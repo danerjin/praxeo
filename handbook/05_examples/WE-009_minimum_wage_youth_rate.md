@@ -1,6 +1,6 @@
 # WE-009 Minimum wage increase with a lower youth rate
 
-Analyst: draft (Handbook 0.2)  |  Rule catalog version: 0.2  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
 
 A stylized policy in a fictional state. This is a designated contested case (PC-10, note; `06_gaps.md`, Q2): the empirical size of minimum-wage employment effects is disputed. The analysis therefore uses the weaker form of PC-10 ("employment, hours or non-wage compensation decrease, in some combination") and does not claim that any one of them falls. Earnings are left ambiguous wherever no dominance rule applies. The probabilities are illustrative; the evidence column says what a real analysis would cite.
 

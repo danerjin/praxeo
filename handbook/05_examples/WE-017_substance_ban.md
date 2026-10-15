@@ -1,6 +1,6 @@
 # WE-017 Ban on a recreational plant product, with penalties scaled to weight
 
-Analyst: draft (Handbook 0.2)  |  Rule catalog version: 0.2  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
 
 A stylized policy in a fictional state, about a fictional substance. It resembles real bans on mildly psychoactive plant products that had been sold legally, but is not modeled on any one of them, and it is kept apart from the historical cases reserved for evaluation. The probabilities are illustrative; the evidence column says what a real analysis would cite.
 
@@ -23,7 +23,7 @@ Note on K2: 50 g of leaf is about 10 doses; 50 g of extract is about 200. Penalt
 
 | Component | Rothbard type | Binding? | Rule families |
 |---|---|---|---|
-| K1, K2 | Triangular: prohibits exchanges between users and sellers; for growing for one's own use, autistic | Yes: demand is established (A-1) | EN-7, EN-8, RS, RS-10 |
+| K1, K2 | Triangular: prohibits exchanges between users and sellers; for growing for one's own use, autistic | Yes: demand is established (A-1) | EN-7, EN-8, EN-10, RS, RS-10, TX-10 |
 | K3 | Triangular: forbids sale of existing stocks in Corrin | Yes | OC-1, RS-8 |
 | K4 | Binary: funded by taxpayers | Yes | OC-3 |
 
@@ -61,13 +61,13 @@ The visible aim: lirva disappears from shop shelves. Licensed shops are easy to 
 | C-6 | `users.mobile` | `cross_border_purchases` (lirva in Halvet, carried home in amounts under 50 g) | increase | short | RS-4 | A-1, A-6 |
 | C-7 | `users.current` | `quantity_substitute` (alcohol, other legal herbal products) | increase | short | RS-1 | A-7 |
 | C-8 | `sellers.substitutes`, `sellers.informal` | `reclassification` (related plants and blends outside the Act's definitions, sold as lirva alternatives) | increase | short to medium | RS-5 | A-8 |
-| C-9 | `sellers.informal` | `variety` (composition shifts toward extract and away from leaf) | increase in the share of concentrated forms | medium | EN-8 | A-1, A-9, A-10 |
+| C-9 | `sellers.informal` | `share_concentrated_forms` (extract rather than leaf) | increase | medium | EN-7, EN-8 | A-1, A-9, A-10 |
 | C-10 | `shops.lirva` | `employment` (lirva retail) | decrease | short | EN-7, RS-6 | A-2, A-11 |
 | C-11 | `users.current`, `shops.lirva` | `lobbying_effort` (for repeal or for a personal-use exemption) | increase | medium | RS-7 | A-12 |
 
 C-4: the price rises because informal sellers must be paid for the risk of punishment and for operating without shops, advertising or scale (EN-7). This holds only if the risk is real (A-4).
 
-C-9: under K2 the penalty depends on weight, and a dose of extract weighs about a twentieth of a dose of leaf. A seller carrying the same number of doses faces a much lower penalty grade with extract, and extract is easier to hide. Sellers shift toward extract (EN-8). The sign is written as a shift in composition because `variety` counts versions rather than measuring their mix (see GAP-017-5).
+C-9: under K2 the penalty depends on weight, and a dose of extract weighs about a twentieth of a dose of leaf. A seller carrying the same number of doses faces a much lower penalty grade with extract, and extract is easier to hide. Sellers shift toward extract (EN-8), recorded with the variable `share_concentrated_forms`.
 
 Not reported:
 - Bundled shopping in Halvet (RS-9). Trips to buy lirva are short, special-purpose trips; that users also do other shopping on them rests on A-13 (p = 0.4), below the cut-off.
@@ -78,17 +78,20 @@ Not reported:
 | ID | Actor class | Variable | Sign | Horizon | Rules | Market relation | Assumptions |
 |---|---|---|---|---|---|---|---|
 | C-12 | `users.informal` | `search_cost` | increase | short | RS-10 | | A-3 |
-| C-13 | `users.informal` | `quality_variability` (proposed: spread of potency and purity between units) | increase | short to medium | RS-10, GAP-017-1 | | A-3 |
+| C-13 | `users.informal` | `quality_variability` (spread of potency and purity between units) | increase | short to medium | RS-10 | | A-3 |
+| C-24 | `users.informal` | `quality_information` (no brands, labels, reviews or recourse) | decrease | short | RS-10 | | A-3 |
 | C-14 | `halvet.sellers` | `quantity_traded` (lirva) | increase | short | RS-4 | Corrin and Halvet lirva markets: `across_border`, partial (40 to 90 minutes) | A-6 |
-| C-15 | `users.informal`, `sellers.informal` | `disputes_settled_outside_courts` (proposed) | increase | short | RS-10, GAP-017-2 | | A-3 |
+| C-15 | `users.informal`, `sellers.informal` | `disputes_settled_outside_courts` | increase | short | RS-10 | | A-3 |
 | C-16 | `officials.enforcement` | `enforcement_cost` (investigation, lab testing, courts, prisons) | increase | short to long | OC-3 | | none |
-| C-17 | `officials.enforcement`, `taxpayers` | `tax_revenue` (state sales tax, all goods) | ambiguous | short | GAP-017-3 | | A-7, A-15 |
-| C-18 | `users.convicted` | `employment` | decrease | long | GAP-017-4 | | A-3, A-16 |
+| C-17 | `officials.enforcement`, `taxpayers` | `tax_revenue` (general sales tax) | decrease | short | TX-10 | | A-1, A-3, A-6 |
+| C-18 | `users.convicted` | `employment` | decrease | long | EN-10 | | A-4, A-16 |
 | C-19 | `users.prospective` | `quantity_demanded` (lirva) | decrease | long | EN-7, LW-3 | | A-1, A-4 |
 
-C-12, C-13, C-15 are RS-10 applied to the informal trade in C-3. Informal sellers cannot advertise, so users spend more time finding them (C-12). With no brands, labels or reviews, and with extract (C-9) easy to dose wrongly, the strength of what users buy varies more from unit to unit (C-13). The catalog has no variable for that spread, so C-13 is Tier C. Disputes over short weight or bad product cannot go to court (C-15); the catalog has no variable for this either, so C-15 is Tier C. Whether such disputes involve violence is discussed in section 5 and not reported.
+C-12, C-13, C-15, C-24 are RS-10 applied to the informal trade in C-3. Informal sellers cannot advertise, so users spend more time finding them (C-12). With no brands, labels or reviews, users can judge a seller's product less well before buying (C-24), and with extract (C-9) easy to dose wrongly, the strength of what they buy varies more from unit to unit (C-13). Disputes over short weight or bad product cannot go to court (C-15). Whether such disputes involve violence is discussed in section 5 and not reported (`06_gaps.md`, Q15).
 
-C-18 is at depth 4 (ban, informal trade, conviction, later job search) and is Tier C: no rule links a criminal record to later employment (GAP-017-4).
+C-17: lirva was subject to the general sales tax, and the ban removes that base (TX-10). Spending that moves to other legal goods pays the same general rate, so it only replaces the revenue lost on lirva; spending that moves to informal sellers and to Halvet is untaxed in Corrin (C-3, C-6). For the general sales tax the sign is therefore a decrease. Excise taxes on substitutes such as alcohol are a separate question (section 7).
+
+C-18 is at depth 4 (ban, informal trade, conviction, later job search): EN-10 links a recorded conviction to later employment, given that records are kept and checked (A-16) and that enforcement produces convictions (A-4).
 
 Stopping points: landlords of closed shop premises are diffuse at depth 3; stopped. RS-11 was checked: no benefit here is lost by moving; it does not apply.
 
@@ -96,8 +99,8 @@ Stopping points: landlords of closed shop premises are diffuse at depth 3; stopp
 
 | Actor class, variable, horizon | Chains (+) | Chains (−) | Dominance rule | Combined sign |
 |---|---|---|---|---|
-| Corrin users' total use of lirva (from all sources), short to medium | Stockpiles bought in the window (C-5) keep use up in the first months. | Higher price per dose (C-4), search (C-12), legal risk, and switching (C-7). | None needed | **decrease**, but by much less than legal sales (C-1), because part of the trade moves to Halvet and to informal sellers (C-3, C-6) rather than stopping. The stockpile only shifts some use in time. |
-| `tax_revenue` (state sales tax, all goods), short | Spending that moves to legal substitutes is taxed (C-7). | Sales tax on lirva is lost (C-1); informal and Halvet purchases are untaxed (C-3, C-6). | None | **ambiguous** (C-17, Tier C). Decided by how much of lirva spending moves to taxed substitutes and at what rates. |
+| `users.current`, `quantity_demanded` (lirva from all sources, after the effective date), short to medium | Stockpiles bought in the window (C-5) keep use up in the first months. | Higher price per dose (C-4), search (C-12), legal risk, and switching (C-7). | None needed | **decrease** (C-25), but by much less than legal sales (C-1), because part of the trade moves to Halvet and to informal sellers (C-3, C-6) rather than stopping. The stockpile only shifts some use in time. |
+| `officials.enforcement`, `taxpayers`, `tax_revenue` (all state taxes, including excises), short | Spending that moves to legal substitutes carrying an excise on top of the sales tax, such as alcohol, adds excise revenue (C-7, A-15). | Sales tax on spending that moves to informal and Halvet sellers is lost (C-17). | None | **ambiguous** (C-26; TX-10). Decided by how much lirva spending moves to excised substitutes, against how much moves to untaxed informal and cross-border purchases. The general sales tax alone decreases (C-17). |
 | `sellers.informal`, `earnings`, medium | The risk premium in the price (C-4). | Fines, seizures, prison terms, and selling without shops or scale. | None | **ambiguous** (C-20). Those who choose to sell informally expect to do better than their next-best option under the ban (LW-5); that says nothing about how they fare compared with legal selling in the counterfactual. |
 
 ## 8. Time structure
@@ -125,11 +128,11 @@ Prevented exchanges are recorded as C-1 and are not listed again.
 |---|---|---|---|---|---|
 | A-1 | A meaningful share of regular users keep using lirva after the ban. | other | 0.9 | Fifteen years of legal use; user surveys; experience of comparable bans. | C-3, C-4, C-6, C-9 shrink; the ban mainly ends use. |
 | A-2 | Licensed shops comply. | enforcement | 0.95 | Visible, licensed premises; inspection powers. | C-1, C-2 weaker; shops sell under the counter. |
-| A-3 | Enforcement is imperfect: many informal sales go undetected. | enforcement | 0.85 | Police budget relative to the number of users; experience of comparable bans. | C-3, C-12, C-13, C-15 weaken; C-18 grows. |
-| A-4 | Enforcement is active enough that informal sellers face a real risk. | enforcement | 0.8 | Added budget; arrest targets; sentencing. | C-4 and C-19 weaken. |
+| A-3 | Enforcement is imperfect: many informal sales go undetected. | enforcement | 0.85 | Police budget relative to the number of users; experience of comparable bans. | C-3, C-12, C-13, C-15, C-24 weaken; C-17 weakens; C-18 grows. |
+| A-4 | Enforcement is active enough that informal sellers face a real risk. | enforcement | 0.8 | Added budget; arrest targets; sentencing. | C-4, C-19 and C-25 weaken; C-18 is smaller. |
 | A-5 | Users know the date and can store dried leaf for months. | expectations | 0.75 | Publicity of the Act; shelf life of about a year. | C-5 not reported. |
-| A-6 | Enough users live within reach of Halvet and will carry home amounts under 50 g. | mobility | 0.65 | Distance to the border (40 to 90 minutes); car ownership; size of the civil fine. | C-6, C-14, C-22 not reported. |
-| A-7 | Legal substitutes are acceptable to some users. | substitutability | 0.8 | Survey data on what users would switch to. | C-7 weakens; C-17 shifts toward a decrease. |
+| A-6 | Enough users live within reach of Halvet and will carry home amounts under 50 g. | mobility | 0.65 | Distance to the border (40 to 90 minutes); car ownership; size of the civil fine. | C-6, C-14, C-22 not reported; C-17 weakens. |
+| A-7 | Legal substitutes are acceptable to some users. | substitutability | 0.8 | Survey data on what users would switch to. | C-7 weakens; C-26 becomes a decrease. |
 | A-8 | Related plants and blends outside the definitions can be sold. | other | 0.6 | Botanical relatives with similar compounds; the Act's wording. | C-8 not reported. |
 | A-9 | Penalties are graded by the total weight of material. | enforcement | 0.95 | Act text (K2). | C-9 not reported. |
 | A-10 | Extract can be made with simple equipment. | other | 0.75 | Current extract sales; method (alcohol soaking). | C-9 weakens. |
@@ -137,7 +140,7 @@ Prevented exchanges are recorded as C-1 and are not listed again.
 | A-12 | Users and former shop owners can organize. | other | 0.6 | Existing trade association of shops; user groups. | C-11 not reported. |
 | A-13 | Users bundle other shopping with lirva trips to Halvet. | other | 0.4 | Trip surveys; what is sold near the border. | Below cut-off; not reported. |
 | A-14 | Informal supply is organized by groups that settle disputes by force on a meaningful scale. | other | 0.3 | Value per unit; scale of sellers; experience with comparable mild substances. | Below cut-off; not reported, and outside version 1 variables. |
-| A-15 | Spending moves to substitutes taxed at rates similar to lirva's. | revenue_use | 0.6 | Sales and excise rates on alcohol and herbal products. | C-17 leans toward a decrease. |
+| A-15 | Some lirva spending moves to substitutes that carry an excise on top of the general sales tax, such as alcohol. | substitutability | 0.6 | Survey data on what users would switch to (A-7); Corrin's excise rates on alcohol and herbal products. | C-26 becomes a decrease. |
 | A-16 | Convictions are recorded and employers check them. | other | 0.6 | Record-keeping rules; background-check practice in Corrin. | C-18 not reported. |
 
 ## 11. Report
@@ -147,13 +150,13 @@ Prevented exchanges are recorded as C-1 and are not listed again.
 **Visible consequences.** Lirva leaves the shelves: legal sales and legal sellers fall to almost nothing (C-1, C-2).
 
 **Invisible consequences.**
-- *Users* stockpiled before the date (C-5), and afterwards pay more per dose (C-4). Some buy in Halvet and carry home small amounts (C-6, C-22); some switch to alcohol or other products (C-7); some buy from informal sellers, who are harder to find (C-12) and whose product varies more in strength (C-13, Tier C). Disputes with sellers cannot go to court (C-15, Tier C). Fewer people start using lirva (C-19).
+- *Users* stockpiled before the date (C-5), and afterwards pay more per dose (C-4). Some buy in Halvet and carry home small amounts (C-6, C-22); some switch to alcohol or other products (C-7); some buy from informal sellers, who are harder to find (C-12), whose product is harder to judge in advance (C-24) and varies more in strength (C-13). Disputes with sellers cannot go to court (C-15). Total use falls, by less than legal sales do (C-25), and fewer people start using lirva (C-19).
 - *Sellers* shift toward extract, because the penalty depends on weight and extract packs about twenty times as many doses into a gram (C-9). Products from related plants are sold as alternatives (C-8).
 - *Shops* lose their stock and staff lose their jobs (C-21, C-10). Halvet shops gain (C-14).
-- *The state* spends more on police, laboratories, courts and, over the years, prisons (C-16), funded by taxpayers (C-23). Those convicted find it harder to get jobs later (C-18, Tier C).
+- *The state* spends more on police, laboratories, courts and, over the years, prisons (C-16), funded by taxpayers (C-23). The general sales tax loses the part of lirva spending that moves to informal and Halvet sellers (C-17). Those convicted find it harder to get jobs later (C-18).
 - Users and former shop owners lobby for repeal (C-11).
 
-**Ambiguous effects.** Total sales-tax revenue (C-17, Tier C). Whether informal sellers earn more or less than they would have selling legally (C-20).
+**Ambiguous effects.** Total state tax revenue, counting excises on substitutes such as alcohol as well as the sales tax (C-26). Whether informal sellers earn more or less than they would have selling legally (C-20).
 
 **Key conditions.** That demand persists (A-1, p = 0.9) and enforcement is imperfect but real (A-3, p = 0.85; A-4, p = 0.8). The shift to extract rests on the weight-based penalties in the Act itself (A-9). Violence in the informal trade is not reported: it rests on an assumption below the cut-off (A-14, p = 0.3), and it is in any case a safety outcome outside version 1.
 
@@ -171,26 +174,31 @@ Prevented exchanges are recorded as C-1 and are not listed again.
 | C-6 | users.mobile | cross_border_purchases | increase | short | invisible | B | RS-4 | A-1, A-6 |
 | C-7 | users.current | quantity_substitute | increase | short | invisible | B | RS-1 | A-7 |
 | C-8 | sellers.substitutes, sellers.informal | reclassification | increase | short–medium | invisible | B | RS-5 | A-8 |
-| C-9 | sellers.informal | variety (share of concentrated forms) | increase | medium | invisible | B | EN-7, EN-8 | A-1, A-9, A-10 |
+| C-9 | sellers.informal | share_concentrated_forms | increase | medium | invisible | B | EN-7, EN-8 | A-1, A-9, A-10 |
 | C-10 | shops.lirva | employment | decrease | short | invisible | B | EN-7, RS-6 | A-2, A-11 |
 | C-11 | users.current, shops.lirva | lobbying_effort | increase | medium | invisible | B | RS-7 | A-12 |
 | C-12 | users.informal | search_cost | increase | short | invisible | B | RS-3, RS-10 | A-3 |
-| C-13 | users.informal | quality_variability (proposed) | increase | short–medium | invisible | C | RS-10, GAP-017-1 | A-3 |
+| C-13 | users.informal | quality_variability | increase | short–medium | invisible | B | RS-3, RS-10 | A-3 |
 | C-14 | halvet.sellers | quantity_traded | increase | short | invisible | B | RS-4 | A-6 |
-| C-15 | users.informal, sellers.informal | disputes_settled_outside_courts (proposed) | increase | short | invisible | C | RS-10, GAP-017-2 | A-3 |
+| C-15 | users.informal, sellers.informal | disputes_settled_outside_courts | increase | short | invisible | B | RS-3, RS-10 | A-3 |
 | C-16 | officials.enforcement | enforcement_cost | increase | short–long | invisible | A | OC-3 | none |
-| C-17 | officials.enforcement, taxpayers | tax_revenue | ambiguous | short | invisible | C | GAP-017-3 | A-7, A-15 |
-| C-18 | users.convicted | employment | decrease | long | invisible | C | GAP-017-4 | A-3, A-16 |
+| C-17 | officials.enforcement, taxpayers | tax_revenue (general sales tax) | decrease | short | invisible | B | EN-7, TX-10 | A-1, A-3, A-6 |
+| C-18 | users.convicted | employment | decrease | long | invisible | B | EN-7, EN-10 | A-4, A-16 |
 | C-19 | users.prospective | quantity_demanded | decrease | long | invisible | B | EN-7, LW-3 | A-1, A-4 |
 | C-20 | sellers.informal | earnings | ambiguous | medium | invisible | B | C-4 vs penalties | A-1, A-3, A-4 |
 | C-21 | shops.lirva | resources_available_other_uses | decrease | short | invisible | A | OC-1 | none |
 | C-22 | users.mobile | search_cost | increase | short | invisible | B | OC-2 | A-6 |
 | C-23 | taxpayers | resources_available_other_uses | decrease | short | invisible | A | OC-3, OC-1 | none |
+| C-24 | users.informal | quality_information | decrease | short | invisible | B | RS-3, RS-10 | A-3 |
+| C-25 | users.current | quantity_demanded (all sources, after the effective date) | decrease | short–medium | invisible | B | EN-7, RS-1 | A-1, A-4 |
+| C-26 | officials.enforcement, taxpayers | tax_revenue (all state taxes, including excises) | ambiguous | short | invisible | B | C-17 vs C-7 (TX-10) | A-6, A-7, A-15 |
 
 ## Gaps found
 
-- **GAP-017-1** (Tier C: C-13; variable). RS-10 says quality in informal trade becomes "harder to judge and more variable", but the variable list has only `quality_per_unit`, which measures a level, not a spread. Proposed fix: add a variable `quality_variability` to 2.4: the spread of quality (for a drug, potency and purity) between units bought in a market.
-- **GAP-017-2** (Tier C: C-15; variable). RS-10 says disputes in informal trade "are settled privately or not at all", but no variable records this. Proposed fix: add `disputes_settled_outside_courts`, the share of disputes in a market that are settled without legal recourse. Violence used in such settlement remains a safety outcome, out of scope for version 1; whether it should get a variable in a later version, and what assumption should govern it (here A-14), is for the experts.
-- **GAP-017-3** (Tier C: C-17). TX-9 covers a tax base that shrinks because of the tax itself (TX-2, TX-4), but not an existing general tax whose base a prohibition removes, with part of the spending moving to other taxed goods and part to untaxed informal or cross-border purchases. Proposed fix: widen TX-9, or add a rule "Base shift": when a policy moves spending from a taxed good to other goods, `tax_revenue` on the target decreases and revenue on substitutes increases; the combined sign is ambiguous unless the substitutes are untaxed.
-- **GAP-017-4** (Tier C: C-18). No rule links penalties under a prohibition to the later options of those penalized. Proposed fix: a rule "EN-10 Penalty records": if a prohibition is enforced by criminal convictions that are recorded and checked, then for those convicted `employment` decreases over the long run; assumes record-keeping and checking practice (`other`).
-- **GAP-017-5** (no Tier C consequence; variable definition). EN-8 concludes that `variety` "changes toward high-potency products", but `variety` is defined as the number of distinct versions offered, not their mix. C-9 stays Tier B because EN-8 names the variable, but its sign has to be written as a shift in composition. Proposed fix: add a variable `share_concentrated_forms` (the share of sales in high-potency forms), and use it in EN-8.
+- GAP-017-1 (closed in catalog 0.3: `quality_variability` and `quality_information`, named in RS-10). C-13 is now Tier B; C-24 added for `quality_information`.
+- GAP-017-2 (closed in catalog 0.3: `disputes_settled_outside_courts`). C-15 is now Tier B. Whether violence in settling disputes should get a variable remains open: Q15 (A-14 here).
+- GAP-017-3 (closed in catalog 0.3: TX-10). C-17 is now Tier B. On review its sign is corrected from ambiguous to decrease: under a general sales tax, spending that moves to other legal goods pays the same rate and only replaces the lost revenue, while spending that moves to informal and cross-border sellers is untaxed. The ambiguity belongs to total revenue across all taxes, including excises on substitutes, now C-26.
+- GAP-017-4 (closed in catalog 0.3: EN-10). C-18 is now Tier B, resting on A-4 (convictions happen) and A-16 (records are checked); it previously cited A-3, which concerns undetected sales.
+- GAP-017-5 (closed in catalog 0.3: `share_concentrated_forms`, used in EN-8). C-9 now uses it with a plain increase.
+
+Also on the update: users' total use, previously a prose row in section 7, is now C-25 (`quantity_demanded`, all sources), and A-15's type is corrected from `revenue_use` to `substitutability`.

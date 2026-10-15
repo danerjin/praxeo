@@ -1,6 +1,6 @@
 # WE-006 Anti-price-gouging law during a declared hurricane emergency
 
-Analyst: draft (Handbook 0.2)  |  Rule catalog version: 0.2  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
 
 A stylized policy in a fictional state. Many places have laws of this kind; this one is not modeled on any of them. The probabilities are illustrative; the evidence column says what a real analysis would cite. The analysis gives particular attention to supplies brought in from outside the affected area and to the timing of decisions before, during and after the emergency.
 
@@ -57,19 +57,19 @@ The visible effect: households who find a generator, water, plywood or a room pa
 | C-4 | `residents.declared` | `wait_time` (lines outside stores before and after landfall) | increase | short | PC-2, OC-2 | A-1, A-3 |
 | C-5 | `residents.declared` | `allocation_by_non_price_criteria` (first come, per-customer limits, regular customers, those who could shop before the storm) | increase | short | PC-2 | A-1, A-3 |
 | C-6 | `sellers.outside` | `quantity_supplied` (goods brought into the declared counties) | decrease | short | PC-5, LW-4, RS-4 | A-1, A-3, A-4, A-5 |
-| C-7 | `sellers.outside` | `number_of_sellers` (individuals and small firms trucking goods in, relative to established chains) | decrease | short | GAP-006-2 | A-1, A-3, A-5 |
+| C-7 | `sellers.outside` | `number_of_sellers` (individuals and small firms trucking goods in, relative to established chains) | decrease | short | PC-13 | A-1, A-3, A-5 |
 | C-8 | `sellers.local` | `quantity_supplied` (stored goods such as plywood and generators, during the emergency) | decrease | short | RS-8 | A-1, A-6 |
 | C-9 | `sellers.local` | `quantity_supplied` (the same goods, in the first weeks after the emergency ends) | increase | short | RS-8 | A-1, A-6 |
 | C-10 | `hotels.declared` | `quality_per_unit` (housekeeping and services cut; minimum stays and deposits added) | decrease | short | PC-4, RS-2 | A-1, A-7 |
 | C-11 | `evacuees.in_rooms` | `turnover` | decrease | short | PC-7 | A-1, A-8 |
 | C-12 | `sellers.local`, `sellers.outside` | `reclassification` (generators sold bundled with delivery or installation; models not sold before the declaration; fees relabeled as costs) | increase | short | RS-5 | A-1, A-9 |
-| C-13 | `sellers.local`, `sellers.outside` | `compliance_cost` (records to document costs under K2) | increase | short | OC-2 | A-1, A-3 |
+| C-13 | `sellers.local`, `sellers.outside` | `compliance_cost` (records to document costs under K2) | increase | short | PC-13, OC-2 | A-1, A-3 |
 | C-14 | `residents.declared` | `informal_activity` (cash sales from trucks and through online listings above the cap) | increase | short | PC-6, RS-3 | A-1, A-10 |
 | C-15 | `sellers.local`, `hotels.declared` | `lobbying_effort` (for a wider cost defense or exemptions; consumer groups for coverage of repair services) | increase | medium | RS-7 | A-1 |
 
 C-6 is the central supply effect. In the counterfactual, the price spike in the declared area is what pays a hardware dealer three hours away to load a truck with generators, drive it through damaged roads and sell the load, or pays a chain to divert stock from inland stores. The cap does not stop this, but it lowers the reward. K2 lets a seller pass on documented freight. It does not cover what is hardest to document and what matters most in an emergency: the owner's own time, the risk of damage or of being stuck with unsold stock, and the value the goods would have had in the market they were taken from (A-5). PC-5 is applied here at a short horizon, as in WE-005: the resources that move are truckloads, not durable capital.
 
-C-7 adds a composition effect that the catalog does not cover. A cap that allows documented costs falls hardest on sellers who have no invoices for their main costs (an individual with a pickup truck) and least on established firms with freight accounts. It therefore changes not just how much is brought in but who brings it. No rule covers caps of this cost-plus form (GAP-006-2), so C-7 is Tier C.
+C-7 adds a composition effect (PC-13). A cap that allows documented costs falls hardest on sellers who have no invoices for their main costs (an individual with a pickup truck) and least on established firms with freight accounts. It therefore changes not just how much is brought in but who brings it. PC-13 also gives the documentation burden on sellers who use the defense (C-13). Both rest on the Attorney General's definition of a documentable cost (A-5).
 
 C-8 and C-9: plywood and generators keep. Demand for plywood stays high for months during rebuilding. A local seller who expects the emergency to end within weeks (A-6) gains by holding part of its stock until the cap lapses. The Act does not require sellers to sell.
 
@@ -85,12 +85,12 @@ Not reported: outside sellers staying away for the whole season because they exp
 | C-17 | `buyers.unserved` | `quantity_substitute` (ice and coolers, candles, staying with relatives, going without) | increase | short | PC-3, RS-1 | generators and ice: `substitute`, partial; rooms and relatives' homes: `substitute`, partial | A-1, A-13 |
 | C-18 | `residents.declared` | `cross_border_purchases` (in inland counties and Hallorn) | ambiguous (section 7) | short | RS-4, PC-2, PC-3 | coastal and inland stores: `across_border`, partial | A-12 |
 | C-19 | `repair_contractors.outside` | `quantity_supplied` (repair work done in the declared counties) | decrease | short | PC-1, PC-7, LW-4 | rooms in the declared counties and outside repair labor: `complement`, note `location` | A-1, A-8, A-11 |
-| C-20 | `sellers.local` | `inventory_held` (generators, plywood and water stocked before each season) — not in the variable list | decrease | medium | GAP-006-1 | | A-14 |
+| C-20 | `sellers.local` | `inventory_held` (generators, plywood and water stocked before each season) | decrease | medium | TS-7 | | A-14, A-17 |
 | C-21 | `households.coastal` | `quantity_demanded` (generators and supplies bought before the season) | ambiguous (section 7) | medium | RS-8 | | A-15 |
 
 C-19 is at depth 4: the cap (1) produces excess demand for rooms (2), which are held by the first arrivals and turn over slowly (3, C-11), so contractors from outside who rely on local rooms find none, or stay far inland and work fewer hours on site (4). In the counterfactual, contractors and insurers would outbid many evacuees for rooms, and evacuees would double up or stay further inland. The chain stops here; the effect on how fast homes are repaired has no variable in version 1.
 
-C-20 and C-21 are the time-structure effects of a standing law. Because the Act is permanent, everyone knows before each season that emergency prices will be capped. In the counterfactual, a seller who stocks extra generators before the season is paid for the cost of storing them, and for the risk that no storm comes, by the high price it can charge if one does. The Act caps that payoff, so sellers stock less (C-20). The catalog has neither a rule nor a variable for stocks held against future scarcity (GAP-006-1), so C-20 is Tier C. Its consequence matters: fewer goods are already in the area when the storm hits, which is exactly when goods from outside cannot yet get in (roads blocked for two to three days).
+C-20 and C-21 are the time-structure effects of a standing law. Because the Act is permanent, everyone knows before each season that emergency prices will be capped. In the counterfactual, a seller who stocks extra generators before the season is paid for the cost of storing them, and for the risk that no storm comes, by the high price it can charge if one does. The Act caps that payoff, so sellers stock less (C-20, TS-7). It rests on sellers expecting the cap to bind in future storms (A-14) and on storage being costly (A-17). Its consequence matters: fewer goods are already in the area when the storm hits, which is exactly when goods from outside cannot yet get in (roads blocked for two to three days).
 
 RS-9 was checked: if coastal buyers drive inland for generators, they buy fuel and food there too. But the sign of C-18 is ambiguous, so the trip effect inherits that ambiguity and is not listed separately. RS-10 is recorded in C-16. RS-11 was checked: evacuees hold a room tied to a place, but the linked choice the rule is about (taking jobs elsewhere) is not at stake during a 30-day emergency; the effect is recorded as C-11.
 
@@ -100,13 +100,13 @@ RS-9 was checked: if coastal buyers drive inland for generators, they buy fuel a
 |---|---|---|---|---|
 | `residents.declared`, `cross_border_purchases`, short | Goods sold out at home (C-3, C-6, C-8) push buyers who must have a generator to drive inland. | Capped prices at home reduce the money gained by buying inland, where prices are uncapped (C-1). | None | **ambiguous**. In the counterfactual, high coastal prices also send buyers inland. |
 | `households.coastal`, `quantity_demanded` (before the season), medium | Households expect goods to be sold out after a storm, so buying early is more favorable (RS-8). | Households expect post-storm prices to be capped, so waiting costs less in money (RS-8). | None | **ambiguous**. It depends on which expectation households hold more strongly. |
-| `buyers.unserved`, `sellers.outside`, `quantity_traded` (covered goods during the emergency), short (C-22) | None during the emergency. Stock held back is released after it (C-9), which is a different period. | Fewer goods brought in from outside (C-6); stored stock held back (C-8); smaller pre-season stocks (C-20, Tier C). | None needed | **decrease**. The Tier C chain only reinforces a sign the Tier B chains already give, so C-22 stays Tier B. |
+| `buyers.unserved`, `sellers.outside`, `quantity_traded` (covered goods during the emergency), short (C-22) | None during the emergency. Stock held back is released after it (C-9), which is a different period. | Fewer goods brought in from outside (C-6); stored stock held back (C-8); smaller pre-season stocks (C-20). | None needed | **decrease**. All three chains agree. |
 
 ## 8. Time structure
 
 The law affects four periods differently.
 
-- **Before the season (every year).** Because the law is standing, it changes decisions made long before any storm. Sellers stock fewer generators and less plywood in coastal stores (C-20, Tier C). Households may stock more or less (C-21, ambiguous). Neither the cap nor its effects show up in prices in this period; they show up as smaller or larger shelves when the storm comes.
+- **Before the season (every year).** Because the law is standing, it changes decisions made long before any storm. Sellers stock fewer generators and less plywood in coastal stores (C-20, TS-7). Households may stock more or less (C-21, ambiguous). Neither the cap nor its effects show up in prices in this period; they show up as smaller or larger shelves when the storm comes.
 - **Declaration to landfall (two days).** The cap starts before landfall. Prices cannot ration the rush of buying in the last two days, so stocks go to those who shop first and buy most (C-2, C-5). In the counterfactual, rising prices in these two days would lead buyers to take less each and leave more for those who shop later.
 - **First two to three weeks.** Roads open over the first days; goods from outside could then arrive. This is when the reduced inflow from outside (C-6) matters most, and when local sellers holding durable goods gain from waiting (C-8). Rooms stay with early arrivals (C-11), which keeps repair crews away or far inland (C-19).
 - **After the emergency ends.** Held-back stock is released (C-9). Because the declaration can be renewed in 30-day steps, sellers do not know when this will be. If they came to expect repeated renewals, holding stock would not pay, but neither would bringing goods in from outside for a longer time (A-16, below the cut-off).
@@ -130,7 +130,7 @@ Time in lines and searching is recorded as C-4 and C-16; documentation as C-13.
 | A-2 | Large chains keep prices below the cap anyway, so the Act binds mainly on others. | other | 0.7 | Chains' pricing in past storms. | The Act binds more widely; C-1 and C-6 grow. |
 | A-3 | The Attorney General enforces actively in the declared area, including against outside sellers. | enforcement | 0.75 | Staff deployed; past prosecutions; publicity. | C-1 shrinks; C-6 and C-7 weaken; C-14 grows. |
 | A-4 | Goods that could be brought in can be sold elsewhere at normal prices. | alternative_uses | 0.9 | Inland and out-of-state demand for the same goods. | C-6 weakens. |
-| A-5 | The extra costs of an emergency trip (own time, risk, unsold stock, value elsewhere) are mostly not documentable under K2. | other | 0.75 | Attorney General guidance on what counts as a cost. | C-6 and C-7 weaken. |
+| A-5 | As the Attorney General applies K2, the extra costs of an emergency trip (own time, risk, unsold stock, value elsewhere) are mostly not accepted as documented costs. | enforcement | 0.75 | Attorney General guidance on what counts as a cost. | C-6 and C-7 weaken. |
 | A-6 | Local sellers expect the emergency to end within weeks, can store durable goods, and are not required to sell. | expectations | 0.55 | Renewal history; text of the Act; storage space. | C-8, C-9 not reported. |
 | A-7 | Hotels may change services and stay conditions (the Act caps the charge only). | other | 0.75 | Text of the Act; Attorney General guidance. | C-10 not reported. |
 | A-8 | A guest who checks out loses the capped room and cannot pass it on. | other | 0.85 | Hotel practice; occupancy during the emergency. | C-11 and C-19 weaken. |
@@ -139,9 +139,10 @@ Time in lines and searching is recorded as C-4 and C-16; documentation as C-13.
 | A-11 | Some outside repair contractors rely on local rooms, and their other lodging is far away. | mobility | 0.6 | Share of crews with their own staging camps; distance to inland hotels. | C-19 not reported. |
 | A-12 | Inland stores can be reached within days of landfall. | mobility | 0.7 | Road damage reports; distance of 60 to 150 miles. | C-18 not reported. |
 | A-13 | Some unserved buyers have substitutes (ice, relatives' homes). | substitutability | 0.8 | Ice distribution; household surveys. | C-17 weakens. |
-| A-14 | Sellers expect the cap to bind in future storms. | expectations | 0.75 | The law is standing and was enforced in the last declaration. | C-20 fails (Tier C chain). |
+| A-14 | Sellers expect the cap to bind in future storms. | expectations | 0.75 | The law is standing and was enforced in the last declaration. | C-20 fails. |
 | A-15 | Households know the Act and expect it to apply in future storms. | expectations | 0.55 | Awareness surveys; publicity of past cases. | C-21 not reported. |
 | A-16 | Sellers expect the emergency to be renewed for months. | expectations | 0.4 | Governor's statements; renewal history. | Below cut-off; not reported. |
+| A-17 | Holding extra stock before the season is costly to sellers (floor and warehouse space, money tied up, stock left unsold or marked down if no storm comes). | other | 0.9 | Retail space costs; end-of-season markdowns of generators and plywood in years without a storm. | C-20 fails: if storage were free, sellers would hold stocks whatever the expected price. |
 
 ## 11. Report
 
@@ -151,14 +152,14 @@ Time in lines and searching is recorded as C-4 and C-16; documentation as C-13.
 
 **Invisible consequences.**
 - *Residents of the declared counties* want more of the goods at the capped price (C-2) than are available (C-3). They wait in lines and drive from store to store (C-4, C-16). Goods go to those who shop first, those with connections and regular customers, within per-customer limits (C-5). Some buy from informal sellers above the cap (C-14). Those who find nothing use ice, candles or relatives' homes, or go without (C-17). Fewer goods are sold in the area during the emergency than would have been (C-22).
-- *Sellers outside the area* bring fewer goods in, because the cap removes most of the reward for the cost and risk of an emergency trip (C-6). Individuals and small firms without documented costs are deterred more than established chains (C-7, Tier C). Sellers reshape products and fees to fit the rules (C-12) and spend time documenting costs (C-13).
-- *Local sellers* hold some durable stock until the emergency ends (C-8, C-9). As a Tier C suggestion: because the law is permanent, they also keep smaller stocks before each season (C-20).
+- *Sellers outside the area* bring fewer goods in, because the cap removes most of the reward for the cost and risk of an emergency trip (C-6). Individuals and small firms without documented costs are deterred more than established chains (C-7). Sellers reshape products and fees to fit the rules (C-12) and spend time documenting costs (C-13).
+- *Local sellers* hold some durable stock until the emergency ends (C-8, C-9). Because the law is permanent, they also keep smaller stocks before each season (C-20), so fewer goods are already in the area in the first days after landfall, when roads from outside are blocked.
 - *Hotels* cut services and add conditions (C-10). Guests holding rooms stay longer (C-11). Repair contractors from outside find fewer rooms and do less work in the area (C-19).
 - *Interested groups* lobby over the rules (C-15). *Taxpayers* fund enforcement (C-23).
 
 **Ambiguous effects.** Whether residents buy more or less inland during the emergency. Whether households stock more or less before the season.
 
-**Key conditions.** The cap must bind (A-1, p = 0.85). The supply effects rest on the costs of emergency trips being hard to document (A-5, p = 0.75) and on active enforcement against outside sellers (A-3, p = 0.75). The holding-back effect (C-8) is the least certain reported result (A-6, p = 0.55).
+**Key conditions.** The cap must bind (A-1, p = 0.85). The supply effects rest on the costs of emergency trips being hard to document (A-5, p = 0.75) and on active enforcement against outside sellers (A-3, p = 0.75). Smaller pre-season stocks rest on sellers expecting the cap in future storms (A-14, p = 0.75). The holding-back effect (C-8) is the least certain reported result (A-6, p = 0.55).
 
 **What this analysis cannot say.** How much less is brought in, how much longer shortages last, or how much repairs are delayed; whether the lower prices for those served outweigh the effects on those not served; effects on health, safety and property damage (out of scope for version 1); whether the law is fair or desirable.
 
@@ -172,25 +173,25 @@ Time in lines and searching is recorded as C-4 and C-16; documentation as C-13.
 | C-4 | residents.declared | wait_time | increase | short | invisible | B | PC-1, PC-2, OC-2 | A-1, A-3 |
 | C-5 | residents.declared | allocation_by_non_price_criteria | increase | short | invisible | B | PC-1, PC-2 | A-1, A-3 |
 | C-6 | sellers.outside | quantity_supplied (into declared counties) | decrease | short | invisible | B | PC-5, LW-4, RS-4 | A-1, A-3, A-4, A-5 |
-| C-7 | sellers.outside | number_of_sellers (ad hoc sellers) | decrease | short | invisible | C | GAP-006-2 | A-1, A-3, A-5 |
+| C-7 | sellers.outside | number_of_sellers (ad hoc sellers) | decrease | short | invisible | B | PC-1, PC-13 | A-1, A-3, A-5 |
 | C-8 | sellers.local | quantity_supplied (stored goods, during emergency) | decrease | short | invisible | B | RS-8 | A-1, A-6 |
 | C-9 | sellers.local | quantity_supplied (stored goods, after emergency) | increase | short | invisible | B | RS-8 | A-1, A-6 |
 | C-10 | hotels.declared | quality_per_unit | decrease | short | invisible | B | PC-4, RS-2 | A-1, A-7 |
 | C-11 | evacuees.in_rooms | turnover | decrease | short | invisible | B | PC-7 | A-1, A-8 |
 | C-12 | sellers.local, sellers.outside | reclassification | increase | short | invisible | B | RS-5 | A-1, A-9 |
-| C-13 | sellers.local, sellers.outside | compliance_cost | increase | short | invisible | B | OC-2 | A-1, A-3 |
+| C-13 | sellers.local, sellers.outside | compliance_cost | increase | short | invisible | B | PC-13, OC-2 | A-1, A-3 |
 | C-14 | residents.declared | informal_activity | increase | short | invisible | B | PC-6, RS-3 | A-1, A-10 |
 | C-15 | sellers.local, hotels.declared | lobbying_effort | increase | medium | invisible | B | RS-7 | A-1 |
 | C-16 | residents.declared | search_cost | increase | short | invisible | B | PC-2, RS-10 | A-1, A-3 |
 | C-17 | buyers.unserved | quantity_substitute | increase | short | invisible | B | PC-3, RS-1 | A-1, A-13 |
 | C-18 | residents.declared | cross_border_purchases | ambiguous | short | invisible | B | RS-4 vs PC-3 (C-3, C-6 vs C-1) | A-1, A-12 |
 | C-19 | repair_contractors.outside | quantity_supplied (repair work in area) | decrease | short | invisible | B | PC-1, PC-7, LW-4 | A-1, A-8, A-11 |
-| C-20 | sellers.local | inventory_held (proposed variable) | decrease | medium | invisible | C | GAP-006-1 | A-14 |
+| C-20 | sellers.local | inventory_held (before each season) | decrease | medium | invisible | B | TS-7 | A-14, A-17 |
 | C-21 | households.coastal | quantity_demanded (before the season) | ambiguous | medium | invisible | B | RS-8 vs RS-8 | A-15 |
-| C-22 | buyers.unserved, sellers.outside | quantity_traded (during emergency) | decrease | short | invisible | B | PC-5, OC-4 | A-1, A-4 |
+| C-22 | buyers.unserved, sellers.outside | quantity_traded (during emergency) | decrease | short | invisible | B | PC-5, OC-4 | A-1, A-3, A-4, A-5 |
 | C-23 | taxpayers | resources_available_other_uses | decrease | short | invisible | A | OC-3, OC-1 | none |
 
 ## Gaps found
 
-- **GAP-006-1. No rule or variable for stocks held against future scarcity.** Needed for C-20 (Tier C) and for reasoning about the season before a storm. Storage is how goods are moved from a time when they are plentiful to a time when they are scarce, and what pays for it is the expected price in the scarce period. A cap on that price, known in advance, lowers the expected return on storage. Proposed fix: add the variable `inventory_held` (stocks of a good held by an actor class at a named time) to 2.4, and a new TS rule. *If* actors expect a `price_ceiling` to apply in future periods of scarcity, *then* `inventory_held` before those periods decreases for sellers. *Assumes* storage is costly and the cap is expected to bind (`expectations`, `binding`). Tier B. Builds on LW-4, LW-7. The same rule would cover WE-005's terminal stocks.
-- **GAP-006-2. Caps that allow documented costs change who supplies, not only how much.** Needed for C-7 (Tier C). A cap of the form "base price plus documented cost increases" lets through the costs that leave a paper trail (invoiced freight) and blocks those that do not (owner's labor, risk, value of the goods elsewhere). Proposed fix: a new PC rule. *If* a binding `price_ceiling` allows increases in documented costs only, *then* `number_of_sellers` among sellers whose main costs are undocumented decreases relative to sellers with documented costs, and `compliance_cost` increases for sellers using the defense. *Assumes* the enforcing agency's definition of a documentable cost (`enforcement`). Tier B.
+- GAP-006-1 (closed in catalog 0.3: TS-7 and `inventory_held`). C-20 is now Tier B, resting on A-14 (sellers expect the cap in future storms) and the new A-17 (storage is costly). The third combined entry in section 7 no longer has a Tier C chain.
+- GAP-006-2 (closed in catalog 0.3: PC-13). C-7 is now Tier B; PC-13 also supplies the documentation cost in C-13. A-5 is retyped `enforcement`, as PC-13 requires (the agency's definition of a documentable cost).

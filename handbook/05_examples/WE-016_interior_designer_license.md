@@ -1,17 +1,17 @@
 # WE-016 License requirement for interior designers, with grandfathering
 
-Analyst: draft (Handbook 0.2)  |  Rule catalog version: 0.2  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
 
 A stylized policy in a fictional state, modeled on a common type of occupational-licensing law. It is a companion to WE-003: here existing practitioners are grandfathered, which changes the time structure, and the required training is partly related to the quality some buyers care about, which changes the quality result. The probabilities are illustrative; the evidence column says what a real analysis would cite.
 
 ## 1. Policy record
 
-**Arden Interior Design Practice Act.** Interior design was previously unregulated in the State of Arden: anyone could offer it for pay. About 6,000 people do, roughly 40% of whom hold a degree in interior design. About half the trade's revenue comes from commercial work (offices, shops, restaurants), half from homes. Two accredited degree programs in Arden graduate about 300 students a year. Arden's largest city, Corvan, is 20 km from the border with Belmar, which does not license interior designers. The Act was passed ten months before it took effect.
+**Arvane Interior Design Practice Act.** Interior design was previously unregulated in the State of Arvane: anyone could offer it for pay. About 6,000 people do, roughly 40% of whom hold a degree in interior design. About half the trade's revenue comes from commercial work (offices, shops, restaurants), half from homes. Two accredited degree programs in Arvane graduate about 300 students a year. Arvane's largest city, Corvan, is 20 km from the border with Velmark, which does not license interior designers. The Act was passed ten months before it took effect.
 
 | Component | Instrument | Target | Bound | Parameters | Exemptions |
 |---|---|---|---|---|---|
-| K1 License requirement | `licensing_requirement` | Interior design for pay: space planning, and selection of interior finishes and furnishings, for homes or businesses in Arden | Anyone offering it, and firms employing them | A four-year accredited degree in interior design; 3,500 hours of work supervised by a licensed designer or architect; a state exam ($1,200). License fee $250 a year; 12 hours of continuing education a year. | K2; architects; retail employees advising on goods sold by their employer; work on one's own home; unpaid work |
-| K2 Grandfathering | Exemption from K1's entry conditions | Existing practitioners | — | Anyone who documents three years of paid practice in Arden before the effective date and registers within 18 months receives a license without the degree, hours or exam. The license lapses if not renewed, and cannot then be regained without meeting K1. | — |
+| K1 License requirement | `licensing_requirement` | Interior design for pay: space planning, and selection of interior finishes and furnishings, for homes or businesses in Arvane | Anyone offering it, and firms employing them | A four-year accredited degree in interior design; 3,500 hours of work supervised by a licensed designer or architect; a state exam ($1,200). License fee $250 a year; 12 hours of continuing education a year. | K2; architects; retail employees advising on goods sold by their employer; work on one's own home; unpaid work |
+| K2 Grandfathering | Exemption from K1's entry conditions | Existing practitioners | — | Anyone who documents three years of paid practice in Arvane before the effective date and registers within 18 months receives a license without the degree, hours or exam. The license lapses if not renewed, and cannot then be regained without meeting K1. | — |
 | K3 Stamped plans | Part of K1 | Building permits for commercial interior alterations | Permit applicants | Plans must be stamped by a licensed interior designer or an architect. Previously, non-structural interior plans by anyone were accepted. | Homes |
 | K4 Enforcement | Enforcement | K1 to K3 | State Board of Interior Design | Complaint-driven; fines up to $2,500 per violation; contracts for unlicensed practice cannot be enforced in court. Funded by license fees and the general budget. | None |
 
@@ -21,8 +21,8 @@ Unclear provisions: whether choosing furnishings, finishes and colors without an
 
 | Component | Rothbard type | Binding? | Rule families |
 |---|---|---|---|
-| K1 | Triangular: prohibits exchanges between clients and unlicensed designers; a grant of privilege to license holders | Yes, for the roughly 60% without a degree who are not grandfathered, and for most would-be entrants (A-1) | EN, RS, OC |
-| K2 | Exemption: a boundary in time | Delays the effect on supply (EN-1, Unless clause) | EN-1, TS-1, RS-8 |
+| K1 | Triangular: prohibits exchanges between clients and unlicensed designers; a grant of privilege to license holders | Yes, for the roughly 60% without a degree who are not grandfathered, and for most would-be entrants (A-1) | EN (including EN-9 for the supervised hours), RS, OC |
+| K2 | Exemption: a boundary in time | Delays the effect on supply (EN-1, Unless clause) | EN-1, TS-1, RS-8, RS-11 |
 | K3 | Triangular: commercial clients may not use unlicensed plans for permits | Yes (A-5) | EN-1, EN-4 |
 | K4 | Binary: funded by fees and taxpayers | Yes | OC-3 |
 
@@ -48,7 +48,7 @@ Unclear provisions: whether choosing furnishings, finishes and colors without an
 |---|---|---|---|---|---|---|
 | C-1 | designers (legal market) | `share_of_sellers_licensed` | increase | short | K1, K2 | A-2 |
 
-The visible, stated aim: everyone who offers interior design for pay in Arden is licensed. For the first years most license holders are grandfathered practitioners whose training has not changed, so the license certifies little that is new about them. Whether quality received rises is the question in section 7.
+The visible, stated aim: everyone who offers interior design for pay in Arvane is licensed. For the first years most license holders are grandfathered practitioners whose training has not changed, so the license certifies little that is new about them. Whether quality received rises is the question in section 7.
 
 ## 5. Responses
 
@@ -57,7 +57,7 @@ The visible, stated aim: everyone who offers interior design for pay in Arden is
 | C-2 | `designers.recent` | `number_of_sellers` (legal) | decrease | short | EN-1 | A-1, A-2 |
 | C-3 | `designers.recent` | `informal_activity` | increase | short | RS-3, EN-3 | A-3 |
 | C-4 | `designers.grandfathered` | `compliance_cost` (documenting practice, fees, continuing education) | increase | short | OC-2 | none |
-| C-5 | `designers.prospective` | `entry_rate` | decrease | medium to long | EN-1, TS-1 | A-1, A-2 |
+| C-5 | `designers.prospective` | `entry_rate` | decrease | medium to long | EN-1, EN-9, TS-1 | A-1, A-2, A-15 |
 | C-6 | `designers.prospective` (degree route) | `compliance_cost` (degree and 3,500 supervised hours, beyond what many residential clients would ask for) | increase | long | OC-2, EN-1 | A-1, A-6 |
 | C-7 | `schools.design` | `quantity_demanded` (degree places) | increase | medium | EN-1 | A-1 |
 | C-8 | `retailers.furniture`, `designers.recent` | `reclassification` (full-room design offered as "free design help" with furniture sales; recent designers joining stores as employees) | increase | short to medium | RS-5 | A-7 |
@@ -66,7 +66,7 @@ The visible, stated aim: everyone who offers interior design for pay in Arden is
 
 C-2 and C-5 are EN-1 with its grandfathering exception. In the short run only the recent, non-degreed practitioners are excluded; the restriction on new entry shows up later (section 8).
 
-Not reported: Belmar-based designers serving Arden homes without an Arden license (RS-4). Corvan is close to the border, but Arden projects need an Arden license whoever does them; A-17 is below the cut-off (p = 0.4).
+Not reported: Velmark-based designers serving Arvane homes without an Arvane license (RS-4). Corvan is close to the border, but Arvane projects need an Arvane license whoever does them; A-17 is below the cut-off (p = 0.4).
 
 ## 6. Second-order effects
 
@@ -80,27 +80,29 @@ Not reported: Belmar-based designers serving Arden homes without an Arden licens
 | C-16 | `retailers.furniture` | `quantity_traded` (furniture) | increase | medium | RS-5, RS-9 | design help and furniture bought in the same store: `complement`, note `trip` | A-7, A-12 |
 | C-17 | `showrooms.trade` | `quantity_traded` | decrease | medium | RS-5, RS-9 | as C-16 | A-7, A-12 |
 | C-18 | `clients.residential` (using unlicensed designers) | `search_cost` | increase | short to medium | RS-10 | | A-3 |
+| C-28 | `clients.residential` (using unlicensed designers) | `quality_information` | decrease | short to medium | RS-10 | | A-3 |
+| C-29 | `clients.residential` (using unlicensed designers) | `disputes_settled_outside_courts` (fee disputes) | increase | short to medium | RS-10 | | A-3 |
 | C-19 | `clients.commercial` | `quality_per_unit` | increase | long | EN-4, DM-2 | | A-5, A-13 |
-| C-20 | `clients.residential` | `quality_per_unit` | ambiguous | medium to long | EN-4 | | A-10, A-14 |
-| C-21 | `apprentices` | `wage_rate` | decrease | medium | GAP-016-1 | | A-15 |
-| C-22 | `designers.grandfathered` | `job_changes` (leaving the occupation for a time) | decrease | medium | GAP-016-2 | | A-16 |
+| C-20 | `clients.residential` | `quality_per_unit` | ambiguous | medium to long | EN-4 | | A-10 |
+| C-21 | `apprentices` | `wage_rate` | decrease | medium | EN-9 | | A-15 |
+| C-22 | `designers.grandfathered` | `job_changes` (leaving the occupation for a time) | decrease | medium | RS-11 | | A-16 |
 
 C-16, C-17: a household that takes a store's free design help buys most of the furnishings from that store. Purchases that independent designers would have placed with trade showrooms move to the stores (RS-9).
 
-C-18: RS-10 applies to the informal practice in C-3. Unlicensed designers cannot advertise as designers, clients cannot check them, and since their contracts cannot be enforced in court, fee disputes are settled privately or not at all.
+C-18, C-28, C-29: RS-10 applies to the informal practice in C-3. Unlicensed designers cannot advertise as designers (C-18), clients cannot check them (C-28), and since their contracts cannot be enforced in court, fee disputes are settled privately or not at all (C-29).
 
-C-21 (Tier C): the 3,500 hours must be supervised by a licensed designer or architect. Supervised positions are scarce relative to graduates in the medium horizon, so graduates accept lower pay to get them. No rule covers supervised-experience requirements (GAP-016-1).
+C-21: the 3,500 hours must be supervised by a licensed designer or architect, so incumbents' willingness to supervise limits entry (EN-9; also C-5). Supervised positions are scarce relative to graduates in the medium horizon (A-15), so graduates accept lower pay to get them, and incumbents capture part of the value of the license through their trainees' pay. The comparison is with what the same graduates would earn as junior designers without the requirement.
 
-C-22 (Tier C): a grandfathered license lost by lapsing cannot be regained without the degree. Designers who would have left the trade for a few years (to raise children, to try other work) now keep renewing and working instead. This is the lock-in of RS-11, but tied to an occupation, not a place, so RS-11's precondition is not met (GAP-016-2).
+C-22: a grandfathered license lost by lapsing cannot be regained without the degree, and it cannot be transferred. Designers who would have left the trade for a few years (to raise children, to try other work) now keep renewing and working instead (A-16). This is the lock-in of RS-11, which since catalog 0.3 covers a benefit lost by a change of status as well as of location.
 
-Stopping points: lower sales at trade showrooms (C-17) would reach their suppliers at depth 4, a diffuse group; stopped. RS-11 in its own terms (a location-tied benefit) does not apply: the license is valid anywhere in Arden.
+Stopping points: lower sales at trade showrooms (C-17) would reach their suppliers at depth 4, a diffuse group; stopped. RS-11 in its location form does not apply, since the license is valid anywhere in Arvane; its status form is C-22.
 
 ## 7. Combined effects
 
 | Actor class, variable, horizon | Chains (+) | Chains (−) | Dominance rule | Combined sign |
 |---|---|---|---|---|
 | `clients.commercial`, `quality_per_unit`, long | New entrants are trained and examined in building codes, egress, accessibility and plan preparation, which commercial clients need to get permits approved (EN-4, up chain; A-13, p = 0.75). | Higher prices (C-12) push some clients toward cheaper options (EN-3, down chain). | DM-2: stamped plans are required for permits (A-5, p = 0.85), so no close unlicensed substitute exists for permit work, and architects, the exempt alternative, are themselves licensed. The down chain is weak. | **increase** (C-19), mostly in the long run, once new entrants are a large share of the trade. In the short run the licensed pool is the grandfathered pool, and quality is close to unchanged. If the curriculum did not cover what commercial clients need (A-13 false), the sign would be **ambiguous**. |
-| `clients.residential`, `quality_per_unit`, medium to long | New entrants know space planning and materials; some of this matters to homeowners (EN-4, up chain). | Higher prices (C-11) push clients toward store design help, online services and doing it themselves (C-14), and toward unlicensed designers they cannot check (C-18) (EN-3, down chain; A-10, p = 0.85). | DM-2 does not settle it. The down chain is active, because close exempt and unlicensed substitutes exist (A-10). Whether the up chain is weak depends on whether the training is unrelated to what residential clients value (taste, coordination, responsiveness). The evidence is mixed: A-14 (largely unrelated) is put at p = 0.45, below the cut-off, and its negation is not established either. | **ambiguous** (C-20). If evidence raised A-14 above 0.5 (for example, client ratings showing no difference between degreed and non-degreed residential designers), DM-2 would make the sign **decrease**, as in WE-003. If evidence showed degreed designers clearly better at what homeowners value, the sign would stay ambiguous, because the down chain remains. |
+| `clients.residential`, `quality_per_unit`, medium to long | New entrants know space planning and materials; some of this matters to homeowners (EN-4, up chain). | Higher prices (C-11) push clients toward store design help, online services and doing it themselves (C-14), and toward unlicensed designers they cannot check (C-28) (EN-3, down chain; A-10, p = 0.85). | DM-2 does not settle it. The down chain is active, because close exempt and unlicensed substitutes exist (A-10). Whether the up chain is weak depends on whether the training is unrelated to what residential clients value (taste, coordination, responsiveness). The evidence is mixed: A-14 (largely unrelated) is put at p = 0.45, below the cut-off, and its negation is not established either. | **ambiguous** (C-20). If evidence raised A-14 above 0.5 (for example, client ratings showing no difference between degreed and non-degreed residential designers), DM-2 would make the sign **decrease**, as in WE-003. If evidence showed degreed designers clearly better at what homeowners value, the sign would stay ambiguous, because the down chain remains. |
 | `designers.prospective` who take the degree route, `earnings`, long | Higher fees once licensed (C-11, C-12). | A degree and 3,500 supervised hours at low pay first (C-6, C-21). | DM-3 | **ambiguous** by design (C-23). Those who choose the route expect it to pay (LW-5); those who turn away expected it not to. |
 | `designers.grandfathered`, `earnings`, medium | Higher fees as competition thins (C-13). | Fees and continuing-education hours every year (C-4). | None | **ambiguous** (C-24). The method cannot compare the two. That nearly all eligible practitioners register shows they expected registration to be worth its cost; it does not compare their earnings with the counterfactual. |
 
@@ -142,21 +144,21 @@ The degree and supervised hours are already recorded as C-6, and grandfathered p
 | A-12 | Households that use a store's design help buy most furnishings from that store. | other | 0.75 | Store sales data; design-help conversion rates. | C-16, C-17 not reported. |
 | A-13 | The degree and exam cover code, egress, accessibility and plan preparation, which commercial clients need. | other | 0.75 | Curriculum hours by topic; exam blueprint; permit rejection rates by preparer. | C-19 becomes ambiguous. |
 | A-14 | For homes, the training is largely unrelated to what clients value. | other | 0.45 | Client ratings and complaints by designer education; curriculum content. | Below cut-off. If it rose above 0.5, C-20 would become a decrease. |
-| A-15 | Supervised positions are scarce relative to graduates in the medium run. | other | 0.6 | Number of licensed supervisors willing to take apprentices; graduates per year. | C-21 not reported. |
+| A-15 | Supervision is costly or limited per supervisor, so supervised positions are scarce relative to graduates in the medium run (the assumption of EN-9). | other | 0.6 | Number of licensed supervisors willing to take apprentices; graduates per year. | C-21 not reported; C-5 rests on EN-1 alone. |
 | A-16 | Some grandfathered designers would otherwise leave the trade for a time and return. | other | 0.65 | Career-break rates in the trade; age and family profile. | C-22 not reported. |
-| A-17 | Belmar-based designers serve Arden homes without an Arden license on a meaningful scale. | mobility | 0.4 | Distance from Corvan to the border; Board enforcement across the line. | Below cut-off; not reported. |
+| A-17 | Velmark-based designers serve Arvane homes without an Arvane license on a meaningful scale. | mobility | 0.4 | Distance from Corvan to the border; Board enforcement across the line. | Below cut-off; not reported. |
 
 ## 11. Report
 
-**The policy.** Arden now requires a license to practice interior design for pay: a degree, 3,500 supervised hours and an exam. Anyone with three years' paid practice who registers within 18 months is licensed without them. Commercial interior plans need a licensed designer's or architect's stamp for a permit. Store staff advising on their store's goods, architects, and work on one's own home are exempt.
+**The policy.** Arvane now requires a license to practice interior design for pay: a degree, 3,500 supervised hours and an exam. Anyone with three years' paid practice who registers within 18 months is licensed without them. Commercial interior plans need a licensed designer's or architect's stamp for a permit. Store staff advising on their store's goods, architects, and work on one's own home are exempt.
 
 **Visible consequences.** Everyone practicing interior design legally is licensed (C-1).
 
 **Invisible consequences.**
 - *Recent practitioners without a degree* must leave, join stores, or work informally (C-2, C-3, C-8), and those who leave earn less (C-26).
-- *Grandfathered practitioners* bear fees and continuing education (C-4), charge more as competition thins (C-13), and stay in the trade rather than take breaks they would otherwise have taken (C-22, Tier C).
-- *Would-be designers* face a degree and supervised hours (C-5, C-6). Schools gain students (C-7). Graduates compete for scarce supervised places and accept lower pay (C-21, Tier C).
-- *Clients* pay more, increasingly so in the medium run (C-11, C-12). Households turn to store design help, online services or doing it themselves (C-14), and those who use unlicensed designers find them harder to check (C-18). Businesses use architects more (C-15). Fewer design services are bought and sold overall (C-25).
+- *Grandfathered practitioners* bear fees and continuing education (C-4), charge more as competition thins (C-13), and stay in the trade rather than take breaks they would otherwise have taken, because a lapsed license cannot be regained (C-22).
+- *Would-be designers* face a degree and supervised hours (C-5, C-6). Schools gain students (C-7). Graduates compete for scarce supervised places and accept lower pay than they would have earned as junior designers (C-21).
+- *Clients* pay more, increasingly so in the medium run (C-11, C-12). Households turn to store design help, online services or doing it themselves (C-14), and those who use unlicensed designers find them harder to find and check, and have no recourse in court over fees (C-18, C-28, C-29). Businesses use architects more (C-15). Fewer design services are bought and sold overall (C-25).
 - *Furniture stores* sell more furniture through their design help, and trade showrooms less (C-16, C-17).
 - *Commercial clients* rushed projects into the announcement window (C-9). Interest groups lobby over the rule's scope (C-10). *Taxpayers* fund part of the Board (C-27).
 
@@ -174,7 +176,7 @@ The degree and supervised hours are already recorded as C-6, and grandfathered p
 | C-2 | designers.recent | number_of_sellers (legal) | decrease | short | invisible | B | EN-1 | A-1, A-2 |
 | C-3 | designers.recent | informal_activity | increase | short | invisible | B | RS-3, EN-3 | A-3 |
 | C-4 | designers.grandfathered | compliance_cost | increase | short | invisible | A | OC-2 | none |
-| C-5 | designers.prospective | entry_rate | decrease | medium–long | invisible | B | EN-1, TS-1 | A-1, A-2 |
+| C-5 | designers.prospective | entry_rate | decrease | medium–long | invisible | B | EN-1, EN-9, TS-1 | A-1, A-2, A-15 |
 | C-6 | designers.prospective (degree route) | compliance_cost | increase | long | invisible | B | OC-2, EN-1 | A-1, A-6 |
 | C-7 | schools.design | quantity_demanded | increase | medium | invisible | B | EN-1 | A-1 |
 | C-8 | retailers.furniture, designers.recent | reclassification | increase | short–medium | invisible | B | RS-5 | A-7 |
@@ -188,10 +190,12 @@ The degree and supervised hours are already recorded as C-6, and grandfathered p
 | C-16 | retailers.furniture | quantity_traded (furniture) | increase | medium | invisible | B | RS-5, RS-9 | A-7, A-12 |
 | C-17 | showrooms.trade | quantity_traded | decrease | medium | invisible | B | RS-5, RS-9 | A-7, A-12 |
 | C-18 | clients.residential (informal) | search_cost | increase | short–medium | invisible | B | RS-3, RS-10 | A-3 |
+| C-28 | clients.residential (informal) | quality_information | decrease | short–medium | invisible | B | RS-3, RS-10 | A-3 |
+| C-29 | clients.residential (informal) | disputes_settled_outside_courts | increase | short–medium | invisible | B | RS-3, RS-10 | A-3 |
 | C-19 | clients.commercial | quality_per_unit | increase | long | visible | B | EN-4, DM-2 | A-5, A-13 |
-| C-20 | clients.residential | quality_per_unit | ambiguous | medium–long | invisible | B | EN-4 (DM-2 not decisive) | A-10, A-14 |
-| C-21 | apprentices | wage_rate | decrease | medium | invisible | C | GAP-016-1 | A-15 |
-| C-22 | designers.grandfathered | job_changes | decrease | medium | invisible | C | GAP-016-2 | A-16 |
+| C-20 | clients.residential | quality_per_unit | ambiguous | medium–long | invisible | B | EN-4 (DM-2 not decisive) | A-10 |
+| C-21 | apprentices | wage_rate | decrease | medium | invisible | B | EN-9 | A-15 |
+| C-22 | designers.grandfathered | job_changes | decrease | medium | invisible | B | RS-11 | A-16 |
 | C-23 | designers.prospective (degree route) | earnings | ambiguous | long | invisible | B | C-11, C-12 vs C-6, C-21; DM-3 | A-1, A-6 |
 | C-24 | designers.grandfathered | earnings | ambiguous | medium | invisible | B | C-13 vs C-4 | A-1, A-2 |
 | C-25 | clients, designers.recent, designers.prospective | quantity_traded (legal services) | decrease | medium–long | invisible | B | OC-4 | A-1, A-2 |
@@ -200,5 +204,7 @@ The degree and supervised hours are already recorded as C-6, and grandfathered p
 
 ## Gaps found
 
-- **GAP-016-1** (Tier C: C-21). No rule covers a requirement for experience supervised by incumbents. Such a requirement makes incumbents' willingness to supervise a bottleneck on entry, and lets them capture part of the rent through low apprentice pay. Proposed fix: a rule "EN-9 Supervised-practice requirement": if a license requires hours supervised by license holders, then `entry_rate` depends on the number of supervised places, and `apprentices.wage_rate` decreases where places are scarce relative to candidates; assumes supervision is costly or limited per supervisor (`other`).
-- **GAP-016-2** (Tier C: C-22). RS-11 (lock-in) requires a benefit tied to a location. A grandfathered status that is lost by lapsing produces the same lock-in, tied to an occupation: holders turn down breaks and other work they would otherwise take. Proposed fix: widen RS-11's If clause to "a non-transferable benefit that is lost by a change of location or status (moving, leaving an occupation, letting a registration lapse)", with `job_changes` as the variable in both cases.
+- GAP-016-1 (closed in catalog 0.3: EN-9). C-21 is now Tier B, resting on A-15; EN-9 also enters C-5.
+- GAP-016-2 (closed in catalog 0.3: RS-11 widened to a benefit lost by a change of status). C-22 is now Tier B, resting on A-16.
+
+Review corrections on the update to catalog 0.3: C-20 listed A-14 (p = 0.45) as an assumption; A-14 is what would decide the ambiguity, not an assumption the ambiguous sign rests on, so it is removed from C-20's list. The RS-10 effects of unlicensed practice are split into their own variables (C-18, C-28, C-29). Two place names that exist in the real world were replaced with fictional ones.

@@ -1,6 +1,6 @@
 # WE-007 Interest-rate cap on small consumer loans
 
-Analyst: draft (Handbook 0.2)  |  Rule catalog version: 0.2  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
 
 A stylized policy in a fictional state. Rate caps of this kind are common; this one is not modeled on any particular law. The probabilities are illustrative; the evidence column says what a real analysis would cite. A loan is treated as an exchange of present money for future money; its price is the interest and fees, stated as an annual percentage rate (APR), recorded under `price_paid`.
 
@@ -18,7 +18,8 @@ The bill was introduced in January, with polls showing wide support; it passed i
 | K2 License reach | `licensing_requirement` (existing, restated) | Any consumer loan to a Wexmoor resident | All lenders, including online lenders based elsewhere | A Wexmoor license is required; loans by unlicensed lenders, and loans above the cap, are void (the borrower owes neither interest nor principal). | As K1 |
 | K3 Enforcement | Administration and enforcement | K1, K2 | Department of Financial Institutions; Attorney General | Examinations of licensees; license revocation; civil suits against unlicensed lenders. Lenders based in other states or abroad are hard to reach. Funded from license fees and the general budget. | None |
 
-Unclear provisions: whether "earned wage access" products (advances on wages already earned, repaid from the next paycheck, with optional "tips" and fees for fast delivery) are loans. The Act defines a loan as an agreement with an obligation to repay; many such products are written without one. Assumed not covered (A-11); if they are covered, C-19 does not occur and borrowers have one fewer substitute.
+Unclear provisions:
+- **U1.** Whether "earned wage access" products (advances on wages already earned, repaid from the next paycheck, with optional "tips" and fees for fast delivery) are loans. The Act defines a loan as an agreement with an obligation to repay; many such products are written without one. Reading U1-a: products written without a repayment obligation are not loans and fall outside the Act. Reading U1-b: they are loans, and their fees count toward the 36% APR. Readings get no probability; C-19 reports one sign for each.
 
 ## 2. Classification
 
@@ -38,7 +39,7 @@ Unclear provisions: whether "earned wage access" products (advances on wages alr
 | `lenders.licensed` | Wexmoor-licensed storefront and online lenders | Small loans become unprofitable for most borrowers; can lend larger amounts, convert to pawn, or leave. |
 | `lenders.prospective` | Would-be entrants | Entry into small-loan lending no longer pays. |
 | `lenders.unlicensed` | Online lenders based outside Wexmoor | Face less competition from licensed lenders; risk void loans and suits. |
-| `providers.wage_access` (`sellers.substitutes`) | Firms offering wage advances | Possibly outside the Act. |
+| `providers.wage_access` (`sellers.substitutes`) | Firms offering wage advances | Outside the Act under reading U1-a; capped like small loans under U1-b. |
 | `pawnshops` (`sellers.substitutes`) | Pawn lenders | More demand. |
 | `storefronts.kestria` | Lenders and check cashers just across the border | Some Wexmoor customers. |
 | `officials.enforcement`, `taxpayers` | Department, Attorney General and their funders | More examination and litigation. |
@@ -59,7 +60,7 @@ The visible effect: anyone who borrows $2,500 or less from a licensed lender pay
 | C-3 | `lenders.licensed` | `number_of_sellers` (storefronts and licensed online lenders) | decrease | short to medium | RS-6, PC-5 | A-1, A-3 |
 | C-4 | `borrowers.unserved` | `excess_demand` (for small loans at 36% or less) | increase | short | PC-1 | A-1, A-2 |
 | C-5 | `borrowers.unserved` | `allocation_by_non_price_criteria` (credit score, steady employment, existing customer record) | increase | short | PC-2 | A-1, A-2 |
-| C-6 | `lenders.licensed` | `variety` (small, short loans offered) | decrease | short | RS-2, GAP-007-1 | A-1 |
+| C-6 | `lenders.licensed` | `variety` (small, short loans offered) | decrease | short | PC-14 | A-1, A-14 |
 | C-7 | `lenders.licensed` | `reclassification` (loans written above $2,500; storefronts relicensed as pawnshops) | increase | short to medium | RS-5 | A-1, A-4 |
 | C-8 | `lenders.licensed` | `quantity_supplied` (loans made April to September, with longer terms, before the effective date) | increase | short | RS-8 | A-5 |
 | C-9 | `lenders.prospective` | `entry_rate` (new storefronts) | decrease | short (from January) | TS-2, RS-6 | A-1, A-6 |
@@ -69,7 +70,7 @@ C-2 and C-3: lenders do not cut the price to 36%; for most small loans they stop
 
 C-5: lenders who stay keep lending to the borrowers least likely to default, who can be served profitably at 36%. Borrowers with thin or poor credit records are the first to be turned away.
 
-C-6 needs a move the catalog lacks. RS-2 says the party disadvantaged by a capped price adjusts the other terms, but not which terms. Because the cost of making and collecting a loan is mostly per loan, not per dollar, an annual rate cap squeezes small and short loans hardest: a $300 two-week loan earns about $4 at 36%, a $2,000 one-year loan about $400. Lenders who stay therefore offer larger and longer loans and drop the smallest ones (GAP-007-1). C-6 is Tier C.
+C-6 applies PC-14 (rate caps bind hardest on small and short transactions). Because the cost of making and collecting a loan is mostly per loan, not per dollar (A-14), an annual rate cap squeezes small and short loans hardest: a $300 two-week loan earns about $4 at 36%, a $2,000 one-year loan about $400. Lenders who stay therefore offer larger and longer loans and drop the smallest ones. The same rule gives the rise in loan size for borrowers who are still served (C-18).
 
 C-7: loans over $2,500 are exempt, so lenders offer $2,600 installment loans to borrowers who wanted $400, and some storefronts convert to pawnshops, which are governed by the Pawn Act (RS-5).
 
@@ -85,17 +86,22 @@ Not reported: lenders adding fees or products to loans that stay under the cap (
 | C-12 | `borrowers.brannock` | `cross_border_purchases` (loans from Kestria storefronts) | increase | short | RS-4 | Wexmoor and Kestria storefronts: `across_border`, close for Brannock | A-1, A-8 |
 | C-13 | `storefronts.kestria` | `quantity_traded` (check cashing, money orders, bill payment) | increase | short | RS-9 | small loans and other storefront services: `complement`, note `trip` | A-1, A-8, A-9 |
 | C-14 | `borrowers.unserved` | `informal_activity` (loans from unlicensed online lenders) | increase | short | RS-3, PC-6 | | A-1, A-10 |
-| C-15 | borrowers from unlicensed lenders | `search_cost` (finding and judging lenders with no license, reviews or regulator to complain to) | increase | short | RS-10 | | A-1, A-10 |
-| C-16 | `borrowers.unserved` | `price_substitute` (pawn loan fees) | ambiguous (section 7) | short to medium | PC-8, RS-5 | same as C-11 | A-1, A-4, A-7 |
+| C-15 | borrowers from unlicensed lenders | `search_cost` (finding lenders that do not advertise openly) | increase | short | RS-10 | | A-1, A-10 |
+| C-22 | borrowers from unlicensed lenders | `quality_information` (no license, regulator or legal recourse to check the lender or its terms against) | decrease | short | RS-10 | | A-1, A-10 |
+| C-16 | `borrowers.unserved` | `price_substitute` (pawn loan fees) | ambiguous (section 7) | short to medium | PC-8 vs RS-5, RS-13 | same as C-11 | A-1, A-4, A-7 |
 | C-17 | `lenders.licensed` | `employment` (storefront staff) | decrease | medium | RS-6 | | A-1, A-3 |
-| C-18 | `borrowers.served` | `quantity_traded` (loans larger and longer than the borrower sought) | increase | short | RS-2, RS-5 | | A-1, A-4 |
-| C-19 | `providers.wage_access` | `reclassification` (wage advances written without a repayment obligation, outside the Act's definition) | increase | short to medium | RS-5, RS-1 | wage advances and small loans: `substitute`, partial | A-1, A-11 |
+| C-18 | `borrowers.served` | `transaction_size` (loans larger and longer than the borrower sought) | increase | short | PC-14, RS-5 | | A-1, A-4, A-14 |
+| C-19 | `providers.wage_access` | `quantity_supplied` (wage advances to Wexmoor workers) | U1-a: increase; U1-b: decrease | short to medium | U1-a: PC-8, RS-1, RS-5; U1-b: PC-5, PC-14 | wage advances and small loans: `substitute`, partial | A-1, A-11 |
 
 C-13 applies RS-9: borrowers who cross to Kestria for a loan also cash their paycheck and buy money orders there, because these services are sold in the same storefronts. The chain stops at depth 3; the effect on Wexmoor check cashers is the mirror image at the same depth and falls on a group already counted in C-3.
 
-C-14 and C-15: online lenders without a Wexmoor license face less competition from licensed lenders. Their loans are void under K2, but a borrower who does not know this, or who wants to keep borrowing, still pays. RS-10 applies: such lenders cannot be checked against a license, and disputes go to no regulator.
+C-14, C-15 and C-22: online lenders without a Wexmoor license face less competition from licensed lenders. Their loans are void under K2, but a borrower who does not know this, or who wants to keep borrowing, still pays. RS-10 applies: such lenders are harder to find, cannot be checked against a license, and disputes go to no regulator.
 
-C-18: some borrowers who are offered only a larger loan (C-7) take it. They borrow more, for longer, than they would have.
+C-16: two chains meet in the pawn market. Demand moves there from small loans (PC-8); storefronts converted to pawnshops add pawn supply (RS-5, then RS-13). See section 7.
+
+C-18: lenders who stay raise the minimum size and length of loans (PC-14), and some borrowers who are offered only a larger loan (C-7) take it. They borrow more, for longer, than they would have.
+
+C-19 depends on reading U1. Under U1-a, wage advances are an uncapped substitute for small loans: demand moves to them (PC-8, RS-1), and providers that wrote advances with a repayment obligation rewrite them without one to stay outside the Act (RS-5), so more are supplied. Under U1-b, their delivery fees count toward the 36% APR; on a $200 advance repaid in two weeks, a $5 fee is already about 65% APR, so they are capped like small loans and fewer are supplied (PC-5, PC-14).
 
 RS-11 was checked and does not apply: no benefit is tied to a place. Pruned at depth 3: landlords of closed storefronts (diffuse; `factor_owners.specific` with many other tenants).
 

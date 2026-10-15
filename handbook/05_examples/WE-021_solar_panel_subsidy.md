@@ -1,6 +1,6 @@
 # WE-021 Per-watt subsidy for rooftop solar, funded by an electricity surcharge
 
-Analyst: draft (Handbook 0.2)  |  Rule catalog version: 0.2  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
 
 A stylized policy in a fictional state. Many places have subsidized rooftop solar; this program is not modeled on any one of them. The probabilities are illustrative; the evidence column says what a real analysis would cite. **Environmental effects (emissions, air quality, climate) are out of scope for version 1 and are not analyzed here.** The analysis covers only the market consequences of the subsidy and its funding.
 
@@ -57,7 +57,8 @@ Both sides of the budget are visible on paper: the subsidy on the installer's in
 
 | ID | Actor class | Variable | Sign | Horizon | Rules | Assumptions |
 |---|---|---|---|---|---|---|
-| C-5 | `installers` | `net_price_received` (per watt installed) | increase | short | SB-2, GAP-021-1 | A-4 |
+| C-5 | `installers` | `net_price_received` (per watt installed) | increase | short | SB-2, DM-1 | A-4, A-18 |
+| C-23 | `installers` | `subsidy_share_received` (share of the subsidy kept by installers) | increase | short | SB-2, DM-1 | A-4, A-18 |
 | C-6 | `installers` | `entry_rate` | increase | short to medium | SB-3, LW-4 | A-5 |
 | C-7 | `installers`, `buyers.adopters` | `reclassification` (systems sized to the 10 kW limit; more panel capacity per inverter than the home needs) | increase | short to medium | SB-5, RS-5 | A-6 |
 | C-8 | `buyers.adopters` | `quantity_traded` (contracts signed in the weeks before each step-down) | increase | short to medium | RS-8 | A-7 |
@@ -66,7 +67,7 @@ Both sides of the budget are visible on paper: the subsidy on the installer's in
 | C-11 | `installers`, `panel_suppliers`; large electricity users | `lobbying_effort` (installers to extend or raise the subsidy; large users to cut the surcharge) | increase | medium | RS-7, SB-5 | A-9 |
 | C-12 | `customers.non_adopters` | `tax_share_borne` (relative to adopters) | increase | short to medium | RS-1, TX-4 | A-10 |
 
-C-5: SB-2 says only that buyers pay less and/or sellers receive more. Panels are bought on a world market in which Calvera is tiny (A-11), so panel prices do not absorb the subsidy. Installer labor, by contrast, cannot grow quickly, because electricians take years to license (A-4). By the logic of DM-1, the side with fewer alternatives in the period, here installation labor, receives part of the subsidy. DM-1 is written for taxes only, so C-5 is Tier C (GAP-021-1).
+C-5: SB-2 says only that buyers pay less and/or sellers receive more. Panels are bought on a world market in which Calvera is tiny (A-11), so panel prices do not absorb the subsidy. Installer labor, by contrast, cannot grow quickly, because electricians take years to license (A-4). DM-1, which in catalog 0.3 covers subsidies, decides the split: in the first year installers have clearly fewer alternatives than households, which can wait or keep buying grid power (A-18). So installers receive the larger part of the subsidy at first (C-23, recorded with `subsidy_share_received`), and their net price per watt rises (C-5). They do not receive all of it (A-1), so C-1 still holds. By DM-1's time note, the share shifts toward buyers as new installers certify and electricians are trained (C-6, section 8).
 
 C-12: adopters buy less grid power, so they pay less surcharge, while every non-adopter, including renters who have no roof of their own, pays it on all their power.
 
@@ -84,7 +85,7 @@ Not reported:
 | C-14 | `buyers.other_electrical_work` | `price_paid` (other electrical and roofing work) | increase | short to medium | SB-3 | as C-13 | A-12 |
 | C-15 | `panel_suppliers` | `quantity_traded` (panels and inverters sold in Calvera) | increase | short to medium | SB-2 | panels: `input_to` installations, close | A-2 |
 | C-16 | `utilities` | `quantity_traded` (grid electricity) | decrease | medium | SB-3, TX-2 | rooftop power and grid power: `substitute`, close | A-2, A-10 |
-| C-17 | `customers.non_adopters` | `price_paid` (grid electricity, before surcharge) | see section 7 | medium to long | GAP-021-2, GAP-021-3 | as C-16 | A-13, A-14 |
+| C-17 | `customers.non_adopters` | `price_paid` (grid electricity, before surcharge) | see section 7 | medium to long | PC-15 vs RS-13 | as C-16; rooftop exports and wholesale power: `same_market_other_segment`, partial | A-13, A-14 |
 | C-18 | `installers` | `quantity_traded` (installations after the program ends) | decrease | medium to long | SB-6 | — | A-15 |
 
 C-17 is at depth 3 (subsidy → adoption → less grid power sold → regulated rates reset) and reaches every non-adopting customer, so the chain stops there. The further effects of higher or lower power prices on businesses that use electricity are diffuse and are not traced.
@@ -98,9 +99,9 @@ Second-order checks:
 
 | Actor class, variable, horizon | Chains (+) | Chains (−) | Dominance rule | Combined sign |
 |---|---|---|---|---|
-| Split of the subsidy between `buyers.adopters` and `installers`, short | — | — | DM-1 logic, not in the catalog for subsidies (GAP-021-1) | **Not determined by catalog 0.2.** C-1 and C-5 can both hold; they are not conflicting chains on one variable. With A-4, installers receive part of the subsidy in the first year, and less as new installers enter (C-6). |
-| `customers.non_adopters`, `price_paid` (grid electricity, before surcharge), medium to long | Utilities sell fewer kWh (C-16) but their grid costs are largely fixed; at the next rate case the Commission spreads those costs over fewer kWh, and net metering credits adopters' exports at the full retail rate (GAP-021-2, A-13, Tier C). | Midday rooftop output lowers wholesale power prices, which the utilities pass through (GAP-021-3, A-14, Tier C). | None | **ambiguous** (Tier C). Decided by how much of the retail rate is fixed grid cost recovered per kWh, against how much rooftop output lowers wholesale prices. |
-| `customers.non_adopters`, total cost of electricity (`price_paid` including surcharge), medium | Surcharge (C-3, Tier B); rate reset (Tier C). | Wholesale price effect (Tier C). | None | **ambiguous** (Tier C) after the first rate case; **increase** before it (C-3), when only the surcharge applies. |
+| Split of the subsidy between `buyers.adopters` and `installers`, short | — | — | DM-1 (A-4, A-18) | **Installers receive the larger part in the first year** (C-23); buyers still receive some of it (C-1, A-1). The share shifts toward buyers as new installers enter (C-6). |
+| `customers.non_adopters`, `price_paid` (grid electricity, before surcharge), medium to long | Utilities sell fewer kWh (C-16) but their grid costs are largely fixed; at the next rate case the Commission spreads those costs over fewer kWh, and net metering credits adopters' exports at the full retail rate (PC-15, A-13). | Rooftop output, including exports, adds supply to the midday wholesale market and lowers its price, which the utilities pass through (RS-13, A-14). | None | **ambiguous** (C-17, Tier B). Decided by how much of the retail rate is fixed grid cost recovered per kWh, against how much rooftop output lowers wholesale prices. |
+| `customers.non_adopters`, total cost of electricity (`price_paid` including surcharge), medium | Surcharge (C-3); rate reset (PC-15). | Wholesale price effect (RS-13). | None | **ambiguous** (Tier B) once both C-17 chains act; **increase** while only the surcharge applies (C-3). |
 | `installers` that entered because of the program, `earnings`, medium to long | Higher margins and volumes while the subsidy lasts (C-2, C-5). | Certification, vans, training and staff taken on for the program lose value when it ends and installations dip (C-18). | DM-3 | **ambiguous by design** (DM-3). Entrants who invested expected the program to pay; firms that stayed out did not. |
 
 ## 8. Time structure
@@ -129,7 +130,7 @@ The surcharge's forgone uses for all customers are recorded as C-4. The power pu
 | A-1 | Installers do not capture the whole subsidy. | other | 0.85 | About 900 competing installers; subsidy shown on the invoice; quotes before and after the start. | C-1 fails; the whole subsidy goes to installers. |
 | A-2 | Some households at the margin install because of the subsidy. | substitutability | 0.9 | The subsidy is about 18% of installed cost; surveys of intentions; payback periods. | C-2, C-15, C-16 shrink to timing shifts. |
 | A-3 | The surcharge is passed through to customers in full, and their demand changes little. | other | 0.95 | Commission order; studies of electricity demand response. | C-3 weakens; part falls on utilities. |
-| A-4 | Installation labor cannot grow much within the first year. | other | 0.7 | Electrician licensing time; installer job vacancies; backlog data. | C-5 not reported; buyers get the subsidy. |
+| A-4 | Installation labor cannot grow much within the first year. | other | 0.7 | Electrician licensing time; installer job vacancies; backlog data. | C-5 and C-23 not reported; buyers get most of the subsidy. |
 | A-5 | Certification is easy enough that new installers enter. | other | 0.8 | Requirements of K3; supply of licensed electricians in related trades. | C-6 weakens; C-5 persists longer. |
 | A-6 | Oversizing toward the 10 kW limit is feasible and pays under net metering. | other | 0.65 | Roof sizes; inverter ratios in claim data; retail-rate export credit. | C-7 not reported. |
 | A-7 | Installer capacity is limited near step-downs, so backlogs form. | other | 0.75 | Weekly capacity dashboard; installer staffing. | C-8, C-9 weaken. |
@@ -138,11 +139,12 @@ The surcharge's forgone uses for all customers are recorded as C-4. The power pu
 | A-10 | Adopters buy less grid power after installing. | substitutability | 0.95 | Utility billing data for existing solar customers. | C-12, C-16 fail. |
 | A-11 | Calvera's purchases are large enough to raise world panel prices. | other | 0.05 | Share of world shipments. | Below cut-off; not reported. |
 | A-12 | Electricians and roofers are scarce and fully used elsewhere. | other | 0.8 | Trade employment and wage data; job vacancies. | C-13, C-14, C-20 fail. |
-| A-13 | The Commission recovers fixed grid costs mainly per kWh, and net metering credits exports at the full retail rate. | other | 0.8 | Rate design; net metering statute. | The + chain in C-17 fails. |
-| A-14 | Rooftop output is large enough to lower midday wholesale prices, and the reduction reaches retail rates. | other | 0.55 | 900 MW against a state peak of about 9 GW; wholesale market design; pass-through rules. | The − chain in C-17 fails; C-17 becomes an increase (Tier C). |
+| A-13 | The Commission recovers fixed grid costs mainly per kWh, those costs do not fall with sales, and net metering credits exports at the full retail rate. | other | 0.8 | Rate design; net metering statute; utilities' cost structure. | The + chain in C-17 fails. |
+| A-14 | Rooftop output is large enough to lower midday wholesale prices (it is not offset by withdrawal of other supply), and the reduction reaches retail rates. | substitutability | 0.55 | 900 MW against a state peak of about 9 GW; wholesale market design; pass-through rules. | The − chain in C-17 fails; C-17 becomes an increase (Tier B). |
 | A-15 | Some adopters would have installed later without the subsidy. | expectations | 0.8 | Adoption trend; falling panel prices. | C-18 not reported. |
 | A-16 | Fraudulent claims are made on a meaningful scale. | enforcement | 0.2 | Connection-record checks; inspection rate. | Below cut-off; not reported. |
 | A-17 | Entrants make investments specific to solar installation that lose value when the program ends. | durability | 0.7 | Certification, vehicles, training; experience of installers after other programs ended. | The − chain in the DM-3 row weakens. |
+| A-18 | In the first year, installers have clearly fewer alternatives than households: their capacity is fixed by the number of licensed electricians (A-4), while households can wait or keep buying grid power. | substitutability | 0.65 | Backlogs and quotes after the start; electrician licensing time; share of households who defer installation. | DM-1 does not apply; the split is open; C-5 and C-23 not reported. |
 
 ## 11. Report
 
@@ -151,15 +153,15 @@ The surcharge's forgone uses for all customers are recorded as C-4. The power pu
 **Visible consequences.** Rooftop systems cost adopters less (C-1), and more are installed (C-2). Every electricity customer pays a little more per kWh (C-3) and has that much less to spend on other things (C-4).
 
 **Invisible consequences.**
-- *Installers* keep part of the subsidy at first, while installation labor is scarce (C-5, Tier C), and new firms enter (C-6). Systems are sized to collect as much subsidy as allowed (C-7). Sales surge before each step-down and dip after it, with backlogs at the peaks (C-8, C-9), and dip before the program starts (C-10) and after it ends (C-18).
+- *Installers* keep the larger part of the subsidy at first, while installation labor is scarce (C-5, C-23), and new firms enter (C-6). Systems are sized to collect as much subsidy as allowed (C-7). Sales surge before each step-down and dip after it, with backlogs at the peaks (C-8, C-9), and dip before the program starts (C-10) and after it ends (C-18).
 - *Electricians and roofers* earn more (C-13). *People who need other electrical or roofing work* pay more and wait longer (C-14, C-20).
 - *Non-adopters*, including renters and apartment dwellers who cannot install, pay a larger share of the surcharge than adopters do (C-12).
 - *Utilities* sell less power (C-16). *Panel suppliers* sell more in Calvera (C-15), but world panel prices are not affected.
 - Installers and suppliers lobby to extend the subsidy; large power users lobby against the surcharge (C-11).
 
-**Ambiguous effects.** Whether grid electricity becomes more or less expensive for non-adopters over the medium term: fixed grid costs spread over fewer kWh push it up; lower midday wholesale prices push it down (Tier C). Whether firms that entered for the program end up better or worse off, once its end is counted (DM-3).
+**Ambiguous effects.** Whether grid electricity becomes more or less expensive for non-adopters over the medium term: fixed grid costs spread over fewer kWh push it up; lower midday wholesale prices push it down (C-17). Whether firms that entered for the program end up better or worse off, once its end is counted (DM-3).
 
-**Key conditions.** How the subsidy splits between buyers and installers depends on how fast installation labor can grow (A-4, p = 0.7). The effect on other customers' electricity rates depends on rate design and net metering (A-13, p = 0.8) and on the wholesale market (A-14, p = 0.55).
+**Key conditions.** How the subsidy splits between buyers and installers depends on how fast installation labor can grow (A-4, p = 0.7; A-18, p = 0.65). The effect on other customers' electricity rates depends on rate design and net metering (A-13, p = 0.8) and on the wholesale market (A-14, p = 0.55).
 
 **What this analysis cannot say.** How large any effect is; whether the gains to adopters and installers outweigh the costs to surcharge payers and other customers of electricians; environmental effects (out of scope for version 1); whether the policy is desirable.
 
@@ -171,7 +173,7 @@ The surcharge's forgone uses for all customers are recorded as C-4. The power pu
 | C-2 | installers | quantity_traded (installations) | increase | short–medium | visible | B | SB-2 | A-1, A-2 |
 | C-3 | customers.electricity | price_paid (incl. surcharge) | increase | short | visible | B | TX-2, DM-1 | A-3 |
 | C-4 | customers.electricity | resources_available_other_uses | decrease | short–medium | invisible | B | SB-1, TX-1, OC-1 | A-3 |
-| C-5 | installers | net_price_received | increase | short | invisible | C | SB-2, GAP-021-1 | A-4 |
+| C-5 | installers | net_price_received | increase | short | invisible | B | SB-2, DM-1 | A-4, A-18 |
 | C-6 | installers | entry_rate | increase | short–medium | invisible | B | SB-3, LW-4 | A-5 |
 | C-7 | installers, buyers.adopters | reclassification | increase | short–medium | invisible | B | SB-5, RS-5 | A-6 |
 | C-8 | buyers.adopters | quantity_traded (before step-downs) | increase | short–medium | invisible | B | RS-8 | A-7 |
@@ -183,15 +185,16 @@ The surcharge's forgone uses for all customers are recorded as C-4. The power pu
 | C-14 | buyers.other_electrical_work | price_paid | increase | short–medium | invisible | B | SB-3 | A-12 |
 | C-15 | panel_suppliers | quantity_traded (in Calvera) | increase | short–medium | invisible | B | SB-2 | A-2 |
 | C-16 | utilities | quantity_traded (grid electricity) | decrease | medium | invisible | B | SB-3, TX-2 | A-2, A-10 |
-| C-17 | customers.non_adopters | price_paid (grid electricity, before surcharge) | ambiguous | medium–long | invisible | C | GAP-021-2 vs GAP-021-3 | A-13, A-14 |
+| C-17 | customers.non_adopters | price_paid (grid electricity, before surcharge) | ambiguous | medium–long | invisible | B | C-16, PC-15 vs RS-13 | A-2, A-10, A-13, A-14 |
 | C-18 | installers | quantity_traded (after program ends) | decrease | medium–long | invisible | B | SB-6 | A-15 |
 | C-19 | officials.enforcement | enforcement_cost | increase | short–medium | invisible | A | OC-3 | none |
 | C-20 | buyers.other_electrical_work | wait_time | increase | short–medium | invisible | B | SB-3, OC-1 | A-12 |
 | C-21 | customers.electricity (businesses) | quantity_traded (forgone purchases) | decrease | short–medium | invisible | B | OC-1, TX-1 | A-3 |
-| C-22 | installers (entrants) | earnings | ambiguous | medium–long | invisible | C | C-2, C-5 vs C-18; DM-3 | A-4, A-15, A-17 |
+| C-22 | installers (entrants) | earnings | ambiguous | medium–long | invisible | B | C-2, C-5 vs C-18; DM-3 | A-4, A-15, A-17, A-18 |
+| C-23 | installers | subsidy_share_received | increase | short | invisible | B | SB-2, DM-1 | A-4, A-18 |
 
 ## Gaps found
 
-- **GAP-021-1. DM-1 covers taxes only.** Who receives a subsidy follows the same logic as tax incidence: the side with fewer alternatives in the period (here installation labor, against a world panel market) receives more of it. DM-1 is written for TX-2 and SB-2 leaves the split open, so C-5 is Tier C. **Proposed fix:** extend DM-1 to SB-2: "If SB-2 applies and one side has clearly fewer alternatives, that side receives the larger part of the subsidy; as alternatives grow (entry, training), the share shifts to the other side." (Same proposal as GAP-019-2.)
-- **GAP-021-2. No rule for regulated cost recovery over a shrinking base.** When a price is set by a regulator to recover largely fixed costs per unit sold, a fall in units sold (C-16) leads at the next rate review to a higher price per unit for the remaining buyers. The catalog's PC rules cover ceilings and floors set as policy, not cost-of-service rate setting as a response. The + chain of C-17 is Tier C. **Proposed fix:** a rule (family PC or a new regulated-prices family) "Fixed-cost recovery": if a regulator sets price to recover fixed costs per unit, and a policy reduces units sold, then at the next rate review `price_paid` increase for remaining buyers; assumes the regulator's rate method (`other`) and that fixed costs do not fall with sales.
-- **GAP-021-3. No rule for added supply lowering the price in a linked market.** Rooftop output exported to the grid adds supply to the wholesale power market and can lower its price. PC-8's note mentions such a chain for housing, but no rule states it: "if a policy increases quantity supplied into a market through a recorded relation, `price_substitute` (or that market's price) decreases". The − chain of C-17 is Tier C. **Proposed fix:** a generic RS rule (ID to be assigned) "Supply spillover" (or a general form of the PC-8 note): if a policy adds quantity supplied to a linked market, its price decreases, assuming demand there is not perfectly elastic and the added supply is not offset by withdrawal elsewhere.
+- GAP-021-1 (closed in catalog 0.3: DM-1 extended to SB-2; variable `subsidy_share_received`). C-5 now Tier B, with the comparison of alternatives as A-18; the split is recorded as C-23. C-22 rises to Tier B with it.
+- GAP-021-2 (closed in catalog 0.3: PC-15). The + chain of C-17 now rests on PC-15, with A-13.
+- GAP-021-3 (closed in catalog 0.3: RS-13). The − chain of C-17 now rests on RS-13, with A-14. C-17 is Tier B, still ambiguous.

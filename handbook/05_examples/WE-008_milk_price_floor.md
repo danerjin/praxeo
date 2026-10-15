@@ -1,6 +1,6 @@
 # WE-008 Price floor for raw milk, with state purchase of the surplus
 
-Analyst: draft (Handbook 0.2)  |  Rule catalog version: 0.2  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
 
 A stylized policy in a fictional state. It combines two instruments found in many farm-support schemes, a minimum price and a state agency that buys what the market will not take at that price, but it is not modeled on any particular scheme. The probabilities are illustrative; the evidence column says what a real analysis would cite.
 
