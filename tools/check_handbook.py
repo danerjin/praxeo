@@ -10,7 +10,8 @@ With no arguments, checks every file in handbook/05_examples/. For each example 
 - every sign is increase, decrease, ambiguous, a group sign (at_least_one_increase or
   at_least_one_decrease), or one of these per reading ("U1-a: increase; U1-b: ambiguous");
 - every assumption cited in the consequence list is defined in section 10.
-Local gap IDs (GAP-005-1) are reported, not failed, and rule IDs proposed under "Gaps found" are ignored.
+Open local gaps (a GAP-005-1 not marked closed, resolved or out of scope under "Gaps found") are
+reported, not failed. Rule IDs proposed under "Gaps found" are not checked against the catalog.
 Exits non-zero if any example has errors.
 """
 import glob
@@ -86,9 +87,15 @@ def check(path, rules, variables):
     if unknown:
         errors.append(f"undefined rule IDs: {', '.join(unknown)}")
 
-    gaps = sorted(set(re.findall(r"GAP-\d{3}-\d+", text)))
-    if gaps:
-        notes.append(f"local gaps: {', '.join(gaps)}")
+    gaps = set(re.findall(r"GAP-\d{3}-\d+", text))
+    gap_section = text[text.find("## Gaps found"):] if "## Gaps found" in text else ""
+    resolved = set()
+    for line in gap_section.splitlines():
+        if re.search(r"\((closed|resolved|out of scope)", line):
+            resolved.update(re.findall(r"GAP-\d{3}-\d+", line))
+    still_open = sorted(gaps - resolved)
+    if still_open:
+        notes.append(f"open gaps: {', '.join(still_open)}")
 
     if "(loss)" in text:
         errors.append("bare '(loss)' entry; record opportunity costs as signed variables")
