@@ -9,6 +9,10 @@ Before starting, keep four habits in mind:
 3. **Look for the unseen.** For each effect you find, ask who else is affected and what was given up (LW-1).
 4. **Say what you assume.** If a step needs a fact about the world (that the law is enforced, that a substitute exists), write it down as an assumption and estimate how likely it is.
 
+**Core rules and patterns.** Every step below applies the core rules in `04a_core_rules.md` (the map at the end of that file shows which). The patterns in `04_rules.md` are derived shortcuts for situations that recur. Use a pattern when its preconditions hold, and cite it.
+
+**When no pattern fits**, do not invent one. Derive the step from the core rules and cite them. For example, "CR-4 (x: comply, y: violate)" or "CR-6, pressure displaced to delivery times". Then state the premises the derivation needs as assumptions. Mark a step `GAP` only if no core rule applies. That would mean the calculus itself is incomplete, which is a finding for the experts. A derivation used in more than one analysis is a candidate for a new pattern, and it enters `04_rules.md` with its derivation written out.
+
 ---
 
 ## Step 1. State the policy precisely

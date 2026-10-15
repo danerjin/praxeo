@@ -2,7 +2,7 @@
 
 Analyst: <name>  |  Date: <date>  |  Rule catalog version: 0.1
 
-Fill in each section in order, following `../03_workflow.md`. Cite rules by ID. Mark any move not covered by a rule as `GAP` and copy it to `../06_gaps.md`.
+Fill in each section in order, following `../03_workflow.md`. Cite patterns (`../04_rules.md`) and core rules (`../04a_core_rules.md`) by ID. Where no pattern fits, derive the step from the core rules and cite them; mark `GAP` only if no core rule applies, and copy it to `../06_gaps.md`.
 
 ## 1. Policy record
 

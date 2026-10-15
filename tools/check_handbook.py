@@ -2,9 +2,12 @@
 
 Usage: python3 tools/check_handbook.py [example files...]
 
-With no arguments, checks every file in handbook/05_examples/. For each example it checks:
+It first checks the pattern catalog (04_rules.md): every pattern has a derivation from the core rules
+and cites only defined rules. With no arguments, it then checks every file in handbook/05_examples/.
+For each example it checks:
 - the required sections are present, in order;
-- every rule ID cited (RS-1, PC-4, LW-3, ...) is defined in 04_rules.md or 01_foundations.md;
+- every rule ID cited (RS-1, PC-4, CR-7b, LW-3, ...) is defined in 04_rules.md, 04a_core_rules.md
+  or 01_foundations.md;
 - every variable in the consequence list is in the controlled list (02_ontology.md, 2.4);
 - no consequence is recorded as a bare "(loss)" instead of a signed variable;
 - every sign is increase, decrease, ambiguous, a group sign (at_least_one_increase or
@@ -26,7 +29,7 @@ SECTIONS = [
     "## 9. Opportunity costs", "## 10. Assumptions", "## 11. Report",
     "## Consequence list (normal form)", "## Gaps found",
 ]
-RULE_ID = re.compile(r"\b((?:RS|OC|TS|PC|TX|SB|EN|DM|AX|LW)-\d+)\b")
+RULE_ID = re.compile(r"\b((?:RS|OC|TS|PC|TX|SB|EN|DM|AX|LW|CR)-\d+)[a-d]?\b")
 
 
 def read(name):
@@ -36,6 +39,7 @@ def read(name):
 
 def defined_rules():
     rules = set(re.findall(r"^### ((?:RS|OC|TS|PC|TX|SB|EN|DM)-\d+)", read("04_rules.md"), re.M))
+    rules |= set(re.findall(r"^### (CR-\d+)", read("04a_core_rules.md"), re.M))
     return rules | set(re.findall(r"^## ((?:AX|LW)-\d+)", read("01_foundations.md"), re.M))
 
 
@@ -119,10 +123,28 @@ def check(path, rules, variables):
     return errors, notes
 
 
+def check_catalog(rules):
+    """Every pattern in 04_rules.md has a derivation, and cites only defined rules."""
+    errors = []
+    text = read("04_rules.md")
+    for block in re.split(r"(?m)^(?=### )", text)[1:]:
+        rid = block.split()[1]
+        if "**Derivation:**" not in block:
+            errors.append(f"{rid}: no derivation from the core rules")
+        unknown = sorted(set(RULE_ID.findall(block)) - rules)
+        if unknown:
+            errors.append(f"{rid}: cites undefined rules {', '.join(unknown)}")
+    return errors
+
+
 def main(argv):
     files = argv or sorted(glob.glob(os.path.join(ROOT, "05_examples", "WE-*.md")))
     rules, variables = defined_rules(), controlled_variables()
-    failed = 0
+    catalog_errors = check_catalog(rules)
+    print("FAIL  04_rules.md" if catalog_errors else "ok    04_rules.md (every pattern derived)")
+    for e in catalog_errors:
+        print(f"      error: {e}")
+    failed = bool(catalog_errors)
     for path in files:
         errors, notes = check(path, rules, variables)
         status = "FAIL" if errors else "ok"
@@ -132,7 +154,7 @@ def main(argv):
         for n in notes:
             print(f"      note:  {n}")
         failed += bool(errors)
-    print(f"\n{len(files) - failed}/{len(files)} examples pass")
+    print(f"\n{len(files) + 1 - failed}/{len(files) + 1} files pass (catalog and examples)")
     return 1 if failed else 0
 
 

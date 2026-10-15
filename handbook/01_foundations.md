@@ -76,6 +76,26 @@ The guiding question, from Bastiat and Hazlitt: **look at the effects of the pol
 
 **Tier:** A as a statement about information; specific consequences derived from it are B. **Source:** Hayek, "The Use of Knowledge in Society" (1945); Mises, "Economic Calculation in the Socialist Commonwealth" (1920).
 
+## LW-9 The law of returns
+
+**Statement.** Means are combined to produce an end. For any combination of complementary means there is a most productive proportion; adding more of one means while the others stay fixed eventually adds less and less to the result.
+
+**Use.** Why the value of one factor depends on how much of its complements is available: labor works with capital, a car with fuel and repairs. Used by CR-9 and by patterns on wages and capital (TS-9).
+
+**Tier:** A. **Source:** Mises, *Human Action*, ch. VII (pending verification).
+
+## LW-10 Imputation
+
+**Statement.** The value of a means derives from the value of the ends it serves. A means used to produce something else (an input, a factor of production, a complement) is valued for its contribution to that end, so a change in the value or use of the end changes the value of the means in the same direction.
+
+**Use.** Why changes travel from one market to the markets for its inputs and complements (CR-9): demand for labor follows demand for what labor produces; demand for repairs follows the number of cars in use.
+
+**Tier:** A. **Source:** Menger, *Principles of Economics*, ch. I to III; Rothbard, *Man, Economy, and State*, ch. 7 (pending verification).
+
+## Laws that are results of the core rules
+
+LW-3, LW-4 and LW-6 are not independent premises: they follow from the core rules in `04a_core_rules.md` (LW-3 from CR-4c, with CR-4's exception; LW-4 from CR-7; LW-6 from CR-6). They are kept here, with their IDs, because patterns and worked examples cite them.
+
 ## The intervention typology
 
 Rothbard classifies intervention by the relationship it coerces. The type tells the analyst where to look first.

@@ -83,6 +83,20 @@ The 22 later examples raised 60 gaps, and updating them to catalog 0.3 raised fo
 | 023-4 | The losing side's response to an expected re-imposition | TS-5 losing-side clause |
 | 024-4 | Timing shifts had no signed form | Convention in 2.5: signed per window, or a path note in section 8; WE-003 C-7 moved to section 8 |
 
+## 6.2a Audit of the patterns against the core rules (catalog 0.4)
+
+Catalog 0.4 adds a layer of twelve core rules (`04a_core_rules.md`), each universal: stated over any actor, option and means, derived from the action axiom, symmetric, and explicit about its empirical premises. Every pattern was then given a derivation from them. Results:
+
+- **78 of 81 patterns derive cleanly** from the core rules plus the premises they already named.
+- **Four problems were exposed and fixed:**
+  - **TX-6** asserted as a priori that saving falls when its return is taxed. CR-4's exception (a change in total means, here savers aiming at a fixed sum) means the direction is ambiguous without a premise. The premise is now stated.
+  - **OC-7** counted the gain to an asset's seller without the buyer's matching outlay, breaking CR-8's symmetry. The matching chain is now required. WE-020 already recorded it, as C-25.
+  - **RS-13** covered added supply but not withdrawn supply. It now covers both.
+  - **TS-4** (the intervention spiral) cannot be derived. It needs a premise about what supporters of a policy believe and how politics responds. It stays Tier C and quarantined.
+- **Two foundations were missing** and have been added: the law of returns (LW-9) and imputation (LW-10). Patterns on complements, inputs, pass-through and wages relied on them without saying so.
+- **Three laws are results, not premises:** LW-3 (law of demand) follows from CR-4, LW-4 from CR-7, and LW-6 from CR-6. They keep their IDs.
+- **The workflow changes.** When no pattern fits, derive from the core rules. Mark a GAP only when no core rule applies.
+
 ## 6.3 Questions for the experts
 
 **Q1. Tier A decisions.** Which foundations and rules may produce Tier A conclusions? The draft proposes A for AX-1, LW-1, LW-2, LW-5, LW-6, LW-7, the OC rules, PC-2, PC-3 and PC-11 (given their preconditions), and A for LW-3 by decision, with the price-as-quality-signal and Giffen exceptions recorded. Is that right?
@@ -114,6 +128,12 @@ The 22 later examples raised 60 gaps, and updating them to catalog 0.3 raised fo
 **Q14. Savers aiming at a fixed sum.** A lower net return makes some savers save more to reach a fixed target. The draft adds this to TX-6 as an exception that makes total saving ambiguous where such savers matter (WE-011). How do Mises's and Rothbard's treatments of time preference bear on this?
 
 **Q15. Violence.** Disputes in informal markets may be settled by force (WE-017). Version 1 treats this as a safety effect, out of scope. Should a later version add a variable for it, and what assumption should govern it?
+
+**Q16. Are the core rules complete and minimal?** Every pattern derives from CR-1 to CR-12, but that shows only that the patterns we have are covered. Is there a kind of praxeological reasoning that experts use and none of the twelve captures? Conversely, can any of them be derived from the others? CR-6 and CR-7 might be two faces of one rule about gains not yet taken.
+
+**Q17. Tendencies and equilibrium.** CR-6 and CR-7 speak of tendencies: prices tend toward clearing, and yields toward equality across uses. Mises grounds these in the imaginary construction of the evenly rotating economy. Is it legitimate to use the direction of a tendency as an a priori conclusion while treating its speed and completeness as empirical, as the core rules do?
+
+**Q18. CR-4's exception.** The direction of response to a change in cost is a priori except where the change also alters the actor's total means. That exception covers the Giffen case under LW-3 and the fixed-target saver under TX-6. Is this the right single statement of the exception, and is it complete?
 
 ## 6.4 Next steps for Phase 1
 
