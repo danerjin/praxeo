@@ -27,7 +27,7 @@ Unclear provisions: whether a farm that moves into Velmora after enactment quali
 | K2, K3 | Binary: the state buys from plants with taxpayers' money | Yes, whenever K1 binds: the Board is the buyer that makes the floor hold | SB, OC |
 | K4 | Binary: funded by taxpayers | Yes | OC-3 |
 
-Because the Board buys everything offered at the support prices, PC-9's "unless" clause applies: there is no lasting unsold surplus in private hands, so PC-11 (non-price selection among excess sellers) does not apply. The surplus becomes the Board's stock instead.
+Because the Board buys everything offered at the support prices, PC-9's "unless" clause applies: there is no lasting unsold surplus in private hands, so PC-11 (non-price selection among excess sellers) does not apply. The surplus becomes the Board's stock instead, which SB-9 follows through to its disposal.
 
 ## 3. Actor classes
 
@@ -106,9 +106,10 @@ RS-9 and RS-11 were checked and do not apply: no buyer changes where they shop, 
 
 | Actor class, variable, horizon | Chains (+) | Chains (−) | Dominance rule | Combined sign |
 |---|---|---|---|---|
-| `consumers`, `price_paid`, long | The Board keeps buying as long as the floor binds, removing product from the market (C-14). | Neighbors expand supply in response to higher prices (C-16, Tier C). The Board sells stocks back into the market or donates them before they spoil (C-20, C-21, Tier C). | None | **ambiguous**, Tier C. In the short and medium run the sign is **increase** (C-14). Over the long run, disposal and expansion elsewhere push the other way; the method cannot say which dominates. |
+| `consumers`, `price_paid`, long | The Board keeps buying as long as the floor binds, removing product from the market (C-14). | Neighbors expand supply in response to higher prices (C-16). The Board sells stocks back into the market, or donates them in place of purchases, before they spoil (C-20, C-21, SB-9, RS-13). | None | **ambiguous** (C-26). In the short and medium run the sign is **increase** (C-14). Over the long run, disposal and expansion elsewhere push the other way; the method cannot say which dominates. |
 | `farmers.velmora` who own their land, `earnings`, short to medium | Higher price (C-1) on more milk (C-3). | None recorded. The extra feed and labor are used only where the farmer expects the extra milk to pay for them (LW-4). | None needed | **increase**. Their land also gains in value (C-18), which is recorded separately. |
 | `farmers.velmora` who rent their land, `earnings`, medium | Higher price (C-1) on more milk (C-3). | Rents rise as the floor is capitalized into the value of dairy land (C-18, SB-4). | None | **ambiguous**. If rents rise by as much as the expected gain, tenant farmers keep little of it; the method cannot say how much of the gain the landowner captures. |
+| `farmers.neighbors`, `quantity_supplied`, long (C-25) | Higher regional price draws more output from neighbors' farms (C-15, C-16, PC-8). | Farms near the border move or register into Velmora, so their output leaves the neighboring states (C-12, RS-4). | None | **ambiguous**. It depends on how many farms are close enough to move (A-7) compared with how far the regional price rises. |
 | `taxpayers`, `resources_available_other_uses`, short to long | — | Purchases, storage and audits (C-22, C-23), growing as supply responds (C-3, C-4). | — | **decrease**, growing over time. |
 
 ## 8. Time structure
@@ -136,14 +137,15 @@ The land and labor kept in dairy rather than in other farming are recorded as C-
 | A-1 | The regional raw milk price stays below $21 for most of the next three years. | binding | 0.8 | Forward prices of $17 to $19; five-year price history. | The program pays little; most consequences fail. |
 | A-2 | Farmers and plants expect the program to last several years. | expectations | 0.65 | Open-ended appropriation; political support in the legislature; the four-year review. | C-4, C-5, C-9, C-12, C-17 and C-18 weaken. |
 | A-3 | Out-of-state supply does not replace all of the withdrawn product at the old price in the short run. | substitutability | 0.75 | Velmora's 15% share; neighbors' capacity to expand; time to raise heifers. | C-14 and C-24 shrink to nothing. |
-| A-4 | Specialty plants need Velmora-origin milk to keep their label and price premium. | other | 0.7 | Label rules; price premium of origin-labeled cheese. | C-7 weakens; they switch to out-of-state milk instead. |
+| A-4 | Specialty plants need Velmora-origin milk to keep their label and price premium, and compete with cheesemakers who buy milk at market prices (RS-14: competitors not exposed). | other | 0.7 | Label rules; price premium of origin-labeled cheese; market shares in specialty cheese. | C-7 weakens; they switch to out-of-state milk instead, or pass more of the cost into prices. |
 | A-5 | Out-of-state raw milk reaches Velmora plants at little more than transport cost. | mobility | 0.85 | Tanker routes and costs of 30 to 90 miles. | C-8, C-15 and C-16 weaken. |
 | A-6 | Some false certification of origin goes undetected. | enforcement | 0.55 | Audit frequency; ease of tracing tanker loads. | C-11 not reported. |
-| A-7 | Moving a dairy operation, or registering one, into Velmora is feasible for some farmers near the border. | mobility | 0.6 | Land for lease near the border; cost of moving herds. | C-12 fails (Tier C). |
+| A-7 | Moving a dairy operation, or registering one, into Velmora is feasible for some farmers near the border. | mobility | 0.6 | Land for lease near the border; cost of moving herds. | C-12 not reported; C-25 reduces to the + chain (increase). |
 | A-8 | Dairy land and barns are in fixed supply in the medium run. | durability | 0.85 | Land use rules; time to build barns. | C-18 weakens; more of the gain goes to farmers' current income. |
-| A-9 | Donated stocks replace dairy that food programs would otherwise have bought. | other | 0.7 | Food program budgets and purchase records. | C-21 fails (Tier C). |
+| A-9 | Donated stocks replace dairy that food programs would otherwise have bought. | other | 0.7 | Food program budgets and purchase records. | C-21 not reported. |
 | A-10 | Velmora farmland and farm labor have other farm uses (crops, beef). | alternative_uses | 0.8 | Land quality; crop rotations in the state. | C-19 not reported. |
 | A-11 | The program is expected to be repealed within two years. | expectations | 0.3 | Budget debates; opposition statements. | Below cut-off; not reported. |
+| A-12 | Cheddar keeps one to two years and powder two to three, and the Board disposes of stocks through K3's routes (donation, export, resale when allowed) rather than destroying them. | durability | 0.8 | Shelf lives; K3 text; disposal practice of comparable agencies. | C-21 weakens; if stocks are destroyed, OC-1 applies to the milk, storage and labor used (SB-9). |
 
 ## 11. Report
 
@@ -155,12 +157,12 @@ The land and labor kept in dairy rather than in other farming are recorded as C-
 - *Velmora farmers* produce more, at first by feeding and culling, later by expanding herds (C-3, C-4), and fewer farms close (C-5). Farmers who own their land earn more; for those who rent, higher rents may take part or all of the gain, so their earnings are ambiguous (section 7). Owners of dairy land and barns gain as the program is capitalized into prices (C-18); later entrants pay for that gain.
 - *Velmora plants* split. Commodity plants expand and sell to the Board (C-9) and bear certification costs (C-10). Specialty plants pay more for milk (C-6) and make less (C-7). Plants making fluid milk and other market products buy out-of-state milk instead (C-8). Some plants pass off out-of-state milk as Velmora milk (C-11).
 - *Consumers* in the region pay more for dairy products (C-14) and buy less (C-24), at least in the short and medium run.
-- *Neighboring farmers* and *input suppliers* sell more (C-17, and as Tier C suggestions C-15, C-16). Some farmers may move into Velmora (C-12, Tier C).
+- *Neighboring farmers* receive more for their milk and produce more (C-15, C-16); *input suppliers* sell more to Velmora dairy (C-17). Some farmers near the border move or register into Velmora (C-12), so over the long run whether the neighbors' output is higher or lower is ambiguous (C-25).
 - *Other farming* in Velmora is smaller than it would be, because land and labor stay in dairy (C-19).
-- *Taxpayers* pay for purchases, storage and audits (C-22, C-23), and the cost grows as supply responds. As Tier C suggestions: the Board's stocks grow (C-20), and their donation displaces sales by firms that supply school meals and food banks (C-21).
+- *Taxpayers* pay for purchases, storage and audits (C-22, C-23), and the cost grows as supply responds. The Board's stocks grow (C-20), and their donation displaces sales by firms that supply school meals and food banks (C-21).
 - *Interested groups* lobby to keep and raise the floor (C-13).
 
-**Ambiguous effects.** The long-run effect on consumer prices, once stocks are released and neighbors expand. The earnings of farmers who rent their land.
+**Ambiguous effects.** The long-run effect on consumer prices, once stocks are released and neighbors expand (C-26). The long-run output of neighboring farms, as some expand and some move into Velmora (C-25). The earnings of farmers who rent their land.
 
 **Key conditions.** The floor must bind (A-1, p = 0.8). The investment responses, and so the growth of the program's cost, depend on farmers expecting it to last (A-2, p = 0.65).
 
@@ -176,30 +178,31 @@ The land and labor kept in dairy rather than in other farming are recorded as C-
 | C-4 | farmers.velmora | investment_target | increase | medium | invisible | B | SB-2, LW-4, TS-1 | A-1, A-2 |
 | C-5 | farmers.velmora | number_of_sellers | increase | medium–long | invisible | B | SB-2, LW-4 | A-1, A-2 |
 | C-6 | plants.specialty | price_paid (raw milk) | increase | short | invisible | B | K1 | A-1 |
-| C-7 | plants.specialty | quantity_supplied (labeled cheese) | decrease | medium | invisible | B | RS-6, LW-4 | A-1, A-4 |
+| C-7 | plants.specialty | quantity_supplied (labeled cheese) | decrease | medium | invisible | B | RS-14, RS-6, LW-4 | A-1, A-4 |
 | C-8 | plants.market | quantity_substitute (out-of-state milk) | increase | short | invisible | B | RS-1 | A-1, A-5 |
 | C-9 | plants.commodity | investment_target | increase | medium | invisible | B | SB-2, LW-4 | A-1, A-2 |
 | C-10 | plants.commodity | compliance_cost | increase | short | invisible | A | OC-2 | none |
 | C-11 | plants.commodity, farmers.neighbors | reclassification (false origin) | increase | short | invisible | B | RS-3, RS-5 | A-1, A-6 |
-| C-12 | farmers.prospective | entry_rate (moves into Velmora) | increase | long | invisible | C | GAP-008-1, SB-5 | A-1, A-2, A-7 |
+| C-12 | farmers.prospective | entry_rate (moves into Velmora) | increase | long | invisible | B | RS-4, SB-5 | A-1, A-2, A-7 |
 | C-13 | farmers.velmora, plants.commodity | lobbying_effort | increase | medium | invisible | B | RS-7, SB-5 | A-2 |
-| C-14 | consumers | price_paid (dairy products) | increase | short–medium | invisible | B | SB-3, LW-3 | A-1, A-3 |
-| C-15 | farmers.neighbors | net_price_received | increase | short–medium | invisible | C | RS-1, GAP-008-3 | A-1, A-5 |
-| C-16 | farmers.neighbors | quantity_supplied | increase | medium | invisible | C | GAP-008-3, LW-4 | A-1, A-5 |
+| C-14 | consumers | price_paid (dairy products) | increase | short–medium | invisible | B | SB-9, SB-3, LW-3 | A-1, A-3 |
+| C-15 | farmers.neighbors | net_price_received | increase | short–medium | invisible | B | PC-8, RS-1 | A-1, A-5 |
+| C-16 | farmers.neighbors | quantity_supplied | increase | medium | invisible | B | PC-8, LW-4 | A-1, A-5 |
 | C-17 | input_suppliers | quantity_traded | increase | medium | invisible | B | SB-3 | A-1, A-2 |
 | C-18 | factor_owners.specific | asset_value | increase | short–medium | invisible | B | SB-4 | A-2, A-8 |
 | C-19 | farmers.other_uses | quantity_supplied (crops, beef) | decrease | medium–long | invisible | B | SB-3 | A-1, A-10 |
-| C-20 | Dairy Board | inventory_held (proposed variable) | increase | short–medium | invisible | C | GAP-008-2 | A-1 |
-| C-21 | sellers.to_food_programs | quantity_traded | decrease | medium | invisible | C | GAP-008-2 | A-1, A-9 |
+| C-20 | Dairy Board | inventory_held (cheddar, powder) | increase | short–medium | invisible | B | PC-9, SB-9 | A-1 |
+| C-21 | sellers.to_food_programs | quantity_traded | decrease | medium | invisible | B | SB-9 | A-1, A-9, A-12 |
 | C-22 | taxpayers | resources_available_other_uses | decrease | short–long | invisible | A | SB-1, TX-1, OC-1 | none |
 | C-23 | Dairy Board | enforcement_cost | increase | short | invisible | A | OC-3 | none |
 | C-24 | consumers, dairy sellers | quantity_traded (regional market) | decrease | short–medium | invisible | B | PC-9, OC-4 | A-1, A-3 |
 | — | farmers.velmora (owners) | earnings | increase | short–medium | invisible | B | C-1, C-3 | A-1 |
 | — | farmers.velmora (tenants) | earnings | ambiguous | medium | invisible | B | C-1, C-3 vs C-18 | A-1, A-2, A-8 |
-| — | consumers | price_paid (dairy products) | ambiguous | long | invisible | C | C-14 vs C-16, C-20, C-21 | A-1, A-3, A-5, A-9 |
+| C-25 | farmers.neighbors | quantity_supplied | ambiguous | long | invisible | B | PC-8 (C-16) vs RS-4 (C-12) | A-1, A-5, A-7 |
+| C-26 | consumers | price_paid (dairy products) | ambiguous | long | invisible | B | SB-9, SB-3 (C-14) vs PC-8 (C-16), SB-9, RS-13 (C-20, C-21) | A-1, A-3, A-5, A-9, A-12 |
 
 ## Gaps found
 
-- **GAP-008-1. Activity moving into a jurisdiction that a policy favors.** Needed for C-12 (Tier C). RS-4 covers only movement out of a boundary to escape a burden. A floor, subsidy or exemption that applies inside a boundary gives activity near it a reason to move in. Proposed fix: generalize RS-4 to "activity and purchases move to whichever side of a boundary the policy favors", with `entry_rate` increase on the favored side and `quantity_supplied` decrease on the other, under the same `mobility` assumption.
-- **GAP-008-2. Public stocks and their disposal.** Needed for C-20 and C-21 (Tier C) and for the long-run entry in section 7. When the state buys a surplus, it holds a stock that grows while the floor binds and must later be sold, given away or destroyed; disposal displaces private sales. Proposed fix: the variable `inventory_held` (as proposed in GAP-006-1), and a new SB rule. *If* the state buys a surplus at a support price, *then* `inventory_held` by the agency increases while the floor binds; when the stock is released, `quantity_traded` decreases for the private sellers it displaces (donation) or `price_paid` decreases in the market it is sold into (resale). *Assumes* the product's shelf life and the disposal routes allowed (`durability`, `other`). Tier B.
-- **GAP-008-3. Spillover to the uncontrolled segment under a floor.** Needed for C-15 and C-16 (Tier C). PC-8 covers buyers moving from a capped segment to an uncontrolled one. Under a floor that covers only part of a market, buyers move from the controlled segment to the uncontrolled one because it is cheaper, raising its price. Proposed fix: extend PC-8 to any binding control on part of a market: *if* a binding `price_ceiling` or `price_floor` covers one segment and an uncontrolled segment exists, *then* demand moves to the uncontrolled segment (ceiling: from outsiders; floor: from buyers avoiding the higher price), and `price_substitute` increases there. *Assumes* `substitutability`. Tier B.
+- GAP-008-1 (closed in catalog 0.3: RS-4 widened). C-12 is now Tier B. RS-4's other half, supply just outside decreasing, is combined with C-16 in the new C-25 (ambiguous, long).
+- GAP-008-2 (closed in catalog 0.3: SB-9 and `inventory_held`). C-20 and C-21 are now Tier B, with the new assumption A-12 on shelf life and disposal routes; SB-9 also enters C-14 (product withdrawn into stocks) and the long-run consumer price entry, now C-26 (ambiguous, Tier B).
+- GAP-008-3 (closed in catalog 0.3: PC-8 widened to floors). C-15 and C-16 are now Tier B.

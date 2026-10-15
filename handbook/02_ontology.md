@@ -154,10 +154,13 @@ consequence:
   reading:       optional; where a sign depends on how an unclear provision is read,
                  one entry per reading, such as "U1-a: increase; U1-b: ambiguous"
   persistence:   for repeals only: none | partial | full, compared with the path on
-                 which the original policy was never imposed (TS-6)
+                 which the original policy was never imposed (TS-6); may be given per
+                 horizon, such as "partial (medium); none (long)"
 ```
 
 **Group consequences.** Some rules conclude that at least one of several variables moves, without saying which (PC-10's weaker form: employment, hours or non-wage compensation; EN-3; RS-2). Record these as one consequence with the variables listed together and the sign `at_least_one_decrease` or `at_least_one_increase`. It is scored as correct if at least one member moves as predicted and none moves the other way. Writing each variable as its own "decrease" would overclaim.
+
+**Timing shifts.** A response that moves an action in time (RS-8, SB-6) is written as signed consequences per time window, each against the counterfactual ("purchases in the window: increase; in the year after: decrease"). Where there is no counterfactual comparison to make, because without the policy the action would not happen at all, the shift is a note on the path in section 8, not a consequence.
 
 **Readings.** Readings of an unclear provision are not given probabilities (workflow step 10); each reading's sign is reported, and the policy text, not the analyst, decides between them.
 

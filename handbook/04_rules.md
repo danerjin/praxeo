@@ -214,14 +214,14 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 
 ### TS-5 Credibility of a repeal
 - **If:** a policy is repealed (or not renewed), and actors give a meaningful probability to its return within the payback period of their investments.
-- **Then:** responses that pay back quickly (repairs, pricing, lettings, short contracts) go ahead; responses that pay back only over long periods (major renovation, new construction, entry with sunk costs) are smaller and later than the mirror of the original policy's effects. Where the expected return would exempt existing practitioners (grandfathering), it brings entry forward instead.
+- **Then:** responses that pay back quickly (repairs, pricing, lettings, short contracts) go ahead; responses that pay back only over long periods (major renovation, new construction, entry with sunk costs) are smaller and later than the mirror of the original policy's effects. Where the expected return would exempt existing practitioners (grandfathering), it brings entry forward instead. The losing side responds too: those who gained from the policy and expect it back delay scrapping, selling or retraining, and keep capacity on standby.
 - **Assumes:** the probability of re-imposition over a named period (`expectations`).
 - **Tier** B. **Horizon** medium to long.
 - **Builds on:** LW-7, TS-2.
 
-### TS-6 Stock changes persist after repeal
-- **If:** a policy caused reclassification (RS-5), exit (RS-6, EN-3), or the loss of specific capital, skills or client relationships, and reversing these has a cost (reassembling converted units, rebuilding capacity, retraining, re-establishing a client base).
-- **Then:** a repeal reverses the flow but not the stock already changed, except where the restored return exceeds the cost of reversal. Former sellers return only partly and slowly; firms that closed re-enter as the sunk costs of entry are paid; people displaced stay displaced. Record the expected `persistence` (none, partial, full) on each repeal consequence.
+### TS-6 Stock changes persist after repeal or erosion
+- **If:** a policy is repealed, or its incentive erodes (TS-3), and it had caused reclassification (RS-5), exit (RS-6, EN-3), or the loss of specific capital, skills or client relationships, and reversing these has a cost (reassembling converted units, rebuilding capacity, retraining, re-establishing a client base).
+- **Then:** a repeal (or erosion) reverses the flow but not the stock already changed, except where the restored return exceeds the cost of reversal. Responses that required sunk investment (a smuggling network, converted buildings) shrink by less than the incentive does. Former sellers return only partly and slowly; firms that closed re-enter as the sunk costs of entry are paid; people displaced stay displaced. Record the expected `persistence` (none, partial, full) on each repeal consequence.
 - **Assumes:** the cost of reversal (`reversal_cost`), including how long people and capital have been away.
 - **Tier** B. **Horizon** medium to long.
 - **Builds on:** LW-1, LW-4, TS-1.

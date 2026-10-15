@@ -24,7 +24,7 @@ Gaps found in WE-004 to WE-025 are listed in 6.2.
 
 ## 6.2 Gaps found in WE-004 to WE-025, resolved in catalog 0.3
 
-The 22 later examples raised 60 gaps. Many were the same gap found independently in different examples. They are resolved below in catalog 0.3 and ontology 0.3. "Closed" means a rule, variable or format was added and the example updated; expert review is still needed for all of it.
+The 22 later examples raised 60 gaps, and updating them to catalog 0.3 raised four more (the last four rows). Many were the same gap found independently in different examples. They are resolved below in catalog 0.3 and ontology 0.3. "Closed" means a rule, variable or format was added and the example updated; expert review is still needed for all of it.
 
 | Gaps | What was missing | Resolution |
 |---|---|---|
@@ -78,6 +78,10 @@ The 22 later examples raised 60 gaps. Many were the same gap found independently
 | 025-2 | Interactions between components | Pairwise check in workflow step 6; `components` field (2.5) |
 | 025-3 | Signs that depend on an unclear provision | `reading` field (2.5); readings get no probability (step 10) |
 | 025-4 | Units held vacant | `units_held_vacant` |
+| 010-3 | Responses with sunk investment outlast the erosion of an incentive | TS-6 widened to erosion (TS-3) |
+| 022-4 | Persistence that changes with the horizon | `persistence` may be given per horizon (2.5) |
+| 023-4 | The losing side's response to an expected re-imposition | TS-5 losing-side clause |
+| 024-4 | Timing shifts had no signed form | Convention in 2.5: signed per window, or a path note in section 8; WE-003 C-7 moved to section 8 |
 
 ## 6.3 Questions for the experts
 

@@ -50,7 +50,6 @@ The visible, stated aim is that everyone who braids for pay is trained and licen
 | C-4 | `braiders.current` who do not qualify | `earnings` (move to next-best occupation) | decrease | short to medium | EN-3, OC-4 | A-1, A-2 |
 | C-5 | `braiders.current` who keep working without a license | `informal_activity` | increase | short | RS-3, EN-3 | A-3 |
 | C-6 | `schools.cosmetology` | `quantity_demanded` for programs | increase | short | EN-1 | A-1 |
-| C-7 | `braiders.current` | timing: rush to enroll, or exit, around the 12-month deadline | (shift) | short | RS-8 | A-1 |
 | C-8 | `schools.cosmetology`, `cosmetologists.licensed`, `braiders.current` | `lobbying_effort` (schools and licensees to keep the rule; braiders for an exemption) | increase | medium | RS-7, EN-5 | A-1 |
 
 Not reported: relocation to neighboring states (RS-4). The borders are far from the main cities, and braiders' customers are local; A-6 is below the cut-off (p = 0.3).
@@ -75,7 +74,7 @@ Not reported: relocation to neighboring states (RS-4). The borders are far from 
 
 ## 8. Time structure
 
-- The 12-month compliance window concentrates exits and enrollments around the deadline (C-7).
+- The 12-month compliance window concentrates exits and enrollments around the deadline (RS-8). This is a note on the path, not a consequence: without the act, braiders would not enroll at all, so there is no counterfactual timing to compare with. Draft 0.2 listed it as C-7; the ID is retired.
 - Fewer legal providers (C-2) appear at the deadline; fewer new braiders (lower entry) shows up over the following years.
 - Braiding skill is specific and often learned informally. Braiders who leave the trade lose the value of that skill (C-4).
 - Expectations: if braiders expect an exemption to be won soon (C-8), more of them wait it out informally instead of enrolling (TS-2).
@@ -145,4 +144,4 @@ The 1,500 hours and tuition are already recorded as C-3 (`compliance_cost`), so 
 - GAP-8 (closed in catalog 0.2): RS-10 informal trade; C-12 now Tier B.
 - GAP-9 (closed in catalog 0.2): `share_of_sellers_licensed`; C-1 now a signed consequence.
 - GAP-10 (resolved as ambiguous by design, DM-3): pending expert confirmation.
-- Catalog 0.3: RS-10 now names `quality_information`; C-17 added.
+- Catalog 0.3: RS-10 now names `quality_information`; C-17 added. C-7 (timing around the deadline) moved to section 8 under the timing convention in 2.5 (closed in catalog 0.3: GAP-024-4).
