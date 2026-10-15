@@ -1,6 +1,6 @@
 # WE-001 Rent freeze with a new-construction exemption
 
-Analyst: draft (Handbook 0.1)  |  Rule catalog version: 0.2  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
 
 A stylized policy in a fictional city. It is close to real rent-control ordinances but deliberately differs from the historical cases reserved for evaluation. The probabilities are illustrative; the evidence column says what a real analysis would cite.
 
@@ -73,6 +73,9 @@ C-10 is worth stating separately: the ordinance protects sitting tenants as a gr
 | C-13 | `developers` | `investment_target` (new rental construction) | see section 7 | medium | LW-4, TS-2 | | A-7, A-9 |
 | C-14 | `homebuyers` | `quantity_substitute` (condos for sale) | increase | medium | RS-5 | rental and owner-occupied housing: `substitute`, partial | A-5 |
 | C-15 | `renters.neighbors` | `price_paid` in Eastfield and Northgate | increase | medium | RS-4, PC-3 | Riverton and neighbors: `across_border`, partial | A-8 |
+| C-20 | `landlords.controlled` | `asset_value` of covered buildings | decrease | short (from the ballot announcement) | SB-4 | | A-1, A-13 |
+
+C-20: a lasting cap on the income from a building lowers what buyers will pay for it, from the moment the cap is expected. Owners at the time of the ballot bear the loss; anyone who buys a covered building later pays the lower price, so the ordinance does not lower their return further.
 
 C-15 is at depth 3 and reaches a diffuse group of bystanders, so the chain stops there (workflow step 6).
 
@@ -116,6 +119,7 @@ Time spent searching and waiting is already recorded as C-3, so it is not listed
 | A-10 | Rental buildings last several decades, so supply adjusts slowly. | durability | 0.95 | Age of the housing stock. | Supply responses come sooner. |
 | A-11 | Enough leases renew during the announcement window, and landlords can raise rents at renewal. | expectations | 0.7 | Share of leases renewing in any eight-month period; lease terms; whether the ordinance rolls rents back to an earlier date. | C-17 not reported. |
 | A-12 | Some job opportunities for sitting tenants would require moving or a much longer commute. | mobility | 0.75 | Size of the region; where jobs are located relative to covered housing. | C-18 not reported. |
+| A-13 | Buyers of buildings expect the ordinance to last for many years. | expectations | 0.75 | Margin by which the ballot measure passed; history of repeal attempts in the region. | C-20 weakens. |
 
 ## 11. Report
 
@@ -126,7 +130,7 @@ Time spent searching and waiting is already recorded as C-3, so it is not listed
 **Invisible consequences.**
 - *People looking for a home in Riverton* find fewer covered units available, wait and search longer, face landlords who choose tenants by income, credit and connections, and sometimes pay key money or illegal sublet premiums (C-2 to C-4, C-7). Many end up in exempt new buildings, where rents rise because of the extra demand (C-12), or in neighboring cities, where they push rents up (C-15).
 - *Sitting tenants* receive less maintenance (C-6) and move less often, even when a different home or a job elsewhere would suit them better (C-5, C-18). Those whose leases renewed in the months before the freeze paid higher rents than they otherwise would have, as landlords locked in a higher base (C-17). Tenants in buildings that are converted lose their controlled tenancy altogether (C-10).
-- *Landlords* earn less on covered units, convert some buildings to condominiums (C-8) and invest less in the rest; over many years the covered rental stock is smaller than it would have been (C-9).
+- *Landlords* earn less on covered units, and the buildings lose value as soon as the ordinance is expected; owners at that time bear the loss (C-20). They convert some buildings to condominiums (C-8) and invest less in the rest; over many years the covered rental stock is smaller than it would have been (C-9).
 - *Homebuyers* see more condominiums for sale than they otherwise would (C-14).
 - *Taxpayers* fund the rent board (C-19).
 
@@ -159,6 +163,7 @@ Time spent searching and waiting is already recorded as C-3, so it is not listed
 | C-17 | tenants.controlled (renewing before effective date) | price_paid | increase | short | invisible | B | RS-8 | A-11 |
 | C-18 | tenants.controlled | job_changes | decrease | medium | invisible | B | PC-7, RS-11 | A-1, A-6, A-12 |
 | C-19 | taxpayers | resources_available_other_uses | decrease | short | invisible | A | OC-3, OC-1 | none |
+| C-20 | landlords.controlled | asset_value | decrease | short | invisible | B | SB-4 | A-1, A-13 |
 | — | tenants.controlled | quality_adjusted_price | ambiguous | medium | invisible | B | C-1 vs C-6 | A-1, A-4 |
 
 ## Gaps found
@@ -166,3 +171,4 @@ Time spent searching and waiting is already recorded as C-3, so it is not listed
 - GAP-1 (closed in catalog 0.2): announcement date added to the policy record; C-17 now reported.
 - GAP-2 (closed in catalog 0.2): RS-11 and the variable `job_changes`; C-18 now a signed consequence.
 - GAP-3 (closed in catalog 0.2): opportunity costs written as signed variables; the duplicate entry for search time removed.
+- Catalog 0.3: SB-4 now covers losses as well as gains; C-20 added.

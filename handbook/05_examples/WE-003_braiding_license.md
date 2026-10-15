@@ -1,6 +1,6 @@
 # WE-003 Cosmetology license required for hair braiding
 
-Analyst: draft (Handbook 0.1)  |  Rule catalog version: 0.2  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
 
 A stylized policy in a fictional state, modeled on a common type of occupational-licensing rule. The probabilities are illustrative.
 
@@ -63,6 +63,7 @@ Not reported: relocation to neighboring states (RS-4). The borders are far from 
 | C-10 | `cosmetologists.licensed` who braid, and newly licensed braiders | `net_price_received` | increase | short to medium | EN-2 | | A-1, A-2 |
 | C-11 | `customers.braiding` | `quantity_substitute` (braiding by family and friends, or not having braids done) | increase | short | EN-3, RS-1 | paid and home braiding: `substitute`, partial | A-4 |
 | C-12 | `customers.braiding` using unlicensed braiders | `search_cost` (informal providers cannot advertise openly) | increase | short | RS-3, RS-10 | | A-3 |
+| C-17 | `customers.braiding` using unlicensed braiders | `quality_information` | decrease | short | RS-10 | | A-3 |
 | C-13 | `customers.braiding` | `quality_per_unit` received | see section 7 | medium | EN-4, DM-2 | | A-5 |
 
 ## 7. Combined effects
@@ -107,7 +108,7 @@ The 1,500 hours and tuition are already recorded as C-3 (`compliance_cost`), so 
 
 **Invisible consequences.**
 - *Braiders* face a large cost to keep working legally (C-3). Some train and later charge more (C-10); some leave the trade for less-valued work (C-4); some carry on without a license, at risk of fines (C-5). Fewer people take up braiding (C-2).
-- *Customers* pay more for legal braiding (C-9), turn more often to family and friends or go without (C-11), and find it harder to locate and judge informal braiders (C-12). The quality of braiding they receive is lower overall (C-13), because the training required is largely unrelated to braiding.
+- *Customers* pay more for legal braiding (C-9), turn more often to family and friends or go without (C-11), and find it harder to locate and judge informal braiders (C-12, C-17). The quality of braiding they receive is lower overall (C-13), because the training required is largely unrelated to braiding.
 - *Cosmetology schools* gain students (C-6); schools and existing licensees have a stake in keeping the rule (C-8).
 - *Taxpayers* fund enforcement (C-16).
 
@@ -132,6 +133,7 @@ The 1,500 hours and tuition are already recorded as C-3 (`compliance_cost`), so 
 | C-10 | licensed braiders | net_price_received | increase | short–medium | invisible | B | EN-2 | A-1, A-2 |
 | C-11 | customers.braiding | quantity_substitute (home braiding) | increase | short | invisible | B | EN-3, RS-1 | A-4 |
 | C-12 | customers.braiding | search_cost | increase | short | invisible | B | RS-3, RS-10 | A-3 |
+| C-17 | customers.braiding (informal) | quality_information | decrease | short | invisible | B | RS-10 | A-3 |
 | C-13 | customers.braiding | quality_per_unit | decrease | medium | invisible | B | EN-4, DM-2 | A-5 |
 | C-15 | customers, braiders | quantity_traded (legal services) | decrease | short–medium | invisible | B | OC-4 | A-1, A-2 |
 | C-16 | taxpayers | resources_available_other_uses | decrease | short | invisible | A | OC-3 | none |
@@ -143,3 +145,4 @@ The 1,500 hours and tuition are already recorded as C-3 (`compliance_cost`), so 
 - GAP-8 (closed in catalog 0.2): RS-10 informal trade; C-12 now Tier B.
 - GAP-9 (closed in catalog 0.2): `share_of_sellers_licensed`; C-1 now a signed consequence.
 - GAP-10 (resolved as ambiguous by design, DM-3): pending expert confirmation.
+- Catalog 0.3: RS-10 now names `quality_information`; C-17 added.

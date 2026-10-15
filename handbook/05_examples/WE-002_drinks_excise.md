@@ -1,6 +1,6 @@
 # WE-002 Local excise tax on sweetened drinks, earmarked for pre-school
 
-Analyst: draft (Handbook 0.1)  |  Rule catalog version: 0.2  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
 
 A stylized policy in a fictional town. It resembles real city drink taxes but is not one of them. The probabilities are illustrative.
 
@@ -72,8 +72,13 @@ Not reported: evasion through untaxed deliveries (RS-3). The tax is collected fr
 | C-14 | `providers.private_preschool` | `number_of_sellers` (independent private providers) | decrease | medium | SB-3, RS-6 | free and paid places: `substitute`, close | A-6 |
 | C-20 | `families.preschool` | pre-school places funded (`quantity_traded`, public places), compared with the earmarked amount | decrease | medium | SB-7 | | A-8 |
 | C-21 | `officials.enforcement`, `taxpayers` | `tax_revenue_vs_static_projection` | decrease | short | TX-9 | | A-1, A-2, A-3 |
+| C-22 | `families.preschool` who would have paid for a private place anyway | `resources_available_other_uses` | increase | short to medium | SB-8 | | A-6 |
+| C-23 | `sellers` of the goods drink buyers would have bought with the tax money | `employment` | decrease | short to medium | OC-5, OC-1 | | A-9 |
+| C-24 | pre-school providers and staff paid from the revenue | `employment` | increase | short to medium | OC-5 | | A-9 |
 
 C-11 and C-12 are not obvious. If some buyers drive across the line for drinks, many will buy the rest of their groceries there too (RS-9). Lakeport stores lose those sales as well, not just the drinks.
+
+C-22: for families who would have paid for a private place anyway, a free place works like a cash transfer; they spend the money they save on other things (SB-8). C-23 and C-24 are Bastiat's tailor (OC-5): the jobs funded by the revenue are visible; the jobs that would have been supported by what the taxpayers would otherwise have bought are not.
 
 C-20: Lakeport already funds some pre-school places from its general budget. Unless the law fixes that funding, the town can reduce it as the earmarked money arrives, so the number of places rises by less than the earmark alone would pay for (SB-7). C-21: the tax base shrinks through C-2 and C-4, so revenue falls short of a projection made at pre-tax sales (TX-9).
 
@@ -114,6 +119,7 @@ Two entries from draft 0.1 are dropped as duplicates: compliance resources (alre
 | A-6 | Free places draw some families who would otherwise have paid for private places. | substitutability | 0.85 | Current private enrollment among 3- and 4-year-olds. | C-8, C-14 fail. |
 | A-7 | Shoppers bundle drink purchases with other groceries on the same trip. | other | 0.7 | Shopping surveys; store layout and basket composition. | C-11, C-12 weaken. |
 | A-8 | Lakeport would otherwise have funded some pre-school places from general revenue, and the law does not fix that funding level. | revenue_use | 0.65 | Current budget lines for early education; whether the ordinance has a maintenance-of-effort clause. | C-20 not reported. |
+| A-9 | Sellers adjust their staffing to their sales. | alternative_uses | 0.75 | Share of part-time and flexible staff in local retail and services. | C-23, C-24 weaken. |
 
 ## 11. Report
 
@@ -127,7 +133,8 @@ Two entries from draft 0.1 are dropped as duplicates: compliance resources (alre
 - *Producers* reformulate drinks to fall into exempt categories (C-6).
 - *Private pre-schools* lose paying families to the free places (C-8), and some close (C-14), so the total number of pre-school places rises by less than the number of free places created. The free places themselves rise by less than the earmark suggests, if the town trims the general funding it already gave pre-school (C-20).
 - *The town* collects less than a projection based on pre-tax sales, because the base shrinks (C-21).
-- *Distributors and taxpayers* bear compliance and administration costs (C-7, C-18), and everyone who pays the tax gives up what they would have bought with the money (C-15).
+- *Distributors and taxpayers* bear compliance and administration costs (C-7, C-18), and everyone who pays the tax gives up what they would have bought with the money (C-15). The jobs the revenue pays for in pre-school (C-24) are matched by fewer jobs among the sellers of what the taxpayers would otherwise have bought (C-23).
+- *Families already paying for private pre-school* who switch to a free place have more to spend on other things (C-22).
 
 **Ambiguous effects.** How the tax splits between buyers and sellers overall cannot be determined; the analysis can only say which subgroups bear more.
 
@@ -158,6 +165,9 @@ Two entries from draft 0.1 are dropped as duplicates: compliance resources (alre
 | C-18 | taxpayers | resources_available_other_uses | decrease | short | invisible | A | OC-3 | none |
 | C-20 | families.preschool | quantity_traded (public places) vs earmark | decrease | medium | invisible | B | SB-7 | A-8 |
 | C-21 | officials.enforcement | tax_revenue_vs_static_projection | decrease | short | invisible | B | TX-9 | A-1, A-2, A-3 |
+| C-22 | families.preschool (would have paid anyway) | resources_available_other_uses | increase | short–medium | invisible | B | SB-8 | A-6 |
+| C-23 | sellers (forgone purchases) | employment | decrease | short–medium | invisible | B | OC-5, OC-1 | A-9 |
+| C-24 | pre-school providers | employment | increase | short–medium | visible | B | OC-5 | A-9 |
 
 ## Gaps found
 
@@ -166,3 +176,4 @@ Two entries from draft 0.1 are dropped as duplicates: compliance resources (alre
 - GAP-6 (closed in catalog 0.2): SB-7 earmark fungibility; C-20 added.
 - GAP-7 (closed in catalog 0.2): TX-9 and `tax_revenue_vs_static_projection`; C-21 added.
 - GAP-11 (closed in catalog 0.2): `tax_share_borne` used for C-13.
+- Catalog 0.3: SB-8 and OC-5 added; C-22 to C-24 added.
