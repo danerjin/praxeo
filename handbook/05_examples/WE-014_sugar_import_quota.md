@@ -1,18 +1,18 @@
 # WE-014 Import quota on raw sugar, with free tradable quota rights
 
-Analyst: draft (Handbook 0.2)  |  Rule catalog version: 0.2  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
 
 A stylized policy in a fictional country. It resembles real sugar import quotas but is not modeled on any one of them, and it is kept apart from the historical cases reserved for evaluation. The probabilities are illustrative; the evidence column says what a real analysis would cite.
 
 ## 1. Policy record
 
-**Calvar Sugar Market Act.** The Republic of Calvar (about 20 million people) uses about 1.2 million tonnes of sugar a year. Domestic farmers grow sugar beet, which four beet factories turn into about 450,000 tonnes of white sugar. The rest, about 750,000 tonnes, is imported, mostly as raw cane sugar that two refineries at the ports of Lusk and Varo refine. World sugar prices have been below the cost of most Calvarian beet growers for years. Corn syrup is made from domestic corn by two wet mills. Calvar's only land neighbor, Ostria, has no sugar quota; the border town of Tessin (150,000 people) is 20 minutes from Ostrian supermarkets, but Calvar's main cities are 200 km or more from the border. The bill was introduced with government backing nine months before the effective date and passed four months later.
+**Calvar Sugar Market Act.** The Republic of Calvar (about 20 million people) uses about 1.2 million tonnes of sugar a year. Domestic farmers grow sugar beet, which four beet factories turn into about 450,000 tonnes of white sugar. The rest, about 750,000 tonnes, is imported, mostly as raw cane sugar that two refineries at the ports of Quellport and Varo refine. World sugar prices have been below the cost of most Calvarian beet growers for years. Corn syrup is made from domestic corn by two wet mills. Calvar's only land neighbor, Ostria, has no sugar quota; the border town of Varnholt (150,000 people) is 20 minutes from Ostrian supermarkets, but Calvar's main cities are 200 km or more from the border. The bill was introduced with government backing nine months before the effective date and passed four months later.
 
 | Component | Instrument | Target | Bound | Parameters | Exemptions |
 |---|---|---|---|---|---|
 | K1 Import quota | `quota` | Imports of raw and refined sugar, and of mixtures containing more than 65% sugar by weight | Importers | 350,000 tonnes a year from the effective date. No expiry, but parliament must review the quota after five years. | Sugar contained in finished foods; mixtures with 65% sugar or less; a travelers' personal allowance of 10 kg per crossing. Corn syrup and other sweeteners are not covered. |
 | K2 Quota rights | Allocation of K1 (part of K1) | Shares of the annual quota | Importers | Shares allocated free, in proportion to each importer's sugar imports over the 36 months before the effective date. Shares are permanent and may be sold or leased; transfers are registered with customs. | None |
-| K3 Enforcement | Enforcement | K1, K2 | Customs service | Imports without quota rights are seized and fined three times their value. Bulk cargo may enter only through Lusk and Varo, where every shipment is inspected; the land crossing at Tessin is checked by sample. Funded from the general budget. | None |
+| K3 Enforcement | Enforcement | K1, K2 | Customs service | Imports without quota rights are seized and fined three times their value. Bulk cargo may enter only through Quellport and Varo, where every shipment is inspected; the land crossing at Varnholt is checked by sample. Funded from the general budget. | None |
 
 Unclear provisions: whether the 65% threshold counts sugar against dry weight or total weight. Assumed total weight, the reading more favorable to importers of syrups and blends.
 
@@ -34,17 +34,17 @@ The quota collects no revenue. The gap between the domestic and world price of t
 | `landowners.beet` (`factor_owners.specific`) | Owners of land suited to beet within reach of the factories | That land earns more in beet. |
 | `quota_holders` | Importers who imported in the base period, including both port refineries | Receive free rights to buy at the world price and sell at the domestic price. |
 | `importers.prospective` (`sellers.prospective`) | Firms that would start importing sugar | Must buy or lease quota shares to import. |
-| `refiners.port` | The cane refineries at Lusk and Varo | Hold large shares, but have less raw cane to refine. |
+| `refiners.port` | The cane refineries at Quellport and Varo | Hold large shares, but have less raw cane to refine. |
 | `buyers.sugar` | All buyers of sugar: the two manufacturer classes below and households | Pay more for sugar. |
 | `manufacturers.tradable` | Makers of confectionery, biscuits, soft drinks and other sweetened goods that are also imported | Pay more for sugar while competing with imports made with world-price sugar. |
 | `manufacturers.local` | Bakeries and makers of fresh desserts and other sweetened goods that are not easily imported | Pay more for sugar; compete mainly with each other. |
 | `households` (`buyers.current`) | Buyers of sugar and sweetened goods | Pay more; can switch to other goods. |
-| `households.tessin` | Residents near the Ostrian border | Can buy up to 10 kg per crossing in Ostria. |
-| `retailers.tessin` | Calvarian grocery stores near the border | Lose some shopping trips to Ostria. |
+| `households.varnholt` | Residents near the Ostrian border | Can buy up to 10 kg per crossing in Ostria. |
+| `retailers.varnholt` | Calvarian grocery stores near the border | Lose some shopping trips to Ostria. |
 | `sweetener_makers` (`sellers.substitutes`) | Corn syrup mills and sellers of other sweeteners | More demand. |
 | `sweetener_users` (`buyers.substitutes`) | Firms already using corn syrup | Compete with switchers for corn syrup. |
 | `exporters.foreign` | Foreign sugar sellers | Sell less to Calvar. |
-| `ostria.sellers` (`neighboring_jurisdictions`) | Ostrian shops near Tessin and Ostrian food manufacturers | More Calvarian customers. |
+| `ostria.sellers` (`neighboring_jurisdictions`) | Ostrian shops near Varnholt and Ostrian food manufacturers | More Calvarian customers. |
 | `buyers.field_crops` | Buyers of the wheat, barley and other crops grown on land that could switch to beet | Less of those crops grown in Calvar. |
 | `exporters.calvar` | Calvarian export industries | See C-23. |
 | `officials.enforcement`, `taxpayers` | Customs and its funders | More inspection and rights administration. |
@@ -70,7 +70,7 @@ C-1 and C-2 are what the Act's supporters point to: fewer imports and a better p
 | C-8 | `manufacturers.tradable`, `manufacturers.local` | `quantity_substitute` (corn syrup and other sweeteners) | increase | short to medium | RS-1 | A-1, A-7 |
 | C-9 | `manufacturers.tradable` | `reclassification` (importing sugar as blends and syrups with 65% sugar or less) | increase | short to medium | RS-5 | A-8 |
 | C-10 | `manufacturers.tradable` | `quantity_supplied` (sweetened goods made in Calvar) | decrease | medium to long | RS-6, RS-4, TS-1 | A-1, A-9, A-10 |
-| C-11 | `households.tessin` | `cross_border_purchases` (sugar and sweetened goods in Ostria) | increase | short | RS-4 | A-1, A-11 |
+| C-11 | `households.varnholt` | `cross_border_purchases` (sugar and sweetened goods in Ostria) | increase | short | RS-4 | A-1, A-11 |
 | C-12 | `growers.beet`, `quota_holders`, `manufacturers.tradable` | `lobbying_effort` (growers and holders to keep or tighten the quota at the five-year review; manufacturers for a larger quota or an exemption for their inputs) | increase | medium | RS-7 | A-1 |
 
 C-6: shares are allocated by imports over the 36 months before the effective date, and the Act was expected nine months ahead. Each extra tonne imported in that window earns a larger permanent share and adds to a stock that can be sold after the quota bites. Both reasons pull imports into the window.
@@ -92,8 +92,8 @@ Not reported: bulk smuggling of raw sugar (RS-3). Bulk cargo may enter only thro
 | C-17 | `manufacturers.tradable` | `employment` (in Calvar) | decrease | medium to long | RS-6, RS-4 | | A-1, A-9, A-10 |
 | C-18 | `refiners.port` | `quantity_supplied` (refined cane sugar) | decrease | short | EN-6 | raw cane `input_to` refined sugar | A-1, A-2 |
 | C-19 | `refiners.port` | `employment` | decrease | medium | RS-6 | | A-1, A-15 |
-| C-20 | `ostria.sellers` (shops near Tessin) | `quantity_traded` (all goods sold to Calvarians) | increase | short | RS-4, RS-9 | Tessin and Ostrian shops: `across_border`, close; sugar and other groceries: `complement`, note `trip` | A-11, A-16 |
-| C-21 | `retailers.tessin` | `quantity_traded` (other groceries) | decrease | short | RS-4, RS-9 | as C-20 | A-11, A-16 |
+| C-20 | `ostria.sellers` (shops near Varnholt) | `quantity_traded` (all goods sold to Calvarians) | increase | short | RS-4, RS-9 | Varnholt and Ostrian shops: `across_border`, close; sugar and other groceries: `complement`, note `trip` | A-11, A-16 |
+| C-21 | `retailers.varnholt` | `quantity_traded` (other groceries) | decrease | short | RS-4, RS-9 | as C-20 | A-11, A-16 |
 | C-22 | `ostria.sellers` (food manufacturers) | `quantity_supplied` (sweetened goods sold into Calvar) | increase | medium | RS-4 | Calvarian and imported sweetened goods: `substitute`, close | A-9 |
 | C-23 | `exporters.calvar` | `quantity_supplied`, `employment` (export industries) | decrease | medium | GAP-014-1 (TX-8 applied to a quota) | | A-17 |
 
@@ -143,17 +143,17 @@ C-26 is the classic unseen effect of protection: the beet is visible, the crops 
 | A-3 | Domestic beet sugar and refined imported sugar are close substitutes for buyers. | substitutability | 0.9 | Both are white sugar of standard grades; buyers' specifications. | C-2 weakens. |
 | A-4 | Land and labor can move from other field crops into beet within one or two seasons, and the beet factories have some spare capacity. | alternative_uses | 0.7 | Crop rotation practice; factory utilization rates. | C-4, C-15 and C-26 weaken; the price rise (C-3) is larger. |
 | A-5 | Holders, growers and landowners expect the quota to survive the five-year review. | expectations | 0.65 | Political strength of the grower lobby; how comparable programs fared at review. | C-5, C-15 and C-24 are smaller. |
-| A-6 | Importers know the allocation formula during the window and can finance and store extra imports. | expectations | 0.8 | Formula published with the bill; storage capacity at Lusk and Varo. | C-6 not reported. |
+| A-6 | Importers know the allocation formula during the window and can finance and store extra imports. | expectations | 0.8 | Formula published with the bill; storage capacity at Quellport and Varo. | C-6 not reported. |
 | A-7 | Corn syrup and other sweeteners are acceptable substitutes for sugar in some uses, above all soft drinks. | substitutability | 0.8 | Current use of corn syrup by Calvarian and foreign drink makers. | C-8, C-13, C-14 weaken. |
 | A-8 | Importing blends and syrups with 65% sugar or less is technically and commercially workable for some users. | other | 0.6 | Existing trade in sugar-cocoa blends and syrups; cost of using or separating them. | C-9 not reported. |
 | A-9 | Imported confectionery, biscuits and soft drinks are close substitutes for Calvarian ones and enter freely. | substitutability | 0.75 | Import shares in these categories; brand overlap; absence of other barriers. | C-10, C-17 and C-22 weaken; domestic makers pass more of the cost on. |
 | A-10 | Food plants last 15 to 25 years, so relocation happens mainly through new investment. | durability | 0.9 | Age of the plant stock; equipment lives. | Relocation is faster. |
-| A-11 | Enough Tessin residents shop in Ostria within the personal allowance. | mobility | 0.7 | 20-minute drive; existing cross-border shopping; car ownership. | C-11, C-20, C-21 not reported. |
+| A-11 | Enough Varnholt residents shop in Ostria within the personal allowance. | mobility | 0.7 | 20-minute drive; existing cross-border shopping; car ownership. | C-11, C-20, C-21 not reported. |
 | A-12 | Bulk sugar is smuggled on a meaningful scale. | enforcement | 0.3 | Port-only entry for bulk; inspection rates. | Below cut-off; not reported. |
 | A-13 | Corn syrup output cannot expand at once because the mills are near capacity. | other | 0.7 | Mill utilization; time to add capacity. | C-13 is smaller and shorter. |
 | A-14 | Makers of locally made sweetened goods compete mainly with each other, all face the dearer sugar, and cannot fully switch to other sweeteners. | other | 0.85 | Import shares of fresh bakery goods; recipe constraints. | C-16 weakens for these goods. |
 | A-15 | The port refineries cannot replace imported raw cane with domestic beet. | other | 0.9 | Beet is processed in beet factories by a different process. | C-19 weakens. |
-| A-16 | Tessin shoppers buy other groceries on the same trips as sugar. | other | 0.7 | Shopping surveys; basket composition. | C-20, C-21 weaken. |
+| A-16 | Varnholt shoppers buy other groceries on the same trips as sugar. | other | 0.7 | Shopping surveys; basket composition. | C-20, C-21 weaken. |
 | A-17 | Lower imports are not offset by capital flows or other adjustments within the medium horizon (the assumption of TX-8). | other | 0.6 | Calvar's trade and capital accounts; exchange-rate regime. | C-23 not reported. |
 
 ## 11. Report
@@ -168,7 +168,7 @@ C-26 is the classic unseen effect of protection: the beet is visible, the crops 
 - *Food manufacturers* switch to corn syrup where they can (C-8), import sugar as blends just under the threshold (C-9), and, for goods that compete with imports, move production abroad over the years (C-10, C-17, C-22). Firms already using corn syrup pay more for it (C-13).
 - *Landowners* near the beet factories see their land gain value (C-15); land that switches to beet stops growing other crops (C-26).
 - *The port refineries* refine less and employ fewer people (C-18, C-19).
-- *Near the border*, Tessin residents buy sugar in Ostria and take other shopping with them, to the benefit of Ostrian shops and the cost of Tessin's (C-11, C-20, C-21).
+- *Near the border*, Varnholt residents buy sugar in Ostria and take other shopping with them, to the benefit of Ostrian shops and the cost of Varnholt's (C-11, C-20, C-21).
 - *Taxpayers* fund customs work (C-29); importers bear paperwork (C-28).
 - As a Tier C suggestion, Calvarian export industries sell less abroad (C-23).
 
@@ -192,7 +192,7 @@ C-26 is the classic unseen effect of protection: the beet is visible, the crops 
 | C-8 | manufacturers.tradable, manufacturers.local | quantity_substitute (corn syrup) | increase | short–medium | invisible | B | RS-1 | A-1, A-7 |
 | C-9 | manufacturers.tradable | reclassification | increase | short–medium | invisible | B | RS-5 | A-8 |
 | C-10 | manufacturers.tradable | quantity_supplied (domestic) | decrease | medium–long | invisible | B | RS-6, RS-4, TS-1 | A-1, A-9, A-10 |
-| C-11 | households.tessin | cross_border_purchases | increase | short | invisible | B | RS-4 | A-1, A-11 |
+| C-11 | households.varnholt | cross_border_purchases | increase | short | invisible | B | RS-4 | A-1, A-11 |
 | C-12 | growers, quota_holders, manufacturers | lobbying_effort | increase | medium | invisible | B | RS-7 | A-1 |
 | C-13 | sweetener_users | price_substitute (corn syrup) | increase | short–medium | invisible | B | RS-1 | A-7, A-13 |
 | C-14 | sweetener_makers | quantity_supplied (corn syrup) | increase | medium | invisible | B | RS-1, LW-4 | A-7 |
@@ -202,7 +202,7 @@ C-26 is the classic unseen effect of protection: the beet is visible, the crops 
 | C-18 | refiners.port | quantity_supplied | decrease | short | invisible | B | EN-6 | A-1, A-2 |
 | C-19 | refiners.port | employment | decrease | medium | invisible | B | RS-6 | A-1, A-15 |
 | C-20 | ostria.sellers (shops) | quantity_traded (all goods) | increase | short | invisible | B | RS-4, RS-9 | A-11, A-16 |
-| C-21 | retailers.tessin | quantity_traded (other groceries) | decrease | short | invisible | B | RS-4, RS-9 | A-11, A-16 |
+| C-21 | retailers.varnholt | quantity_traded (other groceries) | decrease | short | invisible | B | RS-4, RS-9 | A-11, A-16 |
 | C-22 | ostria.sellers (manufacturers) | quantity_supplied (into Calvar) | increase | medium | invisible | B | RS-4 | A-9 |
 | C-23 | exporters.calvar | quantity_supplied, employment | decrease | medium | invisible | C | GAP-014-1 | A-17 |
 | C-24 | growers.beet | investment_target (factory capacity) | increase | long | invisible | B | EN-6, LW-4, TS-2 | A-4, A-5 |
