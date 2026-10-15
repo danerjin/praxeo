@@ -1,4 +1,4 @@
-# 4. Rule catalog 0.1
+# 4. Rule catalog 0.3
 
 Each rule is one reusable inference. Format:
 
@@ -11,6 +11,8 @@ Each rule is one reusable inference. Format:
 - **Source:** where the reasoning comes from (from memory; to be checked).
 
 Rules are deliberately small. A full analysis chains several of them, and each link is reviewed on its own.
+
+**Changes in 0.3.** New: RS-12 to RS-15, OC-5 to OC-7, TS-5 to TS-9, PC-12 to PC-15, TX-10, TX-11, SB-8, SB-9, EN-9, EN-10, DM-4, DM-5. Widened: RS-4, RS-10, RS-11, TS-1, TS-3, PC-8, TX-6, TX-8, TX-9, SB-4, EN-6, EN-8, DM-1. Each change traces to a gap found in the worked examples (`06_gaps.md`, 6.2).
 
 ---
 
@@ -42,9 +44,9 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 - **Tier** B. **Visibility** invisible. **Horizon** short.
 - **Builds on:** AX-1, LW-1.
 
-### RS-4 Relocation
-- **If:** the policy applies within a boundary, and the activity can be carried out or bought just outside it.
-- **Then:** `cross_border_purchases` increase (buyers), or relocation of sellers and production outside the boundary; activity inside decreases.
+### RS-4 Relocation across a boundary
+- **If:** the policy applies within a boundary, and the activity can be carried out or bought on the other side of it.
+- **Then:** activity and purchases move to whichever side the policy favors. Where the policy burdens activity inside: `cross_border_purchases` increase (buyers), or sellers and production relocate outside; activity inside decreases. Where it favors activity inside (a floor, subsidy or exemption that applies only there): `entry_rate` increase inside and `quantity_supplied` decrease just outside.
 - **Assumes:** the boundary is near enough for crossing to be worth its cost to some actors (`mobility`).
 - **Tier** B. **Visibility** invisible. **Horizon** short (purchases) to long (firms).
 - **Builds on:** RS-1.
@@ -86,17 +88,45 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 
 ### RS-10 Driving trade into the informal market
 - **If:** some trade in a good or service moves outside the legal market (RS-3, PC-6, EN-3, EN-7).
-- **Then:** for that trade: `search_cost` increase (sellers cannot advertise openly); quality becomes harder to judge and more variable (no brands, licensing or reviews to rely on); disputes cannot go to court, so they are settled privately or not at all; sellers charge for the risk of punishment.
+- **Then:** for that trade: `search_cost` increase (sellers cannot advertise openly); `quality_information` decrease and `quality_variability` increase (no brands, licensing, reviews or recourse to rely on); `disputes_settled_outside_courts` increase; sellers charge for the risk of punishment. In reverse (trade returning to the legal market after a repeal), each sign flips.
 - **Assumes:** penalties for informal trade are enforced at least sometimes (`enforcement`).
 - **Tier** B. **Visibility** invisible. **Horizon** short.
 - **Builds on:** AX-1, LW-1.
 
 ### RS-11 Lock-in spills into linked markets
-- **If:** an actor class holds a benefit that is lost if it moves (PC-7: a controlled tenancy, a place on a list), and the benefit is tied to a location.
-- **Then:** members of the class turn down opportunities in linked markets that would require moving: `job_changes` decrease, longer commutes, or forgone better jobs.
-- **Assumes:** some job opportunities require a move or a much longer commute (`mobility`); the benefit is not transferable.
+- **If:** an actor class holds a non-transferable benefit that is lost by a change of location or status: moving (PC-7: a controlled tenancy, a place on a list), leaving an occupation, or letting a registration lapse (a grandfathered status).
+- **Then:** members of the class turn down opportunities that would cost them the benefit: `job_changes` decrease, longer commutes, forgone breaks or better work elsewhere.
+- **Assumes:** some valued opportunities would require the change (`mobility`); the benefit is not transferable.
 - **Tier** B. **Visibility** invisible. **Horizon** medium.
 - **Builds on:** LW-1 (losing the benefit is part of the cost of moving), PC-7.
+
+### RS-12 Complement spillover
+- **If:** the quantity traded, or the stock in use, of a good changes, and another good is recorded as its `complement` in use (not `trip`): cars and repairs, cars and fuel.
+- **Then:** `quantity_complement` changes in the same direction; where the complement's supply is slow to adjust, `price_complement` moves the same way too.
+- **Assumes:** the complement relation is close, and the complement has few other uses (`substitutability`).
+- **Tier** B. **Visibility** invisible. **Horizon** short to medium.
+- **Builds on:** LW-2.
+
+### RS-13 Supply spillover
+- **If:** a policy adds quantity supplied to a linked market (exempt new building next to a capped segment, subsidized output fed into a wholesale market, released public stocks).
+- **Then:** the price in that market decreases (`price_substitute` decrease, or that market's `price_paid` decrease), compared with the counterfactual.
+- **Assumes:** the added supply is not offset by withdrawal elsewhere; buyers there do not absorb it at an unchanged price (`substitutability`).
+- **Tier** B. **Visibility** invisible. **Horizon** short to medium.
+- **Builds on:** LW-3. This is the general form of the opposing chain noted under PC-8.
+
+### RS-14 Input cost pass-through
+- **If:** a policy raises the cost of an input (a tax or floor on labor, a tariff on a material, a regulated price) that is a material part of the cost of some output.
+- **Then:** for the output: `price_paid` by its buyers increase and/or `quantity_supplied` decrease (at least one). Where the sellers' competitors face the same increase, the price rise dominates; where competitors are exempt (imports, untaxed or uncovered sellers), RS-6 applies and the quantity effect dominates.
+- **Assumes:** the input cannot be fully replaced at the old cost (`substitutability`); the competitors' exposure (`other`).
+- **Tier** B. **Visibility** invisible. **Horizon** short to medium.
+- **Builds on:** LW-4, TX-2. The upstream counterpart, for a cap on the output, is PC-12.
+
+### RS-15 Discretionary relief is rationed by non-price criteria
+- **If:** relief from a policy's burden (an exclusion, waiver, permit or exemption) is granted case by case at officials' discretion, and is worth more to applicants than its fee.
+- **Then:** `allocation_by_non_price_criteria` increase among applicants; `compliance_cost` of applying increase; `lobbying_effort` increase, both by applicants and by those who gain when relief is denied.
+- **Assumes:** the grant is discretionary and valuable (`other`).
+- **Tier** B. **Visibility** invisible. **Horizon** short to medium.
+- **Builds on:** LW-6 (relief is scarce and not priced), RS-7.
 
 ---
 
@@ -130,6 +160,27 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Builds on:** LW-5.
 - **Source:** Rothbard, *Power and Market*, ch. 3.
 
+### OC-5 Diverted spending diverts work (Bastiat's tailor)
+- **If:** a policy changes where an actor class spends (OC-1: money taken and spent by others; SB-8: money freed), so that `quantity_traded` falls in some markets and rises in others.
+- **Then:** `employment` or `hours_worked` decrease in the markets that lose the spending and increase in those that gain it. The jobs the policy creates are visible; the jobs it prevents elsewhere are not.
+- **Assumes:** sellers adjust their labor to their sales (`alternative_uses`).
+- **Tier** B. **Visibility**: the gain is visible, the loss invisible. **Horizon** short to medium.
+- **Builds on:** OC-1, LW-4.
+- **Source:** Bastiat, "That Which Is Seen, and That Which Is Not Seen" (the window, and the tailor who does not get the order); Hazlitt, *Economics in One Lesson*, ch. 2.
+
+### OC-6 Lost revenue is made up elsewhere
+- **If:** a repeal or cut reduces `tax_revenue` that the budget was spending.
+- **Then:** other taxes rise, borrowing rises (implying later taxes), or spending falls. Apply TX-1 and OC-1 to whichever group bears the replacement, named from the budget response. If the record does not say, state the replacement chain with a `revenue_use` assumption; where it frees resources for the same group that the repeal relieves, combine the chains (workflow step 7).
+- **Tier** B. **Visibility** invisible. **Horizon** short to medium.
+- **Builds on:** LW-1, SB-1 (its mirror case).
+
+### OC-7 Revaluation changes holders' means
+- **If:** `asset_value` of an asset held by an actor class rises or falls (SB-4).
+- **Then:** when they sell or borrow against it, their `resources_available_other_uses` change in the same direction, and so do their purchases in linked markets (homeowners whose homes gain value bid for larger homes).
+- **Assumes:** the change can be realized by sale or borrowing (`other`), and is not offset by an equal change in the price of what they intend to buy.
+- **Tier** B. **Visibility** invisible. **Horizon** medium.
+- **Builds on:** LW-1.
+
 ---
 
 ## TS: Time structure
@@ -137,6 +188,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 ### TS-1 Durable capital lag
 - **If:** a consequence works through reduced investment or maintenance in durable capital (buildings, equipment, trained skills).
 - **Then:** the effect on `capital_stock_target` and `quantity_supplied` is small at first and grows as the existing stock wears out and is not replaced. Set horizon to medium or long; `quality_per_unit` often falls before quantity does.
+- **In the other direction:** when a policy (or a repeal) raises the return on durable capital, the stock grows at the speed of new investment (planning, permits, finance, construction, training), which is not the mirror of wear-out. State that lag as a `durability` assumption; TS-5 may slow it further.
 - **Assumes:** the durability of the capital involved (`durability`).
 - **Tier** B. **Horizon** medium to long.
 - **Builds on:** LW-4, LW-7.
@@ -148,10 +200,10 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Tier** B. **Horizon** short to medium.
 - **Builds on:** LW-7.
 
-### TS-3 Erosion of a nominal parameter
-- **If:** a cap, floor, rate or threshold is fixed in money terms, or indexed at a rate different from the change in the relevant market price.
-- **Then:** the component becomes more binding (or less) over time as market prices move. A ceiling that is not binding at enactment can become binding later.
-- **Assumes:** the expected path of market prices.
+### TS-3 Erosion of a fixed parameter
+- **If:** a cap, floor, rate, threshold or quantity is fixed in money terms or in physical units (a number of licenses, a tonnage), or indexed at a rate different from the change in the relevant market price or demand.
+- **Then:** the component becomes more binding (or less) over time as prices or demand move. A ceiling or quota that is not binding at enactment can become binding later.
+- **Assumes:** the expected path of market prices or demand.
 - **Tier** B. **Horizon** medium to long.
 
 ### TS-4 The intervention spiral (proposed, contested)
@@ -159,6 +211,42 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Then:** pressure for further intervention to address them (extending controls to substitutes, rationing schemes, penalties), or for repeal.
 - **Tier** C until the experts decide whether and how to encode it; it is a claim about political dynamics rather than market action. See `06_gaps.md`, Q4.
 - **Source:** Mises, *A Critique of Interventionism* (1929) and *Human Action*, ch. XXXVI.
+
+### TS-5 Credibility of a repeal
+- **If:** a policy is repealed (or not renewed), and actors give a meaningful probability to its return within the payback period of their investments.
+- **Then:** responses that pay back quickly (repairs, pricing, lettings, short contracts) go ahead; responses that pay back only over long periods (major renovation, new construction, entry with sunk costs) are smaller and later than the mirror of the original policy's effects. Where the expected return would exempt existing practitioners (grandfathering), it brings entry forward instead.
+- **Assumes:** the probability of re-imposition over a named period (`expectations`).
+- **Tier** B. **Horizon** medium to long.
+- **Builds on:** LW-7, TS-2.
+
+### TS-6 Stock changes persist after repeal
+- **If:** a policy caused reclassification (RS-5), exit (RS-6, EN-3), or the loss of specific capital, skills or client relationships, and reversing these has a cost (reassembling converted units, rebuilding capacity, retraining, re-establishing a client base).
+- **Then:** a repeal reverses the flow but not the stock already changed, except where the restored return exceeds the cost of reversal. Former sellers return only partly and slowly; firms that closed re-enter as the sunk costs of entry are paid; people displaced stay displaced. Record the expected `persistence` (none, partial, full) on each repeal consequence.
+- **Assumes:** the cost of reversal (`reversal_cost`), including how long people and capital have been away.
+- **Tier** B. **Horizon** medium to long.
+- **Builds on:** LW-1, LW-4, TS-1.
+
+### TS-7 Expected caps reduce stocks held
+- **If:** sellers expect a `price_ceiling` to apply in future periods of scarcity (an anti-gouging rule, a standing threat of price controls).
+- **Then:** `inventory_held` before those periods decreases, because the expected return to storing goods for the scarce period falls. Less is available when scarcity arrives.
+- **Assumes:** storage is costly and the cap is expected to bind (`expectations`, `binding`).
+- **Tier** B. **Visibility** invisible. **Horizon** short to medium.
+- **Builds on:** LW-4, LW-7.
+
+### TS-8 Habit adjustment
+- **If:** a policy changes the cost of a routine, often-repeated action (carrying bags, a commute, a shopping pattern).
+- **Then:** responses are smaller at first and grow over weeks or months as routines change; some short-run effects (fee payments, use of the costlier option) shrink over the same period without any change in prices or capital. Set the horizon of the full response to short-to-medium and describe the path.
+- **Assumes:** the action is repeated often (`other`).
+- **Tier** B. **Horizon** short to medium.
+- **Builds on:** AX-1, LW-1 (learning a new routine has a cost).
+
+### TS-9 Capital per worker and wages
+- **If:** a policy reduces saving or investment across the economy (TX-6), so that `capital_stock_economy` is smaller over time than it would have been.
+- **Then:** `wage_rate` across the economy is lower in the long run than it would have been, because labor works with less capital.
+- **Assumes:** no offsetting inflow of foreign capital (`other`).
+- **Tier** B. **Visibility** invisible. **Horizon** long.
+- **Builds on:** LW-7, LW-4.
+- **Source:** Mises, *Human Action*, ch. XXI.
 
 ---
 
@@ -216,12 +304,12 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Builds on:** LW-2, LW-5.
 
 ### PC-8 Spillover to uncontrolled substitutes
-- **If:** binding `price_ceiling` on part of a market, and an uncontrolled substitute or segment exists (recorded market relation).
-- **Then:** demand from outsiders (PC-3) moves to the uncontrolled segment: `price_substitute` increase, which harms `buyers.substitutes`.
+- **If:** a binding `price_ceiling` or `price_floor` covers part of a market, and an uncontrolled substitute or segment exists (recorded market relation).
+- **Then:** demand moves to the uncontrolled segment (under a ceiling, from outsiders who cannot obtain the good, PC-3; under a floor, from buyers avoiding the higher price): `price_substitute` increase, which harms `buyers.substitutes`.
 - **Assumes:** `substitutability` between the segments.
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
 - **Builds on:** RS-1, PC-3.
-- **Note:** another chain can push `price_substitute` the other way: resources withdrawn from the controlled segment (PC-5) may reappear in the uncontrolled one (for example, new building that is exempt from the cap), adding supply there. Combine the chains using the procedure in workflow step 7.
+- **Note:** another chain can push `price_substitute` the other way: resources withdrawn from the controlled segment (PC-5) may reappear in the uncontrolled one (for example, new building that is exempt from the cap), adding supply there (RS-13). Combine the chains using the procedure in workflow step 7.
 
 ### PC-9 Binding floor: excess supply
 - **If:** `price_floor` on a good, above the price at which quantity demanded would equal quantity supplied.
@@ -244,6 +332,34 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Then:** buyers choose among excess sellers by non-price criteria: `allocation_by_non_price_criteria` increase. Under a minimum wage, employers become more selective (credentials, experience), and the cost to them of discriminating falls.
 - **Tier** A, given the surplus; its form is B. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-6 (applied to the selling side).
+
+### PC-12 A ceiling passes up to the inputs
+- **If:** a binding `price_ceiling` on a good, and the capped sellers buy most of a named input (relation `input_to`).
+- **Then:** `net_price_received` by input suppliers for sales into the capped market decreases, and/or the capped sellers buy less of the input (`quantity_demanded` of the input decreases).
+- **Assumes:** the input has few uncapped outlets in the period considered (`alternative_uses`).
+- **Tier** B. **Visibility** invisible. **Horizon** short to medium.
+- **Builds on:** LW-4, PC-5. The downstream counterpart is RS-14.
+
+### PC-13 Ceilings that allow documented costs
+- **If:** a binding `price_ceiling` allows increases only for documented costs (invoiced freight, wholesale prices), not for costs that leave no paper trail (the owner's labor, risk, the value of the goods elsewhere).
+- **Then:** `number_of_sellers` decreases most among sellers whose main costs are undocumented (occasional and informal suppliers, people bringing goods from outside); `compliance_cost` increases for sellers who use the defense.
+- **Assumes:** the enforcing agency's definition of a documentable cost (`enforcement`).
+- **Tier** B. **Visibility** invisible. **Horizon** short.
+- **Builds on:** LW-4, RS-6.
+
+### PC-14 Rate caps bind hardest on small and short transactions
+- **If:** a binding `price_ceiling` is stated as a rate per unit of value and time (an annual interest rate, a percentage markup), and a material part of the seller's cost is fixed per transaction (processing, collection).
+- **Then:** sellers raise the minimum size and length of the transactions they offer: `transaction_size` increase; `quantity_supplied` of small, short transactions decreases most; `variety` decreases at the small end.
+- **Assumes:** the share of fixed per-transaction costs (`other`).
+- **Tier** B. **Visibility** invisible. **Horizon** short.
+- **Builds on:** LW-4, RS-2.
+
+### PC-15 Regulated cost recovery over a shrinking base
+- **If:** a regulator sets a price to recover largely fixed costs per unit sold (utility rates), and a policy reduces the units sold through the regulated channel.
+- **Then:** at the next rate review, `price_paid` per unit increases for the remaining buyers.
+- **Assumes:** the regulator's rate method (`other`); fixed costs do not fall with sales.
+- **Tier** B. **Visibility** invisible. **Horizon** medium.
+- **Builds on:** LW-1.
 
 ---
 
@@ -288,7 +404,8 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **If:** a tax falls on interest, dividends, capital gains or profits.
 - **Then:** the net return on providing future goods falls; at the margin, saving and `investment_target` decrease, and the capital stock is smaller over time than it would have been.
 - **Assumes:** savers and investors respond to net returns at the margin.
-- **Tier** B. **Visibility** invisible. **Horizon** long.
+- **Unless:** some savers aim at a fixed future sum, for whom a lower net return calls for more saving. Where such savers are a material part of the group, total saving by the group is `ambiguous`; the sign holds firmly only for saving in the taxed forms by savers who have untaxed alternatives. (Pending expert decision, `06_gaps.md` Q14.)
+- **Tier** B. **Visibility** invisible. **Horizon** long. Variables: `saving`, `investment_target`, `capital_stock_economy`; TS-9 carries the effect on wages.
 - **Builds on:** LW-7, LW-4.
 
 ### TX-7 Tariff: domestic buyers pay more, protected sellers gain
@@ -299,8 +416,8 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Builds on:** TX-2, RS-1.
 - **Source:** Hazlitt, *Economics in One Lesson*, chapter on tariffs; Bastiat, "Petition of the Candlemakers".
 
-### TX-8 Tariff: export industries lose
-- **If:** `tariff` reduces imports (TX-7).
+### TX-8 Import restrictions: export industries lose
+- **If:** a `tariff` (TX-7) or an import `quota` (EN-6) reduces imports.
 - **Then:** foreigners earn less of the domestic currency from selling to the country, and so have less to spend on its exports: `quantity_supplied` and `employment` in export industries decrease over time.
 - **Assumes:** trade is not offset by capital flows or other adjustments in the period considered (`other`).
 - **Tier** B. **Visibility** invisible. **Horizon** medium.
@@ -310,8 +427,21 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 ### TX-9 Revenue falls short of a static projection
 - **If:** TX-2 applies (the taxed quantity falls), or TX-4 applies (avoidance shrinks the base).
 - **Then:** `tax_revenue_vs_static_projection` decrease: revenue is less than the rate times the pre-tax base.
+- **Unless:** the tax is ad valorem on a price that the tax itself pushes up (a tax on interest that raises the gross interest rate). Then the remaining base is worth more per unit and the sign is open: combine the chains (workflow step 7).
 - **Tier** B (inherits the assumptions of TX-2 or TX-4). **Visibility** invisible until revenue is reported. **Horizon** short.
 - **Builds on:** TX-2, TX-4.
+
+### TX-10 Base erosion and base shift across taxes
+- **If:** a policy reduces `quantity_traded`, wages, employment or sales that bear other taxes in the jurisdiction (directly, or through RS-4 and RS-9), or a prohibition removes the base of an existing tax.
+- **Then:** `tax_revenue` from those other taxes decreases. Where part of the spending moves to other goods taxed in the jurisdiction, revenue there increases, and the combined sign is `ambiguous` unless the substitutes are untaxed (informal or cross-border purchases), in which case it is a decrease.
+- **Tier** B, inheriting the assumptions of the rules that shrink the base. **Visibility** invisible. **Horizon** short to medium.
+- **Builds on:** TX-1, RS-1.
+
+### TX-11 Tax on nominal returns
+- **If:** a tax falls on nominal interest or gains, and prices are rising.
+- **Then:** the share of the real return taken exceeds the statutory rate, and rises with the rate of inflation; the TX-6 responses are correspondingly stronger.
+- **Tier** A for the arithmetic, B for the responses. **Visibility** invisible. **Horizon** medium to long.
+- **Builds on:** TX-6.
 
 ---
 
@@ -337,10 +467,10 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Tier** B. **Visibility** invisible. **Horizon** medium.
 - **Builds on:** LW-1, LW-4.
 
-### SB-4 Capitalization into specific factors
-- **If:** a lasting subsidy (or a lasting restriction that raises returns, such as EN-2) attaches to an activity that depends on a resource in fixed supply (land, licenses, quota rights).
-- **Then:** `asset_value` of that resource increases; its owners at the time of the announcement capture much of the gain; later entrants pay for it in the asset price.
-- **Assumes:** fixed or slowly expandable supply of the resource; the subsidy is expected to last (`expectations`).
+### SB-4 Capitalization of lasting changes in returns
+- **If:** a lasting policy raises or lowers the expected net return from an asset in fixed or slowly expandable supply (land, buildings, licenses, quota rights, shares in firms with specific capital): a subsidy or a restriction that raises returns (EN-2, EN-6), or a tax, cap or competing entry that lowers them.
+- **Then:** `asset_value` changes in the same direction from the time the change becomes expected. Owners at that time capture the gain or bear the loss; later buyers pay the new price, so they neither gain nor lose from the policy as it stands. When an expected gain later erodes (the subsidy ends, exempt competitors enter, repeal becomes likely), the value falls on whoever holds the asset then, including recent buyers who paid the capitalized price.
+- **Assumes:** fixed or slowly expandable supply of the resource; the change is expected to last, or to end, at a stated probability (`expectations`).
 - **Tier** B. **Visibility** invisible. **Horizon** short (announcement) to medium.
 - **Builds on:** LW-4, LW-7.
 
@@ -363,6 +493,20 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Unless:** the law also fixes the general funding level (a maintenance-of-effort clause) and it is enforced.
 - **Tier** B. **Visibility** invisible. **Horizon** medium.
 - **Builds on:** LW-1, AX-1 (budget-makers act on the whole budget).
+
+### SB-8 In-kind provision of a good the recipient would have bought anyway
+- **If:** the state provides a good, free or below cost, to recipients some of whom would have bought it themselves (or had it paid for, for example by an insurer).
+- **Then:** for those recipients (and their payers), the provision works like a cash transfer: `resources_available_other_uses` increase, and they spend the freed money elsewhere (OC-5 applies there). The quantity of the provided good rises only for recipients who would not have bought it. Providers of the good who would have been paid privately are paid by the state instead.
+- **Assumes:** the share of recipients who would have bought anyway (`other`).
+- **Tier** B. **Visibility** invisible. **Horizon** short.
+- **Builds on:** LW-1, SB-1.
+
+### SB-9 Public stocks and their disposal
+- **If:** the state buys a surplus at a support price (PC-9 Unless clause).
+- **Then:** `inventory_held` by the agency increases while the floor binds. When the stock is released, `quantity_traded` decreases for the private sellers it displaces (donation, school meals) or `price_paid` decreases in the market it is sold into (resale, including abroad, RS-13); if it is destroyed, OC-1 applies to the resources used to produce and store it.
+- **Assumes:** the product's shelf life and the disposal routes allowed (`durability`, `other`).
+- **Tier** B. **Visibility** invisible. **Horizon** medium.
+- **Builds on:** LW-1, RS-13.
 
 ---
 
@@ -403,7 +547,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 
 ### EN-6 Quota
 - **If:** `quota` limiting the quantity produced, sold or imported, below the quantity that would otherwise be traded.
-- **Then:** `quantity_traded` decrease; `price_paid` increase; holders of quota rights gain, and their `asset_value` increases where rights are tradable (SB-4). Buyers lose (OC-4).
+- **Then:** `quantity_traded` decrease; `price_paid` increase; holders of quota rights gain, and their `asset_value` increases where rights are tradable (SB-4). Domestic sellers of the same good (for an import quota): `net_price_received` and `quantity_supplied` increase, as under TX-7. Buyers lose (OC-4). For an import quota, TX-8 applies to export industries; DM-4 governs how the gap between the domestic and world price is split.
 - **Assumes:** `binding`, `enforcement`.
 - **Tier** B. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-3, LW-5.
@@ -417,10 +561,24 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 
 ### EN-8 Prohibition favors concentrated forms
 - **If:** EN-7 applies, and penalties or detection risk depend on bulk or volume rather than on potency.
-- **Then:** sellers shift toward more concentrated, potent forms of the good, which are cheaper to hide per unit of effect: `variety` changes toward high-potency products.
+- **Then:** sellers shift toward more concentrated, potent forms of the good, which are cheaper to hide per unit of effect: `share_concentrated_forms` increase.
 - **Assumes:** penalties scale with volume (`enforcement`).
 - **Tier** B. **Visibility** invisible. **Horizon** medium.
 - **Source:** the "iron law of prohibition" (Cowen, 1986; Thornton, *The Economics of Prohibition*, 1991). Not a classical praxeological text; flagged for expert decision.
+
+### EN-9 Supervised-practice requirement
+- **If:** a license requires a period of practice supervised by existing license holders.
+- **Then:** incumbents' willingness to supervise becomes a bottleneck on entry: `entry_rate` is limited by the number of supervised places, and where places are scarce relative to candidates, `wage_rate` of those in supervised practice decreases, as incumbents capture part of the value of the license through their trainees' pay.
+- **Assumes:** supervision is costly or limited per supervisor (`other`).
+- **Tier** B. **Visibility** invisible. **Horizon** short to medium.
+- **Builds on:** EN-1, LW-6.
+
+### EN-10 Penalty records
+- **If:** a prohibition (EN-7) or licensing rule is enforced by criminal convictions that are recorded and checked by employers.
+- **Then:** for those convicted, `employment` and `earnings` decrease over the long run, compared with the counterfactual.
+- **Assumes:** record-keeping and checking practice (`other`).
+- **Tier** B. **Visibility** invisible. **Horizon** long.
+- **Builds on:** LW-1.
 
 ---
 
@@ -428,11 +586,11 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 
 Dominance rules decide the combined sign when chains conflict (workflow step 7). Each is itself an assumption and needs an estimate.
 
-### DM-1 Tax incidence follows the alternatives
-- **If:** TX-2 applies, and one side of the market has clearly fewer or worse alternatives than the other (buyers with no substitutes; sellers with highly specific, immobile resources).
-- **Then:** that side bears the larger part of the tax: if buyers have fewer alternatives, `price_paid` rises by most of the tax; if sellers do, `net_price_received` falls by most of it.
+### DM-1 Incidence follows the alternatives
+- **If:** TX-2 (a tax) or SB-2 (a subsidy) applies, and one side of the market has clearly fewer or worse alternatives than the other (buyers with no substitutes; sellers with highly specific, immobile resources).
+- **Then:** that side bears the larger part of a tax, or receives the larger part of a subsidy. For a tax: if buyers have fewer alternatives, `price_paid` rises by most of the tax; if sellers do, `net_price_received` falls by most of it. For a subsidy: if buyers have fewer alternatives, `price_paid` falls by most of the subsidy; if sellers do, `net_price_received` rises by most of it. Record the split with `tax_share_borne` or `subsidy_share_received`.
 - **Assumes:** the comparison of alternatives (`substitutability`, `mobility`), with evidence.
-- **Tier** B. **Horizon**: in the long run, seller alternatives grow as capital can be redeployed (TS-1), so incidence shifts toward buyers over time.
+- **Tier** B. **Horizon**: over time, the side that owns redeployable capital gains alternatives as it redeploys (TS-1), so the burden shifts away from that side. In product markets the sellers own the capital, so incidence shifts toward buyers; in factor markets such as labor the buyers (employers) own it, so a payroll tax's incidence shifts toward workers.
 - **Note:** Rothbard argued (*Power and Market*, ch. 4) that a general sales tax cannot be shifted forward to buyers and falls on factor owners. This differs from the standard treatment and applies to general, not selective, taxes. Whether to encode it as an option is question Q3 in `06_gaps.md`.
 
 ### DM-2 Quality under licensing
@@ -440,3 +598,15 @@ Dominance rules decide the combined sign when chains conflict (workflow step 7).
 
 ### DM-3 One-time cost against later gains (ambiguous by design)
 - **No default rule.** When one chain imposes a one-time cost (training, conversion, relocation) and another produces a later stream of gains (a higher price, a lower cost), the combined effect on the actor class's earnings or welfare is `ambiguous`. Comparing them needs magnitudes and a discount rate, which the method does not supply. Report both chains, and state that the actors who chose to bear the cost expected the gains to be worth it (LW-5), while those who did not, did not.
+
+### DM-4 Quota rent follows the scarce side
+- **If:** EN-6 (an import quota) raises the domestic price above the world price.
+- **Then:** if foreign supply comes from many competing sellers, the holders of quota rights capture most of the gap; if it comes from a few sellers who can coordinate, or if exporting countries administer their own shares of the quota, foreign sellers capture part of it.
+- **Assumes:** the structure of foreign supply and of quota administration (`other`).
+- **Tier** B.
+
+### DM-5 Netting a timing shift
+- **If:** SB-6 (or RS-8) produces a surge in one period and a dip in another, and the question is the total over a horizon that includes both.
+- **Then:** the total rises if some purchases in the surge are additional, provided the dip consists only of purchases moved into the surge. If the policy is expected to recur, buyers wait for it, and the dip can include purchases that are merely delayed; then the total is `ambiguous`.
+- **Assumes:** what the dip contains (`expectations`).
+- **Tier** B.

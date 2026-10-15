@@ -118,7 +118,19 @@ Before starting, keep four habits in mind:
 - Three second-order patterns to check every time:
   - **Bundled trips (RS-9).** If buyers now shop somewhere else for the target good, what else do they buy on the same trip?
   - **Informal trade (RS-10).** If some trade goes underground, what happens to search costs, quality and dispute resolution?
-  - **Lock-in (RS-11).** If people now hold a benefit they lose by moving, which other choices (jobs, schools) do they now turn down?
+  - **Lock-in (RS-11).** If people now hold a benefit they lose by moving or by changing status, which other choices (jobs, breaks, schools) do they now turn down?
+- Four more links to check:
+  - **Complements in use (RS-12).** If the stock or use of a good changes, what is used with it?
+  - **Added supply (RS-13).** Does the policy push extra supply into a linked market?
+  - **Inputs (RS-14, PC-12).** If the policy changes the cost of an input, what happens to the price of the output? If it caps the output, what happens to the input?
+  - **Asset values (SB-4).** Does the policy change the lasting return to an asset in fixed supply? Its value moves at announcement.
+- **Policies with several components.** For each pair of components, ask:
+  - Does one close or open an exit route from the other?
+  - Does one change who is bound by the other?
+  - Does one fund the other (SB-7)?
+  - Does one tax or restrict the other's intended output?
+
+  Record the components each interaction chain runs through.
 
 **Stopping rule.** Stop each chain at depth 4 (four links from the policy), and stop any branch earlier if it has reached a diffuse effect on bystanders at depth 3. Note where you stopped. Chains are not stopped because an effect "seems small"; this method cannot measure size.
 
@@ -167,6 +179,7 @@ Before starting, keep four habits in mind:
 - What time and effort do people now spend that does not appear in any price: queues, searches, paperwork, training hours that serve only to qualify (OC-2)?
 - What exchanges no longer happen, and what did each party expect to gain from them (LW-5)?
 - What production does not happen because resources moved elsewhere?
+- Whose work depended on the spending that was diverted (OC-5, Bastiat's tailor)?
 
 **Pitfall.** Counting what the money is spent on as a pure gain. The spending is visible; what the taxpayers would have bought is not. Both must appear.
 
@@ -188,7 +201,8 @@ Before starting, keep four habits in mind:
 **Rules for estimates**
 - Estimates are made now, before any outcome is known, and are not revised after.
 - Each estimate cites its evidence: the policy text, enforcement budgets, the existence of a border nearby, conversion rules, past behavior in comparable places.
-- A consequence is reported if each of its assumptions has p of at least 0.5. Consequences below the cut-off are listed separately as conditional possibilities.
+- A consequence is reported if each of its assumptions has p of at least 0.5. Consequences below the cut-off are listed separately as conditional possibilities. (Whether the cut-off should apply to the joint probability instead is open: `06_gaps.md`, Q9.)
+- Readings of an unclear provision are not assumptions and get no probability. Where a sign depends on the reading, report one sign per reading (`02_ontology.md`, 2.5).
 
 **Output.** Assumption table; each consequence linked to its assumptions.
 
@@ -211,3 +225,13 @@ Before starting, keep four habits in mind:
 - Unsupported claims. Every sentence in the report must trace to a consequence in the list; anything else is labelled as a Tier C suggestion.
 
 **Output.** The report, and the full consequence list in normal form.
+
+---
+
+## Analyzing a repeal
+
+A repeal is analyzed with the same eleven steps, with three differences.
+
+1. **The counterfactual is that the policy stays in force.** Signs are relative to that path, not to the world before the policy.
+2. **Check what does not reverse.** For each consequence of the original policy, ask whether the repeal reverses it, partly reverses it or leaves it in place (TS-6). Converted buildings, closed firms, lost skills and displaced people do not come back just because the rule is gone. Record `persistence` on each consequence, and include a table that checks the repeal against the original analysis, as in WE-022 to WE-024.
+3. **Ask whether the repeal is believed (TS-5).** If actors think the policy may return, quick-payback responses go ahead and long-payback ones are held back. Ask also who must make up any lost revenue (OC-6), and who now has a stake in restoring the policy (RS-7).

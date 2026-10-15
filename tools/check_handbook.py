@@ -7,6 +7,8 @@ With no arguments, checks every file in handbook/05_examples/. For each example 
 - every rule ID cited (RS-1, PC-4, LW-3, ...) is defined in 04_rules.md or 01_foundations.md;
 - every variable in the consequence list is in the controlled list (02_ontology.md, 2.4);
 - no consequence is recorded as a bare "(loss)" instead of a signed variable;
+- every sign is increase, decrease, ambiguous, a group sign (at_least_one_increase or
+  at_least_one_decrease), or one of these per reading ("U1-a: increase; U1-b: ambiguous");
 - every assumption cited in the consequence list is defined in section 10.
 Local gap IDs (GAP-005-1) are reported, not failed, and rule IDs proposed under "Gaps found" are ignored.
 Exits non-zero if any example has errors.
@@ -54,6 +56,18 @@ def table_rows(block):
     return rows[1:]  # drop header
 
 
+SIGNS = {"increase", "decrease", "ambiguous", "at_least_one_increase", "at_least_one_decrease"}
+
+
+def valid_sign(sign):
+    """A plain sign, or one sign per reading of an unclear provision: 'U1-a: increase; U1-b: ambiguous'."""
+    if sign in SIGNS:
+        return True
+    parts = [p.strip() for p in sign.split(";")]
+    return len(parts) > 1 and all(re.fullmatch(r"U\d+-[a-z]: (\S+)", p) and p.split(": ")[1] in SIGNS
+                                  for p in parts)
+
+
 def check(path, rules, variables):
     text = open(path, encoding="utf-8").read()
     errors, notes = [], []
@@ -90,8 +104,8 @@ def check(path, rules, variables):
             names = re.findall(r"[a-z]+(?:_[a-z]+)+|\b[a-z]{4,}\b", variable.split("(")[0])
             if names and not any(n in variables for n in names):
                 notes.append(f"{cid}: variable '{variable}' not in the controlled list")
-            if sign not in ("increase", "decrease", "ambiguous"):
-                errors.append(f"{cid}: sign '{sign}' is not increase/decrease/ambiguous")
+            if not valid_sign(sign):
+                errors.append(f"{cid}: sign '{sign}' is not a valid sign")
             for a in re.findall(r"A-\d+", assumed):
                 if a not in assumptions:
                     errors.append(f"{cid}: assumption {a} not defined in section 10")
