@@ -87,7 +87,7 @@ The 22 later examples raised 60 gaps, and updating them to catalog 0.3 raised fo
 
 Catalog 0.4 adds a layer of twelve core rules (`04a_core_rules.md`), each universal: stated over any actor, option and means, derived from the action axiom, symmetric, and explicit about its empirical premises. Every pattern was then given a derivation from them. Results:
 
-- **78 of 81 patterns derive cleanly** from the core rules plus the premises they already named.
+- **77 of 81 patterns derive cleanly** from the core rules plus the premises they already named.
 - **Four problems were exposed and fixed:**
   - **TX-6** asserted as a priori that saving falls when its return is taxed. CR-4's exception (a change in total means, here savers aiming at a fixed sum) means the direction is ambiguous without a premise. The premise is now stated.
   - **OC-7** counted the gain to an asset's seller without the buyer's matching outlay, breaking CR-8's symmetry. The matching chain is now required. WE-020 already recorded it, as C-25.
