@@ -75,7 +75,7 @@ Not reported: shop owners cutting insurance or storm shutters because they expec
 
 C-9: with the town's emergency contracts first in line, glaziers' hours go to shop windows before home windows, so homeowners wait longer or pay more for whatever capacity is left, or both (SB-3: the subsidized use draws resources from unsubsidized ones). It is a group consequence: glaziers may ration home work by queue rather than by price, so the method does not say which of the two moves.
 
-C-11 and C-12 are Bastiat's tailor (OC-5): the work that the levy-payers' spending would have supported in other shops is not done (C-11), while the work supported by the shop owners' and insurers' freed spending is (C-12). Both are group consequences: sellers may adjust headcount or hours, and the method does not say which. C-9, C-11 and C-12 are at depth 3 and reach diffuse groups of bystanders, so the chains stop there.
+C-11 and C-12 are Hazlitt's tailor (OC-5): the work that the levy-payers' spending would have supported in other shops is not done (C-11), while the work supported by the shop owners' and insurers' freed spending is (C-12). Both are group consequences: sellers may adjust headcount or hours, and the method does not say which. C-9, C-11 and C-12 are at depth 3 and reach diffuse groups of bystanders, so the chains stop there.
 
 Checks. RS-9 (bundled trips): no one changes where they shop, so it does not apply. RS-10 (informal trade): no exchange is forbidden, so none moves underground. RS-11 (lock-in): no benefit is tied to staying in a place.
 
@@ -132,7 +132,7 @@ The shop owners' own households pay the levy too; they are inside C-13. For an o
 **Visible consequences.** Damaged shops get new windows without paying (C-1). Glaziers work more hours (C-2). The town collects the levy (C-3).
 
 **Invisible consequences.**
-- *Every household* has $80 less to spend or save (C-13), and the shops, restaurants and banks where it would have gone lose that business (C-14), and with it some jobs or hours of work (C-11). This is Bastiat's tailor: the glaziers' extra work is seen; the work not done for the levy-payers is not.
+- *Every household* has $80 less to spend or save (C-13), and the shops, restaurants and banks where it would have gone lose that business (C-14), and with it some jobs or hours of work (C-11). This is Hazlitt's tailor: the glaziers' extra work is seen; the work not done for the levy-payers is not.
 - *Shop owners who would have replaced their windows anyway*, and *their insurers*, keep the money they would have spent (C-4, C-5) and spend it elsewhere (C-10), supporting work where they spend it (C-12). For these windows, which are most of them, the program does not create glazing work at all: it changes who pays.
 - *Shop owners who would have replaced promptly* may wait longer for their windows, because only windows not yet replaced on the adoption date qualified (C-6); owners who would have boarded up get theirs sooner. Some claims will be for windows not broken by the storm (C-7).
 - *Homeowners with broken windows* wait longer, pay more, or both, because the glaziers are busy with shop windows first (C-9, C-15).
@@ -169,5 +169,5 @@ The shop owners' own households pay the levy too; they are inside C-13. For an o
 ## Gaps found
 
 - GAP-004-1 (closed in catalog 0.3: SB-8): in-kind provision of a good the recipient would have bought anyway works as a cash transfer. C-4, C-5 and C-10 now Tier B.
-- GAP-004-2 (closed in catalog 0.3: OC-5): diverted spending diverts work (Bastiat's tailor). C-11 and C-12 now Tier B, recorded as group consequences over `employment` and `hours_worked`, with the new assumption A-11; the section 7 employment row is now Tier B.
+- GAP-004-2 (closed in catalog 0.3: OC-5): diverted spending diverts work (Hazlitt's tailor). C-11 and C-12 now Tier B, recorded as group consequences over `employment` and `hours_worked`, with the new assumption A-11; the section 7 employment row is now Tier B.
 - GAP-004-3 (closed in catalog 0.3: `lump_sum_tax` in 2.3): K1 is now recorded as a `lump_sum_tax`, to which TX-2, TX-9 and DM-1 do not apply.

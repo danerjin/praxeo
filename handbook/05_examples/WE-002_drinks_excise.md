@@ -78,7 +78,7 @@ Not reported: evasion through untaxed deliveries (RS-3). The tax is collected fr
 
 C-11 and C-12 are not obvious. If some buyers drive across the line for drinks, many will buy the rest of their groceries there too (RS-9). Lakeport stores lose those sales as well, not just the drinks.
 
-C-22: for families who would have paid for a private place anyway, a free place works like a cash transfer; they spend the money they save on other things (SB-8). C-23 and C-24 are Bastiat's tailor (OC-5): the jobs funded by the revenue are visible; the jobs that would have been supported by what the taxpayers would otherwise have bought are not.
+C-22: for families who would have paid for a private place anyway, a free place works like a cash transfer; they spend the money they save on other things (SB-8). C-23 and C-24 are Hazlitt's tailor (OC-5): the jobs funded by the revenue are visible; the jobs that would have been supported by what the taxpayers would otherwise have bought are not.
 
 C-20: Lakeport already funds some pre-school places from its general budget. Unless the law fixes that funding, the town can reduce it as the earmarked money arrives, so the number of places rises by less than the earmark alone would pay for (SB-7). C-21: the tax base shrinks through C-2 and C-4, so revenue falls short of a projection made at pre-tax sales (TX-9).
 

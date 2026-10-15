@@ -10,7 +10,7 @@ Each pattern is one reusable inference. Format:
 - **Unless:** known exceptions that block the rule.
 - **Tier / visibility / horizon:** proposed defaults. A rule's tier is the tier of its conclusion when its preconditions hold; it is A only if it has no empirical assumptions.
 - **Builds on:** foundations from `01_foundations.md`.
-- **Source:** where the reasoning comes from.
+- **Source:** where the reasoning comes from, in the short forms of `07_sources.md`, which records how each citation was checked.
 - **Derivation:** how the pattern follows from the core rules (`04a_core_rules.md`).
 
 Patterns are deliberately small. A full analysis chains several of them, and each link is reviewed on its own.
@@ -41,7 +41,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 - **Unless:** every relevant term is fixed and enforced.
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
 - **Builds on:** AX-1, LW-5.
-- **Source:** Hazlitt, *Economics in One Lesson*, chapters on price-fixing and rent control.
+- **Source:** HA ch. XXX §2; EIOL 1979 ch. 18 "What Rent Control Does" (maintenance; not in the 1946 edition).
 - **Derivation:** CR-6 (pressure displaced to unregulated terms) with CR-5c.
 
 ### RS-3 Evasion
@@ -159,7 +159,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Then:** `resources_available_other_uses` decrease for that actor class; the goods they would have bought or produced with those resources are not produced, so `quantity_traded` decrease in the markets where they would have spent it. The spending or use is visible; the forgone alternative is not.
 - **Tier** A, given that resources are taken. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-1.
-- **Source:** Bastiat, "That Which Is Seen, and That Which Is Not Seen" (the broken window); Hazlitt, *Economics in One Lesson*, ch. 2 to 4.
+- **Source:** Bastiat 1850, §1 "The Broken Window"; EIOL 1946 ch. 2 to 4.
 - **Derivation:** CR-8a.
 
 ### OC-2 Unpriced time and effort
@@ -181,16 +181,16 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Then:** `quantity_traded` decrease for the prevented exchanges; both parties to each lose the gain they expected from it. Name both sides.
 - **Tier** A (ex ante, by each party's own ranking). **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-5.
-- **Source:** Rothbard, *Power and Market*, ch. 3.
+- **Source:** P&M ch. 2 §2 and ch. 3 §1.
 - **Derivation:** CR-5a.
 
-### OC-5 Diverted spending diverts work (Bastiat's tailor)
+### OC-5 Diverted spending diverts work (Hazlitt's tailor)
 - **If:** a policy changes where an actor class spends (OC-1: money taken and spent by others; SB-8: money freed), so that `quantity_traded` falls in some markets and rises in others.
 - **Then:** `employment` or `hours_worked` decrease in the markets that lose the spending and increase in those that gain it. The jobs the policy creates are visible; the jobs it prevents elsewhere are not.
 - **Assumes:** sellers adjust their labor to their sales (`alternative_uses`).
 - **Tier** B. **Visibility**: the gain is visible, the loss invisible. **Horizon** short to medium.
 - **Builds on:** OC-1, LW-4.
-- **Source:** Bastiat, "That Which Is Seen, and That Which Is Not Seen" (the window, and the tailor who does not get the order); Hazlitt, *Economics in One Lesson*, ch. 2.
+- **Source:** EIOL 1946 ch. 2 (the tailor who does not get the order for a suit) and ch. 4 ("for every public job created ... a private job has been destroyed somewhere else"); Bastiat 1850, §1, where the forgone purchase is shoes or a book.
 - **Derivation:** CR-8b (spending diverted from some sellers is received by others), then CR-9 with LW-10 (demand for labor is derived from demand for what it produces).
 
 ### OC-6 Lost revenue is made up elsewhere
@@ -240,7 +240,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **If:** a policy produces consequences that its supporters regard as problems (shortages, black markets, evasion).
 - **Then:** pressure for further intervention to address them (extending controls to substitutes, rationing schemes, penalties), or for repeal.
 - **Tier** C. **Status:** not derivable (see Derivation); kept out of Tier A and B results until the experts decide what premises would make it a pattern. See `06_gaps.md`, Q4.
-- **Source:** Mises, *A Critique of Interventionism* (1929) and *Human Action*, ch. XXXVI.
+- **Source:** Mises, *A Critique of Interventionism* (1929), Part I; HA ch. XXX §2 (a price ceiling must be extended to other goods) and ch. XXXVI.
 - **Derivation:** Not derivable from the core rules. It needs a premise about what a policy's supporters believe about its effects and how political decisions respond, which is neither a core rule nor a fact about the policy record.
 
 ### TS-5 Credibility of a repeal
@@ -281,7 +281,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Assumes:** no offsetting inflow of foreign capital (`other`).
 - **Tier** B. **Visibility** invisible. **Horizon** long.
 - **Builds on:** LW-7, LW-4.
-- **Source:** Mises, *Human Action*, ch. XXI.
+- **Source:** HA ch. XXI §6 "Wages and Subsistence".
 - **Derivation:** CR-7 (labor's price tends to its discounted marginal value product) with LW-9 and LW-10 (labor's product depends on the capital it works with).
 
 ---
@@ -295,7 +295,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Unless:** the ceiling is above the market price (not binding); price is a quality signal (LW-3 exception).
 - **Tier** B. **Visibility** invisible (the shortage is often noticed, but its cause is not attributed to the policy). **Horizon** short.
 - **Builds on:** LW-3, LW-4.
-- **Source:** Mises, *Human Action*, ch. XXX; Hazlitt, *Economics in One Lesson*, chapter on government price-fixing.
+- **Source:** HA ch. XXX §2; P&M ch. 3 §1; EIOL 1946 ch. 17.
 - **Derivation:** CR-6 (a price held below the clearing level).
 
 ### PC-2 Shortage is rationed by other means
@@ -327,7 +327,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Unless:** the resources are completely specific and have no other use, in which case quantity supplied from the existing stock holds until it wears out (TS-1 still applies to new investment).
 - **Tier** B. **Visibility** invisible. **Horizon** medium to long.
 - **Builds on:** LW-4, RS-6, TS-1.
-- **Source:** Hazlitt, *Economics in One Lesson*, chapter on rent control.
+- **Source:** EIOL 1979 ch. 18 "What Rent Control Does" (not in the 1946 edition).
 - **Derivation:** CR-7 (owners move resources to uses whose yield is not capped), timed by CR-10b.
 
 ### PC-6 Black and grey markets under a ceiling
@@ -370,7 +370,8 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Assumes:** `binding` for an identifiable group; `enforcement`; employers can adjust hours, staffing, automation or non-wage terms.
 - **Tier** B. **Visibility**: the wage rise is visible; lost hires and cut hours are invisible. **Horizon** short to medium.
 - **Builds on:** PC-9, LW-4.
-- **Note:** the empirical size of the employment effect is contested (Card and Krueger, 1994, and the literature since). Earnings of the low-wage group as a whole combine opposite chains and are `ambiguous` unless a dominance rule applies. This is a designated contested case for evaluation.
+- **Source:** HA ch. XXX §3 "Minimum Wage Rates"; EIOL 1946 ch. 18 "Minimum Wage Laws" (ch. 19 in 1979).
+- **Note:** the empirical size of the employment effect is contested (Card and Krueger, *American Economic Review* 84(4), 1994, and the literature since). Earnings of the low-wage group as a whole combine opposite chains and are `ambiguous` unless a dominance rule applies. This is a designated contested case for evaluation.
 - **Derivation:** CR-6 applied to labor (a price held above the level some workers can command), with CR-4 for employers' margins: hiring, hours, non-wage terms.
 
 ### PC-11 Non-price selection under a floor
@@ -421,7 +422,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Then:** `resources_available_other_uses` decrease for the actor classes that bear it (see TX-2 for who bears it); `tax_revenue` increase. Apply OC-1 to what those actors would have done with the money, and analyze the spending of the revenue as a separate component.
 - **Tier** A, given collection. **Visibility**: the payment is visible; the forgone uses are invisible. **Horizon** short.
 - **Builds on:** LW-1.
-- **Source:** Rothbard, *Power and Market*, ch. 4.
+- **Source:** P&M ch. 4.
 - **Derivation:** CR-8a and CR-8b.
 
 ### TX-2 Per-unit tax: wedge and smaller market
@@ -471,7 +472,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Assumes:** domestic substitutes exist; the tariff is not absorbed entirely by foreign sellers.
 - **Tier** B. **Visibility**: gains to protected producers are visible; higher prices to buyers and input users are invisible. **Horizon** short to medium.
 - **Builds on:** TX-2, RS-1.
-- **Source:** Hazlitt, *Economics in One Lesson*, chapter on tariffs; Bastiat, "Petition of the Candlemakers".
+- **Source:** EIOL 1946 ch. 11 "Who's 'Protected' by Tariffs?"; Bastiat, *Economic Sophisms*, First Series (1845), ch. VII (the candlemakers' petition).
 - **Derivation:** CR-5c and CR-7 for the importing side; CR-9 for domestic sellers of the same good (their buyers' alternative has become dearer) and for users of the good as an input.
 
 ### TX-8 Import restrictions: export industries lose
@@ -480,7 +481,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Assumes:** trade is not offset by capital flows or other adjustments in the period considered (`other`).
 - **Tier** B. **Visibility** invisible. **Horizon** medium.
 - **Builds on:** LW-5, OC-4.
-- **Source:** Hazlitt, *Economics in One Lesson*, chapter on tariffs.
+- **Source:** EIOL 1946 ch. 11 and ch. 12 "The Drive for Exports" ("Without imports we can have no exports, for foreigners will have no funds with which to buy our goods").
 - **Derivation:** CR-8b (foreigners' receipts from selling to the country are the means with which they buy its exports or assets) and CR-9.
 
 ### TX-9 Revenue falls short of a static projection
@@ -590,7 +591,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Unless:** existing sellers are exempt (grandfathered), which delays the effect on supply (TS: horizon medium).
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
 - **Builds on:** LW-1, LW-4, LW-5.
-- **Source:** Rothbard, *Power and Market*, ch. 3 (grants of monopolistic privilege).
+- **Source:** P&M ch. 3 §3 "Product Control: Grant of Monopolistic Privilege".
 - **Derivation:** CR-1 (the option of selling is removed for those without a license, and a cost is attached to obtaining one), CR-4 for would-be sellers, CR-6 in the market.
 
 ### EN-2 Licensed incumbents gain
@@ -642,7 +643,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Then:** sellers shift toward more concentrated, potent forms of the good, which are cheaper to hide per unit of effect: `share_concentrated_forms` increase.
 - **Assumes:** penalties scale with volume (`enforcement`).
 - **Tier** B. **Visibility** invisible. **Horizon** medium.
-- **Source:** the "iron law of prohibition" (Cowen, 1986; Thornton, *The Economics of Prohibition*, 1991). Not a classical praxeological text; flagged for expert decision.
+- **Source:** the "iron law of prohibition" (Richard Cowan, "How the Narcs Created Crack", *National Review*, 1986; Mark Thornton, *The Economics of Prohibition*, 1991). Not a classical praxeological text; flagged for expert decision (Q7).
 - **Derivation:** CR-7 with CR-4: where penalties scale with volume, sellers minimize volume per unit of effect, so the concentrated forms yield more net of expected penalty.
 
 ### EN-9 Supervised-practice requirement
@@ -672,7 +673,7 @@ Dominance rules decide the combined sign when chains conflict (workflow step 7).
 - **Then:** that side bears the larger part of a tax, or receives the larger part of a subsidy. For a tax: if buyers have fewer alternatives, `price_paid` rises by most of the tax; if sellers do, `net_price_received` falls by most of it. For a subsidy: if buyers have fewer alternatives, `price_paid` falls by most of the subsidy; if sellers do, `net_price_received` rises by most of it. Record the split with `tax_share_borne` or `subsidy_share_received`.
 - **Assumes:** the comparison of alternatives (`substitutability`, `mobility`), with evidence.
 - **Tier** B. **Horizon**: over time, the side that owns redeployable capital gains alternatives as it redeploys (TS-1), so the burden shifts away from that side. In product markets the sellers own the capital, so incidence shifts toward buyers; in factor markets such as labor the buyers (employers) own it, so a payroll tax's incidence shifts toward workers.
-- **Note:** Rothbard argued (*Power and Market*, ch. 4) that a general sales tax cannot be shifted forward to buyers and falls on factor owners. This differs from the standard treatment and applies to general, not selective, taxes. Whether to encode it as an option is question Q3 in `06_gaps.md`.
+- **Source and dispute:** the rule as stated is the standard treatment of incidence, not Rothbard's. Rothbard's "first law of incidence" (P&M ch. 4 §3A) holds that no tax can be shifted forward: a general sales tax is in effect a tax on the incomes of original factors, and where a price later rises, that comes about through reduced supply, which he classes as an effect of the tax rather than shifting. The two accounts agree that the burden falls first on those who cannot escape it, and that prices rise only as supply contracts; they differ in what they call shifting, and in Rothbard's case for general taxes. Whether to encode Rothbard's account as an option is Q3 in `06_gaps.md`.
 - **Derivation:** CR-7b: the side whose means can move away bears less; the burden or benefit settles on the side with fewer alternatives.
 
 ### DM-2 Quality under licensing

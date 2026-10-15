@@ -2,7 +2,7 @@
 
 How to analyze the consequences of a policy praxeologically, written so that a newcomer can follow it and a machine can later encode it. This is the Phase 1 deliverable of the project plan (`../Praxeology_AI_Project_Plan_v3.md`, Section 4).
 
-**Status:** draft 0.4 (12 core rules; catalog 0.4, 81 derived patterns), with 25 worked examples, written before any expert review. Gaps found in the worked examples have been closed or turned into questions for the experts; see `06_gaps.md`. Every rule, tier decision and source pointer is a proposal. Source pointers were written from memory and must be checked against the texts before they are relied on.
+**Status:** draft 0.4 (12 core rules; catalog 0.4, 81 derived patterns), with 25 worked examples, written before any expert review. Gaps found in the worked examples have been closed or turned into questions for the experts; see `06_gaps.md`. Every rule, tier decision and source pointer is a proposal. Citations have been checked once against the texts; `07_sources.md` records how, and which still need a direct check.
 
 ## How to use it
 
@@ -19,6 +19,7 @@ To analyze a policy, work through `03_workflow.md` step by step, using `template
 | `04_rules.md` | Rule catalog 0.4, patterns: each with its derivation from the core rules. Patterns cover generic responses, opportunity-cost and time rules, and rules for the three version 1 families (price controls; taxes, tariffs and subsidies; licensing, quotas and prohibition), plus dominance rules. |
 | `05_examples/` | 25 fully worked analyses, from the broken window to a multi-part housing bill, including three repeals that check the original analyses in reverse. Listed in `06_gaps.md`, 6.4. |
 | `06_gaps.md` | Gaps the examples found and how each was resolved, questions that need an expert decision, and next steps. |
+| `07_sources.md` | Editions, short forms and the verification status of every citation. |
 | `templates/analysis_template.md` | Blank analysis form following the workflow. |
 | `../tools/check_handbook.py` | Consistency checker for the worked examples (sections, rule IDs, variables, signs, assumptions). |
 

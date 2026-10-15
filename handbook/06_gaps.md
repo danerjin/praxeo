@@ -29,7 +29,7 @@ The 22 later examples raised 60 gaps, and updating them to catalog 0.3 raised fo
 | Gaps | What was missing | Resolution |
 |---|---|---|
 | 004-1 | State provision of a good recipients would have bought anyway | SB-8 |
-| 004-2 | Diverted spending diverts work (Bastiat's tailor) | OC-5 |
+| 004-2 | Diverted spending diverts work (Hazlitt's tailor) | OC-5 |
 | 004-3 | No lump-sum tax instrument | `lump_sum_tax` in 2.3 |
 | 005-1 | A ceiling passes up to inputs | PC-12 |
 | 005-2 | Full cost per unit to the buyer | `full_cost_per_unit` |
@@ -97,13 +97,25 @@ Catalog 0.4 adds a layer of twelve core rules (`04a_core_rules.md`), each univer
 - **Three laws are results, not premises:** LW-3 (law of demand) follows from CR-4, LW-4 from CR-7, and LW-6 from CR-6. They keep their IDs.
 - **The workflow changes.** When no pattern fits, derive from the core rules. Mark a GAP only when no core rule applies.
 
+## 6.2b Source check (catalog 0.4)
+
+Every citation was checked against the texts. The editions, the method and the findings are in `07_sources.md`. The main corrections:
+- Cost is defined in HA ch. IV, not ch. VII.
+- The mutual benefit of exchange is in P&M ch. 2, not ch. 1.
+- The tailor is Hazlitt's; Bastiat's own example is shoes or a book.
+- The iron law of prohibition is Richard Cowan's.
+- The rent control chapter is only in the 1979 edition of Hazlitt.
+- DM-1's incidence rule is the standard treatment, not Rothbard's (Q3).
+
+Most citations could be confirmed only from search extracts of the online texts, not by opening them. Opening them directly is still to be done.
+
 ## 6.3 Questions for the experts
 
 **Q1. Tier A decisions.** Which foundations and rules may produce Tier A conclusions? The draft proposes A for AX-1, LW-1, LW-2, LW-5, LW-6, LW-7, the OC rules, PC-2, PC-3 and PC-11 (given their preconditions), and A for LW-3 by decision, with the price-as-quality-signal and Giffen exceptions recorded. Is that right?
 
 **Q2. Contested empirical rules.** PC-10 (minimum wage) is a standard praxeological conclusion whose empirical support is disputed. Should it stay as written, with the dispute recorded, or be weakened (for example, to "employment, hours or non-wage compensation decrease, in some combination")? The draft already uses the weaker form.
 
-**Q3. Rothbard on the general sales tax.** Rothbard argued that a general sales tax is not shifted forward to buyers. Should this be encoded as a selectable option alongside DM-1, as the plan's open decision on disagreements within the tradition suggests?
+**Q3. Rothbard on incidence.** DM-1, and the incidence clause of CR-7b, state the standard treatment: the burden of a tax falls on the side with fewer alternatives. Rothbard's "first law of incidence" (P&M ch. 4 §3A) holds that no tax can be shifted forward. On his account a general sales tax is in effect a tax on the incomes of original factors, and any later price rise comes from reduced supply, which he does not call shifting. The two accounts agree on the sequence of events but differ in what they call shifting, and for general taxes. Should the Handbook adopt Rothbard's terms, keep the standard ones with the dispute noted (the current draft), or encode both as selectable options?
 
 **Q4. The intervention spiral.** Should TS-4 (Mises: interventions produce problems that lead to further intervention or repeal) be a rule? If so, which variables does it predict, and how could it be checked?
 
@@ -111,7 +123,7 @@ Catalog 0.4 adds a layer of twelve core rules (`04a_core_rules.md`), each univer
 
 **Q6. Depth limit.** Is a limit of four links, with pruning of diffuse bystander effects after three, close to how experts actually stop? (WE-001 needed depth 3 at most.)
 
-**Q7. Non-classical sources.** EN-8 (prohibition favors concentrated forms) comes from Cowen and Thornton rather than Mises or Rothbard. What is the standard for admitting a rule that is consistent with praxeology but not from its canonical texts?
+**Q7. Non-classical sources.** EN-8 (prohibition favors concentrated forms) comes from Cowan and Thornton rather than Mises or Rothbard. What is the standard for admitting a rule that is consistent with praxeology but not from its canonical texts?
 
 **Q8. Visibility test.** Is "would this appear in a news story about the policy's passage?" a good enough test for visible versus invisible? WE-002's C-2 (fewer drinks sold) is both intended and visible; C-13 (who bears the tax) is neither.
 
@@ -140,7 +152,7 @@ Catalog 0.4 adds a layer of twelve core rules (`04a_core_rules.md`), each univer
 The Handbook now has 25 worked examples, the number the plan set for Phase 1, and catalog 0.3 closes the gaps they found. What remains before the Phase 1 exit test:
 
 1. **Expert review.** Go through Q1 to Q15, then review each rule and worked example step by step. Log findings by severity, as in Phase 3. The rules added in 0.3 need the same scrutiny as the originals, since they came from the examples rather than from the canonical texts.
-2. **Check the sources.** Every source pointer was written from memory. Check each against the texts, and add sources for the 0.3 rules, most of which have none yet.
+2. **Finish the source check.** Every citation has been checked once (`07_sources.md`), mostly from search extracts. Open each text directly, confirm the quotations, and add sources for the patterns added in 0.3, most of which cite only the core rules they derive from.
 3. **Record expert walkthroughs.** Ask two or three praxeologists to analyze a fresh policy aloud, and compare their moves with the workflow. Every move they make that is not in the workflow or catalog becomes a gap.
 4. **Run the Phase 1 exit test.** Give someone new the Handbook and three unseen policies, and have experts judge their analyses.
 5. **Start the calibration question bank** from the worked examples: every assumption and every workflow step becomes one or more typed questions with an expert-labelled answer.

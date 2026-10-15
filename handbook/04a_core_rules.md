@@ -1,5 +1,7 @@
 # 4a. Core rules (the calculus)
 
+Citations use the short forms in `07_sources.md`, which records how each was checked.
+
 The rule catalog has two layers.
 
 - **Core rules** (this file, `CR-1` to `CR-12`) are universal. They are stated over any actor, any option, any means and any time, with no reference to a particular instrument, good or market. Each is derived from the action axiom and the laws in `01_foundations.md`, and each states exactly which part of its conclusion is a priori and which part needs an empirical premise.
@@ -41,7 +43,7 @@ A policy does not change anyone's ranking of ends, except through what it tells 
 
 **Premises.** Whether a stated rule is actually enforced is empirical (`enforcement`). An unenforced prohibition does not remove an option; it attaches a risk to it (operation 3).
 
-**Source.** Mises, *Human Action*, ch. I and ch. XXVII; Rothbard, *Power and Market*, ch. 2 (pending verification).
+**Source.** HA ch. I §1; HA ch. XXVII; P&M ch. 2 §1.
 
 ### CR-2 Choice
 
@@ -51,7 +53,7 @@ A policy does not change anyone's ranking of ends, except through what it tells 
 
 **Premises.** None for the statement. What actors believe about their options is a fact about them, and may be wrong (CR-11).
 
-**Source.** Mises, *Human Action*, ch. I and IV; Rothbard, "Toward a Reconstruction of Utility and Welfare Economics" (1956) (pending verification).
+**Source.** HA ch. I §1 and ch. VII §1 ("action sorts and grades"); Rothbard, "Toward a Reconstruction of Utility and Welfare Economics" (1956), on demonstrated preference.
 
 ### CR-3 Cost and loss
 
@@ -64,7 +66,7 @@ A policy does not change anyone's ranking of ends, except through what it tells 
 
 **Premises.** None. (Statement (b) is about the actor's ranking at the time of choice; it says nothing about how things turn out.)
 
-**Source.** Mises, *Human Action*, ch. IV and VII; Rothbard, *Power and Market*, ch. 2 (pending verification).
+**Source.** HA ch. IV §4 (cost as the value of the satisfaction forgone); P&M ch. 2 §2.
 
 ### CR-4 Response at the margin
 
@@ -81,7 +83,7 @@ The mirror case (x made better) reverses every direction.
 
 **Use.** All the generic responses are this one rule applied to different pairs of options: substitution (x: the good, y: a substitute), evasion (x: comply, y: violate), relocation (x: here, y: there), reclassification (x: the covered form, y: the uncovered form), exit (x: this use, y: another use), lobbying (x: accept, y: lobby), timing (x: now, y: later), entry (x: stay out, y: enter).
 
-**Source.** Mises, *Human Action*, ch. VII; Rothbard, *Man, Economy, and State*, ch. 1 and 2 (pending verification).
+**Source.** HA ch. VII §1; MES ch. 1 §5, ch. 2 §5 and ch. 4.
 
 ### CR-5 Exchange
 
@@ -94,7 +96,7 @@ The mirror case (x made better) reverses every direction.
 
 **Premises.** None for (a) to (c). Whether a given exchange would have taken place without the policy is the empirical question.
 
-**Source.** Rothbard, *Man, Economy, and State*, ch. 2; *Power and Market*, ch. 1 and 2; Mises, *Human Action*, ch. XV (pending verification).
+**Source.** MES ch. 2 §4 ("a double inequality of values"); HA ch. XVI §1; P&M ch. 2 §2.
 
 ### CR-6 Price formation and displaced pressure
 
@@ -113,7 +115,7 @@ The full price, meaning the money price plus everything else given up, moves tow
 
 **Derivation.** CR-2, CR-4, CR-5.
 
-**Source.** Mises, *Human Action*, ch. XVI and XXX; Rothbard, *Man, Economy, and State*, ch. 2; *Power and Market*, ch. 3 (pending verification).
+**Source.** HA ch. XVI §1 and ch. XXX §2; MES ch. 2 §5; P&M ch. 3 §1; EIOL 1946 ch. 15 and 17.
 
 ### CR-7 Equalization across uses
 
@@ -128,7 +130,7 @@ The full price, meaning the money price plus everything else given up, moves tow
 
 **Derivation.** CR-2 and CR-4 applied to every owner of a movable means; CR-10 for (c).
 
-**Source.** Mises, *Human Action*, ch. XIV and XV (the evenly rotating economy; the tendency to eliminate profit and loss); Rothbard, *Man, Economy, and State*, ch. 6 and 7 (equalization of returns; capitalization); Rothbard, *Power and Market*, ch. 4 (shifting and incidence) (pending verification).
+**Source.** HA ch. XIV §5 (the evenly rotating economy) and ch. XV §4; MES ch. 6 §1 and ch. 8 §1 (equalization of returns); MES ch. 7 §5 "Capitalization and Rent" (clause c); EIOL 1946 ch. 15. On incidence (clause b), see the dispute recorded under DM-1: the formulation here is the standard one, not Rothbard's.
 
 ### CR-8 Conservation of means
 
@@ -144,7 +146,7 @@ The full price, meaning the money price plus everything else given up, moves tow
 
 **Symmetry.** Applies to taxes and subsidies, imposition and repeal, public and private budgets. A rule that counts a gain to the recipient of a transfer, or to the seller of an asset that has risen in value, must count the matching loss to the payer or buyer.
 
-**Source.** Bastiat, "That Which Is Seen, and That Which Is Not Seen" (1850); Hazlitt, *Economics in One Lesson*, ch. 2 and 4; Rothbard, *Power and Market*, ch. 5 (pending verification).
+**Source.** Bastiat 1850, §1; EIOL 1946 ch. 2 and 4; P&M ch. 5.
 
 ### CR-9 Propagation
 
@@ -156,7 +158,7 @@ The value to anyone of a means depends on the ends it serves and on what it is u
 
 **Limits.** Propagation follows exchange relations only, and stops at the depth limit in workflow step 6. Every link must name the relation it uses.
 
-**Source.** Menger, *Principles of Economics*, ch. I to III; Mises, *Human Action*, ch. XVI; Rothbard, *Man, Economy, and State*, ch. 7 (pending verification).
+**Source.** Menger, *Principles of Economics*, ch. I and III; HA ch. XVI §3; MES ch. 7 §1.
 
 ### CR-10 Time
 
@@ -169,7 +171,7 @@ The value to anyone of a means depends on the ends it serves and on what it is u
 
 **Derivation.** AX-1 (action aims at a future state), LW-7, CR-4.
 
-**Source.** Mises, *Human Action*, ch. V and XVIII; Rothbard, *Man, Economy, and State*, ch. 6 (pending verification).
+**Source.** HA ch. XVIII §2, §5 and §8; MES ch. 6 §3 and ch. 7 §5.
 
 ### CR-11 Knowledge
 
@@ -180,7 +182,7 @@ The value to anyone of a means depends on the ends it serves and on what it is u
 
 **Derivation.** AX-1 (action rests on the actor's understanding of the situation), CR-1, LW-8.
 
-**Source.** Hayek, "The Use of Knowledge in Society" (1945); Mises, *Human Action*, ch. XXVI; Mises, "Economic Calculation in the Socialist Commonwealth" (1920) (pending verification).
+**Source.** Hayek, "The Use of Knowledge in Society" (1945); Mises, "Economic Calculation in the Socialist Commonwealth" (1920); HA ch. XXVI.
 
 ### CR-12 Composition
 

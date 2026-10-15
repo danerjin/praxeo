@@ -2,6 +2,8 @@
 
 Every rule in the catalog rests on the action axiom and a small set of laws derived from it. This file lists them, says how each is used in policy analysis, and proposes a tier. The tier decisions are for the experts to confirm (see `06_gaps.md`, question Q1).
 
+Citations use the short forms defined in `07_sources.md` (HA, MES, P&M, EIOL), which also records how each was checked.
+
 The guiding question, from Bastiat and Hazlitt: **look at the effects of the policy on all groups, not just one, and over the long run, not just the short run.**
 
 ## AX-1 The action axiom
@@ -10,7 +12,7 @@ The guiding question, from Bastiat and Hazlitt: **look at the effects of the pol
 
 **What follows for analysis.** A policy does not act; people do. Every consequence must be traced to choices made by members of some actor class who are pursuing their own ends with the means they have. A claim that cannot be stated as "these people, facing this changed situation, will choose differently in this way" is not yet an analysis.
 
-**Tier:** A. **Source:** Mises, *Human Action*, Part One, ch. I.
+**Tier:** A. **Source:** HA ch. I §1 "Purposeful Action and Animal Reaction".
 
 ## LW-1 Scarcity and opportunity cost
 
@@ -18,7 +20,7 @@ The guiding question, from Bastiat and Hazlitt: **look at the effects of the pol
 
 **Use.** Every resource a policy directs to a use (spending, compliance, enforcement, queuing, a forced purchase) was taken from some other use. The other use is the "unseen" consequence. Rules OC-1 to OC-3 apply this law.
 
-**Tier:** A. **Source:** Mises, *Human Action*, ch. IV and VII; Bastiat, "That Which Is Seen, and That Which Is Not Seen".
+**Tier:** A. **Source:** HA ch. IV §4 "Action as an Exchange"; Bastiat 1850, §1 "The Broken Window".
 
 ## LW-2 Marginal valuation
 
@@ -26,7 +28,7 @@ The guiding question, from Bastiat and Hazlitt: **look at the effects of the pol
 
 **Use.** Responses to policy happen at the margin: those actors for whom the policy changes the ranking of their best and next-best options change their behavior; others do not. Ask who is "at the margin" for each change.
 
-**Tier:** A. **Source:** Mises, *Human Action*, ch. VII; Rothbard, *Man, Economy, and State*, ch. 1.
+**Tier:** A. **Source:** HA ch. VII §1 "The Law of Marginal Utility"; MES ch. 1 §5.
 
 ## LW-3 Law of demand
 
@@ -34,7 +36,7 @@ The guiding question, from Bastiat and Hazlitt: **look at the effects of the pol
 
 **Use.** Price ceilings, subsidies to buyers and taxes on sellers all work through this law.
 
-**Tier:** A by proposed decision, with a recorded exception: goods whose higher price signals quality, and the theoretical Giffen case, can break it. Rules that rely on LW-3 must state in their exceptions when a good's price is used as a quality signal. **Source:** Rothbard, *Man, Economy, and State*, ch. 2.
+**Tier:** A by proposed decision, with a recorded exception: goods whose higher price signals quality, and the theoretical Giffen case, can break it. Rules that rely on LW-3 must state in their exceptions when a good's price is used as a quality signal. **Source:** MES ch. 2 §5 and ch. 4.
 
 ## LW-4 Resources move toward higher expected returns
 
@@ -42,7 +44,7 @@ The guiding question, from Bastiat and Hazlitt: **look at the effects of the pol
 
 **Use.** The basis of every supply response: withdrawal of rental units, exit from a taxed industry, entry into a subsidized one, choice of occupation.
 
-**Tier:** the direction is A (from AX-1 and LW-2); whether alternative uses exist, and how fast resources can move, are empirical. Rules that use LW-4 are therefore Tier B and carry an assumption such as `alternative_uses_exist`. **Source:** Mises, *Human Action*, ch. XV (the market process) and ch. XVIII (specific factors and capital).
+**Tier:** the direction is A (from AX-1 and LW-2); whether alternative uses exist, and how fast resources can move, are empirical. Rules that use LW-4 are therefore Tier B and carry an assumption such as `alternative_uses_exist`. **Source:** HA ch. XV §4 "The Sovereignty of the Consumers"; HA ch. XVIII §5 "The Convertibility of Capital Goods" and §8 "The Mobility of the Investor".
 
 ## LW-5 Voluntary exchange is expected to benefit both parties
 
@@ -50,7 +52,7 @@ The guiding question, from Bastiat and Hazlitt: **look at the effects of the pol
 
 **Use.** When a policy prohibits an exchange that would otherwise have happened (triangular intervention), at least one party, and usually both, loses an expected gain. When a policy forces an exchange that would not otherwise have happened (binary intervention), at least one party loses compared with what they would have chosen. This is how the analysis identifies losers who are never counted.
 
-**Tier:** A (ex ante, in terms of each party's own ranking). It says nothing about whether the parties are right afterwards. **Source:** Rothbard, *Power and Market*, ch. 1 and ch. 3; Rothbard, "Toward a Reconstruction of Utility and Welfare Economics" (1956).
+**Tier:** A (ex ante, in terms of each party's own ranking). It says nothing about whether the parties are right afterwards. **Source:** MES ch. 2 §4 "Terms of Exchange"; P&M ch. 2 §2 "Direct Effects of Intervention on Utility"; Rothbard, "Toward a Reconstruction of Utility and Welfare Economics" (1956).
 
 ## LW-6 Non-price rationing
 
@@ -58,7 +60,7 @@ The guiding question, from Bastiat and Hazlitt: **look at the effects of the pol
 
 **Use.** Price ceilings do not abolish rationing; they change who gets the good and what it costs them in non-money terms. The form rationing takes is empirical; the fact that some form appears is not.
 
-**Tier:** A, given a shortage. **Source:** Hazlitt, *Economics in One Lesson*, chapter on government price-fixing; Mises, *Human Action*, ch. XXX.
+**Tier:** A, given a shortage. **Source:** EIOL 1946 ch. 17 "Government Price-Fixing"; HA ch. XXX §2.
 
 ## LW-7 Time preference
 
@@ -66,7 +68,7 @@ The guiding question, from Bastiat and Hazlitt: **look at the effects of the pol
 
 **Use.** Policies that change the return on saving or investment change how much future-oriented production people undertake. Policies with delayed costs and immediate benefits are attractive to actors with short horizons (including politicians facing elections).
 
-**Tier:** A. **Source:** Mises, *Human Action*, ch. XVIII; Rothbard, *Man, Economy, and State*, ch. 6.
+**Tier:** A. **Source:** HA ch. XVIII §2; MES ch. 6 §3.
 
 ## LW-8 Knowledge and calculation
 
@@ -74,7 +76,7 @@ The guiding question, from Bastiat and Hazlitt: **look at the effects of the pol
 
 **Use.** A controlled price misallocates in two ways: between buyers (the good may not go to those who value it most, as ranked by their own willingness to give up other goods) and over time (signals to invest or conserve are suppressed). Apply as a qualitative warning attached to PC rules; it does not by itself predict a specific variable.
 
-**Tier:** A as a statement about information; specific consequences derived from it are B. **Source:** Hayek, "The Use of Knowledge in Society" (1945); Mises, "Economic Calculation in the Socialist Commonwealth" (1920).
+**Tier:** A as a statement about information; specific consequences derived from it are B. **Source:** Hayek, "The Use of Knowledge in Society", *American Economic Review* 35(4), 1945; Mises, "Economic Calculation in the Socialist Commonwealth" (1920).
 
 ## LW-9 The law of returns
 
@@ -82,7 +84,7 @@ The guiding question, from Bastiat and Hazlitt: **look at the effects of the pol
 
 **Use.** Why the value of one factor depends on how much of its complements is available: labor works with capital, a car with fuel and repairs. Used by CR-9 and by patterns on wages and capital (TS-9).
 
-**Tier:** A. **Source:** Mises, *Human Action*, ch. VII (pending verification).
+**Tier:** A. **Source:** HA ch. VII §2 "The Law of Returns"; MES ch. 1 §6.
 
 ## LW-10 Imputation
 
@@ -90,7 +92,7 @@ The guiding question, from Bastiat and Hazlitt: **look at the effects of the pol
 
 **Use.** Why changes travel from one market to the markets for its inputs and complements (CR-9): demand for labor follows demand for what labor produces; demand for repairs follows the number of cars in use.
 
-**Tier:** A. **Source:** Menger, *Principles of Economics*, ch. I to III; Rothbard, *Man, Economy, and State*, ch. 7 (pending verification).
+**Tier:** A. **Source:** Menger, *Principles of Economics*, ch. I and III; HA ch. XVI §3 "The Prices of the Goods of Higher Orders"; MES ch. 7 §1.
 
 ## Laws that are results of the core rules
 
@@ -108,4 +110,4 @@ Rothbard classifies intervention by the relationship it coerces. The type tells 
 
 Many real policies combine types. Classify each component separately (workflow step 2).
 
-**Source:** Rothbard, *Power and Market*, ch. 2.
+**Source:** P&M ch. 2 §1 "Types of Intervention".

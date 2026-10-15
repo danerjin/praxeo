@@ -183,7 +183,7 @@ Before starting, keep four habits in mind:
 - What time and effort do people now spend that does not appear in any price: queues, searches, paperwork, training hours that serve only to qualify (OC-2)?
 - What exchanges no longer happen, and what did each party expect to gain from them (LW-5)?
 - What production does not happen because resources moved elsewhere?
-- Whose work depended on the spending that was diverted (OC-5, Bastiat's tailor)?
+- Whose work depended on the spending that was diverted (OC-5, Hazlitt's tailor)?
 
 **Pitfall.** Counting what the money is spent on as a pure gain. The spending is visible; what the taxpayers would have bought is not. Both must appear.
 
