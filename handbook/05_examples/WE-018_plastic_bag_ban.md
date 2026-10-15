@@ -104,8 +104,8 @@ Not reported: higher prices for bin liners or reusable bags. Brennick is too sma
 ## 8. Time structure
 
 - **Announcement window (nine months).** Shoppers take extra free thin bags while they still can (C-10), and stores run down their stocks of thin bags. Households that reuse bags as liners live off this stock at first, so bought liners (C-4) rise only after a few months, as the stock runs out.
-- **The first months.** Shoppers forget their bags most often at first, so paper-bag fees (C-2, C-6) are highest early. Reusable bag purchases surge, then fall to a lower rate at which bags are replaced, since a reusable bag lasts many trips.
-- **Habits form over months (TS-8).** Carrying bags is a routine repeated on every trip (A-14). As shoppers learn to carry bags, paper-bag use and fee payments fall from their early peak, without any change in prices; reusable bags take a growing share of C-3. The full response therefore has a short-to-medium horizon. The path changes sizes, not signs: compared with the counterfactual, fee payments (C-2, C-6) and shoppers' outlay (C-17) stay increases and decreases respectively, only smaller than at first.
+- **The first months.** Shoppers forget their bags most often at first, so total paper-bag fee payments are highest early. Reusable bag purchases surge, then fall to a lower rate at which bags are replaced, since a reusable bag lasts many trips.
+- **Habits form over months (TS-8).** Carrying bags is a routine repeated on every trip (A-14). As shoppers learn to carry bags, paper-bag use and fee payments fall from their early peak, without any change in prices; reusable bags take a growing share of C-3. The full response therefore has a short-to-medium horizon. The path changes sizes, not signs: compared with the counterfactual, paper and reusable bag use (C-3) stays an increase and shoppers' resources for other uses (C-17) stay a decrease, only by less than at first. The per-bag charge (C-2, C-6) is not affected.
 - **Edge shoppers.** Shoppers who switch stores across the line (C-9) are likely to stay switched once they have learned the other store, so C-13 and C-14 do not fade with habit as fee payments do.
 - **The fee erodes in real terms.** The minimum charge is fixed at 10 cents. As other prices rise, its real value falls, and, unless stores charge more, paper-bag use creeps up over the long run (TS-3).
 - **Reclassification grows.** Bag makers design cheap bags that just meet the 4 mil and 125-use definition (C-7); this takes months. If they come to be used once and thrown away, pressure to tighten the definition is what TS-4 predicts; TS-4 is Tier C in the catalog, so this is a suggestion only. Makers who expect such tightening invest less in thick bags (TS-2).
@@ -148,7 +148,6 @@ The free thin bags no longer handed out are the prevented exchanges, recorded as
 
 **Invisible consequences.**
 - *Shoppers* give up the other goods that the money spent on fees and reusable bags would have bought (C-17). They pay for paper most often in the first weeks; as carrying bags becomes a habit, paper use and fee payments fall (C-3, section 8). Before the ban they took extra free bags (C-10).
-
 - *Households that reused bags as bin liners* now buy liners (C-4, C-18).
 - *Retailers* bear compliance costs (C-5), keep the paper-bag fee (C-6), and spend less on bags (C-15). Some sell cheap thick "reusable" bags that are used like the old ones (C-7); some small stores carry on giving thin bags (C-8).
 - *Near the city line*, some shoppers move their whole weekly shop to Fallow Creek (C-9, C-12), so Brennick stores there sell less and over time employ fewer people (C-13, C-14).
@@ -158,7 +157,7 @@ The free thin bags no longer handed out are the prevented exchanges, recorded as
 
 **Key conditions.** That shoppers accept other bags (A-2, p = 0.95) and retailers comply (A-1, p = 0.85). The edge effects (C-9, C-12 to C-14) rest on A-6 (p = 0.55), the weakest reported assumption; with it false, they disappear.
 
-**What this analysis cannot say.** Environmental effects, the policy's purpose, are out of scope for version 1, as are any health effects; how large any effect is; whether the costs to shoppers and households are worth the environmental gains; whether the policy is desirable.
+**What this analysis cannot say.** Environmental effects, the policy's purpose, are out of scope for version 1, as are any health effects; how large any effect is; whether the costs to shoppers and households are worth any environmental effects; whether the policy is desirable.
 
 ## Consequence list (normal form)
 
@@ -186,5 +185,7 @@ The free thin bags no longer handed out are the prevented exchanges, recorded as
 
 ## Gaps found
 
-- **GAP-018-1** (no Tier C consequence; relation vocabulary). The bin-liner chain (C-4, C-18) runs through a by-product: carryout bags came free with shopping and were reused for another end. The market relations in 2.8 have no type for this; it is recorded here as `substitute` (partial, in the use as liners), which lets RS-1 apply, so the consequences stay Tier B. But the record hides why the substitution happens (the policy removed a free by-product, not a priced good). Proposed fix: add a relation note `secondary_use` to 2.8, alongside `trip` and `location`, for goods whose reuse for another end ties them to a substitute in that end.
-- **GAP-018-2** (Tier C suggestion in section 8; not a consequence). The time rules cover durable capital (TS-1), expectations (TS-2) and erosion of nominal parameters (TS-3), but not responses that grow as buyers form new routines (carrying bags), which make some short-run effects (fee payments, paper-bag use) shrink over months without any change in prices or capital. Proposed fix: a rule "TS-5 Habit adjustment": if a policy changes the cost of a routine, repeated action, responses are smaller at first and grow over months as routines change; set the horizon of the full response to short-to-medium and note the path; assumes the action is repeated often (`other`).
+- GAP-018-1 (closed in catalog 0.3: relation note `secondary_use` in 2.8). The bin-liner relation behind C-4 and C-18 is now recorded as `substitute`, partial, note `secondary_use`.
+- GAP-018-2 (closed in catalog 0.3: TS-8). The habit path is now derived: C-3 carries TS-8 with a short-to-medium horizon, resting on A-14. It changes sizes along the path, not signs, so no new consequence is added.
+
+Also applied on the update to catalog 0.3: RS-14 for the pass-through of compliance costs and bag savings to shelf prices (C-16), and OC-5 for staffing at stores that lose sales (C-14, A-15). Review corrections: the shoppers' outlay row in section 7 used a prose variable with an increase sign; it is now `resources_available_other_uses`, decrease, limited to the short run because lower shelf prices (C-16) may offset it later. C-3 is listed as visible, so the report now gives it among the visible consequences.

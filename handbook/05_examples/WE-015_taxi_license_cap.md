@@ -110,7 +110,7 @@ Not reported: higher medallion prices passed on to riders as a higher meter rate
 
 **Stage 1: the cap alone (years 0 to about 5).**
 - **Announcement (five months).** Licenses are taken out to be converted into medallions (C-3), and medallions gain value as soon as the cap is expected (C-2).
-- **The cap binds gradually.** On the effective date the fleet is no smaller than under open entry. With demand growing about 3% a year, the cap binds within about two years (A-1), and every effect that runs through scarcity (C-5 to C-11, C-13 to C-16) starts small and grows each year. This is TS-3, which since catalog 0.3 covers caps fixed in physical units such as a number of licenses; the expected path of demand is A-1.
+- **The cap binds gradually.** On the effective date the fleet is no smaller than under open entry. With demand growing about 3% a year, the cap binds within about two years (A-1), and every effect that runs through scarcity (C-5 to C-11, C-13 to C-16, C-26 to C-28) starts small and grows each year. This is TS-3, which since catalog 0.3 covers caps fixed in physical units such as a number of licenses; the expected path of demand is A-1.
 - **Durable vehicles.** Owners keep cars up to the 8-year limit rather than replacing them early, since busy cabs fill anyway (C-8, TS-1); the fall in vehicle quality shows after a few years.
 - **Capitalization and later buyers.** Every sale after the announcement is at a price that carries the expected rent (SB-4). Later buyers, often borrowing (C-17), earn only an ordinary return on what they paid, and they carry the risk that the rent will not last.
 
