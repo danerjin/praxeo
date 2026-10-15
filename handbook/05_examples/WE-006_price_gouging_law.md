@@ -6,7 +6,7 @@ A stylized policy in a fictional state. Many places have laws of this kind; this
 
 ## 1. Policy record
 
-**Coralia Emergency Pricing Act.** Coralia is a coastal state. The Act was passed two years ago and is a standing law: it applies automatically whenever the governor declares a state of emergency for named counties. This season a hurricane is forecast to strike the six coastal counties (about 1.8 million people). The governor declares an emergency for those counties two days before landfall. A declaration lasts 30 days and may be renewed in 30-day steps; the governor has said it will be renewed "as long as needed". The inland counties of Coralia, 60 to 150 miles from the coast, are not declared. The neighboring state of Ashby, about three hours north, has no such law. For the first two or three days after landfall, roads into the coast are partly blocked.
+**Coralia Emergency Pricing Act.** Coralia is a coastal state. The Act was passed two years ago and is a standing law: it applies automatically whenever the governor declares a state of emergency for named counties. This season a hurricane is forecast to strike the six coastal counties (about 1.8 million people). The governor declares an emergency for those counties two days before landfall. A declaration lasts 30 days and may be renewed in 30-day steps; the governor has said it will be renewed "as long as needed". The inland counties of Coralia, 60 to 150 miles from the coast, are not declared. The neighboring state of Hallorn, about three hours north, has no such law. For the first two or three days after landfall, roads into the coast are partly blocked.
 
 The counterfactual is the same hurricane and the same declaration (with its other emergency powers, such as public water distribution and curfews), without the Act's pricing rules.
 
@@ -32,7 +32,7 @@ Unclear provisions: whether repair and tree-removal services count as covered "n
 |---|---|---|
 | `residents.declared` | Households and businesses in the six counties, including evacuees seeking rooms | Lower money prices where goods can be found; more goods sold out. Split into `buyers.served` (who obtain goods at the capped price) and `buyers.unserved`. |
 | `sellers.local` | Hardware stores, groceries and other sellers in the declared counties | Prices capped; can hold stock, change terms, document costs. |
-| `sellers.outside` | Firms and individuals in inland counties and in Ashby who could bring goods into the area (trucks of generators, water, plywood) | Their price in the area is capped at the pre-emergency level plus documented costs; elsewhere it is not. |
+| `sellers.outside` | Firms and individuals in inland counties and in Hallorn who could bring goods into the area (trucks of generators, water, plywood) | Their price in the area is capped at the pre-emergency level plus documented costs; elsewhere it is not. |
 | `hotels.declared` | Hotels, motels and short-term rentals in the declared counties | Room rates capped; rooms are fixed in number. |
 | `evacuees.in_rooms` | Guests who hold a room at the capped rate | Lose the room if they leave. |
 | `repair_contractors.outside` | Roofers, tree crews and insurance adjusters from outside the area | Need somewhere to stay while they work. |
@@ -83,7 +83,7 @@ Not reported: outside sellers staying away for the whole season because they exp
 |---|---|---|---|---|---|---|---|
 | C-16 | `residents.declared` | `search_cost` (driving between stores, finding informal sellers) | increase | short | PC-2, RS-10 | | A-1, A-3 |
 | C-17 | `buyers.unserved` | `quantity_substitute` (ice and coolers, candles, staying with relatives, going without) | increase | short | PC-3, RS-1 | generators and ice: `substitute`, partial; rooms and relatives' homes: `substitute`, partial | A-1, A-13 |
-| C-18 | `residents.declared` | `cross_border_purchases` (in inland counties and Ashby) | ambiguous (section 7) | short | RS-4, PC-2, PC-3 | coastal and inland stores: `across_border`, partial | A-12 |
+| C-18 | `residents.declared` | `cross_border_purchases` (in inland counties and Hallorn) | ambiguous (section 7) | short | RS-4, PC-2, PC-3 | coastal and inland stores: `across_border`, partial | A-12 |
 | C-19 | `repair_contractors.outside` | `quantity_supplied` (repair work done in the declared counties) | decrease | short | PC-1, PC-7, LW-4 | rooms in the declared counties and outside repair labor: `complement`, note `location` | A-1, A-8, A-11 |
 | C-20 | `sellers.local` | `inventory_held` (generators, plywood and water stocked before each season) — not in the variable list | decrease | medium | GAP-006-1 | | A-14 |
 | C-21 | `households.coastal` | `quantity_demanded` (generators and supplies bought before the season) | ambiguous (section 7) | medium | RS-8 | | A-15 |

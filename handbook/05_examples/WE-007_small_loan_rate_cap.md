@@ -6,16 +6,16 @@ A stylized policy in a fictional state. Rate caps of this kind are common; this 
 
 ## 1. Policy record
 
-**Halden Small Loan Act.** Halden is a state of about four million people. Before the Act, about 40 companies licensed under Halden's consumer lending law ran about 380 storefronts, and 12 online lenders held Halden licenses. Typical loans were two-week payday loans of $300 to $600 at about $15 per $100 borrowed (roughly 390% APR) and six-month installment loans of $500 to $1,500 at 150% to 250% APR. Banks charge an overdraft fee of about $34. Pawn loans are governed by a separate Pawn Act, which allows fees of up to 15% a month. Some credit unions offer small loans below 28% APR, mostly to members with a history at the credit union.
+**Wexmoor Small Loan Act.** Wexmoor is a state of about four million people. Before the Act, about 40 companies licensed under Wexmoor's consumer lending law ran about 380 storefronts, and 12 online lenders held Wexmoor licenses. Typical loans were two-week payday loans of $300 to $600 at about $15 per $100 borrowed (roughly 390% APR) and six-month installment loans of $500 to $1,500 at 150% to 250% APR. Banks charge an overdraft fee of about $34. Pawn loans are governed by a separate Pawn Act, which allows fees of up to 15% a month. Some credit unions offer small loans below 28% APR, mostly to members with a history at the credit union.
 
-The neighboring state of Kessel has no rate cap. Its border is 20 minutes from Brannock (Halden's second city, about 300,000 people) and two hours from Halden City. Informal lending (family, employers, street lenders) exists in both states.
+The neighboring state of Kestria has no rate cap. Its border is 20 minutes from Brannock (Wexmoor's second city, about 300,000 people) and two hours from Wexmoor City. Informal lending (family, employers, street lenders) exists in both states.
 
 The bill was introduced in January, with polls showing wide support; it passed in April and takes effect on October 1. Loans made before October 1 are honored on their original terms; a loan renewed or refinanced after that date is a new loan.
 
 | Component | Instrument | Target | Bound | Parameters | Exemptions |
 |---|---|---|---|---|---|
-| K1 Rate cap | `price_ceiling` | Consumer loans of $2,500 or less | Lenders licensed under Halden's consumer lending law | All-in APR of at most 36%, counting interest, all fees and any product sold with the loan (credit insurance, memberships). | Loans over $2,500. Banks and credit unions (chartered under other laws). Pawn loans (Pawn Act). |
-| K2 License reach | `licensing_requirement` (existing, restated) | Any consumer loan to a Halden resident | All lenders, including online lenders based elsewhere | A Halden license is required; loans by unlicensed lenders, and loans above the cap, are void (the borrower owes neither interest nor principal). | As K1 |
+| K1 Rate cap | `price_ceiling` | Consumer loans of $2,500 or less | Lenders licensed under Wexmoor's consumer lending law | All-in APR of at most 36%, counting interest, all fees and any product sold with the loan (credit insurance, memberships). | Loans over $2,500. Banks and credit unions (chartered under other laws). Pawn loans (Pawn Act). |
+| K2 License reach | `licensing_requirement` (existing, restated) | Any consumer loan to a Wexmoor resident | All lenders, including online lenders based elsewhere | A Wexmoor license is required; loans by unlicensed lenders, and loans above the cap, are void (the borrower owes neither interest nor principal). | As K1 |
 | K3 Enforcement | Administration and enforcement | K1, K2 | Department of Financial Institutions; Attorney General | Examinations of licensees; license revocation; civil suits against unlicensed lenders. Lenders based in other states or abroad are hard to reach. Funded from license fees and the general budget. | None |
 
 Unclear provisions: whether "earned wage access" products (advances on wages already earned, repaid from the next paycheck, with optional "tips" and fees for fast delivery) are loans. The Act defines a loan as an agreement with an obligation to repay; many such products are written without one. Assumed not covered (A-11); if they are covered, C-19 does not occur and borrowers have one fewer substitute.
@@ -34,13 +34,13 @@ Unclear provisions: whether "earned wage access" products (advances on wages alr
 |---|---|---|
 | `borrowers.served` | People who still obtain small loans from licensed lenders | Pay at most 36%. |
 | `borrowers.unserved` | People who would have borrowed at the old rates but are no longer offered a loan | Must use pawn, overdrafts, late payment, family, unlicensed lenders, or go without. |
-| `borrowers.brannock` | Borrowers within reach of the Kessel border | Can borrow at Kessel storefronts. |
-| `lenders.licensed` | Halden-licensed storefront and online lenders | Small loans become unprofitable for most borrowers; can lend larger amounts, convert to pawn, or leave. |
+| `borrowers.brannock` | Borrowers within reach of the Kestria border | Can borrow at Kestria storefronts. |
+| `lenders.licensed` | Wexmoor-licensed storefront and online lenders | Small loans become unprofitable for most borrowers; can lend larger amounts, convert to pawn, or leave. |
 | `lenders.prospective` | Would-be entrants | Entry into small-loan lending no longer pays. |
-| `lenders.unlicensed` | Online lenders based outside Halden | Face less competition from licensed lenders; risk void loans and suits. |
+| `lenders.unlicensed` | Online lenders based outside Wexmoor | Face less competition from licensed lenders; risk void loans and suits. |
 | `providers.wage_access` (`sellers.substitutes`) | Firms offering wage advances | Possibly outside the Act. |
 | `pawnshops` (`sellers.substitutes`) | Pawn lenders | More demand. |
-| `storefronts.kessel` | Lenders and check cashers just across the border | Some Halden customers. |
+| `storefronts.kestria` | Lenders and check cashers just across the border | Some Wexmoor customers. |
 | `officials.enforcement`, `taxpayers` | Department, Attorney General and their funders | More examination and litigation. |
 
 ## 4. Direct effect
@@ -82,8 +82,8 @@ Not reported: lenders adding fees or products to loans that stay under the cap (
 | ID | Actor class | Variable | Sign | Horizon | Rules | Market relation | Assumptions |
 |---|---|---|---|---|---|---|---|
 | C-11 | `borrowers.unserved` | `quantity_substitute` (pawn loans, bank overdrafts, late payment of bills, borrowing from family or employers) | increase | short | PC-3, RS-1 | small loans and pawn, overdrafts, late payment: `substitute`, partial | A-1, A-7 |
-| C-12 | `borrowers.brannock` | `cross_border_purchases` (loans from Kessel storefronts) | increase | short | RS-4 | Halden and Kessel storefronts: `across_border`, close for Brannock | A-1, A-8 |
-| C-13 | `storefronts.kessel` | `quantity_traded` (check cashing, money orders, bill payment) | increase | short | RS-9 | small loans and other storefront services: `complement`, note `trip` | A-1, A-8, A-9 |
+| C-12 | `borrowers.brannock` | `cross_border_purchases` (loans from Kestria storefronts) | increase | short | RS-4 | Wexmoor and Kestria storefronts: `across_border`, close for Brannock | A-1, A-8 |
+| C-13 | `storefronts.kestria` | `quantity_traded` (check cashing, money orders, bill payment) | increase | short | RS-9 | small loans and other storefront services: `complement`, note `trip` | A-1, A-8, A-9 |
 | C-14 | `borrowers.unserved` | `informal_activity` (loans from unlicensed online lenders) | increase | short | RS-3, PC-6 | | A-1, A-10 |
 | C-15 | borrowers from unlicensed lenders | `search_cost` (finding and judging lenders with no license, reviews or regulator to complain to) | increase | short | RS-10 | | A-1, A-10 |
 | C-16 | `borrowers.unserved` | `price_substitute` (pawn loan fees) | ambiguous (section 7) | short to medium | PC-8, RS-5 | same as C-11 | A-1, A-4, A-7 |
@@ -91,9 +91,9 @@ Not reported: lenders adding fees or products to loans that stay under the cap (
 | C-18 | `borrowers.served` | `quantity_traded` (loans larger and longer than the borrower sought) | increase | short | RS-2, RS-5 | | A-1, A-4 |
 | C-19 | `providers.wage_access` | `reclassification` (wage advances written without a repayment obligation, outside the Act's definition) | increase | short to medium | RS-5, RS-1 | wage advances and small loans: `substitute`, partial | A-1, A-11 |
 
-C-13 applies RS-9: borrowers who cross to Kessel for a loan also cash their paycheck and buy money orders there, because these services are sold in the same storefronts. The chain stops at depth 3; the effect on Halden check cashers is the mirror image at the same depth and falls on a group already counted in C-3.
+C-13 applies RS-9: borrowers who cross to Kestria for a loan also cash their paycheck and buy money orders there, because these services are sold in the same storefronts. The chain stops at depth 3; the effect on Wexmoor check cashers is the mirror image at the same depth and falls on a group already counted in C-3.
 
-C-14 and C-15: online lenders without a Halden license face less competition from licensed lenders. Their loans are void under K2, but a borrower who does not know this, or who wants to keep borrowing, still pays. RS-10 applies: such lenders cannot be checked against a license, and disputes go to no regulator.
+C-14 and C-15: online lenders without a Wexmoor license face less competition from licensed lenders. Their loans are void under K2, but a borrower who does not know this, or who wants to keep borrowing, still pays. RS-10 applies: such lenders cannot be checked against a license, and disputes go to no regulator.
 
 C-18: some borrowers who are offered only a larger loan (C-7) take it. They borrow more, for longer, than they would have.
 
@@ -136,22 +136,22 @@ Fees paid on overdrafts and late bills by unserved borrowers are not listed as a
 | A-5 | Lenders can raise volume and lengthen terms between April and October, and know the effective date. | expectations | 0.6 | Loan volumes in the window; lender statements. | C-8 not reported. |
 | A-6 | From January, would-be entrants expected the bill to pass. | expectations | 0.8 | Polls; sponsors; legislative calendar. | C-9 starts in April, not January. |
 | A-7 | Unserved borrowers have legal substitutes (pawn, overdraft, late payment, family). | substitutability | 0.85 | Bank account holding among borrowers; pawn store locations. | C-11 weakens; more go without. |
-| A-8 | Borrowers in Brannock can easily reach Kessel storefronts and may legally borrow there. | mobility | 0.6 | Drive time of 20 minutes; Kessel law on lending to non-residents. | C-12, C-13 not reported. |
+| A-8 | Borrowers in Brannock can easily reach Kestria storefronts and may legally borrow there. | mobility | 0.6 | Drive time of 20 minutes; Kestria law on lending to non-residents. | C-12, C-13 not reported. |
 | A-9 | Borrowers use the same storefront for loans, check cashing and money orders. | other | 0.7 | Storefront transaction data. | C-13 not reported. |
-| A-10 | Some unlicensed online lenders reach Halden borrowers, and enforcement against them is incomplete. | enforcement | 0.7 | Online advertising aimed at Halden; record of suits against out-of-state lenders. | C-14, C-15 not reported. |
+| A-10 | Some unlicensed online lenders reach Wexmoor borrowers, and enforcement against them is incomplete. | enforcement | 0.7 | Online advertising aimed at Wexmoor; record of suits against out-of-state lenders. | C-14, C-15 not reported. |
 | A-11 | Wage-access products fall outside the Act's definition of a loan. | other | 0.6 | Act's definition; Department guidance. | C-19 not reported. |
 | A-12 | Lenders can add fees or products to capped loans without breaching the all-in APR rule. | other | 0.3 | Text of K1. | Below cut-off; not reported. |
 | A-13 | Borrowing from street lenders rises on a meaningful scale. | enforcement | 0.35 | Police reports; surveys of borrowers in places with similar caps. | Below cut-off; not reported. |
 
 ## 11. Report
 
-**The policy.** Halden caps the all-in annual rate on consumer loans of $2,500 or less from state-licensed lenders at 36%, where most such loans had cost 150% to 390%. Loans by unlicensed lenders and loans above the cap are void. Banks, credit unions, pawn loans and loans over $2,500 are outside the cap.
+**The policy.** Wexmoor caps the all-in annual rate on consumer loans of $2,500 or less from state-licensed lenders at 36%, where most such loans had cost 150% to 390%. Loans by unlicensed lenders and loans above the cap are void. Banks, credit unions, pawn loans and loans over $2,500 are outside the cap.
 
 **Visible consequences.** People who still borrow small sums from licensed lenders pay far lower rates (C-1).
 
 **Invisible consequences.**
 - *Licensed lenders* make far fewer small loans (C-2), close storefronts (C-3) and let staff go (C-17). New lenders stop opening, starting from when the bill was expected to pass (C-9). Before the effective date, lenders write extra loans on longer terms (C-8). Afterwards they lend to the best-qualified borrowers (C-5), offer loans over $2,500 or convert to pawnshops (C-7), and, as a Tier C suggestion, drop their smallest and shortest loans first (C-6).
-- *Borrowers who are no longer offered a loan* (C-4) use pawn, overdrafts, late payment of bills and family (C-11), options they ranked below the loan they would have taken (LW-5). Some borrow from unlicensed online lenders, where they cannot check the lender or complain to a regulator (C-14, C-15). Those near the border borrow in Kessel (C-12), and cash their checks there too (C-13). Fewer small loans are made in all (C-20).
+- *Borrowers who are no longer offered a loan* (C-4) use pawn, overdrafts, late payment of bills and family (C-11), options they ranked below the loan they would have taken (LW-5). Some borrow from unlicensed online lenders, where they cannot check the lender or complain to a regulator (C-14, C-15). Those near the border borrow in Kestria (C-12), and cash their checks there too (C-13). Fewer small loans are made in all (C-20).
 - *Some borrowers who are served* take larger, longer loans than they wanted (C-18).
 - *Wage-advance providers* shape their products to stay outside the Act (C-19).
 - *Interested groups* lobby over the threshold and coverage (C-10). *Taxpayers* fund part of the enforcement (C-21).
@@ -178,7 +178,7 @@ Fees paid on overdrafts and late bills by unserved borrowers are not listed as a
 | C-10 | lenders, consumer groups | lobbying_effort | increase | medium | invisible | B | RS-7 | A-1 |
 | C-11 | borrowers.unserved | quantity_substitute | increase | short | invisible | B | PC-3, RS-1 | A-1, A-7 |
 | C-12 | borrowers.brannock | cross_border_purchases | increase | short | invisible | B | RS-4 | A-1, A-8 |
-| C-13 | storefronts.kessel | quantity_traded (other services) | increase | short | invisible | B | RS-4, RS-9 | A-1, A-8, A-9 |
+| C-13 | storefronts.kestria | quantity_traded (other services) | increase | short | invisible | B | RS-4, RS-9 | A-1, A-8, A-9 |
 | C-14 | borrowers.unserved | informal_activity | increase | short | invisible | B | RS-3, PC-6 | A-1, A-10 |
 | C-15 | borrowers (unlicensed lenders) | search_cost | increase | short | invisible | B | RS-3, RS-10 | A-1, A-10 |
 | C-16 | borrowers.unserved | price_substitute (pawn) | ambiguous | short–medium | invisible | B | PC-8 vs RS-5 | A-1, A-4, A-7 |
