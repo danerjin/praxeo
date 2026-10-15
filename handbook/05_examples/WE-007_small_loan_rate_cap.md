@@ -87,11 +87,11 @@ Not reported: lenders adding fees or products to loans that stay under the cap (
 | C-13 | `storefronts.kestria` | `quantity_traded` (check cashing, money orders, bill payment) | increase | short | RS-9 | small loans and other storefront services: `complement`, note `trip` | A-1, A-8, A-9 |
 | C-14 | `borrowers.unserved` | `informal_activity` (loans from unlicensed online lenders) | increase | short | RS-3, PC-6 | | A-1, A-10 |
 | C-15 | borrowers from unlicensed lenders | `search_cost` (finding lenders that do not advertise openly) | increase | short | RS-10 | | A-1, A-10 |
-| C-22 | borrowers from unlicensed lenders | `quality_information` (no license, regulator or legal recourse to check the lender or its terms against) | decrease | short | RS-10 | | A-1, A-10 |
 | C-16 | `borrowers.unserved` | `price_substitute` (pawn loan fees) | ambiguous (section 7) | short to medium | PC-8 vs RS-5, RS-13 | same as C-11 | A-1, A-4, A-7 |
 | C-17 | `lenders.licensed` | `employment` (storefront staff) | decrease | medium | RS-6 | | A-1, A-3 |
 | C-18 | `borrowers.served` | `transaction_size` (loans larger and longer than the borrower sought) | increase | short | PC-14, RS-5 | | A-1, A-4, A-14 |
 | C-19 | `providers.wage_access` | `quantity_supplied` (wage advances to Wexmoor workers) | U1-a: increase; U1-b: decrease | short to medium | U1-a: PC-8, RS-1, RS-5; U1-b: PC-5, PC-14 | wage advances and small loans: `substitute`, partial | A-1, A-11 |
+| C-22 | borrowers from unlicensed lenders | `quality_information` (no license, regulator or legal recourse to check the lender or its terms against) | decrease | short | RS-10 | | A-1, A-10 |
 
 C-13 applies RS-9: borrowers who cross to Kestria for a loan also cash their paycheck and buy money orders there, because these services are sold in the same storefronts. The chain stops at depth 3; the effect on Wexmoor check cashers is the mirror image at the same depth and falls on a group already counted in C-3.
 
@@ -109,7 +109,7 @@ RS-11 was checked and does not apply: no benefit is tied to a place. Pruned at d
 
 | Actor class, variable, horizon | Chains (+) | Chains (−) | Dominance rule | Combined sign |
 |---|---|---|---|---|
-| `borrowers.unserved`, `price_substitute` (pawn fees), short to medium | Demand moves from small loans to pawn (PC-8, C-11). | Storefronts converted to pawnshops add pawn supply (C-7, RS-5), as the note to PC-8 anticipates. | None | **ambiguous**. If the Pawn Act's 15% monthly limit binds, pawn fees cannot rise and the extra demand shows up as more items pawned, or turned away, instead. |
+| `borrowers.unserved`, `price_substitute` (pawn fees), short to medium | Demand moves from small loans to pawn (PC-8, C-11). | Storefronts converted to pawnshops add pawn supply (C-7, RS-5, RS-13), as the note to PC-8 anticipates. | None | **ambiguous**. If the Pawn Act's 15% monthly limit binds, pawn fees cannot rise and the extra demand shows up as more items pawned, or turned away, instead. |
 
 Two further questions were considered and not entered as combined consequences, because no variable in the list records them:
 - *Borrowers who are still served:* the APR on loans under $2,500 falls (C-1), but some take larger, longer loans than they sought (C-18), so the total charge for meeting a given need may rise or fall. Each of C-1 and C-18 has a clear sign; their combination per need cannot be recorded.
@@ -145,9 +145,10 @@ Fees paid on overdrafts and late bills by unserved borrowers are not listed as a
 | A-8 | Borrowers in Brannock can easily reach Kestria storefronts and may legally borrow there. | mobility | 0.6 | Drive time of 20 minutes; Kestria law on lending to non-residents. | C-12, C-13 not reported. |
 | A-9 | Borrowers use the same storefront for loans, check cashing and money orders. | other | 0.7 | Storefront transaction data. | C-13 not reported. |
 | A-10 | Some unlicensed online lenders reach Wexmoor borrowers, and enforcement against them is incomplete. | enforcement | 0.7 | Online advertising aimed at Wexmoor; record of suits against out-of-state lenders. | C-14, C-15 not reported. |
-| A-11 | Wage-access products fall outside the Act's definition of a loan. | other | 0.6 | Act's definition; Department guidance. | C-19 not reported. |
+| A-11 | Wage advances are a usable substitute for small loans for some borrowers (they have a regular paycheck and access to a provider). | substitutability | 0.65 | Share of small-loan borrowers in regular employment; providers' reach among Wexmoor employers. | C-19 not reported under reading U1-a; under U1-b the decrease still follows, but concerns few borrowers. |
 | A-12 | Lenders can add fees or products to capped loans without breaching the all-in APR rule. | other | 0.3 | Text of K1. | Below cut-off; not reported. |
 | A-13 | Borrowing from street lenders rises on a meaningful scale. | enforcement | 0.35 | Police reports; surveys of borrowers in places with similar caps. | Below cut-off; not reported. |
+| A-14 | A material part of the cost of a small loan is fixed per loan (underwriting, servicing, collection), not proportional to the amount lent. | other | 0.85 | Lenders' cost accounts; the cost per loan relative to the charge on a $300 loan. | C-6 and the PC-14 chain of C-18 not reported; lenders would cut all loan sizes alike. |
 
 ## 11. Report
 
@@ -156,10 +157,10 @@ Fees paid on overdrafts and late bills by unserved borrowers are not listed as a
 **Visible consequences.** People who still borrow small sums from licensed lenders pay far lower rates (C-1).
 
 **Invisible consequences.**
-- *Licensed lenders* make far fewer small loans (C-2), close storefronts (C-3) and let staff go (C-17). New lenders stop opening, starting from when the bill was expected to pass (C-9). Before the effective date, lenders write extra loans on longer terms (C-8). Afterwards they lend to the best-qualified borrowers (C-5), offer loans over $2,500 or convert to pawnshops (C-7), and, as a Tier C suggestion, drop their smallest and shortest loans first (C-6).
-- *Borrowers who are no longer offered a loan* (C-4) use pawn, overdrafts, late payment of bills and family (C-11), options they ranked below the loan they would have taken (LW-5). Some borrow from unlicensed online lenders, where they cannot check the lender or complain to a regulator (C-14, C-15). Those near the border borrow in Kestria (C-12), and cash their checks there too (C-13). Fewer small loans are made in all (C-20).
+- *Licensed lenders* make far fewer small loans (C-2), close storefronts (C-3) and let staff go (C-17). New lenders stop opening, starting from when the bill was expected to pass (C-9). Before the effective date, lenders write extra loans on longer terms (C-8). Afterwards they lend to the best-qualified borrowers (C-5), offer loans over $2,500 or convert to pawnshops (C-7), and drop their smallest and shortest loans first (C-6).
+- *Borrowers who are no longer offered a loan* (C-4) use pawn, overdrafts, late payment of bills and family (C-11), options they ranked below the loan they would have taken (LW-5). Some borrow from unlicensed online lenders, which are harder to find and which they cannot check or complain about to a regulator (C-14, C-15, C-22). Those near the border borrow in Kestria (C-12), and cash their checks there too (C-13). Fewer small loans are made in all (C-20).
 - *Some borrowers who are served* take larger, longer loans than they wanted (C-18).
-- *Wage-advance providers* shape their products to stay outside the Act (C-19).
+- *Wage-advance providers* supply more advances if products written without a repayment obligation fall outside the Act (reading U1-a), shaping their products to stay outside it; if they are loans under the Act (reading U1-b), they supply fewer (C-19). The Act's text, not this analysis, decides between the readings.
 - *Interested groups* lobby over the threshold and coverage (C-10). *Taxpayers* fund part of the enforcement (C-21).
 
 **Ambiguous effects.** Whether pawn fees rise or fall (C-16).
@@ -177,7 +178,7 @@ Fees paid on overdrafts and late bills by unserved borrowers are not listed as a
 | C-3 | lenders.licensed | number_of_sellers | decrease | short–medium | invisible | B | RS-6, PC-5 | A-1, A-3 |
 | C-4 | borrowers.unserved | excess_demand | increase | short | invisible | B | PC-1 | A-1, A-2 |
 | C-5 | borrowers.unserved | allocation_by_non_price_criteria | increase | short | invisible | B | PC-1, PC-2 | A-1, A-2 |
-| C-6 | lenders.licensed | variety (small, short loans) | decrease | short | invisible | C | RS-2, GAP-007-1 | A-1 |
+| C-6 | lenders.licensed | variety (small, short loans) | decrease | short | invisible | B | PC-14 | A-1, A-14 |
 | C-7 | lenders.licensed | reclassification | increase | short–medium | invisible | B | RS-5 | A-1, A-4 |
 | C-8 | lenders.licensed | quantity_supplied (April–September) | increase | short | invisible | B | RS-8 | A-5 |
 | C-9 | lenders.prospective | entry_rate | decrease | short | invisible | B | TS-2, RS-6 | A-1, A-6 |
@@ -187,13 +188,14 @@ Fees paid on overdrafts and late bills by unserved borrowers are not listed as a
 | C-13 | storefronts.kestria | quantity_traded (other services) | increase | short | invisible | B | RS-4, RS-9 | A-1, A-8, A-9 |
 | C-14 | borrowers.unserved | informal_activity | increase | short | invisible | B | RS-3, PC-6 | A-1, A-10 |
 | C-15 | borrowers (unlicensed lenders) | search_cost | increase | short | invisible | B | RS-3, RS-10 | A-1, A-10 |
-| C-16 | borrowers.unserved | price_substitute (pawn) | ambiguous | short–medium | invisible | B | PC-8 vs RS-5 | A-1, A-4, A-7 |
+| C-16 | borrowers.unserved | price_substitute (pawn) | ambiguous | short–medium | invisible | B | PC-8 vs RS-5, RS-13 | A-1, A-4, A-7 |
 | C-17 | lenders.licensed | employment | decrease | medium | invisible | B | RS-6 | A-1, A-3 |
-| C-18 | borrowers.served | quantity_traded (loans larger than sought) | increase | short | invisible | B | RS-2, RS-5 | A-1, A-4 |
-| C-19 | providers.wage_access | reclassification | increase | short–medium | invisible | B | RS-5, RS-1 | A-1, A-11 |
+| C-18 | borrowers.served | transaction_size (loans larger than sought) | increase | short | invisible | B | PC-14, RS-5 | A-1, A-4, A-14 |
+| C-19 | providers.wage_access | quantity_supplied (wage advances) | U1-a: increase; U1-b: decrease | short–medium | invisible | B | U1-a: PC-8, RS-1, RS-5; U1-b: PC-5, PC-14 | A-1, A-11 |
 | C-20 | borrowers.unserved, lenders.licensed | quantity_traded (small loans) | decrease | short | invisible | B | PC-5, OC-4, LW-7 | A-1, A-3 |
 | C-21 | taxpayers | resources_available_other_uses | decrease | short | invisible | A | OC-3, OC-1 | none |
+| C-22 | borrowers (unlicensed lenders) | quality_information | decrease | short | invisible | B | RS-3, RS-10 | A-1, A-10 |
 
 ## Gaps found
 
-- **GAP-007-1. A cap on a rate binds hardest on the smallest and shortest transactions.** Needed for C-6 (Tier C). When much of the cost of a transaction is fixed per transaction (processing, collection), a cap stated as a percentage per year leaves small and short transactions unprofitable first. RS-2 says that the other terms move against the protected party but not which way. Proposed fix: a new PC rule. *If* a binding `price_ceiling` is stated as a rate per unit of value and time, and a material part of the seller's cost is fixed per transaction, *then* sellers raise the minimum size and length of the transactions they offer: `variety` decrease at the small and short end, `quantity_supplied` of small transactions decrease more than of large ones. *Assumes* the share of fixed per-transaction costs (`other`). Tier B. A matching variable for transaction size (`transaction_size`, the typical amount per exchange) would let C-6 and C-18 be recorded more precisely than with `variety` and a qualified `quantity_traded`.
+- GAP-007-1 (closed in catalog 0.3: PC-14 and `transaction_size`). C-6 is now Tier B (PC-14, with the new assumption A-14 on fixed per-loan costs); C-18 is recorded as `transaction_size` increase instead of a qualified `quantity_traded`.

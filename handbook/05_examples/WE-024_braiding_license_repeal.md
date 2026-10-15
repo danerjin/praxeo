@@ -1,8 +1,8 @@
 # WE-024 Abolition of the braiding license requirement
 
-Analyst: draft (Handbook 0.2)  |  Rule catalog version: 0.2  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
 
-A stylized repeal of the licensing rule analyzed in WE-003, in the same fictional state, five years after it took effect. It doubles as a metamorphic check: the analysis of the abolition should reverse the signs of WE-003, except where the license caused lasting changes. The check is at the end of section 7. The counterfactual throughout is **the license requirement stays in force**; every sign is relative to that, not to the situation before the abolition and not to a Westmark that never licensed braiding. "In reverse" after a rule ID means the rule is applied to the removal of its precondition; where that direction is not obviously valid, the text says so. The probabilities are illustrative.
+A stylized repeal of the licensing rule analyzed in WE-003, in the same fictional state, five years after it took effect. It doubles as a metamorphic check: the analysis of the abolition should reverse the signs of WE-003, except where the license caused lasting changes. The check is at the end of section 7. The counterfactual throughout is **the license requirement stays in force**; every sign is relative to that, not to the situation before the abolition and not to a Westmark that never licensed braiding. "In reverse" after a rule ID means the rule is applied to the removal of its precondition; where that direction is not obviously valid, the text says so. Catalog 0.3 states some directions explicitly: RS-10 has a reverse clause for trade returning to the legal market, and TS-5 and TS-6 are written for repeals (see "Analyzing a repeal" in the workflow). The probabilities are illustrative.
 
 ## 1. Policy record
 
@@ -19,7 +19,7 @@ Unclear provisions: whether a licensed salon must ensure that its braiders hold 
 
 | Component | Rothbard type | Binding? | Rule families |
 |---|---|---|---|
-| R1 | Removal of a triangular intervention: customers and unlicensed braiders may again trade legally; the privilege of license holders ends | Yes: many people who would braid for pay do not hold a cosmetology license (A-1) | EN in reverse, RS, OC, RS-8 |
+| R1 | Removal of a triangular intervention: customers and unlicensed braiders may again trade legally; the privilege of license holders ends | Yes: many people who would braid for pay do not hold a cosmetology license (A-1) | EN in reverse, RS, RS-8, RS-10 (reverse clause), OC, TS-5, TS-6 |
 | R2 | Removal of a binary intervention (enforcement funded by taxpayers and license fees) | Yes | OC-3 in reverse |
 
 ## 3. Actor classes
@@ -53,23 +53,23 @@ The visible effects: legal braiders no longer need to be licensed, and braiders 
 | C-4 | `braiders.prospective` | `entry_rate` | increase | short to medium | EN-1 in reverse | A-3 |
 | C-5 | `braiders.in_training` | `compliance_cost` (remaining hours and tuition) | decrease | short | OC-2 in reverse | A-4 |
 | C-6 | `schools.cosmetology` | `quantity_demanded` for programs | decrease | short (from the announcement) | EN-1 in reverse, RS-8 | A-5 |
-| C-7 | `braiders.former` | `employment` (in braiding) | increase | medium | EN-3 in reverse, GAP-024-1 | A-6 |
+| C-7 | `braiders.former` | `employment` (in braiding) | increase | medium | EN-3 in reverse, TS-6 | A-6, A-15 |
 | C-8 | `braiders.licensed` | `quantity_supplied` (services that only licensees may offer: cutting, coloring, chemical treatments) | increase | medium | LW-4, RS-6 | A-7 |
 | C-9 | `schools.cosmetology`, `braiders.licensed`, `cosmetologists.licensed`, braiders | `lobbying_effort` | ambiguous (see section 7) | medium | RS-7, EN-5 | A-8 |
-| C-10 | braiders formerly working informally | `investment_target` (premises, chairs, signage) | increase | medium | RS-6 in reverse, LW-4, GAP-024-2 | A-2, A-11 |
+| C-10 | braiders formerly working informally | `investment_target` (premises, chairs, signage) | increase | medium | RS-6 in reverse, LW-4, TS-5 | A-2, A-11 |
 
 C-3 is fast because almost nothing has to be built: informal braiders already have the skill, the tools and the customers, and need only to stop hiding.
 
 C-6 starts at the announcement (RS-8, "delay until after a repeal is expected"): would-be braiders stop enrolling once the exemption is expected.
 
-C-7 is Tier C. EN-3 says that sellers excluded by a license move to their next-best occupation. Applied in reverse it would say they move back once the license goes, but that is not obviously valid five years on: skills unused for five years decay, clients have found other braiders, and some former braiders have built experience in their new work, which raises what they would give up by returning. No rule covers this (GAP-024-1). The sign is an increase, because some will return (A-6); how many, the method cannot say.
+C-7 is Tier B in catalog 0.3 (Tier C in the 0.2 draft). EN-3 says that sellers excluded by a license move to their next-best occupation. Applied in reverse it would say they move back once the license goes, but TS-6 limits that five years on: skills unused for five years decay, clients have found other braiders, and some former braiders have built experience in their new work, which raises what they would give up by returning (A-15, `reversal_cost`). Former braiders return only where the restored return exceeds that cost. The sign is an increase, because some will return (A-6); how many, the method cannot say. Persistence against a Westmark that never licensed braiding is partial (metamorphic check, WE-003 C-2 and C-4).
 
 C-8: with the braiding premium gone, licensed braiders shift some of their time to the services their license still reserves to them (LW-4). Their training, sunk in both the repeal and the counterfactual, now earns its return there or not at all.
 
-C-10 is Tier C. Braiders who come into the open may rent premises and equipment, but whether they do depends on whether they expect the exemption to last, which no rule covers (GAP-024-2). Braiding capital is small and pays back quickly, so this expectation matters much less here than in WE-022 or WE-023.
+C-10 is Tier B in catalog 0.3 (Tier C in the 0.2 draft). Braiders who come into the open may rent premises and equipment, to the extent they expect the exemption to last long enough to pay them back (TS-5, A-11, p = 0.7). Braiding capital is small and pays back quickly, so this expectation matters much less here than in WE-022 or WE-023.
 
 Not reported:
-- A rush to enter braiding before the license might return with existing braiders grandfathered (TS-2). It needs braiders to expect both re-imposition and grandfathering (A-13, p = 0.25).
+- A rush to enter braiding before the license might return with existing braiders grandfathered (TS-5, grandfathering clause). It needs braiders to expect both re-imposition and grandfathering (A-13, p = 0.25).
 - Braiders returning from neighboring states. WE-003 found little relocation in the first place (A-14, p = 0.2).
 
 ## 6. Second-order effects
@@ -82,49 +82,51 @@ Not reported:
 | C-14 | `customers.braiding` | `search_cost` | decrease | short | RS-10 in reverse | | A-2 |
 | C-15 | `customers.braiding` | `quality_per_unit` received | increase (see section 7) | medium | EN-4 in reverse, DM-2 | | A-2, A-10 |
 | C-16 | `braiders.licensed` | `earnings` | decrease (see section 7) | medium | EN-2 in reverse, LW-2 | | A-2, A-3 |
+| C-20 | `customers.braiding` | `quality_information` | increase | short to medium | RS-10 (reverse clause) | | A-2 |
+| C-21 | `customers.braiding` | `quality_variability` | decrease | medium | RS-10 (reverse clause) | | A-2 |
 
-C-14 applies RS-10 in reverse: braiders who come into the open can advertise, collect public reviews and be taken to court, so customers find and judge them more easily. RS-10 also says that quality is harder to judge in informal trade, but the catalog has no variable for how well buyers can judge quality, so that part is carried by C-14 and C-15 rather than recorded on its own (GAP-024-3).
+C-14, C-20 and C-21 apply RS-10's reverse clause: braiders who come into the open can advertise, collect public reviews and be taken to court, so customers find them more easily (C-14) and can judge their quality before buying (C-20), and the spread of quality between braiders they might use narrows (C-21). Licensed braiders can still advertise their license as a voluntary signal. C-21 is about the spread of quality, C-15 about its level; they are separate consequences.
 
 ## 7. Combined effects
 
 | Actor class, variable, horizon | Chains (+) | Chains (−) | Dominance rule | Combined sign |
 |---|---|---|---|---|
-| `customers.braiding`, `quality_per_unit` received, medium | Customers move back from home braiding and hidden informal providers to an open legal market with reviews and recourse (C-13, C-14; EN-3 and RS-10 in reverse). | Legal providers are no longer all trained to the license standard (EN-4's "up" chain removed). | DM-2: the training is largely unrelated to braiding (A-10, p = 0.85), so removing it takes little away. | **increase**. The mirror of WE-003's C-13, with the same dominance judgment. If the training were related to braiding quality, the sign would be **ambiguous**. |
+| `customers.braiding`, `quality_per_unit` received, medium | Customers move back from home braiding and hidden informal providers to an open legal market with reviews and recourse (C-13, C-14, C-20; EN-3 in reverse, RS-10 reverse clause). | Legal providers are no longer all trained to the license standard (EN-4's "up" chain removed). | DM-2: the training is largely unrelated to braiding (A-10, p = 0.85), so removing it takes little away. | **increase**. The mirror of WE-003's C-13, with the same dominance judgment. If the training were related to braiding quality, the sign would be **ambiguous**. |
 | `braiders.licensed`, `earnings`, medium | They may shift time to services their license reserves (C-8). But that option was open to them in the counterfactual too; that they braided instead shows they ranked braiding higher (LW-2). | The price of braiding falls (C-12), and they face more legal competitors (C-3). | None needed | **decrease**. The tuition and the 1,500 hours were spent before the exemption and are spent in the counterfactual as well, so they are not a consequence of the exemption. DM-3 does not apply, because only the stream of gains is in the comparison. |
 | `schools.cosmetology`, `braiders.licensed`, `cosmetologists.licensed`, braiders, `lobbying_effort`, medium | Schools and licensed braiders, who paid a large sunk cost for an advantage the exemption removes, now have a concentrated stake in restoring the license (RS-7, EN-5, A-8). Braiders now organized in the open defend the exemption. | The contest over the license that would have continued with it in force (WE-003 C-8) ends in its old form. | None | **ambiguous**. The exemption changes who lobbies for what; the method cannot say whether total effort rises or falls. |
 
 ### Metamorphic check against WE-003
 
-"Reverses" means the expected sign under the exemption is the opposite of WE-003's. "Partly reverses" means the sign reverses for what happens from now on, but not for a change the license already caused. Rows whose verdict depends on GAP-024-1 are marked Tier C.
+"Reverses" means the expected sign under the exemption is the opposite of WE-003's. "Partly reverses" means the sign reverses for what happens from now on, but not for a change the license already caused. **Persistence** (TS-6; `02_ontology.md`, 2.5) is how much of WE-003's effect remains after the exemption, compared with a Westmark that never licensed braiding: none, partial or full. It is filled in where TS-6 applies, that is, where the effect ran through exit from the trade and the loss of skills and clients that cost something to rebuild; "—" means TS-6 does not apply (a flow that simply stops, a sunk cost borne in both paths, or a change in who acts).
 
-| WE-003 ID | Actor class, variable | Sign in WE-003 | Expected sign under the exemption (this example) | Reverses? | Reason |
-|---|---|---|---|---|---|
-| C-1 | braiders (legal market), `share_of_sellers_licensed` | increase | decrease (C-1) | Reverses | Licensed braiders keep their licenses; the share falls as unlicensed braiders join the legal market. |
-| C-2 | braiders, `number_of_sellers` (legal), `entry_rate` | decrease | increase (C-3, C-4) | Partly reverses (Tier C) | Informal braiders become legal at once, and new entry resumes. Former braiders return only in part: skills have decayed, clients have dispersed, and some have built careers elsewhere (C-7; GAP-024-1). |
-| C-3 | braiders in training, `compliance_cost` | increase | decrease for those still in training (C-5); no change for those who finished | Partly reverses | Hours and tuition already spent are sunk, are not refunded (R1), and appear in both the exemption and the counterfactual. |
-| C-4 | braiders who left, `earnings` | decrease | increase for those who return (C-7, Tier C) | Partly reverses (Tier C) | Returning is a choice, so those who return expect to gain (LW-5). Those whose skills or alternatives have changed too much stay where they are; for them the exemption changes nothing (GAP-024-1). |
-| C-5 | braiders, `informal_activity` | increase | decrease (C-2) | Reverses | Nothing is left to evade. Some braiders may stay out of sight for reasons that have nothing to do with the license, such as taxes, but that is part of the counterfactual too. |
-| C-6 | `schools.cosmetology`, `quantity_demanded` | increase | decrease (C-6) | Reverses | From the announcement. Schools' capacity is mostly general cosmetology capacity, which they keep using for other students. |
-| C-7 | braiders, timing around the deadline | shift (rush to enroll or exit) | shift (enrollment stops at the announcement, C-6) | Reverses in kind | RS-8 in both cases; the action moves to the favorable time. |
-| C-8 | schools, licensees, braiders, `lobbying_effort` | increase | ambiguous (C-9) | Does not reverse | The license created a group with sunk costs and a stake in restoring it: licensed braiders and the schools that trained them. |
-| C-9 | `customers.braiding`, `price_paid` | increase | decrease (C-11) | Reverses | |
-| C-10 | licensed braiders, `net_price_received` | increase | decrease (C-12) | Reverses | |
-| C-11 | `customers.braiding`, `quantity_substitute` (home braiding) | increase | decrease (C-13) | Reverses | |
-| C-12 | `customers.braiding`, `search_cost` | increase | decrease (C-14) | Reverses | |
-| C-13 | `customers.braiding`, `quality_per_unit` | decrease | increase (C-15) | Reverses | Same dominance judgment (DM-2, A-10). |
-| C-15 | customers and braiders, `quantity_traded` (legal services) | decrease | increase (C-17) | Reverses | |
-| C-16 | `taxpayers`, `resources_available_other_uses` | decrease | increase (C-19) | Reverses | If the board's budget falls with its workload (A-12). |
-| — | licensed braiders, `earnings` | ambiguous (DM-3) | decrease (C-16) | Does not reverse | Under the license, a one-time training cost was set against a later stream of gains, so the sign was ambiguous by design. Under the exemption, the cost is sunk in both the exemption and the counterfactual; only the lost stream of gains remains, so the sign is a decrease. |
+| WE-003 ID | Actor class, variable | Sign in WE-003 | Expected sign under the exemption (this example) | Reverses? | Persistence (TS-6) | Reason |
+|---|---|---|---|---|---|---|
+| C-1 | braiders (legal market), `share_of_sellers_licensed` | increase | decrease (C-1) | Reverses | — | Licensed braiders keep their licenses; the share falls as unlicensed braiders join the legal market. |
+| C-2 | braiders, `number_of_sellers` (legal), `entry_rate` | decrease | increase (C-3, C-4) | Partly reverses | partial | Informal braiders become legal at once, and new entry resumes. Former braiders return only in part: skills have decayed, clients have dispersed, and some have built careers elsewhere (C-7; TS-6, A-15). |
+| C-3 | braiders in training, `compliance_cost` | increase | decrease for those still in training (C-5); no change for those who finished | Partly reverses | — | Hours and tuition already spent are sunk, are not refunded (R1), and appear in both the exemption and the counterfactual. |
+| C-4 | braiders who left, `earnings` | decrease | no separate consequence; `employment` in braiding of former braiders increase (C-7) | Partly reverses | partial | Returning is a choice, so those who return expect to gain (LW-5); their money earnings are not listed as a consequence. Those whose skills or alternatives have changed too much stay where they are; for them the exemption changes nothing (TS-6, A-15). |
+| C-5 | braiders, `informal_activity` | increase | decrease (C-2) | Reverses | — | Nothing is left to evade. Some braiders may stay out of sight for reasons that have nothing to do with the license, such as taxes, but that is part of the counterfactual too. |
+| C-6 | `schools.cosmetology`, `quantity_demanded` | increase | decrease (C-6) | Reverses | — | From the announcement. Schools' capacity is mostly general cosmetology capacity, which they keep using for other students. |
+| C-7 | braiders, timing around the deadline (section 5 only; not in WE-003's consequence list) | shift (rush to enroll or exit) | shift (enrollment stops at the announcement, C-6) | Reverses in kind | — | RS-8 in both cases; the action moves to the favorable time. See GAP-024-4. |
+| C-8 | schools, licensees, braiders, `lobbying_effort` | increase | ambiguous (C-9) | Does not reverse | — | The license created a group with sunk costs and a stake in restoring it: licensed braiders and the schools that trained them. |
+| C-9 | `customers.braiding`, `price_paid` | increase | decrease (C-11) | Reverses | — | |
+| C-10 | licensed braiders, `net_price_received` | increase | decrease (C-12) | Reverses | — | |
+| C-11 | `customers.braiding`, `quantity_substitute` (home braiding) | increase | decrease (C-13) | Reverses | — | |
+| C-12 | `customers.braiding`, `search_cost` | increase | decrease (C-14) | Reverses | — | |
+| C-13 | `customers.braiding`, `quality_per_unit` | decrease | increase (C-15) | Reverses | — | Same dominance judgment (DM-2, A-10). |
+| C-15 | customers and braiders, `quantity_traded` (legal services) | decrease | increase (C-17) | Reverses | — | New entrants (A-3) can take the place of former braiders who do not return. |
+| C-16 | `taxpayers`, `resources_available_other_uses` | decrease | increase (C-19) | Reverses | — | If the board's budget falls with its workload (A-12). |
+| — | licensed braiders, `earnings` | ambiguous (DM-3) | decrease (C-16) | Does not reverse | — | Under the license, a one-time training cost was set against a later stream of gains, so the sign was ambiguous by design. Under the exemption, the cost is sunk in both the exemption and the counterfactual; only the lost stream of gains remains, so the sign is a decrease. |
 
-Consequences with no counterpart in WE-003: C-8 (licensed braiders shift to other licensed services), C-10 (investment by braiders coming into the open, Tier C), C-18 (board enforcement cost, recorded only through taxpayers in WE-003).
+Consequences with no counterpart in WE-003: C-8 (licensed braiders shift to other licensed services), C-10 (investment by braiders coming into the open), C-18 (board enforcement cost, recorded only through taxpayers in WE-003), C-20 and C-21 (`quality_information` and `quality_variability`, which WE-003 did not record; their mirror under the license follows from RS-10).
 
 ## 8. Time structure
 
 - **Announcement window (about nine months).** Enrollment by would-be braiders stops (C-6). Braiders midway through training weigh whether to finish (C-5). Informal braiders have no reason to enroll and wait for the exemption.
-- **Effective date.** Informal braiders come into the open at once (C-2, C-3), because braiding needs almost no capital and their skills are in use. Prices for legal braiding fall quickly (C-11), and search costs fall as braiders advertise (C-14).
+- **Effective date.** Informal braiders come into the open at once (C-2, C-3), because braiding needs almost no capital and their skills are in use. Prices for legal braiding fall quickly (C-11), and search costs fall as braiders advertise (C-14); customers can judge braiders by reviews and reputation as these build up (C-20, C-21).
 - **Sunk costs.** The tuition and hours licensed braiders spent are gone in both the exemption and the counterfactual. The exemption removes the price premium those costs were meant to earn (C-12, C-16). This is why the ambiguous earnings sign in WE-003 becomes a decrease here, and why licensed braiders and the schools now have a stake in restoring the license (C-9).
-- **Skill loss and changed alternatives.** Five years is long enough for unused braiding skills to decay and for clients to settle with other braiders. Some former braiders have built experience in other work, which raises what they would give up by returning. Their return is slower and smaller than their exit was (C-7, Tier C; GAP-024-1). Apprentices who would have learned informally from them during those five years did not, and that gap closes only as new braiders are trained.
-- **Expectations of re-imposition.** Because braiding needs little capital, most responses to the exemption pay back within months and do not depend much on whether braiders expect the license to return. Only investments in premises (C-10, Tier C) depend on it (GAP-024-2). This is the main difference in time structure from WE-022 and WE-023, where long-lived capital makes credibility central.
+- **Skill loss and changed alternatives.** Five years is long enough for unused braiding skills to decay and for clients to settle with other braiders. Some former braiders have built experience in other work, which raises what they would give up by returning. Their return is slower and smaller than their exit was (C-7; TS-6, A-15). Apprentices who would have learned informally from them during those five years did not, and that gap closes only as new braiders are trained.
+- **Expectations of re-imposition.** Because braiding needs little capital, most responses to the exemption pay back within months and do not depend much on whether braiders expect the license to return. Only investments in premises (C-10) depend on it (TS-5, A-11). A belief that the license would return with existing braiders grandfathered would bring entry forward instead (TS-5), but A-13 is below the cut-off. This is the main difference in time structure from WE-022 and WE-023, where long-lived capital makes credibility central.
 
 ## 9. Opportunity costs
 
@@ -141,7 +143,7 @@ The hours and tuition that braiders in training no longer have to spend are C-5,
 | ID | Statement | Type | p | Evidence | If false |
 |---|---|---|---|---|---|
 | A-1 | The license still binds: many people who would braid for pay do not hold a cosmetology license. | binding | 0.95 | Board license records against estimates of informal and former braiders. | Almost every consequence fails. |
-| A-2 | A meaningful number of people braid for pay without a license and will come into the open. | enforcement | 0.8 | Complaint-driven enforcement; home-based work (WE-003 A-3). | C-2, C-3, C-11 to C-16 weaken. |
+| A-2 | A meaningful number of people braid for pay without a license and will come into the open. | enforcement | 0.8 | Complaint-driven enforcement; home-based work (WE-003 A-3). | C-2, C-3, C-11 to C-16, C-20 and C-21 weaken. |
 | A-3 | The license deterred some would-be braiders, who will now enter. | binding | 0.85 | Entry before and after amendment 7; school enrollment of braiders. | C-4 weakens; C-11, C-12 weaken. |
 | A-4 | Students midway through training can stop without owing the remaining tuition. | other | 0.7 | School contracts; billing per term. | C-5 not reported. |
 | A-5 | Some of the schools' students enrolled only to braid legally. | other | 0.85 | Enrollment records; students' stated plans. | C-6 not reported. |
@@ -154,6 +156,7 @@ The hours and tuition that braiders in training no longer have to spend are C-5,
 | A-12 | The board's budget falls with its braiding workload rather than being redirected to other work. | revenue_use | 0.6 | Budget process for the board; share of the budget from license fees. | C-19 not reported. |
 | A-13 | Braiders expect the license to return, with those then practicing grandfathered. | expectations | 0.25 | Legislative history; how the board's earlier rules treated existing practitioners. | Below cut-off; not reported. |
 | A-14 | Braiders who moved to neighboring states return on a meaningful scale. | mobility | 0.2 | WE-003 A-6 (little relocation in the first place). | Below cut-off; not reported. |
+| A-15 | For many former braiders, returning costs more than the restored return: skills unused for five years have decayed, clients have settled with other braiders, and experience built in other work raises what they would give up. | reversal_cost | 0.75 | Survey of former braiders; how long they have been away; earnings in their current work. | Former braiders return more fully; the WE-003 C-2 and C-4 rows of the metamorphic check would show persistence none. |
 
 ## 11. Report
 
@@ -162,8 +165,8 @@ The hours and tuition that braiders in training no longer have to spend are C-5,
 **Visible consequences.** Legal braiders no longer need to be licensed (C-1), and braiders who were working outside the law can work openly (C-2).
 
 **Invisible consequences.**
-- *Customers* pay less for legal braiding (C-11), turn less often to family and friends or go without (C-13), find braiders more easily (C-14), and receive higher-quality braiding overall (C-15), because the training the license required was largely unrelated to braiding.
-- *Braiders* who were working informally come into the open (C-3), and more people take up braiding (C-4). Some who left the trade return, but not all: five years away has eroded skills and client lists, and some have built careers elsewhere (C-7, Tier C). Braiders midway through training can stop (C-5).
+- *Customers* pay less for legal braiding (C-11), turn less often to family and friends or go without (C-13), find braiders more easily (C-14), can judge a braider's quality better before buying, through reviews, advertising and legal recourse (C-20), meet less variation in quality between braiders (C-21), and receive higher-quality braiding overall (C-15), because the training the license required was largely unrelated to braiding.
+- *Braiders* who were working informally come into the open (C-3), and more people take up braiding (C-4). Some who left the trade return, but not all: five years away has eroded skills and client lists, and some have built careers elsewhere (C-7). Braiders midway through training can stop (C-5). Those who came into the open invest in premises and equipment, to the extent they expect the exemption to last (C-10).
 - *Licensed braiders* receive lower prices for braiding (C-12) and earn less overall (C-16); their tuition and hours are already spent and cannot be recovered. Some shift toward services their license still reserves to them (C-8).
 - *Cosmetology schools* lose students who enrolled only to braid (C-6). Schools and licensed braiders now have a stake in restoring the license (C-9).
 - *Taxpayers* save the cost of braiding enforcement, if the board's budget is cut accordingly (C-18, C-19).
@@ -186,10 +189,10 @@ The hours and tuition that braiders in training no longer have to spend are C-5,
 | C-4 | braiders.prospective | entry_rate | increase | short–medium | invisible | B | EN-1 in reverse | A-3 |
 | C-5 | braiders.in_training | compliance_cost | decrease | short | invisible | B | OC-2 in reverse | A-4 |
 | C-6 | schools.cosmetology | quantity_demanded | decrease | short | invisible | B | EN-1 in reverse, RS-8 | A-5 |
-| C-7 | braiders.former | employment (in braiding) | increase | medium | invisible | C | EN-3 in reverse, GAP-024-1 | A-6 |
+| C-7 | braiders.former | employment (in braiding) | increase | medium | invisible | B | EN-3 in reverse, TS-6 | A-6, A-15 |
 | C-8 | braiders.licensed | quantity_supplied (licensed-only services) | increase | medium | invisible | B | LW-4, RS-6 | A-7 |
 | C-9 | schools, licensees, braiders | lobbying_effort | ambiguous | medium | invisible | B | RS-7, EN-5 | A-8 |
-| C-10 | braiders (formerly informal) | investment_target (premises, equipment) | increase | medium | invisible | C | RS-6 in reverse, LW-4, GAP-024-2 | A-2, A-11 |
+| C-10 | braiders (formerly informal) | investment_target (premises, equipment) | increase | medium | invisible | B | RS-6 in reverse, LW-4, TS-5 | A-2, A-11 |
 | C-11 | customers.braiding | price_paid (legal braiding) | decrease | short–medium | invisible | B | EN-1 in reverse | A-2, A-3 |
 | C-12 | braiders.licensed, cosmetologists.licensed who braid | net_price_received (braiding) | decrease | short–medium | invisible | B | EN-2 in reverse | A-2, A-3 |
 | C-13 | customers.braiding | quantity_substitute (home braiding) | decrease | short | invisible | B | EN-3, RS-1 in reverse | A-9 |
@@ -199,6 +202,8 @@ The hours and tuition that braiders in training no longer have to spend are C-5,
 | C-17 | customers, braiders | quantity_traded (legal services) | increase | short–medium | invisible | B | OC-4 in reverse | A-2, A-3 |
 | C-18 | officials.enforcement | enforcement_cost (braiding) | decrease | short | invisible | A | OC-3 in reverse | none |
 | C-19 | taxpayers | resources_available_other_uses | increase | short | invisible | B | OC-3, OC-1 in reverse | A-12 |
+| C-20 | customers.braiding | quality_information | increase | short–medium | invisible | B | RS-10 (reverse clause) | A-2 |
+| C-21 | customers.braiding | quality_variability | decrease | medium | invisible | B | RS-10 (reverse clause) | A-2 |
 
 ## Gaps found
 

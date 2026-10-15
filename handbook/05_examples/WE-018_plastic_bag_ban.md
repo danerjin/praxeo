@@ -1,6 +1,6 @@
 # WE-018 Ban on single-use plastic shopping bags, with a fee for paper bags
 
-Analyst: draft (Handbook 0.2)  |  Rule catalog version: 0.2  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
 
 A stylized policy in a fictional city. It resembles real local bag ordinances but is not modeled on any one of them, and it is kept apart from the historical cases reserved for evaluation. Environmental effects (litter, waste, emissions, use of materials) are the stated purpose of such policies but are out of scope for version 1, which has no variables for them; this analysis covers only the variables in the controlled list. The probabilities are illustrative; the evidence column says what a real analysis would cite.
 
@@ -53,7 +53,7 @@ The visible effects: thin bags disappear from Brennick checkouts, and a bag now 
 
 | ID | Actor class | Variable | Sign | Horizon | Rules | Assumptions |
 |---|---|---|---|---|---|---|
-| C-3 | `shoppers` | `quantity_substitute` (reusable bags and paid paper bags) | increase | short | RS-1 | A-2 |
+| C-3 | `shoppers` | `quantity_substitute` (reusable bags and paid paper bags) | increase | short to medium | RS-1, TS-8 | A-2, A-14 |
 | C-4 | `households.bag_reusers` | `quantity_substitute` (bought bin liners and pet-waste bags) | increase | short to medium | RS-1 | A-3 |
 | C-5 | `retailers.brennick` | `compliance_cost` (new stock, till changes, signs, staff training, fee handling) | increase | short | OC-1 | none |
 | C-6 | `retailers.brennick` | `net_price_received` (carryout bags) | increase | short | K2 | A-1 |
@@ -63,9 +63,11 @@ The visible effects: thin bags disappear from Brennick checkouts, and a bag now 
 | C-10 | `shoppers` | `quantity_demanded` (free thin bags taken in the announcement window) | increase | short | RS-8 | A-7 |
 | C-11 | `bag_makers.thin`, `sellers.substitutes`, `retailers.brennick` | `lobbying_effort` (thin-bag makers for repeal or a looser definition; makers of thick bags to keep the 4 mil line; retailers over the fee) | increase | medium | RS-7 | A-8 |
 
-C-4: households that lined bins with carryout bags were using a by-product that came free with their shopping. Its cost has risen from nothing, relative to bought liners, which serve the same end, so they buy liners (RS-1).
+C-4: households that lined bins with carryout bags were using a by-product that came free with their shopping. The relation is recorded as `substitute`, partial, with the note `secondary_use` (`02_ontology.md`, 2.8): carryout bags and bought liners serve the same end. The ban removes the free supply, so they buy liners (RS-1).
 
 C-6: the store keeps the 10-cent fee. A paper bag costs a store a few cents more than a thin bag did, but the store now receives at least 10 cents for each one it hands out, where it received nothing for a thin bag.
+
+C-3: the mix changes as routines form (TS-8). In the first weeks shoppers forget their bags and pay for paper; over the following months they learn to carry reusable bags, so paper use falls and reusable bags take a larger share (section 8).
 
 C-9: the fee is small (perhaps 30 to 60 cents on a weekly shop). Only shoppers who were already close to indifferent between stores on either side of the line, at the margin in the sense of LW-2, change where they shop. Most shoppers do not.
 
@@ -79,15 +81,15 @@ Not reported:
 |---|---|---|---|---|---|---|---|
 | C-12 | `retailers.fallow_creek` | `quantity_traded` (all goods) | increase | short | RS-4, RS-9 | Brennick and Fallow Creek stores near Route 9: `across_border`, close; carryout bags and the rest of the basket: `complement`, note `trip` | A-6, A-9 |
 | C-13 | `retailers.edge` | `quantity_traded` (all goods) | decrease | short | RS-4, RS-9 | as C-12 | A-6, A-9 |
-| C-14 | `retailers.edge` | `employment` | decrease | medium | RS-4, RS-9, RS-6 | as C-12 | A-6, A-9 |
+| C-14 | `retailers.edge` | `employment` | decrease | medium | RS-4, RS-9, OC-5 | as C-12 | A-6, A-9, A-15 |
 | C-15 | `retailers.brennick` | `resources_available_other_uses` (bag spending saved per transaction) | increase | short | K1, K2, LW-1 | | A-2, A-12 |
-| C-16 | `shoppers` | `price_paid` (groceries and other goods) | ambiguous | medium | see section 7 | | A-12, A-13 |
+| C-16 | `shoppers` | `price_paid` (groceries and other goods) | ambiguous | medium | RS-14, see section 7 | carryout bags `input_to` retail service | A-12, A-13 |
 
-C-12 to C-14: the bag goes with the whole basket. A shopper who crosses the line to avoid the fee moves the entire week's shopping, not just the bags (RS-9). C-14 is at depth 4 (ban, cross-border shopping, lost basket, store staffing), where the chain stops.
+C-12 to C-14: the bag goes with the whole basket. A shopper who crosses the line to avoid the fee moves the entire week's shopping, not just the bags (RS-9). Stores that lose the sales need fewer staff (OC-5; Fallow Creek stores gain the mirror image, which is not separately recorded). C-14 is at depth 4 (ban, cross-border shopping, lost basket, store staffing), where the chain stops.
 
 C-15: stores no longer buy thin bags for every shopper. Many shoppers now bring their own bags, and those who take paper pay a fee that covers its cost (A-12). Store spending on bags per transaction falls. This is separate from the compliance cost in C-5; the two are different variables and are not netted.
 
-The relation between carryout bags and bin liners is recorded as `substitute` (partial, in their use as liners); see GAP-018-1.
+The relation between carryout bags and bin liners is recorded as `substitute`, partial, note `secondary_use` (see C-4).
 
 Not reported: higher prices for bin liners or reusable bags. Brennick is too small a part of these markets to move their prices; the opposite assumption, A-10, has p = 0.1.
 
@@ -95,15 +97,15 @@ Not reported: higher prices for bin liners or reusable bags. Brennick is too sma
 
 | Actor class, variable, horizon | Chains (+) | Chains (−) | Dominance rule | Combined sign |
 |---|---|---|---|---|
-| `shoppers`, `price_paid` (groceries and other goods), medium | Compliance costs (C-5) and, near the line, lost sales spread over fewer customers (C-13) lower stores' return; at the margin they offer less, and prices are higher (RS-6, LW-3). | Stores spend less on bags (C-15); in a competitive retail market, lower costs draw more supply and lower prices (LW-4, LW-3; A-13). | None | **ambiguous** (C-16). Decided by whether stores' saving on bags exceeds their compliance costs, which depends on how many shoppers bring their own bags. |
-| `shoppers` and `households.bag_reusers`, total outlay on carrying goods and lining bins, short | Paper-bag fees (C-2), reusable bags (C-3), bought liners (C-4). | None for these items. | None needed | **increase**. Every item on which shoppers now spend money was free before. Whether this is offset by lower grocery prices is C-16, which is ambiguous. |
+| `shoppers`, `price_paid` (groceries and other goods), medium | Compliance costs (C-5) are a cost of every Brennick store, so they pass through to prices (RS-14); near the line, lost sales spread fixed costs over fewer customers (C-13). | Stores spend less on bags per transaction (C-15); in a competitive retail market, a lower input cost passes through to lower prices in the same way (RS-14 in reverse; A-13). | None | **ambiguous** (C-16). Decided by whether stores' saving on bags exceeds their compliance costs, which depends on how many shoppers bring their own bags. |
+| `shoppers`, `households.bag_reusers`, `resources_available_other_uses`, short | None in the short run. | Paper-bag fees (C-2), reusable bags (C-3), bought liners (C-4): money spent on items that came free with shopping before. | None needed | **decrease** (C-17, C-18). Shelf prices do not move in the short run, so nothing offsets this. Over the medium run, lower grocery prices could offset part of it if stores' saving on bags is passed on (C-16, ambiguous), so the sign is not carried beyond the short run. |
 | `retailers.brennick`, finances from bags, short | Fee income on paper bags (C-6), less spent on bags (C-15). | Compliance costs (C-5). | None | Not combined: these are different variables (workflow step 7, rule 6). Each is reported on its own. |
 
 ## 8. Time structure
 
 - **Announcement window (nine months).** Shoppers take extra free thin bags while they still can (C-10), and stores run down their stocks of thin bags. Households that reuse bags as liners live off this stock at first, so bought liners (C-4) rise only after a few months, as the stock runs out.
 - **The first months.** Shoppers forget their bags most often at first, so paper-bag fees (C-2, C-6) are highest early. Reusable bag purchases surge, then fall to a lower rate at which bags are replaced, since a reusable bag lasts many trips.
-- **Habits form over months.** As shoppers learn to carry bags, paper-bag use and fee payments fall. This is a Tier C suggestion (GAP-018-2): the catalog's time rules cover durable capital (TS-1) and expectations (TS-2), not the gradual forming of routines, and the claim concerns the path of a size rather than a sign, so it is not in the consequence list.
+- **Habits form over months (TS-8).** Carrying bags is a routine repeated on every trip (A-14). As shoppers learn to carry bags, paper-bag use and fee payments fall from their early peak, without any change in prices; reusable bags take a growing share of C-3. The full response therefore has a short-to-medium horizon. The path changes sizes, not signs: compared with the counterfactual, fee payments (C-2, C-6) and shoppers' outlay (C-17) stay increases and decreases respectively, only smaller than at first.
 - **Edge shoppers.** Shoppers who switch stores across the line (C-9) are likely to stay switched once they have learned the other store, so C-13 and C-14 do not fade with habit as fee payments do.
 - **The fee erodes in real terms.** The minimum charge is fixed at 10 cents. As other prices rise, its real value falls, and, unless stores charge more, paper-bag use creeps up over the long run (TS-3).
 - **Reclassification grows.** Bag makers design cheap bags that just meet the 4 mil and 125-use definition (C-7); this takes months. If they come to be used once and thrown away, pressure to tighten the definition is what TS-4 predicts; TS-4 is Tier C in the catalog, so this is a suggestion only. Makers who expect such tightening invest less in thick bags (TS-2).
@@ -135,15 +137,18 @@ The free thin bags no longer handed out are the prevented exchanges, recorded as
 | A-11 | Checkout times rise meaningfully. | other | 0.45 | Till timing studies in comparable towns. | Below cut-off; not reported. |
 | A-12 | Stores' spending on bags per transaction falls, because many shoppers bring bags and the fee covers paper. | other | 0.7 | Store bag purchasing records; paper-bag cost against the 10-cent fee. | C-15 not reported; C-16 leans toward increase. |
 | A-13 | Retail competition is strong enough that cost changes reach shelf prices over time. | other | 0.7 | Number of grocery chains; margins. | C-16's − chain weakens. |
+| A-14 | Shopping trips are frequent and routine, so carrying bags can become a habit (the assumption of TS-8). | other | 0.9 | Trip frequency from household surveys (most households shop at least weekly). | C-3's path is flatter; paper-bag use does not fall over time. |
+| A-15 | Stores near the line adjust staff hours and hiring to their sales (the assumption of OC-5). | alternative_uses | 0.8 | Share of part-time and hourly staff in grocery retail; scheduling practice. | C-14 not reported. |
 
 ## 11. Report
 
 **The policy.** Brennick retailers may no longer give out thin plastic carryout bags. They may hand out paper bags only for at least 10 cents each, which they keep, and may sell reusable bags at any price. Shoppers on food assistance get paper bags free. The neighboring town has no such rule.
 
-**Visible consequences.** Thin plastic bags disappear from Brennick checkouts (C-1), and bags now cost shoppers money at the till (C-2).
+**Visible consequences.** Thin plastic bags disappear from Brennick checkouts (C-1), bags now cost shoppers money at the till (C-2), and shoppers switch to reusable and paper bags (C-3).
 
 **Invisible consequences.**
-- *Shoppers* buy reusable bags and pay for paper (C-3), and give up the other goods that money would have bought (C-17). Before the ban they took extra free bags (C-10).
+- *Shoppers* give up the other goods that the money spent on fees and reusable bags would have bought (C-17). They pay for paper most often in the first weeks; as carrying bags becomes a habit, paper use and fee payments fall (C-3, section 8). Before the ban they took extra free bags (C-10).
+
 - *Households that reused bags as bin liners* now buy liners (C-4, C-18).
 - *Retailers* bear compliance costs (C-5), keep the paper-bag fee (C-6), and spend less on bags (C-15). Some sell cheap thick "reusable" bags that are used like the old ones (C-7); some small stores carry on giving thin bags (C-8).
 - *Near the city line*, some shoppers move their whole weekly shop to Fallow Creek (C-9, C-12), so Brennick stores there sell less and over time employ fewer people (C-13, C-14).
@@ -161,7 +166,7 @@ The free thin bags no longer handed out are the prevented exchanges, recorded as
 |---|---|---|---|---|---|---|---|---|
 | C-1 | shoppers, retailers.brennick, bag_makers.thin | quantity_traded (thin carryout bags) | decrease | short | visible | B | K1, EN-7 | A-1 |
 | C-2 | shoppers | price_paid (carryout bags) | increase | short | visible | B | K2 | A-1 |
-| C-3 | shoppers | quantity_substitute (reusable and paper bags) | increase | short | visible | B | RS-1 | A-2 |
+| C-3 | shoppers | quantity_substitute (reusable and paper bags) | increase | short–medium | visible | B | RS-1, TS-8 | A-2, A-14 |
 | C-4 | households.bag_reusers | quantity_substitute (bought liners) | increase | short–medium | invisible | B | RS-1 | A-3 |
 | C-5 | retailers.brennick | compliance_cost | increase | short | invisible | A | OC-1 | none |
 | C-6 | retailers.brennick | net_price_received (carryout bags) | increase | short | invisible | B | K2 | A-1 |
@@ -172,9 +177,9 @@ The free thin bags no longer handed out are the prevented exchanges, recorded as
 | C-11 | bag_makers.thin, sellers.substitutes, retailers | lobbying_effort | increase | medium | invisible | B | RS-7 | A-8 |
 | C-12 | retailers.fallow_creek | quantity_traded (all goods) | increase | short | invisible | B | RS-4, RS-9 | A-6, A-9 |
 | C-13 | retailers.edge | quantity_traded (all goods) | decrease | short | invisible | B | RS-4, RS-9 | A-6, A-9 |
-| C-14 | retailers.edge | employment | decrease | medium | invisible | B | RS-4, RS-9, RS-6 | A-6, A-9 |
+| C-14 | retailers.edge | employment | decrease | medium | invisible | B | RS-4, RS-9, OC-5 | A-6, A-9, A-15 |
 | C-15 | retailers.brennick | resources_available_other_uses | increase | short | invisible | B | K1, K2, LW-1 | A-2, A-12 |
-| C-16 | shoppers | price_paid (groceries and other goods) | ambiguous | medium | invisible | B | RS-6, LW-3 vs LW-4, LW-3 | A-12, A-13 |
+| C-16 | shoppers | price_paid (groceries and other goods) | ambiguous | medium | invisible | B | RS-14 (C-5) vs RS-14 in reverse (C-15) | A-12, A-13 |
 | C-17 | shoppers | resources_available_other_uses | decrease | short | invisible | B | OC-1, RS-1 | A-2 |
 | C-18 | households.bag_reusers | resources_available_other_uses | decrease | short–medium | invisible | B | RS-1, LW-1 | A-3 |
 | C-19 | taxpayers | resources_available_other_uses | decrease | short | invisible | A | OC-3, OC-1 | none |

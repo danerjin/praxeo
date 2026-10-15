@@ -63,44 +63,44 @@ The visible effects: Velmora dairy farmers receive at least $21 per cwt instead 
 | C-4 | `farmers.velmora` | `investment_target` (herd expansion, barns, milking equipment) | increase | medium | SB-2, LW-4, TS-1 | A-1, A-2 |
 | C-5 | `farmers.velmora` | `number_of_sellers` (farms that would have closed stay open) | increase | medium to long | SB-2, LW-4 | A-1, A-2 |
 | C-6 | `plants.specialty` | `price_paid` (raw Velmora milk) | increase | short | K1 | A-1 |
-| C-7 | `plants.specialty` | `quantity_supplied` (Velmora-labeled cheese) | decrease | medium | RS-6, LW-4 | A-1, A-4 |
+| C-7 | `plants.specialty` | `quantity_supplied` (Velmora-labeled cheese) | decrease | medium | RS-14, RS-6, LW-4 | A-1, A-4 |
 | C-8 | `plants.market` | `quantity_substitute` (out-of-state raw milk in place of Velmora milk) | increase | short | RS-1 | A-1, A-5 |
 | C-9 | `plants.commodity` | `investment_target` (cheddar and powder capacity) | increase | medium | SB-2, LW-4 | A-1, A-2 |
 | C-10 | `plants.commodity` | `compliance_cost` (keeping Velmora milk separate; origin records) | increase | short | OC-2 | none |
 | C-11 | `plants.commodity`, `farmers.neighbors` | `reclassification` (out-of-state milk passed off as Velmora milk for Board sales) | increase | short | RS-3, RS-5 | A-1, A-6 |
-| C-12 | `farmers.prospective` (across the border) | `entry_rate` (farms moved or registered into Velmora) | increase | long | GAP-008-1, SB-5 | A-1, A-2, A-7 |
+| C-12 | `farmers.prospective` (across the border) | `entry_rate` (farms moved or registered into Velmora) | increase | long | RS-4, SB-5 | A-1, A-2, A-7 |
 | C-13 | `farmers.velmora`, `plants.commodity` | `lobbying_effort` (to keep and raise the floor) | increase | medium | RS-7, SB-5 | A-2 |
 
 C-3 to C-5: in the short run, farmers can add milk only by feeding cows more and keeping older cows longer. Herds grow more slowly, because a heifer takes about two years to come into milk, and barns take a season or two to build (TS-1). So the supply response is small at first and grows over the medium run, as long as farmers expect the program to last (A-2).
 
-C-6 to C-8 show how the floor splits Velmora's processors. Commodity plants are protected: they pay $21 and sell to the Board at prices set to cover it. Specialty plants, whose label requires Velmora milk, pay $21 but sell at market prices, so their margins shrink and some cut output (C-7). Plants making fluid milk and other market products are free to buy out-of-state milk and do (C-8). The result is that Velmora milk flows into Board products and out-of-state milk flows into Velmora's market products.
+C-6 to C-8 show how the floor splits Velmora's processors. Commodity plants are protected: they pay $21 and sell to the Board at prices set to cover it. Specialty plants, whose label requires Velmora milk, pay $21 but sell at market prices, so their margins shrink and some cut output (C-7). This is RS-14 (input cost pass-through) in the case where competitors are not exposed: other cheesemakers in the region buy milk at market prices, so the specialty plants cannot pass much of the cost on, and the quantity effect dominates. Plants making fluid milk and other market products are free to buy out-of-state milk and do (C-8). The result is that Velmora milk flows into Board products and out-of-state milk flows into Velmora's market products.
 
 C-11: since out-of-state milk costs about $18 and Velmora milk $21, a plant gains by certifying out-of-state milk as Velmora milk for Board sales (RS-3), and a farm near the border gains by routing milk through a registered Velmora address (RS-5).
 
-C-12 needs a move the catalog does not have. RS-4 describes activity moving out of a jurisdiction to escape a burden. Here the policy favors activity inside the boundary, so farmers near it have reason to move in: lease or buy land in Velmora and register there. SB-5 (seeking to qualify) covers the motive but not the movement of production across a border. C-12 is Tier C (GAP-008-1).
+C-12 applies RS-4 in its widened form: the policy favors activity inside the boundary, so farmers near it have reason to move in: lease or buy land in Velmora and register there (SB-5 gives the motive). RS-4 also says that supply just outside decreases as those farms leave; that chain meets C-16, which pushes neighbors' supply up, and the two are combined in section 7 (C-25).
 
 ## 6. Second-order effects
 
 | ID | Actor class | Variable | Sign | Horizon | Rules | Market relation | Assumptions |
 |---|---|---|---|---|---|---|---|
-| C-14 | `consumers` | `price_paid` (cheese, butter, powder) | increase | short to medium | SB-3, LW-3 | Velmora and out-of-state dairy products: `same_market_other_segment`, close | A-1, A-3 |
-| C-15 | `farmers.neighbors` | `net_price_received` | increase | short to medium | RS-1, GAP-008-3 | Velmora and out-of-state raw milk: `across_border`, close | A-1, A-5 |
-| C-16 | `farmers.neighbors` | `quantity_supplied` | increase | medium | GAP-008-3, LW-4 | same | A-1, A-5 |
+| C-14 | `consumers` | `price_paid` (cheese, butter, powder) | increase | short to medium | SB-9, SB-3, LW-3 | Velmora and out-of-state dairy products: `same_market_other_segment`, close | A-1, A-3 |
+| C-15 | `farmers.neighbors` | `net_price_received` | increase | short to medium | PC-8, RS-1 | Velmora and out-of-state raw milk: `across_border`, close | A-1, A-5 |
+| C-16 | `farmers.neighbors` | `quantity_supplied` | increase | medium | PC-8, LW-4 | same | A-1, A-5 |
 | C-17 | `input_suppliers` | `quantity_traded` (feed, heifers, equipment sold to Velmora dairy) | increase | medium | SB-3 | feed and milk: `input_to` | A-1, A-2 |
 | C-18 | `factor_owners.specific` | `asset_value` (Velmora dairy farmland and barns) | increase | short to medium | SB-4 | | A-2, A-8 |
 | C-19 | `farmers.other_uses` | `quantity_supplied` (crops and beef in Velmora) | decrease | medium to long | SB-3 | dairy and other farm uses: `substitute` (for land and labor), partial | A-1, A-10 |
-| C-20 | `officials.enforcement` (Dairy Board) | `inventory_held` (cheddar and powder in storage) — not in the variable list | increase | short to medium | GAP-008-2 | | A-1 |
-| C-21 | `sellers.to_food_programs` | `quantity_traded` (dairy sold to school meals and food banks in Velmora) | decrease | medium | GAP-008-2 | donated and purchased cheese: `substitute`, close | A-1, A-9 |
+| C-20 | `officials.enforcement` (Dairy Board) | `inventory_held` (cheddar and powder in storage) | increase | short to medium | SB-9 | | A-1 |
+| C-21 | `sellers.to_food_programs` | `quantity_traded` (dairy sold to school meals and food banks in Velmora) | decrease | medium | SB-9 | donated and purchased cheese: `substitute`, close | A-1, A-9, A-12 |
 
 C-14: the Board takes Velmora's milk off the market in the form of stored cheese and powder. The market is offered less, so buyers pay more than they otherwise would, unless out-of-state supply replaces every pound at the old price. Because Velmora is about 15% of the region and other farms take time to expand, it does not do so at first (A-3).
 
-C-15 and C-16 travel the other way. Velmora plants making market products switch to out-of-state milk (C-8), so demand for neighbors' milk rises and so does the price they receive. PC-8 describes this spillover only for ceilings, where demand spills to the uncontrolled segment from buyers who cannot obtain the controlled good. Here buyers leave the controlled segment because it costs more. The movement is the same in kind, but no rule covers it for floors (GAP-008-3), so C-15 and C-16 are Tier C. C-16 is at depth 4 and the chain stops.
+C-15 and C-16 apply PC-8 in its widened form, for a floor: Velmora plants making market products leave the controlled segment because it costs more and switch to out-of-state milk (C-8), so demand for neighbors' milk rises and so does the price they receive (A-5 gives the close substitutability). C-16 is at depth 4 and the chain stops.
 
 C-18: dairy land and barns in Velmora are in fixed supply, so the expected stream of higher returns is capitalized into their price (SB-4), from the time the program became expected in February. Owners at that time gain. Farmers who buy in later pay the higher price and do not gain from the floor in the same way.
 
-C-20 and C-21 rest on a missing variable and rule. The Board's stock grows whenever the floor binds. Cheddar keeps one to two years and powder two to three, so the Board must dispose of stocks within that time (K3). Donations to school meals and food banks replace dairy products those programs would otherwise have bought, so their usual suppliers sell less (C-21). Neither stocks nor disposal have a rule or variable in version 1 (GAP-008-2), so both are Tier C.
+C-20 and C-21 apply SB-9 (public stocks and their disposal). The Board's stock grows whenever the floor binds, because K3's resale route opens only when market prices exceed 110% of the Board's purchase price, which is rare while the floor binds. Cheddar keeps one to two years and powder two to three (A-12), so the Board must dispose of stocks within that time (K3). Donations to school meals and food banks replace dairy products those programs would otherwise have bought, so their usual suppliers sell less (C-21). Resale into the regional market, when it happens, lowers prices there (SB-9, RS-13); it is one of the chains in the long-run consumer price entry in section 7.
 
-RS-9 and RS-11 were checked and do not apply: no buyer changes where they shop, and no benefit is tied to a buyer's location. RS-10 applies only to the false-origin trade in C-11, which takes place inside legal plants; no informal market for milk is expected. Pruned at depth 3: consumers outside the region, where Board exports are sold (diffuse, and outside the jurisdiction).
+RS-9 and RS-11 were checked and do not apply: no buyer changes where they shop, and no benefit is tied to a buyer's location. RS-10 applies only to the false-origin trade in C-11, which takes place inside legal plants; no informal market for milk is expected. Pruned at depth 3: consumers and sellers outside the region, where Board exports are sold (SB-9 and RS-13 would give lower prices there; diffuse, and outside the jurisdiction).
 
 ## 7. Combined effects
 
