@@ -6,7 +6,7 @@ A stylized policy in a fictional city, chosen as the "messy" case: three instrum
 
 ## 1. Policy record
 
-**Wexmoor Housing Stability and Supply Act.** Wexmoor is a city of about 700,000 people with about 300,000 homes, 55% of them rented. Market rents have risen about 5% a year for several years. The suburbs of Alden County, 20 to 30 minutes away, have no comparable rules. About 12,000 homes (4% of the stock) are not anyone's principal residence for more than six months a year: roughly 5,000 second homes and city apartments of people who live elsewhere, 3,000 short-term rentals, 2,500 units held empty by landlords, and 1,500 estates and renovations. Converting a rental building to separately owned condominiums requires a subdivision permit that takes about nine months.
+**Harrowmere Housing Stability and Supply Act.** Harrowmere is a city of about 700,000 people with about 300,000 homes, 55% of them rented. Market rents have risen about 5% a year for several years. The suburbs of Alden County, 20 to 30 minutes away, have no comparable rules. About 12,000 homes (4% of the stock) are not anyone's principal residence for more than six months a year: roughly 5,000 second homes and city apartments of people who live elsewhere, 3,000 short-term rentals, 2,500 units held empty by landlords, and 1,500 estates and renovations. Converting a rental building to separately owned condominiums requires a subdivision permit that takes about nine months.
 
 The bill was introduced on 1 February of Year 1 with a council majority behind it. It passed on 1 May and takes effect on 1 September of Year 1. The vacancy tax is first assessed on occupancy during calendar Year 2. The subsidy applies to units completed from 1 September of Year 1 to 31 August of Year 6. The rent cap has no end date.
 
@@ -209,7 +209,7 @@ Payments of K2 by owners who keep units empty are C-2; their declarations are C-
 
 ## 11. Report
 
-**The policy.** Wexmoor caps rent increases for sitting tenants in existing multi-unit buildings at 3% a year, while letting rents reset between tenancies. It taxes homes that are no one's principal residence for more than six months a year at 2% of their value. It pays developers $30,000 for each new rental unit kept as a long-term rental for 15 years, from the vacancy tax first and the general budget for the rest.
+**The policy.** Harrowmere caps rent increases for sitting tenants in existing multi-unit buildings at 3% a year, while letting rents reset between tenancies. It taxes homes that are no one's principal residence for more than six months a year at 2% of their value. It pays developers $30,000 for each new rental unit kept as a long-term rental for 15 years, from the vacancy tax first and the general budget for the rest.
 
 **Visible consequences.** Sitting tenants pay less than they would have, and the gap grows each year (C-1). Owners who keep homes empty pay the tax (C-2), and fewer homes sit empty (C-3). Building new rentals pays better (C-4).
 
