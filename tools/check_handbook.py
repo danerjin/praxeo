@@ -8,7 +8,7 @@ With no arguments, checks every file in handbook/05_examples/. For each example 
 - every variable in the consequence list is in the controlled list (02_ontology.md, 2.4);
 - no consequence is recorded as a bare "(loss)" instead of a signed variable;
 - every assumption cited in the consequence list is defined in section 10.
-Local gap IDs (GAP-005-1) and proposed rules named in 06_gaps.md are reported, not failed.
+Local gap IDs (GAP-005-1) are reported, not failed, and rule IDs proposed under "Gaps found" are ignored.
 Exits non-zero if any example has errors.
 """
 import glob
@@ -66,7 +66,9 @@ def check(path, rules, variables):
     if found != sorted(found):
         errors.append("sections out of order")
 
-    unknown = sorted(set(RULE_ID.findall(text)) - rules)
+    # Proposed new rules may be named in "Gaps found"; only the analysis must cite defined rules.
+    analysis = text.split("## Gaps found")[0]
+    unknown = sorted(set(RULE_ID.findall(analysis)) - rules)
     if unknown:
         errors.append(f"undefined rule IDs: {', '.join(unknown)}")
 
