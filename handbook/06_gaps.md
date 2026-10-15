@@ -4,19 +4,23 @@ The to-do list for the catalog and the agenda for the first expert review. Gaps 
 
 ## 6.1 Gaps found in the worked examples
 
-| ID | Found in | Gap | Proposed fix |
+Status as of catalog 0.2. "Closed" means a rule or variable was added and the worked example re-run; it still needs expert review like everything else.
+
+| ID | Found in | Gap | Status |
 |---|---|---|---|
-| GAP-1 | WE-001 | Announcement effects before a policy takes effect: the policy record has no announcement date, so RS-8 cannot be applied. | Add `announced` to the policy record. |
-| GAP-2 | WE-001 | No rule links lower housing turnover to worse job matching. | New rule under RS or a cross-market relation `housing → labor mobility`. Needs expert input on whether this is praxeological or empirical. |
-| GAP-3 | WE-001, WE-002, WE-003 | Opportunity-cost entries are losses, not signed variables, so they do not fit the normal form cleanly. | Either express each as a signed variable (for example, `resources_available_other_uses` decrease), or add a `loss` type to the normal form. Proposal: the former, so all consequences can be scored the same way. |
-| GAP-4 | WE-002 | No rule for bundled shopping trips: cross-border buying of a taxed good takes untaxed purchases with it. | New rule RS-9, using a `complement` relation between the taxed good and the shopping trip. |
-| GAP-5 | WE-002 | No variables for health or nutrient intake. | Out of scope for version 1. Note in reports that health effects are not analyzed. |
-| GAP-6 | WE-002 | No rule for fungibility of earmarked revenue: an earmark adds less than it appears if the budget would have funded some of the same spending anyway. | New rule SB-7. |
-| GAP-7 | WE-002 | No variable for revenue relative to a projection that ignores behavioral responses. | Add `tax_revenue_vs_static_projection`, or leave to reports. |
-| GAP-8 | WE-003 | The informal-market effects (higher search costs, no reputation, no legal recourse) are written only into EN-7 (prohibition). | Move them into a generic rule RS-10, used by PC-6, EN-3 and EN-7. |
-| GAP-9 | WE-003 | The direct effect of a licensing rule (who may sell) has no variable. | Add `share_of_sellers_licensed`. |
-| GAP-10 | WE-003 | No way to compare a one-time cost with a later stream of gains, so some earnings effects stay ambiguous. | Expert input needed; possibly leave as ambiguous by design. |
-| GAP-11 | WE-002 | Tax incidence share by subgroup ("immobile buyers bear more") has no variable. | Add `tax_share_borne`, with signs relative to other subgroups. |
+| GAP-1 | WE-001 | Announcement effects: the policy record had no announcement date, so RS-8 could not be applied. | Closed: `announced` added to the policy record (2.1); WE-001 C-17. |
+| GAP-2 | WE-001 | No rule linked lower housing turnover to the labor market. | Closed: RS-11 lock-in, variable `job_changes`, relation note `location`; WE-001 C-18. Expert check requested (Q12). |
+| GAP-3 | all | Opportunity costs were recorded as losses, not signed variables. | Closed: every consequence is now a signed variable (2.5, workflow step 9, OC rules); duplicate OC entries removed from WE-001 to WE-003. |
+| GAP-4 | WE-002 | No rule for bundled shopping trips. | Closed: RS-9, relation note `trip`; WE-002 C-11 and C-12 now Tier B. |
+| GAP-5 | WE-002 | No variables for health or nutrient intake. | Out of scope for version 1; stated in 2.4 and in every report's "cannot say" section. |
+| GAP-6 | WE-002 | No rule for fungibility of earmarked revenue. | Closed: SB-7; WE-002 C-20. |
+| GAP-7 | WE-002 | No variable for revenue against a static projection. | Closed: TX-9, variable `tax_revenue_vs_static_projection`; WE-002 C-21. |
+| GAP-8 | WE-003 | Informal-market effects were written only into EN-7. | Closed: generic RS-10, now used by PC-6, EN-3 and EN-7; WE-003 C-12 now Tier B. |
+| GAP-9 | WE-003 | The direct effect of licensing had no variable. | Closed: `share_of_sellers_licensed`; WE-003 C-1. |
+| GAP-10 | WE-003 | No way to compare a one-time cost with later gains. | Resolved as ambiguous by design: DM-3. Expert confirmation requested (Q13). |
+| GAP-11 | WE-002 | Tax incidence by subgroup had no variable. | Closed: `tax_share_borne`; WE-002 C-13. |
+
+Gaps found in WE-004 to WE-025 are listed in 6.4.
 
 ## 6.2 Questions for the experts
 
@@ -41,6 +45,10 @@ The to-do list for the catalog and the agenda for the first expert review. Gaps 
 **Q10. Grants of privilege.** Rothbard treats licensing, quotas and tariffs as "grants of monopolistic privilege". Should the Handbook adopt that category explicitly, as a shared parent of EN-1, EN-6 and TX-7?
 
 **Q11. The counterfactual.** Every sign is relative to "the same place and time without the policy". When a market is trending (rents rising 5% a year), is that trend part of the counterfactual by default? The draft assumes yes.
+
+**Q12. Lock-in and jobs.** RS-11 says that people who lose a benefit by moving turn down jobs that would require a move. Is this a praxeological conclusion (moving now costs more, LW-1) or an empirical claim that belongs in an assumption?
+
+**Q13. One-time costs against later gains.** DM-3 leaves these ambiguous rather than netting them. Do experts reason about them differently, for example by appeal to the actors' own revealed choices?
 
 ## 6.3 Next steps for Phase 1
 

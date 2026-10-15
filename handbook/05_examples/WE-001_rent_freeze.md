@@ -1,12 +1,12 @@
 # WE-001 Rent freeze with a new-construction exemption
 
-Analyst: draft (Handbook 0.1)  |  Rule catalog version: 0.1  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.1)  |  Rule catalog version: 0.2  |  Status: awaiting expert review
 
 A stylized policy in a fictional city. It is close to real rent-control ordinances but deliberately differs from the historical cases reserved for evaluation. The probabilities are illustrative; the evidence column says what a real analysis would cite.
 
 ## 1. Policy record
 
-**Riverton Rent Stabilization Ordinance.** Riverton is a mid-sized city. Its neighbors, Eastfield and Northgate, are 15 to 25 minutes away by car or train and have no rent regulation. Market rents in Riverton have risen about 5% a year for several years.
+**Riverton Rent Stabilization Ordinance.** Riverton is a mid-sized city. Its neighbors, Eastfield and Northgate, are 15 to 25 minutes away by car or train and have no rent regulation. Market rents in Riverton have risen about 5% a year for several years. The ordinance was put on the ballot eight months before it took effect, and polls showed it was likely to pass.
 
 | Component | Instrument | Target | Bound | Parameters | Exemptions |
 |---|---|---|---|---|---|
@@ -61,6 +61,7 @@ The visible effect: sitting tenants pay less than they would have, and the gap w
 | C-9 | `landlords.controlled` | `quantity_supplied` of covered rental units | decrease | medium to long | PC-5, RS-6, TS-1 | A-1, A-5, A-10 |
 | C-10 | `tenants.controlled` (in converted buildings) | lose their controlled tenancy: `price_paid` increase for this subgroup after relocation | increase | medium | PC-5, RS-5 | A-5 |
 | C-11 | `tenants.controlled`, `landlords.controlled`, `developers` | `lobbying_effort` | increase | medium | RS-7 | A-1 |
+| C-17 | `tenants.controlled` whose leases renew before the effective date | `price_paid` (in the announcement window) | increase | short | RS-8 | A-11 |
 
 C-10 is worth stating separately: the ordinance protects sitting tenants as a group, but it gives landlords a reason to remove buildings from the rental market, and the tenants in those buildings end up worse off than they would have been without it.
 
@@ -87,16 +88,17 @@ C-15 is at depth 3 and reaches a diffuse group of bystanders, so the chain stops
 
 - The freeze is not binding at first and tightens every year (TS-3). Most effects therefore start small and grow.
 - Buildings last decades (A-10). Less maintenance shows up within a year or two (C-6); reduced supply through conversion follows the 12-month permit process (C-8); reduced investment in the existing stock compounds over the long run (C-9, TS-1).
-- Announcement effect: landlords who expected the ordinance may raise rents just before the effective date, to lock in a higher base (RS-8). This is not reported, because the record has no evidence on how long the ordinance was announced in advance (`GAP-1` in `06_gaps.md`).
+- Announcement effect: the ordinance was expected eight months before it took effect. Landlords whose leases come up for renewal in that window raise rents to lock in a higher base before the freeze (C-17, RS-8).
 
 ## 9. Opportunity costs
 
-| ID | Actor class | What is given up | Rules |
-|---|---|---|---|
-| C-16 | `tenants.prospective`, `landlords.controlled` | Rentals that would have been agreed at market rent and now do not happen, because units are converted or kept off the market. Both sides lose the gain they expected. | OC-4 |
-| C-17 | `tenants.prospective` | Time spent searching and waiting (C-3). | OC-2 |
-| C-18 | `tenants.controlled` | Moves not made (C-5): a home closer to a new job, a smaller unit after children leave. The forgone better match is a cost to the tenant, invisible in any price. | OC-4, PC-7 |
-| C-19 | `taxpayers` | What the rent board's budget would otherwise have funded. | OC-3, OC-1 |
+| ID | Actor class | Variable | Sign | What is given up | Rules |
+|---|---|---|---|---|---|
+| C-16 | `tenants.prospective`, `landlords.controlled` | `quantity_traded` (rentals of covered units) | decrease | Rentals that would have been agreed at market rent and now do not happen, because units are converted or kept off the market. Both sides lose the gain they expected. | OC-4 |
+| C-18 | `tenants.controlled` | `job_changes` | decrease | Moves not made because moving means losing the controlled rent: a job in another part of the region, a smaller unit after children leave. | RS-11, PC-7 |
+| C-19 | `taxpayers` | `resources_available_other_uses` | decrease | What the rent board's budget would otherwise have funded. | OC-3, OC-1 |
+
+Time spent searching and waiting is already recorded as C-3, so it is not listed again here.
 
 ## 10. Assumptions
 
@@ -112,6 +114,8 @@ C-15 is at depth 3 and reaches a diffuse group of bystanders, so the chain stops
 | A-8 | Commuting from neighboring cities is practical for many seekers. | mobility | 0.7 | Travel times of 15 to 25 minutes; transit links. | C-15 not reported. |
 | A-9 | Developers expect the new-construction exemption to last. | expectations | 0.6 | Political history of exemptions in the region; whether the exemption is in the city charter or an ordinance. | The sign of C-13 flips to decrease. |
 | A-10 | Rental buildings last several decades, so supply adjusts slowly. | durability | 0.95 | Age of the housing stock. | Supply responses come sooner. |
+| A-11 | Enough leases renew during the announcement window, and landlords can raise rents at renewal. | expectations | 0.7 | Share of leases renewing in any eight-month period; lease terms; whether the ordinance rolls rents back to an earlier date. | C-17 not reported. |
+| A-12 | Some job opportunities for sitting tenants would require moving or a much longer commute. | mobility | 0.75 | Size of the region; where jobs are located relative to covered housing. | C-18 not reported. |
 
 ## 11. Report
 
@@ -121,7 +125,7 @@ C-15 is at depth 3 and reaches a diffuse group of bystanders, so the chain stops
 
 **Invisible consequences.**
 - *People looking for a home in Riverton* find fewer covered units available, wait and search longer, face landlords who choose tenants by income, credit and connections, and sometimes pay key money or illegal sublet premiums (C-2 to C-4, C-7). Many end up in exempt new buildings, where rents rise because of the extra demand (C-12), or in neighboring cities, where they push rents up (C-15).
-- *Sitting tenants* receive less maintenance (C-6) and move less often, even when a different home would suit them better (C-5, C-18). Tenants in buildings that are converted lose their controlled tenancy altogether (C-10).
+- *Sitting tenants* receive less maintenance (C-6) and move less often, even when a different home or a job elsewhere would suit them better (C-5, C-18). Those whose leases renewed in the months before the freeze paid higher rents than they otherwise would have, as landlords locked in a higher base (C-17). Tenants in buildings that are converted lose their controlled tenancy altogether (C-10).
 - *Landlords* earn less on covered units, convert some buildings to condominiums (C-8) and invest less in the rest; over many years the covered rental stock is smaller than it would have been (C-9).
 - *Homebuyers* see more condominiums for sale than they otherwise would (C-14).
 - *Taxpayers* fund the rent board (C-19).
@@ -151,14 +155,14 @@ C-15 is at depth 3 and reaches a diffuse group of bystanders, so the chain stops
 | C-13 | developers | investment_target (new rental) | increase | medium | invisible | B | PC-8, LW-4 | A-7, A-9 |
 | C-14 | homebuyers | quantity_substitute (condos) | increase | medium | invisible | B | RS-5 | A-1, A-5 |
 | C-15 | renters.neighbors | price_paid | increase | medium | invisible | B | PC-3, RS-4 | A-1, A-8 |
-| C-16 | tenants.prospective, landlords | prevented rentals | (loss) | medium | invisible | B | OC-4 | A-1, A-5 |
-| C-17 | tenants.prospective | search time | (loss) | short | invisible | B | OC-2 | A-1 |
-| C-18 | tenants.controlled | forgone moves | (loss) | medium | invisible | B | OC-4, PC-7 | A-1, A-6 |
+| C-16 | tenants.prospective, landlords | quantity_traded (covered rentals) | decrease | medium | invisible | B | OC-4 | A-1, A-5 |
+| C-17 | tenants.controlled (renewing before effective date) | price_paid | increase | short | invisible | B | RS-8 | A-11 |
+| C-18 | tenants.controlled | job_changes | decrease | medium | invisible | B | PC-7, RS-11 | A-1, A-6, A-12 |
 | C-19 | taxpayers | resources_available_other_uses | decrease | short | invisible | A | OC-3, OC-1 | none |
 | — | tenants.controlled | quality_adjusted_price | ambiguous | medium | invisible | B | C-1 vs C-6 | A-1, A-4 |
 
 ## Gaps found
 
-- GAP-1: announcement effects before the effective date (RS-8 applies, but the policy record has no field for the announcement date).
-- GAP-2: no rule links reduced housing turnover to job matching in the labor market (C-18 stops at the forgone move).
-- GAP-3: OC entries are losses, not variables with a sign; the normal form needs a convention for them (see `06_gaps.md`).
+- GAP-1 (closed in catalog 0.2): announcement date added to the policy record; C-17 now reported.
+- GAP-2 (closed in catalog 0.2): RS-11 and the variable `job_changes`; C-18 now a signed consequence.
+- GAP-3 (closed in catalog 0.2): opportunity costs written as signed variables; the duplicate entry for search time removed.

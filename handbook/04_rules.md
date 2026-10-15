@@ -77,13 +77,36 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 - **Tier** B. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-7.
 
+### RS-9 Bundled trips carry other purchases with them
+- **If:** buyers of a good change where they buy it (RS-4 cross-border buying, or a switch to another store or channel), and they usually buy other goods on the same trip (a `complement` relation noted `trip`).
+- **Then:** the other goods bought on those trips move with it: `quantity_traded` of untaxed or unregulated goods decrease at the sellers left behind and increase at the sellers gained.
+- **Assumes:** buyers bundle purchases on trips (`other`); the destination sells the other goods too.
+- **Tier** B. **Visibility** invisible. **Horizon** short.
+- **Builds on:** LW-1 (a trip has a cost, so buyers spread it over several purchases), RS-4.
+
+### RS-10 Driving trade into the informal market
+- **If:** some trade in a good or service moves outside the legal market (RS-3, PC-6, EN-3, EN-7).
+- **Then:** for that trade: `search_cost` increase (sellers cannot advertise openly); quality becomes harder to judge and more variable (no brands, licensing or reviews to rely on); disputes cannot go to court, so they are settled privately or not at all; sellers charge for the risk of punishment.
+- **Assumes:** penalties for informal trade are enforced at least sometimes (`enforcement`).
+- **Tier** B. **Visibility** invisible. **Horizon** short.
+- **Builds on:** AX-1, LW-1.
+
+### RS-11 Lock-in spills into linked markets
+- **If:** an actor class holds a benefit that is lost if it moves (PC-7: a controlled tenancy, a place on a list), and the benefit is tied to a location.
+- **Then:** members of the class turn down opportunities in linked markets that would require moving: `job_changes` decrease, longer commutes, or forgone better jobs.
+- **Assumes:** some job opportunities require a move or a much longer commute (`mobility`); the benefit is not transferable.
+- **Tier** B. **Visibility** invisible. **Horizon** medium.
+- **Builds on:** LW-1 (losing the benefit is part of the cost of moving), PC-7.
+
 ---
 
 ## OC: Opportunity cost
 
+Opportunity costs are recorded as signed changes in variables (`02_ontology.md`, 2.5), never as a separate "loss" entry.
+
 ### OC-1 Diverted resources
 - **If:** the policy takes resources from an actor class (tax, mandated purchase, compliance) or directs resources to a use.
-- **Then:** `resources_available_other_uses` decrease for that actor class; the goods they would have bought or produced with those resources are not produced. The spending or use is visible; the forgone alternative is not.
+- **Then:** `resources_available_other_uses` decrease for that actor class; the goods they would have bought or produced with those resources are not produced, so `quantity_traded` decrease in the markets where they would have spent it. The spending or use is visible; the forgone alternative is not.
 - **Tier** A, given that resources are taken. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-1.
 - **Source:** Bastiat, "That Which Is Seen, and That Which Is Not Seen" (the broken window); Hazlitt, *Economics in One Lesson*, ch. 2 to 4.
@@ -102,7 +125,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 
 ### OC-4 Prevented exchanges
 - **If:** the policy prevents exchanges that buyers and sellers would otherwise have made (a ceiling, a floor, a license requirement, a prohibition, a tax that prices some buyers out).
-- **Then:** both parties to each prevented exchange lose the gain they expected from it. Identify both sides and name them as losers.
+- **Then:** `quantity_traded` decrease for the prevented exchanges; both parties to each lose the gain they expected from it. Name both sides.
 - **Tier** A (ex ante, by each party's own ranking). **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-5.
 - **Source:** Rothbard, *Power and Market*, ch. 3.
@@ -180,7 +203,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 
 ### PC-6 Black and grey markets under a ceiling
 - **If:** binding `price_ceiling` (PC-1).
-- **Then:** `informal_activity` and `side_payments` increase: some exchanges happen at prices above the ceiling, disguised or illegal (key money, tie-in sales, sublets at market rent).
+- **Then:** `informal_activity` and `side_payments` increase: some exchanges happen at prices above the ceiling, disguised or illegal (key money, tie-in sales, sublets at market rent). RS-10 applies to that trade.
 - **Assumes:** imperfect `enforcement`.
 - **Tier** B. **Visibility** invisible. **Horizon** short.
 - **Builds on:** RS-3.
@@ -284,6 +307,12 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 - **Builds on:** LW-5, OC-4.
 - **Source:** Hazlitt, *Economics in One Lesson*, chapter on tariffs.
 
+### TX-9 Revenue falls short of a static projection
+- **If:** TX-2 applies (the taxed quantity falls), or TX-4 applies (avoidance shrinks the base).
+- **Then:** `tax_revenue_vs_static_projection` decrease: revenue is less than the rate times the pre-tax base.
+- **Tier** B (inherits the assumptions of TX-2 or TX-4). **Visibility** invisible until revenue is reported. **Horizon** short.
+- **Builds on:** TX-2, TX-4.
+
 ---
 
 ## SB: Subsidies
@@ -327,6 +356,14 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 - **Tier** B. **Visibility**: the surge is visible; the dip and the used-goods effect are invisible. **Horizon** short.
 - **Builds on:** RS-8, OC-1.
 
+### SB-7 Earmarked revenue is fungible
+- **If:** a tax's revenue is earmarked for a purpose that the budget already funds, or would have funded, from general revenue.
+- **Then:** general funding for the purpose decreases in part, so spending on the purpose rises by less than the earmarked amount, and the rest of the revenue in effect funds other spending or lower borrowing.
+- **Assumes:** the purpose already receives, or would have received, general funding; budget-makers can reduce it (`revenue_use`).
+- **Unless:** the law also fixes the general funding level (a maintenance-of-effort clause) and it is enforced.
+- **Tier** B. **Visibility** invisible. **Horizon** medium.
+- **Builds on:** LW-1, AX-1 (budget-makers act on the whole budget).
+
 ---
 
 ## EN: Licensing, quotas and prohibition
@@ -351,7 +388,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 - **Then:** would-be sellers who do not qualify move to their next-best occupation (OC-4): their `earnings` decrease compared with the counterfactual. Buyers priced out of the licensed service substitute toward doing it themselves, unlicensed providers (RS-3) or going without (RS-1).
 - **Assumes:** `substitutability` for buyers.
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
-- **Builds on:** OC-4, RS-1, RS-3.
+- **Builds on:** OC-4, RS-1, RS-3, RS-10.
 
 ### EN-4 Quality received by buyers: ambiguous by default
 - **If:** EN-1 applies and the requirement is related to the quality of the service.
@@ -373,10 +410,10 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 
 ### EN-7 Prohibition of a good moves trade underground
 - **If:** `prohibition` of a good that some buyers continue to value highly.
-- **Then:** `quantity_traded` legally falls to near zero; `informal_activity` increase; `price_paid` increase (sellers require compensation for the risk of punishment); `quality_per_unit` becomes less predictable (no legal recourse, no brand reputation); disputes are settled outside the courts.
+- **Then:** `quantity_traded` legally falls to near zero; `informal_activity` increase; `price_paid` increase (sellers require compensation for the risk of punishment). RS-10 applies to the informal trade: higher search costs, less predictable quality, disputes settled outside the courts.
 - **Assumes:** demand persists for some buyers; imperfect `enforcement`.
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
-- **Builds on:** RS-3, LW-3.
+- **Builds on:** RS-3, RS-10, LW-3.
 
 ### EN-8 Prohibition favors concentrated forms
 - **If:** EN-7 applies, and penalties or detection risk depend on bulk or volume rather than on potency.
@@ -400,3 +437,6 @@ Dominance rules decide the combined sign when chains conflict (workflow step 7).
 
 ### DM-2 Quality under licensing
 - **No default rule.** EN-4 stays ambiguous unless the case supplies evidence that one chain dominates: for example, the requirement is unrelated to the quality buyers care about (then only the "down" chain is active), or close unlicensed substitutes are unavailable (then the "down" chain is weak). Record such evidence as an assumption.
+
+### DM-3 One-time cost against later gains (ambiguous by design)
+- **No default rule.** When one chain imposes a one-time cost (training, conversion, relocation) and another produces a later stream of gains (a higher price, a lower cost), the combined effect on the actor class's earnings or welfare is `ambiguous`. Comparing them needs magnitudes and a discount rate, which the method does not supply. Report both chains, and state that the actors who chose to bear the cost expected the gains to be worth it (LW-5), while those who did not, did not.

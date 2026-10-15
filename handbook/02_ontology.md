@@ -10,7 +10,7 @@ The structured statement of what the policy does (workflow step 1).
 |---|---|
 | `policy_id` | Short identifier. |
 | `jurisdiction` | Where it applies. Note the nearest places where it does not apply. |
-| `enacted`, `effective`, `expires` | Dates. `expires` may be none. |
+| `announced`, `enacted`, `effective`, `expires` | Dates. `announced` is when the policy became publicly expected (a bill's introduction, a credible campaign promise); it drives announcement effects (RS-8). `expires` may be none. |
 | `components` | One entry per distinct instrument (a policy with a cap and an exemption has two components). |
 | `component.instrument` | One of the instrument types in 2.3. |
 | `component.target` | The good, service, activity or factor affected. |
@@ -86,6 +86,8 @@ Every consequence names one variable from this list. Add a variable only by edit
 | `allocation_by_non_price_criteria` | Use of connections, discrimination or favoritism in deciding who gets the good. |
 | `turnover` | Rate at which holders of the good change (tenant moves, job changes). |
 | `variety` | Number of distinct versions of the good offered. |
+| `share_of_sellers_licensed` | Share of active legal sellers who hold the required license or permit. |
+| `job_changes` | Rate at which members of an actor class change jobs, including moves that require changing home. |
 
 **Production, capital and entry**
 
@@ -112,8 +114,12 @@ Every consequence names one variable from this list. Add a variable only by edit
 | `compliance_cost` | Resources spent by those bound to comply. |
 | `enforcement_cost` | Resources spent by the state to enforce. |
 | `tax_revenue` | Revenue collected. |
+| `tax_revenue_vs_static_projection` | Revenue collected compared with a projection that multiplies the rate by the pre-tax base (ignoring responses). |
+| `tax_share_borne` | Share of a tax's burden borne by a subgroup, signed relative to the other subgroups in the same market (increase means it bears more than they do). |
 | `lobbying_effort` | Resources spent seeking to change, extend or keep the policy. |
 | `resources_available_other_uses` | Resources available to actors for uses outside the target (the "unseen" bucket). |
+
+**Out of scope for version 1.** Health, safety, environmental quality and nutrient intake have no variables. Reports say explicitly that these are not analyzed, rather than leaving them out silently.
 
 ## 2.5 Consequence (normal form)
 
@@ -131,6 +137,8 @@ consequence:
   reversal:      what would make the sign flip or the effect vanish
   chains:        for ambiguous consequences, the opposing derivations
 ```
+
+Every consequence, including an opportunity cost, is a signed change in a variable from 2.4. There is no separate "loss" entry: a forgone purchase is `resources_available_other_uses` decrease, prevented exchanges are `quantity_traded` decrease, time spent queuing is `wait_time` increase. This keeps every consequence scorable in the same way.
 
 The sign is always relative to the counterfactual (the same place and time without the policy), not to the situation before the policy. "Rents rise more slowly than they would have" is a decrease in `price_paid`, even if rents still rise.
 
@@ -163,5 +171,9 @@ relation:
   strength:  close | partial | weak
   source:    evidence for the relation
 ```
+
+Two relation types need care:
+- **Trip complements.** Goods bought on the same shopping trip are complements in where they are bought, even if they are unrelated in use. Record them as `complement` with a note `trip`. RS-9 uses them.
+- **Location ties to other markets.** Holding a good tied to a place (a controlled tenancy) links the holder's housing market to their labor market. Record as `complement` with a note `location`. RS-11 uses them.
 
 Example: `controlled_rental_units` and `uncontrolled_rental_units` are `same_market_other_segment`, `close`. `sweetened_drinks_in_city` and `sweetened_drinks_outside_city` are `across_border`, with strength depending on distance.

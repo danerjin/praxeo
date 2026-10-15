@@ -1,6 +1,6 @@
 # WE-003 Cosmetology license required for hair braiding
 
-Analyst: draft (Handbook 0.1)  |  Rule catalog version: 0.1  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.1)  |  Rule catalog version: 0.2  |  Status: awaiting expert review
 
 A stylized policy in a fictional state, modeled on a common type of occupational-licensing rule. The probabilities are illustrative.
 
@@ -37,7 +37,7 @@ Unclear provisions: whether unpaid braiding for family and friends is covered. A
 
 | ID | Actor class | Variable | Sign | Horizon | Rules | Assumptions |
 |---|---|---|---|---|---|---|
-| C-1 | `customers.braiding` | requirement that providers hold a cosmetology license | (the intended effect) | short | K1 | none |
+| C-1 | braiders in the legal market | `share_of_sellers_licensed` | increase | short | K1 | A-2 |
 
 The visible, stated aim is that everyone who braids for pay is trained and licensed. Whether this raises the quality customers receive is the open question in section 7.
 
@@ -62,7 +62,7 @@ Not reported: relocation to neighboring states (RS-4). The borders are far from 
 | C-9 | `customers.braiding` | `price_paid` (legal braiding) | increase | short to medium | EN-1 | | A-1, A-2 |
 | C-10 | `cosmetologists.licensed` who braid, and newly licensed braiders | `net_price_received` | increase | short to medium | EN-2 | | A-1, A-2 |
 | C-11 | `customers.braiding` | `quantity_substitute` (braiding by family and friends, or not having braids done) | increase | short | EN-3, RS-1 | paid and home braiding: `substitute`, partial | A-4 |
-| C-12 | `customers.braiding` using unlicensed braiders | `search_cost` (informal providers cannot advertise openly) | increase | short | EN-7 (by analogy), RS-3 | | A-3 |
+| C-12 | `customers.braiding` using unlicensed braiders | `search_cost` (informal providers cannot advertise openly) | increase | short | RS-3, RS-10 | | A-3 |
 | C-13 | `customers.braiding` | `quality_per_unit` received | see section 7 | medium | EN-4, DM-2 | | A-5 |
 
 ## 7. Combined effects
@@ -70,7 +70,7 @@ Not reported: relocation to neighboring states (RS-4). The borders are far from 
 | Actor class, variable, horizon | Chains (+) | Chains (−) | Dominance rule | Combined sign |
 |---|---|---|---|---|
 | `customers.braiding`, `quality_per_unit` received, medium | Licensed providers have completed formal training (EN-4, "up" chain). | Higher prices push customers toward home braiding and unlicensed providers, who now work without reputation systems or recourse (EN-3, C-11, C-12). | DM-2: the up chain is active only if the training is related to braiding quality. The curriculum covers cutting, color and chemicals and little or no braiding (A-5, p = 0.85). | **decrease**. With A-5, the up chain is weak, so the down chain dominates. If the curriculum taught braiding (A-5 false), the sign would be **ambiguous**. |
-| `braiders.current` who obtain the license, `earnings`, medium | Higher price per service (C-10). | Time spent in training rather than working (C-3); some customers lost to home braiding (C-11). | None | **ambiguous** during and just after training. Without a rule for comparing the training cost with the later price rise, the method cannot sign it. |
+| `braiders.current` who obtain the license, `earnings`, medium | Higher price per service (C-10). | Time spent in training rather than working (C-3); some customers lost to home braiding (C-11). | None | **ambiguous** during and just after training. A one-time cost against a later stream of gains is ambiguous by design (DM-3). Braiders who chose to train expected it to pay; those who left expected it not to. |
 
 ## 8. Time structure
 
@@ -81,11 +81,12 @@ Not reported: relocation to neighboring states (RS-4). The borders are far from 
 
 ## 9. Opportunity costs
 
-| ID | Actor class | What is given up | Rules |
-|---|---|---|---|
-| C-14 | `braiders.current` who train | 1,500 hours, much of it on skills they will not use, and the tuition. | OC-2 |
-| C-15 | `customers.braiding`, `braiders` who exit | Braiding services that would have been bought and sold at the old prices and no longer are. Both sides lose the gain they expected. | OC-4 |
-| C-16 | `taxpayers` | Board enforcement resources. | OC-3 |
+| ID | Actor class | Variable | Sign | What is given up | Rules |
+|---|---|---|---|---|---|
+| C-15 | `customers.braiding`, `braiders` who exit | `quantity_traded` (legal braiding services) | decrease | Braiding services that would have been bought and sold at the old prices and no longer are. Both sides lose the gain they expected. | OC-4 |
+| C-16 | `taxpayers` | `resources_available_other_uses` | decrease | Board enforcement resources. | OC-3 |
+
+The 1,500 hours and tuition are already recorded as C-3 (`compliance_cost`), so the separate draft 0.1 entry for training time is dropped.
 
 ## 10. Assumptions
 
@@ -105,7 +106,7 @@ Not reported: relocation to neighboring states (RS-4). The borders are far from 
 **Visible consequences.** Everyone who braids legally for pay is now a licensed cosmetologist (C-1).
 
 **Invisible consequences.**
-- *Braiders* face a large cost to keep working legally (C-3, C-14). Some train and later charge more (C-10); some leave the trade for less-valued work (C-4); some carry on without a license, at risk of fines (C-5). Fewer people take up braiding (C-2).
+- *Braiders* face a large cost to keep working legally (C-3). Some train and later charge more (C-10); some leave the trade for less-valued work (C-4); some carry on without a license, at risk of fines (C-5). Fewer people take up braiding (C-2).
 - *Customers* pay more for legal braiding (C-9), turn more often to family and friends or go without (C-11), and find it harder to locate and judge informal braiders (C-12). The quality of braiding they receive is lower overall (C-13), because the training required is largely unrelated to braiding.
 - *Cosmetology schools* gain students (C-6); schools and existing licensees have a stake in keeping the rule (C-8).
 - *Taxpayers* fund enforcement (C-16).
@@ -120,7 +121,7 @@ Not reported: relocation to neighboring states (RS-4). The borders are far from 
 
 | ID | Actor class | Variable | Sign | Horizon | Visibility | Tier | Derivation | Assumptions |
 |---|---|---|---|---|---|---|---|---|
-| C-1 | braiders (legal market) | share_of_sellers_licensed (proposed, GAP-9) | increase | short | visible | B | K1 | A-2 |
+| C-1 | braiders (legal market) | share_of_sellers_licensed | increase | short | visible | B | K1 | A-2 |
 | C-2 | braiders | number_of_sellers (legal), entry_rate | decrease | short–medium | invisible | B | EN-1 | A-1, A-2 |
 | C-3 | braiders (training) | compliance_cost | increase | short | invisible | B | OC-2, EN-1 | A-1 |
 | C-4 | braiders (exiting) | earnings | decrease | short–medium | invisible | B | EN-3, OC-4 | A-1, A-2 |
@@ -130,17 +131,15 @@ Not reported: relocation to neighboring states (RS-4). The borders are far from 
 | C-9 | customers.braiding | price_paid | increase | short–medium | invisible | B | EN-1 | A-1, A-2 |
 | C-10 | licensed braiders | net_price_received | increase | short–medium | invisible | B | EN-2 | A-1, A-2 |
 | C-11 | customers.braiding | quantity_substitute (home braiding) | increase | short | invisible | B | EN-3, RS-1 | A-4 |
-| C-12 | customers.braiding | search_cost | increase | short | invisible | C | RS-3, EN-7 by analogy | A-3 |
+| C-12 | customers.braiding | search_cost | increase | short | invisible | B | RS-3, RS-10 | A-3 |
 | C-13 | customers.braiding | quality_per_unit | decrease | medium | invisible | B | EN-4, DM-2 | A-5 |
-| C-14 | braiders (training) | training time | (loss) | short | invisible | B | OC-2 | A-1 |
-| C-15 | customers, braiders | prevented services | (loss) | short–medium | invisible | B | OC-4 | A-1, A-2 |
+| C-15 | customers, braiders | quantity_traded (legal services) | decrease | short–medium | invisible | B | OC-4 | A-1, A-2 |
 | C-16 | taxpayers | resources_available_other_uses | decrease | short | invisible | A | OC-3 | none |
-| — | licensed braiders | earnings | ambiguous | medium | invisible | B | C-10 vs C-3, C-11 | A-1, A-4 |
+| — | licensed braiders | earnings | ambiguous | medium | invisible | B | C-10 vs C-3, C-11; DM-3 | A-1, A-4 |
 
-C-12 is Tier C because it borrows a move from EN-7 (prohibition) by analogy; see `GAP-8`.
 
 ## Gaps found
 
-- GAP-8: no general rule that driving an activity into the informal market raises customers' search costs and removes reputation and legal recourse. EN-7 contains this for prohibition only; it should be a generic RS rule.
-- GAP-9: the direct effect of a licensing rule is a change in who may sell, which has no variable in the controlled list. Proposed: `share_of_sellers_licensed`.
-- GAP-10: no rule for comparing a one-time cost (training) with a later stream of gains (higher price), which leaves C-10 against C-3 ambiguous. This may be beyond a qualitative method, but experts should say how they reason about it.
+- GAP-8 (closed in catalog 0.2): RS-10 informal trade; C-12 now Tier B.
+- GAP-9 (closed in catalog 0.2): `share_of_sellers_licensed`; C-1 now a signed consequence.
+- GAP-10 (resolved as ambiguous by design, DM-3): pending expert confirmation.

@@ -1,6 +1,6 @@
 # WE-002 Local excise tax on sweetened drinks, earmarked for pre-school
 
-Analyst: draft (Handbook 0.1)  |  Rule catalog version: 0.1  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.1)  |  Rule catalog version: 0.2  |  Status: awaiting expert review
 
 A stylized policy in a fictional town. It resembles real city drink taxes but is not one of them. The probabilities are illustrative.
 
@@ -66,12 +66,16 @@ Not reported: evasion through untaxed deliveries (RS-3). The tax is collected fr
 | ID | Actor class | Variable | Sign | Horizon | Rules | Market relation | Assumptions |
 |---|---|---|---|---|---|---|---|
 | C-10 | `retailers.neighbors` | `quantity_traded` (all goods) | increase | short | RS-4 | Lakeport and neighbor stores: `across_border`, close for mobile buyers | A-3 |
-| C-11 | `retailers.lakeport` | `quantity_traded` of untaxed goods (bought on the same trip as drinks) | decrease | short | RS-4, `GAP-4` | taxed drinks and other groceries: `complement` (bundled shopping trips) | A-3, A-7 |
-| C-12 | `retailers.lakeport`, especially near the town line | `employment` | decrease | medium | TX-3 | | A-3, A-7 |
-| C-13 | `buyers.lakeport.immobile` | share of tax borne | larger than for mobile buyers | short | DM-1 | | A-3 |
+| C-11 | `retailers.lakeport` | `quantity_traded` of untaxed goods (bought on the same trip as drinks) | decrease | short | RS-4, RS-9 | taxed drinks and other groceries: `complement`, note `trip` | A-3, A-7 |
+| C-12 | `retailers.lakeport`, especially near the town line | `employment` | decrease | medium | TX-3, RS-9 | | A-3, A-7 |
+| C-13 | `buyers.lakeport.immobile` | `tax_share_borne` (relative to mobile buyers) | increase | short | DM-1 | | A-3 |
 | C-14 | `providers.private_preschool` | `number_of_sellers` (independent private providers) | decrease | medium | SB-3, RS-6 | free and paid places: `substitute`, close | A-6 |
+| C-20 | `families.preschool` | pre-school places funded (`quantity_traded`, public places), compared with the earmarked amount | decrease | medium | SB-7 | | A-8 |
+| C-21 | `officials.enforcement`, `taxpayers` | `tax_revenue_vs_static_projection` | decrease | short | TX-9 | | A-1, A-2, A-3 |
 
-C-11 and C-12 are not obvious. If some buyers drive across the line for drinks, many will buy the rest of their groceries there too. Lakeport stores lose those sales as well, not just the drinks.
+C-11 and C-12 are not obvious. If some buyers drive across the line for drinks, many will buy the rest of their groceries there too (RS-9). Lakeport stores lose those sales as well, not just the drinks.
+
+C-20: Lakeport already funds some pre-school places from its general budget. Unless the law fixes that funding, the town can reduce it as the earmarked money arrives, so the number of places rises by less than the earmark alone would pay for (SB-7). C-21: the tax base shrinks through C-2 and C-4, so revenue falls short of a projection made at pre-tax sales (TX-9).
 
 ## 7. Combined effects
 
@@ -90,13 +94,13 @@ C-11 and C-12 are not obvious. If some buyers drive across the line for drinks, 
 
 ## 9. Opportunity costs
 
-| ID | Actor class | What is given up | Rules |
-|---|---|---|---|
-| C-15 | `buyers.lakeport` who keep buying taxed drinks in town | The goods they would have bought with the money paid in tax. | TX-1, OC-1 |
-| C-16 | `buyers.lakeport.mobile` | Time and travel cost of shopping across the line. | OC-2 |
-| C-17 | `distributors` | Resources spent on compliance (C-7). | OC-1 |
-| C-18 | `taxpayers` | What the revenue department's budget for this task would otherwise have funded. | OC-3 |
-| C-19 | `buyers.lakeport`, `retailers.lakeport` | Purchases priced out by the tax: both sides lose the gain they expected. | OC-4 |
+| ID | Actor class | Variable | Sign | What is given up | Rules |
+|---|---|---|---|---|---|
+| C-15 | `buyers.lakeport` who keep buying taxed drinks in town | `resources_available_other_uses` | decrease | The goods they would have bought with the money paid in tax. | TX-1, OC-1 |
+| C-16 | `buyers.lakeport.mobile` | `search_cost` (travel time and cost) | increase | Time and travel cost of shopping across the line. | OC-2 |
+| C-18 | `taxpayers` | `resources_available_other_uses` | decrease | What the revenue department's budget for this task would otherwise have funded. | OC-3 |
+
+Two entries from draft 0.1 are dropped as duplicates: compliance resources (already C-7) and purchases priced out by the tax (already C-2).
 
 ## 10. Assumptions
 
@@ -109,6 +113,7 @@ C-11 and C-12 are not obvious. If some buyers drive across the line for drinks, 
 | A-5 | Distributors evade the tax on a meaningful scale. | enforcement | 0.3 | Small number of registered distributors; audit powers. | Below cut-off; not reported. |
 | A-6 | Free places draw some families who would otherwise have paid for private places. | substitutability | 0.85 | Current private enrollment among 3- and 4-year-olds. | C-8, C-14 fail. |
 | A-7 | Shoppers bundle drink purchases with other groceries on the same trip. | other | 0.7 | Shopping surveys; store layout and basket composition. | C-11, C-12 weaken. |
+| A-8 | Lakeport would otherwise have funded some pre-school places from general revenue, and the law does not fix that funding level. | revenue_use | 0.65 | Current budget lines for early education; whether the ordinance has a maintenance-of-effort clause. | C-20 not reported. |
 
 ## 11. Report
 
@@ -120,14 +125,15 @@ C-11 and C-12 are not obvious. If some buyers drive across the line for drinks, 
 - *Lakeport buyers* switch to exempt drinks (C-5), and those who can, buy taxed drinks in neighboring towns (C-4), so total consumption falls by less than sales in Lakeport do. Residents who cannot easily travel bear more of the tax (C-13).
 - *Lakeport retailers* lose drink sales and also the other groceries their customers now buy on cross-border trips (C-11). Over time, employment in Lakeport stores, especially near the town line, is lower than it would have been (C-12). Retailers just outside the line gain (C-10).
 - *Producers* reformulate drinks to fall into exempt categories (C-6).
-- *Private pre-schools* lose paying families to the free places (C-8), and some close (C-14), so the total number of pre-school places rises by less than the number of free places created.
+- *Private pre-schools* lose paying families to the free places (C-8), and some close (C-14), so the total number of pre-school places rises by less than the number of free places created. The free places themselves rise by less than the earmark suggests, if the town trims the general funding it already gave pre-school (C-20).
+- *The town* collects less than a projection based on pre-tax sales, because the base shrinks (C-21).
 - *Distributors and taxpayers* bear compliance and administration costs (C-7, C-18), and everyone who pays the tax gives up what they would have bought with the money (C-15).
 
 **Ambiguous effects.** How the tax splits between buyers and sellers overall cannot be determined; the analysis can only say which subgroups bear more.
 
 **Key conditions.** Cross-border shopping (A-3, p = 0.8) drives most of the less obvious effects; in a town far from untaxed neighbors they would be much weaker.
 
-**What this analysis cannot say.** How large any effect is; health effects (outside the method's vocabulary; see `GAP-5`); whether the trade-off is worthwhile.
+**What this analysis cannot say.** How large any effect is; health effects (out of scope for version 1); whether the trade-off is worthwhile.
 
 ## Consequence list (normal form)
 
@@ -143,21 +149,20 @@ C-11 and C-12 are not obvious. If some buyers drive across the line for drinks, 
 | C-8 | providers.private_preschool | quantity_demanded (paid places) | decrease | short–medium | invisible | B | SB-3, RS-1 | A-6 |
 | C-9 | retailers, distributors, families, providers | lobbying_effort | increase | medium | invisible | B | RS-7, SB-5 | none |
 | C-10 | retailers.neighbors | quantity_traded (all goods) | increase | short | invisible | B | RS-4 | A-3 |
-| C-11 | retailers.lakeport | quantity_traded (untaxed goods) | decrease | short | invisible | C | RS-4, GAP-4 | A-3, A-7 |
-| C-12 | retailers.lakeport | employment | decrease | medium | invisible | C | TX-3, GAP-4 | A-3, A-7 |
-| C-13 | buyers.lakeport.immobile | tax share borne | increase | short | invisible | B | DM-1 | A-3 |
+| C-11 | retailers.lakeport | quantity_traded (untaxed goods) | decrease | short | invisible | B | RS-4, RS-9 | A-3, A-7 |
+| C-12 | retailers.lakeport | employment | decrease | medium | invisible | B | TX-3, RS-9 | A-3, A-7 |
+| C-13 | buyers.lakeport.immobile | tax_share_borne | increase | short | invisible | B | DM-1 | A-3 |
 | C-14 | providers.private_preschool | number_of_sellers | decrease | medium | invisible | B | SB-3, RS-6 | A-6 |
 | C-15 | buyers.lakeport | resources_available_other_uses | decrease | short | invisible | A | TX-1, OC-1 | none |
-| C-16 | buyers.lakeport.mobile | travel time | (loss) | short | invisible | B | OC-2 | A-3 |
-| C-17 | distributors | compliance resources | (loss) | short | invisible | A | OC-1 | none |
+| C-16 | buyers.lakeport.mobile | search_cost | increase | short | invisible | B | OC-2 | A-3 |
 | C-18 | taxpayers | resources_available_other_uses | decrease | short | invisible | A | OC-3 | none |
-| C-19 | buyers.lakeport, retailers.lakeport | prevented purchases | (loss) | short | invisible | B | OC-4 | A-1 |
-
-C-11 and C-12 are Tier C because they rely on a move that is not yet a rule (`GAP-4`). Once a rule for bundled shopping trips is reviewed and added, they become Tier B.
+| C-20 | families.preschool | quantity_traded (public places) vs earmark | decrease | medium | invisible | B | SB-7 | A-8 |
+| C-21 | officials.enforcement | tax_revenue_vs_static_projection | decrease | short | invisible | B | TX-9 | A-1, A-2, A-3 |
 
 ## Gaps found
 
-- GAP-4: no rule for complementarity through bundled shopping trips (cross-border buying of a taxed good pulls untaxed purchases with it).
-- GAP-5: no variables for health or consumption of a nutrient; out of scope for version 1, but readers will ask.
-- GAP-6: no rule for fungibility of earmarked revenue. If the town would have funded some pre-school places from the general budget anyway, the earmark adds fewer places than it appears to.
-- GAP-7: no variable for revenue relative to a static projection (projections that ignore the responses overstate revenue).
+- GAP-4 (closed in catalog 0.2): RS-9 bundled trips; C-11 and C-12 now Tier B.
+- GAP-5 (out of scope): health and nutrient variables; reports now say so explicitly.
+- GAP-6 (closed in catalog 0.2): SB-7 earmark fungibility; C-20 added.
+- GAP-7 (closed in catalog 0.2): TX-9 and `tax_revenue_vs_static_projection`; C-21 added.
+- GAP-11 (closed in catalog 0.2): `tax_share_borne` used for C-13.

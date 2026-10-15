@@ -17,6 +17,7 @@ Before starting, keep four habits in mind:
 
 **Questions to ask**
 - What exactly does each provision require or forbid? Split the policy into components, one per instrument.
+- When was it announced or first expected, and when does it take effect? The gap between the two is when announcement effects happen (RS-8).
 - Who is bound? Who is exempt, and on what conditions?
 - What are the parameters (cap, rate, number of hours, quantity)? How do they change over time?
 - Who enforces it, with what penalties, and with what resources?
@@ -114,6 +115,10 @@ Before starting, keep four habits in mind:
 - When an actor class changes its behavior, whose options change as a result? (Landlords cut maintenance; tenants receive worse quality. Buyers move to substitutes; prices rise there.)
 - Which recorded market relations (`02_ontology.md`, 2.8) does the effect travel along? If you need a relation that is not recorded, record it with its evidence first.
 - What happens to the people who would have made the exchanges that no longer happen (LW-5)?
+- Three second-order patterns to check every time:
+  - **Bundled trips (RS-9).** If buyers now shop somewhere else for the target good, what else do they buy on the same trip?
+  - **Informal trade (RS-10).** If some trade goes underground, what happens to search costs, quality and dispute resolution?
+  - **Lock-in (RS-11).** If people now hold a benefit they lose by moving, which other choices (jobs, schools) do they now turn down?
 
 **Stopping rule.** Stop each chain at depth 4 (four links from the policy), and stop any branch earlier if it has reached a diffuse effect on bystanders at depth 3. Note where you stopped. Chains are not stopped because an effect "seems small"; this method cannot measure size.
 
@@ -132,7 +137,8 @@ Before starting, keep four habits in mind:
 2. If all chains for that key have the same sign, that is the combined sign.
 3. If signs conflict and a dominance rule (DM family) applies, apply it, and add its assumption.
 4. If signs conflict and no dominance rule applies, the sign is `ambiguous`. Keep all chains, and state what would decide it.
-5. Never merge different variables. "Wage rate rises" and "hours fall" are two consequences.
+5. A one-time cost in one chain against a later stream of gains in another is ambiguous by design (DM-3): say so, and do not try to net them.
+6. Never merge different variables. "Wage rate rises" and "hours fall" are two consequences.
 
 **Output.** Combined consequence list.
 
@@ -164,7 +170,7 @@ Before starting, keep four habits in mind:
 
 **Pitfall.** Counting what the money is spent on as a pure gain. The spending is visible; what the taxpayers would have bought is not. Both must appear.
 
-**Output.** Opportunity-cost consequences, almost always `invisible`.
+**Output.** Opportunity-cost consequences, almost always `invisible`, each written as a signed change in a variable (for example `resources_available_other_uses` decrease, `quantity_traded` decrease for prevented exchanges), never as a bare "loss".
 
 ---
 
@@ -198,7 +204,7 @@ Before starting, keep four habits in mind:
 3. **Invisible consequences:** grouped by actor class, each with its chain in plain words, its horizon and its key assumptions.
 4. **Ambiguous effects:** what pushes each way, and what would decide it.
 5. **Conditions:** the assumptions that matter most, their estimates, and what would change the picture.
-6. **What the method cannot say:** sizes, net welfare, and whether the policy is good. These are left to the reader.
+6. **What the method cannot say:** sizes, net welfare, whether the policy is good, and (in version 1) health, safety and environmental effects. These are left to the reader or to other methods.
 
 **Pitfalls**
 - Advocacy. Describe consequences by group and horizon; do not weigh them.

@@ -9,7 +9,7 @@ Fill in each section in order, following `../03_workflow.md`. Cite rules by ID. 
 | Field | Value | Source sentence |
 |---|---|---|
 | Jurisdiction (and what lies just outside) | | |
-| Enacted / effective / expires | | |
+| Announced / enacted / effective / expires | | |
 | Enforcement (who, penalties, resources) | | |
 
 | Component | Instrument | Target | Bound | Parameters | Exemptions |
@@ -46,7 +46,7 @@ For each actor class, check RS-1 to RS-8: substitute, adjust quality or terms, e
 
 ## 6. Second-order effects
 
-Depth limit 4; prune diffuse bystander effects after depth 3. Name the market relation each step uses.
+Depth limit 4; prune diffuse bystander effects after depth 3. Name the market relation each step uses. Check bundled trips (RS-9), informal trade (RS-10) and lock-in (RS-11).
 
 | ID | Actor class | Variable | Sign | Horizon | Rules | Market relation | Assumptions |
 |---|---|---|---|---|---|---|---|
@@ -64,9 +64,11 @@ Notes on durability, effects that grow or fade, expectations and timing shifts.
 
 ## 9. Opportunity costs
 
-| ID | Actor class | What is given up | Rules |
-|---|---|---|---|
-| | | | |
+Write each as a signed change in a variable, not as a bare loss.
+
+| ID | Actor class | Variable | Sign | What is given up | Rules |
+|---|---|---|---|---|---|
+| | | | | | |
 
 ## 10. Assumptions
 

@@ -2,7 +2,7 @@
 
 How to analyze the consequences of a policy praxeologically, written so that a newcomer can follow it and a machine can later encode it. This is the Phase 1 deliverable of the project plan (`../Praxeology_AI_Project_Plan_v3.md`, Section 4).
 
-**Status:** draft 0.1, written before any expert review. Every rule, tier decision and source pointer is a proposal. Source pointers were written from memory and must be checked against the texts before they are relied on.
+**Status:** draft 0.2 (rule catalog 0.2), written before any expert review. Gaps found in the first three worked examples have been closed; see `06_gaps.md`. Every rule, tier decision and source pointer is a proposal. Source pointers were written from memory and must be checked against the texts before they are relied on.
 
 ## How to use it
 
