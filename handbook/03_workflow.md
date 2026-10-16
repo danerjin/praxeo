@@ -232,6 +232,21 @@ Before starting, keep four habits in mind:
 
 ---
 
+## Final check before the report
+
+The core-only re-run (`08_core_rerun_report.md`) found that most errors, in analyses with and without patterns, are of a few recurring kinds. Before writing the report, check each consequence for them:
+
+1. **Uncombined chains.** For each actor class and variable, list every chain in the analysis that reaches it, including chains written down in other sections (time structure, announcement effects, other components). If any two have opposite signs, the consequence is `ambiguous` unless a dominance premise is stated (CR-12b, CR-12e). This was the most common sign error.
+2. **Single signs for a group.** Where a rule licenses only "at least one of" (employment or hours; waiting, search or side payments; hiring, hours or non-wage terms), record the group with `at_least_one_increase` or `at_least_one_decrease`, not one member alone.
+3. **The wrong baseline.** Every sign is against the same place and time without the policy: not against the situation before it, not against a controlled price, and not against a different version of the policy.
+4. **Worse off is not poorer.** That a class is worse off by its own ranking (CR-3a) does not mean it has less to spend on other things (CR-3, note). Sign `resources_available_other_uses` only where the class keeps paying, or pays a sum it cannot avoid.
+5. **Timing shifts.** Where an action happens with and without the policy, but at different times, sign it per window (`02_ontology.md`, 2.5). Use a path note only where the action would not happen at all without the policy.
+6. **Both sides of every transfer.** For every payment, subsidy, grant or revaluation, check that the payer's side and the recipient's side are both recorded (CR-8b).
+7. **Every actor class, every core rule.** For each actor class, ask whether each of CR-4 (every pair of options), CR-6, CR-7 (including capitalization, CR-7c) and CR-9 applies. Patterns prompt for some of these and not others, so analyses that rely on patterns tend to miss capitalization, enforcement costs and the payer's side.
+8. **Unstated premises.** Every premise a derivation uses is in the assumption table with a probability. That includes "the group can organize" for lobbying, "some actors are at the margin" for any response, and "the alternative is worse" for any quality claim.
+
+---
+
 ## Analyzing a repeal
 
 A repeal is analyzed with the same eleven steps, with three differences.

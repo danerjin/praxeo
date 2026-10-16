@@ -43,6 +43,8 @@ A policy does not change anyone's ranking of ends, except through what it tells 
 
 **Premises.** Whether a stated rule is actually enforced is empirical (`enforcement`). An unenforced prohibition does not remove an option; it attaches a risk to it (operation 3).
 
+**Recording.** A provision often does more than one thing: a free tradable right adds an option and transfers means; a void-contract rule removes an option for one side and adds one for the other; a prohibition removes an option where enforced and attaches a risk where not. Record every operation that applies, for each actor class, and split an actor class where the operation differs within it. Which operation a provision performs depends on what the law would be without it, so state that counterfactual law.
+
 **Source.** HA ch. I §1; HA ch. XXVII; P&M ch. 2 §1.
 
 ### CR-2 Choice
@@ -61,6 +63,8 @@ A policy does not change anyone's ranking of ends, except through what it tells 
 - (a) removing an actor's chosen option, or attaching a burden to it, makes the actor worse off by their own ranking, unless their next-best was ranked equal;
 - (b) only adding options, or removing burdens, cannot make an actor worse off by their own ranking at the time of choice;
 - (c) means used for one end are not available for any other (LW-1).
+
+A loss by the actor's own ranking (a) is not the same as a fall in their spending on other things. An actor who must pay more for something may respond by buying less of it, and so spend more, not less, elsewhere. `resources_available_other_uses` falls for an actor class only if its members keep spending on the burdened option, or are made to pay a sum they cannot avoid.
 
 **Derivation.** CR-2 and LW-1. Under (a) the actor must fall back to an alternative they ranked lower. Under (b) the previously chosen option is still open.
 
@@ -100,14 +104,14 @@ The mirror case (x made better) reverses every direction.
 
 ### CR-6 Price formation and displaced pressure
 
-**Statement.** At any price at which the quantity buyers wish to buy differs from the quantity sellers wish to sell, some unsatisfied party can gain by offering better terms, and some party on the other side can gain by accepting them (CR-5). Prices therefore tend toward the level at which planned purchases and sales are compatible.
+**Statement.** At any price at which the quantity buyers wish to buy differs from the quantity sellers wish to sell (whatever the reason the price is where it is), some unsatisfied party can gain by offering better terms, and some party on the other side can gain by accepting them (CR-5). Prices therefore tend toward the level at which planned purchases and sales are compatible.
 
-If a rule prevents the price from moving, the gain from closing the gap does not disappear. Unsatisfied parties pursue it along every margin that is still open:
+If a rule prevents the price from moving, the gain from closing the gap does not disappear. The rule may be the policy, a rule already in force (a regulated fare), or a buyer of last resort that holds the price. The same holds when a rule fixes the quantity (a quota, a cap on the number of sellers) and leaves the price free: the price then rises to ration the fixed quantity, and the gap between that price and what sellers would accept is the pressure that seeks other margins (entry outside the rule, the value of the permission). Unsatisfied parties pursue it along every margin that is still open:
 - the terms that are not regulated (quality, service, conditions, timing);
 - the criteria by which the scarce side chooses among the other side (queues, connections, preference for some buyers or sellers);
 - exchanges outside the rule, where the expected gain exceeds the expected penalty (CR-4 with x: comply, y: violate).
 
-The full price, meaning the money price plus everything else given up, moves toward the clearing level as far as the open margins allow.
+The full price, meaning the money price plus everything else given up, moves toward the clearing level as far as the open margins allow. CR-6 establishes that at least one open margin is used; which ones, and whether each is used, needs a premise per margin. Without such premises, record the margins as a group with sign `at_least_one_increase` (02_ontology.md, 2.5).
 
 **What is a priori and what is not.** That the pressure exists and moves to open margins is a priori. Which margins are open, and how wide, is a fact about the case: which terms are regulated, and how well the rule is enforced (`enforcement`, `binding`).
 
@@ -121,8 +125,8 @@ The full price, meaning the money price plus everything else given up, moves tow
 
 **Statement.** Wherever a means (labor, capital, money, land, a purchase, an activity, a moment in time) can be moved between uses that serve the same end, its owners move it from the use that yields less to the use that yields more, until the difference in yield at the margin is no greater than the cost of moving. Hence:
 - (a) after any change in yields, yields on the means that can move are brought back into line, net of moving costs;
-- (b) the lasting gain or loss from the change settles on the means that cannot move: specific, immobile or fixed resources, and actors without alternatives (this decides who bears a tax and who keeps a subsidy or a privilege);
-- (c) the price of a durable asset adjusts until a buyer expects to earn on it what they could earn elsewhere, so a lasting change in its expected yield is borne or captured by whoever owns it when the change becomes expected, not by later buyers.
+- (b) the lasting gain or loss from the change settles on the means that cannot move: specific, immobile or fixed resources, and actors without alternatives (this decides who bears a tax and who keeps a subsidy or a privilege). This is a matter of degree: where both sides have some alternatives, each bears part, and the side whose alternatives are clearly worse bears more than the other. Ranking the shares needs a premise comparing the alternatives; with three or more parties (a distributor, a retailer and a buyer), rank each pair. Without such a premise, only the direction of each side's price is signed;
+- (c) the price of a durable asset adjusts until a buyer expects to earn on it what they could earn elsewhere, so a change in its expected yield is borne or captured by whoever owns it when the change becomes expected, not by later buyers. A change of limited duration is capitalized for the yields it affects. An asset the policy itself creates (a quota right, a medallion, a transferable license) is valued the same way, and its value is captured by whoever receives it at creation.
 
 **What is a priori and what is not.** The direction of every movement is a priori (CR-4 for each owner). How mobile each means is, and how fast it moves, is empirical (`mobility`, `alternative_uses`, `durability`).
 
@@ -188,9 +192,12 @@ The value to anyone of a means depends on the ends it serves and on what it is u
 
 **Statement.** When several chains of reasoning reach the same actor class, variable and horizon:
 - (a) if all push in the same direction, that is the combined direction;
-- (b) if they push in opposite directions, the combined direction is `ambiguous`, unless a premise establishes that one chain dominates (a dominance pattern, `DM`, with its premises stated);
+- (b) if they push in opposite directions, the combined direction is `ambiguous`, unless a premise establishes that one chain dominates (stated under (e); a dominance pattern may be cited for it where one fits);
 - (c) different variables are never netted against each other;
-- (d) a consequence takes the lowest tier of any link in its chain, and holds only if all its premises hold.
+- (d) a consequence takes the lowest tier of any link in its chain, and holds only if all its premises hold. Where the same consequence is reached by independent chains with the same sign, it holds if any one chain's premises hold: list the premises of each chain separately, and report the consequence if at least one chain clears the cut-off.
+- (e) a premise that establishes dominance under (b) may be an empirical premise with a probability, an accounting identity, or arithmetic on the case's figures (a cost far smaller than a revenue). Say which.
+- (f) where chains cancel exactly by construction (one provision undoes what another creates), the consequence is not reported, and section 7 says so.
+- (g) chains at different horizons are not combined: a one-time effect in the short run and a lasting effect in the long run are separate consequences, one per horizon.
 
 **Derivation.** None needed: this is the logic of combining qualitative signs. The method states directions, not magnitudes, so opposing directions cannot be netted without a further premise.
 

@@ -1,4 +1,4 @@
-# 4. Rule catalog 0.4: patterns
+# 4. Rule catalog 0.5: patterns
 
 This file holds the **patterns**: derived results for recurring situations. They rest on the **core rules** in `04a_core_rules.md`, which are the universal calculus. Every pattern below carries a **Derivation** line that shows which core rules it instantiates and how; a pattern adds no reasoning of its own beyond that derivation and the premises it names. If a pattern and a direct derivation from the core rules ever disagree, the derivation wins and the pattern is corrected.
 
@@ -14,6 +14,8 @@ Each pattern is one reusable inference. Format:
 - **Derivation:** how the pattern follows from the core rules (`04a_core_rules.md`).
 
 Patterns are deliberately small. A full analysis chains several of them, and each link is reviewed on its own.
+
+**Changes in 0.5.** The core-only re-run of the 25 worked examples (`08_core_rerun_report.md`) found no claim the core rules could not derive, but found patterns that overclaim or lack a clause. Revised: EN-3, EN-4, DM-1, DM-2, RS-6, TX-3, RS-7, RS-10, PC-2, PC-8, OC-3, SB-1, SB-3, SB-4.
 
 **Changes in 0.4.** The core rules (CR-1 to CR-12) are introduced and every pattern is given a derivation from them. Writing the derivations exposed four problems, now fixed: TX-6 stated as a priori a direction that depends on an empirical premise (CR-4's exception); OC-7 counted the gain to an asset's seller without the matching outlay of its buyer (CR-8 symmetry); RS-13 covered added supply but not withdrawn supply (symmetry); TS-4 cannot be derived at all and is quarantined.
 
@@ -70,7 +72,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 
 ### RS-6 Exit and reallocation
 - **If:** the policy lowers the expected return of using resources in the target activity, relative to other uses.
-- **Then:** `investment_target` decrease, then `quantity_supplied` and `capital_stock_target` decrease; `number_of_sellers` decrease or `entry_rate` decrease. Resources go to other uses, where quantities rise.
+- **Then:** `investment_target` decrease, then `quantity_supplied` and `capital_stock_target` decrease; `number_of_sellers` decrease or `entry_rate` decrease; labor in the activity: `employment` and `hours_worked` as a group, `at_least_one_decrease` (sellers may cut hours rather than staff). Resources go to other uses, where quantities rise.
 - **Assumes:** resources have other uses (`alternative_uses`); speed depends on how specific and durable the resources are (`durability`; see TS-1).
 - **Tier** B. **Visibility** invisible. **Horizon** medium to long.
 - **Builds on:** LW-4.
@@ -79,7 +81,8 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 ### RS-7 Lobbying and rent-seeking
 - **If:** the policy creates a gain that is concentrated on an identifiable group and depends on political decisions (renewal, extension, exemption, enforcement).
 - **Then:** `lobbying_effort` by that group increase. Those concentrated groups harmed by the policy also lobby, for repeal or exemption.
-- **Assumes:** the group can organize at a cost lower than its stake.
+- **Assumes:** the group can organize at a cost lower than its stake (`other`). This premise must be stated and estimated in each case, like any other.
+- **Unless:** the counterfactual also has lobbying on the same question (a repeal, where the policy's beneficiaries would lobby to keep it in force). Then compare with that: the side that gains from the change lobbies more, the side that loses may lobby more or less, and the combined sign for a class that lobbied in both worlds is `ambiguous` without a premise.
 - **Tier** B. **Visibility** invisible. **Horizon** medium.
 - **Builds on:** AX-1, LW-1.
 - **Derivation:** CR-4 applied to political action (x: accept the decision, y: spend means to change it). The payoff to y rises with the concentrated gain or loss at stake.
@@ -102,7 +105,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 
 ### RS-10 Driving trade into the informal market
 - **If:** some trade in a good or service moves outside the legal market (RS-3, PC-6, EN-3, EN-7).
-- **Then:** for that trade: `search_cost` increase (sellers cannot advertise openly); `quality_information` decrease and `quality_variability` increase (no brands, licensing, reviews or recourse to rely on); `disputes_settled_outside_courts` increase; sellers charge for the risk of punishment. In reverse (trade returning to the legal market after a repeal), each sign flips.
+- **Then:** for that trade: `search_cost` increase (sellers cannot advertise openly); `quality_information` decrease and `quality_variability` increase (no brands, licensing, reviews or recourse to rely on); `disputes_settled_outside_courts` increase; sellers charge for the risk of punishment. In reverse (trade returning to the legal market after a repeal), `search_cost` and `disputes_settled_outside_courts` decrease and `quality_information` increases; `quality_variability` is `ambiguous` if the repeal also admits sellers who were previously excluded by a training or quality requirement.
 - **Assumes:** penalties for informal trade are enforced at least sometimes (`enforcement`).
 - **Tier** B. **Visibility** invisible. **Horizon** short.
 - **Builds on:** AX-1, LW-1.
@@ -171,7 +174,10 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 
 ### OC-3 Administration and enforcement
 - **If:** the policy must be administered or enforced.
-- **Then:** `enforcement_cost` increase for `officials.enforcement`, funded by `taxpayers` (OC-1 applies to that funding).
+- **Then:** `enforcement_cost` increase for `officials.enforcement`. Who bears it depends on the funding, which must be stated:
+  - from a budget that rises with the new task: `taxpayers` (OC-1 applies);
+  - from a fixed budget: enforcement of other rules falls instead (CR-8a), and the cost falls on those whom that enforcement protected;
+  - from the policy's own revenue: it reduces what the revenue does elsewhere (CR-8d), not general taxpayers' means.
 - **Tier** A, given positive enforcement activity. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-1.
 - **Derivation:** CR-8c, with CR-8a for the funding.
@@ -300,7 +306,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 
 ### PC-2 Shortage is rationed by other means
 - **If:** `excess_demand` increase (PC-1).
-- **Then:** `wait_time`, `search_cost`, `side_payments` and `allocation_by_non_price_criteria` increase for `buyers.prospective`; which ones depend on the market. The good does not go to whoever is willing to give up the most for it, but by these other criteria.
+- **Then:** for `buyers.prospective`, the group `wait_time`, `search_cost`, `side_payments`, `allocation_by_non_price_criteria`: `at_least_one_increase`. Any one member is signed on its own only with a premise that that margin is open and used in this market. The good does not go to whoever is willing to give up the most for it, but by these other criteria.
 - **Tier** A, given the shortage; the particular form is B. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-6.
 - **Derivation:** CR-6 (the scarce side chooses by other criteria).
@@ -350,6 +356,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **If:** a binding `price_ceiling` or `price_floor` covers part of a market, and an uncontrolled substitute or segment exists (recorded market relation).
 - **Then:** demand moves to the uncontrolled segment (under a ceiling, from outsiders who cannot obtain the good, PC-3; under a floor, from buyers avoiding the higher price): `price_substitute` increase, which harms `buyers.substitutes`.
 - **Assumes:** `substitutability` between the segments.
+- **Unless:** the policy also pushes sellers into the uncontrolled segment (sellers shut out of the controlled one by a cap on their number, owners moving units out of the controlled segment, exempt new building). Then RS-13 adds supply there, and the combined sign of `price_substitute` is `ambiguous` unless a premise says which chain dominates.
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
 - **Builds on:** RS-1, PC-3.
 - **Note:** another chain can push `price_substitute` the other way: resources withdrawn from the controlled segment (PC-5) may reappear in the uncontrolled one (for example, new building that is exempt from the cap), adding supply there (RS-13). Combine the chains using the procedure in workflow step 7.
@@ -436,7 +443,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 
 ### TX-3 Taxed activity shrinks; resources move to untaxed uses
 - **If:** TX-2 applies.
-- **Then:** `investment_target` and `employment` in the taxed activity decrease over time; `quantity_substitute` increase.
+- **Then:** `investment_target` in the taxed activity decreases over time; `employment` and `hours_worked` there, as a group, `at_least_one_decrease`; `quantity_substitute` increase.
 - **Assumes:** `alternative_uses`, `substitutability`.
 - **Tier** B. **Visibility** invisible. **Horizon** medium.
 - **Builds on:** RS-1, RS-6.
@@ -512,7 +519,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 
 ### SB-1 Subsidy is funded by someone
 - **If:** a subsidy is paid.
-- **Then:** apply TX-1 and OC-1 to its funding source (taxes now, borrowing that implies taxes later, or monetary expansion). Name the payers.
+- **Then:** apply TX-1 and OC-1 to its funding source (taxes now, borrowing that implies taxes later, or monetary expansion). Name the payers. By CR-8b, the recipients' means increase by what the payers give up, before any response: record both sides.
 - **Tier** A, given payment. **Visibility** invisible. **Horizon** short to long, depending on funding.
 - **Builds on:** LW-1.
 - **Derivation:** CR-8a and CR-8b.
@@ -529,14 +536,15 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **If:** SB-2 applies.
 - **Then:** resources move into the subsidized activity from other uses, where quantities fall: `quantity_substitute` decrease and output elsewhere decreases.
 - **Assumes:** resources are scarce and in use elsewhere.
+- **Unless:** the policy only moves an activity in time (a temporary program that brings work forward and leaves it undone later). Then the effect on other uses is a timing shift (RS-8, SB-6), signed per window, not a lasting reduction.
 - **Tier** B. **Visibility** invisible. **Horizon** medium.
 - **Builds on:** LW-1, LW-4.
 - **Derivation:** CR-7 and CR-8a.
 
 ### SB-4 Capitalization of lasting changes in returns
-- **If:** a lasting policy raises or lowers the expected net return from an asset in fixed or slowly expandable supply (land, buildings, licenses, quota rights, shares in firms with specific capital): a subsidy or a restriction that raises returns (EN-2, EN-6), or a tax, cap or competing entry that lowers them.
+- **If:** a policy expected to last for some period raises or lowers the expected net return from an asset in fixed or slowly expandable supply (land, buildings, licenses, quota rights, shares in firms with specific capital): a subsidy or a restriction that raises returns (EN-2, EN-6), or a tax, cap or competing entry that lowers them.
 - **Then:** `asset_value` changes in the same direction from the time the change becomes expected. Owners at that time capture the gain or bear the loss; later buyers pay the new price, so they neither gain nor lose from the policy as it stands. When an expected gain later erodes (the subsidy ends, exempt competitors enter, repeal becomes likely), the value falls on whoever holds the asset then, including recent buyers who paid the capitalized price.
-- **Assumes:** fixed or slowly expandable supply of the resource; the change is expected to last, or to end, at a stated probability (`expectations`).
+- **Assumes:** fixed or slowly expandable supply of the resource; how long the change is expected to last (`expectations`). A change of limited duration is capitalized only for the yields it affects, so its effect on `asset_value` is smaller, but its sign is the same. Assets the policy itself creates (quota rights, medallions, transferable licenses) are covered too: their value is the expected yield of the privilege, captured by whoever receives them at creation.
 - **Tier** B. **Visibility** invisible. **Horizon** short (announcement) to medium.
 - **Builds on:** LW-4, LW-7.
 - **Derivation:** CR-7c with CR-10c.
@@ -603,7 +611,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 
 ### EN-3 Excluded sellers and priced-out buyers
 - **If:** EN-1 applies.
-- **Then:** would-be sellers who do not qualify move to their next-best occupation (OC-4): their `earnings` decrease compared with the counterfactual. Buyers priced out of the licensed service substitute toward doing it themselves, unlicensed providers (RS-3) or going without (RS-1).
+- **Then:** would-be sellers who do not qualify move to their next-best occupation (OC-4); by their own ranking they are worse off (CR-3a). Their money `earnings` decrease only with the premise that the next-best occupation pays less in money (`other`): an occupation chosen second may pay more and be valued less for other reasons. Buyers priced out of the licensed service substitute toward doing it themselves, unlicensed providers (RS-3) or going without (RS-1).
 - **Assumes:** `substitutability` for buyers.
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
 - **Builds on:** OC-4, RS-1, RS-3, RS-10.
@@ -611,7 +619,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 
 ### EN-4 Quality received by buyers: ambiguous by default
 - **If:** EN-1 applies and the requirement is related to the quality of the service.
-- **Then:** two chains push `quality_per_unit` received by buyers in opposite directions: licensed providers meet a minimum standard (up), while buyers priced out move to self-provision or unlicensed providers (EN-3, down). The combined sign is `ambiguous` unless DM-2 applies.
+- **Then:** two chains push `quality_per_unit` received by buyers in opposite directions: licensed providers meet a minimum standard (up), while buyers priced out move to self-provision or unlicensed providers (EN-3, down). The "down" chain needs its own premise: that what buyers move to is of lower quality than the paid provision it replaces (`other`). Without it, that chain gives no sign. The combined sign is `ambiguous` unless DM-2 applies.
 - **Tier** B for each chain. **Visibility** the first chain is visible; the second is invisible. **Horizon** medium.
 - **Note:** the canonical example for workflow step 7.
 - **Derivation:** CR-12 (two chains with opposite signs).
@@ -670,14 +678,14 @@ Dominance rules decide the combined sign when chains conflict (workflow step 7).
 
 ### DM-1 Incidence follows the alternatives
 - **If:** TX-2 (a tax) or SB-2 (a subsidy) applies, and one side of the market has clearly fewer or worse alternatives than the other (buyers with no substitutes; sellers with highly specific, immobile resources).
-- **Then:** that side bears the larger part of a tax, or receives the larger part of a subsidy. For a tax: if buyers have fewer alternatives, `price_paid` rises by most of the tax; if sellers do, `net_price_received` falls by most of it. For a subsidy: if buyers have fewer alternatives, `price_paid` falls by most of the subsidy; if sellers do, `net_price_received` rises by most of it. Record the split with `tax_share_borne` or `subsidy_share_received`.
+- **Then:** that side bears more of a tax, or receives more of a subsidy, than the other side does (CR-7b, with the premise that the difference in alternatives is clear). This compares the two sides' shares; it says nothing about how large either is. For a tax: if buyers have fewer alternatives, the rise in `price_paid` exceeds the fall in `net_price_received`; if sellers do, the reverse. For a subsidy, the same with the signs reversed. Without a clear difference in alternatives, the split is not signed: each side's price moves in the direction TX-2 or SB-2 gives, and `tax_share_borne` or `subsidy_share_received` is `ambiguous`. Record the split with `tax_share_borne` or `subsidy_share_received`.
 - **Assumes:** the comparison of alternatives (`substitutability`, `mobility`), with evidence.
 - **Tier** B. **Horizon**: over time, the side that owns redeployable capital gains alternatives as it redeploys (TS-1), so the burden shifts away from that side. In product markets the sellers own the capital, so incidence shifts toward buyers; in factor markets such as labor the buyers (employers) own it, so a payroll tax's incidence shifts toward workers.
 - **Source and dispute:** the rule as stated is the standard treatment of incidence, not Rothbard's. Rothbard's "first law of incidence" (P&M ch. 4 §3A) holds that no tax can be shifted forward: a general sales tax is in effect a tax on the incomes of original factors, and where a price later rises, that comes about through reduced supply, which he classes as an effect of the tax rather than shifting. The two accounts agree that the burden falls first on those who cannot escape it, and that prices rise only as supply contracts; they differ in what they call shifting, and in Rothbard's case for general taxes. Whether to encode Rothbard's account as an option is Q3 in `06_gaps.md`.
 - **Derivation:** CR-7b: the side whose means can move away bears less; the burden or benefit settles on the side with fewer alternatives.
 
 ### DM-2 Quality under licensing
-- **No default rule.** EN-4 stays ambiguous unless the case supplies evidence that one chain dominates: for example, the requirement is unrelated to the quality buyers care about (then only the "down" chain is active), or close unlicensed substitutes are unavailable (then the "down" chain is weak). Record such evidence as an assumption.
+- **No default rule.** Both chains of EN-4 need their premises: the "up" chain that the requirement bears on the quality buyers care about, and the "down" chain that the alternatives buyers move to are of lower quality. EN-4 stays ambiguous unless the case supplies evidence that one chain dominates: for example, the requirement is unrelated to the quality buyers care about (then only the "down" chain is active), or close unlicensed substitutes are unavailable (then the "down" chain is weak). Record such evidence as an assumption.
 - **Derivation:** CR-12 (no dominance premise by default).
 
 ### DM-3 One-time cost against later gains (ambiguous by design)

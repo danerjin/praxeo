@@ -124,6 +124,9 @@ def check(path, rules, variables, core_only=False):
             names = re.findall(r"[a-z]+(?:_[a-z]+)+|\b[a-z]{4,}\b", variable.split("(")[0])
             if names and not any(n in variables for n in names):
                 notes.append(f"{cid}: variable '{variable}' not in the controlled list")
+            tier = row[6] if len(row) > 6 else ""
+            if "TS-4" in row[7] and tier in ("A", "B"):
+                errors.append(f"{cid}: cites TS-4, which is not derivable, in a Tier {tier} consequence")
             if not valid_sign(sign):
                 errors.append(f"{cid}: sign '{sign}' is not a valid sign")
             for a in re.findall(r"A-\d+", assumed):

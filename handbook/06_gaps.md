@@ -109,6 +109,15 @@ Every citation was checked against the texts. The editions, the method and the f
 
 Most citations could be confirmed only from search extracts of the online texts, not by opening them. Opening them directly is still to be done.
 
+## 6.2c Core-only re-run (catalog 0.5)
+
+All 25 worked examples were re-derived blind from the core rules alone and compared with the pattern-based versions; see `08_core_rerun_report.md`. No valid claim needed anything beyond the core rules (Q16, first half). The test led to:
+- revisions of 14 patterns that overclaimed or lacked a clause;
+- clearer wording in CR-1, CR-3, CR-6, CR-7 and CR-12;
+- a final checklist in the workflow for the errors that recur in both kinds of analysis.
+
+The pattern-based examples are being corrected for the errors the comparison found.
+
 ## 6.3 Questions for the experts
 
 **Q1. Tier A decisions.** Which foundations and rules may produce Tier A conclusions? The draft proposes A for AX-1, LW-1, LW-2, LW-5, LW-6, LW-7, the OC rules, PC-2, PC-3 and PC-11 (given their preconditions), and A for LW-3 by decision, with the price-as-quality-signal and Giffen exceptions recorded. Is that right?
@@ -146,6 +155,8 @@ Most citations could be confirmed only from search extracts of the online texts,
 **Q17. Tendencies and equilibrium.** CR-6 and CR-7 speak of tendencies: prices tend toward clearing, and yields toward equality across uses. Mises grounds these in the imaginary construction of the evenly rotating economy. Is it legitimate to use the direction of a tendency as an a priori conclusion while treating its speed and completeness as empirical, as the core rules do?
 
 **Q18. CR-4's exception.** The direction of response to a change in cost is a priori except where the change also alters the actor's total means. That exception covers the Giffen case under LW-3 and the fixed-target saver under TX-6. Is this the right single statement of the exception, and is it complete?
+
+**Q19. Which purchases fall when means fall?** When an actor's means are reduced, the core rules say that some other use is given up but not which (CR-3, CR-8; WE-004). The method treats this as empirical and requires a premise. Is there a praxeological ground (for example, the marginal use is the one given up, LW-2) for saying more?
 
 ## 6.4 Next steps for Phase 1
 
