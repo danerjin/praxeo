@@ -123,7 +123,7 @@ Not reported: employers ending seasonal and temporary engagements before 90 days
 | C-19 | `neighboring_jurisdictions` (Pellam employers) | `quantity_supplied` (goods and services sold into Varrow) | increase | medium to long | RS-4 | as C-18 | A-6, A-18 |
 | C-20 | `employers.compliant`, `employers.small` | `quantity_supplied` | increase | medium | CR-9, CR-7a | their output and that of `employers.uncovered`: `substitute`, partial | A-6, A-13 |
 | C-21 | `staffing_agencies` | `quantity_traded` (temporary and on-call staffing to cover absences) | increase | short | CR-9 | agency labor and absent employees' hours: `substitute`, close in shift work | A-1, A-4, A-19 |
-| C-22 | `employers.uncovered` (owners) | `asset_value` (labor-intensive businesses employing uncovered staff) | decrease | short (from passage) | CR-7c, CR-10c | — | A-1, A-3, A-25 |
+| C-22 | `employers.uncovered` (owners) | `asset_value` (labor-intensive businesses employing uncovered staff) | decrease | short (from passage) | CR-7c, CR-10c | — | A-1, A-3, A-24 |
 | C-23 | `employers.uncovered` | `return_on_capital` | decrease | short | CR-7b | — | A-1, A-2, A-3 |
 | C-24 | `workers.uncovered` | `tax_share_borne` (share of the term's cost borne, workers compared with employers) | increase | medium to long | CR-7b | `contract` (employment) | A-5, A-22 |
 
@@ -135,7 +135,7 @@ C-21: shift-based employers must fill absent shifts (C-3). Those who use agencie
 
 C-22 and C-23: until wages adjust, the cost falls on employers' returns (C-23). Where a business's value rests on its expected earnings, the fall for the years before wages adjust is capitalized when the Act becomes expected, borne by owners at that time (CR-7c, a change of limited duration). In the long run returns are equalized across uses (CR-7a), so no lasting change in return is signed.
 
-C-24, who pays (CR-7b). Nearly every employer of six or more in Varrow is bound, so a worker cannot escape the term by changing employer. Their alternatives are exempt small firms, contracting, or a job in Pellam. Employers can redeploy capital, automate or move across the river over time. With the premise that workers' alternatives are clearly worse (A-22), workers bear more of the cost than employers, through the wage (C-5), and their share grows as capital redeploys. "Bearing" here is net of nothing: the term is also worth v to them (C-1), and the method does not compare v with what they pay (section 7; Gaps found, b).
+C-24, who pays (CR-7b). Nearly every employer of six or more in Varrow is bound, so a worker cannot escape the term by changing employer. Their alternatives are exempt small firms, contracting, or a job in Pellam. Employers can redeploy capital, automate or move across the river over time. With the premise that workers' alternatives are clearly worse (A-22), workers bear more of the cost than employers, through the wage (C-5), and their share grows as capital redeploys. Here "bears" means pays, before counting what the term is worth to them (C-1); the method does not compare that value with what they pay (Gaps found, b).
 
 Stopping points: C-17 leads to the buyers' other spending (depth 3), a diffuse effect; stopped, because buyers' total spending on these services may rise or fall (CR-3, note). Medical providers seeing more patients during working hours: the link runs through health behavior, out of scope. Payroll software firms: depth 2, diffuse; stopped.
 
@@ -145,9 +145,9 @@ Stopping points: C-17 leads to the buyers' other spending (depth 3), a diffuse e
 |---|---|---|---|---|
 | `workers.full_time`, `hours_worked` (scheduled), medium | Hours beyond 1,200 carry no accrual, so hours shift from part-timers to them (CR-4b, A-8); covering absent colleagues (C-3, A-19). | The cost of labor as a whole rises (C-2, CR-4c); wages fall at most partly (A-6). | None | **ambiguous** (C-9). Decided by how much of employers' labor is part time, and how much of c the wage absorbs. |
 | `workers.uncovered`, `hours_worked`, short to medium | None. | Hours present fall as paid sick hours are used (C-3); hours scheduled fall, in the group with employment and other benefits (C-4, C-6), and for part-timers (C-8). | None needed | The chains measure **different quantities**: hours at work net of absence (C-3) and hours on the schedule (C-4, C-6, C-8, C-9). The controlled list has only `hours_worked` (Gaps found, d). Read as hours present, the combined sign is a decrease for part-timers and for the class as a whole, and `ambiguous` for full-timers (C-9's + chains against C-3). |
-| `workers.uncovered`, `non_wage_compensation` (total, including sick time), medium | Paid sick time (C-1). | Other benefits may be cut (C-4, C-6, C-7), at least as one member of a group. | None | **ambiguous** (C-25). The variable cannot keep the mandated term apart from the benefits it may displace (Gaps found, d). |
+| `workers.uncovered`, `non_wage_compensation` (total, including sick time), short to medium | Paid sick time (C-1). | Other benefits may be cut (C-4, C-6, C-7), at least as one member of a group. | None | **ambiguous** (C-25). The variable cannot keep the mandated term apart from the benefits it may displace (Gaps found, d). |
 | `workers.uncovered`, `earnings`, medium | Pay for sick hours not worked (C-1). | Lower wages (C-5); fewer jobs or hours (C-6, C-7, C-8). | None | **ambiguous** (C-26). |
-| `employers.uncovered`, `price_paid` (labor cost per hour worked), medium | The mandated cost (C-2). | Lower wages (C-5). | A-6 (arithmetic once v is less than c: the wage falls by less than c) | **increase**, extending C-2 to the medium horizon under A-6 (p = 0.6). Without A-6, `ambiguous`. |
+| `employers.uncovered`, `price_paid` (labor cost per hour worked), medium | The mandated cost (C-2). | Lower wages (C-5). | A-6 (arithmetic once v is less than c: the wage falls by less than c) | **increase** (C-31), extending C-2 to the medium horizon under A-6 (p = 0.6). Without A-6, `ambiguous`. |
 | `workers.min_wage`, `wage_rate`, medium | — | — | — | **Not signed.** The floor holds the wage (R1); the cost goes to C-7's margins. |
 | `employers.uncovered`, `return_on_capital`, long | — | — | CR-7a | **Not signed**: returns are equalized across uses in the long run. |
 
@@ -164,10 +164,10 @@ Stopping points: C-17 leads to the buyers' other spending (depth 3), a diffuse e
 
 | ID | Actor class | Variable | Sign | What is given up | Rules |
 |---|---|---|---|---|---|
-| C-27 | `employers.uncovered` | `compliance_cost` (tracking accrual, payroll changes, records kept three years, notices) | increase | What that staff time and software would otherwise have done. | OC-2, CR-8c |
+| C-27 | `employers.uncovered` | `compliance_cost` (tracking accrual, payroll changes, records kept three years, notices, responding to complaints) | increase | What that staff time and software would otherwise have done. | OC-2, CR-8c |
 | C-28 | `officials.enforcement` | `enforcement_cost` | increase | Investigating complaints. | OC-3 |
 | C-29 | `taxpayers` | `resources_available_other_uses` | decrease | What the $3.4 million a year would otherwise have funded. | OC-3, OC-1 |
-| C-30 | `workers.uncovered`, `employers.uncovered` | `compliance_cost` (time spent by both sides on complaints and investigations) | increase | The other uses of that time. | OC-2, CR-8c |
+| C-30 | `workers.uncovered` | `compliance_cost` (time spent filing and pursuing complaints) | increase | The other uses of that time. | OC-2, CR-8c |
 
 The jobs and hours not exchanged under C-4, C-6 and C-7 are prevented exchanges (OC-4): workers and employers both lose the gain each expected from them. They are recorded in those groups, not again here.
 
@@ -200,8 +200,7 @@ Back pay and the equal damages paid after a successful complaint are transfers f
 | A-21 | Complaints are filed in meaningful numbers. | enforcement | 0.85 | Complaint volumes under comparable laws. | C-30 is not reported. |
 | A-22 | Over the medium to long run, workers' alternatives to bound employment (small firms, contracting, Pellam) are clearly worse than employers' alternatives (automation, redeployment, Pellam). | mobility | 0.6 | Share of employment in bound firms; commuting to Pellam is open only near Fenmouth. | C-24 is not reported; the split is not signed. |
 | A-23 | Employers end seasonal and temporary engagements before 90 days to avoid use. | other | 0.4 | Replacement costs compared with 40 hours of sick pay. | Below the cut-off; not reported. |
-| A-24 | Not used. | other | 0 | — | — |
-| A-25 | Labor-intensive businesses are valued on expected earnings, and buyers expect the short-run cost before wages adjust. | expectations | 0.7 | Business sale prices as multiples of earnings. | C-22 is not reported. |
+| A-24 | Labor-intensive businesses are valued on expected earnings, and buyers expect the short-run cost before wages adjust. | expectations | 0.7 | Business sale prices as multiples of earnings. | C-22 is not reported. |
 
 ## 11. Report
 
@@ -217,7 +216,7 @@ Back pay and the equal damages paid after a successful complaint are transfers f
 - *Use and absence.* Workers are present for fewer hours (C-3), employers buy more temporary cover (C-21), and workers change jobs a little less, to keep their balances (C-14).
 - *Enforcement.* Because only complaints trigger enforcement, breaches are concentrated among workers least able to complain (C-15).
 - *Other markets.* Local services cost more (C-17). Tradable production moves partly to Pellam over time (C-18, C-19). Compliant and exempt firms gain sales (C-20). Owners of labor-intensive businesses see their value fall at passage (C-22), and their returns fall until wages adjust (C-23).
-- *Costs.* Employers' record-keeping (C-27), compliant employers' policy changes (C-13), enforcement and its funding (C-28, C-29), time spent on complaints (C-30), and lobbying over the threshold and the cap (C-16).
+- *Costs.* Employers' record-keeping and handling of complaints (C-27), compliant employers' policy changes (C-13), enforcement and its funding (C-28, C-29), workers' time spent on complaints (C-30), and lobbying over the threshold and the cap (C-16).
 
 **Ambiguous effects.** Full-timers' scheduled hours (C-9); covered workers' total non-wage compensation (C-25) and total earnings (C-26). Not signed: the wage of minimum-wage workers, which the floor holds, and employers' long-run returns.
 
@@ -250,16 +249,16 @@ Back pay and the equal damages paid after a successful complaint are transfers f
 | C-19 | neighboring_jurisdictions | quantity_supplied (into Varrow) | increase | medium–long | invisible | B | RS-4 | A-6, A-18 |
 | C-20 | employers.compliant, employers.small | quantity_supplied | increase | medium | invisible | B | CR-9, CR-7a | A-6, A-13 |
 | C-21 | staffing_agencies | quantity_traded (temporary cover) | increase | short | invisible | B | CR-9 | A-1, A-4, A-19 |
-| C-22 | employers.uncovered (owners) | asset_value (labor-intensive businesses) | decrease | short | invisible | B | CR-7c, CR-10c | A-1, A-3, A-25 |
+| C-22 | employers.uncovered (owners) | asset_value (labor-intensive businesses) | decrease | short | invisible | B | CR-7c, CR-10c | A-1, A-3, A-24 |
 | C-23 | employers.uncovered | return_on_capital | decrease | short | invisible | B | CR-7b | A-1, A-2, A-3 |
 | C-24 | workers.uncovered | tax_share_borne (cost of the mandated term) | increase | medium–long | invisible | B | CR-7b | A-5, A-22 |
-| C-25 | workers.uncovered | non_wage_compensation (total, including sick time) | ambiguous | medium | invisible | B | CR-12b | A-1, A-2 |
+| C-25 | workers.uncovered | non_wage_compensation (total, including sick time) | ambiguous | short–medium | invisible | B | CR-12b | A-1, A-2 |
 | C-26 | workers.uncovered | earnings | ambiguous | medium | invisible | B | CR-12b | A-1, A-2, A-5 |
-| C-27 | employers.uncovered | compliance_cost (accrual tracking, records) | increase | short | invisible | A | OC-2, CR-8c | none |
+| C-27 | employers.uncovered | compliance_cost (accrual tracking, records, complaints) | increase | short | invisible | A | OC-2, CR-8c | none |
 | C-28 | officials.enforcement | enforcement_cost | increase | short | invisible | A | OC-3 | none |
 | C-29 | taxpayers | resources_available_other_uses | decrease | short | invisible | B | OC-3, OC-1 | A-20 |
-| C-30 | workers.uncovered, employers.uncovered | compliance_cost (complaints and investigations) | increase | short–medium | invisible | B | OC-2, CR-8c | A-21 |
-| — | employers.uncovered | price_paid (labor cost per hour worked) | increase | medium | invisible | B | CR-5c, CR-12e | A-1, A-2, A-6 |
+| C-30 | workers.uncovered | compliance_cost (filing complaints) | increase | short–medium | invisible | B | OC-2, CR-8c | A-21 |
+| C-31 | employers.uncovered | price_paid (labor cost per hour worked) | increase | medium | invisible | B | CR-5c, CR-12e | A-1, A-2, A-6 |
 
 ## Gaps found
 
@@ -274,9 +273,9 @@ Back pay and the equal damages paid after a successful complaint are transfers f
 
 **(c) Missing patterns.**
 1. *Mandated contract term (proposed PC-17 or a new family).* If a policy requires a term in every contract of a kind that costs one party c per unit and is worth v ≥ 0 to the other, then: the money price moves against the party the term benefits (`wage_rate` decrease) where it can move; while it cannot (contracts, a floor), the party that pays adjusts the other open terms, as a group with `at_least_one_decrease`; once the price adjusts, quantity falls only with a premise that v < c, otherwise `ambiguous`; at a binding floor, PC-10 applies through the floor. Derivation: CR-1 (an option removed for both sides, one added for the beneficiary), CR-3b (v ≥ 0), CR-4 for each side, CR-5c, CR-6, CR-12b and CR-12e.
-2. *A uniform term with costs that differ by counterparty (proposed RS-17).* If a policy fixes a term that must be the same for all counterparties, but its cost to the provider differs by counterparty and the price cannot be set to match, then the provider selects counterparties on whatever predicts cost: `allocation_by_non_price_criteria` increase. Derivation: CR-4 for the provider, CR-6 (the scarce side chooses by other criteria). It covers insurance rating bans and lending rules as well.
-3. *A cost per head that stops at a cap (proposed RS-18).* If a policy's cost per counterparty rises with units up to a cap and then stops (a contribution ceiling, an accrual cap), units move toward counterparties already above the cap: more units per head for those, fewer heads, and the opposite for those below. Derivation: CR-4b, with x: add a head, y: add units to an existing head above the cap, against CR-4c for the general rise in cost. It recurred here (C-8, C-9) and in WE-012 (C-4).
-4. *Complaint-driven enforcement (proposed RS-19).* If a rule is enforced only on complaint by the protected party, then breach is concentrated where complaint is least likely (short tenure, ignorance of the law, fear of retaliation, small sums), and the rule binds least for those parties. Derivation: CR-1 (the rule attaches a risk equal to the probability of a complaint times the remedy) and CR-4 (x: comply, y: violate), applied counterparty by counterparty.
+2. *A uniform term with costs that differ by counterparty (proposed RS-18).* If a policy fixes a term that must be the same for all counterparties, but its cost to the provider differs by counterparty and the price cannot be set to match, then the provider selects counterparties on whatever predicts cost: `allocation_by_non_price_criteria` increase. Derivation: CR-4 for the provider, CR-6 (the scarce side chooses by other criteria). It covers insurance rating bans and lending rules as well.
+3. *A cost per head that stops at a cap (proposed RS-19).* If a policy's cost per counterparty rises with units up to a cap and then stops (a contribution ceiling, an accrual cap), units move toward counterparties already above the cap: more units per head for those, fewer heads, and the opposite for those below. Derivation: CR-4b, with x: add a head, y: add units to an existing head above the cap, against CR-4c for the general rise in cost. It recurred here (C-8, C-9) and in WE-012 (C-4).
+4. *Complaint-driven enforcement (proposed RS-20).* If a rule is enforced only on complaint by the protected party, then breach is concentrated where complaint is least likely (short tenure, ignorance of the law, fear of retaliation, small sums), and the rule binds least for those parties. Derivation: CR-1 (the rule attaches a risk equal to the probability of a complaint times the remedy) and CR-4 (x: comply, y: violate), applied counterparty by counterparty.
 5. *Size thresholds (proposed RS-5 clause).* An exemption by firm size, measured over a past period, gives firms near the line a reason to manage the measure (heads, hours, contractors) in that period. RS-5 covers this in general; a clause naming size thresholds and how the count is defined would prompt it. Derivation: CR-4 (x: cross the line, y: stay below) with CR-10a when the count is over a past period.
 
 **(d) Vocabulary.**
@@ -285,4 +284,4 @@ Back pay and the equal damages paid after a successful complaint are transfers f
 3. *The mandated term and the benefits it displaces.* `non_wage_compensation` holds both the mandated sick time (C-1, up) and the other benefits employers may cut (C-4, C-6, down), which forced a separate ambiguous total (C-25).
 4. *Who bears a mandate's cost.* `tax_share_borne` is defined for taxes. C-24 uses it for the cost of a mandated term. Proposed: widen it to "share of the burden of a tax or mandate borne", or add `cost_share_borne`.
 5. *Breach within the legal market.* `informal_activity` means trade outside the legal market. Breach of a mandated term (C-15) takes place within legal employment. Proposed: `noncompliance`, the share of bound actors not complying.
-6. *Per-reading "no change".* Under U2-b, firms near the threshold have no reason to change the composition of their staff's hours, only their count. A per-reading sign for "no effect under this reading" does not exist (see WE-028, Gaps found, d4). C-11 was chosen so that both readings have a sign.
+6. *Per-reading "no change".* The first candidate for C-11 was hours per worker at firms near the threshold, which rise under U2-a (fewer heads, more hours each) and have no reason to change under U2-b. There is no per-reading sign for "no effect under this reading" (see WE-028, Gaps found, d4), so C-11 was recast on a variable with a sign under both readings.

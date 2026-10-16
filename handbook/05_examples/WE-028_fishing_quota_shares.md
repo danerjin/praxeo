@@ -6,7 +6,7 @@ A stylized policy in a fictional country. It resembles real individual transfera
 
 ## 1. Policy record
 
-**Kallmark Ridge Cod Fishery Act.** Kallmark is a coastal country of about 3 million people. Its boats land about 48,000 tonnes of ridge cod a year (average of 2022 to 2024). About 70% is frozen or filleted by four processing plants (two at Brennhavn, one at Skelby, one at Tornhavn) and exported to the North Basin whitefish market, of which Kallmark's ridge cod is about 7%, alongside close substitutes such as saithe and haddock from other countries. About 30% is sold fresh in Kallmark to fish shops and restaurants. The fishery is open: any owner of a registered vessel may fish ridge cod, and 290 vessels did so in 2024 (38 trawlers over 24 m, which land about 60% of the catch, and 252 coastal boats). Nearby fisheries for saithe and ling are open as well and are not covered by the Act. About 1,700 crew are paid by "lay": under the Fishermen's Share Agreement, a standard private contract used on about 80% of vessels, the crew together receive 45% of each trip's revenue after trip expenses (fuel, ice, bait, landing fees).
+**Kallmark Ridge Cod Fishery Act.** Kallmark is a coastal country of about 3 million people. Its boats land about 48,000 tonnes of ridge cod a year (average of 2022 to 2024). About 70% is frozen or filleted by four processing plants (two at Brennhavn, one at Haldrun, one at Tornhavn) and exported to the North Basin whitefish market, of which Kallmark's ridge cod is about 7%, alongside close substitutes such as saithe and haddock from other countries. About 30% is sold fresh in Kallmark to fish shops and restaurants. The fishery is open: any owner of a registered vessel may fish ridge cod, and 290 vessels did so in 2024 (38 trawlers over 24 m, which land about 60% of the catch, and 252 coastal boats). Nearby fisheries for saithe and ling are open as well and are not covered by the Act. About 1,700 crew are paid by "lay": under the Fishermen's Share Agreement, a standard private contract used on about 80% of vessels, the crew together receive 45% of each trip's revenue after trip expenses (fuel, ice, bait, landing fees).
 
 The bill was introduced by the government on 3 February 2026, with its allocation formula published, and passage was widely expected. It was passed on 14 October 2026 and takes effect on 1 January 2028.
 
@@ -55,7 +55,7 @@ The cap collects no revenue for the state. Against the counterfactual (an open f
 | `processors` (`input_suppliers` to the export market) | The four plants | Less ridge cod to process; may not hold shares without a vessel. |
 | `workers.processing` | Plant employees | Less throughput. |
 | `ports.minor` | The ten small harbors and their landing services | Landings may move to the processing ports. |
-| `ports.major` | Brennhavn, Skelby, Tornhavn | Fewer tonnes in total, a larger share of them. |
+| `ports.major` | Brennhavn, Haldrun, Tornhavn | Fewer tonnes in total, a larger share of them. |
 | `sellers.complements` | Fuel, ice, chandlery, boat repair and boatbuilding | Demand follows days at sea and the number of vessels. |
 | `buyers.fresh_domestic` | Fish shops, restaurants and households in Kallmark | Less fresh ridge cod. |
 | `buyers.regional` | Buyers in the North Basin market | Less Kallmark ridge cod among many substitutes. |
@@ -178,7 +178,7 @@ The 8,000 tonnes not landed (C-1) are the prevented exchanges (OC-4): fishers wh
 |---|---|---|---|---|---|
 | A-1 | Without the Act, landings would stay well above 40,000 tonnes a year, so the cap binds from 2028. | binding | 0.9 | Landings of 48,000 tonnes on average in 2022 to 2024; fleet capacity. | Almost every consequence from 2028 fails. |
 | A-2 | Landings are recorded and overages enforced at the designated sites. | enforcement | 0.8 | Weighing at every site; forfeiture and triple fines; share suspension. | C-1 and C-3 shrink; C-14 grows. |
-| A-3 | Owners expect the bill to pass and the shares to keep their value past the 2033 review. | expectations | 0.7 | Government sponsorship; political strength of the owners' association; the review's terms. | C-2 and C-8 are smaller. |
+| A-3 | Owners expect the bill to pass and the shares to keep their value past the 2033 review. | expectations | 0.7 | Government sponsorship; political strength of the owners' association; the review's terms. | C-2, C-8 and C-38 are smaller. |
 | A-4 | Owners know the formula from the introduction of the bill, expect passage, and have idle vessels or spare capacity to land more in 2026 and 2027. | expectations | 0.8 | Formula published with the bill; laid-up vessels; spare days at sea. | C-4 to C-6, C-19 and C-27 are not reported. |
 | A-5 | A vessel's history passes to its buyer, and buyers price it in. | expectations | 0.85 | K2 allocates by vessel to the owner on 31 December 2027; vessel brokers' practice. | C-8 is not reported; history is captured by recipients instead. |
 | A-6 | Costs per tonne differ materially among vessels, and transfers are not blocked for most owners by the 8% limit. | other | 0.8 | Fuel use and catch per day by vessel class; current holdings would be far below 8% for all but a few. | C-9 to C-11, C-18 and C-26 to C-29 weaken. |
