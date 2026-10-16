@@ -109,4 +109,14 @@ The following changes are made in catalog 0.5 and the accompanying files.
 - **Workflow:** a final check, before the report, for each of the recurring errors above.
 - **Checker:** warns when TS-4 appears in a consequence's derivation.
 
-The pattern-based worked examples are then corrected for the errors the comparison attributed to them (P and E items). The core-only re-runs are kept unchanged, as the record of the test.
+The 25 pattern-based worked examples were then corrected against their comparisons and the new final checklist. Each correction was checked against the core rules before it was applied. Most comparison conclusions were accepted. A few were rejected, and the reasons are recorded in the example:
+- **WE-006:** a lobbying premise was kept at p 0.6.
+- **WE-009:** the core version's "output and consumption fall" was not added, as it would overclaim in the contested case.
+- **WE-012:** "employment or hours" was kept for workers below the contribution ceiling, rather than a plain fall in hours.
+- **WE-019 and WE-020:** the split of a subsidy was kept as a comparison of shares, with its premise.
+
+The corrections also went beyond the comparison in places, for consistency with the revised patterns. Some premises they added need expert review. For example:
+- WE-025's A-29, the dominance premise behind new rental investment;
+- WE-006 and WE-009's reading of enforcement budgets as fixed.
+
+The core-only re-runs are kept unchanged, as the record of the test.

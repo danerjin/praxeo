@@ -1,6 +1,6 @@
 # WE-025 Housing bill with a rent cap, a vacancy tax and a construction subsidy
 
-Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.5)  |  Rule catalog version: 0.5  |  Status: awaiting expert review
 
 A stylized policy in a fictional city, chosen as the "messy" case: three instruments from three rule families in one bill, each of which changes the options that the others create. The analysis takes each component in turn and then traces the interactions explicitly, labeled I-1 to I-6. It is not modeled on any particular city's legislation. The probabilities are illustrative; the evidence column says what a real analysis would cite.
 
@@ -48,20 +48,24 @@ Because K1 lets rents reset between tenancies, PC-1 (excess demand) does not app
 | `hotels` (`sellers.substitutes`) | Hotels and serviced apartments | Some short-term guests move to them. |
 | `developers` (`sellers.prospective`) | Builders of new rental housing | $30,000 per unit; new units exempt from K1, but locked into rental by the covenant. |
 | `developers.other` | Builders of condominiums and non-residential projects | Compete with subsidized rental projects for land and labor. |
+| `workers.construction` | Construction workers | More demand for their labor from subsidized projects. |
 | `landowners.developable` (`factor_owners.specific`) | Owners of land zoned for apartments | Subsidized developers bid for their land. |
 | `homebuyers` | Buyers of condominiums and other owner-occupied homes | More conversions and sales of formerly empty units; fewer new condominiums. |
-| `taxpayers`, `officials.enforcement` | General budget and the Housing Department | Fund K3 shortfalls and K5. |
+| `taxpayers`, `officials.enforcement` | General budget and the Housing Department, which holds the Housing Fund | Fund K3 shortfalls and K5; the fund receives K2. |
 
 ## 4. Direct effects
 
 | ID | Actor class | Variable | Sign | Horizon | Rules | Assumptions |
 |---|---|---|---|---|---|---|
-| C-1 | `tenants.covered` | `price_paid` | decrease | short to long, growing over time | PC-3, TS-3 | A-1, A-2 |
+| C-1 | `tenants.covered` | `price_paid` | decrease | medium to long, growing over time | PC-3, TS-3; dominance over C-10 by A-27 (CR-12b, CR-12e) | A-1, A-2, A-27 |
+| C-45 | `tenants.covered` | `price_paid` (first months after 1 September) | ambiguous | short | PC-3 (−) against RS-8 (+, C-10 lifts the base); CR-12b | A-1, A-2, A-9 |
+| C-38 | `landlords.covered` | `net_price_received` (rent from sitting tenants) | decrease | medium to long | PC-3 (the mirror of C-1); dominance over C-10 by A-27 | A-1, A-2, A-27 |
+| C-39 | `officials.enforcement` (Housing Fund) | `tax_revenue` (K2) | increase | medium (from Year 2) | TX-1 | none |
 | C-2 | `owners.vacant` who keep units empty | `resources_available_other_uses` | decrease | short | TX-1 | none |
 | C-3 | `owners.vacant` | `units_held_vacant` | decrease | short to medium | TX-3, RS-6 | A-10 |
 | C-4 | `developers` | `net_price_received` (new rental units, including subsidy) | increase | medium | SB-2 | A-13 |
 
-These are the three intended effects: sitting tenants pay less than they would have (K1), fewer homes sit empty (K2), and building new rentals pays better (K3). C-3 is the direct aim of K2, recorded with `units_held_vacant`. Units offered on the market (C-12) are a related but different quantity: an owner can also end a vacancy by occupying the unit, or by selling it to someone who occupies it.
+These are the three intended effects: sitting tenants pay less than they would have (K1), fewer homes sit empty (K2), and building new rentals pays better (K3). Their other sides are recorded too (CR-8b): landlords receive less from sitting tenants (C-38), and the Housing Fund receives what owners of empty units pay (C-39). In the first months after 1 September, sitting tenants whose landlords raised the rent before the base date (C-10) may pay more than they would have, so the short-run sign is ambiguous (C-45); from the medium horizon the counterfactual market path passes any such raise (A-27), and the cap dominates (C-1, C-38). C-3 is the direct aim of K2, recorded with `units_held_vacant`. Units offered on the market (C-12) are a related but different quantity: an owner can also end a vacancy by occupying the unit, or by selling it to someone who occupies it.
 
 ## 5. Responses
 
@@ -69,15 +73,17 @@ These are the three intended effects: sitting tenants pay less than they would h
 
 | ID | Actor class | Variable | Sign | Horizon | Rules | Assumptions |
 |---|---|---|---|---|---|---|
-| C-5 | `tenants.prospective` | `price_paid` (starting rents on new tenancies in covered units) | increase | short to medium | RS-2 | A-1, A-3 |
+| C-5 | `tenants.prospective` | `price_paid` (starting rents on new tenancies in covered units) | ambiguous (see section 7) | short to medium | RS-2 vs RS-13 | A-1, A-3, A-10, A-13 |
+| C-40 | `tenants.prospective` | `search_cost` | ambiguous (see section 7) | medium | PC-7 vs RS-13 | A-4, A-10 |
+| C-41 | `tenants.covered` | `quality_per_unit` | decrease | long | PC-4, TS-1 | A-1, A-6 |
 | C-6 | `tenants.covered` | `turnover` | see section 7 | medium | PC-7 vs RS-2 | A-1, A-4, A-6, A-7 |
 | C-7 | `landlords.covered` | `maintenance_spending` | decrease | short to medium | PC-4, RS-2 | A-1, A-6 |
 | C-8 | `landlords.covered` | `side_payments` (buyouts paid to sitting tenants to leave) | increase | short to medium | RS-2 | A-1, A-7 |
-| C-9 | `landlords.covered` | `reclassification` (conversion to separately owned condominiums) | increase | medium | RS-5, PC-5; RS-1 via I-1 | A-1, A-8, A-10 |
+| C-9 | `landlords.covered` | `reclassification` (conversion to separately owned condominiums) | ambiguous (see section 7) | medium | RS-5, PC-5; RS-1 via I-1 vs RS-13 via K2 | A-1, A-8, A-10, A-28 |
 | C-10 | `tenants.covered` renewing between 1 February and 1 September | `price_paid` (at renewal before the base date) | increase | short | RS-8 | A-9 |
 | C-11 | `tenants.covered` | `informal_activity` (sublets at market rent) | increase | medium | PC-6, RS-3 | A-1, A-18 |
 
-C-5: the starting rent is the one term K1 leaves free. A landlord who expects market rents to outrun the 3% cap sets a higher starting rent to make up for the capped increases to come (RS-2). C-7 and C-8: because rents reset between tenancies, landlords now gain from turnover, so both less maintenance and buyout offers serve to encourage sitting tenants to leave. This is a chain on turnover opposite to PC-7, so C-6 is combined in section 7.
+C-5: the starting rent is the one term K1 leaves free. A landlord who expects market rents to outrun the 3% cap sets a higher starting rent to make up for the capped increases to come (RS-2). But the starting rent is set in the same rental market to which K2 (from late Year 1) and K3 (later) add units (RS-13), which lowers the market level the premium is added to. With opposing chains and no dominance premise, C-5 is `ambiguous` (section 7). C-40 is the same kind of combination: sitting tenants move less (PC-7), so fewer covered units fall vacant and seekers search longer, while K2 brings units onto the market (RS-13). C-41: less maintenance (C-7) lowers quality only as the stock wears (PC-4, TS-1). C-7 and C-8: because rents reset between tenancies, landlords now gain from turnover, so both less maintenance and buyout offers serve to encourage sitting tenants to leave. This is a chain on turnover opposite to PC-7, so C-6 is combined in section 7.
 
 **K2, vacancy tax**
 
@@ -94,14 +100,18 @@ C-5: the starting rent is the one term K1 leaves free. A landlord who expects ma
 |---|---|---|---|---|---|---|
 | C-16 | `developers` | `reclassification` (smaller units, to collect more per-unit subsidy per building) | increase | medium | SB-5, RS-5 | A-14 |
 | C-17 | `developers` | `quantity_supplied` (new units completed between 1 February and 1 September of Year 1) | decrease | short | RS-8 | A-21 |
+| C-46 | `developers` | `quantity_supplied` (new units completed in the months after 1 September of Year 1) | increase | short | RS-8 | A-21 |
+| C-42 | `developers` | `quantity_supplied` (new units completed in the months after 31 August of Year 6) | decrease | long | SB-6, RS-8 | A-21 |
 
-C-17: a unit first occupied before 1 September would be covered by K1 and receive no subsidy. Developers close to completion delay their certificates of occupancy past the base date.
+C-17 and C-46: a unit first occupied before 1 September would be covered by K1 and receive no subsidy. Developers close to completion delay their certificates of occupancy past the base date, so completions fall before it and rise just after it; each window is signed against the counterfactual (2.5). C-42: the subsidy ends on 31 August of Year 6, so completions that would have fallen just after that date are rushed into the window (SB-6), and completions in the months after it are lower than they would have been.
 
 **All components**
 
 | ID | Actor class | Variable | Sign | Horizon | Rules | Assumptions |
 |---|---|---|---|---|---|---|
 | C-18 | `tenants.covered`, `landlords.covered`, `owners.vacant`, `developers` | `lobbying_effort` (tenants to tighten K1 or end vacancy decontrol; landlords and owners for exemptions; developers to extend K3) | increase | medium | RS-7, SB-5 | A-19 |
+
+C-18: RS-7's premise, that each group can organize at a cost below its stake, is A-19. The bill is new, so the counterfactual has no lobbying over these provisions, and RS-7's repeal clause does not apply.
 
 Not reported:
 - False declarations of occupancy under K2 (RS-3). Water and electricity records make empty units easy to detect; A-22 is below the cut-off (p = 0.35).
@@ -112,24 +122,29 @@ Not reported:
 
 | ID | Actor class | Variable | Sign | Horizon | Rules | Market relation | Assumptions |
 |---|---|---|---|---|---|---|---|
-| C-19 | `tenants.covered` in converted buildings | `price_paid` (after relocation) | increase | medium | PC-5, RS-5 | covered and exempt units: `same_market_other_segment`, close | A-1, A-8 |
 | C-20 | `tenants.covered` | `job_changes` | decrease | medium | RS-11 | covered tenancy and jobs: `complement`, note `location` | A-1, A-4, A-5 |
 | C-21 | subtenants (`tenants.prospective` in informal sublets) | `search_cost` | increase | medium | RS-10 | — | A-18 |
 | C-22 | `guests.short_term` | `price_paid` (short stays) | increase | short to medium | TX-2 | — | A-11 |
 | C-23 | `hotels` | `quantity_traded` | increase | short to medium | RS-1 | short-term rentals and hotels: `substitute`, close | A-11 |
 | C-24 | `landowners.developable` | `asset_value` (land zoned for apartments) | increase | medium | SB-4 | land: `input_to` new rental units, close | A-13, A-15 |
 | C-25 | `developers.other` | `quantity_substitute` (new condominiums and other projects) | decrease | medium | SB-3 | rental and condominium building: compete for land and labor | A-13, A-16 |
+| C-44 | `workers.construction` | `wage_rate` | increase | medium | SB-3, CR-9, CR-7 | construction labor: `input_to` new rental units, close | A-13, A-16 |
+| C-43 | `homebuyers` | `price_substitute` (condominiums and other homes for sale) | decrease | short | RS-13 | units sold under K2: `same_market_other_segment` of homes for sale | A-10 |
 | C-26 | `owners.vacant` | `asset_value` (units whose best use was to stay empty or short-term) | decrease | short | SB-4 | — | A-10, A-24, A-25 |
 | C-27 | `landlords.covered` | `asset_value` (covered buildings with sitting tenants) | decrease | short to medium | SB-4 | — | A-1, A-24, A-25 |
 | C-28 | `officials.enforcement` | `tax_revenue_vs_static_projection` (K2) | decrease | medium | TX-9 | — | A-10 |
 
+C-19 (in catalog 0.3: tenants of converted buildings pay more after relocation) is withdrawn. It compared their new rent with the capped rent they held, not with the counterfactual: without the bill they would also pay a market rent. Their rent after relocation could rise only through higher rents in the units they move to, and those are ambiguous (C-31).
+
+C-43: in the short run only K2 acts on homes for sale: owners put formerly empty units up for sale (C-12) before Year 2 (RS-13). Conversions take nine months and subsidized projects years, so the medium-run sign (C-32) combines more chains. C-44: SB-3 draws construction labor into subsidized projects; with labor scarce and in use elsewhere (A-16), its wage is bid up in every use (CR-9, CR-7), which is also why other projects are crowded out (C-25).
+
 C-22 and C-23 are at depth 3 (tax → fewer short-term rentals → guests pay more or switch to hotels), and the chains stop there. Effects on Alden County rents are also at depth 3; their direction would follow the ambiguous city rent effect in section 7 (C-31), and they reach a diffuse group, so they are not traced.
 
-C-26 and C-27: a lasting tax on holding a unit empty, and a lasting cap on the rent from sitting tenants, both lower the expected net return of the asset, and so the price a buyer would pay for it, from the time they are expected (SB-4, which in catalog 0.3 covers losses). Both rest on the policies being expected to last (A-24) and on the housing stock growing slowly (A-25). For C-26 the fall is limited by the unit's value in its next-best use (long-term rental, sale to an occupier); for C-27 it is limited by vacancy decontrol, which lets the rent reset at each turnover.
+C-26 and C-27: a lasting tax on holding a unit empty, and a lasting cap on the rent from sitting tenants, both lower the expected net return of the asset, and so the price a buyer would pay for it, from the time they are expected (SB-4, which in catalog 0.3 covers losses). Both rest on the policies being expected to last (A-24) and on the housing stock growing slowly (A-25). C-24 applies SB-4 to a subsidy of limited duration (completions to 31 August of Year 6): the land's value rises only for the yields the subsidy affects, so by less than for a lasting subsidy, but with the same sign. For C-26 the fall is limited by the unit's value in its next-best use (long-term rental, sale to an occupier); for C-27 it is limited by vacancy decontrol, which lets the rent reset at each turnover.
 
 Second-order checks:
 - **RS-9 (bundled trips).** No one changes where they buy housing in a way that carries other purchases along. Not applicable.
-- **RS-10 (informal trade).** Applies to illegal sublets by sitting tenants (C-11, C-21). Buyouts (C-8) are legal and are not informal trade.
+- **RS-10 (informal trade).** Applies to illegal sublets by sitting tenants (C-11, C-21). Buyouts (C-8) are legal and are not informal trade. No sellers are newly excluded, so RS-10's quality-variability caveat does not arise.
 - **RS-11 (lock-in).** Applies: sitting tenants lose the capped rent if they move (C-20).
 
 ### Interactions between components
@@ -138,7 +153,7 @@ The components were classified separately (step 2), but each changes the alterna
 
 For each pair of components (workflow step 6): K1 and K2 interact through I-1 and I-2; K1 and K3 through I-3; K2 and K3 through I-4, I-5 and I-6 (K4 is the funding link). The components each chain runs through are recorded in the consequence list.
 
-- **I-1 (K1, K2). K2 closes one exit from K1 and widens others.** Without K2, a landlord who found the cap too costly could let a unit stay empty at the next turnover and hold it for sale with vacant possession or for later conversion. K2 taxes that after six months. The landlord's other exits are still open: re-let at a reset rent (possible because K1 has vacancy decontrol), sell within six months, or convert, which the renovation-permit exemption shelters from K2 for up to 24 months. When one means becomes costlier, the alternatives are used more (RS-1). So K2 adds a chain to C-9 (more conversion) and a chain to C-29 (more re-letting), in opposite directions on covered rental supply.
+- **I-1 (K1, K2). K2 closes one exit from K1 and widens others.** Without K2, a landlord who found the cap too costly could let a unit stay empty at the next turnover and hold it for sale with vacant possession or for later conversion. K2 taxes that after six months. The landlord's other exits are still open: re-let at a reset rent (possible because K1 has vacancy decontrol), sell within six months, or convert, which the renovation-permit exemption shelters from K2 for up to 24 months. When one means becomes costlier, the alternatives are used more (RS-1). So K2 adds a chain to C-9 (more conversion) and a chain to C-29 (more re-letting), in opposite directions on covered rental supply. K2 also pushes against conversion: it puts formerly empty units up for sale (C-12, C-43) and taxes condominiums bought as second homes or short-term rentals (A-28), both of which lower condominium prices and so the return to converting (RS-13, CR-9). C-9 combines these chains (section 7).
 - **I-2 (K1, K2). K1 weakens K2's push into long-term renting.** An owner of an empty or short-term unit in an existing multi-unit building who now rents it long-term brings it under K1. Renting is therefore less attractive than it would be under K2 alone, and selling more attractive. Separately owned condominium units are exempt from K1, so their owners face no such deterrent. This changes the mix within C-12 (more sales, fewer rentals), not its sign.
 - **I-3 (K1, K3). K3 offsets K1 for new construction only if the exemption is trusted.** New units are exempt from K1 for 15 years, and K3 requires them to stay rentals for 15 years. If developers expect a later council to bring new units under the cap (U2), the covenant removes their usual exit (conversion or sale), so the subsidy comes with greater exposure to the cap. See section 7.
 - **I-4 (K2, K3). K2 may tax K3's own output.** Under reading U1-b, newly completed units that take more than six months to lease up are taxed as vacant, a cost on exactly the construction K3 subsidizes.
@@ -150,21 +165,25 @@ For each pair of components (workflow step 6): K1 and K2 interact through I-1 an
 | Actor class, variable, horizon | Chains (+) | Chains (−) | Dominance rule | Combined sign |
 |---|---|---|---|---|
 | `tenants.covered`, `turnover`, medium | Landlords, who now gain from each turnover, offer buyouts (C-8) and cut maintenance (C-7) to encourage sitting tenants to leave (RS-2). | Sitting tenants lose the capped rent if they move, so they move less (PC-7). | None | **ambiguous** (C-6). Buyouts let some tenants sell back part of the value of the cap, so the − chain is weaker than under a cap without vacancy decontrol; whether they restore turnover to the level it would have had cannot be decided by the method. |
-| `landlords.covered`, `reclassification` (conversion), medium | K1 lowers the return on renting to sitting tenants (RS-5, PC-5). I-1: K2 closes the "hold empty" exit, and the renovation exemption shelters conversion (RS-1). | — | None needed | **increase** (C-9). |
+| `tenants.covered`, `price_paid`, short | Pre-emptive raises at renewal before 1 September lift the base (C-10, RS-8). | Rent capped below a rising market (PC-3). | None at this horizon: the size of the raises against the counterfactual path is a magnitude. | **ambiguous** (C-45). |
+| `tenants.covered`, `price_paid`, medium to long | As above. | As above. | A-27 with CR-5c: a pre-emptive raise is bounded by the market rent at renewal, which the counterfactual path passes within a lease cycle or two (CR-12e, empirical premise). | **decrease** (C-1); likewise `landlords.covered`, `net_price_received` (C-38). |
+| `tenants.prospective`, `price_paid` (starting rents, covered units), short to medium | Landlords add a premium for the capped increases to come (RS-2, A-3; K1). | K2 brings empty and short-term units into long-term rental from late Year 1 (C-12, A-10); K3 adds new rental units later (A-13). Both add supply to the same market and lower the level the premium is added to (RS-13). | None | **ambiguous** (C-5). |
+| `tenants.prospective`, `search_cost`, medium | Sitting tenants move less, so fewer covered units fall vacant (PC-7, A-4; K1). | More units offered for rent and sale under K2 (C-12, A-10). | None | **ambiguous** (C-40). |
+| `landlords.covered`, `reclassification` (conversion), medium | K1 lowers the return on renting to sitting tenants (RS-5, PC-5). I-1: K2 closes the "hold empty" exit, and the renovation exemption shelters conversion (RS-1). K3 draws builders away from condominiums (C-25), which supports condominium prices. | K2 puts formerly empty units up for sale (C-12, C-43, A-10) and taxes condominiums bought as second homes or short-term rentals (A-28), so condominium prices, and the return to converting, are lower (RS-13, CR-9, CR-4). | None | **ambiguous** (C-9). In catalog 0.3 this was signed an increase from K1 and I-1 alone; the K2 sales chain, which the analysis records in C-32, was not combined with it. |
 | `landlords.covered`, `quantity_supplied` (covered rental units), medium | I-1: empty covered units are re-let to avoid K2 (RS-6, TX-3). | K1: conversion and withdrawal (PC-5, RS-5); I-1: K2 makes conversion the more attractive exit, speeding it (RS-1). | None | **ambiguous** (C-29). Decided by how many covered units were being held empty (about 2,500) compared with how many convert. In the short run, before conversion permits come through, the + chain acts first. |
-| `developers`, `investment_target` (new rental units), medium | K3 subsidy (SB-2, C-4). K1 spillover: covered units converted (C-9) and starting rents in covered units raised (C-5) push tenants toward exempt units (RS-1, PC-5), so new units can earn more; rests on A-17 (p = 0.55). PC-8 in its usual form does not apply, because K1 creates no excess demand at the start of a tenancy (section 2). | Fear that the K1 exemption will be removed, made worse by the covenant (TS-2, I-3): rests on the negation of A-17 (p = 0.45), not reported. Under reading U1-b only: K2 on units in lease-up (I-4, A-20). | None | **Reading U1-a: increase.** **Reading U1-b: ambiguous** (C-30; one sign per reading, with no probability on the readings). The sign also turns on A-17: if developers' trust in the exemption fell below 0.5, the fear chain would be reported and the sign would be ambiguous under both readings. |
-| `tenants.prospective`, `price_substitute` (rents in exempt units: new buildings, condominiums, houses), medium | K1 spillover: covered units converted or withdrawn (C-9; PC-5, RS-5), and starting rents in covered units raised (C-5), push tenants toward exempt units (RS-1). | Added supply in the rental market (RS-13): K2's empty and short-term units offered for rent (C-12); K3's new subsidized rental units (C-4). | None | **ambiguous** (C-31). The same chains decide the total cost of renting for newcomers: higher starting rents in covered units (C-5) push it up; more units from K2 and K3 push it down. |
-| `homebuyers`, `price_substitute` (condominiums), medium | Builders and land moved from condominium to subsidized rental projects (SB-3, C-25). | Conversions (C-9) and sales of formerly empty units (C-12, I-2) add condominiums for sale (RS-13). | None | **ambiguous** (C-32). |
+| `developers`, `investment_target` (new rental units), medium | K3 subsidy (SB-2, C-4). K1 spillover: sitting tenants move less and covered starting rents carry a premium (A-3, A-4), which push some tenants toward exempt units (RS-1), so new units can earn more; rests on A-17 (p = 0.55). PC-8 in its usual form does not apply, because K1 creates no excess demand at the start of a tenancy (section 2). | K2 adds units to the rental market (C-12), which lowers the rents new units can expect (RS-13). Fear that the K1 exemption will be removed, made worse by the covenant (TS-2, I-3): rests on the negation of A-17 (p = 0.45), not reported. Under reading U1-b only: K2 on units in lease-up (I-4, A-20). | Under both readings: A-29, that the one-time addition of K2 units lowers expected rents on a new unit by much less than the $30,000 payment is worth (CR-12e, empirical premise). Under U1-b also A-26, arithmetic on the case's figures: the tax on a slowly leased unit, about $10,000 a year, stays below the $30,000 payment unless lease-up takes about three years (CR-12e). | **Reading U1-a: increase. Reading U1-b: increase** (C-30; one sign per reading, with no probability on the readings). The sign also turns on A-17: if developers' trust in the exemption fell below 0.5, the fear chain would be reported and the sign would be ambiguous under both readings. |
+| `tenants.prospective`, `price_substitute` (rents in exempt units: new buildings, condominiums, houses), medium | K1 spillover: covered units converted or withdrawn, where that happens (C-9; PC-5, RS-5), and the premium landlords add to covered starting rents (RS-2, A-3) push tenants toward exempt units (RS-1). | Added supply in the rental market (RS-13): K2's empty and short-term units offered for rent (C-12); K3's new subsidized rental units (C-4). | None | **ambiguous** (C-31). PC-8's Unless clause applies in kind: K2 and K3 push supply into the uncovered segment, so the spillover chain cannot be signed alone. |
+| `homebuyers`, `price_substitute` (condominiums), medium | Builders and land moved from condominium to subsidized rental projects (SB-3, C-25). | Sales of formerly empty units (C-12, I-2) add condominiums for sale (RS-13); K2 lowers what second-home and short-term buyers will pay (A-28). Conversions (C-9) add to them where they happen, but C-9 is itself ambiguous. | None | **ambiguous** (C-32). In the short run only the K2 sales chain acts: **decrease** (C-43). |
 | `tenants.covered`, `quality_adjusted_price`, medium | Less maintenance, used partly to encourage turnover (C-7). | Lower rent (C-1). | None | **ambiguous** (C-33). |
-| `taxpayers`, `resources_available_other_uses`, medium | — | General budget pays K5 (OC-3) and any part of K3 that K2 revenue does not cover (SB-1, OC-1); that part grows as K2 revenue falls (I-6, C-28). | None needed | **decrease** (C-34). Compared with no bill, the general budget never gains: K2 revenue only reduces its share of K3 (I-5), and any K2 surplus stays in the Housing Fund. How large the decrease is depends on K2 revenue against K3 spending, which the method cannot measure. |
+| `taxpayers`, `resources_available_other_uses`, medium | — | General budget pays K5 (OC-3, first funding case: K5 is funded from the general budget) and any part of K3 that K2 revenue does not cover (SB-1, OC-1); that part grows as K2 revenue falls (I-6, C-28). | None needed | **decrease** (C-34). Compared with no bill, the general budget never gains: K2 revenue only reduces its share of K3 (I-5), and any K2 surplus stays in the Housing Fund. How large the decrease is depends on K2 revenue against K3 spending, which the method cannot measure. |
 
 ## 8. Time structure
 
-- **Announcement (February to September of Year 1).** The cap's base is the rent on 1 September, so landlords raise rents at renewals before then (C-10). Developers delay completions until after the base date, to be exempt from K1 and eligible for K3 (C-17).
-- **First year.** K2 is assessed on Year 2 occupancy, so owners of empty units must have them occupied, sold or under a building permit by about mid-Year 2 (C-12, C-13). Short-term rental supply falls and short-stay prices rise in Year 2 (C-14, C-22). Starting rents in covered units rise at once (C-5).
+- **Announcement (February to September of Year 1).** The cap's base is the rent on 1 September, so landlords raise rents at renewals before then (C-10); in the first months after the base date, sitting tenants' rent against the counterfactual is therefore ambiguous (C-45), and a decrease from the medium horizon (C-1). Developers delay completions until after the base date, to be exempt from K1 and eligible for K3 (C-17), and complete them just after it (C-46).
+- **First year.** K2 is assessed on Year 2 occupancy, so owners of empty units must have them occupied, sold or under a building permit by about mid-Year 2 (C-12, C-13), which lowers prices of homes for sale in the short run (C-43). Short-term rental supply falls and short-stay prices rise in Year 2 (C-14, C-22). Landlords add a premium to starting rents in covered units at once, but the units K2 brings onto the rental market push the other way (C-5).
 - **Medium term.** The cap tightens every year market rents rise faster than 3% (TS-3), so the gap between sitting tenants' rents and starting rents grows, and with it the landlord's gain from turnover (C-7, C-8), tenants' reluctance to move (C-20), set against the landlords' push to end tenancies (C-6) and the pull toward conversion (C-9). Conversions arrive after the nine-month permit, and the 24-month renovation exemption lets landlords hold units empty while converting (I-1). Subsidized units arrive from Year 3 onward, given planning and building times.
-- **Subsidy deadline.** Completions are rushed to beat 31 August of Year 6 (RS-8), followed by a dip.
-- **Long term.** Covered buildings last for decades; reduced maintenance and conversion compound slowly (TS-1). Subsidized units carry a 15-year covenant and a 15-year exemption that end together; what developers expect to happen then (U2) affects how much they invest now (TS-2).
+- **Subsidy deadline.** Completions are rushed to beat 31 August of Year 6 (RS-8), followed by a dip below the counterfactual (C-42, SB-6).
+- **Long term.** Covered buildings last for decades; reduced maintenance shows up in lower quality only as the stock wears (C-41, TS-1). Subsidized units carry a 15-year covenant and a 15-year exemption that end together; what developers expect to happen then (U2) affects how much they invest now (TS-2).
 - **Funding over time.** K3 payments begin as soon as subsidized units complete, but the first K2 revenue arrives only in Year 3, so the general budget pays the early subsidies (C-35). Later, K2 revenue falls as the vacancy base shrinks (I-6).
 
 ## 9. Opportunity costs
@@ -172,7 +191,7 @@ For each pair of components (workflow step 6): K1 and K2 interact through I-1 an
 | ID | Actor class | Variable | Sign | What is given up | Rules |
 |---|---|---|---|---|---|
 | C-35 | `taxpayers` | `resources_available_other_uses` | decrease | Short horizon: K3 payments made before any K2 revenue arrives, and K5's administration. (Medium horizon: C-34.) | SB-1, OC-1, OC-3 |
-| C-36 | `officials.enforcement` | `enforcement_cost` | increase | Rent registry, vacancy audits, subsidy claims. | OC-3 |
+| C-36 | `officials.enforcement` | `enforcement_cost` | increase | Rent registry, vacancy audits, subsidy claims. Funded from the general budget (OC-3, first funding case), so borne by taxpayers (C-34, C-35). | OC-3 |
 | C-37 | `guests.short_term`, `operators.short_term_rental` | `quantity_traded` (short stays) | decrease | Stays that would have been booked and are not; both sides lose the gain each expected. | OC-4 |
 
 Payments of K2 by owners who keep units empty are C-2; their declarations are C-15. Rentals that are not made because covered units are converted are not entered separately here: they are one of the two chains in C-29, whose combined sign is ambiguous.
@@ -186,46 +205,50 @@ Payments of K2 by owners who keep units empty are C-2; their declarations are C-
 | A-3 | Landlords raise starting rents in anticipation of capped increases. | expectations | 0.75 | Starting rents in covered and exempt units after enactment; landlord surveys. | C-5 not reported. |
 | A-4 | Sitting tenants lose the capped rent if they move; tenancies cannot be transferred. | other | 0.95 | Ordinance text. | C-6, C-20 weaken. |
 | A-5 | Some job opportunities for sitting tenants require moving or a much longer commute. | mobility | 0.7 | Size of the region; job locations. | C-20 not reported. |
-| A-6 | Housing codes leave room to reduce maintenance. | other | 0.8 | Habitability code; inspection frequency. | C-7 not reported. |
+| A-6 | Housing codes leave room to reduce maintenance. | other | 0.8 | Habitability code; inspection frequency. | C-7 and C-41 not reported. |
 | A-7 | Landlords offer buyouts where the rent gap is large. | other | 0.6 | Buyout disclosures where they are required; tenant surveys. | C-8 not reported; the + chain of C-6 weakens. |
-| A-8 | The conversion route is usable for many buildings. | alternative_uses | 0.7 | Subdivision permit approvals; relocation costs; condominium demand. | C-9, C-19 weaken; − chain of C-29 weakens. |
+| A-8 | The conversion route is usable for many buildings. | alternative_uses | 0.7 | Subdivision permit approvals; relocation costs; condominium demand. | The + chains of C-9 weaken; − chain of C-29 weakens. |
 | A-9 | Enough leases renew before 1 September, and landlords can raise rents at renewal. | expectations | 0.7 | Share of leases renewing in the window. | C-10 not reported. |
-| A-10 | Many owners of empty units prefer to rent, sell or occupy them rather than pay 2% a year. | alternative_uses | 0.75 | Vacancy reasons by type (second homes, short-term, landlord-held); sale and rental demand. | C-3, C-12, C-28 weaken; K2 becomes mainly a revenue tax. |
+| A-10 | Many owners of empty units prefer to rent, sell or occupy them rather than pay 2% a year. | alternative_uses | 0.75 | Vacancy reasons by type (second homes, short-term, landlord-held); sale and rental demand. | C-3, C-12, C-28, C-43 weaken; the − chains of C-5, C-9 and C-40 weaken; K2 becomes mainly a revenue tax. |
 | A-11 | Short-term rental is less profitable than other uses after the tax, and guests have hotel alternatives. | alternative_uses | 0.7 | Short-term rental revenue per unit against $10,000 tax; hotel occupancy. | C-14, C-22, C-23, C-37 not reported. |
 | A-12 | Owners can use building permits or occupancy arrangements to fall into exemptions. | other | 0.65 | Permit requirements; audit design. | C-13 not reported. |
 | A-13 | The subsidy is large relative to developers' margins, and land and approvals are available. | alternative_uses | 0.75 | Development cost per unit; approval rates; zoned capacity. | C-4, C-24, C-25 and the K3 chain of C-30 weaken. |
 | A-14 | The per-unit subsidy makes smaller units more attractive, and zoning allows them. | other | 0.7 | Minimum unit sizes; unit-mix data. | C-16 not reported. |
 | A-15 | Land zoned for apartments is scarce. | other | 0.75 | Zoned capacity; land prices. | C-24 weakens. |
-| A-16 | Construction land and labor are scarce and in use elsewhere. | other | 0.8 | Construction employment; project pipeline. | C-25 and the + chain of C-32 fail. |
+| A-16 | Construction land and labor are scarce and in use elsewhere. | other | 0.8 | Construction employment; project pipeline. | C-25, C-44 and the + chain of C-32 fail. |
 | A-17 | Developers expect new units to stay exempt from K1 for the full 15 years. | expectations | 0.55 | Whether the exemption is in the charter or an ordinance; council politics; history of extending controls. | The fear chain in C-30 becomes reported; C-30 becomes ambiguous under both readings. |
 | A-18 | Some sitting tenants sublet at market rent without being caught. | enforcement | 0.6 | Lease terms; complaint-driven enforcement. | C-11, C-21 not reported. |
-| A-19 | Tenants, landlords, owners and developers can organize to lobby. | other | 0.85 | Existing associations. | C-18 weakens. |
-| A-20 | Under reading U1-b, some newly completed units stay unleased for more than six months. | other | 0.8 | Lease-up times for new buildings. | The K2 chain of C-30 fails; C-30 is an increase under both readings. |
-| A-21 | Developers can time certificates of occupancy around 1 September. | expectations | 0.8 | Completion schedules; inspection process. | C-17 not reported. |
+| A-19 | Tenants, landlords, owners and developers can organize to lobby at a cost below their stake (RS-7's premise). | other | 0.85 | Existing associations. | C-18 not reported. |
+| A-20 | Under reading U1-b, some newly completed units stay unleased for more than six months. | other | 0.8 | Lease-up times for new buildings. | The K2 lease-up chain of C-30 fails; A-26 is then not needed. |
+| A-21 | Developers can time certificates of occupancy around a date that changes what a unit is covered by or eligible for (1 September of Year 1; 31 August of Year 6). | expectations | 0.8 | Completion schedules; inspection process. | C-17, C-42 and C-46 not reported. |
 | A-22 | Owners make false occupancy declarations on a meaningful scale. | enforcement | 0.35 | Utility-record audits; penalties. | Below cut-off; not reported. |
 | A-23 | Short-term rental operators move to Alden County on a meaningful scale. | mobility | 0.35 | Location of short-stay demand. | Below cut-off; not reported. |
 | A-24 | Owners and buyers expect K1 and K2 to stay in force for many years. | expectations | 0.75 | Neither has an end date; council majority; history of rent rules in the region once enacted. | C-26, C-27 shrink. |
 | A-25 | The housing stock grows slowly relative to its size, so existing units are in slowly expandable supply. | durability | 0.9 | Completions against the stock of 300,000; permit and building times. | C-26, C-27 weaken. |
+| A-26 | Lease-up of a new unit rarely takes anywhere near three years, so under U1-b the vacancy tax on a slow unit (about $10,000 a year) stays well below the $30,000 payment (arithmetic on the case's figures). | other | 0.9 | Typical lease-up times for new buildings (months; A-20 says some exceed six). | Under U1-b, C-30 becomes ambiguous. |
+| A-27 | Without the bill, sitting tenants' rents would follow the market path within one or two lease cycles, so the counterfactual rent passes any raise made before 1 September within the medium horizon. | other | 0.7 | Typical lease length of 12 months; share of renewals priced at market; a pre-emptive raise is bounded by the market rent at renewal (CR-5c). | C-1 and C-38 become ambiguous at the medium horizon too. |
+| A-28 | Some buyers of condominiums buy them as second homes or to let short-term, and K2 lowers what they will pay. | other | 0.85 | About 5,000 second homes and 3,000 short-term rentals in the record; K2 taxes both uses. | One of the two − chains of C-9 and C-32 fails; their signs are unchanged (the K2 sales chain remains). |
+| A-29 | The one-time addition of K2 units to the rental market lowers the rents a developer expects on a new unit by much less than the $30,000 payment is worth to the developer. | other | 0.75 | K2 brings at most part of about 5,500 landlord-held and short-term units into long-term rental, against about 165,000 rented homes; the payment is a large share of a unit's margin (A-13). | C-30 becomes ambiguous under both readings. |
 
 ## 11. Report
 
 **The policy.** Harrowmere caps rent increases for sitting tenants in existing multi-unit buildings at 3% a year, while letting rents reset between tenancies. It taxes homes that are no one's principal residence for more than six months a year at 2% of their value. It pays developers $30,000 for each new rental unit kept as a long-term rental for 15 years, from the vacancy tax first and the general budget for the rest.
 
-**Visible consequences.** Sitting tenants pay less than they would have, and the gap grows each year (C-1). Owners who keep homes empty pay the tax (C-2), and fewer homes sit empty (C-3). Building new rentals pays better (C-4).
+**Visible consequences.** From the medium horizon, sitting tenants pay less than they would have, and the gap grows each year (C-1); their landlords receive less (C-38). Owners who keep homes empty pay the tax (C-2) into the Housing Fund (C-39), and fewer homes sit empty (C-3). Building new rentals pays better (C-4).
 
 **Invisible consequences.**
-- *People looking for a rental* face higher starting rents in covered buildings, as landlords make up in advance for capped increases (C-5). Those who sublet from sitting tenants search harder and have no recourse (C-21).
-- *Sitting tenants* turn down jobs that would require a move (C-20), receive less maintenance and buyout offers to leave (C-7, C-8), and some sublet illegally (C-11). Those who renewed just before the base date paid more (C-10). Those in buildings that are converted lose their tenancy and pay more afterwards (C-19).
-- *Landlords* convert more buildings to condominiums (C-9), more so because the vacancy tax closes the alternative of holding units empty while the renovation exemption shelters conversion (I-1). Covered buildings lose value from the time the bill is expected (C-27).
-- *Owners of empty homes and short-term rentals* offer them for rent or sale (C-12), more often for sale because renting long-term would bring them under the cap (I-2); some take out permits or arrange occupancy to qualify for exemptions (C-13). Units whose best use was to stay empty or be let short-term lose value (C-26).
+- *People looking for a rental*: landlords add a premium to starting rents in covered buildings to make up in advance for capped increases, while the units K2 and K3 bring onto the market push rents down, so starting rents (C-5) and search costs (C-40) could go either way. Those who sublet from sitting tenants search harder and have no recourse (C-21).
+- *Sitting tenants* turn down jobs that would require a move (C-20), receive less maintenance and buyout offers to leave (C-7, C-8), see the quality of their homes decline over time (C-41), and some sublet illegally (C-11). Those who renewed just before the base date paid more (C-10), and in the first months after it may still pay more than they would have (C-45).
+- *Landlords* gain a reason to convert buildings to condominiums (the cap, and the vacancy tax closing the alternative of holding units empty, I-1), but the vacancy tax also puts formerly empty units up for sale, lowering condominium prices, so whether more buildings are converted cannot be said (C-9). Covered buildings lose value from the time the bill is expected (C-27).
+- *Owners of empty homes and short-term rentals* offer them for rent or sale (C-12), more often for sale because renting long-term would bring them under the cap (I-2), so homes for sale are cheaper in the short run (C-43); some take out permits or arrange occupancy to qualify for exemptions (C-13). Units whose best use was to stay empty or be let short-term lose value (C-26).
 - *Visitors* pay more for short stays, and hotels gain business (C-14, C-22, C-23, C-37).
-- *Developers* design smaller units (C-16) and delay completions past the base date (C-17). Owners of apartment land gain (C-24); condominium and other projects lose land and labor to subsidized rentals (C-25).
+- *Developers* build more new rentals under either reading of the lease-up provision (C-30), design smaller units (C-16), delay completions past the base date (C-17, C-46), and rush completions before the subsidy ends, with fewer just after it (C-42). Owners of apartment land gain (C-24); construction wages rise (C-44), and condominium and other projects lose land and labor to subsidized rentals (C-25).
 - *The city* collects less vacancy tax than a projection at today's vacancy level, because the tax works (C-28). The earmark does not change how much is spent on the subsidy (I-5). Taxpayers fund the early subsidies and the administration (C-35, C-36), and over the medium term any part of the subsidy that vacancy-tax revenue does not cover (C-34); compared with no bill, the general budget does not come out ahead.
 - All affected groups lobby (C-18).
 
-**Ambiguous effects.** Whether sitting tenants move less overall, given that landlords pay and press them to leave (C-6). Whether the stock of covered rental units is larger or smaller (empty units re-let against conversions) (C-29). Whether new rental building rises, which depends on whether units in lease-up are taxed as vacant (C-30). Whether rents in exempt units, and the total cost of renting for newcomers, rise or fall (C-31). Whether condominium prices rise or fall (C-32). Whether sitting tenants get more housing per dollar (C-33).
+**Ambiguous effects.** Whether sitting tenants move less overall, given that landlords pay and press them to leave (C-6). Whether starting rents in covered units, and seekers' search costs, rise or fall (C-5, C-40). Whether more buildings are converted to condominiums (C-9). Whether the stock of covered rental units is larger or smaller (empty units re-let against conversions) (C-29). Whether rents in exempt units rise or fall (C-31). Whether condominium prices rise or fall in the medium run (C-32). Whether sitting tenants get more housing per dollar (C-33). Sitting tenants' rent in the first months after the base date (C-45).
 
-**Key conditions.** That market rents outrun the cap (A-1, p = 0.85). That empty-unit owners have uses they prefer to paying the tax (A-10, p = 0.75); otherwise K2 mainly raises revenue. That developers trust the exemption of new units (A-17, p = 0.55): this is the closest call in the analysis, and if it fell below 0.5, new rental building would become ambiguous under both readings of the lease-up provision. Clarifying U1 would settle one of the ambiguous signs.
+**Key conditions.** That market rents outrun the cap (A-1, p = 0.85). That empty-unit owners have uses they prefer to paying the tax (A-10, p = 0.75); otherwise K2 mainly raises revenue. That developers trust the exemption of new units (A-17, p = 0.55): this is the closest call in the analysis, and if it fell below 0.5, new rental building would become ambiguous under both readings of the lease-up provision. That the vacancy tax's addition to rental supply is small against the subsidy (A-29, p = 0.75), and, under the reading that taxes units in lease-up, that lease-up rarely takes three years (A-26, p = 0.9).
 
 **What this analysis cannot say.** How large any effect is; whether the bill as a whole adds or removes rental housing; whether gains to sitting tenants and developers outweigh costs to newcomers, empty-unit owners, visitors and taxpayers; whether the bill is desirable.
 
@@ -235,15 +258,15 @@ The last column is the `components` field (2.5): the components each chain runs 
 
 | ID | Actor class | Variable | Sign | Horizon | Visibility | Tier | Derivation | Assumptions | Components |
 |---|---|---|---|---|---|---|---|---|---|
-| C-1 | tenants.covered | price_paid | decrease | short–long | visible | B | PC-3, TS-3 | A-1, A-2 | K1 |
+| C-1 | tenants.covered | price_paid | decrease | medium–long | visible | B | PC-3, TS-3; CR-12b with A-27 against C-10 | A-1, A-2, A-27 | K1 |
 | C-2 | owners.vacant (keeping units empty) | resources_available_other_uses | decrease | short | visible | A | TX-1 | none | K2 |
 | C-3 | owners.vacant | units_held_vacant | decrease | short–medium | visible | B | TX-3, RS-6 | A-10 | K2 |
 | C-4 | developers | net_price_received (new rental) | increase | medium | visible | B | SB-2 | A-13 | K3 |
-| C-5 | tenants.prospective | price_paid (starting rents, covered units) | increase | short–medium | invisible | B | RS-2 | A-1, A-3 | K1 |
+| C-5 | tenants.prospective | price_paid (starting rents, covered units) | ambiguous | short–medium | invisible | B | RS-2 vs RS-13 | A-1, A-3, A-10, A-13 | K1, K2, K3 |
 | C-6 | tenants.covered | turnover | ambiguous | medium | invisible | B | PC-7 vs RS-2 (C-7, C-8) | A-1, A-4, A-6, A-7 | K1 |
 | C-7 | landlords.covered | maintenance_spending | decrease | short–medium | invisible | B | PC-4, RS-2 | A-1, A-6 | K1 |
 | C-8 | landlords.covered | side_payments (buyouts) | increase | short–medium | invisible | B | RS-2 | A-1, A-7 | K1 |
-| C-9 | landlords.covered | reclassification (conversion) | increase | medium | invisible | B | RS-5, PC-5, RS-1 (I-1) | A-1, A-8, A-10 | K1, K2 (I-1) |
+| C-9 | landlords.covered | reclassification (conversion) | ambiguous | medium | invisible | B | RS-5, PC-5, RS-1 (I-1) vs RS-13, CR-9 (K2 sales) | A-1, A-8, A-10, A-28 | K1, K2 (I-1) |
 | C-10 | tenants.covered (renewing before base date) | price_paid | increase | short | invisible | B | RS-8 | A-9 | K1 |
 | C-11 | tenants.covered | informal_activity (sublets) | increase | medium | invisible | B | PC-6, RS-3 | A-1, A-18 | K1 |
 | C-12 | owners.vacant | quantity_supplied (offered for rent or sale) | increase | short–medium | invisible | B | RS-6, TX-3 | A-10 | K2; mix shaped by K1 (I-2) |
@@ -253,7 +276,6 @@ The last column is the `components` field (2.5): the components each chain runs 
 | C-16 | developers | reclassification (smaller units) | increase | medium | invisible | B | SB-5, RS-5 | A-14 | K3 |
 | C-17 | developers | quantity_supplied (completions, February to August of Year 1) | decrease | short | invisible | B | RS-8 | A-21 | K1, K3 |
 | C-18 | tenants, landlords, owners, developers | lobbying_effort | increase | medium | invisible | B | RS-7, SB-5 | A-19 | K1, K2, K3 |
-| C-19 | tenants.covered (converted buildings) | price_paid (after relocation) | increase | medium | invisible | B | PC-5, RS-5 | A-1, A-8 | K1 |
 | C-20 | tenants.covered | job_changes | decrease | medium | invisible | B | PC-7, RS-11 | A-1, A-4, A-5 | K1 |
 | C-21 | subtenants | search_cost | increase | medium | invisible | B | RS-3, RS-10 | A-18 | K1 |
 | C-22 | guests.short_term | price_paid (short stays) | increase | short–medium | invisible | B | TX-2 | A-11 | K2 |
@@ -264,14 +286,23 @@ The last column is the `components` field (2.5): the components each chain runs 
 | C-27 | landlords.covered | asset_value | decrease | short–medium | invisible | B | SB-4 | A-1, A-24, A-25 | K1; K2 (I-1) |
 | C-28 | officials.enforcement | tax_revenue_vs_static_projection (K2) | decrease | medium | invisible | B | TX-9 | A-10 | K2 |
 | C-29 | landlords.covered | quantity_supplied (covered rental units) | ambiguous | medium | invisible | B | RS-6, TX-3 (I-1) vs PC-5, RS-5, RS-1 | A-1, A-8, A-10 | K1, K2 (I-1) |
-| C-30 | developers | investment_target (new rental) | U1-a: increase; U1-b: ambiguous | medium | invisible | B | SB-2, RS-1, PC-5 vs TX-2 (I-4) | A-13, A-17, A-20 | K1, K2, K3 (I-3, I-4) |
+| C-30 | developers | investment_target (new rental) | U1-a: increase; U1-b: increase | medium | invisible | B | SB-2, RS-1 vs RS-13, TX-2 (I-4); CR-12e with A-29 and A-26 | A-13, A-17, A-26, A-29 | K1, K2, K3 (I-3, I-4) |
 | C-31 | tenants.prospective | price_substitute (rents in exempt units) | ambiguous | medium | invisible | B | RS-1, PC-5 vs RS-13 | A-1, A-3, A-8, A-10, A-13 | K1, K2, K3 |
-| C-32 | homebuyers | price_substitute (condominiums) | ambiguous | medium | invisible | B | SB-3 vs RS-5, RS-6, RS-13 | A-8, A-10, A-16 | K1, K2, K3 (I-2) |
+| C-32 | homebuyers | price_substitute (condominiums) | ambiguous | medium | invisible | B | SB-3 vs RS-13 | A-8, A-10, A-16, A-28 | K1, K2, K3 (I-2) |
 | C-33 | tenants.covered | quality_adjusted_price | ambiguous | medium | invisible | B | C-1 vs C-7 | A-1, A-6 | K1 |
 | C-34 | taxpayers | resources_available_other_uses | decrease | medium | invisible | A | SB-1, OC-1, OC-3; SB-7 (size only) | none | K2, K3, K4, K5 (I-5, I-6) |
 | C-35 | taxpayers | resources_available_other_uses | decrease | short | invisible | A | SB-1, OC-1, OC-3 | none | K3, K4, K5 |
 | C-36 | officials.enforcement | enforcement_cost | increase | short | invisible | A | OC-3 | none | K5 |
 | C-37 | guests.short_term, operators.short_term_rental | quantity_traded (short stays) | decrease | short–medium | invisible | B | OC-4 | A-11 | K2 |
+| C-38 | landlords.covered | net_price_received (rent from sitting tenants) | decrease | medium–long | visible | B | PC-3; CR-12b with A-27 against C-10 | A-1, A-2, A-27 | K1 |
+| C-39 | officials.enforcement (Housing Fund) | tax_revenue (K2) | increase | medium | visible | A | TX-1 | none | K2, K4 |
+| C-40 | tenants.prospective | search_cost | ambiguous | medium | invisible | B | PC-7 vs RS-13 | A-4, A-10 | K1, K2 |
+| C-41 | tenants.covered | quality_per_unit | decrease | long | invisible | B | PC-4, TS-1 | A-1, A-6 | K1 |
+| C-42 | developers | quantity_supplied (completions after 31 August of Year 6) | decrease | long | invisible | B | SB-6, RS-8 | A-21 | K3 |
+| C-43 | homebuyers | price_substitute (condominiums and other homes for sale) | decrease | short | invisible | B | RS-13 | A-10 | K2 |
+| C-44 | workers.construction | wage_rate | increase | medium | invisible | B | SB-3, CR-9, CR-7 | A-13, A-16 | K3 |
+| C-45 | tenants.covered | price_paid (first months after 1 September) | ambiguous | short | visible | B | PC-3 vs RS-8 (C-10); CR-12b | A-1, A-2, A-9 | K1 |
+| C-46 | developers | quantity_supplied (completions in the months after 1 September of Year 1) | increase | short | invisible | B | RS-8 | A-21 | K1, K3 |
 
 ## Gaps found
 
@@ -279,3 +310,4 @@ The last column is the `components` field (2.5): the components each chain runs 
 - GAP-025-2 (closed in catalog 0.3: pairwise check in workflow step 6; `components` field in 2.5). The interactions are labeled with their components (I-1 to I-6), and the consequence list carries a components column.
 - GAP-025-3 (closed in catalog 0.3: `reading` field in 2.5; readings get no probability, step 10). C-30 now records one sign per reading ("U1-a: increase; U1-b: ambiguous") and is Tier B.
 - GAP-025-4 (closed in catalog 0.3: `units_held_vacant`). C-3 now Tier B.
+- Catalog 0.5: corrected after the core-only comparison (see ../05_examples_core/WE-025_housing_bill_multipart_core.md): starting rents (C-5) and conversion (C-9) made ambiguous by combining the K2 and K3 supply chains the analysis had recorded elsewhere (CR-12b); C-19 withdrawn (measured against the capped rent, not the counterfactual); new rental investment (C-30) signed increase under both readings, with the arithmetic premise A-26 and a dominance premise A-29 for the K2 supply chain; sitting tenants' short-run rent made ambiguous against the pre-base-date raises (C-45; C-1 limited to medium–long with A-27, as in WE-001); added landlords' side of the cap (C-38), the fund's revenue (C-39), seekers' search costs (C-40), quality of covered units (C-41), the post-deadline dip and post-base-date surge in completions (C-42, C-46), short-run home prices (C-43) and construction wages (C-44); RS-7 premise (A-19) and OC-3 funding stated; second-home buyers' premise A-28; the cross-variable "total cost of renting" sentence removed (CR-12c).
