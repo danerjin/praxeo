@@ -1,4 +1,4 @@
-# 4. Rule catalog 0.7: patterns
+# 4. Rule catalog 0.8: patterns
 
 This file holds the **patterns**: derived results for recurring situations. They rest on the **core rules** in `04a_core_rules.md`, which are the universal calculus. Every pattern below carries a **Derivation** line that shows which core rules it instantiates and how; a pattern adds no reasoning of its own beyond that derivation and the premises it names. If a pattern and a direct derivation from the core rules ever disagree, the derivation wins and the pattern is corrected.
 
@@ -14,6 +14,8 @@ Each pattern is one reusable inference. Format:
 - **Derivation:** how the pattern follows from the core rules (`04a_core_rules.md`).
 
 Patterns are deliberately small. A full analysis chains several of them, and each link is reviewed on its own.
+
+**Changes in 0.8.** From the core-only re-runs of WE-026 to WE-035 (`08_core_rerun_report.md`, second round). Revised: OC-3 (enforcement the policy makes unnecessary), OC-1 and TX-1 (payers from a general budget are a group), RS-1 (the split between price and quantity of a substitute needs a supply premise), OC-5 (new activities), TS-3 (product standards), EN-6 (the wider-market price still moves), SB-10 (checks on the return crossing), RS-8 (opposing timing chains).
 
 **Changes in 0.7.** From the ten gap-probing examples (WE-026 to WE-035). New patterns for moves that are general or recurred: PC-17 (mandated contract term), PC-18 (prohibited contract term), PC-19 (public supply at a set price), RS-17 (size thresholds), RS-18 (a per-head cost with a cap), OC-8 (crowding out by public borrowing), SB-10 (export subsidy). Widened: TX-8 (both directions of the currency link), RS-4, RS-8, RS-16, OC-1, OC-4, SB-8, EN-6. Moves seen once are listed as candidates in `06_gaps.md`, 6.2e.
 
@@ -34,7 +36,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 ### RS-1 Substitution
 - **If:** a policy raises the cost (money or otherwise) to an actor class of using a good or means, relative to an alternative that serves the same end.
 - **Then:** `actor_class.quantity_substitute` increase; use of the target decreases at the margin.
-- **Assumes:** a substitute exists and is not covered by the policy (`substitutability`).
+- **Assumes:** a substitute exists and is not covered by the policy (`substitutability`). CR-4 gives only that more buyers turn to the substitute; `quantity_substitute` increase as a traded quantity also needs a premise that the substitute's supply can expand, and its price is then RS-16's question.
 - **Unless:** the actor class has no margin of choice (a fixed contract during its term).
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
 - **Builds on:** LW-2, LW-3.
@@ -95,7 +97,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 ### RS-8 Change of timing
 - **If:** the policy treats the same action differently depending on when it is taken (announcement before effective date, phase-in, deadline, expected tightening or repeal).
 - **Then:** actions are moved toward the favorable time: rush before a tax or cap takes effect, delay until after a repeal is expected, purchases pulled forward into a temporary subsidy. Every such move has two sides: the action rises in the favored window and falls in the window it was taken from. Record both, each signed against the counterfactual (`02_ontology.md`, 2.5).
-- **Unless:** where a stock must be run down to a common deadline with no grandfathering (a phase-out), there is no favorable window to move toward, and the sign before the deadline is `ambiguous` rather than a rush. Where a claim on a future payment can be acquired before the charge that funds it starts (containers refundable before deposits are charged), holders acquire it in the gap.
+- **Unless:** where a stock must be run down to a common deadline with no grandfathering (a phase-out), there is no favorable window to move toward, and the sign before the deadline is `ambiguous` rather than a rush. Where a claim on a future payment can be acquired before the charge that funds it starts (containers refundable before deposits are charged), holders acquire it in the gap. Where the policy also improves the earlier window (a clause applying the new rule to cases already pending, so that acting before the effective date is already partly protected), the two timing chains oppose each other. Check every provision for this before signing: the sign in that window is `ambiguous` without a dominance premise.
 - **Assumes:** actors know the timing and can shift their actions.
 - **Tier** B. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-7.
@@ -193,6 +195,8 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **If:** the policy takes resources from an actor class (tax, mandated purchase, compliance) or directs resources to a use.
 - **Then:** `resources_available_other_uses` decrease for that actor class; the goods they would have bought or produced with those resources are not produced, so `quantity_traded` decrease in the markets where they would have spent it. The spending or use is visible; the forgone alternative is not.
 - **Naming the forgone uses.** Where means are taken directly (a tax, a levy), which uses are given up needs a premise (CR-4, a change in means alone). Where they are taken through a market (public borrowing draws on the loan market), the forgone uses are those of that market's marginal participants (the borrowers crowded out), which can be named with a premise about who they are.
+- **Who pays.** Where the means come from a general budget and the record names no tax, the payers are a group (taxpayers, recipients of other spending, future taxpayers) with `at_least_one_decrease`; do not name taxpayers alone. Where the means are borrowed, the lenders' side is recorded too (OC-8).
+- **Saving is a use.** For payers who may cut saving rather than purchases, `quantity_traded` falls in named markets only with a premise (CR-4, 0.7).
 - **Tier** A, given that resources are taken. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-1.
 - **Source:** Bastiat 1850, §1 "The Broken Window"; EIOL 1946 ch. 2 to 4.
@@ -211,7 +215,9 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
   - from a budget that rises with the new task: `taxpayers` (OC-1 applies);
   - from a fixed budget: enforcement of other rules falls instead (CR-8a), and the cost falls on those whom that enforcement protected;
   - from the policy's own revenue: it reduces what the revenue does elsewhere (CR-8d), not general taxpayers' means.
-- **Tier** A, given positive enforcement activity. **Visibility** invisible. **Horizon** short.
+  - from a general budget where the record names no tax: the payers are a group (taxpayers, recipients of other spending, future taxpayers through borrowing) with `at_least_one_decrease` (CR-8, 0.7).
+- **Against the right baseline.** The comparison is enforcement without the policy, not zero. Where the policy shrinks an activity that was itself enforced (complaints about backyard flocks under a nuisance law), enforcement of the old rule falls; the net sign is `ambiguous` without a dominance premise (arithmetic on the case's figures may supply one).
+- **Tier** A, given positive enforcement activity and no enforcement the policy makes unnecessary; otherwise B. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-1.
 - **Derivation:** CR-8c, with CR-8a for the funding.
 
@@ -228,6 +234,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **If:** a policy changes where an actor class spends (OC-1: money taken and spent by others; SB-8: money freed), so that `quantity_traded` falls in some markets and rises in others.
 - **Then:** `employment` or `hours_worked` decrease in the markets that lose the spending and increase in those that gain it. The jobs the policy creates are visible; the jobs it prevents elsewhere are not.
 - **Assumes:** sellers adjust their labor to their sales (`alternative_uses`).
+- **New activities.** Where the activity that gains is new (a redemption center, a new service), it starts from zero, so hours cannot substitute for jobs: `employment` increase alone is derivable there. The group form applies to existing activities.
 - **Tier** B. **Visibility**: the gain is visible, the loss invisible. **Horizon** short to medium.
 - **Builds on:** OC-1, LW-4.
 - **Source:** EIOL 1946 ch. 2 (the tailor who does not get the order for a suit) and ch. 4 ("for every public job created ... a private job has been destroyed somewhere else"); Bastiat 1850, §1, where the forgone purchase is shoes or a book.
@@ -282,7 +289,8 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Then:** the component becomes more binding (or less) over time as prices or demand move. A ceiling or quota that is not binding at enactment can become binding later.
 - **Assumes:** the expected path of market prices or demand.
 - **Tier** B. **Horizon** medium to long.
-- **Derivation:** CR-6 (a fixed parameter binds when the clearing price or demand moves past it) with CR-10a (expected path).
+- **Product standards.** A standard on a product's specification has no clearing price to move past. It binds on the share of designs actors would choose below it (CR-1, CR-4 over the spread of designs), and that share changes as costs and the counterfactual trend move (CR-10a).
+- **Derivation:** CR-6 (a fixed parameter binds when the clearing price or demand moves past it) with CR-10a (expected path); for a product standard, CR-1 and CR-4 with CR-10a.
 
 ### TS-4 The intervention spiral (proposed, contested)
 - **If:** a policy produces consequences that its supporters regard as problems (shortages, black markets, evasion).
@@ -499,7 +507,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 
 ### TX-1 Tax takes resources
 - **If:** a tax is imposed and collected.
-- **Then:** `resources_available_other_uses` decrease for the actor classes that bear it (see TX-2 for who bears it); `tax_revenue` increase. Apply OC-1 to what those actors would have done with the money, and analyze the spending of the revenue as a separate component.
+- **Then:** `resources_available_other_uses` decrease for the actor classes that bear it (see TX-2 for who bears it); `tax_revenue` increase. Apply OC-1 to what those actors would have done with the money, and analyze the spending of the revenue as a separate component. Where a shortfall in revenue is made up from a general budget, its payers are a group (OC-1, Who pays).
 - **Tier** A, given collection. **Visibility**: the payment is visible; the forgone uses are invisible. **Horizon** short.
 - **Builds on:** LW-1.
 - **Source:** P&M ch. 4.
@@ -666,7 +674,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 
 ### SB-10 Export subsidy
 - **If:** an `export_subsidy` pays a fixed sum per unit of a good exported.
-- **Then:** sellers move sales abroad until the domestic price rises toward the export price plus the subsidy (CR-7a): domestic buyers' `price_paid` increases and their `quantity_traded` decreases; producers' `net_price_received` and `quantity_supplied` increase; `asset_value` of the land or capital specific to the good increases (SB-4); foreign buyers gain (`price_paid` for `buyers.foreign` decreases); TX-8's mirror case applies; round trips to claim the subsidy appear (RS-4). The funding is analyzed under SB-1.
+- **Then:** sellers move sales abroad until the domestic price rises toward the export price plus the subsidy (CR-7a): domestic buyers' `price_paid` increases and their `quantity_traded` decreases; producers' `net_price_received` and `quantity_supplied` increase; `asset_value` of the land or capital specific to the good increases (SB-4); foreign buyers gain (`price_paid` for `buyers.foreign` decreases); TX-8's mirror case applies; round trips to claim the subsidy appear (RS-4), unless the policy checks the return crossing (rules of origin, re-import bans); where it does, combine the round-trip chain with the check under CR-12b. The funding is analyzed under SB-1.
 - **Assumes:** the domestic market is open to the world price (`mobility`); producers can expand (`alternative_uses`).
 - **Tier** B. **Visibility**: the subsidy is visible; the higher domestic price is invisible. **Horizon** short to medium.
 - **Builds on:** LW-4.
@@ -718,7 +726,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **If:** `quota` limiting the quantity produced, sold or imported, below the quantity that would otherwise be traded.
 - **Then:** `quantity_traded` decrease; `price_paid` increase; holders of quota rights gain, and their `asset_value` increases where rights are tradable (SB-4). Domestic sellers of the same good (for an import quota): `net_price_received` and `quantity_supplied` increase, as under TX-7. Buyers lose (OC-4). For an import quota, TX-8 applies to export industries; DM-4 governs how the gap between the domestic and world price is split.
 - **Assumes:** `binding`, `enforcement`.
-- **Unless:** the capped good's price is set in a wider market (fish sold into a regional market, a traded commodity). Then `price_paid` is not signed; the lease price of the right (`right_lease_price`) rations the capped quantity (CR-6).
+- **Unless:** the capped good's price is set in a wider market (fish sold into a regional market, a traded commodity). Then the lease price of the right (`right_lease_price`) rations the capped quantity (CR-6), not `price_paid`. `price_paid` still moves up in the wider market, by as much as the capped quantity matters there: record it as `increase` with a premise that the effect is not negligible, or note it as negligible. Where part of the good is sold only at home, that part's price rises as in the main case.
 - **Tier** B. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-3, LW-5.
 - **Derivation:** CR-6 (quantity held below the clearing level), CR-7b (the gain settles on the holders of quota rights, the scarce side) and CR-9 (domestic sellers of the same good).
