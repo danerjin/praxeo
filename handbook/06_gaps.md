@@ -193,6 +193,38 @@ Ten new examples (WE-026 to WE-035) were written to probe parts of the method th
 | Selection under a uniform term | WE-029 | CR-5c, CR-4 per counterparty |
 | Complaint-only enforcement | WE-029 | CR-4 (expected cost of breach differs by counterparty) |
 
+## 6.2f Held-out test of catalog 0.8 (WE-036 to WE-045)
+
+Catalogs 0.7 and 0.8 were tuned on WE-026 to WE-035. Ten new examples were then written with the catalog frozen at 0.8, to see whether the changes work on cases they were not drawn from. Each example ends with a "Test of 0.8" part in its Gaps found, giving a verdict on each change it used.
+
+**Calculus gaps.** One new one: GAP-041-1, residents who value having a team in their city without buying a ticket. No exchange, shared-facility or proximity relation reaches them. It is referred to Q20. Every other step in the ten examples was derived from CR-1 to CR-12.
+
+**Patterns whose conclusion was wrong although their preconditions held.**
+
+| Pattern | Problem | Found in |
+|---|---|---|
+| RS-18 | Predicts hours moving to fewer heads under a cap per firm; the derivation (CR-4 0.8, fixed cost per firm) gives `no_change`. | WE-036 |
+| RS-17 | Signs the value of firms near a threshold as a decrease; the policy also burdens their rivals above the line, so the sign is `ambiguous`. | WE-040 |
+| SB-10 | The domestic price need not rise toward the export price plus the subsidy when imports of the finished good cap it. Its If clause fits a refund for exporters (drawback) only in part. | WE-042 |
+| EN-11 | A license that is issued on different requirements (recognized from other states) conveys less information, not more. | WE-045 |
+| PC-8 | Its Unless clause misses demand the same policy withdraws from the uncontrolled segment (brokers). | WE-037 |
+
+**Changes that needed interpretation.** Most 0.7 and 0.8 changes worked as written. These did not:
+- **Tier C against Tier B.** CR-12 0.8 does not say how a Tier C chain (shared facility, proximity) combines with an opposing Tier B chain. Seen in WE-039, WE-041 and WE-044; each read CR-12d as giving `ambiguous` at Tier C. The groundwater plan's central purpose could be reported only at Tier C.
+- **OC-8** (WE-038, WE-041): revenue bonds are repaid from fees, not later taxes; no clause for a borrower too small to move its loan market, or for a legal debt limit; the lenders' side gives no sign against the right baseline.
+- **Public supply** (WE-038): a public seller at a set price with no fixed quantity is covered by no clause; PC-19 rightly does not apply.
+- **PC-17** (WE-036): does not cover a mandate the employer can buy out with a charge.
+- **EN-6 0.8 Unless** (WE-039): written for a capped good, needed here for an input (water) whose output is priced in a wider market.
+- **CR-8 0.8, value from ending a race** (WE-039): correct, but the race runs through a shared aquifer, so the split is only Tier C.
+- **RS-17** for an hours line rather than firm size; **RS-4** where the law reaches resales wherever made; **RS-8 0.8** where the opposing timing chain comes from a second incentive; **TS-3 0.8** where other rules bind first; **CR-11 0.7** on what exempt sellers do, and on buyers who learn a signal became noisier; **CR-7c** for a license that cannot be sold.
+- **Repeals** (WE-043): the workflow assumes an analysis of the original rule exists; here it had to be derived first.
+
+**Candidate patterns needed a second time.** By the rule in 6.2e these are promoted: consolidation under tradable rights (WE-039); allocation of a right by history, in a wider form where history was fixed before announcement (WE-039); fixed cost per item reduces variety (WE-040); debt-funded transfer in two windows (WE-041); circular trade under a payment for crossing a boundary (WE-042); standard on new units with the stock exempt (WE-043); complaint-only enforcement (WE-044); and disclosure mandate (WE-040). New candidates proposed: a mandate with a buy-out charge, public entry at a set price against sunk incumbents, a tariff-like burden without a tax, public enforcement of a private term, a below-market lease of a public asset.
+
+**Vocabulary.** A `not_signed` per-reading sign; a way to record a change in the probability of an action (WE-041); variables for the stock of a shared resource, amenity, complaints, and land per dwelling; the line between `legal_breach` and `informal_activity` where a ban has a permitted sub-class.
+
+**Not yet done.** None of this is applied; the catalog stays at 0.8 so that these examples remain a record of the test. A blind core-only re-run of WE-036 to WE-045 would test the same cases independently.
+
 ## 6.3 Questions for the experts
 
 **Q1. Tier A decisions.** Which foundations and rules may produce Tier A conclusions? The draft proposes A for AX-1, LW-1, LW-2, LW-5, LW-6, LW-7, the OC rules, PC-2, PC-3 and PC-11 (given their preconditions), and A for LW-3 by decision, with the price-as-quality-signal and Giffen exceptions recorded. Is that right?
@@ -233,7 +265,7 @@ Ten new examples (WE-026 to WE-035) were written to probe parts of the method th
 
 **Q19. Which purchases fall when means fall?** When an actor's means are reduced, the core rules say that some other use is given up but not which (CR-3, CR-8; WE-004). The method treats this as empirical and requires a premise. Is there a praxeological ground (for example, the marginal use is the one given up, LW-2) for saying more? WE-033 tested this. LW-2 says the use given up is the lowest-ranked one served, but names no good, and saving is one of the uses. A named use was reached only through a market, with premises: public borrowing raises the interest rate and crowds out private borrowing (OC-8).
 
-**Q20. Shared facilities and proximity.** Some effects travel without exchange: a neighbor's hens, a congested road, a shared fishing ground (GAP-026-1, WE-032). Catalog 0.7 records them as `proximity` and `shared_facility` relations and reports chains through them at Tier C. Do such effects belong to praxeological analysis, given that the affected party does not choose them? If so, under what premises may they be signed at Tier B?
+**Q20. Shared facilities and proximity.** Some effects travel without exchange: a neighbor's hens, a congested road, a shared fishing ground (GAP-026-1, WE-032), a shared aquifer (WE-039), and residents who value a team's presence without buying anything (GAP-041-1). Catalog 0.7 records them as `proximity` and `shared_facility` relations and reports chains through them at Tier C. Do such effects belong to praxeological analysis, given that the affected party does not choose them? If so, under what premises may they be signed at Tier B?
 
 **Q21. Non-rival means.** CR-8 treats every means as rival. Know-how carried to a rival firm is used there without being lost to the first (GAP-034-1). Should a core rule cover non-rival means, and what could it say a priori about total output?
 
@@ -290,3 +322,13 @@ The metamorphic checks in the three repeal examples (WE-022 to WE-024) are alrea
 | WE-033 | One-time household cash payment funded by borrowing | OC-8, SB |
 | WE-034 | Ban on non-compete clauses | PC-18 |
 | WE-035 | Calorie labels on restaurant menus | EN, RS |
+| WE-036 | Employer health-insurance mandate with a per-worker charge | PC-17, RS-17, RS-18 |
+| WE-037 | Cap on ticket resale prices; ban on bulk-buying software | PC, RS |
+| WE-038 | Municipal broadband at a set price, revenue bonds | OC-8, RS-16 |
+| WE-039 | Groundwater pumping cap with tradable rights | EN-6, SB |
+| WE-040 | Country-of-origin labels on meat | EN, RS-17 |
+| WE-041 | Stadium funded by city bonds, leased below market | OC-8, OC-5, SB |
+| WE-042 | Aluminum tariff with drawback for exporters | TX-7, TX-8, SB-10 |
+| WE-043 | Repeal of a minimum lot size | TS-3, TS |
+| WE-044 | Short-term rental ban | EN, RS-16, RS-8 |
+| WE-045 | Recognition of other states' occupational licenses | EN, TS |
