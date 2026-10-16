@@ -178,20 +178,20 @@ Ten new examples (WE-026 to WE-035) were written to probe parts of the method th
 | Ban on own production | WE-026 | CR-1 (option removed), CR-3a, CR-9 to the sellers of the bought substitute |
 | Refundable charge (deposit-refund) | WE-027 | CR-1 (charge on an option, refund on a later act), CR-4 per unit, CR-8b with a residual claimant |
 | A claim payable inside a boundary draws items from outside | WE-027 | CR-4, CR-7a across the boundary |
-| Circular trade under a payment for crossing a boundary | WE-030 | CR-4 (gain per round trip against its cost), CR-8c |
-| Allocation of a right by history after announcement | WE-028 | CR-10a, CR-7a, CR-8c |
+| Circular trade under a payment for crossing a boundary (promoted to RS-19 in 0.9) | WE-030 | CR-4 (gain per round trip against its cost), CR-8c |
+| Allocation of a right by history after announcement (promoted to EN-12 in 0.9) | WE-028 | CR-10a, CR-7a, CR-8c |
 | High-grading under a physical-unit cap | WE-028 | CR-4c with the unit of the constraint |
-| Consolidation under tradable rights | WE-028 | CR-5, CR-7a (rights move to the lowest-cost users) |
-| Standard on new units, stock exempt | WE-031 | CR-1, CR-7c on the exempt stock, CR-10b |
+| Consolidation under tradable rights (promoted to EN-13 in 0.9) | WE-028 | CR-5, CR-7a (rights move to the lowest-cost users) |
+| Standard on new units, stock exempt (promoted to EN-14 in 0.9) | WE-031 | CR-1, CR-7c on the exempt stock, CR-10b |
 | Scheduled tightening faster than the trend | WE-031 | CR-10c, CR-7c, CR-12h |
 | A standard per unit of a chosen attribute shifts the attribute | WE-031 | CR-4 |
 | Certifiers hired by those they certify | WE-031 | CR-2, CR-11 |
 | Compensating differential from a non-wage term | WE-032 | CR-5c, CR-7a |
-| Debt-funded transfer in two windows | WE-033 | CR-8, CR-10, CR-12g |
+| Debt-funded transfer in two windows (promoted to OC-9 in 0.9) | WE-033 | CR-8, CR-10, CR-12g |
 | Ban on a restraint over carryable training; retroactive voiding | WE-034 | CR-5c, CR-7c, CR-10b |
-| Fixed cost per item reduces variety | WE-035 | CR-4b with a lumpy cost |
+| Fixed cost per item reduces variety | WE-035 (WE-040's use was invalid) | CR-4b with a lumpy cost |
 | Selection under a uniform term | WE-029 | CR-5c, CR-4 per counterparty |
-| Complaint-only enforcement | WE-029 | CR-4 (expected cost of breach differs by counterparty) |
+| Complaint-only enforcement (promoted to RS-20 in 0.9) | WE-029 | CR-4 (expected cost of breach differs by counterparty) |
 
 ## 6.2f Held-out test of catalog 0.8 (WE-036 to WE-045)
 
@@ -223,7 +223,7 @@ Catalogs 0.7 and 0.8 were tuned on WE-026 to WE-035. Ten new examples were then 
 
 **Vocabulary.** A `not_signed` per-reading sign; a way to record a change in the probability of an action (WE-041); variables for the stock of a shared resource, amenity, complaints, and land per dwelling; the line between `legal_breach` and `informal_activity` where a ban has a permitted sub-class.
 
-**Not yet done.** None of this is applied; the catalog stays at 0.8 so that these examples remain a record of the test. A blind core-only re-run of WE-036 to WE-045 would test the same cases independently.
+**Re-run and catalog 0.9.** The blind core-only re-run of WE-036 to WE-045 found K = 0 again, confirmed the pattern failures above and found more (OC-8's baseline, OC-3's fixed-budget clause, RS-16, RS-7). It also showed that the second use of "fixed cost per item reduces variety" was invalid, so that candidate is not promoted. Catalog 0.9 applies the fixes and promotes the other seven (`08_core_rerun_report.md`, third round). WE-036 to WE-045 are then corrected against their comparisons.
 
 ## 6.3 Questions for the experts
 

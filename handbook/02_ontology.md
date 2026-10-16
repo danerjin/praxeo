@@ -60,15 +60,16 @@ A group defined by its role in the situation, not by identity. Name actor classe
 | `quota` | triangular | EN |
 | `prohibition` (of a good or service) | triangular | EN |
 | `own_production_ban` (banning production for one's own use) | autistic | CR-1, CR-4 directly; candidate pattern |
-| `product_standard` (a minimum specification for goods sold) | triangular | EN; candidate pattern |
+| `product_standard` (a minimum specification for goods sold) | triangular | EN-14, TS-3 |
 | `mandated_contract_term` | triangular | PC-17 |
 | `term_prohibition` (a contract term made unenforceable) | triangular | PC-18 |
-| `disclosure_mandate` | triangular | CR-11c; candidate pattern |
+| `disclosure_mandate` | triangular | CR-11c, EN-15 |
 | `deposit_refund` (a charge refunded on a later action) | binary | CR-1, CR-8; candidate pattern |
 | `export_subsidy` | binary | SB-10 |
 | `public_supply` (a good supplied by the state at a set price, quantity set by a budget) | binary | PC-19 |
 | `government_borrowing` | binary | OC-8 |
-| `rights_allocation` (how a created right is first assigned: by history, auction or lottery) | binary | SB-4, CR-7c; candidate pattern |
+| `rights_allocation` (how a created right is first assigned: by history, auction or lottery) | binary | SB-4, CR-7c, EN-12 |
+| `mandate_with_charge` (a required term or action that may be bought out by paying a charge, "play or pay") | triangular / binary | PC-17, TX-2 |
 
 ## 2.4 Variables (controlled list, version 1)
 
@@ -160,6 +161,8 @@ Every consequence names one variable from this list. Add a variable only by edit
 | `tax_share_borne` | Share of a tax's (or a mandate's) burden borne by a subgroup, signed relative to the other subgroups in the same market (increase means it bears more than they do). |
 | `lobbying_effort` | Resources spent seeking to change, extend or keep the policy. |
 | `resources_available_other_uses` | Resources available to actors for uses outside the target (the "unseen" bucket). |
+| `resource_stock` | The state of a shared natural stock (an aquifer's level, a fish stock). Chains through it are Tier C (CR-9, 0.7). |
+| `enrollment` | Number enrolled in a course of training or study. |
 
 **Out of scope for version 1.** Health, safety, environmental quality and nutrient intake have no variables. Reports say explicitly that these are not analyzed, rather than leaving them out silently.
 

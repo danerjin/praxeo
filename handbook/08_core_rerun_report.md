@@ -204,3 +204,54 @@ Of 481 consequences compared, 294 were matched; 264 of these (90%) agree in sign
 - In all, the corrections changed about 100 consequences, added about 120 and removed 5 (WE-028 C-15, WE-032 C-9 and C-14, WE-033 C-20 and C-21). The removals are claims that needed a premise the case lacks or that duplicated another row.
 
 The core-only re-runs are kept unchanged, as the record of the test.
+
+---
+
+# Third round: the held-out test, WE-036 to WE-045
+
+WE-036 to WE-045 were written with the catalog frozen at 0.8, on cases the 0.7 and 0.8 changes were not drawn from (`06_gaps.md`, 6.2f). They were then re-run blind from the core rules, as before, and compared by agents that had written neither version. Unlike the second round, this one is independent: no catalog change was made between writing the examples and the re-runs.
+
+Two lapses from the blind protocol were reported by the agents themselves: one read past the cut-off in the format reference (WE-021's comparison section, which cites patterns for another case); another ran one `git log` line after finishing its analyses. Neither re-run cites a pattern, and neither lapse concerned its own case.
+
+## Results
+
+| Case | M | V | S | OP | OC | P | K | A | E | J |
+|---|---|---|---|---|---|---|---|---|---|---|
+| WE-036 health cover mandate | 20 | 19 | 6 | 11 | 4 | 1 | 0 | 0 | 18 | 2 |
+| WE-037 ticket resale cap | 24 | 9 | 3 | 11 | 7 | 0 | 0 | 1 | 16 | 4 |
+| WE-038 municipal broadband | 14 | 10 | 4 | 8 | 1 | 0 | 0 | 2 | 7 | 4 |
+| WE-039 groundwater allocation | 23 | 5 | 2 | 14 | 4 | 0 | 0 | 0 | 20 | 0 |
+| WE-040 origin labeling | 25 | 13 | 0 | 10 | 7 | 1 | 0 | 0 | 10 | 6 |
+| WE-041 stadium bond | 15 | 10 | 3 | 12 | 10 | 3 | 0 | 0 | 16 | 6 |
+| WE-042 tariff drawback | 25 | 11 | 4 | 12 | 7 | 3 | 0 | 1 | 15 | 4 |
+| WE-043 lot size repeal | 11 | 9 | 2 | 13 | 6 | 0 | 0 | 1 | 17 | 3 |
+| WE-044 short-term rental ban | 30 | 10 | 6 | 14 | 5 | 4 | 0 | 1 | 14 | 6 |
+| WE-045 license recognition | 19 | 6 | 3 | 12 | 7 | 2 | 0 | 2 | 15 | 3 |
+| **Total** | **206** | **102** | **33** | **117** | **58** | **14** | **0** | **8** | **148** | **38** |
+
+Of 516 consequences compared, 341 were matched; 308 of these (90%) agree in sign. The 208 differences have 208 causes. **K is 0 for the third time.** Every step in ten cases written against a frozen catalog was derivable from CR-1 to CR-12.
+
+## What the round shows
+
+**The core rules held; several patterns did not.** The comparisons confirmed, from the core rules alone, every pattern failure the pattern versions had reported (RS-18, SB-10, EN-11, PC-8, PC-17 and RS-17's value clause), and found more:
+- **OC-8** gives the wrong sign where the counterfactual also borrows (a team that would have renovated with its own loan): other borrowers' rate is `ambiguous`. The CR-8 borrowing note shared the flaw. (WE-041)
+- **RS-17's value clause** failed a second time, on the 50-staff line. (WE-036)
+- **OC-3's fixed-budget clause** assumes the time comes from enforcing other rules; it can come from any other use of the agency's time. (WE-042)
+- **RS-16** misses a cost the policy puts on the substitute itself. (WE-040)
+- **RS-7's repeal clause** reads as if the old rule was always contested. (WE-045)
+
+**One promotion was wrong.** "Fixed cost per item reduces variety" was counted as used a second time in WE-040. The comparison showed the use was invalid: in the counterfactual each cut had one version, so a fixed cost per version cannot reduce the count. It stays a candidate.
+
+**Some "worked as written" verdicts were wrong.** The comparisons contradicted the pattern versions' own verdicts on CR-12 0.8 kind 2 (WE-039, misapplied), RS-17 (WE-036), the drawback as an export subsidy (WE-042, once holding costs are counted), and RS-8's Unless (WE-036, WE-044). Self-assessment by the analyst is not enough; the blind re-run is needed.
+
+**The Tier C problem is real.** Both versions, independently, met a Tier C chain opposing a Tier B chain with no rule for combining them (WE-039, WE-041, WE-044).
+
+**New calculus gaps raised by the core versions:** GAP-039-C1 (the counterfactual race to pump a shared stock: a physical relation, under Q20), GAP-039-C2 (the value of a lottery entry; changed no sign), GAP-045-C1 (how beliefs adjust after a policy stops conveying something: empirical). None produced a difference.
+
+**The recurring analyst errors are unchanged:** uncombined opposing chains (in both versions), employment signed alone, signs taken against the other reading or against no lobbying instead of the counterfactual.
+
+## Changes made in response: catalog 0.9
+
+- **Core rules.** CR-12: a rule for Tier C against Tier B (report the Tier B sign, qualified, and the combined sign at Tier C); what the response argument gives (not reversed; `increase` needs a partial response); kind 3; activities that exist only under the policy; flows and stocks. CR-8: the borrowing baseline, revenue bonds, tax-exempt interest, a permissive reading, mutual rights. CR-6: splitting a shift into price and quantity needs a premise; a public seller with an open quantity; a capped price with a free fee. CR-7: assets without a market price, contract terms that remove an option, persistence following the stock. CR-11: sellers' response to silence; beliefs after a signal ends. CR-1, CR-3, CR-4: operations that switch at a cap, refunds on a standard, lobbying in repeals.
+- **Patterns.** Corrected: RS-17, RS-18, SB-10, EN-11, OC-8, PC-8. Widened: PC-17, PC-19, RS-4, RS-7, RS-8, RS-9, RS-16, OC-3, OC-5, EN-6, TX-8. Promoted: RS-19, RS-20, OC-9, EN-12, EN-13, EN-14, EN-15. 98 patterns.
+- **Ontology and workflow.** Instrument `mandate_with_charge`; variables `resource_stock`, `enrollment`; for a repeal with no earlier analysis, derive the original rule first.

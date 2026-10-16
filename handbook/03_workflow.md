@@ -249,6 +249,8 @@ The core-only re-run (`08_core_rerun_report.md`) found that most errors, in anal
 
 ## Analyzing a repeal
 
+*0.9.* Where no earlier analysis of the original rule exists, derive its effects first, from the core rules, as a short table, and run the metamorphic check against that table.
+
 A repeal is analyzed with the same eleven steps, with three differences.
 
 1. **The counterfactual is that the policy stays in force.** Signs are relative to that path, not to the world before the policy.

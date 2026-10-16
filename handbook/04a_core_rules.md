@@ -54,6 +54,9 @@ A policy does not change anyone's ranking of ends, except through what it tells 
 - Where every member of a class faces the same operation but responds differently (some return containers and some do not), split the class by response, not by operation.
 - Information that changes how much an actor values an option (a calorie count) is not one of the four operations; it works through CR-11c.
 
+**0.9 clarifications.**
+- A single provision can perform different operations for one actor on either side of a threshold: a charge per worker capped per firm is operation 3 below the cap and operation 4 above it. Record the operation per range.
+
 ### CR-2 Choice
 
 **Statement.** Each actor chooses, from the options they believe open, the one they expect to serve their most highly ranked end. What an actor chooses reveals that they ranked it above the alternatives open at the time (demonstrated preference).
@@ -81,6 +84,9 @@ A loss by the actor's own ranking (a) is not the same as a fall in their spendin
 
 **Source.** HA ch. IV §4 (cost as the value of the satisfaction forgone); P&M ch. 2 §2.
 
+**0.9 clarifications.**
+- The note on refunded charges covers partial refunds and refunds computed on a standard rather than on what was used (yield tables, deemed amounts). Those who claim on the standard and use less than it receive more than they paid; those who use more receive less. Split the class by its position against the standard.
+
 ### CR-4 Response at the margin
 
 **Statement.** Suppose a change makes option x worse relative to option y for an actor (x costs more, brings less, or y improves). Then:
@@ -106,6 +112,9 @@ The mirror case (x made better) reverses every direction.
 - *Means over time.* A transfer financed by borrowing that the recipient expects to repay through later taxes is, for that recipient, partly a loan at the government's rate: it changes the cost of present against future goods for those who could not borrow on such terms, and so falls under CR-4 proper, not only under "a change in means alone".
 - *Saving is a use.* Saving and repaying debt are among the uses on which spending rises or falls when means change. By LW-2, the use added is the next in the actor's own ranking and the use given up is the last ranked; this is a statement about rank and names no good. With lumpy goods it may be a new kind of item rather than more of an old one.
 - *Fixed costs per item offered.* A cost incurred once for each item a seller offers (testing and labeling a menu item, certifying a model) bears on which items are offered, not on the price of each unit sold: it is a cost of the option of offering the item (x: offer it, y: drop it). *0.8:* the same holds for a cost fixed per outlet or per firm (a menu board, a registration): it bears on whether the outlet or firm operates, and on the size at which it pays to do so, not on the price of each unit. The unit price is signed only with a premise about entry and exit.
+
+**0.9 clarifications.**
+- *Lobbying in repeals.* Applying the rule to political action (x: accept, y: lobby), remember that in a repeal the counterfactual is the old rule still in force, which may itself have been contested. Lobbying is signed against that path, not against no lobbying; where the old rule was contested, the sign needs a premise.
 
 ### CR-5 Exchange
 
@@ -151,6 +160,11 @@ The full price, meaning the money price plus everything else given up, moves tow
 - *Existing contracts.* Terms fixed by existing contracts count as regulated while those contracts last. *0.8:* for at-will employment and other contracts without a fixed term, terms are regulated only for as long as changing them costs more than it gains (custom, pay scales, the cost of renegotiating): treat their stickiness as a premise with a probability, not as a rule.
 - *0.8. A free price's rise is enough.* Where a margin is a free price (a rater's fee, a lease price), its rise satisfies the "at least one margin" conclusion by itself; waiting or other non-price margins then need their own premise.
 
+**0.9 clarifications.**
+- *Splitting a shift.* A shift in demand (or supply) gives the direction of the pressure; how it divides between price and quantity needs a premise about the other side's response (supply that can or cannot expand in the period). Sign the price and the quantity separately only with that premise; otherwise record them as a group.
+- *A public seller with an open quantity.* Where the state sells at a set price and supplies whatever is demanded (a utility, a network with spare capacity), there is no excess demand to ration: the main clause applies in the markets it competes in. Buyers move to it by CR-4 and rival sellers face lower demand (CR-9), with the price and quantity split as above. Where capacity can be added from the fees it earns, but only after a lag, the public-supply clause applies until the capacity arrives.
+- *A capped price with a free fee.* Where a capped price can be paid together with a fee that is not capped (a platform's charge on a capped resale), the buyer's price is the total paid. Record the capped part and the fee as two items of `price_paid` (CR-12, two items) where the policy moves them differently.
+
 ### CR-7 Equalization across uses
 
 **Statement.** Wherever a means (labor, capital, money, land, a purchase, an activity, a moment in time) can be moved between uses that serve the same end, its owners move it from the use that yields less to the use that yields more, until the difference in yield at the margin is no greater than the cost of moving. Hence:
@@ -171,6 +185,11 @@ The full price, meaning the money price plus everything else given up, moves tow
 - *Gross and net burdens.* Where a mandated term is worth something to the side that receives it, the burden "borne" by the paying side is the cost net of anything it recovers through the other terms. Say whether a share is gross or net.
 - *A tax whose revenue buys something the payers value.* Where the payers of a tax receive part of what it funds (employers whose staff ride the transit their payroll tax pays for), their net burden is smaller than the tax; sign each side separately and combine only with a premise (CR-12e).
 - *Claims before creation.* Where the claim to a right the policy will create travels with a tradable asset before the right exists (quota shares allocated to vessels), the claim's value is capitalized into that asset when the allocation rule becomes expected, and captured by its holder then. *0.8:* where the qualifying history was fixed before the measure became expected, the value is a windfall to its holders. Where actors compete to qualify for the claim (a race to build catch history), part of the value is used up in the competition (CR-8c).
+
+**0.9 clarifications.**
+- *Assets without a market price.* CR-7c applies to durable assets whether or not they can be sold. Inventories that take time to finish (cattle on feed, stock in process) are durable assets in this sense. For an asset that cannot be sold (a license, training), the change in its expected yield is a loss or gain by the holder's own ranking (CR-3a); a change in money earnings needs a premise about the holder's next-best use.
+- *A contract term that removes an option.* Where an agreement binds an asset's owner (a team's commitment not to relocate), the asset's value falls by the value of the option given up, against whatever the agreement pays for it. Sign the net only with a dominance premise.
+- *Persistence of an asset's value.* After a repeal, an asset price persists only as far as the stock its value depends on persists (homes built under the rule, a scarce license count). Give its persistence from that stock, not from who held the asset when the change was capitalized.
 
 ### CR-8 Conservation of means
 
@@ -197,6 +216,11 @@ The full price, meaning the money price plus everything else given up, moves tow
 - *0.8. Contingent payers and capped budgets.* Where a budget pays only if something happens (a general fund that covers a shortfall in a dedicated tax), record its payers per reading or with a premise on the contingency. Where a law promises more than its budget can pay, record who bears the shortfall per reading (claimants paid less or later, or a group of other payers if it is made up).
 - *0.8. Value created by ending a race.* Where a policy ends a competition that used up means (a race to fish, to queue, to qualify), part of the value of the rights it creates is means no longer used up (a), which no one pays. Only the rest is a transfer under (b), with a payer to name.
 - *Non-rival means.* Knowledge, techniques and know-how can be used by several actors at once without being used up. (a) applies to the time and materials used with them, not to the knowledge itself. Whether a policy that spreads knowledge raises total output therefore cannot be signed by conservation of means; it needs a premise. Whether this is a gap in the calculus is `06_gaps.md`, Q21.
+
+**0.9 clarifications.**
+- *The borrowing baseline.* Public borrowing is compared with the borrowing that would have taken place without the policy, including private borrowing for the same purpose (a team that would have renovated with its own loan). Where the counterfactual also borrows, the effect on other borrowers' interest rate is `ambiguous` without a premise on the difference. Borrowing repaid from the project's own fees (revenue bonds) implies later taxes only for any shortfall. Interest exempt from tax reduces tax receipts, and those who make up the receipts are payers too. The lenders' side gives no sign by itself: they would have lent elsewhere.
+- *A reading that permits.* Where one reading of an unclear provision allows a source of funds without requiring it, record the payers under that reading as a group that includes the permitted source.
+- *Mutual rights.* Where every member of a class both holds a right and is bound by it (owners under a covenant that each can enforce), voiding it is not a transfer between classes: each member loses the right to enforce and gains freedom from enforcement. Sign the net per member only with a premise about which they value more.
 
 ### CR-9 Propagation
 
@@ -242,6 +266,10 @@ The value to anyone of a means depends on the ends it serves and on what it is u
 - *What a sign needs.* A consequence of information conveyed by a policy needs two premises: what the actors believed before (otherwise nothing changes), and which way those who learn something move (otherwise the direction is open).
 - *Silence.* Where a policy requires some sellers to disclose and exempts others, buyers may infer something from an exempt seller's silence. That inference is information conveyed by the policy and falls under (c), with its own premise.
 
+**0.9 clarifications.**
+- *Sellers' response to silence.* Where buyers infer something from an exempt seller's silence, exempt sellers whose goods would compare well choose to disclose voluntarily (CR-4). Record it.
+- *When a policy stops conveying something.* After a repeal, or when a signal becomes noisier, buyers' beliefs adjust as they learn; how fast is empirical. Record such consequences with `persistence: partial` and no long-run sign unless a premise gives one.
+
 ### CR-12 Composition
 
 **Statement.** When several chains of reasoning reach the same actor class, variable and horizon:
@@ -262,6 +290,12 @@ The value to anyone of a means depends on the ends it serves and on what it is u
 - *0.8. Three kinds of opposing chain.* (1) A chain no rule derives: a Tier C note, as above. (2) A chain the rules derive but that needs a premise the case lacks: it is a chain. State the premise with an estimated probability; if p is at least 0.5 the result is `ambiguous` without a dominance premise; if below 0.5, report the derived sign and record the chain in section 10 with its premise. (3) A chain whose own sign is `ambiguous`: it can push either way, so the combined sign is `ambiguous` unless a dominance premise covers the other chain against both of its directions.
 - *0.8. Two items in one variable.* Where a policy moves two named items of the same variable in opposite directions (mandated sick time up, other benefits down, both `non_wage_compensation`), record each item as its own consequence with a qualifier, and record the total separately, combined under (b).
 - The same action at different times is "the same" for timing shifts only if it is paid and performed in the same way; where the policy changes how it is paid (paid absence where it was unpaid), record the change in kind separately from any change in timing.
+
+**0.9 clarifications.**
+- *0.9. Tier C against Tier B.* Where a Tier C chain (through a `proximity` or `shared_facility` relation) opposes a Tier B chain on the same key, record two consequences: the Tier B chain's sign at Tier B, qualified "not counting effects through [relation]", and the combined sign at Tier C (`ambiguous` unless a dominance premise covers the Tier C chain). The Tier C chain never lowers the tier of the Tier B consequence by itself, and never raises its own tier by being combined.
+- *0.9. What the response argument gives.* CR-12e's response argument shows that the result is not reversed: the price stays at or above its old level. To report `increase` rather than an increase or no change, the response must be partial: state that supply cannot fully expand at the old cost in the period, as a premise or from the case's figures.
+- *0.9. Kind 3.* A chain whose own parts push in opposite directions is a kind (3) chain under the 0.8 note, unless its parts cancel by construction (CR-12f).
+- *0.9. Activities that exist only under the policy.* An activity the policy creates (filings to hold a place in a queue, refund claims) is an `increase` in its window against a counterfactual of none. Say whether a timing consequence is signed on a flow (actions in the window) or on a stock (employment at a date).
 
 ---
 
