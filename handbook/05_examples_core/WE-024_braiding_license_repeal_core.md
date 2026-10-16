@@ -216,3 +216,92 @@ CR-8's symmetry: buyers' lower prices (C-3, C-30) are matched by licensed braide
 - CR-11b is worded only for exchanges moved outside the legal market. Its use for exchanges moved back in relies on the symmetry test in the preamble rather than on the rule's own statement.
 - CR-10b and CR-8c on sunk training: the training cost is used up on both the repeal path and the counterfactual, so it is not a signed consequence of the repeal; but it is the clearest case of an effect of the original policy that persists. The persistence field was used to record it on C-12 and C-9; the core rules do not say where such a persisting cost belongs when it has no sign against the counterfactual.
 - CR-4 for lobbying on a repeal (C-19): as in the other repeal cases, the counterfactual also has defensive lobbying. Signed increase on the ground that the repeal makes accepting worse for schools and licensees, but the rule does not settle the comparison across paths.
+
+## Comparison with the pattern-based analysis
+
+The two versions agree on the core of the abolition. Legal sellers increase and fewer of them are licensed. Informal braiding comes into the open. Entry rises and some former braiders return, only in part. Prices fall and licensed braiders receive less. Enrollment falls. Home braiding falls. Search costs fall and quality information rises. Braiders invest in premises, and enforcement ends. Persistence is partial for the return of former braiders in both. There are two real differences. (1) Lobbying: the pattern version calls it ambiguous for all parties; the core version signs schools' and licensees' lobbying as an increase, without counting the defensive lobbying they would have done under the counterfactual, and leaves braiders out. The pattern version is right. (2) Quality: the pattern version reports an increase in `quality_per_unit` and a fall in `quality_variability`; the core version reports neither level nor spread, only `quality_information` and disputes. These are judgment calls, because both need a step from better information to sellers' quality choices that neither version states as a premise. The core version traces more of the market: salons, other cosmetology services, supplies, instructors, license-fee and income-tax revenue, and customers' means. Its sign for braiding supplies (C-25) contradicts its own WE-003 analysis.
+
+**Counts:** M 15, V 3, S 1, OP 11, OC 2. Causes over S, OP and OC: P 0, K 0, A 1, E 10, J 3.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-2 | M | | |
+| C-2 | C-6 | M | | |
+| C-3 | C-1 | M | | |
+| C-4 | C-7 | M | | |
+| C-5 | C-10 | V | | Compliance cost no longer incurred, vs means freed: the same release of hours and tuition. |
+| C-6 | C-9 | M | | |
+| C-7 | C-8 | V | | `employment` in braiding vs `job_changes` (return to braiding). Persistence partial in both (A-15). |
+| C-8 | C-13 | M | | |
+| C-9 | C-19 | S | E (core) | In the counterfactual, schools and licensees keep lobbying to defend the license against braiders who seek an exemption (WE-003 core C-17, C-18). After the abolition they lobby to restore it and braiders defend the exemption. With stakes on both paths, CR-12b gives ambiguous, as the core version itself notes in its gaps. The pattern version is right; the core version also omits braiders' lobbying. |
+| C-10 | C-18 | M | | |
+| C-11 | C-3 | M | | |
+| C-12 | C-11 | M | | |
+| C-13 | C-15 | M | | |
+| C-14 | C-22 | M | | |
+| C-15 | none (the core version lists only a fall in quality as "not reported") | OC | J | The pattern version argues an increase: A-10 removes the training chain, and customers move from home and hidden providers to an open market with reputations and recourse. The core version considered only the training chain. The rise needs a step from better information to higher quality supplied (CR-4 for sellers: reputations make high quality pay more; CR-11b). The step is plausible and derivable, but its strength is an unstated premise. Both positions are defensible. |
+| C-16 | C-11, C-12 | V | | Licensed braiders' `earnings` decrease vs a lower net price and a lower value of the license for braiding. The core version does not record earnings, but its two consequences carry the same claim. Both treat the training as sunk on both paths. |
+| C-17 | C-14 | M | | |
+| C-18 | C-4 | M | | |
+| C-19 | C-29 | M | | |
+| C-20 | C-20 | M | | |
+| C-21 | none | OC | J | RS-10's reverse clause gives `quality_variability` decrease, because buyers can screen sellers through reviews and recourse. Against it, untrained new entrants widen the spread of sellers. The core version recorded the information chain (C-20, C-21 disputes) but not the spread. The pattern sign is plausible, not certain. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-5 | OP | E (pattern) | Fines on pending cases not paid (R2 drops pending cases). Tier A. |
+| C-16 | OP | E (pattern) | Salons no longer check licenses or risk fines (TX-5 analog in reverse). |
+| C-17 | OP | E (pattern) | Salons employ more braiders. This mirrors the WE-003 core consequence for employers (C-6). The pattern version has no salon actor class. |
+| C-21 | OP | E (pattern) | `disputes_settled_outside_courts` decrease. RS-10's reverse clause names this variable, so the pattern version left out part of the pattern it cited. |
+| C-23 | OP | E (pattern) | Prices of cutting, coloring and chemical services fall as licensed braiders move into them. This propagates the pattern version's own C-8 (CR-9). |
+| C-24 | OP | E (pattern) | The mirror of C-23 for incumbent sellers of those services. |
+| C-25 | OP | E (core) | Braiding supplies: increase. WE-003 core C-16 found this ambiguous because home and informal braiding use the same supplies. On the abolition, home braiding falls (C-15) while paid braiding rises, so by symmetry the sign is ambiguous. The core version kept one chain only. |
+| C-26 | OP | E (pattern) | Fewer instructors (CR-9, LW-10 from enrollment). |
+| C-27 | OP | E (pattern) | License fees from braiders fall (CR-8b). |
+| C-28 | OP | A | Income tax on braiding rises as work comes into the open. Rests on new premise A-N1 (0.6). |
+| C-30 | OP | J | Customers' means rise with lower prices (CR-8 symmetry). The pattern versions treat this as the price consequence seen from the budget. |
+
+### Findings
+
+- **No pattern found wrong.** EN-1, EN-2, EN-3 and RS-10 "in reverse" agree with direct derivation. The one pattern-level question is RS-10's reverse clause for `quality_variability`. It assumes that better information narrows the spread, while free entry of untrained sellers widens it. The clause states only one of two chains, so it may overclaim on a repeal that also lowers the entry barrier.
+- **Pattern version omissions:** salons, adjacent cosmetology services, instructors, license fees, pending fines, and RS-10's disputes variable.
+- **Errors in the core version:** (1) C-19 signs lobbying from one path only (as in WE-022 and WE-023). (2) C-25 drops the home-braiding chain that its WE-003 counterpart contained.
+- **Limit of the core rules (not K):** as in the other repeals, CR-4 does not say how to sign the change in lobbying when both paths carry lobbying. CR-11b is worded one way only (core gap (c)), and nothing in the core rules links better information to the level or spread of quality supplied without a further premise.
+
+## Metamorphic check (core versions)
+
+Against `WE-003_braiding_license_core.md`. Persistence is compared with a Westmark that never licensed braiding.
+
+| Original consequence ID | Its sign | Repeal consequence ID(s) | Sign | Reverses? | Persistence | Reason |
+| --- | --- | --- | --- | --- | --- | --- |
+| C-1 (legal sellers) | decrease | C-1 | increase | partly reverses | partial | Many former braiders do not return (A-15). New entrants and informal braiders fill part of the gap. |
+| C-2 (braiders' compliance cost) | increase | C-10 (students), C-16 (salons) | decrease | partly reverses | full for training already completed | Tuition and hours already spent are sunk on both paths. |
+| C-3 (employment in paid braiding) | decrease | C-8, C-14 | increase | partly reverses | partial | (A-15) |
+| C-4 (braiders' means) | decrease | C-10 | increase (for those still training) | partly reverses | full for those who finished | |
+| C-5 (informal activity) | increase | C-6 | decrease | reverses | none | |
+| C-6 (employers' unlicensed braiders) | decrease | C-17 | increase | reverses | none | |
+| C-7 (price of legal braiding) | increase | C-3 | decrease | reverses | partial (medium) | Fewer sellers return than left. Free entry (A-3) should close the gap in the long run. |
+| C-8 (legal braiding traded) | decrease | C-14 | increase | reverses | partial | |
+| C-9 (home braiding) | U1-a: increase; U1-b: ambiguous | C-15 | decrease | reverses (U1-a) | none | The repeal analysis carries no reading for home braiding, because the exemption covers braiding for pay only. |
+| C-10 (search cost) | increase | C-22 | decrease | reverses | none | |
+| C-11 (quality information, informal) | decrease | C-20 | increase | reverses | none | |
+| C-12 (disputes outside courts) | increase | C-21 | decrease | reverses | none | |
+| C-13 (entry, long) | decrease | C-7 | increase | reverses | none | |
+| C-14 (licensed sellers' net price) | increase | C-11 | decrease | reverses | none (price); full (sunk training) | |
+| C-15 (school places) | increase | C-9 | decrease | reverses | none for new enrollment; full for training completed | |
+| C-16 (braiding supplies) | ambiguous | C-25 | increase | does not mirror | none | The repeal kept only one of the original's two chains (core error). |
+| C-17 (braiders' lobbying for an exemption) | increase | not recorded | — | not recorded | n/a | The repeal omits braiders' defensive lobbying. |
+| C-18 (licensees' and schools' lobbying) | increase | C-19 | increase | does not reverse | n/a | The stake moves from defending to restoring. Should be ambiguous (see comparison). |
+| C-19 (enforcement cost) | increase | C-4 | decrease | reverses | none | |
+| C-20 (buyers' means) | decrease | C-30 | increase | reverses | partial | |
+
+**Agreement with the pattern version's metamorphic check.** The two checks agree on reversal for price, net price, home braiding, search cost, informal activity, school demand, quantity traded and enforcement. They agree on "partly reverses" with partial persistence for legal sellers and former braiders, and full persistence (or "sunk on both paths") for training already completed. They agree on "does not reverse" for lobbying. They disagree in four places.
+
+1. **Quality.** The pattern check has decrease → increase, "reverses". Neither core analysis records `quality_per_unit`, so the core check cannot test it.
+2. **Licensed braiders' earnings.** The pattern check has ambiguous (DM-3) → decrease, "does not reverse". The core versions record net price instead (increase → decrease, reverses). Both explanations rest on the same fact: the training is sunk on both repeal paths.
+3. **Persistence on price and quantity.** The core check gives partial (C-3, C-14), because fewer sellers return than left. The pattern check gives "—" on the ground that new entrants replace former braiders. With free entry the pattern value holds in the long run and the core value in the medium run: a horizon issue, which per-horizon persistence (2.5) would settle.
+4. **Supplies.** This row exists only in the core check, which exposes a symmetry error in the core repeal.

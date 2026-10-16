@@ -239,3 +239,64 @@ K5's earmark: under CR-8d, money earmarked for the quit program frees general re
 - CR-7b as a dominance premise (C-4, C-23): CR-7b says the lasting burden settles on means that cannot move and on "actors without alternatives". Applied to buyers versus sellers it decides the split; applied within buyers (near against far from the border) it decides a second split. The rule does not say that both readings are intended, nor whether "lasting" excludes the short-run incidence reported here.
 - CR-4 for floor stock (K2): K1 alone would make stamping before the date better; K2 cancels that. CR-4 is stated for one change; with two components acting on the same pair of options in opposite directions and exactly cancelling, the analysis used CR-12 to combine, which gives "no change" rather than "ambiguous". CR-12 does not mention exact cancellation by construction.
 - CR-4 exception (C-5): for heavy smokers the price rise takes a large share of means. The exception speaks of shifting "their ranking among other options in the opposite direction"; it is unclear whether it can reverse the direction for the taxed good itself. The analysis assumed it cannot here (supported by A-2).
+
+## Comparison with the pattern-based analysis
+
+**Summary.** Both versions agree on the main chains: a higher shelf price borne mostly by smokers, fewer stamped sales, cross-border buying, casual and then organized smuggling, switching to other tobacco and reclassified products, buying ahead before 1 January, the floor-stock paperwork, trip goods moving across the line, interior smokers bearing more, the neighbors' revenue gain and revenue below the static projection. The largest difference is coverage. The core version omits a run of consequences the pattern version derives and the core rules support: RS-10's search cost and quality variability in the informal trade, the TX-10 base effects (Marren sales tax on trip goods down, other-tobacco tax up), border retailers' lower net price, light smokers bearing more than heavy smokers, border-store employment, and the travel cost of crossing (which the core version misrecords under transaction_size). The pattern version in turn omits capitalization on both sides of the border (SB-4) and the enforcement cost of the eight new agents (OC-3). There are two sign disagreements. On cigarette tax revenue, the core version adds A-N1 (p 0.85: taxed sales fall by less than 57%), which is well supported by experience, and signs it as an increase; the pattern version leaves it ambiguous. This is a difference in premises. On the funding of enforcement, the pattern version applies OC-3 mechanically: "taxpayers' resources decrease". But K4 is funded from K5's earmark of the new tax, so its cost is borne by smokers and by the general fund's forgone share of new revenue, not by other taxpayers. Given its own ambiguous revenue sign, the pattern version cannot sign taxpayers' resources as a decrease. Finally, the pattern version lists a Tier C consequence from TS-4 (further enforcement powers), a pattern the catalog itself marks as not derivable.
+
+**Counts.** M 13, V 5, S 2, OP 5, OC 11. Causes over S/OP/OC: P 2, K 0, A 2, E 11, J 3.
+
+### Pattern version → core version
+
+| Pattern ID | Core ID(s) | Class | Cause | Note |
+|---|---|---|---|---|
+| C-1 | C-1 (and C-4) | M | | Shelf price increase; the core version also records smokers' tax_share_borne relative to sellers, which DM-1 tells the pattern version to record and which it states only in section 7. |
+| C-2 | C-15 | M | | Stamped sales in Marren decrease. |
+| C-3 | C-8 | M | | Cross-border purchases increase. |
+| C-4 | C-10 | V | | Casual bootlegging: bootleggers vs cross-border buyers carrying above the allowance. |
+| C-5 | C-11 | M | | Organized smuggling increase, medium. |
+| C-6 | C-6 | M | | Substitutes increase. |
+| C-7 | C-7 | M | | Reclassification by producers increase. |
+| C-8 | C-13 | V | | Buying ahead: quantity_traded vs quantity_demanded in the window. |
+| C-9 | C-14 | M | | Floor-stock compliance_cost increase. |
+| C-10 | C-27 | M | | Lobbying increase (both cite A-8). |
+| C-11 | C-17, C-18 | V | | Neighbors' retailers: one quantity_traded entry vs separate cigarette and trip-good entries. |
+| C-12 | C-16 | V | | Marren border retailers' trip goods decrease: quantity_traded vs quantity_complement. |
+| C-13 | — | OC | E (core) | Border-store employment decrease. Derivable (CR-9, LW-10 from C-16). Both TX-3, which the pattern cites, and the core's own practice elsewhere use a plain employment decrease where LW-10 supports only employment or hours (a group). |
+| C-14 | — | OC | E (core) | Border retailers' net_price_received decrease. CR-7b: near the line, buyers have an alternative, so more of the tax settles on those sellers. The core version applied CR-7b within buyers (C-23) but not across sellers. |
+| C-15 | C-23 | M | | Interior smokers bear more. |
+| C-16 | — | OC | E (core) | Light smokers bear more than heavy smokers. The core version has the mechanism (A-11, fixed trip cost) but records it only as transaction_size (C-9). CR-7b within buyers gives the pattern's claim, exactly as for C-23. |
+| C-17 | — | OC | E (core) | search_cost increase for buyers of informal cigarettes (CR-11b: no open advertising). |
+| C-18 | — | OC | E (core) | quality_variability increase in informal trade (CR-11b with CR-4: sellers outside courts and brands face less penalty for counterfeit or stale product). |
+| C-19 | C-19 | M | | Neighbors' tax revenue increase. |
+| C-20 | — | OC | E (core) | Marren sales tax on trip goods decrease (CR-8b, CR-9: the base moves with the trip). The core version recorded the trip-goods shift (C-16) but not its tax consequence. |
+| C-21 | C-3 | M | | Revenue below the static projection. |
+| C-22 | — | OC | J | Earmark fungibility (SB-7, CR-8d). The pattern version records it as quit-program clients' quantity_traded "funded from general revenue" decrease. This is a valid statement about general funding, but misleading as a statement about clients, whose total services probably rise by less than the earmark. The core version folded it into C-26 and called it a vocabulary gap; `quantity_traded` with a named market could have recorded the program's general-revenue funding. |
+| C-23 | — | OC | P | Further enforcement powers (TS-4, Tier C). The catalog marks TS-4 as not derivable from the core rules and keeps it out of Tier A and B results. Listing it as a consequence, even at Tier C, reports something the calculus cannot support. The core version is right to omit it. |
+| C-24 | C-25 | M | | Smokers' resources decrease. |
+| C-25 | C-5 | V | | Purchases forgone: quantity_traded (priced out entirely) vs quantity_demanded from all sources. |
+| C-26 | — | OC | E (core) | Border smokers' search_cost (travel) increase (CR-8c). The core version lists travel time and fuel under C-9 transaction_size in its opportunity-cost table; that is a misrecording. |
+| C-27 | C-26 | S | P | Pattern: taxpayers' resources decrease (OC-3); core: general-fund recipients' resources increase. The enforcement expansion is funded from K5's earmark of the new tax (the pattern version's own classification says so), so OC-3's "funded by taxpayers" does not apply. The cost is borne by smokers (C-24) and by the general fund's forgone share of new revenue. With revenue ambiguous in the pattern version itself, the general fund's net position, and so other taxpayers', is ambiguous at best. With A-N1 it is an increase, as the core version says. |
+| C-28 | C-12 | M | | quality_information decrease in informal trade. |
+| C-29 | — | OC | E (core) | Other-tobacco tax revenue increase (base shift, CR-8b with C-6, C-7). The core version recorded the substitution but not its revenue effect. |
+| — (cigarette tax_revenue, ambiguous) | C-2 | S | A | The core version adds A-N1 (p 0.85, taxed sales fall by less than 57%) and signs revenue as an increase. Both follow CR-12b correctly given their premises. The core's premise is well evidenced (state cigarette tax increases nearly always raise revenue), so the core sign is the better forecast. The pattern version's caution is defensible only if no such evidence is admitted. |
+| — (new stores' earnings at the line, ambiguous) | — | OC | J | DM-3 by design. The core version records entry (C-20) and site values (C-22) instead. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+|---|---|---|---|
+| C-9 | OP | J | Cross-border buyers buy by the carton (transaction_size increase). Valid (fixed trip cost, A-11). The pattern version used the same mechanism for incidence (C-16) instead. |
+| C-20 | OP | A | Retailers near the crossings increase in number, resting on the new premise A-N2 (expectations of retailers and site owners). The pattern version implies it in its DM-3 entry but does not list it. |
+| C-21 | OP | E (pattern) | asset_value decrease for Marren border retail businesses and sites. SB-4 covers a lasting change that lowers returns on assets in fixed supply; the pattern version did not apply it. |
+| C-22 | OP | E (pattern) | asset_value increase for retail sites near the crossings in Dunmarch and Kessick; SB-4 again. |
+| C-24 | OP | E (pattern) | enforcement_cost increase for the eight new agents (K4). OC-3 gives it directly; the pattern version recorded only the TS-4 escalation (C-23) and the funding entry (C-27). |
+
+### Findings
+
+- **Pattern misapplied (pattern version C-27):** OC-3 assumes enforcement is funded by taxpayers; here it is funded from an earmark of the new tax. The consequence should name smokers and the general fund, and its sign depends on the revenue sign. The catalog could add to OC-3: "where the policy funds its own enforcement from its revenue, apply CR-8b to that revenue instead".
+- **Pattern not derivable (pattern version C-23):** TS-4 is quarantined in catalog 0.4 as not derivable. A worked example should not list a TS-4 consequence in the normal-form list, even at Tier C; it belongs in a note.
+- **Premise difference (revenue):** the core version's A-N1 settles the sign. TX-9 and TX-10 in the pattern version do not prevent adding such a premise; the pattern version chose not to.
+- **Core-version errors:** eight omissions that the core rules would have caught (RS-10-type information effects under CR-11b; TX-10-type base effects under CR-8b and CR-9; CR-7b applied to border sellers and to light smokers; border-store employment; travel cost). Travel time is misrecorded as transaction_size. The "no variable for a program's budget" gap is overstated.
+- **Pattern-version omissions:** SB-4 on both sides of the border, the OC-3 enforcement_cost.
+- **Core rules:** no genuine limit. The one pattern consequence the core cannot derive (C-23, TS-4) is one the catalog already marks as not derivable.
