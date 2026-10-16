@@ -201,6 +201,6 @@ Of 481 consequences compared, 294 were matched; 264 of these (90%) agree in sign
   - WE-032: a medium-run ambiguity for employers whose staff do not use transit.
   - WE-034: the core version's single-member sign for funded training.
   - WE-035: a fall in item variety, since the opposing chain (new lighter items) is derivable.
-- In all, the corrections changed about 90 consequences, added about 125 and removed 5 (WE-028 C-15, WE-032 C-9 and C-14, WE-033 C-20 and C-21). The removals are claims that needed a premise the case lacks or that duplicated another row.
+- In all, the corrections changed about 100 consequences, added about 120 and removed 5 (WE-028 C-15, WE-032 C-9 and C-14, WE-033 C-20 and C-21). The removals are claims that needed a premise the case lacks or that duplicated another row.
 
 The core-only re-runs are kept unchanged, as the record of the test.
