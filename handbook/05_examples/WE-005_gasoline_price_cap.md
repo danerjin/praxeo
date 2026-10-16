@@ -1,6 +1,6 @@
 # WE-005 Retail gasoline price cap after a refinery outage
 
-Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.5)  |  Rule catalog version: 0.5  |  Status: awaiting expert review
 
 A stylized policy in a fictional state. It resembles emergency fuel-price orders that governments sometimes issue after a supply disruption, but it is not modeled on any particular one. The probabilities are illustrative; the evidence column says what a real analysis would cite.
 
@@ -24,7 +24,7 @@ Unclear provisions: whether stations may limit the quantity sold per customer, s
 |---|---|---|---|
 | K1 | Triangular: fixes the terms of exchange between stations and drivers | Yes, while the market price would stay above $4.20 (A-1). As the refinery is repaired and cargoes arrive, the market price would have fallen, so the cap may stop binding before Day 95. | PC, RS, TS |
 | K2 | Triangular | Yes, by its text; it closes the most direct ways to charge more than the cap | RS-2, RS-3 |
-| K3 | Binary: funded by taxpayers | Yes | OC-3 |
+| K3 | Binary: funded by an emergency appropriation from the general fund, a budget that rises with the new task, so taxpayers bear it (OC-3, first funding case) | Yes | OC-3 |
 
 ## 3. Actor classes
 
@@ -63,11 +63,16 @@ The visible effect: drivers who fill up pay at most $4.20 for regular instead of
 | C-12 | `drivers` | `quantity_demanded` (Days 3 to 5, between announcement and effective date) | decrease | short | RS-8 | A-8 |
 | C-13 | `stations` | `quantity_demanded` (wholesale purchases, Days 3 to 5) | decrease | short | RS-8, TS-7 | A-1, A-8 |
 | C-14 | `refiner.port_aldis` | `maintenance_spending` (overtime and expedited parts to finish the repair sooner) | decrease | short | PC-12, RS-6, LW-4 | A-1, A-7, A-9 |
-| C-15 | `stations` | `lobbying_effort` (for a wholesale cap or an early end to the order) | increase | short | RS-7 | A-1 |
+| C-15 | `stations` | `lobbying_effort` (for a wholesale cap or an early end to the order) | increase | short | RS-7 | A-1, A-16 |
+| C-25 | `suppliers` | `inventory_held` (in terminals, last days before Day 95) | increase | short | RS-8, TS-7 (the return to holding product rises as the end of the cap approaches) | A-1, A-13 |
 
 C-10 applies PC-5 at a short horizon. PC-5's default horizon (medium to long) reflects durable capital that wears out slowly (TS-1). Here the resource that moves is not a building but a tanker cargo or a day's pipeline shipment, which can be sent elsewhere within days. A trader deciding where to send a cargo of Corvane-blend gasoline compares the price it can fetch in Corvane with the price elsewhere (LW-4). The cap lowers the first, so fewer cargoes are ordered for Corvane and more of the in-state refiners' output goes through the pipeline to Brennick.
 
 C-10, C-11 and C-14 apply PC-12 (a ceiling passes up to the inputs). Stations are the only large buyers of wholesale gasoline in Corvane. If they cannot charge more than $4.20, they cannot pay more than $4.20 less taxes and costs. PC-12 says that either the wholesale price for Corvane sales falls, or stations buy less, or both. Which branch applies depends on the supplier's other outlets. Cargo traders have other buyers (A-6), so for them the quantity branch applies: fewer cargoes come (C-10). Most in-state refinery output has no outlet but Corvane stations in the short run, because the pipeline to Brennick carries only about a tenth of Corvane's consumption (A-7), so for that output the price branch applies (C-11). C-14 follows from either branch: the owner of the damaged refinery earns less from output sold before Day 95 than it would have, so it has less reason to pay for overtime and air-freighted parts to finish sooner (RS-6: a lower expected return on putting resources into the activity).
+
+C-5, C-6, C-7 and C-9 sign members of PC-2's group (waiting, search, non-price allocation, side payments through resale) one by one. Each rests on its own premise that the margin is open and used here: drivers queue and search rather than give up the car (A-3); stations may set per-car limits and favor regular customers (A-4); resale in cans goes undetected (A-5).
+
+C-25: suppliers who expect the order to end on Day 95 (A-13) gain by holding product in terminals in its last days and selling it just after. This is a timing shift, signed per window: stocks held before Day 95 increase (C-25); supply in the weeks after combines the release of those stocks with the slower repair (C-24, section 7).
 
 C-12 and C-13: between the announcement on Day 3 and the cap on Day 5, drivers who can wait for the lower price do, and stations avoid buying wholesale stock at Day 3 prices that they would have to sell at the cap (RS-8; for stations, TS-7: the expected cap lowers the return to holding stock for the capped period). Both shift purchases to Day 5, so the cap starts with low station stocks and a burst of demand.
 
@@ -95,14 +100,14 @@ Pruned: the effect on prices in Brennick. It is at depth 3, falls on diffuse bys
 |---|---|---|---|---|
 | `drivers.border`, `cross_border_purchases`, short | Queues and dry stations at home raise the cost of buying in Corvane (C-5, C-6), so more drivers cross. | The home price falls from about $5.10 to $4.20, so the money saved by crossing to Brennick (about $4.00) falls from about $1.10 to $0.20 a gallon (C-1). | None | **ambiguous**. It depends on how long the queues are compared with how much drivers value the money saved. Without the cap, many eastern drivers would cross anyway, for the price. |
 | `drivers`, `full_cost_per_unit` (per gallon: money price plus the value of time queuing and searching and of informal premiums), short | Wait, search and informal premiums (C-5, C-6, C-9). | Lower money price (C-1). | None | **ambiguous** (C-23). Who gains and who loses is clearer: among drivers who obtain fuel, those whose time is cheap to them come out ahead of those whose time is dear to them (C-7). |
-| `suppliers`, `quantity_supplied` (first weeks after Day 95), short | Product held in terminals for sale after the cap ends, and cargoes timed to arrive just after it (RS-8, A-13). | A later repair finish leaves the refinery's output lower in the weeks after Day 95 (C-14). | None | **ambiguous** (C-24). If C-14 were rejected on review, the sign would be **increase**. |
+| `suppliers`, `quantity_supplied` (first weeks after Day 95), short | Product held in terminals for sale after the cap ends (C-25), and cargoes timed to arrive just after it (RS-8, A-13). | A later repair finish leaves the refinery's output lower in the weeks after Day 95 (C-14). | None | **ambiguous** (C-24). If C-14 were rejected on review, the sign would be **increase**. |
 
 ## 8. Time structure
 
 - **Announcement window (Days 3 to 5).** The two-day notice shifts purchases by both drivers and stations to Day 5 (C-12, C-13, RS-8). The cap therefore opens with stations short of stock and a rush of buyers, so queues start at once.
 - **Days 5 to about 40.** In the counterfactual, the price spike is what draws cargoes from distant refineries; cargoes ordered in the first week arrive in weeks 3 to 6, and the price falls as they do. Under the cap fewer are ordered (C-10), so the period of shortage lasts longer than the price spike would have. This is when queues, station hopping and informal resale (C-5, C-6, C-9) are greatest.
 - **Weeks 8 to 12.** The refinery is due back in this period. The cap lowers the reward for finishing before Day 95, though not after it (C-14). If the repair finishes early in any case, the market price would fall toward the cap and the cap stops binding before it expires (A-1).
-- **Near Day 95.** Suppliers who expect the order to end on schedule (A-13) gain by holding product in terminals for a few days and by timing cargoes to arrive just after the cap ends (RS-8). This deepens the shortage in the last days of the cap; how supply compares with the counterfactual in the weeks after is ambiguous (section 7). If suppliers instead expected an extension (A-14, below the cut-off), diversion would continue past Day 95 (TS-2).
+- **Near Day 95.** Suppliers who expect the order to end on schedule (A-13) gain by holding product in terminals for a few days (C-25) and by timing cargoes to arrive just after the cap ends (RS-8). This deepens the shortage in the last days of the cap; how supply compares with the counterfactual in the weeks after is ambiguous (section 7). If suppliers instead expected an extension (A-14, below the cut-off), diversion would continue past Day 95 (TS-2).
 - **Stocks.** TS-7 applies inside the episode only: stations hold less stock going into the capped period (C-13). Whether suppliers and stations would hold smaller stocks before future disruptions, expecting another order, was not estimated; it would need an `expectations` assumption about future orders.
 - **Durability.** No durable capital changes in 90 days; TS-1 and TS-3 play no role. The one long-lived asset involved is the damaged refinery, and the cap changes only how fast it is repaired, not whether.
 
@@ -112,6 +117,7 @@ Pruned: the effect on prices in Brennick. It is at depth 3, falls on diffuse bys
 |---|---|---|---|---|---|
 | C-20 | `drivers.unserved`, `suppliers` | `quantity_traded` (retail gasoline in Corvane) | decrease | Gallons that drivers would have bought at the uncapped price, from cargoes that would have come to Corvane and now go elsewhere. Both sides lose the gain each expected. | OC-4 |
 | C-21 | `taxpayers` | `resources_available_other_uses` | decrease | What the emergency appropriation for enforcement would otherwise have funded. | OC-3, OC-1 |
+| C-26 | `officials.enforcement` | `enforcement_cost` | increase | Inspectors' time, the hotline and case work of the Attorney General's office, used up (CR-8c). | OC-3 |
 
 Time spent in queues is recorded as C-5 and is not listed again here.
 
@@ -131,9 +137,10 @@ Time spent in queues is recorded as C-5 and is not listed again here.
 | A-10 | Transit, car-sharing or dropping trips is feasible for some unserved drivers. | substitutability | 0.65 | Transit coverage in the main cities. | C-16 not reported. |
 | A-11 | Drivers in the eastern cities can reach Brennick stations easily. | mobility | 0.7 | Drive times of 20 to 45 minutes. | C-17 not reported. |
 | A-12 | Drivers buy in-store goods on fuel trips. | other | 0.75 | Station convenience-store sales data. | C-18, C-19 not reported. |
-| A-13 | Suppliers expect the order to end on Day 95 and have terminal space to hold product for a few days. | expectations | 0.6 | The governor's statements; terminal storage capacity. | The + chain in section 7 fails. |
+| A-13 | Suppliers expect the order to end on Day 95 and have terminal space to hold product for a few days. | expectations | 0.6 | The governor's statements; terminal storage capacity. | C-25 not reported; the + chain in section 7 fails. |
 | A-14 | Suppliers expect the order to be extended beyond Day 95. | expectations | 0.35 | Statements by officials; history of emergency orders in the state. | Below cut-off; not reported. |
 | A-15 | Stations or buyers can reshape sales to fall under an exemption. | other | 0.15 | Exemption text (pre-outage contracts; diesel only). | Below cut-off; not reported. |
+| A-16 | Station owners can organize and lobby at a cost below their stake (an existing retailers' association). | other | 0.8 | Petroleum retailers' association in the state; the short life of the order raises the stake per week. | C-15 not reported. |
 
 ## 11. Report
 
@@ -146,7 +153,8 @@ Time spent in queues is recorded as C-5 and is not listed again here.
 - *Stations* cut hours and services and may refuse cards (C-8). Stations that run dry lose their in-store sales to stations that have fuel (C-18, C-19). Station owners lobby for a wholesale cap or an early end (C-15).
 - *Suppliers* send fewer cargoes and more pipeline gasoline elsewhere (C-10), so less gasoline is sold in Corvane than would have been (C-20). In-state refiners, which have few other outlets, receive less for what they sell to Corvane stations (C-11), and the damaged refinery has less reason to pay for a faster repair (C-14).
 - *Drivers who buy fuel in cans* from informal sellers cannot check its quality or seek redress (C-22).
-- *Taxpayers* fund enforcement (C-21).
+- *Suppliers* hold product in terminals in the last days of the order to sell it after (C-25).
+- *Taxpayers* fund enforcement (C-21), whose staff time is used up (C-26).
 
 **Ambiguous effects.** Whether more or fewer eastern drivers buy in Brennick (C-17). Whether drivers as a group pay more or less per gallon once time, searching and informal premiums are counted (C-23); the method can say only that drivers who value their time less gain relative to those who value it more. Whether more or less fuel is available in the weeks after the cap ends (C-24).
 
@@ -172,7 +180,7 @@ Time spent in queues is recorded as C-5 and is not listed again here.
 | C-12 | drivers | quantity_demanded (Days 3–5) | decrease | short | invisible | B | RS-8 | A-8 |
 | C-13 | stations | quantity_demanded (wholesale, Days 3–5) | decrease | short | invisible | B | RS-8, TS-7 | A-1, A-8 |
 | C-14 | refiner.port_aldis | maintenance_spending (speed of repair) | decrease | short | invisible | B | PC-12, RS-6, LW-4 | A-1, A-7, A-9 |
-| C-15 | stations | lobbying_effort | increase | short | invisible | B | RS-7 | A-1 |
+| C-15 | stations | lobbying_effort | increase | short | invisible | B | RS-7 | A-1, A-16 |
 | C-16 | drivers.unserved | quantity_substitute (transit, fewer trips) | increase | short | invisible | B | PC-3, RS-1 | A-1, A-10 |
 | C-17 | drivers.border | cross_border_purchases | ambiguous | short | invisible | B | RS-4 vs PC-3 (C-5, C-6 vs C-1) | A-1, A-11 |
 | C-18 | stations (out of fuel) | quantity_traded (in-store goods) | decrease | short | invisible | B | PC-5, RS-9 | A-1, A-6, A-12 |
@@ -182,8 +190,11 @@ Time spent in queues is recorded as C-5 and is not listed again here.
 | C-22 | drivers (buying in cans) | quality_information | decrease | short | invisible | B | PC-6, RS-10 | A-1, A-5 |
 | C-23 | drivers | full_cost_per_unit (per gallon) | ambiguous | short | invisible | B | PC-3 (C-1) vs PC-2, PC-6 (C-5, C-6, C-9) | A-1, A-2, A-3, A-5 |
 | C-24 | suppliers | quantity_supplied (first weeks after Day 95) | ambiguous | short | invisible | B | RS-8 vs PC-12, RS-6 (C-14) | A-7, A-9, A-13 |
+| C-25 | suppliers | inventory_held (last days before Day 95) | increase | short | invisible | B | RS-8, TS-7 | A-1, A-13 |
+| C-26 | officials.enforcement | enforcement_cost | increase | short | invisible | A | OC-3 | none |
 
 ## Gaps found
 
 - GAP-005-1 (closed in catalog 0.3: PC-12). A ceiling on a final good passes up to its main input. C-11 is now Tier B through PC-12's price branch (in-state output with few other outlets, A-7, retyped `alternative_uses`); C-10 carries the quantity branch; C-14 is now Tier B (PC-12, RS-6); the post-Day-95 supply entry (C-24) is now a Tier B ambiguity.
 - GAP-005-2 (closed in catalog 0.3: `full_cost_per_unit`). The combined entry for drivers' full cost per gallon is now C-23, `ambiguous`, Tier B.
+- Catalog 0.5: corrected after the core-only comparison (see ../05_examples_core/WE-005_gasoline_price_cap_core.md): added suppliers' stock held before Day 95 (C-25, the chain section 7 already used) and enforcement cost (C-26); OC-3 funding case stated; RS-7 premise A-16; PC-2 members tied to their per-margin premises (A-3, A-4, A-5). C-24 stays ambiguous, as the comparison concluded.

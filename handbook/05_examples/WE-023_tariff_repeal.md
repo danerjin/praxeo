@@ -140,35 +140,35 @@ C-21 and C-22 are Tier B in catalog 0.3 (Tier C in the 0.2 draft). C-21: capacit
 
 ### Metamorphic check against the original tariff
 
-"Reverses" means the expected sign under repeal is the opposite of the tariff's. "Partly reverses" means the sign reverses for the flow but not for a stock the tariff already changed, or reverses for the variable but not for the persons who gained or lost. **Persistence** (TS-6; `02_ontology.md`, 2.5) is how much of the tariff's effect remains after the repeal, compared with a Velmora that never had the duty: none, partial or full. It is filled in where TS-6 applies, that is, where the effect ran through exit or lost capital, skills or client relationships that cost something to rebuild; "—" means TS-6 does not apply. A row can partly reverse for other reasons, shown in the Reason column: capacity built behind the duty runs down at the speed of wear-out (TS-1), and capitalized gains and losses fall on different persons (SB-4).
+"Reverses" means the expected sign under repeal is the opposite of the tariff's. "Partly reverses" means the sign reverses for the flow but not for a stock the tariff already changed, or reverses for the variable but not for the persons who gained or lost. **Persistence** (TS-6; `02_ontology.md`, 2.5) is how much of the tariff's effect remains after the repeal, compared with a Velmora that never had the duty: none, partial or full. It is "partial" or "full" where the effect ran through a stock that costs something to undo or rebuild: capacity and employment built behind the duty, which run down only as capital wears out (TS-1), and exit, lost skills or client relationships (TS-6). It is "none" where a flow simply stops, and "n/a" for transition effects. It may be given per horizon (`02_ontology.md`, 2.5). The same values are recorded on each consequence in the consequence list. A row can partly reverse for other reasons, shown in the Reason column: capacity built behind the duty runs down at the speed of wear-out (TS-1), and capitalized gains and losses fall on different persons (SB-4).
 
-| Tariff ID | Actor class, variable | Sign under the tariff | Expected sign under repeal (this example) | Reverses? | Persistence (TS-6) | Reason |
+| Tariff ID | Actor class, variable | Sign under the tariff | Expected sign under repeal (this example) | Reverses? | Persistence | Reason |
 |---|---|---|---|---|---|---|
-| T-1 | `buyers.lumber`, `price_paid` | increase | decrease (C-1) | Reverses | — | Immediate on the effective date. |
-| T-2 | `sawmills.domestic`, `net_price_received` | increase | decrease (C-2) | Reverses | — | |
-| T-3 | `sawmills.domestic`, `quantity_supplied` | increase | decrease (C-5) | Partly reverses | — | The increase came through new investment; the decrease comes through wear-out, because mill capital is specific and keeps running while it covers operating costs (A-3, TS-1). The speeds differ. |
-| T-4 | `sawmills.domestic`, `investment_target` | increase | decrease (C-6) | Partly reverses | — | New investment falls at once. Capital already sunk is not recovered; it appears as lower mill values (C-14), which has no counterpart in the tariff list. |
-| T-5 | `workers.sawmill`, `employment` | increase | decrease (C-8) | Partly reverses | — | In sign. But workers who built careers on milling skills under the duty bear an earnings loss on leaving (C-9). The tariff's workers moved in because their best option improved, expecting to gain (LW-5); the repeal's workers move out because their best option has worsened. The loss has no mirror in the tariff list. |
-| T-6 | `timberland_owners`, `asset_value` | increase | decrease (C-13) | Partly reverses | — | Reverses for the asset, not for the persons (SB-4). Owners at the duty's introduction captured the gain; current owners who bought at duty-inclusive prices bear the loss. |
-| T-7 | `importers`, `quantity_traded` (imported lumber) | decrease | increase (C-4); decrease in the announcement window (C-11) | Reverses after a temporary dip | — | RS-8 delays purchases until the duty ends. |
+| T-1 | `buyers.lumber`, `price_paid` | increase | decrease (C-1) | Reverses | none | Immediate on the effective date. |
+| T-2 | `sawmills.domestic`, `net_price_received` | increase | decrease (C-2) | Reverses | none | Log prices fall with it (C-27), which has no counterpart in the tariff list. |
+| T-3 | `sawmills.domestic`, `quantity_supplied` | increase | decrease (C-5) | Partly reverses | partial (short; medium); none (long) | The increase came through new investment; the decrease comes through wear-out, because mill capital is specific and keeps running while it covers operating costs (A-3, TS-1). Until it wears out, capacity built behind the duty remains. |
+| T-4 | `sawmills.domestic`, `investment_target` | increase | decrease (C-6) | Partly reverses | none (flow) | New investment falls at once. Capital already sunk is not recovered; it appears as lower mill values (C-14), which has no counterpart in the tariff list. |
+| T-5 | `workers.sawmill`, `employment`, `hours_worked` (at least one) | at_least_one_increase | at_least_one_decrease (C-8) | Partly reverses | partial (medium); none (long) | Gradual as mills wind down. Workers who built careers on milling skills under the duty bear an earnings loss on leaving (C-9). The tariff's workers moved in because their best option improved, expecting to gain (LW-5); the repeal's workers move out because their best option has worsened. The loss has no mirror in the tariff list. |
+| T-6 | `timberland_owners`, `asset_value` | increase | decrease (C-13) | Partly reverses | partial | Reverses for the asset, not for the persons (SB-4). Owners at the duty's introduction captured the gain and, if they sold, keep it; current owners who bought at duty-inclusive prices bear the loss. |
+| T-7 | `importers`, `quantity_traded` (imported lumber) | decrease | increase (C-4); decrease in the announcement window (C-11) | Reverses after a temporary dip | none | RS-8 delays purchases until the duty ends. |
 | T-8 | `importers`, `reclassification` | increase | decrease (C-10) | Reverses | none | No reason remains to shape imports around the duty, and reshaping a shipment's description or processing costs little to undo (TS-6, A-19). |
-| T-9 | `builders`, `quantity_supplied` (new houses) | decrease | increase (C-15) | Reverses | — | For the flow. Houses not built over twenty years are not built retroactively, but they are not part of a comparison with the tariff staying. |
-| T-10 | `homebuyers`, `price_paid` (new houses) | increase | decrease (C-16) | Reverses | — | |
+| T-9 | `builders`, `quantity_supplied` (new houses) | decrease | increase (C-15) | Reverses | none (flow) | For the flow. Houses not built over twenty years are not built retroactively; against a Velmora that never had the duty the housing stock is smaller until new building makes it up, but that is a stock, not this flow. |
+| T-10 | `homebuyers`, `price_paid` (new houses) | increase | decrease (C-16) | Reverses | none | |
 | T-11 | `furniture_makers.domestic`, `quantity_supplied` | decrease | increase (C-17); `entry_rate` increase, long (C-22) | Partly reverses | partial | Surviving makers expand as their input cost falls. Firms that closed, the skills of their workers, supplier links and retail placement lost over twenty years come back slowly, as the sunk costs of entry are paid (TS-6, A-13), and only as far as entrants believe the repeal (TS-5, A-12). |
 | T-12 | `buyers.furniture`, `quantity_substitute` (imported furniture) | increase | decrease (C-18) | Partly reverses | partial | Domestic makers lost retail placement and buyer familiarity to foreign brands, and regain them only at a cost (TS-6, A-13). |
-| T-13 | `exporters`, `quantity_supplied`, `employment` | decrease | increase (C-19) | Partly reverses | partial | In sign. Entering or re-entering foreign markets has sunk costs (distribution, buyer relationships), so the response is slower than the original decline (TS-6, A-18); the horizon is set to medium to long. |
-| T-14 | `buyers.lumber`, `resources_available_other_uses` | decrease | increase (C-23) | Reverses | — | |
-| T-15 | treasury, `tax_revenue` | increase | decrease (C-3) | Reverses | — | The spending the revenue funded must now be funded in some other way (OC-6; section 7 row 1, C-25). The tariff list did not trace the revenue's use, so this has no counterpart. |
-| T-16 | `sawmills.domestic`, `timberland_owners`, `lobbying_effort` | increase | ambiguous (C-12) | Does not reverse | — | Those who lose from the repeal now lobby to restore the duty; those who gain defend it. |
-| T-17 | `taxpayers`, `resources_available_other_uses` (customs) | decrease | ambiguous (C-25); `enforcement_cost` decrease (C-24) | Partly reverses | — | The administrative saving reverses T-17, but the same taxpayers must make up the lost revenue (OC-6, A-14). |
+| T-13 | `exporters`, `quantity_supplied`; labor in export industries | decrease | increase (C-19); `employment`, `hours_worked` at_least_one_increase (C-29) | Partly reverses | partial | In sign. Entering or re-entering foreign markets has sunk costs (distribution, buyer relationships), so the response is slower than the original decline (TS-6, A-18); the horizon is set to medium to long. |
+| T-14 | `buyers.lumber`, `resources_available_other_uses` | decrease | increase (C-23) | Reverses | none | |
+| T-15 | treasury, `tax_revenue` | increase | decrease (C-3) | Reverses | none | The spending the revenue funded must now be funded in some other way (OC-6; section 7 row 1, C-25). The tariff list did not trace the revenue's use, so this has no counterpart. |
+| T-16 | `sawmills.domestic`, `timberland_owners`, `lobbying_effort` | increase | ambiguous, short to medium (C-12); decrease, long (C-28) | Does not reverse (short to medium); reverses (long) | n/a | RS-7, repeal clause: those who lose from the repeal now lobby to restore the duty, those who gain defend it, and both lobbied in the counterfactual. Once mill capital has worn out, the stake and the lobbying shrink. |
+| T-17 | `taxpayers`, `resources_available_other_uses` (customs) | decrease | `enforcement_cost` decrease (C-24); taxpayers overall decrease (C-25) | Partly reverses | none | The administrative saving reverses T-17, but the same taxpayers, or recipients of cut spending, must make up the lost revenue, which by arithmetic is far larger (OC-6, A-14, A-20). |
 
-Consequences with no counterpart in the tariff list: C-9 (earnings of displaced mill workers), C-11 (purchases deferred in the announcement window), C-14 (mill values), C-20 (foreign sellers' net price), C-21 (lumber-using capacity).
+Consequences with no counterpart in the tariff list: C-9 (earnings of displaced mill workers), C-11 (purchases deferred in the announcement window), C-14 (mill values), C-20 (foreign sellers' net price), C-21 (lumber-using capacity), C-26 (importers' compliance cost) and C-27 (log prices).
 
 ## 8. Time structure
 
 - **Announcement window (nine months).** Timberland and mill values fall as soon as the repeal is expected (C-13, C-14). Buyers defer purchases and importers hold shipments until the effective date (C-11), so domestic mills lose orders before the duty ends.
 - **Effective date.** Lumber prices fall and imports rise at once (C-1, C-4). The flows of trade reverse within months.
-- **Mill capacity declines at the speed of wear-out.** Mills keep running while the lower price covers their operating costs (A-3). Exits and job losses spread over several years (C-5, C-7, C-8). This direction is TS-1 as written.
+- **Mill capacity declines at the speed of wear-out.** Mills keep running while the lower price covers their operating costs (A-3). Exits and job or hours losses spread over several years (C-5, C-7, C-8). This direction is TS-1 as written. As the capital wears out, so does the mills' stake in restoring the duty, and their lobbying falls (C-28).
 - **Re-entry is not the mirror of exit.** Domestic furniture making shrank over twenty years. Its recovery needs new firms, trained workers, supplier links and shelf space that foreign brands now hold (C-22). Export firms that never entered, or left, Dravenland's market face sunk entry costs (C-19). These responses take longer than the original decline did (TS-6; A-13, A-18).
 - **Who bears the capital losses.** Lower land and mill values (C-13, C-14) fall on owners at the time of the announcement. Over twenty years many assets have changed hands at prices that included the duty's value; the original gainers are not the present losers.
 - **Expectations of restoration.** The duty lasted twenty years, and its beneficiaries are concentrated and organized (C-12). Builders and furniture makers who would add capacity that pays back over ten years or more weigh the chance that the duty returns (TS-5; A-12, p = 0.6). Mills, conversely, keep idle capacity on standby rather than scrapping it if they expect the duty back (TS-5, losing-side clause; A-12). This slows the decline in mill capacity that the repeal causes without changing its sign, so it is a note on the path, not a separate consequence.
@@ -180,9 +180,10 @@ Consequences with no counterpart in the tariff list: C-9 (earnings of displaced 
 |---|---|---|---|---|---|
 | C-23 | `buyers.lumber` | `resources_available_other_uses` | increase | Nothing given up; the part of the duty that buyers bore (A-2) is freed for other purchases. | TX-1, OC-1 in reverse |
 | C-24 | `officials.enforcement` (customs) | `enforcement_cost` | decrease | Nothing given up; customs staff time spent classifying and valuing lumber for the duty is freed. | OC-3 in reverse |
-| C-25 | `taxpayers` | `resources_available_other_uses` | ambiguous (section 7) | Freed: the cost of administering the duty. Given up: what other taxpayers, or recipients of cut spending, would have done with the resources that now replace the lost revenue. | OC-3, OC-1 in reverse; OC-6 |
+| C-25 | `taxpayers` | `resources_available_other_uses` | decrease (section 7) | Freed: the cost of administering the duty. Given up, and far larger by arithmetic (A-20): what other taxpayers, or recipients of cut spending, would have done with the resources that now replace the lost revenue. | OC-3, OC-1 in reverse; OC-6; CR-12e |
+| C-26 | `importers` | `compliance_cost` | decrease | Nothing given up; duty paperwork and classification disputes end. | TX-5 in reverse |
 
-The imports that the duty prevented (OC-4) are now made: that is C-4, not listed again.
+The imports that the duty prevented (OC-4) are now made: that is C-4, not listed again. Both sides of the lost revenue are recorded (CR-8b): the duty no longer paid by buyers (C-23) and by foreign sellers (C-20), and its replacement by taxpayers (C-25).
 
 ## 10. Assumptions
 
@@ -190,23 +191,24 @@ The imports that the duty prevented (OC-4) are now made: that is C-4, not listed
 |---|---|---|---|---|---|
 | A-1 | Imports are a substantial share of lumber used, and the duty raised domestic lumber prices. | binding | 0.9 | Import share; domestic prices against Dravenland prices plus transport. | Almost every consequence weakens or disappears. |
 | A-2 | Velmoran buyers bore at least part of the duty (foreign sellers did not absorb all of it). | other | 0.85 | Price gap across the border; Dravenland's other markets. | C-1 and C-23 shrink. |
-| A-3 | Mill capital is specific and durable: mills keep operating while prices cover operating costs and close as equipment wears out. | durability | 0.85 | Age and type of mill equipment; resale market for used mill equipment. | Capacity falls faster; C-14 smaller. |
-| A-4 | Mill workers' skills are partly specific, and the forest region has few other employers. | alternative_uses | 0.75 | Regional employment structure; wages in other local work. | C-9 not reported. |
+| A-3 | Mill capital is specific and durable: mills keep operating while prices cover operating costs and close as equipment wears out. | durability | 0.85 | Age and type of mill equipment; resale market for used mill equipment. | Capacity falls faster; C-14 smaller; C-28 comes sooner. |
+| A-4 | Mill workers' skills are partly specific, and the forest region has few other employers, so displaced workers' next-best work pays less in money. | alternative_uses | 0.75 | Regional employment structure; wages in other local work. | C-9 not reported (displaced workers are still worse off by their own ranking, but their earnings may not fall). |
 | A-5 | Some imports had been shaped to fall outside the lumber heading. | other | 0.6 | Customs classification disputes; import volumes of lightly processed wood. | C-10 not reported. |
 | A-6 | Lumber buyers can defer purchases or draw down stocks for some months. | expectations | 0.7 | Inventory practices of builders and furniture makers; bonded warehouse capacity. | C-11 not reported. |
-| A-7 | Timberland is valued mainly for sawlogs sold to domestic mills; exporting logs costs too much to replace that demand. | alternative_uses | 0.7 | Land prices against log prices; transport costs; other uses of forest land. | C-13 weakens. |
+| A-7 | Timberland is valued mainly for sawlogs sold to domestic mills; exporting logs costs too much to replace that demand. | alternative_uses | 0.7 | Land prices against log prices; transport costs; other uses of forest land. | C-13 and C-27 weaken. |
 | A-8 | Lumber is a significant share of building costs, and builders compete. | other | 0.8 | Cost breakdowns of new houses; number of builders. | C-15 and C-16 weaken. |
 | A-9 | Lumber is a significant input for domestic furniture, and imported furniture is a close substitute. | substitutability | 0.8 | Cost breakdowns; import share of furniture sales. | C-17, C-18 and C-22 weaken. |
-| A-10 | Changes in imports are not fully offset by capital flows: Dravenland sellers spend more of the crowns they earn on Velmoran goods. | other | 0.65 | Composition of the balance of payments; trade patterns with Dravenland. | C-19 not reported. |
+| A-10 | Changes in imports are not fully offset by capital flows: Dravenland sellers spend more of the crowns they earn on Velmoran goods. | other | 0.65 | Composition of the balance of payments; trade patterns with Dravenland. | C-19 and C-29 not reported. |
 | A-11 | Foreign sellers bore part of the duty. | other | 0.6 | Dravenland export prices to Velmora against prices to other markets. | C-20 not reported. |
 | A-12 | Lumber users expect the repeal to last at least ten years, the payback of new capacity. | expectations | 0.6 | Size of the parliamentary majority; organization and history of the mill lobby. | C-21 and C-22 not reported. |
 | A-13 | Furniture-making skills, supplier links and retail placement lost over twenty years take years to rebuild. | reversal_cost | 0.7 | Number of furniture firms and workers now against twenty years ago; training available. | C-22 comes sooner. |
-| A-14 | The lost revenue is made up by some combination of other taxes, borrowing and spending cuts; the Act does not say which. | revenue_use | 0.95 | Budget documents; fiscal rules. | Section 7 row 1 changes. |
-| A-15 | Mill owners, timberland owners, builders and exporters can organize at a cost below their stake. | other | 0.85 | Twenty years of organized lobbying over the duty. | C-12 not reported. |
+| A-14 | The lost revenue is made up by some combination of other taxes, borrowing and spending cuts; the Act does not say which. | revenue_use | 0.95 | Budget documents; fiscal rules. | Section 7 row 1 changes; C-25 not reported. |
+| A-15 | Mill owners, timberland owners, builders and exporters can organize at a cost below their stake. | other | 0.85 | Twenty years of organized lobbying over the duty. | C-12 and C-28 not reported. |
 | A-16 | Lumber smuggling was significant under the duty. | enforcement | 0.15 | Controlled crossing points; seizure records. | Below cut-off; not reported. |
 | A-17 | Owners of timberland and mills give the repeal a meaningful probability of lasting. | expectations | 0.9 | The Act passed by a clear majority; no sunset or review clause; restoring a duty needs new legislation. | C-13 and C-14 not reported (values would not fall if owners expected the duty back at once). |
 | A-18 | Entering or re-entering export markets in Dravenland has sunk costs (distribution, buyer relationships, product approvals) that take years to pay. | reversal_cost | 0.75 | Export trade structure; how long comparable firms took to enter new markets. | C-19 comes sooner; the T-13 row would fully reverse. |
 | A-19 | Imports reshaped to fall outside the lumber heading can be returned to ordinary sawn lumber at little cost. | reversal_cost | 0.8 | The reshaping is light processing or description, not separate plant. | C-10 smaller; persistence of T-8 partial rather than none. |
+| A-20 | The cost of duty-specific customs administration is much smaller than the revenue the duty raised (arithmetic on the case's figures, CR-12e). | other | 0.95 | A 25% duty on a substantial import share (A-1) against the cost of classification and valuation checks; ordinary customs procedures continue in any case. | C-25 becomes ambiguous. |
 
 ## 11. Report
 
@@ -215,14 +217,15 @@ The imports that the duty prevented (OC-4) are now made: that is C-4, not listed
 **Visible consequences.** Lumber is cheaper (C-1). Domestic sawmills receive less for their lumber (C-2). The treasury loses the duty revenue (C-3).
 
 **Invisible consequences.**
-- *Sawmills and their workers* sell less and invest less (C-5, C-6). Mills close over several years as equipment wears out (C-7), and mill employment falls (C-8). Workers who lose mill jobs earn less in their next-best work, because their skills are partly specific and the forest region has few other employers (C-9).
-- *Owners of forest land and of mills* see their assets lose value as soon as the repeal is expected (C-13, C-14). The losses fall on present owners, many of whom bought at prices that included the duty's value.
+- *Sawmills and their workers* sell less and invest less (C-5, C-6). Mills close over several years as equipment wears out (C-7), and mill employment or hours fall (C-8). Workers who lose mill jobs earn less in their next-best work, because their skills are partly specific and the forest region has few other employers (C-9).
+- *Owners of forest land and of mills* see their assets lose value as soon as the repeal is expected (C-13, C-14), and timberland owners receive less for their logs (C-27). The losses fall on present owners, many of whom bought at prices that included the duty's value.
 - *Builders and furniture makers* pay less for lumber, so more houses are built and sold at lower prices (C-15, C-16), and domestic furniture makers expand against imported furniture (C-17, C-18). To the extent they expect the repeal to last ten years or more, they add capacity (C-21), and new furniture firms enter, slowly (C-22). In the months before the repeal takes effect, they buy less lumber, waiting for the lower price (C-11).
-- *Export industries* sell more abroad over time, because Dravenland buyers earn more crowns from lumber sales (C-19).
-- *Lumber buyers* keep the part of the duty they used to pay (C-23). *Dravenland sellers* receive more (C-20).
-- *Taxpayers* save the cost of administering the duty, but must make up the lost revenue through other taxes, borrowing or reduced spending; the net effect cannot be determined (C-25).
+- *Export industries* sell more abroad over time, because Dravenland buyers earn more crowns from lumber sales (C-19), and employ more people or hours (C-29).
+- *Lumber buyers* keep the part of the duty they used to pay (C-23). *Dravenland sellers* receive more (C-20). *Importers* no longer bear duty paperwork and classification disputes (C-26).
+- *Taxpayers* save the cost of administering the duty, but must make up the lost revenue through other taxes, borrowing or reduced spending, which is far larger, so on balance they have less to spend (C-25). Who exactly bears it depends on the budget response, which the Act leaves open.
+- *Mill and timberland owners* lobby to restore the duty while their capital lasts; whether their lobbying, or that of builders and exporters who now defend the repeal, is greater than it would have been with the duty kept cannot be said (C-12). Once mill capital has worn out, the mills' lobbying falls (C-28).
 
-**Ambiguous effects.** Whether taxpayers as a group are better or worse off, until the budget response is known. Whether total lobbying effort rises or falls: the mill lobby now seeks restoration, while lumber users defend the repeal (C-12).
+**Ambiguous effects.** Whether any class's lobbying effort rises or falls in the short and medium run: the mill lobby now seeks restoration, while lumber users defend the repeal, and both lobbied with the duty in force (C-12).
 
 **What does not reverse.** Mill capital built behind the duty is not recovered; its owners bear the loss. Land and mill values reverse, but not for the same persons who gained twenty years ago. Domestic furniture making and exporting recover more slowly than they shrank, because skills, supplier links, retail placement and foreign customers lost over twenty years must be rebuilt (C-19, C-22).
 
@@ -232,33 +235,37 @@ The imports that the duty prevented (OC-4) are now made: that is C-4, not listed
 
 ## Consequence list (normal form)
 
-| ID | Actor class | Variable | Sign | Horizon | Visibility | Tier | Derivation | Assumptions |
-|---|---|---|---|---|---|---|---|---|
-| C-1 | buyers.lumber | price_paid (lumber) | decrease | short | visible | B | TX-7 in reverse | A-1, A-2 |
-| C-2 | sawmills.domestic | net_price_received | decrease | short | visible | B | TX-7 in reverse | A-1 |
-| C-3 | officials.enforcement (treasury) | tax_revenue | decrease | short | visible | A | TX-1 in reverse | none |
-| C-4 | importers | quantity_traded (imported lumber) | increase | short | invisible | B | TX-2, OC-4 in reverse | A-1 |
-| C-5 | sawmills.domestic | quantity_supplied | decrease | short–medium | invisible | B | TX-7 in reverse, TS-1 | A-1, A-3 |
-| C-6 | sawmills.domestic | investment_target | decrease | short–medium | invisible | B | RS-6, TX-7 in reverse | A-1 |
-| C-7 | sawmills.domestic | number_of_sellers | decrease | medium–long | invisible | B | RS-6, TS-1 | A-1, A-3 |
-| C-8 | workers.sawmill | employment | decrease | medium | invisible | B | RS-6, LW-4 | A-1, A-3 |
-| C-9 | workers.sawmill (displaced) | earnings | decrease | medium | invisible | B | RS-6, LW-4 | A-1, A-4 |
-| C-10 | importers | reclassification | decrease | short | invisible | B | RS-5, TX-4 in reverse | A-5 |
-| C-11 | buyers.lumber | quantity_traded (lumber, announcement window) | decrease | short | invisible | B | RS-8 | A-6 |
-| C-12 | sawmills, timberland_owners, builders, exporters | lobbying_effort | ambiguous | medium | invisible | B | RS-7 | A-15 |
-| C-13 | timberland_owners | asset_value | decrease | short | invisible | B | SB-4, TS-5 | A-1, A-7, A-17 |
-| C-14 | sawmills.domestic | asset_value (mill capital) | decrease | short | invisible | B | SB-4, TS-1, TS-5 | A-1, A-3, A-17 |
-| C-15 | builders | quantity_supplied (new houses) | increase | medium | invisible | B | TX-7 in reverse, RS-14 in reverse, LW-4 | A-1, A-8 |
-| C-16 | homebuyers | price_paid (new houses) | decrease | medium | invisible | B | TX-7 in reverse, RS-14 in reverse | A-1, A-8 |
-| C-17 | furniture_makers.domestic | quantity_supplied | increase | medium | invisible | B | TX-7 in reverse, RS-14 in reverse, LW-4 | A-1, A-9 |
-| C-18 | buyers.furniture | quantity_substitute (imported furniture) | decrease | medium | invisible | B | RS-1 in reverse | A-1, A-9 |
-| C-19 | exporters | quantity_supplied, employment | increase | medium–long | invisible | B | TX-8 in reverse, TS-6 | A-1, A-10, A-18 |
-| C-20 | sellers.foreign | net_price_received | increase | short | invisible | B | TX-7 in reverse | A-11 |
-| C-21 | builders, furniture_makers.domestic | investment_target (lumber-using capacity) | increase | medium–long | invisible | B | TX-7 in reverse, LW-4, TS-5 | A-1, A-12 |
-| C-22 | furniture_makers.domestic | entry_rate | increase | long | invisible | B | LW-4, TS-5, TS-6 | A-1, A-9, A-12, A-13 |
-| C-23 | buyers.lumber | resources_available_other_uses | increase | short | invisible | B | TX-1, OC-1 in reverse | A-2 |
-| C-24 | officials.enforcement (customs) | enforcement_cost | decrease | short | invisible | A | OC-3 in reverse | none |
-| C-25 | taxpayers | resources_available_other_uses | ambiguous | medium | invisible | B | OC-3, OC-1 in reverse vs OC-6 | A-14 |
+| ID | Actor class | Variable | Sign | Horizon | Visibility | Tier | Derivation | Assumptions | Persistence |
+|---|---|---|---|---|---|---|---|---|---|
+| C-1 | buyers.lumber | price_paid (lumber) | decrease | short | visible | B | TX-7 in reverse | A-1, A-2 | none |
+| C-2 | sawmills.domestic | net_price_received | decrease | short | visible | B | TX-7 in reverse | A-1 | none |
+| C-3 | officials.enforcement (treasury) | tax_revenue | decrease | short | visible | A | TX-1 in reverse | none | none |
+| C-4 | importers | quantity_traded (imported lumber) | increase | short | invisible | B | TX-2, OC-4 in reverse | A-1 | none |
+| C-5 | sawmills.domestic | quantity_supplied | decrease | short–medium | invisible | B | TX-7 in reverse, TS-1 | A-1, A-3 | partial (short; medium); none (long) |
+| C-6 | sawmills.domestic | investment_target | decrease | short–medium | invisible | B | RS-6, TX-7 in reverse | A-1 | none |
+| C-7 | sawmills.domestic | number_of_sellers | decrease | medium–long | invisible | B | RS-6, TS-1 | A-1, A-3 | partial (medium); none (long) |
+| C-8 | workers.sawmill | employment, hours_worked | at_least_one_decrease | medium | invisible | B | RS-6, LW-4 | A-1, A-3 | partial (medium); none (long) |
+| C-9 | workers.sawmill (displaced) | earnings | decrease | medium | invisible | B | RS-6, LW-4 | A-1, A-4 | n/a (no counterpart) |
+| C-10 | importers | reclassification | decrease | short | invisible | B | RS-5, TX-4 in reverse | A-5 | none |
+| C-11 | buyers.lumber | quantity_traded (lumber, announcement window) | decrease | short | invisible | B | RS-8 | A-6 | n/a (transition) |
+| C-12 | sawmills, timberland_owners, builders, exporters | lobbying_effort | ambiguous | short–medium | invisible | B | RS-7 (repeal clause) | A-15 | n/a |
+| C-13 | timberland_owners | asset_value | decrease | short | invisible | B | SB-4, TS-5 | A-1, A-7, A-17 | partial (owners who sold keep the gain) |
+| C-14 | sawmills.domestic | asset_value (mill capital) | decrease | short | invisible | B | SB-4, TS-1, TS-5 | A-1, A-3, A-17 | n/a (no counterpart) |
+| C-15 | builders | quantity_supplied (new houses) | increase | medium | invisible | B | TX-7 in reverse, RS-14 in reverse, LW-4 | A-1, A-8 | none (flow) |
+| C-16 | homebuyers | price_paid (new houses) | decrease | medium | invisible | B | TX-7 in reverse, RS-14 in reverse | A-1, A-8 | none |
+| C-17 | furniture_makers.domestic | quantity_supplied | increase | medium | invisible | B | TX-7 in reverse, RS-14 in reverse, LW-4 | A-1, A-9 | partial (A-13) |
+| C-18 | buyers.furniture | quantity_substitute (imported furniture) | decrease | medium | invisible | B | RS-1 in reverse | A-1, A-9 | partial (A-13) |
+| C-19 | exporters | quantity_supplied | increase | medium–long | invisible | B | TX-8 in reverse, TS-6 | A-1, A-10, A-18 | partial (A-18) |
+| C-20 | sellers.foreign | net_price_received | increase | short | invisible | B | TX-7 in reverse | A-11 | n/a (no counterpart) |
+| C-21 | builders, furniture_makers.domestic | investment_target (lumber-using capacity) | increase | medium–long | invisible | B | TX-7 in reverse, LW-4, TS-5 | A-1, A-12 | n/a (no counterpart) |
+| C-22 | furniture_makers.domestic | entry_rate | increase | long | invisible | B | LW-4, TS-5, TS-6 | A-1, A-9, A-12, A-13 | partial (A-13) |
+| C-23 | buyers.lumber | resources_available_other_uses | increase | short | invisible | B | TX-1, OC-1 in reverse | A-2 | none |
+| C-24 | officials.enforcement (customs) | enforcement_cost | decrease | short | invisible | A | OC-3 in reverse | none | none |
+| C-25 | taxpayers | resources_available_other_uses | decrease | short–medium | invisible | B | OC-6, TX-1, OC-1 vs OC-3 in reverse; CR-12e with A-20 | A-14, A-20 | none |
+| C-26 | importers | compliance_cost | decrease | short | invisible | A | TX-5 in reverse | none | none |
+| C-27 | timberland_owners | net_price_received (sawlogs) | decrease | short–medium | invisible | B | TX-7 in reverse, CR-9, CR-7 | A-1, A-7 | none |
+| C-28 | sawmills.domestic, timberland_owners | lobbying_effort (to restore the duty) | decrease | long | invisible | B | RS-7 (repeal clause), TS-1 | A-3, A-15 | n/a |
+| C-29 | workers.export_industries | employment, hours_worked | at_least_one_increase | medium–long | invisible | B | TX-8 in reverse, CR-9 | A-1, A-10, A-18 | partial (A-18) |
 
 ## Gaps found
 
@@ -266,3 +273,4 @@ The imports that the duty prevented (OC-4) are now made: that is C-4, not listed
 - GAP-023-2 (closed in catalog 0.3: TS-5). Expectations of restoration. C-21 now Tier B on A-12 (p = 0.6); C-13 and C-14 cite TS-5 with A-17.
 - GAP-023-3 (closed in catalog 0.3: OC-6). Replacing lost revenue. C-25 and section 7 row 1 now Tier B, ambiguous, with the replacement chain stated through A-14 (`revenue_use`). (The 0.2 draft proposed this rule as OC-5; in catalog 0.3 it is OC-6, and OC-5 is Hazlitt's tailor.)
 - GAP-023-4 (closed in catalog 0.3: TS-5 losing-side clause). Expected restoration delays exit by those who lose from a repeal. TS-5 says that a repeal's beneficiaries hold back long-payback investment when they expect the policy to return. It does not state the other side: owners of capital that the repeal makes less profitable (here, mills built behind the duty) delay scrapping or selling it, and keep it on standby, when they give restoration a meaningful probability, so `capital_stock_target` and `number_of_sellers` fall more slowly than wear-out alone implies. *Proposed fix:* add to TS-5 a clause for the losing side: "for actors whose returns the repeal lowers, an expected return of the policy delays exit and scrapping: capacity is held in reserve rather than sold or scrapped", with the same `expectations` assumption.
+- Catalog 0.5: corrected after the core-only comparison (see ../05_examples_core/WE-023_tariff_repeal_core.md): taxpayers' means (C-25) signed decrease with the arithmetic dominance premise A-20 (CR-12e); lobbying kept ambiguous under RS-7's repeal clause, with a long-run decrease for mills and timberland owners added (C-28); added importers' compliance saving (C-26) and log prices (C-27); mill and export labor recorded as employment-or-hours groups (C-8, T-5, new C-29, RS-6); A-4 now states that displaced workers' next-best work pays less in money; persistence recorded on every consequence, with partial values for capacity and employment built behind the duty (T-3, T-5) as in the core version.
