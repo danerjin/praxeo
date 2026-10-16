@@ -1,6 +1,6 @@
 # WE-042 / Analysis: Aluminum tariff with export drawback
 
-Analyst: core-only re-run (Handbook 0.8)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.8)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -312,3 +312,88 @@ CR-8's symmetry: the tariff paid by users (C-46) is received by the fund (C-3) a
 - No variable for the price of a transferable claim created by a policy other than `asset_value` and `right_lease_price` (designation of entries under U1-b).
 - No actor class for importers of record as distinct from users; `importers_of_record` and `importers.covered` were introduced.
 - No variable for the time a refund is held before payment; it was folded into `wait_time (drawback payment)` in C-25.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on most of the case. Both have users paying import parity and smelters receiving it, smelters restarting idle pots and gaining value from the announcement, covered imports falling after a rush in the announcement window, more scrap and secondary metal, reshaping into uncovered forms, home fabricators losing output and value to tariff-free finished imports and to Ostrel, round trips that rest on weak audits, the U1-a reshuffle of exporters' metal with no change in total imports, both sides of the fund's transfers, and a currency chain that is ambiguous in its own right. The differences are mostly about exporters' net metal cost. The pattern version splits exporters by scrap ratio, signs low-scrap exporters' cost up (C-17) and high-scrap exporters' cost down (C-18, an export subsidy through SB-10 with A-6). The core version keeps one class and signs it `ambiguous` (C-20). Neither is fully right. The pattern version's threshold of about $19 a tonne covers only the unrefunded 1%: it leaves out the cost of holding the tariff until the refund arrives, which the same version counts for low-scrap exporters. It also misses the chain the core version found in K2's "at its option" clause: claimants whose actual yield beats Customs' tables are refunded on metal they did not use (A-N1, p = 0.6). The core version should have split the class, since the scrap allowance acts on the two groups very differently. OC-3's fixed-budget clause, as written, makes the pattern version sign one margin (fewer other checks) where CR-6's public-supply clause gives only a group. The core version is wrong on smelters' sales to exporters under U1-b, where it ignores the change in export volume. It also omits the two tax shares and importers' entry costs, and it declines exporters' resources by misreading CR-3's note. The pattern version omits the gain to holders of metal stocks, the U1-a position of exporters of domestic metal, drawback against Customs' ceiling, the price of secondary metal, the foreign sides of several markets and what persists after expiry. Both versions sign some exporters' exports up while ignoring the currency chain that each records as ambiguous.
+
+Counts: M 25, V 11, S 4, OP 12, OC 7.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-2 | M | | |
+| C-2 | C-1 | M | | |
+| C-3 | C-3, C-30 | V | | The pattern version records tariff revenue net of drawback; the core version records gross receipts (C-3) and the fund's balance (C-30) separately. |
+| C-4 | C-4 | M | | |
+| C-5 | C-5 | M | | Both use arithmetic on the case's figures (CR-12e) to settle the U1-a chain. |
+| C-6 | C-40 | V | | The pattern version uses the group (`employment`, `hours_worked`, at least one up); the core version signs `employment` alone. CR-9 with LW-10 gives more demand for smelter labor, but whether it is met by more jobs or by more hours needs a premise, so the group is the safer form. |
+| C-7 | C-7 | V | | `quantity_traded` against `quantity_demanded`. |
+| C-8 | C-12 | M | | |
+| C-9 | C-11 | M | | |
+| C-10 | C-10 | M | | |
+| C-11 | C-8 | M | | |
+| C-12 | C-9 | M | | |
+| C-13 | C-18 | V | | Recorded as `reclassification` in the pattern version and as `quantity_substitute` (traced imported metal) in the core version. Both give U1-a increase and U1-b no_change. |
+| C-14 | C-19 | S | E | Under U1-b, the pattern version has `ambiguous` and the core version `no_change`. The core version reasons only that exporters gain nothing by switching. It ignores the change in their output: tonnage sold to exporters follows export volume, and the core version itself signs exports up (C-16). With smelters at capacity and exporters indifferent between domestic and imported metal at import parity, no sign follows. The error is in the core version. |
+| C-15 | C-21 | M | | The core version adds importers' designations and re-import declarations. |
+| C-16 | C-21 | V | | The core version folds U1-a lot tracing into C-21 as a note, with one sign for both readings. The pattern version signs it per reading. |
+| C-17 | C-20 | S | E | Pattern: low-scrap exporters' net cost increases. Core: all claimants `ambiguous`. For exporters who use about the table's yield, the pattern version's arithmetic holds (1.03 × $5 against at most 0.03 × $80). But K2 lets a claimant use the yield tables "at its option". A can or cable maker whose actual scrap is below the table's is refunded on metal it did not use, and 0.02 t × $495 is about $10, above the $5 unrefunded. That is a derivable chain (CR-1, CR-4) whose premise the core version estimates at p = 0.6 (A-N1). By CR-12's 0.8 clarification (kind 2), the class sign is then `ambiguous` unless the class is split by claim basis. The pattern version left this chain out, and its own A-25 calls the tables generous. The core version erred too: it did not split claimants by scrap ratio (CR-1, recording), so it lost the low/high contrast. |
+| C-18 | C-20 | S | P | Pattern: high-scrap exporters' net cost decreases. The analyst misapplied SB-10 with CR-12e. The arithmetic (1.35 × $5 − 0.35 × Δs) leaves out the time the $675 a tonne of tariff is held before the refund (CR-3 note, LW-7), which the same version counts in C-17. A-6's $19 threshold covers only the 1%. With a holding period of several months, Δs must be several times larger, close to the top of the case's range (about $80). The A-N1 chain pushes the same way as the scrap allowance, but no premise establishes dominance, so the sign is `ambiguous` unless A-6 is restated with the holding cost included. The core version's `ambiguous` stands. One flaw remains in it: it lists claim costs (`compliance_cost`, C-21) as a chain on `price_paid`, which CR-12c forbids. The holding cost alone is enough to make the sign `ambiguous`. |
+| C-19 | C-16 | V | | Same sign, increase. The core version's class (mixed fabricators and parts makers) contains the pattern version's high-scrap exporters. Its chain (home sales burdened by about $500 a tonne against about $5 on export sales, CR-4 with CR-12e) does not need A-6, so it is the sounder derivation. Both versions leave out the currency chain here: see Findings. |
+| C-20 | C-14, C-16 | V | | The pattern version records mixed firms' home sales. The core version records home-market output (C-14) and the shift to export (C-16). |
+| C-21 | C-14 | M | | |
+| C-22 | C-41 | V | | As C-6: the pattern version uses the group form and the core version `employment` alone. |
+| C-23 | C-22 | M | | Both derive round trips from CR-4 with an enforcement premise, not from CR-12b. |
+| C-24 | C-24 | M | | |
+| C-25 | C-36 | M | | |
+| C-26 | C-36 | V | | Ostrel fabricators are an independent chain inside the core version's C-36. |
+| C-27 | C-33 | V | | `price_substitute` (scrap) against scrap sellers' `net_price_received`. The pattern version also combines the opposing chain from high-scrap exporters' added scrap (RS-13) with CR-12e. The core version does not record that chain; the sign is the same. |
+| C-28 | C-31 | M | | |
+| C-29 | C-34 | M | | |
+| C-30 | C-44 | M | | |
+| C-31 | C-6 | M | | |
+| C-32 | C-15 | M | | |
+| C-33 | C-37 | M | | |
+| C-34 | C-38 | M | | Different chains to the same sign: the scrap subsidy element in the pattern version (A-6), the home-to-export shift in the core version (A-8, A-15). |
+| C-35 | none (core: C-45, and "knock-on signs not reported") | OC | J | Other exporters' quantity, `ambiguous`. The core version signs the exchange rate `ambiguous` and stops. The pattern version adds the competition chain for electricity and labor, but both versions leave the result unsigned. Nothing scorable is lost. |
+| C-36 | none | OC | E | Total exports of aluminum-containing goods, `ambiguous`. Its chains are the low-scrap cost rise (C-17), the high-scrap and redirection chains, and the currency chain, which is itself ambiguous (kind 3). The core version signs only a subset (C-16) and never combines the exporters who sell only abroad. This is an omission in the core version. |
+| C-37 | C-12 | V | | Duplicates C-8 in the pattern version. The core version puts the reshuffle identity inside C-12. |
+| C-38 | none | OC | E | `tax_share_borne`, users against foreign smelters, increases (CR-7b with A-14). The core version uses this reasoning in C-1's derivation but does not record the split. This is an omission in the core version. |
+| C-39 | none | OC | E | `tax_share_borne`, home fabricators against their buyers, increases (CR-7b: buyers can switch to tariff-free imports, A-15). The core version gives the reasoning under C-14 and C-15 but does not record the split. This is an omission in the core version. |
+| C-40 | C-27 | M | | |
+| C-41 | C-46 | M | | |
+| C-42 | C-47 | M | | |
+| C-43 | C-26 | M | | Tier A in both. |
+| C-44 | C-25 | S | P | Pattern: `enforcement_cost` (other customs work) decreases. Core: a group of slower drawback payment, slower clearance and fewer other checks, `at_least_one_as_stated`. OC-3's fixed-budget clause, as written, names one margin ("enforcement of other rules falls"). CR-8a gives only that the staff time is withdrawn from some other use. Customs can just as well let its new task queue (slower refunds) or slow clearance, and CR-6's 0.7 public-supply clause needs a premise for each margin. The pattern applied as written overclaims. |
+| C-45 | none | OC | E | Importers' `compliance_cost` for classification and tariff entries increases (CR-1 operation 3, CR-8c). The core version's C-21 names importers of record only for designations and re-import declarations, not for the tariff itself. This is an omission in the core version. |
+| C-46 | none (core: final check 4) | OC | E | Low-scrap exporters' `resources_available_other_uses` decreases. The core version declines it, saying that the 1%, the claim cost and the holding cost "enter C-20, not a resources consequence". CR-3's note says resources fall for those who keep paying for the burdened option, and exporters who keep exporting do. The core version misread the note. The A-N1 chain applies here as in C-17, so the class sign should carry it, or the class should be split by claim basis. |
+| C-47 | none | OC | P | High-scrap exporters' resources increase. This rests on the same arithmetic as C-18, with the holding cost left out. Without a restated A-6 the sign is not established. The analyst misapplied SB-10. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-13 | OP | E | Holders of covered metal in Vessland gain `asset_value` when the tariff becomes expected (CR-7c, CR-10c, A-21). The pattern version records the stocks (C-10) but not their revaluation. This is an omission in the pattern version. |
+| C-17 | OP | E | Exporters of domestic metal pay about $500 a tonne more with no refund under U1-a; under U1-b their position is that of C-20. The pattern version derives this in section 5 but records no consequence for the class. This is an omission in the pattern version. |
+| C-23 | OP | J | Round-trip shipments, `quantity_traded`. The pattern version records the same trips only as `legal_breach` (C-23). This is a choice of how to record them. |
+| C-28 | OP | E | Drawback against Customs' $124 million ceiling in the first year: U1-a decrease, U1-b increase. This is arithmetic on the case's figures: under U1-a only 100,000 t of imported content qualifies until exporters switch; under U1-b the tables count process scrap on all 250,000 t. It is valid, and the pattern version omitted it. |
+| C-29 | OP | E | Drawback against the ceiling in the medium term increases. The core version says all its chains have the same sign, but one of them is export volume, which the pattern version shows is `ambiguous` in total (C-36). Under U1-a, A-20 also says only "most" exporters switch. The sign needs a premise that the scrap allowance outweighs any fall in exports. The core version overclaims. |
+| C-32 | OP | E | Remelters' `net_price_received` increases (CR-9, CR-6). It is valid. The pattern version records the price of scrap (C-27) but not of secondary metal. This is an omission in the pattern version. |
+| C-35 | OP | E | Foreign smelters sell less to Vessland (CR-9). This is the other side of the pattern version's C-8, which it did not record. This is an omission in the pattern version. |
+| C-39 | OP | E | Regional parts makers' `net_price_received` decreases (CR-9, CR-6, A-27). This is the competitors' side of the pattern version's C-34. This is an omission in the pattern version. |
+| C-42 | OP | E | Employment in export fabrication increases. The pattern version signs high-scrap exports up (C-19) but not the work they need. This is an omission in the pattern version. The core version should have used the group form, and the currency caveat under C-19 applies. |
+| C-43 | OP | J | Total employment in aluminum-using firms, `ambiguous`. Nothing scorable is lost. |
+| C-45 | OP | J | Exchange rate, `ambiguous`. The pattern version reaches the same currency chain through other exporters' quantity (C-35). |
+| C-48 | OP | A | Home-market fabrication after expiry decreases (CR-10b) because a move to Ostrel costs something to undo. The sign rests on a premise the core version added (A-N2, p = 0.65) and the pattern version did not consider. |
+
+### Findings
+
+- **Pattern overclaims (OC-3, fixed-budget clause).** OC-3 says that from a fixed budget "enforcement of other rules falls instead". CR-8a gives only that the staff time is withdrawn from some other use. The margin can be the new task itself (refunds paid more slowly) or other service (clearance), and CR-6's 0.7 public-supply clause asks for a premise per margin. OC-3 should record the margins as a group with `at_least_one_as_stated`, or name a premise for the one it signs (C-44).
+- **Pattern hides a premise (SB-10 for a drawback; the version's own finding confirmed).** SB-10's domestic-price clause assumes that domestic buyers cannot import the good untaxed, and its "combine with CR-12b" does not fit a check on the return crossing. The core version reached the same results without SB-10: imports cap the domestic price of the parts (C-14, C-36), and round trips follow from CR-4 with an enforcement premise (C-22). The core version confirms both points the pattern version raised.
+- **Errors in the pattern version.** (1) C-18 and C-47: the export-subsidy element leaves out the cost of holding the tariff until the refund arrives, which C-17 counts. A-6's $19 threshold covers only the 1%, so the sign is not established. (2) C-17 (and C-46): it misses the chain from claiming by the tables at the claimant's option (core A-N1), which can reverse the sign for low-scrap claimants who beat the tables. (3) C-19 and C-34 rest on SB-10 alone. The core version's home-to-export chain supports them without A-6 and should be added. (4) Omissions: holders' stock values (core C-13), exporters of domestic metal under U1-a (core C-17), drawback against the ceiling (core C-28), the price of secondary metal (core C-32), foreign smelters' and regional parts makers' sides (core C-35, C-39), employment in export fabrication (core C-42).
+- **Errors in the core version.** (1) C-19 under U1-b: `no_change` ignores export volume, so it should be `ambiguous`. (2) C-20: it does not split claimants by scrap ratio (CR-1 recording), and it nets claim costs into `price_paid` (CR-12c). (3) Final check 4: it misreads CR-3's note and so drops exporters' `resources_available_other_uses`. (4) C-29 overclaims: total exports are not signed. (5) C-40, C-41 and C-42 sign `employment` alone where the group form is derivable. (6) Omissions: the two `tax_share_borne` splits (pattern C-38, C-39), importers' tariff-entry compliance (pattern C-45), total exports (pattern C-36), and the opposing chain on the scrap price (pattern C-27).
+- **Error in both versions.** The core version signs exports of mixed fabricators and parts makers up (C-16, and C-42 through it). The pattern version signs high-scrap exports up (C-19). Neither combines the currency chain, which each records as `ambiguous` in its own right (core C-45, pattern C-35). By CR-12's 0.8 clarification (kind 3), an ambiguous chain makes the combined sign `ambiguous` unless a premise covers the other chain against both of its directions. Both versions should give such a premise or report these as `ambiguous`. The pattern version applied kind (3) to C-35 and C-36 but not to C-19.
+- **Test of 0.8 (the pattern version's verdicts).** *TX-8, both directions (needed interpretation):* confirmed. The core version also found the currency chain ambiguous when one policy moves imports both ways, and it notes that CR-9 says nothing about a change in the form of imports. *SB-10, round trips and checks (needed interpretation); domestic-price clause (failed):* both confirmed. The core version never needed CR-12b for the check, and it never derived a domestic price rise for goods not covered at import. *CR-12e, a second change (needed interpretation):* not tested. The core version did not record the opposing chain on the scrap price that raised the question. *Drawback as close to an export subsidy (recorded as "worked"):* the core version contradicts it. Once the holding cost is counted, the subsidy element is not signed on A-6 as stated.
+- **Limits of the core rules.** None produced a difference (no K). Wording that caused trouble: CR-3's note covers a refund in full, but not a partial refund, a refund on more metal than was used, or what happens to claimants' resources (the core version misread it); CR-12c leaves open whether holding and claim costs belong in a net `price_paid`; CR-9 gives no guidance when the form of imports changes; CR-6's 0.7 wider-market clause does not say whether a negligible effect is `no_change` or not reported; and no rule states how CR-6 and CR-7c combine for a right the policy creates in excess supply (designations under U1-b).
