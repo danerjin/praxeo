@@ -27,7 +27,7 @@ Small retail units (1,500 to 4,000 sq ft) in commercial zones rent for about $26
 
 The grocers' association has campaigned against the cap for twenty years; ballot initiatives to end it failed in 2019 (48% yes) and 2023 (46% yes). The license holders' association opposed both.
 
-The bill was introduced on 2 February 2027, passed on 20 May 2027 and signed on 1 June 2027. It takes effect on 1 December 2028, 18 months after signing. It has no expiry.
+The bill was introduced on 2 February 2027, passed on 20 May 2027 (Senate 41 to 9, House 112 to 38) and signed on 1 June 2027. It takes effect on 1 December 2028, 18 months after signing. No referendum petition was filed. It has no expiry.
 
 | Component | Instrument | Target | Bound | Parameters | Exemptions |
 |---|---|---|---|---|---|
@@ -132,7 +132,7 @@ Under U1-b the Sunday clause cuts the other way. No Merrowind store may sell off
 
 **The Board (C-23).** The Board's work rises from about 90 transfers a year to 2,000 to 3,000 applications, on an appropriation the Act does not raise (A-17). Under OC-3's 0.9 fixed-budget clause the resources come from some other use of its time: license decisions take longer, or fewer compliance checks are made on existing licensees, or both. Recorded as a mixed group. Fees go to the general fund, so they do not fund the Board (OC-3).
 
-**Credibility (TS-5).** Supermarkets add departments in existing space with little sunk cost, and enter whatever they expect. Standalone entrants sign multi-year leases; they would hold back if they feared the cap's return, but with the 7 to 2 margin in the legislature's committee and no referendum filed that premise is A-22 (p = 0.25), below the cut-off, so it is not reported.
+**Credibility (TS-5).** Supermarkets add departments in existing space with little sunk cost, and enter whatever they expect. Standalone entrants sign multi-year leases; they would hold back if they feared the cap's return, but with the Act's wide margins and no referendum petition filed, that premise is A-22 (p = 0.25), below the cut-off, so it is not reported.
 
 ## 6. Second-order effects
 
@@ -252,7 +252,7 @@ The check finds no sign that fails to reverse without a stated reason. The two t
 | ID | Statement | Type | p | Evidence | If false |
 |---|---|---|---|---|---|
 | A-1 | The cap binds: more outlets would operate without it. | binding | 0.95 | Licenses sell for about $400,000 and lease for about $30,000 a year. | Almost every consequence vanishes. |
-| A-2 | Holders, buyers of licenses and entrants expect the repeal to last. | expectations | 0.8 | Two ballot votes near half; no referendum petition; the Act's wide margin. | C-1, C-10, C-18 and C-31 shrink. |
+| A-2 | Holders, buyers of licenses and entrants expect the repeal to last. | expectations | 0.8 | Votes of 41 to 9 and 112 to 38; no referendum petition. | C-1, C-10, C-18 and C-31 shrink. |
 | A-3 | Entry pays for some supermarkets, convenience stores and standalone stores at a $5,000 fee. | alternative_uses | 0.85 | Ashcombe's licenses at $3,000; the Board's projection of 2,000 to 3,000 applications. | C-2 to C-5, C-7, C-9, C-18, C-24, C-28 and C-37 not reported. |
 | A-4 | Part of the cap's rent is in the money price, not only in volume per store. | other | 0.7 | The 11% basket gap after excise. | C-3, C-35 not reported; C-5 rests on A-5 alone; C-17 loses a premise. |
 | A-5 | New outlets are nearer to some buyers than existing package stores. | other | 0.85 | 3,750 supermarkets and convenience stores against 2,380 package stores. | C-4 not reported; C-5 rests on A-4 alone. |
@@ -272,7 +272,7 @@ The check finds no sign that fails to reverse without a stated reason. The two t
 | A-19 | Drinks bought off-premises and drinks in bars are substitutes for some buyers. | substitutability | 0.6 | Spending patterns in Ashcombe after supermarket sales began. | C-17 not reported. |
 | A-20 | Some buyers buy mixers, snacks, ice and groceries on the same trip as wine and spirits. | other | 0.8 | Package stores' sales mix. | C-24, C-26 not reported. |
 | A-21 | Old-license stores price the same on every day of the week. | other | 0.6 | Shelf pricing practice. | C-15 under U1-a becomes a decrease. |
-| A-22 | Standalone entrants fear the cap's return within their payback period. | expectations | 0.25 | Holders' lobbying; but the ballot history and the Act's margin. | Below the cut-off; not reported. |
+| A-22 | Standalone entrants fear the cap's return within their payback period. | expectations | 0.25 | Holders' lobbying; against it, the Act's margins and the absence of a referendum petition. | Below the cut-off; not reported. |
 | A-23 | Entrants staff liquor departments and new stores with added employees. | alternative_uses | 0.7 | Ashcombe supermarkets' staffing. | C-9 not reported. |
 | A-24 | Habits of buying in Ashcombe, and stores sited where licenses could be had, cost something to change. | reversal_cost | 0.8 | Commuting and shopping patterns; store leases. | More of the cap's effects reverse at once (persistence column). |
 | A-25 | Under U1-b, some residents near the line buy on Sunday in Ashcombe. | mobility | 0.7 | Sunday sales in Ashcombe; 30-minute trips. | C-6, C-25 and C-26 under U1-b become decreases. |
