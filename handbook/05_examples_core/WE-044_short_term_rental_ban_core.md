@@ -1,6 +1,6 @@
 # WE-044 / Analysis: Ban on short-term rentals of whole homes, with a primary-residence exception
 
-Analyst: core-only re-run (Handbook 0.8)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.8)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -360,3 +360,92 @@ CR-8b check (both sides of every transfer): fines paid by owners (C-57) are rece
 - No standard actor class for intermediaries' platforms as a role distinct from `intermediaries`, or for visitors and guests (used `guests.whole_unit`).
 - No variable for registrations or registered sellers in a non-licensing registry (only `share_of_sellers_licensed`).
 - No variable for visitor numbers or trips; `quantity_demanded (trips)` was used.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the main structure of the Saltmere case: fewer lawful whole-unit short lets and platform bookings, a fall in the value of non-primary units from the introduction, conversion to 12-month leases, mid-term lets and second homes left empty, two kinds of breach with guest screening where complaints are unlikely, lower long-term rents and landlords' receipts and values, higher hotel prices, nights and values, spillover to Elsdon, fewer visitor trips, the registry's cost to a group of general-fund payers, and ambiguous signs for mid-term rents, TOT, owner-occupied home values (Tier C) and Code Enforcement's workload. Both versions sign each opposing chain under CR-12 (0.8) the same way where they record it. The differences are of three kinds. First, the pattern version leaves four chains uncombined that the core version combines: the higher nightly price that displaced guests bring to lawful hosts (its own C-39) against the "no change" for two-unit owners under U1-a (C-4) and the fall in two-unit values under U1-a (C-41); the proximity chain of its own C-43 against home prices (C-42); and the spending of residents in converted units against beach-district sales (C-31). Second, the core version leaves one chain uncombined that the pattern version combines: owners who refuse summer bookings to free the unit for the leasing season (A-16) against early booking for summer stays (core C-34). Third, each version omits consequences the other derives: the pattern version omits sales of units, investors' lower demand, sham 30-night contracts and residence claims, room hosts' supply and entry (excluded on a wrong reason), hotel guests crowded out at peak and the rise in mid-term lets traded; the core version omits RS-10's search cost and disputes outside the courts, hotel staff, neighbors' complaint time and Elsdon's quantity supplied, and overclaims guests' full cost, off-peak and long-run hotel prices and cleaners' employment as a single variable. No pattern applied as written gave a wrong sign; every pattern-version error is a misapplication or an uncombined chain.
+
+Counts: M 30, V 10, S 6, OP 14, OC 5.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | M | | |
+| C-2 | C-2 | M | | |
+| C-3 | C-6 | M | | |
+| C-4 | C-15 | S | P | Pattern: two-unit owners letting 90 nights or fewer, U1-a `no_change`. Under U1-a they are lawful hosts, so the pattern's own C-39 (higher nightly price, A-32) pushes their nights up (CR-9, CR-4c), and K3's fee and proof, replacing R1's $150, is a fixed cost per outlet that can end the lightest lets (CR-4, 0.8). `no_change` is used only where a derivation establishes no change (02_ontology.md, 2.5); here two derived chains oppose, so U1-a is `ambiguous` (CR-12b), as the core has it. Analyst misapplication (uncombined chain), not a pattern error. U1-b agrees (decrease). |
+| C-5 | C-15 | V | | Pattern splits two-unit owners above 90 nights (decrease under both readings, correct: the cap removes nights above 90 and no price chain can restore them). The core signs the whole two-unit class, U1-a ambiguous, U1-b decrease; consistent with the pattern's split. |
+| C-6 | C-7, C-36 | M | | Core adds the leasing-season window (C-36) and horizon long. |
+| C-7 | C-9 | M | | |
+| C-8 | C-8 | V | | Pattern records mid-term lets as `reclassification`; core as `quantity_supplied` of lets of 30 nights or more. The core keeps `reclassification` for sham 30-night contracts (C-12). |
+| C-9 | C-11 | M | | Pattern also covers listing under another unit's registration; the core puts false residence claims under C-12. |
+| C-10 | C-10 | M | | |
+| C-11 | none | OC | E | `search_cost` increase for off-platform guests. Derivable from CR-11b (the means by which buyers and sellers learn about each other, here the platform's listings, are not available to trade outside the legal market) with CR-1. Core-version omission. |
+| C-12 | C-25 | M | | |
+| C-13 | none | OC | E | `disputes_settled_outside_courts` increase. CR-11b names courts among the means not available outside the legal market. Core-version omission (as in WE-003). |
+| C-14 | C-26 | M | | |
+| C-15 | C-29, C-30 | V | | Split by side. Both sign an increase: without the ordinance there is no contest on these terms. |
+| C-16 | C-31 | M | | |
+| C-17 | C-5 | M | | Pattern gives Tier A with no premise and does not mention R1. For R1 registrants the cost rises from $150 to $250 plus proof; for the third who did not register under R1 it rises only if platforms require the number (A-2). The core's Tier B with A-2 is the correct tier. |
+| C-18 | C-34 | S | E | Bookings made in the window for July–September stays. Pattern: ambiguous (early booking, A-15, against owners who refuse summer bookings to free the unit for the August–September leasing season or a sale, A-16, p 0.6). Core: increase, A-15 only. The core states the A-16 chain itself (section 8, C-36) but did not combine it with C-34; at p ≥ 0.5 it is a kind (2) chain and the sign is `ambiguous` (CR-12b; CR-12, 0.8). Core-version error (uncombined chain, final check 1). |
+| C-19 | C-32 | S | A | Stays before 1 July 2027. Pattern: ambiguous, with the (−) chain on A-16. But A-16 as stated concerns summer lets (the leasing season is August–September), not stays before July; the chain the pattern describes (selling with vacant possession, an early lease start) needs its own premise. The core states it as A-N4 at p 0.4 (a buyer may let until 1 July) and keeps the derived increase (CR-12, 0.8, kind 2). Difference of premises; the pattern version should state a separate premise rather than stretch A-16. |
+| C-20 | C-35 | M | | |
+| C-21 | C-28 | M | | |
+| C-22 | C-41 | V | | Pattern: peak-season hotel price, short–medium; off-peak and long run not signed. Core: all hotel rooms, short to long. The core's extension overclaims twice: off-peak, spare rooms can meet added demand at the old price, so CR-6 gives only "price or quantity" without a supply premise (the pattern's reading); in the long run, CR-12e's response argument gives "not below the counterfactual", and a strict increase needs a premise that entry (A-25) does not close the gap. |
+| C-23 | C-42 | M | | |
+| C-24 | C-43 | M | | |
+| C-25 | C-44 | M | | |
+| C-26 | C-23 | M | | |
+| C-27 | none | OC | J | Elsdon hosts' `quantity_supplied` increase. The core records the price instead (C-48). CR-6 with CR-4 for Elsdon sellers gives at least one of price or quantity; each half needs a supply premise. The pattern's half is the better supported (Elsdon units have spare occupancy, as hotels do off-peak), but it cites only A-10 and should cite A-29 or a premise on spare occupancy. |
+| C-28 | C-49 | M | | |
+| C-29 | C-50 | M | | |
+| C-30 | C-22 | V | | `quantity_traded` (trips) in the pattern, `quantity_demanded` (trips) in the core. |
+| C-31 | C-51, C-52 | S | P | Pattern: beach-district businesses' `quantity_traded` decrease, from visitors alone. Core: visitors' purchases decrease (C-51, agreeing) but total purchases `ambiguous` (C-52), because residents of units moved to 12-month leases buy near home (CR-9, complement by location; A-N3, A-5). The pattern's own C-6 and C-35 put those residents there. Analyst misapplication: RS-9, cited "by analogy" for a location complement, prompts only the purchases that move with the visitor and not the opposing chain. |
+| C-32 | C-54 | V | | Pattern: `employment`, `hours_worked` `at_least_one_decrease` (correct form). Core: `employment` decrease alone. CR-9 and LW-10 give a fall in demand for the input, not which of heads or hours falls; the core overclaims one member of a group (final check 2). |
+| C-33 | none | OC | E | Hotel staff `employment`, `hours_worked` `at_least_one_increase`. Derivable from CR-9 with LW-10 along hotel labor `input_to` room-nights (core C-42). Core-version omission. |
+| C-34 | C-37 | M | | |
+| C-35 | C-38 | M | | |
+| C-36 | C-39 | M | | |
+| C-37 | C-40 | M | | |
+| C-38 | C-47 | M | | |
+| C-39 | C-17 | V | | Pattern signs sellers' `net_price_received`; core signs `price_paid` for room and primary-residence lets. No wedge between them. |
+| C-40 | C-4 | M | | |
+| C-41 | C-16 | S | P | Two-unit buildings' value. Pattern: decrease under both readings. Under U1-a the second unit keeps 90 nights at a higher nightly rate (the pattern's own C-39, A-32) and loses nights above 90; two derived chains oppose, so U1-a is `ambiguous` (CR-12b), as the core has it. Analyst misapplication (uncombined chain). U1-b agrees (decrease). |
+| C-42 | C-61 | S | P | Pattern: home prices in the beach districts decrease (fewer investor bids, A-21). The same homes carry the proximity chain the pattern itself uses in C-43 (A-23, p 0.6): buyers who value fewer transient neighbors bid more. A kind (2) chain at p ≥ 0.5, so the price is `ambiguous`, Tier C (CR-12b, CR-12d), as the core has it. The pattern version is inconsistent between C-42 and C-43. Analyst misapplication. |
+| C-43 | C-62 | M | | Both Tier C, kind (2). |
+| C-44 | C-3 | M | | Core adds horizon long, which holds for owners at the time (return per unit of capital they invested); the pattern's "no lasting change" refers to later buyers. Not a conflict. |
+| C-45 | C-58 | M | | |
+| C-46 | C-59 | M | | |
+| C-47 | C-60 | V | | Pattern records Code Enforcement's `enforcement_cost` (ambiguous); core records the burden on a fixed budget as other complainants' `wait_time` (ambiguous), which is where a fixed budget puts it (CR-6, 0.7, public supply). |
+| C-48 | none | OC | E | Neighbors' time spent complaining, `ambiguous` (K4 complaints against fewer nuisance complaints). Derivable from CR-8c over the same two chains as core C-60. Core-version omission (the core notes neighbors' choice to complain only under Gaps (b)). |
+| C-49 | C-55 | V | | Same sign (ambiguous); recorded on `taxpayers` in the pattern, on `city.general_fund` in the core. |
+| C-50 | C-56 | V | | Agree on fines (increase). The pattern also puts registration fees in an `increase`, against the wrong baseline: K3 replaces R1 for whole units, so R1's $150 from about 65% of 3,050 whole-unit hosts (about $297,000) is replaced by at most $250 from about 900 registrants (about $225,000). Registration fees more likely fall (with a premise that the 65% applies to whole-unit hosts, CR-12e), and the combined receipts are not signed. Pattern-version error (final check 3); the core rightly separates the items, though it could have signed the fees item with that premise. |
+| C-51 | C-57 | M | | |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-12 | OP | E | Sham 30-night contracts and false residence claims (`reclassification`, A-N1). RS-5, which the pattern version cites, prompts it; the pattern applied RS-5 only to genuine 30-night lets. Pattern-version omission. |
+| C-13 | OP | E | Homes offered for sale increase (CR-4, x: hold, y: sell; A-N2). The pattern names `hosts.selling` and "a sale" as a next-best option but records no consequence for it. Pattern-version omission. |
+| C-14 | OP | E | Investors' demand for beach-district homes decreases (CR-1, CR-4, CR-7c; A-21). The pattern uses A-21 inside C-42 and C-43 but does not record the demand itself. Pattern-version omission. |
+| C-18 | OP | E | Room hosts let more rooms (CR-9, CR-4c; A-32). The pattern excludes it as "a supply response to the price, not a separate consequence of the policy". That reason is wrong: a response to a price change the policy causes is a consequence of the policy (CR-9, then CR-4). Pattern-version error. |
+| C-19 | OP | J | Total nights of primary-residence hosts, ambiguous (cap and fixed fee against the higher price). The pattern records the above-90 subclass (C-3) and discusses both chains, but not the total. Choice of key; nothing scorable conflicts. |
+| C-20 | OP | E | Entry of new room and primary-residence hosts (CR-4, x: stay out, y: enter). Excluded by the pattern on the same wrong reason as C-18. Pattern-version error. |
+| C-21 | OP | E | Guests' `full_cost_per_unit` of lodging increase. CR-3a gives a loss by the guest's own ranking, not a higher full cost: the unit of lodging changes (a couple who move from a $235 whole unit to a $180 hotel room may pay less), and of the substitutes the mid-term price is ambiguous and the off-peak hotel price unsigned. Core-version overclaim, the same confusion as "worse off is not poorer". |
+| C-24 | OP | E | `travel_time` increase for guests who stay in Elsdon (CR-4, CR-3a; A-10). Derivable; pattern-version omission. |
+| C-27 | OP | J | Stays booked before the introduction for dates after 30 September 2027 decrease. A subset of C-2 in both versions; the pattern states the lost stay in prose (section 5) but not as a row. |
+| C-33 | OP | J | Nights in the July–September 2027 window decrease. The pattern covers it through C-1 and C-2 (short horizon, "from 1 July 2027"); the core adds a window row and the argument that early booking moves the booking, not the stay. |
+| C-45 | OP | E | Guests who would have stayed in hotels anyway get fewer peak nights (CR-4c, CR-6 with fixed rooms, A-9). The pattern records the price rise (C-22) but not its cost in nights to incumbent buyers. Pattern-version omission. |
+| C-46 | OP | E | Furnished lets of 30 nights or more traded increase: both chains (owners in, A-7; guests in, A-31) raise the quantity (CR-12d). RS-16's Then gives `quantity_substitute` increase; the pattern recorded only the ambiguous price. Pattern-version omission. |
+| C-48 | OP | J | Elsdon hosts' `net_price_received` increase. The other half of the CR-6 result for which the pattern records quantity (C-27); needs a premise that Elsdon supply is not perfectly elastic, which the core does not state. |
+| C-53 | OP | J | Elsdon businesses sell more to visitors. Depth choice: the pattern stops at hotel-district businesses (depth 3). |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** No pattern applied as written gave a wrong sign. The overclaims are the analyst's: `no_change` and `decrease` under U1-a (C-4, C-41) and `decrease` for home prices (C-42) where the version's own chains (C-39, C-43) oppose; a beach-district sales `decrease` (C-31) reached through RS-9 "by analogy", which carries no prompt for the opposing chain from new residents; registration fees signed against a baseline without R1 (C-50); Tier A for registration with no premise (C-17); and A-16 stretched to stays before July (C-19). C-27 (Elsdon quantity) needs a supply premise it does not cite.
+- **Errors in the core version.** One uncombined chain: early summer bookings (C-34) should be `ambiguous`, since the core states the A-16 chain (owners refusing summer bookings) and does not combine it. Overclaims: guests' `full_cost_per_unit` (C-21), a loss by own ranking recorded as a higher cost; hotel prices off-peak and in the long run (C-41), where CR-6 needs a supply premise and CR-12e gives only "not below the counterfactual"; and cleaners' `employment` alone (C-54) where only the group is derivable. Omissions: RS-10's search cost and disputes outside the courts for off-platform guests (derivable from CR-11b), hotel staff (CR-9 with LW-10), neighbors' complaint time (CR-8c) and Elsdon quantity supplied.
+- **Errors in the pattern version (omissions).** Sales of units (core C-13), investors' demand (C-14), sham contracts and residence claims (C-12), room hosts' supply and entry (C-18, C-20; excluded on the wrong ground that a supply response to a policy-caused price is not a consequence), crowded-out hotel guests (C-45), mid-term quantity traded (C-46), and Elsdon guests' travel time (C-24).
+- **Test of 0.8 verdicts.** *CR-9 0.7, proximity at Tier C (needed interpretation):* confirmed. Working from the core rules alone, the core version reached the same treatment (kind 2, Tier C, C-61 and C-62) and flagged the same open question: whether a Tier C chain may make a Tier B chain ambiguous (its Gaps b). It kept the right-baseline chain for Code Enforcement (C-60) at Tier B on an empirical premise (A-18), as the pattern version did, without flagging it. *RS-8 0.8, opposing timing chains (needed interpretation, then worked):* confirmed, and more strongly. Without RS-8's prompt, the core version missed the opposing A-16 chain for summer bookings (C-34), although it stated that chain elsewhere. For stays before July, it judged the opposing chain to need a premise below the cut-off (A-N4, p 0.4). That contradicts the pattern version's use of A-16 there (C-19): the clause's prompt led the pattern version to find a chain, but it then borrowed a premise that does not cover that window.
+- **Limits of the core rules.** None produced a difference: no S, OP or OC row has cause K. Unclear core-rule wording: (1) CR-6 gives "price or quantity" for a demand shift on a free market but does not say, as RS-1 (0.8) and RS-16 do, that each half needs a supply premise. Both versions signed some substitute prices (rooms, Elsdon, off-peak hotels) without one. (2) CR-12e's response argument says a response cannot push a price "back below its old level". Whether that licenses `increase` or only "increase or no change" is not stated (hotel prices in the long run). (3) CR-9 (0.7) with CR-12d: whether a Tier C proximity chain can make a Tier B sign ambiguous (both versions). (4) CR-12e on counts over a distribution: whether a rate given for all hosts (65% registered) may be applied to a subclass as arithmetic or only as a premise (registration fees).

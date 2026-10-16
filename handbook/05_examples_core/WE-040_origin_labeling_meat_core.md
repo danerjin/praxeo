@@ -1,6 +1,6 @@
 # WE-040 / Analysis: Country-of-origin labeling for meat
 
-Analyst: core-only re-run (Handbook 0.8)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.8)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -333,3 +333,106 @@ What would decide each: the size of the cost pass-through against the demand shi
 - No variable for the composition of supply by origin (share of Quorra-born animals in slaughter); recorded through `quantity_demanded` and `quantity_traded` with qualifiers.
 - No actor class for a foreign government as a lobbying party; recorded inside `lobbies.opponents`.
 - No variable for turnover held under a threshold distinct from `quantity_supplied`.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the main structure of the labeling case. Both find the following: shoppers learn origin, and given A-3 and A-4 they move from mixed-origin meat toward "Brennmark" meat. Processors, importers and retailers bear tracing and labeling costs. Mixed plants take fewer Quorra-born animals, and Quorra breeders get less for them and sell fewer. Quorra plants ship boxed meat instead. Brennmark breeders get more, their herds gain value and grow, and border feedlots and plants lose returns and value. "Brennmark" meat costs more, while the mixed-origin price and the food-service price are ambiguous. Some service counters close, and butchers near the threshold stay under it or split. Exempt butchers who sell only Brennmark-born meat label voluntarily. Some meat is routed into processed forms and food service, there is a late-2026 rush with frozen stocks, some meat is mislabeled, and both versions record lobbying, enforcement, the general-fund payers and fines. There is no case where the two versions sign the same key in opposite directions. The main difference is one pattern-version error. The pattern version signs `variety` (origin versions per cut) as a decrease (C-10) and counts it as the second use of the candidate pattern "fixed cost per item reduces variety". Against the counterfactual, each cut is sold in one version with no origin shown, so a fixed cost per origin version cannot reduce the count. The core's refusal to sign is right. The pattern version also signs Brennmark breeders' price rise (C-29) without the opposing chain that K2's $1.20 per head on Brennmark-born animals creates; the core states that chain and a dominance premise (A-N1). The core version has its own errors. Its long-run sign for breeders' prices (C-29) takes more from CR-12e than the response argument gives. Its fall in demand for labeled meat as a whole (C-37), with the rise in substitutes that follows (C-38), ignores that the mixed-origin price is itself ambiguous. And it omits several derivable keys: buyers' information at exempt butchers, per-batch information on ground meat, Quorra breeders' asset value, and mixed plants' loss of means.
+
+Counts: M 25, V 13, S 0, OP 10, OC 7.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | M | | `quality_information` increase. The core adds A-3 as a premise; it is not needed for this variable (the label makes origin easier to judge whatever buyers believed before), only for any change in choices. |
+| C-2 | C-2 | V | | The core merges mixed and single-origin plants into one row. |
+| C-3 | C-2 | V | | As C-2. |
+| C-4 | C-3 | M | | |
+| C-5 | C-4 | M | | |
+| C-6 | C-7 | V | | Same premises (A-1 to A-4). Pattern class `buyers.origin_minded`, core class all shoppers at bound retailers; the core cites CR-4a for the 3% who prefer Quorra-born meat. |
+| C-7 | C-8 | V | | As C-6. |
+| C-8 | C-9 | M | | Both have two independent chains (CR-12d). The pattern's cost chain is per head (CR-4c with A-5, A-6). The core's cost chain is through plants dropping the second stream (A-7). Both are valid. |
+| C-9 | C-9 | V | | The pattern records `number_of_sellers` (plants handling both origins); the core folds the same CR-4 move (A-7) into chain 1 of C-9. |
+| C-10 | none (core: "Not reported") | OC | P | Pattern: `variety` (origin versions per cut) decrease, from a fixed cost per version (A-8). The analyst misapplied the CR-4 0.7 note and the candidate pattern "fixed cost per item reduces variety". In the counterfactual, under R1, each cut is sold in one version with no origin shown. With the Act, a cut is sold in one version or, where it pays, two. So the count cannot fall below the counterfactual. A-8 only keeps it from rising for low-volume cuts. A-9, which the pattern treats as the opposing (+) chain, is in fact the only chain that moves the count against the baseline, and it is below the cut-off. The valid record is no sign (or `no_change`), which is the core's reading (its "Not reported" and Gaps (b)). This case is not a second use that promotes the candidate pattern. |
+| C-11 | C-17 | M | | |
+| C-12 | C-14 | V | | `number_of_sellers` just below the line relative to just above (pattern), against `quantity_supplied` (turnover held under the line in each measuring year, core). Same CR-4 move, A-11, A-12. |
+| C-13 | C-15 | M | | |
+| C-14 | C-16 | M | | The core starts the horizon at medium, the pattern at short. |
+| C-15 | none | OC | E | `quality_information` at exempt butchers increase (voluntary labels and silence, A-14, A-15). This follows from the core's own C-16 by CR-11c, since buyers there had no origin information in the counterfactual. Core omission. |
+| C-16 | C-19 | M | | `reclassification` into processed forms. The core adds A-N3 (processing costs less than the discount for some cuts). The pattern's RS-5 "Assumes" needs this premise, and the pattern did not state it, so the premise is hidden there. The pattern's cost chain (A-5) holds only for the part of the cost carried through retail cutting: K2's per-head records apply to every animal slaughtered whatever its later form. |
+| C-17 | C-20 | V | | Food service's purchases (pattern) against processors' sales to food service (core). Same move, CR-7a and CR-4, A-16. |
+| C-18 | C-21 | M | | The core lists A-30 (some breaches detected) as a premise. `legal_breach` increase does not need detection, so A-30 is needed only for fines. |
+| C-19 | C-25 | V | | The core records only the opponents. The breeders' lobbying to extend K1 is derivable from CR-4 (x: accept, y: lobby) with A-18, so the core omitted it. Neither version asks what breeders would do in the counterfactual, though. Without the Act, they would presumably still be lobbying for an origin law. Against that baseline, their lobbying needs a comparison premise, as in RS-7's "Unless" clause. |
+| C-20 | C-26 | M | | |
+| C-21 | none | OC | E | Ground-meat `quality_information` per batch (U1-a no_change; U1-b increase). It follows from CR-11c per reading, and the core records the matching cost (C-26) but not the information. Core omission. |
+| C-22 | C-23, C-24 | V | | The pattern signs the late-2026 window (July to December) and leaves the 2027 fall to C-8. The core signs both windows (October to December 2026 up, January to June 2027 down). The core adds A-N4 (some animals are near slaughter weight), which the pattern's rush needs and does not state. Neither version notes that fresh meat from animals slaughtered in January to June 2027 is sold before K1 applies. So the rush rests on K2's cost and K5's frozen window, not on the label as such. The core's "x: slaughter in early 2027 under K2 and K1" is imprecise on this. |
+| C-23 | C-22 | M | | |
+| C-24 | C-10, C-12 | V | | Importers bring in fewer feeders from mid-2026 (pattern, a window) against live imports decrease over all horizons, with CR-10a for 2026 inside C-12 (core). The core makes C-10 rest on A-22 (boxed meat), which it does not need: lower bids alone move marginal Quorra sellers to any alternative. |
+| C-25 | C-12 | M | | |
+| C-26 | C-10 | V | | Breeders' `quantity_supplied` (pattern) against importers' `quantity_traded` (core). Same prevented exchanges (CR-5a). |
+| C-27 | C-11 | M | | |
+| C-28 | none | OC | J | Total Quorra sales to Brennmark, `ambiguous`. The core records the two items (C-10, C-11) and the currency link (C-44), not the total. Nothing scorable is lost. |
+| C-29 | C-28 | M | | Both increase, short to medium. The pattern's premises omit an opposing chain the core derives: K2 attaches about $1.20 per head to Brennmark-born animals too, which lowers what plants bid for every animal (CR-9, LW-10). Without a dominance premise (core A-N1, CR-12e), CR-12b gives `ambiguous`. So the pattern's sign has a hidden premise. RS-16's "Unless" clause, as written, names added supply but not a cost the policy also attaches to the substitute. |
+| C-30 | C-31 | M | | |
+| C-31 | C-30 | M | | |
+| C-32 | C-34 | M | | |
+| C-33 | C-32 | M | | |
+| C-34 | C-35 | M | | |
+| C-35 | C-36 | M | | Both `ambiguous`. |
+| C-36 | C-41 | M | | Both `ambiguous`. |
+| C-37 | C-39, C-40 | V | | The pattern gives all exempt butchers `ambiguous`. The core splits them: those selling only Brennmark-born meat increase (they label, so the silence chain does not reach them; A-15), and mixed sellers `ambiguous`. The split is the better record, but the core's C-39 class should be limited to those who do label. |
+| C-38 | C-18 | V | | Pattern: labeled retailers' `asset_value` decrease (CR-7c on A-31). Core: `return_on_capital` decrease, short run. Same chain; the core omits the capitalization step (final check 7). A change of limited duration is capitalized for the yields it affects (CR-7c), so the pattern's row is derivable. |
+| C-39 | none | OC | E | Quorra breeders' `asset_value` decrease (CR-7c, CR-10c with A-21, A-24). The core uses A-21 only for the incidence row (C-13) and omits the capitalization. Core omission. |
+| C-40 | none | OC | J | Near-threshold butchers' `asset_value`, `ambiguous`. The pattern overrides RS-17's "decrease" with a (+) chain from rivals' burden; that is the valid sign (CR-7c, CR-9, CR-12b). The core does not record the key. Nothing scorable is lost. |
+| C-41 | C-5 | M | | |
+| C-42 | C-6 | M | | |
+| C-43 | none | OC | E | Mixed plants that keep both origins have less for other uses (CR-3 note: they keep paying for the burdened option). The core's final check 4 signs this for shoppers but not for plants. Core omission; by the same reasoning single-origin plants and bound retailers qualify too, which neither version records. |
+| C-44 | C-45 | M | | |
+| C-45 | C-46 | M | | |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-13 | OP | J | Quorra breeders' `tax_share_borne` increase relative to Brennmark feedlots and processors (CR-7b, A-21, A-6). The pattern states the same comparison in prose (section 6) and puts A-21 into C-25's premises. A recording choice. |
+| C-27 | OP | J | Under U1-a, Quorra-born trim is moved into ground meat sold under a "may contain" list (CR-4, CR-7a). The pattern says that such a list also deters origin-minded buyers. The core's claim needs a premise the core does not state: buyers discount a mixing grinder's list less than a "Mixed origin" cut. Both readings are defensible. |
+| C-29 | OP | E | Brennmark breeders' price increase in the long run. CR-12e's response argument shows that herd growth cannot push the price below its old level. It does not show that the price stays above that level, which needs a premise that breeding supply is not perfectly elastic in the long run (scarce pasture or sow places). A-25 points the other way. Core error: the long-run sign should be `ambiguous` between increase and `no_change`, or carry that premise. The pattern rightly limits its sign to short and medium (section 8). |
+| C-33 | OP | E | Quorra-born animals on feed when the Act became expected lose value (CR-7c, CR-10a). This is derivable, and the pattern omitted it (final check 7). The core's derivation contains a slip, though. Animals "bought before March 2026 ... slaughtered after 1 January 2027" hardly exist with six to nine months of finishing. The loss falls on animals on feed between March and July 2026 that are slaughtered from January 2027, through K2's cost (A-5). |
+| C-37 | OP | E | Shoppers buy less labeled fresh meat overall. The core derives this from "labeled meat costs more" (A-27), but its own C-36 makes the mixed-origin price `ambiguous`. A chain whose sign is ambiguous (origin-indifferent shoppers facing a possibly lower mixed-origin price) opposes it, so by CR-12 0.8 (kind 3) the sign is `ambiguous` without a dominance premise. Core error. |
+| C-38 | OP | E | Poultry and processed meat sell more. This rests on C-37 and fails with it. Core error. |
+| C-42 | OP | E | Total slaughter in Brennmark decreases in the short and medium run (fewer Quorra-born animals, herds fixed, A-23). This is derivable, and the pattern omitted it. The core adds A-22, which the sign does not need. The late-2026 rush (C-23) also lies inside "short", so the short horizon should be signed per window (CR-12h). |
+| C-43 | OP | J | Total slaughter in the long run is `ambiguous`. Nothing scorable is added. |
+| C-44 | OP | J | Brennmark's exports `ambiguous` through the currency link. The pattern declines to sign the same link (kind 3 on an ambiguous first link). Same content, recorded differently. |
+| C-47 | OP | E | Shoppers who keep buying labeled meat have less for other uses (CR-3 note). This is valid for buyers of "Brennmark" meat, whose price rises (C-35), and the pattern's final check 4 omitted them. The core's class is too broad, since the mixed-origin price is `ambiguous`. Error in both versions: an omission in the pattern and too wide a class in the core. |
+
+### Findings
+
+- **Pattern overclaims and hidden premises.**
+  - C-10 (`variety` decrease) is signed against an imagined two-version baseline, not against the counterfactual, in which each cut has one version with no origin shown. The candidate pattern "fixed cost per item reduces variety" needs a precondition: the versions must exist in the counterfactual. This case is not a second use that promotes it.
+  - C-29 (Brennmark breeders' price) leaves out the opposing chain from K2's per-head cost on Brennmark-born animals and needs a dominance premise (core A-N1). RS-16's "Unless" clause should also cover a cost the policy attaches to the substitute itself.
+  - C-16 needs the premise that processing costs less than the discount (core A-N3), as RS-5's "Assumes" requires. C-22 needs the premise that some animals are near slaughter weight (core A-N4).
+  - C-19 records breeders' lobbying without asking what they would have lobbied for without the Act.
+- **Errors in the core version.**
+  - C-29 (long run) reads the CR-12e response argument as giving "above the old level", where it gives only "not below".
+  - C-37 and C-38 ignore the kind 3 chain from the ambiguous mixed-origin price.
+  - C-47's class is too broad.
+  - It omits buyers' information at exempt butchers (pattern C-15), per-batch information on ground meat (C-21), Quorra breeders' asset value (C-39), mixed plants' loss of means (C-43), retailers' capitalization (C-38) and breeders' lobbying (C-19).
+  - Minor: unneeded premises (A-3 on C-1, A-22 on C-10 and C-42, A-30 on C-21), a dating slip in C-33, and the imprecise "under K2 and K1" in C-23.
+- **Errors in the pattern version (omissions).** It omits animals on feed losing value (core C-33), total slaughter falling in the short and medium run (C-42), and the loss of means for buyers who keep buying "Brennmark" meat (part of C-47).
+- **Limits of the core rules.**
+  - No row has cause K. Every difference traces to an error or a recording choice.
+  - GAP-040-C1 (trust in meat as a whole) is the CR-11 0.7 rule doing its job: no premise, no chain. It is not a gap.
+  - GAP-040-C2 (a plant choosing between one origin stream and two) is covered by CR-4's paragraph on units and lumpy costs (a large cost attached to the option "handle both origins"). The 0.8 note's list of items, outlets and firms is incomplete, but the rule is not.
+  - The real limit both versions meet is the welfare of buyers who choose differently once informed (Q22). Both leave it unsigned, correctly.
+- **Unclear core-rule wording.**
+  - CR-7c says "durable asset". Its scope over inventories held when a change becomes expected (cattle on feed) should be stated; CR-10b already lists inventories as a stock.
+  - CR-12e's response argument should say explicitly that it bounds the response at the old level and does not establish a sign above it.
+  - CR-4's 0.8 note on fixed costs should point back to the lumpy-cost paragraph rather than list items, outlets and firms.
+  - CR-11's silence clause should name the second step, the sellers' response (both versions made this point independently).
+  - CR-12h covers moving activity between windows, not holding it under a level in every window (core Gaps (b)).
+- **Test of 0.8 verdicts.**
+  - *CR-11 0.7, silence (needed interpretation):* confirmed. The core version had to derive the exempt sellers' response with CR-4 too (core C-16; core Gaps (b)).
+  - *CR-4 0.8, a cost fixed per origin stream (needed interpretation):* confirmed (core GAP-040-C2), with the qualification above that CR-4's lumpy-cost paragraph already covers it.
+  - *RS-17 (partly worked; the asset-value conclusion overridden):* the core-only version supports the override in principle. A derivation from CR-4, CR-7c and CR-9 has the rivals' burden as a (+) chain, and RS-17's "value of growing past the threshold falls" compares with a firm free of the policy, not with the counterfactual. The core does not record the key itself.
+  - *CR-4 0.7 fixed costs per item and the candidate pattern ("worked as written", "needed here"):* contradicted (C-10 above).
+

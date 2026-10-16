@@ -1,6 +1,6 @@
 # WE-039 / Analysis: Groundwater pumping cap with tradable shares allocated by history
 
-Analyst: core-only re-run (Handbook 0.8)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.8)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -279,3 +279,75 @@ Both sides (CR-8b): fees (C-41, C-19) are SBWA receipts (C-3); lease payments (C
 - No variable for acreage farmed or land use (irrigated, fallowed, dry grazing).
 - No variable for lottery entries; C-18 uses `reclassification` and C-19 `compliance_cost`.
 - No generic actor class for holders of a created right as distinct from the land that earned it; `holders.history` and `lottery_winners` were added by role.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on almost all of the case: pumping falls; the history shares gain value from March 2022 as a windfall, because the base period was fixed before the plan was expected; lottery winners gain; a lease price appears and rations the cap; field crops fall most and tree nuts fall too, on the response argument of CR-12e; new orchards fall from 2022; the lottery draws parcel splitting and its costs; some pumpers over-pump; groups lobby; surface water costs more; Lowther land gains; farm work and input sales fall; the SBWA's enforcement, the meters and the fee are costs; and through the shared aquifer, at Tier C, lift energy, well deepening, dry domestic wells and the county's emergency deliveries all fall. Long-run pumping is `ambiguous` at Tier C in both, and so are the value of parcels with history and the value of eligible parcels without it. The one disagreement in sign is South under U1-b. The pattern version signs South's pumping (C-8), and the domestic wells that follow it (C-24), `ambiguous` under U1-b, on a premise (A-22) that leasing in from North and Central could take South past its counterfactual pumping. No rule derives that: under either reading every af pumped in South costs at least the lease price, against energy only in the counterfactual, so by CR-4c and the response argument of CR-12e (which the pattern version itself uses for nut output, C-6) South pumps less than it would have. U1-b only makes the cut smaller. The core version says this (A-22, C-9) but records no row for South's pumping. The pattern version also leaves the full cost of water to the marginal user `ambiguous` (C-29), which its own dominance for C-6 contradicts. The core omitted four pattern claims: fewer irrigating farms, basin growers' surface-water purchases, cross-sub-basin transfer costs under U1-b, and the full-cost item. Its fourteen core-only claims are pattern-version omissions: both sides of the money flows (SBWA receipts, lease payments and receipts), the long-run ambiguity of output and farm work, low-use wells retired rather than metered, and the markets one step out (meters, other districts' surface water, drillers, input dealers' returns).
+
+Counts: M 23, V 5, S 2, OP 14, OC 4.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | M | | |
+| C-2 | C-2 | M | | Both date the claim's value from 15 March 2022 and call it a windfall (CR-7c, 0.7 and 0.8). |
+| C-3 | C-20 | M | | |
+| C-4 | C-6 | M | | The core notes that the counterfactual price of a right that does not exist is undefined, and signs against water at energy cost only. |
+| C-5 | C-8 | M | | |
+| C-6 | C-9 | M | | Both use CR-12e's response argument. The core also names the lower lift cost (Tier C) as an opposing chain and bounds it with A-N3. Under CR-12e's 0.8 clause that is needed, because the lift saving is a second change the policy causes, not part of the response. The pattern version does not list it. |
+| C-7 | none | OC | E | `number_of_sellers` (irrigating farms) decrease. Derivable: CR-4 (x: farm the allocation, y: lease all of it out and fallow) and CR-7a, with CR-1 op 1 on would-be new irrigators (core A-N5). Core-version omission; the core's C-7 and C-24 record leasing and retired wells, not farms. The pattern version should also deal with lottery winners who start irrigating, at most 210 blocks of 100 af. And A-5, as worded, does not say that any grower leases out a *whole* allocation. |
+| C-8 | C-13, A-22 (text) | S | E | South's groundwater pumping. U1-a: both `decrease`. U1-b: pattern `ambiguous` (CR-12 0.8 kind 2 on A-22); core `decrease`, stated in A-22's "if false" column and in C-9, with C-13 as the leasing flow. Pattern-version analyst error. The (+) chain raises South's pumping relative to U1-a, not relative to the counterfactual. Against the counterfactual, every af costs at least the lease price (CR-3, CR-4c), and leasing in, as a response to the cap, cannot take South past its unconstrained level (CR-12e). The pattern version applied exactly this argument to nut output (C-6). The only opposing chain is the Tier C lift saving, which A-N3 dominates. The core should have recorded South's pumping as its own row. |
+| C-9 | C-14 | V | | Pattern: `entry_rate` of new irrigated farms; core: `investment_target` in new orchards, for prospective planters. |
+| C-10 | C-14 | M | | The core extends the horizon to medium and long. |
+| C-11 | C-18 | M | | |
+| C-12 | C-19 | M | | The core separates the fees (a transfer to SBWA) from the costs of splitting (used up). |
+| C-13 | C-21 | M | | |
+| C-14 | C-23 | M | | |
+| C-15 | none | OC | E | Basin growers' `quantity_substitute` (surface water bought) increase (CR-4, x: groundwater at the lease price, y: surface water; A-8). Core-version omission. The core records the other side, other districts buying less (C-31), and the price (C-30), but not the basin's purchases. |
+| C-16 | C-32, C-33 | V | | The pattern records basin growers' `cross_border_purchases`; the core records the Lowther side: land value (C-32) and Lowther pumping (C-33). The same move under CR-4 and CR-7a on A-9, seen from opposite ends. |
+| C-17 | C-30 | M | | Class labels differ (buyers.substitutes, sellers.surface_water); same price. |
+| C-18 | C-32 | M | | |
+| C-19 | C-26 | M | | Both give the group. |
+| C-20 | C-28 | M | | |
+| C-21 | C-34 | M | | Both Tier C. |
+| C-22 | C-35 | M | | Pattern horizon "medium to long"; core "long". |
+| C-23 | C-36 | M | | The core does not split domestic wells by sub-basin. |
+| C-24 | C-36 | S | E | South's domestic wells under U1-b. Pattern `ambiguous`; core `decrease` (all domestic wells). This follows C-8, and so does the analyst error. |
+| C-25 | C-37 | V | | Pattern: county `enforcement_cost` (OC-3, right baseline); core: county `subsidy_outlay` for emergency water. Both Tier C. |
+| C-26 | C-10 | M | | Both `ambiguous` at Tier C on A-14 and A-15. |
+| C-27 | C-17 | M | | Both apply CR-12's 0.8 two-items clause: the share is an increase (C-2), and land and share together are ambiguous. |
+| C-28 | C-15, C-16 | V | | The core splits by eligibility: small parcels `decrease` (C-15, on A-N5, with the Tier C lift chain dominated by A-N3), eligible parcels `ambiguous` (C-16). The pattern version notes the small-parcel decrease in section 7 but dismisses it as "mostly domestic users, exempt", with no premise. The core's split is the better recording. |
+| C-29 | none | OC | E | `full_cost_per_unit` (lease price plus energy) for the marginal user: pattern `ambiguous` at Tier C. Pattern-version analyst error: lease price `increase` (Tier B) against a lift saving of a few dollars per af after a decade ($0.20 per foot, about 2.5 feet a year) is a dominance premise under CR-12e (the core's A-N3, p 0.9). The pattern version needs the same dominance for its own C-6. With it the item is `increase`. The core did not record the total, only the energy item (C-34); a minor core omission. |
+| C-30 | C-5 | M | | Both Tier A. |
+| C-31 | C-41 | M | | The core names only `holders.history`. Lottery winners also pay the fee, a minor core omission. |
+| C-32 | C-4 | M | | |
+| C-33 | none | OC | E | `compliance_cost` for cross-sub-basin transfers: U1-a `no_change`, U1-b `increase` (CR-1, CR-8c). Core-version omission. |
+| C-34 | C-8 | V | | The crops not grown. The pattern records `quantity_traded` for growers, workers and national buyers; the core records `quantity_supplied` of field crops (also listed under opportunity costs). |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-3 | OP | E | SBWA's `non_tax_receipts` (share fees and entry fees), Tier A. The receiving side of the pattern version's C-31 and C-12 (final check, item 6). Pattern-version omission. |
+| C-7 | OP | E | Field-crop holders lease out allocations (CR-4, CR-7a, CR-5; A-4, A-5, A-16). Stated in the pattern version's section 5, not recorded. Pattern-version omission. |
+| C-11 | OP | E | Tree-nut output, long: `ambiguous` at Tier C, by the same chains as C-10. The pattern version gives long-run pumping (C-26) but not the output that follows from it. Pattern-version omission. |
+| C-12 | OP | E | Field-crop output, long: as C-11. |
+| C-22 | OP | E | SBWA's `non_tax_receipts` from penalties (CR-8b; A-10, A-2). The other side of over-pumping (pattern C-13). Pattern-version omission. |
+| C-24 | OP | E | Fewer active non-domestic wells (`capital_stock_target` decrease). Low-use wells are retired rather than given a $3,000 meter (CR-4's 0.8 clause on a cost fixed per outlet; A-N4). No pattern prompts this. Pattern-version omission (final check, item 7). |
+| C-25 | OP | E | Meter sellers sell more (CR-9, LW-10). Pattern-version omission (minor). |
+| C-27 | OP | E | Farm employment, long: `ambiguous` at Tier C (as C-10). Pattern-version omission. |
+| C-29 | OP | E | Local input dealers' `return_on_capital` decrease (CR-7b; A-7). The pattern version uses A-7 for sales (C-20) but stops there. Pattern-version omission. |
+| C-31 | OP | E | Other districts buy less surface water (CR-9, CR-4c, CR-8a; A-8). The other side of the pattern version's C-15 and C-17. Pattern-version omission. |
+| C-38 | OP | E | Well drillers' work falls (CR-9, LW-10; Tier C). This follows C-35 and C-36. Pattern-version omission. The core's horizon ("medium; long") is inconsistent with its C-35 and C-36 ("long"). |
+| C-39 | OP | E | Nut holders' `resources_available_other_uses` decrease: they keep buying water by leasing (CR-3 note), and the lift saving is dominated (A-N3). Pattern-version omission. |
+| C-40 | OP | E | Lessors' lease receipts, `increase` (CR-8b, CR-2), recorded as an item. The other side of C-39. Pattern-version omission. |
+| C-42 | OP | E | Field-crop holders' total means `ambiguous`: lease receipts against fees and lost crop receipts on the cut 37% (CR-12b, with CR-12's 0.8 two-items clause). Pattern-version omission. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** No pattern, applied as written, produced a wrong sign. EN-6 as written does not fit a cap on an input: its main clause signs `price_paid` for a capped good that here has no market, and its 0.8 Unless clause speaks of "the capped good's price set in a wider market", where here it is the output that is priced nationally. The pattern version had to read in a CR-9 `input_to` link. The core version reached the same result from CR-6's 0.7 clause directly (the lease price of the right rations the cap) and noted only that the right's counterfactual price is undefined. The pattern version hides one premise: it dismisses the loss on small parcels without history as "mostly domestic users" (C-28, section 7) with no estimate. The core states it as A-N5 and signs C-15.
+- **Errors in the core version.** Omissions: fewer irrigating farms (pattern C-7), basin growers' surface-water purchases (pattern C-15), cross-sub-basin transfer costs per reading (pattern C-33), the full-cost item (pattern C-29), and lottery winners as fee payers (C-41). Recording: South's pumping per reading is signed only in the "if false" column of A-22 and in C-9's derivation, not as a row. Basin growers' move to Lowther is recorded only from the Lowther side (C-32, C-33). The horizon of C-38 does not match C-35 and C-36.
+- **Errors in the pattern version.** Baseline: C-8 and C-24 under U1-b compare South's pumping with U1-a rather than with the counterfactual. They misapply CR-12's 0.8 kind 2 to a (+) chain that no rule derives, contrary to the version's own CR-12e argument for C-6. Correct sign: `decrease` under both readings. Combination: C-29 left `ambiguous` where the figures give a dominance premise, and C-6 does not list the Tier C lift saving as an opposing chain, which CR-12e's 0.8 clause (a second change) requires. Omissions: both sides of money flows (C-3, C-22, C-39, C-40, C-42), long-run output and farm work (C-11, C-12, C-27), wells retired rather than metered (C-24), and the markets one step out (C-25, C-29, C-31, C-38).
+- **Limits of the core rules.** None produced a difference: no row needed cause K. Both versions are bounded alike by the core version's GAP-039-C1: no core rule derives when open-access extraction from a common stock exceeds what owners would choose, or how the stock's decline feeds back on extraction. So the plan's main purpose (a slower-falling table) and every long-run sign rest on A-14, A-15 and a Tier C relation, in both versions. GAP-039-C2 (valuing a lottery entry) did not affect any sign, given A-21. Unclear core-rule wording, all noted by one or both versions: CR-9's 0.7 Tier C clause does not separate a common stock the policy itself governs from incidental spillovers between neighbors. CR-12 does not say how a derived but Tier C chain opposes a Tier B chain; both versions read CR-12d (`ambiguous`, Tier C). CR-12g does not say whether long-run Tier C chains count against a short-run asset value that capitalizes them. CR-6's 0.7 clause leaves the counterfactual price of a right that does not yet exist undefined. CR-7c's 0.7 clause dates capture "when the allocation rule becomes expected" while the qualifying date is later. CR-7c's 0.8 "windfall to its holders" reads as a net gain unless joined to CR-12's two-items clause. CR-8's 0.8 race clause can be applied only at Tier C where the race runs over a shared facility.
+- **Test of 0.8 verdicts.** *EN-6 0.8 Unless (needed interpretation, applied to the output via CR-9):* confirmed that EN-6's wording does not fit a capped input. The core rules do not need that reading: CR-6's 0.7 clause gives the lease price as the rationing margin directly, and the national crop prices stop below the cut-off in both (A-18, A-19). *CR-7c 0.8 (needed interpretation: a windfall is the right's value, not the holders' net gain):* confirmed. The core records the share as an increase (C-2) and the parcel as ambiguous (C-17), the same reading, and finds a second difficulty in the 0.7 clause's dating. *CR-8 0.8 race clause (worked in logic, failed in tier):* confirmed, and the core goes further (GAP-039-C1). *CR-9 0.7 and CR-12 0.8 on an opposing Tier C chain (unclear):* confirmed, by the same complaint in the core's gap (b). One "worked as written" verdict is contradicted: CR-12 0.8 kind 2 for C-8 under U1-b. The rule was misapplied there, because the (+) chain is not against the counterfactual. *CR-12e 0.8 (worked):* confirmed for C-6. The core applies it consistently to South's pumping too. *Candidate "consolidation under tradable rights" (needed):* the core version derived the same moves (C-7, C-8, C-13) from CR-4, CR-5 and CR-7a without it. That confirms it is derivable, as a pattern must be; it does not show the candidate is needed.
