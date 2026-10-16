@@ -1,6 +1,6 @@
 # WE-050 / Analysis: Ban on sales of new combustion-engine cars from 2035
 
-Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -321,3 +321,81 @@ No new premises (A-N) were needed: every derivation used the case assumptions, t
 - No variable for the scrappage rate; `quantity_traded (cars sold for scrap)` stood in for it.
 - The horizons short, medium and long have no fixed meaning for a policy whose operative date is nine years after enactment; windows were defined in section 1.
 - No actor class for users of a public administrative service crowded by new duties (`users.registry_services` was introduced).
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the main structure of the Vessmark case. No new combustion cars from 2035 and no new PHEVs from 2038. More new BEVs, with the road charge as an opposing chain that A-22 dominates. Buyers who move to BEVs pay more for the car. More PHEVs in 2035 to 2037. Fewer combustion models from 2031, pre-registration of unsold stock, and an ambiguous 2033 to 2034 window. Used imports and grey imports are signed per reading. Cars are repaired and kept longer, and used combustion prices and the value of cars held at enactment rise in 2035 to 2040. The long-run value of the stock is ambiguous as the fuel and repair network thins, and the value of existing BEVs is ambiguous. Fuel sales, excise, station values and station numbers fall, charging rises, total revenue is ambiguous, and the fixed-budget Registry crowds out its other work. Both versions derive the complement-thinning chain and the road charge's effect on the substitute's quantity rather than its price. That confirms the pattern version's verdicts on EN-14 and RS-16 0.9. The differences: the pattern version signs total new-car purchases `decrease` (C-7) by a response argument that does not cover U1-a's removal of imported used cars, a separate change with its own (+) chain. It also leaves Drevland's used price unsigned where CR-6 asks for a sign. It omits several derivable keys: the pre-2033 windows for new combustion and BEV purchases, the pre-registration discount, the inspection queue, repair businesses' value and mechanics' labor, and the used-BEV price. The core version signs labor alone where the derivable form is a group (C-37, C-41, C-42). It signs long-run repair work `decrease` without the age-mix chain that the pattern records (C-40). It signs new combustion purchases in 2026 to 2030 `increase` on A-11 outside that premise's scope (C-15), and charging firms' value `increase` with no premise that charging capacity expands slowly (C-45). It omits total new-car purchases, used imports before 2035 and scrapping after 2040.
+
+Counts: M 24, V 7, S 2, OP 17, OC 4.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | M | | |
+| C-2 | C-2 | M | | |
+| C-3 | C-4 | M | | |
+| C-4 | C-3 | M | | |
+| C-5 | C-5 | V | | `quantity_substitute` (BEVs registered) in the pattern; `quantity_demanded` in the core, with the quantity traded implied by C-6 (price unchanged under A-5). Same chains and dominance premise (A-22). |
+| C-6 | C-7 | M | | Both sign a change in the good bought (a BEV instead of a combustion car) as `price_paid` increase. 6.2g asks that prices be signed per unit of a given good, so a change in mix is not a price change. Neither version has a variable for "spends more on the car bought". |
+| C-7 | none | OC | P | Pattern: total new cars `decrease` (CR-4a, response argument, partial with A-4). The response argument binds the responses of displaced combustion buyers. Under U1-a, the Act also removes the option of an imported used combustion car for about 25,000 buyers a year (CR-1 op 1). That is a separate change, not a response, and some of those buyers move to new cars (CR-4): a (+) chain with p ≥ 0.5 that CR-12e does not bound. A second (+) chain comes from owners who sell at the higher used price and buy new (CR-3: keeping the car costs its sale price). Since entries to the fleet are new cars plus imports, the response argument bounds that sum, and under U1-a it lets new purchases exceed the counterfactual by as much as imports fall. Derivable form: U1-b `decrease` (as the pattern argues); U1-a `ambiguous` without a dominance premise. Analyst misapplication of CR-12e. Core-version omission of the key. |
+| C-8 | C-8 | M | | |
+| C-9 | C-17 | M | | |
+| C-10 | C-19 | M | | |
+| C-11 | C-20 | V | | `inventory_held` (pre-registered stock unsold at the date) in the pattern; `reclassification` (stock registered before the date) in the core. Both use CR-12 0.9. |
+| C-12 | none | OC | E | Used combustion imports in 2026 to 2034 increase: CR-7c and CR-10c (the premium on cars in use after 2035 is capitalized from enactment, as the core's own C-11 says), then CR-7a across the border (A-20). Holds under both readings. The core signs imports only from 2035 (C-23). Core-version omission. |
+| C-13 | C-23 | M | | |
+| C-14 | C-24 | M | | |
+| C-15 | C-13 | M | | |
+| C-16 | C-14 | M | | |
+| C-17 | none | OC | E | Scrapping after 2040 `ambiguous`: cars retained are scrapped later (+), and fewer combustion cars reach scrapping age (−). CR-10b, CR-12b and CR-12g give it. The core signs scrapping only for the medium horizon (C-14). Core-version omission. |
+| C-18 | C-25, C-26 | V | | Split by side. |
+| C-19 | C-11 | M | | |
+| C-20 | C-10 | M | | |
+| C-21 | C-10 | V | | Sellers' `net_price_received`. The core records it through the CR-8b note in section 9 ("paid by their buyers"), not as a row. |
+| C-22 | C-12 | V | | `price_paid` after 2040 in the pattern; `asset_value` of cars in the fleet after 2040 in the core. Same chains (scarcity against thinning, A-10), both `ambiguous`. |
+| C-23 | C-47 | M | | |
+| C-24 | C-31 | M | | |
+| C-25 | C-36 | M | | |
+| C-26 | C-35 | M | | |
+| C-27 | C-37 | S | E | Pattern: station staff's `employment`, `hours_worked` `at_least_one_decrease`. Core: `employment` `decrease`. A-18 ("adjust staff or hours to volume") does not say which, so `employment` alone needs a further premise. CR-9 and LW-10 give lower demand for the labor, and the derivable form is the group. Core-version error. |
+| C-28 | C-44 | M | | |
+| C-29 | C-39 | M | | |
+| C-30 | C-40 | S | E | Repairs after 2040. Pattern: `ambiguous` (older cars kept against fewer cars). Core: `decrease` from the smaller fleet alone. The core's section 7 treats the two chains as belonging to different horizons (CR-12g). But the age-mix chain continues within the long horizon: after 2035 every combustion car is at least as old as the date, and the fleet stays older than on the counterfactual path, where new combustion cars keep entering. That is a (+) chain on repairs per car, the core's own GAP-050-C1. Core-version error (an uncombined chain). The pattern's `ambiguous` needs A-26 to extend past 2040, and the pattern should state that. |
+| C-31 | C-38 | M | | The core adds trips to repair shops. |
+| C-32 | C-32 | M | | |
+| C-33 | C-33 | M | | |
+| C-34 | C-20 | V | | The cost of pre-registration as `compliance_cost` in the pattern; the core records it as what `reclassification` uses up (section 9, CR-8c). |
+| C-35 | C-27 | M | | |
+| C-36 | C-28 | V | | Both are mixed groups from the fixed Registry budget. The second member is "other Registry checks" (−) in the pattern and `quality_per_unit` (−) in the core. |
+| C-37 | none | OC | E | Used importers' total spending on inspections and checks, per reading (CR-8c: it follows the number of imports, C-13). Derivable. Core-version omission; the core records the queue instead (C-30). |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-6 | OP | J | New BEV price `no_change` under A-5 (CR-6 0.9 split). The pattern declined to sign it and noted the lack of a `not_signed` value (Gaps d2). With A-5 ("expands at about unchanged cost") the core's sign is derivable. Recording "not signed" is also defensible if "about" is read as allowing a small rise. |
+| C-9 | OP | J | Used combustion `quantity_demanded` increase: a step the pattern states in prose (C-20 discussion) and does not record. |
+| C-15 | OP | E | New combustion purchases in 2026 to 2030 `increase`. Two (+) chains: the expected road charge makes a BEV worse (CR-4, CR-10a; needs only A-2), and a car bought before 2035 carries the scarcity value (CR-7c). The second is a kind (3) chain under CR-12 0.8. A car bought in 2026 to 2030 is in use well past 2040, where the core's own C-12 is `ambiguous`. The core cites A-11, which covers cars in the fleet at enactment and used prices in 2035 to 2040, not cars bought later. The `increase` needs A-11 extended to these cars; without that it is `ambiguous`. Core-version error. The window is also a pattern-version omission: its C-12 says the premium is capitalized from 2026, but its timing analysis starts in 2031. |
+| C-16 | OP | J | 2031 to 2032 `ambiguous`. The window boundaries are the core's choice (its Gaps b). The pattern starts model withdrawal in 2031 and signs only 2033 to 2034. |
+| C-18 | OP | E | New BEV purchases in 2026 to 2034 `ambiguous`: the expected charge and the combustion car's resale value (−), against the expected demand for used BEVs from 2035 (+, A-27). Derivable. Pattern-version omission. |
+| C-21 | OP | E | Buyers of pre-registered cars pay less in 2035 than these cars would have fetched new (CR-5c, A-29). The pattern states A-29 and uses it in C-9 but records no row. Pattern-version omission. Caveat: a pre-registered car is not a new car, so this signs a change of good, the issue 6.2g raises for prices. |
+| C-22 | OP | E | Dealers receive less for pre-registered stock (CR-5c, CR-7b, A-29). Pattern-version omission, as C-21. |
+| C-29 | OP | P | Drevland's used price, per reading. CR-6 (0.7, 0.8): the wider-market price moves in the CR-6 direction; record its sign, with a premise if the effect may be negligible. The pattern noted the effect as negligible and did not record it, "as EN-6's wider-market clause". EN-6 as written allows "or note it as negligible". The pattern as written departs from CR-6, applied here by analogy. |
+| C-30 | OP | E | Import inspection queue, per reading (CR-6 0.7: public supply with fixed capacity). Under U1-b the pattern's own A-12 says that capacity limits imports, which implies rationing of inspection slots, so `increase` is derivable. Pattern-version omission. The core's U1-a `decrease` is not derivable: 25,000 imports against 40,000 capacity leaves no queue to shorten unless one exists now, which the record does not say. U1-a should be `no_change`, or `decrease` with a premise. |
+| C-34 | OP | J | Payers who make up or receive the net budget change: `ambiguous`, since the total (C-33) is. The pattern records no group because the total is unsigned. Either is defensible. |
+| C-41 | OP | E | Mechanics' labor rises in 2035 to 2040 (CR-9, LW-10, A-26). Derivable; pattern-version omission. The core signs `employment` alone; as in C-27, the derivable form is `employment`, `hours_worked` `at_least_one_increase`. |
+| C-42 | OP | E | Mechanics' `employment` `decrease` after 2040. Core-version error, as in C-40 (the age-mix chain is not combined) and C-27 (group form). The derivable sign is `ambiguous`. |
+| C-43 | OP | E | Repair businesses' value `ambiguous` (CR-7c, CR-10c on C-39 and C-40). The pattern applied CR-7c to stations but not to repair shops. Pattern-version omission. |
+| C-45 | OP | E | Charging businesses' value `increase`. By CR-7a, yields on means that can move are brought back into line. A lasting gain settles only on means that cannot move (CR-7b), and chargers can be added at will over eight years. The sign needs a premise that charging capacity, or good sites for it, expands slowly. Core-version error (missing premise). |
+| C-46 | OP | J | Exports through the currency link `ambiguous`, stopped at depth 3. A depth choice. |
+| C-48 | OP | E | Used BEV price in 2035 to 2040 `ambiguous` (displaced demand, A-27, against the charge). Derivable; the pattern records only the value at enactment (C-23). Pattern-version omission. |
+| C-49 | OP | J | Foreign makers' sales to Vessmark fall (CR-9, input_to). The pattern names importers in C-1. Adds a class, not a sign. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** Total new-car purchases (C-7) were signed `decrease` by a response argument that does not cover U1-a. There the Act also removes imported used combustion cars, a separate change whose buyers partly move to new cars. Entries to the fleet are new plus imported cars, so the response argument bounds their sum, not new cars alone. The sign should be per reading. The `ambiguous` sign for repairs after 2040 (C-30) needs A-26 extended past 2040, which the pattern did not state. Drevland's used price was noted as negligible rather than signed (core C-29). EN-6's wider-market clause, applied by analogy, permits that; CR-6 does not. Both versions sign a move from combustion cars to BEVs as a rise in `price_paid` (C-6), the change-of-mix problem 6.2g records under RS-16.
+- **Errors in the core version.** Labor signed as `employment` alone where A-18 and CR-9 give only the group (C-37, C-41, C-42). Long-run repair work and mechanics' labor signed `decrease` with the age-mix chain left out (C-40, C-42), though that chain is the core's own GAP-050-C1. New combustion purchases in 2026 to 2030 (C-15) signed `increase` on A-11, which does not cover cars bought in that window and used past 2040. Charging firms' value (C-45) signed without a premise on slow expansion, contrary to CR-7a. The U1-a sign of the inspection queue (C-30) assumes an existing queue. Omissions: total new-car purchases (per reading), used imports in 2026 to 2034, scrapping after 2040, and importers' inspection spending.
+- **Errors in the pattern version (omissions).** New combustion purchases in 2026 to 2032 (core C-15, C-16) and new BEV purchases in 2026 to 2034 (C-18); the pre-registration discount to buyers and dealers (C-21, C-22, on its own A-29); the inspection queue under U1-b (C-30); repair businesses' value (C-43); mechanics' labor in 2035 to 2040 (C-41); the used-BEV price (C-48).
+- **Test of 0.9 verdicts.** *EN-14 (needed interpretation; listed as a failure in 6.2g):* confirmed. Without EN-14, the core version derived the thinning of fuel and repair from CR-9 and CR-4 0.8 (its GAP-050-C2), found the long-run value of the stock `ambiguous` (C-12), needed A-11 for the 2035 to 2040 rise and signed scrapping per window. It also shows that EN-14's "kept in use longer" reaches complements through the age mix (GAP-050-C1), which the core version itself then failed to combine after 2040 (C-40). *CR-7 0.9, persistence follows the stock (needed interpretation):* not tested. The core version analyzed no repeal or postponement scenario, so it neither confirms nor contradicts the reading that the stock includes new supply that can return at once. Its one statement on persistence (station closures persist once sites are converted) is consistent with the clause read on the stock. *RS-16 0.9, costs on the substitute (failed for new BEVs):* confirmed. The core version combined the road charge with the quantity of new BEVs (C-5, A-22), signed their price `no_change` from CR-6 0.9 and A-5 (C-6), and took the charge's other effect on the value of existing BEVs (C-47). Nothing pointed at sellers' net price. *CR-12 0.9, response argument (worked as written, with the U1-a point in b2):* the core version raised the same uncertainty in its Gaps (b): whether a capacity figure counts as arithmetic. C-7 adds a further point: the clause does not say which aggregate the response bounds.
+- **Limits of the core rules.** None produced a difference: no S, OP or OC row has cause K. Unclear core-rule wording: (1) CR-12e and its 0.9 note do not say which aggregate the response argument bounds (here, entries to the fleet, new plus imported, rather than new cars alone) (C-7). (2) CR-12h gives no guidance on window boundaries when timing chains start at different dates (the core's Gaps b; C-15, C-16 against the pattern's C-9). (3) CR-12 0.8, kind (2): what to do when a dominance or chain premise is stated for one horizon only (A-26 for 2035 to 2040) and the chain continues into the next (C-30, C-40). (4) CR-6 0.7, public supply: it does not say that a queue exists only where capacity binds, which made the U1-a sign of C-30 easy to overstate. (5) CR-7c with CR-7a: a rise in expected yield is captured as `asset_value` only by means that cannot expand. The core version applied it symmetrically to stations (sunk, falling) and to charging (expandable, rising) (C-45). (6) No variable or rule for the age mix of a durable stock (GAP-050-C1).

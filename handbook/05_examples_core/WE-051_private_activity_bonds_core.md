@@ -1,6 +1,6 @@
 # WE-051 / Analysis: Tax-exempt revenue bonds for private rental housing, allocated by lottery
 
-Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -282,3 +282,72 @@ CR-8's symmetry: the transfer to winners (C-1, C-3) is matched by forgone nation
 - No variable for a contingent liability (a pledge not yet called); C-19 and C-20 used `interest_rate` and `resources_available_other_uses` per reading.
 - No actor class for bond holders as a class distinct from `buyers.current`; `bond_buyers` and `holders.existing_aldmere_bonds` were introduced.
 - No variable for the stock of housing as such; `quantity_traded (rental homes occupied)` stood in for it.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the main structure of the Aldmere case. Winners borrow at the exempt rate and gain an allocation worth about $50,000 a unit. Bonds are issued, entry costs are used up, and projects are split or redesigned. Cities ration sponsorship by non-price criteria and collect fees. Rental starts fall in 2027 as developers wait for the first draw, are ambiguous for some years while losers hold projects, and rise in the long run once the crowding out of other builders is partial (A-9). Rents are lower in the long run, and existing landlords lose value from enactment, at Tier B. Qualifying sites gain (A-17). Taxable lenders lose these loans. In-state exempt yields rise and existing Aldmere bonds lose value (A-19). National and state receipts fall, net of developers' smaller deductions, and the payers are groups. City taxpayers are contingent payers under U1-b only. Both versions derive the value of a lottery entry and where it settles from the core rules: the core version does so through CR-7 0.7 (claims before creation) and CR-7b. That confirms the pattern version's finding that EN-12 is silent on it. The differences: the pattern version leaves the national exempt market's yield unrecorded as negligible where CR-6 asks for a sign (core C-33). It omits the short-run rise in rents that its own 2027 fall in starts implies, site prices paid by all developers, and other construction crowded out. Its windows for starts end the waiting period in 2032, where the core's end it in 2037. The core version signs construction labor alone where the derivable form is a group (C-24). It signs a lasting fall in unsubsidized developers' `return_on_capital` (C-15), which CR-7a rules out for mobile capital. It omits the Tier C rent and receipts consequences that CR-12 0.9 asks for, the intermediaries' new work and winners' issuance costs.
+
+Counts: M 21, V 9, S 2, OP 9, OC 4.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | M | | |
+| C-2 | C-2 | M | | |
+| C-3 | C-3 | M | | The core combines the allocation with the issuer fee (arithmetic) and the rent fall on the project (A-17); the pattern signs it without either. For a winner the comparison is about $50,000 against about $1,100 and $5,000, so the sign holds. The pattern's dominance premise is implicit. |
+| C-4 | C-7 | M | | |
+| C-5 | C-9 | M | | |
+| C-6 | C-11 | M | | The core also records taxable loans closed in 2027 (C-10). |
+| C-7 | C-12 | V | | 2028 `ambiguous`. The core folds 2028 into one window, 2028 to 2037. |
+| C-8 | C-12 | V | | 2029 to 2032 `ambiguous`; same chains (A-7 against A-8). The core adds crowding out (A-10) as a (−) chain in the medium run. |
+| C-9 | C-12, C-13 | S | J | After 2037 both sign `increase` (core C-13). For 2033 to 2037 the pattern signs `increase` and the core `ambiguous`. Two questions are open: when the pool of waiting projects stops growing, and from when A-9 ("over the long horizon") makes crowding out partial. Each version defined its own horizons, and neither date follows from the record. Both are defensible; the core's GAP-051-C1 records that the steady-state argument is made by analogy. |
+| C-10 | C-14 | M | | The core also records other construction (C-26). |
+| C-11 | C-17, C-18 | V | | Split into lobbying councils for resolutions (C-17) and lobbying to keep or enlarge the program (C-18). |
+| C-12 | C-34 | M | | |
+| C-13 | C-6 | M | | |
+| C-14 | C-8 | V | | The Commission's fee receipts. The core records them in C-8's derivation (CR-8b, "funded by applicants' fees") and in the final check (C-7 against C-8), not as a row. |
+| C-15 | C-16 | M | | |
+| C-16 | C-28 | V | | Rents `ambiguous` in the medium run; windows differ (2029 to 2032 against 2030 to 2037). See core C-27 for 2029 to 2030. |
+| C-17 | C-29 | M | | The core does not qualify C-29 "not counting effects through proximity". See C-18. |
+| C-18 | none | OC | E | Rents at Tier C `ambiguous` (proximity, A-15). CR-12 0.9 (Tier C against Tier B) asks for two consequences, the Tier B sign qualified and the combined Tier C sign. The core applied this only to landlords' value near new projects (C-39). Core-version omission. |
+| C-19 | C-30, C-29 | V | | Landlords' `net_price_received` decrease. The core records it through the CR-8b pairing in its final check (landlords' loss against renters' gain), not as a row. |
+| C-20 | C-30 | M | | |
+| C-21 | C-21 | M | | The pattern dates it from passage, the core from introduction (CR-7c probability clause). Both are defensible. |
+| C-22 | C-38 | V | | `capital_stock_target` (rental homes) in the pattern; `quantity_traded` (rental homes occupied) in the core, for lack of a stock variable (core Gaps c). |
+| C-23 | C-25 | V | | Construction inputs as a group. The pattern groups price and quantity in the long run (CR-6 0.9 with A-9). The core groups the wage and input prices in the medium run (A-10), with quantity in C-24. Both are derivable with their premises. |
+| C-24 | C-24 | S | E | Pattern: `employment`, `hours_worked` `at_least_one_increase`. Core: `employment` `increase`. A-18 ("adjust labor to volume") does not say heads rather than hours; CR-9 and LW-10 give only more demand for the labor. The derivable form is the group. Core-version error. |
+| C-25 | C-31 | M | | |
+| C-26 | C-32 | M | | |
+| C-27 | C-4 | M | | |
+| C-28 | C-36 | M | | |
+| C-29 | C-5 | M | | |
+| C-30 | C-37 | M | | |
+| C-31 | C-20 | M | | |
+| C-32 | none | OC | E | Underwriting, counsel, trustee and rating services rise (CR-9 input_to; CR-12 0.9, an activity that exists only under the policy). Derivable. Core-version omission. |
+| C-33 | C-8 | M | | |
+| C-34 | none | OC | E | Winners' issuance costs (CR-8c). Derivable as an item against a counterfactual with no issuance. Core-version omission; the core counts only the issuer fee, inside C-3. The pattern's figure (1.5% to 2% of each issue) is not in the policy record and no assumption carries it. The claim that these costs exceed those of arranging a bank loan needs a premise. |
+| C-35 | none | OC | E | Landlords' receipts at Tier C `ambiguous`. As C-18: CR-12 0.9 asks for it. Core-version omission. |
+| C-36 | C-39 | V | | Landlords' value at Tier C `ambiguous`. The pattern covers all existing landlords; the core restricts the row to buildings near new projects. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-10 | OP | E | Taxable loans closed in 2027 decrease (CR-10a, CR-4, A-6). Derivable; the pattern records only starts. Pattern-version omission. |
+| C-15 | OP | E | Unsubsidized developers' `return_on_capital` `decrease` in the medium and long run. CR-7a: the yields on means that can move are brought back into line. CR-7b: the lasting loss settles on means that cannot move, here sites, existing buildings and their owners. The core's own C-22 says developers' capital and skills can move to other projects. At most a transitional fall is derivable, and only with a premise on the speed of exit. Core-version error. |
+| C-19 | OP | A | Pledging cities' own general obligation rate, per reading: U1-a `no_change`, U1-b `increase`. The core added A-N1 (lenders count a pledge in the city's risk although the debt limit does not). The pattern uses the same chain without a premise, as a "further (+) chain" on in-state exempt yields inside its C-25, and records no key for it. A difference of premises. The core's A-N1 is the premise the chain needs. |
+| C-22 | OP | J | Site owners' `subsidy_share_received` `increase` (CR-7b). Against a counterfactual with no subsidy, any share is an increase, so this restates C-21. The pattern declined to say how the subsidy divides. Adds no sign. |
+| C-23 | OP | E | Site prices paid by all developers rise in the medium and long run (CR-9, CR-6, A-10). The pattern uses the chain inside C-10 and C-21 but records no row, and its input group (C-23) leaves out sites. Pattern-version omission. |
+| C-26 | OP | E | Other construction (owner-occupied, commercial) decreases (CR-9 through shared inputs, CR-4c, CR-8a, A-10). The pattern stopped at owner-occupied prices (depth 3) and did not record the quantity. Derivable; pattern-version omission. |
+| C-27 | OP | E | Rents `increase` in the short run (fewer completions after the 2027 dip in starts, A-6, A-14). The pattern's own C-6 implies it, and its C-16 starts the medium window in 2029 at `ambiguous`. Pattern-version omission. The core version's derivation, though, rests on a construction lag ("about two years later") that no assumption carries. Its window also runs to 2030, when projects held back from 2027 and started in 2028 are completing, so 2030 belongs with the `ambiguous` window. The sign is derivable for about 2029 with a stated lag premise. |
+| C-33 | OP | P | The national exempt market's yield rises (CR-6 0.7: a wider-market price moves in the CR-6 direction; record its sign, with a premise if it may be negligible). Against the counterfactual the volume lapses, so this is added exempt supply, not a baseline swap. OC-8 0.9's small-borrower clause, applied as written, records the effect "as negligible". That departs from CR-6, which asks for the sign. |
+| C-35 | OP | J | Other borrowers' rate `ambiguous` (CR-8 0.9, borrowing baseline). The pattern reaches the same sign and leaves it unrecorded as negligible, which is defensible for an `ambiguous` sign. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** No pattern claim was found unsupported by the core rules. The pattern's signs for allocations (C-3) rest on an implicit dominance over the issuer fee and the rent fall, which the figures supply. Its issuance costs (C-34) use a figure absent from the record. Its "further (+) chain" from city pledges onto the rates of in-state exempt bonds (C-25) needs a premise like the core's A-N1. Left unsigned: the national exempt yield (core C-33), recorded as negligible under OC-8 0.9's small-borrower clause, which conflicts with CR-6 0.7 and 0.8.
+- **Errors in the core version.** Construction labor signed as `employment` alone (C-24), where the group is the derivable form. A lasting fall in unsubsidized developers' `return_on_capital` (C-15) contradicts CR-7a and the core's own C-22. The short-run rent rise (C-27) rests on an unstated lag and runs one year too long. Omissions: the Tier C rent and receipts consequences (pattern C-18, C-35) that CR-12 0.9 asks for; intermediaries' work (C-32); winners' issuance costs (C-34).
+- **Errors in the pattern version (omissions).** Taxable loans closed in 2027 (core C-10); the short-run rent rise (C-27); site prices paid by all developers (C-23); other construction crowded out (C-26); the national exempt yield (C-33, a pattern-as-written cause); pledging cities' own borrowing rate as a key with its premise (C-19).
+- **Test of 0.9 verdicts.** No item was marked "failed". The "needed interpretation" verdicts and their equivalents: *OC-8 0.9, small borrower (needed interpretation: small nationally, not in the in-state segment):* confirmed. The core version signed in-state yields and existing bonds (C-31, C-32) from CR-6 and CR-9 with A-19, and did not need the clause. It also shows a second defect: the clause's "recorded as negligible" conflicts with CR-6, which records the national exempt yield's sign (C-33). *CR-12 0.9, what the response argument gives (needed interpretation: partial means that inputs can expand):* confirmed. The core version used the same inverted premise (A-9) for C-13, and its Gaps (b) found a further problem: the response argument covers crowding out but not a second response to the same change (holding, A-8). *GAP-039-C2, value of a lottery entry (resolved with interpretation):* confirmed as resolvable from the core rules. The core version reached C-21 through CR-7 0.7 (claims before creation) rather than CR-7c's probability clause. It raised a point the pattern version did not: how a claim conditional on a third party's discretion (the city's resolution) divides between the site owner and the city. *EN-12, open eligibility (incomplete on where the value settles):* confirmed. Without EN-12 the core version derived the split among entry costs (C-7, C-9, C-17), site owners (C-21, C-22) and winners (C-3). *CR-8 0.9, borrowing baseline (needed extending to the homes):* confirmed in effect. The core version applied the same baseline to the homes through A-7 (C-12, C-13), without comment. *OC-8 0.9, tax-exempt interest (worked with an addition: developers' smaller deductions):* confirmed. The core version needed the same arithmetic (A-20) for C-4 and C-5. *CR-8 0.9 with CR-8 0.8 (two premises under U1-b):* confirmed; the same two premises (A-21, A-22) were used for C-20.
+- **Limits of the core rules.** None produced a difference: no S, OP or OC row has cause K. Unclear core-rule wording: (1) CR-12e 0.9: "the response must be partial: state that supply cannot fully expand" assumes the response is an expansion. Where the response is a contraction by rivals through input prices, partiality needs inputs that can expand (A-9). (2) CR-12e with two responses to the same change: crowding out is covered and holding is not (core Gaps b). (3) No rule states how a repeated, probabilistic allocation shifts a flow in the steady state (GAP-051-C1). It was argued from CR-10b, and the two versions placed the end of the waiting period five years apart (C-9). (4) CR-7 0.7, claims before creation, where the claim also needs a third party's discretionary approval. (5) CR-6 0.8, "a free price's rise is enough", where the free price (site options) sits in a different market from the rationed right. (6) CR-7a against CR-7b for a lasting `return_on_capital` sign on mobile capital: the text is clear, but nothing in the workflow's final check prompts the analyst to test it (C-15).
