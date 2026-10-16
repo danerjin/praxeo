@@ -43,7 +43,7 @@ A policy does not change anyone's ranking of ends, except through what it tells 
 
 **Premises.** Whether a stated rule is actually enforced is empirical (`enforcement`). An unenforced prohibition does not remove an option; it attaches a risk to it (operation 3).
 
-**Recording.** A provision often does more than one thing: a free tradable right adds an option and transfers means; a void-contract rule removes an option for one side and adds one for the other; a prohibition removes an option where enforced and attaches a risk where not. Record every operation that applies, for each actor class, and split an actor class where the operation differs within it. Which operation a provision performs depends on what the law would be without it, so state that counterfactual law.
+**Recording.** A provision often does more than one thing: a free tradable right adds an option and transfers means; a void-contract rule removes an option for one side and adds one for the other; a prohibition removes an option where enforced and attaches a risk where not. Record every operation that applies, for each actor class, and split an actor class where the operation differs within it. Which operation a provision performs depends on what the law would be without it, so state that counterfactual law. Where an operation holds only under one reading of an unclear provision, record the operation per reading (U1-a, U1-b), as consequences are (`02_ontology.md`, 2.5).
 
 **Source.** HA ch. I §1; HA ch. XXVII; P&M ch. 2 §1.
 
@@ -81,7 +81,11 @@ A loss by the actor's own ranking (a) is not the same as a fall in their spendin
 
 The mirror case (x made better) reverses every direction.
 
-**What is a priori and what is not.** Statement (a) and the direction in (b) and (c) are a priori. That some actors actually are at the margin, so that someone does switch, is empirical: it is the premise behind `substitutability`, `alternative_uses` and `mobility`. **Exception:** when the change also alters the actor's total means (a price rise on something they spend much of their means on; a lower return on something they save toward a fixed sum), the change in means can shift their ranking among other options in the opposite direction. Where such an effect matters, the direction for that actor class is `ambiguous` unless a premise says which effect dominates (this is the exception recorded under LW-3 and TX-6).
+**What is a priori and what is not.** Statement (a) and the direction in (b) and (c) are a priori. That some actors actually are at the margin, so that someone does switch, is empirical: it is the premise behind `substitutability`, `alternative_uses` and `mobility`. **Exception:** when the change also alters the actor's total means (a price rise on something they spend much of their means on; a lower return on something they save toward a fixed sum), the change in means can shift their ranking among other options in the opposite direction. Where such an effect matters, the direction for that actor class is `ambiguous` unless a premise says which effect dominates (this is the exception recorded under LW-3 and TX-6). The exception can bear on the burdened option itself (a heavy buyer of a good whose price rises) and on what an actor offers as well as what they buy (hours of work offered when the wage falls).
+
+**A change in means alone.** When a policy changes an actor's means without changing the relative cost of any option (a lump-sum tax or grant), CR-3c and CR-8 establish that spending on some uses falls (or rises) by the amount taken (or given). Which uses, and by how much each, CR-4 does not say: it depends on the actor's ranking, which the rules never assume. A claim about a named use ("sales at local shops fall") therefore needs a premise. Whether anything more can be said a priori is `06_gaps.md`, Q19.
+
+**Units and lumpy costs.** In (c), the unit is the unit of the end served (a dose, not a gram; a trip, not a mile), since that is what the actor ranks. Where a change attaches a large one-time cost to an option (training hours, a license fee), "narrowly ranked" in (b) covers every actor whose ranking of x over y is reversed by that cost, which may be many.
 
 **Derivation.** CR-2 and CR-3. Under (a), y was ranked above x before, and x is now worse, so y still ranks above it. Under (b) and (c), LW-2.
 
@@ -94,7 +98,7 @@ The mirror case (x made better) reverses every direction.
 **Statement.** A voluntary exchange takes place only if each party ranks what they receive above what they give. Hence:
 - (a) a policy that prevents an exchange that would otherwise have taken place deprives both parties of a gain each expected;
 - (b) a policy that compels a transfer that would not have taken place voluntarily makes at least one party worse off by their own ranking;
-- (c) the terms of any exchange that does take place lie within the range both parties accept, and any change in what one party must give or may receive moves that range.
+- (c) the terms of any exchange that does take place lie within the range both parties accept, and any change in what one party must give or may receive moves that range. The terms include everything either party gives or receives, money or not: hours that count toward a qualification, training, flexibility, security of tenure.
 
 **Derivation.** CR-2 applied to both parties; CR-3.
 
@@ -126,7 +130,7 @@ The full price, meaning the money price plus everything else given up, moves tow
 **Statement.** Wherever a means (labor, capital, money, land, a purchase, an activity, a moment in time) can be moved between uses that serve the same end, its owners move it from the use that yields less to the use that yields more, until the difference in yield at the margin is no greater than the cost of moving. Hence:
 - (a) after any change in yields, yields on the means that can move are brought back into line, net of moving costs;
 - (b) the lasting gain or loss from the change settles on the means that cannot move: specific, immobile or fixed resources, and actors without alternatives (this decides who bears a tax and who keeps a subsidy or a privilege). This is a matter of degree: where both sides have some alternatives, each bears part, and the side whose alternatives are clearly worse bears more than the other. Ranking the shares needs a premise comparing the alternatives; with three or more parties (a distributor, a retailer and a buyer), rank each pair. Without such a premise, only the direction of each side's price is signed;
-- (c) the price of a durable asset adjusts until a buyer expects to earn on it what they could earn elsewhere, so a change in its expected yield is borne or captured by whoever owns it when the change becomes expected, not by later buyers. A change of limited duration is capitalized for the yields it affects. An asset the policy itself creates (a quota right, a medallion, a transferable license) is valued the same way, and its value is captured by whoever receives it at creation.
+- (c) the price of a durable asset adjusts until a buyer expects to earn on it what they could earn elsewhere, so a change in its expected yield is borne or captured by whoever owns it when the change becomes expected, not by later buyers. A change of limited duration is capitalized for the yields it affects. An asset the policy itself creates (a quota right, a medallion, a transferable license) is valued the same way, and its value is captured by whoever receives it at creation. "Becomes expected" is a matter of probability: as a measure becomes more likely to pass, or more likely to be renewed, the asset's price moves part of the way, so the loss or gain is shared among those who hold the asset as the probability rises. CR-7c states what happens in the market for the asset; CR-10c states why its value reflects expected yields. Cite both.
 
 **What is a priori and what is not.** The direction of every movement is a priori (CR-4 for each owner). How mobile each means is, and how fast it moves, is empirical (`mobility`, `alternative_uses`, `durability`).
 
@@ -142,7 +146,8 @@ The full price, meaning the money price plus everything else given up, moves tow
 - (a) every resource the policy directs to one use is withdrawn from another use its owner would have chosen (the seen and the unseen);
 - (b) every payment is a receipt to someone, and every transfer adds to the recipient exactly what it takes from the payer;
 - (c) resources spent on complying with, administering, enforcing or evading a policy, or on queuing, searching or lobbying because of it, are used up and serve no other end of those who spend them;
-- (d) money is fungible: a sum earmarked for one purpose frees other money for other purposes, unless the other spending is also fixed.
+- (d) money is fungible: a sum earmarked for one purpose frees other money for other purposes, unless the other spending is also fixed;
+- (e) a confiscation (seized stock, a forfeited asset) is a transfer under (b), recorded on both sides: the holder's means fall, and the state's rise by what it can realize from what it seized. Where the seized goods are destroyed, (a) applies instead: the means are used up.
 
 **Derivation.** LW-1 and CR-3c.
 
@@ -154,7 +159,7 @@ The full price, meaning the money price plus everything else given up, moves tow
 
 ### CR-9 Propagation
 
-**Statement.** When an actor changes what they do, the situation of everyone who would have dealt with them changes too: those who would have sold to them or bought from them, those who compete with them for the same means or customers, and those whose goods are used together with theirs. Apply CR-1 to CR-8 to each of these actors in turn, following actual exchange relations and the relations recorded under `02_ontology.md`, 2.8.
+**Statement.** When an actor changes what they do, the situation of everyone who would have dealt with them changes too: those who would have sold to them or bought from them, those who compete with them for the same means or customers, and those linked to them by any other relation recorded under `02_ontology.md`, 2.8: goods used together, goods bought together on one trip, goods put to a secondary use, contracts (a lease, an insurance policy, an employment contract), and the currency link (payments for imports are the means with which foreigners buy exports or assets). Apply CR-1 to CR-8 to each of these actors in turn, following those relations.
 
 The value to anyone of a means depends on the ends it serves and on what it is used with (LW-10). So when the use of a good changes, the demand for the means that produce it and for the goods used with it changes in the same direction, and the demand for goods that compete with it in the opposite direction.
 
@@ -168,7 +173,7 @@ The value to anyone of a means depends on the ends it serves and on what it is u
 
 **Statement.** Action takes place in time, on expectations, and present satisfaction is preferred to the same satisfaction later (LW-7). Hence:
 - (a) a change expected in the future alters choices now, as far as present actions' payoffs depend on it: announcement effects, rushes before deadlines, holding back when a policy may return;
-- (b) a stock (buildings, equipment, skills, inventories, a client base) changes only through flows (production, investment, maintenance, wear, conversion), so its response to a change in returns is gradual, and changes that cost something to undo persist after the cause is removed;
+- (b) a stock (buildings, equipment, skills, inventories, a client base) changes only through flows (production, investment, maintenance, wear, conversion), so its response to a change in returns is gradual, and changes that cost something to undo persist after the cause is removed. Two cases need care in repeals. A cost already incurred under the policy (training paid for, a conversion completed) is the same with and without the repeal, so it is not a consequence of the repeal; it enters only through what it makes cheaper or dearer next. An effect that exists only during the transition (units held empty before decontrol, buyouts before a deadline) has no lasting stock to persist: record its `persistence` as `n/a`;
 - (c) the value of a durable means reflects the yields it is expected to bring, discounted by time preference (with CR-7c).
 
 **Premises.** What actors expect (`expectations`); how durable the stock is (`durability`); what reversal costs (`reversal_cost`).
@@ -181,7 +186,7 @@ The value to anyone of a means depends on the ends it serves and on what it is u
 
 **Statement.** Actors act on what they know and believe. Hence:
 - (a) a price that is prevented from moving stops conveying the scarcity it would have revealed, and those who rely on it act as if conditions were other than they are;
-- (b) where an exchange is moved outside the legal market, the means by which buyers and sellers ordinarily learn about each other (advertising, reputation, brands, certification, courts) are not available to it;
+- (b) where an exchange is moved outside the legal market, the means by which buyers and sellers ordinarily learn about each other (advertising, reputation, brands, certification, courts) are not available to it; where it moves back into the legal market, they become available again;
 - (c) a policy can change actions by conveying information (a license as a signal, a record of conviction), and only to that extent can it change what actors believe.
 
 **Derivation.** AX-1 (action rests on the actor's understanding of the situation), CR-1, LW-8.
@@ -198,6 +203,7 @@ The value to anyone of a means depends on the ends it serves and on what it is u
 - (e) a premise that establishes dominance under (b) may be an empirical premise with a probability, an accounting identity, or arithmetic on the case's figures (a cost far smaller than a revenue). Say which.
 - (f) where chains cancel exactly by construction (one provision undoes what another creates), the consequence is not reported, and section 7 says so.
 - (g) chains at different horizons are not combined: a one-time effect in the short run and a lasting effect in the long run are separate consequences, one per horizon.
+- (h) where a policy raises an activity in every window against the counterfactual, but also moves some of it from one window to another (bunching before each step-down of a subsidy), sign each window against the counterfactual and describe the bunching as a path note in section 8, with its effect on waiting or prices recorded as consequences where it has one.
 
 **Derivation.** None needed: this is the logic of combining qualitative signs. The method states directions, not magnitudes, so opposing directions cannot be netted without a further premise.
 

@@ -79,6 +79,7 @@ Every consequence names one variable from this list. Add a variable only by edit
 | `full_cost_per_unit` | Money price plus the value the buyer places on the wait, search and side payments needed to obtain a unit. Usually `ambiguous` under a ceiling. |
 | `inventory_held` | Stocks of a good held by an actor class at a named time (sellers' stocks before a season; an agency's surplus stocks). |
 | `transaction_size` | Typical amount per exchange (loan size, order size). |
+| `unit_size` | Physical size of each unit of a durable good (floor area per dwelling, capacity per vehicle). |
 
 **Allocation, quality and non-price terms**
 
@@ -155,12 +156,15 @@ consequence:
                  one entry per reading, such as "U1-a: increase; U1-b: ambiguous"
   persistence:   for repeals only: none | partial | full, compared with the path on
                  which the original policy was never imposed (TS-6); may be given per
-                 horizon, such as "partial (medium); none (long)"
+                 horizon, such as "partial (medium); none (long)"; `n/a` for effects that
+                 exist only during the transition
 ```
 
 **Group consequences.** Some rules conclude that at least one of several variables moves, without saying which (PC-10's weaker form: employment, hours or non-wage compensation; EN-3; RS-2). Record these as one consequence with the variables listed together and the sign `at_least_one_decrease` or `at_least_one_increase`. It is scored as correct if at least one member moves as predicted and none moves the other way. Writing each variable as its own "decrease" would overclaim.
 
 **Timing shifts.** A response that moves an action in time (RS-8, SB-6) is written as signed consequences per time window, each against the counterfactual. This applies whenever the action also takes place without the policy, at another time: interest credited before a tax starts, bonuses paid before a contribution rises, purchases brought forward into a subsidy window. Each window gets its own sign ("purchases in the window: increase; in the year after: decrease"). Where there is no counterfactual comparison to make, because without the policy the action would not happen at all, the shift is a note on the path in section 8, not a consequence.
+
+**Readings or assumptions.** A provision is a reading only if its meaning is genuinely undecided by the text and the record. Where the record supplies evidence about how it will be applied (an agency's practice, a court's earlier decisions), treat it as an assumption with a probability instead.
 
 **Readings.** Readings of an unclear provision are not given probabilities (workflow step 10); each reading's sign is reported, and the policy text, not the analyst, decides between them.
 
@@ -194,6 +198,7 @@ relation:
   from:      good or market
   to:        good or market
   type:      substitute | complement | input_to | same_market_other_segment | across_border
+             | contract | currency
   strength:  close | partial | weak
   source:    evidence for the relation
 ```
@@ -201,6 +206,8 @@ relation:
 Two relation types need care:
 - **Trip complements.** Goods bought on the same shopping trip are complements in where they are bought, even if they are unrelated in use. Record them as `complement` with a note `trip`. RS-9 uses them.
 - **Secondary use.** A good that came free with something else and was reused for another end (carryout bags reused as bin liners) is tied to the goods it substituted for in that end. Record as `substitute` with a note `secondary_use`, so that RS-1 applies and the reason is visible.
+- **Contracts.** Parties bound by a continuing contract (a lease, an insurance policy, an employment contract) are linked even when no new exchange takes place: a policy that changes one party's obligations changes the other's situation. Record as type `contract`, naming the contract.
+- **Currency.** Payments for imports are the means with which foreigners buy the country's exports or assets; a change in one changes the means available for the other. Record as type `currency`. TX-8 uses it.
 - **Location ties to other markets.** Holding a good tied to a place (a controlled tenancy) links the holder's housing market to their labor market. Record as `complement` with a note `location`. RS-11 uses them.
 
 Example: `controlled_rental_units` and `uncontrolled_rental_units` are `same_market_other_segment`, `close`. `sweetened_drinks_in_city` and `sweetened_drinks_outside_city` are `across_border`, with strength depending on distance.

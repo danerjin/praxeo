@@ -1,4 +1,4 @@
-# 4. Rule catalog 0.5: patterns
+# 4. Rule catalog 0.6: patterns
 
 This file holds the **patterns**: derived results for recurring situations. They rest on the **core rules** in `04a_core_rules.md`, which are the universal calculus. Every pattern below carries a **Derivation** line that shows which core rules it instantiates and how; a pattern adds no reasoning of its own beyond that derivation and the premises it names. If a pattern and a direct derivation from the core rules ever disagree, the derivation wins and the pattern is corrected.
 
@@ -14,6 +14,8 @@ Each pattern is one reusable inference. Format:
 - **Derivation:** how the pattern follows from the core rules (`04a_core_rules.md`).
 
 Patterns are deliberately small. A full analysis chains several of them, and each link is reviewed on its own.
+
+**Changes in 0.6.** New patterns for moves that recurred in the core-only re-run without a pattern to prompt them: PC-16 (a ceiling as a transfer), RS-16 (a substitute's price after a demand shift), EN-11 (a license as a signal). RS-8 and SB-6 now state both sides of a timing shift.
 
 **Changes in 0.5.** The core-only re-run of the 25 worked examples (`08_core_rerun_report.md`) found no claim the core rules could not derive, but found patterns that overclaim or lack a clause. Revised: EN-3, EN-4, DM-1, DM-2, RS-6, TX-3, RS-7, RS-10, PC-2, PC-8, OC-3, SB-1, SB-3, SB-4.
 
@@ -89,7 +91,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 
 ### RS-8 Change of timing
 - **If:** the policy treats the same action differently depending on when it is taken (announcement before effective date, phase-in, deadline, expected tightening or repeal).
-- **Then:** actions are moved toward the favorable time: rush before a tax or cap takes effect, delay until after a repeal is expected, purchases pulled forward into a temporary subsidy.
+- **Then:** actions are moved toward the favorable time: rush before a tax or cap takes effect, delay until after a repeal is expected, purchases pulled forward into a temporary subsidy. Every such move has two sides: the action rises in the favored window and falls in the window it was taken from. Record both, each signed against the counterfactual (`02_ontology.md`, 2.5).
 - **Assumes:** actors know the timing and can shift their actions.
 - **Tier** B. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-7.
@@ -150,6 +152,15 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
 - **Builds on:** LW-6 (relief is scarce and not priced), RS-7.
 - **Derivation:** CR-6 (relief is scarce and not priced, so it is allocated by other criteria) and CR-4 applied to applicants and to political action.
+
+### RS-16 A substitute's price after a demand shift
+- **If:** a policy moves buyers from a good to a substitute (by taxing, banning, capping or licensing the good), outside any price control on the substitute.
+- **Then:** `quantity_substitute` increases, and `price_substitute` increases where the substitute's supply cannot expand at an unchanged cost in the period considered.
+- **Assumes:** `substitutability`; the substitute's supply is not perfectly elastic in the period (`durability`, `alternative_uses`).
+- **Unless:** the policy also adds supply to the substitute's market (RS-13), in which case the price is `ambiguous` without a premise.
+- **Tier** B. **Visibility** invisible. **Horizon** short to medium.
+- **Builds on:** LW-3.
+- **Derivation:** CR-9 (buyers turn to the substitute) then CR-6 in the substitute's market (at the old price, buyers wish to buy more than sellers wish to sell, so the price rises as far as supply cannot expand). PC-8 is the same move for a controlled market.
 
 ---
 
@@ -420,6 +431,13 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Builds on:** LW-1.
 - **Derivation:** CR-1 (the regulator's pricing rule is part of the situation), applied with CR-2 to the regulator.
 
+### PC-16 A binding ceiling is a transfer
+- **If:** a binding `price_ceiling` (PC-1), and some buyers obtain the good at the controlled price.
+- **Then:** for each unit traded at the controlled price, the buyer pays less and the seller receives less than at the clearing price, by the same amount: `price_paid` decrease for buyers who obtain the good and `net_price_received` decrease for sellers. Record both sides. Side payments (PC-6) and lower quality (PC-4) take back part of the transfer.
+- **Tier** A, given the ceiling binds and is enforced for those units. **Visibility**: the buyers' gain is visible; the sellers' loss is invisible. **Horizon** short to long.
+- **Builds on:** LW-5.
+- **Derivation:** CR-8b (every payment is a receipt: what the buyer does not pay, the seller does not receive) with CR-6 (the clearing price is the comparison).
+
 ---
 
 ## TX: Taxes and tariffs
@@ -559,6 +577,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **If:** a purchase subsidy available only during a limited window.
 - **Then:** purchases are moved into the window (RS-8): `quantity_traded` increase during it and decrease after it, compared with the counterfactual. If the subsidy requires destroying a used good (scrappage), the stock of used goods falls: `price_substitute` increase for buyers of used goods.
 - **Assumes:** buyers can shift purchase timing; for scrappage, the scrapped goods would otherwise have stayed in use.
+- **Price side:** in the dip after the window, sellers face fewer buyers than they would have, so `net_price_received` decreases for them in that window where their supply cannot adjust at once (CR-6).
 - **Tier** B. **Visibility**: the surge is visible; the dip and the used-goods effect are invisible. **Horizon** short.
 - **Builds on:** RS-8, OC-1.
 - **Derivation:** CR-10a with CR-4 (x: buy at another time, y: buy in the window).
@@ -669,6 +688,14 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Tier** B. **Visibility** invisible. **Horizon** long.
 - **Builds on:** LW-1.
 - **Derivation:** CR-11c (a record conveys information employers act on) with CR-4 for employers.
+
+### EN-11 A license as a signal
+- **If:** a license requirement tests something buyers care about but cannot easily judge for themselves (competence, safety, honesty), and the license is visible to buyers.
+- **Then:** for licensed sellers, `quality_information` increases for their buyers. Where the requirement tests something buyers do not care about, the license conveys nothing about the quality they want, and this chain gives no sign.
+- **Assumes:** the requirement's content bears on the quality buyers value (`other`); buyers can see who holds a license.
+- **Tier** B. **Visibility** visible. **Horizon** short to medium.
+- **Builds on:** AX-1.
+- **Derivation:** CR-11c (a policy changes actions by conveying information) with CR-2 for buyers.
 
 ---
 

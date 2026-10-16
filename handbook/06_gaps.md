@@ -118,6 +118,29 @@ All 25 worked examples were re-derived blind from the core rules alone and compa
 
 The pattern-based examples are being corrected for the errors the comparison found.
 
+## 6.2d Gaps closed in catalog 0.6
+
+The core-only re-runs flagged points where a core rule was unclear, and catalog 0.5 did not address all of them. Catalog 0.6 closes the rest.
+
+| Raised in | Gap | Resolution |
+|---|---|---|
+| WE-002 core | CR-1 could not record an operation that holds under one reading only | CR-1 "Recording": record operations per reading |
+| WE-004 core | Which named purchases fall when means fall | CR-4 "A change in means alone": a premise is required; Q19 remains open |
+| WE-010, WE-012 core | Whether CR-4's exception applies to the burdened good itself, and to what an actor offers | CR-4: it applies to both |
+| WE-017, WE-003 core | The unit in CR-4c (a gram or a dose); "narrowly ranked" under a large one-time cost | CR-4 "Units and lumpy costs" |
+| WE-016 core | Non-money terms of exchange (hours toward a license) | CR-5c: terms include everything given or received |
+| WE-001, WE-013 core | "Becomes expected" for a measure likely but not certain; overlap of CR-7c and CR-10c | CR-7c: value moves with the probability; cite both rules |
+| WE-017 core | Confiscation: a capital loss or a transfer? | CR-8e: a transfer, recorded on both sides; destruction uses up means |
+| WE-018, WE-013, WE-001, WE-004 core | CR-9 covered only goods used together; leases, insurance and the currency link had no relation type | CR-9 widened; relation types `contract` and `currency` (2.8) |
+| WE-022, WE-024 core | Persistence of transition-only effects; sunk costs in repeals | CR-10b: sunk costs are not consequences of a repeal; `persistence: n/a` for transition effects |
+| WE-024 core | CR-11b covered only trade moving out of the legal market | CR-11b: symmetric |
+| WE-021 core | Bunching before subsidy step-downs | CR-12h |
+| WE-004 core | A reading that the record gives a probability | 2.5: that is an assumption, not a reading |
+| WE-025 core | No variable for unit size | `unit_size` (2.4) |
+| Comparison | Recurring moves with no pattern to prompt them | PC-16 (ceiling as transfer), RS-16 (substitute's price), EN-11 (license as signal); RS-8 and SB-6 now state both sides of a timing shift |
+
+Still open, and for the experts: GAP-011-4 (Q14), GAP-013-4 (Q5), and Q19.
+
 ## 6.3 Questions for the experts
 
 **Q1. Tier A decisions.** Which foundations and rules may produce Tier A conclusions? The draft proposes A for AX-1, LW-1, LW-2, LW-5, LW-6, LW-7, the OC rules, PC-2, PC-3 and PC-11 (given their preconditions), and A for LW-3 by decision, with the price-as-quality-signal and Giffen exceptions recorded. Is that right?
