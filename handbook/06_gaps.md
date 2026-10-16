@@ -141,6 +141,58 @@ The core-only re-runs flagged points where a core rule was unclear, and catalog 
 
 Still open, and for the experts: GAP-011-4 (Q14), GAP-013-4 (Q5), and Q19.
 
+## 6.2e Gap-probing examples and catalog 0.7
+
+Ten new examples (WE-026 to WE-035) were written to probe parts of the method the first 25 had not tested: autistic interventions, refundable charges, tradable rights, mandated and prohibited contract terms, export subsidies, product standards with a schedule, public supply at a zero price, debt-funded transfers, non-competes and disclosure mandates. They found two calculus gaps, both now expert questions, and many unclear wordings and missing words, which catalog 0.7 closes.
+
+**Calculus gaps (for the experts).**
+
+| Gap | Step no core rule covers | Status |
+|---|---|---|
+| GAP-026-1 (also WE-032, congestion) | Effects through physical proximity or a shared facility, not exchange | CR-9 0.7: recorded as `proximity` or `shared_facility` relations, chains at Tier C; Q20 |
+| GAP-034-1 | A non-rival means (know-how used by a rival without loss to the first firm) | CR-8 0.7: no claim on total output; Q21 |
+
+**Closed in 0.7.**
+
+| Raised in | Gap | Resolution |
+|---|---|---|
+| WE-026 | A derived chain against a suspected opposing chain that cannot be derived | CR-12 0.7: report the derived sign; the suspected effect is a Tier C note |
+| WE-026, WE-031 | Phased and scheduled operations | CR-1 0.7: operations carry the date they take effect; expected future operations act now through CR-7c and CR-10c |
+| WE-027 | A per-unit charge is attached to an option; refunds with residual claimants | CR-1 and CR-8 0.7; instrument `deposit_refund`; actor class `residual_claimant`; variable `non_tax_receipts` |
+| WE-028 | Fixed quantity priced in a wider market; who captures a created asset when receipt depends on later actions; the unit of a constraint | CR-6, CR-7 and CR-4 0.7; EN-6 Unless; instrument `rights_allocation`; variables `discards`, `right_lease_price` |
+| WE-029 | Direction of terms under a mandated term; burden of a mandate; change of kind against change of timing | CR-5, CR-7 and CR-12 0.7; PC-17; variable `legal_breach` |
+| WE-030, WE-013 | The currency link in one direction only; better offers against prevented exchanges; "a response cannot reverse its cause" | CR-9 0.7 (both directions), OC-4 Unless, CR-12(e); TX-8 widened; SB-10; variable `exchange_rate`; `buyers.foreign`, `sellers.foreign` |
+| WE-031 | Product standards; counterfactual trend | Instrument `product_standard`; variable `specification_level`; assumption type `counterfactual_trend`; Q11 updated |
+| WE-032 | Price set by a public supplier; fixed capacity | CR-6 0.7; PC-19; SB-8 widened; instrument `public_supply`; variable `travel_time` |
+| WE-033 | Debt-funded transfers; which uses fall | OC-8; instrument `government_borrowing`; variables `interest_rate`, `consumption`; Q19 updated |
+| WE-034 | Prohibited contract terms | PC-18; instrument `term_prohibition`; variable `term_prevalence` |
+| WE-035 | Disclosure mandates | CR-11 0.7; instrument `disclosure_mandate` |
+| Several | "No change" and mixed-direction groups had no sign | Signs `no_change` and `at_least_one_as_stated` (2.5), also per reading |
+| WE-026 | Own-use bans, gifts, neighbors | Instrument `own_production_ban`; variable `home_production`; relation `gift`; actor class `neighbors` |
+| WE-029, WE-012 | Size thresholds; per-head costs with a cap | RS-17, RS-18 |
+
+**Candidate patterns.** These moves were derived from the core rules once each. They become patterns when a second example needs them; until then the derivation in the example stands.
+
+| Candidate | Seen in | Derivation |
+|---|---|---|
+| Ban on own production | WE-026 | CR-1 (option removed), CR-3a, CR-9 to the sellers of the bought substitute |
+| Refundable charge (deposit-refund) | WE-027 | CR-1 (charge on an option, refund on a later act), CR-4 per unit, CR-8b with a residual claimant |
+| A claim payable inside a boundary draws items from outside | WE-027 | CR-4, CR-7a across the boundary |
+| Circular trade under a payment for crossing a boundary | WE-030 | CR-4 (gain per round trip against its cost), CR-8c |
+| Allocation of a right by history after announcement | WE-028 | CR-10a, CR-7a, CR-8c |
+| High-grading under a physical-unit cap | WE-028 | CR-4c with the unit of the constraint |
+| Consolidation under tradable rights | WE-028 | CR-5, CR-7a (rights move to the lowest-cost users) |
+| Standard on new units, stock exempt | WE-031 | CR-1, CR-7c on the exempt stock, CR-10b |
+| Scheduled tightening faster than the trend | WE-031 | CR-10c, CR-7c, CR-12h |
+| A standard per unit of a chosen attribute shifts the attribute | WE-031 | CR-4 |
+| Certifiers hired by those they certify | WE-031 | CR-2, CR-11 |
+| Compensating differential from a non-wage term | WE-032 | CR-5c, CR-7a |
+| Debt-funded transfer in two windows | WE-033 | CR-8, CR-10, CR-12g |
+| Ban on a restraint over carryable training; retroactive voiding | WE-034 | CR-5c, CR-7c, CR-10b |
+| Fixed cost per item reduces variety | WE-035 | CR-4b with a lumpy cost |
+| Selection under a uniform term | WE-029 | CR-5c, CR-4 per counterparty |
+| Complaint-only enforcement | WE-029 | CR-4 (expected cost of breach differs by counterparty) |
+
 ## 6.3 Questions for the experts
 
 **Q1. Tier A decisions.** Which foundations and rules may produce Tier A conclusions? The draft proposes A for AX-1, LW-1, LW-2, LW-5, LW-6, LW-7, the OC rules, PC-2, PC-3 and PC-11 (given their preconditions), and A for LW-3 by decision, with the price-as-quality-signal and Giffen exceptions recorded. Is that right?
@@ -163,7 +215,7 @@ Still open, and for the experts: GAP-011-4 (Q14), GAP-013-4 (Q5), and Q19.
 
 **Q10. Grants of privilege.** Rothbard treats licensing, quotas and tariffs as "grants of monopolistic privilege". Should the Handbook adopt that category explicitly, as a shared parent of EN-1, EN-6 and TX-7?
 
-**Q11. The counterfactual.** Every sign is relative to "the same place and time without the policy". When a market is trending (rents rising 5% a year), is that trend part of the counterfactual by default? The draft assumes yes.
+**Q11. The counterfactual.** Every sign is relative to "the same place and time without the policy". When a market is trending (rents rising 5% a year), is that trend part of the counterfactual by default? The draft assumes yes. WE-031 adds a case: part of the trend is driven by an existing rule (a standard already tightening). The draft keeps existing rules in the counterfactual (`existing_rules`) and records the trend as an assumption of type `counterfactual_trend`.
 
 **Q12. Lock-in and jobs.** RS-11 says that people who lose a benefit by moving turn down jobs that would require a move. Is this a praxeological conclusion (moving now costs more, LW-1) or an empirical claim that belongs in an assumption?
 
@@ -179,7 +231,11 @@ Still open, and for the experts: GAP-011-4 (Q14), GAP-013-4 (Q5), and Q19.
 
 **Q18. CR-4's exception.** The direction of response to a change in cost is a priori except where the change also alters the actor's total means. That exception covers the Giffen case under LW-3 and the fixed-target saver under TX-6. Is this the right single statement of the exception, and is it complete?
 
-**Q19. Which purchases fall when means fall?** When an actor's means are reduced, the core rules say that some other use is given up but not which (CR-3, CR-8; WE-004). The method treats this as empirical and requires a premise. Is there a praxeological ground (for example, the marginal use is the one given up, LW-2) for saying more?
+**Q19. Which purchases fall when means fall?** When an actor's means are reduced, the core rules say that some other use is given up but not which (CR-3, CR-8; WE-004). The method treats this as empirical and requires a premise. Is there a praxeological ground (for example, the marginal use is the one given up, LW-2) for saying more? WE-033 tested this. LW-2 says the use given up is the lowest-ranked one served, but names no good, and saving is one of the uses. A named use was reached only through a market, with premises: public borrowing raises the interest rate and crowds out private borrowing (OC-8).
+
+**Q20. Shared facilities and proximity.** Some effects travel without exchange: a neighbor's hens, a congested road, a shared fishing ground (GAP-026-1, WE-032). Catalog 0.7 records them as `proximity` and `shared_facility` relations and reports chains through them at Tier C. Do such effects belong to praxeological analysis, given that the affected party does not choose them? If so, under what premises may they be signed at Tier B?
+
+**Q21. Non-rival means.** CR-8 treats every means as rival. Know-how carried to a rival firm is used there without being lost to the first (GAP-034-1). Should a core rule cover non-rival means, and what could it say a priori about total output?
 
 ## 6.4 Next steps for Phase 1
 
@@ -193,7 +249,7 @@ The Handbook now has 25 worked examples, the number the plan set for Phase 1, an
 
 The metamorphic checks in the three repeal examples (WE-022 to WE-024) are already a first test of consistency: each records which of the original consequences reverse, partly reverse or persist.
 
-### The 25 worked examples
+### The worked examples
 
 | # | Policy | Main rule families |
 |---|---|---|
@@ -222,3 +278,13 @@ The metamorphic checks in the three repeal examples (WE-022 to WE-024) are alrea
 | WE-023 | Repeal of a long-standing lumber tariff | TX, TS |
 | WE-024 | Abolition of the WE-003 braiding license | EN, TS |
 | WE-025 | Multi-part housing bill: rent cap, vacancy tax, construction subsidy | PC, TX, SB |
+| WE-026 | Ban on keeping chickens on residential lots, with a phase-out (autistic) | EN, RS |
+| WE-027 | Bottle deposit-refund scheme | TX, SB, RS |
+| WE-028 | Tradable fishing quota shares allocated by history | EN, SB |
+| WE-029 | Paid sick leave mandate | PC-17, RS |
+| WE-030 | Export subsidy on wheat | SB-10, TX-8 |
+| WE-031 | Building energy code with a tightening schedule | TS, EN |
+| WE-032 | Fare-free buses and trams funded by a payroll tax | PC-19, SB-8 |
+| WE-033 | One-time household cash payment funded by borrowing | OC-8, SB |
+| WE-034 | Ban on non-compete clauses | PC-18 |
+| WE-035 | Calorie labels on restaurant menus | EN, RS |

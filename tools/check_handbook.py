@@ -64,7 +64,7 @@ def table_rows(block):
     return rows[1:]  # drop header
 
 
-SIGNS = {"increase", "decrease", "ambiguous", "at_least_one_increase", "at_least_one_decrease"}
+SIGNS = {"increase", "decrease", "ambiguous", "no_change", "at_least_one_increase", "at_least_one_decrease", "at_least_one_as_stated"}
 
 
 def valid_sign(sign):

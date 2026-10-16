@@ -47,6 +47,12 @@ A policy does not change anyone's ranking of ends, except through what it tells 
 
 **Source.** HA ch. I §1; HA ch. XXVII; P&M ch. 2 §1.
 
+**0.7 clarifications.**
+- A charge paid only when an option is taken (a deposit on a purchase, a fee on a transaction) is operation 3: it changes what the option brings. Operation 4 is a transfer that no choice avoids (a lump-sum tax, a grant).
+- Operations may be dated: a provision that removes an option from a future date, or tightens each year, performs its operation on that date. Record the date. Before it, the operation acts only through expectations (CR-10a): an option nobody currently chooses can be removed with no present effect on choices, while assets whose yields depend on the future option change value at once (CR-7c).
+- Where every member of a class faces the same operation but responds differently (some return containers and some do not), split the class by response, not by operation.
+- Information that changes how much an actor values an option (a calorie count) is not one of the four operations; it works through CR-11c.
+
 ### CR-2 Choice
 
 **Statement.** Each actor chooses, from the options they believe open, the one they expect to serve their most highly ranked end. What an actor chooses reveals that they ranked it above the alternatives open at the time (demonstrated preference).
@@ -56,6 +62,8 @@ A policy does not change anyone's ranking of ends, except through what it tells 
 **Premises.** None for the statement. What actors believe about their options is a fact about them, and may be wrong (CR-11).
 
 **Source.** HA ch. I §1 and ch. VII §1 ("action sorts and grades"); Rothbard, "Toward a Reconstruction of Utility and Welfare Economics" (1956), on demonstrated preference.
+
+**0.7 clarification: absence of an exchange.** That a term or an exchange was absent before a policy demonstrates only that, in the situation as it was, no pair of parties found it worth agreeing on (CR-5). Whether that reflects the parties' own rankings or an obstacle to agreeing (one side knowing more than the other, costs of writing the term) is an empirical question and needs a premise; the rules do not presume either.
 
 ### CR-3 Cost and loss
 
@@ -93,6 +101,11 @@ The mirror case (x made better) reverses every direction.
 
 **Source.** HA ch. VII §1; MES ch. 1 §5, ch. 2 §5 and ch. 4.
 
+**0.7 clarifications.**
+- *Means over time.* A transfer financed by borrowing that the recipient expects to repay through later taxes is, for that recipient, partly a loan at the government's rate: it changes the cost of present against future goods for those who could not borrow on such terms, and so falls under CR-4 proper, not only under "a change in means alone".
+- *Saving is a use.* Saving and repaying debt are among the uses on which spending rises or falls when means change. By LW-2, the use added is the next in the actor's own ranking and the use given up is the last ranked; this is a statement about rank and names no good. With lumpy goods it may be a new kind of item rather than more of an old one.
+- *Fixed costs per item offered.* A cost incurred once for each item a seller offers (testing and labeling a menu item, certifying a model) bears on which items are offered, not on the price of each unit sold: it is a cost of the option of offering the item (x: offer it, y: drop it).
+
 ### CR-5 Exchange
 
 **Statement.** A voluntary exchange takes place only if each party ranks what they receive above what they give. Hence:
@@ -105,6 +118,10 @@ The mirror case (x made better) reverses every direction.
 **Premises.** None for (a) to (c). Whether a given exchange would have taken place without the policy is the empirical question.
 
 **Source.** MES ch. 2 §4 ("a double inequality of values"); HA ch. XVI §1; P&M ch. 2 §2.
+
+**0.7 clarifications.**
+- A gift is a transfer the giver ranks above keeping the thing given; a policy that removes the means of a gift (a ban on the production whose output was given away) removes a gain for the giver and a receipt for the recipient (CR-8b).
+- (a) applies to an exchange that would otherwise have taken place. Where a policy only makes another offer more attractive, so that a buyer takes the better offer instead, the party who loses the sale loses; the buyer does not.
 
 ### CR-6 Price formation and displaced pressure
 
@@ -125,6 +142,13 @@ The full price, meaning the money price plus everything else given up, moves tow
 
 **Source.** HA ch. XVI §1 and ch. XXX §2; MES ch. 2 §5; P&M ch. 3 §1; EIOL 1946 ch. 15 and 17.
 
+**0.7 clarifications.**
+- *Public supply.* Where the supplier is the rule-maker itself and supplies a fixed quantity at a set price (zero, for a free service), the unsatisfied buyers' pressure goes to the margins open to buyers sharing that quantity: waiting, crowding, time of travel. The supplier does not respond as a seller would, unless the budget rule changes.
+- *A fixed quantity of a good priced in a wider market.* Where a cap fixes the quantity of a good whose price is set in a wider market (a catch quota, a local quota on a traded good), the price of the good does not ration the capped quantity. The price (or lease price) of the right to produce or sell does.
+- *Margins that move in opposite directions.* Where the open margins differ in direction (quality falls while waiting rises; pay falls while a substitute restraint becomes more common), record them as a group with each member's direction stated and the sign `at_least_one_as_stated` (02_ontology.md, 2.5).
+- *Illegal margins.* The price of a legal right can satisfy the "at least one margin" conclusion on its own. Illegal margins (misreporting, discarding) each need their own premise.
+- *Existing contracts.* Terms fixed by existing contracts count as regulated while those contracts last.
+
 ### CR-7 Equalization across uses
 
 **Statement.** Wherever a means (labor, capital, money, land, a purchase, an activity, a moment in time) can be moved between uses that serve the same end, its owners move it from the use that yields less to the use that yields more, until the difference in yield at the margin is no greater than the cost of moving. Hence:
@@ -139,6 +163,12 @@ The full price, meaning the money price plus everything else given up, moves tow
 **Derivation.** CR-2 and CR-4 applied to every owner of a movable means; CR-10 for (c).
 
 **Source.** HA ch. XIV §5 (the evenly rotating economy) and ch. XV §4; MES ch. 6 §1 and ch. 8 §1 (equalization of returns); MES ch. 7 §5 "Capitalization and Rent" (clause c); EIOL 1946 ch. 15. On incidence (clause b), see the dispute recorded under DM-1: the formulation here is the standard one, not Rothbard's.
+
+**0.7 clarifications.**
+- *A policy that makes a means mobile.* Where a policy removes a restraint on moving a means between uses (a ban on non-compete clauses, an end to a residence requirement), the gain from its mobility goes to the owner of the means (the worker), and the loss falls on those who held the restraint. This is (b) applied to the change in mobility itself.
+- *Gross and net burdens.* Where a mandated term is worth something to the side that receives it, the burden "borne" by the paying side is the cost net of anything it recovers through the other terms. Say whether a share is gross or net.
+- *A tax whose revenue buys something the payers value.* Where the payers of a tax receive part of what it funds (employers whose staff ride the transit their payroll tax pays for), their net burden is smaller than the tax; sign each side separately and combine only with a premise (CR-12e).
+- *Claims before creation.* Where the claim to a right the policy will create travels with a tradable asset before the right exists (quota shares allocated to vessels), the claim's value is capitalized into that asset when the allocation rule becomes expected, and captured by its holder then. Where actors compete to qualify for the claim (a race to build catch history), part of the value is used up in the competition (CR-8c).
 
 ### CR-8 Conservation of means
 
@@ -157,6 +187,13 @@ The full price, meaning the money price plus everything else given up, moves tow
 
 **Source.** Bastiat 1850, §1; EIOL 1946 ch. 2 and 4; P&M ch. 5.
 
+**0.7 clarifications.**
+- *Residual claimants.* Where a fund pays out of what it collects (a deposit fund that refunds deposits and keeps the rest), the residual claimant's receipt can be negative; record its sign per reading or with a premise, not as a gain by default.
+- *Payers from the general budget.* Where a cost is funded from the general budget, CR-8b establishes that someone pays but not who: record the payers as a group of actor classes (taxpayers, recipients of other spending, future taxpayers through borrowing) with sign `at_least_one_decrease`.
+- *Borrowing.* Borrowing now implies taxes later only if the debt is expected to be repaid; that is a premise. The lenders' side of a public borrowing is recorded too: the means they lend are not available to other borrowers (OC-8).
+- *Voiding a contract right.* A rule that voids a right one party held under an existing contract (an enforceable non-compete) is a transfer under (b): the holder loses the value of the right and the other party gains it.
+- *Non-rival means.* Knowledge, techniques and know-how can be used by several actors at once without being used up. (a) applies to the time and materials used with them, not to the knowledge itself. Whether a policy that spreads knowledge raises total output therefore cannot be signed by conservation of means; it needs a premise. Whether this is a gap in the calculus is `06_gaps.md`, Q21.
+
 ### CR-9 Propagation
 
 **Statement.** When an actor changes what they do, the situation of everyone who would have dealt with them changes too: those who would have sold to them or bought from them, those who compete with them for the same means or customers, and those linked to them by any other relation recorded under `02_ontology.md`, 2.8: goods used together, goods bought together on one trip, goods put to a secondary use, contracts (a lease, an insurance policy, an employment contract), and the currency link (payments for imports are the means with which foreigners buy exports or assets). Apply CR-1 to CR-8 to each of these actors in turn, following those relations.
@@ -168,6 +205,10 @@ The value to anyone of a means depends on the ends it serves and on what it is u
 **Limits.** Propagation follows exchange relations only, and stops at the depth limit in workflow step 6. Every link must name the relation it uses.
 
 **Source.** Menger, *Principles of Economics*, ch. I and III; HA ch. XVI §3; MES ch. 7 §1.
+
+**0.7 clarifications.**
+- *The currency link runs both ways.* More imports provide foreigners with means to buy more exports or assets; more exports provide the country's residents with means to buy more imports. Exporters of different goods also compete for the same foreign buyers' means. Follow the link in whichever direction the policy moves it.
+- *Shared facilities and proximity.* An actor's use of a facility others share (a road, a vehicle, a common fishing ground) changes what is available to them; an actor's activity on their own property can change their neighbors' situation (noise, smell, gifts of produce). These are relations, not exchanges, and are recorded as `shared_facility` and `proximity` (02_ontology.md, 2.8). Propagation along them follows the same rules. Whether such effects belong to praxeological analysis at all, given that the affected party does not choose them, is `06_gaps.md`, Q20; until the experts decide, chains through them are reported at Tier C.
 
 ### CR-10 Time
 
@@ -193,6 +234,10 @@ The value to anyone of a means depends on the ends it serves and on what it is u
 
 **Source.** Hayek, "The Use of Knowledge in Society" (1945); Mises, "Economic Calculation in the Socialist Commonwealth" (1920); HA ch. XXVI.
 
+**0.7 clarifications.**
+- *What a sign needs.* A consequence of information conveyed by a policy needs two premises: what the actors believed before (otherwise nothing changes), and which way those who learn something move (otherwise the direction is open).
+- *Silence.* Where a policy requires some sellers to disclose and exempts others, buyers may infer something from an exempt seller's silence. That inference is information conveyed by the policy and falls under (c), with its own premise.
+
 ### CR-12 Composition
 
 **Statement.** When several chains of reasoning reach the same actor class, variable and horizon:
@@ -200,12 +245,17 @@ The value to anyone of a means depends on the ends it serves and on what it is u
 - (b) if they push in opposite directions, the combined direction is `ambiguous`, unless a premise establishes that one chain dominates (stated under (e); a dominance pattern may be cited for it where one fits);
 - (c) different variables are never netted against each other;
 - (d) a consequence takes the lowest tier of any link in its chain, and holds only if all its premises hold. Where the same consequence is reached by independent chains with the same sign, it holds if any one chain's premises hold: list the premises of each chain separately, and report the consequence if at least one chain clears the cut-off.
-- (e) a premise that establishes dominance under (b) may be an empirical premise with a probability, an accounting identity, or arithmetic on the case's figures (a cost far smaller than a revenue). Say which.
+- (e) a premise that establishes dominance under (b) may be an empirical premise with a probability, an accounting identity, arithmetic on the case's figures (a cost far smaller than a revenue), or the argument that a response cannot reverse the change that causes it (sellers moving sales abroad cannot push the domestic price back below its old level, since the move stops once the yields are equal). Say which.
 - (f) where chains cancel exactly by construction (one provision undoes what another creates), the consequence is not reported, and section 7 says so.
 - (g) chains at different horizons are not combined: a one-time effect in the short run and a lasting effect in the long run are separate consequences, one per horizon.
 - (h) where a policy raises an activity in every window against the counterfactual, but also moves some of it from one window to another (bunching before each step-down of a subsidy), sign each window against the counterfactual and describe the bunching as a path note in section 8, with its effect on waiting or prices recorded as consequences where it has one.
 
 **Derivation.** None needed: this is the logic of combining qualitative signs. The method states directions, not magnitudes, so opposing directions cannot be netted without a further premise.
+
+**0.7 clarifications.**
+- (g) does not forbid a separate consequence for a whole period ("over the ten years") where a dominance premise under (e) establishes its sign, such as a repayment plainly smaller than the receipt. That consequence is recorded with the horizon `whole period`, alongside the per-horizon ones.
+- An opposing chain that cannot be derived from the rules is not a chain. Where a derived chain meets a suspected but underivable opposing effect, report the derived sign and record the suspected effect as a Tier C note, not as an ambiguity.
+- The same action at different times is "the same" for timing shifts only if it is paid and performed in the same way; where the policy changes how it is paid (paid absence where it was unpaid), record the change in kind separately from any change in timing.
 
 ---
 
