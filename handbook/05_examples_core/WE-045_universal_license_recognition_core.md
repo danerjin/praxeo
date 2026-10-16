@@ -1,6 +1,6 @@
 # WE-045 / Analysis: Universal recognition of out-of-state occupational licenses
 
-Analyst: core-only re-run (Handbook 0.8)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.8)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -310,3 +310,74 @@ Persistence is compared with a path on which out-of-state licensees never faced 
 - No actor class for training providers (schools) or for licensees as a class split by how they obtained the license.
 - No variable for the number of moves into a jurisdiction (migration); `entry_rate` was used.
 - The persistence field allows none, partial, full or n/a, but has no value for "partial, with no long-run sign", which C-30 needed.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the main structure of the Halvoran case. Movers who would have topped up save the cost and keep the money. More licensees move in and practise. Licensed services become cheaper, with shorter waits and less self-provision and unlicensed work. Incumbents' wages fall, and some incumbents leave or cut hours. Employers' returns are ambiguous. Schools lose value from the introduction, residents train in Orlesk, and Orlesk schools gain. Across the border, prices and Brasholt rents rise. In occupations whose standards vary by state, the license tells buyers less, training varies more among licensed providers and quality falls. Moves in 2027 and boards' fee receipts are ambiguous. Both versions derive the signal results from CR-11c, the core version without the prompt of any pattern. That confirms the pattern version's finding that EN-11, applied as written, would give the wrong sign. The differences: the pattern version signs lobbying `ambiguous` on an unstated premise that the counterfactual has lobbying on the same question (C-11); it signs incumbents' money `earnings` (C-15) and total `employment` alone (C-17), where only a loss by their own ranking and a group are derivable; and it rests a decrease in total board cost on a premise that does not bound discipline hours (C-32). The core version signs quantity traded `increase` for all buyers without examining the information chain the pattern records as kind (3) (C-19), signs unlicensed practice in 2027 `increase` while ignoring the counterfactual's informal practice during top-ups (C-12), and omits several derivable consequences: buyers' information about formerly informal practitioners, `share_of_sellers_licensed`, buyers' means, and neighbors' quantity supplied. The pattern version omits enrollment losses, the separate fee and cost items that CR-12 (0.8) asks for, and pending applicants' wait.
+
+Counts: M 19, V 6, S 3, OP 12, OC 7.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1, C-2 | M | | The pattern puts the wait inside `compliance_cost`; the core records it separately as `wait_time` (C-2). |
+| C-2 | C-6, C-11 | M | | |
+| C-3 | C-6, C-11 | V | | `job_changes` (moves) in the pattern; `entry_rate` (moves and practice) in the core. |
+| C-4 | C-10 | V | | Same chains (A-3, A-4) and sign (ambiguous); `job_changes` against `entry_rate`. |
+| C-5 | C-9, C-13 | V | | Entry into practice in 2027 decreases (A-4). The core records the same chain on top-up enrollments (C-9) and delayers' 2027 earnings (C-13), not on entry. |
+| C-6 | C-8 | M | | |
+| C-7 | C-15 | M | | |
+| C-8 | none | OC | E | Under U1-a, demand for Orlesk certificates rises among practitioners in non-licensing states (CR-4, CR-10a). Derivable; core-version omission. The pattern cites only A-6 (holders would move), but the claim also needs a premise that non-holders can obtain the certificate (exam and experience). |
+| C-9 | C-7 | M | | |
+| C-10 | none | OC | E | Buyers of formerly informal practitioners gain `quality_information`. CR-11b: where an exchange moves back into the legal market, the means of learning (advertising, reputation, courts) become available again. Core-version omission. |
+| C-11 | C-17, C-18 | S | P | Pattern: lobbying by incumbents and schools `ambiguous`, by RS-7's Unless clause, on the ground that a reintroduced bill would be lobbied against without the Act. Core: increase (CR-4, x: accept, y: lobby). The counterfactual is Halvoran without the Act, and nothing in the record puts a bill or a contest on this question there. Lobbying in the counterfactual is an empirical premise, and the pattern states none. In WE-044 the same catalog version reached the opposite conclusion on the same point ("without the ordinance there would be no contest"). Partly a pattern problem: RS-7's Unless, with its parenthetical "(a repeal, where the policy's beneficiaries would lobby to keep it in force)", reads as if every repeal's counterfactual has such lobbying. Partly an analyst misapplication: no premise was stated. |
+| C-12 | C-25 | M | | |
+| C-13 | C-25, C-33 | V | | Self-employed incumbents' `net_price_received` decrease. The core records it through buyers' price (C-25) and its CR-8b check ("lower prices to buyers are lower receipts to sellers"), not as a row. |
+| C-14 | C-33 | M | | |
+| C-15 | none | OC | P | Incumbents' money `earnings` decrease, derived by CR-12a from a lower wage and price. CR-12c forbids netting different variables. Earnings also depend on hours, and CR-4's exception allows hours offered to rise when the wage falls. Leavers' earnings depend on their next-best occupation (the point of EN-3's 0.5 revision). What CR-7b and CR-10c do give is a fall in the expected yield of incumbents' training and license, a loss by their own ranking with no variable in 2.4 (the pattern's Gaps d3). The core rightly does not sign money earnings. Analyst misapplication. |
+| C-16 | C-34 | M | | |
+| C-17 | none | OC | E | Total `employment` in covered occupations increase, by CR-12e. The response argument binds total licensed supply: incumbents' cuts cannot push the price back up past the counterfactual. It does not bind heads: if leavers are part-timers and entrants full-time, heads can fall while hours rise. Derivable form: `employment`, `hours_worked` `at_least_one_increase`. Pattern-version overclaim of one member (final check 2). The core version records services traded (C-26) but omits the labor total altogether. |
+| C-18 | C-26 | M | | The core signs all buyers. For uniform-standard occupations it agrees with the pattern. |
+| C-19 | C-26 | S | J | Varied-standard occupations. Pattern: `quantity_traded` `ambiguous`, since a lower price (+) meets an information chain whose own direction CR-11 (0.7) leaves open, kind (3). Core: `increase` for all buyers; the information chain is not discussed for quantity, only as a Tier C note for price. Both readings of CR-12 (0.8) are defensible: an information chain with no derivable direction can be read as kind (3) (ambiguous) or kind (1) (a Tier C note, derived sign kept). The core version should at least have recorded the chain and its classification, since its own C-30 establishes the information change. |
+| C-20 | C-30 | M | | |
+| C-21 | C-31 | M | | |
+| C-22 | C-32 | V | | Same sign and premises. The pattern signs quality received by varied-standard buyers, with the opposing A-15 chain below the cut-off. The core restricts the row to licensed provision and records the A-15 chain as concerning all provision. |
+| C-23 | C-28, C-29 | V | | The core splits the pattern's `quantity_substitute` into `home_production` and `informal_activity` (unlicensed providers). |
+| C-24 | C-27 | M | | |
+| C-25 | none | OC | E | Buyers who keep buying have more for other uses (CR-8b; the mirror of the CR-3 note). Derivable for buyers who keep buying the same amount. Those who buy more may spend more, so the pattern's qualifier should say "the same amount". Core-version omission (its final check 4 considered only movers). |
+| C-26 | C-35 | M | | |
+| C-27 | C-38 | M | | |
+| C-28 | none | OC | E | Neighbors' `quantity_supplied` of licensed services decreases (CR-4 for licensees at the margin of moving, A-20). The core's C-41 and C-42 rest on this chain ("fewer sellers at each price") but do not record it. Core-version omission. |
+| C-29 | C-41 | M | | |
+| C-30 | C-40 | M | | |
+| C-31 | C-39 | M | | |
+| C-32 | C-5, C-24 | S | A | Pattern: total licensing administration `decrease`. Core: the review item decreases (C-5, by the same arithmetic), discipline of added licensees increases (C-23), and the total is `ambiguous` (C-24). The pattern's dominance premise A-22 ("applications and added discipline cases stay well below four times the present level") bounds the number of applications but does not compare discipline hours with the roughly 32,000 review hours saved. The stock of recognized licensees, and so discipline, grows every year. A premise stated as a bound on discipline hours would be a valid CR-12e dominance premise, at least at the short horizon. Difference of premises; A-22 as worded does not do the work. |
+| C-33 | C-22 | M | | The core's arithmetic understates the lost top-up fees: about 4,300 × $150 = $645,000, not $516,000 (which is 4,300 × $120). The sign is unaffected. |
+| C-34 | none | OC | E | `share_of_sellers_licensed` `no_change`, Tier A. CR-1: every legal seller must still hold a Halvoran license, and K3 makes a recognized license one. Trivially derivable; core-version omission (as in WE-003). |
+| C-35 | C-3 | M | | |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-4 | OP | J | Earnings in the first year in Halvoran rise for movers who would have topped up anyway: about four months of licensed practice replace training (A-1). The pattern declines money earnings for marginal movers (C-3 discussion), a different class. Defensible with A-1, though movers who worked during top-ups gain less. |
+| C-12 | OP | E | Unlicensed practice in 2027 `increase`. The core cites A-3, which is stated for movers who "can wait without practising". It also ignores the counterfactual: movers who would have topped up in 2027 would have practised unlicensed while doing so (A-7), and some now delay their move (A-4). That is a (−) chain at p ≥ 0.5, so the sign is `ambiguous` (CR-12b). Core-version error. |
+| C-14 | OP | E | Pending applicants' wait falls (K5, CR-1 op 2). Derivable. The pattern discusses K5 only for its timing effects. Pattern-version omission. |
+| C-16 | OP | A | A law exam added for Schedule B applicants who would have been endorsed directly, if none applied before (A-N1, p 0.5). The core adds the premise; the pattern did not consider that subclass. CR-1's recording note asks for the counterfactual law for each subclass. |
+| C-19 | OP | E | Recognized licensees set up on their own (CR-4; A-18). The pattern states A-18 and uses it inside C-26 but records no row. Pattern-version omission. |
+| C-20 | OP | E | Top-up exam fees decrease. CR-12 (0.8, two items in one variable) asks for each item as its own consequence, with the total separately. The pattern records only the total (C-33). Pattern-version omission. |
+| C-21 | OP | E | Application fees increase. As C-20. |
+| C-23 | OP | E | Discipline of added licensees increases (CR-8c). The pattern folds it into C-32's total; CR-12 (0.8, two items) asks for it separately. Pattern-version omission. |
+| C-36 | OP | E | Top-up enrollments at Halvoran schools decrease (about 1,900 a year). Stated in the pattern's prose (section 6) but not recorded. Pattern-version omission. |
+| C-37 | OP | E | Residents' enrollments at Halvoran schools decrease, through two independent chains (Orlesk route, A-5; lower expected wages, A-10). Stated in prose, not recorded. Pattern-version omission. |
+| C-42 | OP | E | Licensees who stay in East Brasholt and Orlesk earn higher wages (CR-9, CR-7a; A-20). Derivable; the pattern records only buyers' prices there. Pattern-version omission. |
+| C-43 | OP | J | Interior design and dietetics wages decrease under both readings: a subset of C-33, split by reading. Adds no sign. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** RS-7's Unless clause, applied without a premise, gave `ambiguous` lobbying (C-11). The clause's parenthetical invites the reading that every repeal's counterfactual has lobbying on the same question, which is an empirical matter. Incumbents' money `earnings` (C-15) were signed by netting wage and price (contrary to CR-12c) with no premise on hours or on leavers' next-best occupation; EN-3's 0.5 revision states that very premise. Total `employment` alone (C-17) was signed where CR-12e binds total supply only, and the group is the derivable form. The total board cost decrease (C-32) rests on A-22, which does not bound discipline hours. C-8 needs a premise that practitioners can obtain the Orlesk certificate.
+- **Errors in the core version.** Unlicensed practice in 2027 (C-12) leaves an opposing chain uncombined (top-up movers who would have practised unlicensed and now delay) and should be `ambiguous`. Quantity traded for varied-standard buyers (C-26) is signed without recording the information chain; this is a judgment call, but the chain belongs in section 7. Omissions: buyers' `quality_information` for formerly informal practitioners (CR-11b), `share_of_sellers_licensed` `no_change` (CR-1), buyers' means (CR-8b), neighbors' quantity supplied, demand for Orlesk certificates under U1-a, and the labor total as a group. Arithmetic slip: lost top-up fees are about $645,000, not $516,000 (no sign change).
+- **Errors in the pattern version (omissions).** Halvoran schools' top-up and resident enrollments (core C-36, C-37); the separate fee and cost items CR-12 (0.8) asks for (C-20, C-21, C-23); pending applicants' wait (C-14); self-employment entry (C-19); stayers' wages across the border (C-42); and the Schedule B subclass endorsed directly (C-16, on A-N1).
+- **Test of 0.8 verdicts.** *EN-11 for a license whose content varies by issuer (failed):* confirmed. Without EN-11, the core version derived `quality_information` decrease (C-30), `quality_variability` increase (C-31) and `quality_per_unit` decrease (C-32) from CR-11c with the same premises, the opposite of what EN-11 as written gives for recognized licensees' buyers. *CR-12 0.8, three kinds of opposing chain (needed interpretation at the line between kinds 1 and 2):* confirmed, and the core version shows the same uncertainty in a second place. It treated the information chain on price as a kind (1) Tier C note, and did not classify the chain on quantity at all, where the pattern version used kind (3) (C-19). The line between kinds (1), (2) and (3) is unclear for an information chain whose direction CR-11 (0.7) leaves open.
+- **Limits of the core rules.** None produced a difference: no S, OP or OC row has cause K. Unclear core-rule wording: (1) CR-11 (0.7) with CR-12 (0.8): whether a chain the rules derive but whose direction is open counts as kind (1), (2) or (3) (C-19). (2) CR-7c for a non-tradable license or training: both versions found that the loss falls on holders when the Act becomes expected, and neither had a variable or a clause to record it, so the pattern pushed it into `earnings` and the core left it out. (3) CR-12e (0.8): the response argument binds "the response as a whole", but the text does not say in which variable (supply in units, not heads) (C-17). (4) CR-7 (0.7): "those who held the restraint" when no one held it contractually (the core's Gaps b). (5) No core rule says how beliefs formed under a repealed rule decay (the core's GAP-045-C1), which leaves the persistence of C-30 to C-32 without a long-run sign.
