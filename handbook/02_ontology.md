@@ -163,6 +163,8 @@ Every consequence names one variable from this list. Add a variable only by edit
 | `resources_available_other_uses` | Resources available to actors for uses outside the target (the "unseen" bucket). |
 | `resource_stock` | The state of a shared natural stock (an aquifer's level, a fish stock). Chains through it are Tier C (CR-9, 0.7). |
 | `enrollment` | Number enrolled in a course of training or study. |
+| `stock_age` | Average age, or age mix, of a durable stock (a car fleet, a housing stock). |
+| `applications` | Number of applications for a permit, license, lottery or program. |
 
 **Out of scope for version 1.** Health, safety, environmental quality and nutrient intake have no variables. Reports say explicitly that these are not analyzed, rather than leaving them out silently.
 

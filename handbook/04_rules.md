@@ -1,4 +1,4 @@
-# 4. Rule catalog 0.9: patterns
+# 4. Rule catalog 1.0: patterns
 
 This file holds the **patterns**: derived results for recurring situations. They rest on the **core rules** in `04a_core_rules.md`, which are the universal calculus. Every pattern below carries a **Derivation** line that shows which core rules it instantiates and how; a pattern adds no reasoning of its own beyond that derivation and the premises it names. If a pattern and a direct derivation from the core rules ever disagree, the derivation wins and the pattern is corrected.
 
@@ -13,7 +13,11 @@ Each pattern is one reusable inference. Format:
 - **Source:** where the reasoning comes from, in the short forms of `07_sources.md`, which records how each citation was checked.
 - **Derivation:** how the pattern follows from the core rules (`04a_core_rules.md`).
 
+Every conclusion below is stated against the no-policy counterfactual (CR-12, 1.0). Where a pattern says "relative to" anything else, re-sign it before use.
+
 Patterns are deliberately small. A full analysis chains several of them, and each link is reviewed on its own.
+
+**Changes in 1.0.** From the second held-out test (WE-046 to WE-055) and its core-only re-run (`08_core_rerun_report.md`, fourth round). Re-based on the no-policy counterfactual: RS-20, EN-11, EN-13. Corrected: PC-17 (a charge refunded on the act), RS-16 (prices per unit of quality; fixed costs on the substitute), TX-7 (two-rate tariffs), EN-14 (thinning complements), EN-6 (caps on sellers; tariff-rate quotas), OC-8 (small effects are signed; segments; interest deductions). Widened: EN-1, EN-2, PC-19, RS-7, RS-8, RS-13, RS-17, RS-18, TS-5, OC-1. Promoted after a valid second use: RS-21 (high-grading under a cap in physical units), RS-22 (compensating differential), RS-23 (selection under a uniform price), TS-10 (scheduled tightening faster than the trend), TX-12 (deposit-refund). Not promoted: "tariff-like burden without a tax" (its second use was a different move).
 
 **Changes in 0.9.** From the held-out test (WE-036 to WE-045) and its core-only re-run. Corrected where a pattern gave a wrong conclusion on a new case: RS-17 (value of firms near a threshold), RS-18 (caps per firm), SB-10 (domestic price; drawback; checks on the return crossing), EN-11 (licenses issued on different requirements), OC-8 (baseline borrowing, revenue bonds, tax-exempt interest), PC-8 (demand withdrawn from the uncontrolled segment). Widened: PC-17 (a mandate with a buy-out charge), PC-19 (a public seller with an open quantity), RS-4, RS-7, RS-8, RS-9, RS-16, OC-3, OC-5, EN-6, TX-8. Promoted from candidates after a second use: RS-19 (round trips), RS-20 (complaint-only enforcement), OC-9 (debt-funded transfer in two windows), EN-12 (allocation of a right by history), EN-13 (consolidation under tradable rights), EN-14 (standard on new units, stock exempt), EN-15 (disclosure mandate). "Fixed cost per item reduces variety" was not promoted: its second use was invalid (`08_core_rerun_report.md`, third round).
 
@@ -94,6 +98,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 - **Assumes:** the group can organize at a cost lower than its stake (`other`). This premise must be stated and estimated in each case, like any other.
 - **Unless:** the counterfactual also has lobbying on the same question (a repeal, where the policy's beneficiaries would lobby to keep it in force). Then compare with that: the side that gains from the change lobbies more, the side that loses may lobby more or less, and the combined sign for a class that lobbied in both worlds is `ambiguous` without a premise.
 - **Repeals (0.9).** In a repeal, whether the old rule would have been contested on the counterfactual path is a premise, not a given (CR-4, 0.9).
+- **1.0.** The Unless clause covers impositions as well as repeals: wherever the question was contested on the counterfactual path, lobbying is signed against that contest (CR-4, 1.0).
 - **Tier** B. **Visibility** invisible. **Horizon** medium.
 - **Builds on:** AX-1, LW-1.
 - **Derivation:** CR-4 applied to political action (x: accept the decision, y: spend means to change it). The payoff to y rises with the concentrated gain or loss at stake.
@@ -104,6 +109,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 - **Unless:** where a stock must be run down to a common deadline with no grandfathering (a phase-out), there is no favorable window to move toward, and the sign before the deadline is `ambiguous` rather than a rush. Where a claim on a future payment can be acquired before the charge that funds it starts (containers refundable before deposits are charged), holders acquire it in the gap. Where the policy also improves the earlier window (a clause applying the new rule to cases already pending, so that acting before the effective date is already partly protected), the two timing chains oppose each other. Check every provision for this before signing: the sign in that window is `ambiguous` without a dominance premise.
 - **Assumes:** actors know the timing and can shift their actions.
 - **More timing chains (0.9).** The Unless clause also covers an opposing chain from a second incentive the policy creates or meets (a leasing season), and cases where sellers and buyers move in opposite directions in time. Sign each window by combining all the timing chains under CR-12b.
+- **Races and rivals (1.0).** A race to qualify adds activity in the window without taking it from another window; a rush whose other side is rivals in the same window (near-line sellers taking jobs from others) is recorded on both classes.
 - **Tier** B. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-7.
 - **Derivation:** CR-10a with CR-4 (x: act at one time, y: act at another).
@@ -145,6 +151,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 - **If:** a policy adds quantity supplied to a linked market (exempt new building next to a capped segment, subsidized output fed into a wholesale market, released public stocks), or withdraws it (units removed from a segment, production stopped).
 - **Then:** the price in that market decreases where supply is added, and increases where it is withdrawn (`price_substitute`, or that market's `price_paid`), compared with the counterfactual.
 - **Assumes:** the added supply is not offset by withdrawal elsewhere; buyers there do not absorb it at an unchanged price (`substitutability`).
+- **1.0.** Where the added supply draws inputs from other uses, record the crowding out of other output and combine; the response argument (CR-12, 1.0) bounds the price only with its premises.
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
 - **Builds on:** LW-3. This is the general form of the opposing chain noted under PC-8.
 - **Derivation:** CR-9 then CR-6 in the linked market: added supply at an unchanged price leaves sellers unsatisfied, so the price falls; withdrawn supply is the mirror case.
@@ -172,6 +179,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 - **Unless:** the policy also adds supply to the substitute's market (RS-13), in which case the price is `ambiguous` without a premise.
 - **Mirror case:** a policy that makes a good cheaper or more available (a free public service) pulls buyers from its substitutes: `quantity_substitute` decreases and `price_substitute` decreases where their supply cannot contract at once.
 - **Costs on the substitute (0.9).** Where the policy also attaches a cost to the substitute itself (a record-keeping charge per domestic animal), that cost is an opposing chain on the substitute's net price to its sellers; combine under CR-12b.
+- **Per unit of quality (1.0).** Sign the substitute's price per unit of a given quality or risk class: a change in the mix of buyers or goods is not a price change. Only a cost per unit sold opposes sellers' net price; a cost fixed per facility bears on the number of facilities (CR-4, 0.8); a cost on owners (a road charge) combines with quantity bought, not with sellers' net price.
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
 - **Builds on:** LW-3.
 - **Derivation:** CR-9 (buyers turn to the substitute) then CR-6 in the substitute's market (at the old price, buyers wish to buy more than sellers wish to sell, so the price rises as far as supply cannot expand). PC-8 is the same move for a controlled market.
@@ -181,6 +189,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 - **Then:** firms near the threshold stay below it (`number_of_sellers` just below the threshold increases relative to just above), split activity across separately counted units (second brands, separate entities: `reclassification` increase), and the value of growing past the threshold falls (CR-7c: `asset_value` of firms near it decreases). Where the threshold is measured over a past period, the response comes in that period, before the policy takes effect.
 - **Assumes:** the cost of the policy is material relative to the gain from growing (`binding`); splitting is legal and cheap enough (`other`).
 - **Value of firms near the line (0.9).** Against the no-policy counterfactual, firms just below a threshold also gain from the burden on their rivals above it, so their `asset_value` is `ambiguous` unless a premise says which dominates. The same clause applies to a line on hours or any other measure ("job" for "firm").
+- **Notches, mirrors, eligibility (1.0).** Distinguish a notch (the burden jumps on the whole base) from a kink (it applies only above the line). The mirror case, a burden below the line (a training requirement grandfathered above an experience line), is signed the same way. Losing eligibility for a program at the line is a further cost of crossing it.
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
 - **Builds on:** LW-2.
 - **Derivation:** CR-1 (the operation applies only above the threshold), CR-4 (x: grow past it, y: stay below or split), CR-7c, CR-10a.
@@ -190,6 +199,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 - **Then:** below the cap the cost raises the price of every hour and every head; above it, an extra hour from an existing worker adds nothing while an extra worker adds the full cost. Employers shift hours toward fewer heads: `hours_worked` per worker increases and `employment` decreases where workers are above the cap, as a mixed group.
 - **Assumes:** hours and heads are substitutes in production (`substitutability`).
 - **Caps per firm (0.9).** Where the cap is per firm rather than per head (a penalty capped at a sum per firm), once a firm is above the cap its cost no longer varies with heads: it is a fixed cost (CR-4, 0.8), and there is no shift of hours toward fewer heads above the cap. One switch can move both hours and heads; sign each where CR-4 gives it, rather than as a group.
+- **Any cost capped per firm (1.0).** The per-firm cap clause applies to any cost capped per firm, per crown of payroll as well as per head.
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
 - **Builds on:** LW-2.
 - **Derivation:** CR-4 (x: another worker, y: more hours from existing workers) with the cost attached only to x above the cap.
@@ -205,8 +215,30 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 - **If:** a rule is enforced only when a protected or affected party complains.
 - **Then:** the expected penalty for breach differs by counterparty: breach is concentrated where complaint is least likely (short tenure, ignorance of the law, fear of retaliation, absent neighbors), and `legal_breach` increases there relative to uniform enforcement. Parties who can complain gain a bargaining threat. Where complaint is costless and can be strategic, complaints also rise for reasons unrelated to breach.
 - **Assumes:** the likelihood of complaint differs across counterparties (`enforcement`).
+- **Baseline (1.0).** Against no policy, breach of a new rule increases from none wherever enforcement is less than certain. "Concentrated where complaint is least likely" describes where the breach that occurs falls, not a comparison with uniform enforcement.
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
 - **Derivation:** CR-4 (the expected cost of breach is the penalty times the chance of a complaint), CR-5c. Seen in WE-029 and WE-044.
+
+### RS-21 High-grading under a cap counted in physical units
+- **If:** a cap, quota or right counts units (tonnes, movements, licences per tonne) whose value per unit varies, and the actor chooses the mix or the size of each unit.
+- **Then:** the value per counted unit rises: high-value fish are landed and low-value ones discarded, larger aircraft fly each slot, white sugar fills tonnage licences rather than raw. `quality_per_unit` (or `unit_size`) increases; the counted good's lower-value varieties fall.
+- **Assumes:** the mix or size can be changed at a cost below the gain (`alternative_uses`).
+- **Tier** B. **Visibility** invisible. **Horizon** short to medium.
+- **Derivation:** CR-4 with the unit of the constraint (x: fill the unit with a higher-value variety; y: a lower-value one). Seen in WE-028, WE-047, WE-054.
+
+### RS-22 Compensating differential from a non-wage term
+- **If:** a policy changes a term of a job other than the wage (the cost of reaching it, its schedule, its security) for some jobs and not others.
+- **Then:** for jobs made worse, `wage_rate` or other terms move in workers' favor, or those jobs are harder to fill, as a group (`at_least_one_as_stated`); for jobs made better, the reverse.
+- **Assumes:** workers can move between jobs (`mobility`).
+- **Tier** B. **Visibility** invisible. **Horizon** medium.
+- **Derivation:** CR-5c, CR-7a. Seen in WE-032, WE-046.
+
+### RS-23 Selection under a uniform price
+- **If:** a policy fixes one price or term for counterparties whose cost to serve differs, while their alternative is priced by each counterparty's cost.
+- **Then:** those whose cost exceeds the uniform price take it; the others take the alternative. The provider's cost per counterparty rises; under the alternative, the remaining pool is cheaper to serve. Sign per class.
+- **Assumes:** the alternative is priced by each counterparty's cost (`other`).
+- **Tier** B. **Visibility** invisible. **Horizon** short to medium.
+- **Derivation:** CR-4 per counterparty, CR-6 (1.0). Seen in WE-029 and, on the buyers' side, WE-049.
 
 ---
 
@@ -220,6 +252,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Naming the forgone uses.** Where means are taken directly (a tax, a levy), which uses are given up needs a premise (CR-4, a change in means alone). Where they are taken through a market (public borrowing draws on the loan market), the forgone uses are those of that market's marginal participants (the borrowers crowded out), which can be named with a premise about who they are.
 - **Who pays.** Where the means come from a general budget and the record names no tax, the payers are a group (taxpayers, recipients of other spending, future taxpayers) with `at_least_one_decrease`; do not name taxpayers alone. Where the means are borrowed, the lenders' side is recorded too (OC-8).
 - **Saving is a use.** For payers who may cut saving rather than purchases, `quantity_traded` falls in named markets only with a premise (CR-4, 0.7).
+- **Receipts into the same budget (1.0).** Where fees or fines flow into the budget that pays, record both and the net (CR-8, 1.0).
 - **Tier** A, given that resources are taken. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-1.
 - **Source:** Bastiat 1850, §1 "The Broken Window"; EIOL 1946 ch. 2 to 4.
@@ -285,6 +318,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Then:** the means lent to the state are not available to other borrowers (CR-8a): `interest_rate` increases for them and their borrowing (for investment, house purchase) decreases, unless the lending comes from abroad; repayment implies taxes later (CR-8b), recorded as a group of later payers. Lenders receive the interest (CR-8b).
 - **Assumes:** the loans come from domestic saving that would otherwise have been lent at home (`other`); the debt is expected to be repaid, not rolled over (`expectations`).
 - **Baseline and kind of debt (0.9).** Compare with the borrowing that would have taken place without the policy (CR-8, 0.9): where private actors would have borrowed for the same purpose, the effect on `interest_rate` is `ambiguous` without a premise on the difference. Revenue bonds imply later taxes only for a shortfall. Tax-exempt interest lowers tax receipts; record those who make them up as payers. A borrower too small to move its loan market: the rate effect is recorded as negligible, as under EN-6. A legal debt limit: borrowing for this project displaces the government's own other borrowing first. Lenders: no sign against the counterfactual.
+- **1.0.** The small-borrower case is signed, not left as negligible (CR-6, 1.0). Where an exemption creates a segment (bonds exempt only from one state's tax), the borrowing can be large in that segment: yields rise there and holders of existing bonds in it lose. Tax-exempt borrowing for private projects also reduces the projects' interest deductions; net receipts need arithmetic.
 - **Tier** B. **Visibility** invisible. **Horizon** short to long.
 - **Builds on:** LW-1, LW-7.
 - **Derivation:** CR-8a and CR-8b; CR-6 in the loan market (more demand for loans at the old rate); CR-7a (lenders move to the higher rate); CR-10 for the later taxes.
@@ -336,6 +370,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **If:** a policy is repealed (or not renewed), and actors give a meaningful probability to its return within the payback period of their investments.
 - **Then:** responses that pay back quickly (repairs, pricing, lettings, short contracts) go ahead; responses that pay back only over long periods (major renovation, new construction, entry with sunk costs) are smaller and later than the mirror of the original policy's effects. Where the expected return would exempt existing practitioners (grandfathering), it brings entry forward instead. The losing side responds too: those who gained from the policy and expect it back delay scrapping, selling or retraining, and keep capacity on standby.
 - **Assumes:** the probability of re-imposition over a named period (`expectations`).
+- **Lines fixed before announcement (1.0).** Where grandfathering is decided by a date or history already past when the measure is announced, there is no rush to qualify (EN-12).
 - **Tier** B. **Horizon** medium to long.
 - **Builds on:** LW-7, TS-2.
 - **Derivation:** CR-10a with CR-4: the expected yield of a long-lived investment includes the chance that the old policy returns; quick-payback actions depend on it less.
@@ -372,6 +407,13 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Builds on:** LW-7, LW-4.
 - **Source:** HA ch. XXI §6 "Wages and Subsistence".
 - **Derivation:** CR-7 (labor's price tends to its discounted marginal value product) with LW-9 and LW-10 (labor's product depends on the capital it works with).
+
+### TS-10 Scheduled tightening faster than the trend
+- **If:** a standard, cap or ban tightens on an announced schedule faster than the counterfactual trend.
+- **Then:** in each window, the share of actors it binds on is the gap from the trend (TS-3, 0.8); asset values capitalize the whole schedule when it becomes expected (CR-7c); activity bunches before each step (RS-8, CR-12h), signed per window against the trend.
+- **Assumes:** the counterfactual trend (`counterfactual_trend`).
+- **Tier** B. **Visibility** invisible. **Horizon** medium to long.
+- **Derivation:** CR-10c, CR-7c, CR-12h. Seen in WE-031, WE-050.
 
 ---
 
@@ -516,6 +558,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Then:** for those contracts, the cost to the party who must provide the term rises (CR-1, operation 3); the bargaining range moves (CR-5c), so the other terms adjust: for an employment term, a mixed group of `wage_rate` (−), `non_wage_compensation` (−) and `employment`/`hours_worked` (−), sign `at_least_one_as_stated`. Parties who already included the term are not bound (not binding for them). Where the term is worth something to the side that receives it, part of the cost is recovered through the other terms (CR-7, gross and net).
 - **Assumes:** the term was absent for some contracts (`binding`); `enforcement`. Why it was absent (the parties' own rankings, or an obstacle to agreeing) is a premise (CR-2), and decides whether the receiving side is better off by its own ranking.
 - **A mandate with a buy-out charge (0.9).** Where the employer may pay a charge instead of providing the term ("play or pay"), split the bound class by response (CR-1, 0.7): PC-17 applies to those who provide the term, TX-2 to those who pay the charge. Where the charge is capped per firm, RS-18 (0.9) applies.
+- **A charge refunded on the act (1.0).** Where the charge is paid first and refunded when the mandated act is bought (a training levy repaid as vouchers), the act is free at the margin up to the refund, so it rises; the wedge (CR-5c) falls on the whole payroll of those who do not recover the charge, not on the contracts that carry the term.
 - **Tier** B. **Visibility**: the term is visible; the adjustment of other terms is invisible. **Horizon** short to medium.
 - **Builds on:** LW-5.
 - **Derivation:** CR-1 (operation 3 on the option of contracting without the term), CR-5c (the range moves), CR-6 (pressure displaced to the other terms), CR-7b (who bears the net cost), CR-12 (the group).
@@ -533,6 +576,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Then:** excess demand at the set price (PC-1); the pressure goes to the margins open to buyers sharing the fixed quantity: `wait_time`, crowding (`quality_per_unit` down), `travel_time`, as a mixed group (CR-6, public supply). Buyers who would have paid anyway gain what they no longer pay (SB-8). Buyers move from substitutes (RS-16, mirror case). The funding is binary and analyzed separately (SB-1).
 - **Assumes:** `binding`; the budget does not expand with use (`revenue_use`).
 - **Open quantity (0.9).** Where the state sells at a set price and supplies whatever is demanded, there is no rationing. Buyers move to it (CR-4), rival sellers face lower demand (CR-9, RS-13), and the split between their price and quantity needs a premise (CR-6, 0.9). Rivals' plant that cannot be moved keeps operating as long as it covers its running costs (CR-7, CR-10b).
+- **Selection (1.0).** Where the public price is uniform and rivals price by each buyer's cost, buyers sort (CR-6, 1.0): high-cost buyers move to the public seller and its outlay per buyer rises. Crowding below capacity is not rationing (CR-6, 1.0) but a Tier C chain.
 - **Tier** B. **Visibility**: the free service is visible; crowding and the funding are invisible. **Horizon** short to medium.
 - **Builds on:** LW-3, LW-6.
 - **Derivation:** CR-6 (public supply), CR-8b, CR-9.
@@ -594,6 +638,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **If:** `tariff` on an imported good.
 - **Then:** `price_paid` for the imported good and for domestic substitutes increase for `buyers.current`; `sellers.substitutes` (domestic producers of competing goods) see `net_price_received` and `quantity_supplied` increase. Domestic firms that use the good as an input face higher costs.
 - **Assumes:** domestic substitutes exist; the tariff is not absorbed entirely by foreign sellers.
+- **Two-rate tariffs (1.0).** Where a quota sets the quantity at a low rate and further imports pay a higher rate (a tariff-rate quota), apply this pattern at the marginal rate, not at the in-quota rate; the in-quota rate only divides the gap between the domestic and world price between the state and the holders of in-quota rights (DM-4).
 - **Tier** B. **Visibility**: gains to protected producers are visible; higher prices to buyers and input users are invisible. **Horizon** short to medium.
 - **Builds on:** TX-2, RS-1.
 - **Source:** EIOL 1946 ch. 11 "Who's 'Protected' by Tariffs?"; Bastiat, *Economic Sophisms*, First Series (1845), ch. VII (the candlemakers' petition).
@@ -631,6 +676,13 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Tier** A for the arithmetic, B for the responses. **Visibility** invisible. **Horizon** medium to long.
 - **Builds on:** TX-6.
 - **Derivation:** Arithmetic (a tax on the nominal return takes a larger share of the real return) with TX-6.
+
+### TX-12 Deposit-refund
+- **If:** a charge is paid on an act and refunded, up to the charge, to whoever performs a later act (returns a container, buys approved training) within a period; what is not refunded goes to a fund.
+- **Then:** the later act rises (it is paid up to the refund); those who do not perform it bear the charge; the fund receives the unclaimed part. Refunds attach to the thing or the act, not to the payer, where the law says so (CR-1, 0.8). Those who claim bear the cost of claiming and the time the money is held (CR-3, 0.9).
+- **Assumes:** the later act is feasible for some (`alternative_uses`).
+- **Tier** B. **Visibility**: the charge is visible; who bears it is invisible. **Horizon** short to medium.
+- **Derivation:** CR-1, CR-3, CR-4, CR-8b. Seen in WE-027, WE-048.
 
 ---
 
@@ -727,6 +779,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Then:** `entry_rate` and `number_of_sellers` decrease; `quantity_supplied` decrease and `price_paid` increase compared with no licensing.
 - **Assumes:** `binding` (the requirement goes beyond what some current or prospective sellers already meet); `enforcement`.
 - **Unless:** existing sellers are exempt (grandfathered), which delays the effect on supply (TS: horizon medium).
+- **Refill (1.0).** Where the requirement removes part of the stock of sellers at one date, the higher fee draws new entrants who meet it: entry in the medium run is `ambiguous`; the long-run decrease needs a premise on exit rates.
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
 - **Builds on:** LW-1, LW-4, LW-5.
 - **Source:** P&M ch. 3 §3 "Product Control: Grant of Monopolistic Privilege".
@@ -735,6 +788,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 ### EN-2 Licensed incumbents gain
 - **If:** EN-1 applies.
 - **Then:** `sellers.current` who hold licenses: `net_price_received` increase. If licenses are transferable, `asset_value` of a license increases (SB-4).
+- **Cost recovery (1.0).** Where the authority recovers its cost by a charge spread over the capped quantity, a smaller quantity raises the charge per unit, which opposes incumbents' net price; combine. Where the license cannot be sold, its value is by the holder's own ranking only (CR-7, 1.0).
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
 - **Builds on:** EN-1, SB-4.
 - **Derivation:** CR-6 and CR-7b: with entry restricted, the gain from the higher price settles on those who hold the scarce permission.
@@ -766,6 +820,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Assumes:** `binding`, `enforcement`.
 - **Unless:** the capped good's price is set in a wider market (fish sold into a regional market, a traded commodity). Then the lease price of the right (`right_lease_price`) rations the capped quantity (CR-6), not `price_paid`. `price_paid` still moves up in the wider market, by as much as the capped quantity matters there: record it as `increase` with a premise that the effect is not negligible, or note it as negligible. Where part of the good is sold only at home, that part's price rises as in the main case.
 - **Inputs (0.9).** Where the cap is on an input whose output is sold in a wider market (groundwater for crops), the lease price of the right rations the input (CR-6), and the wider-market clause applies to the output through CR-9.
+- **Caps on sellers; small effects (1.0).** A cap on the number of sellers is not a cap on quantity: its removal lowers price only with a premise that the cap held quantity down. The wider-market price is signed even when the effect may be small (CR-6, 1.0). For a tariff-rate quota, see TX-7 (1.0).
 - **Tier** B. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-3, LW-5.
 - **Derivation:** CR-6 (quantity held below the clearing level), CR-7b (the gain settles on the holders of quota rights, the scarce side) and CR-9 (domestic sellers of the same good).
@@ -807,6 +862,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Then:** for licensed sellers, `quality_information` increases for their buyers. Where the requirement tests something buyers do not care about, the license conveys nothing about the quality they want, and this chain gives no sign.
 - **Assumes:** the requirement's content bears on the quality buyers value (`other`); buyers can see who holds a license.
 - **Unless (0.9).** Where the same license is issued on different requirements (recognized from other jurisdictions, or with standards that vary by issuer), it conveys less about the quality buyers care about than a license issued on one requirement: `quality_information` decreases for buyers of the sellers whose license now covers more variation (CR-11c).
+- **Baseline of the Unless (1.0).** The 0.9 Unless compares with a license issued on one requirement. Where the counterfactual has no license, the main clause applies: `quality_information` increases, by less where requirements vary.
 - **Tier** B. **Visibility** visible. **Horizon** short to medium.
 - **Builds on:** AX-1.
 - **Derivation:** CR-11c (a policy changes actions by conveying information) with CR-2 for buyers.
@@ -822,6 +878,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **If:** a policy creates tradable rights to a capped quantity, and holders' costs or the value they get from the right differ.
 - **Then:** rights move to the holders who value them most: `number_of_sellers` using the right decreases, the quantity per remaining user increases, and lessors receive `right_lease_price` instead of producing. The workers and suppliers of those who sell or lease out lose (CR-9).
 - **Assumes:** rights can be traded or leased at low cost (`mobility`); values differ (`other`).
+- **Baseline (1.0).** Against no policy, the number of users of the capped resource falls through blocked entry and holders who sell or lease their whole holding, not by comparison with the initial allocation. Where rights can go to anyone, a premise is needed that the highest-value users are among the holders.
 - **Tier** B. **Visibility** invisible. **Horizon** medium.
 - **Derivation:** CR-5, CR-7a. Seen in WE-028 and WE-039.
 
@@ -829,6 +886,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **If:** a policy forbids new units of a durable good below a specification (a home, a lot, a vehicle), and existing units are exempt.
 - **Then:** new units cost more or are not built where the standard binds (TS-3, 0.8); existing units, which now face less competition from cheaper new ones, rise in value (CR-7c) and are kept in use longer (CR-10b). A repeal reverses these effects as the stock turns over: asset values persist only as far as the stock does (CR-7, 0.9).
 - **Assumes:** the standard binds on some designs (`binding`).
+- **Thinning complements (1.0).** As the exempt stock shrinks, the goods and services used with it (fuel stations, repair) thin out and cost more (CR-9, CR-4 0.8), which opposes the rise in the stock's value; in the long run that value is `ambiguous` without a dominance premise.
 - **Tier** B. **Visibility** invisible. **Horizon** medium to long.
 - **Derivation:** CR-1, CR-4, CR-7c, CR-10b. Seen in WE-031 and WE-043.
 

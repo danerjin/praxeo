@@ -256,3 +256,47 @@ Of 516 consequences compared, 341 were matched; 308 of these (90%) agree in sign
 - **Patterns.** Corrected: RS-17, RS-18, SB-10, EN-11, OC-8, PC-8. Widened: PC-17, PC-19, RS-4, RS-7, RS-8, RS-9, RS-16, OC-3, OC-5, EN-6, TX-8. Promoted: RS-19, RS-20, OC-9, EN-12, EN-13, EN-14, EN-15. 98 patterns.
 - **Ontology and workflow.** Instrument `mandate_with_charge`; variables `resource_stock`, `enrollment`; for a repeal with no earlier analysis, derive the original rule first.
 - **WE-036 to WE-045 corrected** against their comparisons under catalog 0.9. Each correction was checked against the core rules before it was applied; each example has a section "Corrections after the core-only comparison", and its part (e) "Test of 0.8" is kept as the record of the test, with a "Re-run note" where the comparison contradicted a verdict. Five consequences were removed: WE-037 C-20 and C-43, WE-038 C-14, WE-040 C-10 and WE-045 C-15. The new Tier C rule is applied throughout, for example in WE-039 (Tier B signs "not counting effects through the aquifer", with combined signs at Tier C).
+
+---
+
+# Fourth round: the held-out test of catalog 0.9, WE-046 to WE-055
+
+WE-046 to WE-055 were written with the catalog frozen at 0.9 (`06_gaps.md`, 6.2g), then re-run blind from the core rules and compared by agents that had written neither version. The blind protocol was tightened after the third round (a line limit on the format reference; no git history); every re-run agent reported keeping to it.
+
+## Results
+
+| Case | M | V | S | OP | OC | P | K | A | E | J |
+|---|---|---|---|---|---|---|---|---|---|---|
+| WE-046 congestion charge | 27 | 13 | 4 | 9 | 12 | 1 | 0 | 0 | 23 | 1 |
+| WE-047 sugar tariff-rate quota | 27 | 8 | 5 | 7 | 5 | 2 | 0 | 0 | 11 | 4 |
+| WE-048 training levy | 18 | 13 | 4 | 10 | 6 | 1 | 0 | 2 | 14 | 3 |
+| WE-049 public auto insurer | 13 | 14 | 0 | 9 | 3 | 0 | 0 | 2 | 7 | 3 |
+| WE-050 combustion-car ban | 24 | 7 | 2 | 17 | 4 | 2 | 0 | 0 | 15 | 6 |
+| WE-051 housing revenue bonds | 21 | 9 | 2 | 9 | 4 | 1 | 0 | 1 | 10 | 3 |
+| WE-052 liquor license cap repeal | 23 | 8 | 6 | 11 | 3 | 0 | 0 | 2 | 16 | 2 |
+| WE-053 data localization | 16 | 10 | 5 | 9 | 4 | 0 | 0 | 3 | 11 | 4 |
+| WE-054 airport night curfew | 27 | 10 | 0 | 7 | 5 | 0 | 0 | 1 | 9 | 2 |
+| WE-055 home inspector licensing | 19 | 7 | 2 | 7 | 3 | 0 | 0 | 1 | 6 | 5 |
+| **Total** | **215** | **99** | **30** | **95** | **49** | **7** | **0** | **12** | **122** | **33** |
+
+Of 488 consequences compared, 344 were matched; 314 of these (91%) agree in sign. The 174 differences have 174 causes. **K is 0 for the fourth time.** "Pattern version wrong" fell from 14 to 7, and most of those were analysts leaving a chain uncombined rather than a pattern giving a wrong sign.
+
+## What the round shows
+
+**Every failure the analysts reported was confirmed by the blind re-runs:** the 0.9 response argument (fixed costs per firm), PC-17's buy-out clause, RS-16's 0.9 clause, TX-7 under a tariff-rate quota, EN-14, RS-20 and EN-11's baselines. Unlike the third round, few "worked" verdicts were contradicted (WE-047's response argument in part, WE-052's CR-7 0.9 "not needed").
+
+**One systemic fault.** Three patterns (RS-20, EN-11's 0.9 clause, EN-13) compared with something other than the no-policy counterfactual. Catalog 1.0 re-bases them and adds a general rule and a final-check item.
+
+**"Record as negligible" is wrong.** OC-8's small-borrower clause and EN-6's wider-market clause let an effect go unsigned; CR-6 asks for a sign. Both versions left prices unsigned because of it.
+
+**Tier C settled.** In WE-046 the core version put road and bus crowding at Tier B through CR-6's public-supply clause. The comparison found CR-9 (Tier C) right: the public-supply clause covers only excess demand over a fixed quantity, and gives a group sign. Catalog 1.0 says so.
+
+**Promotions.** Five candidates had a valid second use and are promoted; "tariff-like burden without a tax" did not (WE-053 is a location requirement with a route around it, a different move).
+
+**No new calculus gaps.** The core versions raised several (GAP-046-C1 to GAP-055-C2); the comparisons judged each to be a premise, a vocabulary item, or out of scope (safety, productivity, security).
+
+## Changes made in response: catalog 1.0
+
+- **Core rules.** CR-12: what the response argument needs (constant cost; which total; a second response is a second chain); dominance does not raise a tier; the baseline of patterns. CR-6: the scope of the public-supply clause; one public price for many costs; a quota on a rate; small effects are signed. CR-8: receipts into the same budget; statutory rights. CR-9: a charge on users is an exchange relation. CR-7: which stock. CR-1, CR-3, CR-4: notches, capped refunds, lobbying generally.
+- **Patterns.** Re-based: RS-20, EN-11, EN-13. Corrected: PC-17, RS-16, TX-7, EN-14, EN-6, OC-8. Widened: EN-1, EN-2, PC-19, RS-7, RS-8, RS-13, RS-17, RS-18, TS-5, OC-1. Promoted: RS-21, RS-22, RS-23, TS-10, TX-12. 103 patterns.
+- **Workflow and ontology.** Final check item 9 (the baseline of every pattern); variables `stock_age`, `applications`.

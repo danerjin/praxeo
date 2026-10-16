@@ -57,6 +57,9 @@ A policy does not change anyone's ranking of ends, except through what it tells 
 **0.9 clarifications.**
 - A single provision can perform different operations for one actor on either side of a threshold: a charge per worker capped per firm is operation 3 below the cap and operation 4 above it. Record the operation per range.
 
+**1.0 clarifications.**
+- *Notches.* A threshold at which a burden jumps on the whole base (a levy on all payroll once payroll passes a line) is a notch, not a range: record the operation on each side, and the jump itself as a cost of crossing (CR-4). A dated operation that repeats (each quota year) is recorded with its period.
+
 ### CR-2 Choice
 
 **Statement.** Each actor chooses, from the options they believe open, the one they expect to serve their most highly ranked end. What an actor chooses reveals that they ranked it above the alternatives open at the time (demonstrated preference).
@@ -87,6 +90,9 @@ A loss by the actor's own ranking (a) is not the same as a fall in their spendin
 **0.9 clarifications.**
 - The note on refunded charges covers partial refunds and refunds computed on a standard rather than on what was used (yield tables, deemed amounts). Those who claim on the standard and use less than it receive more than they paid; those who use more receive less. Split the class by its position against the standard.
 
+**1.0 clarifications.**
+- A refund capped at the charge paid can exceed the cost of the act refunded per unit but never in total. Where the standard is paid to a provider, the position against it that matters is the provider's.
+
 ### CR-4 Response at the margin
 
 **Statement.** Suppose a change makes option x worse relative to option y for an actor (x costs more, brings less, or y improves). Then:
@@ -115,6 +121,9 @@ The mirror case (x made better) reverses every direction.
 
 **0.9 clarifications.**
 - *Lobbying in repeals.* Applying the rule to political action (x: accept, y: lobby), remember that in a repeal the counterfactual is the old rule still in force, which may itself have been contested. Lobbying is signed against that path, not against no lobbying; where the old rule was contested, the sign needs a premise.
+
+**1.0 clarifications.**
+- *Lobbying, generally.* The 0.9 note on lobbying in repeals applies to any policy: whenever the question the policy settles would have been contested on the counterfactual path (residents campaigning for a curfew, incumbents for a license), lobbying by each side is signed against that contest, and needs a premise.
 
 ### CR-5 Exchange
 
@@ -165,6 +174,12 @@ The full price, meaning the money price plus everything else given up, moves tow
 - *A public seller with an open quantity.* Where the state sells at a set price and supplies whatever is demanded (a utility, a network with spare capacity), there is no excess demand to ration: the main clause applies in the markets it competes in. Buyers move to it by CR-4 and rival sellers face lower demand (CR-9), with the price and quantity split as above. Where capacity can be added from the fees it earns, but only after a lag, the public-supply clause applies until the capacity arrives.
 - *A capped price with a free fee.* Where a capped price can be paid together with a fee that is not capped (a platform's charge on a capped resale), the buyer's price is the total paid. Record the capped part and the fee as two items of `price_paid` (CR-12, two items) where the policy moves them differently.
 
+**1.0 clarifications.**
+- *Scope of the public-supply clause.* The clause applies only where demand at the set price exceeds a fixed quantity. It then gives a group sign over the margins (waiting, crowding, pass-ups), not any one of them alone. Crowding among users of a road or vehicle below its capacity is not rationing: it is the `shared_facility` relation (CR-9, 0.7), at Tier C.
+- *One public price, many costs.* Where a public seller charges one price to buyers whose cost to serve differs and rivals price by each buyer's cost, buyers sort: those whose cost exceeds the price move to the public seller, the others stay (CR-4 per buyer). Sign per class of buyer.
+- *A quota on a rate.* Where a quota fixes the quantity that pays a low rate and further units pay a higher one (a tariff-rate quota), the price is set at the margin by the higher rate, as long as demand at the old price exceeds the quota.
+- *Small effects are signed.* Where a chain moves a price in a wider market by an amount that may be small, record its sign; do not leave it unsigned as negligible. Its size goes in the evidence column.
+
 ### CR-7 Equalization across uses
 
 **Statement.** Wherever a means (labor, capital, money, land, a purchase, an activity, a moment in time) can be moved between uses that serve the same end, its owners move it from the use that yields less to the use that yields more, until the difference in yield at the margin is no greater than the cost of moving. Hence:
@@ -190,6 +205,9 @@ The full price, meaning the money price plus everything else given up, moves tow
 - *Assets without a market price.* CR-7c applies to durable assets whether or not they can be sold. Inventories that take time to finish (cattle on feed, stock in process) are durable assets in this sense. For an asset that cannot be sold (a license, training), the change in its expected yield is a loss or gain by the holder's own ranking (CR-3a); a change in money earnings needs a premise about the holder's next-best use.
 - *A contract term that removes an option.* Where an agreement binds an asset's owner (a team's commitment not to relocate), the asset's value falls by the value of the option given up, against whatever the agreement pays for it. Sign the net only with a dominance premise.
 - *Persistence of an asset's value.* After a repeal, an asset price persists only as far as the stock its value depends on persists (homes built under the rule, a scarce license count). Give its persistence from that stock, not from who held the asset when the change was capitalized.
+
+**1.0 clarifications.**
+- *Which stock.* Where a policy-created permission and the capital it allowed come apart (a license and the store using it), the permission's value follows the legal count, and changes on the date the count changes; the capital's value follows the stock of capital. A permission that can no longer be sold after a repeal keeps only a value by its holder's own ranking (CR-7, 0.9).
 
 ### CR-8 Conservation of means
 
@@ -222,6 +240,10 @@ The full price, meaning the money price plus everything else given up, moves tow
 - *A reading that permits.* Where one reading of an unclear provision allows a source of funds without requiring it, record the payers under that reading as a group that includes the permitted source.
 - *Mutual rights.* Where every member of a class both holds a right and is bound by it (owners under a covenant that each can enforce), voiding it is not a transfer between classes: each member loses the right to enforce and gains freedom from enforcement. Sign the net per member only with a premise about which they value more.
 
+**1.0 clarifications.**
+- *Receipts into the same budget.* Where fees or fines go into the budget that funds the policy, record them and the outlay as two items of the budget (CR-12, two items), and the net as a separate consequence, `ambiguous` unless arithmetic or a premise settles it.
+- *Statutory rights.* The voiding note applies to rights held under statute (a license, a privilege) as well as under contract: the holder loses the right's value; who gains it depends on who now obtains what the right excluded, and may be spread over time.
+
 ### CR-9 Propagation
 
 **Statement.** When an actor changes what they do, the situation of everyone who would have dealt with them changes too: those who would have sold to them or bought from them, those who compete with them for the same means or customers, and those linked to them by any other relation recorded under `02_ontology.md`, 2.8: goods used together, goods bought together on one trip, goods put to a secondary use, contracts (a lease, an insurance policy, an employment contract), and the currency link (payments for imports are the means with which foreigners buy exports or assets). Apply CR-1 to CR-8 to each of these actors in turn, following those relations.
@@ -237,6 +259,9 @@ The value to anyone of a means depends on the ends it serves and on what it is u
 **0.7 clarifications.**
 - *The currency link runs both ways.* More imports provide foreigners with means to buy more exports or assets; more exports provide the country's residents with means to buy more imports. Exporters of different goods also compete for the same foreign buyers' means. Follow the link in whichever direction the policy moves it.
 - *Shared facilities and proximity.* An actor's use of a facility others share (a road, a vehicle, a common fishing ground) changes what is available to them; an actor's activity on their own property can change their neighbors' situation (noise, smell, gifts of produce). These are relations, not exchanges, and are recorded as `shared_facility` and `proximity` (02_ontology.md, 2.8). Propagation along them follows the same rules. Whether such effects belong to praxeological analysis at all, given that the affected party does not choose them, is `06_gaps.md`, Q20; until the experts decide, chains through them are reported at Tier C.
+
+**1.0 clarifications.**
+- *A charge on users of a shared facility.* Where a facility's cost is recovered by a charge on its users (an airport's landing fees), a change in the number of users changes the charge per user. This is an exchange relation (the charge is a price), at Tier B, not a `shared_facility` chain.
 
 ### CR-10 Time
 
@@ -296,6 +321,11 @@ The value to anyone of a means depends on the ends it serves and on what it is u
 - *0.9. What the response argument gives.* CR-12e's response argument shows that the result is not reversed: the price stays at or above its old level. To report `increase` rather than an increase or no change, the response must be partial: state that supply cannot fully expand at the old cost in the period, as a premise or from the case's figures.
 - *0.9. Kind 3.* A chain whose own parts push in opposite directions is a kind (3) chain under the 0.8 note, unless its parts cancel by construction (CR-12f).
 - *0.9. Activities that exist only under the policy.* An activity the policy creates (filings to hold a place in a queue, refund claims) is an `increase` in its window against a counterfactual of none. Say whether a timing consequence is signed on a flow (actions in the window) or on a stock (employment at a date).
+
+**1.0 clarifications.**
+- *1.0. What the response argument needs.* The response argument shows that yields are equalized, not that the old price returns. It gives `increase` (or `decrease`) for a price only with a premise that cost per unit does not fall as the activity contracts (constant or rising cost): with fixed costs per firm, contraction can restore equal yields at a higher price. State which total the argument bounds (new and imported cars together, not new cars alone). Where the response is a contraction by rivals, "partial" means that their inputs can be shifted to other uses only gradually. The argument covers one response; a second response to the same change, a new competitor attracted by the policy, or a stock built in advance that holds the price for a while, is a second chain to combine.
+- *1.0. Tiers and dominance.* A dominance premise settles a sign; it does not raise a tier. A Tier C chain that is itself kind 3 makes the combined Tier C sign `ambiguous` unless the dominance premise covers both of its directions.
+- *1.0. The baseline of patterns.* Every pattern's conclusion is against the no-policy counterfactual. Where a pattern compares with anything else (another policy, the allocation before trading, uniform enforcement, a license on one requirement), re-sign its conclusion against the counterfactual before using it.
 
 ---
 

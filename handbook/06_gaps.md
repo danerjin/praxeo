@@ -176,21 +176,21 @@ Ten new examples (WE-026 to WE-035) were written to probe parts of the method th
 | Candidate | Seen in | Derivation |
 |---|---|---|
 | Ban on own production | WE-026 | CR-1 (option removed), CR-3a, CR-9 to the sellers of the bought substitute |
-| Refundable charge (deposit-refund) | WE-027 | CR-1 (charge on an option, refund on a later act), CR-4 per unit, CR-8b with a residual claimant |
+| Refundable charge (deposit-refund) (promoted to TX-12 in 1.0) | WE-027 | CR-1 (charge on an option, refund on a later act), CR-4 per unit, CR-8b with a residual claimant |
 | A claim payable inside a boundary draws items from outside | WE-027 | CR-4, CR-7a across the boundary |
 | Circular trade under a payment for crossing a boundary (promoted to RS-19 in 0.9) | WE-030 | CR-4 (gain per round trip against its cost), CR-8c |
 | Allocation of a right by history after announcement (promoted to EN-12 in 0.9) | WE-028 | CR-10a, CR-7a, CR-8c |
-| High-grading under a physical-unit cap | WE-028 | CR-4c with the unit of the constraint |
+| High-grading under a physical-unit cap (promoted to RS-21 in 1.0) | WE-028 | CR-4c with the unit of the constraint |
 | Consolidation under tradable rights (promoted to EN-13 in 0.9) | WE-028 | CR-5, CR-7a (rights move to the lowest-cost users) |
 | Standard on new units, stock exempt (promoted to EN-14 in 0.9) | WE-031 | CR-1, CR-7c on the exempt stock, CR-10b |
-| Scheduled tightening faster than the trend | WE-031 | CR-10c, CR-7c, CR-12h |
+| Scheduled tightening faster than the trend (promoted to TS-10 in 1.0) | WE-031 | CR-10c, CR-7c, CR-12h |
 | A standard per unit of a chosen attribute shifts the attribute | WE-031 | CR-4 |
 | Certifiers hired by those they certify | WE-031 | CR-2, CR-11 |
-| Compensating differential from a non-wage term | WE-032 | CR-5c, CR-7a |
+| Compensating differential from a non-wage term (promoted to RS-22 in 1.0) | WE-032 | CR-5c, CR-7a |
 | Debt-funded transfer in two windows (promoted to OC-9 in 0.9) | WE-033 | CR-8, CR-10, CR-12g |
 | Ban on a restraint over carryable training; retroactive voiding | WE-034 | CR-5c, CR-7c, CR-10b |
 | Fixed cost per item reduces variety | WE-035 (WE-040's use was invalid) | CR-4b with a lumpy cost |
-| Selection under a uniform term | WE-029 | CR-5c, CR-4 per counterparty |
+| Selection under a uniform term (promoted to RS-23 in 1.0) | WE-029 | CR-5c, CR-4 per counterparty |
 | Complaint-only enforcement (promoted to RS-20 in 0.9) | WE-029 | CR-4 (expected cost of breach differs by counterparty) |
 
 ## 6.2f Held-out test of catalog 0.8 (WE-036 to WE-045)
@@ -252,7 +252,7 @@ Ten new examples were written with the catalog frozen at 0.9, on kinds of policy
 
 **Candidate patterns used validly a second time** (and so to be promoted, subject to a blind re-run): high-grading under a physical-unit cap (WE-047, WE-054), compensating differential from a non-wage term (WE-046), selection under a uniform term (WE-049), deposit-refund (WE-048), scheduled tightening faster than the trend (WE-050), tariff-like burden without a tax (WE-053). Proposed new clauses: a selection clause for PC-19; a notch/kink distinction for RS-17.
 
-**Not yet done.** None of this is applied; the catalog stays at 0.9 as the record of the test. The next step, as before, is a blind core-only re-run of WE-046 to WE-055.
+**Re-run and catalog 1.0.** The blind core-only re-run of WE-046 to WE-055 found K = 0 again and confirmed the failures above. It found one more pattern compared with the wrong baseline (EN-13), showed that "record as negligible" (OC-8, EN-6) conflicts with CR-6, and settled that congestion below capacity is a Tier C `shared_facility` chain, not CR-6 rationing. Of the six claimed second uses, five were valid; "tariff-like burden without a tax" was not (WE-053 is a different move), so it stays a candidate. Catalog 1.0 applies the fixes (`08_core_rerun_report.md`, fourth round).
 
 ## 6.3 Questions for the experts
 
