@@ -207,3 +207,49 @@ CR-3 and CR-8. Symmetry: the fees shoppers pay for paper bags are retailers' rec
 - CR-9 on trip complements: CR-9 speaks of "goods used together"; groceries and carryout bags are bought together, not used together. The link was made through the trip relation recorded in 02_ontology 2.8, which CR-9 refers to, but the rule's own wording does not cover it.
 - CR-9 on secondary use: the thin bag served two ends (carrying and lining bins). CR-9's statement that demand for "goods that compete with it" moves "in the opposite direction" fits only if a bag reused as a liner is read as competing with liners; 2.8's secondary_use note supplies this, not CR-9 itself.
 - CR-6 on a minimum price for a good the seller keeps the proceeds of: CR-6 is written for a price prevented from moving between buyers and sellers who both want to trade more or less. Here the retailer may wish to give paper bags away to win customers; that this is "pressure from sellers" displaced to cheap reusable bags and fee waivers is a reading, not a statement of the rule.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The versions agree on the main chain: thin bags disappear, a paper bag now costs the shopper at least 10 cents and the retailer keeps it, shoppers switch to reusable bags and households to bought liners, edge shoppers move whole baskets across the line (RS-4 with RS-9), small stores evade, shelf prices are ambiguous, and shoppers and taxpayers have less for other uses. There are two sign differences. The pattern version's `employment` decrease at edge stores (C-14) should be the group sign `at_least_one_decrease` over employment and hours. OC-5 itself says "employment or hours_worked", and 2.5 says that writing one member as a plain decrease overclaims, so the core is right. The pattern version counts paper bags with reusable bags as an increase (C-3); the core makes paper-bag use ambiguous (C-8). The core's minus chain, shoppers who "would have taken free paper bags" and now pay, compares with a world with the ban but no fee (A-N2), not with the counterfactual of no policy. The record says stores gave thin plastic bags, so on the case as stated the pattern version's increase is better supported. The pattern version's retailers' `resources_available_other_uses` increase (C-15) avoids CR-12 by treating compliance spending as a separate variable, although compliance spending reduces the same pool of resources. The core omitted the row.
+
+**Counts.** M 12, V 4, S 2, OP 4, OC 1. Causes over S, OP and OC (7 items): P 1, K 0, A 1, E 5 (pattern version 4, core version 1), J 0.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+|---|---|---|---|---|
+| C-1 | C-1, C-5 | M | | Core splits off the thin-bag makers (C-5). |
+| C-2 | C-2 | M | | The core adds A-N2 (the floor binds). |
+| C-3 | C-6, C-7, C-8 | S | E (core) | Reusable bags: both increase (C-6, C-7). Paper bags: pattern increase (inside C-3), core ambiguous (C-8). **Pattern better supported.** The sign is against the counterfactual without the policy (2.5), in which stores hand out thin plastic bags. The core's minus chain (free paper bags now charged) needs paper bags to have been given away before the ordinance, and the record does not say so. A-N2 asks what stores would do under K1 without K2, a counterfactual that mixes components. If free paper bags were common before the ordinance, the core's ambiguity would be right. |
+| C-4 | C-16 | M | | |
+| C-5 | C-4 | M | | The pattern version cites OC-1; the derivation is CR-8c (OC-2 or TX-5 in form). Citation only. |
+| C-6 | C-3 | M | | |
+| C-7 | C-10 | V | | The core reports both readings of the 125-use provision (U1-a increase; U1-b ambiguous). The pattern version assumed U1-a. |
+| C-8 | C-11 | M | | |
+| C-9 | C-12 | M | | |
+| C-10 | C-13, C-14 | V | | Window bag-taking is recorded as shoppers' `inventory_held` and makers' window sales. |
+| C-11 | C-15 | M | | |
+| C-12 | C-18 | M | | |
+| C-13 | C-17 | M | | |
+| C-14 | C-19 | S | P | Pattern: `employment` decrease; core: employment or hours, `at_least_one_decrease`. **Core right.** OC-5's conclusion is "employment or hours_worked", and 2.5 (group consequences) says that writing one variable as a plain decrease overclaims. CR-4 gives stores several margins (hiring, hours). |
+| C-15 | — | OC | E (pattern) | Retailers' `resources_available_other_uses` increase from lower bag spending. The pattern version avoids netting by calling compliance a different variable (`compliance_cost`). But compliance spending is drawn from the same resources (CR-8c), so on this variable the chains oppose: bag savings and fee receipts (+) against compliance spending and lost edge sales (−). CR-12b gives ambiguous unless a premise says which dominates. The core omitted the row; the correct entry is ambiguous. |
+| C-16 | C-22 | V | | Both ambiguous; medium against long horizon. |
+| C-17 | C-25 | M | | |
+| C-18 | C-25 | V | | Liners are inside the core's shoppers' row. |
+| C-19 | C-24 | M | | |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+|---|---|---|---|
+| C-9 | OP | A | Food-assistance shoppers take more free paper bags; rests on the new premise A-N1. |
+| C-20 | OP | E (pattern) | Fallow Creek staff, `at_least_one_increase`. The pattern version noted the mirror of C-14 but chose not to record it; OC-5 calls for both sides. |
+| C-21 | OP | E (pattern) | Paper-bag makers' sales. The pattern version did not follow the `input_to` link. The core's ambiguous sign inherits the counterfactual problem in C-8; against the counterfactual without the policy, the sign is an increase. |
+| C-23 | OP | E (pattern) | Office of Sustainability `enforcement_cost`. OC-3 gives it; the pattern version recorded only the taxpayer side (C-19). |
+
+### Findings
+
+- **Pattern overclaimed (P).** Pattern-version C-14 writes OC-5's "employment or hours_worked" as a plain `employment` decrease. The pattern is right; its application overclaims, contrary to 2.5.
+- **Composition error in the pattern version.** C-15 (retailers' resources increase) avoids CR-12b by treating compliance spending as a separate variable, though that spending comes from the same resources. The sign should be ambiguous.
+- **Core-version error.** Paper-bag use (C-8) and paper-bag makers' sales (C-21) are made ambiguous through a chain that compares with a ban-without-fee world, not with the counterfactual without the policy (2.5). The same framing appears in A-N2's wording: the floor's bindingness is posed against K1 alone.
+- **Core rules.** No difference traces to a limit of the calculus (K = 0). The core version's notes (CR-9 wording for trip complements and secondary uses; CR-6 for a floor on a good sellers would give away) are wording issues that 2.8's relation notes already cover.

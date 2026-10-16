@@ -225,3 +225,58 @@ Revenue: the contribution goes to the pension fund. Pension benefits do not chan
 - CR-4 exception: lower wages (C-8) change workers' total means, which could raise or lower the hours they wish to work. The exception would make workers' labor supply ambiguous, but the consequence list does not sign workers' desired hours, so it was not applied; it is unclear whether the exception should also be applied to C-5 (employment), which rests partly on workers' choices.
 - CR-6 is stated for "a rule [that] prevents the price from moving". Here the existing minimum wage, not the policy, holds the price; CR-6 was applied on the reading that the rule may be an existing rule that the policy makes bind.
 - CR-12b refers to "a dominance pattern" for a dominance claim; in a core-only run the dominance premise for C-8 was stated directly from CR-7b and A-8.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on incidence, which is the lesson of this case. Employers bear the tax while money wages are fixed (A-1). Over the medium and long run it moves to workers through slower wage growth, because employers have better alternatives (A-8). Workers below the ceiling bear more than high earners. At the minimum wage the tax cannot pass to the wage and lands on jobs, hours or non-wage terms (a group consequence in both). The pattern version reaches this with DM-1 and its time note; the core version reaches it with CR-7b and CR-5c. The two derivations give the same signs, so DM-1's time note is consistent with the core rules here. Both versions also agree on avoidance (contracting out, undeclared work), on equipment substitution, on dearer labor-intensive services and on revenue falling short of a static projection. The one sign difference is hours. The pattern version records `hours_worked` decrease for all formal workers. The core version shows that for workers above the ceiling an extra hour bears no added contribution while each extra head costs more, so their hours are `ambiguous`. The pattern version overgeneralized, and the core version in turn omitted the plain decrease for workers below the ceiling. Most other differences are omissions in the core version: non-price selection under the floor, informal workers' search costs, the income-tax base, the bonus-timing shift (again kept as a path note), and the two ambiguous rows. One pattern was misapplied: the pattern version charges taxpayers for added enforcement (OC-3), although the case assumes the Inspectorate's budget does not rise.
+
+**Counts.** M 13, V 8, S 1, OP 3, OC 7. Causes over S, OP and OC (11 items): P 1, K 0, A 0, E 10, J 0.
+
+**Pattern version → core version**
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+|---|---|---|---|---|
+| C-1 | C-1 | V | | The core version signs the labor-cost rise only in the short run. The pattern version carries it to the long run, "shrinking". On A-8 ("mostly" on workers) the long-run labor cost stays above the counterfactual, so the pattern version's horizon is defensible. The core version is silent beyond the short run, not opposed. |
+| C-2 | C-2 | V | | Actor class `officials.enforcement` vs `pension_fund`. |
+| C-3 | C-4 | M | | |
+| C-4 | C-9 | S | E (pattern) | Pattern: `hours_worked` decrease for all `workers.formal`. Core: `workers.above_ceiling` hours ambiguous. **Core right for workers above the ceiling**: the added contribution is a fixed 240 crowns per head, and extra pay above the ceiling bears none, so CR-4b moves work from new heads to longer hours for high earners, against CR-4c's output effect (CR-12b). The pattern version's own note under C-14 states the fact it needed. The core version, however, omits the decrease for workers below the ceiling, which CR-4c derives directly (an E in the core version too). The correct pair is: below the ceiling, decrease; above it, ambiguous. |
+| C-5 | C-10 | M | | |
+| C-6 | (section 8 note), C-15 | OC | E (core) | Bonuses moved into June. As in WE-011, the core version keeps the shift as a path note on the ground that "without the policy there would be no reason to move them". Bonuses are paid in the counterfactual too, so 2.5 requires per-window signed consequences. |
+| C-7 | C-12 | M | | |
+| C-8 | C-13 | V | | Recorded on `sellers.substitutes`, not on employers. |
+| C-9 | C-26 | V | | Payroll system changes (short, Tier A) vs restructuring costs (medium). |
+| C-10 | C-14 | M | | |
+| C-11 | C-7, C-8 | M | | |
+| C-12 | C-1, C-3 | V | | The core version records the short-run employer burden as `return_on_capital` decrease and in the C-1 derivation, not as `tax_share_borne`. |
+| C-13 | C-8, C-25 | V | | Long-run burden on workers, recorded as a wage fall and lost resources. |
+| C-14 | C-17 | M | | Horizon medium–long vs long. |
+| C-15 | C-6 | M | | Same group consequence, with the floor handled by CR-6 in the core version. |
+| C-16 | none | OC | E (core) | More selection by credentials under the floor. CR-6's second margin ("the criteria by which the scarce side chooses") derives it from the same widened floor as C-6. |
+| C-17 | C-23 | M | | |
+| C-18 | none | OC | E (core) | Informal jobs cannot be advertised. CR-11b derives it; the core version applied CR-11b only to disputes (C-21). |
+| C-27 | C-21 | M | | |
+| C-19 | C-13 | V | | Merged with C-8. |
+| C-20 | C-18 | M | | |
+| C-21 | none | OC | E (core) | Income-tax revenue on wages falls. Arithmetic on the core version's own C-7, C-8 and C-5 (the tax is a share of wages) with CR-8b. Note that the pattern version narrows the variable to "income tax on wages", which sidesteps the shift of income to other taxed bases that TX-10 would otherwise make `ambiguous`. |
+| C-22 | C-15, C-16 | M | | TX-9's Unless clause does not apply: the tax lowers, not raises, the gross wage. |
+| C-23 | C-24, C-25 | M | | |
+| C-24 | C-4, C-6 (section 9) | V | | Prevented jobs, recorded as `employment` with CR-5a rather than `quantity_traded`. |
+| C-25 | none | OC | P | Taxpayers fund added enforcement (OC-3). The case assumes the Inspectorate's budget does not rise, so no added funding is drawn from taxpayers. The cost of more avoidance shows instead as a lower chance of inspection per case, which the core version notes (section 6, interaction of components). OC-3 is misapplied here. |
+| C-26 | C-5, C-20 | M | | |
+| — (`workers.formal` non_wage_compensation, ambiguous) | (C-11 is one chain only) | OC | E (core) | The core version derives the + chain (C-11, pay moved into exempt vouchers and premiums) and the wage chain, but does not compose them on this variable. |
+| — (contractors earnings, ambiguous) | none | OC | E (core) | A one-time setup cost against a later stream of saved contributions. CR-12b (no magnitudes) gives `ambiguous`; the core version did not record contractors' earnings. A minor omission. |
+
+**Core-only consequences**
+
+| Core ID | Class | Cause | Note |
+|---|---|---|---|
+| C-11 | OP | E (pattern) | Pay moved into exempt meal vouchers and health premiums (`reclassification` increase). The pattern version uses this only as a chain inside its ambiguous non-wage row and never lists the signed response. The core version needed A-N1 for it. |
+| C-19 | OP | E (pattern) | Buyers of labor-intensive services buy less. RS-14 itself names the quantity side; the pattern version records only the price. |
+| C-22 | OP | E (pattern) | The general budget's freed money (CR-8d). The pattern version derives it in prose (SB-7, A-11) but lists no consequence. |
+
+**Findings**
+- Incidence: DM-1, including its time note for factor markets, and CR-7b with CR-5c give identical signs in the short run (employers), in the long run (workers) and at the minimum wage (jobs, hours, terms). No disagreement.
+- Pattern misapplied: OC-3 (C-25) charges taxpayers for added enforcement when the record assumes a fixed enforcement budget. OC-3 as written has no clause for a fixed budget, where the cost falls as less enforcement elsewhere rather than as more spending. This is worth an Unless clause in the catalog.
+- Error in the pattern version: C-4 extends an hours cut to workers above the ceiling, for whom the marginal hour bears no added contribution. It also omits the signed shift into exempt benefits, buyers' lower quantity and the freed general-budget money.
+- Errors in the core version: it omits the hours decrease below the ceiling, non-price selection under the floor (CR-6), informal workers' search cost (CR-11b), the wage income-tax base, and the two ambiguous rows. It keeps the bonus shift as a path note through a misreading of 2.5 (the same error as in WE-011).
+- Limits of the core rules: none that changed a sign. The core version's notes on CR-6 (an existing floor that the policy makes bind) and CR-5c (a moved range does not by itself move the agreed term) are fair requests to clarify the wording.

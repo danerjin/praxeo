@@ -257,3 +257,57 @@ Resources used for evasion and disguise (C-11, C-12) are also used up under CR-8
 - CR-4 with two option changes at once (C-27): the cap makes buying after landfall cheaper in money and harder to obtain. CR-4 is stated for a change that makes x worse relative to y; it does not say how to treat a change that moves y both ways. The analysis treated it as two CR-4 applications combined under CR-12b; a sentence in CR-4 saying so would help.
 - CR-6 versus CR-10a on held stock (C-5): CR-6 lists the open margins as terms, criteria and exchanges outside the rule; timing appears only in "terms (…timing)". Holding goods for sale after the price rule lapses is a timing margin, but it is not clear whether CR-6 or CR-10a is the governing clause; the analysis cites both.
 - CR-12d with alternative chains (C-8, C-19): CR-12d says a consequence holds only if all its premises hold, which reads naturally for one chain. When two independent chains each establish the same sign, it is unclear whether the consequence's assumptions are the union or either set. The analysis lists the minimal set of one sufficient chain.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the core of the case: the capped price for those served, more wanted than offered, fewer goods brought in from outside, stock held back by local sellers, worse hotel terms, sitting guests holding rooms, reclassification, informal sales, substitutes, smaller pre-season stocks, the ambiguous household stocking decision and the enforcement burden. No pattern was found to be wrong. The real disagreements are three. (1) The pattern version records waits, non-price allocation and search as three separate increases (PC-2), where the core version records one group consequence; CR-6 says only that the pressure moves to open margins, and which margins sellers use is empirical, so the group is the stricter reading, though the separate signs are plausible in a hurricane. (2) The core version signs cross-border purchases as an increase, but it missed the opposing chain the pattern version found: the cap lowers the money price at home, which makes travelling inland less rewarding than in the counterfactual, where coastal prices would also have sent buyers inland. This is the same two-way change in one option (cheaper but harder to obtain) that the core version itself treated as ambiguous for households' pre-season stocking (C-27), so by CR-4 and CR-12b C-18 should be `ambiguous`, and C-19 (inland sellers' quantity) inherits the ambiguity. (3) Each version omits consequences the other derives: the core version misses the after-emergency release of held stock and the composition effect of the cost defense; the pattern version misses the direct fall in sellers' net price, the enforcement cost itself and the information loss in informal sales.
+
+**Counts.** M 12, V 4, S 4, OP 7, OC 3. Causes over S/OP/OC: P 0, K 0, A 1, E 7, J 6.
+
+### Pattern version → core version
+
+| Pattern ID | Core ID(s) | Class | Cause | Note |
+|---|---|---|---|---|
+| C-1 | C-1 | M | | price_paid decrease for buyers served. |
+| C-2 | C-3 | M | | quantity_demanded increase at the capped price. |
+| C-3 | C-7 | M | | excess_demand increase. |
+| C-4 | C-9 | S | J | Pattern: wait_time increase; core: group `at_least_one_increase` (wait, search, non-price allocation). CR-6 makes the displacement of pressure a priori but which margin sellers use empirical; PC-2's own text says "which ones depend on the market" yet the pattern version signs each without a premise. Core is the stricter reading; the pattern's sign is plausible (queues are observed in storms) but needs a stated premise. |
+| C-5 | C-9 | S | J | As C-4, for allocation_by_non_price_criteria. |
+| C-6 | C-4 | M | | Outside sellers bring fewer goods in. |
+| C-7 | — | OC | E (core) | number_of_sellers decrease among ad hoc sellers whose trip costs cannot be documented (PC-13). Derivable from CR-1 (K2 burdens sellers differently by kind of cost) and CR-4 for each kind; the core version used the same K2 logic only for reclassification (C-11). |
+| C-8 | C-6 (and C-5) | M | | Local sellers supply less during the emergency; core also records the same act as inventory_held increase (C-5). |
+| C-9 | — | OC | E (core) | Held stock released after the emergency: quantity_supplied increase in that window. Follows from the same CR-10a/CR-4 chain as core C-5/C-6, signed per window as 02_ontology 2.5 requires; the core version recorded only the emergency window. |
+| C-10 | C-10 | M | | Hotel quality decrease. |
+| C-11 | C-14 | M | | Guests' turnover decrease. |
+| C-12 | C-11 | M | | Reclassification increase. |
+| C-13 | C-23 | M | | compliance_cost increase. |
+| C-14 | C-12 | V | | informal_activity increase; pattern assigns it to residents (buyers), core to intermediaries (sellers). |
+| C-15 | — (not reported) | OC | A | Lobbying. The core version added A-N3 (p 0.45), so CR-4 (x: accept, y: lobby) falls below the cut-off. RS-7 carries an assumption (the group can organize at a cost below its stake) that the pattern version did not estimate; it cites A-1 only. The core version is the more careful here. |
+| C-16 | C-9 | S | J | As C-4, for search_cost. |
+| C-17 | C-21 | M | | quantity_substitute increase for unserved buyers. |
+| C-18 | C-18 | S | E (core) | Pattern: ambiguous; core: increase. Pattern is right. Relative to the counterfactual, the cap makes buying at home cheaper in money (C-1) and harder to obtain (C-7); the travel option is improved by one change and worsened by the other. CR-4 gives opposite directions and CR-12b gives `ambiguous`. The core version applied exactly this reasoning to C-27 but not to C-18. |
+| C-19 | C-16 (and C-15) | V | | Repair work in the declared counties decreases: pattern as contractors' quantity_supplied, core as quantity_traded of repair services, with crews' lodging search (C-15) as the intermediate link. The core version added A-N2 (crews have other work), a premise the pattern's chain also needs but did not state. |
+| C-20 | C-26 | V | | Pre-season inventory_held decrease; horizon medium (pattern) vs long (core). |
+| C-21 | C-27 | V | | Household pre-season stocking ambiguous; quantity_demanded vs inventory_held. |
+| C-22 | C-8 | M | | quantity_traded decrease during the emergency. |
+| C-23 | C-25 | M | | Taxpayers' resources decrease. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+|---|---|---|---|
+| C-2 | OP | E (pattern) | Bound sellers' net_price_received decrease: the direct counterpart of C-1 (CR-1 op 1, CR-3a). The pattern version records only the buyers' side. |
+| C-13 | OP | E (pattern) | quality_information decrease in informal sales. RS-10, which the pattern version cites for C-16, names this variable; it was left out. |
+| C-17 | OP | J | Repair-service price per reading (U1-a increase, U1-b decrease). The pattern version stopped the chain at depth 4; both choices are defensible. |
+| C-19 | OP | E (core) | Inland and Hallorn sellers' quantity increase. The diverted-goods chain (C-4, CR-7a) supports an increase, but the second chain runs through C-18, which should be ambiguous; with that correction the combined sign is `ambiguous` (CR-12b). The pattern version did not record it. |
+| C-20 | OP | J | Inland price ambiguous; a valid but uninformative addition the pattern version did not make. |
+| C-22 | OP | J | full_cost_per_unit ambiguous for buyers; the variable's own definition says it is usually ambiguous under a ceiling. Valid; the pattern version did not record it. |
+| C-24 | OP | E (pattern) | enforcement_cost increase. OC-3 yields both this and the taxpayers' consequence; the pattern version recorded only the latter (C-23). |
+
+### Findings
+
+- No pattern was found to be wrong in this case. PC-2 is stated as four variables increasing "depending on the market" without the group sign that 02_ontology 2.5 provides; applied literally it leads to separate signed claims (C-4, C-5, C-16) that CR-6 does not license without a premise. PC-2 would be clearer with a group form.
+- RS-7 is used in the pattern version without an estimate for its own assumption (the group can organize); the core version's A-N3 shows that premise can fall below the cut-off.
+- Core-version errors: C-18 (should be `ambiguous`, by the same CR-4 reasoning the version used for C-27), and C-19 inherits it; omissions of the after-emergency release (pattern C-9) and the cost-defense composition effect (pattern C-7).
+- Pattern-version omissions: sellers' net price (core C-2), enforcement_cost (core C-24), quality_information in informal trade (core C-13).
+- No limit of the core rules appeared: every pattern-version consequence that is valid can be derived from CR-1 to CR-12.

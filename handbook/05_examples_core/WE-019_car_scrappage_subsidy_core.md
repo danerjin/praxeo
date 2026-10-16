@@ -235,3 +235,58 @@ CR-3 and CR-8. The rebate is a transfer (CR-8b): every V$4,000 received is V$4,0
 - CR-6 for a capped, first-come subsidy: CR-6 is stated for a market price prevented from moving. A fixed rebate amount from a fixed budget is a price held fixed only in a stretched sense (the "good" is the rebate, offered at zero); applying CR-6's displaced-pressure margins to it (C-9) is a reading of the rule.
 - CR-7b and CR-12b on incidence: CR-7b says the benefit settles on the side with fewer alternatives, which, with A-16, gives a direction for the sellers' share, but not whether the net price to rebate buyers still falls. That needed A-1, an empirical premise. The core rules do not say whether a CR-7b premise counts as a "dominance" premise under CR-12b or only as a direction for one side.
 - CR-10a and the timing-shift convention: the rule licenses "rushes before deadlines" but gives no guide to how windows should be cut when the announcement, start and end dates all differ; the windows used here (15 March to 30 June, the window, the year after, the window plus three years) are the analyst's choice.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The versions agree on almost everything that both record. Both have the rebate buyers' lower net price, the window surge with dips before and after, and a net increase over the whole period: the pattern version gets it from DM-5, the core version from arithmetic on CR-10a with the same premises, A-19 and A-20. Both have seller capture, used-car scarcity and higher prices, the gain to owners of older cars, ambiguous repair work, and the cost to taxpayers. On incidence they reach the same signs by different routes. DM-1 gives sellers "the larger part" while stock is fixed. CR-7b gives only that the benefit settles on the side with fewer alternatives. Both versions need A-1 (sellers do not capture the whole rebate) to keep the net price to rebate buyers falling. The one sign difference is fuel. The pattern version keeps it ambiguous, because cheaper driving per km leads to more driving (CR-4). The core makes it a decrease by adding A-N3 (replacement cars are driven about as far), which is in effect a dominance premise of the kind CR-12b allows. The core adds several consequences the pattern version could have derived: dealers' compliance cost, lower seller prices in the post-window dip, fewer used parts once cars are crushed, the used-car buyers' outlay that matches the owners' gain (CR-8 symmetry, which OC-7 also asks for), and the timing of rebate buyers' spending. On new premises it also adds used-car imports and crowding-out of private borrowers.
+
+**Counts.** M 16, V 5, S 1, OP 8, OC 1. Causes over S, OP and OC (10 items): P 0, K 0, A 3, E 4 (pattern version 3, core version 1), J 3.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+|---|---|---|---|---|
+| C-1 | C-1 | M | | Both rest on A-1. |
+| C-2 | C-2 | M | | |
+| C-3 | C-28, C-19 | V | | Stock of older cars recorded as `quantity_supplied` and `quantity_traded` of older used cars. |
+| C-4 | C-3 | M | | |
+| C-5 | C-5 | M | | |
+| C-6 | C-6 | M | | |
+| C-7 | C-9 | V | | Rationing of a capped budget: `wait_time` against `allocation_by_non_price_criteria` (CR-6 margins). |
+| C-8 | C-15, C-13 | M | | The core adds the pre-rebate price paid by rebate buyers (C-13), the buyers' side of the same capture. |
+| C-9 | C-12 | M | | |
+| C-10 | C-10 | V | | `reclassification` against `quantity_complement` (repairs to qualify). |
+| C-11 | C-11 | M | | |
+| C-12 | C-8 | M | | |
+| C-23 | C-14 | M | | Same sign. The pattern version (DM-1) claims sellers get the *larger part*. CR-7b supports only a direction, and the core version claims only a share (see findings). |
+| C-13 | C-18 | M | | |
+| C-14 | C-17 | M | | |
+| C-15 | — | OC | E (core) | Used-car buyers repair their own cars more (`quantity_substitute`). The core version uses this as the (+) chain in C-21 but never records it as a consequence. CR-4b gives it directly. |
+| C-16 | C-21 | M | | |
+| C-17 | C-23 | V | | Parts: pattern `quantity_demanded` (ambiguous, medium); core `price_complement` (ambiguous, long). |
+| C-18 | C-24 | S | A | Fuel: pattern ambiguous, core decrease. The core adds A-N3 (p 0.7, replacement cars driven about as far), which removes the rebound chain the pattern version keeps (CR-4: a lower fuel cost per km raises km driven). CR-12b allows a premise that establishes dominance, so the core is valid *given A-N3*. A-N3 has no stated evidence beyond odometer records, which makes the pattern version's ambiguity the more careful answer. |
+| C-19 | C-27 | M | | |
+| C-20 | C-26 | M | | |
+| C-21 | C-19 | M | | |
+| C-22 | C-7 | V | | Both increase; medium against long horizon. DM-5 against arithmetic on the same A-19 and A-20. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+|---|---|---|---|
+| C-4 | OP | E (pattern) | Dealers' `compliance_cost` for claims and checks. CR-8c (TX-5 or OC-2 in form). Minor. |
+| C-16 | OP | E (pattern) | Sellers' `net_price_received` falls in the post-window dip (CR-6 first paragraph). SB-6 gives only the quantity dip, so the catalog lacks the price side. Valid, but import volumes adjust within a year, so the effect is weak. |
+| C-20 | OP | A | Used-car imports increase despite the duty; rests on the new premise A-N2. |
+| C-22 | OP | E (pattern) | Supply of used parts falls because rebate cars are crushed with no parts resold (K2, CR-10b). The pattern version did not record it. |
+| C-25 | OP | A | Private borrowers crowded out by the bond issue; rests on the new premise A-N1 (`revenue_use`). |
+| C-29 | OP | J | Used-car buyers' `resources_available_other_uses` decrease: the CR-8 match for the owners' gain (C-17). The pattern version recorded the gain (C-14) without the matching outlay, which OC-7 asks for. The core's sign holds only for buyers who still buy at the higher price; buyers priced out (C-19) spend less. |
+| C-30 | OP | J | Rebate buyers' money for other uses falls in the window. A bookkeeping consequence of the timing shift; defensible either way. |
+| C-31 | OP | J | Rebate buyers' money for other uses rises in later years. It does not hold for the additional buyers (A-19). Defensible either way. |
+
+### Findings
+
+- **No sign error from a pattern.** SB-2, SB-6, RS-8, RS-12, DM-1 and DM-5 all agree in sign with the direct derivations.
+- **DM-1 says more than its derivation gives.** DM-1 says the side with fewer alternatives receives "the larger part" of a subsidy. Its derivation, CR-7b, gives a direction ("settles on"), not a comparison of shares, and CR-12 says the method states directions, not magnitudes. The scored variable (`subsidy_share_received` increase) is unaffected, but the pattern version's prose ("sellers receive the larger part") goes beyond what the core rules derive. A-1 is needed in either version.
+- **Catalog gaps exposed.** SB-6 does not give the price side of the post-window dip. The pattern version did not apply OC-7's matching chain to the rise in older cars' value, although OC-7 asks for it.
+- **Core rules.** No difference traces to a limit of the calculus (K = 0). The core's notes (CR-6 for a first-come capped subsidy; whether a CR-7b premise counts as a CR-12b dominance premise; how to cut windows under CR-10a) are points of wording. The second is a real ambiguity in the rules, but both versions settled it the same way, with A-1.
+- **Core-version errors.** It omits the used-car buyers' own repair response as a consequence (C-15 in the pattern version). The fuel decrease (C-24) rests on a thin new premise (A-N3).

@@ -237,3 +237,84 @@ The unclear provision on how the lost revenue is replaced is not a reading with 
 - CR-12b: whether an arithmetic comparison of two sums of money on the same actor class counts as "a premise that establishes that one chain dominates". It was treated as one, with its empirical part stated as A-N2.
 - CR-4 for lobbying on a repeal (C-20, C-18): the counterfactual also has lobbying, by the other side. CR-4 compares accepting and lobbying for one change; it does not say how to sign the change in effort when both paths have a stake. For mills and timberland the stake moves from defending to restoring and was signed increase; for users it was left ambiguous.
 - CR-7c on a repeal: the rule says the gain or loss goes to the owner when the change becomes expected. For persistence this means a capitalized gain under the original policy stays with whoever sold, while the repeal's loss falls on the current owner. The persistence field has no place to say that the asset value reverses but its incidence does not; this was written out in words.
+
+## Comparison with the pattern-based analysis
+
+The two versions are close. Every price, quantity, investment, asset-value and trade consequence of the pattern version has a core counterpart with the same sign, including the slow decline of mill capacity and the slow rebuilding of furniture and export capacity. There are two sign differences. (1) Mill and timberland owners' lobbying: the pattern version calls it ambiguous; the core version signs an increase in the short and medium run. The core version's own treatment of users' lobbying (ambiguous on the two-path argument) shows that the mills' sign should be ambiguous too. (2) Taxpayers' means: the pattern version calls them ambiguous; the core version gives a decrease, using an added arithmetic premise (A-N2) that the duty-specific administration costs far less than the revenue lost. The core version is right on (2): CR-12b permits a stated dominance premise, and here it is close to certain. The core version adds importers' compliance savings, timberland owners' log prices, and a long-run fall in the mills' lobbying as their capital wears out. It omits builders' investment and furniture entry as separate consequences.
+
+**Counts:** M 20, V 2, S 2, OP 3, OC 1. Causes over S, OP and OC: P 0, K 0, A 1, E 5, J 0.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | M | | |
+| C-2 | C-11 | M | | |
+| C-3 | C-2 | M | | |
+| C-4 | C-3, C-9 | M | | |
+| C-5 | C-12, C-14 | M | | The core version adds persistence "partial (short; medium)" for capacity built behind the duty. |
+| C-6 | C-13 | M | | |
+| C-7 | C-15 | M | | |
+| C-8 | C-23 | M | | |
+| C-9 | C-24, C-25 | V | | Displaced workers' `earnings` vs `wage_rate` and `job_changes`: the same CR-7b incidence on partly specific skills. |
+| C-10 | C-17 | M | | |
+| C-11 | C-6, C-7, C-8 | M | | The core version also records buyers' stock drawdown and importers' bonded stocks. |
+| C-12 | C-18 (mills and timberland, increase, short; medium), C-19 (decrease, long), C-20 (users, ambiguous) | S | E (core) | In the counterfactual (duty kept), mills and timberland owners keep defending the duty (T-16). After the repeal they lobby to restore it. Both paths have their lobbying, so CR-12b gives ambiguous, which is exactly the core version's argument for users (C-20). The pattern version is right for the short and medium horizon. The core version's C-19 (less lobbying once mill capital has worn out) is a valid addition (CR-10b). |
+| C-13 | C-22 | M | | |
+| C-14 | C-16 | M | | |
+| C-15 | C-26 | M | | The core version adds A-N1 for the quantity chain. The pattern version relies on A-8 alone. |
+| C-16 | C-27 | M | | |
+| C-17 | C-28 | M | | |
+| C-18 | C-30 | M | | |
+| C-19 | C-31, C-32 | M | | |
+| C-20 | C-10 | M | | |
+| C-21 | C-29 | V | | The core version covers furniture makers only. Builders' added capacity (CR-4, CR-10c) is not recorded separately in core. |
+| C-22 | none (rebuilding is folded into C-28) | OC | E (core) | Entry by new furniture firms (CR-4 with x: stay out, y: enter; CR-7a) is derivable. The core version records only the quantity supplied. |
+| C-23 | C-33 | M | | |
+| C-24 | C-4 | M | | |
+| C-25 | C-34 | S | A | The pattern version leaves taxpayers ambiguous (OC-3 saving vs OC-6 replacement). The core version adds A-N2 (0.95): the duty-specific administration costs far less than a 25% duty on a substantial import share raised. That is arithmetic stated as a premise, as CR-12b allows. The core version is right: the pattern version could have stated the same comparison and did not. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-5 | OP | E (pattern) | Importers' paperwork and classification disputes end (TX-5 in reverse). Tier A. |
+| C-19 | OP | E (pattern) | Mills' and timberland owners' lobbying falls in the long run as the stake wears out with the capital (CR-10b with CR-4). The pattern version considered only the medium horizon. |
+| C-21 | OP | E (pattern) | Timberland owners receive less for sawlogs (CR-9 input_to, CR-7b). The pattern version records only the capitalized value (C-13). |
+
+### Findings
+
+- **No pattern found wrong.** The pattern version's "in reverse" uses of TX-7, TX-8, RS-14 and SB-4 all agree with direct derivation.
+- **Pattern version, missed resolution:** C-25 stays ambiguous where a stated comparison of magnitudes (administration cost against duty revenue) is near-certain. The catalog's OC-6 invites the ambiguity by listing the two chains without prompting a magnitude premise. This is analyst caution, not a wrong pattern.
+- **Error in the core version:** lobbying by mills and timberland owners is signed increase on a one-path reading of CR-4, while the same file treats users' lobbying as ambiguous because the counterfactual also has lobbying. One of the two treatments is wrong, and under CR-12b it is the signed one. The core version also omitted furniture entry and builders' investment.
+- **Limit of the core rules (not K):** as in WE-022, the core rules give no explicit way to sign a change in lobbying when both the policy path and the counterfactual carry lobbying by different parties. CR-12b's "premise" is also unclear on whether arithmetic counts. The core version treated it as one here (A-N2) but not in WE-022.
+
+## Metamorphic check (core versions)
+
+Against the T-list of the original tariff (section 1 of the pattern version, `WE-023_tariff_repeal.md`). Persistence is compared with a Velmora that never had the duty.
+
+| Original consequence ID | Its sign | Repeal consequence ID(s) | Sign | Reverses? | Persistence | Reason |
+| --- | --- | --- | --- | --- | --- | --- |
+| T-1 | increase | C-1 | decrease | reverses | none | Immediate at the effective date. |
+| T-2 | increase | C-11 | decrease | reverses | none | |
+| T-3 | increase | C-12, C-14 | decrease | reverses (more slowly) | partial (short; medium); none (long) | Mill capital built behind the duty keeps operating until worn out (A-3, CR-10b). |
+| T-4 | increase | C-13 | decrease | reverses | none (flow); sunk capital appears as lower mill values (C-16) | |
+| T-5 | increase | C-23, C-24, C-25 | decrease | reverses | partial (medium); none (long) | Gradual as mills wind down. Displaced workers bear a wage loss (C-24) that has no mirror in the tariff list. |
+| T-6 | increase | C-22 | decrease | partly reverses | partial | It reverses for the asset but not for the persons: owners when the duty began kept the gain if they sold (CR-7c). |
+| T-7 | decrease | C-3 (increase); C-6 (window, decrease) | increase after a dip | reverses after a temporary dip | none | |
+| T-8 | increase | C-17 | decrease | reverses | none | Cheap to undo (A-19). |
+| T-9 | decrease | C-26 | increase | reverses | partial | Houses not built over twenty years are made up only through new building (CR-10b). |
+| T-10 | increase | C-27 | decrease | reverses | none | |
+| T-11 | decrease | C-28 (and C-29) | increase | partly reverses | partial | Lost skills, supplier links and retail placement are rebuilt slowly (A-13). |
+| T-12 | increase | C-30 | decrease | partly reverses | partial | (A-13) |
+| T-13 | decrease | C-31, C-32 | increase | partly reverses | partial | Sunk costs of entering export markets (A-18). |
+| T-14 | decrease | C-33 | increase | reverses | none | |
+| T-15 | increase | C-2 | decrease | reverses | none | |
+| T-16 | increase | C-18 (short; medium), C-19 (long) | increase; then decrease | does not reverse (short; medium); reverses (long) | n/a | The losing side lobbies to restore the duty while its capital lasts. The signed short and medium value is questioned in the comparison above. |
+| T-17 | decrease | C-4 (administration, decrease); C-34 (taxpayers overall, decrease) | decrease | partly reverses | none | The administrative saving reverses T-17. Taxpayers as a whole still lose because the replacement revenue dominates (A-N2). |
+
+**Agreement with the pattern version's metamorphic check.** The two checks agree on every row from T-1 to T-15 in direction, and on "partly reverses" with partial persistence for T-6 (incidence), T-11, T-12 and T-13. They disagree in three places.
+
+1. **T-16 (lobbying).** The pattern check has ambiguous and "does not reverse". The core check has increase, then decrease in the long run. The long-run reversal is a valid core addition; the short and medium sign is the core error noted above.
+2. **T-17 (taxpayers).** The pattern check has ambiguous and "partly reverses". The core check has a decrease, so the taxpayers' row does not reverse as a whole. The core is right, given A-N2.
+3. **Persistence on T-3, T-5 and T-9.** The pattern check uses "—" because it reserves TS-6 for exit and lost skills. The core check gives partial, because capacity and employment built behind the duty, and houses not built, are stocks that cost something to undo (CR-10b). For T-3 and T-5 the core value fits the 2.5 definition (how much of the original effect remains against the never-imposed path) better. For T-9 the variable is a flow, so "none" is defensible for the flow and "partial" for the housing stock: a judgment call.

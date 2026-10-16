@@ -247,3 +247,56 @@ Case assumptions are used as given. New premises added by this re-run are marked
 - CR-12b refers to a dominance pattern (DM); in a core-only run the dominance for enrollment rests on arithmetic plus A-N1, and the rule does not say this is admissible.
 - CR-9 trip complements: 2.8 records them, but CR-9's text speaks of goods "used together"; a trip relation is joint purchase, not joint use. Applied on the strength of 2.8.
 - CR-1 for the earmark (K2) with an unclear provision (U1): whether private pre-schools get operation 2 depends on the reading; CR-1 has no way to record an operation that holds only under one reading, so it was written per reading.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on almost everything in the drinks-tax case: higher shelf prices and lower in-town sales, cross-border buying, switching to exempt drinks, reformulation, compliance cost, the burden on immobile buyers, trip purchases lost by Lakeport grocers and gained across the line, private pre-schools losing paying families, revenue below a static projection, the cash-transfer effect for families who would have paid anyway, and pre-school jobs. Earmark fungibility is recorded differently but means the same. They differ on two signs. On Lakeport retail employment the pattern version (decrease) is right and the core version (ambiguous) is wrong: its "opposing" chain, exempt drinks bought in Lakeport, is the substitution already counted inside C-4 and cannot outweigh it, so the only independent chains (trips moved across the line, droppers and continuing buyers paying tax that leaves retail) push down. On the number of private pre-schools the core version (ambiguous under the record's assumed reading that private providers can be approved) is right and the pattern version (decrease) ignored the funded option that its own assumed reading opens. The core version adds three consequences on new premises (retailers bear more than distributors, net enrollment rises, site values across the line rise) and two that the pattern version simply omitted (tax revenue, private fees).
+
+Counts: M 13, V 5, S 2, OP 6, OC 2.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | M | | |
+| C-2 | C-4 | M | | |
+| C-3 | C-3 | M | | |
+| C-4 | C-5 | M | | |
+| C-5 | C-6 | M | | Actor class recorded as sellers of exempt drinks in core; same claim. |
+| C-6 | C-7 | M | | |
+| C-7 | C-10 | M | | |
+| C-8 | C-15 | V | | Paid places recorded as quantity_substitute rather than quantity_demanded. |
+| C-9 | C-12, C-13 | V | | Core records distributors and approved providers; pattern adds retailers and families. No conflict. |
+| C-10 | C-19 | M | | |
+| C-11 | C-18 | V | | Recorded as quantity_complement (trip). |
+| C-12 | C-21 | S | E | Pattern decrease, core ambiguous. Pattern is right. The core's (+) chain (exempt drinks bought in Lakeport, C-6) is the switching already netted inside C-4: a buyer who switches within the same store leaves its volume unchanged, so the two cannot be treated as independent opposing chains under CR-12b. The independent chains (C-5 and C-18: purchases and trips moved across the line; CR-8b: tax paid by continuing buyers goes to the town, not to retail) all push down. Error in the core version. |
+| C-13 | C-9 | M | | Horizon short (pattern) against medium (core). |
+| C-14 | C-17 | S | E | Pattern decrease, core U1-a ambiguous, U1-b decrease. The record assumes U1-a (private pre-schools may be approved, with limits). Under that reading K2 adds a funded option (CR-1 op 2) that keeps some providers open, opposing the loss of paid demand; CR-12b gives ambiguous. Core is right; the pattern version did not combine the approval chain. |
+| C-15 | C-26 | M | | |
+| C-16 | none | OC | E | Travel cost of cross-border trips (search_cost increase for mobile buyers). Follows from C-5 by CR-3c and CR-8c for those who make extra trips; core-version omission. |
+| C-18 | C-11 | V | | Administration recorded as enforcement_cost (officials) rather than taxpayers' resources; funded from tax revenue in any case. |
+| C-20 | C-24 | V | | Same fungibility claim (CR-8d). The pattern's variable (public places compared with the earmarked amount) is not a counterfactual comparison; the core's general-fund resources increase is the cleaner recording. |
+| C-21 | C-25 | M | | |
+| C-22 | C-27 | M | | |
+| C-23 | none | OC | J | Hazlitt's tailor: employment at the sellers of what drink buyers would have bought. Derivable from C-26 by CR-8b, CR-9 and LW-10 (with A-9), as core C-23 does for pre-school staff; the core pruned it as diffuse. Depth judgment. |
+| C-24 | C-23 | M | | |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-2 | OP | E | tax_revenue increase (CR-8b; Tier A). The pattern version cites TX-1, which yields it, but did not record it. |
+| C-8 | OP | A | Lakeport retailers bear more of the tax than distributors (CR-7b), resting on the new premise A-N2 (distributors can redirect deliveries). The pattern version says the same in prose (section 7) without a consequence. |
+| C-14 | OP | A | Pre-school places used increase, net of switching and of fungibility; needs A-N1 and A-N4. The pattern version's section 7 states the same sign without a consequence. |
+| C-16 | OP | E | Private pre-school fees decrease (CR-6 after C-15). Pattern-version omission. |
+| C-20 | OP | J | Employment or hours across the line at_least_one_increase (OC-5 would give it). Depth judgment, mirror of pattern C-23. |
+| C-22 | OP | A | Site values near the line increase (CR-7c, CR-10c), resting on the new premise A-N5. |
+
+### Findings
+
+- **Error in the core version.** C-21 treats within-store substitution to exempt drinks as an independent chain opposing the fall in covered-drink sales. It is the same set of choices seen from the other side; netting it against C-4 leaves the cross-border and tax-wedge chains, which give a decrease.
+- **Error in the core version (omission).** Cross-border travel cost (pattern C-16).
+- **Error in the pattern version.** C-14 (number of private pre-schools decrease) ignores the approval route that the record's own assumed reading opens; ambiguous is the right sign.
+- **Error in the pattern version (omissions).** tax_revenue increase and lower private fees are not recorded although the cited rules give them.
+- **Pattern note (SB-7).** The pattern version's recording of SB-7 (places compared with the earmarked amount) is not a counterfactual comparison as 2.5 requires; the variable should be the freed general fund or places against the no-tax world.
+- **No pattern found wrong** in this case, and **no limit of the core rules** produced a difference. The core version's own notes stand: CR-7b does not say how to rank three parties in a chain of exchanges, and CR-9 speaks of goods "used together", which a trip relation is not.

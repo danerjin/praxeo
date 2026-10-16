@@ -247,3 +247,57 @@ No dominance claim is made.
 - CR-4c and loan size (C-7): CR-4c is stated for "how many units of x" an actor takes. Applying it to the size of a loan under a rate cap with a fixed per-loan cost takes an extra step of arithmetic (charge proportional to amount, cost partly fixed) that the rule does not spell out.
 - CR-12c and timing windows (C-13 against C-4): 02_ontology 2.5 says timing shifts are signed per window; CR-12 does not mention windows. The analysis treated the window as a separate named market so the two signs are not combined; a sentence in CR-12 would settle this.
 - CR-1 operation for the void rule (K2): voiding a loan both removes an option for the lender (enforceable lending) and adds one for the borrower (not repaying). CR-1 handles this as two operations on two classes, which works, but the K2 text is restated existing law and it is unclear whether it changes anything relative to the counterfactual; the analysis treated only its interaction with the new cap as new.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on almost every main chain: fewer small loans from licensed lenders, closures and job losses, excess demand, larger loans and conversion to exempt forms, the April to September rush, held-back entry from January, substitutes, borrowing in Kestria and the trip effect on Kestria storefronts, unlicensed online lending and its information problems, and the burden on taxpayers. Most differences are in how things are recorded (variety against transaction_size; storefront services as quantity_traded against quantity_complement). One pattern-version consequence is wrong: under reading U1-b the pattern version signs wage-advance supply as a decrease, applying PC-5 and PC-14 to the capped fee-charging products. It omits the opposing chain that it uses itself under U1-a: unmet small-loan demand moves to wage advances, and products with no fee or with fees within 36% APR (the standard free-delivery tier, optional tips if not counted) are not capped and gain users. By CR-12b the U1-b sign is `ambiguous`, as the core version has it. The pattern version also omits several consequences the patterns would have given: the fall in the value of lending firms and licenses (SB-4 covers a cap that lowers returns), disputes settled outside courts (RS-10), the enforcement cost itself (OC-3) and lenders' net price and compliance cost. The core version omits the search cost of finding unlicensed lenders and the ambiguous pawn-fee entry.
+
+**Counts.** M 11, V 7, S 2, OP 8, OC 2. Causes over S/OP/OC: P 1, K 0, A 0, E 6, J 5.
+
+### Pattern version → core version
+
+| Pattern ID | Core ID(s) | Class | Cause | Note |
+|---|---|---|---|---|
+| C-1 | C-1 | M | | APR decrease on loans still made. |
+| C-2 | C-3 | M | | Licensed small-loan supply decrease. |
+| C-3 | C-9 | M | | number_of_sellers decrease (short to medium vs medium; overlapping). |
+| C-4 | C-5 | M | | excess_demand increase. |
+| C-5 | C-6 | S | J | Pattern: allocation_by_non_price_criteria increase; core: group (wait, search, allocation). For loans the scarce side is the lender, who must choose among applicants by something other than price (CR-6); queues are not a plausible margin, so the pattern's single sign is well supported here. The core group is correct but weaker than the case allows. |
+| C-6 | C-7 | V | | Same claim (smallest loans dropped first, PC-14 / CR-4c with fixed per-loan cost): variety decrease vs transaction_size increase. |
+| C-7 | C-8 | M | | Reclassification increase. |
+| C-8 | C-13 | V | | Window rush: quantity_supplied vs quantity_traded. |
+| C-9 | C-11 | M | | entry_rate decrease from January. |
+| C-10 | C-25 | M | | Lobbying increase. The core version adds A-N1 (p 0.6), the margin premise RS-7 also needs but the pattern version did not estimate. The pattern version also includes consumer groups. |
+| C-11 | C-14 | M | | Legal substitutes increase. |
+| C-12 | C-16 (and C-17) | M | | Borrowing in Kestria; core also records the Kestria lenders' side. |
+| C-13 | C-18 | V | | Trip goods at Kestria storefronts: quantity_traded vs quantity_complement, short vs medium. |
+| C-14 | C-20 | V | | informal_activity increase; borrowers vs intermediaries. |
+| C-15 | — | OC | E (core) | search_cost increase for borrowers from unlicensed lenders. CR-11b (no open advertising or reputation) gives it; the core version recorded quality_information and disputes from the same rule but not search. |
+| C-16 | — | OC | J | Pawn fees ambiguous. The core version records the pawn market only as number_of_sellers increase (C-15). Omitting an ambiguous entry is a defensible scope choice. |
+| C-17 | C-10 | V | | Storefront employment decrease; lenders vs workers. Both versions use a plain `employment` decrease where LW-10 strictly gives employment or hours (see Findings). |
+| C-18 | C-7 | V | | transaction_size increase; borrowers served vs lenders; short vs medium. |
+| C-19 | C-23 | S | P | Wage advances. U1-a: both increase. U1-b: pattern decrease (quantity_supplied by providers), core ambiguous (quantity_substitute). Core is right: under U1-b the cap removes high-fee products (CR-1 op 1, CR-4), while demand displaced from small loans (the same CR-4 chain the pattern uses under U1-a) raises use of products whose fees fit within 36%; opposing chains give `ambiguous` (CR-12b). The pattern version applied PC-5 and PC-14 without combining them with PC-8. |
+| C-20 | C-4 | M | | quantity_traded decrease. |
+| C-21 | C-28 | V | | Taxpayers' resources decrease; the core version adds the loss of license fees (A-N2), short vs medium. |
+| C-22 | C-22 | M | | quality_information decrease. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+|---|---|---|---|
+| C-2 | OP | E (pattern) | Lenders' net_price_received decrease per small loan; the direct counterpart of C-1. |
+| C-12 | OP | E (pattern) | asset_value decrease for owners of lending firms and licenses, from January. SB-4 explicitly covers a cap that lowers expected returns on assets in fixed supply; the pattern version did not apply it. |
+| C-15 | OP | J | Pawn shops increase in number. Overlaps the pattern's conversion claim (C-7) but adds the demand chain; a recording choice. |
+| C-19 | OP | J | Check-cashing customers of closed storefronts search farther. The pattern version pruned it as falling on a group already counted; defensible either way. |
+| C-21 | OP | E (pattern) | disputes_settled_outside_courts increase for borrowers from unlicensed lenders. RS-10 names it; the pattern version recorded the other RS-10 variables only. |
+| C-24 | OP | J | full_cost_per_unit ambiguous. The pattern version discussed this question and said no variable records it; `full_cost_per_unit` is in the list, though using it for the cost of a cash need, including fallbacks, stretches its definition. |
+| C-26 | OP | E (pattern) | Lenders' compliance_cost increase (all-in APR calculation). CR-8c, as OC-2 or TX-5 would give. The core's Tier A with no assumptions is slightly strong, since lenders that exit bear none. |
+| C-27 | OP | E (pattern) | enforcement_cost increase; OC-3 yields it alongside the taxpayers' entry, which is all the pattern version recorded. |
+
+### Findings
+
+- **Pattern misapplied (pattern version C-19, U1-b):** PC-5 and PC-14 were applied to capped wage-advance products without the PC-8/RS-1 demand chain that the same analysis uses under U1-a. The correct U1-b sign is `ambiguous`. The patterns themselves are not wrong; the combination step (workflow step 7, CR-12b) was skipped.
+- **Catalog inconsistency:** RS-6 and TX-3 conclude `employment` decrease, while OC-5 and the LW-10 derivation they rest on give only "employment or hours_worked" (a group). Both versions here record a plain employment decrease (pattern C-17, core C-10). This is a mild overclaim shared by both, and a wording issue in the catalog.
+- **Pattern-version omissions:** SB-4 (lenders' asset value), RS-10 disputes, OC-3 enforcement_cost, the sellers' direct net-price effect, compliance cost. RS-7 used without estimating its own assumption.
+- **Core-version omissions:** search cost in the unlicensed segment (pattern C-15); pawn-fee entry (ambiguous, minor).
+- **No limit of the core rules** appeared; every valid pattern-version claim is derivable from CR-1 to CR-12.

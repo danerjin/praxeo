@@ -251,3 +251,62 @@ The one dominance claim (C-17, C-18) rests on CR-10b and CR-8b plus A-N1. In the
 - CR-12b dominance: the core rule says a dominance claim needs a premise, and the task guidance points to CR-7b as the usual source. Here the premise came instead from CR-10b (fixed herds in Year 1) and CR-8b (arithmetic of stocks), plus an empirical inequality. CR-12b does not say which core rules may ground a dominance premise.
 - CR-6 for a floor supported by a buyer of last resort: CR-6 describes displaced pressure when "a rule prevents the price from moving". K2 does not prevent the price from moving; it adds a buyer. Whether the excess supply (C-4) is CR-6 (the floor) or CR-1 op 2 plus CR-4 (the Board route) depends on which component one starts from; both are cited.
 - CR-7b and specialty plants (C-14): CR-7b says the lasting loss settles on means that cannot move. A label tied to origin is a legal attribute rather than a physical means; reading it as an immobile means was needed to apply the rule.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** Both versions trace the same structure: Velmora farmers paid $21, Velmora milk routed into Board stocks while Velmora plants making market products switch to out-of-state milk, specialty plants squeezed, expansion of Velmora dairy over time, capitalization into land and barns, land and labor drawn from crops and beef, higher regional prices and neighbors' expansion, donations displacing food-program purchases, false certification, and costs to taxpayers. The core version adds a defensible dominance argument for the short-run regional price (A-N1) and several valid extra chains (food programs' freed budgets, export prices, dairy farm employment, the price of origin-labeled cheese). It also makes two errors. First, it signs neighbors' raw-milk supply as an increase at the medium horizon (C-20), although its own C-10 puts border farms moving into Velmora at the same horizon, which pulls neighbors' output the other way; by CR-12b the sign is `ambiguous`, as the pattern version's C-25 has it. Second, it reports a "vocabulary gap" for input suppliers that does not exist (`quantity_traded` with a named market records it, as the pattern version does). The core version's C-4 (excess supply of Velmora milk in the private market) is weakly founded: with a Board that buys any quantity at break-even, a surplus appears only if Board-route capacity is short, which is its own A-N3, not cited for C-4. The pattern version's commodity-plant investment claim (C-9) rests on a premise neither version states: the support prices are set so that plants only break even, so SB-2's "sellers' net price rises" does not by itself apply to plants.
+
+**Counts.** M 12, V 10, S 1, OP 7, OC 5. Causes over S/OP/OC: P 0, K 0, A 1, E 6, J 6.
+
+### Pattern version → core version
+
+| Pattern ID | Core ID(s) | Class | Cause | Note |
+|---|---|---|---|---|
+| C-1 | C-1 | M | | Farmers' net price increase. |
+| C-2 | C-5 | V | | Board purchases: quantity_demanded vs inventory_held. |
+| C-3 | C-7 | V | | Farmers' quantity_supplied increase; short (feeding, culling) vs medium (herds). Both directions agree; the core version treats the Year-1 response as negligible. |
+| C-4 | C-8 | M | | investment_target increase. |
+| C-5 | C-9 | V | | Farms kept open (number_of_sellers) vs dairy capacity (capital_stock_target). |
+| C-6 | C-2 | V | | Higher price for Velmora milk; specialty plants vs all plants buying Velmora milk. |
+| C-7 | C-15 (and C-14) | M | | Specialty output decrease; core also records their return_on_capital decrease. |
+| C-8 | C-3 | V | | Out-of-state milk: quantity_substitute vs cross_border_purchases. |
+| C-9 | — | OC | J | Commodity plants' investment increase. The pattern derives it from SB-2, but K2's prices are set so that a plant paying $21 only breaks even, so SB-2's net-price increase does not apply to plants without a further premise. The core version says plants gain nothing by expanding (A-N3 evidence), yet its own C-6 (farmers competing for access through hauling charges or quality deductions) would create a return to Board-route capacity. More Velmora cheddar and powder must be made somewhere, so an increase is plausible, but neither version states the premise. |
+| C-10 | C-22 | M | | Plants' compliance_cost increase. |
+| C-11 | C-21 | V | | False origin: reclassification vs informal_activity. |
+| C-12 | C-10 | V | | Farms moving or registering into Velmora; long vs medium. |
+| C-13 | C-28 | M | | Lobbying; the core version adds A-N4 (p 0.7), the margin premise RS-7 needs but the pattern version did not estimate. |
+| C-14 | C-18 | V | | Regional dairy prices increase. Pattern: short to medium; core: short only, with no sign for the medium run. The core version's dominance argument (A-N1) is sound for the short run; the pattern's medium-run sign is plausible (heifers take two years) but rests on the same unstated premise. |
+| C-15 | C-17 | V | | Neighbors' net price increase; same horizon note as C-14. |
+| C-16 | C-20 | M | | Neighbors' quantity_supplied increase, medium (but see C-25). |
+| C-17 | — | OC | E (core) | Input suppliers' quantity_traded increase. The core version derives it (CR-9, LW-10) but declined to record it, claiming no variable fits. `quantity_traded` with a named market records it, as the pattern version shows. |
+| C-18 | C-11 | M | | asset_value increase for land and barns. |
+| C-19 | C-12 | M | | Crop and beef output decrease. |
+| C-20 | C-5 | M | | Board inventory_held increase. |
+| C-21 | C-26 | M | | Food-program suppliers' sales decrease. |
+| C-22 | C-24 | M | | Taxpayers' resources decrease. |
+| C-23 | C-23 | M | | Board enforcement_cost increase. |
+| C-24 | C-19 | V | | Regional dairy sales decrease: quantity_traded vs quantity_demanded. |
+| — (owner-farmers' earnings, increase) | — | OC | E (core) | Higher price on more milk, with extra inputs used only where they pay (CR-2, CR-3b). Derivable; the core version did not record earnings. |
+| — (tenant farmers' earnings, ambiguous) | — | OC | J | Higher price against rents rising with capitalization (CR-7b). Valid; a scope choice. |
+| C-25 | C-20 (with C-10) | S | E (core) | Neighbors' quantity_supplied. Pattern: ambiguous (long), combining higher regional price with farms leaving for Velmora. Core: increase (medium), while its own C-10 puts that relocation at the medium horizon. Same actor class, variable and horizon with opposing chains: CR-12b gives `ambiguous`. The pattern version is right. |
+| C-26 | — | OC | J | Long-run consumer price ambiguous. The core version declined to sign the medium and long run; recording `ambiguous` is the more complete statement but adds little. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+|---|---|---|---|
+| C-4 | OP | E (core) | excess_supply increase "in the private market". With K2 buying any quantity at break-even, Velmora milk at $21 finds a buyer through Board-route plants unless their capacity is short. The surplus therefore needs A-N3, which C-4 does not cite. The pattern version (PC-9's Unless clause) concluded that there is no lasting private surplus. |
+| C-6 | OP | A | Farmers' side payments or non-price allocation (group), resting on the new premise A-N3 (p 0.6: Year-1 Board-route capacity short). The pattern version rejected PC-11 because the Board buys everything; with A-N3 the core chain is valid. |
+| C-13 | OP | E (pattern) | Dairy farm employment increase (CR-9, LW-10). The pattern version recorded input suppliers but not labor. Strictly this is employment or hours (group). |
+| C-14 | OP | J | Specialty plants' return_on_capital decrease; the pattern version gives the same reasoning in prose for C-7. |
+| C-16 | OP | J | Price of origin-labeled cheese increase. Given A-4 (a real label premium, so the product is differentiated), less supply raises its price (CR-6 in that market). The pattern version used RS-14's "quantity effect dominates" branch and did not sign price. The core's sign is defensible. |
+| C-25 | OP | E (pattern) | Food programs' resources_available_other_uses increase. SB-8 (in-kind provision of a good the recipient would have bought anyway) gives exactly this. The pattern version applied SB-9 only to the suppliers' side. |
+| C-27 | OP | J | Export-market prices decrease (A-N2). The pattern version pruned it as outside the jurisdiction. |
+
+### Findings
+
+- No pattern is wrong here. The pattern version stretches SB-2 to commodity plants (C-9), whose margin K2 fixes at break-even; the sign needs a premise about a return to plant capacity. RS-14's "the quantity effect dominates" is a statement about magnitudes, which the method otherwise disclaims; it should not be read as "price does not rise" (core C-16).
+- RS-7 is again used without estimating its own assumption (core adds A-N4).
+- **Core-version errors:** C-20 should be `ambiguous` at the medium horizon given C-10 (CR-12b); C-4 needs A-N3; the "vocabulary gap" under Gaps found (a) is not a gap, since `quantity_traded` with a named market records input suppliers' sales. Owner-farmers' earnings were omitted.
+- **Pattern-version omissions:** SB-8 for donated stocks (core C-25); dairy farm labor (core C-13).
+- **Core rules:** no limit found. The core version's dominance argument for the Year-1 regional price (CR-10b, CR-8b, A-N1) is a legitimate use of CR-12b and is more careful than the pattern version's unqualified "increase" for the short to medium run.

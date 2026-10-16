@@ -276,3 +276,62 @@ Case assumptions are used as given. New premises added by this re-run are marked
 - CR-6, "every margin that is still open": unclear whether each open margin is predicted to be used, or only at least one. Each margin here (search, selection, key money, maintenance) was given its own premise rather than a group consequence.
 - CR-7c and CR-10c overlap (both say a durable asset's price reflects expected yields); and "when the change becomes expected" is unclear for a ballot measure that was likely but not certain to pass.
 - CR-9 relations: the lease itself (landlord to tenant, maintenance as part of what is bought) is not one of the relation types in 2.8 (substitute, complement, input_to, same_market_other_segment, across_border).
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the core of the rent-freeze case: excess demand, search, selection by landlords, key money and illegal sublets, lower turnover and job mobility, falling maintenance and quality (under the record's assumed reading), conversion and a shrinking covered stock, fewer covered leases, the announcement-window rent rise, the fall in building values and the cost to taxpayers. They part on four signs. (1) Sitting tenants' rent in the short horizon: the pattern version signs it a decrease from the start, although its own C-17 records the pre-emptive raises that lift the frozen base; the core version composes the two chains (CR-12b) and is right that the short-run sign is ambiguous. (2) and (3) Rents on exempt units and in the neighboring cities, and so (4) developers' investment: the pattern version signs increases; the core version reports them ambiguous. Here the core version is wrong. Its opposing chain (added exempt construction, C-25) is induced by the very rent rise it is set against and is itself derived from C-24, so the reasoning is circular; and its counting argument ("lower turnover alone moves no net households") holds the number of households per covered unit fixed, missing the insiders' own response to a lower price (CR-4c mirror: no downsizing, fewer roommates, second units kept), which lowers the number of people the fixed covered stock houses. With the independent chains (units withdrawn, insiders' higher consumption, and the regulatory signal if A-9 fails) all pushing the same way, CR-12a gives an increase. The pattern version also contains one overclaim (C-10: tenants of converted buildings pay more, measured against the controlled rent instead of the no-ordinance counterfactual) and omits several consequences the core version derives directly (landlords' receipts, the CR-8b transfer, enforcement and compliance cost, units held vacant, disputes in sublets).
+
+Counts: M 8, V 6, S 4, OP 12, OC 3.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1, C-2, C-3 | S | E | Medium and long horizons match (core needs A-N1 for medium). Short horizon: pattern decrease, core ambiguous. Core is right: the pattern's own C-17 (pre-emptive raises lift the frozen base, CR-10a, bounded by CR-5c) and the cap chain reach the same key, and CR-12b leaves it ambiguous until the counterfactual path passes the raised base. Pattern-version omission of the composition step. |
+| C-2 | C-10 | M | | |
+| C-3 | C-11 | V | | Core records search_cost only; wait_time folded in. No substantive difference. |
+| C-4 | C-12 | M | | |
+| C-5 | C-8 | M | | |
+| C-6 | C-6, C-7 | V | | Core gives per-reading signs (U1-a decrease; U1-b ambiguous); the pattern used the record's assumed reading (no renovation allowance), on which both agree. Core puts quality at the long horizon, pattern at short to medium. |
+| C-7 | C-13, C-14 | V | | Split: key money (side_payments) and illegal sublets (informal_activity). |
+| C-8 | C-16 | V | | Conversion recorded as capital_stock_target decrease rather than reclassification increase. |
+| C-9 | C-16, C-17 | V | | Covered stock shrinking recorded as capital_stock_target; vacancy held pending conversion recorded separately. |
+| C-10 | C-19 | OC | P | Pattern claims price_paid increase for tenants of converted buildings, comparing with the controlled rent. Against the counterfactual (2.5: no ordinance, so no conversion and a market-path rent), they pay a market rent in either world and receive a relocation payment; no sign for price_paid follows from CR-1, CR-3 or CR-8. The core's turnover increase (C-19) is the derivable claim. |
+| C-11 | C-20, C-21 | V | | Core omits developers lobbying to keep the exemption; minor. |
+| C-12 | C-24 | S | E | Pattern increase, core ambiguous. Pattern is right (see summary): the core's opposing chain is an induced supply response derived from C-24 itself (circular), and its counting argument misses insiders' larger consumption per household at the lower price (CR-4c mirror). Remaining chains (C-16, C-17 withdrawals; insiders' consumption) agree, CR-12a: increase. Error in the core version. |
+| C-13 | C-25 | S | E | Pattern increase (A-9 above the cut-off), core ambiguous. Follows from C-12: with exempt rents up and A-9 holding, CR-7a gives an increase. Error in the core version (inherited from C-24). |
+| C-14 | C-23 | OC | E | Pattern: quantity of condominiums offered increases. Core recorded only the condominium price (ambiguous) and omitted the quantity, which follows directly from C-16 by CR-9. Core-version omission. |
+| C-15 | C-26 | S | E | As C-12: pattern increase is right; core ambiguity rests on the same circular counter-chain. Error in the core version. |
+| C-16 | C-29 | M | | |
+| C-17 | C-5 | M | | |
+| C-18 | C-9 | M | | |
+| C-19 | C-30 | M | | |
+| C-20 | C-22 | M | | Actor class named factor_owners.specific in core; same owners. |
+| — (quality_adjusted_price, ambiguous) | none | OC | J | The core records rent and quality separately (C-2, C-7) and does not compose them into quality_adjusted_price. Ambiguous either way; nothing scorable lost. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-4 | OP | E | Landlords' net_price_received decrease: the mirror of C-1 (CR-3a). Pattern version mentions it in prose only. |
+| C-15 | OP | E | Subtenants' disputes_settled_outside_courts increase (CR-11b). The pattern version's own PC-6 says RS-10 applies to that trade; omitted. |
+| C-17 | OP | E | units_held_vacant increase (relocation payments and no-cause eviction make re-letting a vacated unit costly before conversion). Pattern version names "kept off the market" in prose only. |
+| C-18 | OP | E | Landlords' compliance_cost (permits, relocation payments, board proceedings), CR-8c. |
+| C-19 | OP | P | Tenants of converted buildings: turnover increase. The pattern version recorded this displacement as an invalid price claim (its C-10). |
+| C-23 | OP | J | Condominium price ambiguous (added converted supply against seekers who buy instead of rent). Unsigned; little lost by the omission. |
+| C-27 | OP | J | Repair trades' earnings ambiguous; depth choice. |
+| C-28 | OP | J | Seekers' full_cost_per_unit for covered units ambiguous. The pattern version's section 7 makes a different claim (total housing cost across segments increases) that is not in its consequence list. |
+| C-31 | OP | E | enforcement_cost increase for the rent board (CR-8c); the pattern version records only the taxpayers' side (C-19). |
+| C-32 | OP | E | Landlords' resources_available_other_uses decrease (CR-8b). No pattern in the catalog records a ceiling as a transfer; see Findings. |
+| C-33 | OP | E | Sitting tenants' resources_available_other_uses increase, the matching gain (CR-8b). |
+| C-34 | OP | J | Seekers' resources_available_other_uses decrease from search and key money. The pattern version deliberately avoided double counting with C-3; defensible either way. |
+
+### Findings
+
+- **Error in the core version (circular counter-chain).** C-24, C-25 and C-26 are ambiguous only because added exempt construction (C-25) is set against the rent rise that induces it, while C-25 is itself derived from C-24. An induced supply response moderates a price change but cannot reverse its sign unless something independent shifts supply. The counting argument also omits the insiders' CR-4c response. Correct signs: increase (as in the pattern version).
+- **Error in the core version (omission).** The quantity of condominiums offered (pattern C-14) follows from C-16 by CR-9 and was not recorded.
+- **Error in the pattern version (composition).** C-1 is signed a decrease from the short horizon, although the version's own C-17 reaches the same key with the opposite sign; CR-12b makes the short horizon ambiguous.
+- **Error in the pattern version (counterfactual).** C-10 (tenants of converted buildings pay more) compares with the controlled rent, not with the no-ordinance world. Not derivable; overclaimed.
+- **Pattern note (PC-8).** PC-8's stated mechanism ("demand moves from outsiders who cannot obtain the good") is loose: when the controlled stock is fixed and fully occupied, rationing alone changes who occupies it, not how many households it houses. The sign holds through withdrawn supply and the insiders' larger consumption at the lower price; the pattern's mechanism should name those.
+- **Catalog gap (not a core limit).** No pattern records a ceiling as a transfer between the two sides (CR-8b: landlords' loss is sitting tenants' gain); the pattern version therefore has no resources consequence for either side. The core rules derive it directly.
+- **Limit of the core rules.** None that produced a difference. The core version's own notes stand: CR-12b refers to a dominance pattern that does not exist in a core-only run, and the lease is not one of the 2.8 relation types.

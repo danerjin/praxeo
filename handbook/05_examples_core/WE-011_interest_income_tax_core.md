@@ -252,3 +252,56 @@ Revenue: the act has no earmark, so the revenue joins the general budget (CR-8d:
 - CR-7b: "the lasting gain or loss settles on the means that cannot move" reads as all-or-nothing. When both sides have some alternatives (savers and borrowers here), the rule does not say whether it licenses "the less mobile side bears more" or only "at least part". A-1 had to fix this.
 - CR-4 exception: applied to saving (C-11) as instructed. The exception's wording ("a lower return on something they save toward a fixed sum") fits saving directly, but it does not say whether it also covers C-4 (the choice among assets), where a change in total means could in principle also alter the mix. Treated as not biting there, because the choice between taxed and untaxed assets of similar risk does not change with wealth in any direction the rule names.
 - CR-12b refers to "a dominance pattern" for a dominance claim. In a core-only run the dominance premise in section 7 had to be stated directly from CR-7b and A-1; the core rules do not say what form such a premise should take.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the core of the case: savers bear the tax at least in part and diversified savers move to untaxed forms, Quellan and undeclared foreign interest; bonds already issued lose value at announcement; gross rates rise for borrowers and the government; untaxed assets rise in price. Both treat total saving as `ambiguous` under CR-4's exception, so neither overclaims on saving. Neither commits an incidence error: the pattern version's DM-1 claim (savers bear the larger part) and the core version's CR-7b reading (savers bear at least part, A-1) point the same way, and the pattern version's stronger claim is not separately listed as a consequence. There are three sign differences. Two are errors in the core version, which failed to compose chains it had itself derived (CR-12b): it signs `capital_stock_economy` as a decrease although its own C-11 (saving ambiguous), C-5 (funds into shares) and C-25 (non-resident lenders lend more) push the other way, and it signs revenue against a static projection as a decrease in the medium run although its own C-17 raises the gross rate on the remaining base. The third goes the other way: the pattern version applied TS-3 to small savers (fiscal drag) without the opposing chain that its own C-13 implies, namely that higher gross deposit rates reach savers under the allowance. The core version found this chain, which needs a new premise (A-N2), and is right to report `ambiguous`. No pattern is wrong. No limit of the core rules was found.
+
+**Counts.** M 11, V 11, S 3, OP 4, OC 2. Causes over S, OP and OC (9 items): P 0, K 0, A 2, E 7, J 0.
+
+**Pattern version → core version**
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+|---|---|---|---|---|
+| C-1 | C-1 | M | | Same claim. Pattern horizon short–long, core short. TX-11's arithmetic appears in both. |
+| C-2 | C-2 | V | | Actor class `officials.enforcement` vs `government.budget`. |
+| C-3 | C-5, C-6 | M | | The core version splits off retirement-account contributions (C-6). |
+| C-4 | C-4, C-16 | V | | Pattern: funds supplied through taxed forms (`quantity_supplied`, medium). Core: taxed assets held (`quantity_demanded`, short); C-16 records the banks' side. Both rest on CR-4 between assets of similar risk. Neither version applies CR-4's exception to the asset mix, and the core version records why. |
+| C-5 | C-7 | V | | The core version omits banks' prize and bonus deposit products, a minor omission. |
+| C-6 | (section 8 note) | OC | E (core) | Early crediting of interest before 1 January. The core version derives it (CR-10a) but keeps it as a path note, on the ground that "without the policy there would be no reason" to move it. That misreads 2.5: crediting happens in the counterfactual too, so per-window signed consequences are required. The pattern version's recording as `reclassification` is loose but scorable. |
+| C-7 | C-8 | M | | |
+| C-8 | C-9 | V | | Horizon medium vs short. |
+| C-9 | C-3 | M | | |
+| C-10 | C-29 | V | | The core version folds advice and restructuring costs into `resources_available_other_uses`, not `compliance_cost`. |
+| C-11 | C-10 | M | | |
+| C-12 | C-15 | M | | Both versions date it to the announcement (CR-7c / SB-4). |
+| C-13 | C-17, C-20 | V | | The core version covers bank-dependent borrowers and banks' deposit rates. Large corporate bond issuers are not separately signed. |
+| C-14 | none | OC | E (core) | `borrowers.small` bear more than `borrowers.large`. CR-7b with A-9 and A-10 derives it (large firms can issue bonds or shares and borrow abroad). The core version did not split borrowers. |
+| C-15 | C-12 | V | | The core version needed A-N1 (a group lacking alternatives). The pattern version built that premise into the definition of `savers.deposit`. The core version's point is fair: A-2 alone does not establish it. |
+| C-16 | C-22 | V | | Debt-financed investment falls: the pattern version records `investment_target`; the core version records it under `capital_stock_economy`, which is the wrong variable (see the next-to-last row). |
+| C-17 | C-23 | M | | |
+| C-18 | C-26, C-27 | V | | The core version adds the owners' gain (C-26), the CR-8 counterpart of the buyers' higher price. |
+| C-19 | C-28 | M | | |
+| C-20 | C-19 | S | A | Pattern: `savers.small` net interest decreases (long, TS-3). Core: ambiguous. The core version adds the chain in which higher gross deposit rates reach savers under the allowance untaxed (CR-9, CR-7a), which needs A-N2 (banks do not price by tax status, p 0.6). **Core right**: with A-N2 above the cut-off, CR-12b requires `ambiguous`. The pattern version's own C-13 (gross rates rise) implies the + chain, so the pattern version should have found it. |
+| C-22 | C-29 | M | | |
+| C-23 | C-21, C-16 | M | | |
+| C-24 | C-30 | V | | Pattern: taxpayers' resources (funding side, CR-8a). Core: `enforcement_cost` (spending side). These are the two halves of the same CR-8 link. |
+| — (`savers.deposit` quantity_supplied, ambiguous) | C-11 | V | | The core version merges this into saving by all taxable savers. |
+| — (`saving`, ambiguous) | C-11 | M | | Both apply CR-4's exception (TX-6's Unless clause) correctly. |
+| — (`capital_stock_economy`, ambiguous) | C-22 | S | E (core) | Core: decrease. **Pattern right.** By CR-12b the economy-wide stock is `ambiguous`: the core version's own C-11 (saving ambiguous), C-5 (funds into shares, which finance equity investment) and C-25 (exempt foreign lenders supply more) oppose the debt-finance chain. The core version also attaches an economy-wide variable to `firms.investing`. The correct core consequence is `investment_target` (debt-financed) decrease, with `capital_stock_economy` ambiguous. |
+| — (`tax_revenue_vs_static_projection`, ambiguous) | C-13, C-14 | S | E (core) | Core: decrease (short and medium). **Pattern right for the medium run**: an ad valorem tax on a price the tax itself raises gives a + chain (the core version's own C-17) against base erosion, so CR-12b requires `ambiguous` (TX-9's Unless clause is pure arithmetic). In the short run the core version's decrease is defensible: coupons on bonds already issued are fixed, gross rates move only over the medium run, and early crediting (A-4) lowers first-year collections. |
+
+**Core-only consequences**
+
+| Core ID | Class | Cause | Note |
+|---|---|---|---|
+| C-18 | OP | A | Savers under the allowance earn more in the medium run (higher gross rate, untaxed). Needs A-N2. The pattern version omitted it although its C-13 implies it. |
+| C-24 | OP | E (pattern) | Exempt non-resident lenders earn a higher net yield (CR-9, CR-7a). The pattern version mentions foreign lenders only as an offsetting chain in section 7. |
+| C-25 | OP | E (pattern) | Non-resident lenders supply more crown funds. Same omission as C-24; it is what makes the pattern version's own `capital_stock_economy` row ambiguous. |
+| C-31 | OP | E (pattern) | Resources used up in lobbying (CR-8c / OC-1). A minor omission. |
+
+**Findings**
+- No pattern is wrong here. TX-6's Unless clause gives the same answer as CR-4's exception: both versions report saving as `ambiguous`. TX-9's Unless clause is sound arithmetic, and the core version should have reached it through CR-12b.
+- Errors in the core version: C-22 signs `capital_stock_economy` (economy-wide) as a decrease against its own opposing chains, using the wrong variable for a debt-finance effect. C-13 and C-14 ignore the gross-rate chain in the medium run. C-14 of the pattern version (split among borrowers) is omitted. The early-crediting shift is kept as a path note through a misreading of 2.5's timing-shift rule.
+- Errors in the pattern version: C-20 applies TS-3 without composing it with the gross-rate chain (CR-12b). It omits non-resident lenders' gain and response (core C-24, C-25) and the cost of lobbying.
+- Limits of the core rules: none that changed a sign. The core version's notes are fair: CR-7b's "settles on" does not say whether it licenses "more" or only "at least part", and CR-4's exception does not say whether it reaches the choice among assets. The lack of a per-window variable for interest crediting is a limit of the ontology, not of the calculus.

@@ -257,3 +257,54 @@ Case assumptions are used as given. New premises added by this re-run are marked
 - CR-6, "every margin that is still open": unclear whether each open margin (hours, card acceptance, per-car limits, favoritism) is predicted to be used, or at least one. Here each was given its own consequence on the strength of A-4; a group consequence would be the cautious reading.
 - CR-12b refers to a dominance pattern (DM); no dominance was claimed here, so every conflict is reported ambiguous.
 - CR-10a and timing-shift consequences: the normal form forbids duplicate (actor class, variable, horizon), but windows (Days 3 to 5, the days before and after Day 95) share the short horizon. They were separated by naming the window in the variable.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** This is the case of closest agreement. Both versions derive the same chain from a retail cap with an uncapped rack price: drivers who fill up pay less and stations receive less; quantity demanded rises while supply into Corvane falls (cargoes diverted, pipeline barrels sent to Brennick, the in-state rack price pushed down where output has no other outlet, the repair not expedited); the gap shows up as queues, search, worse service, selection of customers and resale in cans with poor information; purchases dip before Day 5; cross-border buying and drivers' full cost are ambiguous for the same reason in both. The core rules carried the cap upstream (CR-5c, CR-9, CR-7a/b) without a pattern, matching PC-12. There is one sign difference: supply in the period after Day 95. The core version reports an increase from the release of held stock, but its own section 8 names the opposing chain (a repair slowed past Day 95 lowers output then) and it did not combine the two; the pattern version's ambiguous is right. The core version also omitted stations' delayed wholesale purchases before Day 5; the pattern version omitted the holding of stock before Day 95 as a consequence and enforcement cost.
+
+Counts: M 18, V 4, S 1, OP 3, OC 1.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | M | | |
+| C-2 | C-2 | M | | |
+| C-3 | C-3 | M | | |
+| C-4 | C-5 | M | | |
+| C-5 | C-6 | M | | |
+| C-6 | C-7 | M | | |
+| C-7 | C-9 | M | | |
+| C-8 | C-8 | M | | Recorded for drivers rather than stations; same claim. |
+| C-9 | C-11 | M | | Recorded for intermediaries rather than drivers; same claim. |
+| C-10 | C-4, C-18, C-19 | V | | Split into retail supply, cargoes and pipeline shipments to Brennick. |
+| C-11 | C-17 | M | | |
+| C-12 | C-15 | V | | Recorded as quantity_traded in the window rather than quantity_demanded. |
+| C-13 | none | OC | E | Stations delay wholesale purchases from Day 3 to Day 5 (CR-10a with CR-4: rack stock bought at Day 3 prices must be sold at the cap). The core's CR-1 table lists the announcement for stations but derives only the drivers' shift. Core-version omission. |
+| C-14 | C-20 | M | | |
+| C-15 | C-25 | M | | |
+| C-16 | C-14 | M | | |
+| C-17 | C-13 | M | | Both ambiguous, same chains. |
+| C-18 | C-24 | V | | Pattern splits stations by whether they have fuel (signs by construction; no claim on the total); core records the total, ambiguous. No conflict. |
+| C-19 | C-24 | V | | As C-18. |
+| C-20 | C-16 | M | | |
+| C-21 | C-27 | M | | |
+| C-22 | C-12 | M | | |
+| C-23 | C-10 | M | | |
+| C-24 | C-22 | S | E | Pattern ambiguous (held stock released against a repair slowed past Day 95); core increase. Pattern is right: the repair chain (C-20) reaches the same key whenever the repair would otherwise finish near Day 95, and the core's own section 8 says the slower repair can outlast the cap; CR-12b gives ambiguous. Core C-22's horizon (medium) is also inconsistent with its window (first days after Day 95). Error in the core version. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-21 | OP | E | inventory_held increase in the last days before Day 95 (CR-10a). The pattern version uses this chain in section 7 and section 8 but did not record it as a consequence. |
+| C-23 | OP | J | Brennick price ambiguous. The pattern version pruned it explicitly at depth 3; both defensible. |
+| C-26 | OP | E | enforcement_cost increase (CR-8c); the pattern version records only the taxpayers' side (C-21). |
+
+### Findings
+
+- **Error in the core version (composition).** C-22 signs post-Day-95 supply an increase while leaving out the slowed-repair chain that the same version identifies in section 8; the sign should be ambiguous, as in the pattern version.
+- **Error in the core version (omission).** Stations' wholesale purchases on Days 3 to 5 (pattern C-13).
+- **Errors in the pattern version (omissions).** Holding stock before Day 95 (used as a chain but not recorded) and enforcement cost.
+- **No pattern found wrong.** PC-12 (a ceiling passes up to the inputs) and PC-5 applied at a short horizon to movable cargoes were both reproduced from the core rules (CR-5c, CR-9, CR-7a/b), which supports their derivations.
+- **Limit of the core rules.** None that produced a difference. The core version's note on CR-4's mirror case stands: when a policy improves an option on one dimension (money price) and worsens it on another (queues), CR-4 does not say to use the full price, which is why both versions leave cross-border buying ambiguous.

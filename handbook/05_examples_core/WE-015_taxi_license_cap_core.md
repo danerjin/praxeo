@@ -230,3 +230,59 @@ Horizons: short = from the ordinance's introduction to the end of the first year
 - CR-1: the conversion of an existing license into a transferable medallion is both op 2 (the option to sell or lease) and op 4 (a transfer of means). The rule does not say whether one provision may be recorded under two operations.
 - CR-7a and CR-7b both bear on driver employment (C-16): CR-7b says the scarcity return settles on medallions, and CR-7a says the medallion is moved into more hours of use. The rules give no way to sign the net effect on the number of drivers; reported as ambiguous under CR-12b.
 - CR-12b refers to "a dominance pattern" for a dominance claim. The short-horizon wait (C-6) used A-1's timing ("within about two years") as the reason no opposing chain applies in year one; the core rules do not say whether a timing premise counts as a dominance premise.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the main structure. The cap together with the existing meter rate produces a shortage, not a higher fare, and the shortage grows as demand grows. It shows up as waiting, drivers choosing their fares, lower quality, off-meter payments and unlicensed service. Medallions gain value at announcement, and the gain goes to holders on the effective date. Licenses are rushed in the window. Entry falls. Private hire stretches the 30-minute rule. Long-run waits depend on U1: ambiguous under U1-a, increase under U1-b, in both versions. There are no opposite signs. The most substantive difference is one the pattern version gets wrong: it signs private-hire fares as an increase (PC-8), ignoring the opposing chain that PC-8's own note names. Would-be taxi entrants shut out by the cap flow into the uncapped private-hire segment and add supply there. The core version records that entry (C-13) and the demand shift (C-20), and by CR-12b their combination leaves `price_substitute` ambiguous. The core version in turn omits several consequences that the core rules derive without difficulty: informal riders' search costs and disputes, the medallion-loan market, excluded entrants' earnings, riders' full cost, app-service entry, and later buyers' losses under U1-a, which it wrongly treats as a path note. It also adds a defensible first-year fall in waits from the window rush, on a new premise (A-N1).
+
+**Counts.** M 15, V 4, S 0, OP 6, OC 9. Causes over S, OP and OC (15 items): P 1, K 0, A 1, E 11, J 2.
+
+**Pattern version → core version**
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+|---|---|---|---|---|
+| C-1 | C-3 | M | | |
+| C-2 | C-1, C-18 | M | | The core version adds the buyer side (C-18: later entrants pay the capitalized price). |
+| C-3 | C-4, C-5 | M | | |
+| C-4 | C-2 | M | | |
+| C-5 | C-8 | M | | |
+| C-6 | C-7 | M | | |
+| C-7 | C-9 | M | | |
+| C-8 | C-10 | M | | |
+| C-9 | C-11 | M | | |
+| C-10 | C-12 | M | | |
+| C-11 | C-14 | V | | Back-dated and short-notice bookings: `reclassification` in the pattern version, `informal_activity` in the core version. Back-dating breaks the rule, so the core version's variable is the more exact. |
+| C-12 | C-15 | M | | |
+| C-13 | C-17 | V | | The holders' lease income and the lessees' higher lease rate: the same transfer, seen from the two sides. |
+| C-14 | C-20 | V | | Actor class `riders` vs `sellers.substitutes`. |
+| C-15 | none | OC | P | Pattern: `price_substitute` (private-hire fares) increase, by PC-8. **Overclaim.** PC-8's note names the opposing chain: resources shut out of the capped segment reappear in the uncapped one (RS-13). Here would-be taxi entrants move into uncapped private hire at a $300 permit (core C-13), adding supply as riders add demand (core C-20). By CR-12b, private-hire fares are `ambiguous`. The core version is right not to sign them, although it should have recorded the ambiguous row explicitly. |
+| C-16 | none | OC | E (core) | Unlicensed cabs cannot advertise (CR-11b). The core version records only `quality_information`. |
+| C-26 | C-21 | M | | |
+| C-27 | none | OC | E (core) | Disputes with unlicensed drivers settled without courts (CR-11b names courts explicitly). |
+| C-17 | none | OC | E (core) | Medallion loans rise. CR-9 (`complement`) with the core version's own C-18 derives it. |
+| C-18 | (C-17, lease rate) | OC | J | Lessees' earnings ambiguous. The core version records the lease rate rising and, by CR-7b, the scarcity return settling on the medallion, which implies lessees earn no lasting premium. That is consistent with the pattern version's "lease fees absorb most". Not recording lessees' earnings is a defensible choice. |
+| C-19 | C-22, C-23 | M | | Same per-reading signs. |
+| C-20 | none | OC | E (core) | App services' legal entry: U1-a increase, U1-b decrease, against an open-entry counterfactual in which they could take $400 licenses. CR-4b derives it under each reading. The core version uses app services only as a chain inside C-22 and C-23. |
+| C-21 | C-24 | M | | |
+| C-22 | (section 8 note) | OC | E (core) | Later buyers' earnings after loan payments, compared with driving under open entry: U1-a decrease. The core version calls it "a note on the path", but the comparison is with the counterfactual, so it is a consequence. CR-7c (the buyer paid the capitalized value) with erosion under U1-a gives the sign. |
+| C-23 | C-19 | M | | |
+| C-24 | none | OC | E (core) | Would-be entrants take next-best work at lower earnings. CR-3a and CR-4 derive it from the core version's own C-2. |
+| C-25 | C-28 | V | | Funding side vs spending side. |
+| C-28 | none | OC | E (core) | Riders' full cost per trip rises: waiting and side payments rise, and the meter fare is unchanged against the counterfactual, so no chain opposes. Arithmetic on the core version's own C-7 and C-11. |
+
+**Core-only consequences**
+
+| Core ID | Class | Cause | Note |
+|---|---|---|---|
+| C-6 | OP | A | First-year waits fall because window licenses add cabs. Needs A-N1 (window licenses are put into service, p 0.6). The chain is valid: CR-10a, and a vehicle must pass inspection to be licensed. The pattern version noted the larger initial fleet but signed nothing for riders in the short run. |
+| C-13 | OP | E (pattern) | Entry into private hire rises (CR-4b: taxi entry closed, private hire open). This is the chain the pattern version needed to see that its C-15 is ambiguous. |
+| C-16 | OP | E (pattern) | Number of taxi drivers ambiguous: fewer cabs, but holders run each medallion for more shifts (CR-7a). A valid point the pattern version missed; EN-3 covers only excluded entrants. |
+| C-25 | OP | E (pattern) | Transfer and permit fees rise. The pattern version omitted city fee revenue. Caveat: the variable is defined narrowly. If annual license fees are still charged, the smaller fleet yields less of them, so total fee revenue would be `ambiguous` (CR-12b). The core version should have said so. |
+| C-26 | OP | J | Later entrants' `resources_available_other_uses` decrease (the medallion price is a transfer to incumbents, CR-8b). Defensible as the buyer side of a capitalized asset (OC-7 in its 0.4 form says to record it). The core version's gloss ("buys no more than a $400 license would have") overstates it, though: by CR-7c the price buys the rent stream, so later buyers neither gain nor lose by their own ranking. |
+| C-27 | OP | E (pattern) | Resources used up in lobbying (CR-8c). A minor omission. |
+
+**Findings**
+- Pattern misapplied, with a design weakness in the pattern: PC-8 is applied to private-hire fares as an unconditional increase, although its own note names the opposing supply chain (RS-13), which is active here because the cap itself pushes entrants into the uncapped segment. PC-8's Then clause should carry this as an Unless clause, or as a condition for using RS-13 together with it: "where the cap excludes sellers who can enter the uncontrolled segment, the price there is `ambiguous`".
+- Errors in the pattern version: besides C-15, it omits private-hire entry (C-13), the ambiguous count of taxi drivers (C-16), fee revenue (C-25) and the cost of lobbying.
+- Errors in the core version: it omits RS-10-type effects that CR-11b derives (search cost, disputes), medallion loans, excluded entrants' earnings, full cost per trip and app-service entry. It treats later buyers' losses under U1-a as a path note, misreading 2.5. Its fee-revenue sign (C-25) holds only under a narrow variable. Its gloss on C-26 conflicts with its own CR-7c reading in C-18.
+- Limits of the core rules: none. The joint effect of a cap and an existing price rule was handled by CR-6, and the core version's note that CR-6 should say it covers an existing price rule which the policy makes bind is a fair request to clarify the wording.

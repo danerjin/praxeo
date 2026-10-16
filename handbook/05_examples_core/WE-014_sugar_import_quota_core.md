@@ -270,3 +270,59 @@ The gain to rights holders (C-14, C-15) is a transfer from sugar buyers (C-2, C-
 - CR-7c says a change in yield is captured by "whoever owns it when the change becomes expected". The quota rights did not exist before the policy; the rule had to be read as "whoever is granted the asset when it is created".
 - CR-12b refers to "a dominance pattern" for a dominance claim. For the first-year price (section 7) the dominance premise was simply A-1 (the quota binds from the first year); the core rules do not say whether a binding premise counts as a dominance premise.
 - Per-reading signs: U1 (dry versus total weight) gives the same sign under both readings (C-9); the convention was followed, though it adds nothing here.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** This is the closest agreement of the five cases, and there are no sign differences. Both versions give the same results. The quota cuts imports and raises the domestic price, increasingly as demand grows. Beet growers gain in price and output. The gap between the domestic and world price goes to the holders of quota rights, not to foreign sellers: DM-4 in one version, CR-5c with CR-7b and A-18 in the other. Rights and beet land gain value at announcement. Imports rush into the base-period window, and entry by new importers falls. Corn syrup is substituted and costs more. Blends are reshaped under the threshold. Makers of tradable sweetened goods lose output and jobs to imports, while local goods pass the cost on. The port refineries shrink. Varnholt shoppers buy in Ostria together with other groceries. Other exporters lose through the currency. The core version derives each of these without the pattern that the pattern version cites (EN-6, DM-4, TX-8, RS-9, RS-14, SB-4, TS-3), which confirms those patterns here. The differences are coverage choices and small omissions on both sides. The pattern version's ambiguous return for the port refineries rests on an unstated premise that the refineries are quota holders, which the policy record does not say.
+
+**Counts.** M 21, V 6, S 0, OP 4, OC 3. Causes over S, OP and OC (7 items): P 0, K 0, A 0, E 5, J 2.
+
+**Pattern version → core version**
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+|---|---|---|---|---|
+| C-1 | C-1, C-31 | M | | |
+| C-2 | C-3 | M | | |
+| C-3 | C-2, C-34 | M | | Both note that window stocks soften but do not reverse the first-year rise, and that the rise grows as demand grows (TS-3 / A-1 with CR-6). |
+| C-4 | C-5 | M | | |
+| C-5 | C-14, C-15 | M | | Who captures the gap: DM-4 and CR-5c with CR-7b (A-18) agree. |
+| C-6 | C-6, C-7 | M | | |
+| C-7 | C-11 | M | | |
+| C-8 | C-8 | M | | |
+| C-9 | C-9 | M | | The core version signs both readings of U1. |
+| C-10 | C-13, C-28 | M | | |
+| C-11 | C-10 | M | | |
+| C-12 | C-12 | M | | The core version adds A-N1 (groups can organize). The pattern version cites only A-1, leaving RS-7's own premise without an estimate, a small omission in the pattern version. |
+| C-13 | C-22 | M | | |
+| C-14 | C-23, C-24 | V | | Syrup expansion recorded as investment in capacity, plus corn sold to the mills. |
+| C-15 | C-16 | M | | |
+| C-16 | C-25 | V | | The core version signs only local sweetened goods. The pattern version also claims a bounded rise for tradable goods. That part is weak: if imports are close substitutes (A-9), the price of tradable goods barely moves, and the core version's silence is the safer recording. |
+| C-17 | C-27 | M | | |
+| C-18 | C-19 | M | | |
+| C-19 | C-20 | M | | |
+| C-20 | C-30 | M | | |
+| C-21 | C-29 | M | | Recorded as `quantity_complement` in the core version. Same claim. |
+| C-22 | C-26 | V | | Recorded on foreign makers as `quantity_substitute`. |
+| C-23 | C-32, C-33 | V | | The core version derives the TX-8 channel through the exchange rate and does not sign export-industry employment. |
+| C-24 | none | OC | E (core) | New beet-factory capacity. CR-7a with CR-10c on A-5 derives it, as the core version did for wet-milling capacity (C-23). |
+| C-25 | C-4, C-31 | V | | Total sugar bought falls, recorded as buyers' `quantity_demanded`. |
+| C-26 | C-17 | V | | Recorded on growers of other field crops (`quantity_supplied`) rather than on their buyers. |
+| C-27 | C-35 | M | | Both condition on A-19 (inelastic total demand). |
+| C-28 | none | OC | E (core) | Quota holders' and entrants' costs of registering, trading and leasing shares (CR-8c). The core version counts the officials' side (C-36) but not the holders'. |
+| C-29 | C-37, C-36 | M | | |
+| — (`refiners.port` return_on_capital, ambiguous) | (section 7, "separate") | OC | J | The pattern version nets quota rent against lost throughput in the owners' return. The policy record does not say the refineries are importers of record; the pattern version assumes it without an assumption ID. The core version flags it as unknown and declines to sign. The core version is more careful; with the premise, the pattern version's row is valid (one variable, two chains, CR-12b). |
+
+**Core-only consequences**
+
+| Core ID | Class | Cause | Note |
+|---|---|---|---|
+| C-18 | OP | E (pattern) | Beet factories employ more (CR-9, `input_to`). A minor omission. |
+| C-21 | OP | E (pattern) | Refining capacity shrinks in the long run (CR-10b). The pattern version stops at throughput and employment. |
+| C-24 | OP | J | Corn sold to the wet mills rises. The pattern version deliberately stops the corn chain at depth 4 as diffuse; the core version follows it. This is a depth-limit call. |
+| C-38 | OP | E (pattern) | Resources spent handling and separating blends only to stay under the threshold (CR-8c). The pattern version records the reshaping (C-9) but not its cost. |
+
+**Findings**
+- No pattern is wrong or overclaims here. EN-6 (as widened in 0.3), DM-4, TX-8, SB-4, RS-9, RS-14 and TS-3 are each reproduced by direct derivation with the same sign.
+- Errors in the pattern version: the refinery row rests on an unstated premise (refineries hold rights). C-12 lacks an estimate for RS-7's organization premise. C-16's claim of a rise for tradable sweetened goods is weak under A-9. It omits beet-factory jobs, refining capacity and the cost of reshaping into blends.
+- Errors in the core version: it omits beet-factory investment and holders' compliance costs.
+- Limits of the core rules: none. The core version's notes on CR-6 (a fixed quantity is the mirror case of a fixed price) and CR-7c (an asset created by the policy) are fair requests to clarify the wording.

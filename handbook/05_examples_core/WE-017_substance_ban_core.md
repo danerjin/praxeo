@@ -233,3 +233,59 @@ Prevented exchanges (CR-5a) between shops and users are C-1.
 - CR-4c "for each unit": the rule does not say which unit is the margin when a penalty is set per gram and the good is valued per dose. The shift to extract (C-17) needs the unit to be the dose; the rule could be read either way.
 - CR-1 and CR-6 on a partly enforced prohibition: CR-1 says an unenforced prohibition attaches a risk instead of removing the option, and CR-6's third margin covers exchanges outside the rule, but neither says how to treat the price of a prohibited good, which has no legal price to be "held". The rise in the informal price was derived through CR-5c (the seller must now be paid for risk) rather than CR-6.
 - CR-7c timing: K3 confiscates stock at the effective date, while the fall in the businesses' value happens at passage. CR-7c covers the second; whether the uncompensated stock loss is a CR-7c capital loss or a CR-8a transfer is not settled by the wording, so it was recorded under both `asset_value` and `resources_available_other_uses`.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree closely, with no sign differences. Prohibition, informal trade and its RS-10 effects, the risk premium, cross-border buying, substitution, the weight-graded shift to extract (EN-8), conviction records (EN-10), the tax-revenue ambiguity and the taxpayer cost all appear in both. The core version derived the EN-8 result directly from CR-4c applied per dose, and the EN-7 price rise through CR-5c. Its gaps section records that both were readings of the rule, but no difference in sign follows. The differences are omissions. The core version adds the fall in the value of shop businesses at passage (CR-7c), which the pattern version could have had from SB-4. It also adds importers' lost trade, shops running stock down before the date, the ambiguous legal price in the final weeks, and, on new premises, vacant premises and accessory sales. The pattern version adds a separate sales-tax line (a decrease, correct) and an ambiguous informal-seller earnings row. Two small errors are worth recording. The pattern version's section 7 lists stockpiles as a (+) chain on purchases after the date; they reduce purchases, though they keep consumption up. The core's C-31 (users' `resources_available_other_uses` decrease) is not signed for the class as a whole, since users who quit or switch to cheaper substitutes spend less.
+
+**Counts.** M 18, V 6, S 0, OP 6, OC 2. Causes over S, OP and OC (8 items): P 0, K 0, A 2, E 4 (pattern version 4, core version 0), J 2.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+|---|---|---|---|---|
+| C-1 | C-1 | M | | |
+| C-2 | C-2 | M | | |
+| C-3 | C-14, C-10 | V | | Pattern: `informal_activity` by sellers; core: informal sellers' `entry_rate` and users' `informal_activity`. |
+| C-4 | C-15 | V | | Short against medium horizon; same risk-premium claim. |
+| C-5 | C-5, C-6 | V | | Pattern: window `quantity_demanded`; core: window `quantity_traded` and users' `inventory_held`. |
+| C-6 | C-11 | M | | |
+| C-7 | C-12 | M | | |
+| C-8 | C-13 | V | | The core reports both readings of the related-plant provision; U1-a (not covered) matches the pattern version's increase. |
+| C-9 | C-17 | M | | Same result: EN-8 against CR-4c per dose. |
+| C-10 | C-18 | M | | |
+| C-11 | C-19 | M | | |
+| C-12 | C-22 | M | | |
+| C-13 | C-20 | M | | |
+| C-24 | C-21 | M | | |
+| C-14 | C-24 | M | | |
+| C-15 | C-23 | M | | |
+| C-16 | C-29 | M | | |
+| C-17 | — | OC | J | General sales tax decrease. The pattern version's argument is right: spending moved to legal goods pays the same rate, while spending moved to informal and Halvet sellers is untaxed. The core version kept only the all-taxes row (C-25, ambiguous), which matches pattern C-26. Splitting by tax is a recording choice. |
+| C-18 | C-28 | M | | |
+| C-19 | C-16 | V | | Pattern: prospective users, long run; core: regular users, medium. Both say fewer doses demanded. The core has no separate row for fewer new users. |
+| C-20 | — | OC | J | Informal sellers' `earnings` ambiguous. Defensible, but the counterfactual comparison is weak: many informal sellers would not have sold at all without the ban. |
+| C-21 | C-32 | M | | |
+| C-22 | C-31 | V | | Travel time to Halvet is part of the core's users' resources row. See the finding on C-31's sign. |
+| C-23 | C-30 | M | | |
+| C-25 | C-16, C-7 | M | | The core splits the short-run dip (stocks replace purchases, C-7) from the medium-run fall. |
+| C-26 | C-25 | M | | |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+|---|---|---|---|
+| C-3 | OP | E (pattern) | Shop businesses lose `asset_value` at passage. SB-4 explicitly covers a lasting fall in returns from a restriction. The pattern version recorded the stock loss (C-21) but not the capitalized fall in the value of the businesses. |
+| C-4 | OP | E (pattern) | Importers and wholesalers lose their legal trade (CR-9, `input_to`). Minor. |
+| C-8 | OP | E (pattern) | Shops run stock down before the date because stock left over must be destroyed or exported (RS-8 with K3). The pattern version mentions clearance sales only in prose. |
+| C-9 | OP | E (pattern) | Legal price in the final weeks is ambiguous: stockpiling demand against shops clearing stock (CR-12b). The pattern version described both forces in section 8 but did not record the consequence. |
+| C-26 | OP | A | Vacant shop premises; rests on the new premise A-N1. |
+| C-27 | OP | A | Accessory sales decrease; rests on the new premise A-N2. |
+
+### Findings
+
+- **No pattern appears wrong in this case.** EN-7, EN-8, EN-10, RS-10 and TX-10 all gave the same signs as the direct derivations. EN-8's result was reproduced from CR-4c with arithmetic on the per-dose penalty.
+- **Pattern-version reasoning slip (no sign effect).** Section 7 lists stockpiles as a (+) chain on users' `quantity_demanded` after the date. Stocks bought in the window replace later purchases (CR-10a), so they push the same way as the other chains. The combined decrease is unchanged.
+- **Pattern-version omission.** SB-4 was not applied to the shop businesses, although its "If" clause covers a restriction that lowers expected returns. The capital loss at passage is missing.
+- **Core rules.** No difference traces to a limit of the calculus (K = 0). The core version's notes on CR-4c (which unit is the margin) and on pricing a prohibited good (CR-5c rather than CR-6) concern wording; neither changed a sign.
+- **Core-version error (matched row).** C-31 (users' `resources_available_other_uses` decrease) is not signed for the whole class. Users who quit or switch to cheaper substitutes have more money for other uses. The decrease holds for those who keep buying at the higher price or travel, and for time spent (CR-8c). CR-3a (worse off by their own ranking) does not imply fewer resources.

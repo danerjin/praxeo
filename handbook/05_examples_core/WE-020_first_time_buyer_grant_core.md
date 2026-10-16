@@ -228,3 +228,61 @@ CR-3 and CR-8. Symmetry: grants are taxpayers' outlay; owners' gains from higher
 - CR-4 exception (changes in total means): it is stated for a price rise or a lower return on saving toward a fixed sum, and says the direction is ambiguous "unless a premise says which effect dominates". Two uses here stretch it: the grant as a lump of means toward a deposit target (C-7), and owners' asset gains carried into demand for larger homes (C-22). The second is not a relative-price change at all; the rule does not say whether an increase in means alone licenses any direction, so the chain rests wholly on A-18 and A-19.
 - CR-7b and CR-12b on incidence: as in other subsidy cases, CR-7b with A-20 gives owners a share, but whether grant holders' net price still falls needed A-1. The core rules do not say whether such a premise is a CR-12b dominance premise.
 - CR-7c and an eligibility threshold: CR-7c capitalizes a lasting change in yield into an asset's price. Here the yield change applies only to homes that sell at or under a nominal cap, which a home can cross as prices rise; the rule does not say how to treat an asset whose eligibility for the change is itself expected to lapse.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The versions agree on the grant's main effects: a lower net price for recipients, more first-time purchases, timing shifts at the announcement and the deadline, reclassification, the 24-month lock-in, capitalization into entry-level homes (SB-4 against CR-7c), higher prices and fewer purchases for buyers without a grant, more building under the cap, trade-up demand above the cap, ambiguous rents, agents' earnings, and the taxpayer cost. On incidence, DM-1 and CR-7b with A-20 give the same sign (`subsidy_share_received` increase for owners). As in WE-019, both need A-1 to keep the recipients' net price falling, and DM-1's "larger part" goes beyond what CR-7b derives. On CR-8 symmetry both versions are consistent. The owners' gain is matched by non-grant buyers' outlay (pattern C-25, core C-29), and for recipients by the grant, that is, by taxpayers (pattern C-24, core C-26). The pattern version also records the realized gain (C-27, OC-7). The one sign difference comes from symmetry in RS-4. The pattern version applies RS-4 only to the class the grant favors (first-time buyers moving from Lowen), so Lowen sales fall (C-21). The grant also raises entry-level prices for buyers who get no grant, and RS-4 moves some of them to Lowen. The core's ambiguous sign is right (CR-12b), and its C-18 is the omitted chain. The core version omits recipients' delayed resales (`turnover`), builders pricing new homes under the cap, land values and total building. The pattern version omits the rental units let, construction wages, applicants' compliance cost and the saving ambiguity.
+
+**Counts.** M 19, V 3, S 1, OP 6, OC 5. Causes over S, OP and OC (12 items): P 2, K 0, A 0, E 7 (pattern version 4, core version 3), J 3.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+|---|---|---|---|---|
+| C-1 | C-1 | M | | Both rest on A-1; neither gets the sign from DM-1 or CR-7b alone. |
+| C-2 | C-2 | M | | |
+| C-3 | C-3 | M | | |
+| C-4 | C-4 | M | | |
+| C-5 | C-8 | M | | |
+| C-6 | C-9 | V | | Value moved outside the contract price: `side_payments` against `reclassification`. |
+| C-7 | C-10 | M | | |
+| C-8 | — | OC | E (core) | Recipients' `turnover` decreases in the first 24 months. CR-1 op. 3 (clawback) with CR-4b gives it as directly as the core's C-10 (job changes). |
+| C-9 | C-13 | M | | |
+| C-10 | C-5 | M | | |
+| C-11 | C-14 | M | | Both from the announcement (SB-4 against CR-7c with CR-10). |
+| C-12 | C-16 | M | | |
+| C-13 | C-17 | M | | |
+| C-14 | C-11 | V | | Medium against long horizon. |
+| C-15 | — | OC | E (core) | Builders design and price new homes just under the cap (`reclassification`). The core recorded the same CR-4b move only for owners selling just above the cap (C-9). |
+| C-16 | C-24 | V | | Other building displaced: `quantity_substitute` against `quantity_traded` of other construction. |
+| C-17 | — | OC | E (core) | Developable land's `asset_value` increases. CR-9 (`input_to`) then CR-7c, with A-3 and A-10. The core rules derive it. |
+| C-18 | C-20 | M | | |
+| C-19 | C-25 | M | | The core adds A-N1 (commission pay) to carry service demand into earnings, a premise the pattern version left implicit. |
+| C-20 | C-6 | M | | |
+| C-21 | C-19 | S | P | Pattern: Lowen sales to Tamberlay-employed buyers decrease. Core: Lowen home prices ambiguous. **Core right.** RS-4 (CR-4, x: this side, y: the other side) applies to every class whose options change. The grant favors Tamberlay for first-time buyers (−), but its capitalization (C-11) makes Tamberlay dearer for buyers without a grant, some of whom move to Lowen (+, core C-18). The pattern version's variable faces the same two chains, so it is ambiguous too (CR-12b). |
+| C-22 | C-22 | M | | Both rest on A-18 and A-19. The core notes that CR-4's exception is stretched to cover a change in means without a relative-price change. |
+| C-23 | C-27 | M | | |
+| C-24 | C-26 | M | | |
+| C-25 | C-29 | M | | The CR-8 match for the owners' gain. Here the sign holds: non-grant buyers who still buy pay more for the same homes, and those priced out (C-17) move to Lowen or above the cap at their own cost. |
+| C-26 | — | OC | J | Total new homes ambiguous (entry-level up, other building down). The core kept the two components (C-11, C-24) without combining them on a total. Both are defensible. |
+| C-27 | — | OC | J | Owners' `resources_available_other_uses` increase when they sell or borrow (OC-7). The core records the same gain as `asset_value` (C-14). Recording the realized form as well is defensible, and the pattern version paired it with the matching outlay (C-25). |
+| C-28 | C-15 | M | | DM-1 against CR-7b: same sign. "Larger part" in the pattern version's prose is beyond what CR-7b gives (see findings). |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+|---|---|---|---|
+| C-7 | OP | J | First-time buyers' `saving` ambiguous (CR-4 exception: the grant lowers the saving needed for a fixed deposit, while buying sooner raises the payoff to saving now). Defensible; the pattern version had no prompt for it. |
+| C-12 | OP | E (pattern) | Landlords supply fewer entry-level rental units. This is a chain the pattern version used inside C-18 but did not record. |
+| C-18 | OP | P | Buyers without a grant move to Lowen (`cross_border_purchases` increase). The pattern version applied RS-4 only to the favored class (see C-21). |
+| C-21 | OP | E (pattern) | Rental units let decrease. Both rent chains reduce units let (landlords sell; renters leave to buy), so CR-12a gives a decrease. The pattern version stopped at the ambiguous rent. |
+| C-23 | OP | E (pattern) | Construction `wage_rate` increases where labor is fully used (A-11). SB-3 gives the quantity shift but not the price of the resource drawn in. |
+| C-28 | OP | E (pattern) | Applicants' `compliance_cost` (declarations, occupancy proof). CR-8c; minor. |
+
+### Findings
+
+- **Pattern misapplied (P).** RS-4 was applied to first-time buyers only (C-20, C-21). Its own statement ("activity and purchases move to whichever side the policy favors") must be applied to each actor class. For buyers without a grant, the capitalized price disfavors Tamberlay. The pattern is sound; the application is one-sided. This is the kind of asymmetry CR-8's and CR-4's symmetry tests are meant to catch.
+- **DM-1 says more than its derivation gives.** DM-1 says that while supply is slow, owners receive "the larger part" of the grant. CR-7b gives a direction, not a share above one half. The variable sign is unaffected, and both versions need A-1 for the recipients' net price.
+- **CR-8 symmetry is satisfied in both versions.** Every gain counted (owners' asset values, recipients' grant) has its matching outlay (non-grant buyers, taxpayers). The pattern version recorded the realized form as well (C-27 with C-25).
+- **Core rules.** No difference traces to a limit of the calculus (K = 0). The core's notes on CR-4's exception (a change in means alone) and on CR-7c with a nominal eligibility cap are real ambiguities in wording; both versions resolved them with the same premises (A-18, A-19; TS-3 or arithmetic).
+- **Core-version omissions.** Recipients' turnover, builders' bunching under the cap, and developable land's value. All three are derivable from CR-1, CR-4, CR-7c and CR-9.

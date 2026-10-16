@@ -217,3 +217,47 @@ Case assumptions are used as given. New premises added by this re-run are marked
 - CR-9 relations: the insurance contract (insurer to shop owner) is an exchange relation, but none of the 2.8 types (substitute, complement, input_to, same_market_other_segment, across_border) fits it.
 - The unclear subrogation provision is both a reading (U1) and a case assumption (A-5, p 0.65). The normal form says readings get no probability; here the record gave one. Signs were reported per reading and A-5 cited for the empirical part (whether insurers in fact decline).
 - CR-4 does not fit a lump-sum levy: no choice changes what is paid. CR-1 operation 4 and CR-8 carry the whole chain; CR-4's exception (change in total means) is the only link to behavior, and it gives no direction for a named good.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** Both versions reach Bastiat's point by the same route: households lose $80 each; for windows that would have been replaced anyway the program is a transfer to shop owners and insurers, not new glazing work; homeowners pay more or wait longer for glaziers; owners who heard the debate waited; some false claims pass; and administration costs something. The structural difference is in how spending effects are recorded. The pattern version follows OC-1 and OC-5 and defines its actor classes by the effect (`sellers.forgone` lose, `sellers.recipients` gain), so each sign holds by construction, and it reports local employment overall as ambiguous. The core version nets the two into Brackwater sellers as a whole and, using the insurers' leak out of town (A-10) and a new premise on spending shares (A-N3, p 0.55), signs local sales and staffing a decrease under reading U1-a. That sign is defensible under the method's per-premise cut-off but fragile: it holds only if A-N2, A-N3 and A-10 all hold, whose joint probability is well below 0.5. The pattern version overclaims once (home repairs completed within the year fall, when its own timeline has the program finished by early summer, so home work is delayed, not forgone) and claims glaziers' hours rise without a premise on their ability to add hours. The core version omitted tax revenue and over-aggregated the waiting effect to all damaged shop owners.
+
+Counts: M 6, V 7, S 2, OP 2, OC 2.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-2 | V | | Free window recorded as resources increase rather than price_paid decrease. |
+| C-2 | C-3, C-13 | S | J | Pattern: glaziers' hours_worked increase. Core: shop windows replaced increase (C-3), earnings ambiguous (C-13), no sign for total glazier labor because, with capacity limited (A-3), extra shop work displaces home work (C-12). With capacity limited but not fixed, CR-4 gives hours up or unchanged; "increase" needs a premise that some glaziers can and will add hours. Both defensible; the pattern version should name that premise. |
+| C-3 | none | OC | E | tax_revenue increase (CR-8b, Tier A). Core-version omission; it records only the payers' side (C-1). |
+| C-4 | C-2 | M | | Core's class covers all damaged owners; the claim for those who would have replaced is the same. |
+| C-5 | C-11 | V | | Core gives per-reading signs (U1-a increase; U1-b ambiguous); the record assumes U1-a. |
+| C-6 | C-4 | M | | Same sign for the pattern's subgroup (owners who would have replaced). The core records it for all damaged owners, which is too broad; see Findings. |
+| C-7 | C-6 | M | | |
+| C-8 | C-7 | M | | Core omits glaziers as lobbyists; minor. |
+| C-9 | C-12 | M | | |
+| C-10 | C-14 | V | | Pattern's `sellers.recipients` gain by construction; core nets them with payers' sellers into `sellers.local`. The substantive difference is in the "—" row below. |
+| C-11 | C-15 | V | | As C-10, for employment and hours of sellers that lose spending. |
+| C-12 | C-15 | V | | As C-10, for sellers that gain spending. |
+| C-13 | C-1 | M | | |
+| C-14 | C-14 | V | | As C-10. Note that the pattern's Tier A holds only because the class is defined by where the money would have gone; for a named market (Brackwater sellers) the core needs A-N2. |
+| C-15 | C-12 | OC | P | Pattern: home repairs completed within the year decrease (SB-3). By the pattern version's own time structure the program is finished by early summer, so glaziers' time is displaced in time, not over the year; C-9 (price or wait, at least one) is the valid claim, and a fall in repairs within the year needs a premise that some homeowners forgo the repair altogether. SB-3 misapplied to a timing shift (2.5, timing shifts). |
+| C-16 | C-8, C-9, C-10 | V | | Split into enforcement cost, general budget and the use of the reserve. |
+| — (workers outside glazing, employment and hours, ambiguous) | C-15 | S | A | Pattern ambiguous; core U1-a at_least_one_decrease, U1-b ambiguous. The core's dominance comes from CR-8b with A-10 (insurers' share leaves town) plus the new premise A-N3 (p 0.55) that local recipients do not spend a larger share locally. Valid under the per-premise cut-off; the joint probability of A-N2, A-N3 and A-10 is about 0.37, so the pattern version's ambiguous is the more cautious report. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-5 | OP | A | Shops' own sales fall while boarded up, resting on the new premise A-N1. Recorded for all damaged owners, though owners who would not have replaced get their windows sooner and sell more (the pattern version notes this in section 8); valid only for the waiting subgroup. |
+| C-13 | OP | J | Glaziers' earnings ambiguous (fixed schedule against the post-storm price; displaced work). Unsigned. |
+
+### Findings
+
+- **Pattern misapplied (SB-3).** Pattern C-15 reads a displacement in time as a fall in quantity within the year. SB-3 should be applied with the timing convention of 2.5 when the subsidized use is temporary.
+- **Pattern framing (OC-1, OC-5).** Classes such as `sellers.forgone` and `sellers.recipients` are defined by the sign of the effect, so their consequences cannot fail. They are correct but uninformative for scoring; for any named market the sign needs a premise (here A-N2), as the core version shows.
+- **Error in the core version (aggregation).** C-4 (wait_time increase) and C-5 (own sales decrease) are recorded for all damaged shop owners. For owners who would not have replaced their windows soon, the program brings the window sooner; for the class as a whole CR-12b gives ambiguous. The signs hold only for owners who would have replaced promptly, as the pattern version records.
+- **Error in the core version (omission).** tax_revenue increase.
+- **Core version fragility.** C-14 and C-15 under U1-a rest on a premise at p 0.55 joined with two others; the method's per-premise cut-off admits it, but the joint probability is below 0.5.
+- **Limit of the core rules.** The core version's gap (a) is real but narrow: CR-8a says a fall in means reduces some use, and no core rule says which named purchase falls. This did not produce a sign difference with any valid pattern claim; OC-1's Tier A sign for named sellers holds only by defining the class by the effect.

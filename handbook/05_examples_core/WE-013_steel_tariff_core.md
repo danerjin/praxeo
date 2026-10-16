@@ -235,3 +235,56 @@ Note on A-N2. CR-7a gives the direction of the domestic price (toward the import
 - CR-7b: "the burden settles on the side without alternatives" was applied to incidence between Halvern buyers and foreign sellers (C-1). The rule does not say how to treat a case where one side has many alternatives (foreign mills' other markets) and the other has some (domestic mills): it licenses "Halvern buyers bear most", and A-1 had to supply "foreign sellers do not absorb most".
 - CR-7c says a lasting change in yield is captured by "whoever owns it when the change becomes expected". With a fixed three-year term and an uncertain renewal (A-10), it is unclear whether the change counts as "lasting"; C-17 was reported on A-11 (the three-year term), with the renewal premium left to A-10.
 - CR-12b refers to "a dominance pattern" for a dominance claim. No dominance claim was needed in this case.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree closely. Incidence of the tariff falls on Halvern's buyers, not on foreign mills: DM-1 in one version, CR-7b in the other, from the same small-buyer premise (A-1). The domestic price rises toward the import price. Mills gain in price, output, investment and share value, and steel users lose. Users that compete with untaxed imported finished goods cut output, and some plants move abroad at replacement. Builders' clients pay more. Other exporters lose. The last point is notable: the core version derives the TX-8 export channel without the pattern, through CR-9 and CR-6 in the foreign-exchange market, so TX-8 is confirmed as a valid shortcut. There are no opposite signs. Two items differ in strength: for mill workers and for steel users' workers, the core version signs `employment` alone where the pattern version uses the group sign (employment or hours). On the 2.5 rule for group consequences, the core version overclaims. The remaining differences are omissions. The core version leaves out the non-price rationing of exclusions, the suppliers of ore and scrap, and the ambiguous return on new mill capacity. The pattern version leaves out the drop in construction quantity and the resources drawn from other domestic producers into the mills.
+
+**Counts.** M 16, V 8, S 2, OP 2, OC 3. Causes over S, OP and OC (7 items): P 0, K 0, A 0, E 6, J 1.
+
+**Pattern version → core version**
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+|---|---|---|---|---|
+| C-1 | C-4 | M | | |
+| C-2 | C-6 | M | | |
+| C-3 | C-18 | S | E (core) | Pattern: `employment, hours_worked` at_least_one_increase. Core: `employment` increase. **Pattern right**: mills with spare capacity can add shifts and overtime before adding staff. CR-4c gives "more labor" but not which margin, so 2.5 requires the group sign. The core version's claim may well hold in the medium run, but no premise supports choosing headcount. |
+| C-4 | C-2 | V | | Actor class. |
+| C-5 | C-1 | M | | Incidence: both put most of the tariff on Halvern's buyers (DM-1 / CR-7b with A-1). Correct for a small buyer on the world market. |
+| C-6 | C-5 | M | | The core version records A-N2 (mills may hold prices down to avoid exclusions), uncited. A fair caution the pattern version lacks. |
+| C-7 | C-3 | M | | |
+| C-8 | C-7, C-8 | M | | Both sign the window separately. The core version adds stocks held on 1 April. |
+| C-9 | C-9 | M | | |
+| C-10 | C-10 | M | | |
+| C-11 | none | OC | E (core) | Exclusions allocated by connections and objections rather than by price. CR-6 derives it: relief is scarce and unpriced, so the scarce side chooses by other criteria (A-5). The core version records only the costs of applying (C-10) and lobbying (C-11). |
+| C-12 | C-11 | V | | The core version merges the mills' and the users' lobbying into `lobby.steel`. |
+| C-13 | C-11 | V | | As above. |
+| C-14 | C-14 | M | | |
+| C-15 | C-19 | V | | Narrowed to import-competing users. |
+| C-16 | C-21 | S | E (core) | Pattern: at_least_one_decrease (employment, hours). Core: `employment` decrease. **Pattern right**, for the same reason as C-3. |
+| C-17 | C-20 | V | | Recorded on foreign sellers rather than on Halvern's buyers. |
+| C-18 | C-13 | M | | The core version needed A-N1 (exporters are price takers abroad). The pattern version left that premise implicit in RS-6. The core version's point is fair. |
+| C-19 | C-24, C-25 | V | | The core version splits the channel into the exchange rate (crowns per unit) and quantity, and does not sign export-industry employment. |
+| C-20 | C-15 | M | | |
+| C-21 | C-17 | M | | |
+| C-22 | C-12 | V | | Pattern: owners' `asset_value` falls at announcement (SB-4). Core: `return_on_capital` falls (medium). The same loss to owners of steel-using firms, recorded as a yield rather than capitalized. CR-7c would give the pattern version's form. |
+| C-23 | none | OC | E (core) | More demand for scrap, ore and energy from the mills. CR-9 (`input_to`) derives it; the core version followed only labor as an input to the mills. |
+| C-24 | C-22 | M | | |
+| C-25 | C-16 | M | | |
+| C-26 | C-27 | M | | |
+| C-27 | C-3, C-26 | M | | |
+| C-28 | C-29 | V | | Funding side vs spending side of the same CR-8 link. |
+| — (new mill capacity, `return_on_capital`, ambiguous) | none | OC | J | A one-time cost against a stream of returns (DM-3, CR-12b). The core version reports the investment (C-14) and leaves its ex post return unsigned. Both are defensible: "ambiguous by design" adds little. |
+
+**Core-only consequences**
+
+| Core ID | Class | Cause | Note |
+|---|---|---|---|
+| C-23 | OP | E (pattern) | Buyers of construction buy less. RS-14 names the quantity side; the pattern version records only the price (C-24). |
+| C-28 | OP | E (pattern) | Labor, energy and capital drawn into the mills are withdrawn from other domestic producers (CR-8a, the seen and the unseen). The pattern version has no such consequence, although the point is central to EIOL ch. 11. |
+
+**Findings**
+- No pattern is wrong or overclaims here. TX-7, TX-8, RS-14, RS-15, SB-4 and DM-1 all give the same signs as direct derivation. TX-8 in particular is reproduced by CR-9 and CR-6 in the foreign-exchange market.
+- Errors in the core version: C-18 and C-21 sign `employment` alone where the group sign is warranted (2.5). It omits non-price allocation of exclusions (CR-6), the mills' input suppliers (CR-9) and the capitalized loss to owners of steel-using firms in the form CR-7c gives.
+- Errors in the pattern version: it omits construction quantity (C-23 of the core version) and the CR-8a withdrawal of resources from other producers (C-28 of the core version). It leaves implicit the premise that machinery exporters are price takers abroad (A-N1 of the core version).
+- Limits of the core rules: none. The core version's note that the foreign-exchange link has no fitting relation type in `02_ontology.md` 2.8 is a gap in the ontology, not in the calculus.

@@ -237,3 +237,113 @@ CR-8's symmetry: the higher rents received by landlords (C-1) are matched by wha
 - CR-6 with CR-12b on a repeal (C-28): CR-6 read symmetrically says removing the ceiling lifts the pressure displaced to the exempt segment, while CR-4 says sitting tenants priced out move into it. Arithmetic on occupied units (households housed in covered units can only rise if covered units in use rise) could decide the sign, but CR-12b speaks of "a premise" and does not say whether an accounting identity counts as one. Left ambiguous.
 - CR-4 for lobbying (C-26): the rule compares x (accept) and y (lobby) for one change, but on a repeal the counterfactual also has lobbying, in the other direction. The rule does not say how to sign the change in effort when both paths have a stake.
 - CR-10b and the persistence field: CR-10b says changes that cost something to undo persist, but persistence is measured against the never-imposed path while signs are measured against the policy staying. For transition effects with no counterpart on either path (buyouts, holding units empty in the window) neither "none" nor "full" fits; "n/a" was used.
+
+## Comparison with the pattern-based analysis
+
+The two versions agree on almost every flow that the repeal reverses. Rents rise for sitting tenants, and landlords receive more. Search costs, selection by connections and key money fall. Turnover and job changes rise. Maintenance, renovation and quality rise. New conversions fall. Building values rise from the announcement. Rents in neighboring cities are ambiguous. Both versions also set persistence to partial on the same stock effects. They disagree on three things.
+
+1. **Lobbying.** The pattern version treats it as ambiguous for all parties. The core version signs sitting tenants' lobbying as an increase but leaves owners' lobbying ambiguous, on the very argument that also applies to tenants. It is inconsistent.
+2. **Exempt-unit rents in the medium run, and new construction that follows them.** The pattern version gives decrease; the core version gives ambiguous. The pattern version is right on an occupancy identity that the core version stated in its gaps, and had used in WE-001, but did not apply here.
+3. **Exempt rents in the short window.** The core version correctly finds an increase. The pattern version's "short–medium decrease" overlooks its own window effect (C-12).
+
+The core version adds the buyer side of the capital gain, new tenants' prices on vacancy, and building-trade work. Its building-trade claim (C-32), and its condominium-price claim (C-31), each drop one of the two chains that its own WE-001 analysis had used, so both overclaim.
+
+**Counts:** M 18, V 4, S 3, OP 4, OC 2. Causes over S, OP and OC: P 0, K 0, A 0, E 7, J 2.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-2 | M | | The pattern version leaves persistence as "—"; the core version gives "partial (short); none (from the second anniversary)". The phase-in limits the rise, so the core value is more precise. This is not a conflicting value. |
+| C-2 | C-1 | M | | |
+| C-3 | none (implied by C-20, C-21) | OC | E (core) | CR-6 applied to a freed price gives `excess_demand` decrease directly. The core version derived its consequences (C-20, C-21) without recording the shortage itself. |
+| C-4 | C-20 | M | | |
+| C-5 | C-21 | M | | |
+| C-6 | C-22, C-23 | M | | The core version needed A-N2 to restate WE-001's premise that key money and sublets existed. The pattern version relied on it implicitly. |
+| C-7 | C-15 | M | | |
+| C-8 | C-10 | M | | Persistence partial in both. |
+| C-9 | C-13 | M | | Persistence agrees: full for buildings already converted, none for the flow. |
+| C-10 | C-9, C-14 | V | | The pattern version uses `quantity_supplied`; the core version uses `units_held_vacant` and `capital_stock_target`, with new premise A-N1 for units held out of use. |
+| C-11 | C-16, C-17 | M | | |
+| C-12 | C-8 | V | | Lettings fall in the window (pattern) or units are held vacant (core): the same response under two variables. |
+| C-13 | C-18 | M | | |
+| C-14 | C-25 (tenants, increase), C-26 (owners, ambiguous) | S | E (core) | The core version's C-26 reasoning applies equally to tenants. Under the counterfactual (ordinance in force), tenants keep lobbying to defend it (WE-001 core C-21). After the repeal they lobby to restore it. CR-4 compares x and y within one path, and with stakes on both paths CR-12b gives ambiguous. The pattern version is right; the core version applied its own argument to one side only. |
+| C-15 | C-27 (short, increase), C-28 (medium; long, ambiguous) | S | E (core) | **Short:** the core version is right. Units held vacant in the window push seekers into exempt units (CR-4, CR-9), and the pattern version's "short–medium decrease" overlooks its own C-12 (PC-8 in reverse misapplied for the window). **Medium:** the pattern version is right. The core version's "+" chain (sitting tenants who move add to exempt demand) is offset one for one by the seeker who takes the freed covered unit. The WE-001 core analysis (its C-24) used exactly this identity: "each sitting tenant who stays blocks one seeker who goes elsewhere". Net households move into the covered segment only as covered units in use rise (C-9, C-13, C-14 are all increases). So exempt demand falls and CR-6 gives a decrease. The core version had the arithmetic, which CR-12b admits as a premise (it was used that way in WE-023, A-N2), but did not apply it. |
+| C-16 | C-30 | S | E (core) | Follows C-15 (medium). Given A-8, the decrease holds. The core version's ambiguity is inherited from its C-28. |
+| C-17 | C-4 | M | | |
+| C-18 | C-31 | V | | The pattern version records fewer condominiums from new conversions (quantity); the core version records a higher condominium price. The quantity claim is safe. The core price claim drops the substitution chain that WE-001 core C-23 used (some seekers who were rationed out would have bought). By symmetry it should be ambiguous (see Findings). |
+| C-19 | C-19 | M | | |
+| C-20 | C-12 | M | | |
+| C-21 | C-29 | M | | |
+| C-22 | C-11 | M | | |
+| C-23 | C-14 | M | | |
+| C-24 | C-24 | M | | |
+| C-25 | C-7 | M | | |
+| C-26 | C-6 | V | | `employment` of board staff vs `enforcement_cost`: the same release of resources. |
+| — (quality_adjusted_price, ambiguous) | none | OC | J | `quality_adjusted_price` is in the variable list, and CR-12b over rent (+) and quality (+) would give ambiguous. The core version did not combine price and quality, which is consistent with CR-12c's caution about netting different variables. Both choices are defensible. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-3 | OP | E (pattern) | New tenants of covered units pay market rents on vacancy: PC-3 in reverse for outsiders. The pattern version mentions it only inside a section 7 total-cost row. |
+| C-5 | OP | E (pattern) | Later buyers pay the capitalized price: CR-8 symmetry with C-4. OC-7's own symmetry clause requires it. The pattern version describes it in text only. |
+| C-32 | OP | E (core) | Building-trade work. WE-001 core C-27 signed trades' earnings ambiguous because conversion works also use them. On the repeal, fewer conversions (−) and more maintenance (+) give ambiguous by the same chains. The core version kept only the "+" chain. |
+| C-33 | OP | J | Sitting tenants' means fall as rent rises. The pattern version left it out as the same event as C-1 seen from the budget. Recording it follows CR-8 symmetry. Both are defensible. |
+
+### Findings
+
+- **Error in the pattern version:** C-15 is signed decrease over "short–medium", although the pattern version's own C-12 holds vacant covered units off the market in the announcement window. In that window exempt rents rise (core C-27). PC-8 "in reverse" should start at the effective date.
+- **Errors in the core version:** (1) C-25 vs C-26: lobbying is signed for tenants and left ambiguous for owners on the same two-path argument. (2) C-28 and C-30 stay ambiguous although the occupancy identity that the core version stated in its gaps, and used in WE-001, resolves them to decrease. (3) C-31 and C-32 each drop the opposing chain that the matching WE-001 core consequence (C-23, C-27) contained, so the repeal is signed where the original was ambiguous. (4) Excess demand (pattern C-3) is not recorded.
+- **Limit of the core rules (not a K item):** CR-4 compares accepting and lobbying within one path. On a repeal, both the counterfactual and the repeal path have lobbying, by different parties for different ends, and no core rule says how to sign the change in effort. RS-7 as applied in the pattern versions defaults to ambiguous, which is the CR-12b answer once the counterfactual's lobbying is treated as an opposing chain. CR-12b should also say explicitly that an accounting identity counts as a dominance premise.
+- **No wrong pattern found.** PC-8 "in reverse" is valid in the medium run (by the identity above) but not for the announcement window.
+
+## Metamorphic check (core versions)
+
+Against `WE-001_rent_freeze_core.md`. Persistence is compared with a Riverton that never had the ordinance; "n/a" marks transition effects.
+
+| Original consequence ID | Its sign | Repeal consequence ID(s) | Sign | Reverses? | Persistence | Reason |
+| --- | --- | --- | --- | --- | --- | --- |
+| C-1 (sitting tenants' rent, short, announcement) | ambiguous | none | — | does not reverse | n/a | The repeal's announcement effect works through vacant units held empty (C-8), not through rents at renewal. |
+| C-2 (sitting tenants' rent, medium) | decrease | C-2 | increase | reverses | partial (short); none (from the second anniversary) | The 15% steps cap the reversal for two years. |
+| C-3 (sitting tenants' rent, long) | decrease | C-2 | increase | reverses | none | |
+| C-4 (landlords' net price) | decrease | C-1 | increase | reverses | partial (short); none | |
+| C-5 (rent at renewal in the window) | increase | none | — | does not reverse | n/a | No counterpart: the repeal sets no base date. |
+| C-6 (maintenance) | U1-a: decrease; U1-b: ambiguous | C-10 | increase | reverses (U1-a); partly (U1-b) | partial | Deferred maintenance that became damage costs more to repair (A-10). |
+| C-7 (quality) | U1-a: decrease; U1-b: ambiguous | C-12 | increase | partly reverses | partial | Gradual (A-10, A-18). |
+| C-8 (turnover) | decrease | C-15 | increase | reverses | none | |
+| C-9 (job changes) | decrease | C-19 | increase | reverses | none | |
+| C-10 (excess demand) | increase | not recorded (implied by C-20, C-21) | (decrease) | reverses (implicitly) | none | Core repeal omission. |
+| C-11 (search cost) | increase | C-20 | decrease | reverses | none | Displaced sitting tenants newly bear search costs (C-18). |
+| C-12 (non-price allocation) | increase | C-21 | decrease | reverses | none | |
+| C-13 (key money) | increase | C-22 | decrease | reverses | none | |
+| C-14 (illegal sublets) | increase | C-23 | decrease | reverses | none | |
+| C-15 (disputes outside courts) | increase | not recorded | — | not recorded | — | It would reverse with C-23 (CR-11b in reverse). Core repeal omission. |
+| C-16 (covered rental stock) | decrease | C-14 | increase | partly reverses | partial | Converted buildings stay converted (A-9); restoration is slow (A-18). |
+| C-17 (units held vacant, medium) | increase | C-8 (short), C-9 (medium; long) | increase (window), then decrease | reverses after a temporary rise | partial | |
+| C-18 (landlords' compliance cost) | increase | C-6 (board cost only) | decrease (board) | partly reverses | — | The K3 conversion permit stays. Landlords' own compliance costs are not recorded in the repeal. |
+| C-19 (turnover in converting buildings) | increase | C-13 (fewer conversions) | decrease (flow) | partly reverses | full for tenants already displaced | |
+| C-20 (landlords' lobbying) | increase | C-26 | ambiguous | does not reverse | n/a | |
+| C-21 (tenants' lobbying) | increase | C-25 | increase | does not reverse | n/a | Should be ambiguous (see comparison). |
+| C-22 (building values) | decrease | C-4 | increase | partly reverses | partial | It reverses for the asset, not for those who sold under the ordinance (CR-7c). |
+| C-23 (condominium price) | ambiguous | C-31 | increase | does not mirror | partial | The repeal keeps only the conversion chain. By symmetry it should be ambiguous (core error). |
+| C-24 (exempt rents) | ambiguous | C-27 (short), C-28 (medium; long) | increase (window); ambiguous | consistent (both ambiguous); see comparison | none | Both core analyses leave this ambiguous. The pattern versions sign it in both. |
+| C-25 (new construction) | ambiguous | C-30 | ambiguous | consistent | partial | |
+| C-26 (neighboring rents) | ambiguous | C-29 | ambiguous | consistent | none | |
+| C-27 (repair trades' earnings) | ambiguous | C-32 | increase | does not mirror | none | The repeal drops the conversion-works chain (core error). |
+| C-28 (seekers' full cost per unit) | ambiguous | not recorded | — | not recorded | — | |
+| C-29 (new leases on covered units) | decrease | C-24 | increase | reverses | partial | Converted units do not return. |
+| C-30 (taxpayers) | decrease | C-7 | increase | reverses, delayed | none | Depends on A-20. |
+| C-31 (enforcement cost) | increase | C-6 | decrease | reverses, delayed | none | |
+| C-32 (landlords' means) | decrease | not recorded (implied by C-1) | — | reverses (implicitly) | — | |
+| C-33 (sitting tenants' means) | increase | C-33 | decrease | reverses | partial (short); none | |
+| C-34 (seekers' means) | decrease | not recorded (implied by C-20, C-22) | — | reverses (implicitly) | — | |
+
+**Agreement with the pattern version's metamorphic check.** The two checks agree on every flow that reverses (rents, shortage margins, turnover, job changes, maintenance and quality, key money), on partial persistence for maintenance, conversions, the rental stock and condominiums, on the absence of a counterpart for the rent rush before the original base date, and on "does not reverse" for lobbying. They disagree in four places.
+
+1. **Exempt rents and new construction.** The pattern checks have increase → decrease, "reverses". The core checks have ambiguous → ambiguous. Both core versions leave the sign open; both pattern versions sign it. By the occupancy identity, the pattern sign is right for the repeal in the medium run. The core WE-001 ambiguity is a separate question, because there the exempt-supply chain from new construction opposes it.
+2. **Neighboring rents.** The pattern check reads increase → ambiguous as "does not reverse". The core check reads ambiguous → ambiguous as consistent. The difference lies in the original analyses, not in the repeals.
+3. **Condominiums and repair trades.** The pattern check records only the quantity of conversions ("partly reverses"). The core check exposes that the core repeal signs prices and trades' work where the core original found them ambiguous. That is a symmetry failure in the core repeal, not in the rules.
+4. **Lobbying.** Both checks say "does not reverse". The pattern check has ambiguous for everyone. The core check has tenants signed increase in both the original and the repeal, which an asymmetric CR-4 reading produces.
+
+Persistence values agree wherever both versions give one. The core version also fills in persistence for flows such as rent (partial during the phase-in), where the pattern version uses "—".

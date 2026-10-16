@@ -259,3 +259,70 @@ Prevented exchanges (CR-5a) between clients and non-degreed designers are record
 - CR-7b and CR-7c: the gain from restricted entry settles on license holders, but the license cannot be sold, so CR-7c's "price of a durable asset" has no market price here. The analysis recorded the gain as `earnings` rather than `asset_value`; CR-7 does not say how to record capitalization into a non-transferable right.
 - CR-6: its first paragraph (price formation) was used for a price that is free to move after supply falls, while its second part (displaced pressure) applies only where a price is held fixed. Using CR-6 as the general rule for price rises after an entry restriction is a reading, not an explicit statement; a sentence saying that CR-6's first paragraph covers any change in planned sales would settle it.
 - CR-5c for supervised positions: the trainee's lower money wage follows from CR-5c only if the supervised hours are treated as part of what the trainee "may receive"; the rule does not say that a non-money benefit counts as part of the terms.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the core of the case: EN-1's exits and lower entry, the price rise for both client groups as grandfathered designers leave, informal residential practice and its RS-10 effects, the EN-9 squeeze on trainees, the RS-11 lapse lock-in, the retail and architect substitution, and the taxpayer cost. There are two sign differences. The pattern version's increase in demand for degree places (C-7) cites EN-1, which does not say this. The core version is right that the sign is ambiguous: the degree is now required (+), but the degree route now also carries 3,500 hours and an exam (−) (CR-4b both ways, CR-12b). The pattern version's ambiguous earnings for grandfathered designers (C-24) nets fees and continuing education, a `compliance_cost`, against `earnings`; CR-12c forbids this, so the core's increase (C-21) is better supported. Most other differences are omissions on each side. The core version adds a dip after the announcement window, the stamp cost, trainees' wait, the readings of the "styling" provision, enforcement cost and the architects' fee rise, and two new premises (A-N1, A-N2) that carry it into fit-out work and retail design labor. It drops several pattern consequences that the core rules could derive: `share_of_sellers_licensed`, informal `search_cost`, commercial `quality_per_unit`, and the degree-route earnings trade-off. It also drops residential quality, misreading A-14's sub-0.5 probability as a bar to reporting an ambiguous sign. The core's two client `resources_available_other_uses` decreases (C-37, C-38) overclaim: clients who cancel or downsize have more money for other uses, not less.
+
+**Counts.** M 14, V 8, S 2, OP 14, OC 5. Causes over S, OP and OC (21 items): P 1, K 0, A 4, E 14 (pattern version 8, core version 6), J 2.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+|---|---|---|---|---|
+| C-1 | — | OC | E (core) | `share_of_sellers_licensed` increase is the stated aim. It follows directly from CR-1 op. 1 with A-2; the core version recorded only the fall in seller numbers. |
+| C-2 | C-1 | V | | Pattern: recent non-degreed designers; core: all legal sellers. Same exit claim. |
+| C-3 | C-5 | M | | |
+| C-4 | C-3 | M | | Core class (all licensed) includes the grandfathered. |
+| C-5 | C-2, C-22 | M | | Core adds the long-run fall in seller numbers (C-22) as its own row. |
+| C-6 | C-39 | V | | Same cost of qualifying: pattern records it as `compliance_cost`, core as `resources_available_other_uses`. |
+| C-7 | C-8 | S | P | Pattern: degree places increase (cites EN-1). Core: ambiguous. **Core right.** EN-1 says nothing about demand for the qualifying input. Directly from CR-4b: entrants who would have entered without a degree now need one (+), and those who would have taken the degree anyway now face 3,500 hours and an exam on top of it, so some choose another career (−). Opposite chains on one key, so CR-12b gives ambiguous. |
+| C-8 | C-29, C-11 | V | | Retail reclassification is recorded in the core as staff moving to exempt retail jobs (C-29) and households taking store design help (C-11). |
+| C-9 | C-15 | M | | |
+| C-10 | C-17 | M | | |
+| C-11 | C-20 | M | | |
+| C-12 | C-18, C-19 | V | | Split by horizon in the core. |
+| C-13 | C-21 | V | | `net_price_received` against `earnings`; same gain. |
+| C-14 | C-11 | M | | |
+| C-15 | C-12 | M | | |
+| C-16 | C-31 | M | | |
+| C-17 | C-32 | V | | Pattern: trade showrooms supplying independent designers; core: furniture stores without design help. Both are competitors that lose the sales moving to stores with design help. |
+| C-18 | — | OC | E (core) | Informal `search_cost` increase. CR-11b (no advertising) gives it directly; the core recorded `quality_information` and disputes but not search. |
+| C-28 | C-27 | M | | |
+| C-29 | C-28 | M | | |
+| C-19 | — | OC | E (core) | Commercial `quality_per_unit` increase (long run). The core rules derive it: CR-1 op. 1 removes the untrained preparer for permit work, and with A-13 the plans that remain meet the trained standard. No down chain operates in permit work (A-5; architects are licensed). The core recorded only the signal side (C-26, `quality_information`), which is a different variable. |
+| C-20 | — | OC | A | Residential `quality_per_unit` ambiguous. The core dropped it because A-14 (p 0.45) is below the cut-off. **Pattern right.** The up chain needs A-14 to be *false*, and its negation has p 0.55. The down chain rests on A-10 (p 0.85). Both chains are reportable, so CR-12b gives ambiguous. A-14 decides only dominance, not whether the consequence is reported. |
+| C-21 | C-10 | M | | |
+| C-22 | C-13 | V | | Horizon: medium against long. |
+| C-23 | — | OC | E (core) | Degree-route `earnings` ambiguous: higher fees later against low supervised pay and qualification costs first. The core rules give it by CR-12b, and the core version had both chains (C-10, C-21, C-39) but did not combine them. |
+| C-24 | C-21 | S | E (pattern) | Pattern: grandfathered `earnings` ambiguous (higher fees against license fees and continuing education). Core: licensed `earnings` increase. **Core right.** Fees and continuing education are `compliance_cost` (C-4 in the pattern version, C-3 in the core version), a different variable, and CR-12c forbids netting them against earnings. The only same-variable opposing chain is CE hours displacing billable hours. That chain is not established: CR-4 says the 12 hours come from the lowest-ranked use, which may be leisure. Lock-in (C-22) adds hours. |
+| C-25 | C-24 | V | | Core records the residential prevented exchanges. Its commercial counterpart, C-23 (alterations), is a different variable that rests on A-N1 and is listed below. |
+| C-26 | C-6 | M | | |
+| C-27 | C-36 | M | | |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+|---|---|---|---|
+| C-4 | OP | J | Stamp `compliance_cost` for commercial permit applicants. The pattern version folded this into the price rise (C-12). Both recordings are defensible; listing both risks double counting. |
+| C-7 | OP | E (pattern) | Readings of the unclear "styling" provision (U1-a decrease, U1-b increase). 2.5 asks for one entry per reading; the pattern version reported only the assumed reading. |
+| C-9 | OP | E (pattern) | Trainees' `wait_time` from graduation to license increases: CR-1 op. 3 (3,500 hours) with CR-6. EN-9 implies it, but the pattern version recorded only the wage effect. |
+| C-14 | OP | E (pattern) | Grandfathered designers keep paying fees while partly inactive, only to hold the license. RS-11 with OC-2 gives it. |
+| C-16 | OP | E (pattern) | The dip after the announcement window. 2.5 (timing shifts) requires a signed consequence for each window. The pattern version recorded only the surge (C-9). |
+| C-23 | OP | A | Commercial alterations decrease; rests on the new premise A-N1. |
+| C-25 | OP | E (pattern) | Architects' fees (`price_substitute`) increase: CR-9 then CR-6 in a close-substitute market with slow supply. No pattern outside price controls gives a substitute's price after a demand shift (RS-1 gives only quantity), which is a gap in the catalog. |
+| C-26 | OP | J | Commercial `quality_information` increase (license as a signal, CR-11c). The catalog has no license-as-signal pattern. The signal is weak in the medium run, when most license holders are grandfathered (the pattern version's own section 4 says so). |
+| C-30 | OP | A | Retail design staff wages ambiguous; rests on the new premise A-N2. |
+| C-33 | OP | A | Fit-out work decreases; rests on A-N1. |
+| C-34 | OP | E (pattern) | Building departments' `enforcement_cost`. OC-3 gives it. |
+| C-35 | OP | E (pattern) | Board `enforcement_cost`. OC-3's own conclusion. The pattern version recorded only the taxpayer side (C-27). |
+| C-37 | OP | E (core) | Commercial clients' `resources_available_other_uses` decrease. Overclaimed. CR-8b matches the fee rise paid by clients who still buy, but clients who cancel or shrink projects (C-23) spend less. The total outlay change is unsigned unless demand for plans is inelastic, so the sign should be ambiguous (CR-12b). CR-3a says clients are worse off by their own ranking, which is not a statement about money left for other uses. |
+| C-38 | OP | E (core) | Residential `resources_available_other_uses` decrease. Overclaimed for the same reason: households switching to cheaper store help or to doing it themselves may spend less money. Only time spent (CR-8c) rises unambiguously, and that is a different variable. |
+
+### Findings
+
+- **Pattern misapplied (P).** Pattern-version C-7 attributes an increase in demand for degree places to EN-1. EN-1 does not cover the demand for the qualifying input, and a direct derivation gives two opposing chains (CR-12b). The pattern itself is not wrong; it was cited beyond its conclusion.
+- **Composition error in the pattern version.** C-24 treats license fees and continuing education as an opposing chain on `earnings`. Under CR-12c these are a separate variable (`compliance_cost`), already recorded as C-4.
+- **Catalog gaps exposed (not pattern errors).** No pattern gives the price of a substitute after a demand shift outside price controls (architects' fees). No pattern treats a license as a signal (CR-11c), apart from EN-10's conviction records. RS-8 does not tell the analyst to record the dip after a pull-forward, as 2.5 requires.
+- **Core rules.** No difference traces to a limit of the calculus (K = 0). Every pattern-version consequence the core version lacks could have been derived from CR-1 to CR-12.
+- **Errors in the core version.** It applied the 0.5 cut-off to an assumption that decides only dominance (residential quality). It omitted `share_of_sellers_licensed`, informal `search_cost`, commercial `quality_per_unit` and degree-route earnings. Its C-37 and C-38 equate "worse off" (CR-3a) with "fewer resources for other uses", which does not follow when buyers cut back.

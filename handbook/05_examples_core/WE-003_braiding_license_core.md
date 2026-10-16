@@ -222,3 +222,47 @@ Case assumptions are used as given. New premises added by this re-run are marked
 - CR-4b and "those for whom x was ranked only narrowly above y": with a large fixed cost (tuition, 1,500 hours), the margin is not narrow for anyone; the rule reads as if changes are small. Applied as "those whose gain from braiding is below the training cost switch".
 - CR-6 is stated for a price "prevented from moving". A license restricts who may sell, not the price; the first paragraph of CR-6 (price formation) was used for the price rise, which the rule's title does not make obvious.
 - CR-7c (asset values) has no tradable asset here: a cosmetology license cannot be sold. The capitalized gain is in licensed providers' earnings, which no variable records as an asset.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the main structure of the braiding case: fewer legal braiders and less entry, a large compliance cost, informal braiding with less information for its customers, higher legal prices and higher receipts for licensed providers, more home braiding (under the record's assumed reading), more search, fewer legal exchanges, more school enrollment, lobbying on both sides and enforcement cost. There is no case where both versions sign the same key in opposite directions. The differences are in what each version claims. The pattern version makes two claims the core rules do not support without a further premise: that braiders who leave lose money earnings (EN-3), when CR-3a gives only a loss by their own ranking, and that the quality customers receive falls (EN-4 with DM-2), which needs an unstated premise that home and informal braiding is of lower quality than the paid braiding it replaces. The core version declined both, rightly, though it also failed to examine quality received overall and omitted the trivially derivable rise in the share of legal sellers who are licensed. The pattern version omitted employers' response to the fines on businesses, disputes outside the courts, and the customers' loss of means.
+
+Counts: M 7, V 5, S 0, OP 4, OC 4.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | none | OC | E | share_of_sellers_licensed increase: follows from CR-1 (op 1, K1) and CR-4 (unlicensed sellers leave the legal market or license). Core-version omission. |
+| C-2 | C-1, C-13 | V | | Split into legal sellers (C-1) and entry (C-13). |
+| C-3 | C-2 | M | | Core adds A-N2 (some do license) and sets horizon medium. |
+| C-4 | C-3, C-4 | OC | P | Pattern: exiting braiders' earnings decrease (EN-3, OC-4). CR-3a gives a loss by their own ranking, not a fall in money earnings: braiders chose braiding over alternatives that may pay more money but less in flexibility or home-based work. The core records employment in braiding decrease (C-3) and resources decrease (C-4) and does not sign earnings. Pattern overclaims; EN-3 needs a premise that the next-best job pays less money. |
+| C-5 | C-5 | M | | |
+| C-6 | C-15 | V | | Recorded as quantity_traded of school places. |
+| C-8 | C-17, C-18 | V | | Split by side. |
+| C-9 | C-7 | M | | |
+| C-10 | C-14 | M | | |
+| C-11 | C-9 | V | | Core gives per-reading signs (U1-a increase; U1-b ambiguous); the record assumes U1-a, on which both agree. |
+| C-12 | C-10 | M | | |
+| C-17 | C-11 | M | | |
+| C-13 | none (core: "Not reported") | OC | P | Pattern: quality_per_unit received decreases (EN-4, DM-2 with A-5). A-5 removes the "up" chain, but the "down" chain asserts that home braiding and informal braiders give lower quality than the paid braiding they replace, a premise not stated or estimated (informal braiders are largely the same people as before). Without it no sign follows; with it (named, with p) the decrease would be valid. The core version declined the sign but examined only the legal segment, not quality received overall; it should have recorded the down chain as conditional on that premise. |
+| C-15 | C-8 | M | | |
+| C-16 | C-19 | V | | Recorded as enforcement_cost (officials) rather than taxpayers' resources. |
+| — (licensed braiders' earnings, ambiguous) | none | OC | J | Ambiguous by DM-3 (one-time cost against later gains). The core rules give both chains (C-2, C-14) but the core version did not record the key. Nothing scorable lost. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-6 | OP | E | Shops employ fewer unlicensed braiders (K2 fines on employers, CR-4). The pattern version did not analyze the employer side of K2. |
+| C-12 | OP | E | disputes_settled_outside_courts increase (CR-11b). RS-10, which the pattern version cites, gives it. |
+| C-16 | OP | J | Braiding supplies ambiguous; depth choice. |
+| C-20 | OP | E | Customers who keep buying legally have less for other uses (CR-8b). The pattern version records the price rise but not its cost to buyers. |
+
+### Findings
+
+- **Pattern overclaims (EN-3).** EN-3 states `earnings` decrease for excluded sellers as if it followed from OC-4. CR-3a gives only a loss by the actor's own ranking; money earnings in the next-best occupation can be higher or lower. EN-3 should carry an `other` premise (the next-best occupation pays less) or record the loss as `resources_available_other_uses` only where training money is spent.
+- **Pattern hides a premise (EN-4 with DM-2).** EN-4's "down" chain presumes that the substitutes buyers turn to are of lower quality. DM-2 then treats A-5 (training unrelated to quality) as enough to sign the result. The down chain needs its own premise, estimated in the case; the pattern version's decrease is not valid as stated.
+- **Errors in the core version (omissions).** share_of_sellers_licensed (pattern C-1) was not recorded, and quality received overall (including the switch to home and informal braiding) was not analyzed; only legal braiding quality was considered.
+- **Errors in the pattern version (omissions).** Employers' response to K2 fines (core C-6), disputes outside the courts (core C-12), and customers' loss of means (core C-20).
+- **Limit of the core rules.** None that produced a difference. On quality the core rules give no sign without a premise, and that is the right answer, not a gap. The core version's own notes stand (CR-1 with partial enforcement; CR-4b with a large fixed cost; CR-6's wording for a restriction on who may sell).

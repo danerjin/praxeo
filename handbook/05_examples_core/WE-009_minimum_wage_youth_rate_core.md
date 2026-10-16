@@ -230,3 +230,52 @@ No dominance claim is made in this analysis.
 - CR-4 exception and labor supply (C-6): the exception (a change in total means can reverse the direction) is stated for buyers and savers; applying it to workers' hours offered at a higher wage, and seeing that it does not apply to those not hired, took a step the rule does not spell out.
 - CR-6 versus CR-4c for C-4: CR-6 says pressure moves to unregulated terms (non-wage compensation), while CR-4c says the least-valued hours are given up. Each alone licenses a different member of the group; neither alone licenses "at least one of three". The group sign came from reading CR-6's "every margin that is still open" as covering hours and hiring as well as terms; CR-6 could say so explicitly.
 - CR-7b in a market where customers also bear part of a cost (C-20 with C-12): CR-7b says lasting losses settle on the means that cannot move, but customers who cannot easily switch (A-10) are also "actors without alternatives". The rule does not say how to split the burden between immobile capital and immobile customers; the analysis gave only directions for each.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** On the contested core of the case the two versions agree exactly. Neither claims that employment of any group falls. Both record the adult margin as a group with sign `at_least_one_decrease`, youth employment as ambiguous (the youth rate makes youth cheaper relative to adults while their own floor rises), and adult earnings as ambiguous. Both rest the job-seeker, price and outlet chains on A-14. Neither version overclaims on the central question. The differences lie at the edges. The pattern version signs non-price selection and search cost separately where CR-6 licenses only a group (pattern C-6, C-12). It counts employers' preference for cheaper under-20 applicants as "non-price" selection, though that preference is a price criterion. The core version goes further than the pattern version in three places that deserve scrutiny. It records an output decrease for low-wage-intensive services and a fall in quantity demanded by customers (C-11, C-13) on top of the price increase. This is derivable from A-14 (unit cost rises for all local sellers, CR-4c), but it is precisely the quantity the empirical dispute is about, and it rests on an unstated premise that some buyers are at the margin. It records a decrease in adults' job changes (C-8) from fewer voluntary quits, without the opposing chain of dismissals and rehiring. And it signs Port Dorran employment as a plain increase at depth 4. The pattern version omits the employers' direct cost (return on capital), the capitalization loss on fixed assets of low-wage-intensive businesses (SB-4) and the enforcement cost itself.
+
+**Counts.** M 14, V 2, S 2, OP 7, OC 1. Causes over S/OP/OC: P 0, K 0, A 0, E 3, J 7.
+
+### Pattern version → core version
+
+| Pattern ID | Core ID(s) | Class | Cause | Note |
+|---|---|---|---|---|
+| C-1 | C-1 | M | | Adult wage_rate increase for those who keep their jobs. |
+| C-2 | C-2 | M | | Youth wage_rate increase. |
+| C-3 | C-4 | M | | Adult employment, hours, non-wage compensation: `at_least_one_decrease`, with the youth-substitution chain agreeing (CR-12a). Identical weak form in both. |
+| C-4 | C-9 | V | | Youth: pattern records the group, core employment alone; both ambiguous for the same opposing chains. |
+| C-5 | C-6 | M | | excess_supply of labor at the floor. Both rest on A-1 (employers value some labor below the floor) and A-14. The contested element is carried by these premises, not by the rules. |
+| C-6 | C-7 | S | J | Pattern: allocation_by_non_price_criteria increase (signed); core: group with search and waits. With more applicants than hires at a fixed wage, employers must choose by other criteria (CR-6), so a rise in selectivity is well supported. But the pattern version's example of preferring cheaper applicants under 20 is selection by price, not by non-price criteria, and does not belong under this variable. |
+| C-7 | C-17 | M | | Contractor reclassification increase. |
+| C-8 | C-18 | M | | Cash pay below the floor increase. |
+| C-9 | C-10 | M | | Labor-saving equipment increase (medium to long vs medium). |
+| C-10 | C-19 | M | | New-outlet investment decrease from the bill's introduction. |
+| C-11 | C-24 | M | | Lobbying. The core version adds A-N1 (p 0.6); the pattern version did not estimate RS-7's assumption and includes unions and advocacy groups. |
+| C-12 | C-7 | S | J | Pattern: search_cost increase (signed separately); core: group. Pattern C-6 and C-12 together claim two members of what CR-6 licenses only as "at least one". The core is the stricter reading. |
+| C-13 | C-12 | M | | Price of low-wage-intensive services increase (A-10). |
+| C-14 | C-14 | M | | Cross-border purchases in Port Dorran increase. |
+| C-15 | C-10 (and C-15) | V | | Equipment sellers' sales: recorded by the pattern version as input suppliers' quantity_traded, by the core version only through employers' quantity_substitute. |
+| C-16 | C-21 | M | | Employers' compliance_cost increase. |
+| C-17 | C-23 | M | | Taxpayers' resources decrease. |
+| — (adult earnings, ambiguous) | C-5 | M | | Ambiguous in both; PC-10's note and CR-12b agree. |
+| — (youth earnings, ambiguous) | — | OC | J | Valid and ambiguous; the core version recorded youth employment but not earnings. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+|---|---|---|---|
+| C-3 | OP | E (pattern) | Employers' return_on_capital decrease (CR-1, CR-3a, with A-14). The direct effect on the payer; the pattern version recorded only the workers' side. With A-10 some of the cost is passed to customers, but not all at once. |
+| C-8 | OP | J | Adults' job_changes decrease: fewer voluntary quits when another job at the floor is harder to find. The variable also counts moves after dismissal, which C-4 allows (employment is one of the margins that may fall). A more cautious sign would restrict the claim to quits or record it as ambiguous. Possible overclaim by the core version. |
+| C-11 | OP | J | Output of low-wage-intensive services decrease. Derivable: A-14 says unit labor cost rises for all local sellers, so marginal units are given up (CR-4c), and the price can rise only as supply is reduced (CR-6). RS-14 gives only "price and/or quantity" and the pattern version recorded only price. The core sign needs some customers at the margin (CR-4's empirical part), which is not stated as a premise. In this contested case, the empirical literature finds price pass-through with little measurable output change, so this is the core version's most exposed claim. |
+| C-13 | OP | J | Customers' quantity_demanded decrease; same chain and same caution as C-11. |
+| C-16 | OP | J | Port Dorran low-wage employment increase. Depth 4; plain employment where LW-10 gives employment or hours. The pattern version pruned the Dorran side. |
+| C-20 | OP | E (pattern) | asset_value decrease for owners of fit-outs and leases. SB-4 covers a lasting policy that lowers expected returns on assets in fixed supply; the pattern version did not apply it. The size is limited by pass-through (A-10), which the core version notes under CR-7b. |
+| C-22 | OP | E (pattern) | enforcement_cost increase; OC-3 yields it alongside the taxpayers' entry. |
+
+### Findings
+
+- **Contested case, overclaim check.** Neither version claims that employment of adults or youth falls, or that low-wage earnings fall; both use the group sign and `ambiguous` as 02_ontology 2.5 and PC-10's note require. The pattern version slightly overclaims by signing two members of a CR-6 group separately (C-6, C-12), and it mislabels a price criterion (cheaper youth) as non-price selection. The core version's exposed claims are C-11 and C-13 (output and consumption fall), C-8 (job changes) and C-16. All are derivable in direction, but each rests on a premise the version does not state (marginal buyers; no offsetting dismissal chain).
+- **Pattern catalog.** No pattern is wrong. RS-14's "and/or" is weaker than a direct derivation from CR-4c and CR-6 when all sellers face the cost: the price rises only because supply falls, so both move unless demand has no marginal buyers. That is consistent, not wrong. PC-11's Tier A ("given the surplus") is fair for the existence of non-price selection but not for any one form.
+- **Pattern-version omissions:** employers' return on capital, SB-4 capitalization, enforcement_cost. RS-7 used without its own premise.
+- **Core rules:** no limit found. The core rules licensed exactly the weak form the pattern version uses.

@@ -251,3 +251,68 @@ CR-8's symmetry is applied throughout: the surcharge paid (C-36) is matched by t
 - CR-7b: "the means that cannot move" is relative and depends on the horizon. Both installers and households are partly mobile; deciding who keeps the payment in year 1 needed the comparative premise A-18, and no sign could be given for the split after year 1. The rule does not say how to state incidence when mobility changes over time.
 - CR-12: it is unclear whether CR-12c's "never netted" also forbids combining a one-time outlay with a later stream for the same variable at different horizons (C-38, C-39). Treated as separate horizons, not combined.
 - CR-10a with tiered payments: the bunching before each step-down raises installations in both windows relative to the counterfactual, so the per-window signs required by the normal form do not show it. The rule licenses the shift, but the representation records it only as C-10 and a note.
+
+## Comparison with the pattern-based analysis
+
+The two versions agree on every central claim: adopters pay less and more systems are installed; installers keep the larger share of the payment in year 1 (both rest on A-4 and A-18, by DM-1 in one version and CR-7b in the other); the surcharge raises customers' power price and takes means from them; electricians' wages and other trades' prices rise; utilities sell less; and the non-adopters' grid price is ambiguous for the same two opposing reasons. Most of the difference is breadth. The core version records many consequences the pattern version left out: commercial and ground-mounted buyers who are crowded out, installers' compliance cost and business values, the utilities' collection cost, the payment received by inframarginal adopters (CR-8 symmetry), wholesale generators, and installer employment. Two of these rest on new premises (A-N1, A-N2). The pattern version has three claims the core version lacks. One is a core omission: non-adopters bear a larger share of the surcharge, which follows from C-28 and arithmetic. One is a representation choice: bunching before step-downs. One is a pattern overreach: other customers' wait time for electricians (C-20), where SB-3 licenses only a quantity fall, and the pattern version's own C-14 has the price rising. The only sign difference is how installer entrants' earnings are combined over time. The pattern version calls them ambiguous by DM-3; the core version signs each horizon separately.
+
+**Counts:** M 15, V 4, S 1, OP 16, OC 3. Causes over S, OP and OC: P 1, K 0, A 2, E 12, J 5.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | M | | |
+| C-2 | C-7, C-6 | M | | Core splits demand (C-6) and trades (C-7). |
+| C-3 | C-4 | M | | |
+| C-4 | C-36 | M | | |
+| C-5 | C-2 | M | | Core extends the increase to the medium horizon via higher wage costs (CR-9). The pattern version gives no medium sign. Not a conflict. |
+| C-6 | C-15 | M | | |
+| C-7 | C-8 | V | | Oversizing is a quantity response (CR-4c, `transaction_size`), not a reshaping of form. The pattern version files it under `reclassification` via SB-5/RS-5. Same claim, better variable in core. |
+| C-8 | none (path note in core section 8; implied by C-7) | OC | J | Against the no-policy counterfactual, both windows have more installations, so the per-window sign adds nothing beyond C-7. Core gap (c) records this as a representation limit of the normal form. |
+| C-9 | C-10 | M | | |
+| C-10 | C-9 | M | | |
+| C-11 | C-17, C-18 | V | | Split by side: installers and suppliers vs large users. |
+| C-12 | none | OC | E (core) | Adopters buy less grid power (core C-28), and K2 is charged per kWh, so non-adopters bear a larger share by arithmetic (CR-1 op 4, CR-4). The core version had every step and did not record it. |
+| C-13 | C-22 | M | | |
+| C-14 | C-23 | M | | |
+| C-15 | C-27 | M | | |
+| C-16 | C-29, C-28 | M | | Core also records the adopters' side (C-28). |
+| C-17 | C-30 | V | | Both ambiguous with the same opposing chains. The pattern version excludes the surcharge from the variable; the core version includes it in the medium horizon. |
+| C-18 | C-11, C-33 | M | | Core records the dip on the buyer side and in installer employment. |
+| C-19 | C-20 | M | | |
+| C-20 | none (core C-24 records quantity, not wait time) | OC | P | SB-3 concludes that output elsewhere falls; it says nothing about queues. Under CR-6, waiting replaces price only where price cannot move, and the pattern version's own C-14 has the price of that work rising. A short-run backlog is plausible but needs a sticky-price premise that the pattern version does not state. |
+| C-21 | C-36 | V | | Same opportunity cost as C-4, restated as forgone purchases. The pattern version counts it twice under two variables. |
+| C-22 | C-2 (short; medium, +), C-34, C-35 (long, −) | S | J | The pattern version nets a one-time investment against a later stream over one "medium–long" horizon and gets ambiguous (DM-3, CR-12b). The core version keeps the horizons apart: increase while the program runs, decrease after it. Both are valid under CR-12. The core version is more informative, the pattern version more cautious. The difference comes from how wide a horizon is, not from a rule. |
+| C-23 | C-3 | M | | |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-5 | OP | E (pattern) | Solar Fund revenue. TX-1/SB-1 would record it; trivial, Tier A. |
+| C-12 | OP | A | Reshaping ground-mounted or commercial projects into the covered rooftop form. Rests on new premise A-N1 (0.55). |
+| C-13 | OP | E (pattern) | Certification and claim costs. K3 is a cost on every claimant even if it is "barely" binding. The pattern version's classification noted K3 and then recorded nothing (TX-5/OC-3 analog). |
+| C-14 | OP | A | Uncertified installers lose sales. Rests on new premise A-N2 (0.6). |
+| C-16 | OP | E (pattern) | Installer business values rise from the announcement (CR-7c, CR-10c). SB-4 as worded requires a "lasting" policy, which is probably why the pattern version skipped it. A five-year expected yield still capitalizes. |
+| C-19 | OP | J | Customers buy slightly less power because of the surcharge. The pattern version folded this into C-16 on purpose (section 9). |
+| C-21 | OP | E (pattern) | Utilities' collection and records cost (TX-5). Tier A. |
+| C-24 | OP | E (pattern) | Less other electrical and roofing work. This is SB-3's own conclusion, which the pattern version replaced with wait time (C-20). |
+| C-25 | OP | E (pattern) | Commercial and ground-mounted buyers pay more in year 1. They compete for the same fixed installer capacity (CR-9 same_market_other_segment; SB-3 would also apply). |
+| C-26 | OP | E (pattern) | As C-25, for quantity. |
+| C-31 | OP | E (pattern) | Midday wholesale price falls. The pattern version uses RS-13 only as a chain inside C-17 and does not record RS-13's own conclusion. |
+| C-32 | OP | E (pattern) | Installation employment rises (CR-9, LW-10). |
+| C-33 | OP | E (pattern) | Installation employment falls after the program ends. Follows from the pattern version's own C-18. |
+| C-37 | OP | E (pattern) | Inframarginal adopters receive a transfer. CR-8's symmetry clause requires counting the receipt. No pattern in the SB family records the recipient's side. |
+| C-38 | OP | J | Marginal adopters' own outlay. The pattern version deliberately leaves out voluntary spending (LW-5). As a signed change in `resources_available_other_uses` it is valid. |
+| C-39 | OP | J | Later bill savings for marginal adopters. Valid, but it is the expected return on a voluntary purchase; the pattern version's choice to omit it is also defensible. |
+
+### Findings
+
+- **Pattern misapplied (P):** C-20 draws `wait_time` from SB-3, which yields only a quantity fall elsewhere. It sits next to the pattern version's own price rise (C-14), which makes a queue unlikely under CR-6.
+- **Pattern catalog, too narrow:** SB-4 is stated for a "lasting" policy. CR-7c and CR-10c capitalize any expected change in yield, including one expected for five years, so a temporary subsidy still moves installer business values (core C-16, C-35).
+- **Pattern catalog, asymmetry:** SB-1 names the payers of a subsidy, but no SB pattern records the recipient's receipt. CR-8's symmetry clause requires both. The pattern version therefore records the surcharge's cost (C-4) but not inframarginal adopters' gain (core C-37).
+- **Pattern version, variable choice:** C-7 records oversizing as `reclassification`. It is a CR-4c quantity response; `transaction_size` (core C-8) is the right variable.
+- **Error in the core version (E):** it omitted the higher share of the surcharge borne by non-adopters (pattern C-12), although every step was present.
+- **Limit of the core rules / normal form:** bunching before tiered step-downs cannot be shown as per-window signs against a no-policy counterfactual (core gap (c)). The same limit applies to the pattern version's C-8, which states a true sign that adds nothing beyond C-2. Neither version can tell bunching apart from a level shift; this is a limit of the representation, not of the calculus.
+- **Agreement on incidence:** DM-1 and CR-7b give the same year-1 split (installers keep the larger share) from the same comparative premise (A-18). Neither can sign the split after year 1.
