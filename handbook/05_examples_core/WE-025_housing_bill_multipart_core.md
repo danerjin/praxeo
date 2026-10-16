@@ -300,3 +300,75 @@ CR-8's symmetry: what sitting tenants do not pay (C-2) landlords do not receive 
 - CR-12b and arithmetic: for C-24, the K2 and K3 payments attach to the same option (building), and arithmetic on their sizes was treated as a dominance premise (A-N3). The rule does not say whether summing money attached to one option is "combining chains" at all, or simply CR-4 applied to the net change.
 - CR-12d: for C-45, one chain needs no premise and a second, reinforcing chain needs A-N2. The rule says a consequence holds only if all its premises hold, but does not say whether the premises of a redundant chain count. Treated as not counting; A-N2 is named in the derivation only.
 - CR-6 with vacancy reset: K1 caps rents within tenancies but frees them between tenancies, so the controlled price is the sitting tenant's, and the starting rent is free. CR-6 applies to the sitting tenancy, while the starting-rent response comes from CR-10a. The rule's wording ("if a rule prevents the price from moving") does not cover a price that is free at one point of a contract and fixed later.
+
+## Comparison with the pattern-based analysis
+
+The two versions agree on each component taken alone: the rent cap's effects on sitting tenants, maintenance, buyouts, sublets and job changes; the vacancy tax's effects on empty units, sales and lettings, short-term rentals, hotels, exemption claims and revenue against projection; and the subsidy's effects on developers, smaller units, land values and crowding out. They also agree that turnover, exempt rents and condominium prices are ambiguous. The differences concentrate where the components interact, which is the point of this case. (1) Starting rents in covered units: the pattern version gives increase from K1 alone (RS-2); the core version combines that chain with the supply that K2 and K3 add to the same market and gets ambiguous. (2) Conversion to condominiums: the pattern version gives increase (K1, plus the I-1 exit-closing chain); the core version finds an opposing K2 chain, in which units put up for sale and the tax on second-home buyers lower condominium prices and so the return to converting, and gets ambiguous. On both points the core version is right by CR-12b, and the pattern version failed to combine chains that it had itself identified elsewhere (C-32, C-31). (3) New rental investment under reading U1-b: the core version resolves the ambiguity by an added arithmetic premise (A-N3). The pattern version's C-19 (tenants of converted buildings pay more) measures the sign against the wrong baseline. The core version adds the landlords' side of the cap, the fund's revenue, seekers' search costs, quality, the dip after the subsidy deadline, construction wages and Alden County. It misuses `units_held_vacant` for units in lease-up and records a confused "fund resources" consequence.
+
+**Counts:** M 26, V 5, S 3, OP 10, OC 3. Causes over S, OP and OC: P 1, K 0, A 1, E 12, J 2.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-2 | M | | |
+| C-2 | C-4 | M | | |
+| C-3 | C-18 | M | | |
+| C-4 | C-7 | M | | |
+| C-5 | C-8 | S | E (pattern) | Starting rents in covered units are set in the same rental market that K2 (from late Year 1) and K3 (later) add units to. The RS-2 premium raises the starting rent relative to the market level, but K2 and K3 lower that level. Same actor class, variable and horizon, opposite chains: CR-12b gives ambiguous. The pattern version names exactly these chains for exempt rents (section 7, C-31) but did not apply them here. The core version is right. |
+| C-6 | C-10 | M | | Both ambiguous. |
+| C-7 | C-13 | M | | |
+| C-8 | C-12 | M | | |
+| C-9 | C-16 | S | E (pattern) | The pattern version's (+) chains are valid (K1; I-1, where K2 closes the "hold empty" exit). But K2 also puts unused units up for sale and taxes condominiums bought as second homes or short-term rentals. Both lower condominium prices, and so the return to converting (CR-9, CR-4). The first of these the pattern version itself records in C-32. The second needs A-N4. With opposing chains, CR-12b gives ambiguous. The core version is right. It did not list the I-1 (+) chain, but adding it would not change the sign. |
+| C-10 | C-1 | M | | |
+| C-11 | C-15 | M | | |
+| C-12 | C-20, C-21 | M | | Split into lettings and sales. Both versions see K1 tilting the mix toward sale (I-2). |
+| C-13 | C-22 | M | | |
+| C-14 | C-19 | M | | |
+| C-15 | C-31 | M | | Merged across components in core. |
+| C-16 | C-26 | V | | Smaller units: the pattern version uses `reclassification`, the core version `quality_per_unit` (floor area per unit). |
+| C-17 | C-27, C-28 | M | | The core version also records the surge just after 1 September. |
+| C-18 | C-30 | M | | |
+| C-19 | none | OC | P | Against the counterfactual (no bill), a tenant in a building that converts would have paid the market rent anyway. After relocation they pay a market rent elsewhere and receive a relocation payment. The "increase" is measured against the capped rent they held, not against the counterfactual (2.5). It could hold only through higher rents in the units they move to, and exempt rents are ambiguous (C-31 in the pattern version). PC-5/RS-5 are misapplied. The core version rightly has no such consequence. |
+| C-20 | C-11 | M | | |
+| C-21 | none | OC | E (core) | Subtenants in illegal sublets search harder and have no recourse (CR-11b from C-15). The core version recorded the sublets but not this consequence. |
+| C-22 | C-33 | V | | Guests' `price_paid` for short stays vs hotel prices (`price_substitute`). |
+| C-23 | C-34 | M | | |
+| C-24 | C-40, C-41 | M | | The core version adds the land's share of the subsidy (CR-7b). |
+| C-25 | C-43 | V | | Other projects crowded out: developers' `quantity_substitute` vs buyers' `quantity_traded` of other construction. |
+| C-26 | C-23 | M | | |
+| C-27 | C-17 | M | | |
+| C-28 | C-6 | M | | |
+| C-29 | C-38 | V | | Covered rental supply vs the citywide rental stock. Both ambiguous. The core version adds K3's chain because its variable is broader. |
+| C-30 | C-24 (and C-25) | S | A | U1-a: increase in both. U1-b: the pattern version has ambiguous; the core version has increase, using A-N3 (0.9): a tax of about $10,000 a year on a slowly leased unit stays below the $30,000 payment unless lease-up takes about three years. With that stated premise the core sign is right, and CR-12b allows it. Both versions flag A-17 (0.55) as the weakest link. |
+| C-31 | C-37 | M | | |
+| C-32 | C-36 (medium; long) | M | | The core version adds a short-run decrease (C-35). |
+| C-33 | none | OC | J | `quality_adjusted_price` combining lower rent with less maintenance. The core version records the two parts separately (C-2; C-13, C-14), which is consistent with CR-12c. |
+| C-34 | C-45 | M | | |
+| C-35 | C-45 | M | | The core version uses one consequence over all horizons. Its sign rests on K5 alone, with the K3 shortfall (A-N2) as reinforcement. |
+| C-36 | C-32 | M | | |
+| C-37 | C-19, C-34 | V | | Short stays forgone vs short-term rental supply and hotel stays. The core version does not record the net number of stays. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-3 | OP | E (pattern) | Landlords receive less from sitting tenants: CR-8 symmetry with C-1. PC-3's landlord side is left out. |
+| C-5 | OP | E (pattern) | The Housing Fund collects the tax (TX-1). Tier A. |
+| C-9 | OP | E (pattern) | Seekers' search cost: lock-in (+) vs K2 supply (−), ambiguous. The pattern version noted that PC-1 does not apply at the start of a tenancy, but fewer vacancies still raise search costs (CR-6, CR-4). |
+| C-14 | OP | E (pattern) | Quality of covered units falls over time (PC-4, CR-10b). The pattern version has maintenance spending and a quality-adjusted price, but no quality level. |
+| C-29 | OP | E (pattern) | Fewer completions just after the subsidy ends on 31 August of Year 6. SB-6 applies, and 2.5 requires per-window signs. The pattern version notes the rush and dip only in section 8. |
+| C-35 | OP | E (pattern) | Home prices fall in the short run, before conversions and subsidized projects act. Only K2 sales act at once. |
+| C-39 | OP | J | Alden County rents, ambiguous. The pattern version pruned them as a diffuse depth-3 effect. The core version added A-N1. Both are defensible. |
+| C-42 | OP | E (pattern) | Construction wages rise (SB-3 with CR-9). The pattern version recorded only the quantity crowded out (C-25). |
+| C-44 | OP | E (core) | Recorded as `units_held_vacant` for units in lease-up. The ontology defines that variable as units "neither occupied, rented nor offered", and units in lease-up are offered. "More completions mean more units in lease-up" is also not an effect on vacancy holding. The variable is misused. |
+| C-46 | OP | E (core) | "Housing Fund resources available decrease". Against a counterfactual with no fund and no tax, the fund cannot lose means. Earmarked balances are K2 payments already counted under C-4. CR-8d is misapplied. |
+
+### Findings
+
+- **Pattern misapplied (P):** C-19 signs tenants of converted buildings against their prior capped rent instead of the no-bill counterfactual. The same construction appears in WE-001's pattern version (its C-10), where a spillover chain at least supports it. Here, with exempt rents ambiguous, it does not hold.
+- **Errors in the pattern version (E), at the interactions:** C-5 and C-9 are each signed from one component, although the pattern version identified the opposing chains from other components elsewhere in its own analysis (C-31, C-32). In a multi-component bill, workflow step 7 (CR-12) has to run over every chain that reaches the same actor class, variable and horizon. The pattern version did this for exempt rents but not for starting rents or conversions. The pattern version also omitted the landlords' side of the cap, the post-deadline dip (SB-6), construction wages and search costs.
+- **Errors in the core version (E):** C-44 misuses `units_held_vacant`; C-46 has no counterfactual basis; C-21 of the pattern version (subtenants' search cost) was not recorded.
+- **Premises (A):** A-N3 resolves C-30/C-24 under U1-b. The pattern version could have used the same arithmetic.
+- **Limit of the core rules (not K):** most combined rent and supply signs are ambiguous because CR-12b gives no dominance without a premise, and no case premise compares components (core gap (c)). That is the honest answer, not a defect. The pattern version reached signed results on C-5 and C-9 only by skipping chains. CR-6's wording does not fit a price that is free at the start of a tenancy and capped within it (core gap (c)); both versions handled this the same way (RS-2 in one, CR-10a in the other).
+- **No pattern found wrong in itself.** RS-2, PC-4, PC-7, TX-3, TX-9, SB-3, SB-4 and SB-7 all agree with direct derivation where both versions used them.
