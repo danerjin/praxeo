@@ -1,6 +1,6 @@
 # WE-041 / Analysis: Stadium financed by city bonds and leased below market
 
-Analyst: core-only re-run (Handbook 0.8)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.8)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -295,3 +295,105 @@ CR-8b both sides: the general fund's debt service (C-1, C-35) is the bondholders
 - No variable for debt headroom under a borrowing cap.
 - No actor class for a government budget as distinct from its payers; recorded as `city.general_fund`.
 - No variable for the in-kind value of a below-market lease; recorded as `subsidy_outlay` with a qualifier (C-2).
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on most of the stadium case. Both find the following: the team gains means and its franchise gains value from the announcement, fans get a better venue, ticket prices are `ambiguous`, other outings in the metro sell less, and the repair clause is disputed. Riverside sales and commercial property are `ambiguous` at Tier C, Riverside residents face congestion, and Halcourt loses game-day trade and Bowl property tax in the medium run. The site sale and the dwellings are forgone, the capital plan is deferred within the charter limit, and the city's later borrowing costs more. Construction work is `ambiguous`, and both versions record the general-fund payers per horizon and over the whole period, administration, and the team's whole-period gain. There are three sign differences. Two are pattern-version errors. In the national loan market, the pattern signs other borrowers' rate up and their loans down (C-26, C-27) by OC-8 as written. But the counterfactual also uses saving, for the team's renovation and the developer's project, so the rate is `ambiguous` (core C-37). In lease years 16 to 30 under U1-b, the pattern signs the team's means down on outlays alone (C-32). It leaves out the derived (+) revenue chain from a venue fans value more, so the valid sign is `ambiguous` (core C-11). The third is a core error: Halcourt's long-run property tax is signed up (core C-30) against an idle site rather than against the renovated Bowl of the counterfactual. The pattern's `ambiguous` (C-21) is right. The core version also signs the team's deferral of repairs (C-13) and its late-lease lobbying (C-16) against the wrong baseline. It omits the items that CR-12's 0.8 "two items in one variable" clause asks for (game-day sales at Riverside, regulars deterred, Merrowgate's game-day sales tax), the stadium workers and the payers' Hazlitt's-tailor row. The pattern version omits the housing-price effect, the property tax on the forgone dwellings, the later window of the capital plan, Halcourt residents' relief from congestion, and the city's residual asset in the whole-period arithmetic.
+
+Counts: M 15, V 10, S 3, OP 12, OC 10.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-3 | M | | The team's means rise while the Bowl's renovation is not needed. The horizon labels differ (pattern "medium" 2027 to 2031, core "short"); the window is the same. |
+| C-2 | C-5 | M | | |
+| C-3 | none (core C-38 records the total) | OC | J | Stadium construction work, `at_least_one_increase`, as an item. The core records only the metro total (`ambiguous`). The item follows from CR-9 and LW-10 for a project that does not exist in the counterfactual. A recording choice. |
+| C-4 | C-4 | M | | The franchise's value rises. The core adds an opposing chain: K4 removes the option to relocate for 30 years (CR-3a, CR-7c), dominated by A-N1. The pattern argues that K4 "binds only in the 30% of cases" where the team would have left. That argument is about actions; an option has value to the asset's holder even when it is unlikely to be used. So the pattern's sign has a hidden premise. Both versions miss that the team's acceptance of the package (CR-2, CR-5) is evidence for A-N1 as far as the owners' own ranking goes. |
+| C-5 | none | OC | J | `subsidy_share_received`, owners against fans, increase. The rent is a cost fixed per firm (CR-4 0.8 note), so no ticket-price chain runs through it, and the fixed number of franchises (A-3) places the gain with the owners (CR-7b). The core uses the same reasoning in C-4 ("the fixed number of franchises keeps it from being competed away") but does not record the share. |
+| C-6 | C-7 | V | | `quantity_demanded` (pattern) against `quantity_traded` (core). The core adds the capacity chain at sold-out games (A-5), with the same sign. |
+| C-7 | C-8 | M | | |
+| C-8 | C-21 | V | | `quantity_traded` against `quantity_substitute` for other outings. |
+| C-9 | C-22 | V | | Pattern: `employment`, `hours_worked` as a group, `at_least_one_decrease`. Core: `employment` decrease alone. CR-9 with LW-10 gives less labor demanded, not which margin moves, so the core's single sign overclaims (final check 2). The pattern's group is the valid record. |
+| C-10 | C-15 | M | | |
+| C-11 | none | OC | E | Employment at the Riverside stadium increases (CR-9, LW-10: labor `input_to` games played there, a place where they are not played in the counterfactual). Core omission. |
+| C-12 | none | OC | E | Employment at the Halcourt Bowl decreases from 2029 (CR-9). The core records Halcourt businesses' staff (C-27) but not the Bowl's own staff. Core omission. |
+| C-13 | none (core C-23 records the total) | OC | E | Riverside sales to fans on game days, increase, as an item (Tier B). CR-12's 0.8 "two items in one variable" clause asks for each item and the total to be recorded. The core records only the total. Core error. It is also what keeps the Tier B claim alive when the total drops to Tier C. |
+| C-14 | C-25 | V | | Halcourt sales to fans (an item, medium to long) against Halcourt businesses' total sales (medium; the core's long-run total, C-26, is `ambiguous`). |
+| C-15 | none | OC | E | Riverside regulars deterred on game days, decrease (Tier C item). The core has it only as a chain of C-23. Same cause as C-13. |
+| C-16 | C-23 | M | | Both `ambiguous`, Tier C. The core adds a third chain: residents of the forgone dwellings (A-12, A-N3). |
+| C-17 | C-39 | M | | |
+| C-18 | C-24 | M | | |
+| C-19 | C-28 | V | | Both `ambiguous`; the tiers differ. The pattern's chains are lost trips (B) against less congestion (C), so it records Tier C. The core's chains are lost trips (B) against expected redevelopment of the Bowl site (B, A-13), so it records Tier B. The pattern omitted the redevelopment chain here, though it uses A-13 for C-21. With that chain the sign is `ambiguous` at Tier B whatever the congestion chain does. |
+| C-20 | C-29 | M | | Halcourt's revenue decreases in the medium run. The pattern also counts "game-day sales tax" for Halcourt. The record names a sales tax for Merrowgate only, so that part rests on an unstated premise. |
+| C-21 | C-30 | S | E | Halcourt's long-run tax revenue. Pattern: `ambiguous` (redevelopment against the loss of the Bowl's tax). Core: property tax on the Bowl site increase. The core's CR-7a step shows only that the owner moves the site to its best use once games leave. It does not show that the redeveloped site is assessed above a renovated, operating stadium, which is the counterfactual (A-1). The comparison the core actually makes is with an idle site, the medium-run state. Core error (baseline); the pattern's sign is the valid one. |
+| C-22 | none (core C-34 records the total) | OC | E | Merrowgate's sales tax on Riverside game-day sales increase, as an item. The core records only the total (`ambiguous`), against the CR-12 0.8 items clause, as for C-13. |
+| C-23 | C-1 | V | | The forgone $38 million, recorded as the city's `non_tax_receipts` (pattern) or inside the payers' group (core C-1, citing CR-8a). Same premise (A-12). |
+| C-24 | C-31 | M | | The core adds A-N4: the developer does not build an equivalent project elsewhere in Merrowgate. The pattern's sign for `buyers.prospective` needs it. Hidden premise. |
+| C-25 | none | OC | J | Land in Halcourt supplied for redevelopment in the long run (CR-7a, A-13). The core uses the same chain inside C-26, C-28 and C-30 but does not record it. A recording choice. |
+| C-26 | C-37 | S | P | Other borrowers' `interest_rate`. Pattern: increase (OC-8 with A-14). Core: `ambiguous`, because the counterfactual also draws on saving: the team's $210 million renovation (A-1) and the developer's project (A-12) are not financed under the agreement. OC-8 as written has no right-baseline clause for borrowing that the policy itself displaces; OC-3 has one. The analyst applied it as written, though the pattern's own C-30 counted the housing project as displaced. Pattern error, with the cause in the PATTERN as written. |
+| C-27 | none | OC | P | Loans to other borrowers decrease (OC-8). Lending to all borrowers other than the city falls whatever the rate does: if the rate falls, saving is no larger; if it rises, the added saving is smaller than the $480 million, by CR-12e's response argument. But part of that fall is the team and developer not borrowing, not crowding out. For third parties, the quantity moves opposite to the rate and is `ambiguous` like C-37. The pattern's sign, derived from a rate rise, fails with C-26. The core omits the key, and nothing scorable is lost. |
+| C-28 | C-18 | V | | `quantity_supplied` (pattern) against `quantity_traded` (core) of capital-plan projects, 2027 to 2031. The core adds the arithmetic: at least $250 million cannot be GO-financed in the window. |
+| C-29 | C-20 | M | | |
+| C-30 | C-38 | V | | Labor (`employment`, `hours_worked`) against construction `quantity_traded`, both `ambiguous`. The pattern's (−) chains omit the renovation not done (A-1), which the core includes; the combined sign is the same. |
+| C-31 | C-10 | M | | The team's means rise in lease years 1 to 15. The core puts the Bowl's $1.6 million property tax into the counterfactual outlays ($8.6 million against $7 million) and adds a revenue chain (A-2); the pattern calls the margin thin. Same sign. |
+| C-32 | C-11 | S | P | Lease years 16 to 30. U1-a: both increase. U1-b: pattern decrease (outlays $14 million against $7 million), core `ambiguous`. A venue fans value more (A-2), with 7,000 more seats, cannot lower the team's net receipts. It can always sell as before (CR-3b) and, given A-2, earns more. That (+) chain opposes the higher outlays, and no premise ranks them. So CR-12b gives `ambiguous`. The pattern analyst omitted a derived chain (final check 1); no pattern is at fault. |
+| C-33 | C-12 | M | | |
+| C-34 | C-1, C-35 | V | | Split by horizon. The pattern nets the rent and new sales tax by arithmetic (A-19); the core folds them into the group sign. |
+| C-35 | C-14 | V | | Payers' repairs under U1-a (pattern) against the general fund's `subsidy_outlay` (core). Same per-reading split, CR-8 contingent payers. |
+| C-36 | C-36 | M | | The core adds A-N5: the land and the stadium the city holds at lease end are worth far less than the debt service. The pattern counts the site's forgone $38 million as a cost while the city keeps the land. Without a residual-value premise its arithmetic is incomplete, though the sign survives. |
+| C-37 | C-6 | M | | The pattern applies OC-3's right baseline (the counterfactual sale's administration); the core omits that comparison but the sign is the same. |
+| C-38 | none | OC | E | Sellers where the payers would have spent or invested: `employment`, `hours_worked`, `at_least_one_decrease` (CR-8a, CR-9, LW-10, as an unnamed group). The core has the payers' loss (C-1, C-35, C-36) but not its propagation. Core omission. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-2 | OP | J | The general fund's `subsidy_outlay` (the rent below arm's length), Tier A. The pattern records the transfer in its classification and through the payers (C-34). A recording choice. |
+| C-9 | OP | E | The team spends less on the Bowl in 2026 to mid-2029, since it does not renovate it (CR-10a, CR-4). Derivable, and the pattern omitted it as a consequence; its C-1 rests on it. |
+| C-13 | OP | E | Under U1-a the team defers major repairs from lease years 11 to 15. The CR-4 move is right, but the sign is given against U1-b ("U1-b: no_change"), not against the counterfactual, in which the team repairs a renovated Bowl. The pattern declined to sign it for that reason (section 8; Gaps (b)3). Core error (baseline). With A-17's figures a sign against the counterfactual may be possible. Neither version tries. |
+| C-16 | OP | E | The team lobbies for a further subsidy as 2059 approaches (A-N2). In the counterfactual the renovated Bowl ages in the same years, and the team's 2024 conduct, the core's own evidence, suggests it would seek a subsidy then too. Against that baseline the sign needs a comparison premise (RS-7's "Unless" clause, applied to a counterfactual with lobbying). Core error. |
+| C-17 | OP | J | The developer's purchase of the site does not happen (CR-5a). The pattern records both sides of the same forgone exchange as C-23 (the city) and C-24 (the dwellings). |
+| C-19 | OP | E | Deferred capital-plan projects completed after 2031, increase (timing shift, 2.5). The pattern says that part of C-28 is a delay but signs only the first window (final check 5), so this is a pattern omission. The core's variable is narrow, though. Stadium debt occupies headroom until 2056, so if the cap binds in later years, the deferred projects displace later ones. The total of GO-financed projects after 2031 is not signed. |
+| C-26 | OP | J | Halcourt businesses' long-run total, `ambiguous` (redevelopment against lost game days). The pattern records the item (C-14) and Halcourt's tax and property, not this total. Nothing scorable is added. |
+| C-27 | OP | E | Halcourt businesses' staff decrease (CR-9, LW-10). The pattern omitted it. The core's single sign should be a group (`employment`, `hours_worked`, `at_least_one_decrease`), as in C-22. |
+| C-32 | OP | E | Housing in Merrowgate costs more than it would have (CR-6 on supply withdrawn, given A-12 and A-N4). The direction is derivable even if the effect is small. Pattern omission. |
+| C-33 | OP | E | The city forgoes property tax on the 1,100 dwellings (CR-8a, CR-9). Pattern omission. The core assumes, without saying so, that Merrowgate levies a property tax. The record implies assessed values but names no city property tax. |
+| C-34 | OP | E | Merrowgate's total sales tax, `ambiguous` (game-day sales partly drawn from Halcourt; outings and the forgone residents drawn from inside the city). The pattern says in prose that the total is "not signed". CR-12's 0.8 items clause asks for the total to be recorded, combined under CR-12b. Minor pattern omission. |
+| C-40 | OP | E | Halcourt residents' game-day travel time decreases (Tier C, A-N6). The pattern uses the same chain for Halcourt property (C-19) but does not record it for residents. Pattern omission. |
+
+### Findings
+
+- **Pattern overclaims and hidden premises.**
+  - C-26 and C-27 apply OC-8 without asking what the counterfactual borrows. The team's renovation and the housing project would have drawn on the same saving, so the rate is `ambiguous`.
+  - C-32 under U1-b signs the team's means from outlays alone and omits the revenue chain from a better, larger venue.
+  - C-4 omits the value of the relocation option that K4 removes; it needs a dominance premise (core A-N1).
+  - C-24 needs the premise that the dwellings are not built elsewhere (core A-N4).
+  - C-36 counts the forgone sale but not the land and stadium the city holds at the end (core A-N5).
+  - C-19 omits the redevelopment chain and so drops to Tier C needlessly.
+  - C-20 assumes a Halcourt sales tax the record does not name.
+- **Errors in the core version.**
+  - C-30 (Halcourt's long-run property tax) is signed against an idle site, not the renovated Bowl.
+  - C-13 is signed against the other reading of U1, and C-16 against no lobbying, rather than against the counterfactual.
+  - C-22 and C-27 give `employment` a single sign where only a group is derivable.
+  - It omits the items CR-12's 0.8 clause asks for (C-13, C-15, C-22), stadium workers at both sites (C-11, C-12), the payers' propagation to sellers (C-38) and the owners' share (C-5).
+- **Errors in the pattern version (omissions).** It omits the Bowl's lost maintenance spending (core C-9), the later window of the capital plan (C-19), Halcourt businesses' staff (C-27), the housing price (C-32), the property tax on the forgone dwellings (C-33), Merrowgate's total sales tax as a recorded key (C-34) and Halcourt residents' relief (C-40).
+- **Problems in patterns as written.**
+  - OC-8 needs a right-baseline clause like OC-3's: compare with the borrowing the counterfactual would have done, including borrowing the policy itself displaces. Without one the rate sign is `ambiguous`. This goes beyond the pattern version's own (c)1, which asks for clauses on a small borrower and an existing debt limit, and (c)2, which asks for "no sign" for lenders. Both of those are also confirmed. The CR-8 0.7 note on borrowing reads the same way (core Gaps (b)).
+  - OC-5's 0.8 clause on new activities should say "new to the place considered", as the pattern version proposes.
+- **Limits of the core rules.**
+  - No row has cause K. Every difference traces to an error or a recording choice.
+  - The real limits are shared. Residents' valuation of having the team travels through no recorded relation (pattern Gaps (a)). A response on an asset that exists only under the policy (deferral of repairs) has no counterfactual to be signed against (pattern Gaps (b)3; the core's C-13 shows the trap). A change in the probability of an action (the team leaving) can be recorded only as a conditional possibility (pattern Gaps (b)4).
+  - The core's GAP-041-C1 (the city as an actor) did not produce a difference: CR-8's note on payers from the general budget carries the burden.
+- **Unclear core-rule wording.**
+  - CR-12d with a Tier C chain opposing a Tier B chain: both versions raise this independently (pattern Gaps (b)1, core Gaps (b)).
+  - CR-12's 0.7 whole-period note should say whether assets held at the end of the period count in the arithmetic (core A-N5).
+  - CR-7c should say how a contract term that removes an option enters an asset's value.
+  - CR-12's 0.8 "two items in one variable" clause is easy to miss; the final check could name it.
+  - The CR-8 0.7 borrowing note needs the baseline point above.
+- **Test of 0.8 verdicts.**
+  - *OC-8 (needed interpretation):* confirmed on the debt limit (core C-18 derives it directly from CR-8a) and on the lenders' side (the core records interest only as a receipt, under CR-8b). Contradicted in degree: the core version finds that OC-8 as written gives the wrong sign in the national loan market here, so the verdict should be "failed" (C-26 above).
+  - *OC-5 0.8, new activities (needed interpretation):* the core version does not record stadium workers, so it neither confirms nor contradicts directly. Its per-location derivations for Halcourt staff (C-27) support applying the clause per place.
+  - *CR-9 0.7, a Tier C chain opposing a Tier B one (needed interpretation):* confirmed (core Gaps (b), C-23).
+  - *CR-12g 0.7, whole period ("worked as written, and showed its value"):* the whole-period sign for the team holds in both versions. The showcase contrast does not: under U1-b, the long-run window is `ambiguous`, not a decrease (C-32 above).
+

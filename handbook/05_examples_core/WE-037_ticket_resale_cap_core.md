@@ -1,6 +1,6 @@
 # WE-037 / Analysis: Ticket resale price cap and bot ban
 
-Analyst: core-only re-run (Handbook 0.8)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.8)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -286,3 +286,81 @@ CR-8b symmetry: the money price buyers save at the cap (C-38) is what sellers lo
 - No variable for an intermediary's fee or take rate; `net_price_received (fee revenue per resale)` was used.
 - No variable for the share of a good bought by intermediaries for resale; `quantity_traded (primary tickets bought by fans)` was used.
 - No variable for the share of output priced by a given method (demand pricing); `term_prevalence` was used.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on almost all of the ticket case. Both find that buyers who obtain tickets at the cap on compliant platforms pay less and resellers receive less. Both find excess demand at the cap, rationed by waiting, search or other criteria, and fewer resales on compliant platforms. Brokers buy fewer primary tickets, leave Selvar events and lose business value. Above-cap resale moves to offshore platforms, social media and packages, with tie-ins and less information for buyers. Bot use falls. More primary seats go to fans, and queue pressure at fixed-face primary sales is `ambiguous`. Demand-priced seats rise in price, opposed only by a kind 2 chain below 0.5 (A-22), and demand pricing spreads. Season seat rights lose value and the waiting list moves faster. More Selvar fans go to Brackmere City. The announcement window brings a lower resale price with an `ambiguous` quantity. Lobbying, compliance and enforcement cost rise, and other consumer-protection work is displaced. There are three sign differences. The pattern version records bot use in breach of K2 as rising `informal_activity` (C-16), counting only breaches of the new public rule against a zero baseline. Bot purchases already breached the primary sellers' terms (R1), take place in the legal primary market, and fall (its own C-15). The total paid on compliant platforms under U1-b is `ambiguous` in the pattern version (C-19). The core signs it as a decrease on an added dominance premise (A-N2), a difference of premises. Brackmere resale prices are `ambiguous` in the pattern version (C-39). The core signs an increase by treating the broker chain as having "no sign of its own", which misapplies CR-12's 0.8 kind 3. The core version omitted several RS-10 consequences of informal trade, including disputes outside the courts, fake tickets and the risk premium, along with the per-reading seller fee and the money price across all channels. The pattern version omitted travel time, charity auctions under the exemption, platforms' business value, brokers' Brackmere buying and season renewals, and the club's season sales.
+
+Counts: M 24, V 9, S 3, OP 11, OC 7.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | V | | The pattern version records the price before fees. The core records it including the buyer fee, per reading (the pattern's C-19 key). Both find a decrease before fees. |
+| C-2 | C-2 | M | | |
+| C-3 | C-9 | V | | Resellers' listings on compliant channels, recorded as the platforms' `quantity_traded`. |
+| C-4 | C-4 | M | | |
+| C-5 | C-5 | M | | The core leaves `side_payments` out of the group and records tie-ins in C-12. |
+| C-6 | C-9 | V | | The outsiders' lost exchanges are recorded as the market's lower compliant quantity (CR-5a). |
+| C-7 | C-6 | V | | `quantity_demanded` against `quantity_traded` of primary tickets bought for resale. |
+| C-8 | C-13 | M | | |
+| C-9 | C-7 | M | | |
+| C-10 | C-12 | M | | Same sign. The pattern version rests tie-ins on compliant platforms on A-4, a premise about penalties outside compliant platforms. A tie-in sold through a compliant platform needs a premise that add-ons get past the platforms' screening, or A-12 for packages, as the core uses. Pattern-version premise mismatch. |
+| C-11 | C-11 | M | | |
+| C-12 | C-8 | V | | The core records only the offshore platforms' side. `cross_border_purchases` (purchases made just outside the jurisdiction) is a stretch for a Selvar resident buying from an offshore website for a Selvar event. |
+| C-13 | C-9 | M | | |
+| C-14 | C-8 | M | | |
+| C-15 | C-20, C-34 | M | | The core records bot users (C-20) and bot sellers (C-34, medium and long). Both rest the sign on the K1 chain (A-3), with K2's chain below the cut-off. |
+| C-16 | C-20 | S | E | Pattern: `informal_activity` (bot use in breach of K2) increase. Core: `legal_breach` (bot purchases) decrease. Bot purchases take place in the legal primary market, so `legal_breach` is the ontology's variable, not `informal_activity`. Every bot purchase already breached R1 in the counterfactual. The number of breaching purchases falls (the pattern version's own C-15). Counting only breaches of the new rule against zero takes the wrong baseline (final check 3). That some remaining use is now unlawful is a CR-1 operation, not a consequence. Pattern-version error. The core's label also mixes a private term (R1) with a public rule (K2), so its row should say it counts purchases in breach of either. |
+| C-17 | C-1, C-3 | V | | The core folds the buyer fee into C-1's U1-b derivation (it rises as the open margin) and records the platform side as fee revenue per resale (C-3: U1-a decrease, U1-b ambiguous). |
+| C-18 | none | OC | E | The seller fee per ticket, U1-a `ambiguous`, U1-b decrease (platforms compete for scarce listings; a percentage of a lower price). Derivable from CR-6 and CR-9 with A-7. The core records only the platforms' total fee revenue (C-3). Core-version omission. |
+| C-19 | C-1 | S | A | U1-b. Pattern: total per ticket `ambiguous` (capped price down, fee up). Core: decrease, on the premise A-N2 (p 0.75) that the fee does not absorb the whole gap. A-N2 is a dominance premise under CR-12e. The pattern version had none, so the difference is one of premises. A-N2 is weaker than it looks, though: listings on compliant platforms fall (C-3), so the total that clears the smaller quantity on those platforms could exceed the counterfactual total. A-N2 should be stated against the counterfactual total, not against "the gap". |
+| C-20 | none | OC | E | Pattern: low-demand events' resale price `no_change`, Tier A, on CR-1 alone (the cap removes no option anyone was choosing). CR-9 is not checked. Fans who fail at the cap for high-demand events may turn to other events, and brokers leaving Selvar events reduce resale supply for all events. Both chains need premises, so the honest record is `no_change` from the direct operation only, or not reported. Pattern-version overclaim. The core version did not record it. |
+| C-21 | C-18, C-19 | V | | Sellers bring resales forward. The core uses it as the (+) chain of C-19 and in C-18, and does not record it as its own consequence. |
+| C-22 | C-18, C-19 | V | | Buyers defer purchases, recorded the same way. |
+| C-23 | C-18 | M | | |
+| C-24 | C-19 | M | | The pattern version cites RS-8's 0.8 Unless clause. That clause covers a policy that also improves the earlier window. Here the opposition is between sellers moving sales forward and buyers moving purchases back, which is plain CR-12b, as the core cites. |
+| C-25 | C-23 | M | | |
+| C-26 | C-26 | V | | Queue margins (`wait_time`, `search_cost`) against `excess_demand` in fixed-face primary sales. Both are `ambiguous` on the same two chains. |
+| C-27 | C-25 | M | | |
+| C-28 | C-27 | M | | Same kind 2 treatment of A-22. |
+| C-29 | C-28 | M | | |
+| C-30 | none (core Tier C note) | OC | E | Prices on offshore and informal channels `ambiguous`: risk premium (+), redirected buyers (+), redirected sellers (−), kind 3. The core puts the risk premium in a Tier C note "with no premise in the case". CR-7a derives it: sellers' yields are equalized net of the expected penalty, as RS-10's derivation says. A-4 is the premise. The chain is derivable, so the consequence belongs in the list. Core-version omission. |
+| C-31 | none | OC | E | The resale money price across all channels is `ambiguous` (capped price on compliant platforms against the price outside the cap). The core records `full_cost_per_unit` (C-40), a different variable. Core-version omission. |
+| C-32 | C-10 | M | | |
+| C-33 | none | OC | E | `disputes_settled_outside_courts` increase for informal trade (CR-11b with CR-1: recourse to courts removed). Core-version omission. |
+| C-34 | none | OC | E | More fake or duplicated tickets in informal trade. With reputation and courts removed, CR-4 for a seller (x: deliver a genuine ticket, y: sell a fake) has y made better, with A-4. The core version treated fraud as out of scope, but the case's scope excludes only safety at events. Core-version omission. |
+| C-35 | C-30 | M | | |
+| C-36 | C-32 | M | | |
+| C-37 | C-14 | M | | |
+| C-38 | C-16 | M | | |
+| C-39 | C-35 | S | E | Pattern: Brackmere resale price `ambiguous`. Fans add demand (+). The broker chain adds resale supply but also displaces Brackmere fans from the primary sale into resale, so its own sign is ambiguous (kind 3). The core states the same broker chain but says it "gives no sign of its own" and drops it, signing an increase. CR-12's 0.8 kind 3 says a chain whose own sign is ambiguous makes the combined sign `ambiguous` unless a dominance premise covers both its directions. The parts do not cancel by construction (CR-12f). Core-version error. |
+| C-40 | C-22 | M | | The core records Tier A with no premise. The pattern version carries A-21, which is not needed for the sign of the division's work on the Act. |
+| C-41 | C-36 | M | | |
+| C-42 | C-21 | M | | |
+| C-43 | C-5 (group only) | OC | E | Pattern: `search_cost` signed alone. PC-2 and the workflow's final check 2 allow a member alone only with a premise that the margin is open and used. The premise the pattern version cites is A-2 (platforms enforce the cap), which says nothing about search. Under U1-b the free fee can carry the pressure (CR-6 0.8). Pattern-version overclaim (an analyst misapplication of PC-2). |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-15 | OP | E | Brokers move buying to Brackmere City events (CR-7a, A-20). The pattern version uses this as a chain in C-39 but does not record it. Pattern-version omission. |
+| C-17 | OP | E | Selvar fans' `travel_time` increase, following from the pattern version's own C-38. Pattern-version omission. |
+| C-24 | OP | E | Charity auctions receive more donated tickets: the K1 exemption is relatively better (CR-4, A-N1 at p 0.5). The pattern version did not analyze the exemption. Pattern-version omission. |
+| C-29 | OP | J | Primary sellers' `net_price_received` increase, from C-27 and C-28 by independent chains. Largely a restatement of the pattern version's C-28 and C-29 for the same class. |
+| C-31 | OP | E | Brokers renew fewer season tickets (A-17). The pattern version states it in its text but records only the waiting list. Pattern-version omission. |
+| C-33 | OP | E | The club's season sales `no_change` by arithmetic (5,700 released, 9,000 waiting). Valid for broker seats. Non-broker holders whose seat value falls (C-30) could also renew less, which the arithmetic does not cover, though the waiting list covers them too. Pattern-version omission. |
+| C-37 | OP | E | Core: taxpayers' means `no_change`. The fixed budget is right, but K4's penalties are receipts to the state whenever any are levied (CR-8b). The core says only that their scale is unknown. The row should be at least one increase with an enforcement premise, or not reported. Core-version overclaim of `no_change`. |
+| C-38 | OP | J | Buyers at the cap have more for other uses (CR-8b, CR-3 note). The pattern version recorded the transfer as prices (C-1, C-2), which the final check accepts. Tie-ins (C-12) could take back part of the saving. |
+| C-39 | OP | J | Sellers' means decrease, the other side of C-38. Same remark. |
+| C-40 | OP | J | `full_cost_per_unit` `ambiguous`. The pattern version says under "cannot say" that it cannot tell whether fans pay more or less in total, and records the money price (C-31) instead. |
+| C-41 | OP | E | Compliant platforms' value, U1-a decrease and U1-b `ambiguous` (CR-7c, CR-10c). The pattern version missed this capitalization (final check 7). Pattern-version omission. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** No pattern, applied as written, produced a wrong sign here, so no row needed cause P. Two patterns lack a clause. PC-8's Unless clause misses demand withdrawn from the uncontrolled segment, which the pattern version found itself and the core version confirms (C-26 `ambiguous`; C-27 by kind 2). RS-4's If clause assumes the law stops at a boundary, where here only enforcement does; the core version handled this by recording CR-1's operations per channel. RS-8 says nothing about a market where sellers and buyers move in opposite directions, and that silence led the pattern version to cite its Unless clause for C-24. Hidden or mismatched premises in the pattern version: tie-ins on compliant platforms rest on A-4, a premise about other channels (C-10). Search is signed alone on A-2 (C-43). The Tier A `no_change` for low-demand events has no CR-9 check (C-20).
+- **Errors in the core version.** CR-12 kind 3 misapplied to Brackmere resale prices (C-35). The informal-market risk premium is relegated to a Tier C note though CR-7a derives it (pattern C-30). Fraud is treated as out of scope, so disputes outside the courts and fake tickets are omitted (C-33, C-34). The seller fee per reading and the all-channel money price are omitted (C-18, C-31). Taxpayers' `no_change` (C-37) ignores penalty receipts. `legal_breach` for bot purchases mixes R1 and K2 without saying so. A-N2 is stated against "the gap" rather than against the counterfactual total.
+- **Errors in the pattern version.** The bot-breach row takes the wrong variable and the wrong baseline (C-16). The Tier A `no_change` for low-demand events skips CR-9 (C-20). Search is signed alone on an unrelated premise (C-43). `cross_border_purchases` is used for offshore websites (C-12). RS-8's Unless clause is miscited (C-24). Omissions: Fans' travel time, the charity-auction exemption, compliant platforms' value, brokers' Brackmere buying and season renewals, and the club's season sales.
+- **Limits of the core rules.** None produced a difference: no row needed cause K. Unclear core-rule wording: CR-12's 0.8 kind 3 does not say that a chain with offsetting parts (added supply and added demand in the same market) is a kind 3 chain unless the parts cancel by construction (CR-12f). The core version read "no sign of its own" as no chain (C-35). CR-7a does not name the expected penalty among the costs that net yields are equalized over, which made the risk premium look underivable (pattern C-30). CR-11b says the means of learning are lost. It does not say whether more fraud then follows by CR-4 or needs a separate premise (C-34). CR-6's 0.8 free-price clause does not say whether a capped price plus a free fee is one price or two (core gap (b)). CR-10a does not say whether the same ticket counted in two windows is one action or two (core gap (b)).
+- **Test of 0.8 verdicts.** *RS-4, 0.7 widening (needed interpretation):* confirmed. The core version reached C-7 and C-8 from CR-1's recording rule (operation 1 where enforced, operation 3 where not, A-5), and its gap (b) raises the same point about a jurisdictional claim the state cannot enforce. *CR-6 0.8, private supplier (worked for existence; needed CR-12 for the change against the counterfactual):* confirmed. The core version signed the fixed-face primary pressure (`excess_demand`, C-26) as `ambiguous` by CR-12b over the same two chains. Neither version got a sign from the clause itself. The pattern version reports no "failed" verdict. Among the verdicts of "worked as written", the core version confirms PC-1 to PC-3, PC-16, PC-18 (correctly not used), RS-10 (except that the core omitted two of its members), CR-6's free-price clause, CR-12's three kinds (though the core misapplied kind 3 at C-35) and OC-3's baseline (same total). It adds one qualification to *RS-8 0.8 Unless:* the core reached the same signs with CR-10a and CR-12b alone, so the clause the pattern version cites is not the one doing the work.
