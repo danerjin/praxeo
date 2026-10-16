@@ -1,6 +1,9 @@
 """Consistency checks for the Method Handbook's worked examples.
 
-Usage: python3 tools/check_handbook.py [example files...]
+Usage: python3 tools/check_handbook.py [--core-only] [example files...]
+
+With --core-only, checks the core-only re-runs in handbook/05_examples_core/ and also fails any
+analysis that cites a pattern (RS, OC, TS, PC, TX, SB, EN, DM) rather than core rules only.
 
 It first checks the pattern catalog (04_rules.md): every pattern has a derivation from the core rules
 and cites only defined rules. With no arguments, it then checks every file in handbook/05_examples/.
@@ -73,7 +76,7 @@ def valid_sign(sign):
                                   for p in parts)
 
 
-def check(path, rules, variables):
+def check(path, rules, variables, core_only=False):
     text = open(path, encoding="utf-8").read()
     errors, notes = [], []
 
@@ -100,6 +103,12 @@ def check(path, rules, variables):
     still_open = sorted(gaps - resolved)
     if still_open:
         notes.append(f"open gaps: {', '.join(still_open)}")
+
+    if core_only:
+        analysis = text.split("## Gaps found")[0]
+        patterns = sorted(set(re.findall(r"\b((?:RS|OC|TS|PC|TX|SB|EN|DM)-\d+)\b", analysis)))
+        if patterns:
+            errors.append(f"core-only analysis cites patterns: {', '.join(patterns)}")
 
     if "(loss)" in text:
         errors.append("bare '(loss)' entry; record opportunity costs as signed variables")
@@ -138,7 +147,10 @@ def check_catalog(rules):
 
 
 def main(argv):
-    files = argv or sorted(glob.glob(os.path.join(ROOT, "05_examples", "WE-*.md")))
+    core_only = "--core-only" in argv
+    argv = [a for a in argv if a != "--core-only"]
+    folder = "05_examples_core" if core_only else "05_examples"
+    files = argv or sorted(glob.glob(os.path.join(ROOT, folder, "WE-*.md")))
     rules, variables = defined_rules(), controlled_variables()
     catalog_errors = check_catalog(rules)
     print("FAIL  04_rules.md" if catalog_errors else "ok    04_rules.md (every pattern derived)")
@@ -146,7 +158,7 @@ def main(argv):
         print(f"      error: {e}")
     failed = bool(catalog_errors)
     for path in files:
-        errors, notes = check(path, rules, variables)
+        errors, notes = check(path, rules, variables, core_only)
         status = "FAIL" if errors else "ok"
         print(f"{status:4}  {os.path.basename(path)}")
         for e in errors:
