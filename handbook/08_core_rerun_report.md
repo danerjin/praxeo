@@ -120,3 +120,76 @@ The corrections also went beyond the comparison in places, for consistency with 
 - WE-006 and WE-009's reading of enforcement budgets as fixed.
 
 The core-only re-runs are kept unchanged, as the record of the test.
+
+---
+
+# Second round: WE-026 to WE-035
+
+The ten gap-probing examples were re-run the same way: blind derivation from the policy record and the case assumptions only, then a comparison by an agent that had written neither version. The derivations used core rules 0.7; the pattern versions were written under catalog 0.6.
+
+**This round is not fully independent.** Many 0.7 clarifications to the core rules, and much of the 0.7 vocabulary, were drawn from these same ten examples' "Gaps found" sections. So agreement on those points is expected, not a test. The comparisons flag where it matters (WE-029, WE-030, WE-033, WE-035 especially). A clean test of 0.7 needs new cases.
+
+## Results
+
+| Case | M | V | S | OP | OC | P | K | A | E | J |
+|---|---|---|---|---|---|---|---|---|---|---|
+| WE-026 own-production ban | 11 | 12 | 3 | 14 | 0 | 1 | 0 | 2 | 13 | 1 |
+| WE-027 deposit-refund | 16 | 9 | 0 | 17 | 6 | 1 | 0 | 3 | 16 | 3 |
+| WE-028 fishing quota shares | 19 | 15 | 1 | 19 | 4 | 3 | 0 | 1 | 18 | 2 |
+| WE-029 paid sick leave | 18 | 10 | 0 | 19 | 3 | 0 | 0 | 4 | 14 | 4 |
+| WE-030 export subsidy | 27 | 7 | 3 | 17 | 2 | 4 | 0 | 2 | 13 | 3 |
+| WE-031 energy code | 16 | 13 | 3 | 15 | 2 | 0 | 0 | 1 | 16 | 3 |
+| WE-032 fare-free transit | 25 | 15 | 5 | 22 | 5 | 2 | 0 | 1 | 17 | 12 |
+| WE-033 debt-funded payment | 9 | 0 | 9 | 15 | 4 | 4 | 0 | 1 | 19 | 4 |
+| WE-034 non-compete ban | 13 | 8 | 3 | 16 | 1 | 0 | 0 | 0 | 15 | 6 |
+| WE-035 calorie labels | 11 | 10 | 3 | 5 | 1 | 1 | 0 | 0 | 5 | 3 |
+| **Total** | **165** | **99** | **30** | **159** | **28** | **16** | **0** | **15** | **146** | **41** |
+
+Of 481 consequences compared, 294 were matched; 264 of these (90%) agree in sign. The comparisons assigned 218 causes to the 217 differences (one difference was given two). **K is again 0**: no valid claim in a pattern version needed anything beyond the core rules.
+
+## What the round shows
+
+**The core rules held on new kinds of policy.** Autistic bans, refundable charges, created tradable rights, mandated and prohibited contract terms, an export subsidy, a scheduled standard, public supply at zero price, a debt-funded transfer and a disclosure mandate were all derivable from CR-1 to CR-12. WE-033 confirms the answer to Q19: for a pure change in means the rules give totals and the rank of the use given up, never a named good, and that is correct rather than a gap.
+
+**Calculus gaps the core versions raised.** Most are wording or premises, not missing rules. Grouped:
+
+| Gap | Assessment |
+|---|---|
+| GAP-035-C1: whether a buyer who changes an order after a disclosure is better or worse off. CR-3 is stated over options, and a disclosure changes none. | **A real question** for the experts (new Q22): is a choice made with more knowledge revealed to be better by the actor's own ranking, or does the method stay silent? |
+| GAP-028-C1: growth of a shared natural stock (fish) after the cap | Physical relation; belongs with Q20 (shared facilities). Needs an empirical premise, not a rule. |
+| GAP-032-C1: bus dwell time | Technical relation; an empirical premise, not a rule. |
+| GAP-034-C1: non-rival know-how | Same as GAP-034-1 (Q21). |
+| GAP-030-C1: sign of export receipts (price falls, quantity rises) | Correctly ambiguous without a premise; not a gap. |
+| GAP-033-C1: spending rounds after the first recipient | Stops at the monetary boundary, out of scope in version 1. |
+| GAP-034-C2: cumulative location effects | Depth limit (Q6). |
+| GAP-032-C3: the council's choice at review | Political response (Q5). |
+| GAP-027-C2, GAP-032-C2, GAP-033-C2, GAP-027-C1: a public buyer at a fixed fee; a contingent payer; an entitlement larger than its budget; local program budgets | Extensions of the 0.7 clarifications to CR-6 and CR-8. Wording. |
+| GAP-028-C2: who pays for the value of a right created by ending a race | Derivable: the value comes partly from means no longer used up in the race (CR-8c), which is not a transfer. Wording for CR-7c. |
+| GAP-026-C1 (culling), GAP-029-C1, GAP-029-C2, GAP-030-C2, GAP-030-C3, GAP-031-C1, GAP-031-C2, GAP-035-C2 | Vocabulary, premises or wording; the comparisons judged GAP-029-C1 and C-2 not real (CR-1 and CR-12e cover them). |
+
+**Pattern problems.** No pattern is wrong in sign. Problems found:
+
+| Pattern | Problem | Found in |
+|---|---|---|
+| OC-3 | Signs enforcement cost against zero enforcement. When the policy shrinks an activity that was itself enforced (complaints under a nuisance law), there is an opposing chain. | WE-026 |
+| OC-3, TX-1, OC-1 | Name taxpayers alone as payers from the general budget. Already fixed by the 0.7 CR-8 clarification (a group); the pattern texts should say so. | WE-027, WE-028, WE-029, WE-030, WE-031 |
+| RS-1 | Signs `quantity_substitute` from CR-4 alone; the split between price and quantity needs a supply premise, as RS-16 asks. | WE-031 |
+| OC-5 | Gives a group sign (employment or hours) even where the activity is new and starts from zero, where a plain rise in employment is derivable. | WE-027 |
+| TS-3 | Its derivation through a clearing price does not fit a product standard; binding is CR-1 and CR-4 over the spread of designs. | WE-031 |
+| EN-6 (0.7 Unless) | Says `price_paid` is not signed when the good is priced in a wider market. The price does not ration the cap, but it still moves in the CR-6 direction. | WE-028 |
+| SB-10 (new in 0.7) | Should note that round trips (RS-4) are opposed by any check on the return crossing. | WE-030 |
+| RS-8 | Applied one way only where a pending-case clause gives an opposing timing chain. | WE-034 |
+
+**The recurring analyst error is unchanged:** failing to combine opposing chains the analysis itself derived (WE-028 C-29, WE-030 C-19 and C-25, WE-034 C-11, WE-035 C-14 in the pattern versions; WE-032 C-5 and C-32 in the core versions). Both versions also again signed one member of a group (a price alone where CR-6 gives price or waiting).
+
+**Core-rule wording the 0.7 clarifications left unclear.**
+- CR-12's 0.7 note ("an opposing chain that cannot be derived is not a chain") was read too widely. It should separate an underivable chain (a Tier C note) from a derivable chain that needs a premise the case lacks (state the premise with p) and from a chain whose own sign is ambiguous (WE-030, WE-031, WE-035).
+- CR-1's recording note on a void-contract rule says one side loses an option and the other gains one; both lose the option of agreeing to the term (WE-034).
+- CR-6: a private supplier that chooses not to charge (WE-026); a capped good only partly priced in a wider market (WE-028); whether a free price's rise satisfies "at least one margin" by itself (WE-031).
+- CR-7c: claims fixed before the announcement (a windfall) against history still to be earned (WE-028).
+- CR-12e: whether "a response cannot reverse its cause" binds members of a class who did not respond (WE-032); when counts over a distribution are arithmetic (WE-031).
+- CR-4's fixed-cost note: whether it covers costs fixed per outlet as well as per item (WE-035).
+
+## Not yet done
+
+The findings above are recorded but not yet applied. The next step, as in the first round, is catalog 0.8 (the pattern and wording fixes above, and Q22) and a correction pass on WE-026 to WE-035 against their comparisons. Each comparison lists its proposed corrections to the pattern version.

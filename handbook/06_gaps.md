@@ -237,6 +237,8 @@ Ten new examples (WE-026 to WE-035) were written to probe parts of the method th
 
 **Q21. Non-rival means.** CR-8 treats every means as rival. Know-how carried to a rival firm is used there without being lost to the first (GAP-034-1). Should a core rule cover non-rival means, and what could it say a priori about total output?
 
+**Q22. Choices made with more knowledge.** A disclosure mandate adds no option and removes none, so CR-3 cannot say whether a buyer who changes an order after seeing a calorie count is better or worse off (GAP-035-C1, from the core-only re-run of WE-035). Is a choice made with more knowledge revealed to be better by the actor's own ranking, or must the method stay silent on it? The same question arises for any policy that works through information (CR-11c).
+
 ## 6.4 Next steps for Phase 1
 
 The Handbook now has 25 worked examples, the number the plan set for Phase 1, and catalog 0.3 closes the gaps they found. What remains before the Phase 1 exit test:

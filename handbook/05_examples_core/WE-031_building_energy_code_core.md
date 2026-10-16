@@ -1,6 +1,6 @@
 # WE-031 / Analysis: Westmere Residential Energy Performance Act (a building energy code that tightens each year)
 
-Analyst: core-only re-run (Handbook 0.7)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.7)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -347,3 +347,91 @@ Both sides of every transfer (CR-8b): the rebate (payers C-45/C-46; recipients C
 - No actor-class or relation for a standing subsidy offer whose terms are tied to another rule (the rebate tied to "the applicable code"); recorded as `contract`.
 - No field for persistence outside repeals; durability notes were put in section 8.
 - No variable for the specification gap (how far homes beat the standard), which the rebate depends on (A-N2).
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the main structure of the energy code case: a higher specification of new homes against the counterfactual trend, paperwork on every permit, administration costs, higher new-home prices and fewer new homes once the standard binds, small builders leaving, filings bunched before each step and thinner after it, longer waits at building departments, renovation in place of rebuilding, per-reading floor area under U1, buyers turning to manufactured homes and to Brennick, dearer ratings and entry of raters, lenient certification, lobbying on both sides, more rebates in Years 1 to 3 and fewer by Year 10, capitalization at announcement (existing homes up, lots down), higher existing-home prices and rents, more efficiency products and fewer general inputs, ambiguous construction employment, and ambiguous means of buyers once lower energy bills are set against the higher price. The differences are of three kinds. (1) The core version followed the rebate further: it found the short-run price and quantity of new homes ambiguous (the looser threshold in Years 1 to 3 pushes against the compliance cost), split filings before Year 1 by a new unclear provision (U2, which code the rebate uses for a vested home), and recorded the payers' side of the rebate. On U2 the pattern version's single sign for the first step is an omission. On the rebate outlay in Years 4 to 9 the core version is the one in error: its (+) chain moves bound homes only to the maximum, which stays 15% above the rebate threshold, so under the 0.7 clarification to CR-12 it is not a chain, and the pattern version's decrease stands. (2) The core version followed more relations and both sides of more transfers (ratings sold, raters' and efficiency makers' asset values, existing-home audits, utilities' receipts, the housing stock, commercial construction, presale contracts, the lot-owner and builder shares). (3) The pattern version recorded two derivable claims the core version lacks: buyers renovating existing homes instead of buying new ones, and other inspection work at fixed-budget departments. Both versions miss the same two opposing chains: the temporary rebate gain on existing-home values (the core version applied it to lots, with A-N5, but not to existing homes), and larger homes under U1-a, which raise general inputs per home. Both also treat waiting for ratings as following from fixed rater capacity, though rating fees are free to move (CR-6 gives at least one margin, not both). Several 0.7 additions the core version relied on were drawn from this very example's pattern version: CR-1's dated operations (its gap b1), `specification_level` and `product_standard` (its gaps d1, d2), the `counterfactual_trend` assumption type and Q11 (its gap b3, d5), and CR-12e's "a response cannot reverse its cause" (its gap b5, with WE-030). On those points the two versions are not independent, and pattern-version records that 0.7 has since superseded are counted as V, not as errors.
+
+Counts: M 16, V 13, S 3, OP 15, OC 2.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-2 | M | | |
+| C-2 | C-1 | V | | Pattern: `quality_per_unit` (0.6 had nothing neutral; its gap d2 proposed `specification_level`, added in 0.7). Core: `specification_level`. The core adds A-2: under CR-1's premise an unenforced prohibition attaches a risk rather than removing the option, so the pattern version's C-2 omits a premise it needs. |
+| C-3 | C-5, C-6 | V | | Split by office. Pattern: Tier A, no premise. Core: Energy Office Tier A; building departments Tier B on A-2 (no review without enforcement at the permit desk). |
+| C-4 | C-4 | M | | Both medium–long. The core adds a long-run (+) chain from fewer rebates; the pattern version's own C-32 gives the same direction. |
+| C-5 | C-8 | V | | `quantity_supplied` against `quantity_traded`. Same premises. The core also records the short run as ambiguous (C-7), listed below. |
+| C-6 | C-21 | M | | Core horizon short; medium, pattern medium–long. The pattern's text also dates the start to Year 1 paperwork. |
+| C-7 | C-11 | M | | Pre-step windows of Years 1 to 9. The core adds A-1: a rush needs the next step to bind on some homes, which the pattern version leaves unstated (A-9 only). |
+| C-7 (first step, late Year 0) | C-9 | S | E | Pattern: increase, explicitly including the first rush in late Year 0 (section 8). Core: `U2-a: ambiguous; U2-b: increase`. Under U2-a a home filed in Year 0 is measured for the rebate against the 0.85 M0 baseline, tighter than the 0.935 M0 Year 1 threshold, so builders of homes between the two have a reason to wait (CR-4). The record's "applicable state energy code" supports both readings, and CR-1's recording note asks for per-reading signs. Pattern-version omission of a reading; narrow (one window). |
+| C-8 | C-12 | M | | Post-step windows of Years 2 to 10. |
+| C-8 (first step, early Year 1) | C-10 | S | E | Mirror of the row above: pattern decrease, core `U2-a: ambiguous; U2-b: decrease`. Pattern-version omission. |
+| C-9 | C-13, C-14 | V | | Pattern: one `wait_time` for all permit applicants on two chains, "A-10 or A-14". Core splits permit review (all applicants; A-10, A-9) from certificates of occupancy (new-home builders; A-14, A-N3). The core's split is the sound one: the rater chain cannot reach renovation and commercial applicants, so the pattern version's "or A-14" overclaims for them. Both versions err on the rater chain: rating fees are not regulated, so CR-6 gives a higher fee or a longer wait (at least one), and waiting alone needs a premise that fees do not clear (core C-14 says "where fees do not clear at once" without one). Pattern horizon short–medium, core short only. |
+| C-10 | C-20 | M | | Class `homeowners.renovating` against `owners.existing_homes`. |
+| C-11 | none | OC | E | Buyers who would have bought a new home buy and renovate an existing one: `quantity_substitute` (renovations) increase (CR-4, x: new home, y: existing home renovated; CR-9; A-1, A-11). Core C-20 covers renovating in place of rebuilding, and C-33 the existing-home price, but not this quantity. Core-version omission. |
+| C-12 | C-23 | M | | Both per reading. The pattern version's U1-a sign rests on fixed loads spread over more floor area, which its text states but its assumption table does not; the core lists it as A-N4 (p 0.65). Pattern hidden premise. |
+| C-13 | C-34 | V | | Pattern: `quantity_substitute` increase (RS-1). Core: price or quantity, `at_least_one_increase` (CR-6). CR-4b gives more buyers turning to the substitute; a quantity sign alone needs a premise that manufactured-home supply expands (A-12 is about demand only). The pattern version's single sign rests on an unstated supply premise. |
+| C-14 | C-35, C-26 | V | | Pattern: Brennick `quantity_supplied` increase (RS-4; A-13 includes builders moving building, so a supply premise is stated). Core: `at_least_one_increase` for the Brennick market (C-35) plus Halden buyers' `cross_border_purchases` increase (C-26). |
+| C-15 | C-16 | V | | Same price from the two sides: builders' `price_paid` against raters' `net_price_received`. Both need that only part of new homes were rated without the Act; the core states it (A-N3), the pattern version does not. |
+| C-16 | C-17 | M | | |
+| C-17 | C-19 | V | | `informal_activity` (0.6) against `legal_breach` (added in 0.7 from WE-029). Same premises. |
+| C-18 | C-24 | M | | Core adds A-1 and the long horizon. |
+| C-19 | C-25 | M | | Core adds A-22 and the short and long horizons. |
+| C-20 | C-29, C-42 | V | | Pattern: rebates per home, Years 1 to 3, increase (arithmetic on the thresholds, A-19). Core: builders' net price per home including the rebate (C-29) and total outlay (C-42, which needs A-N1 because the number of homes is ambiguous in the short run). |
+| C-21 | C-32 | M | | Both miss an opposing chain: in Years 1 to 3 the looser rebate lowers the cost of new homes (core C-3, C-7), which lowers existing homes' yield for those years. The core weighed exactly this chain for lots (A-N5) and not for existing homes. Both need a dominance premise like A-N5 (CR-12b, CR-12e). The sign survives with it. |
+| C-22 | C-33 | M | | The pattern version's dominance "by logic" (a response cannot reverse its cause) is now in CR-12e, added in 0.7 partly from this example's gap b5. Core adds A-6. |
+| C-23 | C-30 | M | | The core records the opposing rebate chain and settles it with A-N5 (p 0.75); the pattern version omits that chain and the premise (an uncombined chain, final check item 1). Core also dates the start to the bill's introduction (CR-7c's probability clause). |
+| C-24 | C-37 | V | | `quantity_demanded` against `quantity_traded`. Same dominance premise A-22. |
+| C-25 | C-39 | V | | `quantity_demanded` against `quantity_traded`. Both miss an opposing chain under U1-a: larger homes (C-12, C-23) use more lumber and framing per home (CR-9, LW-10), so the sign should be `U1-a: ambiguous; U1-b: decrease` without a dominance premise. Error in both versions. |
+| C-26 | C-40 | M | | Pattern records `employment` and `hours_worked`; core `employment` only. Both ambiguous. |
+| C-27 | C-36 | M | | Pattern: rents generally, long. Core: low-rise rents, medium; long. Core also records the quantity (C-28), below. |
+| C-28 | C-48 | M | | Pattern cites DM-3; core CR-12b with CR-3's note. |
+| C-29 | C-8 | V | | Pattern records prevented exchanges of homes below the standard separately (OC-4); the core records the fall in homes traded with CR-5a in section 9. |
+| C-30 | C-47 | V | | Pattern signs `taxpayers` alone on A-25. The core records taxpayers and recipients of other general-fund spending as a group, `at_least_one_decrease`, as the 0.7 clarification to CR-8 on payers from the general budget requires. The pattern version predates it and overclaims for taxpayers alone. |
+| C-31 | none | OC | E | Other inspection and review work at fixed-budget building departments decreases (CR-8a, A-10). The core mentions it only as waiting (section 9, C-6 note). Inspections that are not applications (site and complaint inspections) are not waiting. Core-version omission. |
+| C-32 | C-43, C-44 | S | E | Long run (Year 10): both decrease (core C-44 on total outlay with A-N2; pattern per home on A-19). Medium run (Years 4 to 9): pattern decrease, core ambiguous. The core's (+) chain ("compliance pushes homes down toward the threshold") moves bound homes to the maximum, and the threshold is always 0.85 times the maximum, so they stay above it. Whether a home already at the maximum then finds it cheaper or dearer than in the counterfactual to reach the threshold is not signed by CR-4 without a premise. The core states none, so under the 0.7 clarification to CR-12 (an underivable opposing chain is not a chain) the derived sign stands: homes the standard does not bind face a tighter threshold (arithmetic, CR-4a), and for total outlay fewer homes are built (C-8). Core-version error. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-3 | OP | E | New-home price, short, ambiguous: compliance cost (+) against the looser rebate in Years 1 to 3, part passed to buyers (−). Both chains derivable (CR-6, CR-5c, CR-7b). The pattern version recorded the rebate (its C-20) but signed the price only from the medium run. Pattern-version omission (CR-12g asks for each horizon). |
+| C-7 | OP | E | New homes traded, short, ambiguous, on the same two chains. Pattern-version omission. |
+| C-15 | OP | E | Ratings sold increase (CR-1, CR-9; A-N3). Implicit in the pattern version's C-15 and C-16, not recorded. Pattern-version omission. |
+| C-18 | OP | E | Raters' asset values rise from enactment (CR-7c, CR-10c; limited by entry, A-14). Pattern-version omission of capitalization (final check item 7). |
+| C-22 | OP | E | Small builders offer fewer plans (CR-4, fixed cost per item; A-8). The pattern version had A-8 and CR-4's note on lumpy costs; the per-item clarification itself was added in 0.7 from WE-035. Pattern-version omission. |
+| C-27 | OP | A | Fixed-price presale builders bear more of a step than their buyers (CR-6 on existing contracts, a 0.7 clarification; new premise A-N6). Valid for the short run. The medium horizon is a core-version error: the whole schedule is known from Year 0, so contracts signed after enactment price in later steps (CR-10a); only contracts signed before the schedule became expected are caught. |
+| C-28 | OP | J | Low-rise rental units built decrease. The pattern version folded it into C-5 and stated it in prose under its C-27. Recording choice. |
+| C-31 | OP | E | Lot owners bear more than builders (`tax_share_borne`; CR-7b with A-7 and A-21). The pattern version said no premise ranks the shares, though it had both premises and its own text puts the lasting loss on lots rather than builders. CR-7b ranks each pair among three parties. Pattern-version omission. |
+| C-38 | OP | E | Efficiency product makers' asset values rise from announcement (CR-7c, CR-10c; A-20, A-22). Pattern-version omission of capitalization. The core should also have stated that their means are partly specific (`alternative_uses`). |
+| C-41 | OP | E | Existing-home energy audits dearer as auditors move to rating (CR-9, CR-7a; A-14, A-15). Uses the pattern version's own premise A-15. Pattern-version omission. |
+| C-45 | OP | E | Ratepayers or other efficiency programs have less in the short run (CR-8b, CR-8d; A-N1). The pattern version named the payer side (final check item 6) and declined to sign it because the uses are not named; a group sign covers that. Pattern-version omission. |
+| C-46 | OP | E | The same group has more in the long run. Mirror of C-45. Pattern-version omission. |
+| C-49 | OP | J | Utilities' receipts from occupants of new homes fall (CR-8b on A-24). The receipt side of the spending the pattern version records. The pattern version declined it as resting on energy use, which the record puts out of scope; the core recorded it as spending only. Both defensible given the scope note. |
+| C-50 | OP | J | Smaller housing stock in the long run (CR-10b). The pattern version said the shortfall accumulates (section 8) but recorded no consequence and proposed a variable (its gap d4). Recording choice. The core's actor class for a stock is odd, and manufactured homes placed in the state partly offset it (they cannot reverse it, CR-12e). |
+| C-51 | OP | E | Commercial building work cheaper or more plentiful as builders move to it (CR-7a, CR-9, CR-6; A-7). The pattern version cited RS-6, whose "resources go to other uses, where quantities rise" gives it. Pattern-version omission. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.**
+  1. C-9 claims longer waits for all permit applicants on "A-10 or A-14". The rater chain (A-14) cannot reach renovation and commercial applicants. Rating fees are free to move, so CR-6 gives a higher fee or a longer wait, not both.
+  2. C-21 and C-23 omit the opposing rebate chain in Years 1 to 3 (final check item 1). The signs need a dominance premise like the core's A-N5.
+  3. C-13 signs the quantity of manufactured homes alone. CR-4b gives more buyers; the split between price and quantity needs a supply premise (RS-1 states the quantity sign without one, where RS-16 asks for it).
+  4. C-30 signs taxpayers alone. 0.7 CR-8 records the general-fund payers as a group. The pattern version predates the clarification.
+  5. Unlisted premises: enforcement (A-2) for C-2; fixed loads spread over floor area (core A-N4) for C-12 under U1-a; that the next step binds on some homes for C-7 and C-8; that only part of homes were rated without the Act (core A-N3) for C-15.
+- **Errors in the core version.**
+  1. C-43 is ambiguous on a (+) chain that does not reach the threshold: homes moved to the maximum stay 15% above the rebate threshold. Under 0.7 CR-12 the sign should be decrease. This also removes the core's GAP-031-C2.
+  2. C-32 (existing-home values) omits the rebate chain that C-30 weighs for lots, with no dominance premise.
+  3. C-39 (and pattern C-25) misses the U1-a chain: larger homes use more general inputs per home. It should be signed per reading.
+  4. C-14 signs waiting for ratings while C-16 signs higher fees. Rating fees are not fixed, so CR-6 gives at least one, not both, without a premise.
+  5. C-27's medium horizon ignores CR-10a: the schedule is known from Year 0.
+  6. Omissions: buyers renovating existing homes instead of buying new (pattern C-11); other inspection work at fixed-budget departments (pattern C-31).
+  7. Smaller points: K1 is recorded as `prohibition` "since `product_standard` is for goods sold", though new homes are sold and 0.7 added that type from this example. `hours_worked` is dropped from C-40. The actor class for the housing stock (C-50) is a stretch.
+- **Errors in the pattern version.**
+  1. No per-reading sign for the first step's filings (C-7, C-8 against core C-9, C-10). The rebate's threshold for vested homes is unclear (core U2).
+  2. Short-run price and quantity of new homes (core C-3, C-7) are not recorded, although the pattern version's own C-20 supplies the opposing chain.
+  3. Omissions of capitalization and the payers' side: raters' and efficiency makers' asset values, ratepayers and other efficiency programs, commercial construction, ratings sold, existing-home audits, the lot-owner and builder ranking.
+  4. Shared with the core: the U1-a chain on general inputs, and waiting for ratings without a fee premise.
+- **Limits of the core rules.** No pattern claim needed a step the core rules lack (no K). Where the rules are unclear: (i) CR-12 does not say how a chain with no sign of its own (the core's GAP-031-C2) enters a combination; the 0.7 clarification covers only underivable chains. (ii) CR-12e lists "arithmetic on the case's figures" without saying when a count over a distribution (homes crossing a threshold) is arithmetic and when it is a premise (GAP-031-C1). (iii) CR-6 does not say plainly that where a price is free its rise satisfies "at least one margin" on its own (as its 0.7 sentence does for the price of a legal right), so waiting needs a further premise. (iv) CR-1 op 1 against op 3 for a continuous standard, and CR-12h for windows whose sign depends on a reading, as the core version records.

@@ -1,6 +1,6 @@
 # WE-034 / Analysis: Non-compete clauses made unenforceable, for new and existing contracts
 
-Analyst: core-only re-run (Handbook 0.7)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.7)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -323,3 +323,118 @@ In each case what would decide it is the size of the opposing effects, which thi
 - A variable for the stock of trained workers (human capital); `non_wage_compensation` covers training received but not the stock it builds.
 - Generic actor classes for workers (labor as a factor), courts and private litigants. `factor_owners.specific` was too narrow for workers with general skills.
 - Instrument types: `term_prohibition` exists, but there is none for a retroactive voiding of existing contracts, an exemption (K2, K3), a mandated notice (K4) or a private right of action with statutory damages (K5).
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the main structure of the case. Both find more moves by bound workers to rivals and start-ups, which holds only on the dominance premise A-9. Both find higher pay for workers already bound, more same-field entry, and fewer moves out of the field. Both find employers shifting to the preserved forms and group practices moving restraints into partnership buy-ins. Both record lobbying, cheaper hiring for rivals with an ambiguous effect on their firm values, a capital loss to owners of restraining firms from the announcement, lower search costs for clients, more placements by recruiters, and ambiguous prices to clients. On the Labor Bureau, both record a new enforcement cost and less of its other work on a fixed budget. There are three sign differences.
+
+1. The pattern version signs moves to rivals in late 2025 as a decrease (RS-8). It missed the opposing chain that comes from K1's pending-cases clause, so the core's `ambiguous` is right.
+2. The pattern version's location key (C-21) combines a (+) chain that reaches hiring-intensive firms with a (−) chain that reaches training-intensive establishments. The core version correctly splits them.
+3. The core version signs one member of the trainee group, employer-funded training, as a decrease. CR-5c and CR-6 give only "at least one margin", and lower trainee pay is an open margin, so this overclaims. The pattern's group sign is the valid form.
+
+The core version records much the pattern version left out:
+- buy-outs, on both sides;
+- clients lost by restraining employers;
+- retention pay;
+- the Mossgrave side of relocation;
+- lawyers' lost enforcement work;
+- the transfer from voiding existing rights, including deferred pay that forfeiture-for-competition clauses would have withheld.
+
+The pattern version was written under catalog 0.6. Several 0.7 additions were drawn largely from this example's own Gaps section, and they explain many of the "V" rows and some of the core-only rows:
+- CR-6 on margins that move in opposite directions;
+- CR-7 on a policy that makes a means mobile;
+- CR-8 on voiding a contract right and on non-rival means;
+- the `term_prohibition` instrument and the `term_prevalence` variable;
+- the `no_change` and `at_least_one_as_stated` signs;
+- PC-18.
+
+On voiding, 0.7 went against the pattern version's proposal. The pattern version proposed a CR-8f saying that voiding a right "does not transfer it". The 0.7 CR-8 clarification says that it does.
+
+The core version made errors of its own:
+- C-11 (above).
+- C-19 and C-39 (cross-river commuters) rest on a direction that CR-3 does not give, and the class the core defines runs into A-25.
+- C-4's second chain widens the entry key into one that A-22 also reaches, and the two are not combined.
+- Court disputes over U1, U2 and K2 are omitted.
+
+Counts: M 13, V 8, S 3, OP 16, OC 1.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-2 | M | | Moves to rivals and start-ups from 2026, increase, on A-1, A-2 and A-9. Both combine the substitute devices as the opposing chain and use A-9 as the dominance premise (CR-12b, CR-12e). |
+| C-2 | C-5 | M | | Compliance cost (CR-8c). |
+| C-3 | C-4 | M | | Same-field entry increase (A-3). The core adds an independent location chain (A-24; CR-12d). That chain widens the key to all new sellers in Teravel, which A-22 reaches in the other direction (see Findings). The spin-off chain alone matches the pattern. |
+| C-4 | C-7 | V | | Pattern: `reclassification`. Core: `term_prevalence` of the preserved terms. `term_prevalence` was added in 0.7, partly on this example's Gaps (d). |
+| C-5 | C-9 | V | | Both sign U1-a as increase. The pattern gives no U1-b sign because 0.6 had no sign for "no chain under this reading" (its Gaps (d)). The core signs U1-b as a decrease: the long notice periods that exist in the counterfactual (A-N1) are void. That sign is valid under CR-1 operation 1, and the pattern version described the same fall in its Gaps (d) without being able to record it. |
+| C-6 | C-10 | V | | Same as C-5 for U2. The pattern gives no U2-a sign. The core's "U2-a: decrease" is valid (CR-1 operation 1, A-N1). |
+| C-7 | C-11 (and C-24) | S | E (core) | Pattern: trainees' pay during training, funded training and trainee hires as a group, `at_least_one_decrease`, on A-5 and A-6. Core: funded training alone, `decrease`. CR-5c says the range moves; CR-6 says the pressure reaches at least one open margin, and which margins are used needs a premise per margin. Lower trainee pay is an open margin through which the employer can recover the cost of general training without the restraint, and no premise in the core excludes it. A-5 says the restraint protected recovery; A-6 says substitute restraints do not fully restore it. Neither says pay cannot fall. So training alone is an overclaim (final check 2). The core's own final check item 2 says "no rule here licenses only 'at least one of'". That is wrong: the 0.7 CR-6 clarification on margins in opposite directions uses this very case as its example. **Pattern right.** Under 0.7 the pattern's group could also carry the substitute terms (+) as `at_least_one_as_stated` (PC-18), but with A-6 its three-member `at_least_one_decrease` is valid as it stands. |
+| C-8 | C-3 | M | | Bound workers' pay increase (A-7). The pattern measures pay including deferred pay as it vests. The core does not, so its C-3 and its C-8 (more unvested pay) overlap where salary is moved into deferred forms. This affects the definition, not the sign. The core cites the 0.7 CR-7 clarification on mobility, which came from this example's Gaps (b). |
+| C-9 | C-17 | V | | Decrease, two chains (A-8, A-10; CR-12d). The core widens the variable to "non-competing employers and out of the field". |
+| C-10 | none | OC | J | Total job changes, ambiguous (CR-4b against the deterrent of unvested pay). The core rules give both chains (core C-2, C-17 and C-8), but the core version records no aggregate key. That is defensible under CR-12c, and no scorable claim is lost. |
+| C-11 | C-14 | S | E (pattern) | Pattern: moves to rivals, July to December 2025, decrease (RS-8, A-14). Core: 3 February to 31 December 2025, ambiguous. K1 says pending cases are decided under the Act, so a worker who moves late in 2025 and is sued has the suit decided under the new law. That makes the move cheaper than in the counterfactual: CR-10a, and CR-4 with x: stay, y: move now (A-N4, p 0.55, above the cut-off). Both chains are valid and no dominance premise is stated, so the sign is ambiguous (CR-12b). The pattern applied RS-8 one way only and did not read the pending-cases clause. The core's window also starts at introduction (CR-10a), which is right: expectations formed from February. **Core right.** |
+| C-12 | C-12 | M | | Partnership buy-ins under K2 (A-11). |
+| C-13 | C-13 | M | | Lobbying (A-13). The core dates it from introduction. |
+| C-14 | C-35, C-32 | V | | Pattern: employers' `quantity_substitute` (trade-secret and non-solicitation claims), from RS-1. Core: the same claims recorded as court time (C-35) and lawyers' work (C-32), A-19. The core version notes that there is no variable for private litigation (its Gaps (c)). |
+| C-15 | C-21 | M | | Rivals' search cost decrease. The core names the premise A-N2: hiring firms bore litigation risk, letters or buy-outs in the counterfactual. The pattern rests this on A-1 alone, but A-1 concerns workers' moves, not what rivals bore. That is a minor hidden premise. |
+| C-16 | C-23 | M | | Capital loss to owners of restraining firms, partly from February and mostly by June 2025 (CR-7c, CR-10c, A-15). |
+| C-17 | C-22 | M | | Rivals' firm values, ambiguous. |
+| C-18 | C-28 | M | | Clients' search cost decrease (A-17). |
+| C-19 | C-27 | M | | Prices to clients, ambiguous (entry against labor cost). |
+| C-20 | C-31 | M | | Recruiters' placements increase (A-21). |
+| C-21 | C-18 (and C-30, C-37, C-38) | S | E (pattern) | Pattern: net trainers' `investment_target` (training-intensive establishments in Teravel), ambiguous, with RS-4 (−, A-22) against CR-7 (+, A-24). Core: training-intensive work in Teravel, decrease (C-18). The pattern's (+) chain does not reach the key. A-24 concerns firms that rely on *hiring* experienced staff, and founders. It does not concern training-intensive establishments of net trainers, which a mobile labor pool makes worse off, not better. The two chains reach different keys, so CR-12b does not apply between them. The core records the (+) chain where it belongs: employment in the bound fields overall (C-30, ambiguous) and Mossgrave entry (C-38). **Core right.** |
+| C-22 | C-34, C-35 | V | | Pattern: courts' total `enforcement_cost`, ambiguous. Core: non-compete suits decrease, and trade-secret and non-solicitation suits increase, kept apart under CR-12c. Both forms are defensible. The pattern's (+) chain also includes K5 suits and disputes over U1, U2 and K2. The core omits the reading disputes, though litigation is how U1 and U2 get decided (see Findings). |
+| C-23 | C-6 | M | | Labor Bureau's enforcement cost increase. |
+| C-24 | C-36 | V | | Other Bureau enforcement decrease (CR-8a, A-18). The core puts it on `other_bureau_beneficiaries`, the pattern on `officials.enforcement`. |
+| C-25 | C-1 | V | | Pattern: training-for-restraint exchanges, `quantity_traded` decrease (OC-4, CR-5a). Core: `term_prevalence` of enforceable non-competes decrease, over all restraining employers (CR-1 operation 1, CR-5a). It is the same prevented exchange, recorded over a wider class and with a 0.7 variable. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-8 | OP | E (pattern) | Bound workers' unvested deferred pay and retention bonuses increase (A-10). The pattern version states A-10 and uses it as the (−) chain in its C-1, C-9 and C-10, but never records the response itself as a consequence. Its C-4 records only the reshaping of terms. |
+| C-15 | OP | E (pattern) | Restraining employers' buy-out receipts decrease. The pattern mentions buy-outs (C-11, C-17) but does not record either side (final check 6). |
+| C-16 | OP | E (pattern) | Hiring firms' buy-out outlays decrease. This is the other side of C-15 (CR-8b). |
+| C-19 | OP | E (core) | Teravel residents working in Mossgrave move to Teravel employers (A-N3). The direction assumes that a Teravel job is now better for them. CR-1 shows that for the worker the Act both adds an option (freedom later) and removes one (selling the restraint for pay or training, CR-5c), and CR-3 then gives no single answer, a point the pattern version made in its section 5. A-N3 assumes the direction rather than establishing it. The class is also defined as "still bound by Mossgrave restraints". For those workers, a competing Teravel job is exactly the escape route that A-25 (p 0.4, not reported) covers. The sign needs a premise that freedom from a future restraint is worth more to them than what the restraint would have bought. |
+| C-20 | OP | E (pattern) | Restraining employers lose client accounts to departing staff (CR-9, A-17). The pattern records only the clients' side (C-18). |
+| C-24 | OP | J | New hires' pay, ambiguous (CR-5c with both chains). The pattern version handles new trainees in a group (C-7) and does not key all new hires. The key is valid but unsigned. |
+| C-25 | OP | J | Unbound workers' pay in the same fields, ambiguous. This is a valid CR-9 key that the pattern version did not examine. Nothing scorable is lost. |
+| C-26 | OP | J | Workers in other fields: pay increase, from fewer entrants (A-8, A-10), at depth 3. The derivation is valid (CR-9 and CR-6, CR-12d). It is diffuse, and leaving it out is a choice of depth. |
+| C-29 | OP | J | `number_of_sellers` increase. The pattern uses it only as the chain behind RS-13 in its C-19. It restates entry (C-4) as a stock, given A-23. |
+| C-30 | OP | J | Employment in the bound fields, ambiguous (spin-offs and A-24 against A-22). This is the key where the pattern's two location chains properly meet (see C-21 above). |
+| C-33 | OP | E (pattern) | Lawyers' non-compete enforcement work decreases (CR-9 input_to). The pattern counts the end of these suits only for courts (C-22). |
+| C-37 | OP | E (pattern) | Training-intensive work in Mossgrave increases (A-22). This is the other side of relocation. The pattern version lists `neighboring_jurisdictions` as an actor class but records nothing for it. |
+| C-38 | OP | E (pattern) | Mossgrave entry of hiring-intensive firms and start-ups decreases (A-24). It is the Mossgrave side of the pattern's (+) location chain. |
+| C-39 | OP | E (core) | Mossgrave employers pay more to keep Teravel-resident staff. It rests entirely on C-19, so it falls with it. |
+| C-40 | OP | E (pattern) | Restraining employers' `resources_available_other_uses` decrease. Chain 1 is higher pay kept up to hold staff, which is spending they keep making on the burdened option (CR-3 note; A-7). Chain 2 is deferred pay that a forfeiture-for-competition clause would have withheld and that must now be paid, an unavoidable sum. K1 names those clauses expressly. Chain 2 is a payment under CR-8b, and was one under 0.6 as well. So the pattern's final check 4 ("no `resources_available_other_uses` is signed") and its statement that voiding is not a transfer missed a real money transfer. The broader claim that voiding a right is itself a transfer comes from the 0.7 CR-8 clarification. That clarification rejected the pattern version's proposed CR-8f, so on that wider point the pattern was defensible under 0.6. |
+| C-41 | OP | E (pattern) | Bound workers' `resources_available_other_uses` increase. This is the other side of C-40 (CR-8b). |
+
+### Findings
+
+- **Pattern overclaims or hides premises.**
+  - **RS-8 applied one way (C-11).** RS-8 records moves toward the favorable window. Here, though, the provision on pending cases makes the 2025 window partly favorable too. The pattern version signed only the delay and ignored K1's own text. The cause is the analyst, not RS-8. Even so, RS-8's "Then" would help if it asked for a check of whether the policy also improves the earlier window.
+  - **RS-4 location (C-21).** The two chains were combined on a key only one of them reaches. RS-4 itself is sound. The analyst attached a CR-7 chain about hiring-intensive firms to a key about net trainers' establishments.
+  - **Rivals' search cost (C-15).** This rests on an unstated premise that rivals bore litigation risk or buy-outs in the counterfactual. The core's A-N2 is that premise.
+  - **RS-5 and `reclassification` (C-4 to C-6).** The pattern recorded these as `reclassification`, which cannot express the fall of a term that exists in the counterfactual. The pattern version saw this itself (its Gaps (d)), and 0.7 added `term_prevalence` and `no_change`.
+- **Errors in the core version.**
+  - (1) C-11 signs one member of a CR-6 group, so its final check 2 is wrong. It should be the pattern's group, or a mixed group under `at_least_one_as_stated` (PC-18 form), unless a premise rules out lower trainee pay.
+  - (2) C-19 and C-39 assume a direction that CR-3 does not give, and they conflict with A-25 being below the cut-off.
+  - (3) C-4's location chain (A-24) widens the entry key to new sellers in Teravel, which A-22 (training-intensive work locating in Mossgrave) reaches in the other direction. The two are not combined. The spin-off chain alone keeps C-4 an increase if the key is held to same-field spin-offs.
+  - (4) Court workload omits litigation over U1, U2 and K2, which is how the readings get decided.
+  - (5) C-3 and C-8 overlap because pay is not defined to include vested deferred pay.
+  - (6) The aggregate of total job changes is not recorded. That is a judgment call.
+- **Errors in the pattern version.**
+  - Sign errors: C-11 (missed opposing chain) and C-21 (mis-keyed chain).
+  - Omissions: retention pay as a consequence (core C-8); buy-outs on both sides (C-15, C-16); clients lost by employers (C-20); lawyers' enforcement work (C-33); the Mossgrave side of relocation (C-37, C-38); and the deferred-pay transfer under voided forfeiture-for-competition clauses (C-40, C-41).
+  - The missing U1-b and U2-a signs on C-5 and C-6 were forced by the 0.6 vocabulary.
+- **Limits of the core rules.**
+  - No difference here is due to the core rules being unable to derive a valid claim, so there is no K.
+  - Both versions meet the same real limit: whether total output or innovation rises when know-how spreads (GAP-034-1, GAP-034-C1). The 0.7 CR-8 clarification on non-rival means now states that this needs a premise; that is a statement of the limit, not a resolution of it.
+  - The core version's GAP-034-C2 (self-reinforcing location) is a second, smaller limit.
+  - Rules that remain unclear:
+    - CR-1's recording note still says a void-contract rule "removes an option for one side and adds one for the other". The pattern version's point that both sides lose the option of agreeing to the term is now built into PC-18 and the CR-6 clarification, but not into CR-1. The core's C-19 error shows the cost.
+    - CR-6 on "existing contracts" when employment is at will.
+    - Whether the CR-7 mobility clarification covers future contracts.
+    - How CR-1 records a retroactive operation on pending cases.
+    - Whether CR-12h covers a window with opposing timing chains.
+  - This comparison is not a fully independent test of the 0.7 clarifications. CR-6 (opposite margins), CR-7 (mobility), CR-8 (voiding and non-rival means), `term_prohibition`, `term_prevalence`, `no_change`, `at_least_one_as_stated` and PC-18 were all drawn largely from this example's Gaps section, and the core version relies on several of them (C-1, C-3, C-9, C-10, C-23, C-40).

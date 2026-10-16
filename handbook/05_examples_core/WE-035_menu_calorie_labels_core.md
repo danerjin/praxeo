@@ -1,6 +1,6 @@
 # WE-035 / Analysis: Calorie counts on chain restaurant menus (Sallow Menu Calorie Disclosure Act)
 
-Analyst: core-only re-run (Handbook 0.7)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.7)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -259,3 +259,70 @@ CR-8b both sides: fines paid (C-28) are county receipts (C-27); the state lab bu
 - `tax_share_borne` is defined for "a tax's (or a mandate's) burden"; a per-outlet comparison between seller segments fits loosely.
 - The input record notes that `disclosure_mandate` is missing from 2.3; it is now listed there (with CR-11c as its rule family), so that note is out of date.
 - Nutrient intake and health remain out of scope, so the policy's stated purpose cannot be scored.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the main structure of the calorie case. Both find that buyers at covered chains learn calorie counts and buy fewer higher-calorie items, which holds only given A-3 (some beliefs were wrong) and the dominance premise A-4. Both find a compliance cost, reformulated lighter items, tighter portion control, fewer standard items dropped for the per-item cost (the − chain), fewer seasonal items under U1-a and limited-time launches under U1-b, fewer 20th outlets and second brands at the threshold, a capital loss to near-threshold chains, more work for laboratories and board makers (with an ambiguous second year for boards), ambiguous trade at exempt restaurants, enforcement cost with other inspection work displaced, and the lab budget and fines on both sides. Neither signs unit meal prices. There are three sign differences. The pattern version signs the value of chains whose menus buyers underestimated as a decrease (C-14). It leaves out the A-12 chain (buyers who value counts prefer covered chains), which reaches every covered chain, and it assumes without a premise that buyers who turn from heavy items spend less at the chain. The core's `ambiguous` is right. The core version signs standard-item variety as a decrease (C-10) and does not examine the derivable (+) chain of new lighter items. It also gives `no_change` for seasonal-item variety under U1-b (C-11), which contradicts its own C-12. Much of the agreement is not independent. The pattern version was written under catalog 0.6, and several 0.7 additions were drawn from its own Gaps section: the CR-1 note that information is not one of the four operations, the CR-4 note on fixed costs per item, the CR-11 notes on what a sign needs and on silence, and the `disclosure_mandate`, `product_attribute` and `non_tax_receipts` vocabulary. The core version leans on all of them. The core version adds buyers' lower search cost, the deterrent that L3 attaches to voluntary posting, detected breaches, the per-outlet burden on small chains, and the compliance chain in chains' loss of means. The pattern version recorded exempt restaurants' lobbying, which the core omitted.
+
+Counts: M 11, V 10, S 3, OP 5, OC 1.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-3 | M | | `quality_information` increase for buyers. The pattern also cites A-2 (counts within tolerance); the core treats A-2 as context only. Both use the variable loosely for an attribute (pattern Gaps (d)). |
+| C-2 | C-1, C-2 | V | | Split into the one-time cost for chains not posting (C-1) and the ongoing cost for all covered chains (C-2). |
+| C-3 | C-6 | M | | Same premises: A-1, A-3, A-4 (CR-11c, CR-4, CR-12e). The 0.7 CR-11 note "what a sign needs" was drawn from this example's Gaps (b), so the agreement is not independent. |
+| C-4 | C-7 | V | | Pattern: `quantity_demanded` of lower-calorie items increase. Core: sales-weighted `product_attribute` (calories per item bought) decrease, a 0.7 variable. Both record the shift in mix. The pattern's form has a hidden premise. A-4 says only that more buyers move away from heavier items than toward them. That those who move away buy lighter items at the same chain, rather than eat elsewhere (core A-N1), is not stated. The core's mix variable does not need it. |
+| C-5 | C-9 | V | | Pattern: `quantity_supplied` of reduced-calorie versions (no variable for composition under 0.6). Core: `product_attribute` decrease, the 0.7 variable proposed in the pattern's Gaps (d). Same premises (A-3, A-4, A-5). |
+| C-6 | C-10 | S | E | Pattern: standard-item variety `ambiguous` ((−) per-item cost, A-6; (+) new lighter items for the demand in C-4). Core: decrease, citing CR-4a ("none is added because of the cost"). That covers the cost chain only. A demand shift toward lighter items (A-4) makes "offer a new lighter item" better (CR-9, CR-4), so the (+) chain is derivable from the core rules. The core version never examines it, so this is a core error. The pattern should have named the premise its (+) chain needs (some chains add new items rather than only reformulating, as A-5 does for C-5), but with that premise `ambiguous` is the valid combination. Both use the − chain that the 0.7 CR-4 note on fixed costs per item made explicit, drawn from this example. |
+| C-7 | C-11, C-12 | S | E | U1-a: both decrease. U1-b: the pattern says limited-time items increase, because new items are launched as exempt offers (RS-5, A-7). The core records that move as `reclassification` increase (C-12), but signs the variety of items offered two weeks to 90 days as `no_change` (C-11). New items launched as offers under 90 days fall in that band, so by the core's own C-12 (CR-4: x the covered form, y the exempt form) their number rises. The core's `no_change` is an error (core). Its two rows together carry the pattern's claim. |
+| C-8 | C-13 | M | | Core adds A-N3 (serving-to-serving variation large enough to matter for the 20% tolerance). The pattern's chain needs this too and leaves it implicit; minor hidden premise. |
+| C-9 | C-15 | V | | `investment_target` against `entry_rate` for the 20th and later outlets; same lumpy-cost derivation and A-9. |
+| C-10 | C-16 | M | | Second brands. The pattern also covers covered chains with 20 to 24 outlets that rename franchised outlets to fall below the line. The core lists that under "Not reported" for lack of a premise, but A-10 ("for some small chains, a second brand costs less than compliance") covers it. That is a minor core omission. |
+| C-11 | C-18 | V | | Chains' lobbying: pattern via RS-7, core via CR-4 (x: accept, y: lobby) with A-11. The pattern names the rule's extension to small restaurants as one aim; the core names U1-b, the threshold and enforcement. The exempt side is the OC row below. |
+| C-12 | C-25 | V | | Exempt restaurants' trade, `ambiguous` in both (`quantity_traded` against `quantity_demanded`). Both have the same (−) chain (A-12). The pattern's (+) chain is buyers who leave chains plus outlets near-threshold chains do not open (C-9). The core's (+) chain is A-N1, which states the premise the pattern left implicit. The core omits the outlets-not-opened chain, which has the same sign and changes nothing. |
+| C-13 | C-17 | M | | |
+| C-14 | C-20 | S | P | Pattern: covered chains whose menus buyers underestimated, `asset_value` decrease (compliance cost and lower demand, "+: None"). Two flaws. First, the A-12 (+) chain, buyers who value counts preferring covered chains, reaches every covered chain, not only the "other menus" of C-15. Second, the (−) demand chain assumes that buyers who turn from heavy items spend less at the chain, rather than switch to its lighter items. A-4 does not say this; it needs an A-N1-type premise. With the (+) chain present and no dominance premise, CR-12b gives `ambiguous`. The core does not split by menu, but its sign is the valid one for this subclass too. |
+| C-15 | C-20 | M | | Both `ambiguous`. |
+| C-16 | C-21 | M | | Core adds the state lab budget as a second chain (CR-8b). |
+| C-17 | C-22 | M | | The window differs: the pattern starts at the rules (December 2025), the core at passage (28 August 2025). Both sign it against the counterfactual cycle (A-14). |
+| C-18 | C-23 | M | | Both `ambiguous`. The core adds a second (−) chain: fewer new items (C-10, A-6). |
+| C-19 | C-10 | V | | Pattern: `quantity_traded` of dropped low-volume items decrease, both sides losing (OC-4, CR-5a). Core: recorded as what C-10 gives up ("low-volume items buyers would have bought"). On CR-5a, the policy does not forbid these exchanges. It attaches a cost to offering the item, so the seller drops it. Both parties still forgo the exchange, and the decrease follows from C-10 with A-6. |
+| C-20 | C-4 | M | | |
+| C-21 | C-29 | M | | A-15 in both. |
+| C-22 | C-5 | V | | Pattern: `taxpayers` decrease. Core: taxpayers and recipients of other state spending as a group, `at_least_one_decrease`, following the 0.7 CR-8 note on payers from the general budget. Under 0.6 the pattern's form was standard. |
+| C-23 | C-28 | V | | Pattern: fined chains, `resources_available_other_uses` decrease (A-17). Core: all covered chains, decrease, through compliance costs that they keep paying because they keep their menus (CR-3 note), with fines as a second independent chain (CR-12d). The pattern's final check 4 declined to sign this for chains in general. But chains that comply keep spending on the burdened option, so CR-3's condition is met; that is a pattern omission. |
+| C-24 | C-27 | V | | `tax_revenue` against `non_tax_receipts`, a 0.7 variable proposed in the pattern's Gaps (d). |
+| — (C-11, exempt restaurants' lobbying to keep the exemption) | none | OC | E | Core omission. The core defines `independents_associations` with a stake "only through the boundary (see section 6 notes)". The section 6 notes say nothing about it, and no consequence is recorded. CR-4 (x: accept, y: lobby) with A-11, which names independents' associations, derives it once chains lobby to extend the rule (core C-18 includes the threshold). |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-8 | OP | E | Buyers' `search_cost` decrease: those who looked counts up on websites now see them at the counter (CR-11c, CR-8a; A-1 implies a minority did). The pattern says that for those buyers "nothing changes", so it missed a real chain; pattern omission. |
+| C-14 | OP | J | `legal_breach` (detected inaccurate counts) increase, A-17. It is implicit in the pattern's C-23 and C-24, which rest on the same premise. A recording choice. |
+| C-19 | OP | E | Exempt restaurants' voluntary posting, `ambiguous`. (−) L3 attaches L2's tolerance, records and fines to voluntary posting (CR-1 op 3, against a counterfactual with no state tolerance). (+) A-12. The pattern's own L3 says "if they do, L2 applies", yet its CR-1 list gives exempt restaurants "none directly". Pattern omission. The pattern did consider the silence inference (A-16, below cut-off), which the 0.7 CR-11 note on silence now covers. The core's own Gaps (b) says the (−) chain depends on the unrecorded general false-advertising law. |
+| C-24 | OP | J | Meals at covered chains, `ambiguous`: the mirror of C-12 and C-25 along the substitute relation. Nothing scorable is added. It does show that the pattern's C-14 demand chain was unsupported. |
+| C-26 | OP | J | Small covered chains bear more compliance cost per outlet (arithmetic on the record, CR-12e). The pattern states the fact in prose (sections 1 and 8, and its proposed size-threshold and per-variant patterns) but does not record it. The core's use of `tax_share_borne` and CR-7b for two segments of sellers is loose, as its own Gaps (b) says. A gross per-outlet comparison is really `compliance_cost` per outlet. |
+
+### Findings
+
+- **Pattern overclaims (C-14).** The decrease in the value of chains whose menus buyers underestimated omits a (+) chain the pattern itself uses for C-15 (A-12 reaches every covered chain). It also treats buyers turning from heavy items as lost demand for the chain. A-4 is a premise about the mix of items, not about spending at the chain; that needs a premise like A-N1. Under CR-12b the valid sign is `ambiguous`.
+- **Pattern hides premises.** C-4 (more lower-calorie items demanded) assumes that buyers moving away from heavier items stay at the chain, which A-4 does not state. C-8 assumes that serving variation is large enough to matter for the 20% tolerance (core A-N3). The (+) chain of C-6 needs a premise that some chains add new items rather than only reformulate.
+- **Errors in the core version.**
+  - C-10 (variety decrease) does not examine the derivable (+) chain of new lighter items (CR-9, CR-4 with A-4). Its citation of CR-4a covers only the cost chain.
+  - C-11 under U1-b (`no_change`) contradicts C-12: items launched as offers under 90 days enlarge that band.
+  - Exempt restaurants' lobbying is omitted, though their association is named as an actor class.
+  - Covered chains with 20 to 24 outlets rebranding to fall below the line are declined for lack of a premise that A-10 already supplies.
+  - C-23's (+) chain cites CR-1 where it is a CR-4 and CR-9 move (each new item is an option with a board cost attached); citation only.
+- **Errors in the pattern version (omissions).**
+  - Buyers' lower search cost (core C-8).
+  - The deterrent that L3 attaches to voluntary posting by exempt restaurants (core C-19). The pattern's CR-1 list says "none directly", against its own L3.
+  - The compliance chain in covered chains' loss of means (core C-28). Final check 4 declined it, though chains that keep their menus keep paying for the burdened option (CR-3 note).
+  - The per-outlet burden on small chains, stated in prose but not recorded (core C-26).
+- **Limits of the core rules.**
+  - No difference above arises from a step the core rules cannot take; no row has cause K.
+  - The real limit both versions meet is the one the core records as GAP-035-C1. A disclosure adds no option and removes none, so CR-3 cannot say whether buyers who change their order are better or worse off. The pattern raised a nearby question in its Gaps (b) (whether enjoying an item less after seeing its count changes the ranking), and the 0.7 CR-1 note now routes all such information through CR-11c without answering the welfare question.
+  - Whether a per-outlet fixed cost, like the per-item cost in the 0.7 CR-4 note, leaves unit prices unsigned in the long run is open (core Gaps (b)). Both versions leave prices unsigned.
+  - This comparison is not a fully independent test of the 0.7 clarifications. The CR-1 note on information, the CR-4 note on fixed costs per item, the CR-11 notes on what a sign needs and on silence, `disclosure_mandate`, `product_attribute` and `non_tax_receipts` were all drawn largely from this example's Gaps section, and the core version relies on them (C-6, C-7, C-9, C-10, C-19, C-27, and its refusal to sign unit prices).
