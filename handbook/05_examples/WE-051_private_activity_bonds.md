@@ -273,26 +273,26 @@ Transfers, both sides: interest saved by winners (C-1, C-3) against receipts for
 |---|---|---|---|---|---|---|---|---|
 | C-1 | developers.winners | interest_rate (projects' debt) | decrease | short–long | visible | B | CR-1, CR-5c, OC-8, CR-7b | A-1, A-2 |
 | C-2 | cities.issuing, bondholders | quantity_traded (exempt rental housing bonds) | increase | short–long | visible | B | CR-1, CR-12 | A-2 |
-| C-3 | developers.winners | asset_value (projects with an allocation) | increase | short | visible | B | SB-4, CR-7c, CR-10c | A-1, A-2, A-3 |
+| C-3 | developers.winners | asset_value (projects with an allocation) | increase | short | visible | B | SB-4, CR-7c, CR-10c, CR-12e | A-1, A-2, A-3 |
 | C-4 | lottery.entrants | compliance_cost (entering the lottery) | increase | short | invisible | B | EN-12, CR-7a, CR-8c, OC-2 | A-4 |
 | C-5 | lottery.entrants | reclassification (split or redesigned projects) | increase | short–medium | invisible | B | RS-5, SB-5, EN-12 | A-5 |
 | C-6 | developers.rental | investment_target (starts, 2027) | decrease | short | invisible | B | RS-8, CR-10a | A-6 |
 | C-7 | developers.rental | investment_target (starts, 2028) | ambiguous | short | invisible | B | RS-8, CR-10a, CR-12b, CR-12 | A-6, A-7, A-8 |
 | C-8 | developers.rental | investment_target (starts, 2029–2032) | ambiguous | medium | invisible | B | CR-4, CR-10a, CR-12b, CR-12 | A-7, A-8 |
-| C-9 | developers.rental | investment_target (starts a year, after 2032) | increase | long | invisible | B | CR-4, RS-13, CR-12e, CR-12 | A-1, A-2, A-7, A-9 |
+| C-9 | developers.rental | investment_target (starts a year, after 2032) | increase | long | invisible | B | CR-4, RS-13, CR-12e, CR-12 | A-1, A-2, A-7, A-9, A-10 |
 | C-10 | developers.other | investment_target (unsubsidized projects) | decrease | medium–long | invisible | B | CR-9, CR-6, CR-4 | A-7, A-10 |
-| C-11 | developers, cities, housing groups | lobbying_effort | increase | medium | invisible | B | RS-7, RS-15 | A-11 |
+| C-11 | developers, cities, housing groups | lobbying_effort (of city councils, for sponsorship) | increase | medium | invisible | B | RS-7, RS-15, CR-12 | A-11 |
 | C-12 | lenders.taxable | quantity_traded (taxable loans to rental projects) | decrease | short–long | invisible | B | CR-5, CR-9, OC-4 | A-1, A-12 |
 | C-13 | cities.issuing | non_tax_receipts (issuer fees) | increase | short–long | invisible | B | CR-8b | A-2, A-13 |
 | C-14 | officials.enforcement (State Bond Commission) | non_tax_receipts (application fees) | increase | short–long | invisible | B | CR-8b | A-4 |
 | C-15 | lottery.entrants | allocation_by_non_price_criteria (city sponsorship) | increase | short–medium | invisible | B | RS-15, CR-6 | A-24 |
-| C-16 | renters | price_paid (rents, 2029–2032) | ambiguous | medium | invisible | B | RS-13, CR-6, CR-12 | A-7, A-8, A-14 |
-| C-17 | renters | price_paid (rents; not counting effects through proximity) | decrease | long | invisible | B | RS-13, CR-6, CR-12e, CR-12 | A-1, A-2, A-7, A-9, A-14 |
-| C-18 | renters | price_paid (rents) | ambiguous | long | invisible | C | RS-13, CR-9 (proximity), CR-12b, CR-12 | A-1, A-2, A-7, A-9, A-14, A-15 |
-| C-19 | landlords.existing | net_price_received (rents; not counting effects through proximity) | decrease | long | invisible | B | RS-13, CR-8b, CR-12 | A-1, A-2, A-7, A-9, A-14 |
-| C-20 | landlords.existing | asset_value (existing buildings; not counting effects through proximity) | decrease | short | invisible | B | SB-4, CR-7c, CR-10c, CR-12e, CR-12 | A-7, A-9, A-14, A-16 |
+| C-16 | renters | price_paid (rents, 2030–2032) | ambiguous | medium | invisible | B | RS-13, CR-6, CR-12 | A-7, A-8, A-14, A-25 |
+| C-17 | renters | price_paid (rents; not counting effects through proximity) | decrease | long | invisible | B | RS-13, CR-6, CR-12e, CR-12 | A-1, A-2, A-7, A-9, A-10, A-14 |
+| C-18 | renters | price_paid (rents) | ambiguous | long | invisible | C | RS-13, CR-9 (proximity), CR-12b, CR-12 | A-1, A-2, A-7, A-9, A-10, A-14, A-15 |
+| C-19 | landlords.existing | net_price_received (rents; not counting effects through proximity) | decrease | long | invisible | B | RS-13, CR-8b, CR-12 | A-1, A-2, A-7, A-9, A-10, A-14 |
+| C-20 | landlords.existing | asset_value (existing buildings; not counting effects through proximity) | decrease | short | invisible | B | SB-4, CR-7c, CR-10c, CR-12e, CR-12 | A-7, A-9, A-10, A-14, A-16 |
 | C-21 | landowners.qualifying_sites | asset_value (sites for 50-unit rentals) | increase | short | invisible | B | SB-4, CR-7c, CR-10c, EN-12, CR-7a, CR-12e | A-4, A-17 |
-| C-22 | renters, landlords.existing | capital_stock_target (rental homes) | increase | long | invisible | B | RS-13, CR-10b, CR-12e, CR-12 | A-1, A-2, A-7, A-9 |
+| C-22 | renters, landlords.existing | capital_stock_target (rental homes) | increase | long | invisible | B | RS-13, CR-10b, CR-12e, CR-12 | A-1, A-2, A-7, A-9, A-10 |
 | C-23 | input_suppliers | price_paid (construction labor and materials), quantity_traded | at_least_one_increase | long | invisible | B | CR-9, CR-6 | A-7, A-9 |
 | C-24 | construction_workers | employment, hours_worked | at_least_one_increase | long | invisible | B | OC-5, CR-9 | A-7, A-9, A-18 |
 | C-25 | issuers.aldmere | interest_rate (own exempt bonds) | increase | medium | invisible | B | OC-8, RS-13, CR-6, CR-7a | A-19 |
@@ -304,9 +304,43 @@ Transfers, both sides: interest saved by winners (C-1, C-3) against receipts for
 | C-31 | taxpayers.city, recipients of city spending (pledging cities) | resources_available_other_uses (defaulted debt service) | U1-a: no_change; U1-b: at_least_one_decrease | long | invisible | B | CR-8, OC-8, CR-12 | A-21, A-22 |
 | C-32 | intermediaries | quantity_traded (underwriting, counsel, trustee, rating) | increase | short–long | invisible | B | CR-9, CR-12 | A-2 |
 | C-33 | officials.enforcement (State Bond Commission) | enforcement_cost | increase | short–long | invisible | A | OC-3, CR-8c | none |
-| C-34 | developers.winners | compliance_cost (issuance costs) | increase | short–long | invisible | B | CR-8c | A-2 |
+| C-34 | developers.winners | compliance_cost (issuance costs) | increase | short–long | invisible | B | CR-8c | A-2, A-27 |
 | C-35 | landlords.existing | net_price_received (rents) | ambiguous | long | invisible | C | RS-13, CR-9 (proximity), CR-12b, CR-12 | A-7, A-9, A-14, A-15 |
 | C-36 | landlords.existing | asset_value (existing buildings) | ambiguous | short | invisible | C | SB-4, CR-9 (proximity), CR-12b, CR-12 | A-7, A-9, A-14, A-15, A-16 |
+| C-37 | lenders.taxable, developers.rental | quantity_traded (taxable loans for rental projects, 2027) | decrease | short | invisible | B | RS-8, CR-10a, CR-4 | A-6 |
+| C-38 | renters | price_paid (rents, 2029) | increase | short | invisible | B | RS-13, RS-8, CR-6, CR-10b | A-6, A-14, A-25 |
+| C-39 | developers.rental, developers.other | price_paid (sites for building) | increase | medium–long | invisible | B | CR-9, CR-6, RS-13, EN-12 | A-4, A-7, A-10 |
+| C-40 | builders.other_construction | quantity_traded (owner-occupied and commercial buildings started) | decrease | long | invisible | B | CR-9, CR-6, CR-4c, CR-8a, RS-13 | A-7, A-9, A-10 |
+| C-41 | issuers.national_exempt | interest_rate (exempt bonds nationally) | increase | medium | invisible | B | OC-8, CR-6, RS-13, CR-7a | A-2, A-28 |
+| C-42 | holders.national_exempt | asset_value (existing exempt bonds nationally) | decrease | short | invisible | B | OC-8, CR-6, CR-7c, CR-10c | A-2, A-28 |
+| C-43 | borrowers.taxable | interest_rate (taxable loans) | ambiguous | medium | invisible | B | CR-8, OC-8, CR-6, CR-12b | A-2, A-12 |
+| C-44 | cities.issuing (pledging cities) | interest_rate (own general obligation debt) | U1-a: no_change; U1-b: increase | medium–long | invisible | B | CR-6, CR-7a, CR-8 | A-21, A-26 |
+| C-45 | officials.enforcement (State Bond Commission) | fund_balance (fees less the cost of the draws) | ambiguous | short–long | invisible | B | CR-8, OC-1, CR-12b | A-4 |
+| C-46 | developers, housing groups | lobbying_effort (state and national, on the program) | ambiguous | medium | invisible | B | RS-7, CR-4, CR-12b | A-11, A-29 |
+
+## Corrections after the core-only comparison
+
+The core-only re-run (`05_examples_core/WE-051_private_activity_bonds_core.md`) was compared with this analysis. Each correction below was checked against the core rules before it was applied; the catalog is now 1.0.
+
+**Changed.**
+- C-16 (rents in the medium run): window narrowed from 2029 to 2032 to 2030 to 2032, sign kept (`ambiguous`); 2029 is now C-38, on a stated construction lag (A-25).
+- C-9, C-17, C-19, C-20, C-22 (long-run starts, rents, landlords, stock): signs kept. Under CR-12's 1.0 clause the response argument now names its total (all construction on the same sites and inputs) and its cost premise (A-10: cost per unit rises, not falls, as other building contracts); holding for later draws is noted as a second response the argument does not cover. C-18 likewise.
+- C-3 (allocation value): sign kept; its dominance over the issuer fee, issuance costs and the rent fall is now stated as arithmetic (CR-12e).
+- C-34 (issuance costs): sign kept; the 1.5% to 2% figure, absent from the record, is now carried by an assumption (A-27).
+- C-25: its U1-b chain (pledges) now rests on A-26; OC-8's 1.0 segment clause cited for C-25 and C-26.
+- C-11 (lobbying): narrowed to lobbying of city councils for sponsorship, an activity that exists only under the Act; lobbying on the program itself moved to C-46.
+- C-27, C-29: OC-8's 1.0 clause on interest deductions cited. C-21: SB-4's "later buyers pay it" re-based on the no-Act path (final check, item 9).
+
+**Added.** C-37 (taxable loans closed in 2027, decrease), C-38 (rents in 2029, increase), C-39 (site prices paid by developers, increase), C-40 (other building crowded out, decrease), C-41 (national exempt yield, increase), C-42 (existing exempt bonds nationally, decrease), C-43 (other borrowers' taxable rates, `ambiguous`), C-44 (pledging cities' own borrowing rate, U1-a no_change, U1-b increase), C-45 (the Commission's fees net of its costs, `ambiguous`), C-46 (lobbying on the program against the counterfactual contest, `ambiguous`). New assumptions A-25 to A-29.
+
+**Removed.** None.
+
+**Comparison conclusions rejected or not applied.**
+- C-9 (end of the waiting period, 2032 against 2037, cause J): not changed; 1.0 does not settle how a repeated draw shifts a flow in the steady state.
+- Core C-22 (site owners' `subsidy_share_received`, cause J): not added; against a counterfactual with no subsidy it restates C-21.
+- Core C-15 (unsubsidized developers' lasting `return_on_capital` decrease): a core-version error (CR-7a: their capital can move); not added.
+- Core C-19 (pledging cities' own rate, cause A): applied as C-44, because the pattern version already used the chain inside C-25 and the final check (item 8) requires its premise to be stated; the premise is A-26, the core's A-N1.
+- Core C-35 (taxable rates `ambiguous`, cause J): applied as C-43, since CR-6's and OC-8's 1.0 clauses now require a small effect to be recorded by its sign rather than left out as negligible.
 
 ## Gaps found
 
@@ -314,13 +348,13 @@ Transfers, both sides: interest saved by winners (C-1, C-3) against receipts for
 
 **(b) Unclear core rules.**
 1. *Valuing a lottery entry (CR-7c, CR-10c; GAP-039-C2).* CR-10c (value reflects expected yields) covers the odds of a draw if "expected" is read as including chance; CR-7c's probability clause speaks only of the probability that a measure passes or is renewed. Two further steps were needed: where the entry's value settles (on whatever entry requires, here a qualifying site: C-21), and that with open eligibility entry continues until the marginal entry's expected value equals its cost (CR-7a applied to entries). Both follow from the core rules, but neither is stated; a clause in CR-7c would make them explicit.
-2. *CR-12, 0.9 (what the response argument gives).* The clause says that to report an increase "the response must be partial: state that supply cannot fully expand at the old cost". Here the response that might undo the added building is a contraction by other builders through higher input prices; it is partial if the inputs' supply *can* expand (A-9). The principle held; the wording, which assumes the response is an expansion, had to be inverted.
+2. *CR-12, 0.9 (what the response argument gives).* The clause says that to report an increase "the response must be partial: state that supply cannot fully expand at the old cost". Here the response that might undo the added building is a contraction by other builders through higher input prices; it is partial if the inputs' supply *can* expand (A-9). The principle held; the wording, which assumes the response is an expansion, had to be inverted. (1.0: CR-12's 1.0 clause now reads "partial" for a contraction by rivals as a gradual shift of their inputs, which covers the transition; in the long run partiality still rests on A-9. It also asks for the total bounded and a cost premise, A-10.)
 3. *CR-8, 0.9 (a reading that permits) with CR-8, 0.8 (contingent payers).* Together they need two premises under U1-b (that the source is used, and that the contingency occurs), and the clauses do not say what the sign is if either is below the cut-off. Read as: not reported under that reading.
 4. *CR-8, 0.9 (borrowing baseline).* Stated for borrowing; it was needed for the homes as well. Only projects that would not have been built add supply (A-7), so RS-13's added supply is measured against the same baseline.
 
 **(c) Missing or wrong patterns.**
-1. *OC-8, 0.9, "a borrower too small to move its loan market".* Applied as written it would have recorded the rate effect as negligible. That is right for the national market, but the state exemption creates a segment (Aldmere-exempt bonds) in which the new bonds are about a quarter of issuance; with A-19 the in-state rate rises (C-25) and existing holders lose (C-26). The clause should say: small relative to the market in which the borrowing's terms are set, which a tax exemption may confine to a segment.
-2. *OC-8, 0.9, tax-exempt interest.* It names those who make up the receipts as payers, but not the opposing chain from borrowers' smaller interest deductions, which raises receipts. The sign needed arithmetic on the case's figures (A-20). The clause should say that net receipts are signed only with that comparison.
+1. *OC-8, 0.9, "a borrower too small to move its loan market".* Applied as written it would have recorded the rate effect as negligible. That is right for the national market, but the state exemption creates a segment (Aldmere-exempt bonds) in which the new bonds are about a quarter of issuance; with A-19 the in-state rate rises (C-25) and existing holders lose (C-26). The clause should say: small relative to the market in which the borrowing's terms are set, which a tax exemption may confine to a segment. (1.0: OC-8 now says this, and also signs the national case rather than noting it as negligible: C-41 to C-43.)
+2. *OC-8, 0.9, tax-exempt interest.* It names those who make up the receipts as payers, but not the opposing chain from borrowers' smaller interest deductions, which raises receipts. The sign needed arithmetic on the case's figures (A-20). The clause should say that net receipts are signed only with that comparison. (1.0: OC-8 now says this.)
 3. *EN-12, open-eligibility branch.* "Draws entry to qualify" was right, but the pattern does not say where the right's value goes: partly used up in entering (C-4), partly to owners of what entry requires (C-21), the rest to winners (C-3). A sentence citing CR-7a and CR-7c would close this.
 4. *RS-13.* Its assumption that added supply "is not offset by withdrawal elsewhere" is exactly the crowding-out chain (C-10). The response argument (CR-12e) bounds it, but only with a partial-response premise (A-9); RS-13 could point to CR-12e and its 0.9 note.
 5. No candidate pattern from 6.2e was needed.
@@ -348,3 +382,4 @@ Transfers, both sides: interest saved by winners (C-1, C-3) against receipts for
 - *CR-12 0.9, Tier C against Tier B.* Worked as written: Tier B rent and landlord signs qualified, Tier C combined signs `ambiguous` (C-17 to C-20, C-35, C-36).
 - *CR-6 0.9, splitting a shift.* Worked as written: construction inputs recorded as a group (C-23).
 - *RS-8.* Worked as written: starts signed per window (C-6, C-7); late-year bunching of issues is a path note.
+- Re-run note: the comparison contradicted two verdicts. OC-8 0.9 baseline borrowing "worked as written", but leaving the national effect unrecorded as negligible departs from CR-6; the national exempt yield is now signed (C-41, C-42) and taxable rates recorded `ambiguous` (C-43). RS-8 "worked as written", but the windows omitted taxable loans in 2027 (C-37) and the rent rise in 2029 that the 2027 dip implies (C-38).
