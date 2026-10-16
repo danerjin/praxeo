@@ -1,6 +1,6 @@
 # WE-046 / Analysis: Congestion charge for a central zone, with a residents' discount and a bus earmark
 
-Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -338,3 +338,93 @@ CR-8b is applied to every transfer: the charge paid (C-33, and by residents C-2)
 - No variable for trips or errands per day (trip bundling).
 - No variable for the crowding of a public service other than `quality_per_unit` and `wait_time`; `quality_per_unit` (crowding) was used for buses.
 - No actor class for keepers whose identity is used by evaders (cloned plates); `keepers.cloned_plates` was coined.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on almost all of the case's structure: drivers and residents pay, the city collects, fewer vehicle-days in charging hours, switching to buses, Ringside garages and ride-hail, trips moved to other hours, evasion and false registration, residents' lock-in, U1's effect on delivery rounds, zone businesses bearing more of the delivery charge, zone sales and zone property `ambiguous`, Ringside and garage values, bus crowding worse in the first year and `ambiguous` after, the earmark's fungibility, and the administrative costs. The main difference is the tier of every chain that runs through the roads. The core version derived road speeds (C-6, C-36, C-53) and first-year bus crowding (C-34) at Tier B through CR-6's public-supply clause and flagged the conflict with CR-9's 0.7 clause. Under the core rules the pattern version's Tier C is right for the roads: CR-9 0.7 names "a road, a vehicle" as shared facilities; CR-6's public-supply clause applies only where demand at the set price exceeds a fixed quantity and then gives only a group sign over the open margins; and the link from fewer vehicles to faster travel for the rest (A-3) is the `shared_facility` relation itself, so by CR-12d the consequence takes Tier C whatever rule brings the pressure there. The same applies to bus crowding, which both versions got wrong in the same way (below). Because the core version put the road chains at Tier B, it merged them with Tier B chains instead of recording two consequences under CR-12's 0.9 rule; that produced three sign differences (ride-hail fares, and indirectly residents' and carriers' costs). It also signed single members of two CR-6 groups (the PAO queue, zone wages) without the per-margin premise CR-6 requires, and failed to use A-21 to split the zone garage shift. The pattern version made one overclaim (diverted through drivers' travel time, a hidden premise) and omitted nine core-derivable consequences, mostly small.
+
+Counts: M 27, V 13, S 4, OP 9, OC 12.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | M | | |
+| C-2 | C-2 | M | | |
+| C-3 | C-3 | M | | Pattern Tier A (TX-1, given collection); core Tier B on A-2. |
+| C-4 | C-7 | V | | Same sign. Core records `quantity_demanded` for switchers without the qualifier "not counting effects through the roads", and has no Tier C companion (see C-6). |
+| C-5 | C-6, C-36 | V | | Same sign; pattern Tier C, core Tier B. Pattern right: the speed gain runs over the roads (`shared_facility`, CR-9 0.7; CR-12d). |
+| C-6 | none | OC | E | Combined vehicle-days at Tier C (faster roads draw some drivers back; CR-12e response argument with A-1 partial). Core omission: it never considered the draw-back chain, which CR-12's 0.9 rule requires recording. |
+| C-7 | C-8, C-37 | M | | Core adds the operator's side (C-37). |
+| C-8 | C-9 | M | | |
+| C-9 | C-41, C-42 | V | | Split into garages' receipts and existing parkers' price. |
+| C-10 | C-10 | M | | |
+| C-11 | C-52 | S | E | Pattern: fare increase (Tier B). Core: `ambiguous`, adding faster roads (more trips per car-hour) as a (-) chain. That chain runs over the roads, so under CR-12 0.9 the Tier B sign is `increase`, qualified "not counting effects through the roads", and the combined sign is `ambiguous` at Tier C. Core error (Tier C chain merged at Tier B); the pattern version also omitted the Tier C record. |
+| C-12 | none | OC | E | Ride-hail drivers' net price per trip `ambiguous` (CR-5c charge against more demand). Core omission; nothing scorable lost. |
+| C-13, C-14 | C-11 | V | | Core records the evening and weekend windows as one item. |
+| C-15 | none (core C-12 is a different variable) | OC | P | Pattern: diverted through trips take longer (CR-4, CR-3a). CR-3a gives a loss by the drivers' own ranking, not longer travel; that going round takes longer is an unstated premise (plausible). Analyst misapplication; valid only with the premise named. |
+| C-16 | C-53 | V | | Same sign; pattern Tier C, core Tier B. Pattern right (`shared_facility`). |
+| C-17 | C-24 | M | | |
+| C-18 | C-22 | M | | |
+| C-19 | C-29 | M | | |
+| C-20 | C-27 | M | | |
+| C-21 | C-18 | M | | |
+| C-22 | none | OC | E | Short delivery visits: U1-a decrease (CR-4b), U1-b increase (reshaped rounds). Core omission: it signed the price and full cost of short visits and the reshaping (C-18), not their number. |
+| C-23 | none | OC | E | Records proving short visits under U1-b (CR-8c). Core omission. |
+| C-24 | none | OC | E | False short-visit claims under U1-b (CR-4, x: comply, y: violate). Core omission. |
+| C-25 | none | OC | E | Driver-dependent retailers leave the zone (CR-4, CR-7a with A-7). Core omission. |
+| C-26 | C-46 | V | | Buyers' side (purchases outside the zone) against the sellers' side (Ringside and Merrowdale sales). |
+| C-27 | none (a chain of core C-48) | OC | J | Zone sales to former car customers fall: the core version records this only as the (-) chain of C-48. Recording a sub-item of a combined key is a choice. |
+| C-28 | C-48 | M | | Same chains (lost car shoppers; bus-borne visitors, A-10); A-30 below cut-off in both. |
+| C-29 | C-46 | M | | Core includes Merrowdale and lacks the qualifier. |
+| C-30 | none | OC | E | Ringside sales at Tier C `ambiguous` (the slower Inner Ring Road, which the core itself signs at C-53, opposes C-29). Core omission of the combination. |
+| C-31 | C-47 | M | | |
+| C-32 | none | OC | E | As C-30, for Ringside commercial values. Core omission. |
+| C-33 | C-49 | M | | |
+| C-34 | C-50 | M | | Different chains (pattern: residents' and visitors' charges, buses; core: A-N3 car disposal), same sign. |
+| C-35 | C-44 | S | E | Pattern: zone garage day rate decrease, splitting the shift on A-21 (stock cannot be converted, so the fall in demand goes to price; CR-6 0.9). Core: price or quantity as a group. CR-6 0.9 allows the split with a premise on supply, and the core version had A-21 (used for C-45) but did not use it here. Core under-use; the pattern sign is valid. |
+| C-36 | C-45 | M | | |
+| C-37 | C-43 | M | | |
+| C-38 | C-34 | M | | Same sign and tier, and wrong in both versions in the same way. Peak load is about 85%, so on most routes added riders take space below capacity: that is a `shared_facility` chain (the vehicle; CR-9 0.7) at Tier C, as WE-032 corrected. Only where demand at the fare exceeds crush capacity does CR-6's public-supply clause apply, and then it gives a group (crowding, pass-ups, waiting) with `at_least_one_as_stated`, not crowding alone. Neither version established excess demand. |
+| C-39 | C-35 | M | | |
+| C-40 | C-5 | M | | |
+| C-41 | C-36 | V | | Same sign; pattern Tier C, core Tier B. Pattern right. |
+| C-42 | C-4 | V | | Service-km against total funding; both on A-8. |
+| C-43 | C-40 | M | | |
+| C-44 | C-16, C-20 | V | | Pattern: van-day cost, Tier B, one class. Core splits short and long visits (CR-1 0.7, split where the operation differs); its C-20 merges the roads chain at Tier B (should be Tier B `increase` not counting roads, plus Tier C `ambiguous`). |
+| C-45 | C-17, C-20 | V | | Pattern: `ambiguous` under both readings for the class. Core splits it: short visits U1-a increase (A-N1), U1-b decrease; long visits `ambiguous`. The split is better (a short visit saves only minutes), but every sign counting the roads is Tier C, and U1-b's decrease runs only through the roads. |
+| C-46 | none (core C-21 covers the share) | OC | E | Zone businesses pay more for deliveries (CR-5c, CR-7b with A-14). Core omission; implied by C-21. |
+| C-47 | C-21 | M | | |
+| C-48, C-49 | C-14 | V | | Same sign. Core makes one record at Tier B combining the charge, the time saved (A-4) and the zone parking price (response argument); under CR-12 0.9 the combined sign belongs at Tier C, with a Tier B record not counting the roads. |
+| C-50, C-51 | C-13 | V | | As C-48, C-49. |
+| C-52 | C-51 | S | E | Pattern: zone wages up or zone employment down, as a group (Tier B). Core: `wage_rate` increase. The charge shifts the supply of car-commuting labor to zone employers; by CR-6 0.9 its split between wage and employment needs a premise on employers' response, which A-19 (about workers) does not give. Core overclaim. |
+| C-53 | none | OC | E | Tier C combination of C-52 with faster commutes. Core omission. |
+| C-54 | C-38 | V | | Core: bus makers only; pattern adds cameras and payment systems. |
+| C-55 | C-33 | M | | |
+| C-56 | C-32 | M | | |
+| C-57 | C-30 | M | | |
+| C-58 | C-54 | S | E | Pattern: slower decisions or less time per appeal, as a group (`at_least_one_as_stated`). Core: `wait_time` increase alone. The PAO is a fixed quantity of hearings at a zero price, so CR-6's public-supply clause applies (this one is genuine rationing, not a shared facility), but it gives the margins as a group unless a premise signs one. Core overclaim. |
+| C-59 | C-25 | M | | |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-12 | OP | E | Through drivers' trips on the Inner Ring Road increase (CR-4, A-18). Pattern omission: stated in its text and in A-18, not recorded. |
+| C-15 | OP | E | Residents' full cost per zone day. Pattern omission. The core sign is at the wrong tier: under CR-12 0.9 it is `increase` at Tier B (the $1.50, not counting the roads) and `ambiguous` at Tier C (about 8 minutes saved against $1.50). |
+| C-19 | OP | E | More drops per charged van-day (CR-4c: a per-day charge bears only on the first drop; A-N2). Pattern omission: it mentions consolidation under C-22 but records nothing. |
+| C-23 | OP | E | Keepers whose plates are cloned spend time contesting notices (CR-9 contract, CR-8c, A-16). Pattern omission. |
+| C-26 | OP | E | Fewer cars kept at zone addresses: a parked car pays $1.50 each weekday ("driven or parked"; CR-4b, A-N3). Pattern omission. |
+| C-28 | OP | E | Demand for zone housing from car-commuting workers rises (CR-4, A-27). Pattern omission: used only as a chain of C-34, on a different variable. |
+| C-31 | OP | E | City reserves tied up for a year by the $70 million advance (CR-8a). Pattern omission. |
+| C-39 | OP | E | Transit employment rises after new buses arrive (CR-9, LW-10, A-8). Pattern omission. |
+| C-55 | OP | E | Zone parking fine receipts fall (CR-9, CR-4b, A-1). Pattern omission: it uses the fall in tickets for the PAO baseline but does not record the receipts. |
+
+### Findings
+
+- **Which tier is right for road speeds and crowding (the core version's flagged conflict).** Tier C, under the core rules as they stand. (1) CR-9 0.7 names roads and vehicles as shared facilities and puts chains through them at Tier C pending Q20; it is the more specific clause. (2) CR-6's public-supply clause establishes a priori only that pressure from excess demand at a set price goes to at least one open margin, recorded as a group; it does not sign travel time or crowding as single members, and it does not apply at all where demand does not exceed the fixed quantity (WE-032, C-6). (3) Whatever brings the pressure to the margin, the step from fewer vehicles (or more riders) to faster travel (or less space) for the others is the `shared_facility` relation (A-3), and CR-12d gives the consequence the lowest tier of any link. So core C-6, C-36 and C-53 should be Tier C, and with them C-14, C-15, C-17 (both readings' time chains), C-20 and C-52 should each be split into a Tier B record not counting the roads and a Tier C combined record (CR-12 0.9). Bus crowding (pattern C-38, core C-34) is wrong in both versions: at 85% peak load it is a Tier C `shared_facility` chain on routes below capacity, and a Tier B group (crowding, pass-ups, waiting) only with a premise that demand at the fare exceeds crush capacity. The PAO queue is different: hearings are a fixed quantity rationed at a zero price, so CR-6 applies at Tier B, as a group.
+- **Pattern overclaims or hidden premises.** C-15: diverted through drivers' longer travel time rests on an unstated premise; CR-3a gives only a loss by their own ranking. C-38: PC-19 was cited for a single member (crowding) of what PC-19 itself states as a group, at Tier B, without establishing that demand at the fare exceeds capacity.
+- **Errors in the core version.** Road and bus chains at Tier B (above), and the missing Tier B/Tier C pairs that follow; ride-hail fares `ambiguous` at Tier B (C-52) where the Tier B sign is `increase`; single members of CR-6 groups signed without a per-margin premise (C-54 PAO wait, C-51 wages); zone garage price not split although A-21 permits it (C-44). Omissions: the draw-back chain on vehicle-days, ride-hail drivers' net price, short-visit numbers, records and false claims under U1-b, retailers leaving the zone, the Tier C combinations for Ringside, and delivery prices. The core's use of the response argument for the zone parking chain in C-14 is sound: the parking price is common to all who park, so the argument binds it, unlike the time chain (CR-12e 0.8).
+- **Errors in the pattern version (omissions).** Residents' full cost (Tier B and Tier C records), drops per van-day, cloned-plate keepers, cars kept at zone addresses, zone housing demand by movers, the reserves advance, transit employment, parking fine receipts and ring-road trip numbers; and the Tier C record for ride-hail fares.
+- **Test of 0.9 verdicts against the core-only version.** No verdict was "failed". "Needed interpretation": CR-12 0.9 on recording a Tier C sign equal to the Tier B sign: the core version gives no evidence either way, because it never applied the rule; the check above shows the rule is needed here and the pattern version applied it correctly. RS-9 0.9 with new occupants through another component: confirmed as a difficulty for the pattern only; the core version reached the same `ambiguous` (C-48) by CR-12b without any special clause. TX-2 where the seller is the state: confirmed; the core version needed no seller side, using CR-1 operation 3 and CR-5c directly. CR-6 0.9 public seller with a lag, needing CR-12g: confirmed (core C-34 short, C-35 medium), though both versions misapplied the public-supply clause to below-capacity crowding. SB-7 needing a second premise: confirmed; the core version also needed A-8 as a dominance premise under CR-8d and flagged the wording.
+- **Limits of the core rules.** No K: every pattern-version claim the core version lacks is derivable from CR-1 to CR-12. The limit that matters is Q20: the policy's central effect, faster roads, and every consequence of it can be reported only at Tier C. Unclear wording: CR-6 0.7's public-supply clause lists "crowding, time of travel" among its margins without saying that it applies only to excess demand over a fixed quantity, gives a group sign, and does not override CR-9 0.7 for the link between users of a road or vehicle. A sentence saying so would have prevented the core version's error and the error both versions made on buses.

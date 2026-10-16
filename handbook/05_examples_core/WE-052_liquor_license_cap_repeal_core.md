@@ -1,6 +1,6 @@
 # WE-052 / Analysis: Repeal of a cap on retail liquor licenses
 
-Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -322,3 +322,90 @@ No earlier analysis of the 1949 cap is used; its effects are derived first from 
 - No actor class for lenders whose collateral is the target asset; `banks.license_lenders` was coined.
 - `asset_value` covers both a sale value and a value by the holder's own ranking for an asset that cannot be sold (CR-7 0.9); a qualifier was needed for the Sunday privilege under U1-a.
 - No variable for enforcement intensity per bound party (checks per outlet); expressed through `legal_breach` with a premise.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the core of the repeal. License values fall at once, from introduction and mostly at passage, and lease prices for use after December 2028 fall with them. Entrants come in, the number of outlets rises, prices and trips fall, and some package stores close. Under U1-a, more is bought at home and less in Ashcombe. Under U1-b, those signs and the signs for bars, wholesalers and excise are `ambiguous`, and Sunday sales fall. Both versions have the same lender loss, Sunday lobbying, window investment, stock run-down, fee receipts, sales-tax ambiguity and the Tier B and Tier C split for homes near outlets. They share 26 premises with the same probabilities. The differences are of three kinds. (1) Each version leaves out opposing chains in some places. The pattern version signs lessees' means (C-11) and the value of stores run on leased licenses (C-32) as increases. It counts the lease saved but leaves out the lost margins and the higher fee, which CR-3's note on receipts says must be combined. The core version signs window and post-date purchases (C-10, C-11), medium-run rents (C-29), incumbents' quality (C-17) and sales per package store (C-15) with one chain each. It leaves out the clearance sales, the units that closing stores vacate, cost-cutting at lower margins, and the customers survivors take over from closed rivals. (2) The pattern version misses that licenses renewed under section 12A cannot be sold or leased. So under U1-a, nothing of the lease value survives, and what is left of the license is a value by the holder's own ranking, not a sale value. (3) Recording. The pattern version uses CR-6's group for the Board's margins, where the core version signs a member with no premise for it. The core version splits lobbying by class but records only the total for holders. The pattern version records only the compensation item. Neither version's error comes from a pattern applied as written.
+
+Counts: M 23, V 8, S 6, OP 11, OC 3.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-3 | M | | Same timing (CR-7c, by probability). The core version's U1-a remnant is a value by the holder's own ranking, because 12A licenses cannot be sold. The pattern version prices it into the sale value of the license (see C-10). |
+| C-2 | C-1, C-2 | V | | Split into `entry_rate` (C-1) and `number_of_sellers` (C-2). |
+| C-3 | C-6 | M | | Both need A-4. The core version adds the long run, and the response argument for exit, mirrored. |
+| C-4 | C-8 | M | | |
+| C-5 | C-9 | M | | Same readings, and the same dominance premise under U1-a (A-18). |
+| C-6 | C-12 | M | | |
+| C-7 | C-16 | M | | |
+| C-8 | C-38 | V | | The pattern version uses the group (`employment`, `hours_worked`, at least one decrease), and the core version uses `employment` decrease. Closures make the core sign defensible, but the core version's own C-17 (survivors add service and hours) runs the other way for survivors' staff, so the group is the safer form. |
+| C-9 | C-39 | M | | |
+| C-10 | C-19 | M | | Same sign. Persistence differs: pattern U1-a partial, core none. Section 12 is repealed, and K4 renews old licenses "under section 12A", whose licenses are "not transferable", so after 1 December 2028 no license can be leased under either reading. The core version is right. The pattern version's U1-a text ("leases ... worth only the Sunday privilege") is an analyst error. |
+| C-11 | C-21 | S | E | Pattern increase, core `ambiguous`. CR-3's note says to combine lost receipts with saved outlays under CR-12b. Lessees save the lease but lose part of their margin and sales (pattern C-35, core C-14 and C-15), and they now pay a $5,000 fee where the holder paid $1,000 out of the lease. No figure ranks these. The error is in the pattern version. |
+| C-12 | C-23 | S | J | The pattern version records holders' lobbying for compensation as an item that exists only under the repeal (increase, CR-12 0.9). The core version records holders' total lobbying (compensation and restoration, against defending a contested cap: `ambiguous`). CR-12's 0.8 rule on two items in one variable asks for both the items and the total. Each version gives one part. Both signs are right for what each records. |
+| C-13 | C-23, C-24 | V | | Lobbying over the cap, `ambiguous` in both. The pattern version puts two actor classes in one consequence. The core version splits them, as CR-1's recording note asks, and gives grocers their own premise (A-N4). |
+| C-14 | C-25 | M | | The core version adds A-N3 for entrants. |
+| C-15 | C-13 | M | | |
+| C-16 | none | OC | E | Saturday sales increase. Under both readings this follows from CR-4c with A-4 and A-5, and under U1-b also from Sunday purchases moved to Saturday. No opposing chain reaches Saturday. The core version left it out. |
+| C-17 | C-37 | M | | |
+| C-18 | C-28 | M | | |
+| C-19 | C-17 | S | E | Pattern: incumbents' `investment_target` is `ambiguous` (differentiation, A-14, against lower margins, A-7). Core: `quality_per_unit` increase, on A-14 alone. Lower margins also give a CR-4c chain toward cutting service and hours, and its premise (A-7, p 0.7) is in the core version's own table. So by CR-12's 0.8 note (kind 2) the core sign should be `ambiguous`. The core version omitted the opposing chain. |
+| C-20 | C-18 | M | | |
+| C-21 | C-10, C-7 | S | E | Pattern: purchases in September to November 2028 are `ambiguous` (delay, A-15, against clearance sales, A-16). Core: storable purchases in the window decrease. The core version records the clearance sales itself (C-7, lower prices; C-18, stock run down), but it does not set them against C-10. Under RS-8's 0.9 case, which follows from CR-10a with CR-12b, the window is `ambiguous`. The error is in the core version. |
+| C-22 | C-11 | S | E | Pattern `ambiguous`, core increase. Purchases pulled forward into the clearance sales are missing from the period after the date. That is a kind 2 chain on A-16 (p 0.6), opposing the deferred purchases. The core version omitted it. |
+| C-23 | C-26 (and C-27) | V | | Pattern: the Board's margins as a mixed group (wait up, other checks down). Core: `wait_time` increase signed alone, citing CR-6's public-supply clause. Under CR-6, each margin needs a premise, and the Board can draw staff from checks instead of letting the queue grow. So the group is the valid form, and the core sign rests on an unstated premise. The core version takes the other member to underage breaches (C-27, below). |
+| C-24 | C-36 | V | | `quantity_traded` against `quantity_complement`. |
+| C-25 | C-33 | V | | The pattern version uses CR-6's group (price or quantity). The core version signs the quantity sold to Merrowind residents. Their demand falls, and Ashcombe's response cannot reverse that fall (CR-12e), so the core sign is defensible too. |
+| C-26 | C-34 | V | | As C-24. |
+| C-27 | C-31 | M | | |
+| C-28 | C-29 (short) | M | | Retail rents rise in the short run. Both versions use the partial-response premise (A-13). |
+| C-29 | C-29 (medium) | S | E | Pattern `ambiguous`, core increase in the medium run. Package stores that close vacate small units (core C-16). That is a second change the repeal causes, which CR-12e's 0.8 note excludes from the response argument, and its premise is A-7. The core version omitted it. Its C-30 (other tenants) carries the same error in the medium run. |
+| C-30 | C-41 | M | | |
+| C-31 | none | OC | E | An owner-operator's store and license, valued as one going concern, decrease. By arithmetic on the case's figures, the transitional rent is part of the counterfactual rent, and the fee rises as well. The core version records the parts (C-3, C-14, C-15, C-5) but not the asset whose persistence differs from the license's. That distinction is the case's main probe. The core version left it out. |
+| C-32 | none | OC | E | Stores run on leased licenses, valued without the license, increase. On the counterfactual path the lease takes the license's rent (CR-7a, CR-7c). After the repeal the lessee keeps a declining transitional rent, but pays $5,000 a year for good in place of the roughly $1,000 fee carried in the lease, and loses margin. The net needs a premise ranking a transitional gain against a permanent cost. Lessees with leases that run past the date also keep paying for a right that has lost its value. The sign is `ambiguous` without a dominance premise. The error is in the pattern version. |
+| C-33 | C-47 | M | | |
+| C-34 | C-20 | M | | |
+| C-35 | C-14 | M | | |
+| C-36 | C-5 | V | | The fee is recorded as `price_paid` in the pattern version and as `resources_available_other_uses` of continuing holders in the core version. That is valid, because they keep paying (CR-3 note, CR-1's 0.7 note on splitting a class by response). The pattern version declined to sign means for the whole class. Its inclusion of `entrants` is wrong for would-be license buyers and lessees: for them the cost of the right to sell falls from about $400,000, or $30,000 a year, to $5,000 a year (core C-22). |
+| C-37 | C-4 | M | | |
+| C-38 | C-48 | M | | Tier C, A-11 and A-12, in both. |
+| C-39 | C-44 | M | | |
+| C-40 | C-46 | M | | |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-7 | OP | E | Prices in the window decrease, as incumbents sell off stock (A-16, CR-10a). Buyers' delay also lowers demand, in the same direction. The pattern version uses this chain in C-21 but does not record the price. Pattern omission. The core horizon (the whole window) is broader than the last months that A-16 covers. |
+| C-15 | OP | E | Sales per package store decrease, on A-5 alone. Per surviving store, customers of closed rivals (A-7) and lower prices (CR-4c) push up, and no premise ranks the chains. The sign should be `ambiguous`. Core error. |
+| C-22 | OP | E | Would-be buyers of about 90 licenses a year no longer pay about $400,000 to a holder (CR-8a, CR-8b). The higher fee is far smaller (arithmetic, CR-12e). Valid. Pattern omission: its section 9 looks for the payer side only among buyers of wine and spirits. |
+| C-27 | OP | A | Underage-sale breaches increase. With fixed staff and up to twice as many outlets, checks per outlet fall even if the total number of checks holds (arithmetic), and A-N1 supplies the response. The pattern version puts underage sales out of scope. This is a difference of scope. |
+| C-30 | OP | E | Other tenants rent fewer small units in the short run (CR-9, CR-4c, CR-8a). Valid in the short run, and a pattern omission. The medium run inherits C-29's error. |
+| C-32 | OP | E | Wholesalers' deliveries in autumn 2028 decrease. Deliveries are sales plus the change in stock, stock is run down (A-16), and clearance sales come out of that stock. Pattern omission. |
+| C-35 | OP | E | Supermarkets and convenience stores sell more mixers and groceries on liquor trips. The pattern version says so in its text on C-24 but does not record it. Pattern omission. |
+| C-40 | OP | J | Total employment in off-premises retail is `ambiguous`. The core version combines two classes into a total. Nothing scorable is lost. |
+| C-42 | OP | A | Borrowers against licenses pay more or borrow less on renewal: a group, on a new premise (A-N2). |
+| C-43 | OP | E | New loans to buy licenses decrease, because license purchases end. Valid. Pattern omission. |
+| C-45 | OP | E | Excise in autumn 2028 decreases. The core version ties it to wholesale deliveries (C-32), which assumes the excise is collected at wholesale. The record does not say this. If it is collected on retail sales, it follows C-21 (`ambiguous`). Core error: a hidden premise. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** None from a pattern applied as written. EN-6 in reverse would have overclaimed on price, but the pattern version caught that itself with A-4, and the core version needed the same premise. RS-7's repeal clause, RS-8's 0.9 clause, OC-3's 0.9 fixed-budget clause, RS-9, RS-16's mirror case, TX-10 and TS-1 all agree with what the core rules give. Where the two versions differ on those keys, the pattern version is the one that is right (C-21, C-22, C-23).
+- **Errors in the pattern version.** (1) C-11 and C-32: the lease saved is signed without the lost margins and the fee rise (CR-3's note on receipts, CR-12b). Both should be `ambiguous`. (2) The section 12A licenses cannot be sold or leased. So persistence of C-10 and C-34 under U1-a is none, not partial, and C-1's U1-a remnant is a value by the holder's own ranking, not a sale value. (3) C-36 includes entrants, though for would-be license buyers and lessees the cost of the right falls. (4) C-13 puts two actor classes in one consequence. (5) Omissions: prices in the window (core C-7), license buyers' means (C-22), other tenants of small units in the short run (C-30), autumn deliveries (C-32), supermarkets' trip goods (C-35) and new license loans (C-43).
+- **Errors in the core version.** (1) Single-chain signs where a derived opposing chain with p ≥ 0.5 exists: purchases in the window and after the date (C-10, C-11), medium-run rents and tenants (C-29, C-30), incumbents' quality (C-17) and sales per package store (C-15). (2) C-26 signs one CR-6 margin with no premise for it. (3) C-45 assumes excise is collected at wholesale. (4) Its transfer account pairs holders' capitalized loss (C-3) with the 90 buyers a year who no longer pay (C-22). The larger payer side is buyers of wine and spirits over time (C-6), which the pattern version's section 9 gives correctly. (5) Omissions: Saturday sales (pattern C-16) and store values (C-31).
+- **Metamorphic checks compared.** Both versions derive the cap's effects from the core rules before comparing, and neither finds a sign that fails to reverse without a reason. Both rest the non-reversals on U1-b's Sunday clause and on lobbying, which changes object. They agree on outlets, prices, trips, cross-border buying, the lease and lending market, supermarkets' exclusion, package-store employment and excise. The differences are as follows.
+  - *License value.* The pattern version records that the variable reverses, with persistence U1-a partial and U1-b none. The core version says it is "not a reversal of who gained", because current holders bear the loss and earlier holders captured the gain. That mixes who bore the change with how much of the variable remains. Who bore it belongs in sections 8 and 9, as the WE-043 comparison found for that pattern version. The pattern version is right. The core version's GAP-052-C2 is a vocabulary point for the check, not a calculus gap.
+  - *Store against license.* Only the pattern version has the row that the case turns on. The license's value follows a legal count, which ends on one date. The store's value follows the stock of outlets, which grows over years. The core version has no store-value row (see C-31).
+  - *Leases.* Pattern: U1-a partial. Core: none. The core version is right (12A licenses cannot be sold or leased).
+  - *Sunday under U1-a.* The core version's table says it "persists in full", while its consequence list says "n/a (not an effect of the cap)". The pattern version gives "no counterpart, n/a" consistently. Since the effect has no counterpart on the original path, n/a is the right entry. The core version's GAP-052-C1 asks for a word for this, which the pattern version's "no counterpart" row already supplies.
+  - *Coverage.* Only the pattern version has rows for bars, wholesalers, rents, homes near outlets, mixers, and the effects with no counterpart (the fee, compensation lobbying, the Board, the window). The core version lists none of the window effects.
+- **Test of 0.9 (the pattern version's verdicts).** *CR-7 0.9, persistence follows the stock (needed interpretation):* confirmed. The core version gave the same persistence for licenses and prices, but without the store/license distinction the clause cannot be applied cleanly, which is the pattern version's point. *EN-6 in reverse (needed interpretation; listed as a failure in 6.2g):* confirmed. The core version also needed A-4 for the price sign. *CR-8 0.7, voiding clause for a privilege (needed interpretation):* confirmed. The core version did without the clause and used CR-8b, CR-7c and CR-1's recording note on K5. *EN-13 in reverse (consolidation does not mirror):* the core version reached the end of the lease market (C-19) and said nothing about consolidation. It neither confirms nor contradicts. *CR-7 0.9, assets without a market price ("not needed: licenses trade"):* contradicted. Under 12A, licenses cannot be sold after 1 December 2028, so the clause is needed for the U1-a Sunday privilege, as the core version used it in C-3. The verdicts marked "worked" for RS-8 0.9, OC-3 0.9 and CR-12e with a second change are supported, since the core version went wrong exactly where it did without them (C-10, C-11, C-26, C-29).
+- **Limits of the core rules.** None produced a difference (K = 0). The core version's GAP-052-C1 and GAP-052-C2 concern the vocabulary of `persistence` and of the metamorphic check, not a missing step. The following wording caused trouble:
+  - CR-7's 0.9 persistence clause does not say which stock, where a permission and the capital it allowed come apart.
+  - CR-8's 0.7 voiding clause is written for contract rights.
+  - CR-12e's 0.9 note is written for an increase, so the core version had to infer the mirror for a fall.
+  - CR-6's 0.7 public-supply clause fits an agency's processing staff only loosely.
+  - CR-12's 0.8 rule on two items in one variable is not cross-referenced from CR-4's 0.9 note on lobbying in a repeal. That is why each version recorded only part of holders' lobbying.
+  - CR-3's note on combining lost receipts with saved outlays mentions only producers who also sold. Its use for lessees, whose saved lease comes with lost margins, is easy to miss (pattern C-11).

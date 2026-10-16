@@ -1,6 +1,6 @@
 # WE-047 / Analysis: Sugar tariff-rate quota replacing a flat tariff, with tradable licences allocated by history
 
-Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -302,3 +302,79 @@ CR-8a: land, labor and capital drawn into beet and mills (C-29, C-32, C-21) are 
 - No variable for the composition of imports (raw against white); `quantity_supplied` of refined sugar was used.
 - No actor class for holders of a created right distinct from current sellers; `holders` was coined.
 - No variable for the value of a firm as a whole as distinct from a single asset; `asset_value (the firm as a whole)` was used.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the core of the case: the domestic sugar price rises in the short, medium and long run (by the response argument with a partial-response premise), imports fall, the nine historical importers receive a windfall captured from the proposal date, licences lease at a positive price and are traded, domestic growers and processors gain and expand, beet land and mills gain value, manufacturers lose sales to imported sugar goods and exports, glucose syrup substitutes at a higher price, the timing effects around 2026 and each 30 September, the per-reading effects of U1, tariff revenue falls and is made up by a group, and the currency link is `ambiguous`. Both reach the price rise without the single-rate tariff pattern: the core version from CR-6 applied to the quantity fixed at the low rate, which confirms the pattern version's verdict that TX-7 fails on a two-rate tariff. The differences are mostly omissions on both sides, plus five sign differences. Two are core errors: Vellport refining throughput is `ambiguous` in the core version although its own premises A-15 and A-25 sign it as a decrease, and its registrations of new importers rise for a reason that misapplies CR-7a. One is a pattern error: the firms' value rises for the refiners on a premise (A-22) that covers only trading margins. Two are judgment calls on group against single signs for labor. The pattern version's EN-13 sign on the number of active importers is against the initial allocation, not the counterfactual.
+
+Counts: M 27, V 8, S 5, OP 7, OC 5.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | none | OC | E | Licence holders' in-quota landed cost falls (25% to 2%; CR-1 op 3). Core omission: stated as an operation in section 2, not recorded. |
+| C-2 | none | OC | E | Out-of-quota landed cost rises (25% to 60%). Core omission, as C-1. |
+| C-3 | C-3 | M | | |
+| C-4 | C-6 | M | | Pattern by the response argument (A-3); core by arithmetic on A-25. Independent chains, same sign (CR-12d). |
+| C-5 | C-1 | M | | Both from the marginal rate. The core version notes (GAP-047-C2) that stocks bought ahead in 2026 are a response A-3 does not cover; the pattern's short horizon "from 1 January 2027" needs a premise that those stocks do not cover the shortfall in the first months (CR-12 0.9: a partial response). |
+| C-6 | C-27, C-28 | V | | Split into processors (white sugar) and growers (beet). |
+| C-7 | C-20, C-29 | V | | Split; core horizon medium and long, pattern from the 2026 sowing. |
+| C-8 | C-4 | M | | |
+| C-9 | C-13 | M | | |
+| C-10 | none | OC | P | Pattern: fewer firms actively import (EN-13). EN-13 signs the number of users against the initial allocation (every holder active), not against the counterfactual. Here licences may be leased to any registered importer, so high-value users outside the nine (manufacturers importing directly) can raise the count. The decrease needs a premise that the high-value users are among the nine and that lessors stop importing. Pattern as written (baseline); core omitted the key. |
+| C-11 | C-14 | S | E | Pattern: total entry U1-a `ambiguous`, U1-b `decrease`. Core: registrations increase under both readings, because firms "register for $500 to buy or lease licences worth more than $100 a tonne". A firm that buys or leases a licence at its market price pays the rent (CR-6, CR-7a), so the licence's value is no reason to register; the core sign holds only in the trivial sense that a register exists only under the act (CR-12 0.9), which is not entry into importing. Core error. The pattern's U1-b decrease holds through the smaller import volume and the new fees, not through "must buy licences", which treats the lease price as a barrier. |
+| C-12 | C-14 (part) | V | | Registrations to apply for surrendered tonnes under U1-a; the core records a wider item (all registrations). |
+| C-13 | C-16 | M | | |
+| C-14 | C-15 | M | | |
+| C-15 | C-11 | M | | |
+| C-16 | C-10 | M | | |
+| C-17 | C-12 | M | | |
+| C-18 | C-7 | M | | |
+| C-19 | C-8 | M | | |
+| C-20 | C-18 | V | | Core signs manufacturers only; households' quantity is not signed (A-24 is about their spending). CR-4c gives the household decrease too. |
+| C-21 | C-19 | M | | |
+| C-22 | C-38 | M | | |
+| C-23 | C-17 | M | | |
+| C-24 | none (a chain of core C-42) | OC | E | Share of white sugar in in-quota imports rises: a licence counts tonnes, and with A-15 the rent per tonne is larger for white (CR-4c with the tonne as the unit). The core version uses this only as a chain of C-42 and notes it lacks a variable for import composition. Core omission. |
+| C-25 | C-42 | S | E | Pattern: refining of imported raw sugar decreases. Core: `ambiguous`, with out-of-quota raw at the margin as a (+) chain. With A-15 every holder faces the same white price, so every licence goes to white (a corner, not a share); raw then enters only out of quota, below 200,000 t (A-25), against 450,000 t now. The decrease follows by arithmetic on two premises the core version itself lists. Core error. The pattern version omits A-25 from C-25's premises, and its "If false" for A-15 ("rests on lower imports alone") is wrong: lower total imports do not sign raw imports. |
+| C-26 | C-22 | M | | |
+| C-27 | C-34, C-36 | V | | Output split into home sales and exports. |
+| C-28 | C-37 | S | J | Pattern: employment or hours, as a group. Core: employment decrease. A-23 ("employment and hours adjust with output") can be read as covering each; both defensible. |
+| C-29 | C-35 | M | | |
+| C-30 | C-36 | M | | |
+| C-31 | C-46 | M | | Same sign. The core version adds a chain the pattern version dismissed: fewer food exports leave foreign buyers' means for other exports (CR-9 0.7: exporters of different goods compete for the same foreign means). The pattern's "not in foreigners' means" is wrong, though the sign is unchanged. |
+| C-32 | C-30 | M | | |
+| C-33 | C-31 | M | | |
+| C-34 | C-33 | V | | Pattern signs manufacturers' asset value; core their return on capital. CR-7c would carry the core's sign to the asset. |
+| C-35 | C-41, C-43 | S | P | Pattern: every importing firm's value rises, by A-22 (rent far exceeds the trading margin on lost volume). Core: trading houses and direct importers increase (C-41, matching), refiners `ambiguous` (C-43). The refiners lose refining throughput (pattern C-25 itself), and the refining margin on it is not in the case; A-22's evidence is the $15 trading margin. Analyst misapplication of a premise beyond its evidence; for refiners there is no dominance premise (CR-12b). |
+| C-36 | none | OC | E | Seed, fertilizer and haulage for beet rise (CR-9, LW-10). Core omission. |
+| C-37 | C-32 | S | J | As C-28, for mills and beet farms. |
+| C-38 | C-39 | M | | |
+| C-39 | C-2 | M | | |
+| C-40 | C-5 | M | | |
+| C-41 | C-45 | M | | |
+| C-42 | C-23 | M | | |
+| C-43 | C-45 | V | | Core merges the licence office's funding into the general-budget group. |
+| C-44 | C-25 | M | | |
+| C-45 | C-6, C-18 | V | | Purchases not made, recorded by the core on imports and manufacturers' quantity. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-9 | OP | E | Tariff revenue in March to December 2026 rises with the imports brought forward at 25% (CR-8b on C-7). Pattern omission; its C-40 covers the quota years only. |
+| C-21 | OP | E | Processors invest in mill capacity (CR-4, CR-10c, A-N1). Pattern omission: its C-39 text names new mill capacity but records nothing. |
+| C-24 | OP | E | Customs' enforcement cost rises (two rates, licence checks, mixtures; CR-8c). Pattern omission: its OC-3 note says only that customs work "does not fall". |
+| C-26 | OP | E | Licence office receives registration and transfer fees (CR-8b). Pattern omission. |
+| C-40 | OP | J | Direct importers' cost of sugar, counting the lease value of their own licences, rises (CR-3). The pattern version states this in its text (C-8 paragraph) without recording it. |
+| C-44 | OP | E | Port storage, price or quantity as a group, rises in 2026 and each summer (CR-9, CR-6 0.9). Pattern omission. |
+| C-47 | OP | J | Exchange rate `ambiguous`. The pattern version records the currency link only through export industries (C-31); recording the link variable is a choice. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** C-35: A-22 (rent against the trading margin) was stretched to the refiners, who lose a refining margin the case does not give; their firm value is `ambiguous`. C-10: EN-13's decrease in users is against the initial allocation; against the flat-tariff counterfactual, with licences leasable to any registered importer, it needs a premise that the high-value users are among the nine. C-5 (short horizon): stocks bought ahead in 2026 are a response the partial-response premise A-3 does not cover, so the first months of 2027 need their own premise. C-11: the reasoning treats the lease price as a barrier to entry; the sign survives on other grounds.
+- **Errors in the core version.** C-42: A-15 implies every licence goes to white (all holders face the same price), and A-25 then caps raw imports below 200,000 t against 450,000 t, so refining throughput decreases; GAP-047-C1 is not a gap. C-14: the rise in registrations was justified by the licences' value, which a buyer or lessee pays for at the market price (CR-7a). Omissions: the two landed costs (C-1, C-2), the number of active importers, the white share of in-quota imports, and beet input suppliers.
+- **Errors in the pattern version (omissions).** 2026 tariff revenue, mill investment, customs' enforcement cost, licence fee receipts, port storage, direct importers' opportunity cost (recorded only in text), and the fewer-food-exports chain in the currency link (C-31).
+- **Test of 0.9 verdicts against the core-only version.** "Failed": TX-7 on a two-rate tariff: confirmed. The core version derived the price rise from CR-6 applied at the marginal quantity and treated the in-quota cut as a change in who receives the gap (C-4, C-5), exactly the reading the pattern version had to impose on TX-7. "Needed interpretation": EN-6 for a tariff-rate quota: confirmed; the core version hit the same difficulty with CR-6's 0.7 note on a fixed quantity priced in a wider market (its Gaps found, b). EN-6 0.9 Inputs clause fitting the output but not the input's price: confirmed; the core version needed no Inputs clause, signing the input's price by CR-6 and the output by CR-9 and CR-7b. CR-1 0.9 for a threshold on a total allocated by licences: not confirmed as a difficulty; the core version recorded operation 3 per class (holders' licensed tonnes, everyone's other tonnes) under CR-1's ordinary recording rule without the 0.9 clause. CR-12 0.9 on the response argument ("worked as written"): partly contradicted. The core version found the 2026 stocks to be a response with no partial-response premise (GAP-047-C2), which bears on the pattern's short-run C-5.
+- **Limits of the core rules.** No K. GAP-047-C1 is closed by A-15 and A-25 (above). GAP-047-C2 is real wording: CR-12 0.9 says a partial response is needed to report `increase`, but not how to sign a window in which a finite stock built in response holds the price, which needs a premise on the stock's size or a horizon that starts when it runs out. Unclear wording: CR-6's 0.7 note on a fixed quantity priced in a wider market does not cover a quantity fixed only at a lower rate (a quota on the rate, not on imports); the CR-12e scope of a dominance premise (A-22) over a related margin. The core version's doubt over whether the windfall dates from proposal or enactment is answered by CR-7c's probability clause, which both versions applied.

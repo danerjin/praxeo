@@ -1,6 +1,6 @@
 # WE-053 / Analysis: Data localization requirement
 
-Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -287,3 +287,76 @@ Both sides of each transfer: the appropriation (C-5) has payers in the general b
 - No variable for the location of processing or storage (share of data hosted at home); C-1 uses `quantity_traded` from the foreign seller.
 - No actor class for groups of related controllers counted separately; `controllers.near_threshold` covers both deleting and splitting.
 - No variable for capacity queues at an infrastructure provider other than `wait_time` (grid connections).
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the main structure of data localization. Covered controllers stop buying Esterland hosting for covered data, pay to migrate, bear the officer's and statement's costs, and pay more per unit of computing. Their hosting quality is `ambiguous` (latency against range of services). Fewer providers serve them. Controllers near the line delete or split records in 2028 and bunch below it. Some foreign services cap or withdraw, and others breach where enforcement cannot reach them. Colocation prices rise in the short run, sites with grid capacity gain value, and migration work rises in the window. Customers of covered controllers pay more or buy less, lobbying rises, and the currency chain is `ambiguous`. Both versions use the same 24 premises with the same probabilities. The differences are of three kinds. (1) The medium run for local colocation (pattern C-18, C-19 and C-21 against core C-26, C-28 and C-30). The pattern version uses CR-12e's response argument, treating the providers' local regions as new supply drawn by the price. The core version counts the regions as a second change that also competes for colocation's existing customers, and finds the medium run `ambiguous`. Each reading needs a premise the other does not state, so this is a judgment call. (2) The general budget. The pattern version signs its payers down (C-32) and leaves out the certificate fees and fines it records itself going into the same budget. The core version is right that the group's sign is `ambiguous`. (3) Coverage. Only the core version has the users' lost exchanges, the domestic rivals' value, operating jobs, the providers' investment withdrawn from elsewhere, the consultants' price and the projects it crowds out, grid queues, and breaches in early 2029. Only the pattern version has firms just below the line, backup storage abroad, equipment imports and construction jobs. The one pattern that failed as written, RS-16's 0.9 clause, was overridden by the pattern version itself, and the core version confirms the override.
+
+Counts: M 16, V 10, S 5, OP 9, OC 4.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-2, C-3 | V | | Split into the officer and statement (C-2, Tier A, all covered controllers) and migration (C-3, those hosting abroad). |
+| C-2 | C-27 | V | | Local capacity hosting covered data, recorded as `quantity_traded` of colocation space. |
+| C-3 | C-16 | M | | |
+| C-4 | C-8 | M | | The core version adds the response argument (provider regions cannot bring the price below the Esterland price it replaced). |
+| C-5 | C-24 | V | | `number_of_sellers` against `variety` (providers and services). |
+| C-6 | C-1, C-22, C-23 | V | | The same prevented exchanges, recorded on the buyers' side (C-1) and on the sellers' side, split into Esterland regions (C-22) and providers that do not build (C-23). |
+| C-7 | none | OC | E | Backup storage abroad: U1-a `no_change`, U1-b decrease. CR-1 per reading gives it directly. The core version left it out. The core version's A-7 note ("no reported consequence rests on it") is also wrong: its own C-14 under U1-a is `no_change` only if the counterfactual backups are already encrypted. Otherwise U1-a requires encryption, which is a cost. |
+| C-8 | C-14 | M | | The core version should cite A-7 (see C-7). |
+| C-9 | C-10 | M | | |
+| C-10 | C-11 | V | | Bunching recorded as more controllers just below the line, against service beyond 50,000 records given up. Both rest on A-10. |
+| C-11 | none | OC | E | Controllers just below the line: `asset_value` is `ambiguous`. CR-7c lowers the value of the option to grow, and CR-9 adds the gain from the burden on rivals above the line. The pattern version applied RS-17's 0.9 clause, and the core rules give the same result. The core version left it out. |
+| C-12 | C-12 | M | | |
+| C-13 | C-13 | M | | |
+| C-14 | C-21 | M | | |
+| C-15 | C-36 | M | | |
+| C-16 | C-9 | M | | |
+| C-17 | C-25, C-29 | V | | The short-run rise in colocation prices, recorded on both sides: sellers' net price (C-25) and the price already-local controllers pay (C-29). |
+| C-18 | C-26, C-30 | S | J | Medium-run colocation price: pattern increase, core `ambiguous`. The pattern version treats provider regions as supply drawn by the price, so CR-12e with A-17 gives an increase. The core version notes that a local region is also a new option for latency-sensitive customers who were already hosting locally, customers the Act did not move. CR-12e's 0.8 note excludes such a second change from the response argument. Each sign needs a premise its version does not state: the pattern version, that the shifted demand dominates; the core version, that some existing colocation customers prefer a local region (it cites only A-4). Both are defensible. The 6.2g failure noted for CR-12e's 0.9 clause points the same way: the argument is fragile when the supply response is a different product. |
+| C-19 | C-25, C-26 | S | J | Short run: both increase. Medium run: as C-18. |
+| C-20 | C-18 | S | E | Pattern: the number of facilities hosting covered data is `ambiguous`, because the demand shift draws facilities in while the certificate drives some out (A-18). Core: small facilities' hosting of covered data decreases. The core version's class also gains from the demand shift and from the higher price (C-25), a kind 2 chain it left out. Without a premise splitting the class by response, the sign is `ambiguous`. The error is in the core version. |
+| C-21 | C-28 | S | J | Operators' value: pattern increase (the certificate is small against facility revenue, by arithmetic), core `ambiguous`. The value follows the expected yield path, so it inherits the medium-run disagreement in C-18. |
+| C-22 | C-17 | V | | New data centers entering, against incumbent colocation firms expanding below 10 MW. Same chain, CR-4 with A-3. |
+| C-23 | C-40 | M | | |
+| C-24 | none | OC | E | Imports of servers and network equipment increase (CR-9, A-21). The core version uses this as a chain in C-43 but does not record it. Core omission. |
+| C-25 | none | OC | E | Employment in building data centers increases. The core version records operating jobs (C-41) but not construction. Core omission. |
+| C-26 | C-31 | M | | The pattern version limits the claim to online services (A-19). The core version covers all customers of covered controllers, with A-5 and A-23. The group sign holds for both. Only the per-unit cost passes into prices (CR-4 0.8), and both versions say so. |
+| C-27 | C-33 | M | | |
+| C-28 | C-34, C-35 | V | | Pattern: a group (sales or prices of domestic rivals, at least one increase). Core: `quantity_substitute` increase signed alone, which under CR-6's 0.9 clause needs a premise on their supply, so the group is the safer form. The core version adds their value (C-35, below). |
+| C-29 | C-43 | V | | The pattern version signs exporters `ambiguous` (TX-8 0.9, extended). The core version stops at an `ambiguous` exchange rate (CR-9 0.7). Same kind 3 chain. |
+| C-30 | C-22 | V | | Pattern: a group of quantity and price for Esterland data centers. Core: quantity sold to covered controllers, which falls directly by CR-1 operation 1, so no split premise is needed. |
+| C-31 | C-5 | M | | |
+| C-32 | C-7 | S | E | Pattern: general-budget payers `at_least_one_decrease`. Core: `ambiguous`. K4 sends certificate fees (and fines, pattern C-33) to the same general budget that funds the 6 million crowns. By CR-8b and CR-8d the group both pays and receives, and the number of certified facilities is not in the case's figures, so CR-12b gives `ambiguous`. The pattern version applied OC-1's and OC-3's "who pays" clauses without the receipts it recorded itself. The analyst erred, though the wording of those clauses invites it (Findings). |
+| C-33 | C-6 | M | | The core version leaves out fines. Fines need breach by controllers that have an establishment, and its own C-15 supplies that. |
+| C-34 | C-20 | M | | Both rest on A-23. The fixed costs, which are not passed into unit prices (CR-4 0.8), are enough for the sign even if the per-unit cost is passed on. |
+| C-35 | C-4 | M | | Tier A in the core version, B in the pattern version (premise A-1). |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-15 | OP | A | Controllers with an establishment that are not yet compliant in early 2029 (`legal_breach` increase). It rests on a new premise (A-N2: regions open from about February 2029, and colocation has 15% free). The pattern version's section 8 notes the timing but signs nothing. |
+| C-19 | OP | E | Covered controllers' `asset_value` decreases. Valid for most of the class, but the class includes domestic online services that host locally. These gain users from withdrawn foreign rivals (the core version's own C-34 and C-35), an opposing chain. The class should be split (CR-1 recording) or the sign qualified. Core error. |
+| C-32 | OP | E | Users of foreign services that cap or withdraw lose those exchanges (CR-5a). Valid. The pattern version records only `variety`. Pattern omission. |
+| C-35 | OP | E | Domestic substitutes' value increases from enactment (CR-7c, CR-10c, A-20). Valid. Pattern omission. |
+| C-37 | OP | A | Migration consultants' price increases. It needs a capacity premise (A-N1, new). |
+| C-38 | OP | A | Other IT projects are crowded out by migrations (A-N1). |
+| C-39 | OP | J | Other firms wait longer for large grid connections. The pattern version stopped it at depth 3 as diffuse. The connections are few and in two zones, so the core version's choice is the better one, but this is a matter of depth. |
+| C-41 | OP | E | Data-center operating jobs in Corvany increase (CR-9 with LW-10, A-3, A-4). Valid. Pattern omission. |
+| C-42 | OP | E | Building providers use about 400 million crowns per region that they would have invested elsewhere (CR-8a). Valid. Pattern omission. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** RS-16's 0.9 clause, applied as written to a cost fixed per facility, would have made operators' net price `ambiguous`. The pattern version overrode it, and the core version confirms the override: CR-4's 0.8 note gives no per-unit chain, so C-25 is an increase. OC-1's and OC-3's "who pays" clauses give `at_least_one_decrease` for general-budget payers and say nothing of fees paid into the same budget. Read alone, they invite the error in pattern C-32. TX-8's 0.9 clause covers this case only when extended, as the pattern version said. No other pattern applied as written gave a sign the core rules do not.
+- **Errors in the pattern version.** (1) C-32 should be `ambiguous` (the fees and fines go to the paying budget). (2) C-18, C-19 (medium run) and C-21 need a stated premise that the shifted demand dominates the regions' competition for colocation's existing customers, or else `ambiguous`. As written they rest on reading the regions as a response to the price, which CR-12e's 0.8 note puts in doubt. (3) Omissions: users' lost exchanges (core C-32), domestic rivals' value (C-35), operating jobs (C-41) and providers' investment withdrawn from elsewhere (C-42).
+- **Errors in the core version.** (1) C-18 signs a decrease for a class that also gains from the demand shift (pattern C-20 is right). (2) C-19's class includes domestic services that gain from rivals' withdrawal. (3) A-7 is said to bear on nothing reported, but C-14's U1-a `no_change` rests on it. (4) C-34 signs one CR-6 margin with no premise. (5) Omissions: firms just below the line (pattern C-11), backup storage abroad (C-7), equipment imports (C-24) and construction jobs (C-25).
+- **Test of 0.9 (the pattern version's verdicts).** *RS-16 0.9 (failed):* confirmed. *TX-8 0.9 (needed interpretation):* confirmed. The core version reached the same kind 3 result from CR-9's 0.7 currency clause without the pattern, and found that clause silent on earnings that local subsidiaries remit abroad. So the extension is needed in both layers. *CR-6 0.9 with CR-12e over two horizons (needed CR-12e in the medium run):* contradicted on the result, not on the need. The core version's reading of CR-12e's 0.8 note makes the medium run `ambiguous`, so the pattern version's verdict that the response argument "worked as written" for C-18 depends on a premise it did not state. *CR-4 0.8 against RS-16 0.9 (conflict):* confirmed. The conflict is in RS-16, not in CR-4.
+- **Candidate "tariff-like burden without a tax" (6.2e list; first use WE-040).** The pattern version calls this a second valid use. The signs are taken against the right counterfactual (Corvany without the Act), and the parts that hold match the core version: buyers pay more (C-8), foreign sellers lose sales (C-22), domestic substitutes gain in the short run (C-25), and nothing is collected. But the move is not the same as WE-040's. WE-040 attached a cost per unit to an imported input. Here an option is removed, with a fixed-cost route around it for foreign suppliers that invest locally. That route turns the foreign suppliers into domestic rivals of the protected sellers, so the candidate's "protected sellers gain" holds only in the short run (core C-26 and C-28 `ambiguous`). The pattern version itself says the candidate would need widening to cover this. This use does not support promoting the candidate as stated. At most it supports a separate candidate: a location requirement with a route around it for suppliers who invest locally.
+- **Limits of the core rules.** None produced a difference (K = 0). GAP-053-C1, the look-back threshold, is derived by CR-4 with CR-10a, as the core version itself did. GAP-053-C2, security and privacy, is a matter of scope. Neither is a missing step. The following wording caused trouble:
+  - CR-12e's 0.8 note does not say whether a new competitor's entry is part of the response or a second change. The answer decided C-18 to C-21 and core C-26 to C-30.
+  - CR-8's 0.7 clause on payers from the general budget does not mention receipts into the same budget.
+  - CR-9's 0.7 currency clause does not mention earnings remitted abroad.
+  - CR-1 does not say what operation a blocking order performs on internet providers.
