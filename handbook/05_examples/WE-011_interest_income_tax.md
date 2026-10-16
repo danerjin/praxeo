@@ -1,6 +1,6 @@
 # WE-011 Tax on interest income from savings and bonds
 
-Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.5)  |  Rule catalog version: 0.5  |  Status: awaiting expert review
 
 A stylized policy in a fictional country. Its main lessons are time preference and the return to saving (LW-7, TX-6), the long horizon, substitution into untaxed assets, and incidence between savers and borrowers. It also shows a case where TX-6's conclusion meets an opposing chain (savers aiming at a fixed sum), now recorded in TX-6's Unless clause pending expert decision (Q14). The probabilities are illustrative; the evidence column says what a real analysis would cite.
 
@@ -26,7 +26,7 @@ Unclear provisions: whether income accumulated inside a fund will later be taxed
 | K1 | Binary: a forced payment to the state out of the return on saving | Yes, for savers above the allowance | TX-1, TX-2, TX-6, TX-9, TX-11, DM-1, SB-4, TS-9, RS |
 | K2 | Binary | Only as far as it is enforced (A-6) | RS-3, RS-4 |
 | K3 | Definition creating an untaxed category | Yes | RS-5 |
-| K4 | Binary: funded by taxpayers | Yes | TX-5, OC-3 |
+| K4 | Binary: funded from the general budget, which is assumed to rise with the new task (A-20) | Yes | TX-5, OC-3 |
 
 Treating interest as a price: interest is the price of present money in terms of future money, so a tax on it works like an ad valorem tax on that price. TX-2 is applied with savers as sellers of present money and borrowers as buyers: the gross rate paid by borrowers rises, the net rate received by savers falls, or both.
 
@@ -45,6 +45,8 @@ Treating interest as a price: interest is the price of present money in terms of
 | `sellers.substitutes` | Issuers and sellers of untaxed assets: shares, property, gold, retirement accounts, accumulating funds | More demand. |
 | `homebuyers` | Buyers of residential property for their own use | Compete with savers buying property as an investment. |
 | `neighboring_jurisdictions` | Banks in Quellan | Gain Corvanian deposits. |
+| `lenders.non_resident` | Foreign holders of crown deposits and bonds, exempt from the tax | Earn the gross rate untaxed. |
+| `owners.untaxed_assets` | Those who own shares, property and gold when the tax becomes expected | More demand for what they hold. |
 | `officials.enforcement` | Tax Agency | New withholding and audit work. |
 
 ## 4. Direct effects
@@ -64,11 +66,15 @@ The visible effects: savers receive less interest, and the state collects the ta
 | C-4 | `savers.diversified` | `quantity_supplied` (funds lent through taxed deposits and bonds) | decrease | medium | TX-6, RS-1, RS-4 | A-2 |
 | C-5 | `banks`, fund managers | `reclassification` (accumulating bond funds; deposit products paying returns as prizes or bonuses) | increase | medium | RS-5 | A-3 |
 | C-6 | `banks`, bond issuers | `reclassification` (crediting accrued interest before 1 January) | increase | short | RS-8 | A-4 |
+| C-28 | `savers.deposit`, `savers.diversified` | `net_price_received` (interest credited in the weeks before 1 January) | increase | short (window before 1 January) | RS-8, CR-10a | A-4 |
 | C-7 | `savers.diversified` | `cross_border_purchases` (deposits and bonds in Quellan) | increase | short to medium | RS-4, TX-4 | A-5 |
 | C-8 | `savers.diversified` | `informal_activity` (foreign interest not declared) | increase | medium | RS-3 | A-5, A-6 |
 | C-9 | `banks` | `compliance_cost` (withholding systems, reporting) | increase | short | TX-5 | none |
 | C-10 | `savers.diversified` | `compliance_cost` (advice, restructuring, foreign accounts) | increase | short | OC-2 | A-2 |
 | C-11 | `banks`, retirement-account providers, `savers.deposit` | `lobbying_effort` (higher allowance, higher retirement cap, exemption for deposits) | increase | medium | RS-7 | A-7 |
+| C-26 | `lenders.non_resident` | `quantity_supplied` (funds lent in crowns) | increase | medium | CR-4b (x: other markets, y: crown deposits and bonds at the higher gross yield), CR-7a | A-1, A-9 |
+
+C-6 and C-28 are a timing shift: the interest is credited with and without the tax, only at different dates. By `02_ontology.md` 2.5 it is signed per window: interest credited in the weeks before 1 January rises (C-28); interest credited in the first months of the tax year falls, which has the same sign as C-1 and is recorded there.
 
 C-4 applies TX-6 to the group for which every chain points the same way. Diversified savers who still want to save the same amount can do it in untaxed forms, so their funds leave taxed deposits and bonds whichever way their total saving moves. For `savers.deposit`, who have few alternatives, the direction is not settled (section 7).
 
@@ -81,18 +87,25 @@ Not reported: savers expecting the rate to rise once the withholding system exis
 | C-12 | `bondholders.existing` | `asset_value` (bonds already issued) | decrease | short (at announcement) | SB-4 | | A-8, A-16 |
 | C-13 | `borrowers.small`, `borrowers.large` | `price_paid` (gross interest rate on loans and bonds) | increase | medium | TX-2, DM-1 | taxed deposits and bonds: `input_to` bank lending and business borrowing | A-1, A-9 |
 | C-14 | `borrowers.small` | `tax_share_borne` (relative to `borrowers.large`) | increase | medium | DM-1 | | A-9, A-10 |
-| C-15 | `savers.deposit` | `tax_share_borne` (relative to `savers.diversified`) | increase | short | DM-1 | | A-2 |
+| C-15 | `savers.deposit` | `tax_share_borne` (relative to `savers.diversified`) | increase | short | DM-1 | | A-2, A-18 |
 | C-16 | `borrowers.small`, `borrowers.large` | `investment_target` (business investment financed by loans and bonds) | decrease | medium to long | TX-6, TX-2 | | A-9, A-11 |
 | C-17 | `taxpayers` | `price_paid` (gross yield on new government borrowing) | increase | medium | TX-2, DM-1 | | A-1, A-9 |
 | C-18 | `homebuyers`, buyers of shares | `price_substitute` (residential property, listed shares) | increase | medium | RS-1 | taxed deposits and property or shares: `substitute`, partial | A-2, A-12 |
 | C-19 | `neighboring_jurisdictions` (Quellan banks) | `quantity_traded` (deposits from Corvanian residents) | increase | short to medium | RS-4 | Corvanian and Quellan deposits: `across_border`, close for diversified savers | A-5 |
-| C-20 | `savers.small` | `net_price_received` (interest after tax) | decrease | long | TS-3 | | A-13 |
+| C-31 | `savers.small` | `net_price_received` (interest on deposits, untaxed under the allowance) | increase | medium | CR-9, CR-7a | taxed and untaxed deposits: `same_market_other_segment` | A-1, A-9, A-17 |
+| C-20 | `savers.small` | `net_price_received` (interest after tax) | ambiguous | long | TS-3 vs CR-9, CR-7a; CR-12b | | A-9, A-13, A-17 |
+| C-25 | `lenders.non_resident` | `net_price_received` (yield on crown deposits and bonds) | increase | medium | CR-9, CR-7a | taxed and exempt lenders: `same_market_other_segment` | A-1, A-9 |
+| C-30 | `owners.untaxed_assets` | `asset_value` (shares, property) | increase | short (at announcement) to medium | SB-4, RS-1 | taxed deposits and property or shares: `substitute`, partial | A-2, A-12 |
 
 C-12: a bond's price is the value today of its future coupons. Taxing those coupons lowers what a resident buyer will pay, so the price of bonds already issued falls when the tax becomes expected, in March, not in January. Non-residents are exempt and may buy some of these bonds, which limits the fall (A-8). This is SB-4 in its generalized form: a lasting tax that lowers the net return on an asset in fixed supply (bonds already issued cannot be added to) lowers its value from the time the tax is expected, and the loss falls on whoever holds it then (A-16).
 
-C-13 and C-17: by DM-1, savers have fewer alternatives than borrowers, who can turn to exempt non-resident lenders and to shares, so savers bear the larger part (C-1), and gross rates rise by the smaller part. C-14: small firms and households cannot issue bonds or borrow abroad, so within the borrowers' side they bear more. C-17 grows as the state's existing debt (average maturity about six years) is refinanced; part of what the tax collects on government bond interest is paid back out in higher yields.
+C-13 and C-17: by DM-1, with the premise that borrowers' alternatives are clearly better than savers' (A-19: borrowers can turn to exempt non-resident lenders and to shares in an open capital market), savers bear the larger part (C-1), and gross rates rise by the smaller part. C-14: small firms and households cannot issue bonds or borrow abroad, so within the borrowers' side they bear more. C-15 needs its own premise that a meaningful group of taxable savers lacks practical alternatives (A-18); A-2 says only that diversified savers have them.
 
-C-18 is at depth 3 (tax, substitution into property and shares, their prices); homebuyers are an identifiable group, but the chain stops here. C-20: the 1,000-crown allowance is fixed in money terms; as nominal balances and interest grow, more small savers cross it (TS-3).
+C-25 and C-26: non-residents are exempt, so the higher gross rate (C-13) reaches them untaxed (CR-7a), and some move funds into crowns (CR-4b). This is the chain that offsets part of the residents' withdrawal (A-9) in section 7.
+
+C-30 is the other side of C-18 (CR-8b): the higher prices that buyers of property and shares pay are received by those who own them when the shift into untaxed assets becomes expected (SB-4, CR-7c). C-17 grows as the state's existing debt (average maturity about six years) is refinanced; part of what the tax collects on government bond interest is paid back out in higher yields.
+
+C-18 is at depth 3 (tax, substitution into property and shares, their prices); homebuyers are an identifiable group, but the chain stops here. C-31 and C-20: banks pay more for deposits (C-13), and if they do not price by depositors' tax status (A-17), the higher gross rate reaches savers under the allowance untaxed, so in the medium run they earn more (C-31). In the long run the 1,000-crown allowance, fixed in money terms, draws more of them into the tax as nominal balances and interest grow (TS-3). The two chains oppose, so the long-run sign is `ambiguous` (CR-12b; section 7).
 
 Checks. RS-9: there are no shopping trips; a saver who opens a Quellan account may move other banking business too, but no such relation is recorded, so this is not followed. RS-10: undeclared foreign interest (C-8) is evasion, not a trade moved underground: Quellan's banks are legal and advertise openly, so RS-10's effects do not apply. RS-11: retirement accounts lock money in until retirement, but the benefit is not tied to a place, so RS-11 does not apply.
 
@@ -102,18 +115,19 @@ Checks. RS-9: there are no shopping trips; a saver who opens a Quellan account m
 |---|---|---|---|---|
 | `savers.deposit`, `quantity_supplied` (funds lent through taxed deposits), medium | Savers aiming at a fixed future sum (a retirement income, a down payment) must put aside more to reach it at the lower net rate (TX-6 Unless clause, pending expert decision Q14; A-15). | The net reward for waiting is lower, so at the margin some saving gives way to present consumption (TX-6, LW-7); some funds move to the few untaxed options these savers use, such as retirement accounts (RS-1). | None | **ambiguous**. What would decide it: the share of these savers who save toward a fixed target, against those who save less when the reward falls. |
 | All resident savers, `saving`, medium | Target savers consume less to reach their goal (TX-6 Unless clause; A-15). | Lower net reward for waiting, so some saving gives way to present consumption (TX-6, LW-7). | None | **ambiguous**, for the same reason. Saving in the taxed forms by savers with untaxed alternatives is not ambiguous: it falls (C-4). |
-| `capital_stock_economy`, long | Target savers save more (row above). Savers' funds move into shares (C-3), which finance investment by issuing firms. Non-residents are exempt and the capital account is open, so foreign lenders replace part of the funds residents withdraw (A-9). | Less saving at the margin and more expensive debt finance mean less investment financed by debt (C-16), and a smaller capital stock over time (TX-6). | None | **ambiguous**. Total saving is ambiguous (row above), and part of the fall in debt-financed investment is a change in how investment is financed, not in how much. What can be said: investment financed by interest-bearing debt falls (C-16). TS-9 (lower wages through less capital per worker) needs `capital_stock_economy` to fall, and assumes no offsetting inflow of foreign capital, which the non-resident exemption makes doubtful here; so `wage_rate` across the economy is not reported. |
+| `capital_stock_economy`, long | Target savers save more (row above). Savers' funds move into shares (C-3), which finance investment by issuing firms. Non-residents are exempt and the capital account is open, so foreign lenders replace part of the funds residents withdraw (C-26; A-9). | Less saving at the margin and more expensive debt finance mean less investment financed by debt (C-16), and a smaller capital stock over time (TX-6). | None | **ambiguous**. Total saving is ambiguous (row above), and part of the fall in debt-financed investment is a change in how investment is financed, not in how much. What can be said: investment financed by interest-bearing debt falls (C-16). TS-9 (lower wages through less capital per worker) needs `capital_stock_economy` to fall, and assumes no offsetting inflow of foreign capital, which the non-resident exemption makes doubtful here; so `wage_rate` across the economy is not reported. |
 | `officials.enforcement`, `tax_revenue_vs_static_projection`, short to medium | Gross rates on the taxed instruments that remain rise (C-13), so each crown of the base earns more taxable interest. | The base shrinks: substitution, reclassification and flight abroad (C-3 to C-8). | None | **ambiguous**, by TX-9's Unless clause: this is an ad valorem tax on a price (the gross interest rate) that the tax itself pushes up, so the remaining base is worth more per unit. |
-| Split of the tax between savers and borrowers, short to medium | — | — | DM-1 | **Savers bear the larger part** (C-1); borrowers bear the rest (C-13). Within savers, `savers.deposit` bear more (C-15); within borrowers, `borrowers.small` bear more (C-14). Rothbard's view that a general tax falls on factor owners rather than being shifted (DM-1 note, Q3) bears on this tax, which falls on almost all interest: on that view the savers' share would be larger still. Not resolved. |
+| `savers.small`, `net_price_received`, long | The higher gross deposit rate reaches them untaxed (C-31; A-17). | The fixed allowance erodes as nominal interest grows (TS-3; A-13). | None | **ambiguous** (C-20). What would decide it: how far banks pass higher rates to small balances, against how fast nominal interest grows past the allowance. |
+| Split of the tax between savers and borrowers, short to medium | — | — | DM-1, with A-19 | **Savers bear the larger part** (C-1); borrowers bear the rest (C-13). Within savers, `savers.deposit` bear more (C-15; A-18); within borrowers, `borrowers.small` bear more (C-14). Rothbard's view that a general tax falls on factor owners rather than being shifted (DM-1 note, Q3) bears on this tax, which falls on almost all interest: on that view the savers' share would be larger still. Not resolved. |
 
 ## 8. Time structure
 
 The policy works over all three horizons, and the long one matters most.
 
-- **At announcement (March).** Prices of bonds already issued fall as soon as the tax is expected (C-12): owners of those bonds bear a loss before any tax is paid. Savers and banks have nine months to restructure, and some interest is credited early (C-6).
+- **At announcement (March).** Prices of bonds already issued fall as soon as the tax is expected (C-12): owners of those bonds bear a loss before any tax is paid. Savers and banks have nine months to restructure, and some interest is credited early (C-6): more interest is credited before 1 January (C-28) and less in the first months of the tax year (C-1). Owners of shares and property gain as soon as the shift into them is expected (C-30).
 - **Short run (the first year).** Diversified savers move into untaxed assets and abroad (C-3, C-7). Deposit savers mostly stay where they are and bear the tax (C-15).
 - **Medium run.** Banks raise deposit rates to keep funding, and the higher cost reaches borrowers (C-13), first small firms and households (C-14). New products avoid the tax (C-5). The state's borrowing cost rises as its debt is refinanced over six years or so (C-17). Asset prices of untaxed substitutes are higher than they would have been (C-18).
-- **Long run.** The cumulative effect of a lower net reward for waiting on investment financed by debt (C-16) compounds year after year (TX-6, LW-7): the capital it would have financed is never built, and the gap with the counterfactual widens rather than closing. Whether the economy's total capital stock, and with it wages (TS-9), end up lower cannot be settled here (section 7). Meanwhile the allowance erodes (C-20).
+- **Long run.** The cumulative effect of a lower net reward for waiting on investment financed by debt (C-16) compounds year after year (TX-6, LW-7): the capital it would have financed is never built, and the gap with the counterfactual widens rather than closing. Whether the economy's total capital stock, and with it wages (TS-9), end up lower cannot be settled here (section 7). Meanwhile the allowance erodes, against the higher gross rate small savers receive, so their long-run net interest is ambiguous (C-31, C-20).
 - **Inflation.** The tax falls on nominal interest. With 4% interest and 3% inflation, the real return is about 1%; the tax takes 0.8 points of it, about 80% of the real return, not 20%. If inflation rises in both worlds and nominal rates follow, the share of the real return taken rises further and can exceed all of it. This is TX-11: Tier A for the arithmetic, given the tax and rising prices, and recorded in C-1. The TX-6 responses are correspondingly stronger when inflation is higher (Tier B).
 
 ## 9. Opportunity costs
@@ -122,9 +136,11 @@ The policy works over all three horizons, and the long one matters most.
 |---|---|---|---|---|---|
 | C-22 | `savers.deposit`, `savers.diversified` | `resources_available_other_uses` | decrease | The consumption or further saving the tax would otherwise have paid for. | TX-1, OC-1 |
 | C-23 | Savers and borrowers | `quantity_traded` (loans and deposits at pre-tax terms) | decrease | Loans that would have been made at the old rates and are not: both lender and borrower lose the gain they expected. | OC-4, TX-2 |
-| C-24 | `taxpayers` | `resources_available_other_uses` | decrease | What the Tax Agency's new withholding and audit work would otherwise have funded. | OC-3, OC-1 |
+| C-24 | `taxpayers` | `resources_available_other_uses` | decrease | What the Tax Agency's new withholding and audit work would otherwise have funded (budget rising with the task, A-20). | OC-3, OC-1 |
+| C-32 | `officials.enforcement` | `enforcement_cost` | increase | Staff time on processing bank reports and auditing foreign income. | OC-3 |
+| C-27 | `banks`, retirement-account providers, retiree groups | `resources_available_other_uses` | decrease | What the resources spent lobbying (C-11) would otherwise have done. | OC-1, CR-8c |
 
-Restructuring time and advice are already C-10. The fall in the real return after tax, formerly listed here as C-21, is the same actor class, variable and horizon as C-1, and is now recorded there (TX-11). The general budget's use of the revenue is out of scope.
+Restructuring time and advice are already C-10. OC-3 funding: the record does not say how the Tax Agency's new work is funded; A-20 takes it to be a budget that rises with the task, so the cost falls on taxpayers (C-24). If the budget is fixed instead, other audit work falls and the cost falls on those whom it protected. The fall in the real return after tax, formerly listed here as C-21, is the same actor class, variable and horizon as C-1, and is now recorded there (TX-11). The general budget's use of the revenue is out of scope.
 
 ## 10. Assumptions
 
@@ -133,19 +149,23 @@ Restructuring time and advice are already C-10. The fall in the real return afte
 | A-1 | Gross interest rates do not rise by the full amount of the tax, so savers bear at least part of it. | other | 0.9 | Open capital account; non-resident exemption; size of the market relative to foreign lenders. | C-1 shrinks; incidence falls more on borrowers. |
 | A-2 | Diversified savers have and use untaxed alternatives. | substitutability | 0.85 | Share ownership and property investment by income group; adviser networks; size of retirement-account caps relative to their wealth. | C-3, C-4, C-10, C-15, C-18 fail or weaken. |
 | A-3 | Accumulating funds stay untaxed and banks can offer them. | other | 0.7 | Text of K3; Tax Agency guidance; whether parliament closes the omission. | C-5 weakens. |
-| A-4 | Banks and issuers can credit accrued interest before 1 January. | other | 0.6 | Account terms; bond indentures. | C-6 not reported. |
+| A-4 | Banks and issuers can credit accrued interest before 1 January. | other | 0.6 | Account terms; bond indentures. | C-6, C-28 not reported. |
 | A-5 | Moving deposits to Quellan is practical for many diversified savers. | mobility | 0.75 | Online account opening; distance; Quellan banks' minimum balances. | C-7, C-8, C-19 not reported. |
 | A-6 | The Tax Agency detects little undeclared foreign interest. | enforcement | 0.8 | No information exchange with Quellan; audit rates. | C-8 not reported. |
-| A-7 | Banks, retirement-account providers and retiree groups organize. | other | 0.75 | Existing associations; past lobbying on savings rules. | C-11 not reported. |
+| A-7 | Banks, retirement-account providers and retiree groups organize. | other | 0.75 | Existing associations; past lobbying on savings rules. | C-11, C-27 not reported. |
 | A-8 | Resident savers are the marginal buyers for a meaningful part of the bond market, so non-residents do not absorb the selling at the old price. | substitutability | 0.6 | Share of bonds held by residents; non-resident demand for crown bonds. | C-12 shrinks toward nothing. |
-| A-9 | Non-resident lenders and share issues replace only part of the funds residents withdraw, at the old gross rate. | substitutability | 0.65 | Non-resident share of the crown bond market; bank access to foreign funding. | C-13, C-14, C-16, C-17 not reported; savers bear the whole tax. |
+| A-9 | Non-resident lenders and share issues replace only part of the funds residents withdraw, at the old gross rate. | substitutability | 0.65 | Non-resident share of the crown bond market; bank access to foreign funding. | C-13, C-14, C-16, C-17, C-20's (+) chain, C-25, C-26, C-31 not reported; savers bear the whole tax. |
 | A-10 | Small firms and households rely mainly on bank credit. | other | 0.85 | Credit statistics by borrower size. | C-14 not reported. |
 | A-11 | Firms' investment responds at the margin to the cost of debt finance. | other | 0.8 | Investment surveys; share of investment financed by debt. | C-16 not reported. |
-| A-12 | The supply of property and listed shares is slow to expand. | durability | 0.8 | Building permits and construction times; new listings. | C-18 weakens. |
-| A-13 | Nominal interest incomes keep rising (inflation, growth of balances). | other | 0.8 | Inflation trend; growth of household deposits. | C-20 not reported. |
+| A-12 | The supply of property and listed shares is slow to expand. | durability | 0.8 | Building permits and construction times; new listings. | C-18, C-30 weaken. |
+| A-13 | Nominal interest incomes keep rising (inflation, growth of balances). | other | 0.8 | Inflation trend; growth of household deposits. | C-20 becomes **increase** in the long run as well (C-31's chain alone). |
 | A-14 | Savers expect the rate to be raised within a few years. | expectations | 0.45 | Government statements; history of other capital taxes. | Below cut-off; not reported. |
 | A-15 | A meaningful share of savers save toward a fixed future sum. | other | 0.7 | Household surveys of saving motives. | The plus chains in section 7 vanish; the deposit-saver and `saving` rows become **decrease** (Tier B). |
 | A-16 | Bond buyers expect the tax to stay in force for much of the remaining life of the bonds already issued. | expectations | 0.8 | Passed by parliament with no sunset; government's stated revenue need; history of capital taxes once introduced. | C-12 shrinks; with a short expected life, the fall in bond prices is small. |
+| A-17 | Banks set deposit rates by account type and balance, not by whether a depositor's interest is above the allowance, so higher gross rates reach small depositors too. | other | 0.6 | Banks' rate schedules; whether banks know depositors' total interest across banks. | C-31 not reported; C-20 becomes **decrease** (TS-3 alone). |
+| A-18 | Many taxable savers hold mainly deposits and lack practical untaxed alternatives (minimum investment sizes, advice costs, no Quellan account, retirement-account cap used or unaffordable). | substitutability | 0.75 | Distribution of household financial assets by wealth; share of deposits in the portfolios of middle-income and older savers. | C-15 not reported. |
+| A-19 | Borrowers taken together have clearly better alternatives than taxed savers taken together: with an open capital account, exempt non-resident lenders and share issues are close substitutes for resident funds. | substitutability | 0.65 | Non-resident share of crown bond and interbank markets; size of Corvania relative to world capital markets. | The split in section 7 is not signed: each side's price moves as TX-2 gives, and which side bears more is `ambiguous`. |
+| A-20 | The Tax Agency's budget is raised to cover the new withholding and audit work. | revenue_use | 0.7 | Budget documents for the Tax Agency; past practice when new taxes were introduced. | C-24 not reported; other audit work falls instead (OC-3, fixed budget). |
 
 ## 11. Report
 
@@ -156,13 +176,14 @@ Restructuring time and advice are already C-10. The fall in the real return afte
 **Invisible consequences.**
 - *Owners of bonds already issued* lose part of their value as soon as the tax is announced (C-12).
 - *Wealthier savers* move into shares, property, gold, retirement accounts and accumulating funds (C-3, C-5), and abroad (C-7), sometimes without declaring the interest (C-8); their funds leave taxed deposits and bonds (C-4). They spend time and money doing it (C-10).
-- *Savers who hold mainly deposits*, many of them retirees, bear more of the tax (C-15), and over time more small savers cross the allowance (C-20). Because the tax falls on nominal interest, it takes a much larger share of the real return than its 20% rate suggests (C-1, TX-11).
-- *Borrowers* pay higher gross rates (C-13), small firms and households most (C-14), and investment financed by loans and bonds is lower, by a growing amount over the long run (C-16). The state's own borrowing costs more as its debt is refinanced (C-17). Property and share prices are higher than they would have been (C-18), which homebuyers pay. Some loans are never made (C-23). Banks in Quellan gain deposits (C-19).
-- *Banks and taxpayers* bear compliance and administration costs (C-9, C-24); everyone who pays the tax gives up what it would have bought (C-22). Banks, pension providers and retirees lobby for changes (C-11).
+- *Savers who hold mainly deposits*, many of them retirees, bear more of the tax (C-15). Some interest is credited before the tax starts (C-28).
+- *Small savers under the allowance* earn more in the medium run, as banks pay more for deposits (C-31); in the long run the fixed allowance draws more of them into the tax, so the long-run direction is ambiguous (C-20). Because the tax falls on nominal interest, it takes a much larger share of the real return than its 20% rate suggests (C-1, TX-11).
+- *Borrowers* pay higher gross rates (C-13), small firms and households most (C-14), and investment financed by loans and bonds is lower, by a growing amount over the long run (C-16). The state's own borrowing costs more as its debt is refinanced (C-17). Property and share prices are higher than they would have been (C-18), which homebuyers pay. Some loans are never made (C-23). Banks in Quellan gain deposits (C-19). Exempt non-resident lenders earn more and lend more in crowns (C-25, C-26). Owners of shares and property gain as savers move into them (C-30).
+- *Banks and taxpayers* bear compliance and administration costs (C-9, C-24, C-32); everyone who pays the tax gives up what it would have bought (C-22). Banks, pension providers and retirees lobby for changes (C-11), using up resources (C-27).
 
-**Ambiguous effects.** Whether deposit savers save less or more: those saving toward a fixed sum must save more, others save less. For the same reason, whether total saving falls and whether the economy's capital stock ends up smaller; and so whether wages end up lower. Whether revenue falls short of a static projection, since the tax raises the gross rates on the base that remains.
+**Ambiguous effects.** Whether deposit savers save less or more: those saving toward a fixed sum must save more, others save less. For the same reason, whether total saving falls and whether the economy's capital stock ends up smaller; and so whether wages end up lower. Whether revenue falls short of a static projection, since the tax raises the gross rates on the base that remains. Whether small savers' net interest is lower in the long run (C-20).
 
-**Key conditions.** That savers bear most of the tax (A-1, p = 0.9) and that foreign funds do not fully replace residents' (A-9, p = 0.65) govern how far the tax reaches borrowers and investment. Whether savers save toward fixed targets (A-15, p = 0.7) is what keeps the saving response open.
+**Key conditions.** That savers bear most of the tax (A-1, p = 0.9) and that foreign funds do not fully replace residents' (A-9, p = 0.65) govern how far the tax reaches borrowers and investment. Whether savers save toward fixed targets (A-15, p = 0.7) is what keeps the saving response open. That savers bear the larger part rests on borrowers' clearly better alternatives (A-19, p = 0.65); the small-saver result rests on bank pricing (A-17, p = 0.6).
 
 **What this analysis cannot say.** How large any effect is; whether the economy's capital stock and wages end up lower; whether the policy is desirable.
 
@@ -176,6 +197,7 @@ Restructuring time and advice are already C-10. The fall in the real return afte
 | C-4 | savers.diversified | quantity_supplied (taxed deposits and bonds) | decrease | medium | invisible | B | TX-6, RS-1, RS-4 | A-2 |
 | C-5 | banks, fund managers | reclassification (product design) | increase | medium | invisible | B | RS-5 | A-3 |
 | C-6 | banks, bond issuers | reclassification (early crediting) | increase | short | invisible | B | RS-8 | A-4 |
+| C-28 | savers.deposit, savers.diversified | net_price_received (interest credited before 1 January) | increase | short | invisible | B | RS-8, CR-10a | A-4 |
 | C-7 | savers.diversified | cross_border_purchases | increase | short–medium | invisible | B | RS-4, TX-4 | A-5 |
 | C-8 | savers.diversified | informal_activity | increase | medium | invisible | B | RS-3 | A-5, A-6 |
 | C-9 | banks | compliance_cost | increase | short | invisible | A | TX-5 | none |
@@ -184,15 +206,21 @@ Restructuring time and advice are already C-10. The fall in the real return afte
 | C-12 | bondholders.existing | asset_value | decrease | short | invisible | B | SB-4 | A-8, A-16 |
 | C-13 | borrowers.small, borrowers.large | price_paid (gross interest) | increase | medium | invisible | B | TX-2, DM-1 | A-1, A-9 |
 | C-14 | borrowers.small | tax_share_borne | increase | medium | invisible | B | DM-1 | A-9, A-10 |
-| C-15 | savers.deposit | tax_share_borne | increase | short | invisible | B | DM-1 | A-2 |
+| C-15 | savers.deposit | tax_share_borne | increase | short | invisible | B | DM-1 | A-2, A-18 |
 | C-16 | borrowers.small, borrowers.large | investment_target (debt-financed) | decrease | medium–long | invisible | B | TX-6, TX-2 | A-9, A-11 |
 | C-17 | taxpayers | price_paid (government borrowing) | increase | medium | invisible | B | TX-2, DM-1 | A-1, A-9 |
 | C-18 | homebuyers, buyers of shares | price_substitute (property, shares) | increase | medium | invisible | B | RS-1 | A-2, A-12 |
 | C-19 | neighboring_jurisdictions | quantity_traded (deposits from Corvania) | increase | short–medium | invisible | B | RS-4 | A-5 |
-| C-20 | savers.small | net_price_received | decrease | long | invisible | B | TS-3 | A-13 |
+| C-20 | savers.small | net_price_received | ambiguous | long | invisible | B | TS-3 vs CR-9, CR-7a; CR-12b | A-9, A-13, A-17 |
 | C-22 | savers.deposit, savers.diversified | resources_available_other_uses | decrease | short | invisible | A | TX-1, OC-1 | none |
 | C-23 | savers, borrowers | quantity_traded (loans at pre-tax terms) | decrease | medium | invisible | B | OC-4, TX-2 | A-1, A-9 |
-| C-24 | taxpayers | resources_available_other_uses | decrease | short | invisible | A | OC-3, OC-1 | none |
+| C-24 | taxpayers | resources_available_other_uses | decrease | short | invisible | B | OC-3, OC-1 | A-20 |
+| C-25 | lenders.non_resident | net_price_received (yield on crown assets) | increase | medium | invisible | B | CR-9, CR-7a | A-1, A-9 |
+| C-26 | lenders.non_resident | quantity_supplied (funds lent in crowns) | increase | medium | invisible | B | CR-4b, CR-7a | A-1, A-9 |
+| C-27 | banks, providers, retiree groups | resources_available_other_uses | decrease | short | invisible | B | OC-1, CR-8c | A-7 |
+| C-30 | owners.untaxed_assets | asset_value (shares, property) | increase | short–medium | invisible | B | SB-4, RS-1 | A-2, A-12 |
+| C-31 | savers.small | net_price_received (deposit interest) | increase | medium | invisible | B | CR-9, CR-7a | A-1, A-9, A-17 |
+| C-32 | officials.enforcement | enforcement_cost | increase | short | invisible | A | OC-3 | none |
 | — | savers.deposit | quantity_supplied (taxed deposits) | ambiguous | medium | invisible | B | TX-6 vs TX-6 Unless (Q14) | A-15 |
 | — | all resident savers | saving | ambiguous | medium | invisible | B | TX-6 vs TX-6 Unless (Q14) | A-15 |
 | — | economy | capital_stock_economy | ambiguous | long | invisible | B | TX-6, C-16 vs TX-6 Unless, C-3, A-9 | A-2, A-9, A-15 |
@@ -205,3 +233,4 @@ Restructuring time and advice are already C-10. The fall in the real return afte
 - GAP-011-3 (closed in catalog 0.3: TX-11): the former C-21 duplicated C-1's actor class, variable and horizon, so it is merged into C-1; TX-11's arithmetic is in section 8.
 - GAP-011-4 (pending expert decision: Q14): recorded in catalog 0.3 as TX-6's Unless clause. The saving rows in section 7 are now Tier B and ambiguous on that clause; if the experts reject it, they become **decrease**.
 - GAP-011-5 (closed in catalog 0.3: TX-9 Unless clause): the static-projection row is now Tier B and ambiguous by that clause.
+- Catalog 0.5: corrected after the core-only comparison (see ../05_examples_core/WE-011_interest_income_tax_core.md): C-20 (small savers, long) is now ambiguous against the gross-rate chain (new C-31, A-17); added non-resident lenders' yield and supply (C-25, C-26), lobbying resources (C-27), owners' gain on untaxed assets (C-30, CR-8b counterpart of C-18), enforcement cost (C-32) and the pre-1 January crediting window (C-28); DM-1's share comparisons now rest on stated premises (A-18, A-19); OC-3 funding stated (A-20).

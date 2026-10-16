@@ -1,8 +1,8 @@
 # WE-023 Repeal of a lumber tariff
 
-Analyst: draft (Handbook 0.3)  |  Rule catalog version: 0.3  |  Status: awaiting expert review
+Analyst: draft (Handbook 0.5)  |  Rule catalog version: 0.5  |  Status: awaiting expert review
 
-A stylized repeal in a fictional country. There is no separate worked example for the original tariff, so section 1 records the tariff's expected consequences briefly, from TX-7, TX-8 and the rules they build on, as the reference for the metamorphic check at the end of section 7. The counterfactual throughout is **the tariff stays in force at its current rate**; every sign is relative to that, not to the situation before the repeal and not to a country that never had the tariff. "In reverse" after a rule ID means the rule is applied to the removal of its precondition; where that direction is not obviously valid, the text says so. Catalog 0.3 states some directions explicitly: SB-4 covers returns that rise or fall, and TS-5, TS-6 and OC-6 are written for repeals (see "Analyzing a repeal" in the workflow). The probabilities are illustrative.
+A stylized repeal in a fictional country. There is no separate worked example for the original tariff, so section 1 records the tariff's expected consequences briefly, from TX-7, TX-8 and the rules they build on, as the reference for the metamorphic check at the end of section 7. The counterfactual throughout is **the tariff stays in force at its current rate**; every sign is relative to that, not to the situation before the repeal and not to a country that never had the tariff. "In reverse" after a rule ID means the rule is applied to the removal of its precondition; where that direction is not obviously valid, the text says so. The catalog states some directions explicitly: SB-4 covers returns that rise or fall, TS-5, TS-6 and OC-6 are written for repeals, and RS-7 has a clause for repeals, where lobbying takes place in the counterfactual too (see "Analyzing a repeal" in the workflow). The probabilities are illustrative.
 
 ## 1. Policy record
 
@@ -25,7 +25,7 @@ Not a full worked example. Signs are relative to no tariff, under the standard a
 | T-2 | `sawmills.domestic` | `net_price_received` | increase | short | TX-7 |
 | T-3 | `sawmills.domestic` | `quantity_supplied` | increase | short to medium | TX-7 |
 | T-4 | `sawmills.domestic` | `investment_target` | increase | medium | TX-7, LW-4 |
-| T-5 | `workers.sawmill` | `employment` | increase | medium | TX-7, LW-4 |
+| T-5 | `workers.sawmill` | `employment`, `hours_worked` | at_least_one_increase | medium | TX-7, LW-4 |
 | T-6 | `timberland_owners` | `asset_value` | increase | short to medium | TX-7, SB-4 |
 | T-7 | `importers`, foreign sellers | `quantity_traded` (imported lumber) | decrease | short | TX-2, OC-4 |
 | T-8 | `importers` | `reclassification` (lightly processed wood declared outside the lumber heading) | increase | short to medium | RS-5, TX-4 |
@@ -33,7 +33,7 @@ Not a full worked example. Signs are relative to no tariff, under the standard a
 | T-10 | `homebuyers` | `price_paid` (new houses) | increase | medium | TX-7, RS-14 |
 | T-11 | `furniture_makers.domestic` | `quantity_supplied` | decrease | medium | TX-7, RS-14, RS-6 |
 | T-12 | `buyers.furniture` | `quantity_substitute` (imported furniture) | increase | medium | RS-1 |
-| T-13 | `exporters` | `quantity_supplied`, `employment` | decrease | medium to long | TX-8 |
+| T-13 | `exporters` | `quantity_supplied`; labor in export industries (`employment`, `hours_worked`, at least one) | decrease | medium to long | TX-8 |
 | T-14 | `buyers.lumber` | `resources_available_other_uses` | decrease | short | TX-1, OC-1 |
 | T-15 | `officials.enforcement` (treasury) | `tax_revenue` | increase | short | TX-1 |
 | T-16 | `sawmills.domestic`, `timberland_owners` | `lobbying_effort` | increase | medium | RS-7 |
@@ -53,13 +53,13 @@ T-11 and T-12 follow from the duty falling on lumber but not on furniture: domes
 | Actor class | Role | How its options change |
 |---|---|---|
 | `buyers.lumber` | Builders, furniture makers and households who buy lumber | Can buy imported lumber without the duty. |
-| `importers` | Firms that import lumber | No duty, no classification disputes. |
+| `importers` | Firms that import lumber | No duty, no duty paperwork or classification disputes. |
 | `sawmills.domestic` (`sellers.substitutes`) | Velmoran sawmills | Lose the protection; mills built for the protected market are specific, durable capital. |
 | `workers.sawmill` | Mill employees, concentrated in the forest region | Fewer mill jobs; skills partly specific to milling. |
-| `timberland_owners` (`factor_owners.specific`) | Owners of forest land that supplies sawlogs to domestic mills | Lower demand for logs from domestic mills. |
+| `timberland_owners` (`factor_owners.specific`) | Owners of forest land that supplies sawlogs to domestic mills | Lower demand for logs from domestic mills, so lower log prices. |
 | `builders`, `homebuyers` | Home builders and buyers of new houses | Lower input costs for builders. |
 | `furniture_makers.domestic`, `buyers.furniture` | Domestic furniture makers and their customers | Domestic makers' input costs fall to their foreign competitors' level. |
-| `exporters` | Velmoran machinery and processed-food exporters | Dravenland buyers earn more crowns from lumber sales. |
+| `exporters`, `workers.export_industries` | Velmoran machinery and processed-food exporters and their workers | Dravenland buyers earn more crowns from lumber sales. |
 | `sellers.foreign` (`neighboring_jurisdictions`) | Dravenland lumber sellers | Duty-free access to Velmora. |
 | `officials.enforcement`, `taxpayers` | Treasury and customs, and those who fund the budget | Revenue lost; duty administration ends. |
 
@@ -81,15 +81,23 @@ The visible effects: lumber is cheaper, domestic mills receive less for it, and 
 | C-5 | `sawmills.domestic` | `quantity_supplied` | decrease | short to medium | TX-7 in reverse, TS-1 | A-1, A-3 |
 | C-6 | `sawmills.domestic` | `investment_target` | decrease | short to medium | RS-6, TX-7 in reverse | A-1 |
 | C-7 | `sawmills.domestic` | `number_of_sellers` | decrease | medium to long | RS-6, TS-1 | A-1, A-3 |
-| C-8 | `workers.sawmill` | `employment` | decrease | medium | RS-6, LW-4 | A-1, A-3 |
+| C-8 | `workers.sawmill` | `employment`, `hours_worked` | at_least_one_decrease | medium | RS-6, LW-4 | A-1, A-3 |
 | C-9 | `workers.sawmill` who lose mill jobs | `earnings` | decrease | medium | RS-6, LW-4 | A-1, A-4 |
 | C-10 | `importers` | `reclassification` | decrease | short | RS-5, TX-4 in reverse | A-5 |
 | C-11 | `buyers.lumber` | `quantity_traded` (lumber) | decrease | short (announcement window only) | RS-8 | A-6 |
-| C-12 | `sawmills.domestic`, `timberland_owners`, `builders`, `exporters` | `lobbying_effort` | ambiguous (see section 7) | medium | RS-7 | A-15 |
+| C-12 | `sawmills.domestic`, `timberland_owners`, `builders`, `exporters` | `lobbying_effort` | ambiguous (see section 7) | short to medium | RS-7 (repeal clause) | A-15 |
+| C-26 | `importers` | `compliance_cost` (duty paperwork, classification and valuation disputes) | decrease | short | TX-5 in reverse | none |
+| C-28 | `sawmills.domestic`, `timberland_owners` | `lobbying_effort` (to restore the duty) | decrease | long | RS-7 (repeal clause), TS-1 | A-3, A-15 |
 
 C-5 applies TS-1 in its own direction: the mills built or expanded behind the duty are specific and durable, so they keep running as long as the lower price covers their operating costs, and capacity falls as equipment wears out and is not replaced. Output falls first at high-cost mills.
 
-C-9: the repeal lowers the return to work in milling. Workers who lose mill jobs move to their next-best work, which they ranked lower; with partly specific skills and few other employers in the forest region (A-4), it pays less.
+C-8: RS-6 licenses only the group: mills may cut staff or hours as output falls, so `employment` and `hours_worked` are signed together.
+
+C-9: the repeal lowers the return to work in milling. Workers who lose mill jobs move to their next-best work, which they ranked lower (CR-3a). That it also pays less in money is a separate premise, A-4: skills are partly specific and the forest region has few other employers.
+
+C-12 and C-28: RS-7's repeal clause applies. Every class here lobbied in the counterfactual too: mills and timberland owners to keep the duty (T-16), builders and exporters to remove it. After the repeal the first group lobbies to restore it and the second to defend the repeal. Each class lobbied in both worlds, so over the short and medium run the change in each class's effort is `ambiguous` (C-12). In the long run the mills' and timberland owners' stake shrinks as mill capital wears out and is not replaced (TS-1, A-3), while in the counterfactual the mills remain and keep defending the duty, so their lobbying falls (C-28). RS-7's premise, that each group can organize at a cost below its stake, is A-15.
+
+C-26: importers no longer classify, value and document lumber for the duty, or dispute classifications with customs (TX-5 in reverse).
 
 C-11 is RS-8 in its own words: "delay until after a repeal is expected". In the nine months before the effective date, builders and furniture makers draw down stocks and defer purchases, and importers hold shipments in bonded warehouses. Domestic mills see a dip in orders before the repeal takes effect.
 
@@ -100,17 +108,21 @@ Not reported: an end to lumber smuggling. Under the duty, smuggling was minor gi
 | ID | Actor class | Variable | Sign | Horizon | Rules | Market relation | Assumptions |
 |---|---|---|---|---|---|---|---|
 | C-13 | `timberland_owners` | `asset_value` | decrease | short (from the announcement) | SB-4, TS-5 | sawlogs `input_to` domestic lumber, close | A-1, A-7, A-17 |
+| C-27 | `timberland_owners` | `net_price_received` (sawlogs) | decrease | short to medium | TX-7 in reverse, CR-9, CR-7 | sawlogs `input_to` domestic lumber, close | A-1, A-7 |
 | C-14 | `sawmills.domestic` | `asset_value` (mill capital) | decrease | short (from the announcement) | SB-4, TS-1, TS-5 | | A-1, A-3, A-17 |
 | C-15 | `builders` | `quantity_supplied` (new houses) | increase | medium | TX-7 in reverse, RS-14 in reverse, LW-4 | lumber `input_to` housing, partial | A-1, A-8 |
 | C-16 | `homebuyers` | `price_paid` (new houses) | decrease | medium | TX-7 in reverse, RS-14 in reverse | lumber `input_to` housing, partial | A-1, A-8 |
 | C-17 | `furniture_makers.domestic` | `quantity_supplied` | increase | medium | TX-7 in reverse, RS-14 in reverse, LW-4 | lumber `input_to` furniture, close | A-1, A-9 |
 | C-18 | `buyers.furniture` | `quantity_substitute` (imported furniture) | decrease | medium | RS-1 in reverse | domestic and imported furniture: `substitute`, close | A-1, A-9 |
-| C-19 | `exporters` | `quantity_supplied`, `employment` | increase | medium to long | TX-8 in reverse, TS-6 | | A-1, A-10, A-18 |
+| C-19 | `exporters` | `quantity_supplied` | increase | medium to long | TX-8 in reverse, TS-6 | | A-1, A-10, A-18 |
+| C-29 | `workers.export_industries` | `employment`, `hours_worked` | at_least_one_increase | medium to long | TX-8 in reverse, CR-9 | labor `input_to` exports, close | A-1, A-10, A-18 |
 | C-20 | `sellers.foreign` | `net_price_received` | increase | short | TX-7 in reverse | Velmora and Dravenland lumber: `across_border`, close | A-11 |
 | C-21 | `builders`, `furniture_makers.domestic` | `investment_target` (lumber-using capacity) | increase | medium to long | TX-7 in reverse, LW-4, TS-5 | lumber `input_to` housing and furniture | A-1, A-12 |
 | C-22 | `furniture_makers.domestic` | `entry_rate` | increase | long | LW-4, TS-5, TS-6 | | A-1, A-9, A-12, A-13 |
 
 C-13 applies SB-4, which in catalog 0.3 covers the erosion of a capitalized gain: the duty raised the return to a resource in fixed supply (forest land whose logs go to domestic mills), and its removal lowers it. The fall is capitalized as soon as the repeal is expected, and is smaller the more owners expect the duty to return (TS-5), but keeps its sign as long as they give the repeal a meaningful chance of lasting (A-17). It falls on whoever owns the land then, including owners who bought during the twenty years at prices that included the duty's value. The owners at the time the duty was introduced captured the original gain (T-6) and, if they have since sold, bear none of the loss.
+
+C-27 is the flow behind C-13: domestic mills buy fewer logs (C-5), and land whose logs cannot be sold elsewhere at a comparable price (A-7) bears the fall in log prices (CR-9 along `input_to`, then CR-7: the loss settles on the means that cannot move). C-29: TX-8 in reverse gives more export sales; firms may add staff or hours, so only the group is signed.
 
 C-14 is the same logic for mill capital, which is durable and specific (SB-4 names shares in firms with specific capital). The resources sunk into mills built behind the duty (T-4) are not recovered by the repeal; the loss shows up as lower mill values.
 
@@ -122,8 +134,8 @@ C-21 and C-22 are Tier B in catalog 0.3 (Tier C in the 0.2 draft). C-21: capacit
 
 | Actor class, variable, horizon | Chains (+) | Chains (−) | Dominance rule | Combined sign |
 |---|---|---|---|---|
-| `taxpayers`, `resources_available_other_uses`, medium | The customs work of administering the duty ends (C-24; OC-3 in reverse). | The lost duty revenue (C-3) must be made up by other taxes now, borrowing that implies taxes later, or lower spending on someone (OC-6, with TX-1 and OC-1 applied to whoever bears the replacement; A-14). | None | **ambiguous** (Tier B). The method cannot net them, and cannot say which group bears the replacement until the budget response is known. |
-| `sawmills.domestic`, `timberland_owners`, `builders`, `exporters`, `lobbying_effort`, medium | Mill owners, timberland owners and mill workers now bear a concentrated loss that restoring the duty would undo, and organize for it (RS-7, A-15). Builders and exporters defend the repeal. | The campaign over the duty that would have continued with it in force (T-16, and lumber users' efforts for repeal) ends in its old form. | None | **ambiguous**. The repeal changes who lobbies for what; the method cannot say whether total effort rises or falls. |
+| `taxpayers` (including recipients of any spending cut), `resources_available_other_uses`, short to medium | The customs work of administering the duty ends (C-24; OC-3 in reverse). | The lost duty revenue (C-3) must be made up by other taxes now, borrowing that implies taxes later, or lower spending on someone (OC-6, with TX-1 and OC-1 applied to whoever bears the replacement; A-14). | A-20, arithmetic on the case's figures (CR-12e): the duty-specific checks cost far less than a 25% duty on a substantial import share raised. | **decrease** (C-25). Which group bears it (taxpayers, future taxpayers through borrowing, or recipients of cut spending) is not known until the budget response is (A-14). |
+| `sawmills.domestic`, `timberland_owners`, `builders`, `exporters`, `lobbying_effort`, short to medium | Mill owners, timberland owners and mill workers now bear a concentrated loss that restoring the duty would undo, and organize for it (RS-7, A-15). Builders and exporters defend the repeal. | The campaign over the duty that would have continued with it in force (T-16, and lumber users' efforts for repeal) ends in its old form. | None (RS-7, repeal clause) | **ambiguous** for each class (C-12). The repeal changes what each lobbies for. In the long run, mills' and timberland owners' lobbying **decreases** as their capital wears out (C-28), a separate horizon (CR-12g). |
 | `buyers.furniture`, `quantity_substitute` (imported furniture), medium | None against the counterfactual. Foreign makers' distribution and buyers' familiarity with their brands, built over twenty years, exist whether or not the duty is repealed, so they do not push the sign either way. | Domestic furniture becomes cheaper relative to imports (C-17, A-9). | None needed | **decrease**. The foreign makers' established position is a persistence (TS-6; partial in the T-12 row of the metamorphic check) and slows the change; it is not a chain against the counterfactual. |
 
 ### Metamorphic check against the original tariff
