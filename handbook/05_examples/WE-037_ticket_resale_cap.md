@@ -323,7 +323,29 @@ The resales that no longer take place (C-6) are prevented exchanges (OC-4): the 
 | C-49 | platforms.compliant (owners) | asset_value | U1-a: decrease; U1-b: ambiguous | short | invisible | B | CR-7c, CR-10c, CR-12b, CR-12e | A-1, A-2, A-5, A-7 |
 
 There is no C-20 or C-43: both were removed after the core-only comparison (see the next section).
+## Corrections after the core-only comparison
+
+The core-only re-run and its comparison (`05_examples_core/WE-037_ticket_resale_cap_core.md`) were checked row by row against the core rules and catalog 0.9. What changed, by consequence:
+
+- **C-16** (bot use): `informal_activity` (bot use in breach of K2) increase replaced by `legal_breach` (bot purchases in breach of R1 or K2) decrease. Bot purchases take place in the legal primary market and already breached R1 in the counterfactual; counted against that baseline they fall with C-15. That remaining use is now unlawful is K2's operation (CR-1), recorded in section 2.
+- **C-20** (low-demand events, `no_change`, Tier A) removed. It rested on CR-1 alone; CR-9 gives two chains (fans redirected from capped events, brokers leaving Selvar) that would raise these prices, each needing a premise the record lacks, so neither `no_change` nor a sign is reported.
+- **C-43** (`search_cost` signed alone) removed. PC-2 allows one member alone only with a premise that the margin is open and used, and A-2 is not that premise; under U1-b the free fee can carry the pressure. **C-5** now lists the buyer fee as a member under U1-b (CR-6, 0.8 and 0.9).
+- **C-10**: tie-ins on compliant platforms now rest on A-12 (which now covers add-ons getting past platforms' screening), those outside them on A-4; two chains (CR-12d).
+- **C-41**: changed from `enforcement_cost` (other work) decrease to a group with `at_least_one_as_stated` (fewer other cases or slower handling), as OC-3's 0.9 clause on a fixed budget asks.
+- **C-12** to **C-14** cite RS-4's 0.9 clause on the reach of enforcement in place of an interpretation. **C-24** cites RS-8's 0.9 clause on more timing chains (sellers and buyers moving in opposite directions); **C-21** to **C-24** are stated as flows (CR-12, 0.9). **C-28** cites PC-8's 0.9 clause on withdrawn demand. **C-17** and **C-19** cite CR-6's 0.9 clause on a capped price with a free fee. **C-30** and **C-39** cite CR-12's 0.9 clause on kind 3.
+- Omissions added: **C-44** (brokers buy more for Brackmere City events), **C-45** (Selvar fans' travel time), **C-46** (charity auctions under the K1 exemption, A-23 at the cut-off), **C-47** (brokers' season renewals), **C-48** (the club's season sales `no_change`, arithmetic with A-24), **C-49** (compliant platforms' value, U1-a decrease, U1-b `ambiguous`).
+- RS-20 (complaint-only enforcement, promoted in 0.9) is cited for K4's buyer remedy; it adds no reported consequence, since A-11 stays below the cut-off. No other promoted pattern (RS-19, OC-9, EN-12 to EN-15) applies: no payment for crossing a boundary, no borrowing, no right allocated by history or tradable right, no standard on new durable units, no disclosure mandate. No chain runs through `proximity` or `shared_facility`, so CR-12's 0.9 rule on Tier C against Tier B does not arise; no chain uses CR-12e's response argument to give an increase, and OC-8 does not arise.
+
+Comparison conclusions rejected or not applied:
+- *C-12, `cross_border_purchases` a stretch for offshore websites.* Rejected: under RS-4's 0.9 clause the boundary is the limit of enforcement, and a purchase from a platform beyond it is a purchase across that boundary.
+- *C-19, U1-b total signed as a decrease on a dominance premise (core A-N2).* Not applied (cause A): catalog 0.9 settles how to record a capped price with a free fee (two items and their total), which this version already does, but not the sign of the total; the comparison itself notes that the premise is stated against the gap rather than the counterfactual total.
+- *C-40, A-21 not needed.* Not changed: a matched row; the premise names the funding branch of OC-3 that C-41 needs.
+- *Core C-29, C-38, C-39, C-40 (J rows: primary sellers' net price; buyers' and sellers' means; full cost).* Not added: catalog 0.9 does not settle them, and the transfer is already recorded as prices (C-1, C-2) and the money price across channels (C-31).
+- *Core C-37 (taxpayers `no_change`).* Not added: the comparison finds it an overclaim.
+
 ## Gaps found
+
+Parts (a) to (d) record the 0.8 run. Under 0.9, (c) 1 is adopted as RS-4's clause on the reach of enforcement, (c) 2 as PC-8's clause on withdrawn demand, the candidate in the last line of (e) as RS-20, and (d) 1 is met in part by CR-6's clause on a capped price with a free fee; the rest remain open.
 
 **(a) Calculus gaps (a step no core rule covers).** None. Every step was derived from CR-1 to CR-12 or from patterns whose preconditions held, or held after the interpretation stated in (c) and (e). The step closest to a gap was whether fixed-price primary sellers change their face values: the rules derive no direction, because the cap removes none of their options and their reason for pricing low is their own ranking (CR-2). That is the method declining to assume a ranking, not a gap.
 
@@ -357,3 +379,4 @@ There is no C-20 or C-43: both were removed after the core-only comparison (see 
 - *RS-16 Unless (supply added to the substitute's market).* Worked as written for offshore channels (C-30).
 - *OC-3 0.8, right baseline.* Worked as written, but gave no separate consequence: the old fraud enforcement moves both ways, and the fixed budget makes the total no change.
 - *Candidate patterns from 06_gaps.md, 6.2e, needed here (second use).* "A claim payable inside a boundary draws items from outside" (WE-027) and "Circular trade under a payment for crossing a boundary" (WE-030) were not needed. "Complaint-only enforcement" (WE-029) was close: K4's buyer remedy works only if buyers sue, and the derivation (CR-4, expected cost of breach differing by counterparty) was used for A-11, which fell below the cut-off. That is a partial second use, recorded here for the catalog to decide.
+- Re-run note: the core-only comparison qualified two verdicts recorded above as "worked as written": RS-8's 0.8 Unless clause did not cover sellers and buyers moving in opposite directions (C-24; RS-8's 0.9 clause now does), and the PC-1 to PC-3 verdict missed that C-43 signed a PC-2 member alone without its premise and that C-20 skipped CR-9 (both removed).
