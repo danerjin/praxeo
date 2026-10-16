@@ -1,6 +1,6 @@
 # WE-054 / Analysis: Airport night curfew with a daytime slot cap and slots allocated by history
 
-Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -302,3 +302,77 @@ CR-8 symmetry: the free slots (C-3) are a transfer to holders whose payers are t
 - No variable for the timeliness of a service (collection cut-off, delivery time); `quality_per_unit` was used (C-32).
 - No actor class for an integrated operator's owned facility separately from the operator, and no variable for the utilization of a right (slot use rate) under a use-it-or-lose-it rule.
 - Noise and sleep are out of scope; only their capitalization into home values appears, at Tier C.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the structure of the Wexcombe case and on every sign they share. Night movements stop and daytime movements are held below their path. Slots are created and capitalized from the draft. Airlines race for history in the base seasons. A slot price and a slot market appear, and airlines move to larger aircraft. Night flights move to the shoulders, and the sort moves to Pellham, with its facility at WXI losing value. Entry falls, some operators break the curfew, and fares rise while trips fall (both with A-9 as the partial-response premise). Holders' net price per seat rises with A-26, and WAA charges per movement rise. Travelers, workers and concessions move as Pellham gains. Home values at both airports get the same Tier B and Tier C pair. The residents' lobbying is `ambiguous` in both. There is no S row. The differences are omissions on both sides, plus two premise choices. The core version omits that fewer airlines operate at WXI, what slot buyers and lessees pay, the noise office's lighter night-complaint load and the Tier C total it requires, and airlines' operations as a whole. It also signs the integrator's money outlays without a premise and signs all of WXI employment alone where only the group is derivable. The pattern version omits lower off-peak fares during the race, haulage to Pellham, travelers' and penalty payers' means, and the value of the K5 claim. It declined that value for want of a premise that the flow is "material", which is not a reason the method recognizes for withholding a sign. Both versions sign night operators' lobbying `increase`, although the counterfactual has the residents' curfew campaign, which night operators would have opposed. By the reasoning both use for the residents, that sign needs a premise.
+
+Counts: M 27, V 10, S 0, OP 7, OC 5.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | M | | Under U1-b the pattern's C-1 also covers the late-running movements, which the core records separately (C-10). |
+| C-2 | C-2 | V | | `quantity_supplied` by `airlines.history` in the pattern; `quantity_traded` by `airlines.daytime` in the core. |
+| C-3 | C-3 | M | | |
+| C-4 | C-5 | M | | Same rules (CR-6 fixed-quantity clause; CR-12 0.9, an activity that exists only under the policy). |
+| C-5 | C-4 | M | | |
+| C-6 | C-44 | V | | Race costs. The pattern uses `compliance_cost` (CR-8c, used up); the core uses `resources_available_other_uses` decrease. The core's form also needs the race flights' fares not to cover their cost, which "thinly loaded" (A-5) implies but does not state. `compliance_cost`, or a variable for resources used in competing to qualify, is the cleaner record. |
+| C-7 | C-11 | V | | `quantity_substitute` against `quantity_supplied` at Pellham. |
+| C-8 | C-8 | M | | |
+| C-9 | C-9 | M | | Same chains and premises per reading. |
+| C-10 | C-6 | V | | The pattern records slot purchases and leases by night operators; the core records all slot trades. |
+| C-11 | C-7 | M | | The core cites CR-4 and CR-10b instead of CR-4c's unit clause; same premises (A-1, A-8). |
+| C-12 | none | OC | E | `number_of_sellers` (airlines at WXI) decrease. Derivable against the no-order counterfactual. Entrants stay out (core C-16, CR-4), and under A-10 some small airlines that value their slots below the lease price lease out or sell all of them and leave (CR-4: x: operate, y: lease out, where y did not exist before). Core-version omission. The pattern derives it from EN-13, whose "number of sellers using the right decreases" compares with the allocation before trading, not with no policy (Findings). Neither version considered entry during the base seasons to earn free slots, an opposing chain in the short window. |
+| C-13 | C-16 | M | | |
+| C-14 | C-15 | M | | |
+| C-15 | C-10 | V | | Under U1-a the pattern records the reshaping of schedules (`reclassification`); the core records its result, more late-running movements 23:00 to 00:00 (A-24). Under U1-b the pattern gives `no_change` for reshaping and the core gives `decrease` for late-running movements, but those are different variables, so the signs do not conflict. |
+| C-16 | C-17 | M | | Both versions sign night operators' lobbying `increase`. That is an error in both: see Findings. |
+| C-17 | C-18 | M | | Same reasoning (counterfactual campaign), by analogy to CR-4 0.9 in both. |
+| C-18 | C-12 | M | | |
+| C-19 | C-24 | M | | Same response argument with A-9. The core also lists higher charges as a (+) chain. |
+| C-20 | C-25 | M | | Trips in the pattern, seats flown in the core; both rest on A-9. |
+| C-21 | C-23 | M | | Same dominance premise (A-26). |
+| C-22 | C-28, C-29 | V | | The pattern gives one `travel_time` increase for night travelers. The core splits it into travelers who switch to Pellham (C-28) and late flights diverted per reading (C-29: U1-a `no_change`, U1-b increase). The core's split is more exact: retiming into the shoulders is not a longer trip. |
+| C-23 | C-27 | V | | The pattern signs `quantity_substitute` alone; the core gives price and quantity as a group (CR-6 0.9, splitting a shift). Signing quantity alone needs a supply premise. The record supports one (Pellham's runway is 45% used, and aircraft can be moved), but the pattern states it only in prose. The core used that same premise to sign Pellham's movements alone (C-31), so it is inconsistent. |
+| C-24 | C-31 | M | | |
+| C-25 | C-34, C-35 | V | | The pattern gives the group (`employment`, `hours_worked`, `at_least_one_decrease`). The core signs `employment` alone, twice. C-34 (the night sort, which leaves WXI entirely) is derivable alone. C-35 (all movements) is not: hours can fall instead of heads, so it should be the group. Core-version error. |
+| C-26 | C-36 | M | | |
+| C-27 | C-38 | M | | The core's horizon omits `short`, though its own derivation capitalizes from when the move becomes expected. |
+| C-28 | C-39 | M | | The core's proximity chain has only quieter nights; it omits busier shoulders (the pattern's kind 3 part). The sign is unaffected, since it is `ambiguous` either way. |
+| C-29 | C-40 | M | | |
+| C-30 | C-41 | M | | Same dominance premise (A-20). |
+| C-31 | C-32 | M | | |
+| C-32 | C-22 | M | | The core adds the K6 cost chain (+) and penalty receipts credited to costs (−), and signs with A-N2. |
+| C-33 | C-37 | M | | |
+| C-34 | C-43 | V | | The pattern records lessors' and sellers' receipts (CR-8b); the core records holders' means as a whole, through the scarcity premium net of charges (A-26). |
+| C-35 | none | OC | E | Lessees and buyers of slots (night operators, entrants) have less for other uses: they pay for something that was free in the counterfactual and keep paying (CR-3 note, CR-8b). The core's CR-8 symmetry note names them as payers but records no consequence. Core-version omission. |
+| C-36 | none | OC | J | Holders' WXI operations as a whole `ambiguous` (CR-12b). Defensible, though the pattern lists slots (C-3) and the scarcity premium (C-21) as two (+) items when the first is the capitalized second. Nothing scorable lost. |
+| C-37 | C-19 | M | | The core does not add the qualifier "not counting effects through proximity" that CR-12 0.9 asks for when a Tier C chain reaches the same key (see C-38, C-39). |
+| C-38 | none | OC | E | Night-noise complaints handled by the WAA decrease (Tier C; CR-9 `proximity`, CR-8c against the right baseline). The record gives the noise office ($0.5 million) and its share of night cases (60%). Core-version omission. |
+| C-39 | none | OC | E | Total enforcement cost at Tier C: increase, by arithmetic ($2.8 million against a $0.5 million office). CR-12 0.9 requires this second record once C-38's chain is found. Core-version omission, following from C-38. The sign equals the core's C-19. |
+| C-40 | C-20 | M | | |
+| C-41 | C-30 | V | | The pattern covers night passengers and cargo shippers; the core covers passengers only. |
+| C-42 | C-21 | M | | |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-13 | OP | A | The K5 claim's value to night operators increases, given that some slots will be freed (A-N1, p 0.75). The pattern declined it because "the case gives no premise that the flow is material". The method signs direction, not size: a free claim on any flow with positive probability has positive value (CR-7c, CR-10c), and CR-3b rules out a loss. The difference is the premise A-N1. The pattern's argument that holders sell instead of returning slots bears on size only. |
+| C-14 | OP | J | Night operators' WXI businesses as a whole `ambiguous` (the K5 claim against lost night use and the hall). It depends on C-13. Defensible, but adds no sign. |
+| C-26 | OP | E | Off-peak fares fall in the base seasons, because the race flights add seats to the same market (CR-9, CR-6; A-5). Pattern-version omission: it records the race flights (C-5) but not their effect on fares. |
+| C-33 | OP | E | Road haulage Wexcombe to Pellham increases (CR-9, LW-10; A-6). Pattern-version omission (its stopping points do not name it, and it is at depth 2). |
+| C-42 | OP | E | Travelers who keep flying from WXI have less for other uses (CR-3 note, CR-8b). Pattern-version omission (as in WE-003); its own final check 4 names only slot lessees and lessors. |
+| C-45 | OP | E | Integrator's `resources_available_other_uses` decrease. Core-version overclaim: trucking and a Pellham facility are added outlays, but the WXI charges and hall costs are no longer paid, and nothing in the record says the moved operation costs more in money. By CR-3a the integrator is worse off by its own ranking. A money sign needs an `other` premise (the Pellham operation costs more), which the pattern version rightly did not assume (its final check 4). |
+| C-46 | OP | E | Operators who pay penalties have less for other uses (CR-8b, CR-3 note). The pattern records the receipt (C-42) but not the payer's side; its section 9 pairs C-42 with C-14, which is breach, not means. Pattern-version omission. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** *EN-13 as written* signs `number_of_sellers` decrease and "the quantity per remaining user increases" against the allocation before trading, not against the no-policy counterfactual. Against no order, quantity per remaining user need not rise, since every holder is capped below its counterfactual growth. The number of airlines does fall, but through entry (CR-4) and whole-holding exits (A-10), which the analysis should cite. This is the same baseline fault that 6.2g found in RS-20 and EN-11's Unless clause. *EN-2* has no clause for an opposing chain from a cost-recovery charge spread over the capped quantity (the pattern's own Gaps c2). The core version needed the same premise, A-26, so this is confirmed. *RS-8's "two sides"* does not fit a race that adds activity without taking it from another window (Gaps c3). Confirmed: the core recorded the race as a rise in its window only (C-4). Pattern C-23 signs a substitute's quantity alone on a supply premise stated only in prose.
+- **Errors in both versions.** Night operators' `lobbying_effort` is signed `increase` (pattern C-16, core C-17). The counterfactual contains the residents' campaign for a curfew, which the integrator and the night passenger airlines would have opposed. RS-7's Unless clause, which the pattern applied to the residents (C-17), and the CR-4 0.9 analogy, which the core applied to them (C-18), both say that a class that lobbies in both worlds needs a premise. Without one, night operators' lobbying is `ambiguous`. Slot holders' and entrants' lobbying is a valid `increase`: it concerns slots that do not exist in the counterfactual. For the pattern version this is an analyst misapplication of RS-7, not a fault in the pattern. Neither version considered entry during the base seasons to earn free slots (K3 issues slots to any airline with base-season movements). That is a chain the rules derive (CR-10a, CR-4: x: stay out, y: enter now; EN-12's newcomer sentence points to it) and needs a premise like A-5.
+- **Errors in the core version.** `employment` alone for all WXI movements (C-35), where only the group is derivable. The integrator's money outlays (C-45), signed without a premise. Omissions: `number_of_sellers` (pattern C-12), slot buyers' and lessees' means (C-35), the Tier C complaint chain and the Tier C total CR-12 0.9 asks for (C-38, C-39), and the shoulder-noise part of the WXI proximity chain (sign unaffected). Pellham is handled inconsistently: movements are signed alone on the spare-capacity premise (C-31), while travelers' trips are kept as a group (C-27). C-38's horizon omits `short`.
+- **Errors in the pattern version (omissions).** Off-peak fares in the base seasons (core C-26), haulage to Pellham (C-33), travelers' means (C-42), penalty payers' means (C-46), and the K5 claim. The K5 claim was declined on materiality, which is a judgment about size, not sign (core C-13, cause A). `travel_time` for night travelers (C-22) is signed for all readings, though under U1-a it rests on moves to Pellham alone.
+- **Test of 0.9 verdicts.** The pattern version reports no "failed" verdict. On the "needed interpretation" verdicts: *CR-12 0.9 Tier C against Tier B, with a kind 3 Tier C chain:* not tested by the core version, which missed the shoulder half of the chain; it reached the same `ambiguous` and the same pair of records (C-38, C-39). It raised a separate unclear point: whether a dominance premise about the Tier C chain's size can lift the combined sign above Tier C (C-41). *CR-12 0.9 response argument with two responses:* confirmed. The core also read "the response" as both responses together and stated A-9 for both. *EN-6 0.9 Inputs, one capped input feeding outputs in a local and a national market:* confirmed. Working per output from CR-6 and CR-9, the core reached the same split (fares local, the national parcel price negligible on A-18). *CR-7c, the part of the value used up in the race:* confirmed. The core read the race costs as wholly used up (C-44, CR-8c) with nothing created. *RS-7 Unless by analogy for an imposition:* confirmed; the core made the same analogy (GAP-054-C2). Both versions failed to carry it to night operators, as above. *EN-12's newcomer clause and K5 (Gaps c1):* partly contradicted. The core shows that CR-7c and CR-10c give K5 a signed value with one premise, so "no consequence" was not forced. *High-grading candidate (Gaps c5):* confirmed. The core derived larger aircraft (C-7) from CR-4 without the candidate.
+- **Limits of the core rules.** None produced a difference: no S, OP or OC row has cause K. Unclear core-rule wording: (1) CR-4 0.9 on lobbying against a contested baseline names repeals only. Both versions extended it to an imposition, and neither saw that it reaches every class active in the counterfactual contest. (2) CR-9 0.7 puts `shared_facility` chains at Tier C, but a cost-recovery charge that links users through an authority's budget runs through money payments (core GAP-054-C3). The pattern version treated it at Tier B through PC-15. (3) CR-12 0.9 Tier C against Tier B does not say what a dominance premise must cover when the Tier C chain is itself kind 3, or whether a dominance premise can raise the combined tier. (4) CR-7c does not say how a contingent claim ranked behind or ahead of other claimants (K5) is capitalized. (5) No rule addresses a use-it-or-lose-it condition on a right that does not exist in the counterfactual (core GAP-054-C1). (6) CR-6 0.9, splitting a shift, does not say whether figures in the record (spare runway capacity) are enough to sign quantity alone.

@@ -1,6 +1,6 @@
 # WE-049 / Analysis: Public auto insurer at a uniform statutory premium, with a surcharge for its losses
 
-Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -258,3 +258,67 @@ CR-8b, both sides: switchers' lower premiums (C-39) are paid by the reserves (C-
 - No variable for vehicle ownership (used `quantity_complement (vehicles owned)`).
 - No variable for the care taken by an insured party; it is a safety effect and out of scope.
 - No variable for a public body's reserves other than `fund_balance`, whose counterfactual is undefined when the body does not exist without the policy.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the whole structure of the public insurer case, and no key is signed in opposite directions. Both find the following: drivers quoted above the statutory premium switch and pay less, and still pay less after the surcharge. Under U1-b serious offenders' premiums fall; under U1-a they do not, and the surcharge pushes some into driving uninsured. Private insurers sell fewer policies, lose value from January 2027, shed staff, and their agents place fewer policies. Every policyholder pays a surcharge from 2029, which the Office receives, and drivers who stay private lose means. Uninsured driving falls, in 2028 with no opposing chain and from 2029 on the same dominance premise (A-7). More victims are paid. High-risk drivers own more vehicles and low-risk drivers fewer. Both versions record misstated addresses, short-term policies in late 2027, slower claims in 2028, conviction checks under U1-a, lobbying, the Office's costs, and the general-budget payers of the reserves. Both leave the premium per risk class without a reportable change from either fixed-cost or capacity chains (A-4, A-5, each p 0.35). The pattern version records nothing for that premium, while the core records `no_change` under A-3 (a judgment call). The differences are omissions on each side. The pattern version leaves out the switchers' gain in means (the recipient side of the cross-subsidy) and low-risk drivers' uninsured driving as its own key. It also leaves out serious offenders' total price per reading, vehicle sales in 2028, and insurers' cost of collecting the surcharge. The core version leaves out the Office's screening as allocation by non-price criteria, the Office's own hiring, and its deficit outlay as a key. It also records a few keys less exactly than the pattern version does: a class average where the pattern version splits the class, and `employment` alone where only a group is derivable.
+
+Counts: M 13, V 14, S 0, OP 9, OC 3.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | M | | |
+| C-2 | C-8 | V | | Recorded as switchers' `quantity_traded` (Office policies), not the Office's `quantity_supplied`. |
+| C-3 | C-14 | M | | |
+| C-4 | C-9 | V | | `quantity_traded` for `quantity_supplied`. |
+| C-5 | C-11 | V | | The core uses `informal_activity`. Uninsured driving is a breach of a rule, not trade outside the legal market, so `legal_breach` (the pattern's choice) fits the ontology better. |
+| C-6 | C-13 | V | | As C-5. Same dominance premise (A-7). |
+| C-7 | C-16 | V | | As C-5. |
+| C-8 | C-21 | M | | |
+| C-9 | none | OC | E | The Office's `allocation_by_non_price_criteria` (refusals by record) under U1-a: increase. Derivable from CR-1 (under U1-a the reading itself removes the option for offenders) with A-20, against no Office (CR-12, 0.9). The core records only the cost of the checks (C-36). Core omission. |
+| C-10 | C-36 | M | | |
+| C-11 | C-33, C-34 | V | | Split by group. |
+| C-12 | C-23 | M | | The core's section 8 also notes that annual policies fall in that window, against the same renewals. |
+| C-13 | C-30 | M | | |
+| C-14 | C-17 | M | | |
+| C-15 | C-18 | M | | |
+| C-16 | C-4 | V | | Both record the state's outlay on the Office. The pattern records it as claims and expenses beyond premiums; the core records it as the $200 million appropriation. The core describes the deficit in section 9 but does not record it as a key. The pattern does not record the appropriation as SAIO's receipt. |
+| C-17 | C-3 | M | | The core adds same-sign chains (less care, A-18; misstated addresses, A-10). |
+| C-18 | C-3 | V | | Pattern: low-risk drivers' total paid (premium plus surcharge) increases. Core: surcharge increase (C-3) and premium per risk class `no_change` (C-10, listed below as OP). Together they give the same total. |
+| C-19 | C-2 | V | | The pattern restricts the class to drivers whose quotes exceed the premium by more than the surcharge, so the decrease holds by definition. The core signs all switchers on the class average and notes that marginal switchers may pay more. Under CR-12e's note on counts over a distribution, the pattern's split is the exact record. |
+| C-20 | C-7 | V | | Pattern: `policyholders.all`, means decrease (the surcharge item). Core: stayers only. For switchers the surcharge is one item against a larger premium saving. The pattern records no total for them (core C-39, below). |
+| C-21 | C-6 | V | | `tax_revenue` for `non_tax_receipts`. |
+| C-22 | C-24 | M | | |
+| C-23 | C-26 | V | | The core uses `earnings` (commissions). Only commissions on basic liability are signed. Agents' total earnings would need a premise on their next-best use (as in EN-3's 0.5 revision). |
+| C-24 | C-25 | V | | The pattern records `employment` and `hours_worked` as a group. The core records `employment` alone, on A-16. CR-9 with LW-10 licenses only the group (final check 2), so the core's single sign needs a premise on heads that A-16 does not state. |
+| C-25 | none | OC | E | The Office's `employment` increase (OC-5's new-activity clause; CR-8b, CR-9). The core records the Office's running cost (C-29) but not its hiring. Core omission. |
+| C-26 | C-31 | M | | |
+| C-27 | C-5 | M | | |
+| C-28 | C-29 | M | | |
+| C-29 | none | OC | J | High-risk drivers' `compliance_cost` of switching. Switching is chosen only by those who gain (CR-2), and CR-8c's list does not name it. Recording time used up in switching is defensible but optional. |
+| — (section 7: vehicles owned, all drivers, `ambiguous`) | C-20 | V | | The pattern states the combined sign in section 7 without a consequence ID. The core records it for vehicle sellers. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-10 | OP | J | Private insurers' premium per risk class `no_change` under A-3 (CR-6 0.9: the split goes to quantity), with the opposing chains below the cut-off. The pattern uses the same A-3 to sign quantity (C-4) but leaves the price unsigned. A `no_change` from A-3 is defensible. |
+| C-12 | OP | E | Low-risk drivers' uninsured driving increases from 2029 (CR-4). The pattern uses this chain inside C-6 but does not record it for its class. Pattern-version omission. |
+| C-15 | OP | E | Serious offenders' total price from 2029: U1-a `increase` (surcharge only), U1-b `decrease` (arithmetic). The pattern states both in C-7's text but records only the short-run premium (C-3). Pattern-version omission. |
+| C-19 | OP | E | Vehicle sales increase in 2028, before any surcharge (CR-9). The pattern's vehicle chains are medium-run only. Pattern-version omission. |
+| C-27 | OP | A | Some private insurers leave the State's basic-liability market. Rests on a new premise, A-N1 (p 0.55). |
+| C-28 | OP | E | Private insurers' `compliance_cost` of collecting and remitting the surcharge (CR-1 op 3 on insurers; CR-8c). Pattern-version omission. |
+| C-32 | OP | J | Uninsured-motorist premiums fall as fewer drivers are uninsured (A-N2). The pattern stops at depth 3. The fall is in the expected payout of an unchanged contract, so per unit of risk it is not a price change (the RS-16 lesson in 6.2g). It should be qualified as such. |
+| C-35 | OP | A | Waiting at motor vehicle offices (shared facility, Tier C). Rests on a new premise, A-N3. |
+| C-39 | OP | E | Switchers' `resources_available_other_uses` increase (CR-8b; arithmetic as C-2). This is the recipient side of the cross-subsidy, whose payers the pattern records (C-20, C-27). Pattern-version omission (final check 6). |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** None that changes a sign. `policyholders.all` in C-20 covers switchers, for whom the surcharge is only one item. The record is valid as an item but needs the total for switchers (core C-39). The provider's side of "selection under a uniform term" (C-9) adds nothing: under U1-a the screening is the reading itself plus A-20, not a response the candidate derives.
+- **Errors in the core version.** No sign errors. Less exact records: switchers signed on the class average (C-2), where the pattern's split by margin is exact. `employment` alone (C-25), where only the group is derivable. `earnings` for agents (C-26), where only commissions on these policies are signed. `informal_activity` for uninsured driving (C-11, C-13, C-16), where `legal_breach` fits. A fall in uninsured-motorist premiums (C-32) that is a change in expected payout, not in price per unit of risk. Omissions: the Office's screening as allocation by criteria (pattern C-9), its hiring (C-25), and its deficit outlay as a key (pattern C-16). The core's GAP-049-C1 (adverse selection) is not a calculus gap: the core itself derived it from CR-4 per driver with the premise that quotes track expected claims (A-2).
+- **Errors in the pattern version (omissions).** Switchers' gain in means (core C-39); low-risk drivers' uninsured driving (C-12); serious offenders' total price per reading (C-15); vehicle sales in 2028 (C-19); insurers' surcharge-collection cost (C-28). On new premises: insurer exit (C-27), uninsured-motorist premiums (C-32), waiting at motor vehicle offices (C-35, Tier C).
+- **Test of 0.9 verdicts.** *CR-12 0.9, what the response argument gives (failed):* confirmed. The core version did not use the response argument for the private premium. To sign it at all, it needed the constant-cost premise A-3 (C-10), and it kept the fixed-cost chain (A-5) as a separate kind 2 chain. That is exactly the premise the pattern version says the clause leaves unstated. *RS-16, main mirror clause (needed interpretation):* confirmed. The core version, through CR-6 0.9 directly, also had to read the price-quantity split per risk class (its Gaps b), and it gave no price fall. The 0.9 costs-on-the-substitute clause (worked) has no core counterpart. The core reached the same total for stayers by recording the surcharge as its own item (C-3). *PC-19 0.9 and CR-6 0.9, open quantity (worked, silent on selection):* confirmed. The core version flagged the same silence on a single price that is below cost for some buyers (Gaps b, GAP-049-C1).
+- **Candidate pattern used a second time (selection under a uniform term, 6.2e).** Valid against the no-policy counterfactual on the buyers' side. The Office's outlay beyond premiums exists only under the Act, and switching by drivers whose quotes exceed the uniform price is signed against no Act (pattern C-16; core C-2, C-3, C-39). The core version derived the same from CR-4 per driver. It needed the premise that the alternative is priced by each counterparty's cost (private quotes track expected claims), which the pattern's proposed wording (c3) includes. The provider's side (screening, C-9) is not a use of the candidate: under U1-a it follows from the reading and A-20.
+- **Limits of the core rules.** None produced a difference: no S, OP or OC row has cause K. Unclear core-rule wording: (1) CR-6 0.9's public seller with an open quantity says nothing about a single price that is below cost for some buyers and above it for others. The selection must be derived from CR-4 per counterparty, and the rivals' price-quantity split must be read per risk class. (2) CR-12e's 0.9 note speaks of the old price, but the response argument gives equal yields, which keep the old price only at constant cost per unit. (3) CR-12e's note on counts over a distribution does not say whether a class may be signed on its average when some members move the other way (core C-2). (4) CR-8 0.8 on contingent payers does not say how to date a consequence whose contingency is set by a rule (reserves below zero).

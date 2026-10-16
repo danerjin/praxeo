@@ -1,6 +1,6 @@
 # WE-048 / Analysis: Apprenticeship training levy with vouchers that lapse to a small-firm fund
 
-Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 0.9)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -323,3 +323,79 @@ CR-8b, both sides of each transfer: the levy taken from payers (C-1, C-2) return
 - No variable for training received by workers (used `non_wage_compensation` with a qualifier) or for the share of a refundable charge recovered.
 - No instrument type for a refund conditional on a purchase with transfer rights and lapse to a third party.
 - No actor class for recipients of a transferable entitlement (used `employers.transfer_recipients`).
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the main structure of the training levy. Both find the following: the levy is collected, and employers that do not recover it lose means and owners lose value from the March 2027 announcement. Training costs no cash at the margin up to the band for employers with unspent balances, so approved enrollment rises after a dip in the announcement window. Existing staff and training are relabeled, and their off-the-job hours cost output. On non-recovering payroll the wedge falls on a group of wage and cost or return terms, and employment or hours fall as a group. Capped employers see `no_change` through the marginal cost of payroll. Near the notch, firms stay under the line, and work moves to contractors and agencies. Vouchers are transferred, some for hidden consideration, and providers whose fees are below the band receive more. Under each reading of U1, in-house training and external volume move in the same directions in both versions. The Fund receives lapses, small employers who would have trained anyway gain, Fund support is rationed by queue, qualified workers' wages fall, and both versions record lobbying, NSA administration and its general-budget payers. Four keys are signed differently. Three are core-version errors: provider entry, provider values and the provider fee are signed `increase` without the reading split that the core's own volume consequence (C-22, `ambiguous` under U1-a) requires. The fourth, small employers' training after 2030, is a judgment call on how long provider capacity stays short. The pattern version's one wrong sign is small employers' value (C-32), which misses the (−) chain from higher provider fees before the Fund opens. The core version omits more than the pattern version does: in-house programs, qualifications, near-threshold firms and small firms are not capitalized, and it omits the revenue shortfall against a static projection and NSA case-by-case registration. The pattern version omits the cash price to employers with balances, training received by workers, total employment at non-recovering employers, trainers' wages, and the fee and price chains for small employers.
+
+Counts: M 18, V 13, S 4, OP 10, OC 6.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | M | | |
+| C-2 | C-5, C-6, C-18, C-29 | V | | Enrollment at levy payers. The core splits it into employers' demand (C-5), candidates' enrollment (C-6), apprentice employment (C-18) and the May to December 2028 window (C-29), which the pattern folds into C-2. |
+| C-3 | C-2 | M | | |
+| C-4 | C-4 | V | | Pattern: full recoverers' `resources_available_other_uses` decrease (holding, claiming, training bought only to recover the levy). Core: holding and claiming recorded as `compliance_cost` (C-4), and no means consequence for full users (CR-12f). The pattern's class is defined by response (redeem everything), so it includes employers that buy training only to use up their vouchers. They pay a levy they cannot avoid and so lose L − T of means (CR-3 note). The core's class is defined by counterfactual spending (training ≥ levy anyway), and it records that loss for nobody: core omission. CR-12f does not apply to a residue the core itself calls real. |
+| C-5 | C-13 | V | | The core records a group: payroll held down (−) or reclassification (+). Either response leaves payroll under 3 million, so the pattern's separate count signs are valid on A-5. The core's group is weaker than derivable, and `earnings` for a firm's payroll stretches the variable. |
+| C-6 | C-13 | V | | As C-5. |
+| C-7 | C-14, C-13 | V | | The core applies it to all bound employers. |
+| C-8 | C-16 | V | | Pattern group: labor cost (+), wage (−). Core group: wage (−), return on capital (−). Both are CR-7b groups with no ranking premise, and they say the same thing from different sides. |
+| C-9 | C-17 | M | | |
+| C-10 | C-20 | M | | |
+| C-11 | C-7 | M | | |
+| C-12 | C-46 | M | | |
+| C-13 | none | OC | E | `allocation_by_non_price_criteria` under U1-a: increase. The core writes "CR-1 op 2 granted case by case" in C-46, and registration exists only under the Act (CR-12, 0.9), so the key is derivable. Core omission. |
+| C-14 | C-41, C-42, C-43 | V | | Split by lobbying group. |
+| C-15 | C-28 | M | | |
+| C-16 | C-27 | V | | The core reaches the same decrease by two chains (higher fees and capacity drawn to voucher buyers; delay to the Fund's opening) over a wider window. |
+| C-17 | C-34, C-37 | S | J | Pattern: small employers' enrollment from July 2030 `increase`. Core: demand increases (C-34), but quantity traded is `ambiguous` (C-37) because unfunded starts face fees pushed up by voucher and Fund demand (C-36). The core's (−) chain uses A-17, which is stated for the short to medium run, at the long horizon. A new demand shift when the Fund opens could keep capacity short for a time, so a premise to that effect is plausible. The pattern never derived the fee chain at all. Each version needs a fix: the core should state a long-run capacity premise in place of A-17, and the pattern should record the chain and combine it. |
+| C-18 | C-10, C-11 | V | | The pattern records the transfers. The core records them through recipients' means (C-10) and recipients' demand (C-11). C-10 needs a premise that some recipients would have bought approved training anyway, like A-22, which the core does not state. Without it, vouchers spent on training a recipient would not otherwise buy free no means. |
+| C-19 | C-12 | M | | |
+| C-20 | C-21 | M | | The core adds a second, independent chain: more demand against limited capacity (A-17). |
+| C-21 | C-22 | M | | |
+| C-22 | C-26 | S | E | Fee per apprentice-year. Pattern: U1-a `ambiguous`; U1-b `increase`. Core: `increase` with no reading split. Under U1-a the core's own C-22 makes demand for external providers `ambiguous`, so a fee pushed up by that demand is `ambiguous` too (CR-12, 0.8, kind 3). Core error. |
+| C-23 | C-23 | S | E | Provider entry. As C-22: the core signs `increase` from a demand chain that it records as `ambiguous` under U1-a. The band surplus (A-16) raises the margin per unit but cannot sign entry while volume is ambiguous. Core error. |
+| C-24 | C-24 | S | E | Provider values. As C-23. The core cites the demand premises (A-2, A-4, A-17), not the band, and makes no reading split. Core error. |
+| C-25 | C-45 | V | | Pattern: in-house trainers' `employment`. Core: in-house training as `quantity_substitute`. Same signs per reading. |
+| C-26 | none | OC | E | In-house programs' `asset_value`: U1-a `ambiguous`, U1-b `decrease`. Derivable from CR-7c with its 0.9 clause (an asset that cannot be sold, valued by the holder's own ranking) and CR-3a, on A-19. Core omission (final check 7). |
+| C-27 | C-51 | M | | |
+| C-28 | none | OC | E | Qualifications' `asset_value` decrease, by holders' own ranking. Follows from C-51 by CR-7c (0.9), CR-3a. Core omission. |
+| C-29 | C-32 | M | | |
+| C-30 | C-38 | M | | |
+| C-31 | C-35 | V | | The pattern records a group (waiting, allocation by criteria). The core signs `wait_time` alone. The statute names the rationing rule (first come, first served each quarter), so naming that margin is defensible. |
+| C-32 | none | OC | P | Small employers' `asset_value` `increase`. Analyst error, not a pattern: an uncombined chain (final check 1). Higher provider fees for small employers before the Fund, and for unfunded starts after it (core C-26, C-36; A-17, p 0.7), are a kind 2 (−) chain on the yield of small firms that train. Against it stand the Fund and rivals' burden. The rivals chain is itself weak, since A-27 (p 0.2) denies pass-through of the levy into output prices. The sign should be `ambiguous`, or the class split into Fund users and others. The core omits small employers' value altogether. |
+| C-33 | C-50 | M | | |
+| C-34 | none | OC | E | Near-threshold firms' `asset_value` `ambiguous`. CR-7c gives (+) from rivals above the line and Fund eligibility, against (−) from the value of growing past the line. The core even lists the loss of Fund eligibility in its class definition. Core omission. |
+| C-35 | C-15 | V | | Recorded as `quantity_substitute`. |
+| C-36 | none | OC | E | `tax_revenue_vs_static_projection` decrease: arithmetic on a base the core itself shrinks (C-13, C-14, C-17). Core omission. |
+| C-37 | C-47 | M | | |
+| C-38 | C-48 | M | | |
+| C-39 | C-49, C-53 | V | | Pattern: group of slower refunds and fewer checks (fixed budget). Core: collection cost (C-49) and less of other collection work (C-53). |
+| C-40 | C-4 | M | | |
+| C-41 | C-8 | M | | Recorded for the employer, not for the apprentices. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-3 | OP | E | `price_paid` (cash outlay per approved apprentice-year, up to the band) decrease for employers with balances. This is the direct op 3 effect. The pattern states it in prose under C-2 but does not record it. Pattern-version omission. |
+| C-9 | OP | E | Workers' `non_wage_compensation` (training received) increase (CR-5c). Pattern-version omission. The key also shows how PC-17 fails for a refund: the term itself rises. |
+| C-19 | OP | E | Total employment at non-recovering employers `ambiguous` (apprentices up, other staff or hours down). CR-12 (0.8, two items) asks for the total. Pattern-version omission. Caveat: the (+) chain on total employment needs a premise that some added apprentices are new hires rather than enrolled staff, and A-3 does not say so. |
+| C-25 | OP | E | Trainers' `wage_rate` increase (CR-9 with LW-10, CR-7a; A-17). Total approved training rises under both readings (in-house units hire trainers too), so no reading split is needed. Pattern-version omission. |
+| C-30 | OP | A | Discretionary pay moved into March 2028 (increase). Rests on a new premise, A-N2 (p 0.55). |
+| C-31 | OP | A | The matching decrease in the first levy year. As C-30. |
+| C-33 | OP | E | Small employers' price for Fund-paid starts decreases, with the dominance premise A-N1 against the fee rise. The pattern has the op 3 subsidy (C-17) but records no price, because it never derived the fee chain. Pattern-version omission. |
+| C-36 | OP | E | Fee for small employers' unfunded starts increases at the long horizon. The pattern omits fees to small employers altogether. The core's sign, however, rests on A-17 beyond its stated horizon and has no U1 split (as C-26). Valid only with a long-run capacity premise, and under U1-b. |
+| C-44 | OP | J | In-house programs registered and paid from own vouchers under U1-a (`reclassification`). This overlaps the pattern's relabeling (C-11) and in-house registration (C-12); it splits by class and adds no new sign. |
+| C-52 | OP | J | Buyers of unapproved training pay more (trainers drawn away). Depth 4; the pattern stopped at depth 3. A depth choice. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** Small employers' value `increase` (C-32) leaves out the fee chain and rests partly on a rivals chain that the pattern's own A-27 (p 0.2) undercuts. It is not a pattern error: CR-7c was applied without listing all chains. C-17 has the same blind spot. None of the patterns used, applied as written, produced a wrong sign here. PC-17's failure (below) was caught and corrected by the analyst.
+- **Errors in the core version.** Sign errors: provider fees (C-26), entry (C-23) and values (C-24) are signed `increase` under both readings, although the core's own C-22 makes external demand `ambiguous` under U1-a (kind 3). C-36 and C-37 carry A-17 into the long run. C-10 lacks an inframarginal premise for recipients of transferred vouchers. CR-12f is misapplied to full users, whose residue is real (the core's own Gaps b), and employers that spend their whole balance on training they would not otherwise buy are recorded nowhere as losing means. Omissions: capitalization of in-house programs, qualifications, near-threshold firms and small firms (final check 7); `tax_revenue_vs_static_projection`; registration as `allocation_by_non_price_criteria` under U1-a. Minor: the notch is recorded as a group with `earnings` where separate count signs are derivable.
+- **Errors in the pattern version (omissions).** The cash price to employers with balances (core C-3); training received by workers (C-9); transferees' demand (C-11); total employment at non-recovering employers (C-19); trainers' wages (C-25); small employers' fees and the price of Fund-paid starts (C-26, C-33, C-36); the timing of discretionary pay (C-30, C-31, on a new premise).
+- **Test of 0.9 verdicts.** *PC-17 0.9, buy-out (failed):* confirmed. Without PC-17 the core version derived, from CR-1 op 3, CR-4 and CR-5c, that the term itself rises for employers with balances (C-5, C-9, training received), while the wedge falls on non-recovering employers' whole payroll (C-16, C-17). That is the reverse of PC-17's adjustment of "those contracts" against the receiving side. *`mandate_with_charge` (needed interpretation):* confirmed. The core version used the same label "with K2" and lists in its Gaps (c) that no instrument covers a refund conditional on a purchase, with transfer and lapse to a third party. *CR-1 0.9, per range (needed interpretation for the voucher):* partly contradicted. The core did not need a "range" for the voucher. It split the class by counterfactual position (full users, employers with unspent balance, non-recovering) under CR-1's 0.7 splitting note. Its own trouble with CR-1 0.9 was the notch, which it had to read as op 3 on the option of crossing. That confirms the pattern's separate notch point (c3). *CR-3 0.9, refunds on a standard (needed interpretation):* confirmed. The core version found independently that the position against the standard belongs to the provider, not the claimant, and applied the split to providers. *RS-17 0.9 (worked, but missed the notch and the Fund chain)* and *RS-18 0.9 (worked, If clause not met):* the core version derived the capped `no_change` from CR-1 0.9 and CR-4 directly, confirming RS-18's conclusion. It did not record near-threshold values, so it neither confirms nor contradicts RS-17's `ambiguous`. It did note the loss of Fund eligibility as a further cost of crossing, which RS-17 does not prompt.
+- **Candidate pattern used a second time (deposit-refund, 6.2e).** Valid against the no-policy counterfactual: the charge, the refund through training, the lapses and the residual claimant's receipts are each signed against no Act (pattern C-3, C-2, C-29; core C-2, C-5, C-32). The core version reached the same structure from CR-1, the CR-3 note, CR-4 and CR-8b without the candidate. It fits only in the wider form the pattern version proposes (a refund for a costly act by the payer, capped at the charge, with a gift channel and a residual claimant that cannot go negative), not in the WE-027 form (refund for returning an item, to whoever holds it).
+- **Limits of the core rules.** None produced a difference: no S, OP or OC row has cause K. Unclear core-rule wording: (1) CR-1 0.9 names thresholds in a parameter (a cap) but not notches (a jump on crossing), nor ranges set by the actor's own position against a quantity the provision depends on. (2) CR-3 0.9's split by position against a standard: when the standard is paid to a third party (a provider) and the refund is capped at the charge, whose position is meant? (3) CR-12f says not to report chains that cancel by construction, yet a residue (claiming, time the money is held) remains, and the core then misread full users. (4) CR-6 has no guidance for a floor that binds only on voucher-paid sales (the ban on rebates) while cash sales are free (core A-N3). (5) CR-6 0.7 public supply is written for a seller of a fixed quantity, and both versions applied it by analogy to a public payer with a fixed budget (Fund rationing). (6) CR-5's gift clause does not say whether a payer whose alternative was a lapse to the Fund gives anything by its own ranking (core GAP-048-C1).
