@@ -190,6 +190,17 @@ Of 481 consequences compared, 294 were matched; 264 of these (90%) agree in sign
 - CR-12e: whether "a response cannot reverse its cause" binds members of a class who did not respond (WE-032); when counts over a distribution are arithmetic (WE-031).
 - CR-4's fixed-cost note: whether it covers costs fixed per outlet as well as per item (WE-035).
 
-## Not yet done
+## Changes made in response
 
-The findings above are recorded but not yet applied. The next step, as in the first round, is catalog 0.8 (the pattern and wording fixes above, and Q22) and a correction pass on WE-026 to WE-035 against their comparisons. Each comparison lists its proposed corrections to the pattern version.
+- **Catalog 0.8.** The pattern fixes above (OC-3, OC-1, TX-1, RS-1, OC-5, TS-3, EN-6, SB-10, RS-8) and the core-rule wording above. In CR-12, three kinds of opposing chain: one no rule derives (a Tier C note), one that needs a premise the case lacks (state it with p), and one whose own sign is ambiguous. Also in CR-12: two items moving in opposite directions within one variable. In CR-8: contingent payers, capped budgets and value created by ending a race. In CR-6: public buyers at a fixed fee, and when a free price's rise is enough.
+- **Q22** added to `06_gaps.md`.
+- **WE-026 to WE-035 corrected** against their comparisons, now at catalog 0.8. Each correction was checked against the core rules before it was applied. Each example has a section "Corrections after the core-only comparison" listing what changed and which comparison conclusions were rejected and why. Some of the rejections:
+  - WE-026: the core version's waiting time alone, where CR-6 gives a group.
+  - WE-029: a ranking of short-run shares, which needs a premise.
+  - WE-030: home flour sales, which are ambiguous once the opposing flour chain is.
+  - WE-032: a medium-run ambiguity for employers whose staff do not use transit.
+  - WE-034: the core version's single-member sign for funded training.
+  - WE-035: a fall in item variety, since the opposing chain (new lighter items) is derivable.
+- In all, the corrections changed about 90 consequences, added about 125 and removed 5 (WE-028 C-15, WE-032 C-9 and C-14, WE-033 C-20 and C-21). The removals are claims that needed a premise the case lacks or that duplicated another row.
+
+The core-only re-runs are kept unchanged, as the record of the test.
