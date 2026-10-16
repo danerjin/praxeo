@@ -2,7 +2,7 @@
 
 How to analyze the consequences of a policy praxeologically, written so that a newcomer can follow it and a machine can later encode it. This is the Phase 1 deliverable of the project plan (`../Praxeology_AI_Project_Plan_v3.md`, Section 4).
 
-**Status:** draft 0.9 (12 core rules; catalog 0.9, 98 derived patterns; core rules tested by blind re-runs of all 45 examples), with 45 worked examples (WE-026 to WE-035 probe parts of the method the first 25 did not test; WE-036 to WE-045 are a held-out test of catalog 0.8), written before any expert review. Gaps found in the worked examples have been closed or turned into questions for the experts; see `06_gaps.md`. Every rule, tier decision and source pointer is a proposal. Citations have been checked once against the texts; `07_sources.md` records how, and which still need a direct check.
+**Status:** draft 0.9 (12 core rules; catalog 0.9, 98 derived patterns; core rules tested by blind re-runs of WE-001 to WE-045), with 55 worked examples (WE-026 to WE-035 probe parts of the method the first 25 did not test; WE-036 to WE-045 and WE-046 to WE-055 are held-out tests of catalogs 0.8 and 0.9), written before any expert review. Gaps found in the worked examples have been closed or turned into questions for the experts; see `06_gaps.md`. Every rule, tier decision and source pointer is a proposal. Citations have been checked once against the texts; `07_sources.md` records how, and which still need a direct check.
 
 ## How to use it
 

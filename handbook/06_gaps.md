@@ -225,6 +225,35 @@ Catalogs 0.7 and 0.8 were tuned on WE-026 to WE-035. Ten new examples were then 
 
 **Re-run and catalog 0.9.** The blind core-only re-run of WE-036 to WE-045 found K = 0 again, confirmed the pattern failures above and found more (OC-8's baseline, OC-3's fixed-budget clause, RS-16, RS-7). It also showed that the second use of "fixed cost per item reduces variety" was invalid, so that candidate is not promoted. Catalog 0.9 applies the fixes and promotes the other seven (`08_core_rerun_report.md`, third round). WE-036 to WE-045 are then corrected against their comparisons.
 
+## 6.2g Held-out test of catalog 0.9 (WE-046 to WE-055)
+
+Ten new examples were written with the catalog frozen at 0.9, on kinds of policy the 0.9 changes were not drawn from. Each ends with a "Test of 0.9" part giving a verdict on each change it used. These verdicts are the analysts' own; the last round showed that a blind re-run contradicts some of them.
+
+**Calculus gaps.** None. Every step in the ten examples was derived from CR-1 to CR-12. Chains through roads, noise and proximity stay at Tier C under GAP-026-1 (Q20). GAP-039-C2 (the value of a lottery entry) was derived from CR-10c, CR-7c and CR-7a in WE-051.
+
+**The new Tier C rule (CR-12 0.9) worked as written** on its main test, the congestion charge (WE-046, nine consequences), and in WE-051, WE-052 and WE-054. It needed interpretation where the Tier C chain itself pushes both ways (night noise moved to shoulder hours, WE-054) and on whether to record a Tier C sign identical to the Tier B sign (WE-046: recorded both).
+
+**Failures: a pattern or 0.9 clause whose conclusion was wrong although its conditions held.**
+
+| Item | Problem | Found in |
+|---|---|---|
+| CR-12e 0.9, response argument | Assumes the response restores the old price; with a fixed cost per firm, yields can be equalized at a higher price. Needs a constant-cost premise, or should speak of yields. In WE-051 a partial response required inputs that *can* expand, the reverse of the clause's wording. | WE-049, WE-051 |
+| PC-17 0.9, buy-out | Where the charge is paid first and refunded on training, training is free at the margin and demand for the mandated term rises; the terms that adjust are those of employers who do not recover the charge. | WE-048 |
+| RS-16 0.9, costs on the substitute | A cost fixed per facility does not oppose net price (CR-4, 0.8); a cost on owners, not sellers, combines with quantity, not price. Prices should be signed per unit of a given quality or risk, so that a change in mix is not a price change. | WE-053, WE-050, WE-049 |
+| TX-7 | Under a tariff-rate quota its conditions are met by the cut in the in-quota rate and give a lower price; the right sign comes from the marginal rate. | WE-047 |
+| RS-20 | Its main sign compares with uniform enforcement, another policy, not with no policy. | WE-055 |
+| EN-11 0.9 Unless | Its decrease is against a license issued on one requirement, not against no license. | WE-055 |
+| EN-6 (in reverse) | A cap on sellers is not a cap on quantity; a price fall needs a premise. | WE-052 |
+| EN-14 | Omits the chain by which a shrinking stock loses its complements (fuel stations, repair), so long-run used values are `ambiguous`. | WE-050 |
+
+**Needed interpretation.** The 0.9 rule that an asset's persistence follows its stock (a license's value follows a legal count that ends on one date; new supply can return at once; WE-052, WE-050); TX-8 0.9 for services (WE-053); EN-6 for a tariff-rate quota (WE-047); OC-8 0.9's small-borrower clause where a state exemption creates a segment (WE-051); CR-8's voiding clause for a license rather than a contract (WE-052); CR-3 0.9 for a refund capped at what was paid (WE-048); RS-17 for a notch against a kink and for a line in time (WE-048, WE-055); CR-8d's earmark, which needs a premise that the council does not cut its own funding by the full amount (WE-046); EN-12, which does not say where the value of a lottery right settles (WE-051).
+
+**Worked as written** in most uses: OC-8 0.9 (baseline borrowing, revenue bonds, lenders), CR-8 0.9 (a reading that permits, contingent payers), CR-6 0.9 (splitting a shift; public seller with an open quantity), PC-19 0.9, RS-8 0.9, RS-9 0.9, RS-18 0.9, OC-3 0.9, OC-5 0.9, CR-7 0.9 for assets without a market price, CR-12 0.9 on activities that exist only under the policy, the 0.9 workflow note on repeals, EN-12 and EN-13.
+
+**Candidate patterns used validly a second time** (and so to be promoted, subject to a blind re-run): high-grading under a physical-unit cap (WE-047, WE-054), compensating differential from a non-wage term (WE-046), selection under a uniform term (WE-049), deposit-refund (WE-048), scheduled tightening faster than the trend (WE-050), tariff-like burden without a tax (WE-053). Proposed new clauses: a selection clause for PC-19; a notch/kink distinction for RS-17.
+
+**Not yet done.** None of this is applied; the catalog stays at 0.9 as the record of the test. The next step, as before, is a blind core-only re-run of WE-046 to WE-055.
+
 ## 6.3 Questions for the experts
 
 **Q1. Tier A decisions.** Which foundations and rules may produce Tier A conclusions? The draft proposes A for AX-1, LW-1, LW-2, LW-5, LW-6, LW-7, the OC rules, PC-2, PC-3 and PC-11 (given their preconditions), and A for LW-3 by decision, with the price-as-quality-signal and Giffen exceptions recorded. Is that right?
@@ -332,3 +361,13 @@ The metamorphic checks in the three repeal examples (WE-022 to WE-024) are alrea
 | WE-043 | Repeal of a minimum lot size | TS-3, TS |
 | WE-044 | Short-term rental ban | EN, RS-16, RS-8 |
 | WE-045 | Recognition of other states' occupational licenses | EN, TS |
+| WE-046 | Congestion charge on a city center | TX-1, RS-9, RS-16 |
+| WE-047 | Sugar tariff-rate quota, licenses by history | EN-6, EN-12, EN-13, TX-7 |
+| WE-048 | Payroll training levy refunded as vouchers | PC-17, RS-17, RS-18 |
+| WE-049 | Public auto insurer at a set premium | PC-19, RS-16 |
+| WE-050 | Ban on new combustion-car sales from 2035 | EN-14, TS-3, RS-8 |
+| WE-051 | Tax-exempt revenue bonds for rental housing, by lottery | OC-8, EN-12, SB-4 |
+| WE-052 | Repeal of a liquor-license cap | EN-6, EN-13, TS |
+| WE-053 | Data-localization requirement | RS-17, TX-8, RS-16 |
+| WE-054 | Airport night curfew with tradable slots | EN-12, EN-13, RS-8 |
+| WE-055 | Licensing of home inspectors | EN-1 to EN-4, EN-11, RS-20 |
