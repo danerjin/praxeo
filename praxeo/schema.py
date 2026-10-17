@@ -24,14 +24,24 @@ class Component(BaseModel):
     excluded_actor: Optional[str] = Field(default=None, description="Actor class of buyers the rule leaves outside, e.g. tenants.prospective")
     cap: Optional[float] = Field(default=None, description="Numeric ceiling, if the text states one")
     cap_unit: Optional[str] = None
+    vacancy_decontrol: bool = Field(default=False, description="True when the price of a new contract is free and the cap binds only on renewals")
     source_sentences: list[str] = Field(description="Sentences of the policy text this component rests on, quoted exactly")
 
 
 class Unclear(BaseModel):
-    """A provision the parser could not read one way only (workflow step 2)."""
+    """A provision the parser could not read one way only (workflow step 2).
+
+    Each reading is labelled by the text before its first colon ("U1-a: ...").
+    `reading_facts` maps a label to engine facts that hold under that reading
+    (for example an exception); the engine runs once per reading.
+    """
     id: str
     text: str
     readings: list[str]
+    reading_facts: dict[str, str] = {}
+
+    def labels(self) -> list[str]:
+        return [r.split(":", 1)[0].strip() for r in self.readings]
 
 
 class PolicyRecord(BaseModel):
@@ -97,9 +107,19 @@ class Consequence(BaseModel):
     assumption_sets: list[list[str]] = Field(description="Minimal sets of assumptions under each of which the consequence follows (ATMS label)")
     assumptions: list[str] = Field(description="The reported set: the minimal set with the highest joint probability")
     reported: bool = Field(description="True when every assumption in the reported set has p >= cut-off")
+    sign_by_reading: dict[str, str] = Field(default={}, description="Per-reading signs when they differ ('none' = not derived under that reading); sign is then 'ambiguous'")
+    combines: list[str] = Field(default=[], description="IDs of the consequences a CR-12 combination was formed from")
 
 
 # --- outcome card --------------------------------------------------------
+
+class Source(BaseModel):
+    """A dated piece of context for grounding (plan 5.3)."""
+    id: str
+    date: str = Field(description="ISO date of publication")
+    text: str
+    citation: str
+
 
 class Finding(BaseModel):
     id: str

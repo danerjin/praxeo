@@ -18,15 +18,20 @@
    "cap_unit": "share of regional CPI rise, per year, for sitting tenants",
    "source_sentences": [
     "Rental units in owner-occupied buildings of two to four units built before June 1979 become subject to the Rent Ordinance.",
-    "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index."
-   ]
+    "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index.",
+    "When a tenant leaves voluntarily, the landlord may set the rent for the next tenant freely, after which the limit applies again."
+   ],
+   "vacancy_decontrol": true
   }
  ],
  "unclear": [
   {
    "id": "U1",
    "text": "The summary does not say whether the rent on the effective date is rolled back to an earlier base date.",
-   "readings": ["U1-a: the base rent is the rent on the effective date", "U1-b: the base rent is rolled back to an earlier date, cancelling increases made in the announcement window"]
+   "readings": [
+    "U1-a: the base rent is the rent on the effective date",
+    "U1-b: the base rent is rolled back to an earlier date, cancelling increases made in the announcement window"
+   ]
   }
  ],
  "context": [

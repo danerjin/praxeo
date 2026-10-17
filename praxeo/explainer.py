@@ -4,7 +4,7 @@ from __future__ import annotations
 from .schema import Assumption, Consequence, PolicyRecord
 
 RULE_TEXT = {
-    "PC-1": "a ceiling held below the price the market would reach leaves more buyers wanting units than sellers offer",
+    "PC-1": "a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage",
     "PC-3": "those who hold a covered unit pay the controlled price, while those shut out look elsewhere",
     "RS-4": "shut-out buyers turn to uncovered units, which are close substitutes",
     "PC-5": "owners move resources to uses whose yield the ceiling does not cap",
@@ -28,6 +28,10 @@ def explain(c: Consequence, assumptions: dict[str, Assumption], record: PolicyRe
     if len(c.assumption_sets) > 1:
         alt = f" It also follows under {len(c.assumption_sets) - 1} other minimal assumption set(s)."
     status = "Reported." if c.reported else "Not reported: an assumption is below the 0.5 cut-off."
+    if c.sign_by_reading:
+        status = "Sign per reading: " + "; ".join(f"{k}: {v}" for k, v in c.sign_by_reading.items()) + ". " + status
+    if c.combines:
+        chain = f"CR-12 total of {', '.join(c.combines)}" + (" (no premise decides which chain is larger)" if c.sign == "ambiguous" else " (a dominance premise decides the sign)" if len(c.combines) > 1 else " (only one subclass's chain is reported)")
     return (
         f"{c.id}. Compared with no {record.name}, {c.variable.replace('_', ' ')} for {c.actor_class} "
         f"{SIGN_WORD[c.sign]} {when} (tier {c.tier}, {c.visibility}). "

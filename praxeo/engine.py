@@ -5,6 +5,10 @@ The rule base opens a choice over every assumption; enumerating all answer
 sets gives, for each conclusion, every assumption set under which it is
 derived. Keeping only the minimal sets yields an ATMS-style label
 (plan 4.4): "this follows if A and B".
+
+Unclear provisions: the engine runs once per reading (adding that reading's
+facts) and merges the results; where the readings disagree, the consequence
+carries a sign per reading (02_ontology.md, per-reading signs).
 """
 from __future__ import annotations
 
@@ -20,6 +24,18 @@ RULES = Path(__file__).parent / "rules" / "price_controls.lp"
 CUTOFF = 0.5  # workflow: report a consequence only if each assumption has p >= 0.5
 
 
+class _Context:
+    """Python functions the rule base calls with @name(...)."""
+
+    @staticmethod
+    def keepers(actor: clingo.Symbol) -> clingo.Symbol:
+        return clingo.String(actor.string + ".keepers")
+
+    @staticmethod
+    def displaced(actor: clingo.Symbol) -> clingo.Symbol:
+        return clingo.String(actor.string + ".displaced")
+
+
 def _atom(name: str) -> str:
     """Snake-case identifier safe as an ASP constant."""
     s = "".join(ch if ch.isalnum() else "_" for ch in name.lower()).strip("_")
@@ -32,6 +48,8 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
         c = _atom(comp.id)
         if comp.instrument == "price_ceiling":
             lines.append(f"ceiling({c}).")
+        if comp.vacancy_decontrol:
+            lines.append(f"decontrol({c}).")
         lines.append(f'bound({c}, "{comp.bound_actor}").')
         if comp.protected_actor:
             lines.append(f'protected({c}, "{comp.protected_actor}").')
@@ -45,16 +63,27 @@ def _models(program: str) -> list[list[clingo.Symbol]]:
     ctl = clingo.Control(["0", "--warn=none"])
     ctl.load(str(RULES))
     ctl.add("base", [], program)
-    ctl.ground([("base", [])])
+    ctl.ground([("base", [])], context=_Context())
     out: list[list[clingo.Symbol]] = []
     ctl.solve(on_model=lambda m: out.append(list(m.symbols(shown=True))))
     return out
 
 
-def run(record: PolicyRecord, assumptions: dict[str, Assumption], extra: str = "") -> tuple[list[Consequence], str]:
-    """Derive consequences. `assumptions` maps the ASP atom (e.g. 'enforced(c1)') to its estimate;
-    `extra` adds facts such as `exception(pc_5, c1).` from context grounding."""
-    program = facts(record, assumptions) + extra
+def readings(record: PolicyRecord) -> list[tuple[str, str]]:
+    """Every combination of readings of the unclear provisions that carry facts: (label, facts)."""
+    branching = [u for u in record.unclear if u.reading_facts]
+    if not branching:
+        return [("", "")]
+    out = []
+    for combo in itertools.product(*[u.labels() for u in branching]):
+        label = "; ".join(combo)
+        extra = "\n".join(u.reading_facts.get(lab, "") for u, lab in zip(branching, combo))
+        out.append((label, extra + "\n"))
+    return out
+
+
+def _derive(program: str, assumptions: dict[str, Assumption]) -> dict[tuple, dict]:
+    """One engine run. Returns {(actor, variable): {sign, horizon, visibility, tier, concl, sets, steps}}."""
     labels: dict[tuple, list[frozenset[str]]] = {}
     steps: dict[str, set[tuple[str, str]]] = {}
     for model in _models(program):
@@ -67,26 +96,61 @@ def run(record: PolicyRecord, assumptions: dict[str, Assumption], extra: str = "
                 concl = str(s.arguments[0])
                 key = tuple(a.string if a.type == clingo.SymbolType.String else a.name for a in s.arguments[1:])
                 labels.setdefault((concl, *key), []).append(held)
-
-    consequences = []
-    for n, (key, sets) in enumerate(sorted(labels.items()), start=1):
-        concl, actor, variable, sign, horizon, visibility, tier = key
+    out = {}
+    for (concl, actor, variable, sign, horizon, visibility, tier), sets in labels.items():
         minimal = sorted({s for s in sets if not any(o < s for o in sets)}, key=lambda s: (len(s), sorted(s)))
+        out[(actor, variable, sign)] = dict(concl=concl, actor=actor, variable=variable, sign=sign, horizon=horizon,
+                                            visibility=visibility, tier=tier, sets=minimal,
+                                            derivation=_derivation(concl, steps))
+    return out
+
+
+def run(record: PolicyRecord, assumptions: dict[str, Assumption], extra: str = "") -> tuple[list[Consequence], str]:
+    """Derive consequences. `assumptions` maps the ASP atom (e.g. 'enforced(c1)') to its estimate;
+    `extra` adds facts such as `exception(pc_5, c1).` from context grounding."""
+    base = facts(record, assumptions) + extra
+    runs = [(label, _derive(base + rf, assumptions)) for label, rf in readings(record)]
+
+    # merge across readings on (actor, variable): same sign everywhere, or a sign per reading
+    keys = sorted({(a, v) for _, r in runs for (a, v, _s) in r})
+    consequences = []
+    for n, (actor, variable) in enumerate(keys, start=1):
+        per = {}
+        for label, r in runs:
+            hits = [d for (a, v, _s), d in r.items() if (a, v) == (actor, variable)]
+            per[label] = hits[0] if len(hits) == 1 else None if not hits else _clash(hits)
+        derived = [d for d in per.values() if d]
+        first = derived[0]
+        signs = {lab: (d["sign"] if d else "none") for lab, d in per.items()}
+        uniform = len(set(signs.values())) == 1
+        sets = sorted({tuple(s) for d in derived for s in d["sets"]})
+        minimal = [list(s) for s in sets if not any(set(o) < set(s) for o in sets)]
         best = max(minimal, key=lambda s: (math.prod(assumptions[a].p for a in s), -len(s)))
         consequences.append(Consequence(
             id=f"C-{n}",
             actor_class=actor,
             variable=variable,
-            sign=sign,
-            horizon=[h for h in HORIZON_ORDER if HORIZON_ORDER[h] >= HORIZON_ORDER[horizon]],
-            visibility=visibility,
-            tier=tier,
-            derivation=_derivation(concl, steps),
+            sign=first["sign"] if uniform else "ambiguous",
+            horizon=[h for h in HORIZON_ORDER if HORIZON_ORDER[h] >= min(HORIZON_ORDER[d["horizon"]] for d in derived)],
+            visibility=first["visibility"],
+            tier=first["tier"],
+            derivation=first["derivation"],
             assumption_sets=[sorted(s) for s in minimal],
             assumptions=sorted(best),
             reported=all(assumptions[a].p >= CUTOFF for a in best),
+            sign_by_reading={} if uniform else signs,
         ))
-    return consequences, program
+    return consequences, base
+
+
+def _clash(hits: list[dict]) -> dict:
+    """Two rules give opposite signs for one actor and variable in one run: leave it to the combiner
+    by keeping the first and flagging the clash in its derivation."""
+    d = dict(hits[0])
+    d["sign"] = "ambiguous"
+    d["derivation"] = [s for h in hits for s in h["derivation"]]
+    d["sets"] = [s for h in hits for s in h["sets"]]
+    return d
 
 
 def _derivation(concl: str, steps: dict[str, set[tuple[str, str]]]) -> list[Step]:

@@ -4,32 +4,121 @@
  "checked_by": null,
  "verification": "UNVERIFIED: written from memory of Diamond, McQuade and Qian (2019), AER 109(9); the paper could not be fetched from this environment. Every figure must be checked against the paper, and the card checked by a second person, before this case counts.",
  "findings": [
-  {"id": "F-1", "actor_class": "tenants.controlled", "variable": "turnover", "finding_type": "effect", "sign": "decrease",
-   "horizon": ["medium", "long"], "magnitude": "treated tenants roughly 10-20% more likely to remain at their 1994 address",
-   "source": "Diamond, McQuade and Qian (2019), AER 109(9)", "confidence": "high"},
-  {"id": "F-2", "actor_class": "tenants.controlled", "variable": "relocation_out_of_area", "finding_type": "effect", "sign": "decrease",
-   "horizon": ["medium", "long"], "magnitude": "lower displacement from San Francisco",
-   "source": "Diamond, McQuade and Qian (2019), AER 109(9)", "confidence": "high"},
-  {"id": "F-3", "actor_class": "landlords.controlled", "variable": "quantity_supplied", "finding_type": "effect", "sign": "decrease",
-   "horizon": ["long"], "magnitude": "rental housing supply of treated buildings down about 15%",
-   "source": "Diamond, McQuade and Qian (2019), AER 109(9)", "confidence": "high"},
-  {"id": "F-4", "actor_class": "landlords.controlled", "variable": "reclassification", "finding_type": "effect", "sign": "increase",
-   "horizon": ["long"], "magnitude": "more conversion to condominiums and tenancies-in-common, sale to owner-occupiers, redevelopment",
-   "source": "Diamond, McQuade and Qian (2019), AER 109(9)", "confidence": "high"},
-  {"id": "F-5", "actor_class": "tenants.prospective", "variable": "price_paid", "finding_type": "effect", "sign": "increase",
-   "horizon": ["long"], "magnitude": "citywide market rents about 5% higher",
-   "source": "Diamond, McQuade and Qian (2019), AER 109(9)", "confidence": "low",
-   "note": "model-based estimate from the supply reduction, not a direct comparison"}
+  {
+   "id": "F-1",
+   "actor_class": "tenants.controlled",
+   "variable": "turnover",
+   "finding_type": "effect",
+   "sign": "decrease",
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "magnitude": "treated tenants roughly 10-20% more likely to remain at their 1994 address",
+   "source": "Diamond, McQuade and Qian (2019), AER 109(9)",
+   "confidence": "high"
+  },
+  {
+   "id": "F-2",
+   "actor_class": "tenants.controlled",
+   "variable": "relocation_out_of_area",
+   "finding_type": "effect",
+   "sign": "decrease",
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "magnitude": "lower displacement from San Francisco",
+   "source": "Diamond, McQuade and Qian (2019), AER 109(9)",
+   "confidence": "high"
+  },
+  {
+   "id": "F-3",
+   "actor_class": "landlords.controlled",
+   "variable": "quantity_supplied",
+   "finding_type": "effect",
+   "sign": "decrease",
+   "horizon": [
+    "long"
+   ],
+   "magnitude": "rental housing supply of treated buildings down about 15%",
+   "source": "Diamond, McQuade and Qian (2019), AER 109(9)",
+   "confidence": "high"
+  },
+  {
+   "id": "F-4",
+   "actor_class": "landlords.controlled",
+   "variable": "reclassification",
+   "finding_type": "effect",
+   "sign": "increase",
+   "horizon": [
+    "long"
+   ],
+   "magnitude": "more conversion to condominiums and tenancies-in-common, sale to owner-occupiers, redevelopment",
+   "source": "Diamond, McQuade and Qian (2019), AER 109(9)",
+   "confidence": "high"
+  },
+  {
+   "id": "F-5",
+   "actor_class": "tenants.prospective",
+   "variable": "price_paid",
+   "finding_type": "effect",
+   "sign": "increase",
+   "horizon": [
+    "long"
+   ],
+   "magnitude": "citywide market rents about 5% higher",
+   "source": "Diamond, McQuade and Qian (2019), AER 109(9)",
+   "confidence": "low",
+   "note": "model-based estimate from the supply reduction, not a direct comparison"
+  }
  ],
  "assumption_status": [
-  {"assumption": "binding", "held": true, "evidence": "Market rents rose far faster than 60% of CPI in the late 1990s (to be sourced)."},
-  {"assumption": "enforced", "held": true, "evidence": "Treated tenants stayed longer, which requires the limit to be applied (F-1)."},
-  {"assumption": "alternative_uses", "held": true, "evidence": "Conversions and redevelopment observed (F-4)."},
-  {"assumption": "nontransferable", "held": true, "evidence": "Vacancy decontrol; tenancies not assignable."},
-  {"assumption": "would_leave", "held": true, "evidence": "Treated tenants were less likely to leave San Francisco (F-2), which needs some to have left otherwise."},
-  {"assumption": "buyouts_limited", "held": null, "evidence": "Not recorded on this card."},
-  {"assumption": "lockin_dominates", "held": null, "evidence": "Not recorded separately; F-2 is consistent with it."},
-  {"assumption": "substitutes", "held": null, "evidence": "Not studied directly."}
+  {
+   "assumption": "binding",
+   "held": true,
+   "evidence": "Market rents rose far faster than 60% of CPI in the late 1990s (to be sourced)."
+  },
+  {
+   "assumption": "enforced",
+   "held": true,
+   "evidence": "Treated tenants stayed longer, which requires the limit to be applied (F-1)."
+  },
+  {
+   "assumption": "alternative_uses",
+   "held": true,
+   "evidence": "Conversions and redevelopment observed (F-4)."
+  },
+  {
+   "assumption": "nontransferable",
+   "held": true,
+   "evidence": "Vacancy decontrol; tenancies not assignable."
+  },
+  {
+   "assumption": "would_leave",
+   "held": true,
+   "evidence": "Treated tenants were less likely to leave San Francisco (F-2), which needs some to have left otherwise."
+  },
+  {
+   "assumption": "buyouts_limited",
+   "held": null,
+   "evidence": "Not recorded on this card."
+  },
+  {
+   "assumption": "lockin_dominates",
+   "held": null,
+   "evidence": "Not recorded separately; F-2 is consistent with it."
+  },
+  {
+   "assumption": "keepers_dominate",
+   "held": true,
+   "evidence": "Lower displacement from San Francisco among treated tenants overall (F-2)."
+  },
+  {
+   "assumption": "substitutes",
+   "held": null,
+   "evidence": "Not studied directly."
+  }
  ],
  "confounders": [
   "Dot-com boom of the late 1990s and later technology booms raised demand for housing citywide",

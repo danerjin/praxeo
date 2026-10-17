@@ -1,21 +1,23 @@
 {
  "headline": {
-  "predictions": 7,
+  "predictions": 9,
   "ambiguous": 0,
   "verifiable": 5,
-  "unverifiable": 2,
-  "unverifiable_rate": 0.2857142857142857,
+  "unverifiable": 4,
+  "unverifiable_rate": 0.4444444444444444,
   "matched": [
-   "C-3",
+   "C-1",
+   "C-2",
    "C-4",
-   "C-5",
-   "C-6",
-   "C-7"
+   "C-7",
+   "C-9"
   ],
   "false_positives": [],
   "unverifiable_ids": [
-   "C-1",
-   "C-2"
+   "C-3",
+   "C-5",
+   "C-6",
+   "C-8"
   ],
   "recalled_findings": [
    "F-1",
@@ -36,13 +38,13 @@
   "unverifiable": 2,
   "unverifiable_rate": 0.5,
   "matched": [
-   "C-4",
-   "C-6"
+   "C-1",
+   "C-2"
   ],
   "false_positives": [],
   "unverifiable_ids": [
-   "C-1",
-   "C-2"
+   "C-3",
+   "C-5"
   ],
   "recalled_findings": [
    "F-3",
@@ -88,12 +90,19 @@
     "p": 0.85,
     "held": true,
     "score": 0.022500000000000006
+   },
+   {
+    "assumption": "keepers_dominate(c1)",
+    "p": 0.6,
+    "held": true,
+    "score": 0.16000000000000003
    }
   ],
-  "mean": 0.04000000000000001
+  "mean": 0.06000000000000002
  },
  "low_confidence_findings": [
   "F-5"
  ],
- "prediction_sha256": "d026b07b069e92fee4161e3d76525d729dabff59371aca99d8957e6a1716d2e0"
+ "card_vocabulary_problems": [],
+ "prediction_sha256": "faddf8ca7661cd9d5a704bc31d6e95c3ca41b341d559db89513a1a150ccd151f"
 }

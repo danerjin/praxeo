@@ -6,20 +6,20 @@
 - Ambiguous predictions are excluded from precision and count as not recalled.
 - Unverifiable predictions (no finding of any type on that actor, variable and horizon)
   are excluded from precision; their rate is reported.
+- Actor classes match only when they are the same class. A subclass's sign can differ
+  from its class's total (CR-12; PC-21 1.4: keepers against the displaced), so a finding
+  on a class neither confirms nor refutes a prediction on one of its subclasses.
+- Variables are checked against the shared vocabulary (02_ontology.md, 2.4).
 - Assumption estimates are scored with the Brier score where the card records the status.
 """
 from __future__ import annotations
 
+from . import vocabulary
 from .schema import Assumption, Consequence, Finding, OutcomeCard
 
 
-def actors_overlap(a: str, b: str) -> bool:
-    """Same class, or one is a subclass of the other (tenants vs tenants.controlled)."""
-    return a == b or a.startswith(b + ".") or b.startswith(a + ".")
-
-
 def _covers(c: Consequence, f: Finding) -> bool:
-    return actors_overlap(c.actor_class, f.actor_class) and c.variable == f.variable and bool(set(c.horizon) & set(f.horizon))
+    return c.actor_class == f.actor_class and c.variable == f.variable and bool(set(c.horizon) & set(f.horizon))
 
 
 def _matches(c: Consequence, f: Finding) -> bool:
@@ -66,6 +66,10 @@ def f1_block(preds: list[Consequence], card: OutcomeCard) -> dict:
     }
 
 
+def vocabulary_problems(card: OutcomeCard) -> list[str]:
+    return [f"{f.id}: {m}" for f in card.findings if (m := vocabulary.check_variable(f.variable))]
+
+
 def score(consequences: list[Consequence], assumptions: dict[str, Assumption], card: OutcomeCard) -> dict:
     status = {s.assumption: s.held for s in card.assumption_status}
     reported = [c for c in consequences if c.reported]
@@ -79,6 +83,7 @@ def score(consequences: list[Consequence], assumptions: dict[str, Assumption], c
             "mean": sum((p - float(h)) ** 2 for _, p, h in brier) / len(brier) if brier else None,
         },
         "low_confidence_findings": [f.id for f in card.findings if f.confidence == "low"],
+        "card_vocabulary_problems": vocabulary_problems(card),
     }
 
 
