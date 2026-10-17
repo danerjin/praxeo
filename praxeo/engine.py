@@ -69,6 +69,10 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
         if comp.protected_actor:
             lines.append(f'protected({c}, "{comp.protected_actor}").')
         lines.append(f'excluded({c}, "{comp.excluded_actor or "buyers.prospective"}").')
+        if comp.instrument == "price_ceiling":
+            lines.append(f'enforcer({c}, "{comp.enforcer_actor}").')
+            if comp.neighbor_actor:
+                lines.append(f'neighbor({c}, "{comp.neighbor_actor}").')
         if comp.instrument in ("per_unit_tax", "tariff"):
             lines += _tax_facts(c, comp)
     for a in assumptions:
@@ -76,15 +80,27 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
     return "\n".join(lines) + "\n"
 
 
-def _models(program: str) -> list[list[clingo.Symbol]]:
-    ctl = clingo.Control(["0", "--warn=none"])
+def _solve(program: str, args: list[str], extra: str = "") -> list[list[clingo.Symbol]]:
+    ctl = clingo.Control(["0", "--warn=none", *args])
     for rules in RULES:
         ctl.load(str(rules))
-    ctl.add("base", [], program)
+    ctl.add("base", [], program + extra)
     ctl.ground([("base", [])], context=_Context())
     out: list[list[clingo.Symbol]] = []
     ctl.solve(on_model=lambda m: out.append(list(m.symbols(shown=True))))
     return out
+
+
+def _minimal_sets(program: str, concl: str) -> list[frozenset[str]]:
+    """Every subset-minimal set of assumptions under which `concl` is derived (the ATMS label).
+
+    Enumerating all 2^n choices of assumptions does not scale past a dozen assumptions, so each conclusion
+    is asked for separately: the rules are monotone in `holds`, and clingo's domain-heuristic mode
+    (`domRec`, with every `holds` preferred false) enumerates the subset-minimal models that derive it."""
+    models = _solve(program, ["--heuristic=Domain", "--enum-mode=domRec"],
+                    f"\n#heuristic holds(A) : assumption(A). [1, false]\n:- not {concl}.\n")
+    sets = {frozenset(str(s.arguments[0]) for s in m if s.name == "holds") for m in models}
+    return sorted({s for s in sets if not any(o < s for o in sets)}, key=lambda s: (len(s), sorted(s)))
 
 
 def invalid_reading_facts(unclear) -> list[str]:
@@ -112,24 +128,25 @@ def readings(record: PolicyRecord) -> list[tuple[str, str]]:
 
 
 def _derive(program: str, assumptions: dict[str, Assumption]) -> dict[tuple, dict]:
-    """One engine run. Returns {(actor, variable): {sign, horizon, visibility, tier, concl, sets, steps}}."""
-    labels: dict[tuple, list[frozenset[str]]] = {}
+    """One engine run. Returns {(actor, variable, sign): {horizon, visibility, tier, concl, sets, derivation}}.
+
+    The model with every assumption held gives all derivable steps and effects (the rules are monotone in
+    `holds`); the assumption sets of each conclusion are then found one conclusion at a time."""
     steps: dict[str, set[tuple[str, str]]] = {}
-    for model in _models(program):
-        held = frozenset(str(s.arguments[0]) for s in model if s.name == "holds")
+    effects: list[tuple[str, tuple]] = []
+    for model in _solve(program, [], "\n:- assumption(A), not holds(A).\n"):
         for s in model:
             if s.name == "fired":
                 rule, concl, prem = (str(a) for a in s.arguments)
                 steps.setdefault(concl, set()).add((rule, prem))
             elif s.name == "effect":
-                concl = str(s.arguments[0])
                 key = tuple(a.string if a.type == clingo.SymbolType.String else a.name for a in s.arguments[1:])
-                labels.setdefault((concl, *key), []).append(held)
+                effects.append((str(s.arguments[0]), key))
+    minimal_by_concl = {c: _minimal_sets(program, c) for c in sorted({c for c, _ in effects})}
     out = {}
-    for (concl, actor, variable, sign, horizon, visibility, tier), sets in labels.items():
-        minimal = sorted({s for s in sets if not any(o < s for o in sets)}, key=lambda s: (len(s), sorted(s)))
+    for concl, (actor, variable, sign, horizon, visibility, tier) in effects:
         out[(actor, variable, sign)] = dict(concl=concl, actor=actor, variable=variable, sign=sign, horizon=horizon,
-                                            visibility=visibility, tier=tier, sets=minimal,
+                                            visibility=visibility, tier=tier, sets=minimal_by_concl[concl],
                                             derivation=_derivation(concl, steps))
     return out
 

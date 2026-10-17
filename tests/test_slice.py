@@ -211,26 +211,163 @@ def test_end_to_end_fixture(tmp_path):
     assert "Compared with no" in (tmp_path / "report.md").read_text()
 
 
-def test_consistent_with_worked_example_we001():
-    """Every engine consequence for WE-001's record should appear in WE-001's consequence list,
-    except PC-21's consequences, which were added to the catalog after WE-001 was written."""
-    text = (WE1 / "policy.txt").read_text()
-    record = parser.parse_fixture(WE1 / "record.json")
-    pred = predict(text, record, FixtureDecider(WE1 / "answers.json"))
-    assert pred["citation_problems"] == []
+NEW_ATOMS = ("search_open", "selection_open", "quality_adjustable", "evasion", "opportunities_need_move",
+             "can_organize", "durable_assets", "expected_to_last", "commutable", "relet_obstructs", "exit_process")
+
+
+def _all_assumptions(**over):
+    """Every ceiling assumption at 0.9 (including those of the rules widened for WE-001), with overrides."""
+    out = _assumptions(**{k: v for k, v in over.items() if k not in NEW_ATOMS})
+    for atom in NEW_ATOMS:
+        out[f"{atom}(c1)"] = Assumption(id=f"{atom}(c1)", text=atom, assumption_class="other", p=over.get(atom, 0.9))
+    return out
+
+
+def _wide_record():
+    """The SF record without vacancy decontrol (so PC-1 and PC-2 apply) and with a neighbouring market (RS-4)."""
+    rec = _record()
+    rec.components[0].vacancy_decontrol = False
+    rec.components[0].neighbor_actor = "renters.neighbors"
+    return rec
+
+
+def _reported(cons):
+    return {(c.actor_class, c.variable, c.sign) for c in cons if c.reported}
+
+
+# For each widened rule: the consequences it gives, the exception name that defeats it, and an assumption that,
+# set low, stops the consequence being reported (a premise below the 0.5 cut-off).
+WIDE_RULES = {
+    "PC-2 search": ([("tenants.prospective", "search_cost", "increase")], "pc_2", "search_open"),
+    "PC-2 selection": ([("tenants.prospective", "allocation_by_non_price_criteria", "increase")], "pc_2", "selection_open"),
+    "PC-4 quality": ([("tenants.controlled", "quality_per_unit", "decrease"),
+                      ("landlords.controlled", "maintenance_spending", "decrease")], "pc_4", "quality_adjustable"),
+    "PC-6 side payments": ([("tenants.prospective", "side_payments", "increase")], "pc_6", "evasion"),
+    "PC-6 sublet": ([("tenants.controlled", "informal_activity", "increase")], "pc_6", "nontransferable"),
+    "RS-10 recourse": ([("tenants.prospective", "disputes_settled_outside_courts", "increase")], "rs_10", "evasion"),
+    "RS-11 job lock": ([("tenants.controlled", "job_changes", "decrease")], "rs_11", "opportunities_need_move"),
+    "RS-7 lobbying": ([("tenants.controlled", "lobbying_effort", "increase"),
+                       ("landlords.controlled", "lobbying_effort", "increase")], "rs_7", "can_organize"),
+    "PC-16 transfer": ([("landlords.controlled", "net_price_received", "decrease")], "pc_16", "binding"),
+    "OC-4 prevented": ([("tenants.prospective", "quantity_traded", "decrease"),
+                        ("landlords.controlled", "quantity_traded", "decrease")], "oc_4", "alternative_uses"),
+    "SB-4 capitalization": ([("landlords.controlled", "asset_value", "decrease")], "sb_4", "expected_to_last"),
+    "OC-3 enforcement": ([("officials.enforcement", "enforcement_cost", "increase")], "oc_3", "enforced"),
+    "RS-4 neighbours": ([("renters.neighbors", "price_paid", "increase")], "rs_4", "commutable"),
+    "PC-5 held vacant": ([("landlords.controlled", "units_held_vacant", "increase")], "pc_5", "relet_obstructs"),
+    "OC-2 process": ([("landlords.controlled", "compliance_cost", "increase")], "oc_2", "exit_process"),
+}
+
+
+@pytest.mark.parametrize("name", sorted(WIDE_RULES))
+def test_widened_rule_fires_and_is_blocked(name):
+    keys, exception, premise = WIDE_RULES[name]
+    rec = _wide_record()
+    got = _reported(engine.run(rec, _all_assumptions())[0])
+    for k in keys:
+        assert k in got, (name, k)
+    # the exception defeats it
+    got = {(c.actor_class, c.variable, c.sign) for c in engine.run(rec, _all_assumptions(), extra=f"exception({exception}, c1).\n")[0]}
+    for k in keys:
+        assert k not in got, (name, "exception", k)
+    # a premise below the cut-off stops it being reported
+    got = _reported(engine.run(rec, _all_assumptions(**{premise: 0.3}))[0])
+    for k in keys:
+        assert k not in got, (name, "low premise", k)
+
+
+def test_pc2_members_are_not_met_under_vacancy_decontrol():
+    """PC-1/PC-2 1.4: no excess demand where the price of a new contract is free, so no rationing members."""
+    rec = _wide_record()
+    rec.components[0].vacancy_decontrol = True
+    got = _reported(engine.run(rec, _all_assumptions())[0])
+    assert ("tenants.prospective", "search_cost", "increase") not in got
+    assert ("tenants.prospective", "allocation_by_non_price_criteria", "increase") not in got
+    assert ("tenants.prospective", "side_payments", "increase") in got  # PC-6 does not depend on excess demand
+
+
+def test_neighbour_effect_needs_a_neighbour_in_the_record():
+    rec = _wide_record()
+    rec.components[0].neighbor_actor = None
+    got = _reported(engine.run(rec, _all_assumptions())[0])
+    assert not any(a == "renters.neighbors" for a, _, _ in got)
+
+
+def test_enforcer_role_comes_from_the_record():
+    rec = _wide_record()
+    rec.components[0].enforcer_actor = "officials.rent_board"
+    got = _reported(engine.run(rec, _all_assumptions())[0])
+    assert ("officials.rent_board", "enforcement_cost", "increase") in got
+
+
+def test_widened_rules_pass_the_verifier():
+    rec = _wide_record()
+    a = _all_assumptions()
+    cons, _ = engine.run(rec, a)
+    assert verify(combine(cons, a), a, rec) == []
+
+
+def _we001_rows() -> dict[str, set[tuple[str, str, str]]]:
+    """WE-001's normal-form table as {row id: {(actor class, variable, sign)}}. A cell naming several actor
+    classes gives one key each; a qualifier in brackets is dropped; the table's bare `landlords` and `tenants`
+    are the record's landlords.controlled and tenants.controlled."""
     md = (ROOT / "handbook" / "05_examples" / "WE-001_rent_freeze.md").read_text()
     table = md.split("## Consequence list (normal form)")[1].split("## Gaps found")[0]
-    rows = set()
+    short = {"landlords": "landlords.controlled", "tenants": "tenants.controlled"}
+    rows: dict[str, set[tuple[str, str, str]]] = {}
     for line in table.splitlines():
         cells = [c.strip() for c in line.strip("|").split("|")]
         if len(cells) > 4 and re.match(r"C-\d+", cells[0]):
-            rows.add((cells[1].split(" ")[0], cells[2].split(" ")[0], cells[3]))
-    known = {("tenants.controlled.keepers", "relocation_out_of_area", "decrease"),  # PC-21 is newer than WE-001
-             ("tenants.controlled.displaced", "relocation_out_of_area", "increase"),
-             ("tenants.controlled", "relocation_out_of_area", "decrease")}
-    for c in pred["consequences"]:
-        key = (c["actor_class"], c["variable"], c["sign"])
-        assert key in rows or key in known, key
+            actors = [re.sub(r"\s*\(.*", "", a).strip() for a in cells[1].split(",")]
+            rows[cells[0]] = {(short.get(a, a), cells[2].split(" ")[0], cells[3]) for a in actors}
+    return rows
+
+
+# Engine consequences for WE-001 that are not rows of its table as written, each with the reason.
+WE001_EXCEPTIONS = {
+    ("tenants.controlled.keepers", "relocation_out_of_area", "decrease"): "PC-21 is newer than WE-001",
+    ("tenants.controlled.displaced", "relocation_out_of_area", "increase"): "PC-21 is newer than WE-001",
+    ("tenants.controlled", "relocation_out_of_area", "decrease"): "CR-12 total of the PC-21 subclasses",
+    # PC-4 signs quality_per_unit and maintenance_spending. WE-001 section 5 (C-6) lists both; the normal-form
+    # table keeps the quality row for the tenants who receive it and drops the landlords' spending.
+    ("landlords.controlled", "maintenance_spending", "decrease"):
+        "WE-001 section 5, C-6 lists it; the normal-form table omits the landlords' side",
+}
+
+# Rows of WE-001's table the engine does not produce, each with the reason (what it would need).
+WE001_NOT_PRODUCED = {
+    "C-10": "turnover increase for tenants in converted buildings: needs a CR-12 total of turnover (keepers against displaced) that the combiner does not form",
+    "C-13": "developers' investment_target: needs the new-construction exemption and a combined sign of two opposing chains (LW-4, TS-2)",
+    "C-14": "homebuyers' quantity_substitute: RS-5 signs reclassification only; the rental to owner-occupied market relation is a case fact",
+    "C-17": "announcement-window price_paid: a per-window timing sign (RS-8)",
+    "C-19": "taxpayers' resources_available_other_uses: OC-3 and OC-1 sign a general-budget payer as a group (at_least_one_decrease), which the engine cannot express",
+    "C-21": "first-months price_paid: a per-window ambiguous sign (PC-3 against RS-8)",
+    "C-28": "landlords' resources_available_other_uses: a CR-12 total (key money against rent forgone) with a dominance premise, not formed by the combiner",
+    "C-29": "tenants' resources_available_other_uses: CR-8b, a core rule that has no pattern in the rule base",
+    "C-30": "relocation payment under K3: a case-specific provision",
+}
+# Rows produced for only some of their actor classes.
+WE001_PARTIAL = {"C-11": {("developers", "lobbying_effort", "increase")}}  # developers need the exemption fact
+
+
+def test_consistent_with_worked_example_we001():
+    """Every engine consequence for WE-001's record is a row of WE-001's consequence list, except those in
+    WE001_EXCEPTIONS (each with its reason). The rows it does not produce are listed with a reason."""
+    text = (WE1 / "policy.txt").read_text()
+    record = parser.parse_fixture(WE1 / "record.json")
+    pred = predict(text, record, FixtureDecider(WE1 / "answers.json"))
+    assert pred["citation_problems"] == [] and pred["verifier_problems"] == []
+    rows = _we001_rows()
+    assert len(rows) == 30  # C-1 to C-30; the 31st table row (quality_adjusted_price) has no C id
+    table_keys = set().union(*rows.values())
+    produced = {(c["actor_class"], c["variable"], c["sign"]) for c in pred["consequences"] if c["reported"]}
+    for key in produced:
+        assert key in table_keys or key in WE001_EXCEPTIONS, key
+    got = {rid for rid, keys in rows.items() if keys & produced}
+    assert set(rows) - got == set(WE001_NOT_PRODUCED)
+    for rid, missing in WE001_PARTIAL.items():
+        assert rows[rid] - produced == missing
+    assert len(got) == 21
 
 
 def _we013_table() -> set[tuple[str, str, str]]:

@@ -21,7 +21,7 @@ from .decider import Decider
 from .questions import ASSUMPTION_TEXT, ceiling_questions
 from .schema import HORIZON_ORDER, Assumption, Component, Consequence, PolicyRecord, Step
 
-Role = Literal["bound", "protected", "excluded", "keepers", "displaced"]
+Role = Literal["bound", "protected", "excluded", "keepers", "displaced", "neighbor", "enforcer"]
 
 
 @dataclass(frozen=True)
@@ -81,6 +81,63 @@ STEPS: list[BStep] = [
     # CR-12: asked only when both subclass chains held; the combiner needs it to choose a total.
     BStep("keepers_dominate", "CR-12", "keepers_dominate", needs=("stay_in_area", "displaced_leave"),
           assumption="keepers_dominate"),
+    # PC-2 (1.4): rationing members, only where there is excess demand (so not under vacancy decontrol)
+    BStep("search_open", "PC-2", "search_open", needs=("excess_demand",), assumption="search_open"),
+    BStep("search_rationing", "PC-2", "search_rationing", needs=("excess_demand", "search_open"),
+          effects=(Effect("excluded", "search_cost", "increase", "short", "invisible"),)),
+    BStep("selection_open", "PC-2", "selection_open", needs=("excess_demand",), assumption="selection_open"),
+    BStep("selection_rationing", "PC-2", "selection_rationing", needs=("excess_demand", "selection_open"),
+          effects=(Effect("excluded", "allocation_by_non_price_criteria", "increase", "short", "invisible"),)),
+    # PC-4 with RS-2
+    BStep("quality_adjustable", "RS-2", "quality_adjustable", needs=("cap",), assumption="quality_adjustable"),
+    BStep("quality_falls", "PC-4", "quality_falls", needs=("cap", "quality_adjustable"),
+          effects=(Effect("protected", "quality_per_unit", "decrease", "short", "invisible"),
+                   Effect("bound", "maintenance_spending", "decrease", "short", "invisible"))),
+    # PC-6 with RS-3, then RS-10
+    BStep("evasion", "RS-3", "evasion", needs=("cap",), assumption="evasion"),
+    BStep("informal", "PC-6", "informal", needs=("cap", "evasion"),
+          effects=(Effect("excluded", "side_payments", "increase", "short", "invisible"),)),
+    BStep("sublet", "PC-6", "sublet", needs=("informal", "nontransferable"),
+          effects=(Effect("protected", "informal_activity", "increase", "short", "invisible"),)),
+    BStep("no_recourse", "RS-10", "no_recourse", needs=("informal",),
+          effects=(Effect("excluded", "disputes_settled_outside_courts", "increase", "short", "invisible"),)),
+    # RS-11 (with PC-7)
+    BStep("opportunities_need_move", "RS-11", "opportunities_need_move", needs=("turnover",),
+          assumption="opportunities_need_move"),
+    BStep("job_lock", "RS-11", "job_lock", needs=("turnover", "opportunities_need_move"),
+          effects=(Effect("protected", "job_changes", "decrease", "medium", "invisible"),)),
+    # RS-7
+    BStep("can_organize", "RS-7", "can_organize", needs=("cap",), assumption="can_organize"),
+    BStep("lobbying", "RS-7", "lobbying", needs=("cap", "can_organize"),
+          effects=(Effect("protected", "lobbying_effort", "increase", "medium", "invisible"),
+                   Effect("bound", "lobbying_effort", "increase", "medium", "invisible"))),
+    # PC-16 and OC-4
+    BStep("transfer", "PC-16", "transfer", needs=("insider_gain",),
+          effects=(Effect("bound", "net_price_received", "decrease", "medium", "invisible"),)),
+    BStep("prevented", "OC-4", "prevented", needs=("supply_falls",),
+          effects=(Effect("excluded", "quantity_traded", "decrease", "medium", "invisible"),
+                   Effect("bound", "quantity_traded", "decrease", "medium", "invisible"))),
+    # SB-4
+    BStep("durable_assets", "SB-4", "durable_assets", needs=("cap",), assumption="durable_assets"),
+    BStep("expected_to_last", "SB-4", "expected_to_last", needs=("cap",), assumption="expected_to_last"),
+    BStep("capitalized", "SB-4", "capitalized", needs=("cap", "durable_assets", "expected_to_last"),
+          effects=(Effect("bound", "asset_value", "decrease", "short", "invisible"),)),
+    # OC-3
+    BStep("administered", "OC-3", "administered", needs=("cap",),
+          effects=(Effect("enforcer", "enforcement_cost", "increase", "short", "invisible", "A"),)),
+    # RS-4 with PC-3, only when the record names a neighbouring market
+    BStep("commutable", "RS-4", "commutable", needs=("cap",), assumption="commutable",
+          guard=lambda c: c.neighbor_actor is not None),
+    BStep("cross_boundary", "RS-4", "cross_boundary", needs=("cap", "commutable"),
+          guard=lambda c: c.neighbor_actor is not None,
+          effects=(Effect("neighbor", "price_paid", "increase", "medium", "invisible"),)),
+    # PC-5 with RS-5 and CR-4; OC-2
+    BStep("relet_obstructs", "PC-5", "relet_obstructs", needs=("reclassify",), assumption="relet_obstructs"),
+    BStep("held_vacant", "PC-5", "held_vacant", needs=("reclassify", "relet_obstructs"),
+          effects=(Effect("bound", "units_held_vacant", "increase", "medium", "invisible"),)),
+    BStep("exit_process", "OC-2", "exit_process", needs=("reclassify",), assumption="exit_process"),
+    BStep("process_cost", "OC-2", "process_cost", needs=("reclassify", "exit_process"),
+          effects=(Effect("bound", "compliance_cost", "increase", "medium", "invisible"),)),
 ]
 
 
@@ -90,6 +147,10 @@ def _actor(comp: Component, role: Role) -> Optional[str]:
         return comp.bound_actor
     if role == "excluded":
         return comp.excluded_actor or "buyers.prospective"
+    if role == "neighbor":
+        return comp.neighbor_actor
+    if role == "enforcer":
+        return comp.enforcer_actor
     if comp.protected_actor is None:
         return None
     return comp.protected_actor if role == "protected" else f"{comp.protected_actor}.{role}"

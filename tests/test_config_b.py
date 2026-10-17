@@ -14,9 +14,13 @@ ROOT = Path(__file__).resolve().parents[1]
 SF = ROOT / "cases" / "sf_1994"
 ANSWERS = SF / "answers.json"
 
-# The nine questions in the order Configuration B asks them on sf_1994.
+# The questions Configuration B asks on sf_1994, in order. The PC-2 members (search_open, selection_open) are not
+# asked: vacancy decontrol means there is no excess demand. commutable is not asked: the record names no
+# neighbouring market. exit_process is asked and fails (p 0.45), so its compliance-cost step is not reached.
 ASKED = ["c1.binding", "c1.enforced", "c1.substitutes", "c1.alternative_uses", "c1.nontransferable",
-         "c1.buyouts_limited", "c1.would_leave", "c1.lockin_dominates", "c1.keepers_dominate"]
+         "c1.buyouts_limited", "c1.would_leave", "c1.lockin_dominates", "c1.keepers_dominate",
+         "c1.quality_adjustable", "c1.evasion", "c1.opportunities_need_move", "c1.can_organize",
+         "c1.durable_assets", "c1.expected_to_last", "c1.relet_obstructs", "c1.exit_process"]
 
 
 def _record():
@@ -27,17 +31,32 @@ def test_b_matches_a_on_sf_1994():
     res = compare_a_b(_record(), FixtureDecider(ANSWERS))
     assert res["only_a"] == [] and res["only_b"] == []
     assert res["agree"] == sorted([
+        ("landlords.controlled", "asset_value", "decrease"),
+        ("landlords.controlled", "lobbying_effort", "increase"),
+        ("landlords.controlled", "maintenance_spending", "decrease"),
+        ("landlords.controlled", "net_price_received", "decrease"),
         ("landlords.controlled", "quantity_supplied", "decrease"),
+        ("landlords.controlled", "quantity_traded", "decrease"),
         ("landlords.controlled", "reclassification", "increase"),
+        ("landlords.controlled", "units_held_vacant", "increase"),
+        ("officials.enforcement", "enforcement_cost", "increase"),
+        ("tenants.controlled", "informal_activity", "increase"),
+        ("tenants.controlled", "job_changes", "decrease"),
+        ("tenants.controlled", "lobbying_effort", "increase"),
         ("tenants.controlled", "price_paid", "decrease"),
+        ("tenants.controlled", "quality_per_unit", "decrease"),
         ("tenants.controlled", "relocation_out_of_area", "decrease"),  # CR-12 total
         ("tenants.controlled", "turnover", "decrease"),
         ("tenants.controlled.displaced", "relocation_out_of_area", "increase"),
         ("tenants.controlled.keepers", "relocation_out_of_area", "decrease"),
+        ("tenants.prospective", "disputes_settled_outside_courts", "increase"),
         ("tenants.prospective", "price_paid", "increase"),
         ("tenants.prospective", "price_substitute", "increase"),
+        ("tenants.prospective", "quantity_traded", "decrease"),
+        ("tenants.prospective", "side_payments", "increase"),
     ])
-    assert res["a_unreported"] == []
+    # A derives compliance_cost (OC-2) but cannot report it: exit_process is at p 0.45. B stops at that question.
+    assert res["a_unreported"] == [("landlords.controlled", "compliance_cost", "increase")]
 
 
 def test_low_binding_stops_every_chain(tmp_path):
@@ -75,15 +94,15 @@ def test_steps_are_well_formed():
     assert {s.assumption for s in STEPS if s.assumption} == set(ASSUMPTION_TEXT)
 
 
-LP_EFFECT = re.compile(r'effect\(\w+\(C\), (@keepers\(P\)|@displaced\(P\)|P|X|B), "(\w+)", (\w+), (\w+), (\w+), "(\w)"\)')
-LP_ROLE = {"@keepers(P)": "keepers", "@displaced(P)": "displaced", "P": "protected", "X": "excluded", "B": "bound"}
+LP_EFFECT = re.compile(r'effect\(\w+\(C\), (@keepers\(P\)|@displaced\(P\)|P|X|B|N|E), "(\w+)", (\w+), (\w+), (\w+), "(\w)"\)')
+LP_ROLE = {"@keepers(P)": "keepers", "@displaced(P)": "displaced", "P": "protected", "X": "excluded", "B": "bound", "N": "neighbor", "E": "enforcer"}
 
 
 def test_steps_carry_the_effects_of_price_controls_lp():
     lp = (ROOT / "praxeo" / "rules" / "price_controls.lp").read_text()
     in_lp = {(LP_ROLE[m[0]], *m[1:]) for m in LP_EFFECT.findall(lp)}
     in_steps = {(e.role, e.variable, e.sign, e.horizon, e.visibility, e.tier) for s in STEPS for e in s.effects}
-    assert len(in_lp) == 9
+    assert len(in_lp) == 27
     assert in_steps == in_lp
 
 
@@ -109,3 +128,14 @@ def test_vacancy_decontrol_switch_agrees():
     assert res["only_a"] == [] and res["only_b"] == []
     assert ("tenants.prospective", "excess_demand", "increase") in res["agree"]
     assert ("tenants.prospective", "price_paid", "increase") not in res["agree"]
+
+
+def test_b_matches_a_on_we001_with_every_widened_rule():
+    """WE-001 names a neighbouring market and has no vacancy decontrol, so the PC-2 members and RS-4 are reached."""
+    we1 = ROOT / "cases" / "we001_riverton"
+    record = parser.parse_fixture(we1 / "record.json")
+    res = compare_a_b(record, FixtureDecider(we1 / "answers.json"))
+    assert res["only_a"] == [] and res["only_b"] == [] and res["a_unreported"] == []
+    assert ("tenants.prospective", "search_cost", "increase") in res["agree"]
+    assert ("renters.neighbors", "price_paid", "increase") in res["agree"]
+    assert ("landlords.controlled", "compliance_cost", "increase") in res["agree"]

@@ -41,6 +41,48 @@ CEILING_QUESTIONS = [
     ("substitutes", "substitutability",
      "Are uncovered units in the same market close substitutes for covered units, for buyers who cannot obtain a covered one?",
      "Uncovered units in the same market are close substitutes for covered ones."),
+    # PC-2 (one question per member of the rationing group: each margin needs its own premise)
+    ("search_open", "other",
+     "Is there no public list or allocation rule that assigns the covered good to buyers, so that buyers have to find sellers by their own search?",
+     "Seekers find covered units by their own search: no public list or allocation rule assigns them."),
+    ("selection_open", "other",
+     "Are sellers free to choose among applicants for the covered good by criteria of their own (income, credit, references, connections)?",
+     "Sellers may choose among applicants by criteria of their own."),
+    # PC-4, RS-2
+    ("quality_adjustable", "other",
+     "Can the bound sellers cut quality or maintenance below what they now supply without breaking a rule that is enforced (a code, a contract term)?",
+     "Sellers have room to cut quality or maintenance above any enforced minimum."),
+    # PC-6, RS-3
+    ("evasion", "enforcement",
+     "Will some exchanges of the covered good take place above the ceiling, disguised or illegal (key money, tie-in sales, sublets at market rent), without being caught?",
+     "Some exchanges take place above the ceiling without being caught."),
+    # RS-11
+    ("opportunities_need_move", "mobility",
+     "Would some valued opportunities for the protected buyers (a job, a better home) require them to give up the covered unit?",
+     "Some valued opportunities for the protected buyers would require giving up the covered unit."),
+    # RS-7
+    ("can_organize", "other",
+     "Can the groups with a concentrated stake in the rule (those it helps, those it burdens) organize and spend to keep or change it at a cost below their stakes?",
+     "The groups with a concentrated stake can organize and spend to keep or change the rule."),
+    # SB-4
+    ("durable_assets", "durability",
+     "Are the assets the bound sellers use to supply the covered good durable, so that the supply of them expands only slowly?",
+     "The covered assets are durable and their supply expands slowly."),
+    ("expected_to_last", "expectations",
+     "Do buyers of the covered assets expect the rule to stay in force for many years?",
+     "Buyers of the covered assets expect the rule to last for many years."),
+    # RS-4
+    ("commutable", "mobility",
+     "Can buyers who cannot obtain a covered unit buy in a neighbouring market outside the rule's reach at a cost (travel, time) they are willing to bear?",
+     "Shut-out buyers can buy in a neighbouring market outside the rule's reach at a bearable cost."),
+    # PC-5, RS-5, CR-4
+    ("relet_obstructs", "other",
+     "Does letting a vacated covered unit to a new tenant make it harder for the owner to move the unit to an alternative use later (eviction only for cause, relocation payments)?",
+     "Re-letting a vacated unit obstructs the owner's later move to an alternative use."),
+    # OC-2
+    ("exit_process", "other",
+     "Does moving covered units to an alternative use require passing a permit or board process?",
+     "Moving covered units to an alternative use requires a permit or board process."),
 ]
 
 

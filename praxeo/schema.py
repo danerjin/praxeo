@@ -37,6 +37,8 @@ class Component(BaseModel):
     excluded_actor: Optional[str] = Field(default=None, description="Actor class of buyers the rule leaves outside, e.g. tenants.prospective")
     cap: Optional[float] = Field(default=None, description="Numeric ceiling, if the text states one")
     cap_unit: Optional[str] = None
+    neighbor_actor: Optional[str] = Field(default=None, description="Price ceilings: buyers in a neighbouring market outside the rule's reach, where shut-out buyers can go (RS-4), e.g. renters.neighbors")
+    enforcer_actor: str = Field(default="officials.enforcement", description="Price ceilings: who administers and enforces the rule (OC-3)")
     vacancy_decontrol: bool = Field(default=False, description="True when the price of a new contract is free and the cap binds only on renewals")
     buyer_actor: str = Field(default="buyers.current", description="Taxes and tariffs: buyers of the taxed good")
     seller_actor: str = Field(default="sellers.current", description="Per-unit taxes: sellers of the taxed good")

@@ -14,6 +14,7 @@
    "bound_actor": "landlords.controlled",
    "protected_actor": "tenants.controlled",
    "excluded_actor": "tenants.prospective",
+   "neighbor_actor": "renters.neighbors",
    "cap": 0.02,
    "cap_unit": "yearly increase after a 3-year freeze",
    "source_sentences": [
@@ -25,5 +26,8 @@
  "unclear": [
   {"id": "U1", "text": "Whether major renovations allow a rent increase.", "readings": ["U1-a: no", "U1-b: yes, by board approval"]}
  ],
- "context": ["Market rents have risen about 5% a year for several years (WE-001 record)."]
+ "context": [
+    "Market rents have risen about 5% a year for several years (WE-001 record).",
+    "Eastfield and Northgate are 15 to 25 minutes away by car or train and have no rent regulation (WE-001 record)."
+  ]
 }

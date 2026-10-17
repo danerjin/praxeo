@@ -65,5 +65,82 @@
   "probability": 0.6,
   "rationale": "Not addressed in WE-001; premise added for the CR-12 total (catalog 1.4).",
   "evidence": []
+ },
+ {
+  "question_id": "k1.search_open",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "WE-001 A-15 (no waiting list or allocation rule).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.selection_open",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "WE-001 A-16.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.quality_adjustable",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "WE-001 A-4 (housing codes leave room above the legal minimum).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "WE-001 A-3.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.opportunities_need_move",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-001 A-12.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "WE-001 A-18.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.durable_assets",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "WE-001 A-10.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-001 A-13.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.commutable",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "WE-001 A-8.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.relet_obstructs",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Not a separate assumption in WE-001; added for the units-held-vacant rule. C-24 rests on A-5 (0.7) and A-2 (0.8); K2's eviction-for-cause rule and K3's relocation payments are what make re-letting obstruct conversion.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.exit_process",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Not in WE-001's assumption table; K3 states a 12-month permit process for conversion, so the premise is close to given by the record.",
+  "evidence": []
  }
 ]

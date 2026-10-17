@@ -51,9 +51,9 @@ def _fixture_with(tmp_path, name, probabilities, default=None):
 def test_passing_thresholds_change_nothing():
     text = (SF / "policy.txt").read_text()
     plain = predict(text, _record(), FixtureDecider(SF / "answers.json"))
-    # 0.6 is the lowest confidence in the fixture (keepers_dominate), so it passes at equality too
+    # 0.55 is the lowest confidence in the fixture (evasion, and exit_process at p = 0.45); 0.54 sits just below it
     wrapped = EscalatingDecider(FixtureDecider(SF / "answers.json"), _Never(),
-                                Thresholds(kind={"noul": 0.6}))
+                                Thresholds(kind={"noul": 0.54}))
     out = predict(text, _record(), wrapped)
     assert wrapped.log == []
     assert out["escalations"] == []
@@ -87,13 +87,15 @@ def test_high_threshold_escalates_low_confidence_to_fallback(tmp_path):
 
 
 def test_only_low_confidence_questions_escalate(tmp_path):
-    # noul 0.7: lockin_dominates (0.65) and keepers_dominate (0.6) fall below; the rest pass
+    # noul 0.7: lockin_dominates (0.65), keepers_dominate (0.6), quality_adjustable (0.6), evasion (0.55) and
+    # exit_process (0.45, confidence 0.55) fall below; the rest pass
     primary = FixtureDecider(SF / "answers.json")
     fallback = _fixture_with(tmp_path, "fallback.json",
                              {"c1.lockin_dominates": 0.3, "c1.keepers_dominate": 0.2})
     dec = EscalatingDecider(primary, fallback, Thresholds(kind={"noul": 0.7}))
     out = predict((SF / "policy.txt").read_text(), _record(), dec)
-    assert [e["question_id"] for e in out["escalations"]] == ["c1.lockin_dominates", "c1.keepers_dominate"]
+    assert [e["question_id"] for e in out["escalations"]] == [
+        "c1.lockin_dominates", "c1.keepers_dominate", "c1.quality_adjustable", "c1.evasion", "c1.exit_process"]
     used = {q["answer"]["question_id"]: q["answer"] for q in out["questions"]}
     assert used["c1.lockin_dominates"]["probability"] == 0.3
     assert used["c1.lockin_dominates"]["decider"] == "fixture:fallback.json"
@@ -166,8 +168,9 @@ def test_cli_with_thresholds_logs_escalations(tmp_path, monkeypatch, capsys):
     main()
     pred = json.loads((out / "prediction.json").read_text())
     ids = {e["question_id"] for e in pred["escalations"]}
-    assert ids == {"c1.binding", "c1.lockin_dominates", "c1.keepers_dominate"}
-    assert "Escalations: 3 of 9" in (out / "report.md").read_text()
+    assert ids == {"c1.binding", "c1.lockin_dominates", "c1.keepers_dominate",
+                   "c1.quality_adjustable", "c1.evasion", "c1.exit_process"}
+    assert "Escalations: 6 of 20" in (out / "report.md").read_text()
     assert (out / "score.json").exists()
 
 

@@ -30,7 +30,8 @@
    "probability": 0.8,
    "rationale": "The annex's sizes (illustrative ranges) put the deterred exits above the displaced exits everywhere; the ranges are not yet sourced, so the premise is raised only part of the way toward the proposal.",
    "evidence": [],
-   "decider": "fixture:premise_answers.json"
+   "decider": "fixture:premise_answers.json",
+   "confidence": null
   },
   "new_p": 0.8
  },

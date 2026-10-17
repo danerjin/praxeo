@@ -4,6 +4,8 @@
 %   decontrol(C).                   the price of a new contract is free (vacancy decontrol)
 %   bound(C, Actor). protected(C, Actor). excluded(C, Actor).
 %   assumption(A).                  an assumption the decider estimated
+%   enforcer(C, Actor).             who administers and enforces the cap (OC-3)
+%   neighbor(C, Actor).             buyers in a neighbouring market outside the cap's reach (RS-4), if the record names one
 %   plus any facts a reading of an unclear provision adds (engine runs once per reading).
 % The engine adds a choice over assumptions and enumerates answer sets,
 % so each conclusion is labelled with the minimal assumption sets it needs
@@ -73,6 +75,114 @@ displaced_leave(C) :- reclassify(C), holds(would_leave(C)), not exception(pc_21,
 fired(rs_5,  displaced_leave(C), reclassify(C))  :- displaced_leave(C).
 fired(pc_21, displaced_leave(C), would_leave(C)) :- displaced_leave(C).
 effect(displaced_leave(C), @displaced(P), "relocation_out_of_area", increase, long, invisible, "B") :- displaced_leave(C), protected(C, P).
+
+% ---- Widened in this version: the rest of the ceiling family and the generic patterns a ceiling uses. ----
+% Signs are against the no-policy counterfactual. Where a pattern's Then lists more members than are encoded
+% here, the comment says which ones are left out.
+
+% PC-2 (1.4): a shortage is rationed by other means. Not met where the price of a new contract is free
+% (excess_demand is not derived then). Each member of the group is signed on its own only with a premise
+% that its margin is open and used in this market.
+search_rationing(C) :- excess_demand(C), holds(search_open(C)), not exception(pc_2, C).
+fired(pc_2, search_rationing(C), excess_demand(C)) :- search_rationing(C).
+fired(pc_2, search_rationing(C), search_open(C))   :- search_rationing(C).
+effect(search_rationing(C), X, "search_cost", increase, short, invisible, "B") :- search_rationing(C), excluded(C, X).
+
+selection_rationing(C) :- excess_demand(C), holds(selection_open(C)), not exception(pc_2, C).
+fired(pc_2, selection_rationing(C), excess_demand(C)) :- selection_rationing(C).
+fired(pc_2, selection_rationing(C), selection_open(C)) :- selection_rationing(C).
+effect(selection_rationing(C), X, "allocation_by_non_price_criteria", increase, short, invisible, "B") :- selection_rationing(C), excluded(C, X).
+% PC-2's other members: wait_time is not signed (no queue premise); side_payments comes from PC-6 below.
+
+% PC-4 with RS-2: sellers cut unregulated quality and maintenance. Insiders receive less quality per unit;
+% sellers spend less on maintenance.
+quality_falls(C) :- binding_cap(C), holds(quality_adjustable(C)), not exception(pc_4, C).
+fired(pc_4, quality_falls(C), binding_cap(C))        :- quality_falls(C).
+fired(rs_2, quality_falls(C), quality_adjustable(C)) :- quality_falls(C).
+effect(quality_falls(C), P, "quality_per_unit", decrease, short, invisible, "B") :- quality_falls(C), protected(C, P).
+effect(quality_falls(C), B, "maintenance_spending", decrease, short, invisible, "B") :- quality_falls(C), bound(C, B).
+
+% PC-6 with RS-3: some exchanges happen above the ceiling, disguised or illegal. Seekers pay side payments.
+informal(C) :- binding_cap(C), holds(evasion(C)), not exception(pc_6, C).
+fired(pc_6, informal(C), binding_cap(C)) :- informal(C).
+fired(rs_3, informal(C), evasion(C))     :- informal(C).
+effect(informal(C), X, "side_payments", increase, short, invisible, "B") :- informal(C), excluded(C, X).
+
+% PC-6, sublet form: where the protected buyers' right cannot be assigned, they sublet at the market price.
+% (PC-6 signs informal_activity without naming who; only this form is encoded.)
+sublet(C) :- informal(C), holds(nontransferable(C)), not exception(pc_6, C).
+fired(pc_6, sublet(C), informal(C))          :- sublet(C).
+fired(pc_6, sublet(C), nontransferable(C))   :- sublet(C).
+effect(sublet(C), P, "informal_activity", increase, short, invisible, "B") :- sublet(C), protected(C, P).
+
+% RS-10: trade driven into the informal market has no recourse to the courts. Encoded for the buyers in that
+% trade; the pattern's other members (quality_information, quality_variability, search_cost) are not encoded.
+no_recourse(C) :- informal(C), not exception(rs_10, C).
+fired(rs_10, no_recourse(C), informal(C)) :- no_recourse(C).
+effect(no_recourse(C), X, "disputes_settled_outside_courts", increase, short, invisible, "B") :- no_recourse(C), excluded(C, X).
+
+% RS-11 (with PC-7): a benefit lost by moving makes insiders turn down opportunities that require a move.
+job_lock(C) :- turnover_falls(C), holds(opportunities_need_move(C)), not exception(rs_11, C).
+fired(rs_11, job_lock(C), turnover_falls(C))            :- job_lock(C).
+fired(rs_11, job_lock(C), opportunities_need_move(C))   :- job_lock(C).
+effect(job_lock(C), P, "job_changes", decrease, medium, invisible, "B") :- job_lock(C), protected(C, P).
+
+% RS-7: a gain concentrated on the protected buyers that rests on later decisions of the rule-maker, and a loss
+% concentrated on the bound sellers: both groups spend to keep or to change the cap. Unless the counterfactual
+% has the same lobbying (exception). The developers of WE-001 are not encoded (they need an exemption fact).
+lobbying(C) :- binding_cap(C), holds(can_organize(C)), not exception(rs_7, C).
+fired(rs_7, lobbying(C), binding_cap(C))  :- lobbying(C).
+fired(rs_7, lobbying(C), can_organize(C)) :- lobbying(C).
+effect(lobbying(C), P, "lobbying_effort", increase, medium, invisible, "B") :- lobbying(C), protected(C, P).
+effect(lobbying(C), B, "lobbying_effort", increase, medium, invisible, "B") :- lobbying(C), bound(C, B).
+
+% PC-16: a binding ceiling is a transfer. The sellers receive less by what the insiders pay less (PC-3, insider_gain).
+transfer(C) :- insider_gain(C), not exception(pc_16, C).
+fired(pc_16, transfer(C), insider_gain(C)) :- transfer(C).
+effect(transfer(C), B, "net_price_received", decrease, medium, invisible, "B") :- transfer(C), bound(C, B).
+
+% OC-4: exchanges that supply withdrawn from the covered stock (PC-5) no longer allows are prevented;
+% both sides lose them.
+prevented(C) :- supply_falls(C), not exception(oc_4, C).
+fired(oc_4, prevented(C), supply_falls(C)) :- prevented(C).
+effect(prevented(C), X, "quantity_traded", decrease, medium, invisible, "B") :- prevented(C), excluded(C, X).
+effect(prevented(C), B, "quantity_traded", decrease, medium, invisible, "B") :- prevented(C), bound(C, B).
+
+% SB-4: a lasting cap lowers the return on a durable asset in slowly expandable supply; its value falls from
+% the time the cap is expected. Owners at that time bear the loss.
+capitalized(C) :- binding_cap(C), holds(durable_assets(C)), holds(expected_to_last(C)), not exception(sb_4, C).
+fired(sb_4, capitalized(C), binding_cap(C))      :- capitalized(C).
+fired(sb_4, capitalized(C), durable_assets(C))   :- capitalized(C).
+fired(sb_4, capitalized(C), expected_to_last(C)) :- capitalized(C).
+effect(capitalized(C), B, "asset_value", decrease, short, invisible, "B") :- capitalized(C), bound(C, B).
+
+% OC-3: the policy must be administered and enforced, so enforcement cost rises for the enforcing body.
+% (Who bears it depends on funding; OC-3 and OC-1 sign a general-budget payer only as a group, so none is encoded.)
+% Enforcement activity is positive only where the cap binds and is enforced, so the rule rests on binding_cap (Tier A given that).
+administered(C) :- binding_cap(C), not exception(oc_3, C).
+fired(oc_3, administered(C), binding_cap(C)) :- administered(C).
+effect(administered(C), E, "enforcement_cost", increase, short, invisible, "A") :- administered(C), enforcer(C, E).
+
+% RS-4 with PC-3: buyers shut out of the covered units can buy in a neighbouring market outside the cap's
+% reach, where the extra demand raises the price.
+cross_boundary(C) :- binding_cap(C), holds(commutable(C)), neighbor(C, _), not exception(rs_4, C).
+fired(pc_3, cross_boundary(C), binding_cap(C)) :- cross_boundary(C).
+fired(rs_4, cross_boundary(C), commutable(C))  :- cross_boundary(C).
+effect(cross_boundary(C), N, "price_paid", increase, medium, invisible, "B") :- cross_boundary(C), neighbor(C, N).
+
+% PC-5 (keeping units off the market is one of its alternative uses) with RS-5 and CR-4: where re-letting a
+% vacated unit makes the later move to an alternative use harder, owners hold vacated units empty instead.
+held_vacant(C) :- reclassify(C), holds(relet_obstructs(C)), not exception(pc_5, C).
+fired(pc_5, held_vacant(C), reclassify(C))        :- held_vacant(C).
+fired(pc_5, held_vacant(C), relet_obstructs(C))   :- held_vacant(C).
+effect(held_vacant(C), B, "units_held_vacant", increase, medium, invisible, "B") :- held_vacant(C), bound(C, B).
+
+% OC-2: where the route to an alternative use runs through a permit or board process, using it costs time
+% and effort that buy nothing the owner values for its own sake.
+process_cost(C) :- reclassify(C), holds(exit_process(C)), not exception(oc_2, C).
+fired(oc_2, process_cost(C), reclassify(C))   :- process_cost(C).
+fired(oc_2, process_cost(C), exit_process(C)) :- process_cost(C).
+effect(process_cost(C), B, "compliance_cost", increase, medium, invisible, "B") :- process_cost(C), bound(C, B).
 
 #show holds/1.
 #show fired/3.
