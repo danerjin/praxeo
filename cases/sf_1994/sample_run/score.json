@@ -1,0 +1,94 @@
+{
+ "headline": {
+  "predictions": 6,
+  "ambiguous": 0,
+  "verifiable": 4,
+  "unverifiable": 2,
+  "unverifiable_rate": 0.3333333333333333,
+  "matched": [
+   "C-3",
+   "C-4",
+   "C-5",
+   "C-6"
+  ],
+  "false_positives": [],
+  "unverifiable_ids": [
+   "C-1",
+   "C-2"
+  ],
+  "recalled_findings": [
+   "F-1",
+   "F-3",
+   "F-4",
+   "F-5"
+  ],
+  "missed_findings": [
+   "F-2"
+  ],
+  "precision": 1.0,
+  "recall": 0.8,
+  "f1": 0.888888888888889
+ },
+ "logic": {
+  "predictions": 5,
+  "ambiguous": 0,
+  "verifiable": 3,
+  "unverifiable": 2,
+  "unverifiable_rate": 0.4,
+  "matched": [
+   "C-4",
+   "C-5",
+   "C-6"
+  ],
+  "false_positives": [],
+  "unverifiable_ids": [
+   "C-1",
+   "C-2"
+  ],
+  "recalled_findings": [
+   "F-1",
+   "F-3",
+   "F-4"
+  ],
+  "missed_findings": [
+   "F-2",
+   "F-5"
+  ],
+  "precision": 1.0,
+  "recall": 0.6,
+  "f1": 0.7499999999999999
+ },
+ "brier": {
+  "items": [
+   {
+    "assumption": "binding(c1)",
+    "p": 0.75,
+    "held": true,
+    "score": 0.0625
+   },
+   {
+    "assumption": "enforced(c1)",
+    "p": 0.85,
+    "held": true,
+    "score": 0.022500000000000006
+   },
+   {
+    "assumption": "alternative_uses(c1)",
+    "p": 0.7,
+    "held": true,
+    "score": 0.09000000000000002
+   },
+   {
+    "assumption": "nontransferable(c1)",
+    "p": 0.95,
+    "held": true,
+    "score": 0.0025000000000000044
+   }
+  ],
+  "mean": 0.04437500000000001
+ },
+ "low_confidence_findings": [
+  "F-5"
+ ],
+ "prediction_sha256": "56983a32fe5933331e6024ab119be922dbb270462ca3a6e423b0deebc7e29bcc"
+}

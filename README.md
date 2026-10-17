@@ -6,5 +6,8 @@ An AI-assisted system for analyzing the consequences of a policy using Misesian 
 |---|---|
 | `Praxeology_AI_Project_Plan_v3.md` (.docx, .pdf) | Current project plan. Version 2 is kept alongside for reference. |
 | `handbook/` | Phase 1: the Method Handbook, which covers how to analyze a policy praxeologically. It has the foundations, vocabulary, workflow, rule catalog, worked examples and open questions. Start at `handbook/README.md`. |
+| `praxeo/` | Phase 2 thin slice: parser, decider, clingo engine, explainer and scoring, run end to end on one case. Start at `praxeo/README.md`. |
+| `cases/` | Cases for the pipeline: `sf_1994` (historical, with an outcome card) and `we001_riverton` (the handbook's WE-001, as a consistency check). |
+| `tests/` | `python3 -m pytest tests` |
 | `figures/` | Diagrams used in the plan. |
 | `tools/build_plan.py` | Builds the plan's .docx from its Markdown source. |

@@ -1,0 +1,17 @@
+[
+ {"question_id": "c1.binding", "value": "yes", "probability": 0.75,
+  "rationale": "The cap is 60 percent of CPI per year for sitting tenants. Over several years any real rise in market rents makes it bind for long tenancies; at enactment, after the early-1990s slowdown, how soon it binds is less certain.",
+  "evidence": ["For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index."]},
+ {"question_id": "c1.enforced", "value": "yes", "probability": 0.85,
+  "rationale": "An existing Rent Board with refund powers and just-cause eviction rules; tenants have a strong incentive to petition.",
+  "evidence": ["The Rent Board, operating since 1979, hears petitions and orders refunds (policy text)."]},
+ {"question_id": "c1.alternative_uses", "value": "yes", "probability": 0.7,
+  "rationale": "Small buildings can be sold to owner-occupiers, converted to shared ownership or redeveloped; the record does not say how hard conversion is.",
+  "evidence": []},
+ {"question_id": "c1.nontransferable", "value": "yes", "probability": 0.95,
+  "rationale": "The limit protects the sitting tenant; on a voluntary move the rent resets, so the benefit is lost on leaving and cannot be sold.",
+  "evidence": ["When a tenant leaves voluntarily, the landlord may set the rent for the next tenant freely, after which the limit applies again."]},
+ {"question_id": "c1.substitutes", "value": "yes", "probability": 0.8,
+  "rationale": "Uncovered units (newer buildings, vacated units at reset rents) are in the same city and serve the same tenant pool.",
+  "evidence": []}
+]

@@ -1,0 +1,7 @@
+[
+ {"question_id": "k1.binding", "value": "yes", "probability": 0.9, "rationale": "WE-001 A-1.", "evidence": ["Market rents have risen about 5% a year for several years (WE-001 record)."]},
+ {"question_id": "k1.enforced", "value": "yes", "probability": 0.8, "rationale": "WE-001 A-2.", "evidence": []},
+ {"question_id": "k1.alternative_uses", "value": "yes", "probability": 0.7, "rationale": "WE-001 A-5.", "evidence": []},
+ {"question_id": "k1.nontransferable", "value": "yes", "probability": 0.95, "rationale": "WE-001 A-6.", "evidence": ["Tenancies cannot be assigned or sold."]},
+ {"question_id": "k1.substitutes", "value": "yes", "probability": 0.85, "rationale": "WE-001 A-7.", "evidence": []}
+]

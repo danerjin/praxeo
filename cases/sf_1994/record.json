@@ -1,0 +1,37 @@
+{
+ "name": "San Francisco Proposition I (1994)",
+ "jurisdiction": "City and County of San Francisco",
+ "rule_maker": "voters of San Francisco (ballot measure)",
+ "enacted": "1994-11-08",
+ "effective": "1994-12 (certification of the election)",
+ "stated_aim": "protect tenants of small multi-unit buildings from large rent increases and evictions",
+ "components": [
+  {
+   "id": "c1",
+   "instrument": "price_ceiling",
+   "good": "rental_housing_small_multiunit_pre1979",
+   "market": "san_francisco",
+   "bound_actor": "landlords.controlled",
+   "protected_actor": "tenants.controlled",
+   "excluded_actor": "tenants.prospective",
+   "cap": 0.6,
+   "cap_unit": "share of regional CPI rise, per year, for sitting tenants",
+   "source_sentences": [
+    "Rental units in owner-occupied buildings of two to four units built before June 1979 become subject to the Rent Ordinance.",
+    "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "The summary does not say whether the rent on the effective date is rolled back to an earlier base date.",
+   "readings": ["U1-a: the base rent is the rent on the effective date", "U1-b: the base rent is rolled back to an earlier date, cancelling increases made in the announcement window"]
+  }
+ ],
+ "context": [
+  "Vacancy decontrol: the rent resets freely when a tenant leaves voluntarily (policy text).",
+  "Just-cause eviction applies to covered units (policy text).",
+  "The Rent Board, operating since 1979, hears petitions and orders refunds (policy text)."
+ ]
+}
