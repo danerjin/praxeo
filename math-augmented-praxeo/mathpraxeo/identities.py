@@ -7,8 +7,10 @@ from __future__ import annotations
 
 from .interval import Interval, corners
 from .result import Result
+from .rules import derives
 
 
+@derives('MR-2')
 def wait_time(queue_length, throughput) -> Result:
     """Little's law, L = lambda * W: average wait = people waiting / people served per unit time.
 
@@ -21,6 +23,7 @@ def wait_time(queue_length, throughput) -> Result:
                   [f"queue length {L}", f"served per period {lam}", "queue stable (arrivals equal departures on average)"])
 
 
+@derives('MR-2')
 def expected_penalty(p_detect, fine) -> Result:
     """Expected cost of breaking a rule: probability of detection times the penalty.
 
@@ -34,6 +37,7 @@ def expected_penalty(p_detect, fine) -> Result:
                   "Informs the enforcement premise; whether actors evade depends on their own ranking (CR-4).")
 
 
+@derives('MR-2')
 def inflation_tax(inflation, real_balances) -> Result:
     """Purchasing power lost by holders of money balances when prices rise by `inflation`:
     balances * inflation / (1 + inflation). Pairs with the equation of exchange and with Cantillon effects:
@@ -43,6 +47,7 @@ def inflation_tax(inflation, real_balances) -> Result:
     return Result("inflation_tax_on_holders", v, "M0", [f"price level rises by {pi}", f"money balances held {b}"])
 
 
+@derives('MR-3')
 def real_rate(nominal, inflation) -> Result:
     """Fisher relation as a definition: (1 + nominal) = (1 + real)(1 + inflation). Exact, not the approximation."""
     i, pi = Interval.of(nominal), Interval.of(inflation)
@@ -50,6 +55,7 @@ def real_rate(nominal, inflation) -> Result:
     return Result("real_rate", v, "M0", [f"nominal rate {i}", f"inflation {pi}"])
 
 
+@derives('MR-2', 'MR-3')
 def debt_path(debt_ratio, rate, growth, primary_balance, years: int) -> Result:
     """Government debt arithmetic: d' = d (1 + r) / (1 + g) - s, with d debt / income, s the primary surplus
     as a share of income. An identity of the budget; r, g and s are ranges. Relevant to OC-8 and OC-9."""
@@ -65,6 +71,7 @@ def debt_path(debt_ratio, rate, growth, primary_balance, years: int) -> Result:
                   [f"initial debt/income {d}", f"interest rate {r}", f"income growth {g}", f"primary surplus/income {s}"])
 
 
+@derives('MR-2', 'MR-3')
 def stock_path(stock, depreciation, additions, years: int) -> Result:
     """Stock-flow arithmetic: K' = K (1 - depreciation) + additions. For TS-1 and PC-5: with new building
     stopped, a durable stock shrinks only at the depreciation rate."""
@@ -80,6 +87,7 @@ def stock_path(stock, depreciation, additions, years: int) -> Result:
                   [f"initial stock {k}", f"depreciation {dep} a year", f"additions {add} a year"])
 
 
+@derives('MR-2')
 def sectoral_balance(private_surplus=None, government_surplus=None, foreign_surplus=None) -> Result:
     """National accounts identity: private (S - I) + government (T - G) + rest of world (M - X) = 0.
     Give any two (as shares of income); returns the third. Says nothing about which one adjusts."""
@@ -93,6 +101,7 @@ def sectoral_balance(private_surplus=None, government_surplus=None, foreign_surp
                   "Identity only: which balance moves when another changes is a praxeological (or empirical) question.")
 
 
+@derives('MR-3')
 def doubling_time(growth) -> Result:
     """Years for a quantity to double at a constant growth rate: ln 2 / ln(1 + g)."""
     import math

@@ -2,7 +2,7 @@
 
 A separate, minimal mathematical annex to the praxeological analyser. **It is not praxeology.** It lives in its own folder so that nothing in `handbook/` or `praxeo/` depends on it. Nothing in the main analysis may cite it as a reason for a sign.
 
-**Start with `SURVEY.md`.** It goes through the main mathematical methods economists use and sorts each one: adopted, adopted as a bound only, usable as an input only, or excluded, with the reason.
+**Start with `MATH_CORE_RULES.md`.** It sets out the seven math core rules (MR-1 to MR-7) that every annex function and handler is derived from, as the handbook's patterns are derived from its core rules. It also gives the admission test: a method belongs here if and only if it can be derived from MR-1 to MR-7 with sourced input ranges. **`SURVEY.md`** applies that test to the main mathematical methods economists use and sorts each one: adopted, adopted as a bound only, usable as an input only, or excluded, with the reason.
 
 ## What it is for
 
@@ -106,6 +106,7 @@ Mises rejected the equation as an explanation (*Theory of Money and Credit*, Par
 | `mathpraxeo/capital.py` | M0 | Gap path between a capped and a market price, the gap as a share of the market price, the capitalized loss, and the present value of a yearly amount (for license, quota and tax values). |
 | `mathpraxeo/statics.py` | M1 (quota rent: M0) | Supply and demand intersection; ceiling shortage, floor surplus, quantity supplied under a held-down price; tax and subsidy incidence; exchanges forgone; tariff; quota rent; spending change; cost pass-through bound; tax revenue with base response. |
 | `mathpraxeo/bounds.py` | M1, bounds only | Black-market premium under a ceiling, Hotelling timing, rent-seeking ceiling, covered interest parity. Each returns limits, never a point. |
+| `mathpraxeo/rules.py` | — | The math core rules as data, their praxeological counterparts, and the `@derives(...)` decorator that records each function's derivation line. |
 | `mathpraxeo/report.py` | — | Renders an annex table with the sign check for each consequence. |
 | `mathpraxeo/bridge.py` | — | The annex pass over a `praxeo` prediction, with handlers keyed by instrument, variable and actor role, and its guards: `annex_pass`, `dominance_evidence`, `premise_evidence`, `settle_by_arithmetic`, `GuardError`. |
 | `mathpraxeo/premise_step.py` | — | Puts annex evidence for dominance premises to a decider; writes the log and the annex-informed prediction. |

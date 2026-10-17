@@ -1,6 +1,6 @@
 # Survey: mathematical methods in economics, judged for the annex
 
-This file goes through the main mathematical methods economists use. For each it says whether the method meets the annex's rules (README) and whether it is relevant to the handbook's patterns. A method qualifies when it meets three conditions:
+This file goes through the main mathematical methods economists use. The verdicts are restated against the math core rules, as derivation lines or the step that fails, in `MATH_CORE_RULES.md` ("Verdicts restated"). For each it says whether the method meets the annex's rules (README) and whether it is relevant to the handbook's patterns. A method qualifies when it meets three conditions:
 - It needs no assumption beyond identities, arithmetic or local linearity with sourced elasticity ranges.
 - It never has to decide a sign.
 - It adds a size, a bound or a timing the praxeological chain lacks.

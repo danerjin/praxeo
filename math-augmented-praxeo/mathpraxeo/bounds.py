@@ -9,8 +9,10 @@ from __future__ import annotations
 from .capital import present_value
 from .interval import Interval, corners
 from .result import Result
+from .rules import derives
 
 
+@derives('MR-4', 'MR-6')
 def black_market_premium(gap, ed, es, seller_penalty, buyer_penalty) -> Result:
     """Price on the illegal market under a binding ceiling, as a premium over the ceiling, in shares of the
     clearing price (PC-6, RS-3).
@@ -41,6 +43,7 @@ def black_market_premium(gap, ed, es, seller_penalty, buyer_penalty) -> Result:
                   "Bound only: the illegal premium lies in this range if illegal trade happens at all.")
 
 
+@derives('MR-3', 'MR-6')
 def hotelling_gap(net_price_growth, rate, tax_growth=0.0, tax_share=0.0) -> Result:
     """No-arbitrage over time for an exhaustible resource: owners leave a unit in the ground only if its
     net-of-tax price is expected to grow at least as fast as the rate of interest.
@@ -63,6 +66,7 @@ def hotelling_gap(net_price_growth, rate, tax_growth=0.0, tax_share=0.0) -> Resu
                   "Negative: extraction brought forward (CR-4, x: extract now, y: later). Positive: deferred.")
 
 
+@derives('MR-3', 'MR-6')
 def rent_seeking_ceiling(rent_per_year, rate, years: int) -> Result:
     """Upper limit on total spending to obtain or keep a privilege: the present value of the privilege to all
     contenders together (RS-7). Contenders who do not overpay in total spend no more than the prize; how
@@ -73,6 +77,7 @@ def rent_seeking_ceiling(rent_per_year, rate, years: int) -> Result:
                   "Bound only: total spending lies between nothing and the value of the privilege.")
 
 
+@derives('MR-6')
 def covered_interest_parity(domestic_rate, foreign_rate, cost_band=0.0) -> Result:
     """Arbitrage limit on the forward exchange rate: forward / spot = (1 + i_dom) / (1 + i_for), up to a band
     for transaction costs and capital controls. Returns the forward premium (forward / spot - 1) as a range.

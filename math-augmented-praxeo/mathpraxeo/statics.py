@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from .interval import Interval, corners
 from .result import Result
+from .rules import derives
 
 
 FIRST_ORDER_LIMIT = 0.15  # beyond a 15% price gap, a constant elasticity is a strong assumption
@@ -27,6 +28,7 @@ def _check(ed: Interval, es: Interval):
         raise ValueError(f"supply elasticity must be >= 0, got {es}")
 
 
+@derives('MR-4')
 def ceiling_shortage(gap, ed, es) -> Result:
     """Excess demand at a ceiling a fraction `gap` below the clearing price, as a share of the clearing quantity.
 
@@ -40,6 +42,7 @@ def ceiling_shortage(gap, ed, es) -> Result:
                    "elasticities roughly constant over the gap (first order)"], _strain(gap))
 
 
+@derives('MR-4')
 def ceiling_quantity_supplied(gap, es) -> Result:
     """Fall in quantity supplied when the price sellers get is held a fraction `gap` below clearing."""
     gap, es = Interval.of(gap), Interval.of(es)
@@ -49,6 +52,7 @@ def ceiling_quantity_supplied(gap, es) -> Result:
                   [f"price held {gap} below clearing", f"supply elasticity {es} at the relevant horizon"], _strain(gap))
 
 
+@derives('MR-5')
 def tax_incidence(t, ed, es) -> tuple[Result, Result]:
     """A per-unit tax of t (as a share of the price): changes in the buyers' price and the sellers' net price.
 
@@ -73,6 +77,7 @@ def tax_incidence(t, ed, es) -> tuple[Result, Result]:
             Result("sellers_net_price_change", sellers, "M1", assum, note))
 
 
+@derives('MR-5')
 def equilibrium_shift(demand_shift, supply_shift, ed, es) -> tuple[Result, Result]:
     """Supply-and-demand intersection, first order. A demand shift `a` and a supply shift `b` are the
     proportional changes in quantity demanded and supplied at the old price. Then
@@ -100,6 +105,7 @@ def _extremes(f, *args: Interval, steps: int = 6) -> Interval:
     return Interval(min(vals), max(vals))
 
 
+@derives('MR-4')
 def floor_surplus(gap, ed, es) -> Result:
     """Excess supply at a floor a fraction `gap` above the clearing price, as a share of the clearing quantity
     (a minimum wage: unemployment among those whose labor the floor binds on). (|ed| + es) * gap, first order."""
@@ -111,6 +117,7 @@ def floor_surplus(gap, ed, es) -> Result:
                   _strain(gap))
 
 
+@derives('MR-4', 'MR-5')
 def quantity_under_wedge(t, ed, es) -> Result:
     """Fall in quantity traded when a wedge t (a tax, or the cost of complying) separates buyers' and sellers' prices:
     %dQ = - t * es * |ed| / (es + |ed|). The exchanges that no longer happen (CR-5a), counted, not valued."""
@@ -122,6 +129,7 @@ def quantity_under_wedge(t, ed, es) -> Result:
                   "Counts the exchanges forgone. Their value to the parties is ordinal and is not summed in money here.")
 
 
+@derives('MR-5')
 def subsidy_incidence(s, ed, es) -> tuple[Result, Result]:
     """A per-unit subsidy is a negative tax: buyers' price falls by s * es / (es + |ed|), sellers' net price rises
     by the rest. Who gains how much of it, first order."""
@@ -130,6 +138,7 @@ def subsidy_incidence(s, ed, es) -> tuple[Result, Result]:
             Result("sellers_net_price_change", -sellers.value, "M1", sellers.assumptions, sellers.note))
 
 
+@derives('MR-2', 'MR-4', 'MR-6')
 def tariff(t, import_share, ed, es_domestic, pass_through=(1.0, 1.0)) -> dict[str, Result]:
     """Ad valorem tariff t on a good partly imported (import share m of use).
 
@@ -154,6 +163,7 @@ def tariff(t, import_share, ed, es_domestic, pass_through=(1.0, 1.0)) -> dict[st
     }
 
 
+@derives('MR-2')
 def quota_rent(price_gap, quota_quantity) -> Result:
     """Yearly value of the right to sell under a binding quota: the gap between the domestic and the world (or
     marginal-cost) price times the quantity allowed. Arithmetic once the gap is known (M0 given the gap)."""
@@ -162,6 +172,7 @@ def quota_rent(price_gap, quota_quantity) -> Result:
                   "Capitalize with capital.present_value for the value of a license (CR-7c).")
 
 
+@derives('MR-2', 'MR-4')
 def spending_change(price_change, ed) -> Result:
     """Change in buyers' total spending on a good when its price changes, first order: (1 + ed) * %dP.
     Its sign turns on whether |ed| is above 1: the case CR-4's means exception needs."""
@@ -171,6 +182,7 @@ def spending_change(price_change, ed) -> Result:
     return Result("spending_change", v, "M1", [f"price change {dp}", f"demand elasticity {ed}", "first order"])
 
 
+@derives('MR-6')
 def cost_pass_through(input_price_change, cost_share) -> Result:
     """Upper bound on the output price change from an input price change: cost share * input change.
     The bound holds with full pass-through; less elastic output supply passes through less, so the
@@ -184,6 +196,7 @@ def cost_pass_through(input_price_change, cost_share) -> Result:
                   [f"input price change {dp}", f"cost share {s}", "first order; between no and full pass-through"])
 
 
+@derives('MR-2', 'MR-4')
 def revenue_change(t0, t1, base_elasticity) -> Result:
     """Revenue R = t * B when the rate moves from t0 to t1 and the base responds to the net-of-tax rate (1 - t)
     with elasticity e (a range): %dB = e * %d(1 - t), first order. The revenue side of OC-1 and TX-2."""

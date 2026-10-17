@@ -30,6 +30,7 @@ from .capital import cap_gap_path, capitalized_loss, gap_share, present_value
 from .identities import wait_time
 from .interval import Interval, corners
 from .result import Result, check_sign
+from .rules import derives
 from .statics import (ceiling_quantity_supplied, ceiling_shortage, cost_pass_through, equilibrium_shift,
                       floor_surplus, quantity_under_wedge, quota_rent, subsidy_incidence, tariff, tax_incidence)
 
@@ -81,6 +82,7 @@ class Attachment:
     inputs_used: list[str]
     sources: list[str]
     diagnosis: str = ""
+    rules: tuple[str, ...] = ()
 
 
 # ---------------------------------------------------------------- helpers
@@ -146,6 +148,7 @@ class Handler:
     role: str
     fn: Callable[[AnnexInputs], Result]
     keys: list[str]
+    rules: tuple[str, ...] = ()
 
 
 # What a "contradicts" means for each kind of handler: the praxeological premise (an assumption atom prefix)
@@ -266,6 +269,41 @@ HANDLERS: list[Handler] = [
 ]
 
 
+# Derivation line of every handler: the math core rules it rests on (MATH_CORE_RULES.md), as each
+# handbook pattern carries a Derivation line naming its core rules.
+HANDLER_RULES: dict[str, tuple[str, ...]] = {
+    "ceiling_quantity_supplied": ("MR-3", "MR-4"),   # gap path, then first-order supply response
+    "ceiling_shortage": ("MR-3", "MR-4"),
+    "insiders_price": ("MR-3",),
+    "capitalized_value": ("MR-3",),
+    "substitute_price": ("MR-5",),
+    "wait_time": ("MR-2",),
+    "floor_surplus": ("MR-4",),
+    "floor_quantity": ("MR-4",),
+    "tax_buyers_price": ("MR-5",),
+    "tax_sellers_price": ("MR-5",),
+    "tax_quantity": ("MR-4", "MR-5"),
+    "tax_revenue_shortfall": ("MR-2", "MR-4", "MR-5"),
+    "tariff_domestic_price": ("MR-6",),               # pass-through between 0 and 1: arbitrage with the world price
+    "tariff_domestic_output": ("MR-4", "MR-6"),
+    "tariff_imports": ("MR-2", "MR-4", "MR-6"),       # imports = use - domestic output
+    "tariff_use": ("MR-4", "MR-6"),
+    "tariff_revenue_shortfall": ("MR-2", "MR-4", "MR-6"),
+    "subsidy_buyers_price": ("MR-5",),
+    "subsidy_sellers_price": ("MR-5",),
+    "right_value": ("MR-2", "MR-3"),
+    "right_lease_price": ("MR-2", "MR-6"),            # a lease cannot fetch more than the gap it captures
+    "black_market_premium": ("MR-3", "MR-4", "MR-6"),
+    "hotelling_timing": ("MR-3", "MR-6"),
+    "rent_seeking_ceiling": ("MR-3", "MR-6"),
+    "cost_pass_through": ("MR-6",),
+}
+for _h in HANDLERS:
+    if _h.name not in HANDLER_RULES:
+        raise RuntimeError(f"handler {_h.name} has no derivation line in HANDLER_RULES")
+    _h.rules = HANDLER_RULES[_h.name]
+
+
 def _role_actor(role: str, comp: dict, inputs: AnnexInputs) -> str | None:
     if role in ("bound", "protected", "excluded"):
         return comp.get(f"{role}_actor")
@@ -301,7 +339,7 @@ def annex_pass(prediction: dict, inputs: AnnexInputs) -> list[Attachment]:
                               {"name": r.name, "range": [r.value.lo, r.value.hi], "rung": r.rung,
                                "assumptions": r.assumptions, "note": r.note},
                               verdict, h.keys, [f"{k}: {inputs.sources[k]}" for k in h.keys],
-                              diagnose(h.name, prediction) if verdict == "contradicts" else ""))
+                              diagnose(h.name, prediction) if verdict == "contradicts" else "", h.rules))
     if prediction != before:
         raise GuardError("the annex pass changed the prediction")
     return out
@@ -327,6 +365,7 @@ def _product(i: AnnexInputs, keys: list[str]) -> Interval:
     return v
 
 
+@derives('MR-2', 'MR-7')
 def dominance_evidence(inputs: AnnexInputs, premise: str, current_p: float) -> PremiseEvidence | None:
     """Size both chains behind a dominance premise from counts and compare them.
 
@@ -347,6 +386,7 @@ def dominance_evidence(inputs: AnnexInputs, premise: str, current_p: float) -> P
     return ev
 
 
+@derives('MR-7')
 def premise_evidence(premise: str, current_p: float, favoured: Result, opposed: Result) -> PremiseEvidence:
     """Evidence for a dominance premise ('the favoured chain is larger than the opposed one').
 
@@ -365,6 +405,7 @@ def premise_evidence(premise: str, current_p: float, favoured: Result, opposed: 
     return PremiseEvidence(premise, current_p, p, rung, f"annex {rung}: {why}")
 
 
+@derives('MR-7')
 def settle_by_arithmetic(total: dict, favoured: Result, opposed: Result, inputs: AnnexInputs, keys: list[str]) -> str:
     """Settle a CR-12 total by arithmetic (CR-12e, 0.8). Allowed only for M0 results on the case's own figures.
 
@@ -388,11 +429,11 @@ def settle_by_arithmetic(total: dict, favoured: Result, opposed: Result, inputs:
 def to_markdown(case: str, atts: list[Attachment]) -> str:
     out = [f"# Annex pass: {case}", "",
            "Sizes attached to reported consequences by `mathpraxeo.bridge.annex_pass`. No consequence was changed.", "",
-           "| Consequence | Actor class | Variable | Sign | Handler | Annex range | Rung | Sign check |",
-           "|---|---|---|---|---|---|---|---|"]
+           "| Consequence | Actor class | Variable | Sign | Handler | Math rules | Annex range | Rung | Sign check |",
+           "|---|---|---|---|---|---|---|---|---|"]
     for a in atts:
         lo, hi = a.result["range"]
-        out.append(f"| {a.consequence_id} | {a.actor_class} | {a.variable} | {a.praxeological_sign} | {a.handler} | "
+        out.append(f"| {a.consequence_id} | {a.actor_class} | {a.variable} | {a.praxeological_sign} | {a.handler} | {', '.join(a.rules)} | "
                    f"[{lo:.3g}, {hi:.3g}] | {a.result['rung']} | {a.sign_check} |")
     out += ["", "Sources of the ranges:", ""]
     seen = set()

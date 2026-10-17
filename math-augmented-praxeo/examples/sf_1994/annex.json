@@ -31,7 +31,11 @@
    "gap_year: horizon chosen for the annex (medium run)",
    "supply_elasticity: illustrative long-run elasticity of rental supply from the covered stock"
   ],
-  "diagnosis": ""
+  "diagnosis": "",
+  "rules": [
+   "MR-3",
+   "MR-4"
+  ]
  },
  {
   "consequence_id": "C-3",
@@ -64,7 +68,10 @@
    "cap_growth: 60% of regional CPI (case text) times a CPI range of 2% to 3.5% (illustrative)",
    "gap_year: horizon chosen for the annex (medium run)"
   ],
-  "diagnosis": ""
+  "diagnosis": "",
+  "rules": [
+   "MR-3"
+  ]
  },
  {
   "consequence_id": "C-8",
@@ -99,6 +106,9 @@
    "substitute_demand_elasticity: illustrative",
    "substitute_supply_elasticity: illustrative"
   ],
-  "diagnosis": ""
+  "diagnosis": "",
+  "rules": [
+   "MR-5"
+  ]
  }
 ]

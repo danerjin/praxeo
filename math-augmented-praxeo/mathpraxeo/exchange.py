@@ -15,8 +15,10 @@ from __future__ import annotations
 
 from .interval import Interval, corners
 from .result import Result
+from .rules import derives
 
 
+@derives('MR-2')
 def price_level_change(m, v, y) -> Result:
     m, v, y = Interval.of(m), Interval.of(v), Interval.of(y)
     p = corners(lambda m_, v_, y_: (1 + m_) * (1 + v_) / (1 + y_) - 1, m, v, y)
@@ -27,6 +29,7 @@ def price_level_change(m, v, y) -> Result:
     )
 
 
+@derives('MR-2')
 def implied_velocity_change(m, p, y) -> Result:
     """Given observed m, p and y, the v that makes the identity hold (for checking stated ranges)."""
     m, p, y = Interval.of(m), Interval.of(p), Interval.of(y)

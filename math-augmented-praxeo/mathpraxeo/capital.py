@@ -10,8 +10,10 @@ from __future__ import annotations
 
 from .interval import Interval
 from .result import Result
+from .rules import derives
 
 
+@derives('MR-3')
 def cap_gap_path(years: int, market_growth, cap_schedule: list[float]) -> list[Result]:
     """Gap between market and capped price in each year, in units of today's price.
 
@@ -31,6 +33,7 @@ def cap_gap_path(years: int, market_growth, cap_schedule: list[float]) -> list[R
     return out
 
 
+@derives('MR-3')
 def gap_share(gap: Result, market_growth, year: int) -> Interval:
     """The same gap as a share of that year's market price. The share rises with market growth,
     so its bounds are taken at the matching ends of the growth range."""
@@ -38,6 +41,7 @@ def gap_share(gap: Result, market_growth, year: int) -> Interval:
     return Interval(gap.value.lo / (1 + g.lo) ** year, gap.value.hi / (1 + g.hi) ** year)
 
 
+@derives('MR-3')
 def capitalized_loss(gaps: list[Result], rate, duration_years) -> Result:
     """Present value of the yearly gaps, in units of today's annual income, over an expected duration.
 
@@ -59,6 +63,7 @@ def capitalized_loss(gaps: list[Result], rate, duration_years) -> Result:
                   "Borne by owners when the policy became expected (CR-7c); later buyers pay the lower price.")
 
 
+@derives('MR-3')
 def present_value(stream, rate, years: int) -> Result:
     """Present value of a constant yearly amount (a range) for `years`, discounted at `rate` (a range).
     Gives the value of a license or quota (the yearly rent it earns) or of a lasting tax or subsidy (CR-7c)."""
