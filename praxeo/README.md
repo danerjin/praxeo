@@ -17,7 +17,7 @@ python3 -m praxeo cases/sf_1994     # fixture parser and fixture decider (offlin
 python3 -m pytest tests
 ```
 
-Options: `--parser fixture|llm`, `--decider fixture|llm|human`, `--out DIR` (default `runs/…`, git-ignored). The LLM parser and decider call Claude through the Anthropic SDK with structured outputs (`messages.parse` into the pydantic schema) and need `ANTHROPIC_API_KEY`. A sample offline run is committed in `cases/sf_1994/sample_run/`.
+Options: `--parser fixture|llm`, `--decider fixture|llm|human`, `--out DIR` (default `runs/…`, git-ignored), and `--thresholds PATH --fallback fixture|human|llm [--fallback-answers PATH]` to escalate low-confidence answers (example thresholds in `cases/sf_1994/thresholds.example.json`; real ones must come from the labelled question bank). The LLM parser and decider call Claude through the Anthropic SDK with structured outputs (`messages.parse` into the pydantic schema) and need `ANTHROPIC_API_KEY`. A sample offline run is committed in `cases/sf_1994/sample_run/`.
 
 ## Stages
 
@@ -67,4 +67,5 @@ Gaps the slice exposed (inputs for the next steps):
 - **Unclear provisions**, closed for readings that change facts. The parser does not yet propose `reading_facts`; a person or the LLM must write them.
 - **Horizons** are crude: each effect is taken to hold from its first horizon onward.
 - **Built in a first form:** context grounding (date filter only; there is no retrieval and no source corpus yet), the CR-12 combiner (subclass totals only) and the verifier.
-- **Not built yet:** retrieval, Configuration B, and per-question confidence thresholds with escalation.
+- **Built in a first form:** per-question confidence thresholds with escalation (`escalation.py`).
+- **Not built yet:** retrieval, Configuration B, and thresholds set from a labelled question bank.
