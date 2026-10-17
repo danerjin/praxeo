@@ -72,7 +72,7 @@ def run_case(case: Path, record: PolicyRecord, decider: Decider, out: Path) -> d
     card = OutcomeCard.model_validate_json(card_path.read_text())
     consequences = [Consequence(**c) for c in prediction["consequences"]]
     assumptions = {k: Assumption(**v) for k, v in prediction["assumptions"].items()}
-    scores = score(consequences, assumptions, card)
+    scores = score(consequences, assumptions, card, record)
     scores["prediction_sha256"] = digest
     (out / "score.json").write_text(json.dumps(scores, indent=1))
     (out / "report.md").write_text(report(prediction, scores, card, digest))

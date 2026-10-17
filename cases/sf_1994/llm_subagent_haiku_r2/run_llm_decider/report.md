@@ -1,7 +1,7 @@
 # Thin-slice run: San Francisco Proposition I (1994)
 
-Rule base: rb-thin-0.5 (handbook catalog 1.4: PC-1, PC-3, PC-5, PC-7, PC-21, RS-4, RS-5, TX-1, TX-2, TX-7, TX-8, RS-14; CR-12 totals)  |  Decider: fixture:answers.json  |  Run: 2026-10-17T20:22:43+00:00
-Prediction log sha256 (frozen before the outcome card was opened): `05495e5c70905e71…`
+Rule base: rb-thin-0.5 (handbook catalog 1.4: PC-1, PC-3, PC-5, PC-7, PC-21, RS-4, RS-5, TX-1, TX-2, TX-7, TX-8, RS-14; CR-12 totals)  |  Decider: fixture:answers.json  |  Run: 2026-10-17T20:25:34+00:00
+Prediction log sha256 (frozen before the outcome card was opened): `c4fbff9caa85c7a8…`
 
 ## Policy record
 

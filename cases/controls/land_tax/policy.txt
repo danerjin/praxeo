@@ -1,0 +1,1 @@
+Garrow Land Tax (fictional control case). Every owner pays a yearly tax of 40 Garrow dollars per hectare of land they own, whatever the land is used for, including land left idle. The total area of land in Garrow is fixed by its borders, and every hectare is owned by someone.

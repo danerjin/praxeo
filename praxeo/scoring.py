@@ -70,7 +70,24 @@ def vocabulary_problems(card: OutcomeCard) -> list[str]:
     return [f"{f.id}: {m}" for f in card.findings if (m := vocabulary.check_variable(f.variable))]
 
 
-def score(consequences: list[Consequence], assumptions: dict[str, Assumption], card: OutcomeCard) -> dict:
+def role_names(card: OutcomeCard, record) -> dict[str, str]:
+    """Record actor name -> card actor name, through the role fields the card declares (CR-12 subclass
+    suffixes such as .keepers and .displaced follow their parent)."""
+    out = {}
+    for card_name, role in card.actor_roles.items():
+        for comp in record.components:
+            name = getattr(comp, role, None)
+            if isinstance(name, str) and name and name != card_name:
+                out[name] = card_name
+                for suffix in (".keepers", ".displaced"):
+                    out[name + suffix] = card_name + suffix
+    return out
+
+
+def score(consequences: list[Consequence], assumptions: dict[str, Assumption], card: OutcomeCard, record=None) -> dict:
+    if record is not None and card.actor_roles:
+        names = role_names(card, record)
+        consequences = [c.model_copy(update={"actor_class": names.get(c.actor_class, c.actor_class)}) for c in consequences]
     status = {s.assumption: s.held for s in card.assumption_status}
     reported = [c for c in consequences if c.reported]
     held = [c for c in reported if c.assumptions and all(status.get(_bare(a)) is True for a in c.assumptions)]

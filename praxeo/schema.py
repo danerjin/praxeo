@@ -181,3 +181,6 @@ class OutcomeCard(BaseModel):
     assumption_status: list[AssumptionStatus]
     confounders: list[str]
     verification: str
+    actor_roles: dict[str, str] = Field(default={}, description=(
+        "Card actor class -> the record role field it stands for (e.g. landlords.controlled: bound_actor). "
+        "Scoring then matches predictions by role, so a parser's own label for the same role still matches."))

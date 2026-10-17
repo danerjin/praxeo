@@ -1,0 +1,26 @@
+{
+ "name": "Garrow Land Tax",
+ "jurisdiction": "fictional",
+ "rule_maker": "parliament",
+ "enacted": "2030-01-01",
+ "effective": "2030-01-01",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "x1",
+   "instrument": "per_unit_tax",
+   "good": "land",
+   "market": "garrow",
+   "bound_actor": "landowners",
+   "buyer_actor": "buyers.land",
+   "seller_actor": "landowners",
+   "source_sentences": [
+    "Every owner pays a yearly tax of 40 Garrow dollars per hectare of land they own, whatever the land is used for, including land left idle."
+   ]
+  }
+ ],
+ "unclear": [],
+ "context": [
+  "The total area of land in Garrow is fixed by its borders, and every hectare is owned by someone."
+ ]
+}

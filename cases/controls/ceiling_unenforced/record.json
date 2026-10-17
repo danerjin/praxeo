@@ -1,0 +1,28 @@
+{
+ "name": "Brell Rent Guideline",
+ "jurisdiction": "fictional",
+ "rule_maker": "city council",
+ "enacted": "2030-01-01",
+ "effective": "2030-07-01",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "r2",
+   "instrument": "price_ceiling",
+   "good": "rental_housing",
+   "market": "city",
+   "bound_actor": "landlords.controlled",
+   "protected_actor": "tenants.controlled",
+   "excluded_actor": "tenants.prospective",
+   "vacancy_decontrol": false,
+   "source_sentences": [
+    "Landlords are asked to keep yearly rent increases for sitting tenants below 2 percent."
+   ]
+  }
+ ],
+ "unclear": [],
+ "context": [
+  "The guideline is voluntary: no public body monitors rents, tenants have no right to petition, and there are no penalties or refunds for exceeding it.",
+  "Market rents in Brell have risen about 7 percent a year for five years."
+ ]
+}

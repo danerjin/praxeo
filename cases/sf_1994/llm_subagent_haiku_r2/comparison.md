@@ -39,6 +39,6 @@ Mean absolute difference 0.07; answers on the other side of the cut-off: 0.
 |---|---|---|---|---|---|
 | fixtures (baseline) | 9 | - | - | 1.00 | 0.06 |
 | fixture record + LLM answers | 9 | - | - | 1.00 | 0.09 |
-| LLM record + LLM answers | 9 | - | - | 0.75 | 0.09 |
+| LLM record + LLM answers | 9 | - | - | 1.00 | 0.09 |
 
 Actor names in the LLM record, mapped to the fixture's by role before comparing rows: `landlords.covered` -> `landlords.controlled`

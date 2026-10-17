@@ -336,3 +336,17 @@ def test_prose_reading_facts_are_ignored_and_reported():
     cons, _ = engine.run(rec, a)
     assert cons and all(c.sign_by_reading == {} for c in cons)
     assert any("U8" in p and "not valid clingo" in p for p in verify(cons, a, rec))
+
+
+def test_card_matches_by_role_not_label():
+    """A parser that calls the bound landlords `landlords.covered` is scored as the card's `landlords.controlled`."""
+    card = OutcomeCard.model_validate_json((SF / "outcome_card.json").read_text())
+    rec = _record()
+    a = _assumptions()
+    base = score(engine.run(rec, a)[0], a, card, rec)["headline"]
+    renamed = rec.model_copy(deep=True)
+    renamed.components[0].bound_actor = "landlords.covered"
+    cons = engine.run(renamed, a)[0]
+    assert any(c.actor_class == "landlords.covered" for c in cons)
+    assert score(cons, a, card, renamed)["headline"]["matched"] == base["matched"]
+    assert score(cons, a, card)["headline"]["recall"] < base["recall"]  # without the record, labels must match

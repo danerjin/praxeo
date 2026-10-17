@@ -124,5 +124,10 @@
   "Dot-com boom of the late 1990s and later technology booms raised demand for housing citywide",
   "Costa-Hawkins Rental Housing Act (state law, 1995)",
   "Ellis Act withdrawals and changes to condominium conversion rules over the period"
- ]
+ ],
+ "actor_roles": {
+  "landlords.controlled": "bound_actor",
+  "tenants.controlled": "protected_actor",
+  "tenants.prospective": "excluded_actor"
+ }
 }

@@ -1,7 +1,7 @@
 # Thin-slice run: San Francisco Proposition I (November 1994)
 
-Rule base: rb-thin-0.5 (handbook catalog 1.4: PC-1, PC-3, PC-5, PC-7, PC-21, RS-4, RS-5, TX-1, TX-2, TX-7, TX-8, RS-14; CR-12 totals)  |  Decider: fixture:answers_remapped.json  |  Run: 2026-10-17T20:22:43+00:00
-Prediction log sha256 (frozen before the outcome card was opened): `c6e57b13dff945c4…`
+Rule base: rb-thin-0.5 (handbook catalog 1.4: PC-1, PC-3, PC-5, PC-7, PC-21, RS-4, RS-5, TX-1, TX-2, TX-7, TX-8, RS-14; CR-12 totals)  |  Decider: fixture:answers_remapped.json  |  Run: 2026-10-17T20:25:34+00:00
+Prediction log sha256 (frozen before the outcome card was opened): `a093d8937afca773…`
 
 ## Policy record
 
@@ -57,8 +57,8 @@ Prediction log sha256 (frozen before the outcome card was opened): `c6e57b13dff9
 
 Card: San Francisco Proposition I (1994). UNVERIFIED: written from memory of Diamond, McQuade and Qian (2019), AER 109(9); the paper could not be fetched from this environment. Every figure must be checked against the paper, and the card checked by a second person, before this case counts.
 
-- **Headline**: precision 1.00, recall 0.60, F1 0.75 (9 predictions; 3 verifiable, 6 unverifiable, 0 ambiguous; matched ['C-4', 'C-7', 'C-9']; false positives []; missed findings ['F-3', 'F-4']).
-- **Logic**: precision n/a, recall 0.00, F1 n/a (4 predictions; 0 verifiable, 4 unverifiable, 0 ambiguous; matched []; false positives []; missed findings ['F-1', 'F-2', 'F-3', 'F-4', 'F-5']).
+- **Headline**: precision 1.00, recall 1.00, F1 1.00 (9 predictions; 5 verifiable, 4 unverifiable, 0 ambiguous; matched ['C-1', 'C-2', 'C-4', 'C-7', 'C-9']; false positives []; missed findings []).
+- **Logic**: precision 1.00, recall 0.40, F1 0.57 (4 predictions; 2 verifiable, 2 unverifiable, 0 ambiguous; matched ['C-1', 'C-2']; false positives []; missed findings ['F-1', 'F-2', 'F-5']).
 - **Assumption Brier score**: 0.09 over 6 assumption(s) with a recorded status.
 - Low-confidence findings on the card: ['F-5'].
 

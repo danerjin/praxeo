@@ -1,0 +1,29 @@
+{
+ "name": "Esker Wheat Tariff",
+ "jurisdiction": "fictional",
+ "rule_maker": "trade ministry",
+ "enacted": "2030-01-01",
+ "effective": "2030-04-01",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "t1",
+   "instrument": "tariff",
+   "good": "the_good",
+   "market": "country",
+   "bound_actor": "importers",
+   "protected_actor": "sellers.domestic",
+   "importer_actor": "importers",
+   "buyer_actor": "buyers.current",
+   "domestic_seller_actor": "sellers.domestic",
+   "source_sentences": [
+    "A tariff of 30 percent of customs value applies to imported wheat."
+   ]
+  }
+ ],
+ "unclear": [],
+ "context": [
+  "Esker grows far more wheat than it uses and exports about half its harvest; imports were 0.1 percent of use last year, almost all of it a single specialty variety that domestic farms also grow.",
+  "The domestic wheat price is set by the world price at which Esker exports."
+ ]
+}
