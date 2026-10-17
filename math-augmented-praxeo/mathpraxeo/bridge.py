@@ -79,6 +79,7 @@ class Attachment:
     sign_check: str
     inputs_used: list[str]
     sources: list[str]
+    diagnosis: str = ""
 
 
 # ---------------------------------------------------------------- helpers
@@ -144,6 +145,38 @@ class Handler:
     role: str
     fn: Callable[[AnnexInputs], Result]
     keys: list[str]
+
+
+# What a "contradicts" means for each kind of handler: the praxeological premise (an assumption atom prefix)
+# that has most likely failed under the annex's inputs, or an input error. Keyed by handler name.
+DIAGNOSES: dict[str, tuple[list[str], str]] = {
+    **{n: (["binding"], "the market path does not rise above the capped path over the input ranges, so the ceiling "
+                        "does not bind: the premise `binding` fails under these inputs, or the market-growth range is wrong")
+       for n in ("ceiling_quantity_supplied", "ceiling_shortage", "insiders_price", "capitalized_value")},
+    "substitute_price": (["substitutes"], "no demand is diverted to uncovered units under these inputs: the premise "
+                                          "`substitutes` fails, or the diverted-demand range is wrong"),
+    **{n: (["binding"], "the floor is not above the clearing price under these inputs: the floor does not bind, "
+                        "or the floor-gap range is wrong")
+       for n in ("floor_surplus", "floor_quantity")},
+    **{n: ([], "the rate range has the wrong sign: an input error, not a failed premise")
+       for n in ("tax_buyers_price", "tax_sellers_price", "tax_quantity", "tax_revenue_shortfall",
+                 "tariff_domestic_price", "tariff_domestic_output", "tariff_imports", "tariff_use",
+                 "tariff_revenue_shortfall", "subsidy_buyers_price", "subsidy_sellers_price")},
+    **{n: (["binding"], "the domestic price is not above the world or marginal-cost price under these inputs: the "
+                        "quota or licence does not bind, or the price-gap range is wrong")
+       for n in ("right_value", "right_lease_price")},
+    "cost_pass_through": ([], "the upstream price change has the opposite sign to the one this chain assumes: check the "
+                              "upstream consequence and the input-price range"),
+    "wait_time": ([], "a wait time cannot be negative: an input error"),
+}
+
+
+def diagnose(handler: str, prediction: dict) -> str:
+    """Name the premise a contradiction points to, with its estimated probability in this run."""
+    prefixes, text = DIAGNOSES.get(handler, ([], "no diagnosis recorded for this handler"))
+    atoms = [f"`{k}` (p = {v['p']:.2f})" for k, v in prediction.get("assumptions", {}).items()
+             if k.split("(", 1)[0] in prefixes]
+    return text + (f". Premise in this run: {', '.join(atoms)}" if atoms else "")
 
 
 CEILING = ("price_ceiling",)
@@ -242,10 +275,12 @@ def annex_pass(prediction: dict, inputs: AnnexInputs) -> list[Attachment]:
         if h is None:
             continue
         r = h.fn(inputs)
+        verdict = check_sign(c["sign"], r)
         out.append(Attachment(c["id"], c["actor_class"], c["variable"], c["sign"], h.name,
                               {"name": r.name, "range": [r.value.lo, r.value.hi], "rung": r.rung,
                                "assumptions": r.assumptions, "note": r.note},
-                              check_sign(c["sign"], r), h.keys, [f"{k}: {inputs.sources[k]}" for k in h.keys]))
+                              verdict, h.keys, [f"{k}: {inputs.sources[k]}" for k in h.keys],
+                              diagnose(h.name, prediction) if verdict == "contradicts" else ""))
     if prediction != before:
         raise GuardError("the annex pass changed the prediction")
     return out
@@ -348,6 +383,10 @@ def to_markdown(case: str, atts: list[Attachment]) -> str:
     notes = [f"- {a.consequence_id}: {a.result['note']}" for a in atts if a.result["note"]]
     if notes:
         out += ["", "Notes:", ""] + notes
+    diag = [f"- {a.consequence_id} contradicts its praxeological sign: {a.diagnosis}. The sign is not changed; "
+            f"the contradiction is reported for review." for a in atts if a.diagnosis]
+    if diag:
+        out += ["", "Contradictions:", ""] + diag
     return "\n".join(out) + "\n"
 
 

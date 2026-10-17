@@ -30,7 +30,8 @@
    "cap_growth: 60% of regional CPI (case text) times a CPI range of 2% to 3.5% (illustrative)",
    "gap_year: horizon chosen for the annex (medium run)",
    "supply_elasticity: illustrative long-run elasticity of rental supply from the covered stock"
-  ]
+  ],
+  "diagnosis": ""
  },
  {
   "consequence_id": "C-3",
@@ -62,7 +63,8 @@
    "market_growth: illustrative; to be sourced from pre-1994 San Francisco rent series",
    "cap_growth: 60% of regional CPI (case text) times a CPI range of 2% to 3.5% (illustrative)",
    "gap_year: horizon chosen for the annex (medium run)"
-  ]
+  ],
+  "diagnosis": ""
  },
  {
   "consequence_id": "C-8",
@@ -96,6 +98,7 @@
    "diverted_demand: illustrative: demand moved to uncovered units, as a share of their market",
    "substitute_demand_elasticity: illustrative",
    "substitute_supply_elasticity: illustrative"
-  ]
+  ],
+  "diagnosis": ""
  }
 ]

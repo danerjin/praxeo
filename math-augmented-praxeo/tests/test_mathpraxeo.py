@@ -130,3 +130,15 @@ def test_examples_run_and_agree():
         spec.loader.exec_module(mod)
         text = mod.main()
         assert "contradicts" not in text
+
+
+def test_incidence_undetermined_without_response_is_full_range():
+    b, s = tax_incidence(0.1, (-0.5, 0.0), (0.0, 1.0))
+    assert (b.value.lo, b.value.hi) == (0.0, pytest.approx(0.1)) and "undetermined" in b.note
+    b, s = tax_incidence(0.1, 0.0, 0.0)
+    assert (b.value.lo, b.value.hi) == (0.0, pytest.approx(0.1))
+    assert (s.value.lo, s.value.hi) == (pytest.approx(-0.1), 0.0)
+    b, s = tax_incidence(0.1, -0.5, 0.0)  # supply fixed, demand responds: sellers bear all of it
+    assert b.value.hi == 0.0 and s.value.lo == pytest.approx(-0.1)
+    sb, ss = subsidy_incidence(0.1, 0.0, 0.0)
+    assert "undetermined" in sb.note

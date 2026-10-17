@@ -52,23 +52,25 @@ def ceiling_quantity_supplied(gap, es) -> Result:
 def tax_incidence(t, ed, es) -> tuple[Result, Result]:
     """A per-unit tax of t (as a share of the price): changes in the buyers' price and the sellers' net price.
 
-    Buyers bear es / (es + |ed|) of it, sellers |ed| / (es + |ed|), to first order.
-    Undefined when both elasticities are zero (no quantity response on either side).
+    Buyers bear the share es / (es + |ed|), sellers the rest, to first order. The share rises with es and
+    with ed (toward zero), so its range comes from the corners (es.lo, ed.lo) and (es.hi, ed.hi). Where the
+    ranges allow no quantity response on either side (es can be 0 and ed can be 0), incidence is
+    undetermined there, and the share is reported as the full range [0, 1]: no split is assumed.
     """
     t, ed, es = Interval.of(t), Interval.of(ed), Interval.of(es)
     _check(ed, es)
-    if es.hi + abs(ed.hi) == 0 and es.lo + abs(ed.lo) == 0:
-        raise ValueError("incidence undefined when both elasticities are zero")
-
-    def share_buyers(d, s):
-        tot = abs(d) + s
-        return 0.5 if tot == 0 else s / tot
-
+    note = ""
+    if es.lo == 0 and ed.hi == 0:
+        share = Interval(0.0, 1.0)
+        note = ("Incidence undetermined: the ranges allow no quantity response on either side, so the buyers' "
+                "share is reported as anything from none to all of the tax.")
+    else:
+        share = Interval(es.lo / (es.lo + abs(ed.lo)), es.hi / (es.hi + abs(ed.hi)))
     assum = [f"tax {t} of the price", f"demand elasticity {ed}", f"supply elasticity {es}", "first order"]
-    buyers = corners(lambda t_, d, s: t_ * share_buyers(d, s), t, ed, es)
-    sellers = corners(lambda t_, d, s: -t_ * (1 - share_buyers(d, s)), t, ed, es)
-    return (Result("buyers_price_change", buyers, "M1", assum),
-            Result("sellers_net_price_change", sellers, "M1", assum))
+    buyers = t * share
+    sellers = -(t * (1 - share))
+    return (Result("buyers_price_change", buyers, "M1", assum, note),
+            Result("sellers_net_price_change", sellers, "M1", assum, note))
 
 
 def equilibrium_shift(demand_shift, supply_shift, ed, es) -> tuple[Result, Result]:
@@ -124,8 +126,8 @@ def subsidy_incidence(s, ed, es) -> tuple[Result, Result]:
     """A per-unit subsidy is a negative tax: buyers' price falls by s * es / (es + |ed|), sellers' net price rises
     by the rest. Who gains how much of it, first order."""
     buyers, sellers = tax_incidence(s, ed, es)
-    return (Result("buyers_price_change", -buyers.value, "M1", buyers.assumptions),
-            Result("sellers_net_price_change", -sellers.value, "M1", sellers.assumptions))
+    return (Result("buyers_price_change", -buyers.value, "M1", buyers.assumptions, buyers.note),
+            Result("sellers_net_price_change", -sellers.value, "M1", sellers.assumptions, sellers.note))
 
 
 def tariff(t, import_share, ed, es_domestic, pass_through=(1.0, 1.0)) -> dict[str, Result]:

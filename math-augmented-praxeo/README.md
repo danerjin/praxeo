@@ -13,7 +13,7 @@ The praxeological method gives directions and conditions: rents for sitting tena
 1. **It never sets or changes a sign.** Every result is checked against the praxeological sign (`check_sign`) and reported as one of:
    - *agrees*.
    - *indeterminate*: the range straddles zero, or the sign was `ambiguous`.
-   - *contradicts*: an input range is wrong, or a praxeological premise failed. Report it; never resolve it here.
+   - *contradicts*: an input range is wrong, or a praxeological premise failed. Report it; never resolve it here. The annex pass names the premise each kind of contradiction points to, with its probability in the run (`bridge.DIAGNOSES`). For example, a negative price gap under a ceiling means `binding` fails.
 2. **Ranges, never points.** Every input is an interval the analyst must source, and every output is an interval. Arithmetic is interval arithmetic. Bounds come from the corners only where the function is monotone in each input, and each function says why it is.
 3. **The fewest assumptions that do the job, on a ladder.** Each result states its rung and lists every assumption it took.
 
@@ -25,7 +25,8 @@ The praxeological method gives directions and conditions: rents for sitting tena
    | Excluded at any rung | Money measures of welfare: consumer and producer surplus, deadweight loss in money, welfare cost-benefit. | They add up ordinal value across persons. The annex counts the exchanges forgone instead. |
 
 4. **M1 says when it is strained.** Above a 15% price gap, a constant elasticity is a strong assumption, and the result carries a warning to treat it as indicative only.
-5. **Signs inside M1 come from praxeology.** Downward-sloping demand and non-negative supply response are the laws of demand and supply (LW-3, LW-4). A demand elasticity above zero is rejected, not used.
+5. **No hidden splits.** Where the inputs leave a quantity undetermined, the result is the full range it could take, with a note. Tax and subsidy incidence when neither side can respond is one case: buyers bear anything from none to all of the tax. A conventional split is never assumed.
+6. **Signs inside M1 come from praxeology.** Downward-sloping demand and non-negative supply response are the laws of demand and supply (LW-3, LW-4). A demand elasticity above zero is rejected, not used.
 
 ## How the annex relates to the core rules
 
@@ -35,7 +36,8 @@ The praxeological method gives directions and conditions: rents for sitting tena
   - Keynesian multipliers contradict CR-8: means taken by a tax come from other uses.
   - Surplus and deadweight loss in money contradict the ordinal value behind CR-2 and CR-3.
   - Monopoly and game models replace CR-4's ordinal margin with an assumed model of how people decide.
-- A range with the opposite sign to the praxeological consequence is reported as *contradicts*. It means an input range is wrong or a praxeological premise failed. The annex never resolves it by changing the sign.
+- A range with the opposite sign to the praxeological consequence is reported as *contradicts*. It means an input range is wrong or a praxeological premise failed. The annex never resolves it by changing the sign. Each handler records which premise its contradiction points to. The report names that premise and its probability in the run, for example "the ceiling does not bind: `binding(c1)` (p = 0.75)", so the reviewer knows where to look.
+- So within its scope the annex quantifies and does not contradict. It can still change what a report says, through the premise step (point 6), and only through a decider and with a label. It also differs from Mises on whether quantitative relations in human action are stable: first-order results treat a sourced elasticity range as stable enough to size an effect. That is why an M1 result never settles a sign, and why large gaps are flagged.
 
 **2. Where each part attaches.**
 

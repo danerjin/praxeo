@@ -185,3 +185,29 @@ def test_premise_step_decider_can_decline(tmp_path):
     log, informed = premise_step.run(pred, AnnexInputs.load(INPUTS), _Stub(0.4))
     assert not any(r.evidence.accepted for r in log)
     assert _total(informed)["sign"] == "ambiguous" and informed["annex_informed"]["differences"] == []
+
+
+def test_every_handler_has_a_diagnosis():
+    from mathpraxeo.bridge import DIAGNOSES, HANDLERS
+    assert {h.name for h in HANDLERS} <= set(DIAGNOSES)
+
+
+def test_contradiction_names_the_failed_premise():
+    """Market rents growing more slowly than the cap allows: the gap is negative, so the annex contradicts
+    the shortage and the fall in supply. The diagnosis names `binding` and its p; the sign is not changed."""
+    pred = json.loads(PRED.read_text())
+    before = copy.deepcopy(pred)
+    raw = json.loads(INPUTS.read_text())
+    raw["market_growth"]["value"] = [0.0, 0.01]
+    inp = AnnexInputs({k: Interval.of(v["value"]) for k, v in raw.items() if not k.startswith("_")},
+                      {k: v["source"] for k, v in raw.items() if not k.startswith("_")},
+                      {k: False for k in raw if not k.startswith("_")})
+    atts = {a.variable: a for a in annex_pass(pred, inp)}
+    q = atts["quantity_supplied"]
+    assert q.sign_check == "contradicts"
+    assert "`binding`" in q.diagnosis and "binding(c1)" in q.diagnosis and "p = 0.75" in q.diagnosis
+    assert atts["price_substitute"].diagnosis == ""  # agrees: no diagnosis
+    assert pred == before
+    from mathpraxeo.bridge import to_markdown
+    md = to_markdown("t", list(atts.values()))
+    assert "Contradictions:" in md and "The sign is not changed" in md
