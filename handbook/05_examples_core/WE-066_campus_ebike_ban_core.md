@@ -1,0 +1,371 @@
+# WE-066 / Analysis: Ban on student e-bikes at a private school, with staff exempt
+
+Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+
+## 1. Policy record
+
+**St Aldric's College Student Travel Rule 2027.** St Aldric's College is a private, fee-paying secondary school in Wendlemere (about 46,000 people). The rule is made by the school's board of governors, not by the state, and enforced by the school's own staff. It binds students through the enrollment contract, under which "the College may amend its rules from time to time, and parents agree that their child will abide by the rules in force"; a child may be withdrawn on one full term's written notice (or a term's fees in lieu). Fees are $18,600 a year, paid by term.
+
+1,240 students and 140 staff; 9-hectare campus with a Main Gate (Quarry Lane) and an East Gate (Kestle Road). Shelters inside the Main Gate hold 420 cycles; about 398 are used (270 student e-bikes, 110 student pedal bicycles, 18 staff e-bikes). Of the 270 student e-bike riders, 190 ride pedal-assist bikes and 80 ride throttle bikes; about 120 live on Hollin Rise, 6 to 8 km north. Other modes: school coach 370 (Marrick Coaches, nine routes, 513 seats; routes 3 and 4 serve Hollin Rise with 114 seats and 106 riders; pass $420 a term, fixed in the contract for the school year; full routes allocated by a published priority with a waiting list), route 14 public bus 125 (about 60% of peak capacity; pass $165 a term, sold at the bus station and at Dunnock News for a 3% commission), walking 150, pedal bicycle 110, car 215 (about 150 cars, a drop-off loop for about 20 cars, a queue onto Quarry Lane at 8:15 to 8:45, which the nine coaches also use). The Verge between the fence and the Quarry Lane footway is school land. Opposite are Linnet Close and Orchard Row (64 homes, about half with a driveway or garage). The Quarry Lane parade, 250 m east, has six shops and 24 free council cycle stands (about 8 used in school hours). A council by-law allows removal of cycles locked to street furniture, enforced on complaint. Spokewright Cycles (600 m) and Corrow Cycle Works (3 km) sell and service e-bikes, pedal bicycles and e-scooters; Spokewright advertised a 40-space secure e-bike yard at $4 a week on 2 February 2027. The local online market lists about 25 used e-bikes a month.
+
+The February 2027 poll of e-bike riders, asked what they would do under a ban on all e-bikes: pedal bicycle 30%, coach 25%, route 14 10%, driven 20%, walk 5%, e-scooter or other 10%. Staff estimate that 60 to 80% of those who said pedal bicycle, coach or other would in fact keep riding an e-bike to a spot outside the grounds.
+
+| Field | Value | Source sentence |
+|---|---|---|
+| Jurisdiction (and what lies just outside) | School grounds: all land within the College's title, including the Verge and the coach bay. Just outside: the council footway on Quarry Lane, Linnet Close and Orchard Row, the parade and its 24 council stands, Spokewright's yard. | §3. |
+| Announced / enacted / effective / expires | Announced and adopted 21 January 2027; effective 19 April 2027 (first day of the Summer term, which ends 16 July); next school year from 6 September 2027; no expiry; board review June 2028. | Letter of 21 January 2027; §1. |
+| Enforcement (who, penalties, resources) | The school's staff on gate duty at both gates and the site office: first breach a one-hour detention; second, confiscation until a parent collects the bike; third, a Saturday detention and a meeting with parents; appeal to the deputy head. Funded from the school's fixed budget; no new staff. | §5. |
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Ban | No type in 2.3 fits: a rule set by the owner of the land, binding through a continuing contract (the enrollment contract) | Riding or parking an electric bicycle on school grounds | Students | From 19 April 2027; "electric bicycle" as in §2 (U1) | Staff (§4); pedal bicycles; e-scooters carried folded (Behaviour Code §14) |
+| K2 Enforcement | Enforcement | K1 | The school's staff | Gate checks, detentions, confiscation, appeal (§5) | — |
+
+Existing rules that stay in the counterfactual: the Behaviour Code (e-bikes walked from the gate, registration sticker, detention for breach); Behaviour Code §14 (e-scooters carried folded and stored in lockers); the coach contract and its fixed pass price; the council's stands and by-law. Counterfactual supervision: about 260 staff-hours a year on shelters, stickers, incidents and walking-rule detentions. The counterfactual is also one in which the ban question stays contested (A-19).
+
+Unclear provisions:
+- **U1, pedal-assist e-bikes.** U1-a: every bicycle with a motor is an "electric bicycle", so all 270 riders are bound. U1-b: only bicycles whose motor can propel them without pedalling (throttle e-bikes) are bound; pedal-assist bikes are "ordinary bicycles" (80 riders bound). No guidance or practice yet. Readings get no probability; signs are given per reading where they differ.
+- Whether an e-bike with its battery removed is still "fitted with a motor capable of propelling it" is left open by the text; noted, not analyzed.
+
+**Out of scope (version 1).** The rule's stated aim is safety: the 7 campus collisions in 2025-26, and any change in collisions on campus, on Quarry Lane, on the footways or on the routes students now use. Safety has no variable in the ontology and no consequence below is signed on it. This is recorded here and in the report, not as consequences.
+
+## 2. Classification
+
+| Component | Rothbard type | Binding? (assumption ID) | CR-1 operations | Core rules applied |
+|---|---|---|---|---|
+| K1 Ban | None of the three: the rule-maker is a private owner, not the state. In form it restricts the bound person's own action (riding to and parking on the grounds) and prohibits no exchange; it binds through the enrollment contract (relation `contract`). | Yes, where enforced (A-1). U1-a: binds 270 riders; U1-b: binds 80. | Op 1: removes the option "ride or park an e-bike on school grounds" for bound students where enforced; op 3: attaches the risk of detention and confiscation where detection is incomplete (A-10). Counterfactual law: the Behaviour Code's walking and sticker rules. For families, op 3 on the option "stay enrolled" (the school's product now has a different term); the option "withdraw" keeps its cost of a term's notice. Staff: no operation (§4). | CR-1, CR-2, CR-3, CR-4, CR-5c, CR-6, CR-7, CR-9, CR-10, CR-12 |
+| K2 Enforcement | Uses the school's own means | Yes (§5 requires gate duty on 190 days) | For the school, its staff time is redirected to gate duty (CR-8a); for students caught, op 3 (detention time, confiscation until collection). Confiscation holds the bike and returns it to a parent: it is a delay and a cost attached to breach (op 3), not a transfer of the bike (CR-8e does not apply). | CR-1, CR-3a, CR-4 (x: comply, y: violate), CR-8a, CR-8c |
+
+The rule fixes no price. CR-6 enters through prices already fixed by other rules: the coach pass price fixed by the contract for the school year, and the council stands supplied free in a fixed number.
+
+## 3. Actor classes
+
+| Actor class | Role | How its options change |
+|---|---|---|
+| students.ebike_riders.bound | U1-a: all 270 e-bike riders; U1-b: the 80 throttle riders | Op 1 on riding or parking on the grounds (CR-1). They choose among pedal bicycle, coach, route 14, being driven, walking, e-scooter, riding to a spot outside the grounds, converting the bike (U1-b only), and breaking the rule (CR-4). Split by response below. |
+| students.pedal_assist_riders (U1-b) | 190 riders not bound under U1-b | No operation under U1-b; reached through the used e-bike market and the shelters. |
+| families.of_bound_riders | Parents who pay for travel and decide enrollment | Pay for passes, car runs, parking or a substitute bike; option to withdraw on a term's notice (contract). |
+| students.prospective_ebike_buyers | Students who would have bought an e-bike in 2027-28 (A-14) | The e-bike loses its main use (U1-a all e-bikes; U1-b throttle bikes). |
+| officials.enforcement (the College) | Rule-maker and enforcer; seller of school places | Staff time to gate duty and detentions; saved shelter and incident hours; enrollment and fee receipts may change. |
+| staff (exempt) | 140 staff; 18 ride e-bikes, 92 drive | No operation; reached through shelters and the queue (Tier C). |
+| sellers.substitutes: Marrick Coaches, Wendlemere Buses, Dunnock News | Sellers of coach seats and bus passes | More demand; coach price fixed by contract (CR-6). |
+| applicants.coach_routes_3_4 | Students seeking coach seats from Hollin Rise | Seats rationed by priority and waiting list (CR-6). |
+| sellers: Spokewright Cycles, Corrow Cycle Works | Sell and service e-bikes, pedal bicycles, e-scooters; Spokewright's yard | Demand shifts across their goods (CR-9). |
+| buyers.substitutes (pedal bicycles, e-scooters) | Other local buyers | Compete with switching students for stock (CR-9). |
+| holders and buyers of used e-bikes (local market) | Students and non-students | Added student listings (CR-6, CR-9). |
+| sellers.prospective (off-site parking) | Residents with driveways, Spokewright | New demand for paid parking (CR-4, x: stay out, y: enter). |
+| users of council cycle stands | Parade customers and others | A fixed free supply now oversubscribed (CR-6). |
+| parade shops | Bakery, café, convenience store and others | Trip purchases by off-site parkers (trip complement); stand users displaced. |
+| driving families (all), coach riders, Quarry Lane through traffic | Users of the drop-off loop and Quarry Lane | Shared facility (CR-9, Tier C). |
+| residents of Linnet Close and Orchard Row; pedestrians | Neighbors | Proximity (bikes on railings, footways), Tier C. |
+| council | Owner of the stands; enforces the by-law on complaint | Enforcement on complaint (Tier C). |
+| student_council, Ride to School, Safe Lanes | Organized groups | Stakes in the rule's reading and its review (CR-4, x: accept, y: lobby). |
+| other_schools (including the rival 4 km from Hollin Rise) | Competing sellers of school places | Families' choice of school changes (CR-9). |
+
+## 4. Direct effect
+
+CR-1 and CR-2: the immediate change for those whose options K1 and K2 alter.
+
+| ID | Actor class | Variable | Sign | Horizon | Rules | Assumptions |
+|---|---|---|---|---|---|---|
+| C-1 | students.ebike_riders.bound | quantity_demanded (e-bike trips ridden or parked on school grounds) | decrease | short; medium | CR-1 op 1, CR-2, CR-3a | A-1 |
+| C-2 | officials.enforcement (the College) | enforcement_cost (gate duty, detentions, confiscations) | increase | short; medium | CR-1, CR-8a, CR-8c | none |
+
+## 5. Responses
+
+CR-4 for every pair of options each class has; CR-10a for timing; CR-5 where exchanges are added or prevented.
+
+| ID | Actor class | Variable | Sign | Horizon | Rules | Assumptions |
+|---|---|---|---|---|---|---|
+| C-3 | students.switch_pedal | quantity_substitute (pedal bicycle trips to school) | increase | short; medium | CR-4 (x: e-bike onto the grounds, y: pedal bicycle) | A-2, A-1 |
+| C-4 | students.switch_coach | applications (coach seats on routes 3 and 4) | increase | short; medium | CR-4 (x: e-bike, y: coach), CR-10a | A-3, A-1 |
+| C-5 | students.switch_bus | quantity_substitute (route 14 trips) | increase | short; medium | CR-4 (x: e-bike, y: route 14) | A-4, A-1 |
+| C-6 | families.switch_car | quantity_substitute (car school runs at 8:15 to 8:45) | increase | short; medium | CR-4 (x: e-bike, y: being driven), CR-12e | A-5, A-1 |
+| C-7 | students.switch_escooter | quantity_traded (e-scooters bought by students) | increase | short | CR-4 (x: covered form, y: e-scooter carried folded, Behaviour Code §14) | A-6, A-1 |
+| C-8 | students.offsite_parkers | quantity_demanded (parking for e-bikes off school land near the gates) | increase | short; medium | CR-4 (x: park on the grounds, y: park just outside the title line) | A-7, A-1 |
+| C-9 | students.throttle_riders | reclassification (throttle removed, or swapped for a pedal-assist bike) | U1-a: no_change; U1-b: increase | short | CR-4 (x: covered form, y: uncovered form), CR-4a | A-11 |
+| C-10 | students.throttle_riders | compliance_cost (throttle removal, swap) | U1-a: no_change; U1-b: increase | short | CR-1 op 1, CR-8c | A-11 |
+| C-11 | students.evading | legal_breach (riding or parking on the grounds against §1) | increase | short; medium | CR-4 (x: comply, y: violate), CR-12 0.9 | A-10 |
+| C-12 | students.ebike_holders | quantity_supplied (used e-bikes offered by students, 21 Jan to 18 Apr 2027) | increase | short (announcement window) | CR-10a, CR-4 (x: keep, y: sell) | A-12 |
+| C-13 | students.ebike_holders | quantity_supplied (used e-bikes offered by students, 19 Apr to 16 Jul 2027) | increase | short | CR-4 (x: keep, y: sell) | A-12 |
+| C-14 | students.ebike_holders | quantity_supplied (used e-bikes offered by students, 17 Jul to 5 Sep 2027) | ambiguous | short | CR-12b, CR-10a | A-12, A-N7 |
+| C-15 | students.prospective_ebike_buyers | quantity_demanded (e-bikes, 2027-28) | U1-a: decrease; U1-b: ambiguous | medium | CR-4c, CR-12b | A-14, A-11 |
+| C-16 | student_council, Ride to School, Safe Lanes | lobbying_effort (over the reading of §2, the staff exemption and §5) | increase | short; medium | CR-4 (x: accept, y: lobby), CR-4 1.1, CR-8c | A-18 |
+| C-17 | student_council, Ride to School, Safe Lanes | lobbying_effort (over whether students may ride e-bikes to school) | ambiguous | medium | CR-4 1.0, CR-12b | A-18, A-19 |
+| C-18 | officials.enforcement (the College) | enrollment (St Aldric's) | ambiguous | medium; long | CR-4, CR-5c, CR-12b | A-21, A-22, A-N4 |
+| C-19 | other_schools | enrollment | ambiguous | medium; long | CR-9, CR-12b | A-21, A-22, A-N4 |
+| C-20 | sellers.prospective (paid e-bike parking near the gates) | entry_rate | increase | short | CR-4 (x: stay out, y: enter), CR-10a | A-7, A-15 |
+| C-21 | students who switch to coach, route 14, pedal bicycle or walking, or park outside | travel_time | increase | short; medium | CR-3a, CR-4 | A-25 |
+| C-22 | students.driven (switched from e-bike) | travel_time | increase | short; medium | CR-4, arithmetic | A-5 |
+| C-23 | parents.driving (new school runs) | travel_time | increase | short; medium | CR-4, CR-3c | A-5 |
+| C-24 | parents of students whose e-bike is confiscated | travel_time (collecting the bike from the site office) | increase | short; medium | CR-1 op 3, CR-3a | A-10, A-1 |
+
+Notes on responses:
+- Under U1-b the bound class is the 80 throttle riders, and C-3 to C-8 apply to those of them who do not convert (C-9). Under U1-a they apply to all 270. The signs are the same; the poll gives magnitudes only for a ban on all e-bikes.
+- C-6: the longer queue (C-50) makes being driven worse, but by the response argument (CR-12e) the drivers' own response cannot bring the number of cars back to the counterfactual, and A-5 states that the response is partial at today's queue time (CR-12, 0.9). Figures: about 40 more cars under U1-a, about 12 under U1-b.
+- Walking (5% in the poll) is covered by C-21. Students refused a coach seat (C-26) fall back to other modes; their second choices feed C-5, C-6 and C-8 and are not separate consequences.
+- C-16: the reading of §2 (U1), the staff exemption and the appeal route exist only under the rule, so lobbying over them is an increase against none (CR-4, 1.1). C-17: whether students may ride e-bikes at all was contested on the counterfactual path (A-19). Each side's lobbying is signed against that contest (CR-4, 1.0): Safe Lanes has won the point but must defend it at the June 2028 review, and the student council and Ride to School now lobby for repeal instead of against adoption. No premise says whether either side spends more than it would have; `ambiguous`.
+- C-18, C-19: CR-4 for families with the school place as x (x: stay or enroll at St Aldric's, y: another school). A-21 (some parents now rank St Aldric's higher) and A-22 (some far families rank it lower) push in opposite directions. Under U1-b the campus still has pedal-assist e-bikes, so A-21 as stated does not apply; the corresponding chain needs A-N4 (p 0.5), a kind (2) chain (CR-12, 0.8), so the sign is `ambiguous` under both readings. The one-term notice makes the earliest change September 2027 (medium).
+- No student who was not riding an e-bike starts riding one because of the rule (CR-4a).
+
+## 6. Second-order effects
+
+CR-9 along named relations, then CR-5 to CR-7 in each market reached. Depth limit 4. Chains through `shared_facility` or `proximity` are Tier C.
+
+| ID | Actor class | Variable | Sign | Horizon | Rules | Market relation | Assumptions |
+|---|---|---|---|---|---|---|---|
+| C-25 | sellers.substitutes (coach seats on routes 3 and 4) | excess_demand (seats at the contract price of $420 a term) | increase | short | CR-6, CR-10b | coach substitute for e-bike (close for Hollin Rise) | A-3, A-8, A-9 |
+| C-26 | applicants.coach_routes_3_4 | wait_time (coach waiting list), allocation_by_non_price_criteria (distance and year-group priority) | at_least_one_increase | short | CR-6 | as above | A-8, A-9 |
+| C-27 | Marrick Coaches | quantity_traded (passes on routes 3 and 4) | increase | short | CR-5, CR-9 | as above | A-3 |
+| C-28 | Marrick Coaches | quantity_supplied (seats on routes 3 and 4) | increase | medium | CR-7a, CR-10b | as above; contract renewed each September | A-34, A-8 |
+| C-29 | Wendlemere Buses | quantity_traded (route 14 student passes) | increase | short; medium | CR-5, CR-9 | route 14 substitute for e-bike (partial) | A-4 |
+| C-30 | Dunnock News | quantity_traded (route 14 passes sold on commission) | increase | short; medium | CR-9 | passes sold at Dunnock input_to route 14 travel | A-4, A-N1 |
+| C-31 | route 14 passengers | quality_per_unit (space aboard at peak) | decrease | short; medium | CR-9 0.7 | shared_facility (bus below capacity) | A-4 |
+| C-32 | sellers: Spokewright, Corrow | quantity_traded (pedal bicycles sold to students) | increase | short | CR-9, CR-5 | pedal bicycle substitute for e-bike (close) | A-2, A-29 |
+| C-33 | buyers.substitutes (pedal bicycles and e-scooters, Wendlemere) | price_substitute (pedal bicycles, e-scooters), wait_time (stock-outs) | ambiguous | short | CR-9, CR-6 0.9, CR-12b | substitutes; used e-bike substitute for pedal bicycle and e-scooter (partial) | A-2, A-6, A-37, A-N5 |
+| C-34 | sellers: Spokewright, Corrow | quantity_traded (pedal bicycles and e-scooters, all buyers) | ambiguous | short | CR-9, CR-12b | as above | A-2, A-6, A-29, A-N5 |
+| C-35 | sellers: Spokewright, Corrow | quantity_traded (new e-bikes) | U1-a: decrease; U1-b: ambiguous | short; medium | CR-5a, CR-9, CR-12b | used e-bike substitute for new (close) | A-14, A-13, A-11 |
+| C-36 | Spokewright | quantity_traded (servicing of student e-bikes) | decrease | short; medium | CR-9, LW-10 | servicing complement of e-bikes in use | A-2, A-12 |
+| C-37 | Spokewright | quantity_traded (throttle removals) | U1-a: no_change; U1-b: increase | short | CR-9 | throttle removal input_to reclassification | A-11 |
+| C-38 | Spokewright | quantity_traded (secure yard spaces rented) | increase | short; medium | CR-5, CR-9 | yard complement of off-site parking | A-7, A-15, A-N8 |
+| C-39 | buyers of used e-bikes (local market) | price_paid (used throttle e-bikes) | decrease | short; medium | CR-6, CR-9 | same_market_other_segment (student and other sellers) | A-12, A-13 |
+| C-40 | buyers of used e-bikes (local market) | price_paid (used pedal-assist e-bikes) | U1-a: decrease; U1-b: ambiguous | short; medium | CR-6, CR-9, CR-12b | as above; throttle and pedal-assist bikes substitutes | A-12, A-13, A-11 |
+| C-41 | holders of e-bikes in the local market (students and others) | asset_value (throttle e-bikes) | decrease | short (from 21 Jan 2027); medium | CR-7c, CR-10c | as above | A-12, A-13, A-27 |
+| C-42 | holders of e-bikes in the local market (students and others) | asset_value (pedal-assist e-bikes) | U1-a: decrease; U1-b: ambiguous | short; medium | CR-7c, CR-10c, CR-12b | as above | A-12, A-13, A-27, A-11 |
+| C-43 | buyers of used e-bikes (non-students) | quantity_traded (used e-bikes bought) | increase | short | CR-4c | as above | A-12, A-13 |
+| C-44 | users of council cycle stands | search_cost (finding a free stand), travel_time (from a farther spot) | at_least_one_increase | short; medium | CR-6 0.7 and 1.0 (fixed free supply, demand above capacity) | shared stands, rationed | A-7, A-15 |
+| C-45 | students.offsite_parkers | legal_breach (by-law: cycles locked to street furniture) | increase | short; medium | CR-4 (x: comply, y: violate) | — | A-17, A-15 |
+| C-46 | residents with a driveway or garage (Linnet Close, Orchard Row) | quantity_traded (driveway or garage space rented for e-bikes) | increase | short; medium | CR-5, CR-4 (x: keep for own use, y: rent) | driveway space substitute for parking on school land | A-16 |
+| C-47 | residents with a driveway or garage | asset_value (homes with a driveway or garage near the gates) | increase | short; medium | CR-7c, CR-10c | as above | A-16, A-27 |
+| C-48 | parade shops | quantity_traded (purchases by students who park at the parade) | increase | short; medium | CR-9 | complement (trip) | A-7, A-26 |
+| C-49 | parade shops | quantity_traded (all purchases) | ambiguous | short; medium | CR-9, CR-12b | complement (trip); stands complement of cycle trips to the parade | A-7, A-26, A-15, A-N3 |
+| C-50 | driving families (all, including the 150 cars today) | wait_time (drop-off queue) | increase | short (Summer term); medium | CR-9 0.7 | shared_facility (loop and Quarry Lane) | A-5, A-23, A-24, A-N6 |
+| C-51 | coach riders (all nine routes) | travel_time | increase | short; medium | CR-9 0.7 | shared_facility (Quarry Lane) | A-5, A-23, A-36 |
+| C-52 | through traffic on Quarry Lane | travel_time | increase | short; medium | CR-9 0.7 | shared_facility (Quarry Lane) | A-5, A-23 |
+| C-53 | council | enforcement_cost (by-law removals on complaint) | increase | short; medium | CR-9 0.7, CR-8c | proximity (bikes on railings near homes and shops) | A-17, A-N2 |
+| C-54 | staff (exempt) | quantity_substitute (staff e-bike commutes) | increase | medium | CR-4, CR-9 0.7 | shared_facility (shelters, queue) | A-33 |
+| C-55 | officials.enforcement (the College) | enforcement_cost (shelter management, e-bike incidents, walking-rule detentions) | decrease | short; medium | CR-8a | — | A-1 |
+| C-56 | officials.enforcement (the College) | enforcement_cost (net staff-hours) | increase | short; medium | CR-12 0.8 (two items), arithmetic | — | A-1 |
+| C-57 | officials.enforcement (the College) | resources_available_other_uses (staff time for other duties) | decrease | short; medium | CR-8a, CR-3c | — | A-20 |
+
+Notes on second-order effects:
+- **Coach seats (C-25 to C-28).** The pass price is fixed by an existing contract for the school year, so it counts as a regulated term (CR-6, 0.7, existing contracts). About 30 likely applicants against 8 free seats (A-8), and no added coach in the term (A-9), give excess demand; the margins open are the published priority and the waiting list, which the record names. CR-6 licenses only that at least one is used: C-26 is a group. Whether current riders on routes 3 and 4 from shorter distances lose seats at the term allocation depends on the priority's application to holders and is not signed. From September an added coach (A-34) removes the excess (arithmetic: 171 seats against about 136 riders), so no excess-demand consequence is recorded for the medium horizon.
+- **Pedal bicycles and e-scooters (C-32 to C-34).** Students' added demand meets supply that cannot fully expand within the term (A-37), so the price or the wait rises (CR-6, 0.9: a group, since how the pressure splits between price and stock-outs needs a premise the case lacks). An opposing chain runs through the used e-bike market: cheaper used e-bikes (C-39, C-40) draw some local buyers away from pedal bicycles and e-scooters (CR-9, substitutes), which needs A-N5 (p 0.5); it is a kind (2) chain (CR-12, 0.8), so C-33 and the shops' total (C-34) are `ambiguous`. The item "sold to students" (C-32) has no opposing chain.
+- **Used e-bikes (C-39 to C-43).** Added student listings in a thin local market (A-12, A-13) lower used prices (CR-6). Under U1-a all e-bikes lose their school use. Under U1-b only throttle bikes do; pedal-assist bikes gain demand from throttle riders who swap (A-11) and from prospective buyers who choose them instead (C-15), and lose demand to cheaper used throttle bikes that can be converted for $40 (CR-9, substitute): two opposing chains, so U1-b is `ambiguous`. Holders bear the change when it becomes expected, at the announcement on 21 January (CR-7c, CR-10c), and the loss extends as far as A-27's expected duration (to the review at least). See GAP-066-C1 on the value before the reading is settled.
+- **New e-bike sales (C-35).** Under U1-a students who would have bought (A-14) do not, and those exchanges no longer happen (CR-5a), while cheaper used e-bikes draw buyers away from new ones (CR-9). Under U1-b, throttle sales fall while pedal-assist sales gain from swaps and from prospective buyers: `ambiguous`.
+- **Servicing (C-36, C-37).** Fewer student e-bikes in use means less servicing of them (LW-10, complement in use), under both readings (switchers and sellers). Throttle removals are a separate item that exists only under U1-b. Servicing of the added pedal bicycles is a further item, not signed for lack of a premise on where they are serviced. No total is recorded for the shops: the items are different goods.
+- **Off-site parking (C-44 to C-49).** Even 50 off-site bikes exceed the 16 free stands (A-15), so the stands are a fixed free supply with demand above capacity (CR-6, 0.7 and 1.0: rationing, Tier B, not crowding). The overflow goes to paid spaces (C-38, C-46), to railings and lamp posts (C-45), or back to other modes. Driveway rents are a new yield on homes with driveways, capitalized as far as owners expect it to last (C-47, A-27). Parade purchases by parkers are trip complements (C-48); parade customers who arrive by bike and find no stand may shop less there (A-N3, p 0.5), a kind (2) chain, so the parade total (C-49) is `ambiguous`. A-30 (purchases taken from the school canteen) has p 0.4 and is not reported.
+- **Queue and Quarry Lane (C-50 to C-52), Tier C.** More cars (C-6) lengthen the queue (A-23), with no change in the loop (A-24). Staff who switch to e-bikes (C-54) do not shorten the drop-off queue, since they reach the staff car park before the drop-off window (A-N6); so no opposing chain is counted. The response argument applies within the families: those deterred by the longer queue cannot bring it back to the counterfactual (CR-12e).
+- **Neighbors and footways, Tier C.** Bikes locked to railings on footways about 1.8 m wide narrow them for pedestrians (A-35, A-17; proximity and shared_facility). No variable in 2.4 fits a footway's width, so this is a Tier C note and a vocabulary gap, not a consequence. The shelters are emptier under both readings (U1-a: about 130 cycles), which improves space for remaining users (shared_facility, Tier C); no variable fits shelter space either, and the only signed consequence through it is C-54.
+- **The College's hours (C-2, C-55 to C-57).** Two items of one variable (CR-12, 0.8): gate duty and detentions about +750 hours; saved shelter and incident hours about −180 under U1-a and about −65 under U1-b. Net by arithmetic: about +570 hours under U1-a, about +685 under U1-b, so `increase` under both readings (CR-12e, arithmetic). With the budget fixed (A-20), the hours come from other duties (CR-8a).
+
+## 7. Combined effects
+
+| Actor class, variable, horizon | Chains (+) | Chains (−) | Dominance rule | Combined sign |
+|---|---|---|---|---|
+| College, enforcement_cost, short; medium | gate duty and detentions, about 750 h (C-2) | saved shelter and incident hours, about 180 h (U1-a) or 65 h (U1-b) (C-55) | arithmetic on the case's figures (CR-12e) | increase (C-56) |
+| College, enrollment, medium; long | parents who rank a campus without (U1-a) or with fewer throttle (U1-b, A-N4) e-bikes higher (A-21) | far families who relied on e-bikes (A-22) | none | ambiguous (C-18) |
+| other_schools, enrollment, medium; long | families leaving St Aldric's (A-22) | parents moving to St Aldric's from them (A-21; A-N4 under U1-b) | none | ambiguous (C-19) |
+| groups, lobbying_effort over the ban, medium | stake in repeal or defense at the review | the counterfactual contest no longer needed in that form (A-19) | none (CR-4, 1.0) | ambiguous (C-17) |
+| students, used e-bikes offered, 17 Jul to 5 Sep 2027 | sales by riders who keep trying and then sell (A-12) | leavers who sold earlier instead of in July (A-N7) | none | ambiguous (C-14) |
+| students.prospective_ebike_buyers, quantity_demanded, medium | U1-b: buyers who choose pedal-assist instead of throttle; swaps (A-11) | U1-a and U1-b: buyers who no longer buy (A-14) | none | U1-a: decrease; U1-b: ambiguous (C-15) |
+| buyers, price_paid (used pedal-assist), short; medium | U1-b: swap and switching demand (A-11) | U1-a: added listings (A-12, A-13); U1-b: cheaper converted throttle bikes (CR-9, substitute) | none | U1-a: decrease; U1-b: ambiguous (C-40; C-42 likewise) |
+| shops, new e-bikes, short; medium | U1-b: pedal-assist sales from swaps and switching buyers | lost student purchases (A-14); cheaper used e-bikes (A-13) | none | U1-a: decrease; U1-b: ambiguous (C-35) |
+| buyers.substitutes, price or wait for pedal bicycles and e-scooters, short | students' added demand, supply not perfectly elastic (A-37) | local buyers drawn to cheaper used e-bikes (A-N5) | none | ambiguous (C-33); total sales ambiguous (C-34); sales to students increase (C-32) |
+| parade shops, quantity_traded, short; medium | trip purchases by parkers (A-26) | cycling customers who find no stand (A-N3) | none | ambiguous (C-49); item for parkers increase (C-48) |
+| families.switch_car, car runs, short; medium | the rule (C-6) | longer queue deters some (C-50) | response argument; A-5 states the response is partial (CR-12e, 0.9) | increase |
+| driving families, wait_time (queue), short; medium (Tier C) | more cars (A-23, A-24) | staff switching to e-bikes (A-33) | A-N6: staff cars are not in the drop-off queue, so no opposing chain | increase, Tier C (C-50) |
+| families who sell an e-bike and buy a pedal bicycle or e-scooter, resources_available_other_uses, short | sale receipts; saved running costs | purchase of the substitute | none | ambiguous (C-61) |
+
+**Final check (workflow).** (1) Every key reached by chains of opposite sign is in the table above, including chains from section 8 (timing of sales) and from the U1-b reading. (2) CR-6 conclusions are recorded as groups (C-26, C-33, C-44). (3) Every sign is against the same school without the rule, with the Behaviour Code, the coach contract and the by-law in force and the ban question contested. (4) `resources_available_other_uses` is signed only where a class keeps paying more (C-58, C-59) or receives (C-60), not for prospective buyers who are only worse off. (5) E-bike sales are signed per window (C-12 to C-14). (6) Each payment has both sides (section 9). (7) CR-4, CR-6, CR-7 (including CR-7c for e-bikes and driveway homes) and CR-9 were run for each class; the College's enforcement cost and its payer side (C-57) are recorded. (8) Every premise is in section 10; eight were added. (9) No patterns are cited.
+
+No chains cancel by construction (CR-12f). Chains at different horizons are kept apart (CR-12g): the excess demand for coach seats (short) and the added coach (medium) are separate consequences.
+
+## 8. Time structure
+
+- **Announcement window (21 January to 18 April 2027).** The rule was announced 12.5 weeks before it took effect. Choices whose payoff depends on it move into the window (CR-10a): holders sell before the Summer term (C-12), Spokewright entered the parking market on 2 February (C-20), families apply for Summer-term coach seats (C-4), and pedal bicycles and e-scooters are bought before 19 April (C-32, C-7). The fall in used e-bike values happens at the announcement, not at the effective date (CR-7c, CR-10c; C-41, C-42). Sales of e-bikes by students are signed per window against the counterfactual (C-12, C-13, C-14). The purchases of pedal bicycles and e-scooters would mostly not happen at all without the rule, so their timing is a path note, not a timing consequence.
+- **Summer term (short).** The coach contract fixes seats and price until September (A-9), so rationing (C-25, C-26) is confined to the term. The queue on Quarry Lane is longest in this term, before any change to the loop or drop-off times (A-24).
+- **From September 2027 (medium).** An added coach at the contract renewal (A-34) ends the excess demand on routes 3 and 4 (C-28); some families who drove in the Summer term may move to the coach, which reduces but does not reverse the added car runs (no consequence is signed for that shift). The earliest enrollment changes take effect, because withdrawal needs a term's notice (C-18, C-19). A-32 (a higher pass price for 2027-28) has p 0.45 and is not reported. Prospective buyers' decisions (C-15) fall in this horizon.
+- **Durability.** Enrollment changes persist, since moving schools again is costly (CR-10b). The yield on driveway space and the fall in e-bike values last as long as owners expect the rule to (A-27): at least to the June 2028 review. A reversal at the review would reverse those asset values only as far as it is expected (CR-7c).
+- **Readings.** Until the school issues guidance on U1, pedal-assist riders do not know which reading will be applied; their choices before 19 April rest on expectations (CR-10a), and the market price of pedal-assist bikes reflects a mixture of readings that the method does not weight (GAP-066-C1).
+
+## 9. Opportunity costs
+
+| ID | Actor class | Variable | Sign | What is given up | Rules |
+|---|---|---|---|---|---|
+| C-2 | officials.enforcement (the College) | enforcement_cost (gate duty, detentions, confiscations) | increase | About 750 staff-hours a year | CR-1, CR-8c |
+| C-10 | students.throttle_riders | compliance_cost | U1-a: no_change; U1-b: increase | $40 throttle removals and the cost of swaps | CR-8c |
+| C-16 | student_council, Ride to School, Safe Lanes | lobbying_effort (over the reading of §2, the staff exemption and §5) | increase | Members' time on petitions and meetings | CR-4, CR-8c |
+| C-21 | students who switch or park outside | travel_time | increase | Minutes each school day (6 km: 16 minutes by e-bike against 24 to 40) | CR-3a, CR-4 |
+| C-23 | parents.driving (new school runs) | travel_time | increase | Parents' time on a daily school run | CR-3c |
+| C-57 | officials.enforcement (the College) | resources_available_other_uses (staff time for other duties) | decrease | The duties the gate-duty hours were taken from | CR-8a, CR-3c |
+| C-58 | families who switch to a coach pass, route 14 or a car run | resources_available_other_uses | decrease | $1,260, $495 or about $500 a year instead of about $150 | CR-3c, CR-8a |
+| C-59 | students.offsite_parkers (paying) | resources_available_other_uses | decrease | $4 a week at the yard, or a driveway rent | CR-3c, CR-8b |
+| C-60 | residents with a driveway or garage; Spokewright | resources_available_other_uses | increase | (receipt side of C-59) | CR-8b |
+| C-61 | families who sell an e-bike and buy a pedal bicycle or e-scooter | resources_available_other_uses | ambiguous | Purchase of the substitute, against sale receipts and saved running costs | CR-3 note, CR-12b |
+
+CR-8b is applied to each payment: passes paid (C-58) are receipts to Marrick and Wendlemere Buses (C-27, C-29) and commission to Dunnock (C-30); parking paid (C-59) is received by residents and Spokewright (C-60); used e-bikes sold at lower prices (C-41, C-42) are bought by others at lower prices (C-39, C-40, C-43). Prospective student buyers who no longer buy an e-bike (C-15) are worse off by their own ranking (CR-3a) but not poorer; no `resources_available_other_uses` consequence is signed for them (CR-3 note). Students in detention lose time (CR-3a); no variable fits that penalty (gap (c)). Staff hours on detentions and confiscations are in C-2.
+
+## 10. Assumptions
+
+| ID | Statement | Type | p | Evidence | If false |
+|---|---|---|---|---|---|
+| A-1 | The rule is enforced at the gates: most students who ride or park an e-bike on the grounds are detected within days. | enforcement | 0.8 | Two gates; a duty rota; existing registration stickers identify bikes; a small campus. | C-1, C-3 to C-8, C-24, C-55, C-56 fail or weaken; the ban becomes a risk attached to riding (CR-1 op 3). |
+| A-2 | Some e-bike riders switch to a pedal bicycle. | substitutability | 0.8 | Poll: 30%; distances of 3 to 12 km; flat route from Hollin Rise. | C-3, C-32, C-33, C-34, C-36, C-61. |
+| A-3 | Some switch to the school coach. | substitutability | 0.8 | Poll: 25%; routes 3 and 4 serve Hollin Rise. | C-4, C-25, C-27, C-58 (this chain). |
+| A-4 | Some switch to route 14. | substitutability | 0.6 | Poll: 10%; route 14 passes the Main Gate. | C-5, C-29, C-30, C-31, C-58 (this chain). |
+| A-5 | Some families choose to drive, at today's queue time (the response is partial). | substitutability | 0.8 | Poll: 20%; 150 cars already drive; parents commute by car. | C-6, C-22, C-23, C-50, C-51, C-52, C-58 (this chain). |
+| A-6 | Some switch to e-scooters, which §14 lets them carry in folded. | substitutability | 0.6 | Poll: 10% "e-scooter or other"; e-scooters sold at Spokewright. | C-7, C-33, C-34, C-61. |
+| A-7 | Some riders keep riding and park off school land near the gates. | mobility | 0.85 | Staff estimate; the stands, the parade and the cul-de-sacs are within 250 m; Spokewright's yard advertised. | C-8, C-20, C-38, C-44, C-48, C-49. |
+| A-8 | On routes 3 and 4, applicants for seats at the fixed pass price exceed the seats in the Summer term. | binding | 0.6 | About 30 likely applicants from Hollin Rise against 8 free seats. | C-25, C-26, C-28. |
+| A-9 | Marrick cannot add a coach on routes 3 and 4 within the Summer term. | durability | 0.7 | The contract runs to September; coaches and drivers are committed to other contracts. | C-25, C-26. |
+| A-10 | Some students ride or park on the grounds anyway. | enforcement | 0.65 | The East Gate after duty ends; the coach bay; experience with the walking rule (about 60 detentions a year). | C-11, C-24. |
+| A-11 | Under U1-b, some throttle riders remove the throttle or swap for a pedal-assist bike at a cost below the rule's burden. | other | 0.7 | Plug-in throttles on many models; $40 at Spokewright; the used pedal-assist market. | C-9, C-10, C-37; the U1-b chains in C-15, C-35, C-40, C-42. |
+| A-12 | Some students sell their e-bikes because the rule removes their main use, some of them before 19 April. | expectations | 0.7 | About 40 student e-bikes a year are sold now; the commute is the main use for most. | C-12, C-13, C-14, C-36, C-39 to C-43, C-61. |
+| A-13 | Most student sellers sell in the local market, and its buyers do not absorb the added listings at an unchanged price. | substitutability | 0.65 | About 25 listings a month; buyers prefer to see a bike before buying. | C-35 (used-price chain), C-39 to C-43. |
+| A-14 | Some students would have bought an e-bike in the next year. | other | 0.8 | About 60 bought in 2025-26 (35 new, 25 used). | C-15, C-35. |
+| A-15 | Off-site parkers exceed the free council stands. | binding | 0.8 | About 16 stands free in school hours against 50 or more bikes. | C-20, C-38, C-44, C-45, C-49. |
+| A-16 | Some residents of Linnet Close and Orchard Row rent driveway or garage space for e-bikes. | other | 0.55 | About 32 homes with a driveway or garage within 150 m of the gate; Spokewright's $4 a week sets a price. | C-46, C-47, C-59 and C-60 (this chain). |
+| A-17 | Some riders lock bikes to railings and lamp posts against the by-law. | enforcement | 0.7 | The stands fill; the by-law is enforced only on complaint. | C-45, C-53. |
+| A-18 | The student council, Safe Lanes and Ride to School can organize at a cost below their stakes. | other | 0.85 | Two petitions in autumn 2026; Ride to School formed in February 2027. | C-16, C-17. |
+| A-19 | Without the rule, the question of a ban would have stayed contested in 2027-28. | other | 0.75 | Safe Lanes' petition; the board's minute; collisions continuing. | C-17 (without it, lobbying over the ban is an increase against no contest). |
+| A-20 | The school's staff budget for 2027 is fixed and gate duty is drawn from other duties. | revenue_use | 0.85 | Fees set; no new posts; the duty rota already full. | C-57. |
+| A-21 | Some parents rank a campus without student e-bikes above one with them, enough to change their choice of school or to stay. | other | 0.55 | Safe Lanes' 310 signatures; enquiries after the collisions. | C-18 and C-19 become decrease and increase respectively (under U1-a). |
+| A-22 | Some families who live far away and relied on e-bikes rank the school lower, enough to change their choice. | other | 0.55 | 120 riders on Hollin Rise; the student council's 540 signatures; a rival school 4 km from Hollin Rise. | C-18 and C-19 become increase and decrease respectively. |
+| A-23 | More cars at 8:15 to 8:45 lengthen the queue on Quarry Lane, and any diversion of through traffic does not fully offset it. | other | 0.85 | The loop holds 20 cars; the queue already reaches Quarry Lane at 150. | C-50, C-51, C-52. |
+| A-24 | At a given number of school cars, the queue is no longer than without the rule: the school does not change the loop or drop-off times in the Summer term, and the rule adds no other traffic. | other | 0.65 | No works planned before September; the rule touches only students' e-bikes. | C-50. |
+| A-25 | For most riders who switch to a coach, route 14, a pedal bicycle or walking, or who park outside and walk in, the trip takes longer door to door. | other | 0.8 | 6 km: e-bike 16 minutes; pedal bicycle 24; coach 35; route 14 about 40. | C-21. |
+| A-26 | Some students who park at the parade buy there on the same trip. | other | 0.6 | A bakery, café and convenience store on the way to the gate. | C-48, C-49. |
+| A-27 | Holders of e-bikes and of rentable driveways expect the rule to last at least until the June 2028 review. | expectations | 0.7 | No expiry; the review is 15 months away; boards rarely reverse a safety rule quickly. | C-41, C-42, C-47 (capitalized only for a shorter period). |
+| A-28 | For families who switch to a pass or a car run, the added outlay exceeds the e-bike running costs they save. | other | 0.85 | $1,260, $495 or about $500 a year, against about $150. | C-58. |
+| A-29 | Some students' pedal bicycles are bought from the two local shops. | other | 0.7 | Two shops within 3 km; about two thirds of student e-bikes were bought locally. | C-32, C-34, C-61. |
+| A-30 | Students who park at the parade buy breakfast or snacks there instead of at the school canteen. | other | 0.4 | No evidence; the canteen opens at 8:00. | Not reported (see below). |
+| A-31 | The school raises its fees for 2027-28 because of the gate duty. | revenue_use | 0.25 | Fees are set on many costs; the duty is a small share. | Not reported. |
+| A-32 | The coach contractor's cost of an added coach on routes 3 and 4 raises the 2027-28 pass price. | other | 0.45 | Coaches are hired at a market rate; one added coach across nine routes. | Not reported. |
+| A-33 | Some staff who drive switch to e-bikes because the shelters are emptier and the queue is longer. | other | 0.5 | 92 staff drive; 18 already ride. | C-54. |
+| A-34 | Marrick adds a coach on routes 3 and 4 from September 2027 at the contract renewal. | alternative_uses | 0.6 | Waiting list; the school can negotiate one more coach. | C-28; excess demand would continue into 2027-28. |
+| A-35 | Bikes locked on the footways narrow them for pedestrians. | other | 0.6 | Footways about 1.8 m wide on the cul-de-sacs; railings along Quarry Lane. | The Tier C note on footways (no variable; no consequence). |
+| A-36 | The longer queue delays the coaches, which use Quarry Lane to reach the coach bay. | other | 0.75 | Coaches arrive 8:20 to 8:40 in the same lane. | C-51. |
+| A-37 | The supply of pedal bicycles and e-scooters to Wendlemere is not perfectly elastic within the Summer term. | durability | 0.6 | Shops restock weekly from a national distributor; popular models sell out in spring. | C-33 (the (+) chain). |
+| A-38 | Some staff are at the margin of buying a used e-bike, so that a lower used price draws one more staff e-bike commute. | other | 0.35 | No evidence. | Not reported. |
+| A-N1 | Some route 14 term passes bought by switching students are bought at Dunnock News rather than at the bus station. | other | 0.6 | NEW. Dunnock is on the Quarry Lane parade, 250 m from the Main Gate; the bus station is in town. | C-30. |
+| A-N2 | Some residents or shopkeepers complain about bikes locked to street furniture, so that the council acts on the by-law. | enforcement | 0.55 | NEW. The by-law is enforced on complaint; bikes on railings beside 64 homes and six shops. | C-53. |
+| A-N3 | Some parade customers who arrive by bicycle in school hours find no stand and shop less at the parade. | substitutability | 0.5 | NEW. About 8 stands used in school hours now; stands full under A-15; no evidence on who those users are. | C-49 becomes increase (with C-48). |
+| A-N4 | Under U1-b, some parents rank a campus without throttle e-bikes above one with them, enough to change their choice of school or to stay. | other | 0.5 | NEW. Five of the seven collisions involved throttle e-bikes; the letter refers to them; Safe Lanes asked for a ban on all e-bikes. | Under U1-b, C-18 becomes decrease and C-19 increase. |
+| A-N5 | Some local buyers who would have bought a pedal bicycle or e-scooter buy a cheaper used e-bike instead. | substitutability | 0.5 | NEW. A used throttle e-bike at about $550 or less overlaps the price of a new pedal bicycle ($350 to $700); no evidence on local buyers. | C-33 and C-34 become increase. |
+| A-N6 | Staff who drive reach the staff car park before the 8:15 to 8:45 drop-off window, so their cars are not in the drop-off queue. | other | 0.6 | NEW. Gate duty and registration precede the drop-off window; the loop is for drop-offs. | C-50 becomes ambiguous at Tier C (staff switching, C-54, would shorten the queue). |
+| A-N7 | Some leavers and upgraders who would have sold their e-bikes in July to September sell before or during the Summer term instead. | expectations | 0.6 | NEW. About 40 student e-bikes a year are sold in July to September; for Year 13 leavers the rule removes the last term's use. | C-14 becomes increase. |
+| A-N8 | Some off-site parkers rent a space in Spokewright's yard. | other | 0.6 | NEW. Advertised at $4 a week for 40 bikes, 600 m from the gate; free stands full (A-15). | C-38; C-59 and C-60 (this chain). |
+
+**Not reported** (an assumption below 0.5):
+- Canteen sales fall as parkers buy at the parade (CR-9, substitute): needs A-30 (p 0.4).
+- Fees for 2027-28 rise because of the gate duty (CR-8b, payers of the duty): needs A-31 (p 0.25). Without it, C-57 is the payer side: other duties.
+- The 2027-28 coach pass price rises (CR-6, CR-9): needs A-32 (p 0.45).
+- Lower used e-bike prices draw a staff e-bike commute (CR-4c): needs A-38 (p 0.35).
+
+## 11. Report
+
+**The policy:** From 19 April 2027 St Aldric's College, a private school, forbids students to ride or park an electric bicycle anywhere on its land, including the verge and the coach bay; staff are exempt. Staff check both gates; breaches bring detention, confiscation until a parent collects the bike, and a Saturday detention. The rule binds through the enrollment contract. Whether pedal-assist e-bikes count as "electric bicycles" is unclear: under one reading 270 riders are bound, under the other only the 80 throttle riders.
+
+**Visible consequences:** Bound students stop riding e-bikes onto the grounds (C-1). The school spends more staff time on gate duty and detentions (C-2), more than it saves on shelters and incidents under either reading (C-56; about +570 hours under U1-a, +685 under U1-b). More students ride pedal bicycles (C-3) and more are driven to school (C-6). Students sell e-bikes in the weeks before the rule takes effect (C-12).
+
+**Invisible consequences:**
+- *Riders and families:* Trips take longer for those who switch to a pedal bicycle, coach, bus or walking, or park outside and walk in (C-21), and for those driven (C-22); parents drive new school runs (C-23) and collect confiscated bikes (C-24). Families who switch to a pass or a car run spend more on travel and less on other things (C-58); those who pay to park off site likewise (C-59). Some students ride on the grounds anyway (C-11) and some lock bikes to railings against the by-law (C-45). Under U1-b, throttle riders convert their bikes at a cost (C-9, C-10).
+- *E-bike holders and the used market:* The value of e-bikes held in Wendlemere falls from the announcement (C-41; pedal-assist bikes C-42 under U1-a), and buyers of used e-bikes pay less and buy more (C-39, C-40, C-43). Students who would have bought an e-bike do not (C-15), and new e-bike sales at the two shops fall under U1-a (C-35).
+- *Coaches and buses:* Seats on routes 3 and 4 run short in the Summer term at the fixed pass price (C-25), so seats go by priority and waiting list (C-26); Marrick fills its free seats (C-27) and adds a coach in September (C-28). Route 14 sells more passes (C-29), some through Dunnock News (C-30), and is more crowded at peak (C-31, Tier C).
+- *Bike shops:* They sell more pedal bicycles to students (C-32), service fewer student e-bikes (C-36), rent yard spaces (C-38) and, under U1-b, remove throttles (C-37).
+- *Neighbors and the parade:* Paid parking near the gates enters (C-20); residents rent driveways (C-46) and receive the rents (C-60), and homes with driveways gain value (C-47). The council stands are oversubscribed, so other stand users search longer or walk farther (C-44). Parkers buy at the parade on the way in (C-48).
+- *Traffic (Tier C):* Families already driving wait longer in the drop-off queue (C-50); coach riders and through traffic on Quarry Lane are delayed (C-51, C-52); the council spends more on by-law removals (C-53); some staff switch to e-bikes (C-54).
+- *The school:* Gate duty is taken from other duties (C-57). The groups on both sides lobby over the reading of §2 and the exemption (C-16).
+
+**Ambiguous effects:** Enrollment at St Aldric's and at other schools from September (C-18, C-19): some parents prefer a campus without student e-bikes, some far families rank the school lower. Lobbying over the ban itself, against a counterfactual in which the question stayed contested (C-17). Sales of e-bikes by students in July to September (C-14). The price or wait for pedal bicycles and e-scooters, and the shops' total sales of them (C-33, C-34): students' demand pushes up, buyers drawn to cheaper used e-bikes push down. The parade's total sales (C-49): parkers buy there, but cycling customers lose their stands. Under U1-b, used and new pedal-assist e-bikes (C-15, C-35, C-40, C-42). Families who sell an e-bike and buy a substitute (C-61).
+
+**Key conditions:** Enforcement at the gates (A-1, 0.8) drives every response. The coach shortage needs more applicants than seats (A-8, 0.6) and no added coach in the term (A-9, 0.7). The off-site chains rest on riders parking outside (A-7, 0.85) beyond the free stands (A-15, 0.8). The driveway chains rest on A-16 (0.55). The enrollment signs rest on two opposing preferences of about even weight (A-21, A-22, 0.55 each). Eight premises were added (A-N1 to A-N8), three of them at p 0.5 (A-N3, A-N4, A-N5); each of those three, if false, would turn an `ambiguous` sign into a definite one.
+
+**What this analysis cannot say:** How large any effect is, so how many students switch to each mode, how far used prices fall or how much the queue lengthens. Whether the school gains or loses pupils overall. Which reading of §2 the school will apply. Whether the rule is good, or whether its costs are worth its aims. Above all, the rule's stated aim, safety (fewer collisions on campus), and every other safety effect (more cars and cyclists on Quarry Lane, narrowed footways, students on e-scooters or riding farther on pedal bicycles), are out of scope for version 1 and are not analyzed. Environmental and health effects are out of scope as well.
+
+## Consequence list (normal form)
+
+| ID | Actor class | Variable | Sign | Horizon | Visibility | Tier | Derivation | Assumptions |
+|---|---|---|---|---|---|---|---|---|
+| C-1 | students.ebike_riders.bound (U1-a: 270 riders; U1-b: 80 throttle riders) | quantity_demanded (e-bike trips ridden or parked on school grounds) | decrease | short; medium | visible | B | CR-1 (op 1 where enforced, op 3 where not); CR-2 (they choose among the options still open); CR-3a (worse off by their own ranking) | A-1 |
+| C-2 | officials.enforcement (the College) | enforcement_cost (gate duty, detentions, confiscations) | increase | short; medium | visible | A | CR-1 (§5 requires two staff at each gate for 50 minutes on 190 days, about 630 h, plus about 120 h of detentions); CR-8a; CR-8c (used up) | none |
+| C-3 | students.switch_pedal | quantity_substitute (pedal bicycle trips to school) | increase | short; medium | visible | B | CR-4 (x: e-bike onto the grounds, removed; y: pedal bicycle, which §2 leaves open; those for whom y ranked next switch) | A-2, A-1 |
+| C-4 | students.switch_coach | applications (coach seats on routes 3 and 4) | increase | short; medium | invisible | B | CR-4 (x: e-bike, y: coach); CR-10a (applications for the Summer term are made before 19 April) | A-3, A-1 |
+| C-5 | students.switch_bus | quantity_substitute (route 14 trips) | increase | short; medium | invisible | B | CR-4 (x: e-bike, y: route 14) | A-4, A-1 |
+| C-6 | families.switch_car | quantity_substitute (car school runs at 8:15 to 8:45) | increase | short; medium | visible | B | CR-4 (x: e-bike, y: being driven); CR-12e (the longer queue deters some, but the response cannot reverse the change; A-5: partial); about 40 more cars under U1-a, 12 under U1-b | A-5, A-1 |
+| C-7 | students.switch_escooter | quantity_traded (e-scooters bought by students) | increase | short | invisible | B | CR-4 (x: covered e-bike, y: e-scooter carried folded under Behaviour Code §14); CR-5 (purchases that would not have taken place) | A-6, A-1 |
+| C-8 | students.offsite_parkers | quantity_demanded (parking for e-bikes off school land near the gates) | increase | short; medium | invisible | B | CR-4 (x: park on school land, removed; y: park just outside the title line) | A-7, A-1 |
+| C-9 | students.throttle_riders | reclassification (throttle removed, or swapped for a pedal-assist bike) | U1-a: no_change; U1-b: increase | short | invisible | B | CR-4 (x: covered form, y: uncovered form); under U1-a a pedal-assist bike is still covered, so no one converts for the rule (CR-4a) | A-11 |
+| C-10 | students.throttle_riders | compliance_cost (throttle removal, swap) | U1-a: no_change; U1-b: increase | short | invisible | B | CR-1 op 1; CR-4 (conversion costs less than the rule's burden, A-11); CR-8c | A-11 |
+| C-11 | students.evading | legal_breach (riding or parking on the grounds against §1) | increase | short; medium | invisible | B | CR-1 op 3 where detection is incomplete; CR-4 (x: comply, y: violate); CR-12 0.9 (an activity that exists only under the rule, against none) | A-10 |
+| C-12 | students.ebike_holders | quantity_supplied (used e-bikes offered by students, 21 Jan to 18 Apr 2027) | increase | short (announcement window) | visible | B | CR-10a (a dated removal of the bike's main use alters choices now); CR-4 (x: keep, y: sell) | A-12 |
+| C-13 | students.ebike_holders | quantity_supplied (used e-bikes offered by students, 19 Apr to 16 Jul 2027) | increase | short | invisible | B | CR-4 (x: keep, y: sell; riders who first try other options and then sell) | A-12 |
+| C-14 | students.ebike_holders | quantity_supplied (used e-bikes offered by students, 17 Jul to 5 Sep 2027) | ambiguous | short | invisible | B | CR-12b: (+) CR-4, further sales by bound riders (A-12); (−) CR-10a, CR-4 (x: sell in July, y: sell earlier), leavers' sales moved out of the window (A-N7) | A-12, A-N7 |
+| C-15 | students.prospective_ebike_buyers | quantity_demanded (e-bikes, 2027-28) | U1-a: decrease; U1-b: ambiguous | medium | invisible | B | CR-4c, CR-5a (U1-a: the e-bike loses its school use, A-14); U1-b: CR-12b, (−) throttle buyers who buy nothing, (+) swaps by throttle riders (A-11) | A-14, A-11 |
+| C-16 | student_council, Ride to School, Safe Lanes | lobbying_effort (over the reading of §2, the staff exemption and §5) | increase | short; medium | invisible | B | CR-4 (x: accept, y: lobby); CR-4 1.1 (provisions that exist only under the rule); CR-8c | A-18 |
+| C-17 | student_council, Ride to School, Safe Lanes | lobbying_effort (over whether students may ride e-bikes to school) | ambiguous | medium | invisible | B | CR-4 1.0 (signed against the contest on the counterfactual path, A-19); CR-12b (each side's stake changes form; no premise says which way) | A-18, A-19 |
+| C-18 | officials.enforcement (the College) | enrollment (St Aldric's) | ambiguous | medium; long | invisible | B | CR-4 (x: stay or enroll, y: another school; withdrawal costs a term's notice); CR-5c (the school's terms changed); CR-12b: (+) A-21 (U1-a) or A-N4 (U1-b); (−) A-22 | A-21, A-22, A-N4 |
+| C-19 | other_schools | enrollment | ambiguous | medium; long | invisible | B | CR-9 (competitors for the same families); CR-12b: (+) families leaving St Aldric's (A-22); (−) parents moving to it (A-21; A-N4 under U1-b) | A-21, A-22, A-N4 |
+| C-20 | sellers.prospective (paid e-bike parking near the gates) | entry_rate | increase | short | invisible | B | CR-4 (x: stay out, y: enter; Spokewright's yard advertised 2 February); CR-10a | A-7, A-15 |
+| C-21 | students who switch to coach, route 14, pedal bicycle or walking, or park outside | travel_time | increase | short; medium | invisible | B | CR-4 (they move to the next-ranked mode); CR-3a; A-25 (6 km: 16 minutes against 24, 35 or 40) | A-25 |
+| C-22 | students.driven (switched from e-bike) | travel_time | increase | short; medium | invisible | B | CR-4; arithmetic: car about 15 minutes plus about 8 in the queue, against 16 by e-bike | A-5 |
+| C-23 | parents.driving (new school runs) | travel_time | increase | short; medium | invisible | B | CR-4 (families choose to drive); CR-3c (the parent's time goes to a run that was not made) | A-5 |
+| C-24 | parents of students whose e-bike is confiscated | travel_time (collecting the bike from the site office) | increase | short; medium | invisible | B | CR-1 op 3 (§5, second breach); CR-3a | A-10, A-1 |
+| C-25 | sellers.substitutes (coach seats on routes 3 and 4) | excess_demand (seats at the contract price of $420 a term) | increase | short | invisible | B | CR-9 (substitute); CR-6 (the price is fixed by the existing contract for the school year, 0.7); CR-10b (no added coach in the term) | A-3, A-8, A-9 |
+| C-26 | applicants.coach_routes_3_4 | wait_time (coach waiting list), allocation_by_non_price_criteria (distance and year-group priority) | at_least_one_increase | short | invisible | B | CR-6 (pressure goes to the open margins the record names; a group, since CR-6 licenses only at least one) | A-8, A-9 |
+| C-27 | Marrick Coaches | quantity_traded (passes on routes 3 and 4) | increase | short | invisible | B | CR-9 (substitute); CR-5 (8 free seats filled) | A-3 |
+| C-28 | Marrick Coaches | quantity_supplied (seats on routes 3 and 4) | increase | medium | invisible | B | CR-7a (a coach moves to the route with unmet demand at renewal); CR-10b (only at renewal) | A-34, A-8 |
+| C-29 | Wendlemere Buses | quantity_traded (route 14 student passes) | increase | short; medium | invisible | B | CR-9 (substitute); CR-5; route 14 at about 60% of capacity, so no rationing | A-4 |
+| C-30 | Dunnock News | quantity_traded (route 14 passes sold on commission) | increase | short; medium | invisible | B | CR-9 (input_to: the outlet that sells the pass) | A-4, A-N1 |
+| C-31 | route 14 passengers | quality_per_unit (space aboard at peak) | decrease | short; medium | invisible | C | CR-9 0.7 (shared_facility below capacity; CR-6 1.0: crowding, not rationing) | A-4 |
+| C-32 | sellers: Spokewright, Corrow | quantity_traded (pedal bicycles sold to students) | increase | short | invisible | B | CR-9 (substitute for e-bike); CR-5 | A-2, A-29 |
+| C-33 | buyers.substitutes (pedal bicycles and e-scooters, Wendlemere) | price_substitute (pedal bicycles, e-scooters), wait_time (stock-outs) | ambiguous | short | invisible | B | CR-12b over two chains: (+) CR-9, CR-6 0.9 (students' demand, supply not perfectly elastic in the term, A-37; a group); (−) CR-9 (used e-bikes at lower prices are substitutes, A-N5) | A-2, A-6, A-37, A-N5 |
+| C-34 | sellers: Spokewright, Corrow | quantity_traded (pedal bicycles and e-scooters, all buyers) | ambiguous | short | invisible | B | CR-12 0.8 (two items; total combined under CR-12b): (+) sales to students (C-32, C-7); (−) local buyers drawn to used e-bikes (A-N5) | A-2, A-6, A-29, A-N5 |
+| C-35 | sellers: Spokewright, Corrow | quantity_traded (new e-bikes) | U1-a: decrease; U1-b: ambiguous | short; medium | invisible | B | CR-5a (prevented purchases, A-14); CR-9 (cheaper used e-bikes are substitutes, A-13); U1-b: CR-12b against pedal-assist sales from swaps and switching buyers (A-11) | A-14, A-13, A-11 |
+| C-36 | Spokewright | quantity_traded (servicing of student e-bikes) | decrease | short; medium | invisible | B | CR-9, LW-10 (servicing is a complement in use; fewer student e-bikes in use under both readings) | A-2, A-12 |
+| C-37 | Spokewright | quantity_traded (throttle removals) | U1-a: no_change; U1-b: increase | short | invisible | B | CR-9 (input_to the conversion, C-9) | A-11 |
+| C-38 | Spokewright | quantity_traded (secure yard spaces rented) | increase | short; medium | invisible | B | CR-9 (complement of off-site parking); CR-5 (rentals that would not have taken place) | A-7, A-15, A-N8 |
+| C-39 | buyers of used e-bikes (local market) | price_paid (used throttle e-bikes) | decrease | short; medium | invisible | B | CR-9 (same market, more sellers); CR-6 (more offered at each price moves the price down; A-13: not absorbed at an unchanged price) | A-12, A-13 |
+| C-40 | buyers of used e-bikes (local market) | price_paid (used pedal-assist e-bikes) | U1-a: decrease; U1-b: ambiguous | short; medium | invisible | B | U1-a: CR-9, CR-6 as C-39; U1-b: CR-12b, (+) swap and switching demand (A-11), (−) cheaper used throttle bikes that convert for $40 (CR-9, substitute) | A-12, A-13, A-11 |
+| C-41 | holders of e-bikes in the local market (students and others) | asset_value (throttle e-bikes) | decrease | short (from 21 Jan 2027); medium | invisible | B | CR-7c, CR-10c (the expected yield falls when the rule becomes expected and is borne by the holders then, for as long as it is expected to last, A-27) | A-12, A-13, A-27 |
+| C-42 | holders of e-bikes in the local market (students and others) | asset_value (pedal-assist e-bikes) | U1-a: decrease; U1-b: ambiguous | short; medium | invisible | B | CR-7c, CR-10c as C-41; U1-b: CR-12b, as C-40 | A-12, A-13, A-27, A-11 |
+| C-43 | buyers of used e-bikes (non-students) | quantity_traded (used e-bikes bought) | increase | short | invisible | B | CR-4c (at a lower price more units are bought) | A-12, A-13 |
+| C-44 | users of council cycle stands | search_cost (finding a free stand), travel_time (from a farther spot) | at_least_one_increase | short; medium | invisible | B | CR-6 0.7 and 1.0 (a fixed free supply with demand above capacity: pressure goes to the margins open to users; a group) | A-7, A-15 |
+| C-45 | students.offsite_parkers | legal_breach (by-law: cycles locked to street furniture) | increase | short; medium | invisible | B | CR-4 (x: comply, y: violate; enforced only on complaint) | A-17, A-15 |
+| C-46 | residents with a driveway or garage (Linnet Close, Orchard Row) | quantity_traded (driveway or garage space rented for e-bikes) | increase | short; medium | invisible | B | CR-4 (x: keep for own use, y: rent); CR-5 | A-16 |
+| C-47 | residents with a driveway or garage | asset_value (homes with a driveway or garage near the gates) | increase | short; medium | invisible | B | CR-7c, CR-10c (a new yield on a fixed asset, capitalized for as long as it is expected, A-27) | A-16, A-27 |
+| C-48 | parade shops | quantity_traded (purchases by students who park at the parade) | increase | short; medium | invisible | B | CR-9 (complement, trip) | A-7, A-26 |
+| C-49 | parade shops | quantity_traded (all purchases) | ambiguous | short; medium | invisible | B | CR-12 0.8 (two items, total under CR-12b): (+) C-48; (−) CR-9, CR-4 (cycling customers who find no stand, A-15, A-N3) | A-7, A-26, A-15, A-N3 |
+| C-50 | driving families (all, including the 150 cars today) | wait_time (drop-off queue) | increase | short (Summer term); medium | invisible | C | CR-9 0.7 (shared_facility: more cars, C-6, in a loop that holds 20); no opposing chain from staff (A-N6) | A-5, A-23, A-24, A-N6 |
+| C-51 | coach riders (all nine routes) | travel_time | increase | short; medium | invisible | C | CR-9 0.7 (shared_facility: Quarry Lane) | A-5, A-23, A-36 |
+| C-52 | through traffic on Quarry Lane | travel_time | increase | short; medium | invisible | C | CR-9 0.7 (shared_facility) | A-5, A-23 |
+| C-53 | council | enforcement_cost (by-law removals on complaint) | increase | short; medium | invisible | C | CR-9 0.7 (proximity: bikes on railings near homes and shops prompt complaints); CR-8c | A-17, A-N2 |
+| C-54 | staff (exempt) | quantity_substitute (staff e-bike commutes) | increase | medium | invisible | C | CR-4 (x: drive, y: e-bike; y improved by emptier shelters and x worsened by the queue); CR-9 0.7 (shared_facility) | A-33 |
+| C-55 | officials.enforcement (the College) | enforcement_cost (shelter management, e-bike incidents, walking-rule detentions) | decrease | short; medium | invisible | B | CR-8a (fewer e-bikes on site: about 180 h saved under U1-a, about 65 h under U1-b) | A-1 |
+| C-56 | officials.enforcement (the College) | enforcement_cost (net staff-hours) | increase | short; medium | invisible | B | CR-12 0.8 (two items: C-2 and C-55); CR-12e (arithmetic: about +570 h under U1-a, +685 h under U1-b) | A-1 |
+| C-57 | officials.enforcement (the College) | resources_available_other_uses (staff time for other duties) | decrease | short; medium | invisible | B | CR-8a (with a fixed budget the hours are withdrawn from other duties); CR-3c | A-20 |
+| C-58 | families who switch to a coach pass, route 14 or a car run | resources_available_other_uses | decrease | short; medium | invisible | B | CR-3c, CR-8a (they keep spending on travel and spend more: $1,260, $495 or about $500 against about $150, A-28); independent chains through A-3, A-4 or A-5 (CR-12d) | A-28, A-3, A-4, A-5 |
+| C-59 | students.offsite_parkers (paying) | resources_available_other_uses | decrease | short; medium | invisible | B | CR-3c, CR-8b (rent paid for a driveway or yard space; independent chains through A-16 or A-N8, CR-12d) | A-16, A-N8 |
+| C-60 | residents with a driveway or garage; Spokewright | resources_available_other_uses | increase | short; medium | invisible | B | CR-8b (the receipt side of C-59) | A-16, A-N8 |
+| C-61 | families who sell an e-bike and buy a pedal bicycle or e-scooter | resources_available_other_uses | ambiguous | short | invisible | B | CR-3 note (lost use against saved outlays); CR-12b: (+) sale receipts and saved running costs; (−) purchase of the substitute | A-2, A-6, A-12, A-29 |
+
+## Gaps found
+
+**(a) Steps no core rule covers.**
+- GAP-066-C1 (open): an asset whose value depends on how an unclear provision will be read. CR-7c says a value moves as a change becomes more probable, so at the announcement the price of pedal-assist e-bikes reflects buyers' and holders' beliefs about U1. The method gives readings no probability and signs per reading, as though the reading were known. The value before the school settles the reading lies between the two per-reading values and cannot be signed by either alone (here it can, since U1-a gives decrease and U1-b ambiguous, but in general it cannot). No core rule says how to record an asset price under an undecided reading.
+- No other step lacked a core rule. Every step was derived from CR-1 to CR-12 and LW-10, and arithmetic on the case's figures. The rule-maker being a private landowner did not need a new rule: CR-1's "a change in the rules that others will enforce" covers it, and the enrollment contract supplies the relation.
+
+**(b) Core-rule wording that was hard to apply.**
+- CR-12 0.8, kind (2) chains: any derivable opposing chain whose premise reaches p 0.5 makes the sign `ambiguous`. Three signs here (C-33/C-34, C-49, C-18/C-19 under U1-b) turn on added premises the analyst estimated at exactly 0.5 with little evidence. The rule makes the sign depend on an estimate at the threshold; it gives no guidance for premises with no evidence either way.
+- CR-6 0.7 and 1.0 (public supply against shared facility): applying the clause to free council stands needed a judgment that demand exceeds capacity (A-15). Below capacity the same stands would be a `shared_facility` at Tier C, so the tier of C-44 switches on a count.
+- CR-4 1.0 (lobbying against a contested counterfactual): the note says each side is signed against the contest and needs a premise, but does not say what the premise would be when the policy settles the question in one side's favor while scheduling a review. C-17 was left `ambiguous`.
+- CR-1 operations for a contract-based rule: the rule changes a term of a continuing contract that one party (the school) may amend at will. Whether this is op 1 on the student, op 3 on the family's option of staying enrolled, or both, needed a choice; both were recorded.
+- CR-12e response argument with a partial premise: for car runs (C-6) the argument needs A-5's "partial" clause, which the case supplies; without it CR-12 0.9 would allow only "increase or no change".
+- Rothbard's typology (01_foundations) covers only state intervention; a private owner's rule fits none of autistic, binary or triangular. The classification step had no type to record.
+
+**(c) Vocabulary missing from the ontology.**
+- Instrument type: no entry in 2.3 for a rule set by a private owner of land or a private organization and binding through a contract.
+- Variables: no variable for space or crowding on a shared facility that is not a traded good (cycle shelters, footway width, bus crowding; `quality_per_unit` was used for the bus); no variable for penalties borne in time (detentions); no variable for trips by mode (`quantity_substitute` and `quantity_demanded` were used with qualifiers).
+- Actor classes: none for members of an organization bound by its rules (students, staff), or for competing private institutions (other schools); role-based names were used.
+- Out of scope: the rule's stated aim (safety) has no variable by design; this is recorded in section 1 and the report (out of scope).
