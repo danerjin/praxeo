@@ -1,0 +1,29 @@
+{
+ "name": "Nairn Rent Cap",
+ "jurisdiction": "fictional",
+ "rule_maker": "city council",
+ "enacted": "2030-01-01",
+ "effective": "2030-07-01",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "h7",
+   "instrument": "price_ceiling",
+   "good": "rental_housing",
+   "market": "city",
+   "bound_actor": "landlords.controlled",
+   "protected_actor": "tenants.controlled",
+   "excluded_actor": "tenants.prospective",
+   "vacancy_decontrol": false,
+   "source_sentences": [
+    "Yearly rent increases are capped at 2 percent.",
+    "A lease that is not registered, or that states a rent above the cap, cannot be enforced in court: the landlord cannot evict for non-payment under it or recover arrears."
+   ]
+  }
+ ],
+ "unclear": [],
+ "context": [
+  "Every lease must be entered in a public register that shows the rent paid.",
+  "Market rents in Nairn rise about 7 percent a year."
+ ]
+}

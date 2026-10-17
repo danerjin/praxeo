@@ -1,0 +1,1 @@
+Halden Rent Limit (fictional control case). Rent may not exceed the rent charged on 1 January 2025 plus 10 percent for each year since. Since 2025 Halden's main employer has closed, its population has fallen by a fifth, and many apartment buildings stand half empty. Landlords now advertise a free first month to attract tenants.

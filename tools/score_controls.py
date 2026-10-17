@@ -20,7 +20,9 @@ def score(answers_root: Path) -> dict:
     for case in sorted(p for p in CONTROLS.iterdir() if (p / "expected.json").exists()):
         expected = json.loads((case / "expected.json").read_text())
         f = answers_root / case.name / "answers.json"
-        answers = {a["question_id"]: a for a in json.loads(f.read_text())} if f.exists() else {}
+        if not f.exists():
+            continue  # this run did not cover the case
+        answers = {a["question_id"]: a for a in json.loads(f.read_text())}
         for qid, want in expected.items():
             a = answers.get(qid)
             p = None if a is None else float(a["probability"])

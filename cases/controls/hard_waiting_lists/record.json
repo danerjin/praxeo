@@ -1,0 +1,28 @@
+{
+ "name": "Orrin Rent Freeze",
+ "jurisdiction": "fictional",
+ "rule_maker": "city council",
+ "enacted": "2030-01-01",
+ "effective": "2030-07-01",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "h8",
+   "instrument": "price_ceiling",
+   "good": "rental_housing",
+   "market": "city",
+   "bound_actor": "landlords.controlled",
+   "protected_actor": "tenants.controlled",
+   "excluded_actor": "tenants.prospective",
+   "vacancy_decontrol": false,
+   "source_sentences": [
+    "Rents are frozen at their level on 1 January 2030."
+   ]
+  }
+ ],
+ "unclear": [],
+ "context": [
+  "In Orrin, letting agents keep waiting lists of more than two years, and each advertised vacancy draws dozens of applications at the current rent.",
+  "New building has been slow for a decade."
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "name": "Halden Rent Limit",
+ "jurisdiction": "fictional",
+ "rule_maker": "city council",
+ "enacted": "2030-01-01",
+ "effective": "2030-07-01",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "h1",
+   "instrument": "price_ceiling",
+   "good": "rental_housing",
+   "market": "city",
+   "bound_actor": "landlords.controlled",
+   "protected_actor": "tenants.controlled",
+   "excluded_actor": "tenants.prospective",
+   "vacancy_decontrol": false,
+   "source_sentences": [
+    "Rent may not exceed the rent charged on 1 January 2025 plus 10 percent for each year since."
+   ]
+  }
+ ],
+ "unclear": [],
+ "context": [
+  "Since 2025 Halden's main employer has closed, its population has fallen by a fifth, and many apartment buildings stand half empty.",
+  "Landlords now advertise a free first month to attract tenants."
+ ]
+}

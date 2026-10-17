@@ -1,0 +1,27 @@
+{
+ "name": "Marden Soda Tax",
+ "jurisdiction": "fictional",
+ "rule_maker": "parliament",
+ "enacted": "2030-01-01",
+ "effective": "2030-01-01",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "h6",
+   "instrument": "per_unit_tax",
+   "good": "the_good",
+   "market": "country",
+   "bound_actor": "sellers.current",
+   "buyer_actor": "buyers.current",
+   "seller_actor": "sellers.current",
+   "source_sentences": [
+    "A tax of 30 cents per litre applies to sugar-sweetened soft drinks."
+   ]
+  }
+ ],
+ "unclear": [],
+ "context": [
+  "Shops in Marden sell bottled water, unsweetened tea, juice and diet drinks, none of which is taxed.",
+  "Soft drinks are made by several firms that also make the untaxed drinks."
+ ]
+}

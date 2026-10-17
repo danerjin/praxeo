@@ -1,0 +1,29 @@
+{
+ "name": "Irwell Rent Freeze",
+ "jurisdiction": "fictional",
+ "rule_maker": "city council",
+ "enacted": "2030-01-01",
+ "effective": "2030-07-01",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "h2",
+   "instrument": "price_ceiling",
+   "good": "rental_housing",
+   "market": "city",
+   "bound_actor": "landlords.controlled",
+   "protected_actor": "tenants.controlled",
+   "excluded_actor": "tenants.prospective",
+   "vacancy_decontrol": false,
+   "source_sentences": [
+    "Rents for sitting tenants are frozen at their 2030 level.",
+    "Enforcement of the freeze is assigned to the city's Housing Department."
+   ]
+  }
+ ],
+ "unclear": [],
+ "context": [
+  "The Housing Department's budget for the year is zero, it has no staff, and complaints are to be sent to its postal address.",
+  "Market rents in Irwell have risen about 9 percent a year for five years."
+ ]
+}
