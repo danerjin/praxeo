@@ -27,6 +27,52 @@ The praxeological method gives directions and conditions: rents for sitting tena
 4. **M1 says when it is strained.** Above a 15% price gap, a constant elasticity is a strong assumption, and the result carries a warning to treat it as indicative only.
 5. **Signs inside M1 come from praxeology.** Downward-sloping demand and non-negative supply response are the laws of demand and supply (LW-3, LW-4). A demand elasticity above zero is rejected, not used.
 
+## How the annex relates to the core rules
+
+**1. The core rules constrain the mathematics, never the reverse.**
+- Directions come from the core rules and the laws. Downward-sloping demand and a non-negative supply response are LW-3 and LW-4; a demand elasticity above zero is rejected, not used. The annex sizes those directions and derives none.
+- Methods are excluded exactly where they conflict with the core rules:
+  - Keynesian multipliers contradict CR-8: means taken by a tax come from other uses.
+  - Surplus and deadweight loss in money contradict the ordinal value behind CR-2 and CR-3.
+  - Monopoly and game models replace CR-4's ordinal margin with an assumed model of how people decide.
+- A range with the opposite sign to the praxeological consequence is reported as *contradicts*. It means an input range is wrong or a praxeological premise failed. The annex never resolves it by changing the sign.
+
+**2. Where each part attaches.**
+
+| Core rule | What the core rule decides | What the annex can add |
+|---|---|---|
+| CR-3, CR-8 (cost; conservation of means) | Who bears a loss; that means taken come from other uses | How much: inflation tax, debt dynamics, sectoral balances |
+| CR-4 (response at the margin) | Direction of every switch; the means exception is `ambiguous` without a premise | `spending_change` (whether spending on the good rises or falls); `expected_penalty` (evidence for an enforcement premise) |
+| CR-5 (exchange) | Exchanges that no longer happen (CR-5a) | `quantity_under_wedge`: how many, counted, never valued |
+| CR-6 (price formation, displaced pressure) | Shortage, surplus, and pressure moved to other margins | Shortage, surplus, equilibrium shift, tax and subsidy incidence, wait times (Little's law) |
+| CR-7 (equalization across uses; CR-7c) | Resources move; asset values change when the policy is expected | Present value, capitalized loss, quota and licence values |
+| CR-9 (propagation) | The chain to linked markets | Cost pass-through (a bound); imports as use minus domestic output |
+| CR-10 (time) | Timing per window | Price-gap paths (when a cap starts to bind), stock-flow (how fast a durable stock shrinks), doubling times |
+| CR-12 (composition) | Opposing chains combine to `ambiguous` unless arithmetic or a premise settles them | See point 3 |
+
+CR-1, CR-2 and CR-11 (what a policy can do to an actor, choice, knowledge) have no counterpart here, and should not have one.
+
+**3. CR-12 is the one point of contact, and it is guarded.** CR-12e (0.8) already allows opposing chains to be combined by arithmetic where the case gives the figures, and by a premise otherwise. The annex respects that line:
+- **M0 on the case's own figures may settle.** `bridge.settle_by_arithmetic` lets an M0 result settle a CR-12 comparison only when every input it used comes from the case record (`from_case: true`). That is the arithmetic CR-12e already allows, done in code.
+- **M1, or any result on illustrative or outside ranges, can only be evidence.** `bridge.premise_evidence` proposes a probability for the dominance premise, with its source:
+  - one range wholly larger than the other gives 0.9 or 0.1;
+  - overlapping ranges give no change.
+
+  It never writes the probability. A decider (LLM, human or Jev) must accept it, and the source is logged. `settle_by_arithmetic` raises `GuardError` if it is given such a result.
+
+Without this guard, an elasticity guess could decide a sign through the back door.
+
+**4. Two labels, never merged.** A consequence keeps its tier (A, B, J, C), which says how its sign was derived. An annex result carries a rung (M0, M1), which says what its size assumes. A Tier A sign with an M1 size is Tier A for its sign; the size is only as good as its ranges.
+
+**5. One-way dependency, checked.** `bridge.annex_pass` reads a frozen `prediction.json` from `praxeo`. For each reported consequence whose variable has a handler, it attaches a range, its rung, the sign check and the source of every input. It verifies that the prediction is unchanged and raises `GuardError` if not. Nothing in `praxeo/` or `handbook/` imports the annex.
+
+```
+python3 -m praxeo cases/sf_1994 --out runs/sf
+python3 math-augmented-praxeo/annex_run.py runs/sf/prediction.json math-augmented-praxeo/examples/sf_1994/annex_inputs.json runs/sf
+```
+
+`examples/sf_1994/annex.md` is the result for the committed sample run. Both attachments agree with their signs: the covered stock's quantity supplied, and sitting tenants' rent against the market path. All ranges but the horizon are illustrative.
+
 ## The equation of exchange
 
 M V = P Y is used as an **identity** (rung M0). In growth factors it holds exactly: (1 + p) = (1 + m)(1 + v) / (1 + y). The identity is close to a priori: it restates that spending equals spending. The *quantity theory* goes further and assumes that velocity and real output do not respond to money. That claim is empirical, so here it enters only as ranges the analyst supplies for v and y.
@@ -44,6 +90,8 @@ Mises rejected the equation as an explanation (*Theory of Money and Credit*, Par
 | `mathpraxeo/capital.py` | M0 | Gap path between a capped and a market price, the gap as a share of the market price, the capitalized loss, and the present value of a yearly amount (for license, quota and tax values). |
 | `mathpraxeo/statics.py` | M1 (quota rent: M0) | Supply and demand intersection; ceiling shortage, floor surplus, quantity supplied under a held-down price; tax and subsidy incidence; exchanges forgone; tariff; quota rent; spending change; cost pass-through bound; tax revenue with base response. |
 | `mathpraxeo/report.py` | — | Renders an annex table with the sign check for each consequence. |
+| `mathpraxeo/bridge.py` | — | The annex pass over a `praxeo` prediction, with its guards: `annex_pass`, `premise_evidence`, `settle_by_arithmetic`, `GuardError`. |
+| `annex_run.py` | — | Command line for the annex pass. |
 
 ## Examples
 
@@ -69,5 +117,6 @@ python3 math-augmented-praxeo/examples/we001_annex.py
 ## Status and next steps
 
 - This is a folder on the working branch, not a separate branch. A separate branch can be cut from it if wanted.
-- Not yet connected to `praxeo/`. The natural hook is an optional pass after the verifier: for each reported consequence whose variable has an annex function, attach a `Result` and its sign check, without touching the consequence.
+- The annex pass has handlers for `quantity_supplied`, `excess_demand` and the insiders' `price_paid`. More handlers (asset values, tariff consequences, wait times) follow the same pattern.
+- Premise evidence is computed but not yet offered to a decider in the `praxeo` run; that needs a step where the decider sees the proposal and accepts or rejects it, logged.
 - Bounds not yet built (see `SURVEY.md`): the black-market price under a ceiling, the Hotelling rule, rent-seeking dissipation, covered interest parity.

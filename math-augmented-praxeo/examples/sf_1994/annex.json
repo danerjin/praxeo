@@ -1,0 +1,65 @@
+[
+ {
+  "consequence_id": "C-1",
+  "actor_class": "landlords.controlled",
+  "variable": "quantity_supplied",
+  "praxeological_sign": "decrease",
+  "result": {
+   "name": "quantity_supplied_change",
+   "range": [
+    -0.34091847680000026,
+    -0.012879737996630128
+   ],
+   "rung": "M1",
+   "assumptions": [
+    "price held [0.04293, 0.3409] below clearing",
+    "supply elasticity [0.3, 1] at the relevant horizon"
+   ],
+   "note": "First order is strained: the gap reaches 34%, beyond 15%; treat the range as indicative only."
+  },
+  "sign_check": "agrees",
+  "inputs_used": [
+   "market_growth",
+   "cap_growth",
+   "gap_year",
+   "supply_elasticity"
+  ],
+  "sources": [
+   "market_growth: illustrative; to be sourced from pre-1994 San Francisco rent series",
+   "cap_growth: 60% of regional CPI (case text) times a CPI range of 2% to 3.5% (illustrative)",
+   "gap_year: horizon chosen for the annex (medium run)",
+   "supply_elasticity: illustrative long-run elasticity of rental supply from the covered stock"
+  ]
+ },
+ {
+  "consequence_id": "C-3",
+  "actor_class": "tenants.controlled",
+  "variable": "price_paid",
+  "praxeological_sign": "decrease",
+  "result": {
+   "name": "insiders_price_vs_market",
+   "range": [
+    -0.34091847680000026,
+    -0.042932459988767095
+   ],
+   "rung": "M0",
+   "assumptions": [
+    "market growth [0.03, 0.1]",
+    "cap growth [0.012, 0.021]",
+    "year 5"
+   ],
+   "note": "Sitting tenants' rent against the market path, as a share of the market rent."
+  },
+  "sign_check": "agrees",
+  "inputs_used": [
+   "market_growth",
+   "cap_growth",
+   "gap_year"
+  ],
+  "sources": [
+   "market_growth: illustrative; to be sourced from pre-1994 San Francisco rent series",
+   "cap_growth: 60% of regional CPI (case text) times a CPI range of 2% to 3.5% (illustrative)",
+   "gap_year: horizon chosen for the annex (medium run)"
+  ]
+ }
+]

@@ -1,0 +1,7 @@
+{
+ "_note": "Ranges for the annex pass on the San Francisco 1994 thin-slice run. All but gap_year are ILLUSTRATIVE and must be sourced from material dated before enactment before this annex means anything.",
+ "market_growth": {"value": [0.03, 0.10], "source": "illustrative; to be sourced from pre-1994 San Francisco rent series", "from_case": false},
+ "cap_growth": {"value": [0.012, 0.021], "source": "60% of regional CPI (case text) times a CPI range of 2% to 3.5% (illustrative)", "from_case": false},
+ "gap_year": {"value": 5, "source": "horizon chosen for the annex (medium run)", "from_case": true},
+ "supply_elasticity": {"value": [0.3, 1.0], "source": "illustrative long-run elasticity of rental supply from the covered stock", "from_case": false}
+}
