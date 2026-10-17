@@ -4,7 +4,9 @@
   "value": "yes",
   "probability": 0.85,
   "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-1 (binding): imports remain a meaningful share of supply and foreign sellers do not absorb most of the tariff; Halvern buys a small share of world steel.",
-  "evidence": ["Halvern buys a small share of the world's steel."]
+  "evidence": [
+   "Halvern buys a small share of the world's steel."
+  ]
  },
  {
   "question_id": "k1.domestic_substitutes",
@@ -18,7 +20,9 @@
   "value": "yes",
   "probability": 0.6,
   "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-8: the fall in steel imports is not offset by capital flows or other adjustments within the medium horizon.",
-  "evidence": ["Halvern is a mid-sized trading country with its own currency and a floating exchange rate."]
+  "evidence": [
+   "Halvern is a mid-sized trading country with its own currency and a floating exchange rate."
+  ]
  },
  {
   "question_id": "k1.input_not_replaceable",
@@ -32,6 +36,106 @@
   "value": "yes",
   "probability": 0.8,
   "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-7 (substitutability): many steel users compete with imported finished goods that are not taxed.",
-  "evidence": ["Imported fabricated steel products and finished goods containing steel (machinery, vehicles, appliances, fabricated structural sections, fasteners) are not covered."]
+  "evidence": [
+   "Imported fabricated steel products and finished goods containing steel (machinery, vehicles, appliances, fabricated structural sections, fasteners) are not covered."
+  ]
+ },
+ {
+  "question_id": "k1.enforcement_budget_raised",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-16 (revenue_use): the budgets of customs and the exclusion office are raised to cover the new work.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-3: some imports can be reshaped to fall outside the tariff's definitions at a cost below 25%.",
+  "evidence": [
+   "Imported fabricated steel products and finished goods containing steel are not covered."
+  ]
+ },
+ {
+  "question_id": "k1.relief_discretionary",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-5: exclusions are decided case by case, with weight given to objections from the mills.",
+  "evidence": [
+   "Domestic steelmakers may object."
+  ]
+ },
+ {
+  "question_id": "k1.relief_valuable",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No row of WE-013's assumption table covers this premise on its own; the probability is an illustrative figure chosen for this fixture, not a table value. WE-013 treats an exclusion as valuable (C-11 text), but A-5 covers only the discretion.",
+  "evidence": [
+   "Exclusions last one year and must be renewed."
+  ]
+ },
+ {
+  "question_id": "k1.beneficiaries_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-6: steelmakers and users organize to influence renewal and exclusions. A-6 joins both groups; the same figure is used for each of the two questions.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.harmed_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-6: steelmakers and users organize to influence renewal and exclusions. A-6 joins both groups; the same figure is used for each of the two questions.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expects_extension",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-10 (expectations): steelmakers expect the tariff to be renewed at the year-three review.",
+  "evidence": [
+   "A review in the third year may extend it."
+  ]
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-11 (expectations): investors expect the tariff to stay in force for at least its three-year term.",
+  "evidence": [
+   "Importers of record must pay a tariff of 25% of the customs value on imports of flat-rolled and long steel products, for three years."
+  ]
+ },
+ {
+  "question_id": "k1.asset_supply_slow",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No row of WE-013's assumption table covers this premise on its own; the probability is an illustrative figure chosen for this fixture, not a table value. SB-4 needs assets in fixed or slowly expandable supply; WE-013 leaves it implicit for mills and plants with specific capital.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_relocate_capital",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-9 (mobility): some steel-using firms have the option of producing abroad when plants are replaced.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.substitute_supply_expands",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "No row of WE-013's assumption table covers this premise on its own; the probability is an illustrative figure chosen for this fixture, not a table value. RS-1 needs the substitute's supply to be able to expand for quantity_substitute to rise as a traded quantity; WE-013 leaves it implicit (A-7 covers competition only).",
+  "evidence": [
+   "Imported fabricated steel products and finished goods containing steel are not covered."
+  ]
+ },
+ {
+  "question_id": "k1.exporters_price_takers",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-15 (substitutability): Halvern's machinery exporters sell at prices set in world markets.",
+  "evidence": [
+   "machinery makers export about 35% of their output"
+  ]
  }
 ]

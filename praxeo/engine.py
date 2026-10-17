@@ -52,8 +52,21 @@ def _tax_facts(c: str, comp) -> list[str]:
              f'revenue({c}, "{comp.revenue_actor}").',
              f'exporter({c}, "{comp.exporter_actor}").',
              f'exporter_worker({c}, "{comp.exporter_worker_actor or "workers." + comp.exporter_actor}").']
+    lines.append(f'taxpayer({c}, "{comp.taxpayer_actor}").')
+    lines.append(f'foreign_seller({c}, "{comp.foreign_seller_actor}").')
+    for pred, actor in (("input_supplier", comp.input_supplier_actor), ("seller_owner", comp.domestic_seller_owner_actor),
+                        ("relief_applicant", comp.relief_applicant_actor)):
+        if actor:
+            lines.append(f'{pred}({c}, "{actor}").')
+    for pred, flag in (("renewable", comp.renewable), ("definition_line", comp.definition_line)):
+        if flag:
+            lines.append(f"{pred}({c}).")
     for d in comp.downstream:
         lines.append(f'downstream({c}, "{d.actor}", "{d.buyer_actor}", {d.competitors}).')
+        if d.owner_actor:
+            lines.append(f'downstream_owner({c}, "{d.actor}", "{d.owner_actor}").')
+        if d.exporter_actor:
+            lines.append(f'downstream_exporter({c}, "{d.actor}", "{d.exporter_actor}").')
     return lines
 
 
@@ -111,20 +124,101 @@ def readings(record: PolicyRecord) -> list[tuple[str, str]]:
     return out
 
 
+class _Ground:
+    """Collects the ground program (clingo observer) so that labels can be computed without enumerating models."""
+
+    def __init__(self) -> None:
+        self.rules: list[tuple[bool, list[int], list[int]]] = []
+        self.shown: list[tuple[clingo.Symbol, int]] = []
+        self.unsupported = False
+
+    def rule(self, choice, head, body):
+        self.rules.append((choice, list(head), list(body)))
+
+    def weight_rule(self, *args, **kwargs):
+        self.unsupported = True
+
+    def minimize(self, *args, **kwargs):
+        self.unsupported = True
+
+    def output_atom(self, symbol, atom):
+        self.shown.append((symbol, atom))
+
+
+def _horn_labels(program: str):
+    """Labels by forward propagation over the ground program: for every shown atom, the minimal sets of
+    `holds` atoms under which it is derived. Valid when the ground program is definite (every rule has one head
+    atom and positive body literals; `not exception(...)` literals are resolved by the grounder because exceptions
+    are facts or absent). Returns None when it is not, and the caller enumerates models instead."""
+    g = _Ground()
+    ctl = clingo.Control(["0", "--warn=none"])
+    for rules in RULES:
+        ctl.load(str(rules))
+    ctl.add("base", [], program)
+    ctl.register_observer(g)
+    ctl.ground([("base", [])], context=_Context())
+    if g.unsupported:
+        return None
+    label: dict[int, set[frozenset[str]]] = {}
+    for choice, head, body in g.rules:
+        if len(head) != 1 or any(b < 0 for b in body):
+            return None
+    holds_name = {atom: str(sym.arguments[0]) for sym, atom in g.shown if atom and sym.name == "holds"}
+    pending = [(h[0], b) for c, h, b in g.rules if not c]
+    for c, h, b in g.rules:
+        if c:
+            if b or h[0] not in holds_name:
+                return None
+            label[h[0]] = {frozenset([holds_name[h[0]]])}
+
+    def add(atom: int, sets: set[frozenset[str]]) -> bool:
+        cur = label.get(atom, set())
+        merged = cur | sets
+        minimal = {s for s in merged if not any(o < s for o in merged)}
+        if minimal == cur:
+            return False
+        label[atom] = minimal
+        return True
+
+    changed = True
+    while changed:
+        changed = False
+        for head, body in pending:
+            if all(b in label for b in body):
+                combos = {frozenset()}
+                for b in body:
+                    combos = {x | y for x in combos for y in label[b]}
+                    combos = {s for s in combos if not any(o < s for o in combos)}
+                changed |= add(head, combos)
+    out: dict[clingo.Symbol, list[frozenset[str]]] = {}
+    for sym, atom in g.shown:
+        if sym.name in ("fired", "effect"):
+            sets = {frozenset()} if atom == 0 else label.get(atom)
+            if sets:
+                out[sym] = list(sets)
+    return out
+
+
 def _derive(program: str, assumptions: dict[str, Assumption]) -> dict[tuple, dict]:
     """One engine run. Returns {(actor, variable): {sign, horizon, visibility, tier, concl, sets, steps}}."""
     labels: dict[tuple, list[frozenset[str]]] = {}
     steps: dict[str, set[tuple[str, str]]] = {}
-    for model in _models(program):
-        held = frozenset(str(s.arguments[0]) for s in model if s.name == "holds")
-        for s in model:
-            if s.name == "fired":
-                rule, concl, prem = (str(a) for a in s.arguments)
-                steps.setdefault(concl, set()).add((rule, prem))
-            elif s.name == "effect":
-                concl = str(s.arguments[0])
-                key = tuple(a.string if a.type == clingo.SymbolType.String else a.name for a in s.arguments[1:])
-                labels.setdefault((concl, *key), []).append(held)
+    horn = _horn_labels(program)
+    if horn is not None:
+        pairs = [(s, sets) for s, sets in horn.items()]
+    else:
+        pairs = []
+        for model in _models(program):
+            held = frozenset(str(s.arguments[0]) for s in model if s.name == "holds")
+            pairs += [(s, [held]) for s in model if s.name in ("fired", "effect")]
+    for s, sets in pairs:
+        if s.name == "fired":
+            rule, concl, prem = (str(a) for a in s.arguments)
+            steps.setdefault(concl, set()).add((rule, prem))
+        else:
+            concl = str(s.arguments[0])
+            key = tuple(a.string if a.type == clingo.SymbolType.String else a.name for a in s.arguments[1:])
+            labels.setdefault((concl, *key), []).extend(sets)
     out = {}
     for (concl, actor, variable, sign, horizon, visibility, tier), sets in labels.items():
         minimal = sorted({s for s in sets if not any(o < s for o in sets)}, key=lambda s: (len(s), sorted(s)))

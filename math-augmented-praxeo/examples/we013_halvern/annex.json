@@ -34,7 +34,7 @@
   ]
  },
  {
-  "consequence_id": "C-3",
+  "consequence_id": "C-5",
   "actor_class": "importers",
   "variable": "quantity_traded",
   "praxeological_sign": "decrease",
@@ -79,7 +79,52 @@
   ]
  },
  {
-  "consequence_id": "C-6",
+  "consequence_id": "C-11",
+  "actor_class": "officials.enforcement",
+  "variable": "tax_revenue_vs_static_projection",
+  "praxeological_sign": "decrease",
+  "handler": "tariff_revenue_shortfall",
+  "result": {
+   "name": "imports_change",
+   "range": [
+    -0.8026315789473686,
+    -0.11285714285714288
+   ],
+   "rung": "M1",
+   "assumptions": [
+    "tariff [0.25, 0.25]",
+    "import share [0.38, 0.42]",
+    "demand elasticity [-0.6, -0.2]",
+    "domestic supply elasticity [0.2, 1]",
+    "pass-through to the domestic price [0.6, 1]",
+    "first order"
+   ],
+   "note": "First order is strained: the gap reaches 25%, beyond 15%; treat the range as indicative only."
+  },
+  "sign_check": "agrees",
+  "inputs_used": [
+   "tax_rate",
+   "import_share",
+   "demand_elasticity",
+   "supply_elasticity",
+   "pass_through"
+  ],
+  "sources": [
+   "tax_rate: WE-013 K1: 25% of the customs value",
+   "import_share: WE-013 record: domestic firms supply about 60% of use, so imports are about 40% (range for rounding)",
+   "demand_elasticity: illustrative medium-run elasticity of steel demand",
+   "supply_elasticity: illustrative medium-run elasticity of domestic steel supply from spare and idle capacity",
+   "pass_through: illustrative: share of the tariff in the domestic price (1 for a small buyer on the world market; less if foreign sellers absorb part)"
+  ],
+  "diagnosis": "",
+  "rules": [
+   "MR-2",
+   "MR-4",
+   "MR-6"
+  ]
+ },
+ {
+  "consequence_id": "C-18",
   "actor_class": "steel_users",
   "variable": "price_paid",
   "praxeological_sign": "increase",
@@ -122,7 +167,51 @@
   ]
  },
  {
-  "consequence_id": "C-9",
+  "consequence_id": "C-20",
+  "actor_class": "steel_users",
+  "variable": "quantity_traded",
+  "praxeological_sign": "decrease",
+  "handler": "tariff_use",
+  "result": {
+   "name": "use_change",
+   "range": [
+    -0.15,
+    -0.03
+   ],
+   "rung": "M1",
+   "assumptions": [
+    "tariff [0.25, 0.25]",
+    "import share [0.38, 0.42]",
+    "demand elasticity [-0.6, -0.2]",
+    "domestic supply elasticity [0.2, 1]",
+    "pass-through to the domestic price [0.6, 1]",
+    "first order"
+   ],
+   "note": ""
+  },
+  "sign_check": "agrees",
+  "inputs_used": [
+   "tax_rate",
+   "import_share",
+   "demand_elasticity",
+   "supply_elasticity",
+   "pass_through"
+  ],
+  "sources": [
+   "tax_rate: WE-013 K1: 25% of the customs value",
+   "import_share: WE-013 record: domestic firms supply about 60% of use, so imports are about 40% (range for rounding)",
+   "demand_elasticity: illustrative medium-run elasticity of steel demand",
+   "supply_elasticity: illustrative medium-run elasticity of domestic steel supply from spare and idle capacity",
+   "pass_through: illustrative: share of the tariff in the domestic price (1 for a small buyer on the world market; less if foreign sellers absorb part)"
+  ],
+  "diagnosis": "",
+  "rules": [
+   "MR-4",
+   "MR-6"
+  ]
+ },
+ {
+  "consequence_id": "C-26",
   "actor_class": "steelmakers.domestic",
   "variable": "net_price_received",
   "praxeological_sign": "increase",
@@ -165,7 +254,7 @@
   ]
  },
  {
-  "consequence_id": "C-10",
+  "consequence_id": "C-27",
   "actor_class": "steelmakers.domestic",
   "variable": "quantity_supplied",
   "praxeological_sign": "increase",

@@ -23,12 +23,20 @@ Actor roles. The rules attach consequences to the role fields, so fill every rol
 instrument, even when the text states no aim:
 - price_ceiling: bound_actor (sellers bound by the cap), protected_actor (buyers who hold the good at the capped
   price), excluded_actor (buyers seeking the good), vacancy_decontrol (true if the price of a new contract is free).
-- per_unit_tax: bound_actor (who pays it to the state), buyer_actor, seller_actor, revenue_actor (who collects).
+- per_unit_tax: bound_actor (who pays it to the state), buyer_actor, seller_actor, revenue_actor (who collects),
+  taxpayer_actor (who funds new administration; default taxpayers), definition_line (true if the definitions or
+  exemptions draw a line between covered and uncovered goods), relief_applicant_actor (who may apply for
+  case-by-case exclusions or waivers, if the text provides them).
 - tariff: bound_actor and importer_actor (importers of record), buyer_actor (domestic users of the good),
   domestic_seller_actor and protected_actor (domestic producers the tariff shelters), revenue_actor,
   exporter_actor and exporter_worker_actor (export industries and their workers), and `downstream` (each group
-  that uses the good as an input, the buyers of its output, and whether its competitors face the same cost or
-  are exempt, e.g. imported finished goods).
+  that uses the good as an input, the buyers of its output, whether its competitors face the same cost or
+  are exempt, e.g. imported finished goods, and where the text names them, owner_actor (owners of those firms) and
+  exporter_actor (their exporting part)); also, where the text gives them: foreign_seller_actor, taxpayer_actor,
+  input_supplier_actor (suppliers of inputs to the protected producers), domestic_seller_owner_actor (their
+  owners), renewable (true if the measure expires or is reviewed and may be renewed or extended),
+  definition_line (true if the definitions or exemptions draw a line between covered and uncovered goods) and
+  relief_applicant_actor (who may apply for case-by-case exclusions or waivers).
 Name actor classes from the controlled list below where one fits. Otherwise use role.qualifier
 (e.g. sellers.domestic_steel); never invent a new name when a listed one fits."""
 

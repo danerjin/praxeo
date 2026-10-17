@@ -18,6 +18,8 @@ class Downstream(BaseModel):
     actor: str = Field(description="Actor class that uses the good as an input, e.g. steel_users")
     buyer_actor: str = Field(default="", description="Actor class that buys their output; needed when competitors face the same cost")
     competitors: Literal["same", "exempt"] = "same"
+    owner_actor: Optional[str] = Field(default=None, description="Owners of these users' firms (SB-4), e.g. owners.steel_users")
+    exporter_actor: Optional[str] = Field(default=None, description="The exporting part of these users, who sell at world prices (RS-6)")
 
     @model_validator(mode="after")
     def _buyer_for_same(self) -> "Downstream":
@@ -46,6 +48,13 @@ class Component(BaseModel):
     exporter_actor: str = Field(default="export_industries", description="Tariffs: export industries linked to imports through the currency (TX-8)")
     exporter_worker_actor: Optional[str] = Field(default=None, description="Tariffs: their workers; defaults to workers.<exporter_actor>")
     downstream: list[Downstream] = Field(default=[], description="Users of the good as an input (RS-14)")
+    taxpayer_actor: str = Field(default="taxpayers", description="Taxes and tariffs: who funds new administration if the agency budget rises (OC-3)")
+    foreign_seller_actor: str = Field(default="sellers.foreign", description="Tariffs: foreign sellers of the tariffed good (OC-4)")
+    input_supplier_actor: Optional[str] = Field(default=None, description="Tariffs: suppliers of inputs to the protected domestic producers (CR-9)")
+    domestic_seller_owner_actor: Optional[str] = Field(default=None, description="Tariffs: owners of the protected domestic producers (SB-4)")
+    renewable: bool = Field(default=False, description="True when the gain depends on a later decision: the measure expires or is reviewed, and may be renewed or extended (RS-7, TS-2)")
+    definition_line: bool = Field(default=False, description="True when the definitions or exemptions draw a line between covered and uncovered goods (RS-5)")
+    relief_applicant_actor: Optional[str] = Field(default=None, description="Who may apply to officials for exclusions, waivers or exemptions granted case by case (RS-15)")
     source_sentences: list[str] = Field(description="Sentences of the policy text this component rests on, quoted exactly")
 
     @field_validator("instrument")
