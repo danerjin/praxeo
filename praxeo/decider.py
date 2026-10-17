@@ -17,10 +17,12 @@ from .schema import Answer, PolicyRecord, Question
 MODEL = "claude-opus-5-5"
 
 DECIDER_SYSTEM = """You answer one narrow typed question about a policy, for a praxeological policy analysis.
-Reason only from the policy record and the context facts given, as they stood when the policy was enacted.
+Reason from the policy record, its context facts, and what was generally knowable when the policy was enacted.
 Do not use any knowledge of what happened after the enactment date: the answer is a prediction, scored later.
 For a yes/no (noul) question, `value` is "yes" or "no" and `probability` is your probability that the answer is yes.
-Cite in `evidence` the record or context lines your answer rests on, quoted exactly."""
+Cite in `evidence` the record or context lines your answer rests on, quoted exactly.
+Before answering, check that your probability agrees with your rationale: if the rationale argues for yes, p is above 0.5.
+Where the record is silent, say so and answer from what was generally knowable at enactment; silence is not evidence against."""
 
 
 class Decider(Protocol):

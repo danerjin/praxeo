@@ -48,6 +48,35 @@ def check_instrument(name: str) -> str | None:
     return None if name in instruments() else f"instrument `{name}` is not in 02_ontology.md section 2.3"
 
 
+@lru_cache(maxsize=1)
+def actor_classes(min_examples: int = 2) -> tuple[str, ...]:
+    """Controlled list of actor-class names for parsers: the classes in 02_ontology.md 2.2, plus every name
+    used in the consequence lists of at least `min_examples` worked examples (handbook/05_examples)."""
+    from collections import Counter
+    text = ONTOLOGY.read_text()
+    section = text[text.index("## 2.2"):text.index("## 2.3")]
+    names = set(re.findall(r"^\| `([a-z_]+(?:\.[a-z_]+)*)`", section, re.M))
+    for pair in re.findall(r"^\| `([a-z_.]+)`, `([a-z_.]+)`", section, re.M):
+        names.update(pair)
+    counts: Counter = Counter()
+    for path in sorted((ONTOLOGY.parent / "05_examples").glob("WE-*.md")):
+        body = path.read_text()
+        if "## Consequence list" not in body:
+            continue
+        table = body.split("## Consequence list", 1)[1].split("## Gaps", 1)[0]
+        used = set()
+        for line in table.splitlines():
+            cells = [c.strip() for c in line.strip("|").split("|")]
+            if len(cells) > 3 and re.match(r"C-\d+", cells[0]):
+                for a in re.split(r",\s*", cells[1]):
+                    a = a.strip("` ").split(" (")[0].strip("` ")
+                    if re.fullmatch(r"[a-z_]+(\.[a-z_]+)*", a):
+                        used.add(a)
+        counts.update(used)
+    names |= {n for n, k in counts.items() if k >= min_examples}
+    return tuple(sorted(names))
+
+
 def check_variable(name: str) -> str | None:
     return None if name in variables() else f"variable `{name}` is not in 02_ontology.md section 2.4"
 

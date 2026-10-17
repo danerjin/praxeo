@@ -23,11 +23,39 @@ from praxeo.pipeline import run_case  # noqa: E402
 from praxeo.questions import questions_for  # noqa: E402
 from praxeo.schema import PolicyRecord  # noqa: E402
 
-ROLE_FIELDS = ("instrument", "bound_actor", "protected_actor", "excluded_actor", "vacancy_decontrol")
+ROLE_FIELDS = ("instrument", "bound_actor", "protected_actor", "excluded_actor", "vacancy_decontrol", "buyer_actor",
+               "seller_actor", "domestic_seller_actor", "importer_actor", "revenue_actor", "exporter_actor",
+               "exporter_worker_actor")
 
 
-def _rows(result: dict) -> set:
-    return {(c["actor_class"], c["variable"], c["sign"]) for c in result["prediction"]["consequences"] if c["reported"]}
+def _rows(result: dict, rename: dict | None = None) -> set:
+    rename = rename or {}
+    return {(rename.get(c["actor_class"], c["actor_class"]), c["variable"], c["sign"])
+            for c in result["prediction"]["consequences"] if c["reported"]}
+
+
+def _role_map(llm: PolicyRecord, fixture: PolicyRecord) -> dict:
+    """LLM actor name -> fixture actor name, paired by role field (and downstream groups by order and type),
+    so the comparison tests whether the parser found the roles, not whether it chose the same labels.
+    Subclass suffixes the rules add (.keepers, .displaced) follow their parent."""
+    m = {}
+    for fc, lc in zip(fixture.components, llm.components):
+        if fc.instrument != lc.instrument:
+            continue
+        for f in ROLE_FIELDS[1:]:
+            fv, lv = getattr(fc, f, None), getattr(lc, f, None)
+            if isinstance(fv, str) and isinstance(lv, str) and fv and lv:
+                m.setdefault(lv, fv)
+        for fd, ld in zip(sorted(fc.downstream, key=lambda d: d.competitors), sorted(lc.downstream, key=lambda d: d.competitors)):
+            m.setdefault(ld.actor, fd.actor)
+            if ld.buyer_actor and fd.buyer_actor:
+                m.setdefault(ld.buyer_actor, fd.buyer_actor)
+    for k, v in list(m.items()):
+        for suffix in (".keepers", ".displaced"):
+            m[k + suffix] = v + suffix
+        if not k.startswith("workers."):
+            m.setdefault("workers." + k, "workers." + v)
+    return {k: v for k, v in m.items() if k != v}
 
 
 def _remap_answers(answers: list[dict], record: PolicyRecord, out: Path) -> Path:
@@ -60,7 +88,9 @@ def main(case: Path, llm: Path, out: Path) -> None:
         lines.append("- Citation check: " + ("every quoted sentence found in the text." if not problems else "; ".join(problems)))
         for i, (fc, lc) in enumerate(zip(fixture_record.components, llm_record.components)):
             for f in ROLE_FIELDS:
-                fv, lv = getattr(fc, f), getattr(lc, f)
+                fv, lv = getattr(fc, f, None), getattr(lc, f, None)
+                if f not in ("instrument", "bound_actor", "vacancy_decontrol") and fv in (None, "") and lv in (None, ""):
+                    continue
                 mark = "same" if fv == lv else "DIFFERS"
                 lines.append(f"- Component {i + 1} `{f}`: fixture `{fv}`, LLM `{lv}` ({mark})")
         shutil.copy(llm / "record.json", out / "record.json")
@@ -91,8 +121,10 @@ def main(case: Path, llm: Path, out: Path) -> None:
     base = run_case(case, fixture_record, FixtureDecider(case / "answers.json"), out / "run_fixture")
     run_a = run_case(case, fixture_record, FixtureDecider(out / "answers.json"), out / "run_llm_decider")
     runs = [("fixtures (baseline)", base), ("fixture record + LLM answers", run_a)]
+    rename = {}
     if llm_record is not None:
         remapped = _remap_answers(llm_answers, llm_record, out / "answers_remapped.json")
+        rename = _role_map(llm_record, fixture_record)
         try:
             runs.append(("LLM record + LLM answers", run_case(case, llm_record, FixtureDecider(remapped), out / "run_llm_both")))
         except Exception as e:
@@ -100,12 +132,16 @@ def main(case: Path, llm: Path, out: Path) -> None:
     lines += ["", "## Pipeline runs", "", "| Run | Reported | Only in this run | Missing vs baseline | F1 | Brier |", "|---|---|---|---|---|---|"]
     b = _rows(base)
     for name, r in runs:
-        rows = _rows(r)
+        rows = _rows(r, rename if name.startswith("LLM record") else None)
         s = r.get("score") or {}
         f1 = s.get("headline", {}).get("f1") if s else None
         brier = s.get("brier", {}).get("mean") if s else None
         lines.append(f"| {name} | {len(rows)} | {sorted(rows - b) or '-'} | {sorted(b - rows) or '-'} | "
                      f"{'n/a' if f1 is None else f'{f1:.2f}'} | {'n/a' if brier is None else f'{brier:.2f}'} |")
+    if rename:
+        lines += ["", "Actor names in the LLM record, mapped to the fixture's by role before comparing rows: " +
+                  "; ".join(f"`{k}` -> `{v}`" for k, v in sorted(rename.items()) if not k.endswith((".keepers", ".displaced"))
+                            and not k.startswith("workers."))]
     (out / "comparison.md").write_text("\n".join(lines) + "\n")
     print((out / "comparison.md").read_text())
 

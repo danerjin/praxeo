@@ -13,12 +13,30 @@ from .decider import MODEL
 from .schema import PolicyRecord
 
 PARSER_SYSTEM = """You turn the text of a policy into a structured policy record for a praxeological analysis.
-For each operative provision, give one component: the instrument, the good and market, the actor class it binds
-and the actor class it is meant to benefit (use ontology names such as landlords.controlled, tenants.controlled,
-tenants.prospective, buyers.prospective), and the sentences of the text it rests on, quoted exactly.
+For each operative provision, give one component: the instrument, the good and market, the actor classes it
+affects, and the sentences of the text it rests on, quoted exactly.
 If a provision can be read more than one way, record it under `unclear` with each reading; do not pick one.
 Leave `reading_facts` empty: it takes engine facts written by a person, not text.
-Copy into `context` only facts stated in the text about the market at enactment. Use nothing from after the enactment date."""
+Copy into `context` only facts stated in the text about the market at enactment. Use nothing from after the enactment date.
+
+Actor roles. The rules attach consequences to the role fields, so fill every role field that applies to the
+instrument, even when the text states no aim:
+- price_ceiling: bound_actor (sellers bound by the cap), protected_actor (buyers who hold the good at the capped
+  price), excluded_actor (buyers seeking the good), vacancy_decontrol (true if the price of a new contract is free).
+- per_unit_tax: bound_actor (who pays it to the state), buyer_actor, seller_actor, revenue_actor (who collects).
+- tariff: bound_actor and importer_actor (importers of record), buyer_actor (domestic users of the good),
+  domestic_seller_actor and protected_actor (domestic producers the tariff shelters), revenue_actor,
+  exporter_actor and exporter_worker_actor (export industries and their workers), and `downstream` (each group
+  that uses the good as an input, the buyers of its output, and whether its competitors face the same cost or
+  are exempt, e.g. imported finished goods).
+Name actor classes from the controlled list below where one fits. Otherwise use role.qualifier
+(e.g. sellers.domestic_steel); never invent a new name when a listed one fits."""
+
+
+def instructions() -> str:
+    """The parser's full instructions: the system prompt and the controlled list of actor-class names."""
+    from .vocabulary import actor_classes
+    return PARSER_SYSTEM + "\n\nControlled actor-class names:\n" + ", ".join(actor_classes())
 
 
 def _norm(s: str) -> str:
@@ -49,7 +67,7 @@ def parse_llm(text: str, model: str = MODEL, effort: str = "medium") -> PolicyRe
     resp = client.messages.parse(
         model=model,
         max_tokens=16000,
-        system=PARSER_SYSTEM,
+        system=instructions(),
         output_config={"effort": effort},
         messages=[{"role": "user", "content": f"Policy text:\n\n{text}"}],
         output_format=PolicyRecord,

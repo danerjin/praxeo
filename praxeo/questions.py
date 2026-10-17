@@ -1,7 +1,12 @@
-"""Typed questions for the price-ceiling rules (plan 4.4, Configuration A).
+"""Typed questions (plan 4.4) for the rules in praxeo/rules/.
 
 Each noul question estimates one assumption the rule base names. The answer's
 probability becomes that assumption's p, committed before any scoring.
+
+Question-schema rules (plan 6.2): one concept per question; no "and" joining two
+claims; examples in brackets illustrate, they are not extra conditions; say which
+way a mechanism runs when it is easy to misread (TX-8). Revised after the first
+LLM-stage run, where double-barrelled questions produced the largest disagreements.
 """
 from __future__ import annotations
 
@@ -13,7 +18,7 @@ CEILING_QUESTIONS = [
      "At the dates the rule takes effect and over the following years, is the maximum price below the price the market would otherwise reach for the covered units?",
      "The ceiling binds: it is below the price the market would otherwise reach."),
     ("enforced", "enforcement",
-     "Will the ceiling be enforced against most of the bound sellers (a body that hears complaints, penalties larger than the gain from breaking it)?",
+     "Will most of the bound sellers comply with the ceiling in practice (given whatever body enforces it, its powers, and how violations come to light)?",
      "The ceiling is enforced against most bound sellers."),
     ("alternative_uses", "alternative_uses",
      "Can the bound sellers move the covered resources to uses the ceiling does not reach (sale to owner-occupiers, conversion, redevelopment, keeping units off the market)?",
@@ -25,8 +30,8 @@ CEILING_QUESTIONS = [
      "Will payments from landlords to sitting tenants for giving up the tenancy (buyouts) move fewer tenants than the cap keeps in place?",
      "Buyouts move fewer tenants than the cap keeps in place."),
     ("would_leave", "mobility",
-     "Without the rule, would some of the protected buyers have moved out of the area, priced out by market rents or for opportunities elsewhere, and does the benefit end if they do?",
-     "Without the rule some protected buyers would have left the area, and the benefit does not follow them."),
+     "Without the rule, would some of the protected buyers have moved out of the area (priced out by market rents, or for opportunities elsewhere)?",
+     "Without the rule some protected buyers would have left the area."),
     ("lockin_dominates", "other",
      "For tenants who keep a covered unit, does the lock-in outweigh moves out of the area by tenants who still move and face higher free rents in the city?",
      "The lock-in outweighs moves diverted out of the area by higher free rents."),
@@ -34,7 +39,7 @@ CEILING_QUESTIONS = [
      "Taking all protected tenants together, will the fall in moves out of the area among those who keep their units be larger than the rise among those displaced by conversion or withdrawal?",
      "Among all protected tenants, the fall in moves out of the area among keepers outweighs the rise among the displaced."),
     ("substitutes", "substitutability",
-     "Do buyers who cannot obtain a covered unit turn to uncovered units in the same market, which are close substitutes?",
+     "Are uncovered units in the same market close substitutes for covered units, for buyers who cannot obtain a covered one?",
      "Uncovered units in the same market are close substitutes for covered ones."),
 ]
 
@@ -43,7 +48,7 @@ CEILING_QUESTIONS = [
 # stand in for DM-1 (the rule leaves the split open), so each side's price effect is its own claim.
 TAX_QUESTIONS = [
     ("quantity_responds", "substitutability",
-     "Can buyers cut back or switch to substitutes, or can sellers move resources to untaxed uses, so that the quantity traded falls once the tax is in place?",
+     "Will the quantity traded fall once the tax is in place (because buyers cut back or switch, or sellers move resources to untaxed uses)?",
      "At least one side can reduce the quantity it trades in response to the tax."),
     ("buyers_bear", "other",
      "Will part of the tax be passed on to buyers, so that the price they pay rises?",
@@ -56,19 +61,22 @@ TAX_QUESTIONS = [
 # Tariffs (TX-7, TX-8).
 TARIFF_QUESTIONS = [
     ("binding", "binding",
-     "Do imports remain a meaningful share of supply after the tariff, and will foreign sellers fail to absorb most of it (they have many other markets, the country buys a small share of the world's supply)?",
-     "Imports remain a meaningful share of supply, and foreign sellers do not absorb most of the tariff."),
+     "Will the price domestic buyers pay for the covered goods rise by a substantial part of the tariff, rather than foreign sellers absorbing most of it?",
+     "The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it."),
     ("domestic_substitutes", "substitutability",
-     "Can domestic producers raise output (spare or idle capacity) and make close substitutes for most imports?",
-     "Domestic producers can raise output and make close substitutes for most imports."),
+     "Do domestic producers make goods that buyers can use in place of the covered imports, so that dearer imports send buyers to them?",
+     "Domestic producers make close substitutes for the covered imports."),
     ("no_offset", "other",
-     "Is the fall in imports left unoffset by capital flows or other adjustments in the currency market within the medium run?",
-     "The fall in imports is not offset by capital flows or other adjustments within the medium run."),
+     ("When the country buys fewer imports, foreigners earn less of its currency. Through the exchange rate (the currency "
+      "rises against what it would otherwise be) this makes the country's exports dearer abroad, so export industries sell "
+      "less: that is the mechanism, not an offset to it. Over the medium run, will this chain operate, rather than being "
+      "cancelled by foreigners investing or lending more in the country?"),
+     "Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it."),
 ]
 
 # RS-14, asked of any tax or tariff whose record names downstream users of the taxed good as an input.
 INPUT_QUESTION = ("input_not_replaceable", "substitutability",
-                  "Is the taxed good a material part of the downstream users' costs, and can they not replace it at the old cost in the medium run (other materials, other designs)?",
+                  "Will the downstream users' costs rise materially because of the higher price of the taxed good (given how much of it they use and whether they can switch to other materials or designs in the medium run)?",
                   "The taxed good is a material part of downstream costs and cannot be replaced at the old cost.")
 EXEMPT_QUESTION = ("competitors_exempt", "other",
                    "Do the downstream users compete with sellers who do not face the higher cost (imported finished goods, untaxed products)?",
