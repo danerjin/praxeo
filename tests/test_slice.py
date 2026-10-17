@@ -139,7 +139,7 @@ def test_context_grounding_holds_back_later_sources():
 
 def test_no_ceiling_no_consequences():
     rec = _record()
-    rec.components[0].instrument = "tax"
+    rec.components[0].instrument = "per_unit_tax"
     assert engine.run(rec, _assumptions())[0] == []
 
 

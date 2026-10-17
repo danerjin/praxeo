@@ -37,6 +37,17 @@ def actor_roles() -> frozenset[str]:
     return frozenset(roles)
 
 
+@lru_cache(maxsize=1)
+def instruments() -> frozenset[str]:
+    text = ONTOLOGY.read_text()
+    section = text[text.index("## 2.3"):text.index("## 2.4")]
+    return frozenset(re.findall(r"^\| `([a-z_]+)`", section, re.M))
+
+
+def check_instrument(name: str) -> str | None:
+    return None if name in instruments() else f"instrument `{name}` is not in 02_ontology.md section 2.3"
+
+
 def check_variable(name: str) -> str | None:
     return None if name in variables() else f"variable `{name}` is not in 02_ontology.md section 2.4"
 

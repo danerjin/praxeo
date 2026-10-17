@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from typing import Literal, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 Sign = Literal["increase", "decrease", "ambiguous", "no_change"]
 Horizon = Literal["short", "medium", "long"]
@@ -15,8 +15,7 @@ HORIZON_ORDER = {"short": 0, "medium": 1, "long": 2}
 class Component(BaseModel):
     """One operative provision of the policy, as the parser read it."""
     id: str
-    instrument: Literal["price_ceiling", "price_floor", "tax", "subsidy", "quota",
-                        "licence", "mandate", "ban", "private_rule", "other"]
+    instrument: str = Field(description="Instrument type from 02_ontology.md section 2.3, e.g. price_ceiling, per_unit_tax, tariff")
     good: str = Field(description="Snake-case name of the good or service, e.g. rental_housing")
     market: str = Field(description="Snake-case name of the market, e.g. san_francisco")
     bound_actor: str = Field(description="Actor class the rule binds, from the ontology, e.g. landlords.controlled")
@@ -26,6 +25,14 @@ class Component(BaseModel):
     cap_unit: Optional[str] = None
     vacancy_decontrol: bool = Field(default=False, description="True when the price of a new contract is free and the cap binds only on renewals")
     source_sentences: list[str] = Field(description="Sentences of the policy text this component rests on, quoted exactly")
+
+    @field_validator("instrument")
+    @classmethod
+    def _known_instrument(cls, v: str) -> str:
+        from .vocabulary import check_instrument
+        if (msg := check_instrument(v)):
+            raise ValueError(msg)
+        return v
 
 
 class Unclear(BaseModel):

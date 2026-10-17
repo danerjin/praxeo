@@ -68,10 +68,24 @@ Without this guard, an elasticity guess could decide a sign through the back doo
 
 ```
 python3 -m praxeo cases/sf_1994 --out runs/sf
-python3 math-augmented-praxeo/annex_run.py runs/sf/prediction.json math-augmented-praxeo/examples/sf_1994/annex_inputs.json runs/sf
+python3 math-augmented-praxeo/annex_run.py runs/sf/prediction.json math-augmented-praxeo/examples/sf_1994/annex_inputs.json runs/sf \
+    --premise-step --decider fixture --answers math-augmented-praxeo/examples/sf_1994/premise_answers.json
 ```
 
-`examples/sf_1994/annex.md` is the result for the committed sample run. Both attachments agree with their signs: the covered stock's quantity supplied, and sitting tenants' rent against the market path. All ranges but the horizon are illustrative.
+`examples/sf_1994/annex.md` is the result for the committed sample run. It attaches sizes to three consequences, and all three agree with their signs:
+- the covered stock's quantity supplied;
+- sitting tenants' rent against the market path;
+- the shut-out seekers' price for uncovered units.
+
+All ranges except the horizon are illustrative.
+
+**6. The premise step.** `premise_step.run` takes each dominance premise that the inputs can size (`_dominance` in the inputs file names the counts behind each chain). When the annex proposes a different probability, it asks a `praxeo` Decider a typed noul question: fixture, LLM, human or later Jev. The question states the premise, its current probability, the annex evidence with its rung, and the proposal. The decider's answer becomes the premise's probability, whatever the proposal was. The step then re-derives the prediction with the `praxeo` engine, combiner and verifier, and writes it as `prediction_annex_informed.json` beside the frozen original, which stays the scored one. Every consequence whose sign or reported status differs is listed and labelled "annex-informed", with the evidence.
+
+In `examples/sf_1994/premise_step.md`:
+- **keepers_dominate:** the annex proposed raising it from 0.60 to 0.90, because the deterred exits exceed the displaced exits over the whole range. The fixture decider gave 0.80. No consequence changed, because the premise was already above the cut-off.
+- **lockin_dominates:** its ranges overlap, so no change was proposed and the decider was not asked.
+
+The tests also cover a premise at 0.4. There the decider's acceptance turns the class total from `ambiguous` to `decrease`, labelled as annex-informed; a decider that declines leaves it `ambiguous`.
 
 ## The equation of exchange
 
@@ -90,8 +104,9 @@ Mises rejected the equation as an explanation (*Theory of Money and Credit*, Par
 | `mathpraxeo/capital.py` | M0 | Gap path between a capped and a market price, the gap as a share of the market price, the capitalized loss, and the present value of a yearly amount (for license, quota and tax values). |
 | `mathpraxeo/statics.py` | M1 (quota rent: M0) | Supply and demand intersection; ceiling shortage, floor surplus, quantity supplied under a held-down price; tax and subsidy incidence; exchanges forgone; tariff; quota rent; spending change; cost pass-through bound; tax revenue with base response. |
 | `mathpraxeo/report.py` | — | Renders an annex table with the sign check for each consequence. |
-| `mathpraxeo/bridge.py` | — | The annex pass over a `praxeo` prediction, with its guards: `annex_pass`, `premise_evidence`, `settle_by_arithmetic`, `GuardError`. |
-| `annex_run.py` | — | Command line for the annex pass. |
+| `mathpraxeo/bridge.py` | — | The annex pass over a `praxeo` prediction, with handlers keyed by instrument, variable and actor role, and its guards: `annex_pass`, `dominance_evidence`, `premise_evidence`, `settle_by_arithmetic`, `GuardError`. |
+| `mathpraxeo/premise_step.py` | — | Puts annex evidence for dominance premises to a decider; writes the log and the annex-informed prediction. |
+| `annex_run.py` | — | Command line for the annex pass and the premise step. |
 
 ## Examples
 
@@ -117,6 +132,16 @@ python3 math-augmented-praxeo/examples/we001_annex.py
 ## Status and next steps
 
 - This is a folder on the working branch, not a separate branch. A separate branch can be cut from it if wanted.
-- The annex pass has handlers for `quantity_supplied`, `excess_demand` and the insiders' `price_paid`. More handlers (asset values, tariff consequences, wait times) follow the same pattern.
-- Premise evidence is computed but not yet offered to a decider in the `praxeo` run; that needs a step where the decider sees the proposal and accepts or rejects it, logged.
+- The annex pass has 25 handlers, keyed by instrument, variable and actor role. They cover:
+  - price ceilings: quantity supplied, shortage, insiders' price, capitalized asset value, the substitute's price;
+  - floors: surplus, employment and quantity demanded;
+  - per-unit taxes: both prices, quantity traded, revenue shortfall;
+  - tariffs: domestic price, domestic output, imports, use, revenue shortfall;
+  - subsidies: both prices;
+  - quotas, licences and allocated rights: the right's value and its lease price;
+  - for any instrument: wait times (Little's law) and cost pass-through to a downstream buyer.
+
+  Actor roles not named in the record (buyers, sellers, importers, holders, downstream) come from `_actors` in the inputs file. The thin slice only produces price-ceiling consequences, so the other handlers are exercised by tests on synthetic predictions.
+- The premise step covers the two dominance premises the rule base has (`keepers_dominate`, `lockin_dominates`). New dominance premises need an entry in `DOMINANCE_PREFIXES` and a `_dominance` spec.
+- The LLM decider has not run here (no API key).
 - Bounds not yet built (see `SURVEY.md`): the black-market price under a ceiling, the Hotelling rule, rent-seeking dissipation, covered interest parity.

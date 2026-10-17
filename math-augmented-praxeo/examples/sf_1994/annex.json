@@ -4,6 +4,7 @@
   "actor_class": "landlords.controlled",
   "variable": "quantity_supplied",
   "praxeological_sign": "decrease",
+  "handler": "ceiling_quantity_supplied",
   "result": {
    "name": "quantity_supplied_change",
    "range": [
@@ -36,6 +37,7 @@
   "actor_class": "tenants.controlled",
   "variable": "price_paid",
   "praxeological_sign": "decrease",
+  "handler": "insiders_price",
   "result": {
    "name": "insiders_price_vs_market",
    "range": [
@@ -48,7 +50,7 @@
     "cap growth [0.012, 0.021]",
     "year 5"
    ],
-   "note": "Sitting tenants' rent against the market path, as a share of the market rent."
+   "note": "Sitting tenants' price against the market path, as a share of the market price."
   },
   "sign_check": "agrees",
   "inputs_used": [
@@ -60,6 +62,40 @@
    "market_growth: illustrative; to be sourced from pre-1994 San Francisco rent series",
    "cap_growth: 60% of regional CPI (case text) times a CPI range of 2% to 3.5% (illustrative)",
    "gap_year: horizon chosen for the annex (medium run)"
+  ]
+ },
+ {
+  "consequence_id": "C-8",
+  "actor_class": "tenants.prospective",
+  "variable": "price_substitute",
+  "praxeological_sign": "increase",
+  "handler": "substitute_price",
+  "result": {
+   "name": "price_change",
+   "range": [
+    0.004545454545454545,
+    0.09999999999999998
+   ],
+   "rung": "M1",
+   "assumptions": [
+    "demand shift [0.005, 0.03] at the old price",
+    "supply shift [0, 0] at the old price",
+    "demand elasticity [-0.6, -0.2]",
+    "supply elasticity [0.1, 0.5]",
+    "first order"
+   ],
+   "note": ""
+  },
+  "sign_check": "agrees",
+  "inputs_used": [
+   "diverted_demand",
+   "substitute_demand_elasticity",
+   "substitute_supply_elasticity"
+  ],
+  "sources": [
+   "diverted_demand: illustrative: demand moved to uncovered units, as a share of their market",
+   "substitute_demand_elasticity: illustrative",
+   "substitute_supply_elasticity: illustrative"
   ]
  }
 ]
