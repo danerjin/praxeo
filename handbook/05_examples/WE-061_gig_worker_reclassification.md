@@ -230,9 +230,9 @@ The trips not taken (C-7) are prevented exchanges: both the riders and the worke
 | ID | Statement | Type | p | Evidence | If false |
 |---|---|---|---|---|---|
 | A-1 | The Act is enforced: audits and private suits with double damages make treating workers as contractors without a valid agreement costly. | enforcement | 0.8 | 4 million budget; damages; the litigation record. | C-1 to C-4, C-8 to C-11 shrink; C-17 grows. |
-| A-2 | Each company elects to offer contractor agreements. | other | 0.75 | Companies' statements during passage; the premium was the level they proposed; under U1-b the election saves most of the floor. | No contractors: C-2, C-12 to C-14, C-34, C-35 vanish; every worker is an employee and C-8 grows. |
+| A-2 | Each company elects to offer contractor agreements. | other | 0.75 | Companies' statements during passage; the premium was the level they proposed; under U1-b the election saves most of the floor. | No contractors: C-2, C-12 to C-14, C-34, C-35, C-42, C-43 vanish; every worker is an employee and C-8 grows. |
 | A-3 | Some hours on a trip pay below 16 per hour on a trip (about a fifth). | binding | 0.9 | Platform data in the record. | Under U1-a the floor does not bind: C-1, C-8, C-9 under U1-a are not reported. |
-| A-4 | Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes). | substitutability | 0.8 | Effects of past fare and fee changes. | C-6, C-7, C-24 (U1-a), C-25, C-28, C-38 are not reported. |
+| A-4 | Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes). | substitutability | 0.8 | Effects of past fare and fee changes. | C-6, C-7, C-24 (U1-a), C-25, C-28, C-38, C-44 are not reported; C-33 loses its (−) chain. |
 | A-5 | Workers paid below 16 per hour on a trip mostly choose employee status (the top-up exceeds the premium and the flexibility they give up). | other | 0.65 | 16 against about 11 per hour on a trip for bicycle couriers, plus the premium of about 3. | C-3, C-4, C-10 rest on A-23 (U1-b) only; fares rest on the premium while fare shares hold. |
 | A-6 | Under U1-b, companies schedule employees' logged-in time to cut paid waiting. | other | 0.85 | Practice of employers paying by the hour; 75% of logged-in hours below 16. | C-24 under U1-b becomes `decrease`; C-40 is not reported; C-41 under U1-b becomes `increase`. |
 | A-7 | Companies can steer requests between employees and contractors through dispatch. | other | 0.6 | The Act is silent on dispatch; current dispatch uses ratings. | C-9 rests on shift allocation only; C-34 under U1-a becomes `increase`. |
@@ -265,15 +265,15 @@ The trips not taken (C-7) are prevented exchanges: both the riders and the worke
 **Visible consequences.** Low-paid hours are paid at least 16 (C-1); contractors receive 1.50 a trip (C-2); employees gain insurance cover (C-3) and the fund collects contributions (C-4).
 
 **Invisible consequences.**
-- *Riders and restaurants.* Fares and fees rise and fewer trips are taken (C-6, C-7); riders who keep riding have less for other things (C-38). Restaurants sell fewer delivery orders (C-28); some hire their own couriers (C-29). Taxis carry more riders and medallions gain value (C-25, C-26).
-- *Employees.* Their hours, jobs, flexibility or pay above the floor fall (C-8), and shifts and requests are allotted by rating (C-9). Workers paid below the floor choose employee status (C-10). Hours bunch below 40 a week with each company and below 150 a week in pay, and workers spread hours across companies (C-18 to C-20). Whether employees' earnings rise is open (C-33).
-- *Contractors.* Their pay per trip rises at first (C-13); once fare shares are reset it may not (C-12, C-14). Under U1-a they wait longer between trips (C-34). Whether they earn more per hour logged in is open (C-35).
+- *Riders and restaurants.* Fares and fees rise and fewer trips are taken (C-6, C-7); riders whose trips do not fall have less for other things (C-38); diners cook more at home (C-44). In the first months riders wait less for a pickup under U1-a (C-24). Restaurants sell fewer delivery orders (C-28); some deliver with their own couriers, employing more of them or for more hours (C-29). Taxis carry more riders, and medallion lease prices and values rise (C-25, C-26, C-45).
+- *Employees.* Their hours, jobs, flexibility or pay above the floor fall (C-8), and shifts and requests are allotted by stricter criteria than today's dispatch ranking (C-9). Under U1-b paid waiting is cut (C-40). Workers paid below the floor choose employee status (C-10). Hours bunch below 40 a week with each company and below 150 a week in pay, and workers spread hours across companies (C-18 to C-20). Their non-wage terms rise in total under U1-a (insurance cover) and are open under U1-b, where flexibility is cut (C-41). Whether employees' earnings rise is open (C-33).
+- *Contractors.* Contractor agreements appear where companies elect them (C-42). Their pay per trip rises at first (C-13); once fare shares are reset it may not (C-12, C-14). Whether they wait longer between trips, whether more people start contracting, and whether they earn more per hour logged in are open (C-34, C-43, C-35).
 - *Companies.* Their labor cost rises for both kinds of worker (C-11); they spend on compliance (C-5); some reshape services or use one-person companies to fall outside the Act (C-15, C-16); some breach it (C-17). Small services stay under 100 workers (C-21). Their shares lost value when the Act became expected (C-27). Lobbying rises (C-22).
 - *The state.* The Department of Labor spends more, paid by the general fund (C-36, C-37); the insurance fund pays benefits to app workers as well as collecting from them (C-30, C-31).
 
-**Per reading of U1.** If waiting is not engaged time (U1-a), the floor binds on about a fifth of trip hours, overtime touches about 600 workers, and riders wait less (C-24). If it is (U1-b), the floor binds on most logged-in hours, companies schedule employees, workers who wait a lot become employees, overtime touches about 5,000 workers, and riders' waits may rise or fall (C-24).
+**Per reading of U1.** If waiting is not engaged time (U1-a), the floor binds on about a fifth of trip hours, overtime touches about 600 workers, and riders wait less in the first months (C-24). If it is (U1-b), the floor binds on most logged-in hours, companies schedule employees and cut paid waiting (C-40), workers who wait a lot become employees, overtime touches about 5,000 workers, and riders' waits may rise or fall (C-24).
 
-**Ambiguous effects.** Contractors' pay per trip after the reset and their hourly earnings (C-14, C-35); employees' earnings (C-33); the RS-22 trade-off between flexibility and cover (C-32); the insurance fund's net (C-31); work in Selvane (C-23); and under U1-b, riders' and contractors' waits (C-24, C-34).
+**Ambiguous effects.** Contractors' pay per trip after the reset, their hourly earnings and their waits (C-14, C-35, C-34); entry of new contractors (C-43); employees' earnings (C-33); under U1-b, employees' non-wage terms in total (C-41) and riders' waits (C-24); the insurance fund's net (C-31); work in Selvane (C-23).
 
 **Key conditions.** That the Act is enforced (A-1, p = 0.8); that companies elect the buy-out (A-2, p = 0.75); that fare shares can be reset after launch (A-28, p = 0.75), which decides whether the premium lasts.
 
@@ -291,7 +291,7 @@ The trips not taken (C-7) are prevented exchanges: both the riders and the worke
 | C-6 | riders | price_paid (fares and fees) | increase | short–medium | visible | B | RS-14, PC-17, CR-6, CR-5c | A-4, A-5 |
 | C-7 | riders, drivers.employee, drivers.contractor | quantity_traded (rides and deliveries) | decrease | short–medium | invisible | B | PC-17, CR-4c, CR-6, OC-4 | A-4, A-5 |
 | C-8 | drivers.employee | hours_worked (−), employment (−), non_wage_compensation (flexibility, −), wage_rate (above the floor, −) | U1-a: at_least_one_decrease; U1-b: at_least_one_decrease | short–medium | invisible | B | PC-10, PC-17, CR-6 | A-1, A-3 |
-| C-9 | drivers.employee | allocation_by_non_price_criteria (shifts and requests) | U1-a: increase; U1-b: increase | short–medium | invisible | B | PC-11, CR-6 | A-1, A-3, A-7 |
+| C-9 | drivers.employee | allocation_by_non_price_criteria (shifts and requests, beyond the counterfactual's ranking) | U1-a: increase; U1-b: increase | short–medium | invisible | B | PC-11, CR-6 | A-1, A-3, A-7, A-31 |
 | C-10 | drivers.low_fare | term_prevalence (employee status) | increase | short | invisible | B | RS-23, CR-4 | A-1, A-5 |
 | C-11 | platforms | price_paid (labor cost per engaged hour of employees; per trip of contractors) | U1-a: increase; U1-b: increase | short | invisible | B | RS-23, PC-17, CR-8b, CR-12 | A-1, A-5, A-29 |
 | C-12 | drivers.contractor | net_price_received (fare share and bonuses per trip) | decrease | medium | invisible | B | CR-6, PC-17, RS-2 | A-2, A-28 |
@@ -306,22 +306,51 @@ The trips not taken (C-7) are prevented exchanges: both the riders and the worke
 | C-21 | sellers.small_platform | number_of_sellers (services with fewer than 100 Lanvik workers) | increase | medium | invisible | B | RS-17, CR-4 | A-15 |
 | C-22 | lobbying groups | lobbying_effort (U1, the premium, guidance on §3) | increase | short–medium | invisible | B | RS-7, CR-4, CR-12 | A-16 |
 | C-23 | neighboring_jurisdictions (Selvane) | quantity_supplied (worker-hours on Selvane trips) | ambiguous | short–medium | invisible | B | RS-4, CR-7a, CR-12b | A-2, A-14 |
-| C-24 | riders | wait_time (pickup and delivery) | U1-a: decrease; U1-b: ambiguous | short | invisible | B | CR-6, CR-9, CR-12b | A-2, A-4, A-6, A-24 |
+| C-24 | riders | wait_time (pickup and delivery) | U1-a: decrease; U1-b: ambiguous | short | invisible | B | CR-6, CR-9, CR-7a, CR-12e, CR-12b | A-2, A-4, A-6, A-29 |
 | C-25 | sellers.substitutes (taxis) | quantity_substitute (taxi trips) | increase | short–medium | invisible | B | RS-1, RS-16 | A-4, A-10 |
 | C-26 | owners.medallions | asset_value (taxi medallions) | increase | short | invisible | B | CR-6, CR-7c, CR-10c, SB-4 | A-10, A-11 |
 | C-27 | owners.platforms | asset_value (shares) | decrease | short | invisible | B | CR-7c, CR-10c | A-11 |
 | C-28 | sellers.complements (restaurants) | quantity_traded (delivery orders) | decrease | short–medium | invisible | B | RS-12, CR-9 | A-4, A-12 |
-| C-29 | workers.inhouse_couriers | employment (restaurant couriers) | increase | medium | invisible | B | RS-1, CR-9, LW-10 | A-13 |
+| C-29 | workers.inhouse_couriers | employment (+), hours_worked (+) (restaurant couriers) | at_least_one_increase | medium | invisible | B | RS-1, CR-9, LW-10, CR-6 | A-13 |
 | C-30 | state_insurance_fund | subsidy_outlay (benefits to app workers) | increase | medium | invisible | B | CR-8b | A-5, A-20 |
 | C-31 | state_insurance_fund | fund_balance (app contributions less app benefits) | ambiguous | medium | invisible | B | CR-8, CR-12b | A-5, A-20 |
-| C-32 | drivers.employee (positions) | wage_rate (above the floor) (+), employment (−) | ambiguous | medium | invisible | B | RS-22, CR-5c, CR-7a, CR-12b | A-6, A-21, A-22 |
-| C-33 | drivers.employee | earnings | ambiguous | medium | invisible | B | PC-10, CR-12b, CR-12c | A-1, A-3 |
-| C-34 | drivers.contractor | wait_time (unpaid time between trips) | U1-a: increase; U1-b: ambiguous | short | invisible | B | CR-6, CR-7a, CR-12, CR-12b | A-2, A-4, A-6, A-29 |
+| C-33 | drivers.employee | earnings | ambiguous | medium | invisible | B | PC-10, CR-4c, CR-12b, CR-12c | A-1, A-3, A-4 |
+| C-34 | drivers.contractor | wait_time (unpaid time between trips) | U1-a: ambiguous; U1-b: ambiguous | short | invisible | B | CR-6, CR-7a, CR-12e, CR-12b | A-2, A-4, A-6, A-7, A-29 |
 | C-35 | drivers.contractor | wage_rate (earnings per hour logged in) | U1-a: ambiguous; U1-b: ambiguous | short–medium | invisible | B | CR-12e, CR-12, CR-12b | A-2, A-4, A-24 |
 | C-36 | officials.enforcement (Department of Labor) | enforcement_cost | increase | short–long | invisible | A | OC-3, CR-8c | none |
 | C-37 | taxpayers, recipients of other spending, future taxpayers | resources_available_other_uses | at_least_one_decrease | short–long | invisible | B | OC-1, OC-3, CR-8 | A-26 |
-| C-38 | riders (who keep riding) | resources_available_other_uses | decrease | short–medium | invisible | B | CR-3, OC-1 | A-4 |
-| C-39 | drivers.contractor | compliance_cost (trip records for the premium) | increase | short | invisible | B | OC-2, CR-8c | A-2 |
+| C-38 | riders (whose trips do not fall) | resources_available_other_uses | decrease | short–medium | invisible | B | CR-3, OC-1 | A-4, A-30 |
+| C-40 | drivers.employee | hours_worked (paid waiting outside scheduled shifts) | U1-a: no_change; U1-b: decrease | short–medium | invisible | B | CR-4, CR-6, PC-10 | A-1, A-6 |
+| C-41 | drivers.employee | non_wage_compensation (total: cover and flexibility) | U1-a: increase; U1-b: ambiguous | short–medium | invisible | B | PC-17, CR-12, CR-12b | A-1, A-5, A-6 |
+| C-42 | drivers.contractor | term_prevalence (contractor agreements) | increase | short | invisible | B | CR-1, CR-12 | A-2 |
+| C-43 | drivers.prospective | entry_rate (new contractors) | ambiguous | short–medium | invisible | B | CR-4, CR-12b | A-2, A-4 |
+| C-44 | riders (diners) | home_production (meals cooked at home) | increase | short–medium | invisible | B | RS-1, CR-4, CR-9 | A-4, A-12 |
+| C-45 | owners.medallions | right_lease_price (taxi medallions) | increase | short–medium | invisible | B | CR-6, CR-9 | A-10 |
+
+## Corrections after the core-only comparison
+
+The core-only re-run (`05_examples_core/WE-061_gig_worker_reclassification_core.md`) was compared with this analysis. Each correction below was checked against the core rules before it was applied; the catalog is now 1.1.
+
+**Changed.**
+- C-9: now signed only for the change in rationing against a counterfactual in which dispatch already ranks drivers (PC-11, 1.1), on the new premise A-31.
+- C-24: U1-a sign kept (`decrease`, short run), but its derivation no longer uses entry, which is unsigned (now C-43). It rests on the response argument for the fleet: with pay per trip no lower for anyone and fewer trips, trips per logged-in hour fall whichever way logged-in hours respond (CR-12e; CR-12 1.1, the response argument in every direction and responses within the named total); dispatch steering is within the fleet. A-29 replaces A-24. The comparison row is J; the change of derivation applies the Findings' point that entry was used as a chain without a sign.
+- C-34: U1-a `increase` to `ambiguous`. Dispatch steering of low-fare requests to contractors (A-7) acts under U1-a too and adds trips from outside the contractor total, a second chain (comparison, cause E); entry is no longer used as a signed chain.
+- C-29: `employment` to the group `employment`, `hours_worked` (`at_least_one_increase`): larger chains already employ couriers, so the new-activity clause does not cover all of them (CR-6, 1.1: labor demand as a group).
+- C-33: the opposing chain is now the signed fall in trips (C-7, A-4), not the group C-8 (CR-12, 1.1: group members are not chains); sign unchanged.
+- C-38: class narrowed to riders whose trips do not fall, with A-30 (CR-3's note: only those who keep paying are signed poorer; comparison, Findings).
+- C-2, C-12, C-11, C-18 to C-22, C-35: signs unchanged; now cite PC-17 1.1 (a buy-out paid to the worker), RS-23 1.1 and RS-17 1.1 (baselines), CR-4 1.1 (lobbying over new provisions) and CR-12 1.1 (a response through another market is a second chain). K5 is recorded under CR-1 1.1 (an option removed and restored at the other party's election) and CR-6 1.1 (a legal exit the policy creates).
+- A-10 now includes taxis' idle capacity at the fixed fare (comparison note on C-25).
+- Sections 2 to 11, the final check (with item 9 under 1.1) and the report updated to match.
+
+**Added.** C-40 (employees' paid waiting outside shifts: U1-a no_change, U1-b decrease; comparison OP), C-41 (employees' non-wage terms in total: U1-a increase, U1-b ambiguous; OP, with the U1-b flexibility item on A-6 rather than on a group member), C-42 (contractor agreements, `term_prevalence` increase; OP), C-43 (entry of new contractors, ambiguous; OP), C-44 (home cooking, increase; OP), C-45 (medallion lease price, increase; OP). New actor class `drivers.prospective`. New assumptions A-30, A-31.
+
+**Removed.** C-32 (RS-22 on flexibility and cover): RS-22's 1.1 clause excludes terms the employer changes in response to the policy, and the value of the cover is PC-17's gross-and-net recovery, already in C-8 (comparison, cause P). C-39 (contractors' record-keeping cost): no provision requires contractors to keep records, and checking one's own pay is not complying, administering, enforcing or evading under CR-8c (comparison, hidden premise). A-21 and A-22, used only by C-32, are withdrawn.
+
+**Comparison conclusions rejected or not applied.**
+- C-24 against core `ambiguous` under U1-a (cause J): the U1-a `decrease` is kept, on the fleet response argument above; the core's opposing chain ("fewer employee hours") is a member of a group and, under CR-12 1.1, not a chain.
+- C-38 (cause J): applied in part, by narrowing the class with a premise, which is what the Findings ask for; CR-3's wording on "keep spending" is not otherwise settled by 1.1.
+- C-11 against core C-36 (platforms' net price per trip, V) and the CR-7b reading behind it: kept as recorded; 1.1 does not settle it.
+- C-9's variable content against core C-27 (dispatch steering as the criteria, V): kept as selection among employees, now with A-31.
 
 ## Gaps found
 
@@ -336,7 +365,7 @@ The trips not taken (C-7) are prevented exchanges: both the riders and the worke
 1. *PC-17's 0.9 buy-out clause assumes the charge goes to a third party.* It says "PC-17 applies to those who provide the term, TX-2 to those who pay the charge". Here the charge (the premium) is paid to the worker, and the worker chooses. TX-2 does not fit: the premium is not a wedge between a buyer's and a seller's price but a second mandated term, and it is added to a price the company still sets. Applied as written, the clause would have treated the premium as a tax and missed that it can be undone through the fare share. The clause should distinguish a charge paid to the state or a fund (TX-2) from one paid to the counterparty (PC-17 again, with CR-6 0.8 on the terms it is added to), and say whose option the buy-out is.
 2. *RS-23's second conclusion is not against the counterfactual.* "Under the alternative, the remaining pool is cheaper to serve" compares the contractor pool with the average pool. Against no Act, the company's cost per contractor trip rises by the premium (while fare shares hold). The selection itself is a statement about who is in which pool, not a change against the counterfactual. Re-signed under CR-12 1.0 (C-11). The 1.0 promotion did not re-base this clause.
 3. *RS-17's first clause.* As in other cases, "below relative to above" is re-signed against the counterfactual (C-18 to C-21). Its 1.0 clauses on notches, kinks, lines on hours and eligibility all fitted, including the mirror where the worker gains eligibility by crossing while the company bears the cost (C-20).
-4. *RS-22 where two terms move in opposite directions.* Its precondition held, and its conclusion, applied to each term, gave opposite group signs (flexibility lost, cover added), so the combined sign is `ambiguous` (C-32). RS-22 does not say that the workers who would bear the worse term can choose the other contract (selection, RS-23), which acts on the same jobs. A note linking the two would help.
+4. *RS-22 where two terms move in opposite directions.* Its precondition held, and its conclusion, applied to each term, gave opposite group signs (flexibility lost, cover added), so the combined sign is `ambiguous` (C-32). RS-22 does not say that the workers who would bear the worse term can choose the other contract (selection, RS-23), which acts on the same jobs. A note linking the two would help. (Corrected under 1.1: RS-22's 1.1 clause excludes terms the employer changes in response to the policy, so C-32 is removed and the two terms are recorded as items of `non_wage_compensation`, with the total in C-41.)
 5. *PC-10 "on engaged time".* PC-10 is stated for a floor per hour of work. Where the floor applies to a defined part of the time (engaged time), the employer's open margins include the definition itself: what counts as engaged time (U1), dispatch, and scheduling. PC-10 worked through CR-6, but the unit of the floor (CR-4's units clause) matters more than PC-10 suggests.
 6. No pattern gave a sign that I had to override apart from the re-signing in (c) 2 and (c) 3.
 
@@ -360,3 +389,4 @@ The trips not taken (C-7) are prevented exchanges: both the riders and the worke
 - *CR-12 1.0, the baseline of patterns.* Worked: it caught RS-23 and RS-17 (C-11, C-18 to C-21). Without the final check's item 9, RS-23's "cheaper pool" would have been recorded as a decrease in cost against no Act, which is wrong.
 - *CR-12 1.0, tiers and dominance.* Not exercised: no dominance premise was used.
 - *Candidates from 06_gaps.md, 6.2e.* None needed. New candidate: "a mandated add-on to an unregulated price is undone through that price once it can move" (derived here from CR-6 0.8 and CR-12 0.8); its first use.
+- Re-run note: the core-only comparison contradicted two verdicts: RS-22 "worked as written per term" was applied to a term the employer changes in response to the floor (C-32, now removed under RS-22 1.1), and CR-6 0.8 on free terms was not needed beyond the stickiness premise, since CR-6's main clause sends the pressure to the fare share; it also found that the waits (C-24, C-34) leaned on an entry chain that is itself `ambiguous` (now C-43), with dispatch steering left out of contractors' waits under U1-a.

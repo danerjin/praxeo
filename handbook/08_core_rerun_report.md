@@ -339,3 +339,5 @@ Of 536 consequences compared, 370 were matched; 335 of these (91%) agree in sign
 
 - **Core rules.** CR-12: the response argument in every direction; items that cancel; group members are not chains; ratios. CR-6: a third-party payer; margins the policy creates; labor demand as a group. CR-7: a right sold at creation; alternatives taxed too. CR-4: several changes in means; the same question. CR-1, CR-3, CR-8: lines on ratios, burdens inside a new option, dedicated funds.
 - **Patterns.** Re-based: RS-17, RS-23, PC-17, EN-13. Corrected: SB-4, PC-1, PC-16, TX-7, TX-9, EN-14, SB-8, TX-1. Widened: twelve more. New: PC-20. Promoted: RS-24. 105 patterns.
+- **WE-056 to WE-065 corrected** against their comparisons under catalog 1.1, each with a section "Corrections after the core-only comparison" and its part (e) "Test of 1.0" kept as the record of the test, with a "Re-run note" where the comparison contradicted a verdict. Four consequences were removed (WE-058 C-23 merged into C-22, WE-060 C-27 merged into C-26, WE-061 C-32 and C-39), each because 1.1 or the comparison showed it rested on a misapplied pattern or a missing premise.
+
