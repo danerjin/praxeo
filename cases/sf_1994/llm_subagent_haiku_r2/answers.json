@@ -1,0 +1,92 @@
+[
+ {
+  "question_id": "c1.binding",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "A sitting tenant's rent is capped at 60 percent of the regional CPI rise, while rents for turnover units reset freely, so market rents in San Francisco in 1994 were likely rising faster than the cap allows. The record does not give market rent levels, so this is an inference from the cap structure.",
+  "evidence": [
+    "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index.",
+    "When a tenant leaves voluntarily, the landlord may set the rent for the next tenant freely, after which the limit applies again."
+  ]
+ },
+ {
+  "question_id": "c1.enforced",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Owner-occupied 2-4 unit buildings put landlords in close daily contact with tenants, and an existing Rent Board since 1979 handles petitions and refunds, so compliance is plausible. Enforcement is largely complaint-driven, which keeps the estimate moderate.",
+  "evidence": [
+    "The Rent Board hears tenant petitions and landlord applications and may order rent reductions and refunds.",
+    "Buildings of four units or fewer in which the owner lives were exempt."
+  ]
+ },
+ {
+  "question_id": "c1.alternative_uses",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Owners of small buildings can sell to buyers, move their own household into a unit, or otherwise take units off the rental market, and the cap only reaches rents on covered tenancies. The record does not describe conversion or withdrawal limits, so the answer rests on general conditions.",
+  "evidence": [
+    "When a tenant leaves voluntarily, the landlord may set the rent for the next tenant freely, after which the limit applies again.",
+    "Rental units in owner-occupied buildings of two to four units built before June 1979 become subject to the Rent Ordinance."
+  ]
+ },
+ {
+  "question_id": "c1.nontransferable",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "The controlled rent attaches to the sitting tenancy and the Ordinance limits eviction and rent increases for the tenant in place, so the right is personal and cannot be sold or assigned as a separate asset. The record states the tenancy-based structure, not an explicit transfer ban.",
+  "evidence": [
+    "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index.",
+    "Tenants of covered units may be evicted only for one of the just causes listed in the Rent Ordinance."
+  ]
+ },
+ {
+  "question_id": "c1.buyouts_limited",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Buyouts are only one way tenants leave, and most covered tenants keep their units under the cap, so buyouts probably move fewer tenants than the cap retains. The record says nothing about buyouts, so this rests on the general size of the tenant population.",
+  "evidence": [
+    "Tenants of covered units may be evicted only for one of the just causes listed in the Rent Ordinance.",
+    "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index."
+  ]
+ },
+ {
+  "question_id": "c1.would_leave",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Without the rule, rents for sitting tenants would rise with the market, and some protected tenants would likely have been priced out of San Francisco or moved for work elsewhere. The record does not quantify this, so the estimate is a general prediction.",
+  "evidence": [
+    "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index.",
+    "When a tenant leaves voluntarily, the landlord may set the rent for the next tenant freely, after which the limit applies again."
+  ]
+ },
+ {
+  "question_id": "c1.lockin_dominates",
+  "value": "yes",
+  "probability": 0.62,
+  "rationale": "The cap keeps most sitting tenants in place at controlled rents, while the tenants who still leave are a smaller group facing higher free rents, so the lock-in effect probably outweighs their moves. The record gives no movement data, so this is a judgment on the relative scale.",
+  "evidence": [
+    "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index.",
+    "When a tenant leaves voluntarily, the landlord may set the rent for the next tenant freely, after which the limit applies again."
+  ]
+ },
+ {
+  "question_id": "c1.keepers_dominate",
+  "value": "yes",
+  "probability": 0.63,
+  "rationale": "The displacement channel through conversion or withdrawal is narrow for owner-occupied 2-4 unit buildings, so the reduction in moves among keepers probably exceeds any rise in displacement from exits. The record does not describe conversion or withdrawal activity, so this rests on the building type.",
+  "evidence": [
+    "Rental units in owner-occupied buildings of two to four units built before June 1979 become subject to the Rent Ordinance.",
+    "Tenants of covered units may be evicted only for one of the just causes listed in the Rent Ordinance."
+  ]
+ },
+ {
+  "question_id": "c1.substitutes",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Uncovered rental units in San Francisco are broadly comparable housing, so tenants who cannot obtain a covered unit would likely rent them as substitutes. The record does not say so directly, and the answer rests on general knowledge of the local rental stock.",
+  "evidence": [
+    "Buildings of four units or fewer in which the owner lives were exempt.",
+    "Since 1979 the San Francisco Residential Rent Stabilization and Arbitration Ordinance has limited annual rent increases for sitting tenants in most rental buildings built before June 1979."
+  ]
+ }
+]

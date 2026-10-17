@@ -1,0 +1,53 @@
+{
+  "name": "San Francisco Proposition I (November 1994)",
+  "jurisdiction": "San Francisco",
+  "rule_maker": "San Francisco voters (ballot measure)",
+  "enacted": "1994-11-08",
+  "effective": "Date of certification, for covered units (the certification date is not stated in the text)",
+  "stated_aim": null,
+  "components": [
+    {
+      "id": "C1",
+      "instrument": "price_ceiling",
+      "good": "rental_housing",
+      "market": "san_francisco",
+      "bound_actor": "landlords.covered",
+      "protected_actor": "tenants.controlled",
+      "excluded_actor": "tenants.prospective",
+      "cap": 60,
+      "cap_unit": "percent of the rise in the regional consumer price index",
+      "vacancy_decontrol": true,
+      "source_sentences": [
+        "Rental units in owner-occupied buildings of two to four units built before June 1979 become subject to the Rent Ordinance.",
+        "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index.",
+        "When a tenant leaves voluntarily, the landlord may set the rent for the next tenant freely, after which the limit applies again."
+      ]
+    },
+    {
+      "id": "C2",
+      "instrument": "prohibition",
+      "good": "rental_housing",
+      "market": "san_francisco",
+      "bound_actor": "landlords.covered",
+      "protected_actor": "tenants.controlled",
+      "source_sentences": [
+        "Rental units in owner-occupied buildings of two to four units built before June 1979 become subject to the Rent Ordinance.",
+        "Tenants of covered units may be evicted only for one of the just causes listed in the Rent Ordinance."
+      ]
+    }
+  ],
+  "unclear": [
+    {
+      "id": "U1",
+      "text": "The Rent Board hears tenant petitions and landlord applications and may order rent reductions and refunds.",
+      "readings": [
+        "U1-a: The Rent Board's power to order reductions and refunds enforces the rent limit in C1 and adds no separate restriction.",
+        "U1-b: The Rent Board's power is a separate operative provision on rent adjudication, which no listed instrument covers."
+      ]
+    }
+  ],
+  "context": [
+    "Since 1979 the San Francisco Residential Rent Stabilization and Arbitration Ordinance has limited annual rent increases for sitting tenants in most rental buildings built before June 1979. (policy.txt, line 5)",
+    "Buildings of four units or fewer in which the owner lives were exempt. (policy.txt, line 5)"
+  ]
+}
