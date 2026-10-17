@@ -211,3 +211,19 @@ def test_contradiction_names_the_failed_premise():
     from mathpraxeo.bridge import to_markdown
     md = to_markdown("t", list(atts.values()))
     assert "Contradictions:" in md and "The sign is not changed" in md
+
+
+def test_bound_handlers():
+    pred = _pred("price_ceiling", [("tenants.prospective", "side_payments", "increase")])
+    base = dict(market_growth=(0.05, 0.07), cap_growth=0.0, gap_year=3, demand_elasticity=-0.5, supply_elasticity=0.3,
+                buyer_penalty=0.0)
+    ok = annex_pass(pred, _inputs(**base, seller_penalty=0.01))
+    assert ok[0].handler == "black_market_premium" and ok[0].sign_check == "agrees"
+    deterred = annex_pass(pred, _inputs(**base, seller_penalty=0.9))
+    assert deterred[0].sign_check == "contradicts" and "imperfect enforcement" in deterred[0].diagnosis
+    tax = annex_pass(_pred("per_unit_tax", [("resource_owners", "resource_stock", "decrease")]),
+                     _inputs(net_price_growth=0.03, discount_rate=0.05))
+    assert tax[0].handler == "hotelling_timing" and tax[0].sign_check == "agrees"
+    lob = annex_pass(_pred("quota", [("license_holders", "lobbying_effort", "increase")]),
+                     _inputs(rent_per_year=1000, discount_rate=0.05, expected_duration=10))
+    assert lob[0].handler == "rent_seeking_ceiling" and lob[0].sign_check == "indeterminate"

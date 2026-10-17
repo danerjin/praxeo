@@ -142,3 +142,37 @@ def test_incidence_undetermined_without_response_is_full_range():
     assert b.value.hi == 0.0 and s.value.lo == pytest.approx(-0.1)
     sb, ss = subsidy_incidence(0.1, 0.0, 0.0)
     assert "undetermined" in sb.note
+
+
+from mathpraxeo.bounds import black_market_premium, covered_interest_parity, hotelling_gap, rent_seeking_ceiling  # noqa: E402
+
+
+def test_black_market_bounds():
+    r = black_market_premium(0.1, -0.5, 0.5, 0.02, 0.01)
+    # lower: sellers' penalty; upper: g (1 + es/|ed|) - buyers' penalty = 0.1 * 2 - 0.01
+    assert (r.value.lo, r.value.hi) == (pytest.approx(0.02), pytest.approx(0.19))
+    assert check_sign("increase", r) == "agrees"
+    deterred = black_market_premium(0.1, -0.5, 0.5, 0.5, 0.0)
+    assert deterred.value == Interval(0.0, 0.0) and "fails" in deterred.note
+    assert check_sign("increase", deterred) == "contradicts"
+    with pytest.raises(ValueError):
+        black_market_premium(0.1, 0.0, 0.5, 0.0, 0.0)
+
+
+def test_hotelling():
+    assert hotelling_gap(0.03, 0.05).value.sign == "decrease"     # price grows slower than r: extract sooner
+    assert hotelling_gap(0.07, 0.05).value.sign == "increase"     # faster: defer
+    r = hotelling_gap(0.05, 0.04, 0.10, 0.2)                       # a tax rising faster than the price
+    assert r.value.lo == pytest.approx(0.05 - 0.2 * 0.05 / 0.8 - 0.04)
+    assert r.value.sign == "decrease"
+    with pytest.raises(ValueError):
+        hotelling_gap(0.05, 0.04, 0.1, 1.0)
+
+
+def test_rent_seeking_and_cip():
+    r = rent_seeking_ceiling(100, 0.0, 10)
+    assert r.value == Interval(0.0, 1000.0) and check_sign("increase", r) == "indeterminate"
+    c = covered_interest_parity(0.05, 0.02)
+    assert c.value.lo == pytest.approx(1.05 / 1.02 - 1)
+    band = covered_interest_parity(0.05, 0.02, 0.01)
+    assert band.value.lo < c.value.lo < band.value.hi

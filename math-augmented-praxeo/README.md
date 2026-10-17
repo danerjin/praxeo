@@ -105,6 +105,7 @@ Mises rejected the equation as an explanation (*Theory of Money and Credit*, Par
 | `mathpraxeo/identities.py` | M0 | Little's law (wait time), expected penalty, inflation tax, Fisher relation, debt dynamics, stock-flow, sectoral balances, doubling time. |
 | `mathpraxeo/capital.py` | M0 | Gap path between a capped and a market price, the gap as a share of the market price, the capitalized loss, and the present value of a yearly amount (for license, quota and tax values). |
 | `mathpraxeo/statics.py` | M1 (quota rent: M0) | Supply and demand intersection; ceiling shortage, floor surplus, quantity supplied under a held-down price; tax and subsidy incidence; exchanges forgone; tariff; quota rent; spending change; cost pass-through bound; tax revenue with base response. |
+| `mathpraxeo/bounds.py` | M1, bounds only | Black-market premium under a ceiling, Hotelling timing, rent-seeking ceiling, covered interest parity. Each returns limits, never a point. |
 | `mathpraxeo/report.py` | — | Renders an annex table with the sign check for each consequence. |
 | `mathpraxeo/bridge.py` | — | The annex pass over a `praxeo` prediction, with handlers keyed by instrument, variable and actor role, and its guards: `annex_pass`, `dominance_evidence`, `premise_evidence`, `settle_by_arithmetic`, `GuardError`. |
 | `mathpraxeo/premise_step.py` | — | Puts annex evidence for dominance premises to a decider; writes the log and the annex-informed prediction. |
@@ -134,16 +135,17 @@ python3 math-augmented-praxeo/examples/we001_annex.py
 ## Status and next steps
 
 - This is a folder on the working branch, not a separate branch. A separate branch can be cut from it if wanted.
-- The annex pass has 24 handlers, keyed by instrument, variable and actor role. They cover:
+- The annex pass has 27 handlers, keyed by instrument, variable and actor role. They cover:
   - price ceilings: quantity supplied, shortage, insiders' price, capitalized asset value, the substitute's price;
   - floors: surplus, employment and quantity demanded;
   - per-unit taxes: both prices, quantity traded, revenue shortfall;
   - tariffs: domestic price, domestic output, imports, use, revenue shortfall;
   - subsidies: both prices;
   - quotas, licences and allocated rights: the right's value and its lease price;
-  - for any instrument: wait times (Little's law) and cost pass-through to a downstream buyer.
+  - for any instrument: wait times (Little's law) and cost pass-through to a downstream buyer;
+  - the bounds: the illegal premium under a ceiling (`side_payments`), the timing of extraction under a resource tax or quota (`resource_stock`), and the ceiling on lobbying spending (`lobbying_effort`). A bound that includes zero gives *indeterminate*, never *agrees*.
 
   Actor roles not named in the record (buyers, sellers, importers, holders, downstream) come from `_actors` in the inputs file. The thin slice only produces price-ceiling consequences, so the other handlers are exercised by tests on synthetic predictions.
 - The premise step covers the two dominance premises the rule base has (`keepers_dominate`, `lockin_dominates`). New dominance premises need an entry in `DOMINANCE_PREFIXES` and a `_dominance` spec.
 - The LLM decider has not run here (no API key).
-- Bounds not yet built (see `SURVEY.md`): the black-market price under a ceiling, the Hotelling rule, rent-seeking dissipation, covered interest parity.
+- Covered interest parity is a function only (`bounds.covered_interest_parity`): the ontology has no forward-rate variable for a handler to attach to.

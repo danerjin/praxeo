@@ -25,6 +25,7 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Callable
 
+from .bounds import black_market_premium, hotelling_gap, rent_seeking_ceiling
 from .capital import cap_gap_path, capitalized_loss, gap_share, present_value
 from .identities import wait_time
 from .interval import Interval, corners
@@ -168,6 +169,13 @@ DIAGNOSES: dict[str, tuple[list[str], str]] = {
     "cost_pass_through": ([], "the upstream price change has the opposite sign to the one this chain assumes: check the "
                               "upstream consequence and the input-price range"),
     "wait_time": ([], "a wait time cannot be negative: an input error"),
+    "black_market_premium": (["enforced"], "no illegal trade pays at the margin under these inputs: the expected penalty "
+                                           "exceeds what buyers will pay above the ceiling, so the premise of imperfect "
+                                           "enforcement (PC-6) fails, or the ceiling does not bind"),
+    "hotelling_timing": ([], "the net-of-tax price is expected to grow at the other side of the interest rate from the one "
+                             "the timing chain assumes: check the expected price and tax paths, and whether owners expect "
+                             "to keep the resource"),
+    "rent_seeking_ceiling": ([], "a ceiling on spending cannot contradict a sign; check the rent and rate inputs"),
 }
 
 
@@ -238,6 +246,19 @@ HANDLERS: list[Handler] = [
             ["price_gap", "units_per_right", "discount_rate", "expected_duration"]),
     Handler("right_lease_price", QUOTA, "right_lease_price", "any",
             lambda i: quota_rent(i.values["price_gap"], i.values["units_per_right"]), ["price_gap", "units_per_right"]),
+    # bounds (SURVEY.md): illegal premium under a ceiling (PC-6), timing of extraction (Hotelling),
+    # ceiling on lobbying spending (RS-7)
+    Handler("black_market_premium", CEILING, "side_payments", "any",
+            lambda i: black_market_premium(_gap(i), i.values["demand_elasticity"], i.values["supply_elasticity"],
+                                           i.values["seller_penalty"], i.values["buyer_penalty"]),
+            GAP_KEYS + ["demand_elasticity", "supply_elasticity", "seller_penalty", "buyer_penalty"]),
+    Handler("hotelling_timing", TAXES + QUOTA, "resource_stock", "any",
+            lambda i: hotelling_gap(i.values["net_price_growth"], i.values["discount_rate"],
+                                    i.values.get("tax_growth", Interval.point(0.0)), i.values.get("tax_share", Interval.point(0.0))),
+            ["net_price_growth", "discount_rate"]),
+    Handler("rent_seeking_ceiling", ANY, "lobbying_effort", "any",
+            lambda i: rent_seeking_ceiling(i.values["rent_per_year"], i.values["discount_rate"], int(i.values["expected_duration"].hi)),
+            ["rent_per_year", "discount_rate", "expected_duration"]),
     # costs passed down a chain (RS-14, PC-12): any instrument, for the actor named `downstream`
     Handler("cost_pass_through", ANY, "price_paid", "downstream",
             lambda i: cost_pass_through(i.values["input_price_change"], i.values["cost_share"]),

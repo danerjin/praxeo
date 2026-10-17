@@ -52,9 +52,9 @@ This file goes through the main mathematical methods economists use. For each it
 | Cost pass-through up and down a chain | Bound: [0, cost share × input change] | Between no and full pass-through | RS-14, PC-12, TX-7 (steel users) | `statics.cost_pass_through` |
 | Tax revenue with base response (the arithmetic behind the Laffer curve) | Adopt, first order; no claim about a revenue peak | Elasticity of the base to the net-of-tax rate, as a range | OC-1, TX-2, TX-9 (does revenue rise by less than the rate?) | `statics.revenue_change` |
 | Cross-price effects (spillover to substitutes) | Adopt via `equilibrium_shift` | A demand shift in the substitute market = cross elasticity × price change | PC-8, RS-1, RS-4, RS-16 | `equilibrium_shift` with a = cross elasticity × %ΔP |
-| Black-market price bounds | Bound | Under a ceiling, the illegal price lies between the ceiling and the clearing price plus the expected penalty per unit | PC-6, RS-3 | Not built; expressible with `expected_penalty` and `ceiling_shortage` |
-| Hotelling rule (an exhaustible resource's price rises at the rate of interest) | Bound only | No-arbitrage over time, a known stock and known costs | Resource taxes and quotas (EN-, TX-12). Usable only as "the price path cannot rise much faster than r without inviting earlier extraction" | Not built |
-| Rent-seeking dissipation (Tullock) | Bound: spending on lobbying ≤ the value of the rent to all bidders together | That bidders do not overpay in total, roughly | RS-7 (lobbying) | Not built; `present_value` gives the rent |
+| Black-market price bounds | Bound | Under a ceiling, the illegal premium lies between sellers' expected penalty per unit and what the marginal buyer will pay for the shrunken quantity, less the buyer's penalty (first order). An empty range means illegal trade does not pay, so imperfect enforcement fails | PC-6, RS-3 | `bounds.black_market_premium` |
+| Hotelling rule (an exhaustible resource's price rises at the rate of interest) | Bound only | No-arbitrage over time; owners expect to keep the resource and choose when to extract | Resource taxes and quotas (EN-, TX-12). Returns net-of-tax price growth minus r: negative brings extraction forward, positive defers it. Gives the direction and size of the timing pressure, not an extraction path | `bounds.hotelling_gap` |
+| Rent-seeking dissipation (Tullock) | Bound: total lobbying spending lies between zero and the present value of the privilege to all contenders together | That contenders do not overpay in total | RS-7 (lobbying) | `bounds.rent_seeking_ceiling` |
 
 ## 3. Valuation in money of gains and losses
 
@@ -89,7 +89,7 @@ This file goes through the main mathematical methods economists use. For each it
 | Growth accounting (Solow residual) | **Exclude** | A residual defined by a production function. |
 | Ricardian equivalence | **Exclude** | A behavioral claim (people offset deficits by saving), empirical and disputed. The debt arithmetic is adopted (`debt_path`); the behavioral claim is not. |
 | Purchasing power parity (absolute or relative) | **Input** | A long-run tendency, not an identity. Usable as a range for the exchange-rate response in TX-8, never as a law. |
-| Covered interest parity | **Bound** | An arbitrage condition that holds closely in practice. Usable as a bound on forward exchange rates; rarely needed by the handbook. |
+| Covered interest parity | **Bound** | An arbitrage condition that holds closely in practice. Usable as a bound on forward exchange rates, within a band for costs and capital controls; rarely needed by the handbook. Built as `bounds.covered_interest_parity`; there is no annex handler, because the ontology has no forward-rate variable. |
 
 ## 6. Statistical and empirical methods
 
@@ -105,7 +105,7 @@ This file goes through the main mathematical methods economists use. For each it
 - **Adopted, in code (25 functions):**
   - M0, 14 functions: the equation of exchange and the velocity it implies; the Fisher relation; the inflation tax; debt dynamics; sectoral balances; present value, capitalized loss and price-path arithmetic; stock-flow arithmetic; doubling time; Little's law; expected penalty; quota rent.
   - M1, 11 functions: the supply and demand intersection; ceiling shortage, floor surplus and quantity supplied under a held-down price; tax and subsidy incidence; exchanges forgone; the tariff; spending change; cost pass-through (as a bound); tax revenue with base response.
-- **Bounds only, not built yet:** black-market price, Hotelling, rent-seeking dissipation, covered interest parity.
+- **Bounds only, in code (4 functions):** black-market premium, Hotelling timing, rent-seeking ceiling, covered interest parity.
 - **Inputs, not methods:** econometric estimates, index numbers, input-output cost shares, purchasing power parity, forecasts.
 - **Excluded:**
   - every money measure of welfare (surplus, deadweight loss in money, cost-benefit in welfare terms);
