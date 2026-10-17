@@ -260,21 +260,21 @@ Stopping points. Farm output and crop losses from shorter downtime, phone resale
 
 **The policy.** From 1 September 2028, makers of farm equipment and phones sold in Kestrava since 2023 must sell parts, tools, documentation and diagnostic software to owners and independent repairers on terms no worse than those they give their own repairers; contract terms that restrict repair are void; and software locks may not stop parts from working. It is unclear whether locks that pair parts to a device must be removed or only made unlockable by the owner.
 
-**Visible consequences.** Independents and owners pay less for genuine parts, tools and software (C-1), do more repairs (C-2, C-3) and pay less per repair of a given kind (C-4). Anti-repair terms cannot be enforced (C-5).
+**Visible consequences.** Independents and owners pay less for genuine parts, tools and software (C-1), and do more repairs (C-2, C-3). Once independent shops have grown, owners pay less per independent repair of a given kind (C-4); before that, the price may rise or fall (C-47). Anti-repair terms cannot be enforced (C-5).
 
 **Invisible consequences.**
-- *Authorized repair.* Dealers and authorized providers do fewer repairs and charge less per job of a given kind (C-6, C-7), though their average ticket may rise as simple jobs leave. Dealerships lose value (C-23) and bear more of the Act's burden than makers on the farm side (C-11); they employ fewer technicians or hours (C-33). Their net price for parts may rise or fall as discounts are reworked (C-31).
+- *Authorized repair.* Dealers and authorized providers do fewer repairs, and charge less per job of a given kind or make owners wait less, or both (C-6, C-7), though their average ticket may rise as simple jobs leave. Dealers sell fewer parts over the counter (C-43). Dealerships lose value (C-23) and bear more of the Act's burden than makers on the farm side (C-11); they employ fewer technicians or hours (C-33). Their net price for parts may rise or fall as discounts are reworked (C-31).
 - *Independents.* More shops open (C-8), earning more at first and, as they enter, what capital earns elsewhere (C-24, C-25); they employ more technicians (C-34) and pay for software and tools (C-42).
-- *Makers.* They pay to comply (C-40) and lose value (C-26). They recover part of the cost through price, warranty or the models they offer (C-9), shift to substitute terms (C-10), withdraw some specialty models from Kestrava (C-21), market some compact tractors outside the definition (C-19), and some offers fall short of the law (C-20). Their designs may become more or less repairable (C-38). New sales may rise or fall (C-30).
-- *Owners.* Covered equipment and phones gain value (C-27) and are kept longer (C-29); owners who repair anyway have more to spend (C-39); farmers wait less at harvest (C-32) and know more about faults (C-37). Owners of older, exempt tractors may gain or lose (C-28). Repairs were deferred into the effective date (C-15, C-16).
+- *Makers.* They pay to comply (C-40) and lose value, provided the lost margins outweigh the gain from every rival being bound (C-26). Farm makers raise Kestrava list prices (C-46); phone makers recover part of the cost through price, warranty or the models they offer (C-9); they shift to substitute terms (C-10), withdraw some specialty models from Kestrava (C-21), market some compact tractors outside the definition (C-19), and some offers fall short of the law (C-20). Their designs may become more or less repairable (C-38). New sales may rise or fall (C-30). Genuine phone parts sell more if owners need only be able to pair them (C-45).
+- *Owners.* Covered equipment and phones gain value (C-27) and are kept longer, though their average age in use may rise or fall (C-29); owners who keep buying the same repairs have more to spend once independents' prices fall (C-39); farmers wait less at harvest (C-32) and know more about faults (C-37). Owners of older, exempt tractors may gain or lose (C-28). Repairs were deferred into the effective date (C-15, C-16).
 - *Across the line.* Farmers near Darnholt may buy more or less there (C-17); Darnholt phone owners pay less for genuine repairs where makers extend their programs (C-18).
-- *The state.* Other consumer complaints wait longer (C-41). Lobbying on the reading of the Act rises (C-22).
+- *The state.* Complaints under the Act appear (C-44) and other consumer complaints wait longer (C-41). Lobbying on the reading of the Act rises (C-22).
 
-**Per reading of U1.** If pairing must go (U1-a), pairing disappears from covered phones (C-12), parts from stolen phones gain a market (C-14), and used-phone buyers lose the notices that told them a part was replaced (C-36). If owners need only be able to pair genuine parts (U1-b), pairing may spread or shrink (C-12), and stolen parts and used-phone information are unchanged (C-14, C-36). Non-genuine parts may sell more or less under both (C-13).
+**Per reading of U1.** If pairing must go (U1-a), pairing disappears from covered phones (C-12), parts from stolen phones gain a market (C-14), and used-phone buyers lose the notices that told them a part was replaced (C-36). If owners need only be able to pair genuine parts (U1-b), pairing may spread or shrink (C-12), stolen parts and used-phone information are unchanged (C-14, C-36), and genuine parts sell more (C-45; under U1-a, more or less). Non-genuine parts may sell more or less under both (C-13).
 
-**Ambiguous effects.** Pairing under U1-b (C-12); non-genuine parts (C-13); cross-border farm purchases (C-17); exempt tractors' values (C-28); new sales (C-30); dealers' parts prices (C-31); technicians' wages (C-35); new designs (C-38).
+**Ambiguous effects.** Pairing under U1-b (C-12); non-genuine parts (C-13); independents' prices before entry (C-47); cross-border farm purchases (C-17); exempt tractors' values (C-28); the average age of covered units (C-29); new sales (C-30); genuine phone parts under U1-a (C-45); dealers' parts prices (C-31); technicians' wages (C-35); new designs (C-38).
 
-**Key conditions.** That makers comply (A-1, p = 0.7); that some owners prefer independent or self repair (A-3, p = 0.9); that dealers' capital is more tied to place than makers' (A-19, p = 0.75); that buyers value the term (A-22, p = 0.7).
+**Key conditions.** That makers comply (A-1, p = 0.7); that some owners prefer independent or self repair (A-3, p = 0.9); that dealers' capital is more tied to place than makers' (A-19, p = 0.75); that buyers value the term (A-22, p = 0.7); that the lost margins outweigh the gain from binding every rival (A-25, p = 0.7); that farm makers raise Kestrava prices (A-18, p = 0.55).
 
 **What this analysis cannot say.** How large any effect is; whether owners as a whole gain more than makers and dealers lose; whether repairs by independents are better or worse done; emissions, safety, theft's harm to persons and electronic waste (out of scope for version 1); whether the Act is desirable.
 
@@ -282,48 +282,87 @@ Stopping points. Farm output and crop losses from shorter downtime, phone resale
 
 | ID | Actor class | Variable | Sign | Horizon | Visibility | Tier | Derivation | Assumptions |
 |---|---|---|---|---|---|---|---|---|
-| C-1 | independents, owners.ag, owners.phone | price_paid (genuine parts, tools, software) | decrease | short | visible | B | CR-1, PC-17, CR-5c | A-1, A-2 |
+| C-1 | independents, owners.ag, owners.phone | price_paid (genuine parts, tools, software) | decrease | short | visible | B | CR-1, PC-17 (1.1), CR-5c | A-1, A-2 |
 | C-2 | independents | quantity_traded (independent repairs of covered equipment) | increase | short–medium | visible | B | RS-1, CR-4 | A-1, A-3 |
 | C-3 | owners.ag | home_production (self repairs) | increase | short–medium | visible | B | RS-1, CR-4 | A-1, A-3 |
-| C-4 | owners.ag, owners.phone | price_paid (independent and self repair, per repair of a given kind) | decrease | short–medium | visible | B | CR-1, CR-5c, RS-16 | A-1, A-2 |
+| C-4 | owners.ag, owners.phone | price_paid (independent repair, per repair of a given kind, after entry) | decrease | medium–long | visible | B | CR-1, CR-5c, RS-16, CR-7a, CR-12e | A-1, A-2, A-5, A-13 |
 | C-5 | makers.ag, makers.phone, dealers.ag | term_prevalence (enforceable anti-repair terms) | decrease | short | visible | B | PC-18, CR-1 | A-2 |
 | C-6 | dealers.ag, authorized_providers.phone | quantity_traded (authorized repairs) | decrease | short–medium | invisible | B | RS-16, CR-9, CR-4 | A-1, A-3 |
-| C-7 | dealers.ag, authorized_providers.phone | price_paid (authorized repair, per job of a given kind) | decrease | short–medium | invisible | B | RS-16, CR-6 | A-1, A-3, A-4 |
+| C-7 | dealers.ag, authorized_providers.phone | price_paid (authorized repair, per job of a given kind) (−), wait_time (authorized repair) (−) | at_least_one_decrease | short–medium | invisible | B | RS-16, CR-6 | A-1, A-3, A-4 |
 | C-8 | independents.prospective | entry_rate (independent shops) | increase | medium | invisible | B | RS-6, CR-7a, CR-4 | A-1, A-5 |
-| C-9 | makers.ag, makers.phone, buyers.prospective | price_paid (+), warranty and other terms (−), variety (−) | at_least_one_as_stated | short–medium | invisible | B | PC-17, CR-5c, CR-6, CR-7, CR-12 | A-2, A-6 |
+| C-9 | makers.phone, buyers.prospective (phones) | price_paid (+), warranty and other terms (−), variety (−) | at_least_one_as_stated | short–medium | invisible | B | PC-17 (1.1), CR-5c, CR-6, CR-7, CR-12 | A-2, A-6 |
 | C-10 | makers.ag, makers.phone, buyers.prospective | term_prevalence (substitute terms) (+), price_paid (+) | at_least_one_as_stated | short–medium | invisible | B | PC-18, CR-5c, CR-6 | A-2, A-6 |
-| C-11 | dealers.ag | tax_share_borne (burden of K1 and K2, against makers) | increase | medium | invisible | B | PC-17, CR-7b, DM-1 | A-6, A-19 |
+| C-11 | dealers.ag | tax_share_borne (burden of K1 and K2, against makers) | increase | medium | invisible | B | PC-17, CR-7b | A-6, A-19 |
 | C-12 | makers.ag, makers.phone | product_attribute (parts pairing) | U1-a: decrease; U1-b: ambiguous | short–medium | invisible | B | CR-1, CR-4, CR-12b | A-1, A-24 |
 | C-13 | parts_sellers.third_party | quantity_traded (non-genuine parts for covered phones) | U1-a: ambiguous; U1-b: ambiguous | short–medium | invisible | B | RS-1, CR-4, CR-12b | A-1, A-3, A-21 |
 | C-14 | thieves, buyers of stolen parts | informal_activity (parts from stolen phones) | U1-a: increase; U1-b: no_change | short–medium | invisible | B | RS-3, CR-4, CR-1 | A-17 |
 | C-15 | owners.ag, owners.phone | quantity_traded (authorized repairs, March 2027–August 2028) | decrease | short | invisible | B | RS-8, CR-10a, CR-4 | A-7 |
 | C-16 | owners.ag, owners.phone | quantity_traded (independent and self repairs, first six months from September 2028) | increase | short | invisible | B | RS-8, CR-10a, CR-4 | A-7 |
-| C-17 | owners.ag (near the state line) | cross_border_purchases (new farm equipment from Darnholt) | ambiguous | short–medium | invisible | B | RS-4, CR-4, CR-12b, CR-12 | A-3, A-18 |
+| C-17 | owners.ag (near the state line) | cross_border_purchases (new farm equipment from Darnholt) | ambiguous | short–medium | invisible | B | RS-4 (1.1), CR-4, CR-12b, CR-12 | A-3, A-18 |
 | C-18 | neighboring_jurisdictions (Darnholt phone owners) | price_paid (genuine-part phone repair) | decrease | short–medium | invisible | B | CR-9, CR-4, RS-16 | A-8 |
 | C-19 | makers.ag | reclassification (compact tractors as grounds-care equipment) | increase | medium | invisible | B | RS-5 | A-9 |
 | C-20 | makers.ag, makers.phone | legal_breach (offers short of the Act) | increase | short–medium | invisible | B | RS-20, RS-3, CR-4 | A-10 |
-| C-21 | makers.ag | variety (specialty models offered in Kestrava) | decrease | medium | invisible | B | CR-4 | A-11 |
-| C-22 | lobbying groups | lobbying_effort (questions only under the Act) | increase | short–medium | invisible | B | RS-7, CR-4, CR-12 | A-23 |
+| C-21 | makers.ag | variety (specialty models offered in Kestrava) | decrease | medium | invisible | B | RS-24, CR-4 | A-11 |
+| C-22 | lobbying groups | lobbying_effort (questions only under the Act) | increase | short–medium | invisible | B | RS-7, CR-4 (1.0, 1.1), CR-12 | A-23 |
 | C-23 | dealers.ag | asset_value (dealerships) | decrease | short | invisible | B | CR-7c, CR-10c, SB-4 | A-3, A-20 |
 | C-24 | independents | return_on_capital | increase | short–medium | invisible | B | CR-7a, CR-4 | A-1, A-3 |
-| C-25 | independents | return_on_capital | no_change | long | invisible | B | CR-7a, CR-12e, CR-12, CR-7 | A-5, A-13 |
-| C-26 | makers.ag, makers.phone | asset_value (shares) | decrease | short | invisible | B | CR-7c, CR-10c, CR-3a, CR-8, CR-6 | A-12, A-20 |
+| C-25 | independents | return_on_capital | no_change | long | invisible | B | CR-7a, CR-12e, CR-12 | A-5, A-13 |
+| C-26 | makers.ag, makers.phone | asset_value (shares) | decrease | short | invisible | B | CR-7c, CR-10c, CR-3a, CR-9, CR-8, CR-6, CR-12e | A-12, A-20, A-25 |
 | C-27 | owners.ag, owners.phone (covered units) | asset_value (covered used equipment and phones) | increase | short | invisible | B | CR-7c, CR-10c, RS-12, CR-8 | A-1, A-3, A-20 |
-| C-28 | owners.ag.exempt | asset_value (equipment sold before 2023) | ambiguous | short–medium | invisible | B | EN-14, RS-16, RS-12, CR-12b | A-3, A-5, A-6 |
-| C-29 | owners.ag, owners.phone | stock_age (covered equipment in use) | increase | medium–long | invisible | B | CR-10b, RS-12, CR-4 | A-1, A-3 |
+| C-28 | owners.ag.exempt | asset_value (equipment sold before 2023) | ambiguous | short–medium | invisible | B | EN-14 (1.1), RS-16, RS-12, CR-12b | A-3, A-5, A-6, A-18 |
+| C-29 | owners.ag, owners.phone | stock_age (covered equipment in use) | ambiguous | medium–long | invisible | B | CR-10b, RS-12, CR-4, CR-12b | A-1, A-3, A-22 |
 | C-30 | makers.ag, makers.phone | quantity_traded (new covered equipment sold in Kestrava) | ambiguous | medium | invisible | B | RS-16, PC-17, CR-7, CR-12b | A-3, A-6, A-22 |
 | C-31 | dealers.ag | price_paid (parts from makers, net of discounts) | ambiguous | short–medium | invisible | B | CR-5c, CR-4, CR-6, CR-12b | A-6, A-21 |
 | C-32 | owners.ag | wait_time (downtime at harvest) | decrease | short–medium | invisible | B | CR-6, CR-4, RS-12 | A-3, A-14 |
 | C-33 | technicians | employment (dealers), hours_worked (dealers) | at_least_one_decrease | medium | invisible | B | RS-6, CR-9, LW-10 | A-3, A-4 |
-| C-34 | technicians | employment (independent shops) | increase | medium | invisible | B | CR-9, LW-10, OC-5 | A-5 |
+| C-34 | technicians | employment (independent shops) | increase | medium | invisible | B | CR-9, LW-10, OC-5, CR-6 (1.1) | A-5 |
 | C-35 | technicians | wage_rate (farm equipment technicians) | ambiguous | medium | invisible | B | CR-9, CR-7a, CR-12b | A-4, A-5 |
 | C-36 | buyers.used (phones) | quality_information (part history) | U1-a: decrease; U1-b: no_change | short–medium | invisible | B | CR-11c, CR-11, CR-1 | A-15 |
 | C-37 | owners.ag, owners.phone | quality_information (fault diagnosis) | increase | short–medium | invisible | B | EN-15, CR-11c, CR-11 | A-16 |
 | C-38 | makers.ag, makers.phone | product_attribute (separately replaceable parts in new models) | ambiguous | medium–long | invisible | B | CR-4, CR-12b, TS-3 | A-22, A-24 |
-| C-39 | owners.ag, owners.phone (who repair anyway) | resources_available_other_uses (money) | increase | short–medium | invisible | B | CR-3, CR-8b | A-1, A-3 |
+| C-39 | owners.ag, owners.phone (who keep buying the same repairs) | resources_available_other_uses (money) | increase | medium–long | invisible | B | CR-3, CR-8b | A-1, A-3, A-5, A-13 |
 | C-40 | makers.ag, makers.phone | compliance_cost | increase | short–long | invisible | A | CR-8c, OC-2, PC-17 | none |
 | C-41 | officials.enforcement, complainants.other | wait_time (other complaints) (+), enforcement_cost (time per other complaint) (−) | at_least_one_as_stated | short–medium | invisible | B | OC-3, CR-8a | A-10 |
-| C-42 | independents | compliance_cost (software, tools, training) | increase | short–medium | invisible | B | CR-8c, CR-4 | A-5 |
+| C-42 | independents | investment_target (software, tools, training) | increase | short–medium | invisible | B | CR-4, CR-5, CR-8a | A-5 |
+| C-43 | dealers.ag | quantity_traded (parts sold at retail to owners and independents) | decrease | medium–long | invisible | B | CR-9, CR-4, PC-17 (1.1) | A-1, A-2 |
+| C-44 | owners and independents (complainants) | applications (complaints under the Act) | increase | medium | invisible | B | CR-4, CR-12 | A-10 |
+| C-45 | makers.phone | quantity_traded (genuine parts for covered phones) | U1-a: ambiguous; U1-b: increase | medium | invisible | B | CR-9, LW-10, CR-4, CR-12b | A-1, A-3, A-21 |
+| C-46 | makers.ag, buyers.prospective (farm) | price_paid (new covered farm equipment in Kestrava) | increase | short–medium | invisible | B | PC-17 (1.1), CR-5c, CR-6, CR-7 | A-2, A-6, A-18 |
+| C-47 | owners.ag, owners.phone | price_paid (independent repair, per repair of a given kind, before entry) | ambiguous | short | invisible | B | CR-6, CR-5c, CR-12b | A-1, A-3, A-5 |
+
+## Corrections after the core-only comparison
+
+Made after the blind core-only re-run (`05_examples_core/WE-059_right_to_repair_core.md`) and its comparison, and under catalog 1.1. Each comparison row with cause P or E against this version, each valid OP omission, and each correction in the Findings was checked against the core rules before it was applied.
+
+**Changed.**
+- C-7: dealers' price per job is now a group with the dealer wait (`at_least_one_decrease`). The dealer market was rationed partly by waiting, so CR-6 gives at least one margin, not the price alone; RS-16's 1.1 clause on waiting now says so.
+- C-9: restricted to phones, where A-6 names no member and the group stands. For farm equipment the price is signed alone on its own premise (C-46, A-18), and variety alone (C-21), so C-17 and C-28 now combine a signed consequence rather than a group member (CR-12, 1.1). Cites PC-17's 1.1 clause on the terms of a product sale.
+- C-4: owners' price per independent repair is now signed for the medium to long run only, after entry, on A-5 and A-13 (response argument, CR-12 1.1); the short run is `ambiguous` (C-47, new). Self repair's price is that of the inputs (C-1).
+- C-29: `stock_age` of covered units changes from `increase` to `ambiguous`; longer lives are combined with the ambiguous new-sales chain (C-30, kind 3).
+- C-26: makers' share values now also rest on A-25 (new): the lost margins and costs outweigh any gain from every rival being bound at once and from buyers valuing the term; CR-3a alone does not sign a firm's money value.
+- C-39: owners' means restricted to owners who keep buying the same repairs, medium to long run, on A-5 and A-13, since the short-run prices behind it are a group (C-7) or `ambiguous` (C-47).
+- C-42: variable changed from `compliance_cost` to `investment_target`: independents' software and tools are a chosen input purchase, not compliance (CR-8c does not fit).
+- C-25: CR-7's 1.0 "which stock" clause no longer cited (there is no permission here).
+- C-28: EN-14 is now applied through its 1.1 Unless clause (a standard buyers value) rather than overridden; its (+) chain rests on C-46.
+- C-11: DM-1 no longer cited (its If clause asks for a tax or subsidy); CR-7b carries the comparison.
+- C-21: cites RS-24 (promoted in 1.1 on this case). C-1: cites PC-17's 1.1 clause on a term owed to third parties. C-17: cites RS-4's 1.1 clause on two chains. C-22: cites CR-4's 1.1 note on "the same question". C-34: cites CR-6's 1.1 clause on labor demand, with new shops as a new activity.
+- C-30, C-32: text no longer uses group members (the phone price, the dealer wait) as chains (CR-12, 1.1); signs unchanged.
+
+**Added.**
+- C-43: dealers' retail parts sales to owners and independents fall (CR-9, CR-4; core C-29).
+- C-44: complaints under the Act rise from none (CR-4, CR-12 0.9; core C-34).
+- C-45: genuine phone parts, U1-a `ambiguous`, U1-b `increase` (CR-9, CR-4; core C-35).
+- C-46: farm list prices in Kestrava rise, signed alone on A-18 (core C-18).
+- C-47: owners' price per independent repair before entry, `ambiguous` (CR-6 against CR-5c; comparison note on C-4).
+- A-25: lost margins and costs outweigh the gain from binding every rival (p 0.7).
+
+**Removed.** None.
+
+**Comparison conclusions rejected or not applied.**
+- Comparison on C-4 (the decrease "holds once capacity has grown"): not applied as stated; applied only with the response argument's premise added (A-13, constant cost of capacity), since technicians' wages are `ambiguous` (C-35) and rising cost could undo the fall.
+- Core C-19 (phone prices signed alone): not adopted, as the comparison itself concludes; A-6 names no member.
+- Core C-25 and C-37 (J): not added; catalog 1.1 does not settle them.
+- Core C-5, C-17, C-32 and the core's form of C-33 (core-version errors): not adopted; this version's C-12, C-38, C-33 and C-34 stand.
 
 ## Gaps found
 
@@ -332,13 +371,13 @@ Stopping points. Farm output and crop losses from shorter downtime, phone resale
 **(b) Unclear core rules.**
 1. *CR-1 for a term owed to third parties.* K1 is a term of each sale, but it is invoked by independent repairers the buyer may never deal with at the time of sale. CR-1's recording note covers operations on each actor class; it does not say how to record a term that adds an option for a class (independents) that is not party to the contract carrying it. Recorded as operation 3 on the maker's option of selling and operation 2 for independents and owners (section 2).
 2. *CR-3a for a firm.* The sign of makers' asset values (C-26) rests partly on CR-3a: removing options cannot make an actor better off by its own ranking. For a firm the ranking that matters is investors' expected yield, and a rule binding all rivals at once can raise each one's yield (it ends a rivalry no one could end alone). That is a premise, not a rule; I used CR-3a with A-12 and note that CR-3 does not say when an option's removal can raise a firm's money value.
-3. *CR-12's 0.8 kind 2 with a group member as the premise.* C-17's opposing chain rests on one member of PC-17's group (Kestrava prices rise). CR-6 and PC-17 say a member is signed alone only with its own premise; I gave it one (A-18, p = 0.55) and then treated it as a kind 2 chain. The rules allow this, but nothing says that a member premised at 0.55 for one key can be used as a chain while the group stays a group for another (C-9).
+3. *CR-12's 0.8 kind 2 with a group member as the premise.* C-17's opposing chain rests on one member of PC-17's group (Kestrava prices rise). CR-6 and PC-17 say a member is signed alone only with its own premise; I gave it one (A-18, p = 0.55) and then treated it as a kind 2 chain. The rules allow this, but nothing says that a member premised at 0.55 for one key can be used as a chain while the group stays a group for another (C-9). *1.1:* settled by CR-12's 1.1 note (group members are not chains): the farm price is now its own consequence (C-46), signed on A-18, and C-9 is restricted to phones.
 
 **(c) Missing or wrong patterns.**
-1. *PC-17's main clause, for a term owed to third parties.* PC-17's If clause ("every contract of a kind to include a term") fits the sale of covered equipment, and its Then (cost to the provider rises, other terms adjust as a mixed group, gross and net) worked (C-9). Its examples and its group are written for employment (wages, hours); the device group (price, warranty, models) had to be built from CR-5c and CR-6. "Who bears it" needed DM-1 and CR-7b across three parties (makers, dealers, buyers), which PC-17 does not prompt (C-11). The 1.0 clause (a charge refunded on the act) did not arise.
-2. *EN-14, applied as written, gave a sign I had to override.* Read for K3 (and K1) as a rule on new units with older units exempt, its preconditions are met: it gives `increase` for the exempt stock's value (new units dearer, so older ones face less competition). The conclusion assumes the standard is only a cost to buyers. Here buyers value what it requires (A-22): covered units are cheaper to keep running, which draws demand away from exempt units, and repair capacity built for covered units serves exempt ones too. Against the counterfactual the sign is `ambiguous` (C-28). EN-14 needs an Unless clause: where buyers value the standard, a chain through substitution toward covered units opposes its sign.
-3. *RS-16's mirror case for a substitute input to the same end.* Worked as written: making independent repair available pulls demand from authorized repair (C-6, C-7), and its 1.0 clause on prices per unit of quality kept a mix shift (dealers keep complex jobs) from being read as a price rise. Its 1.0 clause on costs fixed per facility also applied, to independents' subscriptions (C-8).
-4. *RS-4, where the favored side depends on two chains.* RS-4's Then says activity moves "to whichever side the policy favors". For farm purchases near the line, the policy favors Kestrava through coverage and may favor Darnholt through price (A-18); RS-4 gave no way to say which side is favored, and the sign came from CR-12 (C-17). A clause saying that where the policy changes both a benefit and a price on one side, the move is combined under CR-12b, would help.
+1. *PC-17's main clause, for a term owed to third parties.* PC-17's If clause ("every contract of a kind to include a term") fits the sale of covered equipment, and its Then (cost to the provider rises, other terms adjust as a mixed group, gross and net) worked (C-9). Its examples and its group are written for employment (wages, hours); the device group (price, warranty, models) had to be built from CR-5c and CR-6. "Who bears it" needed DM-1 and CR-7b across three parties (makers, dealers, buyers), which PC-17 does not prompt (C-11). The 1.0 clause (a charge refunded on the act) did not arise. *1.1:* PC-17's 1.1 clause now names the terms of a product sale and a term owed to third parties; DM-1 is no longer cited for who bears it (its If clause asks for a tax or subsidy), and CR-7b carries it.
+2. *EN-14, applied as written, gave a sign I had to override.* Read for K3 (and K1) as a rule on new units with older units exempt, its preconditions are met: it gives `increase` for the exempt stock's value (new units dearer, so older ones face less competition). The conclusion assumes the standard is only a cost to buyers. Here buyers value what it requires (A-22): covered units are cheaper to keep running, which draws demand away from exempt units, and repair capacity built for covered units serves exempt ones too. Against the counterfactual the sign is `ambiguous` (C-28). EN-14 needs an Unless clause: where buyers value the standard, a chain through substitution toward covered units opposes its sign. *1.1:* EN-14 now has this Unless clause, applied here.
+3. *RS-16's mirror case for a substitute input to the same end.* Worked as written: making independent repair available pulls demand from authorized repair (C-6, C-7), and its 1.0 clause on prices per unit of quality kept a mix shift (dealers keep complex jobs) from being read as a price rise. Its 1.0 clause on costs fixed per facility also applied, to independents' subscriptions (C-8). *Re-check:* its mirror case signed the dealer price alone where the dealer market was rationed partly by waiting; under its 1.1 clause on waiting, price and wait are a group (C-7).
+4. *RS-4, where the favored side depends on two chains.* RS-4's Then says activity moves "to whichever side the policy favors". For farm purchases near the line, the policy favors Kestrava through coverage and may favor Darnholt through price (A-18); RS-4 gave no way to say which side is favored, and the sign came from CR-12 (C-17). A clause saying that where the policy changes both a benefit and a price on one side, the move is combined under CR-12b, would help. *1.1:* RS-4 now has this clause (two chains).
 5. *No pattern for a duty to deal at terms tied to another buyer's terms.* §2(d) ties independents' terms to dealers' "most favorable terms". The consequence that each discount to dealers now costs the maker more, so discounts shrink (C-31), was derived from CR-4 and CR-5c; no pattern prompts it. It resembles a most-favored-customer clause imposed by law.
 6. *PC-18* worked as written: void terms, substitute terms as a mixed group (C-10), and voiding in existing contracts as a transfer (C-26, C-27).
 
@@ -365,3 +404,5 @@ Stopping points. Farm output and crop losses from shorter downtime, phone resale
 - *RS-8 (timing).* Worked as written: repairs deferred into the effective date, per window (C-15, C-16); purchases not shifted, since coverage runs from a past date.
 - *OC-3 0.9, fixed budget.* Worked as written (C-41).
 - *Candidates from 06_gaps.md, 6.2e.* "Fixed cost per item reduces variety" (WE-035) was needed for specialty farm models (C-21; CR-4 0.7). The use is against the counterfactual, in which the 14 models are offered in Kestrava, so a fixed cost per model offered can lower the count; this is unlike the invalid WE-040 use, where the counterfactual had one version. I count it as a valid second use, with two cautions for the re-run: the premise is at the cut-off (A-11, p = 0.5), and the cost is per model per state, which is narrower than "per item". "A claim payable inside a boundary draws items from outside" (WE-027) did not apply: coverage depends on where equipment was sold, not where it is used, so no items are drawn across the line. New candidate: a duty to deal at terms tied to another buyer's ((c) 5).
+
+Re-run note: the comparison contradicts two verdicts above: RS-16 1.0 did not work as written for dealers' price (C-7 needed price and wait as a group, as RS-16's 1.1 clause now says), and CR-7's 1.0 "which stock" clause did not apply to independents (there is no permission); EN-14's failure, PC-17's and RS-4's need for interpretation were confirmed.
