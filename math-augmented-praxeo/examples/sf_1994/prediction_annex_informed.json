@@ -1826,19 +1826,25 @@
     "buyer_actor": "buyers.current",
     "cap": 0.6,
     "cap_unit": "share of regional CPI rise, per year, for sitting tenants",
+    "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
     "downstream": [],
     "enforcer_actor": "officials.enforcement",
     "excluded_actor": "tenants.prospective",
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
     "good": "rental_housing_small_multiunit_pre1979",
     "id": "c1",
     "importer_actor": null,
+    "input_supplier_actor": null,
     "instrument": "price_ceiling",
     "market": "san_francisco",
     "neighbor_actor": null,
     "protected_actor": "tenants.controlled",
+    "relief_applicant_actor": null,
+    "renewable": false,
     "revenue_actor": "officials.enforcement",
     "seller_actor": "sellers.current",
     "source_sentences": [
@@ -1846,6 +1852,7 @@
      "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index.",
      "When a tenant leaves voluntarily, the landlord may set the rent for the next tenant freely, after which the limit applies again."
     ],
+    "taxpayer_actor": "taxpayers",
     "vacancy_decontrol": true
    }
   ],
@@ -1872,8 +1879,8 @@
    }
   ]
  },
- "rulebase_version": "rb-thin-0.5 (handbook catalog 1.4: PC-1, PC-3, PC-5, PC-7, PC-21, RS-4, RS-5, TX-1, TX-2, TX-7, TX-8, RS-14; CR-12 totals)",
- "run_at": "2026-10-17T21:10:07+00:00",
+ "rulebase_version": "rb-thin-0.6 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-7, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals)",
+ "run_at": "2026-10-17T21:13:35+00:00",
  "sources_held_back": [],
  "unclear": [
   {

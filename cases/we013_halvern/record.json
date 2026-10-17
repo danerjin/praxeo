@@ -20,14 +20,22 @@
    "exporter_actor": "export_industries",
    "exporter_worker_actor": "workers.export_industries",
    "downstream": [
-    {"actor": "steel_users", "buyer_actor": "buyers.steel_goods", "competitors": "exempt"},
+    {"actor": "steel_users", "buyer_actor": "buyers.steel_goods", "competitors": "exempt",
+     "owner_actor": "owners.steel_users", "exporter_actor": "steel_users.exporters"},
     {"actor": "builders", "buyer_actor": "buyers.construction", "competitors": "same"}
    ],
+   "input_supplier_actor": "input_suppliers",
+   "domestic_seller_owner_actor": "steelmakers.owners",
+   "renewable": true,
+   "definition_line": true,
+   "relief_applicant_actor": "steel_users",
    "cap": 0.25,
    "cap_unit": "ad valorem, share of customs value, for three years",
    "source_sentences": [
     "Importers of record must pay a tariff of 25% of the customs value on imports of flat-rolled and long steel products, for three years.",
-    "Imported fabricated steel products and finished goods containing steel (machinery, vehicles, appliances, fabricated structural sections, fasteners) are not covered."
+    "Imported fabricated steel products and finished goods containing steel (machinery, vehicles, appliances, fabricated structural sections, fasteners) are not covered.",
+    "A review in the third year may extend it.",
+    "Steel users may apply to exclude a product \"not produced domestically in sufficient quantity or quality\"."
    ]
   }
  ],
@@ -38,6 +46,7 @@
  "context": [
   "Three domestic steel firms supply about 60% of the steel used in Halvern; the rest is imported (WE-013 record).",
   "About 4,000 domestic manufacturers use steel as a main input; machinery makers export about 35% of their output (WE-013 record).",
+  "The mills buy scrap, ore and energy as inputs, and their shares are held by owners (WE-013 table, C-21 and C-23; not stated in the order's text).",
   "Halvern buys a small share of the world's steel and has a floating exchange rate (WE-013 record)."
  ]
 }

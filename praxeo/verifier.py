@@ -12,7 +12,8 @@ from . import vocabulary
 from .engine import CUTOFF
 from .schema import Assumption, Consequence, PolicyRecord
 
-RECORD_PREDICATES = ("ceiling(", "decontrol(", "bound(", "protected(", "excluded(", "tax(", "tariff(", "neighbor(", "enforcer(")
+RECORD_PREDICATES = ("ceiling(", "decontrol(", "bound(", "protected(", "excluded(", "tax(", "tariff(", "neighbor(", "enforcer(",
+                     "definition_line(", "renewable(")
 
 
 def record_roles(record: PolicyRecord) -> set[str]:
@@ -23,8 +24,10 @@ def record_roles(record: PolicyRecord) -> set[str]:
         names = [comp.bound_actor, comp.protected_actor, comp.excluded_actor, comp.buyer_actor, comp.seller_actor,
                  comp.domestic_seller_actor, comp.importer_actor, comp.revenue_actor, comp.exporter_actor,
                  comp.exporter_worker_actor or "workers." + comp.exporter_actor, comp.neighbor_actor, comp.enforcer_actor]
+        names += [comp.taxpayer_actor, comp.foreign_seller_actor, comp.input_supplier_actor,
+                  comp.domestic_seller_owner_actor, comp.relief_applicant_actor]
         for d in comp.downstream:
-            names += [d.actor, d.buyer_actor]
+            names += [d.actor, d.buyer_actor, d.owner_actor, d.exporter_actor]
         roles |= {n.split(".")[0] for n in names if n}
     return roles
 

@@ -52,8 +52,21 @@ def _tax_facts(c: str, comp) -> list[str]:
              f'revenue({c}, "{comp.revenue_actor}").',
              f'exporter({c}, "{comp.exporter_actor}").',
              f'exporter_worker({c}, "{comp.exporter_worker_actor or "workers." + comp.exporter_actor}").']
+    lines.append(f'taxpayer({c}, "{comp.taxpayer_actor}").')
+    lines.append(f'foreign_seller({c}, "{comp.foreign_seller_actor}").')
+    for pred, actor in (("input_supplier", comp.input_supplier_actor), ("seller_owner", comp.domestic_seller_owner_actor),
+                        ("relief_applicant", comp.relief_applicant_actor)):
+        if actor:
+            lines.append(f'{pred}({c}, "{actor}").')
+    for pred, flag in (("renewable", comp.renewable), ("definition_line", comp.definition_line)):
+        if flag:
+            lines.append(f"{pred}({c}).")
     for d in comp.downstream:
         lines.append(f'downstream({c}, "{d.actor}", "{d.buyer_actor}", {d.competitors}).')
+        if d.owner_actor:
+            lines.append(f'downstream_owner({c}, "{d.actor}", "{d.owner_actor}").')
+        if d.exporter_actor:
+            lines.append(f'downstream_exporter({c}, "{d.actor}", "{d.exporter_actor}").')
     return lines
 
 

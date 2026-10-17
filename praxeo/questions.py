@@ -124,6 +124,47 @@ EXEMPT_QUESTION = ("competitors_exempt", "other",
                    "Do the downstream users compete with sellers who do not face the higher cost (imported finished goods, untaxed products)?",
                    "Many downstream users compete with sellers who do not face the higher input cost.")
 
+# OC-3: asked of every tax or tariff.
+BUDGET_QUESTION = ("enforcement_budget_raised", "revenue_use",
+                   "Will the budget of the agency that administers the measure be raised to cover the new work, rather than the work being absorbed within its existing budget?",
+                   "The administering agency's budget is raised to cover the new work, so taxpayers fund it.")
+
+# Asked only when the record carries the fact the rule needs (definition_line, relief_applicant_actor, renewable,
+# owner and exporter actors, downstream groups), so that no question is posed about a role the record leaves empty.
+RESHAPING_QUESTION = ("reshaping_pays", "other",
+                      "For some of the actors bound by the measure, will reshaping goods so that they fall outside the measure's definitions cost less than the measure would cost them?",
+                      "Reshaping goods to fall outside the definitions costs some actors less than the burden.")
+DISCRETIONARY_QUESTION = ("relief_discretionary", "other",
+                          "Will the officials who grant exclusions, waivers or exemptions decide case by case, with room to weigh who the applicant is or what others say against it, rather than by a fixed published test?",
+                          "Relief is granted case by case at officials' discretion.")
+VALUABLE_QUESTION = ("relief_valuable", "other",
+                     "Is an exclusion, waiver or exemption worth more to those who apply than the fee for applying?",
+                     "Relief is worth more to applicants than its fee.")
+BENEFICIARIES_ORGANIZE = ("beneficiaries_organize", "other",
+                          "Can the protected domestic producers organize to influence the renewal or extension decision at a cost lower than what they stand to gain?",
+                          "The protected producers can organize to influence renewal at a cost below their stake.")
+HARMED_ORGANIZE = ("harmed_organize", "other",
+                   "Can the downstream users who cannot pass the higher cost on organize to seek repeal, exemption or non-renewal at a cost lower than what they stand to lose?",
+                   "The harmed users can organize to seek repeal or exemption at a cost below their stake.")
+EXTENSION_QUESTION = ("expects_extension", "expectations",
+                      "Do the protected domestic producers expect the measure to be renewed or extended when it comes up for review?",
+                      "The protected producers expect the measure to be renewed or extended.")
+LASTING_QUESTION = ("expected_to_last", "expectations",
+                    "Do investors expect the measure to stay in force for at least its stated term?",
+                    "Investors expect the measure to stay in force for at least its stated term.")
+SLOW_SUPPLY_QUESTION = ("asset_supply_slow", "durability",
+                        "Is the supply of the affected firms' productive assets (plants, equipment, the shares that claim their returns) slow to expand or to replace?",
+                        "The supply of the affected firms' assets is fixed or slowly expandable.")
+RELOCATE_QUESTION = ("can_relocate_capital", "mobility",
+                     "Do some downstream users have the option of producing abroad when they next replace their plants?",
+                     "Some downstream users can move production abroad when they replace plant.")
+SUBSTITUTE_SUPPLY_QUESTION = ("substitute_supply_expands", "substitutability",
+                              "Can the sellers of the uncovered substitutes (imported finished goods) supply more at roughly their present prices?",
+                              "Sellers of the uncovered substitutes can expand their supply.")
+PRICE_TAKER_QUESTION = ("exporters_price_takers", "substitutability",
+                        "Do the downstream users who export sell at prices set in world markets, so that they cannot pass a higher input cost on to foreign buyers?",
+                        "The exporting users sell at world prices and cannot pass the higher cost on.")
+
 
 def _specs(comp: Component) -> list[tuple[str, str, str, str]]:
     """The (atom, class, question, assumption text) list for a component, by instrument."""
@@ -136,6 +177,26 @@ def _specs(comp: Component) -> list[tuple[str, str, str, str]]:
         specs.append(INPUT_QUESTION)
         if any(d.competitors == "exempt" for d in comp.downstream):
             specs.append(EXEMPT_QUESTION)
+    specs.append(BUDGET_QUESTION)
+    exempt = [d for d in comp.downstream if d.competitors == "exempt"]
+    if comp.definition_line:
+        specs.append(RESHAPING_QUESTION)
+    if comp.relief_applicant_actor:
+        specs += [DISCRETIONARY_QUESTION, VALUABLE_QUESTION]
+    if comp.instrument == "tariff":
+        if comp.renewable:
+            specs.append(BENEFICIARIES_ORGANIZE)
+            if exempt:
+                specs.append(HARMED_ORGANIZE)
+            specs.append(EXTENSION_QUESTION)
+        if comp.domestic_seller_owner_actor or any(d.owner_actor for d in exempt):
+            specs += [LASTING_QUESTION, SLOW_SUPPLY_QUESTION]
+        if exempt:
+            specs.append(RELOCATE_QUESTION)
+            if any(d.buyer_actor for d in exempt):
+                specs.append(SUBSTITUTE_SUPPLY_QUESTION)
+        if any(d.exporter_actor for d in comp.downstream):
+            specs.append(PRICE_TAKER_QUESTION)
     return specs
 
 
