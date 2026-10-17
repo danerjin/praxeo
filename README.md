@@ -9,5 +9,6 @@ An AI-assisted system for analyzing the consequences of a policy using Misesian 
 | `praxeo/` | Phase 2 thin slice: parser, decider, clingo engine, explainer and scoring, run end to end on one case. Start at `praxeo/README.md`. |
 | `cases/` | Cases for the pipeline: `sf_1994` (historical, with an outcome card) and `we001_riverton` (the handbook's WE-001, as a consistency check). |
 | `tests/` | `python3 -m pytest tests` |
+| `math-augmented-praxeo/` | A separate, minimal mathematical annex (not praxeology): interval-valued sizes for consequences the method has already signed, using identities and first-order statics only. It never sets a sign. Start at `math-augmented-praxeo/README.md`. |
 | `figures/` | Diagrams used in the plan. |
 | `tools/build_plan.py` | Builds the plan's .docx from its Markdown source. |
