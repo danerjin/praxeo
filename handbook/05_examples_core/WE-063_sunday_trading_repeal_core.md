@@ -1,6 +1,6 @@
 # WE-063 / Analysis: Repeal of a ban on Sunday opening for large shops, with a right to refuse Sunday work
 
-Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -298,3 +298,108 @@ CR-8's symmetry: fines no longer paid are both a lower receipt for municipalitie
 - No variable for opening hours or days as such; `quantity_supplied (Sunday opening and Sunday sales)` was used.
 - No variable for a worker's statutory right as held; `term_prevalence` and `non_wage_compensation` carry it.
 - No actor class for workers by contract date (covered against uncovered under U1-b).
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the main lines of the repeal. Large shops open and sell on Sunday, and sales move from other days. Border residents buy less in Corsland and online Sunday orders fall. Small shops lose Sunday trade and some close. Small units lose their premium and their rents fall, while large premises gain. Large-shop workers work Sunday hours, fewer weekday hours and, by the minimum-crew premise, more hours in total. Cafés and fuel stations near large stores gain, and neighbors of corner shops lose. Unit size near 280 m² rises as shops are refitted. Both have the same U1-dependent job changes in the medium run, breach of the right, tribunal work, the end of ban enforcement and fines, the sales-tax gain, and lobbying over Sunday opening `ambiguous` on both sides. Both have large retailers' gain resting on the same dominance premise (A-13). There are two sign conflicts, and in both the core version is wrong. It signs all small shops' Sunday sales down, though its own A-12 names nearby small shops as complements of large-store trips, so shops in anchored centres are `ambiguous`. It also signs job changes in the window from workers' timing alone, leaving out its own employers' deferral of hires and the preparation hiring. The pattern version records more values, the weekly sales total, the window effects and the Corsland trip goods. The core version records more of K2: the voided rostering right as a transfer, the re-rostering cost, both sides of the U1-b timing moves, and the municipal net. The pattern version signs small-shop owners' means from lost receipts without the saved outlays. CR-3's note requires them to be combined.
+
+Counts: M 17, V 13, S 2, OP 13, OC 9.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1, C-2 | V | | Split into sellers' supply and buyers' purchases. Persistence differs: see Findings, metamorphic checks. |
+| C-2 | C-14 | V | | Pattern: all buyers who prefer large shops on Sunday, `full_cost_per_unit` (time given up) decrease, by CR-3b. Core: border residents' `travel_time` only. The core version keeps the general gain in C-2's derivation (CR-3b) without a key. |
+| C-3 | C-10 | V | | Pattern: standalone small shops. Core: all small shops, with K2's objecting staff as a second (−) chain (CR-12d). |
+| C-4 | none | OC | E | Standalone small shops' value as going concerns decrease (CR-7c, CR-10c with A-3, A-4). Core recorded small units (C-32) but no shop value. Core omission. |
+| C-5 | C-12 | M | | |
+| C-6 | none | OC | E | Large shops' weekly sales increase, by an accounting identity (CR-12e): purchases moved between days cancel, and purchases drawn from small shops, Corsland and online add. Core section 7 refuses to net the windows, citing CR-12h. CR-12h is about bunching where a policy raises activity in every window. CR-12's 0.8 note on two items in one variable asks for the total to be recorded separately. Core error (omission from a misreading). |
+| C-7 | C-13 | M | | |
+| C-8 | C-11 | M | | |
+| C-9 | C-31 | V | | Group against `employment` alone. Here the core sign is valid, because closures (A-7) remove jobs. |
+| C-10 | C-28 | V | | Group of staff and hours against `hours_worked` total. Same premise A-9. |
+| C-11 | C-26 | M | | |
+| C-12 | C-27 | M | | |
+| C-13 | C-16 | M | | |
+| C-14 | C-16 | V | | Chains stop fitting formats to the line, recorded by the core as unit size of chain formats near the line. |
+| C-15 | none | OC | E | Near-line shops' value `ambiguous`. CR-7c gives both chains: the freedom to grow (+) and the lost Sunday advantage (−). Core omission. Nothing scorable is lost. |
+| C-16 | C-10 | S | E | Small shops in anchored centres, Sunday sales. Pattern: `ambiguous` (the anchor's Sunday footfall, + against the anchor's competition, −). Core: decrease for all small shops. CR-9 along the complement (trip) relation gives the (+) chain. The core version's own A-12 (p 0.75) says Sunday shoppers at large shops combine the trip with "nearby small shops", but it used A-12 only for cafés and fuel (C-40). With p ≥ 0.5 the chain is kind 2 (CR-12, 0.8), so the in-centre sign is `ambiguous`. Core error. |
+| C-17 | none | OC | E | In-centre shops' value `ambiguous`, as C-16. Core omission. |
+| C-18 | C-35 | V | | `asset_value` of large retailers against `return_on_capital` of the class. Same chains and dominance premise A-13. |
+| C-19 | C-25 | V | | Core puts both sides in one key. Both are `ambiguous` against the contested counterfactual (A-15). |
+| C-20 | C-25 | V | | As C-19. |
+| C-21 | none | OC | E | Lobbying on U1 and the rules for s. 6, increase from none (CR-4 1.0, CR-12 0.9 with A-14). Core omission. |
+| C-22 | none | OC | E | Large shops' preparation in the window (rosters, systems, recruitment), an activity from none (CR-10a, CR-12 0.9). The core version's C-15 is long-run investment in larger stores, a different key. Core omission. |
+| C-23 | C-17, C-18 | V | | Pattern: all hires in the window, U1-a increase (preparation), U1-b `ambiguous`. Core: replacement hires only, U1-a `no_change`, U1-b decrease before and increase after the date. On the replacement item the two agree. The core version omits preparation hiring, which gives the window an increase under U1-a. |
+| C-24 | C-19 | S | E | Job changes in the window. Pattern: U1-a increase, U1-b `ambiguous`. Core: U1-a `no_change`, U1-b increase. Under U1-a, large shops hire some Sunday staff from existing shop workers ahead of opening (A-19, CR-9), which the core version omits. Under U1-b, the employers' deferral of hires past the date is the core version's own C-17 (A-16). It removes job changes from the window and opposes the workers' early moves (A-17). Core error on both readings. |
+| C-25 | C-21 | M | | Class differs slightly (contracts in force on 3 November; small-shop workers). |
+| C-26 | C-8 | V | | PC-17's group for small-shop workers (wage, other benefits, employment or hours, `at_least_one_as_stated`). Core C-8 signs objectors' Sunday hours down, one member of the group, but as the workers' choice. The core version does not derive where employers' higher cost of cover (its C-9) goes on other terms for existing small-shop workers (CR-5c, CR-6). It does so only for new hires under U1-a (C-22). Partial core omission. |
+| C-27 | C-23 | M | | |
+| C-28 | C-40 | M | | |
+| C-29 | C-41 | M | | |
+| C-30 | C-37 | V | | Pattern: group of quantity and price (CR-6, 0.9). Core: quantity sold to Hastrow residents alone. That is defensible, since a price fall caused by the lost demand cannot restore it (CR-12e). |
+| C-31 | none | OC | E | Corsland cafés and fuel stations lose trip sales (CR-9 complement, trip, with A-6, A-12). Core omission. |
+| C-32 | C-36 | V | | `quantity_substitute` against `quantity_traded`. |
+| C-33 | C-33 | M | | Horizons short to medium against medium and long. |
+| C-34 | C-32 | M | | |
+| C-35 | C-34 | M | | The pattern rests the large units' gain on A-13 as well as A-1 and A-4. The core version omits A-13. If rivals' opening could lower the class's yield, the rent large retailers will pay for units could fall too. Hidden premise in the core version. |
+| C-36 | C-3 | M | | |
+| C-37 | C-4 | M | | |
+| C-38 | C-24 | M | | |
+| C-39 | C-39 | M | | Pattern adds an online chain, which needs an unstated premise that online orders by Hastrow residents bear no Hastrow sales tax. The core version treats them as taxed on both paths. The Corsland chain alone gives the sign (CR-12d). |
+| C-40 | none | OC | P | Small-shop owners' `resources_available_other_uses` decrease from lost Sunday receipts (cites CR-3, CR-5, OC-4). CR-3's note says to combine lost receipts with saved outlays (stock not bought, staff hours not paid) under CR-12b. OC-4's Unless says who loses by their own ranking, not who has less money. Without a premise that the margins on the lost sales exceed the outlays saved, the sign is `ambiguous`. Analyst's misapplication. The core version recorded nothing. |
+| C-41 | none | OC | E | Total retail purchases in Hastrow increase (CR-4, CR-9 with A-6; the online chain needs the same unstated tax premise as C-39). Core omission. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-5 | OP | E | Municipal budgets net of fines and officer time `ambiguous` (CR-8, 1.0: receipts into the same budget). The pattern version records both items (C-36, C-37) but not the net. Pattern omission. |
+| C-6 | OP | E | `term_prevalence` of enforceable Sunday-work requirements decrease, the direct CR-1 effect of K2 on existing small-shop contracts. Pattern omission. |
+| C-7 | OP | E | The voided "as rostered" right as a transfer: objecting workers gain `non_wage_compensation` (CR-8, 0.7 voiding note, CR-8b). The pattern text says the right "is worth something to workers who use it" but records only the other terms falling (C-26). The two are items of one variable moving in opposite directions (CR-12, 0.8). Each should be recorded with the total `ambiguous`. Pattern omission. |
+| C-9 | OP | E | Small shops' re-rostering cost (CR-1 op 1, CR-3a, CR-8c). The pattern text names it ("rosters, replacement staff") but records no key. Pattern omission. |
+| C-15 | OP | E | Long-payback investment in new and enlarged large stores (CR-4, CR-10a with A-4, A-11; A-25 below the cut-off). The pattern discussed it under TS-5 but did not record it. Pattern omission. |
+| C-18 | OP | E | Under U1-b, replacement hires rise after 3 November 2027, the other side of the deferral. RS-8 says to record both sides of a timing move. Pattern omission. |
+| C-20 | OP | E | Under U1-b, job changes after the date fall among workers who moved early, the other side of C-19. Pattern omission (RS-8, both sides). |
+| C-22 | OP | E | New hires screened for willingness to work Sundays, under U1-a. Core error. CR-6 establishes that at least one open margin takes the pressure, and a named margin needs its own premise. A-N1 says only that pressure goes to "other terms (hiring choices, hours)". The key should be a group of the unregulated margins (selection, hours, other terms) with `at_least_one_as_stated`. The pattern version has the small-shop part of that group (C-26) but nothing for large shops' new hires under U1-a. |
+| C-29 | OP | E | Large-shop workers' earnings increase. Sunday hours are paid at time-and-a-half and total hours rise (A-9); wage rates are fixed until April (A-N1). Pattern omission for the short run. A-N1 covers rates only until the April renegotiation, so the core version's medium and long signs need a further premise. This is a core error on those horizons. |
+| C-30 | OP | J | Total retail hours across all shop workers `ambiguous`. The pattern version declined to combine classes (CR-12c). The core version treated the union as its own class. Both are defensible, and nothing scorable is lost. |
+| C-38 | OP | E | Corsland shops near the line lose value (CR-7c, CR-10c with A-6, A-4). Pattern omission. |
+| C-42 | OP | E | Buyers who relied on closing small shops travel farther (CR-9, CR-3a with A-7). Pattern omission. |
+| C-43 | OP | E | Large shops keep the fines they would have paid (CR-8b), the other side of C-4. The pattern's section 9 names it but records no key. Pattern omission. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.**
+  - No pattern applied as written overclaims. PC-17, RS-4, RS-5, RS-7's repeal clause, RS-8, RS-9, RS-11, RS-16's mirror case, RS-17 in reverse, RS-20's 1.0 baseline, OC-3's baseline clause, TS-6 and TX-10 all agree with what the core rules give. Where the versions differ on those keys, the pattern version is right (C-16, C-24).
+  - The analyst's errors are C-40 (lost receipts without saved outlays) and an unstated tax premise on online orders in C-39 and C-41. The sign of C-39 survives on the Corsland chain.
+  - The ban table (B-1 to B-19) carries no premises. B-12 needs A-13 mirrored and B-13's weekly decrease needs A-9 mirrored.
+- **Errors in the core version.**
+  - Signs: C-10 for small shops in anchored centres (should be `ambiguous`, using its own A-12). C-19 on both readings, which ignores its own C-17 and the preparation hiring. C-22 signs one CR-6 margin with no premise for it. C-29 extends A-N1 past the April renegotiation. C-34 omits A-13. The weekly sales total was refused on a misreading of CR-12h.
+  - Omissions: shop values (pattern C-4, C-15, C-17), the weekly total (C-6), lobbying on U1 (C-21), window preparation and hiring (C-22, C-23 U1-a), Corsland trip goods (C-31), total purchases in Hastrow (C-41), and the employers' adjustment of other terms for existing small-shop workers (C-26).
+- **Errors in the pattern version.**
+  - C-40 should be `ambiguous`, or carry a premise that the lost sales' margins exceed the saved outlays.
+  - B-4 and B-6 in the ban table sign all small shops' Sunday sales and values up. By the mirror of the pattern version's own C-16 and C-17, shops in anchored centres are `ambiguous` under the ban too. The metamorphic check passed this over ("reverses for standalone shops") instead of flagging it.
+  - Omissions: the municipal net (core C-5), K2's direct effects and its transfer (C-6, C-7, C-9), long-payback investment (C-15), the other side of the U1-b timing moves (C-18, C-20), short-run earnings (C-29), Corsland shops' value (C-38), dependent buyers' travel (C-42) and saved fines (C-43).
+- **Metamorphic checks compared.** Both versions derive the ban from the core rules first, and neither finds a sign that fails to reverse without a reason. Every row the two share has the same ban sign and the same reversal: Sunday and weekday sales, small shops' Sunday sales and number, Corsland, online, the small-unit premium, unit size, large premises, Sunday hours, complements near large stores, enforcement and fines, sales tax and lobbying. The differences are as follows.
+  - *Coverage.* The pattern version has 19 ban rows plus two derived ones. The core version has 14. It lacks the weekly sales total (B-3), Corsland's prices (B-8), bunching below the line and fitted formats (B-9, B-10), near-line values (B-11), large retailers' value (B-12 is only premises in the core), large-shop weekday and weekly hours (B-13), small-shop workers (B-14), complements next to small shops (B-15) and small shops' own values (B-6). Each missing ban row matches a repeal key the core version also omitted or recorded differently, so the check could not catch those omissions.
+  - *Habits.* The pattern version gives partial persistence in the short run for sales, Corsland, online and complements (TS-8: habits formed under the ban change over months; CR-3, CR-10b). The core version gives none throughout. The pattern version is right. A routine is a stock that changes only through flows, and the core rules give it through CR-10b.
+  - *Unit size in the long run.* Pattern: none. Core: partial. The flow of refits eventually turns the stock over, but how long that takes is a premise neither states. This is a judgment call.
+  - *Lobbying.* Pattern: "does not reverse in sign; n/a". Core: "full". On the repeal both signs are `ambiguous`, so there is no signed effect whose persistence could be stated. The pattern's n/a is the consistent entry.
+  - *Small units.* Both give none for the premium. The core version adds that the stock of small units built under the ban persists and holds their value below the no-ban path for a while (CR-7, 0.9 persistence). That is a point the pattern version missed. It is an overshoot rather than persistence of the ban's (+) effect, and belongs in section 8.
+  - *Ban rows that need care.* Both versions sign small shops' Sunday sales under the ban up for all small shops. That is the mirror of the in-centre error above, so both checks are blind to it. The pattern version's own repeal derivation (C-16) should have made it adjust B-4.
+- **Test of 1.0 (the pattern version's verdicts).**
+  - *CR-7 1.0, which stock (needed interpretation):* confirmed that the interpretation was needed to apply that clause. But the core version did not need the clause at all. It reached the same answer (the premium falls at once, the stock of units persists) through CR-7c, CR-10c and CR-7's 0.9 persistence clause, and so the clause's wording is the problem, as (b) 1 says.
+  - *CR-8 1.0, statutory rights (needed interpretation):* confirmed. The core version did not treat small shops' advantage as a right. It used CR-9 and CR-7c on units. It used CR-8's 0.7 voiding note where it does fit, on employers' "as rostered" right under K2 (C-7), which the pattern version did not record.
+  - *PC-17 for large shops (failed):* confirmed in part. Against the ban, the core version derived no wage or benefit cut for large-shop workers, and found their earnings up (C-29). But read precisely, PC-17's If clause ("absent from some contracts that would otherwise be made") already excludes large shops. So the failure lies in how the clause reads, not in its logic. And the core version shows that the right still moves terms of the new Sunday contracts under U1-a against none (C-22, as a group). The pattern version's replacement statement, that in large shops the right only narrows the option and has no consequence, is too strong.
+  - *RS-17 in reverse (worked, with a reading):* confirmed for the flow and stock split (core C-16 with CR-10b). The core version, with no 0.9 value clause to prompt it, omitted near-line values (C-15).
+- **Candidate patterns (6.2e).** The pattern version claims none ("None needed"). Its two new moves (a status fixed at a date: rush before and lock-in after; an option added to all competitors that can lower their joint yield) are first uses, not second uses of a 6.2e candidate. There is nothing to check against the counterfactual. Both moves are valid against the ban in force: C-24 and C-25 are signed per reading against no right, and C-18 carries A-13.
+- **Limits of the core rules.** None produced a difference (K = 0). The core version's GAP-063-C1 (a right that decays with turnover) is covered by CR-1's dated operations and CR-10b with per-horizon signs, so it is not a calculus gap. The following wording caused trouble:
+  - CR-12h reads as if windows may never be summed. It should point to CR-12's 0.8 two-items note for a total across windows.
+  - CR-6's "a premise per margin" is easy to skip when one regulated term (the pay agreement) diverts pressure (core C-22).
+  - CR-7's 1.0 which-stock clause does not cover a protected party's capital where the rivals' capacity already exists. CR-7's 0.9 persistence clause covers it.
+  - CR-8's 1.0 statutory-rights note does not cover an advantage held through a restriction on others (pattern (b) 2).
+  - CR-3b speaks of one actor, not a class of competitors (pattern (b) 3). Both versions handled this with A-13.
+  - CR-3's note on combining lost receipts with saved outlays is phrased for producers who also sold, and was missed for sellers who lose sales to a better offer (pattern C-40).
+  - `persistence` has no entry for effects of a component with no counterpart in the original rule (core (b)).

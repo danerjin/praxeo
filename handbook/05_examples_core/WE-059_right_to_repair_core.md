@@ -1,6 +1,6 @@
 # WE-059 / Analysis: Right to repair for farm equipment and phones
 
-Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -299,3 +299,74 @@ Case assumptions as given (same IDs and p); one added premise (A-N1) flagged NEW
 - No variable for product design or modularity; `product_attribute` was used.
 - No actor class for informal sellers of stolen goods distinct from `intermediaries`.
 
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the core of the right-to-repair case: independents and owners pay less for parts, tools and software; independent and self repair rise and authorized repair falls; anti-repair terms lose force; independents enter; dealers bear more of the burden than makers and their dealerships lose value; makers' shares fall and covered equipment gains; pairing, stolen parts and used-phone information per reading; deferred repairs in the window; compact tractors reshaped; specialty models withdrawn; breach of the new duty; lobbying over the Act's reading; shorter harvest waits; ambiguous values of exempt tractors, new farm sales, cross-border purchases and non-genuine parts. No key is signed in opposite directions. The differences: the pattern version signs dealers' price per job alone (RS-16's mirror case), where CR-6 leaves price and waiting as a group in a market the record shows was rationed by waiting; and it signs the average age of covered devices up without combining its own ambiguous new-sales chain. The core version is wrong on pairing under U1-b (`no_change`, against its own classification of K3 as operation 3), signs integration as rising without the buyers'-valuation chain it uses elsewhere, signs phone prices alone without a member premise, and under-signs technicians' employment. It omits makers' substitute terms, dealers' net parts price, owners' diagnostic information and independents' long-run return. The pattern version omits dealers' retail parts sales and genuine phone parts. EN-14's failure is confirmed.
+
+Counts: M 23, V 6, S 6, OP 5, OC 7.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1, C-2 | M | | Inputs cheaper for independents and owners; the core splits farm and phone. Horizon labels differ only by definition (the core's "medium" starts at the effective date). |
+| C-2 | C-7 | M | | Independent repairs rise. |
+| C-3 | C-8 | M | | Self repair rises; the core adds phone owners and A-16. |
+| C-4 | C-24 | V | | Pattern: owners' price per independent or self repair of a given kind falls. Core: owners' `full_cost_per_unit` of repair falls (medium). Both omit a chain: before entry (A-5) independents' capacity is short while demand for them rises (pattern C-24: returns rise), which pushes their price per job up against the cheaper inputs. For owners who already used independents the short-run sign is `ambiguous` (CR-12b); the decrease holds once capacity has grown. |
+| C-5 | C-3 | M | | Enforceable anti-repair terms fall. |
+| C-6 | C-9 | M | | Authorized repairs fall. |
+| C-7 | C-10 | S | P | Pattern: dealers' price per job falls (RS-16, mirror). Core: price or wait at dealers, `at_least_one_decrease`. Core right: lower demand against fixed capacity (A-4) moves at least one margin (CR-6), and the record shows the dealer market was rationed partly by waiting (2.5 days at harvest), so the wait is an open margin; signing the price alone needs a premise (CR-6, 0.9: splitting a shift). RS-16's mirror case, applied as written, signs the substitute's price alone and does not consider a substitute market cleared partly by waiting. |
+| C-8 | C-11 | M | | Entry of independents rises. |
+| C-9 | C-16, C-18, C-19 | S | E | Pattern: group over new-equipment price (+), warranty and terms (−), variety (−). Core: farm price increase (C-18, on A-18), phone price increase in all states (C-19), variety decrease (C-16), each alone. For farm equipment the core is right: A-18 (p 0.55) is a member premise, and the pattern version itself uses it as a chain in C-17 while keeping the group (its gap b3). For phones the core is wrong: A-6 says makers recover costs "through other terms of sale", which names no member, and A-19 (national prices) says where a price change would fall, not that price is the margin used; C-19 should stay in the group. Errors in both versions. |
+| C-10 | none | OC | E | Substitute terms (warranty exclusions for damage caused by repair, which §4(b) allows; service bundles; expiring subscriptions) rise, with price, as a group. CR-1 (K2 removes the term's protection), CR-5c and CR-6 (pressure moves to the open terms) derive it. Core-version omission. |
+| C-11 | C-28 | M | | Dealers bear more than makers (CR-7b, A-19). |
+| C-12 | C-5, C-17 | S | E | Pairing. U1-a: both decrease. U1-b: pattern `ambiguous`; core `no_change` (C-5) and, separately, more paired parts in the long run (C-17). Pattern right: under U1-b, K1 (§3(a)(iv)) and K3 attach to the option of pairing a duty to supply owners a pairing tool on dealer terms, an operation 3 that the core version itself records in section 2 ("U1-b: 3"), so by CR-4b some makers drop pairing; A-24 gives the opposing chain the core puts in C-17. CR-12b: `ambiguous`. Error in the core version (C-5 under U1-b contradicts its own classification, and C-17's chain was not combined with it). |
+| C-13 | C-36 | M | | Non-genuine parts: ambiguous under both readings. |
+| C-14 | C-38 | M | | Stolen parts: U1-a increase, U1-b `no_change`. |
+| C-15 | C-13 | M | | Authorized repairs fall in the window before the effective date. |
+| C-16 | C-14 | V | | Pattern: independent and self repairs in the first six months rise. Core: repairs by all providers rise from September 2028 (deferred repairs, and CR-4c on cheaper repair). Same timing chain, recorded wider. |
+| C-17 | C-21 | M | | Cross-border farm purchases: ambiguous. The core notes that §2(b) may cover a Kestrava farm buying in Darnholt (an unrecorded reading); the pattern version assumes it does not. Same sign either way. |
+| C-18 | C-41 | V | | Spillover to other states through national programmes (A-8): the pattern signs Darnholt owners' price of a genuine repair; the core signs quantity bought outside Kestrava. |
+| C-19 | C-15 | M | | Compact tractors reclassified. |
+| C-20 | C-23 | M | | Breach of the new duty rises from none. |
+| C-21 | C-16 | M | | Specialty models withdrawn (CR-4 0.7, A-11). |
+| C-22 | C-22 | M | | Lobbying over the Act's reading; both decline to sign lobbying over the law as such. |
+| C-23 | C-27 | M | | Dealership values fall. |
+| C-24 | C-31 | V | | Pattern: independents' `return_on_capital` rises until entry. Core: shops' `asset_value` rises at passage. Same chain (CR-7a, CR-7c). |
+| C-25 | none | OC | E | Independents' return `no_change` in the long run (CR-7a with A-13). Derivable; the core says only in C-31's text that entry brings yields back in line. Core-version omission. The pattern version's citation of CR-7's 1.0 "which stock" clause is misplaced (there is no permission here) but harmless. |
+| C-26 | C-30 | M | | Makers' share values fall. Both rest on more than CR-3a: the Act binds every rival at once and changes each maker's situation through the others (CR-9), so a fall needs the premise that the lost repair margins outweigh any gain from all rivals being bound and from buyers valuing the term (A-22). A-12 does not state that; the pattern version flags it (its gap b2), the core version leans on "recovery is partial". |
+| C-27 | C-6 | M | | Covered equipment gains value. |
+| C-28 | C-40 | M | | Exempt tractors: ambiguous. The core misses EN-14's (+) chain (new covered units dearer, its own C-18, so exempt units face less competition), but the sign is the same. |
+| C-29 | none | OC | E | `stock_age` of covered devices increase. Longer lives (CR-4) raise average age, but the pattern version's own C-30 leaves new covered sales ambiguous, with a (+) chain from buyers valuing the term (A-22); more new units lower the average age. CR-12b gives `ambiguous` for the average; the retention claim alone ("kept longer") is valid. Error in the pattern version (chain not combined). |
+| C-30 | C-20 | M | | New covered sales: ambiguous (the core records farm equipment only). |
+| C-31 | none | OC | E | Dealers' net parts price: ambiguous. The "most favorable terms" tie makes each dealer discount cost the maker more (CR-4, CR-5c: +), against competition from salvaged and non-genuine parts (A-21: −). Derivable; core-version omission. |
+| C-32 | C-26 | M | | Harvest waits fall (A-14). |
+| C-33 | C-32 | S | E | Pattern: dealers' technicians, employment or hours, `at_least_one_decrease`. Core: one group over employment at independents and at dealers, `at_least_one_as_stated`. Pattern right: each side has its own derivation (CR-9 with LW-10 on the core's own C-9 and C-7), so two signs are warranted where the core gives only "at least one of the two". Error in the core version (under-signing). |
+| C-34 | C-32 | S | E | Pattern: employment at independents increase. Entry of new shops (core C-11, A-5) adds employment that cannot be hours in an existing shop (OC-5's new-activity clause, here CR-9 with entry). Pattern right; error in the core version. |
+| C-35 | none | OC | J | Technicians' wage: ambiguous. Not recorded by the core; nothing scorable lost. |
+| C-36 | C-39 | M | | Used-phone buyers' information: U1-a decrease, U1-b `no_change`. |
+| C-37 | none | OC | E | Owners' information about faults increases (CR-11c with A-16, both premises CR-11 0.7 asks for). The core uses A-16 only inside C-8. Core-version omission. |
+| C-38 | C-17 | S | E | Pattern: separately replaceable parts in new models `ambiguous` ((−) integration, A-24; (+) buyers value repairable designs, A-22). Core: integration increase (long), on A-24 alone. Pattern right: the core uses A-22 (p 0.7) for C-18 and C-20 but not here; under CR-12 (0.8, kind 2) a chain with p ≥ 0.5 makes the sign `ambiguous`. Error in the core version. |
+| C-39 | none | OC | J | Owners who repair anyway have more for other uses. The mirror of the CR-3 note holds for owners who keep buying the same repairs at a lower price; for owners who buy more repairs (CR-4c) spending on repair may rise. The core version declined it ("owners who switch choose to"). Both defensible; it rests also on C-4 and C-7, whose short-run price signs are questioned above. |
+| C-40 | C-4 | M | | Makers' compliance cost. |
+| C-41 | C-33 | V | | Other complainants: a group with `wait_time` in both; the pattern's second member is time per complaint, the core's attention per complaint (`quality_per_unit`), with the new premise A-N1. |
+| C-42 | C-12 | V | | Independents' outlays on software and tools: the pattern records them as `compliance_cost` (a voluntary input purchase, not compliance; CR-8c does not fit), the core as investment before the effective date. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-25 | OP | J | Long-run repair cost of new models: ambiguous (access against integration). The pattern version records the design side (C-38) but not this key; nothing scorable lost. |
+| C-29 | OP | E | Dealers' retail parts sales to owners and independents fall: K1 lets those buyers buy at dealer terms from the maker (CR-9, CR-4). Pattern-version omission. |
+| C-34 | OP | E | Complaints under the Act rise from none (CR-4, CR-12 0.9). The pattern version uses them in C-41 but records no row. Pattern-version omission. |
+| C-35 | OP | E | Genuine phone parts: U1-a ambiguous, U1-b increase. Under U1-b, more repairs and independents' switch from warning-giving parts raise demand; no one switches toward non-genuine parts on account of the change, since that option is unchanged under U1-b (CR-4a). Pattern-version omission (it analyzed only the non-genuine side, C-13). |
+| C-37 | OP | J | Quality of independents' phone repairs increases. Defensible by CR-4a for existing customers (no one moves to a worse part on account of the change), but the class's average also depends on new entrants and on the jobs moving from authorized providers, which no premise covers; the pattern version declined to say whether independent repairs are better or worse done. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** (1) Dealers' price per job (C-7) signed alone where waiting is an open margin; RS-16's mirror case as written invites this. (2) `stock_age` (C-29) signed without combining the version's own ambiguous new-sales chain. (3) Owners' price per independent repair (C-4) and owners' means (C-39) omit the short-run demand pressure on independents' prices before entry. (4) Makers' share values (C-26) need a premise that binding every rival at once does not raise each maker's value; CR-3a alone does not give it (shared with the core version).
+- **Errors in the core version.** Pairing under U1-b `no_change` (C-5) against its own operation 3 for K3, and its (+) chain left in C-17 uncombined; integration (C-17) signed without the A-22 chain it uses for C-18 and C-20; phone prices (C-19) signed alone without a member premise; technicians (C-32) under-signed as one group. Omissions: substitute terms (pattern C-10), dealers' net parts price (C-31), diagnostic information (C-37), independents' long-run return (C-25), and EN-14's dearer-new-units chain inside C-40 (sign unaffected).
+- **Errors in the pattern version.** Beyond the overclaims: farm list prices kept inside the group (C-9) although the version signs them on A-18 elsewhere; omissions of dealers' retail parts sales (core C-29), genuine phone parts (C-35) and the complaints count (C-34); `compliance_cost` used for a voluntary purchase (C-42); CR-7's 1.0 clause cited where no permission exists (C-25).
+- **Limits of the core rules.** None that produced a difference: every difference above is an analyst's error or omission, or a judgment, and every valid claim of either version is derivable from CR-1 to CR-12. The core version's GAP-059-C1 (design changes that make a mandated term bind less) was handled by CR-4 in both versions; GAP-059-C2 (non-rival diagnostic knowledge) is the existing Q21 and no consequence turned on it. Where the core rules are thin is wording, not reach: CR-3a for a firm when the rule binds all its rivals; CR-1 for a term owed to third parties; CR-7b with three parties.
+- **The pattern version's "Test of 1.0".** *EN-14, failed:* confirmed. The core version, without the pattern, reached `ambiguous` for exempt tractors (C-40) from CR-9 chains, and the reason is the one the pattern version gives: the standard is something buyers value, so covered units draw demand from exempt ones. EN-14 needs an Unless clause for a standard that raises buyers' valuation of the new units. *PC-17, needed interpretation:* confirmed. The core built the product-side adjustment from CR-5c and CR-6 and still went wrong on it (phone prices alone, substitute terms omitted), which shows that PC-17's employment-only group gives no help for a product sale; who bears it needed CR-7b with A-19 in the core too (C-28). *RS-4, needed interpretation:* confirmed; the core reached `ambiguous` for cross-border purchases (C-21) from CR-4 with two chains, as the pattern version did from CR-12, and found a further unrecorded reading of §2(b) that RS-4 would not prompt.

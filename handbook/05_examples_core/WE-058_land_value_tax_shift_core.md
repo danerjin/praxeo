@@ -1,6 +1,6 @@
 # WE-058 / Analysis: Revenue-neutral shift from a property tax to a land value tax, phased in over four years
 
-Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -372,3 +372,85 @@ Case assumptions as given (same IDs and p); two added premises (A-N1, A-N2) are 
 - No variable for a class's tax bill as distinct from its share; `tax_share_borne` with a fixed levy was used.
 - No actor class for an adjudicating body (the Board of Equalization) separate from `officials.enforcement`.
 
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on almost all of the land value tax shift: every class's share of the levy and the lots' per-reading, per-window shares; building on lots and elsewhere; the reclassification works that §4(b) invites; surface parking and its price under each reading; completions moved from early January into December; Ostbridge building and land; triple-net tenants during their leases; rents unchanged at first and lower as space is added; lower values for low-rise and outlying land and parcels and ambiguous values elsewhere; trades' wages and employment; downtown shops; who has more or less to spend; and the Assessor's cost and its payers. No key is signed in opposite directions. The differences are in recording and in a few claims. The pattern version signs sales and delinquency by owners short of means as two separate increases on a premise (A-9) that says only that they do one or the other, and reports ground rents as `no_change` "from the land tax alone", which is one chain, not the policy's consequence: the building relief raises what users will pay for sites (its own A-21). The core version collapses the Board's group of margins to waiting, against CR-6's 1.0 clause; it signs other construction as falling for a class that includes renovation in Vellmoor, which K2 itself favors; and it omits the two revenue items and the long-run return on new building, which the core rules derive. The pattern version omitted permits brought forward from the announcement, the rise in what other construction buyers pay, and the garage owners' side of the parking market. TX-2's "failure" is a pattern that does not apply, not one that was wrong.
+
+Counts: M 32, V 7, S 3, OP 8, OC 8.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | none | OC | E | Building item of `tax_revenue` decrease. Arithmetic on the record's figures with CR-1; CR-12's 0.8 note on two items says to record each item. Core-version omission (it recorded only the total, C-9). |
+| C-2 | none | OC | E | Land item of `tax_revenue` increase. As C-1: core-version omission. |
+| C-3 | C-8 | M | | Offices' share falls. |
+| C-4 | C-7 | M | | Apartments' share falls. |
+| C-5 | C-6 | M | | Low-land-share homes' share falls. |
+| C-6 | C-5 | M | | High-land-share homes' share rises. |
+| C-7 | C-4 | M | | Low-rise share rises. |
+| C-8 | C-3 | M | | Vacant land's share rises. |
+| C-9 | C-1 | M | | Lots 2028 to 2030: U1-a increase, U1-b decrease. |
+| C-10 | C-2 | M | | Lots from 2031: increase under both readings (the core gives one sign). |
+| C-11 | C-15, C-16 | V | | Building on lots: the core merges all new building in C-15 (its three chains, with A-4 for lots under U1-b) and records the fall in parcels held unbuilt (C-16). |
+| C-12 | C-15 | V | | Building on other sites, including redevelopment under §4(b) (A-5): inside the core's C-15. |
+| C-13 | C-17, C-18, C-19 | V | | The core splits reclassification by owner and work: vacant land builds (both readings), lots build only under U1-a (U1-b: `no_change`, already improved), vacant land paves only under U1-b. The pattern version's text gives the same split; its one row hides it. |
+| C-14 | C-45 | M | | Surface spaces: U1-a decrease, U1-b ambiguous. |
+| C-15 | C-20 | M | | Completions in late December rise. Both versions stop the window at 2030 or 2031; against the counterfactual, where the 1.5% building tax rewards a January completion every year, the shift continues indefinitely (the core gives C-21, but not C-20, a long horizon). |
+| C-16 | C-21 | M | | Completions in early January fall. |
+| C-17 | C-50 | M | | Less building in Ostbridge. |
+| C-18 | C-36 | M | | Triple-net tenants of low-rise parcels pay more during their leases. |
+| C-19 | C-35 | M | | Triple-net office tenants pay less during their leases. |
+| C-20 | C-10, C-34 | V | | Low-rise owners' net rent falls on renewal: the core records the same incidence as lessors' means falling once leases end (C-10) with rents unchanged (C-34). |
+| C-21 | C-11, C-34 | V | | Office owners' net rent rises on renewal: as C-20, mirrored. |
+| C-22 | C-29 | S | E | Pattern: `turnover` increase. Core: `turnover` and `legal_breach` as a group, `at_least_one_increase`. Core right: CR-4's exception gives a change in means; which response each owner takes (sell sooner, fall behind, or pay from savings or a loan) is a premise per margin, and A-9 states only "they sell sooner or fall behind". Error in the pattern version (no pattern involved: CR-4 exception, CR-3a). |
+| C-23 | C-29 | S | E | Pattern: `legal_breach` increase, also for `owners.vacant`. As C-22: one disjunctive premise cannot sign both members. The pattern's RS-3 citation also does not fit (RS-3 concludes `informal_activity`, for evasion that pays, not arrears from a want of means). Error in the pattern version. |
+| C-24 | C-22, C-23 | V | | Lobbying increase. The pattern version signs only questions that exist under the measure; the core's qualifiers add lobbying "for repeal" and "to keep the measure", reasoning that after the vote the question is closed on the no-measure path. CR-4's 1.0 note says lobbying over a question contested on the counterfactual path needs a premise; whether a repeal campaign is the same question as the ballot fight is the analyst's reading (the core version flags it). Same sign; the core's wider qualifier is the weaker part. |
+| C-25 | C-24, C-25 | M | | Appeals and their cost (the core adds the count of appeals, C-24). |
+| C-26 | C-34 | M | | Rents unchanged in the short run. |
+| C-27 | C-38 | M | | Rents fall as space is added; the core adds the medium horizon. |
+| C-28 | C-37 | M | | Floor space grows. |
+| C-29 | none | OC | P | Ground rents on new ground leases `no_change` "from the land tax alone". Analyst misapplied DM-1 and CR-7b: the land tax's own chain gives no change in rent for a fixed factor, but the policy also removes the tax on what a lessee builds, and the pattern version's own A-21 (bids for sites reflect part of the building tax saved) raises what lessees pay for sites. No chain lowers ground rent (the later fall in space rents dissipates the same relief and cannot reverse it, CR-12e). Under CR-12a the policy's sign is `increase` on A-21 (p 0.7), not `no_change`; a one-chain qualifier is not a consequence. DM-1's If clause (TX-2 or SB-2 applies) is also not met. The core version stated the land-tax chain in C-38's text only. |
+| C-30 | none | OC | J | New buildings' `return_on_capital` increase while the stock adjusts (CR-7a, A-14). Derivable, but how much of it sites capture through their price (A-21) decides whether the builder's return or the land value carries it; a recording choice. |
+| C-31 | none | OC | E | New buildings' `return_on_capital` `no_change` in the long run: CR-7a with A-16. Derivable from the core rules; core-version omission (it cites A-16 only for employment). |
+| C-32 | C-39 (parcel) | OC | J | Existing buildings, as an item of `asset_value`, increase at expectation. Valid by CR-7b, CR-7c and CR-10c, with a premise the pattern version does not state: building cost does not fall as building expands (with falling cost, long-run rents fall by more than the tax removed). The core recorded parcels only; splitting land and building items of one parcel is a recording choice (the pattern version's own vocabulary gap, d4). |
+| C-33 | none | OC | J | Existing buildings' value per m² `no_change` in the long run (A-16). Same item split as C-32; derivable from CR-7a with A-16. |
+| C-34 | C-43, C-42 | V | | Land under high permitted building: ambiguous. The core groups all land city-wide (C-43) and the lots (C-42), both ambiguous. |
+| C-35 | C-41 | M | | Low-intensity land: decrease on A-17. |
+| C-36 | C-41 | M | | Low-rise and vacant parcels: decrease. The core restricts vacant land to outlying sites, which is all that A-17 covers; the pattern version's `owners.vacant` (mostly outlying) includes downtown vacant sites, where C-34's ambiguity applies. |
+| C-37 | C-39, C-40 | M | | Bill-falling classes and large-lot homes: ambiguous. |
+| C-38 | C-42 | M | | Lots: ambiguous under both readings. |
+| C-39 | none (core C-11) | OC | J | Bill-falling owners' `return_on_capital` (net of tax) increase 2028 to 2030. Valid for owners who held when the measure became expected; a later buyer earns the normal return (core C-44). The core records the same gain as means (C-11). |
+| C-40 | C-51 | M | | Ostbridge land falls. |
+| C-41 | C-33 | M | | Construction employment in Vellmoor rises. |
+| C-42 | C-30 | M | | Trades' wages rise in the short run. |
+| C-43 | C-46 | M | | Parking price: U1-a increase, U1-b ambiguous. |
+| C-44 | C-49 | M | | Downtown shops: ambiguous. |
+| C-45 | C-10 | M | | Bill-rising classes have less for other uses. |
+| C-46 | C-11 | M | | Bill-falling classes have more. |
+| C-47 | C-12, C-13 | M | | Lots' means per reading and window. |
+| C-48 | C-27 | M | | Assessor's cost. |
+| C-49 | C-28 | M | | Its payers, a group. |
+| C-50 | C-26 | S | E | Pattern: group (`wait_time` +, time per appeal −), `at_least_one_as_stated`. Core: `wait_time` increase. Pattern right: CR-6's 1.0 clause on public supply gives a group sign over the margins, "not any one of them alone", and the pattern names an open margin (less time per appeal) that the core version says the record lacks. Error in the core version. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-9 | OP | J | Total levy `no_change`. CR-12's 0.8 note says to record the total; CR-12f says chains that cancel by construction are not reported; the versions read the conflict oppositely (the pattern version did not report it). The core's qualifier "collected" is also loose: its own C-29 raises delinquency, so collections can fall slightly; "levied" would be exact. |
+| C-14 | OP | E | Permits rise from June 2026 (CR-10a, CR-4): projects started then are finished when the building tax is lower. The pattern version has this only as a path note (section 8). Pattern-version omission. |
+| C-31 | OP | E | Other construction buyers pay more for the trades (CR-9, CR-7a, A-18). The pattern version mentions labor drawn from other work (OC-5) but records no price. Pattern-version omission. |
+| C-32 | OP | E | Other construction `quantity_traded` decrease. Valid for construction outside Vellmoor and for work K2 does not touch; but the core's class includes renovation in Vellmoor, which K2 itself makes cheaper to keep (improvements untaxed), so for that part the chains oppose (CR-12b: ambiguous). Error in the core version (class too wide); the valid part is a pattern-version omission. |
+| C-44 | OP | J | Later buyers' return `no_change`. The pattern version says the same in text (SB-4) without a row. |
+| C-47 | OP | E | Garage owners' net price under U1-a increase (CR-9, CR-6, A-22). The pattern version cites RS-16 for garages as the substitute but records only drivers' side. Pattern-version omission. |
+| C-48 | OP | E | Garage values under U1-a increase (CR-7c, with the new premise A-N1 that garages' own tax share falls). Pattern-version omission. |
+| C-52 | OP | A | Ostbridge's revenue falls at a fixed rate. The core adds A-N2 (Ostbridge taxes at a rate, p 0.6); the pattern version stopped on the premise that Ostbridge, like Vellmoor, sets a levy and lets the rate absorb the base. The record states only "1.4% of the assessed value". |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** (1) Owners short of means (C-22, C-23): two members signed on one disjunctive premise; the correct record is the core's group. (2) Ground rents (C-29): one chain reported as the consequence; the policy's sign is `increase` on A-21. (3) Existing buildings' value at expectation (C-32) needs a premise that building cost does not fall as building expands. (4) C-36 extends A-17 to vacant sites it does not cover.
+- **Errors in the core version.** The Board's margins collapsed to waiting (C-26), contrary to CR-6's 1.0 clause; other construction signed down for a class that includes Vellmoor renovation (C-32); "collected" in C-9 where its own C-29 lowers collections; lobbying for repeal and to keep the measure included without the premise CR-4's 1.0 note asks for (C-22, C-23). Omissions: the two revenue items (pattern C-1, C-2) and builders' long-run return (C-31). Its horizon labels (short "2028 to 2030", long "2031 on") do not match its own definitions in section 8.
+- **Errors in the pattern version.** Beyond the overclaims above: omissions of permits from the announcement (core C-14), the price of construction to other buyers (C-31), garage owners' receipts and values (C-47, C-48). DM-1 is cited for incidence of a tax on holding although its If clause requires TX-2; CR-7b alone carries it. TS-10's "activity bunches before each step" does not describe what happens here (a counterfactual incentive to delay past 1 January shrinks); its use was a stretch the core rules did not need.
+- **Limits of the core rules.** None that produced a difference: every claim in either version that holds was derived, or is derivable, from CR-1 to CR-12. The core version's GAP-058-C2 (a land tax that depends on use under §4(b)) was handled by CR-1 operation 3 and CR-4, as the pattern version handled it; it is a missing pattern, not a calculus gap.
+- **The pattern version's "Test of 1.0".** *TX-2, failed:* the core version confirms the substance (under §4(a) the land tax changes no ranking of uses, C-14 to C-16; owners bear it, CR-7b and CR-7c) but contradicts the verdict as a pattern failure: TX-2's If clause (a tax on a sale) and its Assumes clause (one side can reduce its quantity) both fail, so TX-2 does not apply; nothing in it is wrong as written. A pattern for a tax on a fixed factor would also need a clause for assessment by current use (§4(b)), where the tax does fall on use. *RS-8, the claim that builders wait for a lower step failed on arithmetic:* confirmed (core section 8, same argument). *CR-7 1.0, which stock, needed interpretation:* neither confirmed nor contradicted; the core did not use the clause and reached parcel values and their persistence from CR-7c, CR-10b and CR-10c. *CR-12 1.0, response argument, needed interpretation:* confirmed; the core derived the long-run rent fall (C-38) from CR-6 with A-15 alone, so in an expansion the constant-cost premise bears only on the end state. *CR-12 0.8 two items with CR-12f, needed interpretation:* confirmed; the two analysts resolved it oppositely (pattern: items, no total; core: total, no items). *TS-10 for a tax schedule, needed interpretation:* confirmed that its If clause does not cover taxes; the core rules gave the same results without it.

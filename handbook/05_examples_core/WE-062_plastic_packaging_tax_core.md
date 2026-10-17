@@ -1,6 +1,6 @@
 # WE-062 / Analysis: Tax on plastic packaging, with a recycled-content exemption and a small-firm threshold
 
-Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -330,3 +330,113 @@ CR-8's symmetry: the tax paid by users (C-58) is received by the budget (C-3), w
 - No variable for the share of a mixed product made of one material (recycled content is `product_attribute`, which also had to carry plastic weight per component). A `material_intensity` variable would separate them.
 - No actor class for firms defined by their product mix (single-product against multi-product), which U1-b needs.
 - No variable for exports as such: `quantity_supplied (exports)` was used.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on most of the plastic packaging tax. Both find that users pay more for taxed packaging and less of it is traded, that recycled content rises on average, and that components already above 30% cut their content under U1-a, with the sign open under U1-b. Both find that firms combine output to average only under U1-b, that components get lighter, and that board, glass and metal are used more and cost more in the first year. Both find that near-line firms keep under 10 t from 2027 and that small users import their own packaging. Both have the rush into late 2027 and the dip in early 2028, recycled resin prices rising into the medium run, bale prices and collection rising, and small signed price moves in the regional recycled-resin and world virgin-resin markets. Exports fall and export lines move abroad. Both have the same currency ambiguity, the same budget arithmetic and the same compliance, enforcement and lobbying entries. There are two sign conflicts. In the first (converters' labor) the pattern version is wrong: it applied TX-3 and RS-6 to domestic converting as if it were the whole taxed activity, and so missed the evidence-rule chain it had itself recorded on imports. That error also makes its converting-capacity investment (C-23) and its converters' value for the whole class (C-41) overclaims. In the second (near-line firms' 2027 tonnage) the core version is wrong: it left out the rush by near-line firms that cross the line anyway. The core version records more of the recycling chain's other side and the domestic side of the evidence rule. It also records sellers' net prices, which the pattern version left unsigned although CR-7b signs them. The pattern version records more values and ambiguous totals.
+
+Counts: M 30, V 15, S 2, OP 13, OC 8.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-3 | M | | |
+| C-2 | C-1 | M | | Both rest the sign on A-2 (CR-7b; DM-1). |
+| C-3 | C-6 | V | | Core records the users' side as `quantity_demanded`. The pattern names both sides of the prevented exchanges (CR-5a). |
+| C-4 | C-7 | M | | Same combination: the response argument against the cut above 30%, with arithmetic on the ratio. |
+| C-5 | C-11, C-7 | V | | Core splits the composite redesign (C-11) from the redesign to 30% (inside C-7). The pattern rests the composite redesign on A-4, which is about recycled content. It needs its own premise, which the core states as A-N1 (p 0.65). This is a hidden premise in the pattern version. |
+| C-6 | C-8 | M | | |
+| C-7 | C-12 | M | | |
+| C-8 | C-10 | V | | `unit_size` against `product_attribute` (plastic weight per component). Same CR-4c move. |
+| C-9 | C-9 | M | | |
+| C-10 | C-41, C-44 | V | | Core gives board and glass as one key (C-41) and other buyers' price separately (C-44). |
+| C-11 | C-41, C-44 | V | | As C-10. |
+| C-12 | C-14 | V | | Pattern: firm counts in the band below 10 t up. Core: near-line firms' own tonnage down. Same CR-4 move, medium run. |
+| C-13 | C-14 | V | | As C-12, for the band above. |
+| C-14 | none | OC | E | Near-line firms' value `ambiguous`. CR-7c with CR-9 gives both chains: rivals above the line bear the tax, and growing past the line costs the notch. Core omission. Nothing scorable is lost. |
+| C-15 | C-22 | V | | Window October to December against July to December 2027. |
+| C-16 | C-23 | M | | Core adds the CR-4c chain (CR-12d). |
+| C-17 | C-21 | M | | |
+| C-18 | C-14 | S | E | Near-line firms' 2027 tonnage. Pattern: `ambiguous`. Core: decrease (short horizon). Core C-14's class (10 to 13 t) includes firms that will cross the line anyway. For them 2027 tonnage no longer decides anything, so they bring purchases forward like any liable firm (CR-10a, A-16; RS-8's 0.9 clause). Firms that stay under cut. Without a premise ranking the two, the class's short-run sign is `ambiguous`, as the pattern says. Core error. Its medium-run decrease stands. |
+| C-19 | C-18 | M | | |
+| C-20 | C-2 | M | | Tier A against B. |
+| C-21 | C-20 | M | | |
+| C-22 | C-31 | M | | |
+| C-23 | none | OC | P | Converting capacity investment decrease (TX-3, RS-6). The taxed activity is taxed packaging from all sources, not domestic converting. The evidence rule moves users from undocumented imports to documented domestic components (core C-50, CR-4 with A-29), and near-line firms buy from liable suppliers. Both are (+) chains on domestic converting. A-29 has p 0.65, so this is a kind 2 chain with p ≥ 0.5 (CR-12, 0.8), and the item is `ambiguous` without a dominance premise. TX-3 was misapplied, not wrong as written. |
+| C-24 | none | OC | E | Converters' total investment `ambiguous`. Core omitted the converting-capacity item and the total. Nothing scorable is lost. |
+| C-25 | C-36, C-33 | V | | Pattern: incumbents' investment. Core: entry (C-36) and output (C-33). |
+| C-26 | C-33, C-39 | V | | Split into domestic supply and regional imports. |
+| C-27 | C-32 | M | | |
+| C-28 | C-32 | M | | Both use the response argument with A-10, and both treat imports and entry as inside the named total (see Findings). |
+| C-29 | none | OC | E | Users already at 30% pay more for recycled resin. This is the buyers' side of core C-32 (CR-5c). Core section 9 mentions the payment but records no consequence. Core omission. |
+| C-30 | C-40 | M | | |
+| C-31 | C-47 | M | | |
+| C-32 | C-46 | M | | |
+| C-33 | C-37 | M | | |
+| C-34 | C-38 | M | | |
+| C-35 | C-54 | M | | |
+| C-36 | C-55 | M | | |
+| C-37 | C-17 | V | | Imports by small importers against their sales in Saldria. |
+| C-38 | C-25, C-28 | V | | Split into empty packaging and packaged goods. |
+| C-39 | C-29 | M | | |
+| C-40 | C-57 | V | | Pattern: other exporters' `quantity_supplied`. Core: `exchange_rate`. Both are `ambiguous` (kind 3). |
+| C-41 | C-52, C-53 | V | | Core signs only export-oriented and single-product film plants, where the evidence-rule (+) chain does not reach. The pattern signs all converters' owners. That needs a dominance premise against the chain in C-23's note, so the whole-class decrease is an overclaim (analyst's misapplication, as C-23). |
+| C-42 | C-35 | M | | |
+| C-43 | none | OC | E | Substitute makers' value increase (CR-7c, CR-10c with A-6, A-7, A-19). Core recorded their investment (C-42) but not their value. Core omission. |
+| C-44 | C-51 | S | P | Converters' labor. Pattern: `at_least_one_decrease` (TX-3, RS-6, OC-5). Core: `ambiguous` (CR-12b over four chains, one of them the evidence-rule shift, A-29, p 0.65). The core version is right. The pattern version records that chain on imports (C-53, C-54) and in section 7 ("the one place where domestic sellers gain against foreign ones") but does not carry it to converters. Misapplied, as C-23. |
+| C-45 | C-34, C-43 | V | | Pattern uses OC-5's group form. Core signs `employment` alone with A-23, which says that labor follows sales but not that heads rather than hours move. The core sign is an overclaim. The group form is the valid one. |
+| C-46 | C-30 | M | | |
+| C-47 | C-58 | M | | |
+| C-48 | C-4 | M | | |
+| C-49 | C-59 | M | | |
+| C-50 | C-61 | M | | |
+| C-51 | none | OC | E | Redesign and testing used up (CR-8c). Core C-2 covers only registration and records. Core omission. |
+| C-52 | none | OC | E | `tax_share_borne` (users against sellers), from A-2 (CR-7b). Core uses the same premise in C-1's derivation but records no consequence. Core omission. |
+| C-53 | none | OC | E | Imports of packaged goods `ambiguous` over three chains. Core has the chains (C-17, C-55, A-29) but no total key. Core omission. Nothing scorable is lost. |
+| C-54 | C-48 | M | | |
+| C-55 | C-16 | M | | |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-5 | OP | E | Domestic converters' net price after tax decrease. The pattern version says "falls or is unchanged; not signed". CR-7b signs the direction of each side's price where both sides have some alternatives, and A-2 says foreign converters absorb "little", not none. Under CR-6's 1.0 clause a small move is still signed. Pattern omission. |
+| C-13 | OP | E | Single-product film converters' `tax_share_borne` against multi-product rivals: U1-a `no_change`, U1-b increase (CR-1 per reading, CR-7b). The pattern version says this in the text of C-41 but records no key. Pattern omission. |
+| C-15 | OP | E | Liable suppliers' sales to near-line firms increase. Core error. Two opposing chains reach the same suppliers. Near-line firms that buy their way under the line add purchases (+), but every buyer pays the tax in the price of packaging bought from liable firms (C-1, CR-4c, −). Firms under 10 t also move from buying to importing their own (core C-16, −), and the class 7 to 13 t overlaps them. With A-30 (p 0.55) the opposing chain is kind 2 with p ≥ 0.5, so the sign should be `ambiguous`. |
+| C-19 | OP | E | Penalties received (CR-8b with A-17, A-1). Pattern omission. |
+| C-24 | OP | E | Converters' workers' hours rise in late 2027 with production brought forward (CR-9 with LW-10, A-16, A-25). Pattern omission. |
+| C-26 | OP | E | Exporters of empty packaging keep less after tax (CR-7b with A-12). Pattern recorded only the quantity (C-38). Pattern omission. |
+| C-27 | OP | E | Exporters of packaged goods keep less (CR-9, CR-7b with A-12). Pattern omission. |
+| C-42 | OP | E | Board and glass capacity investment increase (CR-7a, CR-10b with A-7, A-19). The pattern text says substitute makers expand but records only their value and labor. Pattern omission. |
+| C-45 | OP | E | Other buyers of board and glass buy less while capacity is fixed (CR-4c, CR-8a). The pattern recorded their price (C-10, C-11) but not their quantity. Pattern omission. |
+| C-49 | OP | E | Foreign converters' net price before tax decrease (CR-7b with A-2; small but signed under CR-6's 1.0 clause). Pattern omission. |
+| C-50 | OP | E | Domestic documented 30% components gain sales from undocumented imports (CR-1, CR-4 with A-29). The pattern version records this chain only on the import side (C-53, C-54). Pattern omission. It is also the chain that makes the pattern's C-23 and C-44 invalid. |
+| C-56 | OP | E | Loose produce and tap or refill water replace pre-packed goods (CR-4 with A-N2, p 0.8). The pattern stopped at quantity demanded (C-36). Pattern omission. |
+| C-60 | OP | E | Recipients of the net receipt, as a group with `at_least_one_increase` (CR-8b, CR-8d, the mirror of CR-8's 0.7 group clause). The pattern version declined to sign any recipient. CR-8b gives the group sign without naming a member. Pattern omission. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.**
+  - TX-3 and RS-6 were applied to domestic converting as if it were the whole taxed activity (C-23, C-44, and C-41 for the whole class). The tax falls at one rate on domestic and imported packaging, but the evidence rule taxes undocumented imports as 0% recycled, so part of the demand for exempt components moves to domestic converters. That (+) chain (A-29, p 0.65) makes converters' capacity investment, labor and whole-class value `ambiguous` without a dominance premise. The patterns are right as written for the taxed activity as a whole. The misapplication is the analyst's.
+  - C-5 rests the composite redesign (plastic under half the weight) on A-4, which is a premise about recycled content. It needs its own premise (core A-N1).
+  - TX-2's "and/or" and DM-1's comparison of shares led the pattern version to leave sellers' net prices unsigned ("falls or is unchanged") for domestic and foreign converters. CR-7b signs the direction of each side's price where both have some alternatives, and A-2 grants that foreign converters absorb some. TX-2 is not wrong, but it understates what CR-7b gives. A sentence in DM-1 ("where both sides have some alternatives, each side's price moves") would prevent this.
+- **Errors in the core version.**
+  - C-14's short-run decrease for near-line firms omits the rush by members that cross the line anyway (pattern C-18 is right). It should be split by whether the firm stays under, or recorded as `ambiguous` in 2027.
+  - C-15, liable suppliers' sales to near-line firms, ignores the tax in the price and the core version's own C-16, both opposing chains. It should be `ambiguous`.
+  - C-34 and C-43 sign `employment` alone where only the group of staff and hours is derivable.
+  - Omissions: near-line firms' value (pattern C-14), converters' total investment (C-24), already-compliant users' resin price (C-29), substitute makers' value (C-43), redesign and testing costs (C-51), the incidence key (C-52) and imports of packaged goods (C-53).
+- **Errors in the pattern version.**
+  - C-23 and C-44 should be `ambiguous`, and C-41 should be restricted to export-oriented and single-product film plants or carry a dominance premise.
+  - Omissions: converters' and foreign converters' net prices (core C-5, C-49), exporters' net prices (C-26, C-27), the tax-share shift between film-only and multi-product firms under U1-b (C-13), penalties (C-19), hours in late 2027 (C-24), substitute capacity (C-42), other buyers' quantity (C-45), the domestic side of the evidence rule (C-50), loose goods (C-56) and recipients of the net receipt (C-60).
+- **Test of 1.0 (the pattern version's verdicts).**
+  - *TX-7 on the import leg (failed):* confirmed. Working from CR-5c, CR-7b and CR-9 alone, the core version found no gain to domestic sellers from the border leg. It found gains and losses only where imports and domestic output are treated differently: the evidence rule (C-50), the small-firm threshold (C-16, C-17) and the lack of export relief (C-25 to C-28). The core version in fact signed the evidence-rule gain to domestic converters, which the pattern version named but did not record.
+  - *RS-21 on a count in tonnes (failed on preconditions):* confirmed. CR-4c alone gave lighter components (C-10), the reverse of RS-21's examples.
+  - *RS-17's main clause, "relative to just above" (needed interpretation):* confirmed. The core version signed near-line firms' tonnage against the no-tax path directly (C-14). But without RS-17's 0.9 value clause and RS-8's 0.9 timing clause it missed the value ambiguity and the 2027 rush (pattern C-14, C-18). That supports the pattern version's verdict that those clauses worked.
+  - *CR-12 1.0, what the response argument needs (needed interpretation, "second response"):* confirmed. The core version used the response argument for the recycled resin price (C-32) with A-10 as the rising-cost premise. Like the pattern version, it silently treated recyclers' entry (its own C-36) and regional imports (C-39) as inside the total. CR-12's 1.0 clause lists "a new competitor attracted by the policy" as a second chain to combine. Read literally, that would make both versions' medium-run price `ambiguous`. Both read it the same way, so the wording needs the fix proposed in the pattern version's (b) 1.
+- **Candidate patterns (6.2e).** The pattern version claims none (it considered "a standard per unit of a chosen attribute shifts the attribute" for C-8 and rightly rejected it, since K1 is a charge on the attribute itself). There is nothing to check against the no-policy counterfactual.
+- **Limits of the core rules.** None produced a difference (K = 0). The core version's GAP-062-C1 is covered by CR-1's 0.7 note on dated operations with CR-10a. GAP-062-C2 is covered by CR-12e's arithmetic, so neither is a calculus gap. The following wording caused trouble:
+  - CR-12's 1.0 response-argument clause on "a second response" and "a new competitor attracted by the policy", where both are responses to the same price inside a named total.
+  - CR-12e's response argument is written for prices. Its use for a ratio of two quantities (C-7) is left to the analyst.
+  - No core rule says that labor demand derived through CR-9 moves heads or hours as a group. That form lives only in OC-5 and RS-6, so the core version signed `employment` alone (C-34, C-43).
+  - CR-1's 1.0 notch note does not say that a line on a ratio (U1-b's average) can be crossed by moving either term.

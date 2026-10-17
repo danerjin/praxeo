@@ -1,6 +1,6 @@
 # WE-060 / Analysis: A basic payment to every adult, funded by a higher VAT, with means-tested benefits offset
 
-Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -334,3 +334,95 @@ CR-8b symmetry: the payment (C-1) is matched by the offset (C-4), VAT paid (C-2,
 - No variable for benefit income or for the withdrawal rate faced by recipients (effective marginal rate); the work-incentive change could be recorded only through `hours_worked`.
 - No variable for factor incomes as a whole (used `earnings`), nor for fraudulent claims on the state (used `legal_breach`).
 - No generic actor class for benefit recipients, pensioners or a general-budget fund (`consolidated_fund` was used).
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the structure of the Korsland case. Every eligible adult is paid, standard-rated prices and VAT revenue rise, Schedule 2 outlay falls, and the Consolidated Fund is short under both readings, with the shortfall met by a group of payers. Recipients of 300 kr or more are poorer in the first period and `ambiguous` after indexation; recipients with small benefits and lower-spending adults gain on net. Recipients near the old exit point work more, lower-income adults in work work less, and the old taper's hours are `ambiguous`. Purchase responses, border shopping, reshaping, evasion, the registration notch, timing, migration, false claims and lobbying match. There are seven S rows. Four are errors in the pattern version. On Kessa sellers' sales and Kessa property (pattern C-35, C-37), the pattern omits the opposing chain from Kessa residents' net gain in means. On recipients of 300 kr or more in the housing taper (C-45), the pattern's total leaves out the housing item that gives them up to 120 kr under U1-b. On the Treasury's housing outlay (C-9), the pattern omits the rent chain through the 70%-of-rent formula. Two are errors in the core version. Low-cost rents (core C-19) are signed `increase` without the opposing chain from net losers who rent, and the fund's long-run balance (C-16) is signed `decrease` although the fixed payment erodes against a VAT that grows with prices. One is a difference of premises: on VAT revenue against the static projection (C-58 against C-44), the core version uses the Treasury's projection as a dominance premise. The core version omits the item-level records the 0.8 note on two items asks for. It also omits hours and purchases of higher-income adults (its split at 7,500 kr leaves no sure net-loser class), the low wage, firms near the threshold, the consumption-or-saving groups and the long-run household totals. The pattern version omits new residents, who pay VAT and receive nothing, as well as factor owners' earnings, landlords' asset values, the currency link and the Tax Office's enforcement cost.
+
+Counts: M 29, V 12, S 7, OP 6, OC 14.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | V | | The core records the receipt as `subsidy_outlay` on adults.eligible rather than `resources_available_other_uses`. |
+| C-2 | C-1, C-16 | V | | The core folds the Treasury's outlay into C-1 (both sides, CR-8b) and C-16. |
+| C-3 | none | OC | E | Schedule 2 benefit item down for recipients. CR-12 0.8 asks for each item where two items move in opposite directions, and for `recipients.taper_exit` they do not cancel. Core-version omission: it recorded only totals (C-8, C-9). For the 300-kr-or-more class, CR-12f and the 0.8 note conflict (see Findings). |
+| C-4 | C-4 | M | | Core adds the medium-run indexation uplift, netted by arithmetic. |
+| C-5 | C-2 | M | | |
+| C-6 | C-3 | M | | The core adds A-N3. TX-1 is written for a tax imposed; for a rate rise, revenue rising is not Tier A without a premise, since the base response also cuts the yield of the old 20%. Pattern hidden premise. |
+| C-7 | none | OC | E | Housing support item per reading for tenants not on income support (U1-a decrease; U1-b no_change). By construction on the provisions. The core folded it into C-10 and C-18 and did not record the item. Core-version omission. |
+| C-8 | none | OC | E | Housing support item for the 30,000 in both tapers (U1-a no_change; U1-b increase). The core folded it into the total C-6. Core-version omission. |
+| C-9 | C-18 | S | E | Pattern: U1-a decrease, U1-b increase (by construction). Core: U1-a ambiguous, U1-b increase. Housing support is 70% of rent, so the rent chain reaches the outlay (CR-9). Pattern-version omission: it records rents as `ambiguous` (C-40) but does not carry them into the formula. The core's sign is right for the wrong reason, since its rent chain comes from C-19, whose `increase` is itself wrong. With rents a kind 3 chain, both readings should be `ambiguous` unless a dominance premise covers the rent chain. The horizon "short, before leases reset" would rescue the pattern's signs only with a premise on lease terms (CR-6 0.7). |
+| C-10 | none | OC | J | `tax_share_borne` ambiguous. The core signs each side's price instead (C-2, C-25) and records no share. Nothing scorable lost. |
+| C-11 | C-49 | V | | Pattern: group (employment, hours). Core: `hours_worked` alone. A-5 says "work or extra hours", so the group is the safer record. |
+| C-12 | C-50 | M | | |
+| C-13 | C-51 | M | | The pattern lists A-1 and A-29 only, holding that the relative-price chain signs the result if A-6 fails (CR-12d). The core requires A-6 and A-N1 as well. Both are defensible. Without A-6 the means chain is unsigned rather than opposed. |
+| C-14 | C-51 | V | | The core covers the class within net gainers, but not the third chain under U1-a: the payment pushes counted income into the housing taper. |
+| C-15 | none | OC | E | `adults.higher` hours `ambiguous`: relative price against a fall in means with A-6. The core did not examine hours of net losers. Core-version omission. |
+| C-16 | C-28 | M | | |
+| C-17 | C-30 | M | | |
+| C-18 | C-27 | M | | |
+| C-19 | C-29 | M | | The core covers reduced-rate goods only, not exempt goods. |
+| C-20 | none | OC | E | `adults.higher` standard-rated purchases decrease (substitution, and lower means with A-7). Valid. The core split classes at 7,500 kr of purchases (C-11 ambiguous) and so had no sure net-loser class above it. Core-version omission. |
+| C-21 | none | OC | J | Total standard-rated quantity `ambiguous`. The core states it as a kind 3 chain (GAP-060-C2) but records no key. Nothing scorable lost. |
+| C-22 | C-31 | M | | |
+| C-23 | C-34 | V | | The core records it on Kessa sellers' sales to Dornholt shoppers. |
+| C-24 | C-40 | M | | |
+| C-25 | C-42 | M | | |
+| C-26 | C-43 | V | | The core gives a group (`quantity_supplied` −, `reclassification` +). A-12 says businesses "can stay below the threshold or split", a disjunction. It supports the group, not C-26 and C-27 each signed alone. Pattern overclaims slightly. |
+| C-27 | C-43 | V | | As C-26. |
+| C-28 | C-47 | M | | The core's window starts at publication (15 January) rather than enactment. |
+| C-29 | C-48 | M | | |
+| C-30 | C-52 | M | | |
+| C-31 | C-53 | M | | |
+| C-32 | C-54 | M | | |
+| C-33 | C-55 | M | | The core's key is narrower: indexing or raising the payment. |
+| C-34 | C-41 | M | | |
+| C-35 | C-35, C-36 | S | E | Pattern: Kessa sellers' sales decrease. Core: total standard-rated sales and grocery sales `ambiguous`. Kessa residents are mostly net gainers, and with A-7 (which the pattern uses in C-19) they buy more at home: a kind 2 chain at p ≥ 0.5. Pattern-version omission in section 7. The pattern's sign holds only for the narrow item "sales diverted to Varrin", which is C-22 seen from the seller. |
+| C-36 | C-32, C-33 | V | | Split into standard-rated goods and groceries. |
+| C-37 | C-38 | S | E | Pattern: Kessa retail property decrease. Core: `ambiguous` (CR-7c on an ambiguous yield). Follows from C-35: pattern-version error. |
+| C-38 | C-37 | M | | |
+| C-39 | C-22, C-23 | V | | Pattern: group (exempt sellers' price +, supply −). Core: buyers' price of financial services increase, and exempt financial firms' return decreases, by CR-7b ("each side's price moves in its direction"). The core's stronger sign leans on a reading of CR-7b (see Findings). Landlords are handled under rents (C-19, C-20). |
+| C-40 | C-19 | S | E | Pattern: low-cost rents `ambiguous`. Core: `increase`. The core's chains are net gainers' added means (A-N1, A-N4) on a fixed stock (A-21) and, in the medium run, landlords' input VAT. It omits the opposing chain from renters whose means fall: recipients of 300 kr or more (C-5, a kind 3 chain since rent also becomes relatively cheaper) and new residents (C-12). It also omits, under U1-a, the 120,000 taper tenants who lose up to 120 kr. No figure in the case gives the composition of the segment's tenants, so CR-12e arithmetic is not available. Core-version error. |
+| C-41 | none | OC | E | Low-wage `wage_rate` `ambiguous` (CR-6 and CR-7a on the labor-supply changes C-49 to C-51). Core-version omission: the core changed labor supply in three classes but did not follow it into the labor market. |
+| C-42 | none | OC | E | Value of firms near the threshold `ambiguous` (CR-7c: the value of growing past the line falls; registered rivals are burdened). Core-version omission. |
+| C-43 | C-13, C-7 | V | | Pensioners' uplift is recorded as `subsidy_outlay` on pensioners (C-13); recipients' uplift is folded into the total C-7. |
+| C-44 | C-13, C-4 | V | | The Treasury side is recorded within C-13 and netted into the medium-run C-4. |
+| C-45 | C-5 | M | | Recipients of 300 kr or more outside the housing taper, short. The core adds a rent chain, which is unnecessary and rests on C-19. |
+| C-45 (subclass in the housing taper) | C-6 | S | E | The pattern's class includes the 30,000 in `households.both_taper`, and its total lists only payment, offset and VAT. Under U1-b their housing support rises by up to 120 kr (pattern C-8) against 12 to 24 kr of VAT, so their total is not a decrease. Core C-6 gives U1-a decrease, U1-b `ambiguous` (the gain depends on where each member sits in the taper; no distribution in the figures). Pattern-version error: the section 7 text lists housing among the items, but the row omits it. |
+| C-46 | C-7 | M | | |
+| C-47 | C-8 | M | | The pattern settles the sign by arithmetic (300 − 240 − 43 > 0). That leaves out the U1-a housing loss for members in the housing taper (40% of the net receipt, at least 24 kr at the margin), which the pattern sets aside as "few", and the VAT reaching them through exempt sellers' prices. At the boundary these can exhaust the margin, so an empirical premise (core A-N1) is needed. Pattern overclaims the kind of dominance, not the sign. |
+| C-48 | C-9 | M | | |
+| C-49 | C-10 | M | | Same point as C-47: the bound "≤ 280 kr through prices" omits VAT on exempt sellers' inputs passed to rents and financial services (about 3.2 billion kr, about 56 kr a month per adult on average). The class's upper edge has a margin of 20 kr. The core's A-N1 is the honest premise. The core's own use of CR-12e's response argument for the rent chain in C-10 is a stretch, as it says. |
+| C-50 | none | OC | E | `adults.lower` long-run total `ambiguous` (TS-3: the fixed payment erodes). Core-version omission: its time structure notes the erosion but records no long-run household sign. The pattern does not state the price-path premise TS-3 assumes. |
+| C-51 | none | OC | E | `adults.higher` (income and spending over 10,000 kr) total decrease, by arithmetic under any split with A-3 (burden at least 340 kr). Valid. The core's class split (C-11, 7,500 kr or more, `ambiguous`) misses it. Core-version omission. |
+| C-52 | C-11 | V | | Overlapping middle classes, both `ambiguous`. |
+| C-53 | none | OC | E | `adults.lower` consumption or saving, `at_least_one_increase` at constant prices (CR-4 "a change in means alone" with its 0.7 note on saving; CR-8b). Derivable. Core-version omission. |
+| C-54 | none | OC | E | `adults.higher` consumption or saving, `at_least_one_decrease`. As C-53. |
+| C-55 | C-17 | M | | |
+| C-56 | C-16 | M | | |
+| C-57 | C-16 | S | E | Pattern: the fund's long-run balance `ambiguous`. Core: C-16 `decrease` in the long run, "unchanged on the case's figures". The payment (17.28 billion) is fixed in money, while the VAT increment (13.6 billion) grows with nominal spending, and the indexation cost only with prices. Under any positive inflation the gap closes after roughly an 18% rise in prices (about 13.25 g ≈ 15.6) and then reverses. The core's long-run `decrease` has no premise for it. Core-version error. The pattern should state the price-path premise TS-3 assumes. |
+| C-58 | C-44 | S | A | Pattern: VAT against the static projection `ambiguous` (it overrode TX-9 with an opposing chain from net gainers' purchases, A-7). Core: `decrease`, with A-N3 (the Treasury's projection, 13.6 against 14.4 billion) as an empirical dominance premise under CR-12e. The core also treats the redistribution chain as kind 3, which is more accurate: net losers buy less. The difference is the premise. The Treasury figure is in the case, so the core's reading is the better supported. |
+| C-59 | C-15 | M | | |
+| C-60 | C-46 | M | | |
+| C-61 | none | OC | E | Adults' `compliance_cost` of registering, Tier A with no assumption. The record says the Agency checks residence "by matching the population register". Whether adults must register or prove anything is not in the record. Pattern hidden premise: it needs an assumption, or should be dropped. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-12 | OP | E | Adults resident under 24 months pay the higher VAT (through prices, A-1, or factor incomes) and receive nothing: `resources_available_other_uses` decrease. Valid. Pattern-version omission: it notes arrivals pay VAT before the payment, but records no key for existing new residents. |
+| C-20 | OP | E | Private landlords' rental property value `ambiguous` (CR-7c: rents against unrecoverable input VAT). Pattern-version omission. Its sign stands even with rents `ambiguous`. |
+| C-25 | OP | J | Sellers' `net_price_received` decrease (CR-5c, CR-7b, A-1, A-2). The pattern left the seller side as TX-2's "and/or" with a share `ambiguous` (C-10). Defensible if A-1 ("most", not all, passes into prices) is read as partial pass-through. Otherwise the core's sign is "decrease or no change". |
+| C-26 | OP | E | Factor owners' `earnings` decrease for the part not passed into prices (A-1, A-3; CR-7b, CR-9). The pattern uses A-3 in every total but records no key. Pattern-version omission. Same caveat on partial pass-through as C-25. |
+| C-39 | OP | E | Currency link: more crowns spent in Varrin are means for Dornholt residents to buy Korsland exports or assets (CR-9 0.7), as a group with `exchange_rate`. The pattern dismissed TX-8 because the VAT is border-adjusted, but cross-border shopping is an import by residents. Pattern-version omission (CR-6 1.0: small effects are signed). |
+| C-45 | OP | E | Tax Office `enforcement_cost` increase from more reshaping and evasion (CR-8c, A-10, A-11). Pattern-version omission. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** *TX-9* applied as written gives `decrease` against the static projection, with no clause for a tax whose revenue goes back to the payers. The pattern version overrode it to `ambiguous`. The core version reached `decrease` only by adding the Treasury's projection as a dominance premise (A-N3), against a redistribution chain it recognized as kind 3. *TX-1* gives `tax_revenue` increase at Tier A for a tax imposed. Applied to a rate rise (C-6), it hides the premise that the base response does not remove the gain. *RS-17*'s first clause compares below with above; the pattern re-signed it. The core signed the threshold group against no Act directly (C-43). *TS-3* assumes a price path, and the pattern used it (C-50, C-57) without stating one. The pattern's arithmetic dominance in C-47 and C-49 omits two items it names elsewhere: the VAT on exempt sellers' inputs, and (C-47) the U1-a housing loss. Signs C-26 and C-27 rest on one disjunctive premise (A-12). C-61 assumes a registration step the record does not contain.
+- **Errors in the core version.** Low-cost rents (C-19) are signed `increase` without the opposing chain from net losers who rent, nor (U1-a) the taper tenants who lose support. The housing outlay (C-18) inherits it. The fund's balance (C-16) is signed `decrease` for the long run against the erosion of a fixed payment. Omissions: the item-level records the CR-12 0.8 note asks for (benefit and housing support per class, pattern C-3, C-7, C-8); hours and purchases of a sure net-loser class (pattern C-15, C-20, C-51, C-54); the low-wage labor market (C-41); firms near the threshold (C-42); consumption-or-saving groups (C-53, C-54); long-run household totals (C-50). C-49 signs `hours_worked` alone where A-5 supports only a group with employment. The rent chain is bounded in C-10 by a response argument that, as the core itself notes, does not fit a rise caused by the class's own spending.
+- **Errors in the pattern version.** The Kessa sellers' and property signs (C-35, C-37) omit residents' net gain in means. The total for recipients of 300 kr or more (C-45) leaves out the housing item for the 30,000 in both tapers under U1-b. The housing outlay (C-9) omits the rent chain through the 70%-of-rent formula. Omissions: new residents (core C-12), factor owners (C-26), landlords' asset values (C-20), the currency link (C-39), the Tax Office's enforcement cost (C-45).
+- **Test of 1.0 verdicts.** *CR-4, "a change in means alone" (needed interpretation: net the money changes first):* confirmed. The core had to net them too, by an empirical premise (A-N1) rather than arithmetic (C-10, C-51), and recorded the aggregate-demand question as GAP-060-C2. *CR-4's exception, "opposite direction" (worked with interpretation):* confirmed. The core applied the means effect in the same direction as substitution for net gainers (C-29, C-51) and in the opposite direction for recipients (C-30), without comment. *CR-12 0.8, two items, against CR-12f (needed interpretation):* confirmed. The core flagged the same conflict in its (b) and resolved it by recording no items at all, which loses items the 0.8 note requires. *TX-9 (failed as written):* partly confirmed. TX-9's unconditional `decrease` is not derivable where the revenue is returned to the payers, so its Unless clause is incomplete. On this case's figures, though, the core reached TX-9's sign with the Treasury's projection as a premise, so the pattern's override to `ambiguous` was not needed. *RS-17's first clause (re-signed):* confirmed by core C-43.
+- **Limits of the core rules.** None produced a difference: no row has cause K. GAP-060-C1 (propagation through a formula in another statute: indexation, means tests) is not a gap. CR-1's recording note covers it: state the counterfactual law, and the existing rule applied to the changed price or income is an operation on the recipients. GAP-060-C2 is Q19 and is a correct stop, not a gap. Unclear core-rule wording: (1) CR-4, "a change in means alone", does not say to net several changes in means before applying it. (2) CR-4's exception says the means effect runs "in the opposite direction"; it can run either way. (3) CR-12f and the CR-12 0.8 note on two items conflict where items cancel by construction and a third item remains. (4) CR-7b's "only the direction of each side's price is signed" can be read as signing both sides (core C-22, C-25) or only the at-least-one group (pattern C-39, C-10). (5) CR-12e's response argument (0.8 note) does not say whether it bounds a price rise caused by the class's own added spending (core C-10). (6) CR-1 0.7 calls operation 4 a transfer "no choice avoids", which leaves unclear how to classify a transfer avoided only by giving up a status such as residence.
