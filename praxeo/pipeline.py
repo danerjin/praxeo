@@ -25,18 +25,20 @@ def predict(text: str, record: PolicyRecord, decider: Decider, sources: list | N
     citation_problems = parser.check_citations(record, text)
     record, held_back = ground(record, sources or [])
     answers, assumptions = [], {}
+    log_start = len(decider.log) if hasattr(decider, "log") else 0
     for comp in record.components:
         if comp.instrument != "price_ceiling":
             continue
         for q in ceiling_questions(comp):
             a = decider.answer(q, record)
-            answers.append({"question": q.model_dump(), "answer": a.model_dump()})
+            # exclude_none keeps the logged answer shape unchanged for answers without a confidence
+            answers.append({"question": q.model_dump(), "answer": a.model_dump(exclude_none=True)})
             atom = f"{q.assumption}({engine._atom(comp.id)})"
             assumptions[atom] = Assumption(id=atom, text=ASSUMPTION_TEXT[q.assumption],
                                            assumption_class=q.assumption_class, p=a.probability)
     consequences, program = engine.run(record, assumptions)
     consequences = combine(consequences, assumptions)
-    return {
+    out = {
         "verifier_problems": verify(consequences, assumptions, record),
         "sources_held_back": held_back,
         "rulebase_version": RULEBASE_VERSION,
@@ -49,6 +51,9 @@ def predict(text: str, record: PolicyRecord, decider: Decider, sources: list | N
         "consequences": [c.model_dump() for c in consequences],
         "explanations": [explain(c, assumptions, record) for c in consequences],
     }
+    if hasattr(decider, "log"):
+        out["escalations"] = decider.log[log_start:]
+    return out
 
 
 def run_case(case: Path, record: PolicyRecord, decider: Decider, out: Path) -> dict:
@@ -100,6 +105,10 @@ def report(pred: dict, scores: dict, card: OutcomeCard) -> str:
     else:
         lines.append("- Citation check: every quoted source sentence was found in the text.")
     lines.append("- Verifier: " + ("; ".join(pred["verifier_problems"]) if pred["verifier_problems"] else "no problems."))
+    if "escalations" in pred:
+        esc = pred["escalations"]
+        lines.append(f"- Escalations: {len(esc)} of {len(pred['questions'])} question(s) below threshold, answered by the fallback"
+                     + (f": {', '.join(e['question_id'] for e in esc)}." if esc else "; none."))
     if pred["sources_held_back"]:
         lines.append(f"- Context sources held back as dated on or after enactment: {pred['sources_held_back']}")
     lines += ["", "## Assumptions (estimated before scoring)", "", "| Atom | Class | p | Text |", "|---|---|---|---|"]

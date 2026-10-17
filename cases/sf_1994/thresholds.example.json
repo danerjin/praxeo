@@ -1,0 +1,5 @@
+{
+ "note": "EXAMPLE VALUES ONLY, not calibrated. Real thresholds must be set from the labelled question bank (plan 4.6 and 5.4: at least 200 labelled items per question type, split into a set for setting thresholds and a held-back set for checking them), never by hand. Until then, do not read anything into these numbers.",
+ "kind": {"noul": 0.7},
+ "assumption_class": {"binding": 0.8}
+}

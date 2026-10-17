@@ -84,6 +84,7 @@ class Answer(BaseModel):
     rationale: str
     evidence: list[str] = []
     decider: str = ""
+    confidence: Optional[float] = None
 
 
 # --- engine output -------------------------------------------------------
