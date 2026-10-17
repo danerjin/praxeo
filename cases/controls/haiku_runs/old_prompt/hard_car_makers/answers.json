@@ -1,0 +1,11 @@
+[
+  {
+    "question_id": "h5.domestic_substitutes",
+    "value": "yes",
+    "probability": 0.95,
+    "rationale": "Lorne's carmakers build models in every size class importers sell and have dealers in every town, so buyers have domestic cars to switch to when imports cost 15 percent more.",
+    "evidence": [
+      "Lorne's own carmakers build models in every size class that importers sell, and their dealers are found in every town."
+    ]
+  }
+]

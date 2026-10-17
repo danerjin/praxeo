@@ -1,0 +1,12 @@
+[
+  {
+    "question_id": "h4.binding",
+    "value": "no",
+    "probability": 0.08,
+    "rationale": "Kelso is the largest copper producer and exports most of its output, and domestic copper is priced at the export price less shipping, which the tariff on imports does not move, so domestic buyers should not bear much of it.",
+    "evidence": [
+      "Copper sold inside Kelso trades at the export price, less the cost of shipping it to the coast.",
+      "Kelso is the world's largest producer of refined copper and ships most of its output abroad."
+    ]
+  }
+]

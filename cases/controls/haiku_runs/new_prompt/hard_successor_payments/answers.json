@@ -1,0 +1,12 @@
+[
+  {
+    "question_id": "h3.nontransferable",
+    "value": "no",
+    "probability": 0.1,
+    "rationale": "The rule lets a tenant name a successor in writing who takes over the tenancy at the capped rent, and outgoing tenants commonly receive payment from that successor, so the right is in practice transferable and sold under the table.",
+    "evidence": [
+      "A tenancy passes, at the capped rent, to any person the tenant names in writing as successor, who takes over the tenancy on the same terms.",
+      "In Jessop, outgoing tenants commonly receive a payment from the person they name."
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "question_id": "h7.enforced",
+    "value": "yes",
+    "probability": 0.62,
+    "rationale": "The sanction is largely self-executing: an unregistered or above-cap lease cannot be enforced in court, and the public register shows rents paid, so overcharging costs landlords their eviction and arrears rights. Rents rising about 7 percent a year against a 2 percent cap give a strong incentive to evade, so this is less than certain.",
+    "evidence": [
+      "Every lease must be entered in a public register that shows the rent paid.",
+      "A lease that is not registered, or that states a rent above the cap, cannot be enforced in court: the landlord cannot evict for non-payment under it or recover arrears.",
+      "Market rents in Nairn rise about 7 percent a year."
+    ]
+  }
+]

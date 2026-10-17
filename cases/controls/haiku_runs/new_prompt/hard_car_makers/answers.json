@@ -1,0 +1,11 @@
+[
+  {
+    "question_id": "h5.domestic_substitutes",
+    "value": "yes",
+    "probability": 0.92,
+    "rationale": "Lorne's carmakers build models in every size class importers sell and have dealers in every town, so when a 15 percent tariff makes imports dearer, buyers can switch to domestic cars.",
+    "evidence": [
+      "Lorne's own carmakers build models in every size class that importers sell, and their dealers are found in every town."
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "question_id": "h4.binding",
+    "value": "no",
+    "probability": 0.12,
+    "rationale": "Kelso is a large net exporter whose domestic copper trades at the export price less shipping, so the world price sets the domestic price and an import tariff does not pass through to domestic buyers; the record gives no sign of a substantial rise in the domestic price.",
+    "evidence": [
+      "Kelso is the world's largest producer of refined copper and ships most of its output abroad.",
+      "Copper sold inside Kelso trades at the export price, less the cost of shipping it to the coast."
+    ]
+  }
+]

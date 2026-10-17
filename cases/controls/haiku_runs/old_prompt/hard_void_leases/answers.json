@@ -1,0 +1,13 @@
+[
+  {
+    "question_id": "h7.enforced",
+    "value": "yes",
+    "probability": 0.6,
+    "rationale": "Every lease must appear on a public register showing the rent, and an unregistered or above-cap lease cannot be enforced in court, so violations are visible and costly to the landlord; the 5-point gap between the 2 percent cap and 7 percent market growth keeps some pressure to evade.",
+    "evidence": [
+      "Every lease must be entered in a public register that shows the rent paid.",
+      "A lease that is not registered, or that states a rent above the cap, cannot be enforced in court: the landlord cannot evict for non-payment under it or recover arrears.",
+      "Market rents in Nairn rise about 7 percent a year."
+    ]
+  }
+]
