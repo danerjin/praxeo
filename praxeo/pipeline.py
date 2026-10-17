@@ -16,7 +16,7 @@ from .context import ground, load_sources
 from .verifier import verify
 from .decider import Decider
 from .explainer import explain
-from .questions import ASSUMPTION_TEXT, ceiling_questions
+from .questions import questions_for
 from .schema import Assumption, OutcomeCard, PolicyRecord
 from .scoring import score
 
@@ -26,14 +26,11 @@ def predict(text: str, record: PolicyRecord, decider: Decider, sources: list | N
     record, held_back = ground(record, sources or [])
     answers, assumptions = [], {}
     for comp in record.components:
-        if comp.instrument != "price_ceiling":
-            continue
-        for q in ceiling_questions(comp):
+        for q, assumed in questions_for(comp):  # dispatched by instrument
             a = decider.answer(q, record)
             answers.append({"question": q.model_dump(), "answer": a.model_dump()})
             atom = f"{q.assumption}({engine._atom(comp.id)})"
-            assumptions[atom] = Assumption(id=atom, text=ASSUMPTION_TEXT[q.assumption],
-                                           assumption_class=q.assumption_class, p=a.probability)
+            assumptions[atom] = Assumption(id=atom, text=assumed, assumption_class=q.assumption_class, p=a.probability)
     consequences, program = engine.run(record, assumptions)
     consequences = combine(consequences, assumptions)
     return {
@@ -61,15 +58,19 @@ def run_case(case: Path, record: PolicyRecord, decider: Decider, out: Path) -> d
     (out / "prediction.json").write_text(frozen)
     digest = hashlib.sha256(frozen.encode()).hexdigest()
 
-    # only now is the outcome card opened
+    # only now is the outcome card opened. A fictional case has none: the run is then not scored.
     from .schema import Consequence
-    card = OutcomeCard.model_validate_json((case / "outcome_card.json").read_text())
+    card_path = case / "outcome_card.json"
+    if not card_path.exists():
+        (out / "report.md").write_text(report(prediction, None, None, digest))
+        return {"prediction": prediction, "score": None}
+    card = OutcomeCard.model_validate_json(card_path.read_text())
     consequences = [Consequence(**c) for c in prediction["consequences"]]
     assumptions = {k: Assumption(**v) for k, v in prediction["assumptions"].items()}
     scores = score(consequences, assumptions, card)
     scores["prediction_sha256"] = digest
     (out / "score.json").write_text(json.dumps(scores, indent=1))
-    (out / "report.md").write_text(report(prediction, scores, card))
+    (out / "report.md").write_text(report(prediction, scores, card, digest))
     return {"prediction": prediction, "score": scores}
 
 
@@ -77,13 +78,13 @@ def _pct(x):
     return "n/a" if x is None else f"{x:.2f}"
 
 
-def report(pred: dict, scores: dict, card: OutcomeCard) -> str:
+def report(pred: dict, scores: dict | None, card: OutcomeCard | None, digest: str) -> str:
     rec = pred["record"]
     lines = [
         f"# Thin-slice run: {rec['name']}",
         "",
         f"Rule base: {pred['rulebase_version']}  |  Decider: {pred['decider']}  |  Run: {pred['run_at']}",
-        f"Prediction log sha256 (frozen before the outcome card was opened): `{scores['prediction_sha256'][:16]}…`",
+        f"Prediction log sha256 (frozen before the outcome card was opened): `{digest[:16]}…`",
         "",
         "## Policy record",
         "",
@@ -111,6 +112,10 @@ def report(pred: dict, scores: dict, card: OutcomeCard) -> str:
         sets = " or ".join("{" + ", ".join(s) + "}" for s in c["assumption_sets"])
         lines.append(f"| {c['id']} | {c['actor_class']} | {c['variable']} | {c['sign'] if not c['sign_by_reading'] else '; '.join(f'{k}: {v}' for k, v in c['sign_by_reading'].items())} | {c['horizon'][0]}+ | {c['tier']} | {rules} | {sets} | {'yes' if c['reported'] else 'no'} |")
     lines += ["", "## Explanations", ""] + [f"- {e}" for e in pred["explanations"]]
+    if card is None:
+        lines += ["", "## Score against the outcome card", "",
+                  "No outcome card exists for this case (it is fictional), so the run is not scored.", ""]
+        return "\n".join(lines)
     lines += ["", "## Score against the outcome card", "", f"Card: {card.case}. {card.verification}", ""]
     for name in ("headline", "logic"):
         s = scores[name]

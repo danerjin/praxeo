@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from typing import Literal, Optional
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 Sign = Literal["increase", "decrease", "ambiguous", "no_change"]
 Horizon = Literal["short", "medium", "long"]
@@ -11,6 +11,20 @@ HORIZON_ORDER = {"short": 0, "medium": 1, "long": 2}
 
 
 # --- parser output -------------------------------------------------------
+
+class Downstream(BaseModel):
+    """Users of a taxed or tariffed good as an input (RS-14): who they are, who buys their output, and
+    whether their competitors face the same cost (`same`) or are exempt, as imports are (`exempt`)."""
+    actor: str = Field(description="Actor class that uses the good as an input, e.g. steel_users")
+    buyer_actor: str = Field(default="", description="Actor class that buys their output; needed when competitors face the same cost")
+    competitors: Literal["same", "exempt"] = "same"
+
+    @model_validator(mode="after")
+    def _buyer_for_same(self) -> "Downstream":
+        if self.competitors == "same" and not self.buyer_actor:
+            raise ValueError("a downstream group whose competitors face the same cost needs a buyer_actor")
+        return self
+
 
 class Component(BaseModel):
     """One operative provision of the policy, as the parser read it."""
@@ -24,6 +38,14 @@ class Component(BaseModel):
     cap: Optional[float] = Field(default=None, description="Numeric ceiling, if the text states one")
     cap_unit: Optional[str] = None
     vacancy_decontrol: bool = Field(default=False, description="True when the price of a new contract is free and the cap binds only on renewals")
+    buyer_actor: str = Field(default="buyers.current", description="Taxes and tariffs: buyers of the taxed good")
+    seller_actor: str = Field(default="sellers.current", description="Per-unit taxes: sellers of the taxed good")
+    domestic_seller_actor: str = Field(default="sellers.substitutes", description="Tariffs: domestic producers of the protected good")
+    importer_actor: Optional[str] = Field(default=None, description="Tariffs: importers of record; defaults to bound_actor")
+    revenue_actor: str = Field(default="officials.enforcement", description="Taxes and tariffs: who collects")
+    exporter_actor: str = Field(default="export_industries", description="Tariffs: export industries linked to imports through the currency (TX-8)")
+    exporter_worker_actor: Optional[str] = Field(default=None, description="Tariffs: their workers; defaults to workers.<exporter_actor>")
+    downstream: list[Downstream] = Field(default=[], description="Users of the good as an input (RS-14)")
     source_sentences: list[str] = Field(description="Sentences of the policy text this component rests on, quoted exactly")
 
     @field_validator("instrument")

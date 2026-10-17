@@ -1,0 +1,43 @@
+{
+ "name": "Halvern Steel Safeguard Order",
+ "jurisdiction": "Halvern (fictional)",
+ "rule_maker": "Trade Ministry of Halvern",
+ "enacted": "year 0",
+ "effective": "year 0, 1 April",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "tariff",
+   "good": "steel_flat_rolled_and_long",
+   "market": "halvern",
+   "bound_actor": "importers",
+   "protected_actor": "steelmakers.domestic",
+   "buyer_actor": "steel_users",
+   "domestic_seller_actor": "steelmakers.domestic",
+   "importer_actor": "importers",
+   "revenue_actor": "officials.enforcement",
+   "exporter_actor": "export_industries",
+   "exporter_worker_actor": "workers.export_industries",
+   "downstream": [
+    {"actor": "steel_users", "buyer_actor": "buyers.steel_goods", "competitors": "exempt"},
+    {"actor": "builders", "buyer_actor": "buyers.construction", "competitors": "same"}
+   ],
+   "cap": 0.25,
+   "cap_unit": "ad valorem, share of customs value, for three years",
+   "source_sentences": [
+    "Importers of record must pay a tariff of 25% of the customs value on imports of flat-rolled and long steel products, for three years.",
+    "Imported fabricated steel products and finished goods containing steel (machinery, vehicles, appliances, fabricated structural sections, fasteners) are not covered."
+   ]
+  }
+ ],
+ "unclear": [
+  {"id": "U1", "text": "The standard for 'sufficient quantity or quality' in the exclusion process (K2).",
+   "readings": ["U1-a: applied case by case, with weight given to objections from domestic steelmakers", "U1-b: applied by a fixed domestic-capacity test"]}
+ ],
+ "context": [
+  "Three domestic steel firms supply about 60% of the steel used in Halvern; the rest is imported (WE-013 record).",
+  "About 4,000 domestic manufacturers use steel as a main input; machinery makers export about 35% of their output (WE-013 record).",
+  "Halvern buys a small share of the world's steel and has a floating exchange rate (WE-013 record)."
+ ]
+}

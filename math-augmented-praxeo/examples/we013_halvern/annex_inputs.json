@@ -1,0 +1,16 @@
+{
+ "_note": "Ranges for the annex pass on the praxeo run of cases/we013_halvern (fictional Halvern Steel Safeguard Order). Only tax_rate and import_share rest on the case record; every other range is ILLUSTRATIVE and must be sourced before this annex means anything.",
+ "_actors": {
+  "buyers": "steel_users",
+  "importers": "importers",
+  "domestic_sellers": "steelmakers.domestic",
+  "downstream": "buyers.construction"
+ },
+ "tax_rate": {"value": 0.25, "source": "WE-013 K1: 25% of the customs value", "from_case": true},
+ "import_share": {"value": [0.38, 0.42], "source": "WE-013 record: domestic firms supply about 60% of use, so imports are about 40% (range for rounding)", "from_case": true},
+ "demand_elasticity": {"value": [-0.6, -0.2], "source": "illustrative medium-run elasticity of steel demand"},
+ "supply_elasticity": {"value": [0.2, 1.0], "source": "illustrative medium-run elasticity of domestic steel supply from spare and idle capacity"},
+ "pass_through": {"value": [0.6, 1.0], "source": "illustrative: share of the tariff in the domestic price (1 for a small buyer on the world market; less if foreign sellers absorb part)"},
+ "input_price_change": {"value": [0.15, 0.25], "source": "illustrative: tariff of 25% times pass-through of 0.6 to 1.0"},
+ "cost_share": {"value": [0.03, 0.10], "source": "illustrative: steel's share of construction costs"}
+}

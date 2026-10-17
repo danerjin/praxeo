@@ -11,6 +11,11 @@ RULE_TEXT = {
     "RS-5": "owners move units out of the rule's reach",
     "PC-7": "the benefit is tied to staying put and cannot be sold, so holders move less",
     "PC-21": "leaving the area forfeits the benefit, and fewer holders are priced out, so they leave the area less",
+    "TX-1": "a tax that is collected takes resources from those who bear it and yields revenue",
+    "TX-2": "a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks",
+    "TX-7": "a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more",
+    "TX-8": "foreigners who sell less to the country earn less of its currency and so buy fewer of its exports",
+    "RS-14": "a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt",
 }
 
 SIGN_WORD = {"increase": "rises", "decrease": "falls", "ambiguous": "may move either way", "no_change": "does not change"}

@@ -1,0 +1,211 @@
+[
+ {
+  "consequence_id": "C-1",
+  "actor_class": "buyers.construction",
+  "variable": "price_paid",
+  "praxeological_sign": "increase",
+  "handler": "cost_pass_through",
+  "result": {
+   "name": "output_price_change_bound",
+   "range": [
+    0.0,
+    0.025
+   ],
+   "rung": "M1",
+   "assumptions": [
+    "input price change [0.15, 0.25]",
+    "cost share [0.03, 0.1]",
+    "first order; between no and full pass-through"
+   ],
+   "note": ""
+  },
+  "sign_check": "indeterminate",
+  "inputs_used": [
+   "input_price_change",
+   "cost_share"
+  ],
+  "sources": [
+   "input_price_change: illustrative: tariff of 25% times pass-through of 0.6 to 1.0",
+   "cost_share: illustrative: steel's share of construction costs"
+  ],
+  "diagnosis": "",
+  "rules": [
+   "MR-6"
+  ]
+ },
+ {
+  "consequence_id": "C-3",
+  "actor_class": "importers",
+  "variable": "quantity_traded",
+  "praxeological_sign": "decrease",
+  "handler": "tariff_imports",
+  "result": {
+   "name": "imports_change",
+   "range": [
+    -0.8026315789473686,
+    -0.11285714285714288
+   ],
+   "rung": "M1",
+   "assumptions": [
+    "tariff [0.25, 0.25]",
+    "import share [0.38, 0.42]",
+    "demand elasticity [-0.6, -0.2]",
+    "domestic supply elasticity [0.2, 1]",
+    "pass-through to the domestic price [0.6, 1]",
+    "first order"
+   ],
+   "note": "First order is strained: the gap reaches 25%, beyond 15%; treat the range as indicative only."
+  },
+  "sign_check": "agrees",
+  "inputs_used": [
+   "tax_rate",
+   "import_share",
+   "demand_elasticity",
+   "supply_elasticity",
+   "pass_through"
+  ],
+  "sources": [
+   "tax_rate: WE-013 K1: 25% of the customs value",
+   "import_share: WE-013 record: domestic firms supply about 60% of use, so imports are about 40% (range for rounding)",
+   "demand_elasticity: illustrative medium-run elasticity of steel demand",
+   "supply_elasticity: illustrative medium-run elasticity of domestic steel supply from spare and idle capacity",
+   "pass_through: illustrative: share of the tariff in the domestic price (1 for a small buyer on the world market; less if foreign sellers absorb part)"
+  ],
+  "diagnosis": "",
+  "rules": [
+   "MR-2",
+   "MR-4",
+   "MR-6"
+  ]
+ },
+ {
+  "consequence_id": "C-6",
+  "actor_class": "steel_users",
+  "variable": "price_paid",
+  "praxeological_sign": "increase",
+  "handler": "tariff_domestic_price",
+  "result": {
+   "name": "domestic_price_change",
+   "range": [
+    0.15,
+    0.25
+   ],
+   "rung": "M1",
+   "assumptions": [
+    "tariff [0.25, 0.25]",
+    "import share [0.38, 0.42]",
+    "demand elasticity [-0.6, -0.2]",
+    "domestic supply elasticity [0.2, 1]",
+    "pass-through to the domestic price [0.6, 1]",
+    "first order"
+   ],
+   "note": ""
+  },
+  "sign_check": "agrees",
+  "inputs_used": [
+   "tax_rate",
+   "import_share",
+   "demand_elasticity",
+   "supply_elasticity",
+   "pass_through"
+  ],
+  "sources": [
+   "tax_rate: WE-013 K1: 25% of the customs value",
+   "import_share: WE-013 record: domestic firms supply about 60% of use, so imports are about 40% (range for rounding)",
+   "demand_elasticity: illustrative medium-run elasticity of steel demand",
+   "supply_elasticity: illustrative medium-run elasticity of domestic steel supply from spare and idle capacity",
+   "pass_through: illustrative: share of the tariff in the domestic price (1 for a small buyer on the world market; less if foreign sellers absorb part)"
+  ],
+  "diagnosis": "",
+  "rules": [
+   "MR-6"
+  ]
+ },
+ {
+  "consequence_id": "C-9",
+  "actor_class": "steelmakers.domestic",
+  "variable": "net_price_received",
+  "praxeological_sign": "increase",
+  "handler": "tariff_domestic_price",
+  "result": {
+   "name": "domestic_price_change",
+   "range": [
+    0.15,
+    0.25
+   ],
+   "rung": "M1",
+   "assumptions": [
+    "tariff [0.25, 0.25]",
+    "import share [0.38, 0.42]",
+    "demand elasticity [-0.6, -0.2]",
+    "domestic supply elasticity [0.2, 1]",
+    "pass-through to the domestic price [0.6, 1]",
+    "first order"
+   ],
+   "note": ""
+  },
+  "sign_check": "agrees",
+  "inputs_used": [
+   "tax_rate",
+   "import_share",
+   "demand_elasticity",
+   "supply_elasticity",
+   "pass_through"
+  ],
+  "sources": [
+   "tax_rate: WE-013 K1: 25% of the customs value",
+   "import_share: WE-013 record: domestic firms supply about 60% of use, so imports are about 40% (range for rounding)",
+   "demand_elasticity: illustrative medium-run elasticity of steel demand",
+   "supply_elasticity: illustrative medium-run elasticity of domestic steel supply from spare and idle capacity",
+   "pass_through: illustrative: share of the tariff in the domestic price (1 for a small buyer on the world market; less if foreign sellers absorb part)"
+  ],
+  "diagnosis": "",
+  "rules": [
+   "MR-6"
+  ]
+ },
+ {
+  "consequence_id": "C-10",
+  "actor_class": "steelmakers.domestic",
+  "variable": "quantity_supplied",
+  "praxeological_sign": "increase",
+  "handler": "tariff_domestic_output",
+  "result": {
+   "name": "domestic_output_change",
+   "range": [
+    0.03,
+    0.25
+   ],
+   "rung": "M1",
+   "assumptions": [
+    "tariff [0.25, 0.25]",
+    "import share [0.38, 0.42]",
+    "demand elasticity [-0.6, -0.2]",
+    "domestic supply elasticity [0.2, 1]",
+    "pass-through to the domestic price [0.6, 1]",
+    "first order"
+   ],
+   "note": ""
+  },
+  "sign_check": "agrees",
+  "inputs_used": [
+   "tax_rate",
+   "import_share",
+   "demand_elasticity",
+   "supply_elasticity",
+   "pass_through"
+  ],
+  "sources": [
+   "tax_rate: WE-013 K1: 25% of the customs value",
+   "import_share: WE-013 record: domestic firms supply about 60% of use, so imports are about 40% (range for rounding)",
+   "demand_elasticity: illustrative medium-run elasticity of steel demand",
+   "supply_elasticity: illustrative medium-run elasticity of domestic steel supply from spare and idle capacity",
+   "pass_through: illustrative: share of the tariff in the domestic price (1 for a small buyer on the world market; less if foreign sellers absorb part)"
+  ],
+  "diagnosis": "",
+  "rules": [
+   "MR-4",
+   "MR-6"
+  ]
+ }
+]
