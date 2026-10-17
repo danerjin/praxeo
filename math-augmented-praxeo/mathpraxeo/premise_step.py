@@ -94,7 +94,8 @@ def run(prediction: dict, inputs: AnnexInputs, decider) -> tuple[list[StepRecord
 
 
 def _differences(before: list[dict], after: list[dict], log: list[StepRecord]) -> list[dict]:
-    key = lambda c: (c["actor_class"], c["variable"])  # noqa: E731
+    # a window, an item or a group makes a different consequence of the same actor and variable
+    key = lambda c: (c["actor_class"], c["variable"], c.get("window"), c.get("item"), tuple(c.get("group", [])))  # noqa: E731
     b = {key(c): c for c in before}
     basis = "; ".join(r.evidence.basis for r in log if r.evidence.accepted)
     out = []

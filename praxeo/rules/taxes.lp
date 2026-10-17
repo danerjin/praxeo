@@ -9,6 +9,9 @@
 %   exporter(C, A). exporter_worker(C, A).  export industries and their workers (TX-8)
 %   downstream(C, A, B, K).         A use the good as an input, sell to B; K is `same` when their
 %                                   competitors face the same cost, `exempt` when competitors do not (RS-14)
+%   domestic_seller_worker(C, A).   employees of the protected domestic producers (optional)
+%   downstream_worker(C, A, W).     employees W of the downstream users A (optional)
+%   announced(C).                   the measure was announced before it takes effect (RS-8; see timing.lp)
 %   assumption(A).                  an assumption the decider estimated
 % The choice over assumptions is repeated here so that the file stands alone; the same rule in
 % price_controls.lp adds no answer sets. Signs are relative to the no-policy counterfactual.
@@ -61,6 +64,9 @@ fired(tx_7, protected_sellers(C), tariff_bites(C))        :- protected_sellers(C
 fired(tx_7, protected_sellers(C), domestic_substitutes(C)) :- protected_sellers(C).
 effect(protected_sellers(C), X, "net_price_received", increase, short, visible, "B") :- protected_sellers(C), domestic_seller(C, X).
 effect(protected_sellers(C), X, "quantity_supplied", increase, short, visible, "B")  :- protected_sellers(C), domestic_seller(C, X).
+% TX-7 with LW-4: mills that sell more use more labor. Spare capacity may be used first through shifts and overtime, so the rule
+% licenses only that headcount or hours rise: the group at_least_one_increase.
+group_effect(protected_sellers(C), W, "employment,hours_worked", at_least_one_increase, short, visible, "B") :- protected_sellers(C), domestic_seller_worker(C, W).
 
 % TX-2 for a tariff: the tax on imports shrinks the quantity imported.
 imports_fall(C) :- tariff_bites(C), not exception(tx_2, C).
@@ -73,7 +79,9 @@ exports_fall(C) :- imports_fall(C), holds(no_offset(C)), not exception(tx_8, C).
 fired(tx_8, exports_fall(C), imports_fall(C)) :- exports_fall(C).
 fired(tx_8, exports_fall(C), no_offset(C))    :- exports_fall(C).
 effect(exports_fall(C), X, "quantity_supplied", decrease, medium, invisible, "B") :- exports_fall(C), exporter(C, X).
-effect(exports_fall(C), X, "employment", decrease, medium, invisible, "B")       :- exports_fall(C), exporter_worker(C, X).
+% TX-8 names employment; sellers that sell less may cut staff or hours, so WE-013 (C-32, OC-5) records the labor effect as the
+% group at_least_one_decrease over employment and hours_worked, which says no more than the rule licenses.
+group_effect(exports_fall(C), X, "employment,hours_worked", at_least_one_decrease, medium, invisible, "B") :- exports_fall(C), exporter_worker(C, X).
 
 % RS-14: a higher cost of an input is passed down to the output, if the input cannot be replaced at the
 % old cost. Where competitors face the same cost the output's price rises; where competitors are exempt
@@ -94,3 +102,6 @@ effect(exempt_squeeze(C), A, "quantity_supplied", decrease, medium, invisible, "
 #show holds/1.
 #show fired/3.
 #show effect/7.
+#show group_effect/7.
+#show window/2.
+#show item/2.

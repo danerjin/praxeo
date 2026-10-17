@@ -4,9 +4,9 @@ Sizes attached to reported consequences by `mathpraxeo.bridge.annex_pass`. No co
 
 | Consequence | Actor class | Variable | Sign | Handler | Math rules | Annex range | Rung | Sign check |
 |---|---|---|---|---|---|---|---|---|
-| C-6 | landlords.controlled | quantity_supplied | decrease | ceiling_quantity_supplied | MR-3, MR-4 | [-0.341, -0.0129] | M1 | agrees |
-| C-14 | tenants.controlled | price_paid | decrease | insiders_price | MR-3 | [-0.341, -0.0429] | M0 | agrees |
-| C-21 | tenants.prospective | price_substitute | increase | substitute_price | MR-5 | [0.00455, 0.1] | M1 | agrees |
+| C-7 | landlords.controlled | quantity_supplied | decrease | ceiling_quantity_supplied | MR-3, MR-4 | [-0.341, -0.0129] | M1 | agrees |
+| C-17 | tenants.controlled | price_paid | decrease | insiders_price | MR-3 | [-0.341, -0.0429] | M0 | agrees |
+| C-27 | tenants.prospective | price_substitute | increase | substitute_price | MR-5 | [0.00455, 0.1] | M1 | agrees |
 
 Sources of the ranges:
 
@@ -20,5 +20,5 @@ Sources of the ranges:
 
 Notes:
 
-- C-6: First order is strained: the gap reaches 34%, beyond 15%; treat the range as indicative only.
-- C-14: Sitting tenants' price against the market path, as a share of the market price.
+- C-7: First order is strained: the gap reaches 34%, beyond 15%; treat the range as indicative only.
+- C-17: Sitting tenants' price against the market path, as a share of the market price.

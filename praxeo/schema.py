@@ -5,7 +5,13 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field, field_validator, model_validator
 
-Sign = Literal["increase", "decrease", "ambiguous", "no_change"]
+# at_least_one_* are the group signs of 02_ontology.md 2.5: at least one of the listed variables moves that way.
+Sign = Literal["increase", "decrease", "ambiguous", "no_change", "at_least_one_increase", "at_least_one_decrease"]
+GROUP_SIGNS = {"at_least_one_increase": "increase", "at_least_one_decrease": "decrease"}
+# Timing windows (02_ontology.md 2.5, RS-8): None is the ordinary, unwindowed consequence. "announcement" is the
+# stretch between announcement and the effective date. "first_months" is the first stretch after the effective date,
+# which the handbook signs on its own where the announcement-window response still bears on the price (WE-001 C-21).
+Window = Literal["announcement", "first_months"]
 Horizon = Literal["short", "medium", "long"]
 HORIZON_ORDER = {"short": 0, "medium": 1, "long": 2}
 
@@ -20,6 +26,7 @@ class Downstream(BaseModel):
     competitors: Literal["same", "exempt"] = "same"
     owner_actor: Optional[str] = Field(default=None, description="Owners of these users' firms (SB-4), e.g. owners.steel_users")
     exporter_actor: Optional[str] = Field(default=None, description="The exporting part of these users, who sell at world prices (RS-6)")
+    worker_actor: Optional[str] = Field(default=None, description="Employees of these users (RS-14, RS-6): their employment or hours fall as a group (at_least_one_decrease)")
 
     @model_validator(mode="after")
     def _buyer_for_same(self) -> "Downstream":
@@ -57,6 +64,11 @@ class Component(BaseModel):
     renewable: bool = Field(default=False, description="True when the gain depends on a later decision: the measure expires or is reviewed, and may be renewed or extended (RS-7, TS-2)")
     definition_line: bool = Field(default=False, description="True when the definitions or exemptions draw a line between covered and uncovered goods (RS-5)")
     relief_applicant_actor: Optional[str] = Field(default=None, description="Who may apply to officials for exclusions, waivers or exemptions granted case by case (RS-15)")
+    domestic_seller_worker_actor: Optional[str] = Field(default=None, description="Tariffs: employees of the protected domestic producers; employment or hours rise as a group (TX-7, LW-4)")
+    announcement_window: bool = Field(default=False, description=(
+        "True when the measure was announced (enacted, put on a ballot, recommended) some time before it takes effect, "
+        "so that actors can shift actions into the window (RS-8). The engine fact is announced(C)."))
+    general_budget: bool = Field(default=False, description="Price ceilings: enforcement is funded from the general budget, so OC-3 and OC-1 name the payers")
     source_sentences: list[str] = Field(description="Sentences of the policy text this component rests on, quoted exactly")
 
     @field_validator("instrument")
@@ -153,6 +165,20 @@ class Consequence(BaseModel):
     reported: bool = Field(description="True when every assumption in the reported set has p >= cut-off")
     sign_by_reading: dict[str, str] = Field(default={}, description="Per-reading signs when they differ ('none' = not derived under that reading); sign is then 'ambiguous'")
     combines: list[str] = Field(default=[], description="IDs of the consequences a CR-12 combination was formed from")
+    window: Optional[Window] = Field(default=None, description=(
+        "Timing window the consequence is signed for (RS-8, 2.5). None for an ordinary consequence. An announcement-window "
+        "consequence has horizon ['short'] and is scored as a short-horizon prediction."))
+    group: list[str] = Field(default=[], description=(
+        "Members of a group consequence: the sign is then at_least_one_increase or at_least_one_decrease and `variable` "
+        "is the first member. Empty for an ordinary consequence."))
+    item: Optional[str] = Field(default=None, description=(
+        "Qualifier of one item of a variable that a policy moves in opposite directions (CR-12 0.8: two items in one "
+        "variable). Items are parts: the CR-12 total over them is a separate consequence with no item, and scoring uses the total."))
+    comparison: Optional[str] = Field(default=None, description="Name of the declared CR-12 comparison (praxeo/combiner.py) that formed or settled this consequence")
+
+    def members(self) -> list[str]:
+        """The variables the consequence is about: the group, or the one variable."""
+        return list(self.group) or [self.variable]
 
 
 # --- outcome card --------------------------------------------------------

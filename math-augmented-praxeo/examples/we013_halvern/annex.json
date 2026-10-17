@@ -211,7 +211,7 @@
   ]
  },
  {
-  "consequence_id": "C-26",
+  "consequence_id": "C-27",
   "actor_class": "steelmakers.domestic",
   "variable": "net_price_received",
   "praxeological_sign": "increase",
@@ -254,7 +254,7 @@
   ]
  },
  {
-  "consequence_id": "C-27",
+  "consequence_id": "C-28",
   "actor_class": "steelmakers.domestic",
   "variable": "quantity_supplied",
   "praxeological_sign": "increase",

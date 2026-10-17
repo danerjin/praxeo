@@ -166,10 +166,27 @@ PRICE_TAKER_QUESTION = ("exporters_price_takers", "substitutability",
                         "The exporting users sell at world prices and cannot pass the higher cost on.")
 
 
+# RS-8, asked only when the record has an announcement window (Component.announcement_window).
+WINDOW_REPRICING_QUESTION = ("window_repricing", "expectations",
+                             "Can the bound sellers reprice a meaningful share of their contracts in the announcement window, before the rule takes effect?",
+                             "Enough contracts come up for repricing in the announcement window, and sellers can raise the price on them.")
+CATCHUP_QUESTION = ("counterfactual_catches_up", "counterfactual_trend",
+                    "Without the rule, would prices on renewed contracts follow the market path within a year or two, so that the market price soon passes any raise made in the announcement window?",
+                    "Without the rule, the market price soon passes any raise made in the announcement window.")
+STOCKPILE_QUESTION = ("stockpile_ahead", "expectations",
+                      "Can the buyers or importers buy ahead of the effective date, by storing the good or placing orders early?",
+                      "Buyers and importers can store the good and order ahead of the effective date.")
+
+
 def _specs(comp: Component) -> list[tuple[str, str, str, str]]:
     """The (atom, class, question, assumption text) list for a component, by instrument."""
     if comp.instrument == "price_ceiling":
-        return CEILING_QUESTIONS
+        specs = list(CEILING_QUESTIONS)
+        if comp.announcement_window:
+            specs += [WINDOW_REPRICING_QUESTION, CATCHUP_QUESTION]
+        if comp.general_budget:
+            specs.append(BUDGET_QUESTION)
+        return specs
     if comp.instrument not in ("per_unit_tax", "tariff"):
         return []
     specs = list(TAX_QUESTIONS if comp.instrument == "per_unit_tax" else TARIFF_QUESTIONS)
@@ -178,6 +195,8 @@ def _specs(comp: Component) -> list[tuple[str, str, str, str]]:
         if any(d.competitors == "exempt" for d in comp.downstream):
             specs.append(EXEMPT_QUESTION)
     specs.append(BUDGET_QUESTION)
+    if comp.announcement_window:
+        specs.append(STOCKPILE_QUESTION)
     exempt = [d for d in comp.downstream if d.competitors == "exempt"]
     if comp.definition_line:
         specs.append(RESHAPING_QUESTION)
@@ -210,4 +229,5 @@ def ceiling_questions(comp: Component) -> list[Question]:
     return [q for q, _ in questions_for(comp)] if comp.instrument == "price_ceiling" else []
 
 
-ASSUMPTION_TEXT = {atom: text for atom, _, _, text in CEILING_QUESTIONS}
+# Configuration B's questions: the ceiling list and the funding question. The window questions are not implemented there.
+ASSUMPTION_TEXT = {atom: text for atom, _, _, text in CEILING_QUESTIONS + [BUDGET_QUESTION]}

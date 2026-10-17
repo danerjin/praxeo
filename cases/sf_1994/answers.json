@@ -154,5 +154,23 @@
   "probability": 0.45,
   "rationale": "The record is silent on any permit or board process for conversion or withdrawal, and silence is not evidence for it; set just below the cut-off so the consequence is not reported.",
   "evidence": []
+ },
+ {
+  "question_id": "c1.window_repricing",
+  "value": "no",
+  "probability": 0.4,
+  "rationale": "Estimate as of November 1994, from the record only. The measure was approved on 8 November and takes effect from certification in December, a window of about four weeks. The summary gives no lease terms, so the share of tenancies that can be repriced in that time is unknown: an annual lease comes up for renewal in only about one month in twelve, and a landlord who owns and lives in a two to four unit building has to act within weeks. Below the cut-off because the window is short, not because landlords lack the incentive. Reading U1-b (rolled back to an earlier base date) would cancel any raise made in the window.",
+  "evidence": [
+   "The measure was approved by the voters on November 8, 1994, and takes effect for covered units from the date of its certification."
+  ]
+ },
+ {
+  "question_id": "c1.counterfactual_catches_up",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Estimate as of November 1994, from the record only. Before the measure these units are outside the Rent Ordinance, so their rents are set freely and follow the market at each renewal or new tenancy; any raise made in the window is bounded by the market rent on the effective date (CR-5c), which the no-measure rent path passes within a lease cycle or two.",
+  "evidence": [
+   "Buildings of four units or fewer in which the owner lives were exempt."
+  ]
  }
 ]

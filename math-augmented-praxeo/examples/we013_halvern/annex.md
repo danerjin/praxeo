@@ -9,8 +9,8 @@ Sizes attached to reported consequences by `mathpraxeo.bridge.annex_pass`. No co
 | C-11 | officials.enforcement | tax_revenue_vs_static_projection | decrease | tariff_revenue_shortfall | MR-2, MR-4, MR-6 | [-0.803, -0.113] | M1 | agrees |
 | C-18 | steel_users | price_paid | increase | tariff_domestic_price | MR-6 | [0.15, 0.25] | M1 | agrees |
 | C-20 | steel_users | quantity_traded | decrease | tariff_use | MR-4, MR-6 | [-0.15, -0.03] | M1 | agrees |
-| C-26 | steelmakers.domestic | net_price_received | increase | tariff_domestic_price | MR-6 | [0.15, 0.25] | M1 | agrees |
-| C-27 | steelmakers.domestic | quantity_supplied | increase | tariff_domestic_output | MR-4, MR-6 | [0.03, 0.25] | M1 | agrees |
+| C-27 | steelmakers.domestic | net_price_received | increase | tariff_domestic_price | MR-6 | [0.15, 0.25] | M1 | agrees |
+| C-28 | steelmakers.domestic | quantity_supplied | increase | tariff_domestic_output | MR-4, MR-6 | [0.03, 0.25] | M1 | agrees |
 
 Sources of the ranges:
 

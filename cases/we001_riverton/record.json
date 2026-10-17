@@ -17,6 +17,8 @@
    "neighbor_actor": "renters.neighbors",
    "cap": 0.02,
    "cap_unit": "yearly increase after a 3-year freeze",
+   "announcement_window": true,
+   "general_budget": true,
    "source_sentences": [
     "Rent on residential rental units existing on the effective date is frozen at its level on the effective date for 3 years; increases are capped at 2% a year after that.",
     "Tenancies cannot be assigned or sold."

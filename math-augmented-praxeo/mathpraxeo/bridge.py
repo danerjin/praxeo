@@ -330,6 +330,8 @@ def annex_pass(prediction: dict, inputs: AnnexInputs) -> list[Attachment]:
     for c in prediction["consequences"]:
         if not c["reported"]:
             continue
+        if c.get("window") or c.get("group") or c.get("item"):
+            continue  # the handlers size ordinary, unwindowed consequences; a window, a group or an item is a different claim
         h = _match(c, comps, inputs)
         if h is None:
             continue

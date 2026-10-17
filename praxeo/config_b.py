@@ -7,8 +7,18 @@ one holds as soon as its prerequisites do. A held step with effects gives
 consequences, and every question asked goes into the log.
 
 Not covered: exception/2 facts and the facts of unclear readings, which
-Configuration A takes as extra input. The CR-12 total is formed by the same
+Configuration A takes as extra input. The CR-12 totals are formed by the same
 combiner as Configuration A, applied to B's output.
+
+Not implemented in B (the capabilities added to Configuration A after B was built):
+- per-window timing (RS-8: the announcement-window rush and the "first months" total, and the questions
+  window_repricing and counterfactual_catches_up that they rest on);
+- group signs (at_least_one_increase / at_least_one_decrease), which only the tax and tariff rules use;
+- the in-place CR-12 comparisons that settle the capped price against the announcement-window rush.
+`compare_a_b` therefore restricts the agreement check to rows without a window and without a group sign. B
+does implement the ordinary rows added with them (the displaced holders' turnover, the two items of the sellers'
+resources and their CR-12 total, the buyers' resources, the quality-adjusted price total, and taxpayers' funding of
+a board paid from the general budget).
 """
 from __future__ import annotations
 
@@ -18,10 +28,10 @@ from typing import Callable, Literal, Optional
 from . import engine
 from .combiner import combine
 from .decider import Decider
-from .questions import ASSUMPTION_TEXT, ceiling_questions
+from .questions import ASSUMPTION_TEXT, ceiling_questions, questions_for
 from .schema import HORIZON_ORDER, Assumption, Component, Consequence, PolicyRecord, Step
 
-Role = Literal["bound", "protected", "excluded", "keepers", "displaced", "neighbor", "enforcer"]
+Role = Literal["bound", "protected", "excluded", "keepers", "displaced", "neighbor", "enforcer", "taxpayer"]
 
 
 @dataclass(frozen=True)
@@ -33,6 +43,7 @@ class Effect:
     horizon: str
     visibility: str
     tier: str = "B"
+    item: Optional[str] = None  # one item of a variable that opposite chains move (CR-12 0.8)
 
 
 @dataclass(frozen=True)
@@ -65,6 +76,8 @@ STEPS: list[BStep] = [
           effects=(Effect("bound", "quantity_supplied", "decrease", "long", "invisible"),)),
     BStep("reclassify", "RS-5", "reclassify", needs=("cap", "alternative_uses"),
           effects=(Effect("bound", "reclassification", "increase", "long", "invisible"),)),
+    BStep("displaced_move", "CR-9", "displaced_move", needs=("reclassify",),
+          effects=(Effect("displaced", "turnover", "increase", "medium", "invisible"),)),
     BStep("nontransferable", "PC-7", "nontransferable", needs=("cap",), assumption="nontransferable"),
     BStep("buyouts_limited", "PC-7", "buyouts_limited", needs=("cap",), assumption="buyouts_limited"),
     BStep("turnover", "PC-7", "turnover_falls", needs=("cap", "nontransferable", "buyouts_limited"),
@@ -114,6 +127,12 @@ STEPS: list[BStep] = [
     # PC-16 and OC-4
     BStep("transfer", "PC-16", "transfer", needs=("insider_gain",),
           effects=(Effect("bound", "net_price_received", "decrease", "medium", "invisible"),)),
+    BStep("rent_forgone", "CR-8", "rent_forgone", needs=("transfer",),
+          effects=(Effect("bound", "resources_available_other_uses", "decrease", "medium", "invisible", item="rent_forgone"),)),
+    BStep("rent_kept", "CR-8", "rent_kept", needs=("insider_gain",),
+          effects=(Effect("protected", "resources_available_other_uses", "increase", "medium", "visible"),)),
+    BStep("key_money", "CR-8", "key_money", needs=("informal",),
+          effects=(Effect("bound", "resources_available_other_uses", "increase", "medium", "invisible", item="key_money"),)),
     BStep("prevented", "OC-4", "prevented", needs=("supply_falls",),
           effects=(Effect("excluded", "quantity_traded", "decrease", "medium", "invisible"),
                    Effect("bound", "quantity_traded", "decrease", "medium", "invisible"))),
@@ -125,6 +144,12 @@ STEPS: list[BStep] = [
     # OC-3
     BStep("administered", "OC-3", "administered", needs=("cap",),
           effects=(Effect("enforcer", "enforcement_cost", "increase", "short", "invisible", "A"),)),
+    # OC-3 with OC-1: taxpayers fund a board paid from the general budget, if the budget rises with the task
+    BStep("enforcement_budget_raised", "OC-3", "enforcement_budget_raised", needs=("administered",),
+          assumption="enforcement_budget_raised", guard=lambda c: c.general_budget),
+    BStep("ceiling_funded", "OC-3", "ceiling_funded", needs=("administered", "enforcement_budget_raised"),
+          guard=lambda c: c.general_budget,
+          effects=(Effect("taxpayer", "resources_available_other_uses", "decrease", "short", "invisible"),)),
     # RS-4 with PC-3, only when the record names a neighbouring market
     BStep("commutable", "RS-4", "commutable", needs=("cap",), assumption="commutable",
           guard=lambda c: c.neighbor_actor is not None),
@@ -151,6 +176,8 @@ def _actor(comp: Component, role: Role) -> Optional[str]:
         return comp.neighbor_actor
     if role == "enforcer":
         return comp.enforcer_actor
+    if role == "taxpayer":
+        return comp.taxpayer_actor
     if comp.protected_actor is None:
         return None
     return comp.protected_actor if role == "protected" else f"{comp.protected_actor}.{role}"
@@ -207,7 +234,7 @@ def run_config_b(record: PolicyRecord, decider: Decider) -> tuple[list[Consequen
                 if actor is None:
                     continue
                 cons.append(Consequence(
-                    id=f"C-{len(cons) + 1}", actor_class=actor, variable=eff.variable, sign=eff.sign,
+                    id=f"C-{len(cons) + 1}", actor_class=actor, variable=eff.variable, sign=eff.sign, item=eff.item,
                     horizon=[h for h in HORIZON_ORDER if HORIZON_ORDER[h] >= HORIZON_ORDER[eff.horizon]],
                     # plan 5.2: Configuration B yields a decision trail, not a proof, so its results are Tier J
                     visibility=eff.visibility, tier="J", derivation=derivation,
@@ -233,11 +260,10 @@ def run_config_a(record: PolicyRecord, decider: Decider) -> tuple[list[Consequen
     for comp in record.components:
         if comp.instrument != "price_ceiling":
             continue
-        for q in ceiling_questions(comp):
+        for q, assumed in questions_for(comp):
             a = decider.answer(q, record)
             atom = f"{q.assumption}({engine._atom(comp.id)})"
-            assumptions[atom] = Assumption(id=atom, text=ASSUMPTION_TEXT[q.assumption],
-                                           assumption_class=q.assumption_class, p=a.probability)
+            assumptions[atom] = Assumption(id=atom, text=assumed, assumption_class=q.assumption_class, p=a.probability)
     cons, _ = engine.run(record, assumptions)
     return combine(cons, assumptions), assumptions
 
@@ -246,10 +272,17 @@ def _key(c: Consequence) -> tuple[str, str, str]:
     return (c.actor_class, c.variable, c.sign)
 
 
+def _comparable(c: Consequence) -> bool:
+    """Rows both configurations can produce: B has no per-window timing and no group signs (see the module docstring)."""
+    return c.window is None and not c.group
+
+
 def compare_a_b(record: PolicyRecord, decider: Decider) -> dict[str, list]:
     """Run both configurations on one record and decider. Compares (actor class, variable, sign) of the
-    reported consequences, CR-12 totals included on both sides."""
+    reported consequences, CR-12 totals included on both sides. Rows with a window or a group sign are left out
+    of the comparison: Configuration B does not implement them."""
     a_cons, _ = run_config_a(record, decider)
+    a_cons = [c for c in a_cons if _comparable(c)]
     b_cons, log = run_config_b(record, decider)
     b_cons = combine(b_cons, assumptions_from_log(log))
     a = {_key(c) for c in a_cons if c.reported}

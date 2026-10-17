@@ -9,27 +9,51 @@
 - Actor classes match only when they are the same class. A subclass's sign can differ
   from its class's total (CR-12; PC-21 1.4: keepers against the displaced), so a finding
   on a class neither confirms nor refutes a prediction on one of its subclasses.
+- Group consequences (at_least_one_increase / at_least_one_decrease over several variables, plan 7.4): a group
+  prediction is verifiable if the card has a finding of any type on any member for that actor and horizon. It matches if an
+  `effect` finding on a member has the group's direction. It is a false positive only if every member has a finding for
+  that actor and horizon and each is null or opposite; a verifiable group prediction that is neither is unresolved (some
+  members have no finding, none has the direction), and is left out of precision. It recalls the effect findings on its
+  members that have its direction.
+- Announcement-window consequences carry horizon ["short"] and are scored as short-horizon predictions; they are kept
+  apart from the ordinary consequence of the same actor and variable when deduplicating. Items (the parts of a CR-12 total
+  over two items of one variable) are not scored: the total is.
 - Variables are checked against the shared vocabulary (02_ontology.md, 2.4).
 - Assumption estimates are scored with the Brier score where the card records the status.
 """
 from __future__ import annotations
 
 from . import vocabulary
-from .schema import Assumption, Consequence, Finding, OutcomeCard
+from .schema import GROUP_SIGNS, Assumption, Consequence, Finding, OutcomeCard
 
 
 def _covers(c: Consequence, f: Finding) -> bool:
-    return c.actor_class == f.actor_class and c.variable == f.variable and bool(set(c.horizon) & set(f.horizon))
+    """The finding is about this prediction's actor and horizon, and about its variable (any member, for a group)."""
+    return c.actor_class == f.actor_class and f.variable in c.members() and bool(set(c.horizon) & set(f.horizon))
+
+
+def _direction(c: Consequence) -> str:
+    return GROUP_SIGNS.get(c.sign, c.sign)
 
 
 def _matches(c: Consequence, f: Finding) -> bool:
-    return f.finding_type == "effect" and _covers(c, f) and c.sign == f.sign
+    return f.finding_type == "effect" and _covers(c, f) and _direction(c) == f.sign
+
+
+def _refuted(c: Consequence, card: OutcomeCard) -> bool:
+    """A verifiable prediction is a false positive. An ordinary one is when no finding matches. A group prediction is
+    only when every member has a finding for the actor and horizon, and each is a null or the opposite direction."""
+    findings = [f for f in card.findings if _covers(c, f)]
+    if not c.group:
+        return not any(_matches(c, f) for f in findings)
+    return (not any(_matches(c, f) for f in findings)
+            and all(any(f.variable == m for f in findings) for m in c.group))
 
 
 def dedupe(preds: list[Consequence]) -> list[Consequence]:
     seen, out = set(), []
     for c in preds:
-        key = (c.actor_class, c.variable, tuple(c.horizon))
+        key = (c.actor_class, tuple(c.members()), tuple(c.horizon), c.window)
         if key not in seen:
             seen.add(key)
             out.append(c)
@@ -37,13 +61,16 @@ def dedupe(preds: list[Consequence]) -> list[Consequence]:
 
 
 def f1_block(preds: list[Consequence], card: OutcomeCard) -> dict:
-    preds = dedupe(preds)
+    preds = dedupe([c for c in preds if c.item is None])
     effects = [f for f in card.findings if f.finding_type == "effect"]
     signed = [c for c in preds if c.sign != "ambiguous"]
     verifiable = [c for c in signed if any(_covers(c, f) for f in card.findings)]
     matched = [c for c in verifiable if any(_matches(c, f) for f in card.findings)]
+    false_pos = [c for c in verifiable if c not in matched and _refuted(c, card)]
+    unresolved = [c for c in verifiable if c not in matched and c not in false_pos]
     recalled = [f for f in effects if any(_matches(c, f) for c in signed)]
-    precision = len(matched) / len(verifiable) if verifiable else None
+    judged = len(matched) + len(false_pos)  # = verifiable, less the unresolved group predictions
+    precision = len(matched) / judged if judged else None
     recall = len(recalled) / len(effects) if effects else None
     if precision is None or recall is None:
         f1 = None
@@ -56,7 +83,8 @@ def f1_block(preds: list[Consequence], card: OutcomeCard) -> dict:
         "unverifiable": len(signed) - len(verifiable),
         "unverifiable_rate": (len(signed) - len(verifiable)) / len(signed) if signed else None,
         "matched": [c.id for c in matched],
-        "false_positives": [c.id for c in verifiable if c not in matched],
+        "false_positives": [c.id for c in false_pos],
+        "unresolved_group_ids": [c.id for c in unresolved],
         "unverifiable_ids": [c.id for c in signed if c not in verifiable],
         "recalled_findings": [f.id for f in recalled],
         "missed_findings": [f.id for f in effects if f not in recalled],

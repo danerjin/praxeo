@@ -87,15 +87,15 @@ def test_high_threshold_escalates_low_confidence_to_fallback(tmp_path):
 
 
 def test_only_low_confidence_questions_escalate(tmp_path):
-    # noul 0.7: lockin_dominates (0.65), keepers_dominate (0.6), quality_adjustable (0.6), evasion (0.55) and
-    # exit_process (0.45, confidence 0.55) fall below; the rest pass
+    # noul 0.7: lockin_dominates (0.65), keepers_dominate (0.6), quality_adjustable (0.6), evasion (0.55),
+    # exit_process (0.45, confidence 0.55) and window_repricing (0.4, confidence 0.6) fall below; the rest pass
     primary = FixtureDecider(SF / "answers.json")
     fallback = _fixture_with(tmp_path, "fallback.json",
                              {"c1.lockin_dominates": 0.3, "c1.keepers_dominate": 0.2})
     dec = EscalatingDecider(primary, fallback, Thresholds(kind={"noul": 0.7}))
     out = predict((SF / "policy.txt").read_text(), _record(), dec)
     assert [e["question_id"] for e in out["escalations"]] == [
-        "c1.lockin_dominates", "c1.keepers_dominate", "c1.quality_adjustable", "c1.evasion", "c1.exit_process"]
+        "c1.lockin_dominates", "c1.keepers_dominate", "c1.quality_adjustable", "c1.evasion", "c1.exit_process", "c1.window_repricing"]
     used = {q["answer"]["question_id"]: q["answer"] for q in out["questions"]}
     assert used["c1.lockin_dominates"]["probability"] == 0.3
     assert used["c1.lockin_dominates"]["decider"] == "fixture:fallback.json"
@@ -169,8 +169,8 @@ def test_cli_with_thresholds_logs_escalations(tmp_path, monkeypatch, capsys):
     pred = json.loads((out / "prediction.json").read_text())
     ids = {e["question_id"] for e in pred["escalations"]}
     assert ids == {"c1.binding", "c1.lockin_dominates", "c1.keepers_dominate",
-                   "c1.quality_adjustable", "c1.evasion", "c1.exit_process"}
-    assert "Escalations: 6 of 20" in (out / "report.md").read_text()
+                   "c1.quality_adjustable", "c1.evasion", "c1.exit_process", "c1.window_repricing"}
+    assert "Escalations: 7 of 22" in (out / "report.md").read_text()
     assert (out / "score.json").exists()
 
 

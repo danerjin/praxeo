@@ -21,7 +21,8 @@
     "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index.",
     "When a tenant leaves voluntarily, the landlord may set the rent for the next tenant freely, after which the limit applies again."
    ],
-   "vacancy_decontrol": true
+   "vacancy_decontrol": true,
+   "announcement_window": true
   }
  ],
  "unclear": [
@@ -31,7 +32,8 @@
    "readings": [
     "U1-a: the base rent is the rent on the effective date",
     "U1-b: the base rent is rolled back to an earlier date, cancelling increases made in the announcement window"
-   ]
+   ],
+   "reading_facts": {"U1-b": "rolled_back(c1)."}
   }
  ],
  "context": [

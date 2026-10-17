@@ -1,6 +1,6 @@
 [
  {
-  "consequence_id": "C-6",
+  "consequence_id": "C-7",
   "actor_class": "landlords.controlled",
   "variable": "quantity_supplied",
   "praxeological_sign": "decrease",
@@ -38,7 +38,7 @@
   ]
  },
  {
-  "consequence_id": "C-14",
+  "consequence_id": "C-17",
   "actor_class": "tenants.controlled",
   "variable": "price_paid",
   "praxeological_sign": "decrease",
@@ -74,7 +74,7 @@
   ]
  },
  {
-  "consequence_id": "C-21",
+  "consequence_id": "C-27",
   "actor_class": "tenants.prospective",
   "variable": "price_substitute",
   "praxeological_sign": "increase",

@@ -137,5 +137,14 @@
   "evidence": [
    "machinery makers export about 35% of their output"
   ]
+ },
+ {
+  "question_id": "k1.stockpile_ahead",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-4 (expectations): users and importers can store steel and order ahead. The Trade Ministry published its recommendation on 1 January and the order took effect on 1 April.",
+  "evidence": [
+   "The Trade Ministry opened an investigation in September, published its recommendation on 1 January, and the order took effect on 1 April."
+  ]
  }
 ]

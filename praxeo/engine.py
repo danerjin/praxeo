@@ -6,6 +6,14 @@ sets gives, for each conclusion, every assumption set under which it is
 derived. Keeping only the minimal sets yields an ATMS-style label
 (plan 4.4): "this follows if A and B".
 
+Rule-base conventions beyond effect/7 (all optional, all documented in rules/*.lp):
+- group_effect(Concl, Actor, "member1,member2", Sign, Horizon, Visibility, Tier): a group consequence; Sign is
+  at_least_one_increase or at_least_one_decrease and the members are comma-separated variable names.
+- window(Concl, announcement|first_months): the conclusion is signed for a timing window (RS-8), horizon short.
+- item(Concl, "name"): the conclusion is one named item of a variable that opposite chains move (CR-12 0.8).
+Consequences are keyed by (actor, variable, window, item). The rules stay monotone in holds/1 (only plain facts
+such as exception/2 and announced/1 are negated), which the minimal-set search relies on.
+
 Unclear provisions: the engine runs once per reading (adding that reading's
 facts) and merges the results; where the readings disagree, the consequence
 carries a sign per reading (02_ontology.md, per-reading signs).
@@ -53,6 +61,8 @@ def _tax_facts(c: str, comp) -> list[str]:
              f'exporter({c}, "{comp.exporter_actor}").',
              f'exporter_worker({c}, "{comp.exporter_worker_actor or "workers." + comp.exporter_actor}").']
     lines.append(f'taxpayer({c}, "{comp.taxpayer_actor}").')
+    if comp.domestic_seller_worker_actor:
+        lines.append(f'domestic_seller_worker({c}, "{comp.domestic_seller_worker_actor}").')
     lines.append(f'foreign_seller({c}, "{comp.foreign_seller_actor}").')
     for pred, actor in (("input_supplier", comp.input_supplier_actor), ("seller_owner", comp.domestic_seller_owner_actor),
                         ("relief_applicant", comp.relief_applicant_actor)):
@@ -67,6 +77,8 @@ def _tax_facts(c: str, comp) -> list[str]:
             lines.append(f'downstream_owner({c}, "{d.actor}", "{d.owner_actor}").')
         if d.exporter_actor:
             lines.append(f'downstream_exporter({c}, "{d.actor}", "{d.exporter_actor}").')
+        if d.worker_actor:
+            lines.append(f'downstream_worker({c}, "{d.actor}", "{d.worker_actor}").')
     return lines
 
 
@@ -82,8 +94,12 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
         if comp.protected_actor:
             lines.append(f'protected({c}, "{comp.protected_actor}").')
         lines.append(f'excluded({c}, "{comp.excluded_actor or "buyers.prospective"}").')
+        if comp.announcement_window:
+            lines.append(f"announced({c}).")
         if comp.instrument == "price_ceiling":
             lines.append(f'enforcer({c}, "{comp.enforcer_actor}").')
+            if comp.general_budget:
+                lines.append(f'taxpayer({c}, "{comp.taxpayer_actor}").')
             if comp.neighbor_actor:
                 lines.append(f'neighbor({c}, "{comp.neighbor_actor}").')
         if comp.instrument in ("per_unit_tax", "tariff"):
@@ -140,27 +156,38 @@ def readings(record: PolicyRecord) -> list[tuple[str, str]]:
     return out
 
 
+def _name(sym: clingo.Symbol) -> str:
+    return sym.string if sym.type == clingo.SymbolType.String else sym.name
+
+
 def _derive(program: str, assumptions: dict[str, Assumption]) -> dict[tuple, dict]:
-    """One engine run. Returns {(actor, variable, sign): {horizon, visibility, tier, concl, sets, derivation}}.
+    """One engine run. Returns {(actor, variable, window, item, sign): {horizon, visibility, tier, concl, sets, derivation}}.
+    For a group consequence `variable` is the comma-separated member list.
 
     The model with every assumption held gives all derivable steps and effects (the rules are monotone in
     `holds`); the assumption sets of each conclusion are then found one conclusion at a time."""
     steps: dict[str, set[tuple[str, str]]] = {}
     effects: list[tuple[str, tuple]] = []
+    windows: dict[str, str] = {}
+    items: dict[str, str] = {}
     for model in _solve(program, [], "\n:- assumption(A), not holds(A).\n"):
         for s in model:
             if s.name == "fired":
                 rule, concl, prem = (str(a) for a in s.arguments)
                 steps.setdefault(concl, set()).add((rule, prem))
-            elif s.name == "effect":
-                key = tuple(a.string if a.type == clingo.SymbolType.String else a.name for a in s.arguments[1:])
-                effects.append((str(s.arguments[0]), key))
+            elif s.name in ("effect", "group_effect"):
+                effects.append((str(s.arguments[0]), tuple(_name(a) for a in s.arguments[1:])))
+            elif s.name == "window":
+                windows[str(s.arguments[0])] = _name(s.arguments[1])
+            elif s.name == "item":
+                items[str(s.arguments[0])] = _name(s.arguments[1])
     minimal_by_concl = {c: _minimal_sets(program, c) for c in sorted({c for c, _ in effects})}
     out = {}
     for concl, (actor, variable, sign, horizon, visibility, tier) in effects:
-        out[(actor, variable, sign)] = dict(concl=concl, actor=actor, variable=variable, sign=sign, horizon=horizon,
-                                            visibility=visibility, tier=tier, sets=minimal_by_concl[concl],
-                                            derivation=_derivation(concl, steps))
+        window, item = windows.get(concl), items.get(concl)
+        out[(actor, variable, window, item, sign)] = dict(
+            concl=concl, actor=actor, variable=variable, sign=sign, horizon=horizon, window=window, item=item,
+            visibility=visibility, tier=tier, sets=minimal_by_concl[concl], derivation=_derivation(concl, steps))
     return out
 
 
@@ -170,13 +197,13 @@ def run(record: PolicyRecord, assumptions: dict[str, Assumption], extra: str = "
     base = facts(record, assumptions) + extra
     runs = [(label, _derive(base + rf, assumptions)) for label, rf in readings(record)]
 
-    # merge across readings on (actor, variable): same sign everywhere, or a sign per reading
-    keys = sorted({(a, v) for _, r in runs for (a, v, _s) in r})
+    # merge across readings on (actor, variable, window, item): same sign everywhere, or a sign per reading
+    keys = sorted({(a, v, w, i) for _, r in runs for (a, v, w, i, _s) in r}, key=lambda k: tuple(x or "" for x in k))
     consequences = []
-    for n, (actor, variable) in enumerate(keys, start=1):
+    for n, (actor, variable, window, item) in enumerate(keys, start=1):
         per = {}
         for label, r in runs:
-            hits = [d for (a, v, _s), d in r.items() if (a, v) == (actor, variable)]
+            hits = [d for (a, v, w, i, _s), d in r.items() if (a, v, w, i) == (actor, variable, window, item)]
             per[label] = hits[0] if len(hits) == 1 else None if not hits else _clash(hits)
         derived = [d for d in per.values() if d]
         first = derived[0]
@@ -185,12 +212,19 @@ def run(record: PolicyRecord, assumptions: dict[str, Assumption], extra: str = "
         sets = sorted({tuple(s) for d in derived for s in d["sets"]})
         minimal = [list(s) for s in sets if not any(set(o) < set(s) for o in sets)]
         best = max(minimal, key=lambda s: (math.prod(assumptions[a].p for a in s), -len(s)))
+        members = variable.split(",") if "," in variable else []
+        # an announcement-window response is a short-horizon prediction; other effects hold from their first horizon on
+        first_h = min(HORIZON_ORDER[d["horizon"]] for d in derived)
+        horizon = ["short"] if window == "announcement" else [h for h in HORIZON_ORDER if HORIZON_ORDER[h] >= first_h]
         consequences.append(Consequence(
             id=f"C-{n}",
             actor_class=actor,
-            variable=variable,
+            variable=members[0] if members else variable,
+            group=members,
+            window=window,
+            item=item,
             sign=first["sign"] if uniform else "ambiguous",
-            horizon=[h for h in HORIZON_ORDER if HORIZON_ORDER[h] >= min(HORIZON_ORDER[d["horizon"]] for d in derived)],
+            horizon=horizon,
             visibility=first["visibility"],
             tier=first["tier"],
             derivation=first["derivation"],

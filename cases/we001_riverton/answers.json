@@ -142,5 +142,26 @@
   "probability": 0.9,
   "rationale": "Not in WE-001's assumption table; K3 states a 12-month permit process for conversion, so the premise is close to given by the record.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.window_repricing",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-001 (illustrative figures), A-11 (expectations): enough leases renew during the announcement window, and landlords can raise rents at renewal. The ordinance was on the ballot eight months before it took effect.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.counterfactual_catches_up",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-001 (illustrative figures), A-14: without the ordinance, sitting tenants' rents would follow the market path within one or two lease cycles, so the counterfactual rent passes any raise made in the announcement window (a raise is bounded by the market rent on the effective date, CR-5c).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforcement_budget_raised",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-001 (illustrative figures), A-19 (revenue_use): the rent board is a new appropriation that raises the general budget, rather than being taken from other enforcement within a fixed budget.",
+  "evidence": []
  }
 ]

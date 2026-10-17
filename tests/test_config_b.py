@@ -28,6 +28,8 @@ def _record():
 
 
 def test_b_matches_a_on_sf_1994():
+    """Rows with a window or a group sign are outside the comparison (B does not implement them; see config_b.py).
+    sf_1994 has an announcement window, so A also derives the announcement-window rush (unreported at p 0.4)."""
     res = compare_a_b(_record(), FixtureDecider(ANSWERS))
     assert res["only_a"] == [] and res["only_b"] == []
     assert res["agree"] == sorted([
@@ -38,16 +40,21 @@ def test_b_matches_a_on_sf_1994():
         ("landlords.controlled", "quantity_supplied", "decrease"),
         ("landlords.controlled", "quantity_traded", "decrease"),
         ("landlords.controlled", "reclassification", "increase"),
+        ("landlords.controlled", "resources_available_other_uses", "decrease"),  # CR-12 total: rent forgone against key money
+        ("landlords.controlled", "resources_available_other_uses", "increase"),  # the key-money item
         ("landlords.controlled", "units_held_vacant", "increase"),
         ("officials.enforcement", "enforcement_cost", "increase"),
         ("tenants.controlled", "informal_activity", "increase"),
         ("tenants.controlled", "job_changes", "decrease"),
         ("tenants.controlled", "lobbying_effort", "increase"),
         ("tenants.controlled", "price_paid", "decrease"),
+        ("tenants.controlled", "quality_adjusted_price", "ambiguous"),  # CR-12 total with no dominance premise
         ("tenants.controlled", "quality_per_unit", "decrease"),
         ("tenants.controlled", "relocation_out_of_area", "decrease"),  # CR-12 total
+        ("tenants.controlled", "resources_available_other_uses", "increase"),
         ("tenants.controlled", "turnover", "decrease"),
         ("tenants.controlled.displaced", "relocation_out_of_area", "increase"),
+        ("tenants.controlled.displaced", "turnover", "increase"),
         ("tenants.controlled.keepers", "relocation_out_of_area", "decrease"),
         ("tenants.prospective", "disputes_settled_outside_courts", "increase"),
         ("tenants.prospective", "price_paid", "increase"),
@@ -94,15 +101,16 @@ def test_steps_are_well_formed():
     assert {s.assumption for s in STEPS if s.assumption} == set(ASSUMPTION_TEXT)
 
 
-LP_EFFECT = re.compile(r'effect\(\w+\(C\), (@keepers\(P\)|@displaced\(P\)|P|X|B|N|E), "(\w+)", (\w+), (\w+), (\w+), "(\w)"\)')
-LP_ROLE = {"@keepers(P)": "keepers", "@displaced(P)": "displaced", "P": "protected", "X": "excluded", "B": "bound", "N": "neighbor", "E": "enforcer"}
+LP_EFFECT = re.compile(r'effect\(\w+\(C\), (@keepers\(P\)|@displaced\(P\)|P|X|B|N|E|T), "(\w+)", (\w+), (\w+), (\w+), "(\w)"\)')
+LP_ROLE = {"@keepers(P)": "keepers", "@displaced(P)": "displaced", "P": "protected", "X": "excluded", "B": "bound", "N": "neighbor",
+           "E": "enforcer", "T": "taxpayer"}
 
 
 def test_steps_carry_the_effects_of_price_controls_lp():
     lp = (ROOT / "praxeo" / "rules" / "price_controls.lp").read_text()
     in_lp = {(LP_ROLE[m[0]], *m[1:]) for m in LP_EFFECT.findall(lp)}
     in_steps = {(e.role, e.variable, e.sign, e.horizon, e.visibility, e.tier) for s in STEPS for e in s.effects}
-    assert len(in_lp) == 27
+    assert len(in_lp) == 32  # the window rules (RS-8) are in rules/timing.lp, which B does not implement
     assert in_steps == in_lp
 
 

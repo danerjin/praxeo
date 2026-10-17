@@ -11,6 +11,7 @@
 %   renewable(C).                   the gain depends on a later decision (renewal, review)   (RS-7, TS-2)
 %   definition_line(C).             the definitions or exemptions draw a line between covered and uncovered goods  (RS-5)
 %   relief_applicant(C, A).         who may apply for discretionary relief (exclusion, waiver)  (RS-15)
+%   downstream_worker(C, A, W).     employees W of the downstream users A                    (RS-6, group sign)
 % Signs are relative to the no-policy counterfactual. Each rule has an exception/2 default.
 
 % The burden bites: a per-unit tax with a wedge (TX-2), or a tariff that foreign sellers do not absorb (TX-7).
@@ -129,3 +130,10 @@ effect(tx_capital_moves(C), A, "capital_stock_target", decrease, long, invisible
 tx_buyers_cut_back(C) :- passes_down(C), not exception(cr_4, C).
 fired(cr_4, tx_buyers_cut_back(C), passes_down(C)) :- tx_buyers_cut_back(C).
 effect(tx_buyers_cut_back(C), B, "quantity_demanded", decrease, medium, invisible, "B") :- tx_buyers_cut_back(C), downstream(C, _, B, same).
+
+% RS-6 after RS-14: users that sell less may cut staff or hours, so their employees' sign is the group at_least_one_decrease
+% over employment and hours_worked (a member alone would claim more than the rule licenses).
+tx_workers_cut(C) :- exempt_squeeze(C), not exception(rs_6, C).
+fired(rs_6, tx_workers_cut(C), exempt_squeeze(C)) :- tx_workers_cut(C).
+group_effect(tx_workers_cut(C), W, "employment,hours_worked", at_least_one_decrease, medium, invisible, "B") :- tx_workers_cut(C), downstream_exempt_worker(C, W).
+downstream_exempt_worker(C, W) :- downstream(C, A, _, exempt), downstream_worker(C, A, W).

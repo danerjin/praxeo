@@ -15,10 +15,18 @@ RULE_TEXT = {
     "TX-2": "a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks",
     "TX-7": "a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more",
     "TX-8": "foreigners who sell less to the country earn less of its currency and so buy fewer of its exports",
+    "RS-8": "a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window",
+    "CR-8": "every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses",
+    "CR-9": "an owner who leaves the rental market ends the leases of those who live in the building",
+    "OC-3": "the measure must be administered, and a raised budget is paid for by taxpayers",
+    "RS-6": "sellers whose return falls sell less, and may cut staff or hours",
     "RS-14": "a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt",
 }
 
-SIGN_WORD = {"increase": "rises", "decrease": "falls", "ambiguous": "may move either way", "no_change": "does not change"}
+SIGN_WORD = {"increase": "rises", "decrease": "falls", "ambiguous": "may move either way", "no_change": "does not change",
+             "at_least_one_increase": "rises for at least one of them", "at_least_one_decrease": "falls for at least one of them"}
+WINDOW_WORD = {"announcement": "in the announcement window (before the effective date)",
+               "first_months": "in the first months after the effective date"}
 
 
 def explain(c: Consequence, assumptions: dict[str, Assumption], record: PolicyRecord) -> str:
@@ -28,6 +36,8 @@ def explain(c: Consequence, assumptions: dict[str, Assumption], record: PolicyRe
             rules.append(step.rule)
     chain = "; ".join(f"{r}: {RULE_TEXT.get(r, r)}" for r in rules)
     when = f"from the {c.horizon[0]} run onward" if len(c.horizon) > 1 else f"in the {c.horizon[0]} run"
+    if c.window:
+        when = WINDOW_WORD[c.window] + ", " + when
     conds = "; ".join(f"{assumptions[a].text.rstrip('.')} (p = {assumptions[a].p:.2f})" for a in c.assumptions) or "no assumption"
     alt = ""
     if len(c.assumption_sets) > 1:
@@ -38,7 +48,8 @@ def explain(c: Consequence, assumptions: dict[str, Assumption], record: PolicyRe
     if c.combines:
         chain = f"CR-12 total of {', '.join(c.combines)}" + (" (no premise decides which chain is larger)" if c.sign == "ambiguous" else " (a dominance premise decides the sign)" if len(c.combines) > 1 else " (only one subclass's chain is reported)")
     return (
-        f"{c.id}. Compared with no {record.name}, {c.variable.replace('_', ' ')} for {c.actor_class} "
+        f"{c.id}. Compared with no {record.name}, {' or '.join(v.replace('_', ' ') for v in c.members())}"
+        f"{' (' + c.item.replace('_', ' ') + ')' if c.item else ''} for {c.actor_class} "
         f"{SIGN_WORD[c.sign]} {when} (tier {c.tier}, {c.visibility}). "
         f"Why: {chain}. This holds if: {conds}.{alt} {status}"
     )

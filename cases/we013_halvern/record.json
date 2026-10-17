@@ -21,11 +21,14 @@
    "exporter_worker_actor": "workers.export_industries",
    "downstream": [
     {"actor": "steel_users", "buyer_actor": "buyers.steel_goods", "competitors": "exempt",
-     "owner_actor": "owners.steel_users", "exporter_actor": "steel_users.exporters"},
+     "owner_actor": "owners.steel_users", "exporter_actor": "steel_users.exporters",
+     "worker_actor": "workers.steel_users"},
     {"actor": "builders", "buyer_actor": "buyers.construction", "competitors": "same"}
    ],
    "input_supplier_actor": "input_suppliers",
    "domestic_seller_owner_actor": "steelmakers.owners",
+   "domestic_seller_worker_actor": "steelworkers",
+   "announcement_window": true,
    "renewable": true,
    "definition_line": true,
    "relief_applicant_actor": "steel_users",

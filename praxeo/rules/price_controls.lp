@@ -6,6 +6,9 @@
 %   assumption(A).                  an assumption the decider estimated
 %   enforcer(C, Actor).             who administers and enforces the cap (OC-3)
 %   neighbor(C, Actor).             buyers in a neighbouring market outside the cap's reach (RS-4), if the record names one
+%   taxpayer(C, Actor).             who funds new administration, written only if the record says enforcement is funded
+%                                   from the general budget (OC-3, OC-1)
+%   announced(C).                   the measure was announced before it takes effect (RS-8; see timing.lp)
 %   plus any facts a reading of an unclear provision adds (engine runs once per reading).
 % The engine adds a choice over assumptions and enumerates answer sets,
 % so each conclusion is labelled with the minimal assumption sets it needs
@@ -68,6 +71,13 @@ fired(pc_21, stay_in_area(C), turnover_falls(C))    :- stay_in_area(C).
 fired(pc_21, stay_in_area(C), would_leave(C))       :- stay_in_area(C).
 fired(pc_21, stay_in_area(C), lockin_dominates(C))  :- stay_in_area(C).
 effect(stay_in_area(C), @keepers(P), "relocation_out_of_area", decrease, medium, invisible, "B") :- stay_in_area(C), protected(C, P).
+
+% PC-7 (1.4), RS-5 and CR-9: holders displaced by conversion or withdrawal are a subclass whose turnover rises
+% (the owner's exit ends the lease). The class total of turnover is a CR-12 comparison that the handbook's worked example
+% does not settle (it lists the keepers' fall as C-5 and this rise as C-10), so the combiner forms no total.
+displaced_move(C) :- reclassify(C), not exception(cr_9, C).
+fired(rs_5, displaced_move(C), reclassify(C)) :- displaced_move(C).
+effect(displaced_move(C), @displaced(P), "turnover", increase, medium, invisible, "B") :- displaced_move(C), protected(C, P).
 
 % PC-21 (1.4) subclass split: insiders displaced by conversion or withdrawal leave more
 % (their next-best home may be outside the area: the mobility premise).
@@ -141,6 +151,24 @@ transfer(C) :- insider_gain(C), not exception(pc_16, C).
 fired(pc_16, transfer(C), insider_gain(C)) :- transfer(C).
 effect(transfer(C), B, "net_price_received", decrease, medium, invisible, "B") :- transfer(C), bound(C, B).
 
+% CR-8b with PC-16: every payment is a receipt. The sellers' rent forgone is one item of their resources for other uses
+% (a fall); the buyers keep the same amount (a rise). Side payments take back part of it (key money, below), so the sellers'
+% resources are a CR-12 comparison of two items, formed by the combiner (rent_forgone against key_money).
+rent_forgone(C) :- transfer(C), not exception(cr_8, C).
+fired(cr_8, rent_forgone(C), transfer(C)) :- rent_forgone(C).
+effect(rent_forgone(C), B, "resources_available_other_uses", decrease, medium, invisible, "B") :- rent_forgone(C), bound(C, B).
+item(rent_forgone(C), "rent_forgone") :- rent_forgone(C).
+rent_kept(C) :- insider_gain(C), not exception(cr_8, C).
+fired(cr_8, rent_kept(C), insider_gain(C)) :- rent_kept(C).
+effect(rent_kept(C), P, "resources_available_other_uses", increase, medium, visible, "B") :- rent_kept(C), protected(C, P).
+
+% CR-8b with PC-6 (RS-3): sellers who sell above the ceiling receive the side payment the seekers make (C-7). The item is
+% signed at the medium horizon so that it can be compared with the rent forgone (CR-12g: one horizon per comparison).
+key_money(C) :- informal(C), not exception(cr_8, C).
+fired(cr_8, key_money(C), informal(C)) :- key_money(C).
+effect(key_money(C), B, "resources_available_other_uses", increase, medium, invisible, "B") :- key_money(C), bound(C, B).
+item(key_money(C), "key_money") :- key_money(C).
+
 % OC-4: exchanges that supply withdrawn from the covered stock (PC-5) no longer allows are prevented;
 % both sides lose them.
 prevented(C) :- supply_falls(C), not exception(oc_4, C).
@@ -162,6 +190,15 @@ effect(capitalized(C), B, "asset_value", decrease, short, invisible, "B") :- cap
 administered(C) :- binding_cap(C), not exception(oc_3, C).
 fired(oc_3, administered(C), binding_cap(C)) :- administered(C).
 effect(administered(C), E, "enforcement_cost", increase, short, invisible, "A") :- administered(C), enforcer(C, E).
+
+% OC-3 with OC-1, first funding case: where the record says the board is funded from the general budget and the budget rises
+% with the new task, taxpayers bear the cost. (From a fixed budget, or with no tax named, OC-1 and OC-3 give a group over
+% payers; these examples take the raised-budget case, so no group is signed.)
+ceiling_funded(C) :- administered(C), taxpayer(C, _), holds(enforcement_budget_raised(C)).
+fired(oc_3, ceiling_funded(C), administered(C))                 :- ceiling_funded(C).
+fired(oc_3, ceiling_funded(C), enforcement_budget_raised(C))    :- ceiling_funded(C).
+fired(oc_1, ceiling_funded(C), administered(C))                 :- ceiling_funded(C).
+effect(ceiling_funded(C), T, "resources_available_other_uses", decrease, short, invisible, "B") :- ceiling_funded(C), taxpayer(C, T).
 
 % RS-4 with PC-3: buyers shut out of the covered units can buy in a neighbouring market outside the cap's
 % reach, where the extra demand raises the price.
@@ -187,3 +224,6 @@ effect(process_cost(C), B, "compliance_cost", increase, medium, invisible, "B") 
 #show holds/1.
 #show fired/3.
 #show effect/7.
+#show group_effect/7.
+#show window/2.
+#show item/2.
