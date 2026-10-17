@@ -1,6 +1,6 @@
 # WE-061 / Analysis: App-based drivers and couriers deemed employees, with a per-trip buy-out at the worker's option
 
-Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -293,3 +293,73 @@ CR-8b symmetry: the premium (C-3) is paid by the companies (C-36) and in part by
 - No variable for the share of a group's work or sales across a border (hours on Selvane trips were recorded as `hours_worked` with a qualifier).
 - No variable for worker status choice as distinct from `term_prevalence`; no variable for dispatch priority (used `allocation_by_non_price_criteria`).
 - No generic actor class for social insurance funds (recorded as the insurance funds).
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the main structure of the Lanvik case. Low-paid workers who become employees are paid the floor, and contractors receive the premium. In the first months contractors' pay per trip rises; after fare shares are reset it is `ambiguous`, with the fare share item falling. Fares rise and trips fall. Employees lose employment, hours or flexibility as a group. Hours bunch at the 40-hour kink and the 150 notch, and work is reshaped outside the Act or evaded. Restaurants sell fewer delivery orders and employ more couriers, medallions and platform shares are revalued, and the insurance funds collect contributions and pay benefits. Contractors' hourly earnings, employees' earnings and hours in Selvane are `ambiguous` in both. Both versions sign against Lanvik without the Act, not against the mandate without a buy-out. Both treat the premium as a mandated term undone through the free fare share, the core from CR-6's main clause and CR-5c without the prompt of PC-17's 0.9 clause. There is one S row. On riders' waits under U1-a, the pattern gives `decrease` and the core `ambiguous`; both are defensible (J). The pattern version applies RS-22 to a term the employer changes in response to the floor (C-32). It also assumes contractors keep records (C-39), and its "riders who keep riding" class (C-38) does not meet CR-3's condition. The core version overclaims on contributions against the static projection (C-24), omitting that the floor and overtime raise the wage base. It omits taxi trips, the insurance fund's net balance and contractors' waiting. The pattern version omits the entry of new contractors, which it uses as a chain without signing, as well as paid waiting cut under U1-b, the medallion lease price, home cooking, the prevalence of contractor agreements and the total of employees' non-wage terms.
+
+Counts: M 20, V 12, S 1, OP 7, OC 6.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1, C-2 | V | | The core splits by the unit of the floor: trip hours below 16 (C-1) and waiting workers per logged-in hour (C-2: U1-a no_change, U1-b increase). |
+| C-2 | C-3 | M | | |
+| C-3 | C-15 | V | | Recorded as `term_prevalence` of insurance cover rather than `non_wage_compensation`. |
+| C-4 | C-8 | M | | |
+| C-5 | C-7 | M | | |
+| C-6 | C-6 | M | | |
+| C-7 | C-11, C-12 | V | | Split by side (riders' demand; companies' trips). |
+| C-8 | C-13 | V | | The pattern's group also includes `wage_rate` above the floor (−). The core's group has employment, hours and flexibility. |
+| C-9 | C-27 | V | | Same variable, different content: the pattern records selection among employees by rating (PC-11), the core dispatch steering to contractors. Both need A-7 and the premise that rationing by criteria rises against a counterfactual in which dispatch already ranks drivers. |
+| C-10 | C-17 | M | | |
+| C-11 | C-36 | V | | Pattern: the platforms' labor cost per unit rises (RS-23 re-signed). Core: platforms' net price per trip falls (CR-7b), with the premium and contributions as the payer side of C-3 and C-8 (CR-8b symmetry note). Same chain, other variable. |
+| C-12 | C-4 | M | | |
+| C-13 | C-5 | M | | |
+| C-14 | C-5b | M | | |
+| C-15 | C-25 | M | | The core lists only A-8, though its CR-12d derivation runs on A-8 or A-9. CR-12d asks for each chain's premises to be listed. |
+| C-16 | C-25 | V | | The core combines one-person companies into the companies' reclassification key. |
+| C-17 | C-26 | M | | |
+| C-18 | C-21 | V | | Pattern: worker-weeks just below 40 increase. Core: hours above 40 with one company decrease. |
+| C-19 | C-22 | V | | Pattern: `reclassification` (hours split across companies). Core: `hours_worked` with other platforms increase (A-N1). |
+| C-20 | C-23 | V | | Pattern: worker-weeks at or under 150 increase. Core: hours in weeks near 150 decrease. |
+| C-21 | C-30 | V | | Pattern: `number_of_sellers` under 100 increase. Core: deliveries by services under 100 increase. Both rest on A-15. |
+| C-22 | C-28 | M | | The core's key adds "the court challenge and repeal". Classification was contested without the Act (suits under the old test), so CR-4 1.0 signs lobbying on that question only against that contest. The core's `increase` holds for the U1 dispute, not for repeal lobbying. The core flagged this. |
+| C-23 | C-29 | M | | |
+| C-24 | C-38 | S | J | Pattern: riders' waits U1-a decrease (U1-b `ambiguous`). Core: `ambiguous` under both. The pattern argues from entry, whose sign its own C-35 leaves open (core C-20: `ambiguous`). The U1-a sign can be derived another way. With pay per trip up and hourly yields equalized (CR-7a), trips per logged-in hour fall, so idle capacity per request rises. The core's opposing chain is "fewer employee hours", which is only a member of the `at_least_one_decrease` group C-13 and not signed alone. Under U1-a, displaced employees can sign contractor agreements. Both defensible. |
+| C-25 | none | OC | E | Taxi trips increase (CR-4, CR-9 substitute). Valid with a premise that taxis have spare capacity at the fixed fare (A-10 says the cap binds on medallions, not trips). Core-version omission: it records medallion values and lease prices only. |
+| C-26 | C-34 | M | | |
+| C-27 | C-35 | M | | |
+| C-28 | C-31 | M | | |
+| C-29 | C-32 | M | | |
+| C-30 | C-37 | M | | |
+| C-31 | none | OC | E | Insurance fund's net balance `ambiguous`. CR-8 1.0 asks for receipts and outlays of the same budget to be recorded as two items and a net. The core recorded both items (C-8, C-37) but not the net. Core-version omission. |
+| C-32 | none | OC | P | RS-22 misapplied. Its precondition is a term changed by the policy. Flexibility is cut by the employer as a response to the floor (CR-6; pattern C-8). The insurance term's effect on other terms is PC-17's gross-and-net clause (CR-7 0.7), already in C-8. Recorded separately, the `wage_rate`-above-floor member duplicates C-8 with the opposite member sign. The core's C-41 (the non-wage total) is the correct key. Nothing scorable lost, since the result is `ambiguous`. |
+| C-33 | C-40 | M | | |
+| C-34 | none | OC | E | Contractors' waiting (U1-a increase; U1-b `ambiguous`). Core-version omission. On the pattern's sign: the CR-7a argument in C-24 supports `increase` once hourly yields settle. In the short run, though, dispatch steering of low-fare requests to contractors (A-7) also acts under U1-a and pushes the other way. The pattern lists it only under U1-b. |
+| C-35 | C-19 | V | | `wage_rate` per logged-in hour against `earnings` per logged-in hour. Both `ambiguous`; the core gets there without the response argument. |
+| C-36 | C-9 | M | | |
+| C-37 | C-39 | M | | |
+| C-38 | none | OC | J | Riders "who keep riding" have less for other uses. CR-3's note signs this only for those who keep spending on the burdened option, and riders who keep riding but take fewer trips may spend less. The core declined (final check, item 4). The pattern's class should be riders whose trips do not fall, with a premise. Both defensible on CR-3's wording. |
+| C-39 | none | OC | E | Contractors' `compliance_cost` for trip records. No provision requires contractors to keep records; checking the premium is their own choice (CR-2). Pattern hidden premise: needs an assumption or should be dropped. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-14 | OP | E | Employees' paid logged-in time outside shifts: U1-a no_change, U1-b decrease (A-6). The pattern states A-6 (p 0.85) but uses it only inside the group C-8. Pattern-version omission. |
+| C-18 | OP | E | Contractor agreements with the premium: `term_prevalence` increase from none (CR-12 0.9, A-2). Pattern-version omission (trivial). |
+| C-20 | OP | E | Entry of new contractors `ambiguous` (CR-4: better per trip, fewer trips per hour). The pattern's C-24 and C-34 use an entry chain as if signed, without recording it. Pattern-version omission. |
+| C-24 | OP | E | Contributions against the static projection `decrease`. The core claims "responses can only reduce the base", but the floor (C-1, C-2) and overtime raise wages per engaged hour for employees who are kept, and under U1-b they pay for waiting time. Those chains enlarge the base. Without a dominance premise the sign is `ambiguous`. Core-version error. |
+| C-33 | OP | E | Diners cook more at home (CR-9 substitute, A-4, A-12). The pattern names home cooking as a substitute under A-4 but records no key. Pattern-version omission. |
+| C-34b | OP | E | Medallion lease price increase (CR-6 0.8: a free price's rise). Pattern-version omission. |
+| C-41 | OP | E | Employees' non-wage terms in total `ambiguous` (CR-12 0.8 two items: cover +, flexibility −). The pattern records the items (C-3, and flexibility within C-8) but not the total the 0.8 note asks for. The core's (−) item is itself only a member of the group C-13, so it should cite A-6 or A-21 for it. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** *PC-17's 0.9 buy-out clause* would treat the premium as a TX-2 wedge. The pattern version overrode it, and the core version, using CR-6's main clause (pressure to the unregulated fare share) and CR-5c, reached the same items and signs (C-3, C-4, C-5, C-5b). The clause is wrong for a charge paid to the counterparty. *RS-23*'s second clause ("the remaining pool is cheaper to serve") compares pools, not worlds. The core never made that comparison and recorded only `term_prevalence` and the companies' net price against no Act. *RS-17*'s first clause compares below with above; the core signed every line directly. *RS-22*'s If clause ("a policy changes a term of a job") does not exclude terms the employer changes in response to the policy. Applied to flexibility (C-32), it double-counts PC-17's adjustment. *PC-11* signs the criteria margin at Tier A "given the surplus". Where the counterfactual already rations by non-price criteria (app dispatch by rating), an `increase` needs a premise (C-9 uses A-7). C-39 (contractors' records) and the class in C-38 rest on unstated premises.
+- **Errors in the core version.** Contributions against the static projection (C-24) omit the chains by which the floor and overtime raise the wage base. Lobbying (C-28) includes repeal and court lobbying, which CR-4 1.0 signs against the counterfactual contest over classification. The C-25 assumptions omit A-9, though the derivation uses it. Riders' waits (C-38) and the non-wage total (C-41) use a member of the group C-13 as a signed chain. Omissions: taxi trips (pattern C-25), the insurance fund's net (C-31, required by CR-8 1.0), contractors' waiting (C-34).
+- **Errors in the pattern version.** RS-22 is applied to an employer's response (C-32). An entry chain is used without being signed (C-24, C-34; core C-20 is `ambiguous`). U1-a dispatch steering is left out of contractors' waits (C-34). C-38 and C-39 rest on unstated premises. Omissions: paid waiting cut under U1-b (core C-14), contractor-agreement prevalence (C-18), entry (C-20), home cooking (C-33), medallion lease price (C-34b), the non-wage total (C-41).
+- **Test of 1.0 verdicts.** *PC-17 0.9 buy-out (failed as written):* confirmed. Without the pattern, the core treated the premium as an operation 3 on the worker's added option, with pressure to the unregulated fare share, not as a wedge. *PC-10 on engaged time (needed interpretation on the unit of the floor):* confirmed. The core had to split the floor's effect by unit and reading (C-1 against C-2, C-14). *RS-23 (needed re-signing):* confirmed: the core has no "cheaper pool" claim against no Act. *CR-6 0.8 on free terms (worked, but beyond the case it is written for):* partly contradicted. CR-6's main clause ("the terms that are not regulated") was enough for the core. The 0.8 note matters only for the stickiness premise (A-29), which both versions state. *CR-12 1.0, the response argument (needed interpretation on a second response through another market):* not tested by the core, which reached `ambiguous` for contractors' hourly earnings (C-19) by listing the chains under CR-12b without the argument. *RS-17's first clause (re-signed):* confirmed by core C-21 to C-23.
+- **Limits of the core rules.** None produced a difference: no row has cause K. GAP-061-C1 (a term one party can change after the other has chosen) is not a gap: CR-6's main clause and CR-10a handle it with a premise (A-28), which is the right answer. Unclear core-rule wording: (1) CR-6 does not list a legal exit the policy itself creates (the buy-out) among the open margins. (2) CR-6 0.8's note on free terms is written for existing contracts; it could say that a mandated add-on to an unregulated price sends the pressure to that price. (3) CR-12e's 1.0 note does not say whether a response by another class, through another market, is a second response. (4) CR-12 0.8, kind 2, does not say what to report when the derived chains themselves oppose and the dominance premise is below 0.5 (core C-19). (5) CR-12 does not say whether a member of an `at_least_one` group can serve as a signed chain in another combination (core C-38, C-41). (6) CR-3's note "keep spending on the burdened option" does not say whether it means any purchase or an unchanged quantity (pattern C-38). (7) CR-4 1.0 on lobbying does not say whether a dispute over a new provision's reading is a new question when the underlying question was contested. (8) CR-1 does not say how to record an option removed and added back only if the other party first elects to offer it.
