@@ -11,6 +11,8 @@ Fill in each section in order, following `../03_workflow.md`. Cite patterns (`..
 | Jurisdiction (and what lies just outside) | | |
 | Announced / enacted / effective / expires | | |
 | Enforcement (who, penalties, resources) | | |
+| Rule-maker (state, or private: how members are bound, can it change the rules, cost of leaving) | | |
+| Stated aim (quoted; in scope: yes / partly / no) | | |
 
 | Component | Instrument | Target | Bound | Parameters | Exemptions |
 |---|---|---|---|---|---|

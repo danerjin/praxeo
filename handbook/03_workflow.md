@@ -27,6 +27,8 @@ Before starting, keep four habits in mind:
 - Who enforces it, with what penalties, and with what resources?
 - For taxes: where does the revenue go? For subsidies and spending: where does the money come from?
 - Where is the jurisdiction's boundary, and what lies just outside it?
+- Who makes the rule: the state, or a private body over its own premises, services or members? For a private rule-maker, how are members bound, can it change the rules mid-relationship, and what does leaving cost? (1.2)
+- What aim does the policy state, and is it in scope? (1.2)
 
 **Pitfalls**
 - Analyzing the policy's stated purpose instead of its provisions. The title says "affordable housing"; the provisions say "no rent increase above 2% a year".
@@ -222,7 +224,8 @@ Before starting, keep four habits in mind:
 3. **Invisible consequences:** grouped by actor class, each with its chain in plain words, its horizon and its key assumptions.
 4. **Ambiguous effects:** what pushes each way, and what would decide it.
 5. **Conditions:** the assumptions that matter most, their estimates, and what would change the picture.
-6. **What the method cannot say:** sizes, net welfare, whether the policy is good, and (in version 1) health, safety and environmental effects. These are left to the reader or to other methods.
+6. **Stated aim out of scope (1.2).** Where the policy's stated aim is out of scope (safety, health, environment in version 1), the report opens by saying so, before any consequence: the list that follows records costs and other effects, not whether the aim is met. Record the in-scope consequences that bear on the aim (trips by mode and place, cars at a gate, crossings on foot) as ordinary consequences with the qualifier "exposure", without signing the aim itself. For a private rule-maker, also state what it expected to gain (CR-2, 1.2).
+7. **What the method cannot say:** sizes, net welfare, whether the policy is good, and (in version 1) health, safety and environmental effects. These are left to the reader or to other methods.
 
 **Pitfalls**
 - Advocacy. Describe consequences by group and horizon; do not weigh them.
@@ -245,6 +248,7 @@ The core-only re-runs (`08_core_rerun_report.md`) found that most errors, in ana
 7. **Every actor class, every core rule.** For each actor class, ask whether each of CR-4 (every pair of options), CR-6, CR-7 (including capitalization, CR-7c) and CR-9 applies. Patterns prompt for some of these and not others, so analyses that rely on patterns tend to miss capitalization, enforcement costs and the payer's side.
 8. **Unstated premises.** Every premise a derivation uses is in the assumption table with a probability. That includes "the group can organize" for lobbying, "some actors are at the margin" for any response, and "the alternative is worse" for any quality claim.
 9. **The baseline of every pattern (1.0).** For each pattern cited, check that its conclusion is against the no-policy counterfactual. Several patterns were found to compare with something else (another policy, the allocation before trading, uniform enforcement). Re-sign where they do (CR-12, 1.0).
+10. **Rule-maker and stated aim (1.2).** The record names the rule-maker and the stated aim. For a private rule-maker: its own costs and expected gain, members' exit and rival providers are covered. Where the aim is out of scope, the report says so first and records exposure.
 
 ---
 

@@ -20,6 +20,8 @@ The structured statement of what the policy does (workflow step 1).
 | `component.enforcement` | Who enforces, with what penalties and powers. |
 | `component.revenue_use` | For taxes: where the money goes, if the policy says. |
 | `component.funding` | For subsidies and spending: where the money comes from. |
+| `rule_maker` | Who makes and enforces the rule: `state` (a legislature, agency or council), or `private` (an owner, school, employer, landlord, owners' association, club or platform acting over its own premises, services or members). For a private rule-maker, also record how the bound parties are bound (contract, membership, lease, terms of service), whether the rule-maker may change the rules during the relationship, and what it costs a member to leave. |
+| `stated_aim` | The aim the policy states, quoted, and whether it is in scope (`yes`, `partly`, `no`). An aim out of scope (safety, health, environment in version 1) is not analyzed, but the report must say so first (`03_workflow.md`, step 11). |
 | `existing_rules` | Rules already in force that the policy interacts with or makes binding (a council-set meter rate that a license cap makes bind). Same sub-fields as a component. They stay in place in the counterfactual. |
 | `source_text` | For each field, the sentence of the policy it comes from. Fields that the text leaves unclear are marked `unclear`, never guessed. |
 
@@ -44,6 +46,9 @@ A group defined by its role in the situation, not by identity. Name actor classe
 | `neighbors` | Those whose situation is changed through proximity, not exchange (CR-9). |
 | `buyers.foreign`, `sellers.foreign` | Foreign participants in a market. |
 | `residual_claimant` | Whoever keeps what a fund collects and does not pay out. |
+| `rule_maker.private` | A private body that makes and enforces a rule over its own premises, services or members (a school, an employer, a landlord, an owners' association, a platform). It is an actor like any other (CR-2, 1.2). |
+| `members.current`, `members.prospective` | Those bound by a private rule through their relationship with the rule-maker (students and their families, tenants, employees, users), and those who would join. |
+| `rival_providers` | Other providers of the bundle the private rule-maker sells (other schools, other landlords, other platforms): members' alternatives (CR-5, 1.2). |
 
 ## 2.3 Intervention instrument types (version 1)
 
@@ -69,6 +74,7 @@ A group defined by its role in the situation, not by identity. Name actor classe
 | `public_supply` (a good supplied by the state at a set price, quantity set by a budget) | binary | PC-19 |
 | `government_borrowing` | binary | OC-8 |
 | `rights_allocation` (how a created right is first assigned: by history, auction or lottery) | binary | SB-4, CR-7c, EN-12 |
+| `private_rule` (a rule made by a private body over its own premises, services or members, binding through a contract, membership, lease or terms of service) | none: not an intervention in Rothbard's sense (`01_foundations.md`, private rules); record what it does by CR-1 operation | CR-1 to CR-12 directly; PC-17, PC-18 for its terms; RS family for responses |
 | `mandate_with_charge` (a required term or action that may be bought out by paying a charge, "play or pay") | triangular / binary | PC-17, TX-2 |
 
 ## 2.4 Variables (controlled list, version 1)
@@ -163,6 +169,8 @@ Every consequence names one variable from this list. Add a variable only by edit
 | `resources_available_other_uses` | Resources available to actors for uses outside the target (the "unseen" bucket). |
 | `resource_stock` | The state of a shared natural stock (an aquifer's level, a fish stock). Chains through it are Tier C (CR-9, 0.7). |
 | `enrollment` | Number enrolled in a course of training or study. |
+| `membership` | Number of members of an organization or customers of a provider bound by its rules (students enrolled, tenants, users). |
+| `trips` | Number of trips, by mode and place, given as a qualifier ("trips by car to the school gate"). Used among other things to record exposure where the policy's stated aim is out of scope (step 11). |
 | `stock_age` | Average age, or age mix, of a durable stock (a car fleet, a housing stock). |
 | `applications` | Number of applications for a permit, license, lottery or program. |
 

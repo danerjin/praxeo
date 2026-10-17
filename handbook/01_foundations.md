@@ -110,4 +110,9 @@ Rothbard classifies intervention by the relationship it coerces. The type tells 
 
 Many real policies combine types. Classify each component separately (workflow step 2).
 
+**Private rules (1.2).** A rule made by a private body over its own premises, services or members (a school's ban on e-bikes on campus, a landlord's pet rule, an employer's dress code, a platform's terms) is not an intervention in Rothbard's sense: it binds through a relationship the members entered, and the rule-maker is itself a seller of a bundle (schooling, housing, a job, a service) whose terms the rule changes. The core rules apply unchanged; the typology does not. Record the rule by what it does under CR-1 (an option removed, a term attached, a charge), and keep three differences in view:
+- **The rule-maker is an actor.** It chose the rule and bears much of its cost, so by its own ranking it expected a gain (CR-2). Record what that expected gain runs through, even when it is out of scope (safety, reputation, liability).
+- **Members can leave.** Leaving is an option at a cost (switching schools, moving, quitting), and rival providers are members' alternatives (CR-4, CR-5). A rule that members value less than it costs them shows up in exit and in what the rule-maker can charge.
+- **Consent and change.** Members accepted the rule-maker's power to set rules when they joined, but a change during the relationship still removes options they valued, signed by CR-3 against the old rules. LW-5's reading of a coerced loss does not apply as such; whether the loss is part of the bargain is `06_gaps.md`, Q23.
+
 **Source:** P&M ch. 2 §1 "Types of Intervention".

@@ -63,6 +63,9 @@ A policy does not change anyone's ranking of ends, except through what it tells 
 **1.1 clarifications.**
 - A line on a ratio (recycled share, land share) can be crossed by moving either term; record both routes. A transfer avoided only by leaving the jurisdiction is operation 4 for those who stay and operation 3 on the option of leaving. An option removed but restored at the other party's election (a buy-out the worker may choose) is recorded as removed, with the restoring option as operation 2 for the party who holds the election.
 
+**1.2 clarifications.**
+- *Private rules.* A rule made by a private rule-maker (`02_ontology.md`, 2.1) performs the same operations on its members as a law does on citizens; record them the same way. Where the rule-maker may change the rules during the relationship, the change is an operation on current members from its date; leaving is an option they hold at a cost (CR-4).
+
 ### CR-2 Choice
 
 **Statement.** Each actor chooses, from the options they believe open, the one they expect to serve their most highly ranked end. What an actor chooses reveals that they ranked it above the alternatives open at the time (demonstrated preference).
@@ -74,6 +77,9 @@ A policy does not change anyone's ranking of ends, except through what it tells 
 **Source.** HA ch. I §1 and ch. VII §1 ("action sorts and grades"); Rothbard, "Toward a Reconstruction of Utility and Welfare Economics" (1956), on demonstrated preference.
 
 **0.7 clarification: absence of an exchange.** That a term or an exchange was absent before a policy demonstrates only that, in the situation as it was, no pair of parties found it worth agreeing on (CR-5). Whether that reflects the parties' own rankings or an obstacle to agreeing (one side knowing more than the other, costs of writing the term) is an empirical question and needs a premise; the rules do not presume either.
+
+**1.2 clarifications.**
+- *The private rule-maker.* A private body that adopts a rule it could have left alone, and that bears its cost, demonstrates that it expected a gain by its own ranking. Record what that gain runs through (fewer accidents, lower insurance, reputation, members' preferences); where that is out of scope, say so in the report, not as a signed consequence.
 
 ### CR-3 Cost and loss
 
@@ -151,6 +157,9 @@ The mirror case (x made better) reverses every direction.
 **0.7 clarifications.**
 - A gift is a transfer the giver ranks above keeping the thing given; a policy that removes the means of a gift (a ban on the production whose output was given away) removes a gain for the giver and a receipt for the recipient (CR-8b).
 - (a) applies to an exchange that would otherwise have taken place. Where a policy only makes another offer more attractive, so that a buyer takes the better offer instead, the party who loses the sale loses; the buyer does not.
+
+**1.2 clarifications.**
+- *Bundles.* Where the rule-maker sells a bundle to its members (schooling, housing, a job, a service), a change in its rules is a change in the bundle's terms: members' range of acceptable terms moves (CR-5c), and their alternatives are rival providers' bundles. Exit, prices or fees, and the terms rival providers offer are the margins (CR-6).
 
 ### CR-6 Price formation and displaced pressure
 
@@ -265,6 +274,9 @@ The full price, meaning the money price plus everything else given up, moves tow
 
 **1.1 clarifications.**
 - *A dedicated fund.* Where a dedicated fund is fed from the general budget, say whether the two are treated as one budget for netting; record each fund's items and the net under that choice.
+
+**1.2 clarifications.**
+- *Private budgets.* Where a private rule-maker enforces its rule, the cost comes from its own budget: from fees (members pay), from other uses of that budget, or from its owners' return; record which, or a group. A penalty that takes time (a detention) uses up the penalized person's time (a); goods confiscated and returned on collection are a time cost, not a transfer.
 
 ### CR-9 Propagation
 

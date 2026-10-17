@@ -190,6 +190,7 @@ Ten new examples (WE-026 to WE-035) were written to probe parts of the method th
 | Debt-funded transfer in two windows (promoted to OC-9 in 0.9) | WE-033 | CR-8, CR-10, CR-12g |
 | Ban on a restraint over carryable training; retroactive voiding | WE-034 | CR-5c, CR-7c, CR-10b |
 | Fixed cost per item reduces variety (promoted to RS-24 in 1.1; second use WE-059) | WE-035 (WE-040's use was invalid) | CR-4b with a lumpy cost |
+| Restriction on using an owned durable good in one place | WE-066 | CR-1 (one place), CR-4 (park elsewhere, convert, switch mode), CR-7c (resale) |
 | Selection under a uniform term (promoted to RS-23 in 1.0) | WE-029 | CR-5c, CR-4 per counterparty |
 | Complaint-only enforcement (promoted to RS-20 in 0.9) | WE-029 | CR-4 (expected cost of breach differs by counterparty) |
 
@@ -303,6 +304,10 @@ Ten examples were written with the catalog frozen at 1.0 and then re-run blind f
 **Q21. Non-rival means.** CR-8 treats every means as rival. Know-how carried to a rival firm is used there without being lost to the first (GAP-034-1). Should a core rule cover non-rival means, and what could it say a priori about total output?
 
 **Q22. Choices made with more knowledge.** A disclosure mandate adds no option and removes none, so CR-3 cannot say whether a buyer who changes an order after seeing a calorie count is better or worse off (GAP-035-C1, from the core-only re-run of WE-035). Is a choice made with more knowledge revealed to be better by the actor's own ranking, or must the method stay silent on it? The same question arises for any policy that works through information (CR-11c).
+
+**Q23. Private rules and consent.** For a rule made by a private body over its own premises or members, members accepted the rule-maker's power to set rules when they joined. Is a later rule change a loss to them in the same sense as a law's (LW-5, CR-3), or part of the bargain they made? Catalog 1.2 signs it against the old rules (CR-3) and records exit and rival providers; experts should confirm the reading (WE-066).
+
+**Q24. Stated aims out of scope.** Where a policy's stated aim is out of scope, catalog 1.2 requires the report to say so first and to record exposure consequences. Is that enough to keep the report from reading as a list of costs, or should version 2 bring safety and health into scope for such cases?
 
 ## 6.4 Next steps for Phase 1
 

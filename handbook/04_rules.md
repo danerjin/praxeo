@@ -1,4 +1,4 @@
-# 4. Rule catalog 1.1: patterns
+# 4. Rule catalog 1.2: patterns
 
 This file holds the **patterns**: derived results for recurring situations. They rest on the **core rules** in `04a_core_rules.md`, which are the universal calculus. Every pattern below carries a **Derivation** line that shows which core rules it instantiates and how; a pattern adds no reasoning of its own beyond that derivation and the premises it names. If a pattern and a direct derivation from the core rules ever disagree, the derivation wins and the pattern is corrected.
 
@@ -16,6 +16,8 @@ Each pattern is one reusable inference. Format:
 Every conclusion below is stated against the no-policy counterfactual (CR-12, 1.0). Where a pattern says "relative to" anything else, re-sign it before use.
 
 Patterns are deliberately small. A full analysis chains several of them, and each link is reviewed on its own.
+
+**Changes in 1.2.** From WE-066 (a school's e-bike ban): rules made by private bodies. RS-7 and OC-3 now cover private rule-makers and their budgets; RS-16 covers goods converted into the substitute and a cheaper substitute of the substitute. New ontology terms (rule maker, stated aim, private rule, members, rival providers, membership, trips), core-rule notes on private rules (CR-1, CR-2, CR-5, CR-8), and a report rule for stated aims out of scope.
 
 **Changes in 1.1.** From the third held-out test (WE-056 to WE-065) and its core-only re-run (`08_core_rerun_report.md`, fifth round). Re-based on the no-policy counterfactual: RS-17, RS-23, PC-17, EN-13. Corrected: SB-4 (taxes that reach the alternatives), PC-1 and PC-16 (a third-party payer), TX-7 (a matched domestic tax), TX-9 (revenue returned to the payers), PC-17 (buy-outs paid to the counterparty; product sales), EN-14 (a standard buyers value), SB-8, TX-1. Widened: SB-2, TX-2, TX-3, RS-6, TS-3, TS-10, RS-4, RS-7, RS-16, RS-21, RS-22, PC-11. New: PC-20 (a cap on the buyer's share). Promoted after a valid second use: RS-24 (a fixed cost per item reduces variety). Candidates recorded: allocation of a right by sale, a mandated add-on to an unregulated price, a tax on the value of a fixed factor.
 
@@ -97,7 +99,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 - **Derivation:** CR-4 for each owner (x: this use, y: another use), aggregated by CR-7; timing by CR-10b.
 
 ### RS-7 Lobbying and rent-seeking
-- **If:** the policy creates a gain that is concentrated on an identifiable group and depends on political decisions (renewal, extension, exemption, enforcement).
+- **If:** the policy creates a gain that is concentrated on an identifiable group and depends on later decisions of whoever makes the rule (renewal, extension, exemption, enforcement): a legislature or agency, or a private rule-maker's board (1.2).
 - **Then:** `lobbying_effort` by that group increase. Those concentrated groups harmed by the policy also lobby, for repeal or exemption.
 - **Assumes:** the group can organize at a cost lower than its stake (`other`). This premise must be stated and estimated in each case, like any other.
 - **Unless:** the counterfactual also has lobbying on the same question (a repeal, where the policy's beneficiaries would lobby to keep it in force). Then compare with that: the side that gains from the change lobbies more, the side that loses may lobby more or less, and the combined sign for a class that lobbied in both worlds is `ambiguous` without a premise.
@@ -186,6 +188,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 - **Costs on the substitute (0.9).** Where the policy also attaches a cost to the substitute itself (a record-keeping charge per domestic animal), that cost is an opposing chain on the substitute's net price to its sellers; combine under CR-12b.
 - **Per unit of quality (1.0).** Sign the substitute's price per unit of a given quality or risk class: a change in the mix of buyers or goods is not a price change. Only a cost per unit sold opposes sellers' net price; a cost fixed per facility bears on the number of facilities (CR-4, 0.8); a cost on owners (a road charge) combines with quantity bought, not with sellers' net price.
 - **Waiting (1.1).** Where the substitute's market is rationed partly by waiting (dealer queues), its price and wait are a group.
+- **Converted goods and second substitutes (1.2).** Where a covered good can be converted into an uncovered one at a small cost (a throttle removed from an e-bike), conversions add supply to the substitute's market: an opposing chain on its price. Where a cheaper good becomes available to the substitute's buyers (used units sold off by those the policy affects), some of them turn to it: a second opposing chain.
 - **Tier** B. **Visibility** invisible. **Horizon** short to medium.
 - **Builds on:** LW-3.
 - **Derivation:** CR-9 (buyers turn to the substitute) then CR-6 in the substitute's market (at the old price, buyers wish to buy more than sellers wish to sell, so the price rises as far as supply cannot expand). PC-8 is the same move for a controlled market.
@@ -291,6 +294,7 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
   - from a general budget where the record names no tax: the payers are a group (taxpayers, recipients of other spending, future taxpayers through borrowing) with `at_least_one_decrease` (CR-8, 0.7).
 - **Against the right baseline.** The comparison is enforcement without the policy, not zero. Where the policy shrinks an activity that was itself enforced (complaints about backyard flocks under a nuisance law), enforcement of the old rule falls; the net sign is `ambiguous` without a dominance premise (arithmetic on the case's figures may supply one).
 - **Fixed budget, more precisely (0.9).** From a fixed budget, the resources come from some other use of the agency's time: slower refunds, slower clearance, fewer other checks. Record it as a group with `at_least_one_as_stated`, not as less enforcement of other rules by default.
+- **Private rule-makers (1.2).** Where the rule-maker is private (a school, a landlord, an association), the cost comes from its own budget: fees (members pay), other uses of that budget, or its owners' return (CR-8, 1.2). The baseline is the supervision it already does.
 - **Tier** A, given positive enforcement activity and no enforcement the policy makes unnecessary; otherwise B. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-1.
 - **Derivation:** CR-8c, with CR-8a for the funding.
