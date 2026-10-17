@@ -27,6 +27,8 @@
   {"assumption": "alternative_uses", "held": true, "evidence": "Conversions and redevelopment observed (F-4)."},
   {"assumption": "nontransferable", "held": true, "evidence": "Vacancy decontrol; tenancies not assignable."},
   {"assumption": "would_leave", "held": true, "evidence": "Treated tenants were less likely to leave San Francisco (F-2), which needs some to have left otherwise."},
+  {"assumption": "buyouts_limited", "held": null, "evidence": "Not recorded on this card."},
+  {"assumption": "lockin_dominates", "held": null, "evidence": "Not recorded separately; F-2 is consistent with it."},
   {"assumption": "substitutes", "held": null, "evidence": "Not studied directly."}
  ],
  "confounders": [

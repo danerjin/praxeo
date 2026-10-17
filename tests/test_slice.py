@@ -19,7 +19,7 @@ WE1 = ROOT / "cases" / "we001_riverton"
 
 def _assumptions(p=0.9, **over):
     out = {}
-    for atom in ("binding", "enforced", "alternative_uses", "nontransferable", "would_leave", "substitutes"):
+    for atom in ("binding", "enforced", "alternative_uses", "nontransferable", "buyouts_limited", "would_leave", "lockin_dominates", "substitutes"):
         out[f"{atom}(c1)"] = Assumption(id=f"{atom}(c1)", text=atom, assumption_class="other", p=over.get(atom, p))
     return out
 
@@ -118,8 +118,9 @@ def test_brier_and_logic_accuracy():
     cons, _ = engine.run(_record(), a)
     s = score(cons, a, card)
     assert s["brier"]["mean"] == pytest.approx(0.04)
-    # substitutes has no recorded status, so the consequence resting on it leaves the logic score
-    assert s["logic"]["predictions"] == s["headline"]["predictions"] - 1
+    # substitutes, buyouts_limited and lockin_dominates have no recorded status, so the three
+    # consequences resting on them (outsiders' price, turnover, moves out of the area) leave the logic score
+    assert s["logic"]["predictions"] == s["headline"]["predictions"] - 3
 
 
 def test_end_to_end_fixture(tmp_path):

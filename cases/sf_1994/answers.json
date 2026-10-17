@@ -46,5 +46,19 @@
   "probability": 0.8,
   "rationale": "Uncovered units (newer buildings, vacated units at reset rents) are in the same city and serve the same tenant pool.",
   "evidence": []
+ },
+ {
+  "question_id": "c1.buyouts_limited",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Buyouts are not barred; their scale against the lock-in is uncertain at enactment.",
+  "evidence": []
+ },
+ {
+  "question_id": "c1.lockin_dominates",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Rising free rents in the city push some movers out; the lock-in on keepers is likely larger.",
+  "evidence": []
  }
 ]

@@ -24,9 +24,9 @@ Options: `--parser fixture|llm`, `--decider fixture|llm|human`, `--out DIR` (def
 |---|---|---|
 | `schema.py` | typed records | PolicyRecord, Component, Unclear, Question, Answer, Assumption, Consequence, Step, OutcomeCard, Finding. |
 | `parser.py` | LLM parser (5.2) | Fills PolicyRecord from text; each component quotes its source sentences; `check_citations` verifies the quotes in code. Fixture backend loads `record.json`. |
-| `questions.py` | typed questions (4.4) | Six noul questions per price ceiling, one per assumption the rules name (binding, enforced, alternative_uses, nontransferable, would_leave, substitutes). |
+| `questions.py` | typed questions (4.4) | Eight noul questions per price ceiling, one per assumption the rules name (binding, enforced, alternative_uses, nontransferable, buyouts_limited, would_leave, lockin_dominates, substitutes). |
 | `decider.py` | Decider interface (5.2) | FixtureDecider, LLMDecider, HumanDecider behind one `answer(question, record)` call. A Jev decider would slot in here. |
-| `rules/price_controls.lp` | rule base (4.4) | PC-1 (the plan's PR-017), PC-3 (insiders and outsiders, with RS-4), PC-5, RS-5, PC-7, PC-21 (catalog 1.3), each with an `exception/2` default. |
+| `rules/price_controls.lp` | rule base (4.4) | PC-1 (the plan's PR-017), PC-3 (insiders and outsiders, with RS-4), PC-5, RS-5, PC-7 and PC-21 (as revised in catalog 1.4: buyout and dominance premises), each with an `exception/2` default. |
 | `engine.py` | symbolic engine, Configuration A (5.4) | Writes facts, opens a choice over assumptions, enumerates answer sets, and labels each conclusion with its minimal assumption sets (ATMS-style). A consequence is reported when its most probable minimal set has every p ≥ 0.5. |
 | `explainer.py` | templated explainer | One sentence per consequence from the derivation steps; no free text. |
 | `scoring.py` | scoring (7.3, 7.4) | Headline and logic precision, recall and F1; deduplication on (actor class, variable, horizon); ambiguous and unverifiable predictions excluded from precision with their counts reported; Brier score on assumptions. |
@@ -39,7 +39,7 @@ Options: `--parser fixture|llm`, `--decider fixture|llm|human`, `--out DIR` (def
 
 ## What the first run shows, and what it does not
 
-Offline run on `sf_1994` (rule base 0.2): 7 consequences reported, 5 verifiable and 2 unverifiable. Headline precision 1.00, recall 1.00, F1 1.00. Logic F1 0.89 (the outsiders' price rests on an assumption the card does not record). Assumption Brier score 0.04. Rule base 0.1 had recall 0.80; the miss was F-2.
+Offline run on `sf_1994` (rule base 0.3): 7 consequences reported, 5 verifiable and 2 unverifiable. Headline precision 1.00, recall 1.00, F1 1.00. Logic F1 0.57: three consequences rest on premises the card does not record (substitutes; the 1.4 premises on buyouts and on the lock-in outweighing diverted movers), so they leave the logic score. Assumption Brier score 0.04. Rule base 0.1 had recall 0.80; the miss was F-2.
 
 **These numbers test the plumbing. They are not evidence of accuracy.** The reasons:
 

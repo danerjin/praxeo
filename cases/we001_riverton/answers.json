@@ -44,5 +44,19 @@
   "probability": 0.85,
   "rationale": "WE-001 A-7.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.buyouts_limited",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Not addressed in WE-001; premise added for 1.4.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.lockin_dominates",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Not addressed in WE-001; premise added for 1.4.",
+  "evidence": []
  }
 ]

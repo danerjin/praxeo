@@ -6,4 +6,4 @@ derivations and minimal assumption sets -> templated explanation -> score
 against an outcome card. See README.md in this directory.
 """
 
-RULEBASE_VERSION = "rb-thin-0.2 (handbook catalog 1.3: PC-1, PC-3, PC-5, PC-7, PC-21, RS-5)"
+RULEBASE_VERSION = "rb-thin-0.3 (handbook catalog 1.4: PC-1, PC-3, PC-5, PC-7, PC-21, RS-5)"

@@ -1,4 +1,4 @@
-# 4. Rule catalog 1.3: patterns
+# 4. Rule catalog 1.4: patterns
 
 This file holds the **patterns**: derived results for recurring situations. They rest on the **core rules** in `04a_core_rules.md`, which are the universal calculus. Every pattern below carries a **Derivation** line that shows which core rules it instantiates and how; a pattern adds no reasoning of its own beyond that derivation and the premises it names. If a pattern and a direct derivation from the core rules ever disagree, the derivation wins and the pattern is corrected.
 
@@ -16,6 +16,8 @@ Each pattern is one reusable inference. Format:
 Every conclusion below is stated against the no-policy counterfactual (CR-12, 1.0). Where a pattern says "relative to" anything else, re-sign it before use.
 
 Patterns are deliberately small. A full analysis chains several of them, and each link is reviewed on its own.
+
+**Changes in 1.4.** From WE-067 (a rent cap with a senior credit portable within the county), the first independent use of PC-21, and its blind core-only re-run (`08_core_rerun_report.md`, addendum). Revised: PC-21 (destinations sorted by whether the benefit follows the insider; a benefit portable over part of the region; diverted movers; buyouts; the CR-4 exception premise; subclass totals; an Unless that requires full portability), PC-7 (buyouts, partial portability, the displaced subclass), RS-11 (partial portability), PC-1 and PC-2 (vacancy decontrol). Core-rule wording: CR-4 1.4 (near-equal changes; a benefit attached to one option), CR-9 1.4 (one choice on both sides of a market).
 
 **Changes in 1.3.** New: PC-21 (insiders leave the area less), placed after PC-7, which it extends; new ontology variable `relocation_out_of_area`. It comes from a recall miss in the Phase 2 thin slice (`praxeo/`): no pattern concluded anything about protected tenants leaving the city. It has one use so far.
 
@@ -142,7 +144,7 @@ These apply to any intervention. Workflow step 5 runs through them for every act
 
 ### RS-11 Lock-in spills into linked markets
 - **If:** an actor class holds a non-transferable benefit that is lost by a change of location or status: moving (PC-7: a controlled tenancy, a place on a list), leaving an occupation, or letting a registration lapse (a grandfathered status).
-- **Then:** members of the class turn down opportunities that would cost them the benefit: `job_changes` decrease, longer commutes, forgone breaks or better work elsewhere.
+- **Then:** members of the class turn down opportunities that would cost them the benefit: `job_changes` decrease, longer commutes, forgone breaks or better work elsewhere. *1.4:* where the benefit follows the holder to some destinations, the opportunities given up are only those beyond that range.
 - **Assumes:** some valued opportunities would require the change (`mobility`); the benefit is not transferable.
 - **Tier** B. **Visibility** invisible. **Horizon** medium.
 - **Builds on:** LW-1 (losing the benefit is part of the cost of moving), PC-7.
@@ -450,13 +452,14 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Assumes:** the ceiling is binding (`binding`) and enforced (`enforcement`).
 - **Unless:** the ceiling is above the market price (not binding); price is a quality signal (LW-3 exception).
 - **A third-party payer (1.1).** The If clause requires that the cap bind on the price the seller receives. Where it caps only what the buyer pays and a third party pays the rest, use PC-20.
+- **Vacancy decontrol (1.4).** Where the cap binds only on what sitting buyers pay at renewal, and the price of a new contract is free, the If clause is not met for prospective buyers: there is no excess demand for new contracts. Use PC-7 and PC-21 for insiders. Seekers' price is signed through the fall in vacancies: initial prices of new contracts rise (PC-3, RS-4).
 - **Tier** B. **Visibility** invisible (the shortage is often noticed, but its cause is not attributed to the policy). **Horizon** short.
 - **Builds on:** LW-3, LW-4.
 - **Source:** HA ch. XXX §2; P&M ch. 3 §1; EIOL 1946 ch. 17.
 - **Derivation:** CR-6 (a price held below the clearing level).
 
 ### PC-2 Shortage is rationed by other means
-- **If:** `excess_demand` increase (PC-1).
+- **If:** `excess_demand` increase (PC-1). Not met where the price of new contracts is free (PC-1, vacancy decontrol, 1.4).
 - **Then:** for `buyers.prospective`, the group `wait_time`, `search_cost`, `side_payments`, `allocation_by_non_price_criteria`: `at_least_one_increase`. Any one member is signed on its own only with a premise that that margin is open and used in this market. The good does not go to whoever is willing to give up the most for it, but by these other criteria.
 - **Tier** A, given the shortage; the particular form is B. **Visibility** invisible. **Horizon** short.
 - **Builds on:** LW-6.
@@ -496,21 +499,26 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Derivation:** CR-6 (exchanges outside the rule) via CR-4 (x: comply, y: violate).
 
 ### PC-7 Reduced turnover where the benefit is tied to holding
-- **If:** binding `price_ceiling`, and the right to buy at the controlled price is tied to keeping the good (a tenancy, a place on a list), and cannot be sold.
-- **Then:** `turnover` decrease among insiders: they move less, even when another unit, job or place would otherwise suit them better.
-- **Assumes:** the benefit is not transferable (`other`).
+- **If:** binding `price_ceiling`, and the right to buy at the controlled price is tied to keeping the good (a tenancy, a place on a list), and cannot be sold or assigned.
+- **Then:** `turnover` decrease among insiders: they move less, even when another unit, job or place would otherwise suit them better. *1.4:* where the benefit follows the holder to some destinations (a portable credit), the decrease holds for moves to destinations where it is lost. Moves within the portable range are a change in means alone (CR-4 1.4), and are `ambiguous` without a premise. Holders displaced by conversion or withdrawal (PC-5, RS-5) are a subclass whose turnover rises, and the class total is a CR-12 comparison.
+- **Assumes:** the benefit is not transferable (`other`). Buyouts, where the holder hands the good back to the seller for a payment, stay below the lock-in; a ban on assignment does not bar them (`other`, 1.4). The forfeited future gap outweighs any move that savings from the gap make affordable (CR-4 exception; `other`, 1.4).
 - **Tier** B. **Visibility** invisible. **Horizon** medium.
 - **Builds on:** LW-2, LW-5.
 - **Derivation:** CR-3 (giving up the good now forfeits the gap between controlled and market price) and CR-4.
 
 ### PC-21 Insiders leave the area less
-- **If:** PC-7 holds for a good tied to a place (a controlled tenancy in a city), and the protected buyers would not get an equal benefit at a destination outside the area.
-- **Then:** for `buyers.current` who keep the covered unit, `relocation_out_of_area` decrease. Two routes give the same sign: leaving forfeits the gap between the controlled and the market price (as in PC-7); and fewer of them are priced out, since without the policy some would have left the area when their price rose to the market level. The sign holds for insiders who keep the unit. Insiders displaced by conversion or withdrawal (PC-5, RS-5) are a separate subclass whose sign runs the other way; the total for the class is a CR-12 comparison and needs a premise on the share of units withdrawn. The pattern does not sign the area's population: outsiders who cannot get a unit settle elsewhere (PC-3, RS-4).
-- **Assumes:** without the policy, some insiders would have left the area, priced out or for opportunities elsewhere (`mobility`); the benefit is not portable to the destination (`other`).
-- **Unless:** the benefit is portable (a voucher, a control that also covers the destination); the ceiling does not bind (PC-1).
+- **If:** PC-7 holds for a good tied to a place (a controlled tenancy in a city). Sort the insiders' destinations into those the benefit follows them to (the portable range, if any) and those where it is lost (1.4).
+- **Then:** for `buyers.current` who keep the covered unit:
+  - moves to destinations where the benefit is lost: `relocation_out_of_area` decrease. Leaving forfeits the gap between the controlled and the market price. "Fewer are priced out" is the same CR-4 choice measured against the no-policy price path, not a second route (1.4).
+  - where the benefit follows them over part of the region only: moves out of the portable range decrease; moves out of the area but within the range are `ambiguous` unless a premise signs the means effect, since inside the range the benefit is a change in means alone (CR-4 1.4).
+  - insiders who still move face higher free prices in the area than at destinations, so some of their moves are diverted out of the area. The decrease for the class of keepers needs a premise that the lock-in outweighs this chain (CR-12 0.8).
+
+  Insiders displaced by conversion, withdrawal, or terminations before the cap takes effect (PC-5, RS-5) are a separate subclass whose sign runs the other way. The total for the class is a CR-12 comparison and needs a premise on the share displaced. A subclass with an `ambiguous` sign makes the total `ambiguous`, unless a dominance premise covers both of its directions (1.4). The pattern does not sign the area's population. Residents shut out of the area (new households, tenants of exempt units) leave it more, given premises that they settle elsewhere and that exempt units are substitutes (PC-3, RS-4). Under vacancy decontrol this runs through higher initial prices, not rationing (PC-1 1.4).
+- **Assumes:** without the policy, some insiders would have left the area, priced out or for opportunities elsewhere (`mobility`). Whether the benefit follows the insider, stated per destination (`other`). Buyouts, where a tenancy is handed back to the landlord for a payment, stay below the lock-in; a ban on assignment does not bar them (`other`, 1.4). For keepers, the forfeited future gap outweighs any move that savings from the gap make affordable (CR-4 exception; `other`, 1.4).
+- **Unless:** the benefit follows the insider, undiminished, to every destination they would consider. Any remaining difference between destinations is ordinary CR-4 (1.4). Or the ceiling does not bind (PC-1).
 - **Tier** B. **Visibility** invisible. **Horizon** medium to long.
 - **Builds on:** LW-2, LW-5, PC-7, RS-11.
-- **Derivation:** CR-3 (moving away now also costs the forfeited gap) and CR-4 (x: leave, y: stay), against the no-policy price path (CR-12, 1.0). Added in 1.3 from the Phase 2 thin slice (San Francisco 1994, outcome card finding F-2), after one use; a worked example should confirm it.
+- **Derivation:** CR-3 (moving away now also costs the forfeited gap) and CR-4 (x: leave, y: stay) per destination, with CR-4 1.4 for a benefit portable over part of the region, against the no-policy price path (CR-12, 1.0). Added in 1.3 from the Phase 2 thin slice (San Francisco 1994, outcome card finding F-2); revised in 1.4 after its first independent use (WE-067) and that example's blind core-only re-run.
 
 ### PC-8 Spillover to uncontrolled substitutes
 - **If:** a binding `price_ceiling` or `price_floor` covers part of a market, and an uncontrolled substitute or segment exists (recorded market relation).

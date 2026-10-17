@@ -95,7 +95,8 @@ def main():
         rest = re.sub(r"(?m)^# ", "## ", rest)
         parts.append(first + "\n" + rest)
     parts.append("# Appendix A. Analysis template\n\n" + demote(read(os.path.join(H, "templates", "analysis_template.md"))))
-    samples = ["# Appendix B. Sample worked examples\n\nThree of the 65 worked examples, printed in full: a price control (WE-001), its repeal with the metamorphic check (WE-022), and a held-out case corrected under catalog 1.0 (WE-046). The others are in `handbook/05_examples/`, and the blind core-only re-runs in `handbook/05_examples_core/`."]
+    n = len([f for f in os.listdir(os.path.join(H, "05_examples")) if f.startswith("WE-")])
+    samples = [f"# Appendix B. Sample worked examples\n\nThree of the {n} worked examples, printed in full: a price control (WE-001), its repeal with the metamorphic check (WE-022), and a held-out case corrected under catalog 1.0 (WE-046). The others are in `handbook/05_examples/`, and the blind core-only re-runs in `handbook/05_examples_core/`."]
     for name in SAMPLES:
         samples.append(demote(read(os.path.join(H, "05_examples", name))))
     parts.append("\n\n".join(samples))

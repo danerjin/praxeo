@@ -30,16 +30,14 @@
   "f1": 1.0
  },
  "logic": {
-  "predictions": 6,
+  "predictions": 4,
   "ambiguous": 0,
-  "verifiable": 4,
+  "verifiable": 2,
   "unverifiable": 2,
-  "unverifiable_rate": 0.3333333333333333,
+  "unverifiable_rate": 0.5,
   "matched": [
    "C-4",
-   "C-5",
-   "C-6",
-   "C-7"
+   "C-6"
   ],
   "false_positives": [],
   "unverifiable_ids": [
@@ -47,17 +45,17 @@
    "C-2"
   ],
   "recalled_findings": [
-   "F-1",
-   "F-2",
    "F-3",
    "F-4"
   ],
   "missed_findings": [
+   "F-1",
+   "F-2",
    "F-5"
   ],
   "precision": 1.0,
-  "recall": 0.8,
-  "f1": 0.888888888888889
+  "recall": 0.4,
+  "f1": 0.5714285714285715
  },
  "brier": {
   "items": [
@@ -97,5 +95,5 @@
  "low_confidence_findings": [
   "F-5"
  ],
- "prediction_sha256": "417fcdda7cff6a302cd3ba819f939110a63b47953973fe517940665d5ca6ad78"
+ "prediction_sha256": "d026b07b069e92fee4161e3d76525d729dabff59371aca99d8957e6a1716d2e0"
 }

@@ -141,6 +141,10 @@ The mirror case (x made better) reverses every direction.
 - *Several changes in means.* Where a policy changes an actor's means in more than one way (a payment and a consumption tax), net them first, by arithmetic or with a premise, then apply "a change in means alone" to the net. The exception's means effect can run either way, with the sign of the net.
 - *The same question.* For lobbying (1.0), "the same question" is the question of the policy field that was contested on the counterfactual path (support for farmers, Sunday opening), not the exact provision. Lobbying over provisions that exist only under the policy (the reading of a new clause) is an increase.
 
+**1.4 clarifications.**
+- *Near-equal changes.* When a change improves (or worsens) two options by amounts that are close but not equal (a credit paid wherever the actor lives within a range, against staying), split it in two. The common part is a change in means alone for an actor who stays within that set of options. This is the mirror of CR-1 1.1: a grant kept only while the actor stays within the set. The difference is ordinary CR-4, with the sign of the difference. Where the difference varies in sign across the class, the result for the class is `ambiguous`: a kind-3 opposing chain (CR-12, 0.8).
+- *A benefit attached to one option.* The exception's means effect also arises when a benefit is attached to one option (savings built from a controlled price can fund a move the benefit itself discourages). Where it matters, a premise must say which effect dominates.
+
 ### CR-5 Exchange
 
 **Statement.** A voluntary exchange takes place only if each party ranks what they receive above what they give. Hence:
@@ -296,6 +300,9 @@ The value to anyone of a means depends on the ends it serves and on what it is u
 
 **1.0 clarifications.**
 - *A charge on users of a shared facility.* Where a facility's cost is recovered by a charge on its users (an airport's landing fees), a change in the number of users changes the charge per user. This is an exchange relation (the charge is a price), at Tier B, not a `shared_facility` chain.
+
+**1.4 clarifications.**
+- *One choice on both sides of a market.* One actor's choice can enter a market on both sides. A tenant who stays removes a vacancy (supply) and, if they would have moved within the same market, a search (demand). Treat each relation as its own chain, apply CR-6 in each, and combine them by CR-12. How many stayers would have moved within the market is arithmetic where the case gives the distribution, and a premise otherwise (CR-12e, 0.8).
 
 ### CR-10 Time
 
