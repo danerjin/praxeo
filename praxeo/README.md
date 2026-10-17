@@ -69,4 +69,5 @@ Gaps the slice exposed (inputs for the next steps):
 - **Horizons** are crude: each effect is taken to hold from its first horizon onward.
 - **Built in a first form:** context grounding (date filter only; there is no retrieval and no source corpus yet), the CR-12 combiner (subclass totals only) and the verifier.
 - **Built in a first form:** per-question confidence thresholds with escalation (`escalation.py`).
-- **Not built yet:** retrieval, Configuration B, and thresholds set from a labelled question bank.
+- **Configuration B** (`config_b.py`) is built for the price-ceiling rules. On `sf_1994` it agrees with Configuration A on all 9 reported (actor, variable, sign) rows. Its results are Tier J (plan 5.2): a decision trail of questions and answers, not a proof. It does not yet take exception facts or per-reading facts.
+- **Not built yet:** retrieval, and thresholds set from a labelled question bank.

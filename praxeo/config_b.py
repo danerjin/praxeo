@@ -148,7 +148,8 @@ def run_config_b(record: PolicyRecord, decider: Decider) -> tuple[list[Consequen
                 cons.append(Consequence(
                     id=f"C-{len(cons) + 1}", actor_class=actor, variable=eff.variable, sign=eff.sign,
                     horizon=[h for h in HORIZON_ORDER if HORIZON_ORDER[h] >= HORIZON_ORDER[eff.horizon]],
-                    visibility=eff.visibility, tier=eff.tier, derivation=derivation,
+                    # plan 5.2: Configuration B yields a decision trail, not a proof, so its results are Tier J
+                    visibility=eff.visibility, tier="J", derivation=derivation,
                     assumption_sets=[assumed], assumptions=assumed, reported=True,
                 ))
     return cons, log
