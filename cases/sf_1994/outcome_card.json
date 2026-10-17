@@ -7,10 +7,9 @@
   {"id": "F-1", "actor_class": "tenants.controlled", "variable": "turnover", "finding_type": "effect", "sign": "decrease",
    "horizon": ["medium", "long"], "magnitude": "treated tenants roughly 10-20% more likely to remain at their 1994 address",
    "source": "Diamond, McQuade and Qian (2019), AER 109(9)", "confidence": "high"},
-  {"id": "F-2", "actor_class": "tenants.controlled", "variable": "relocation_out_of_city", "finding_type": "effect", "sign": "decrease",
+  {"id": "F-2", "actor_class": "tenants.controlled", "variable": "relocation_out_of_area", "finding_type": "effect", "sign": "decrease",
    "horizon": ["medium", "long"], "magnitude": "lower displacement from San Francisco",
-   "source": "Diamond, McQuade and Qian (2019), AER 109(9)", "confidence": "high",
-   "note": "variable not covered by the thin-slice rule base"},
+   "source": "Diamond, McQuade and Qian (2019), AER 109(9)", "confidence": "high"},
   {"id": "F-3", "actor_class": "landlords.controlled", "variable": "quantity_supplied", "finding_type": "effect", "sign": "decrease",
    "horizon": ["long"], "magnitude": "rental housing supply of treated buildings down about 15%",
    "source": "Diamond, McQuade and Qian (2019), AER 109(9)", "confidence": "high"},
@@ -27,6 +26,7 @@
   {"assumption": "enforced", "held": true, "evidence": "Treated tenants stayed longer, which requires the limit to be applied (F-1)."},
   {"assumption": "alternative_uses", "held": true, "evidence": "Conversions and redevelopment observed (F-4)."},
   {"assumption": "nontransferable", "held": true, "evidence": "Vacancy decontrol; tenancies not assignable."},
+  {"assumption": "would_leave", "held": true, "evidence": "Treated tenants were less likely to leave San Francisco (F-2), which needs some to have left otherwise."},
   {"assumption": "substitutes", "held": null, "evidence": "Not studied directly."}
  ],
  "confounders": [

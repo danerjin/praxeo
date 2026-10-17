@@ -1,4 +1,4 @@
-% Thin-slice rule base: price ceilings (handbook catalog 1.2, family PC).
+% Thin-slice rule base: price ceilings (handbook catalog 1.3, family PC).
 % Input facts, written by praxeo/engine.py from the policy record:
 %   ceiling(C).                     component C is a price ceiling
 %   bound(C, Actor). protected(C, Actor). excluded(C, Actor).
@@ -47,6 +47,12 @@ turnover_falls(C) :- excess_demand(C), holds(nontransferable(C)), not exception(
 fired(pc_7, turnover_falls(C), excess_demand(C))   :- turnover_falls(C).
 fired(pc_7, turnover_falls(C), nontransferable(C)) :- turnover_falls(C).
 effect(turnover_falls(C), P, "turnover", decrease, medium, invisible, "B") :- turnover_falls(C), protected(C, P).
+
+% PC-21: tied to a place and not portable -> insiders who keep the unit leave the area less.
+stay_in_area(C) :- turnover_falls(C), holds(would_leave(C)), not exception(pc_21, C).
+fired(pc_21, stay_in_area(C), turnover_falls(C)) :- stay_in_area(C).
+fired(pc_21, stay_in_area(C), would_leave(C))    :- stay_in_area(C).
+effect(stay_in_area(C), P, "relocation_out_of_area", decrease, medium, invisible, "B") :- stay_in_area(C), protected(C, P).
 
 #show holds/1.
 #show fired/3.

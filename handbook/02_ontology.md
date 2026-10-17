@@ -124,6 +124,7 @@ Every consequence names one variable from this list. Add a variable only by edit
 | `home_production` | Goods or services produced by a household for its own use or to give away. |
 | `consumption` | Spending by a household on present goods (as distinct from `saving`). |
 | `job_changes` | Rate at which members of an actor class change jobs, including moves that require changing home. |
+| `relocation_out_of_area` | Rate at which members of an actor class move their home out of the area (city, region) the policy covers (1.3). |
 
 **Production, capital and entry**
 

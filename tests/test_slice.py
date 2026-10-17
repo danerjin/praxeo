@@ -19,7 +19,7 @@ WE1 = ROOT / "cases" / "we001_riverton"
 
 def _assumptions(p=0.9, **over):
     out = {}
-    for atom in ("binding", "enforced", "alternative_uses", "nontransferable", "substitutes"):
+    for atom in ("binding", "enforced", "alternative_uses", "nontransferable", "would_leave", "substitutes"):
         out[f"{atom}(c1)"] = Assumption(id=f"{atom}(c1)", text=atom, assumption_class="other", p=over.get(atom, p))
     return out
 
@@ -38,6 +38,7 @@ def test_engine_derives_ceiling_consequences():
     assert ("tenants.prospective", "excess_demand", "increase") in got
     assert ("landlords.controlled", "quantity_supplied", "decrease") in got
     assert ("tenants.controlled", "turnover", "decrease") in got
+    assert ("tenants.controlled", "relocation_out_of_area", "decrease") in got
     assert all(c.reported for c in cons)
 
 
@@ -135,7 +136,8 @@ def test_end_to_end_fixture(tmp_path):
 def test_consistent_with_worked_example_we001():
     """Every engine consequence for WE-001's record should appear in WE-001's consequence list,
     except the documented vocabulary divergence (the handbook calls the outsiders' price
-    `price_substitute`, the engine and the SF outcome card call it `price_paid`)."""
+    `price_substitute`, the engine and the SF outcome card call it `price_paid`) and PC-21,
+    which was added to the catalog after WE-001 was written."""
     text = (WE1 / "policy.txt").read_text()
     record = parser.parse_fixture(WE1 / "record.json")
     pred = predict(text, record, FixtureDecider(WE1 / "answers.json"))
@@ -147,7 +149,8 @@ def test_consistent_with_worked_example_we001():
         cells = [c.strip() for c in line.strip("|").split("|")]
         if len(cells) > 4 and re.match(r"C-\d+", cells[0]):
             rows.add((cells[1].split(" ")[0], cells[2].split(" ")[0], cells[3]))
-    known = {("tenants.prospective", "price_paid", "increase")}
+    known = {("tenants.prospective", "price_paid", "increase"),
+             ("tenants.controlled", "relocation_out_of_area", "decrease")}  # PC-21 is newer than WE-001
     for c in pred["consequences"]:
         key = (c["actor_class"], c["variable"], c["sign"])
         assert key in rows or key in known, key

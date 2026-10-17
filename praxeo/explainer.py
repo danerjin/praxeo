@@ -10,6 +10,7 @@ RULE_TEXT = {
     "PC-5": "owners move resources to uses whose yield the ceiling does not cap",
     "RS-5": "owners move units out of the rule's reach",
     "PC-7": "the benefit is tied to staying put and cannot be sold, so holders move less",
+    "PC-21": "leaving the area forfeits the benefit, and fewer holders are priced out, so they leave the area less",
 }
 
 SIGN_WORD = {"increase": "rises", "decrease": "falls", "ambiguous": "may move either way", "no_change": "does not change"}

@@ -1,4 +1,4 @@
-# 4. Rule catalog 1.2: patterns
+# 4. Rule catalog 1.3: patterns
 
 This file holds the **patterns**: derived results for recurring situations. They rest on the **core rules** in `04a_core_rules.md`, which are the universal calculus. Every pattern below carries a **Derivation** line that shows which core rules it instantiates and how; a pattern adds no reasoning of its own beyond that derivation and the premises it names. If a pattern and a direct derivation from the core rules ever disagree, the derivation wins and the pattern is corrected.
 
@@ -16,6 +16,8 @@ Each pattern is one reusable inference. Format:
 Every conclusion below is stated against the no-policy counterfactual (CR-12, 1.0). Where a pattern says "relative to" anything else, re-sign it before use.
 
 Patterns are deliberately small. A full analysis chains several of them, and each link is reviewed on its own.
+
+**Changes in 1.3.** New: PC-21 (insiders leave the area less), placed after PC-7, which it extends; new ontology variable `relocation_out_of_area`. It comes from a recall miss in the Phase 2 thin slice (`praxeo/`): no pattern concluded anything about protected tenants leaving the city. It has one use so far.
 
 **Changes in 1.2.** From WE-066 (a school's e-bike ban): rules made by private bodies. RS-7 and OC-3 now cover private rule-makers and their budgets; RS-16 covers goods converted into the substitute and a cheaper substitute of the substitute. New ontology terms (rule maker, stated aim, private rule, members, rival providers, membership, trips), core-rule notes on private rules (CR-1, CR-2, CR-5, CR-8), and a report rule for stated aims out of scope.
 
@@ -500,6 +502,15 @@ Opportunity costs are recorded as signed changes in variables (`02_ontology.md`,
 - **Tier** B. **Visibility** invisible. **Horizon** medium.
 - **Builds on:** LW-2, LW-5.
 - **Derivation:** CR-3 (giving up the good now forfeits the gap between controlled and market price) and CR-4.
+
+### PC-21 Insiders leave the area less
+- **If:** PC-7 holds for a good tied to a place (a controlled tenancy in a city), and the protected buyers would not get an equal benefit at a destination outside the area.
+- **Then:** for `buyers.current` who keep the covered unit, `relocation_out_of_area` decrease. Two routes give the same sign: leaving forfeits the gap between the controlled and the market price (as in PC-7); and fewer of them are priced out, since without the policy some would have left the area when their price rose to the market level. The sign holds for insiders who keep the unit. Insiders displaced by conversion or withdrawal (PC-5, RS-5) are a separate subclass whose sign runs the other way; the total for the class is a CR-12 comparison and needs a premise on the share of units withdrawn. The pattern does not sign the area's population: outsiders who cannot get a unit settle elsewhere (PC-3, RS-4).
+- **Assumes:** without the policy, some insiders would have left the area, priced out or for opportunities elsewhere (`mobility`); the benefit is not portable to the destination (`other`).
+- **Unless:** the benefit is portable (a voucher, a control that also covers the destination); the ceiling does not bind (PC-1).
+- **Tier** B. **Visibility** invisible. **Horizon** medium to long.
+- **Builds on:** LW-2, LW-5, PC-7, RS-11.
+- **Derivation:** CR-3 (moving away now also costs the forfeited gap) and CR-4 (x: leave, y: stay), against the no-policy price path (CR-12, 1.0). Added in 1.3 from the Phase 2 thin slice (San Francisco 1994, outcome card finding F-2), after one use; a worked example should confirm it.
 
 ### PC-8 Spillover to uncontrolled substitutes
 - **If:** a binding `price_ceiling` or `price_floor` covers part of a market, and an uncontrolled substitute or segment exists (recorded market relation).
