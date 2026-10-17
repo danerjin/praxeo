@@ -57,3 +57,19 @@ def capitalized_loss(gaps: list[Result], rate, duration_years) -> Result:
     return Result("capitalized_loss", Interval(pv("lo", r.hi, d.lo), pv("hi", r.lo, d.hi)), "M0",
                   [f"discount rate {r}", f"expected duration {d} years", "gaps as given"],
                   "Borne by owners when the policy became expected (CR-7c); later buyers pay the lower price.")
+
+
+def present_value(stream, rate, years: int) -> Result:
+    """Present value of a constant yearly amount (a range) for `years`, discounted at `rate` (a range).
+    Gives the value of a license or quota (the yearly rent it earns) or of a lasting tax or subsidy (CR-7c)."""
+    a, r = Interval.of(stream), Interval.of(rate)
+    if r.lo <= -1:
+        raise ValueError("discount rate must be above -100%")
+    if a.lo < 0:
+        raise ValueError("give the stream as a positive amount; sign it in the caller")
+
+    def annuity(r_):
+        return years if r_ == 0 else (1 - (1 + r_) ** -years) / r_
+
+    return Result("present_value", Interval(a.lo * annuity(r.hi), a.hi * annuity(r.lo)), "M0",
+                  [f"yearly amount {a}", f"discount rate {r}", f"{years} years"])

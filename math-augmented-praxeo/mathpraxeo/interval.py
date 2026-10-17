@@ -21,7 +21,11 @@ class Interval:
 
     @classmethod
     def of(cls, x) -> "Interval":
-        return x if isinstance(x, Interval) else cls.point(float(x))
+        if isinstance(x, Interval):
+            return x
+        if isinstance(x, (tuple, list)):
+            return cls(float(x[0]), float(x[1]))
+        return cls.point(float(x))
 
     def __add__(self, o):
         o = Interval.of(o)

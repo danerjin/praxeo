@@ -14,4 +14,5 @@ Assumptions, by consequence:
 - C-9 quantity_supplied (year 10): price held [0.1453, 0.4161] below clearing; supply elasticity [0.3, 1] at the relevant horizon. **First order is strained: the gap reaches 42%, beyond 15%; treat the range as indicative only.**
 - C-20 asset_value (at announcement): discount rate [0.04, 0.08]; expected duration [5, 15] years; gaps as given. **Borne by owners when the policy became expected (CR-7c); later buyers pay the lower price.**
 
+
 Gap path (market minus capped rent, in units of today's rent): y1 [0.03, 0.07], y3 [0.09273, 0.225], y5 [0.1189, 0.3622], y10 [0.1952, 0.8185], y15 [0.2897, 1.491]
