@@ -2,7 +2,7 @@
 
 How to analyze the consequences of a policy praxeologically, written so that a newcomer can follow it and a machine can later encode it. This is the Phase 1 deliverable of the project plan (`../Praxeology_AI_Project_Plan_v3.md`, Section 4).
 
-**Status:** draft 1.0 (12 core rules; catalog 1.0, 103 derived patterns; core rules tested by blind re-runs of all 55 examples), with 55 worked examples (WE-026 to WE-035 probe parts of the method the first 25 did not test; WE-036 to WE-045 and WE-046 to WE-055 are held-out tests of catalogs 0.8 and 0.9), written before any expert review. Gaps found in the worked examples have been closed or turned into questions for the experts; see `06_gaps.md`. Every rule, tier decision and source pointer is a proposal. Citations have been checked once against the texts; `07_sources.md` records how, and which still need a direct check.
+**Status:** draft 1.1 (12 core rules; catalog 1.1, 105 derived patterns; core rules tested by blind re-runs of all 65 examples), with 65 worked examples (WE-026 to WE-035 probe parts of the method the first 25 did not test; WE-036 to WE-065 are held-out tests of catalogs 0.8, 0.9 and 1.0), written before any expert review. Gaps found in the worked examples have been closed or turned into questions for the experts; see `06_gaps.md`. Every rule, tier decision and source pointer is a proposal. Citations have been checked once against the texts; `07_sources.md` records how, and which still need a direct check.
 
 ## How to use it
 
@@ -19,8 +19,8 @@ To analyze a policy, work through `03_workflow.md` step by step, using `template
 | `04_rules.md` | Rule catalog 1.0, 103 patterns: each with its derivation from the core rules. Patterns cover generic responses, opportunity-cost and time rules, and rules for the three version 1 families (price controls; taxes, tariffs and subsidies; licensing, quotas and prohibition), plus dominance rules. |
 | `05_examples/` | 65 fully worked analyses: WE-001 to WE-025 (the core set, from the broken window to a multi-part housing bill, with three repeals), WE-026 to WE-035 (gap-probing cases) and WE-036 to WE-065 (held-out tests of catalogs 0.8, 0.9 and 1.0). Listed in `06_gaps.md`, 6.4. |
 | `06_gaps.md` | Gaps the examples found and how each was resolved, questions that need an expert decision, and next steps. |
-| `05_examples_core/` | WE-001 to WE-055 re-derived blind from the core rules alone, each with a comparison against the pattern-based version. |
-| `08_core_rerun_report.md` | Report of the four rounds of that test: method, results (the core rules derived every valid claim in every round), the patterns and recurring errors each exposed, and the changes made. |
+| `05_examples_core/` | WE-001 to WE-065 re-derived blind from the core rules alone, each with a comparison against the pattern-based version. |
+| `08_core_rerun_report.md` | Report of the five rounds of that test: method, results (the core rules derived every valid claim in every round), the patterns and recurring errors each exposed, and the changes made. |
 | `07_sources.md` | Editions, short forms and the verification status of every citation. |
 | `templates/analysis_template.md` | Blank analysis form following the workflow. |
 | `../tools/check_handbook.py` | Consistency checker for the worked examples (sections, rule IDs, variables, signs, assumptions). |

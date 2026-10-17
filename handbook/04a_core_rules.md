@@ -60,6 +60,9 @@ A policy does not change anyone's ranking of ends, except through what it tells 
 **1.0 clarifications.**
 - *Notches.* A threshold at which a burden jumps on the whole base (a levy on all payroll once payroll passes a line) is a notch, not a range: record the operation on each side, and the jump itself as a cost of crossing (CR-4). A dated operation that repeats (each quota year) is recorded with its period.
 
+**1.1 clarifications.**
+- A line on a ratio (recycled share, land share) can be crossed by moving either term; record both routes. A transfer avoided only by leaving the jurisdiction is operation 4 for those who stay and operation 3 on the option of leaving. An option removed but restored at the other party's election (a buy-out the worker may choose) is recorded as removed, with the restoring option as operation 2 for the party who holds the election.
+
 ### CR-2 Choice
 
 **Statement.** Each actor chooses, from the options they believe open, the one they expect to serve their most highly ranked end. What an actor chooses reveals that they ranked it above the alternatives open at the time (demonstrated preference).
@@ -93,6 +96,9 @@ A loss by the actor's own ranking (a) is not the same as a fall in their spendin
 **1.0 clarifications.**
 - A refund capped at the charge paid can exceed the cost of the act refunded per unit but never in total. Where the standard is paid to a provider, the position against it that matters is the provider's.
 
+**1.1 clarifications.**
+- A burden attached to an option that exists only under the policy (obligations that come with a newly sold license) is no loss against the counterfactual; the counterfactual is not having the option at all. The note on lost receipts and saved outlays applies to every seller who loses sales, including to a better offer. Where a saving comes back through another term of the same contract (a deductible, a premium share), net it before signing means.
+
 ### CR-4 Response at the margin
 
 **Statement.** Suppose a change makes option x worse relative to option y for an actor (x costs more, brings less, or y improves). Then:
@@ -124,6 +130,10 @@ The mirror case (x made better) reverses every direction.
 
 **1.0 clarifications.**
 - *Lobbying, generally.* The 0.9 note on lobbying in repeals applies to any policy: whenever the question the policy settles would have been contested on the counterfactual path (residents campaigning for a curfew, incumbents for a license), lobbying by each side is signed against that contest, and needs a premise.
+
+**1.1 clarifications.**
+- *Several changes in means.* Where a policy changes an actor's means in more than one way (a payment and a consumption tax), net them first, by arithmetic or with a premise, then apply "a change in means alone" to the net. The exception's means effect can run either way, with the sign of the net.
+- *The same question.* For lobbying (1.0), "the same question" is the question of the policy field that was contested on the counterfactual path (support for farmers, Sunday opening), not the exact provision. Lobbying over provisions that exist only under the policy (the reading of a new clause) is an increase.
 
 ### CR-5 Exchange
 
@@ -180,6 +190,11 @@ The full price, meaning the money price plus everything else given up, moves tow
 - *A quota on a rate.* Where a quota fixes the quantity that pays a low rate and further units pay a higher one (a tariff-rate quota), the price is set at the margin by the higher rate, as long as demand at the old price exceeds the quota.
 - *Small effects are signed.* Where a chain moves a price in a wider market by an amount that may be small, record its sign; do not leave it unsigned as negligible. Its size goes in the evidence column.
 
+**1.1 clarifications.**
+- *A third-party payer.* A cap on what the buyer pays, with a third party paying the rest, is not a ceiling on the price the seller receives: there is no shortage from it, and the seller's receipt is set by the payer's terms. Where the payer pays the seller's own posted price up to a limit, the posted price is drawn toward the limit.
+- *Margins the policy creates.* A legal exit the policy itself creates (opting out, moving to an exempt form) is one of the margins to which displaced pressure can go.
+- *Labor demand.* Where demand for a seller's output changes, the labor it hires moves as a group (`employment`, `hours_worked`), not `employment` alone, unless a premise or a new activity (OC-5, 0.8) says otherwise.
+
 ### CR-7 Equalization across uses
 
 **Statement.** Wherever a means (labor, capital, money, land, a purchase, an activity, a moment in time) can be moved between uses that serve the same end, its owners move it from the use that yields less to the use that yields more, until the difference in yield at the margin is no greater than the cost of moving. Hence:
@@ -208,6 +223,10 @@ The full price, meaning the money price plus everything else given up, moves tow
 
 **1.0 clarifications.**
 - *Which stock.* Where a policy-created permission and the capital it allowed come apart (a license and the store using it), the permission's value follows the legal count, and changes on the date the count changes; the capital's value follows the stock of capital. A permission that can no longer be sold after a repeal keeps only a value by its holder's own ranking (CR-7, 0.9).
+
+**1.1 clarifications.**
+- *A right sold at creation.* Where the state sells a right it creates (an auction), the price goes to the state and only the value above the price to the winner (CR-5c, CR-8b); "captured by whoever receives it at creation" applies to rights given away.
+- *Alternatives taxed too.* Where a tax or subsidy reaches the buyers' alternatives as well as the asset (a wealth tax on homes, shares and cash alike), the asset's value moves with its return relative to those alternatives as the policy leaves them, not with its own return alone.
 
 ### CR-8 Conservation of means
 
@@ -243,6 +262,9 @@ The full price, meaning the money price plus everything else given up, moves tow
 **1.0 clarifications.**
 - *Receipts into the same budget.* Where fees or fines go into the budget that funds the policy, record them and the outlay as two items of the budget (CR-12, two items), and the net as a separate consequence, `ambiguous` unless arithmetic or a premise settles it.
 - *Statutory rights.* The voiding note applies to rights held under statute (a license, a privilege) as well as under contract: the holder loses the right's value; who gains it depends on who now obtains what the right excluded, and may be spread over time.
+
+**1.1 clarifications.**
+- *A dedicated fund.* Where a dedicated fund is fed from the general budget, say whether the two are treated as one budget for netting; record each fund's items and the net under that choice.
 
 ### CR-9 Propagation
 
@@ -326,6 +348,12 @@ The value to anyone of a means depends on the ends it serves and on what it is u
 - *1.0. What the response argument needs.* The response argument shows that yields are equalized, not that the old price returns. It gives `increase` (or `decrease`) for a price only with a premise that cost per unit does not fall as the activity contracts (constant or rising cost): with fixed costs per firm, contraction can restore equal yields at a higher price. State which total the argument bounds (new and imported cars together, not new cars alone). Where the response is a contraction by rivals, "partial" means that their inputs can be shifted to other uses only gradually. The argument covers one response; a second response to the same change, a new competitor attracted by the policy, or a stock built in advance that holds the price for a while, is a second chain to combine.
 - *1.0. Tiers and dominance.* A dominance premise settles a sign; it does not raise a tier. A Tier C chain that is itself kind 3 makes the combined Tier C sign `ambiguous` unless the dominance premise covers both of its directions.
 - *1.0. The baseline of patterns.* Every pattern's conclusion is against the no-policy counterfactual. Where a pattern compares with anything else (another policy, the allocation before trading, uniform enforcement, a license on one requirement), re-sign its conclusion against the counterfactual before using it.
+
+**1.1 clarifications.**
+- *1.1. The response argument in every direction.* The 1.0 note is written for a contraction raising a price. The mirror cases hold: an expansion that lowers a price is bounded by the old price from above, with a premise that cost per unit does not fall as the activity expands; a price fall is bounded the same way. The argument may bound a counterfactual total (all installations, new and imported cars). Responses within the named total (imports answering the same price) are part of the response; responses through other markets are second chains.
+- *1.1. Items that cancel.* Where two items of a variable cancel by construction and nothing else moves the variable, CR-12f applies and no total is recorded. Where a third item remains, record the items and the total. Per-window signs (h) may be summed into a whole-period total under the same rule.
+- *1.1. Group members are not chains.* A member of an `at_least_one` group cannot be used as a signed chain in another combination; only the group as a whole carries a sign.
+- *1.1. Ratios.* Arithmetic under (e) covers ratios as well as levels where the figures are in the case.
 
 ---
 

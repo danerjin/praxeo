@@ -302,3 +302,40 @@ Of 488 consequences compared, 344 were matched; 314 of these (91%) agree in sign
 - **Workflow and ontology.** Final check item 9 (the baseline of every pattern); variables `stock_age`, `applications`.
 - **WE-046 to WE-055 corrected** against their comparisons under catalog 1.0. Each correction was checked against the core rules before it was applied; each example has a section "Corrections after the core-only comparison", and its part (e) "Test of 0.9" is kept as the record of the test, with a "Re-run note" where the comparison contradicted a verdict. One consequence was removed (WE-050 C-6, a change of good recorded as a price change). Examples of the 1.0 rules at work: bus crowding below capacity moved to Tier C (WE-046); the importers' count re-based on no policy under EN-13 (WE-047); small effects now signed (WE-047, WE-051, WE-054); response arguments state their total and their constant-cost premise throughout.
 
+
+---
+
+# Fifth round: the held-out test of catalog 1.0, WE-056 to WE-065
+
+WE-056 to WE-065 were written with the catalog frozen at 1.0 (`06_gaps.md`, 6.2h), re-run blind from the core rules, and compared by agents that had written neither version. The re-run agents all reported keeping to the blind protocol.
+
+## Results
+
+| Case | M | V | S | OP | OC | P | K | A | E | J |
+|---|---|---|---|---|---|---|---|---|---|---|
+| WE-056 insulin cap | 24 | 9 | 5 | 13 | 4 | 1 | 0 | 0 | 16 | 5 |
+| WE-057 wealth tax | 20 | 8 | 3 | 9 | 5 | 0 | 0 | 0 | 13 | 4 |
+| WE-058 land value tax | 32 | 7 | 3 | 8 | 8 | 1 | 0 | 1 | 11 | 6 |
+| WE-059 right to repair | 23 | 6 | 6 | 5 | 7 | 1 | 0 | 0 | 13 | 4 |
+| WE-060 basic income | 29 | 12 | 7 | 6 | 14 | 0 | 0 | 1 | 23 | 3 |
+| WE-061 gig workers | 20 | 12 | 1 | 7 | 6 | 1 | 0 | 0 | 11 | 2 |
+| WE-062 packaging tax | 30 | 15 | 2 | 13 | 8 | 2 | 0 | 0 | 21 | 0 |
+| WE-063 Sunday trading repeal | 17 | 13 | 2 | 13 | 9 | 1 | 0 | 0 | 23 | 1 |
+| WE-064 spectrum auction | 23 | 6 | 5 | 8 | 6 | 0 | 0 | 0 | 14 | 5 |
+| WE-065 crop payments | 18 | 11 | 1 | 11 | 6 | 1 | 0 | 0 | 10 | 7 |
+| **Total** | **236** | **99** | **35** | **93** | **73** | **8** | **0** | **2** | **155** | **37** |
+
+Of 536 consequences compared, 370 were matched; 335 of these (91%) agree in sign. **K is 0 for the fifth time.** "Pattern version wrong" stayed low (8), and every one of those was an analyst misapplying a pattern, not a pattern giving a wrong sign as written.
+
+## What the round shows
+
+- **The baseline rule (1.0) works in use but the pattern texts lagged.** Analysts re-signed RS-17, RS-23, PC-17 and EN-13 against the counterfactual, as the rule asks; 1.1 rewrites those clauses.
+- **Failures confirmed by the core versions:** SB-4 (a tax that reaches buyers' alternatives), PC-1 and PC-16 (a cap on the buyer's share with a third-party payer), TX-7 (a matched domestic tax), TX-9 (revenue returned to the payers), EN-14 (a standard buyers value), PC-17's buy-out clause (a payment to the counterparty).
+- **Core-rule wording** that both versions found hard: the response argument for an expansion or a price fall; items that cancel against CR-12f; using a group member as a chain; "the same question" for lobbying; a right sold at creation; a third-party payer.
+- **No calculus gaps.** The core versions raised fifteen; the comparisons judged each to be a premise, a recording limit, vocabulary, or out of scope.
+- **The analysts' own verdicts were mostly confirmed;** a few "worked" verdicts were contradicted, nearly all for an uncombined opposing chain.
+
+## Changes made in response: catalog 1.1
+
+- **Core rules.** CR-12: the response argument in every direction; items that cancel; group members are not chains; ratios. CR-6: a third-party payer; margins the policy creates; labor demand as a group. CR-7: a right sold at creation; alternatives taxed too. CR-4: several changes in means; the same question. CR-1, CR-3, CR-8: lines on ratios, burdens inside a new option, dedicated funds.
+- **Patterns.** Re-based: RS-17, RS-23, PC-17, EN-13. Corrected: SB-4, PC-1, PC-16, TX-7, TX-9, EN-14, SB-8, TX-1. Widened: twelve more. New: PC-20. Promoted: RS-24. 105 patterns.

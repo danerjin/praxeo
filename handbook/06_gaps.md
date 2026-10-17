@@ -189,7 +189,7 @@ Ten new examples (WE-026 to WE-035) were written to probe parts of the method th
 | Compensating differential from a non-wage term (promoted to RS-22 in 1.0) | WE-032 | CR-5c, CR-7a |
 | Debt-funded transfer in two windows (promoted to OC-9 in 0.9) | WE-033 | CR-8, CR-10, CR-12g |
 | Ban on a restraint over carryable training; retroactive voiding | WE-034 | CR-5c, CR-7c, CR-10b |
-| Fixed cost per item reduces variety | WE-035 (WE-040's use was invalid) | CR-4b with a lumpy cost |
+| Fixed cost per item reduces variety (promoted to RS-24 in 1.1; second use WE-059) | WE-035 (WE-040's use was invalid) | CR-4b with a lumpy cost |
 | Selection under a uniform term (promoted to RS-23 in 1.0) | WE-029 | CR-5c, CR-4 per counterparty |
 | Complaint-only enforcement (promoted to RS-20 in 0.9) | WE-029 | CR-4 (expected cost of breach differs by counterparty) |
 
@@ -253,6 +253,10 @@ Ten new examples were written with the catalog frozen at 0.9, on kinds of policy
 **Candidate patterns used validly a second time** (and so to be promoted, subject to a blind re-run): high-grading under a physical-unit cap (WE-047, WE-054), compensating differential from a non-wage term (WE-046), selection under a uniform term (WE-049), deposit-refund (WE-048), scheduled tightening faster than the trend (WE-050), tariff-like burden without a tax (WE-053). Proposed new clauses: a selection clause for PC-19; a notch/kink distinction for RS-17.
 
 **Re-run and catalog 1.0.** The blind core-only re-run of WE-046 to WE-055 found K = 0 again and confirmed the failures above. It found one more pattern compared with the wrong baseline (EN-13), showed that "record as negligible" (OC-8, EN-6) conflicts with CR-6, and settled that congestion below capacity is a Tier C `shared_facility` chain, not CR-6 rationing. Of the six claimed second uses, five were valid; "tariff-like burden without a tax" was not (WE-053 is a different move), so it stays a candidate. Catalog 1.0 applies the fixes (`08_core_rerun_report.md`, fourth round).
+
+## 6.2h Held-out test of catalog 1.0 (WE-056 to WE-065)
+
+Ten examples were written with the catalog frozen at 1.0 and then re-run blind from the core rules (`08_core_rerun_report.md`, fifth round). No calculus gaps were found: every claimed gap was judged a premise, a vocabulary item, a recording limit, or out of scope. The 1.0 baseline rule caught most pattern problems in use, but the pattern texts still needed re-wording (RS-17, RS-23, PC-17, EN-13). New failures: SB-4 when a tax reaches buyers' alternatives, PC-1 and PC-16 with a third-party payer, TX-7 with a matched domestic tax, TX-9 when revenue returns to the payers, EN-14 for a standard buyers value. "Fixed cost per item reduces variety" had a valid second use and is promoted (RS-24). New candidates (one use each): allocation of a right by sale (WE-064), a mandated add-on to an unregulated price (WE-061), a tax on the value of a fixed factor (WE-058), a payment counted in tonnes shifting output to lower-value tonnes (WE-065). Catalog 1.1 applies the fixes.
 
 ## 6.3 Questions for the experts
 
@@ -371,3 +375,13 @@ The metamorphic checks in the three repeal examples (WE-022 to WE-024) are alrea
 | WE-053 | Data-localization requirement | RS-17, TX-8, RS-16 |
 | WE-054 | Airport night curfew with tradable slots | EN-12, EN-13, RS-8 |
 | WE-055 | Licensing of home inspectors | EN-1 to EN-4, EN-11, RS-20 |
+| WE-056 | Insulin out-of-pocket cap with a third-party payer | PC-20, CR-6 |
+| WE-057 | Wealth tax above 10 million with an exit charge | RS-17, TX-6, SB-4 |
+| WE-058 | Revenue-neutral shift to a land value tax | TX-2, CR-7c, TS-10 |
+| WE-059 | Right to repair | PC-17, PC-18, RS-24 |
+| WE-060 | Basic income funded by VAT | OC-1, TX-9, CR-4 |
+| WE-061 | Gig-worker reclassification with a buy-out | PC-17, PC-10, RS-23 |
+| WE-062 | Plastic packaging tax with a recycled-content exemption | TX-2, TX-7, RS-21 |
+| WE-063 | Repeal of a Sunday-trading ban | RS-9, RS-8, TS |
+| WE-064 | Spectrum auction with a build-out obligation | EN-13, PC-17, CR-7c |
+| WE-065 | Crop deficiency payments | SB-2, CR-8, EN-12 |
