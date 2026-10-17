@@ -1,0 +1,349 @@
+# WE-057 An annual tax on household net worth above a threshold, with formula valuation of unlisted shares and an exit charge
+
+Analyst: draft (Handbook 1.0, held-out test)  |  Rule catalog version: 1.0  |  Status: awaiting expert review
+
+A stylized policy in a fictional country. Several real countries have taxed net wealth, and some still do; this one is not modeled on any of them. It is a held-out test of catalog 1.0 on a case none of the 1.0 changes were drawn from. It probes RS-17's 1.0 clause on notches and kinks (the annual tax is a kink, since only the excess over the threshold is taxed; the exit charge, which applies to all of an emigrant's gains once the household has been above the threshold, is a notch at the same line) together with CR-1's 1.0 note on notches; TX-6 on saving; CR-7 on assets without a market price and on a valuation formula that departs from market value (unlisted shares at book value; pension rights); RS-5 (reshaping wealth into the forms the formula favors); RS-4 (emigration); RS-8's 1.0 clauses on timing before the start (14 months between announcement and the first valuation date, and an exit charge that applies only to departures after it); CR-12's 1.0 notes on what the response argument needs and on the baseline of patterns; and OC-1's 1.0 clause on receipts into the same budget. The unclear provision is whether pension rights count in net worth. The counterfactual throughout is **Ostrevia without the Act**: the same income, capital gains, gift and inheritance taxes, and the same rules on residence. Effects on inequality as such, and any effect on political influence, are outside the scope of version 1. The probabilities are illustrative; the evidence column says what a real analysis would cite.
+
+## 1. Policy record
+
+**Ostrevian Net Wealth Tax Act.** Ostrevia has about 9.2 million people in 4.0 million households; its currency is the mark (M). At market values, about 11,000 households have net worth above M 10 million, together about M 290 billion, of which about M 180 billion is above the threshold. Their wealth:
+
+| Asset | Market value | Note |
+|---|---|---|
+| Listed shares | M 87 bn (30%) | Ostrevian taxed households own about 8% of the domestic listed market; foreign investors 55%, pension funds and insurers 30%. |
+| Unlisted business shares | M 110 bn (38%) | The firms' book equity is about M 50 bn (about 45% of estimated market value). Unlisted firms are bought mostly by companies and private equity funds; families buy about a third by value. |
+| Real estate | M 49 bn (17%) | Main homes M 18 bn; other property M 31 bn. Taxed households buy about 45% by value of homes priced above M 3 million (about 14,000 homes); foreign buyers about 15%. |
+| Pension rights | M 20 bn (7%) | Executives' defined-benefit rights (at transfer value) and personal pension accounts. |
+| Cash and bonds | M 17 bn (6%) | |
+| Art, collectibles, other | M 7 bn (2%) | |
+
+About 6,000 further households have net worth between M 8 and 10 million as the Act measures it. About 120 households above M 10 million leave Ostrevia each year (retirement abroad, family); such a household pays on average about M 0.9 million a year in income and capital gains taxes.
+
+Existing taxes, unchanged on both paths: capital gains tax of 28% on realization; at death, heirs take assets at market value, with no tax on the gain. Gift and inheritance tax of 20% on amounts above M 1 million per recipient over a lifetime; gifts and bequests are taxed alike. Tax Code art. 44: assets transferred to a company the transferor controls are not treated as sold (the gain is deferred until the company's shares are sold). Small companies may carry investments at cost in their accounts. Personal pension accounts accept contributions of up to M 300,000 a year per person (up to M 50,000 deductible from income) and are locked until age 62. Defined-benefit rights cannot be assigned or used as collateral, but can be transferred, at a cash-equivalent value, to another pension scheme.
+
+Valtria, the neighboring country two hours away by train, shares the language, has free movement of residents with Ostrevia, no wealth tax, and no tax on gains on shares held over a year. Quellin, the other neighbor, taxes wealth at 0.5% above a higher threshold.
+
+The Finance Minister announced the tax, with the draft bill, in the budget speech of 1 November 2026. Parliament passed it on 18 March 2027. The first valuation date is 31 December 2027, 14 months after the announcement; returns are due by 30 April and payment by 30 June of the following year. No expiry.
+
+| Field | Value | Source sentence |
+|---|---|---|
+| Jurisdiction (and what lies just outside) | Households resident in Ostrevia, on worldwide assets. Just outside: Valtria (no wealth tax, free movement, same language); Quellin (wealth tax at 0.5%). | §2, §3. |
+| Announced / enacted / effective / expires | Announced 1 November 2026; enacted 18 March 2027; first valuation date 31 December 2027; exit charge for departures on or after 1 January 2028; no expiry. | §1, §15. |
+| Enforcement (who, penalties, resources) | Ostrevian Tax Agency: self-assessment, with a new valuation unit costing about M 45 million a year from the general budget; it plans to audit about 10% of returns a year. Penalty: 50% of the tax understated. Ostrevia exchanges financial account information with 110 countries. | §10, §11. |
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Annual tax | `capital_tax` | Household net worth on 31 December each year | Resident households (a person, a spouse or registered partner, and minor children) | 1% of net worth above M 10 million (a kink: only the excess is taxed). The threshold is fixed in marks. | Household goods and personal effects up to M 100,000. §5(2): "rights that the holder cannot assign, surrender or borrow against are valued at nil" (U1). |
+| K2 Valuation rules | Part of K1 | — | — | §4: listed securities at the closing price; real estate at market value as assessed by the taxpayer, subject to audit; art and other assets at market value as assessed by the taxpayer; unlisted shares at "the holder's proportion of the company's net assets as shown in its most recent audited balance sheet". Debts deductible. | — |
+| K3 Exit charge | `capital_tax` (on unrealized gains) | Persons ceasing to be resident on or after 1 January 2028 | Members of a household liable under K1 on any of the three valuation dates before departure | §12: capital gains tax at 28% "as if all assets had been sold at market value on the day before departure", payable in five yearly installments with interest. | Departures before 1 January 2028. |
+| K4 Revenue | Revenue use | K1, K3 | — | Paid into the general budget; no earmark. | — |
+
+Unclear provision:
+- **U1, pension rights.** §3 counts "all assets of the members of a household, wherever situated". §5(2) values at nil "rights that the holder cannot assign, surrender or borrow against". Pension rights cannot be assigned or borrowed against; a defined-benefit right can be transferred, at a cash-equivalent value, to another scheme, and a personal account can be moved to another provider. Reading U1-a: such a transfer is a surrender, so pension rights are not within §5(2) and count at their transfer value. Reading U1-b: a transfer between schemes is not a surrender (the holder receives no cash), so pension rights are valued at nil. The Agency has not ruled, and the two readings each have support in the parliamentary record. Readings get no probability; where a sign depends on U1, one sign per reading is given.
+
+**Figures.** Static base under the Act's own rules (unlisted shares at book value, before any response): about M 120 billion above the threshold under U1-a, about M 110 billion under U1-b, so a static projection of about M 1.2 billion or M 1.1 billion a year; the fiscal note uses M 1.1 billion. Valuing unlisted shares at book rather than market already removes about M 60 billion from the base: the effective rate on an unlisted holding is about 0.45% of its market value, against 1% on listed shares and cash and, under U1-b, 0% on pension rights. Holding companies: a portfolio with large unrealized gains moved into a company (art. 44) is carried at cost, so a listed portfolio bought for M 4 million and worth M 10 million is taxed on M 4 million. Splitting: a household with M 30 million that gives M 10 million to each of two adult children's households (gift tax about M 3.6 million, which a later bequest would have paid anyway) moves from a tax of M 200,000 a year to zero for the parents and zero for each child below the line. Exit charge: a departing household with M 6 million of unrealized gains pays about M 1.7 million; at the counterfactual rate of departures (120 a year), and if most were liable, receipts would be about M 0.2 billion a year. The Agency projects about 300 additional departures in the 14 months before the first valuation date.
+
+## 2. Classification
+
+| Component | Rothbard type | Binding? (assumption ID) | Rule families |
+|---|---|---|---|
+| K1 | Binary: a yearly payment to the state attached to holding wealth above a line (CR-1, operation 3 on the option of holding each mark above it; per range, CR-1 0.9: none below the line, 1% at the margin above). A kink, not a notch: crossing the line by one mark costs one hundredth of a mark a year. | Yes, for about 9,000 households as measured by the Act (A-1). | TX-1, TX-6, TX-9, TX-10, RS-3, RS-4, RS-5, RS-7, RS-8, RS-17 (1.0), CR-7, CR-7c, SB-4, OC-1 |
+| K2 | Part of K1: the valuation rules decide the tax per mark of market value on each form of wealth (1% on listed shares, cash and property as declared; about 0.45% on unlisted shares; a fraction on holding companies carried at cost; 0% or 1% on pensions per U1). | Yes. | RS-5, CR-4, CR-7a, CR-7 (0.9: assets without a market price) |
+| K3 | Binary: a charge attached to the option of leaving (CR-1, operation 3), dated 1 January 2028. It is a notch at the K1 line: a household liable on a valuation date pays on all its gains on departure; one just below pays nothing (CR-1, 1.0). | Yes, for liable households that leave (A-26). | RS-4, RS-8 (1.0), RS-11, RS-17 (1.0), CR-1 (1.0), CR-10a |
+| K4 | Binary: the revenue's use, the general budget, which also pays the Agency and loses other taxes from emigrants. | Yes. | OC-1 (1.0), OC-3, CR-8 (1.0), TX-10 |
+
+**Notch and kink at one line.** CR-1's 1.0 note asks for the operation on each side of a notch and the jump as a cost of crossing. For K1 the operation is none below the line and 1% of each mark above it, so there is no jump. For K3 the operation below the line is none, and above it, for a household that leaves within three years, 28% of all its unrealized gains: the jump is the whole exit charge (about M 1.7 million for the typical household with M 6 million of gains). The same line therefore carries a weak incentive to stay below (the kink: 1% a year on the excess) for households that will stay, and a strong one (the notch) for households that expect to leave.
+
+## 3. Actor classes
+
+| Actor class | Role | How its options change |
+|---|---|---|
+| `taxed_households` | Households above the line as the Act measures it | Pay 1% a year on the excess; face the exit charge on leaving. Split by response (CR-1, 0.7): those who reshape wealth, split it by gift, emigrate, or pay. |
+| `households_near_line` | About 6,000 households between M 8 and 10 million, and those above but close to the line | The kink above; the notch for those who may leave. |
+| `firm_owners` (`factor_owners.specific`) | Owners of unlisted firms above the line | Taxed on book value; choose whether to list, how to invest, how much to pay out. |
+| `adult_children` | Separate households who receive gifts | Each has its own threshold. |
+| `emigrants.window`, `emigrants.liable` | Households that leave before 1 January 2028, and liable households that leave later | Escape both taxes; or pay the exit charge. |
+| `prospective_residents.wealthy` | Wealthy foreigners who would have moved to Ostrevia | Would become liable on arrival. |
+| `owners.high_end_residential` | Owners of homes above M 3 million when the tax became expected | Their main buyers are taxed households. |
+| `holders.listed_shares` | Holders of Ostrevian listed shares | One class of holders (8%) faces the tax. |
+| `owners.unlisted_firms` (as sellers) | Owners selling unlisted firms | Some buyers face the tax on book value. |
+| `sellers.art` | Dealers and auction houses (a world market) | Taxed households may move wealth into self-assessed objects. |
+| `pension_holders.near_line` | Households whose pension rights carry them over the line under U1-a | Taxed on a right they cannot sell. |
+| `pension_providers` | Personal pension account providers | Under U1-b, a favored form. |
+| `intermediaries` | Tax advisers, valuers, company formation agents | New work. |
+| `neighboring_jurisdictions` | Valtria's border cities | Emigrants arrive. |
+| `general_budget`; `taxpayers`, recipients of state spending, future taxpayers | The state's budget and those it taxes and pays | Receives the tax and the exit charge; pays the Agency; loses emigrants' other taxes. |
+| `officials.enforcement` | The Tax Agency | Valuation unit; audits. |
+| `lobbying groups` | Family-business federation, advisers, pension industry, campaigners for the tax | Stakes in U1, the formula and the threshold. |
+| `workers.unlisted_firms` | Employees of family firms | Investment in their firms may change. |
+
+## 4. Direct effect
+
+| ID | Actor class | Variable | Sign | Horizon | Rules | Assumptions |
+|---|---|---|---|---|---|---|
+| C-1 | `general_budget` | `tax_revenue` (wealth tax) | increase | short (from June 2028) | TX-1, CR-8b | A-1 |
+| C-2 | `taxed_households` | `resources_available_other_uses` | decrease | short–long | TX-1, OC-1, CR-3 (a sum the household cannot avoid while it stays above the line), CR-8a | A-1 |
+| C-3 | `general_budget` | `tax_revenue_vs_static_projection` (against M 1.1–1.2 bn under the Act's own valuation rules) | decrease | short–medium | TX-9, TX-4, CR-12a, CR-12d | A-2 or A-5 or A-9 |
+
+C-1 and C-2 are what the Act's supporters expect. The revenue falls short of the static projection (C-3) through any of the responses in section 5: reshaping into holding companies (A-2), gifts to adult children (A-5) or departure (A-9); each suffices (CR-12d). The fall from market-value wealth (M 1.8 billion) to the projection under the Act's own rules (M 1.1–1.2 billion) is not a response but a definition of the base, and TX-9 is not used for it.
+
+## 5. Responses
+
+| ID | Actor class | Variable | Sign | Horizon | Rules | Assumptions |
+|---|---|---|---|---|---|---|
+| C-4 | `taxed_households` | `reclassification` (listed portfolios and investment property moved into holding companies carried at cost) | increase | short (from November 2026)–medium | RS-5, CR-4, CR-7a, CR-7 (0.9) | A-2 |
+| C-5 | `firm_owners` | `reclassification` (firms kept unlisted or taken private) | increase | medium | RS-5, CR-4, CR-7a | A-3 |
+| C-6 | `firm_owners` | `reclassification` (investment in expensed intangibles rather than booked assets) | increase | medium | CR-4, CR-7a, CR-7 (0.9) | A-4 |
+| C-7 | `taxed_households` | `reclassification` (savings moved into personal pension accounts) | U1-a: no_change; U1-b: increase | short–medium | RS-5, CR-4 | A-24 |
+| C-8 | `taxed_households`, `adult_children` | `reclassification` (wealth moved by gift to adult children's households), November 2026 to December 2027 | increase | short (window) | RS-17 (1.0: splitting), RS-5, RS-8 (1.0), CR-10a | A-5 |
+| C-9 | `taxed_households`, `adult_children` | `reclassification` (wealth moved by gift to adult children's households), 2028 on | ambiguous | medium–long | RS-17, RS-8, CR-12b | A-5 |
+| C-10 | `households_near_line` | `reclassification` (measured net worth placed just below M 10 million on valuation dates) | increase | short–medium | RS-17 (1.0: kink and notch; re-signed against the counterfactual), CR-1 (1.0), CR-4 | A-8 |
+| C-11 | `taxed_households` | `saving` (in taxed, market-valued forms) | decrease | long | TX-6, CR-4, CR-7a | A-7 |
+| C-12 | `taxed_households` | `saving` (total) | ambiguous | long | TX-6, CR-4 (exception), CR-12b | A-6, A-7 |
+| C-13 | `taxed_households` (`emigrants.window`) | `turnover` (departures abroad, November 2026 to December 2027) | increase | short (window) | RS-4, RS-8 (1.0), CR-10a, CR-4 | A-9 |
+| C-14 | `taxed_households` | `turnover` (departures abroad, 2028 on) | ambiguous | medium–long | RS-4, RS-8, RS-11, CR-4, CR-12b | A-9, A-11 |
+| C-15 | `prospective_residents.wealthy` | `turnover` (arrivals of households above the line) | decrease | medium | RS-4, CR-4 | A-12 |
+| C-16 | `taxed_households` | `legal_breach` (under-declared property and art values; undeclared foreign accounts) | increase | short–medium | RS-3, CR-4 | A-19 |
+| C-17 | `taxed_households` | `quantity_substitute` (art and collectibles bought) | increase | medium | CR-4, CR-7a, RS-3 | A-19, A-20 |
+| C-18 | `lobbying groups` | `lobbying_effort` (on questions that exist only under the Act: U1, the formula, the threshold, exemptions for family firms) | increase | short–medium | RS-7 (1.0), CR-4 (1.0), CR-12 (0.9) | A-21 |
+| C-19 | `pension_holders.near_line` | `resources_available_other_uses` | U1-a: decrease; U1-b: no_change | short–long | CR-1, CR-7 (0.9: an asset without a market price), CR-3 | A-25 |
+| C-20 | `pension_holders.near_line`, `taxed_households` | `compliance_cost` (valuing pension rights) | U1-a: increase; U1-b: no_change | short | CR-8c, TX-5 | none |
+
+**The formula and the favored forms (C-4 to C-7).** K2 sets a different tax per mark of market value on each form of wealth: 1% on listed shares, cash and declared property; about 0.45% on unlisted shares (book equity is about 45% of market value); less still on assets inside a company carried at cost; and, under U1-b, nothing on pension rights. By CR-7a, owners move wealth from the forms that bear more to those that bear less, until the difference at the margin is no greater than the cost of moving. That is RS-5 for each line the formula draws.
+- *Holding companies (C-4).* A portfolio with large unrealized gains, contributed to a company the household controls, is not treated as sold (art. 44), and the company may carry it at cost. The tax falls on the cost, not the market value. Formation costs and the loss of flexibility are small against the saving for large portfolios (A-2). This begins at once: the first valuation date is 31 December 2027, and what is moved before then is valued at cost on that date.
+- *Listing (C-5).* An owner whose firm is listed pays 1% on its market value; unlisted, about 0.45% on its book value. Owners close to a listing decision keep the firm private, and some take a listed firm private (A-3).
+- *Investment mix (C-6).* Inside an unlisted firm, a mark spent on a machine stays in book equity and is taxed; a mark spent on research, training or marketing is expensed and reduces book equity. The formula therefore makes the second cheaper for the owner (CR-4; A-4). This is a valuation formula, not a market price, changing the relative yield of two uses of the same means (CR-7a); CR-7's 0.9 clause on assets without a market price was read as covering it (Gaps found, (b) 2).
+- *Pensions (C-7).* Under U1-b, a mark moved into a personal pension account is valued at nil, so households above the line with room within the M 300,000 limit move savings there (A-24), at the cost of locking them until 62. Under U1-a the account counts at its value like any other asset; the formula draws no line here, and the derivation gives `no_change`.
+
+**Splitting by gift (C-8, C-9).** The line is per household, and an adult child is a separate household with its own M 10 million. RS-17's "split activity across separately counted units" applies: a gift moves wealth to a household below the line. Gifts are taxed like bequests, so for a household that planned to leave the wealth to its children anyway, the gift tax is mainly paid earlier, not added (A-5). Before the first valuation date, gifts rise (C-8; RS-8, an action moved toward the favorable time; CR-10a). After it, two chains oppose: households that cross the line later, or did not act in time, keep splitting (+), and gifts made in the window would otherwise have been made later, or as bequests (−). No premise ranks them: `ambiguous` (C-9). Each window is signed against the counterfactual (02_ontology.md, 2.5).
+
+**The kink and the notch (C-10).** RS-17 says firms near a threshold stay below it and that the response comes in the measured period. Its 1.0 clause asks to distinguish a notch from a kink, and CR-12's 1.0 note asks that its conclusion be against the counterfactual, not "relative to just above". Re-signed: against the no-tax counterfactual, the number of households whose measured net worth lies just below M 10 million rises. Two chains push the same way. (1) The kink: above the line each mark costs 1% a year, so households close to it have reason to lower their measured wealth by self-assessing property at the low end of its range, by a gift or by a holding company; this is the same marginal response as TX-6 and RS-5 above the line, with nothing extra at the line itself. (2) The notch: a household that expects to leave within three years and is just above the line on a valuation date pays the exit charge on all its gains; just below, nothing. For such households staying below is worth the whole charge (CR-1, 1.0: the jump is a cost of crossing; CR-4). A-8 states that some can do so at a cost below these gains. RS-17's other conclusion, on the value of firms near a threshold, has no counterpart: the line is drawn on households.
+
+**Saving (C-11, C-12).** A tax of 1% of capital each year takes a share of the return on every mark saved above the line, about a quarter to a third of a 3% to 4% real return. TX-6 applies: the cost of future goods rises relative to present goods. Its firm conclusion holds for saving in the taxed forms by savers who have untaxed or lightly taxed alternatives (C-11): here the alternatives are the formula-favored forms (C-4 to C-7), gifts (C-8) and consumption (A-7). For total saving by taxed households, CR-4's exception applies: households saving toward a fixed sum (an intended bequest of a set size, a target income) must save more to reach it. Such savers are a material part of the group (A-6), and the premise that the substitution response dominates for the group has p = 0.45 (A-27), below the cut-off. So total saving is `ambiguous` (C-12; TX-6 Unless; CR-12, 0.8, kind 2). For households below the line who do not expect to cross it, the tax changes no option, and nothing is signed.
+
+**Emigration and timing (C-13 to C-15).** CR-4 with x: stay resident, y: leave (RS-4). Departures before 1 January 2028 avoid the annual tax (the first valuation date is 31 December 2027) and the exit charge, which applies only from that date. So the window rewards leaving early: departures in November 2026 to December 2027 rise (C-13; RS-8; CR-10a; A-9). From 2028, three chains meet. (+) The annual tax, for every year of residence, makes leaving more attractive. (−) The exit charge is a cost attached to leaving (CR-1, operation 3), which deters some liable households who would have left for other reasons, retirement abroad or family (RS-11: moving now costs something it did not; A-11). (−) Some who would have left in 2028 or later left in the window instead (RS-8: the other side of the move). No premise ranks them: `ambiguous` (C-14; CR-12b). RS-8's 1.0 clause on races does not apply: leaving early takes departures from later windows; it does not add departures that would have happened nowhere. Wealthy foreigners who would have moved to Ostrevia become liable on arrival, with no exit-charge relief for the wealth they bring; fewer come (C-15; A-12). Here the variable is `turnover`, read as the rate at which residents above the line leave or arrive; the ontology has no variable for residence (Gaps found, (d) 1).
+
+**Evasion and hard-to-value assets (C-16, C-17).** Property and art are valued by the taxpayer. With audits of about 10% of returns and valuation disputes costly to the Agency, some households declare values at or below the low end of the range, and some keep foreign accounts undeclared despite information exchange (RS-3; A-19). That also makes assets whose value is declared and rarely checked, art above all, a better store of wealth for taxed households than assets with a quoted price: some buy more of them (C-17; CR-4, CR-7a; A-20). The purchase is legal; the gain from it comes from the chance of under-declaring, so the chain rests on A-19 as well.
+
+**Lobbying (C-18).** A wealth tax was contested before the announcement (it was in the governing parties' manifestos) and would have stayed so; lobbying on the tax as such is signed against that contest (CR-4 1.0, RS-7 1.0) and needs a premise the case lacks, so it is not signed. The questions C-18 names exist only under the Act and are an increase against none (CR-12, 0.9): the reading of U1 (pension providers and executives), the book-value formula (family firms against campaigners), indexing the threshold, and relief for family firms (A-21).
+
+**Pension rights, by reading (C-19, C-20).** Under U1-a, a household whose executive pension right carries its net worth over the line is taxed on a right it cannot sell, borrow against or draw on before retirement. By CR-7's 0.9 clause, the tax lowers the right's value to its holder by the holder's own ranking (CR-3a); its money value has no market to show it. The tax is a sum the household cannot avoid while it holds the right and stays resident, so its means for other uses fall (C-19; CR-3, note; A-25). Valuing defined-benefit rights each year needs an actuarial calculation (C-20). Under U1-b neither happens.
+
+## 6. Second-order effects
+
+| ID | Actor class | Variable | Sign | Horizon | Rules | Market relation | Assumptions |
+|---|---|---|---|---|---|---|---|
+| C-21 | `owners.high_end_residential` | `asset_value` (homes above M 3 million) | ambiguous | short–medium (from 1 November 2026) | CR-7c, CR-7a, CR-10c, CR-12b (SB-4 not applied: see text) | taxed households: buyers in the segment; their alternatives: other forms of wealth | A-7, A-9, A-13, A-19, A-29 |
+| C-22 | `neighboring_jurisdictions` (Valtria's border cities) | `asset_value` (high-end homes, new and existing together) | increase | medium | CR-12e (1.0: what the response argument needs), CR-6, CR-10b, RS-4 | `across_border`; new Valtrian building: `same_market_other_segment` | A-9, A-14, A-15 |
+| C-23 | `holders.listed_shares` | `asset_value` (Ostrevian listed shares) | ambiguous | short–medium | CR-7c, CR-7a, CR-12b | taxed households: one class of holders | A-2, A-7, A-16 |
+| C-24 | `owners.unlisted_firms` | `asset_value` (sale value of unlisted firms) | ambiguous | short–medium | CR-7c, CR-7a, CR-7 (0.9), CR-7b, CR-12b | taxed households: one class of buyers | A-7, A-9, A-18 |
+| C-25 | `firm_owners`, `workers.unlisted_firms` | `investment_target` (booked capital: plant and equipment, in unlisted firms of taxed households) | decrease | medium | CR-8a, TX-6, CR-4, CR-12a, CR-12d | the owner's dividends and the firm's retained earnings: `contract` (ownership) | A-4 or A-17 |
+| C-26 | `sellers.art` | `price_substitute` (art and collectibles, world market) | increase | short–medium | CR-9, CR-6 (1.0: small effects are signed) | art: `substitute` for financial assets as a store of wealth | A-19, A-20 |
+| C-27 | `neighboring_jurisdictions` (Valtria's border cities) | `asset_value` (high-end homes) | increase | short | RS-4, CR-9, CR-6 (1.0: small effects are signed) | `across_border` | A-9, A-23 |
+| C-28 | `general_budget` | `tax_revenue` (income and capital gains taxes from households that left in the window) | decrease | medium–long | TX-10, CR-9 | emigrants' income and gains: the tax base | A-9, A-10 |
+| C-29 | `general_budget` | `tax_revenue` (exit charge) | increase | short–long (from 2028) | CR-8b, CR-12 (0.9: activities that exist only under the policy) | — | A-26 |
+| C-30 | `intermediaries` | `quantity_traded` (tax advice, valuations, company formation) | increase | short–medium | CR-9, CR-8c, OC-5 | advice: `input_to` compliance and reshaping | A-1 |
+| C-31 | economy | `capital_stock_economy` | ambiguous | long | TX-6, TS-9, CR-12b | — | A-6, A-7 |
+
+**High-end homes (C-21).** Taxed households buy about 45% by value of homes above M 3 million (A-13). Each such home now costs its taxed owner 1% of its declared value a year. SB-4, applied as written, says a tax that lowers an asset's expected net return lowers its value, which would give a `decrease`. CR-7c, from which SB-4 is derived, says more: the price adjusts until a buyer expects to earn on the asset what they could earn *elsewhere*, and for a taxed household "elsewhere" is taxed too. Cash, bonds and listed shares held directly bear the same 1%, so against them the home loses nothing; against the forms the formula favors (unlisted shares, holding companies carried at cost, pensions under U1-b) it loses (CR-7a; A-7). Three chains push the price down: taxed households move wealth toward the favored forms, some by renting rather than owning (−); departing households sell and fewer wealthy foreigners arrive (−; A-9). One pushes it up: a home's value is declared by its owner and checked in few audits, so it can be held at a lower declared value than the cash or listed shares it is bought with, which makes it better than they are as a store of wealth for a taxed household (+; A-19, as for art, C-17). No premise ranks them, so the sign is `ambiguous`, from the announcement into the medium run (C-21; CR-12b). The tax on the home is not a burden on homes alone but on wealth in most of its forms; signing it as SB-4 does compares the home with untaxed alternatives that the taxed buyer does not have (Gaps found, (c) 6).
+
+**Listed shares (C-23).** Taxed households hold about 8% of the listed market (A-16). Against unlisted shares (about 0.45% of market value) and pensions under U1-b, listed shares held directly bear more, so taxed households move away from them (−; A-7). Against bonds and cash, listed shares held through a holding company bear less: the company carries them at cost, and the gains that accrue after purchase never enter the base, while a bond's value does not grow (+; A-2). The chains oppose and no premise ranks them: `ambiguous` (C-23). Foreign investors and pension funds, who are not taxed, set most of the price either way.
+
+**Unlisted firms (C-24).** A family firm has no market price, and the tax on it follows book value, not market value. CR-7c applies to its sale value whether or not it is ever sold (CR-7, 0.9), as far as taxed households are among the buyers who set it (A-18; companies and funds buy two thirds by value). For a taxed buyer, buying a firm at its market price with cash turns a mark taxed at 1% into a mark taxed at about 0.45% (the firm's book equity is about 45% of its price): against the buyer's alternatives, the formula makes the firm better (+; CR-7a; A-7). Against no tax, the firm also bears a tax it did not bear, and the buyer's total wealth held in Ostrevia falls with departures (−; A-9). No premise ranks them: `ambiguous` (C-24). Whatever the sale value does, owners who keep their firms bear the tax on book value by their own ranking (CR-7b; C-2).
+
+**Investment in family firms (C-25).** Two chains reduce investment in booked capital (plant and equipment) in unlisted firms of taxed households. An owner who pays the tax on the firm's book value from dividends draws means out of the firm (CR-8a), and where the firm cannot replace its retained earnings by borrowing on the same terms it invests less (A-17). And the formula makes expensed intangibles cheaper to the owner than booked assets (C-6; A-4). Both push the same way; either suffices (CR-12a, CR-12d). Cash put into the firm raises its book equity mark for mark, so it is not a favored form and opens no opposing chain. Total investment, booked and expensed together, is not signed. Workers' wages depend on the firm's capital through TS-9; that link is depth 4 and diffuse, and stopped.
+
+**Art (C-26).** If taxed households buy more art (C-17), the world price of art rises by as much as their demand matters there, which is little; it is signed (CR-6, 1.0; A-20).
+
+**Valtria (C-22, C-27).** Emigrants buy homes in Valtria's border cities, where high-end supply cannot expand at once (A-23): prices there rise when they arrive (C-27, a small effect, signed by CR-6's 1.0 note). Into the medium run, Valtrian builders build more high-end homes and some Valtrian owners sell. CR-12e's response argument applies: these responses are to the rise in price, and cannot push it below its old level. CR-12's 1.0 note says what the argument needs. (1) The total it bounds: the price of high-end homes in the border cities, new and existing together. (2) A premise on cost: the note is written for a contraction (cost per unit must not fall as activity contracts); here the response is an expansion, and the mirror premise is that cost per unit does not fall as building expands, so that more building cannot restore equal yields at a lower price (A-15). (3) Partial response: building expands only gradually (A-14). (4) Second responses: none that oppose; the Ostrevian homes the emigrants sell are in another market. So the medium-run sign is an `increase` (C-22), separate from the short run by CR-12g.
+
+**Other taxes (C-28, C-29).** Households that left in the window would otherwise have stayed and paid income and capital gains taxes (A-10), so those receipts fall (TX-10). Gains they realize abroad escape Ostrevian capital gains tax altogether. From 2028, liable households that leave pay the exit charge, a receipt that exists only under the Act (C-29; A-26). Whether total departures after 2028 rise or fall is open (C-14), so the effect of later departures on other taxes is not signed.
+
+**Capital (C-31).** The capital stock depends on total saving (C-12, `ambiguous`) and on foreign capital, which Ostrevia's open capital market lets flow in where yields rise (TS-9's premise). The chain is kind 3 (CR-12, 0.8): `ambiguous`. TS-9's wage effect is therefore not signed.
+
+## 7. Combined effects
+
+| Actor class, variable, horizon | Chains (+) | Chains (−) | Dominance rule | Combined sign |
+|---|---|---|---|---|
+| `taxed_households`, `saving` (total), long | Fixed-target savers (A-6). | Substitution response (A-7). | None: substitution dominance A-27 has p = 0.45. | **ambiguous** (C-12) |
+| `taxed_households`, `turnover` (departures), window | Escaping both charges before they start (A-9). | — | — | **increase** (C-13) |
+| `taxed_households`, `turnover` (departures), 2028 on | The annual tax (A-9). | Exit charge (A-11); departures pulled into the window. | None | **ambiguous** (C-14) |
+| `taxed_households`, `reclassification` (gifts), 2028 on | Continued splitting. | Gifts pulled into the window (A-5). | None | **ambiguous** (C-9) |
+| `households_near_line`, `reclassification` (just below the line) | Kink (marginal 1%); notch (exit charge) (A-8). | — | Same direction. | **increase** (C-10) |
+| `owners.high_end_residential`, `asset_value`, short–medium | Homes can be declared at a low value (A-19). | Wealth moves to formula-favored forms (A-7); departures and fewer arrivals (A-9). | None. SB-4 would give a decrease; not applied (the buyers' alternatives are taxed too). | **ambiguous** (C-21) |
+| `neighboring_jurisdictions` (Valtria), `asset_value` (high-end homes), medium | Emigrants' demand (A-9). | More Valtrian building; Valtrian owners selling. | CR-12e, response argument on the border cities' high-end price (CR-12, 1.0), with A-15 (cost per unit does not fall as building expands) and A-14 (partial response). | **increase** (C-22) |
+| `holders.listed_shares`, `asset_value`, short–medium | Shares held through holding companies at cost, against bonds and cash (A-2). | Against unlisted shares and pensions (A-7). | None | **ambiguous** (C-23) |
+| `owners.unlisted_firms`, `asset_value`, short–medium | The formula taxes a firm less than the cash that buys it (A-7). | The tax itself; departures (A-9). | None | **ambiguous** (C-24) |
+| `general_budget`, `tax_revenue_vs_static_projection` | — | Holding companies (A-2), gifts (A-5), departures (A-9). | Same direction. | **decrease** (C-3) |
+| `general_budget`, net receipts of the Act | Wealth tax (C-1), exit charge (C-29). | Lost income and gains taxes (C-28); the Agency's cost (C-35). | A-22 (the Agency's projections with arithmetic on the case's figures; CR-8 1.0). | **increase** (C-33) |
+| economy, `capital_stock_economy`, long | Fixed-target saving; foreign inflow. | Lower saving in taxed forms. | None (kind 3). | **ambiguous** (C-31) |
+
+**Final check** (`03_workflow.md`).
+1. Uncombined chains: departures are combined per window (C-13, C-14), with the pulled-forward departures as a chain in the later window; gifts likewise (C-8, C-9); high-end home values, listed shares and unlisted firms each combine the tax on the asset with the tax on the buyers' alternatives (C-21, C-23, C-24), which made all three `ambiguous` where a first pass had signed them `decrease`; Valtrian home prices combine emigrants' demand with Valtrian building (C-22); investment in booked capital combines two same-direction chains (C-25); total saving combines both of TX-6's chains (C-12); the budget's net combines four items (C-33).
+2. Group signs: the payers and recipients of the general budget (C-32) are a group.
+3. Baseline: every sign is against Ostrevia without the Act. RS-17's "just below relative to just above" is re-signed against the counterfactual (C-10). C-7 under U1-a is `no_change` against the counterfactual, not against U1-b. Departures after 2028 are signed against the counterfactual rate (120 a year), not against the window.
+4. Worse off is not poorer: `resources_available_other_uses` is signed for taxed households who stay above the line and pay (C-2), for pension holders under U1-a (C-19) and for liable emigrants who pay the exit charge (C-36); households who reshape or split are worse off by their own ranking only as far as the reshaping costs them, and are not signed.
+5. Timing shifts: departures and gifts are signed per window (C-8, C-9, C-13, C-14); home values at announcement (C-21).
+6. Both sides of every transfer: households pay (C-2, C-36) and the budget receives (C-1, C-29); the budget's spending reaches its recipients or other taxpayers (C-32); the Agency's cost (C-35) and the lost taxes (C-28) are in the net (C-33); gifts move means from parents to children (C-8, a transfer between private households, recorded as reclassification); high-end owners' loss (C-21) is later buyers' lower outlay.
+7. Every actor class, every core rule: CR-7c for homes, listed shares and unlisted firms (C-21, C-23, C-24), each with CR-7a for the buyers' taxed alternatives, and for Valtrian homes (C-22, C-27); CR-6 for the art market and Valtria (small effects); CR-9 for intermediaries and other taxes; enforcement costs (C-35).
+8. Unstated premises: A-14 and A-15 (response argument in Valtria), A-23 (Valtrian supply in the short run), A-29 (when the tax became expected).
+9. Baseline of every pattern: RS-17 re-signed (C-10). SB-4 not applied: its conclusion compares the taxed asset with untaxed alternatives the taxed buyer does not have (C-21; Gaps found, (c) 6). TX-6, RS-4, RS-5, RS-8, SB-4, TX-1, TX-10 and OC-1 are against no tax. TX-9 compares with a static projection by definition and is recorded on that variable. RS-7 is re-signed against the counterfactual contest (C-18). RS-20, EN-11 and EN-13 are not used.
+
+## 8. Time structure
+
+- **1 November 2026: announcement.** Values whose buyers include taxed households are revalued at once: high-end homes, listed shares and unlisted firms, each in a direction the case does not settle (C-21, C-23, C-24) (CR-7c; CR-10c). The draft was not certain to pass; by CR-7c's probability clause part of any change comes at the announcement and the rest at the vote of 18 March 2027.
+- **November 2026 to 31 December 2027: the window.** Households that will leave do so before the first valuation date and before the exit charge applies (C-13). Holding companies are formed and portfolios moved before 31 December 2027 (C-4); gifts to adult children are brought forward (C-8); households near the line bring their measured wealth below it on the first valuation date, above all those that may leave within three years (C-10). Under U1-b, pension contributions are made before the valuation date (C-7).
+- **2028 to 2030.** First payments in June 2028 (C-1). Departures are subject to the exit charge (C-14, C-29); the notch applies on each of the three valuation dates before a departure. Revenue falls short of the static projection (C-3). Lost income taxes from the window's emigrants run on (C-28).
+- **Long run.** The threshold is fixed in marks, so as nominal wealth grows more households cross it each year (TS-3): the tax binds more widely, and the responses above spread to households that were below the line at the start. Saving and capital (C-11, C-12, C-31) change slowly, through flows.
+
+## 9. Opportunity costs
+
+| ID | Actor class | Variable | Sign | What is given up | Rules |
+|---|---|---|---|---|---|
+| C-32 | `taxpayers`, recipients of state spending, future taxpayers | `resources_available_other_uses` | at_least_one_increase | The Act's net receipts fund more spending, lower other taxes or less borrowing; the record does not say which. | CR-8b, OC-1 (1.0) |
+| C-33 | `general_budget` | `tax_revenue` (net receipts of the Act: wealth tax and exit charge, less lost income and gains taxes and the Agency's cost) | increase | — | CR-8 (1.0: receipts into the same budget), OC-1 (1.0), CR-12e (A-22) |
+| C-34 | `taxed_households`, `households_near_line` | `compliance_cost` (valuations, returns, advice, company formation) | increase | Time and fees spent valuing, filing and reshaping, used up (CR-8c). | TX-5, OC-2, CR-8c |
+| C-35 | `officials.enforcement` | `enforcement_cost` | increase | About M 45 million a year, from the general budget (in the net, C-33). | OC-3, CR-8c |
+| C-36 | `emigrants.liable` | `resources_available_other_uses` | decrease | The exit charge, about M 1.7 million for a typical liable household, paid over five years: a sum it cannot avoid once it leaves (CR-3, note). | TX-1, CR-3, CR-8b |
+
+**OC-1 and CR-8, 1.0.** The tax is named, so its payers are named: the taxed households (C-2). The revenue goes into the general budget, which also pays the Agency's valuation unit (C-35) and loses the income and gains taxes of households that left (C-28). By OC-1's and CR-8's 1.0 clauses, these are recorded as items of one budget and the net separately (C-33). The net is not settled by the case's figures alone: the wealth tax brings perhaps M 0.8 to 1.0 billion after responses and the exit charge up to M 0.2 billion, against about M 0.27 billion a year of lost taxes from 300 extra departures (the Agency's projection) and M 45 million of administration. With the projection as a premise (A-22), the net is an `increase`. Its use reaches a group (C-32), recorded by CR-8b in reverse (CR-8, 0.7).
+
+## 10. Assumptions
+
+| ID | Statement | Type | p | Evidence | If false |
+|---|---|---|---|---|---|
+| A-1 | Most taxed households file and pay. | enforcement | 0.9 | Self-assessment with audits of about 10% of returns; penalties of 50%; information exchange with 110 countries. | C-1, C-2 and what follows shrink; C-16 grows. |
+| A-2 | A portfolio contributed to a controlled company is not treated as sold, and the company may carry it at cost; for large portfolios the cost of a holding company is below the tax saved. | other | 0.75 | Tax Code art. 44; small-company accounting rules; formation costs of a few thousand marks. | C-4 is not reported; C-3 rests on its other chains. |
+| A-3 | Some owners close to a listing decision keep their firms private, or take listed firms private, to be taxed on book value. | other | 0.6 | Listing costs and benefits are close for mid-sized family firms; the gap between 1% of market and about 0.45% of market. | C-5 is not reported. |
+| A-4 | Some owners of unlisted firms can shift investment toward expensed intangibles. | other | 0.55 | Firms already choose between capital and research, training and marketing; accounting rules expense these. | C-6 is not reported. |
+| A-5 | Some taxed households have adult children and planned to leave them wealth, so that a gift mainly brings forward a tax a bequest would have paid. | other | 0.75 | Most households above M 10 million are headed by people over 55; gifts and bequests are taxed alike. | C-8 is not reported; C-9 becomes `increase`. |
+| A-6 | A material part of taxed households save toward a fixed sum (a bequest of a set size, a target income). | other | 0.6 | Surveys of saving motives among the wealthy. | C-12 becomes `decrease` (with A-7); C-31 loses one (+) chain. |
+| A-7 | Taxed households have untaxed or lightly taxed alternatives to saving in market-valued forms: the formula-favored forms, gifts, consumption. | substitutability | 0.85 | K2's valuation rules; art. 44; gift rules. | C-11 is not reported. |
+| A-8 | Some households near the line can bring their measured net worth below it, at a cost below the kink's tax or, for those that may leave, the exit charge. | other | 0.75 | Self-assessed property values; gifts; holding companies. | C-10 is not reported. |
+| A-9 | Some taxed households are at the margin of leaving Ostrevia. | mobility | 0.7 | Valtria: two hours away, same language, free movement, no wealth tax; 120 such households leave each year without the tax. | C-13, C-27, C-28 are not reported; C-14 becomes `decrease`; C-3 rests on its other chains. |
+| A-10 | Households that left in the window would otherwise have stayed resident and paid income and gains taxes for some years. | counterfactual_trend | 0.8 | Departures before the announcement ran at about 120 a year. | C-28 is not reported. |
+| A-11 | Some liable households that would have left after 2028 for other reasons stay because of the exit charge. | mobility | 0.6 | Retirement abroad is common among the wealthy; the charge is about M 1.7 million on typical gains. | C-14 becomes `increase`. |
+| A-12 | Some wealthy foreigners would otherwise have moved to Ostrevia. | mobility | 0.6 | Recent arrivals of executives and investors. | C-15 is not reported. |
+| A-13 | Taxed households are a material share of buyers of homes above M 3 million. | other | 0.7 | About 45% by value of recent purchases. | C-21 is not reported. |
+| A-14 | High-end building in Valtria's border cities expands only gradually (planning and building times). | durability | 0.7 | Valtrian permit and building times of two to three years. | C-22 becomes "increase or no change". |
+| A-15 | The cost per unit of high-end building in Valtria does not fall as more is built (it uses trades and materials priced in the wider building market). | other | 0.7 | Building costs set region-wide; no scale economies in one-off homes. | C-22's response argument fails; C-22 becomes `ambiguous`. |
+| A-16 | Taxed households are among the marginal holders of Ostrevian listed shares. | other | 0.6 | They hold about 8% of the market. | C-23 is not reported. |
+| A-17 | Some owners of unlisted firms pay the tax from dividends, and their firms cannot replace the retained earnings by borrowing on the same terms. | other | 0.55 | Family firms' reliance on retained earnings; bank lending terms. | C-25 is not reported. |
+| A-18 | Taxed households are among the buyers who set the sale value of some unlisted firms. | other | 0.55 | Families buy about a third of unlisted firms by value. | C-24 is not reported. |
+| A-19 | Audits of self-assessed property and art values are infrequent, and some under-declaration is not detected. | enforcement | 0.65 | Audit plan of about 10%; valuation disputes are costly. | C-16 and C-17 are not reported; C-26 fails. |
+| A-20 | Some taxed households move wealth into art and collectibles. | substitutability | 0.55 | Insurance values are not binding for tax; experience of other wealth taxes. | C-17 and C-26 are not reported. |
+| A-21 | Family-business federations, advisers, pension providers and campaigners can organize at a cost below their stakes. | other | 0.85 | Existing associations; the hearings on the bill. | C-18 is not reported. |
+| A-22 | The Act's net receipts to the general budget are positive: the wealth tax and exit charge exceed lost income and gains taxes and the Agency's cost. | revenue_use | 0.7 | Fiscal note M 1.1 billion; the Agency's projection of about 300 extra departures (about M 0.27 billion a year of lost taxes); M 45 million administration. | C-32 becomes `at_least_one_decrease`; C-33 becomes `ambiguous`. |
+| A-23 | Emigrants buy high-end homes in Valtria's border cities, where supply cannot expand at once. | durability | 0.6 | Where recent emigrants have settled; Valtrian building times. | C-27 is not reported; C-22 loses its cause. |
+| A-24 | Under U1-b, some taxed households have room within the M 300,000 yearly contribution limit and accept the lock until 62. | other | 0.8 | Most such households contribute less than the limit now. | C-7 under U1-b is not reported. |
+| A-25 | Under U1-a, some households are carried over the line by their pension rights. | other | 0.8 | Executives' defined-benefit rights of M 2 to 6 million. | C-19 under U1-a is not reported. |
+| A-26 | Some liable households leave on or after 1 January 2028. | mobility | 0.9 | About 120 departures a year without the tax, for reasons other than tax. | C-29 and C-36 are not reported. |
+| A-27 | For taxed households as a group, the substitution response outweighs the response of fixed-target savers. | other | 0.45 | No direct evidence. Below the cut-off. | If above 0.5: C-12 becomes `decrease`. |
+| A-28 | Emigrants move their firms' management and operations abroad. | mobility | 0.35 | Most family firms' customers and staff are in Ostrevia. Below the cut-off. | — (conditional possibility only) |
+| A-29 | The tax was not expected before the announcement of 1 November 2026. | expectations | 0.6 | It was in the governing parties' manifestos, but with no rate, threshold or date. | C-21's timing moves earlier, to the election. |
+
+**Conditional possibilities** (an assumption below 0.5): total saving by taxed households falls (A-27); emigrants' firms move operations abroad, with effects on employment and on the corporate tax base (A-28).
+
+## 11. Report
+
+**The policy.** From 31 December 2027, Ostrevian households pay 1% a year on net worth above M 10 million, valued by themselves, with unlisted shares valued at book value. Households that have been above the line and leave the country from 2028 pay capital gains tax on their unrealized gains. The tax was announced 14 months before the first valuation date. It is unclear whether pension rights count.
+
+**Visible consequences.** Taxed households pay the tax (C-1, C-2).
+
+**Invisible consequences.**
+- *Reshaping.* Households move portfolios into holding companies carried at cost (C-4), keep firms unlisted or take them private (C-5), and invest inside their firms in forms the formula does not record (C-6); under U1-b they move savings into pensions (C-7). They give wealth to adult children, a rush before the first valuation date (C-8). Households near the line keep measured wealth just below it, above all those that may leave the country (C-10). Some under-declare (C-16) and buy art (C-17), whose world price rises slightly (C-26). Revenue falls short of its static projection (C-3).
+- *Emigration.* Departures of the wealthy rise before 2028 (C-13), fewer wealthy foreigners arrive (C-15), and the taxes the leavers would have paid are lost (C-28); from 2028, liable leavers pay the exit charge (C-29, C-36). Valtrian border homes gain value (C-27).
+- *Saving and investment.* Saving in taxed forms falls (C-11); family firms whose owners pay from dividends invest less (C-25).
+- *Asset values.* Whether high-end homes, listed shares and unlisted firms gain or lose value is open (C-21, C-23, C-24): the tax falls on them, but also on most of what their taxed buyers could hold instead. High-end homes in Valtria's border cities rise in value, at once and into the medium run (C-27, C-22).
+- *Costs and the budget.* Households and the Agency spend on valuations, advice and audits (C-34, C-35), and advisers gain work (C-30). The net receipts of the Act are positive on the Agency's projections (C-33) and fund spending, lower taxes or less borrowing (C-32). Lobbying over the Act's terms rises (C-18).
+
+**Per reading of U1.** If pension rights count (U1-a), households carried over the line by them pay a tax on a right they cannot sell (C-19) and must value it each year (C-20). If they do not (U1-b), savings move into pension accounts (C-7).
+
+**Ambiguous effects.** Total saving by taxed households (C-12) and the capital stock (C-31); departures after 2028 (C-14); gifts after 2028 (C-9); the value of high-end homes, listed shares and unlisted firms in Ostrevia (C-21, C-23, C-24).
+
+**Key conditions.** That households can reshape cheaply into holding companies (A-2, p = 0.75); that some are at the margin of leaving (A-9, p = 0.7); that the Act's net receipts are positive (A-22, p = 0.7); and, for total saving, the motives of the wealthy (A-6, A-27).
+
+**What this analysis cannot say.** How large any effect is; whether inequality falls, and whether that is worth the costs; whether total saving and capital fall; whether the policy is desirable.
+
+## Consequence list (normal form)
+
+| ID | Actor class | Variable | Sign | Horizon | Visibility | Tier | Derivation | Assumptions |
+|---|---|---|---|---|---|---|---|---|
+| C-1 | general_budget | tax_revenue (wealth tax) | increase | short | visible | B | TX-1, CR-8b | A-1 |
+| C-2 | taxed_households | resources_available_other_uses | decrease | short–long | visible | B | TX-1, OC-1, CR-3, CR-8a | A-1 |
+| C-3 | general_budget | tax_revenue_vs_static_projection | decrease | short–medium | invisible | B | TX-9, TX-4, CR-12a, CR-12d | A-2, A-5, A-9 |
+| C-4 | taxed_households | reclassification (holding companies carried at cost) | increase | short–medium | invisible | B | RS-5, CR-4, CR-7a, CR-7 | A-2 |
+| C-5 | firm_owners | reclassification (firms kept unlisted or taken private) | increase | medium | invisible | B | RS-5, CR-4, CR-7a | A-3 |
+| C-6 | firm_owners | reclassification (investment in expensed intangibles) | increase | medium | invisible | B | CR-4, CR-7a, CR-7 | A-4 |
+| C-7 | taxed_households | reclassification (savings into pension accounts) | U1-a: no_change; U1-b: increase | short–medium | invisible | B | RS-5, CR-4 | A-24 |
+| C-8 | taxed_households, adult_children | reclassification (gifts to adult children's households), Nov 2026–Dec 2027 | increase | short | invisible | B | RS-17, RS-5, RS-8, CR-10a | A-5 |
+| C-9 | taxed_households, adult_children | reclassification (gifts to adult children's households), 2028 on | ambiguous | medium–long | invisible | B | RS-17, RS-8, CR-12b | A-5 |
+| C-10 | households_near_line | reclassification (measured net worth just below the line) | increase | short–medium | invisible | B | RS-17, CR-1, CR-4 | A-8 |
+| C-11 | taxed_households | saving (in taxed, market-valued forms) | decrease | long | invisible | B | TX-6, CR-4, CR-7a | A-7 |
+| C-12 | taxed_households | saving (total) | ambiguous | long | invisible | B | TX-6, CR-4, CR-12b | A-6, A-7 |
+| C-13 | taxed_households (emigrants.window) | turnover (departures abroad, Nov 2026–Dec 2027) | increase | short | invisible | B | RS-4, RS-8, CR-10a, CR-4 | A-9 |
+| C-14 | taxed_households | turnover (departures abroad, 2028 on) | ambiguous | medium–long | invisible | B | RS-4, RS-8, RS-11, CR-4, CR-12b | A-9, A-11 |
+| C-15 | prospective_residents.wealthy | turnover (arrivals above the line) | decrease | medium | invisible | B | RS-4, CR-4 | A-12 |
+| C-16 | taxed_households | legal_breach (under-declared values, undeclared accounts) | increase | short–medium | invisible | B | RS-3, CR-4 | A-19 |
+| C-17 | taxed_households | quantity_substitute (art and collectibles bought) | increase | medium | invisible | B | CR-4, CR-7a, RS-3 | A-19, A-20 |
+| C-18 | lobbying groups | lobbying_effort (questions that exist only under the Act) | increase | short–medium | invisible | B | RS-7, CR-4, CR-12 | A-21 |
+| C-19 | pension_holders.near_line | resources_available_other_uses | U1-a: decrease; U1-b: no_change | short–long | invisible | B | CR-1, CR-7, CR-3 | A-25 |
+| C-20 | pension_holders.near_line, taxed_households | compliance_cost (valuing pension rights) | U1-a: increase; U1-b: no_change | short | invisible | A | CR-8c, TX-5 | none |
+| C-21 | owners.high_end_residential | asset_value (homes above M 3 million) | ambiguous | short–medium | invisible | B | CR-7c, CR-7a, CR-10c, CR-12b | A-7, A-9, A-13, A-19, A-29 |
+| C-22 | neighboring_jurisdictions (Valtria) | asset_value (high-end homes in border cities, new and existing) | increase | medium | invisible | B | CR-12e, CR-6, CR-10b, RS-4 | A-9, A-14, A-15 |
+| C-23 | holders.listed_shares | asset_value (Ostrevian listed shares) | ambiguous | short–medium | invisible | B | CR-7c, CR-7a, CR-12b | A-2, A-7, A-16 |
+| C-24 | owners.unlisted_firms | asset_value (sale value of unlisted firms) | ambiguous | short–medium | invisible | B | CR-7c, CR-7a, CR-7, CR-7b, CR-12b | A-7, A-9, A-18 |
+| C-25 | firm_owners, workers.unlisted_firms | investment_target (booked capital in unlisted firms of taxed households) | decrease | medium | invisible | B | CR-8a, TX-6, CR-4, CR-12a, CR-12d | A-4, A-17 |
+| C-26 | sellers.art | price_substitute (art and collectibles, world market) | increase | short–medium | invisible | B | CR-9, CR-6 | A-19, A-20 |
+| C-27 | neighboring_jurisdictions (Valtria) | asset_value (high-end homes in border cities) | increase | short | invisible | B | RS-4, CR-9, CR-6 | A-9, A-23 |
+| C-28 | general_budget | tax_revenue (income and gains taxes from window emigrants) | decrease | medium–long | invisible | B | TX-10, CR-9 | A-9, A-10 |
+| C-29 | general_budget | tax_revenue (exit charge) | increase | short–long | invisible | B | CR-8b, CR-12 | A-26 |
+| C-30 | intermediaries | quantity_traded (advice, valuations, company formation) | increase | short–medium | invisible | B | CR-9, CR-8c, OC-5 | A-1 |
+| C-31 | economy | capital_stock_economy | ambiguous | long | invisible | B | TX-6, TS-9, CR-12b | A-6, A-7 |
+| C-32 | taxpayers, recipients of state spending, future taxpayers | resources_available_other_uses | at_least_one_increase | short–long | invisible | B | CR-8b, OC-1 | A-22 |
+| C-33 | general_budget | tax_revenue (net receipts of the Act) | increase | short–long | invisible | B | CR-8, OC-1, CR-12e | A-22 |
+| C-34 | taxed_households, households_near_line | compliance_cost (valuations, returns, advice) | increase | short–long | invisible | A | TX-5, OC-2, CR-8c | none |
+| C-35 | officials.enforcement | enforcement_cost | increase | short–long | invisible | A | OC-3, CR-8c | none |
+| C-36 | emigrants.liable | resources_available_other_uses | decrease | short–long | invisible | B | TX-1, CR-3, CR-8b | A-26 |
+
+C-3 holds if any one of A-2, A-5 or A-9 holds (CR-12d).
+
+## Gaps found
+
+**(a) Calculus gaps (a step no core rule covers).** None. Emigration, splitting by gift and reshaping into favored forms are CR-4 on pairs of options; the valuation formula enters through CR-7a as a difference in the tax per mark of market value between forms.
+
+**(b) Unclear core rules.**
+1. *CR-1 1.0, notches.* Worked for the exit charge, but the case has a kink and a notch on the same line, the notch applying only to households that later leave. CR-1 says to record the operation on each side and the jump as a cost of crossing; it does not say that the size of the jump can differ by a later choice (whether to leave), so that the notch binds on a subset of the class identified by an expectation. Recorded by splitting the class by response (CR-1, 0.7).
+2. *CR-7 0.9, assets without a market price, and valuation formulas.* The clause says CR-7c applies to assets whether or not they can be sold, and that an unsellable asset's change in yield is a loss by the holder's own ranking. It says nothing about a tax base set by a formula that departs from market value. That was derived from CR-7a (owners move wealth to the forms the formula taxes least; C-4 to C-7) and from CR-7c read with the buyer's taxed alternatives (C-24: a firm valued at book is taxed less than the cash that buys it). The 1.0 clause on "which stock" did not apply. A sentence saying "where a tax is levied on a value set by formula, apply CR-7a to the difference between the formula and the market value, and compare each asset with the buyer's alternatives as taxed" would help.
+3. *CR-12 1.0, what the response argument needs, for an expansion.* The note gives the cost premise for a response by contraction (cost per unit must not fall as the activity contracts). In Valtria the price rises and the response is more building (C-22); the mirror premise (cost per unit must not fall as the activity expands, A-15) was used. The note could state both directions.
+4. *CR-8 1.0, receipts into the same budget, with lost receipts.* The clause covers fees and fines flowing into the budget that pays. Here the budget also loses other taxes because of the policy (C-28). They were treated as items of the same budget, with the net signed on a premise (A-22). The clause could say that lost receipts count as items too.
+5. *CR-7c, "what they could earn elsewhere", when the tax reaches the elsewhere.* CR-7c's wording is right, but a first pass of this example signed three asset values as decreases by treating the tax as falling on each asset alone. Where a tax falls on a class of owners across most forms of wealth, the alternatives that set an asset's price for those owners are taxed too, and the sign depends on the tax per mark on the asset against the tax on those alternatives (C-21, C-23, C-24). A note under CR-7c would help.
+
+**(c) Missing or wrong patterns.**
+1. *RS-17 with a kink.* Applied as written, RS-17 says households near the line "stay below it" and that "the number just below increases relative to just above". Under a kink there is no jump: the response at the line is the same marginal response as above it (TX-6, RS-5), so the conclusion holds only weakly, and its baseline ("relative to just above") had to be re-signed against the counterfactual (C-10). Its splitting conclusion held strongly (gifts to adult children, C-8). Its conclusion on the value of firms near the line had no counterpart. The 1.0 clause says to distinguish a notch from a kink but not what changes between them; it should say that under a kink only the splitting conclusion holds in full, and that "stay below" is the marginal response.
+2. *TX-6 for a tax on the stock rather than the return.* TX-6's If clause is "a tax on interest, dividends, capital gains or profits". A tax on net worth is a tax on the return at a rate that varies with the return (1% of capital is a third of a 3% return and a tenth of a 10% one). TX-6 was applied, but its If clause should name taxes on the holding of capital. TX-11 does not apply (no nominal base), but the same point holds: the share of the real return taken is highest when real returns are lowest.
+3. *RS-8 1.0, races.* Its clause on races (activity added in the window without being taken from another) was checked for departures and did not apply: leaving early takes departures from later windows (C-13, C-14). RS-8 worked as written.
+4. *RS-11* fitted the exit charge (moving abroad now costs something it did not) though its If clause speaks of a benefit lost by moving rather than a charge on moving; the derivation (CR-3, CR-4) is the same.
+5. No other pattern gave a sign that had to be overridden.
+6. *SB-4 when the tax reaches the buyer's alternatives.* SB-4's If clause is met for high-end homes, listed shares and unlisted firms: "a tax ... that lowers [the expected net return]" from an asset in slowly expandable supply. Its conclusion, `asset_value` decreases, was wrong here: the same tax lowers the return on most of what the taxed buyers would hold instead, and for unlisted firms it lowers it by more, so derived from CR-7c and CR-7a the signs are `ambiguous` (C-21, C-23, C-24). A first pass of this example applied SB-4 and had to be overridden. SB-4 should say that the change in return is measured against the buyer's alternatives as the policy leaves them, so that a tax on wealth in general changes asset prices only through the differences it makes between forms.
+
+**(d) Vocabulary.**
+1. No variable for residence or migration; departures and arrivals of households were recorded as `turnover`, which is defined for holders of a good.
+2. No variable for measured or declared value against market value (the gap the formula and self-assessment create), nor for the number of households in a band below a line; both were recorded as `reclassification`.
+3. No variable for gifts between households; recorded as `reclassification`.
+4. No actor class for the economy as a whole; `economy` was used for C-31.
+
+**(e) Test of 1.0.**
+- *RS-17 1.0, notch against kink.* Needed interpretation: the clause names the distinction but not its consequence; under the kink only splitting held in full, and the notch (the exit charge) gave the strong "stay below" response for prospective leavers (C-10; (c) 1).
+- *CR-1 1.0, notches.* Worked, with interpretation where the notch binds only on those who later leave ((b) 1).
+- *TX-6.* Worked as written: the firm sign for saving in taxed forms by savers with alternatives (C-11), and `ambiguous` for total saving with fixed-target savers (C-12). Its If clause should name taxes on holding capital ((c) 2).
+- *CR-7 (0.9, assets without a market price; 1.0, which stock).* The 0.9 clause worked for pension rights under U1-a (C-19) and for the sale value of unlisted firms (C-24). It needed interpretation for a valuation formula, and CR-7c needed reading with the buyer's taxed alternatives ((b) 2, (b) 5). The 1.0 "which stock" clause did not arise.
+- *RS-5.* Worked as written for each line the formula draws: holding companies (C-4), listing (C-5), pensions under U1-b (C-7).
+- *RS-4.* Worked as written for departures and arrivals (C-13 to C-15) and the destination's home prices (C-22, C-27).
+- *RS-8 1.0, timing before the start.* Worked as written: departures and gifts are signed per window (C-8, C-9, C-13, C-14). The races clause correctly did not apply ((c) 3).
+- *CR-12 1.0, what the response argument needs.* Worked, read in mirror form for a response by expansion ((b) 3): the total bounded (the border cities' high-end price, new and existing homes), the cost premise (A-15) and the partial response (A-14) are stated, and no second response opposes (C-22). A first application to Ostrevian high-end homes was withdrawn: the price there is `ambiguous` (C-21), so there was no change for the argument to bound.
+- *SB-4.* Failed: preconditions met for three assets, conclusion (`decrease`) wrong because the tax also reaches the buyers' alternatives ((c) 6). Not a 1.0 change, but the kind of error CR-12's 1.0 baseline note is meant to catch: the pattern implicitly compares with untaxed alternatives.
+- *CR-12 1.0, the baseline of patterns.* Worked: RS-17's "relative to just above" was re-signed (C-10); RS-7 re-signed against the counterfactual contest (C-18); TX-9 is on its own variable.
+- *OC-1 1.0 and CR-8 1.0.* Worked: the named tax names its payers (C-2); the revenue, exit charge, Agency cost and lost taxes are items of one budget, with the net on a premise (C-33). Needed interpretation for lost receipts ((b) 4).
+- *CR-6 1.0, small effects are signed.* Worked as written for art (C-26) and Valtrian homes (C-27). It did not decide listed shares or unlisted firms: there the chains oppose (C-23, C-24), and a small effect of unknown sign is still `ambiguous`.
+- *Candidate patterns from 06_gaps.md, 6.2e.* None was needed. Proposed: "a tax base set by formula draws wealth to the forms it undervalues" (CR-7a, CR-4), seen here in four forms (C-4 to C-7).
