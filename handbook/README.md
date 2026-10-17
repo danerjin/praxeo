@@ -16,11 +16,11 @@ To analyze a policy, work through `03_workflow.md` step by step, using `template
 | `02_ontology.md` | The vocabulary: actor classes, variables, interventions, consequences, assumptions, signs, horizons, visibility. Includes the controlled variable list for version 1. |
 | `03_workflow.md` | The eleven-step procedure, with the questions to ask at each step, common moves, pitfalls and the output each step produces. |
 | `04a_core_rules.md` | The core rules (CR-1 to CR-12): the universal calculus from which every pattern is derived, the tests a rule must pass to count as universal, and a map from workflow steps to core rules. |
-| `04_rules.md` | Rule catalog 0.4, patterns: each with its derivation from the core rules. Patterns cover generic responses, opportunity-cost and time rules, and rules for the three version 1 families (price controls; taxes, tariffs and subsidies; licensing, quotas and prohibition), plus dominance rules. |
-| `05_examples/` | 25 fully worked analyses, from the broken window to a multi-part housing bill, including three repeals that check the original analyses in reverse. Listed in `06_gaps.md`, 6.4. |
+| `04_rules.md` | Rule catalog 1.0, 103 patterns: each with its derivation from the core rules. Patterns cover generic responses, opportunity-cost and time rules, and rules for the three version 1 families (price controls; taxes, tariffs and subsidies; licensing, quotas and prohibition), plus dominance rules. |
+| `05_examples/` | 65 fully worked analyses: WE-001 to WE-025 (the core set, from the broken window to a multi-part housing bill, with three repeals), WE-026 to WE-035 (gap-probing cases) and WE-036 to WE-065 (held-out tests of catalogs 0.8, 0.9 and 1.0). Listed in `06_gaps.md`, 6.4. |
 | `06_gaps.md` | Gaps the examples found and how each was resolved, questions that need an expert decision, and next steps. |
-| `05_examples_core/` | The same 25 cases re-derived blind from the core rules alone, each with a comparison against the pattern-based version. |
-| `08_core_rerun_report.md` | Report of that test: method, results (the core rules derived every valid claim), the patterns and recurring errors it exposed, and the changes made. |
+| `05_examples_core/` | WE-001 to WE-055 re-derived blind from the core rules alone, each with a comparison against the pattern-based version. |
+| `08_core_rerun_report.md` | Report of the four rounds of that test: method, results (the core rules derived every valid claim in every round), the patterns and recurring errors each exposed, and the changes made. |
 | `07_sources.md` | Editions, short forms and the verification status of every citation. |
 | `templates/analysis_template.md` | Blank analysis form following the workflow. |
 | `../tools/check_handbook.py` | Consistency checker for the worked examples (sections, rule IDs, variables, signs, assumptions). |
