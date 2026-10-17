@@ -32,6 +32,11 @@ def record_roles(record: PolicyRecord) -> set[str]:
 def verify(consequences: list[Consequence], assumptions: dict[str, Assumption], record: PolicyRecord) -> list[str]:
     problems = []
     labels = {lab for u in record.unclear for lab in u.labels()}
+    from .engine import invalid_reading_facts
+    for u in record.unclear:
+        bad = invalid_reading_facts(u)
+        if bad:
+            problems.append(f"{u.id}: reading facts for {bad} are not valid clingo and were ignored")
     by_id = {c.id: c for c in consequences}
     named = record_roles(record)
     for c in consequences:

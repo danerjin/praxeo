@@ -325,3 +325,14 @@ def test_llm_parser_live():
     rec = parser.parse_llm(text)
     assert isinstance(rec, PolicyRecord)
     assert any(c.instrument == "price_ceiling" for c in rec.components)
+
+
+def test_prose_reading_facts_are_ignored_and_reported():
+    """A parser may write text where engine facts belong; the engine must not crash on it."""
+    rec = _record()
+    rec.unclear.append(Unclear(id="U8", text="t", readings=["U8-a: x", "U8-b: y"],
+                               reading_facts={"U8-a": "no rent reset after involuntary departure"}))
+    a = _assumptions()
+    cons, _ = engine.run(rec, a)
+    assert cons and all(c.sign_by_reading == {} for c in cons)
+    assert any("U8" in p and "not valid clingo" in p for p in verify(cons, a, rec))

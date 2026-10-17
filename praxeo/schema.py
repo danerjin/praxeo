@@ -67,7 +67,10 @@ class Unclear(BaseModel):
     id: str
     text: str
     readings: list[str]
-    reading_facts: dict[str, str] = {}
+    reading_facts: dict[str, str] = Field(default={}, description=(
+        "Engine facts in clingo syntax per reading label, e.g. {\"U1-b\": \"exception(pc_5, c1).\"}. "
+        "Written by a person who knows the rule base; a parser should leave this empty. "
+        "Text that is not valid clingo is ignored by the engine and reported by the verifier."))
 
     def labels(self) -> list[str]:
         return [r.split(":", 1)[0].strip() for r in self.readings]

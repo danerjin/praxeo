@@ -1,0 +1,49 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.72,
+  "rationale": "Imports are about 40% of supply and Halvern buys a small share of world steel, so foreign sellers have little reason to absorb most of the tariff and imports should stay a meaningful share.",
+  "evidence": [
+   "Three domestic steel firms supply about 60% of the steel used in Halvern; the rest is imported (WE-013 record).",
+   "Halvern buys a small share of the world's steel and has a floating exchange rate (WE-013 record)."
+  ]
+ },
+ {
+  "question_id": "k1.domestic_substitutes",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "Domestic firms supply about 60% of steel and the exclusion process presumes some products are not produced domestically in sufficient quantity or quality, so close substitutes for most imports are unlikely in the medium run.",
+  "evidence": [
+   "Three domestic steel firms supply about 60% of the steel used in Halvern; the rest is imported (WE-013 record).",
+   "The standard for \"sufficient quantity or quality\" is not defined."
+  ]
+ },
+ {
+  "question_id": "k1.no_offset",
+  "value": "no",
+  "probability": 0.35,
+  "rationale": "The floating exchange rate is the kind of adjustment channel that tends to offset part of a tariff-driven fall in imports, so the fall is more likely offset than left unoffset.",
+  "evidence": [
+   "Halvern is a mid-sized trading country with its own currency and a floating exchange rate."
+  ]
+ },
+ {
+  "question_id": "k1.input_not_replaceable",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Steel is a main input for about 4,000 domestic manufacturers, and the record gives no sign of cheap medium-run replacement, so the taxed input is likely hard to replace at the old cost.",
+  "evidence": [
+   "About 4,000 domestic manufacturers use steel as a main input (WE-013 record)."
+  ]
+ },
+ {
+  "question_id": "k1.competitors_exempt",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Imported finished goods containing steel (machinery, vehicles, appliances) are not covered, so steel-using downstream makers compete with sellers who do not face the 25% tariff.",
+  "evidence": [
+   "Imported fabricated steel products and finished goods containing steel (machinery, vehicles, appliances, fabricated structural sections, fasteners) are not covered."
+  ]
+ }
+]

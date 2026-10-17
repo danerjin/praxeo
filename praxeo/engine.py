@@ -17,6 +17,7 @@ import math
 from pathlib import Path
 
 import clingo
+import clingo.ast
 
 from .schema import Assumption, Consequence, HORIZON_ORDER, PolicyRecord, Step
 
@@ -86,9 +87,20 @@ def _models(program: str) -> list[list[clingo.Symbol]]:
     return out
 
 
+def invalid_reading_facts(unclear) -> list[str]:
+    """Labels whose reading facts are not valid clingo (e.g. prose a parser wrote). Such readings are skipped."""
+    bad = []
+    for label, text in unclear.reading_facts.items():
+        try:
+            clingo.ast.parse_string(text, lambda _stmt: None)
+        except RuntimeError:
+            bad.append(label)
+    return bad
+
+
 def readings(record: PolicyRecord) -> list[tuple[str, str]]:
     """Every combination of readings of the unclear provisions that carry facts: (label, facts)."""
-    branching = [u for u in record.unclear if u.reading_facts]
+    branching = [u for u in record.unclear if u.reading_facts and not invalid_reading_facts(u)]
     if not branching:
         return [("", "")]
     out = []

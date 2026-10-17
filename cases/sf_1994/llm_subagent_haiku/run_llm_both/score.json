@@ -1,0 +1,90 @@
+{
+ "headline": {
+  "predictions": 0,
+  "ambiguous": 0,
+  "verifiable": 0,
+  "unverifiable": 0,
+  "unverifiable_rate": null,
+  "matched": [],
+  "false_positives": [],
+  "unverifiable_ids": [],
+  "recalled_findings": [],
+  "missed_findings": [
+   "F-1",
+   "F-2",
+   "F-3",
+   "F-4",
+   "F-5"
+  ],
+  "precision": null,
+  "recall": 0.0,
+  "f1": null
+ },
+ "logic": {
+  "predictions": 0,
+  "ambiguous": 0,
+  "verifiable": 0,
+  "unverifiable": 0,
+  "unverifiable_rate": null,
+  "matched": [],
+  "false_positives": [],
+  "unverifiable_ids": [],
+  "recalled_findings": [],
+  "missed_findings": [
+   "F-1",
+   "F-2",
+   "F-3",
+   "F-4",
+   "F-5"
+  ],
+  "precision": null,
+  "recall": 0.0,
+  "f1": null
+ },
+ "brier": {
+  "items": [
+   {
+    "assumption": "binding(c1_rent_cap)",
+    "p": 0.85,
+    "held": true,
+    "score": 0.022500000000000006
+   },
+   {
+    "assumption": "enforced(c1_rent_cap)",
+    "p": 0.4,
+    "held": true,
+    "score": 0.36
+   },
+   {
+    "assumption": "alternative_uses(c1_rent_cap)",
+    "p": 0.6,
+    "held": true,
+    "score": 0.16000000000000003
+   },
+   {
+    "assumption": "nontransferable(c1_rent_cap)",
+    "p": 0.7,
+    "held": true,
+    "score": 0.09000000000000002
+   },
+   {
+    "assumption": "would_leave(c1_rent_cap)",
+    "p": 0.55,
+    "held": true,
+    "score": 0.20249999999999996
+   },
+   {
+    "assumption": "keepers_dominate(c1_rent_cap)",
+    "p": 0.4,
+    "held": true,
+    "score": 0.36
+   }
+  ],
+  "mean": 0.1991666666666667
+ },
+ "low_confidence_findings": [
+  "F-5"
+ ],
+ "card_vocabulary_problems": [],
+ "prediction_sha256": "483034992f49e5df811e35a469e9bb8550f85c5bee1d86e0095568ac23fbc89f"
+}

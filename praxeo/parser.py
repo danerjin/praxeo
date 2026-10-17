@@ -17,6 +17,7 @@ For each operative provision, give one component: the instrument, the good and m
 and the actor class it is meant to benefit (use ontology names such as landlords.controlled, tenants.controlled,
 tenants.prospective, buyers.prospective), and the sentences of the text it rests on, quoted exactly.
 If a provision can be read more than one way, record it under `unclear` with each reading; do not pick one.
+Leave `reading_facts` empty: it takes engine facts written by a person, not text.
 Copy into `context` only facts stated in the text about the market at enactment. Use nothing from after the enactment date."""
 
 
