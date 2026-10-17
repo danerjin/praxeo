@@ -20,7 +20,7 @@ import clingo
 
 from .schema import Assumption, Consequence, HORIZON_ORDER, PolicyRecord, Step
 
-RULES = Path(__file__).parent / "rules" / "price_controls.lp"
+RULES = sorted((Path(__file__).parent / "rules").glob("*.lp"))  # every rule file is loaded
 CUTOFF = 0.5  # workflow: report a consequence only if each assumption has p >= 0.5
 
 
@@ -42,6 +42,20 @@ def _atom(name: str) -> str:
     return s if s[:1].isalpha() else "c_" + s
 
 
+def _tax_facts(c: str, comp) -> list[str]:
+    lines = [f"{'tax' if comp.instrument == 'per_unit_tax' else 'tariff'}({c}).",
+             f'buyer({c}, "{comp.buyer_actor}").',
+             f'seller({c}, "{comp.seller_actor}").',
+             f'domestic_seller({c}, "{comp.domestic_seller_actor}").',
+             f'importer({c}, "{comp.importer_actor or comp.bound_actor}").',
+             f'revenue({c}, "{comp.revenue_actor}").',
+             f'exporter({c}, "{comp.exporter_actor}").',
+             f'exporter_worker({c}, "{comp.exporter_worker_actor or "workers." + comp.exporter_actor}").']
+    for d in comp.downstream:
+        lines.append(f'downstream({c}, "{d.actor}", "{d.buyer_actor}", {d.competitors}).')
+    return lines
+
+
 def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
     lines = []
     for comp in record.components:
@@ -54,6 +68,8 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
         if comp.protected_actor:
             lines.append(f'protected({c}, "{comp.protected_actor}").')
         lines.append(f'excluded({c}, "{comp.excluded_actor or "buyers.prospective"}").')
+        if comp.instrument in ("per_unit_tax", "tariff"):
+            lines += _tax_facts(c, comp)
     for a in assumptions:
         lines.append(f"assumption({a}).")
     return "\n".join(lines) + "\n"
@@ -61,7 +77,8 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
 
 def _models(program: str) -> list[list[clingo.Symbol]]:
     ctl = clingo.Control(["0", "--warn=none"])
-    ctl.load(str(RULES))
+    for rules in RULES:
+        ctl.load(str(rules))
     ctl.add("base", [], program)
     ctl.ground([("base", [])], context=_Context())
     out: list[list[clingo.Symbol]] = []

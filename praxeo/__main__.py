@@ -42,6 +42,9 @@ def main() -> None:
     stamp = dt.datetime.now().strftime("%Y%m%d-%H%M%S")
     out = a.out or Path("runs") / f"{a.case.name}-{a.parser}-{a.decider}-{stamp}"
     result = run_case(a.case, record, decider, out)
+    if result["score"] is None:
+        print(json.dumps({"out": str(out), "scored": False, "consequences": len(result["prediction"]["consequences"])}, indent=1))
+        return
     s = result["score"]["headline"]
     print(json.dumps({"out": str(out), "precision": s["precision"], "recall": s["recall"], "f1": s["f1"],
                       "brier": result["score"]["brier"]["mean"]}, indent=1))

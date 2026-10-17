@@ -1,0 +1,37 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-1 (binding): imports remain a meaningful share of supply and foreign sellers do not absorb most of the tariff; Halvern buys a small share of world steel.",
+  "evidence": ["Halvern buys a small share of the world's steel."]
+ },
+ {
+  "question_id": "k1.domestic_substitutes",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-2 (substitutability): domestic mills can raise output from spare or idle capacity and produce close substitutes for most imports.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.no_offset",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-8: the fall in steel imports is not offset by capital flows or other adjustments within the medium horizon.",
+  "evidence": ["Halvern is a mid-sized trading country with its own currency and a floating exchange rate."]
+ },
+ {
+  "question_id": "k1.input_not_replaceable",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-14 (substitutability): steel is a material part of construction costs and builders cannot replace it at the old cost in the medium run. Applied to both downstream groups.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.competitors_exempt",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-013 (illustrative figures), A-7 (substitutability): many steel users compete with imported finished goods that are not taxed.",
+  "evidence": ["Imported fabricated steel products and finished goods containing steel (machinery, vehicles, appliances, fabricated structural sections, fasteners) are not covered."]
+ }
+]

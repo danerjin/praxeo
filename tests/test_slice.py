@@ -18,6 +18,7 @@ from praxeo.scoring import f1_block, score
 ROOT = Path(__file__).resolve().parents[1]
 SF = ROOT / "cases" / "sf_1994"
 WE1 = ROOT / "cases" / "we001_riverton"
+WE13 = ROOT / "cases" / "we013_halvern"
 
 
 def _assumptions(p=0.9, **over):
@@ -120,7 +121,9 @@ def test_verifier_clean_and_catches_problems():
 
 
 def test_vocabulary_shared_by_rules_and_cards():
-    lp = (ROOT / "praxeo" / "rules" / "price_controls.lp").read_text()
+    files = sorted((ROOT / "praxeo" / "rules").glob("*.lp"))
+    assert {f.name for f in files} >= {"price_controls.lp", "taxes.lp"} and engine.RULES == files
+    lp = "\n".join(f.read_text() for f in files)
     used = set(re.findall(r'effect\([^,]+, [^,]+, "([a-z_]+)"', lp))
     assert used and all(vocabulary.check_variable(v) is None for v in used), used
     for card in ROOT.glob("cases/*/outcome_card.json"):
@@ -139,7 +142,7 @@ def test_context_grounding_holds_back_later_sources():
 
 def test_no_ceiling_no_consequences():
     rec = _record()
-    rec.components[0].instrument = "per_unit_tax"
+    rec.components[0].instrument = "price_floor"  # no rule file covers it (a per_unit_tax now has rules in taxes.lp)
     assert engine.run(rec, _assumptions())[0] == []
 
 
@@ -228,6 +231,92 @@ def test_consistent_with_worked_example_we001():
     for c in pred["consequences"]:
         key = (c["actor_class"], c["variable"], c["sign"])
         assert key in rows or key in known, key
+
+
+def _we013_table() -> set[tuple[str, str, str]]:
+    """(actor class, variable, sign) for every row of WE-013's normal-form table; a cell naming several
+    actor classes or variables gives one row each."""
+    md = (ROOT / "handbook" / "05_examples" / "WE-013_steel_tariff.md").read_text()
+    table = md.split("## Consequence list (normal form)")[1].split("## Gaps found")[0]
+    rows = set()
+    for line in table.splitlines():
+        cells = [c.strip() for c in line.strip("|").split("|")]
+        if len(cells) > 4 and re.match(r"C-\d+", cells[0]):
+            for actor in cells[1].split(","):
+                for var in cells[2].split("("[0])[0].split(","):
+                    rows.add((actor.split("(")[0].strip(), var.split("(")[0].strip(), cells[3]))
+    return rows
+
+
+# Engine consequences for WE-013 that are not rows of its table as written, each with the reason.
+WE013_EXCEPTIONS = {
+    # TX-8 names `employment` for export industries; WE-013 records the labor effect as the group sign
+    # at_least_one_decrease (employment or hours_worked), which the engine's sign set does not have.
+    ("workers.export_industries", "employment", "decrease"):
+        "TX-8 as written signs employment alone; the table's group sign at_least_one_decrease (C-32) is weaker",
+}
+
+
+def test_consistent_with_worked_example_we013():
+    """Every engine consequence for WE-013's record appears in WE-013's consequence list (actor, variable, sign),
+    except the listed exceptions. There is no outcome card for this fictional case."""
+    text = (WE13 / "policy.txt").read_text()
+    record = parser.parse_fixture(WE13 / "record.json")
+    pred = predict(text, record, FixtureDecider(WE13 / "answers.json"))
+    assert pred["citation_problems"] == [] and pred["verifier_problems"] == []
+    rows = _we013_table()
+    assert ("steelmakers.domestic", "quantity_supplied", "increase") in rows
+    got = {(c["actor_class"], c["variable"], c["sign"]) for c in pred["consequences"] if c["reported"]}
+    assert got
+    for key in got:
+        assert key in rows or key in WE013_EXCEPTIONS, key
+    assert got & set(WE013_EXCEPTIONS) == set(WE013_EXCEPTIONS)  # an exception that no longer occurs is removed
+    # the pieces of the table the rules in scope (TX-1, TX-2, TX-7, TX-8, RS-14) cover
+    for key in [("steelmakers.domestic", "net_price_received", "increase"), ("steel_users", "price_paid", "increase"),
+                ("importers", "quantity_traded", "decrease"), ("officials.enforcement", "tax_revenue", "increase"),
+                ("export_industries", "quantity_supplied", "decrease"), ("buyers.construction", "price_paid", "increase"),
+                ("steel_users", "quantity_supplied", "decrease")]:
+        assert key in got, key
+
+
+def test_unscored_run_without_outcome_card(tmp_path):
+    record = parser.parse_fixture(WE13 / "record.json")
+    assert not (WE13 / "outcome_card.json").exists()
+    result = run_case(WE13, record, FixtureDecider(WE13 / "answers.json"), tmp_path)
+    assert result["score"] is None and not (tmp_path / "score.json").exists()
+    assert "not scored" in (tmp_path / "report.md").read_text()
+
+
+def _tariff_assumptions(p=0.9, **over):
+    atoms = ("binding", "domestic_substitutes", "no_offset", "input_not_replaceable", "competitors_exempt")
+    return {f"{a}(k1)": Assumption(id=f"{a}(k1)", text=a, assumption_class="other", p=over.get(a, p)) for a in atoms}
+
+
+def test_tariff_exception_and_cutoff():
+    rec = parser.parse_fixture(WE13 / "record.json")
+    cons = _by_var(engine.run(rec, _tariff_assumptions(no_offset=0.4))[0])
+    assert not cons[("export_industries", "quantity_supplied")].reported  # TX-8 needs A-8 above the cut-off
+    assert cons[("steelmakers.domestic", "quantity_supplied")].reported
+    # TX-7 "Unless": domestic output pays the same tax, so there are no protected sellers and no pattern
+    cons = _by_var(engine.run(rec, _tariff_assumptions(), extra="exception(tx_7, k1).\n")[0])
+    assert ("steelmakers.domestic", "quantity_supplied") not in cons and ("steel_users", "price_paid") not in cons
+    assert ("officials.enforcement", "tax_revenue") in cons  # TX-1 is unaffected
+
+
+def test_per_unit_tax_wedge():
+    rec = parser.parse_fixture(SF / "record.json")
+    comp = rec.components[0]
+    comp.instrument, comp.bound_actor, comp.buyer_actor, comp.seller_actor = "per_unit_tax", "sellers.current", "buyers.current", "sellers.current"
+    a = {f"{x}(c1)": Assumption(id=f"{x}(c1)", text=x, assumption_class="other", p=0.8)
+         for x in ("quantity_responds", "buyers_bear", "sellers_bear")}
+    cons = engine.run(rec, a)[0]
+    got = {(c.actor_class, c.variable, c.sign) for c in cons}
+    assert {("buyers.current", "price_paid", "increase"), ("sellers.current", "net_price_received", "decrease"),
+            ("sellers.current", "quantity_traded", "decrease"), ("officials.enforcement", "tax_revenue", "increase")} <= got
+    assert verify(cons, a, rec) == []
+    a["sellers_bear(c1)"] = a["sellers_bear(c1)"].model_copy(update={"p": 0.3})
+    cons = _by_var(engine.run(rec, a)[0])
+    assert not cons[("sellers.current", "net_price_received")].reported and cons[("buyers.current", "price_paid")].reported
 
 
 @pytest.mark.skipif(not os.environ.get("ANTHROPIC_API_KEY"), reason="needs ANTHROPIC_API_KEY")

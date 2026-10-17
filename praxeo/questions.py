@@ -39,17 +39,64 @@ CEILING_QUESTIONS = [
 ]
 
 
+# Per-unit taxes (TX-1, TX-2). The wedge needs one side able to cut its quantity; the incidence premises
+# stand in for DM-1 (the rule leaves the split open), so each side's price effect is its own claim.
+TAX_QUESTIONS = [
+    ("quantity_responds", "substitutability",
+     "Can buyers cut back or switch to substitutes, or can sellers move resources to untaxed uses, so that the quantity traded falls once the tax is in place?",
+     "At least one side can reduce the quantity it trades in response to the tax."),
+    ("buyers_bear", "other",
+     "Will part of the tax be passed on to buyers, so that the price they pay rises?",
+     "Part of the tax is passed on to buyers: the price they pay rises."),
+    ("sellers_bear", "other",
+     "Will part of the tax stay with sellers, so that the price they keep after tax falls?",
+     "Part of the tax stays with sellers: the price they keep after tax falls."),
+]
+
+# Tariffs (TX-7, TX-8).
+TARIFF_QUESTIONS = [
+    ("binding", "binding",
+     "Do imports remain a meaningful share of supply after the tariff, and will foreign sellers fail to absorb most of it (they have many other markets, the country buys a small share of the world's supply)?",
+     "Imports remain a meaningful share of supply, and foreign sellers do not absorb most of the tariff."),
+    ("domestic_substitutes", "substitutability",
+     "Can domestic producers raise output (spare or idle capacity) and make close substitutes for most imports?",
+     "Domestic producers can raise output and make close substitutes for most imports."),
+    ("no_offset", "other",
+     "Is the fall in imports left unoffset by capital flows or other adjustments in the currency market within the medium run?",
+     "The fall in imports is not offset by capital flows or other adjustments within the medium run."),
+]
+
+# RS-14, asked of any tax or tariff whose record names downstream users of the taxed good as an input.
+INPUT_QUESTION = ("input_not_replaceable", "substitutability",
+                  "Is the taxed good a material part of the downstream users' costs, and can they not replace it at the old cost in the medium run (other materials, other designs)?",
+                  "The taxed good is a material part of downstream costs and cannot be replaced at the old cost.")
+EXEMPT_QUESTION = ("competitors_exempt", "other",
+                   "Do the downstream users compete with sellers who do not face the higher cost (imported finished goods, untaxed products)?",
+                   "Many downstream users compete with sellers who do not face the higher input cost.")
+
+
+def _specs(comp: Component) -> list[tuple[str, str, str, str]]:
+    """The (atom, class, question, assumption text) list for a component, by instrument."""
+    if comp.instrument == "price_ceiling":
+        return CEILING_QUESTIONS
+    if comp.instrument not in ("per_unit_tax", "tariff"):
+        return []
+    specs = list(TAX_QUESTIONS if comp.instrument == "per_unit_tax" else TARIFF_QUESTIONS)
+    if comp.downstream:
+        specs.append(INPUT_QUESTION)
+        if any(d.competitors == "exempt" for d in comp.downstream):
+            specs.append(EXEMPT_QUESTION)
+    return specs
+
+
+def questions_for(comp: Component) -> list[tuple[Question, str]]:
+    """Typed questions for a component, each with the text of the assumption it estimates."""
+    return [(Question(id=f"{comp.id}.{atom}", kind="noul", text=text, assumption=atom, assumption_class=cls), assumed)
+            for atom, cls, text, assumed in _specs(comp)]
+
+
 def ceiling_questions(comp: Component) -> list[Question]:
-    return [
-        Question(
-            id=f"{comp.id}.{atom}",
-            kind="noul",
-            text=text,
-            assumption=atom,
-            assumption_class=cls,
-        )
-        for atom, cls, text, _ in CEILING_QUESTIONS
-    ]
+    return [q for q, _ in questions_for(comp)] if comp.instrument == "price_ceiling" else []
 
 
 ASSUMPTION_TEXT = {atom: text for atom, _, _, text in CEILING_QUESTIONS}
