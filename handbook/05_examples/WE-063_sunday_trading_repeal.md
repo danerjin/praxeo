@@ -298,7 +298,7 @@ The check finds no sign that fails to reverse without a stated reason. The corre
 
 **Small shops' means (C-40).** CR-3's note, which its 1.1 clarification extends to every seller who loses sales, including to a better offer, says to combine the lost receipts with the outlays saved (CR-12b). A-27 is the dominance premise: on the Sunday sales they lose, small shops' receipts exceed the stock and staff hours they save, since they sold at positive margins and part of their staffing is fixed by opening hours. Without it, C-40 is `ambiguous`.
 
-**Fines (C-37, C-52, C-42).** The fines municipalities no longer receive (C-37) the large shops that would have opened in breach keep (C-52; CR-8b). The fines and the officer time are two items of the municipal budget (CR-8, 1.0): the net is `ambiguous` (C-42).
+**Fines (C-37, C-52, C-42).** Large shops that would have opened in breach keep the fines that municipalities no longer receive (C-52, C-37; CR-8b). The fines and the officer time are two items of the municipal budget (CR-8, 1.0): the net is `ambiguous` (C-42).
 
 **Who gains what small shops lose (CR-8b, CR-5).** On purchases that move from a small shop to a large one on Sunday, the small shop loses the sale. The large shop gains it, and the buyer gains a better offer (C-2, C-6). This is not a transfer of a right but a lost sale (CR-5, 0.7). On purchases that move from Corsland and online sellers, Hastrow's shops gain sales that Corsland and the online sellers lose (C-30, C-32). On purchases moved between days, nobody loses a sale. The capitalized value small shops lose (C-4) is the expected stream of those lost sales' margins, and it falls on whoever held the shop when the repeal became expected.
 
@@ -444,7 +444,7 @@ The core-only re-run (`05_examples_core/WE-063_sunday_trading_repeal_core.md`) w
 **Comparison conclusions rejected or applied only in part.**
 - Core C-7 with a total: the item is added (C-44), but no `ambiguous` total of `non_wage_compensation` is recorded, because the opposing item is a member of C-26's group and cannot be used as a signed chain (CR-12, 1.1).
 - Core C-29 in the medium and long run: not added; A-28 covers the rates only until the April 2028 pay round, as the comparison itself notes.
-- Core C-40 (pattern C-40 `ambiguous`): applied as the comparison's alternative, a premise that the lost margins exceed the saved outlays (A-27), not as `ambiguous`.
+- Pattern C-40, which the comparison says should be `ambiguous`: applied as the comparison's alternative, a premise that the lost margins exceed the saved outlays (A-27), not as `ambiguous`.
 - The comparison's view that the right still moves terms of large shops' new Sunday contracts under U1-a against none (core C-22, as a group): rejected. Under CR-3's 1.1 clarification and PC-17's 1.1 clause, a term attached to contracts that exist only under the repeal is no burden against the ban in force, where those contracts do not exist; what the right does to large shops is already in A-1.
 - Core C-22 (screening of new hires) and C-30 (total retail hours, cause J): not added; the first signs one CR-6 margin with no premise for it, and nothing in 1.1 settles the second (CR-12c).
 - The unit-size persistence in the long run (J): unchanged; 1.1 does not settle it.
