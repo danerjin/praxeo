@@ -1,0 +1,12 @@
+[
+ {
+  "question_id": "t1.binding",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "Imports are a tiny share of use and the domestic price is set by the world price at which Esker exports, so the tariff on a negligible import flow should not raise the domestic price by a substantial part of the tariff.",
+  "evidence": [
+   "The domestic wheat price is set by the world price at which Esker exports.",
+   "Esker grows far more wheat than it uses and exports about half its harvest; imports were 0.1 percent of use last year, almost all of it a single specialty variety that domestic farms also grow."
+  ]
+ }
+]

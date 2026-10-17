@@ -1,0 +1,12 @@
+[
+  {
+    "question_id": "x1.quantity_responds",
+    "value": "no",
+    "probability": 0.2,
+    "rationale": "Land area is fixed and the tax falls on every hectare whatever its use, so there is no untaxed use to move into and the stock traded should change little; the tax is mainly capitalised into land prices.",
+    "evidence": [
+      "Every owner pays a yearly tax of 40 Garrow dollars per hectare of land they own, whatever the land is used for, including land left idle.",
+      "The total area of land in Garrow is fixed by its borders, and every hectare is owned by someone."
+    ]
+  }
+]
