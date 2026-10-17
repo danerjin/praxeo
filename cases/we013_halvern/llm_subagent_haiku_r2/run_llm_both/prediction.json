@@ -1,0 +1,703 @@
+{
+ "assumptions": {
+  "binding(c1)": {
+   "assumption_class": "binding",
+   "id": "binding(c1)",
+   "p": 0.85,
+   "text": "The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it."
+  },
+  "competitors_exempt(c1)": {
+   "assumption_class": "other",
+   "id": "competitors_exempt(c1)",
+   "p": 0.85,
+   "text": "Many downstream users compete with sellers who do not face the higher input cost."
+  },
+  "domestic_substitutes(c1)": {
+   "assumption_class": "substitutability",
+   "id": "domestic_substitutes(c1)",
+   "p": 0.9,
+   "text": "Domestic producers make close substitutes for the covered imports."
+  },
+  "input_not_replaceable(c1)": {
+   "assumption_class": "substitutability",
+   "id": "input_not_replaceable(c1)",
+   "p": 0.65,
+   "text": "The taxed good is a material part of downstream costs and cannot be replaced at the old cost."
+  },
+  "no_offset(c1)": {
+   "assumption_class": "other",
+   "id": "no_offset(c1)",
+   "p": 0.68,
+   "text": "Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "buyers.current",
+   "assumption_sets": [
+    [
+     "binding(c1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(c1)"
+   ],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(c1)",
+     "premises": [
+      "binding(c1)",
+      "tariff(c1)"
+     ],
+     "rule": "TX-7"
+    }
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible"
+  },
+  {
+   "actor_class": "buyers.current",
+   "assumption_sets": [
+    [
+     "binding(c1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(c1)"
+   ],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "collected(c1)",
+     "premises": [
+      "tariff(c1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "tariff_bites(c1)",
+     "premises": [
+      "binding(c1)",
+      "tariff(c1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "bears_buyer(c1)",
+     "premises": [
+      "collected(c1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "bears_buyer(c1)",
+     "premises": [
+      "tariff_bites(c1)"
+     ],
+     "rule": "TX-7"
+    }
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible"
+  },
+  {
+   "actor_class": "export_industries",
+   "assumption_sets": [
+    [
+     "binding(c1)",
+     "no_offset(c1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(c1)",
+    "no_offset(c1)"
+   ],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(c1)",
+     "premises": [
+      "binding(c1)",
+      "tariff(c1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "imports_fall(c1)",
+     "premises": [
+      "tariff_bites(c1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "exports_fall(c1)",
+     "premises": [
+      "imports_fall(c1)",
+      "no_offset(c1)"
+     ],
+     "rule": "TX-8"
+    }
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible"
+  },
+  {
+   "actor_class": "general_fund",
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "collected(c1)",
+     "premises": [
+      "tariff(c1)"
+     ],
+     "rule": "TX-1"
+    }
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "tax_revenue",
+   "visibility": "visible"
+  },
+  {
+   "actor_class": "importers",
+   "assumption_sets": [
+    [
+     "binding(c1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(c1)"
+   ],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(c1)",
+     "premises": [
+      "binding(c1)",
+      "tariff(c1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "imports_fall(c1)",
+     "premises": [
+      "tariff_bites(c1)"
+     ],
+     "rule": "TX-2"
+    }
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible"
+  },
+  {
+   "actor_class": "importers",
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "collected(c1)",
+     "premises": [
+      "tariff(c1)"
+     ],
+     "rule": "TX-1"
+    }
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible"
+  },
+  {
+   "actor_class": "manufacturers",
+   "assumption_sets": [
+    [
+     "binding(c1)",
+     "competitors_exempt(c1)",
+     "input_not_replaceable(c1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(c1)",
+    "competitors_exempt(c1)",
+    "input_not_replaceable(c1)"
+   ],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(c1)",
+     "premises": [
+      "binding(c1)",
+      "tariff(c1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(c1)",
+     "premises": [
+      "tariff_bites(c1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "passes_down(c1)",
+     "premises": [
+      "input_cost_up(c1)",
+      "input_not_replaceable(c1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(c1)",
+     "premises": [
+      "competitors_exempt(c1)",
+      "passes_down(c1)"
+     ],
+     "rule": "RS-14"
+    }
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible"
+  },
+  {
+   "actor_class": "sellers.domestic_steel",
+   "assumption_sets": [
+    [
+     "binding(c1)",
+     "domestic_substitutes(c1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(c1)",
+    "domestic_substitutes(c1)"
+   ],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(c1)",
+     "premises": [
+      "binding(c1)",
+      "tariff(c1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(c1)",
+     "premises": [
+      "domestic_substitutes(c1)",
+      "tariff_bites(c1)"
+     ],
+     "rule": "TX-7"
+    }
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "visible"
+  },
+  {
+   "actor_class": "sellers.domestic_steel",
+   "assumption_sets": [
+    [
+     "binding(c1)",
+     "domestic_substitutes(c1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(c1)",
+    "domestic_substitutes(c1)"
+   ],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(c1)",
+     "premises": [
+      "binding(c1)",
+      "tariff(c1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(c1)",
+     "premises": [
+      "domestic_substitutes(c1)",
+      "tariff_bites(c1)"
+     ],
+     "rule": "TX-7"
+    }
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "visible"
+  },
+  {
+   "actor_class": "workers.export_industries",
+   "assumption_sets": [
+    [
+     "binding(c1)",
+     "no_offset(c1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(c1)",
+    "no_offset(c1)"
+   ],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(c1)",
+     "premises": [
+      "binding(c1)",
+      "tariff(c1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "imports_fall(c1)",
+     "premises": [
+      "tariff_bites(c1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "exports_fall(c1)",
+     "premises": [
+      "imports_fall(c1)",
+      "no_offset(c1)"
+     ],
+     "rule": "TX-8"
+    }
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible"
+  }
+ ],
+ "decider": "fixture:answers_remapped.json",
+ "engine_facts": "bound(c1, \"importers\").\nprotected(c1, \"sellers.domestic_steel\").\nexcluded(c1, \"buyers.prospective\").\ntariff(c1).\nbuyer(c1, \"buyers.current\").\nseller(c1, \"sellers.current\").\ndomestic_seller(c1, \"sellers.domestic_steel\").\nimporter(c1, \"importers\").\nrevenue(c1, \"general_fund\").\nexporter(c1, \"export_industries\").\nexporter_worker(c1, \"workers.export_industries\").\ndownstream(c1, \"manufacturers\", \"\", exempt).\nassumption(binding(c1)).\nassumption(domestic_substitutes(c1)).\nassumption(no_offset(c1)).\nassumption(input_not_replaceable(c1)).\nassumption(competitors_exempt(c1)).\n",
+ "explanations": [
+  "C-1. Compared with no Halvern Steel Safeguard Order, price paid for buyers.current rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85). Reported.",
+  "C-2. Compared with no Halvern Steel Safeguard Order, resources available other uses for buyers.current falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85). Reported.",
+  "C-3. Compared with no Halvern Steel Safeguard Order, quantity supplied for export_industries falls from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; TX-8: foreigners who sell less to the country earn less of its currency and so buy fewer of its exports. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it (p = 0.68). Reported.",
+  "C-4. Compared with no Halvern Steel Safeguard Order, tax revenue for general_fund rises from the short run onward (tier A, visible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue. This holds if: no assumption. Reported.",
+  "C-5. Compared with no Halvern Steel Safeguard Order, quantity traded for importers falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85). Reported.",
+  "C-6. Compared with no Halvern Steel Safeguard Order, resources available other uses for importers falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue. This holds if: no assumption. Reported.",
+  "C-7. Compared with no Halvern Steel Safeguard Order, quantity supplied for manufacturers falls from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Many downstream users compete with sellers who do not face the higher input cost (p = 0.85); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.65). Reported.",
+  "C-8. Compared with no Halvern Steel Safeguard Order, net price received for sellers.domestic_steel rises from the short run onward (tier B, visible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Domestic producers make close substitutes for the covered imports (p = 0.90). Reported.",
+  "C-9. Compared with no Halvern Steel Safeguard Order, quantity supplied for sellers.domestic_steel rises from the short run onward (tier B, visible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Domestic producers make close substitutes for the covered imports (p = 0.90). Reported.",
+  "C-10. Compared with no Halvern Steel Safeguard Order, employment for workers.export_industries falls from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; TX-8: foreigners who sell less to the country earn less of its currency and so buy fewer of its exports. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it (p = 0.68). Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers_remapped.json",
+    "evidence": [
+     "Halvern buys a small share of the world's steel and has a floating exchange rate (WE-013 record).",
+     "Importers of record must pay a tariff of 25% of the customs value on imports of flat-rolled and long steel products, for three years."
+    ],
+    "probability": 0.85,
+    "question_id": "C1.binding",
+    "rationale": "Halvern is a small buyer of world steel, so foreign sellers have little reason to cut prices much; the tariff is therefore mostly passed to domestic buyers. The record does not give a pass-through figure, so this rests on the small-country fact.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "C1.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the price domestic buyers pay for the covered goods rise by a substantial part of the tariff, rather than foreign sellers absorbing most of it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers_remapped.json",
+    "evidence": [
+     "Three domestic steel firms supply about 60% of the steel used in Halvern; the rest is imported (WE-013 record)."
+    ],
+    "probability": 0.9,
+    "question_id": "C1.domestic_substitutes",
+    "rationale": "Domestic steelmakers already supply about 60% of the steel used, for the same flat-rolled and long products, so dearer imports can shift demand to them.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "domestic_substitutes",
+    "assumption_class": "substitutability",
+    "id": "C1.domestic_substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Do domestic producers make goods that buyers can use in place of the covered imports, so that dearer imports send buyers to them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers_remapped.json",
+    "evidence": [
+     "Halvern buys a small share of the world's steel and has a floating exchange rate (WE-013 record)."
+    ],
+    "probability": 0.68,
+    "question_id": "C1.no_offset",
+    "rationale": "Halvern has a floating exchange rate and is a small economy, so the currency appreciation channel should operate over the medium run; the record is silent on capital flows that could cancel it, so this is a moderate rather than firm yes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "no_offset",
+    "assumption_class": "other",
+    "id": "C1.no_offset",
+    "kind": "noul",
+    "options": [],
+    "text": "When the country buys fewer imports, foreigners earn less of its currency. Through the exchange rate (the currency rises against what it would otherwise be) this makes the country's exports dearer abroad, so export industries sell less: that is the mechanism, not an offset to it. Over the medium run, will this chain operate, rather than being cancelled by foreigners investing or lending more in the country?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers_remapped.json",
+    "evidence": [
+     "About 4,000 domestic manufacturers use steel as a main input; machinery makers export about 35% of their output (WE-013 record).",
+     "Importers of record must pay a tariff of 25% of the customs value on imports of flat-rolled and long steel products, for three years."
+    ],
+    "probability": 0.65,
+    "question_id": "C1.input_not_replaceable",
+    "rationale": "Steel is a main input for about 4,000 manufacturers, so a 25% rise in its price raises their costs materially; the medium-run ability to switch materials or designs limits but does not remove this.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "input_not_replaceable",
+    "assumption_class": "substitutability",
+    "id": "C1.input_not_replaceable",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the downstream users' costs rise materially because of the higher price of the taxed good (given how much of it they use and whether they can switch to other materials or designs in the medium run)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers_remapped.json",
+    "evidence": [
+     "Imported fabricated steel products and finished goods containing steel (machinery, vehicles, appliances, fabricated structural sections, fasteners) are not covered."
+    ],
+    "probability": 0.85,
+    "question_id": "C1.competitors_exempt",
+    "rationale": "Imported finished goods containing steel are exempt, so downstream steel users (machinery, appliances, vehicle parts) compete with imports that do not carry the steel cost increase.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "competitors_exempt",
+    "assumption_class": "other",
+    "id": "C1.competitors_exempt",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the downstream users compete with sellers who do not face the higher cost (imported finished goods, untaxed products)?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "bound_actor": "importers",
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "domestic_seller_actor": "sellers.domestic_steel",
+    "downstream": [
+     {
+      "actor": "manufacturers",
+      "buyer_actor": "",
+      "competitors": "exempt"
+     }
+    ],
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": "workers.export_industries",
+    "good": "flat_rolled_and_long_steel",
+    "id": "C1",
+    "importer_actor": "importers",
+    "instrument": "tariff",
+    "market": "halvern",
+    "protected_actor": "sellers.domestic_steel",
+    "revenue_actor": "general_fund",
+    "seller_actor": "sellers.current",
+    "source_sentences": [
+     "Importers of record must pay a tariff of 25% of the customs value on imports of flat-rolled and long steel products, for three years.",
+     "A review in the third year may extend it.",
+     "Imported fabricated steel products and finished goods containing steel (machinery, vehicles, appliances, fabricated structural sections, fasteners) are not covered.",
+     "The Customs Service checks classification at ports and penalizes misdeclaration.",
+     "The revenue goes to the general budget."
+    ],
+    "vacancy_decontrol": false
+   }
+  ],
+  "context": [
+   "Halvern is a mid-sized trading country with its own currency and a floating exchange rate. [policy.txt line 3]",
+   "Three domestic steel firms supply about 60% of the steel used in Halvern; the rest is imported. [policy.txt line 3]",
+   "About 4,000 domestic manufacturers use steel as a main input (machinery, vehicle parts, household appliances, cans, construction products); machinery makers export about 35% of their output. [policy.txt line 3]",
+   "Halvern's other large export industries are grain and tourism. [policy.txt line 3]",
+   "Halvern buys a small share of the world's steel. [policy.txt line 3]"
+  ],
+  "effective": "1 April (year not stated)",
+  "enacted": "not stated; the recommendation was published on 1 January",
+  "jurisdiction": "Halvern",
+  "name": "Halvern Steel Safeguard Order",
+  "rule_maker": "not stated; the Trade Ministry opened the investigation and published the recommendation",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "readings": [
+     "U1-a: a product qualifies for exclusion if domestic supply is short in either quantity or quality.",
+     "U1-b: a product qualifies for exclusion only if domestic supply is short in both quantity and quality."
+    ],
+    "text": "The standard for \"sufficient quantity or quality\" is not defined."
+   },
+   {
+    "id": "U2",
+    "reading_facts": {},
+    "readings": [
+     "U2-a: the tariff lapses at the end of three years unless the third-year review extends it; the length of any extension is not stated.",
+     "U2-b: the text gives the review power over the tariff's duration but does not say whether the review must take place or whether the tariff stays in force until it does."
+    ],
+    "text": "A review in the third year may extend it."
+   },
+   {
+    "id": "U3",
+    "reading_facts": {},
+    "readings": [
+     "U3-a: an excluded product is no longer subject to the 25% tariff for any importer.",
+     "U3-b: the exclusion benefits only the steel user that applied, and other importers of the same product remain subject to the tariff."
+    ],
+    "text": "Steel users may apply to exclude a product \"not produced domestically in sufficient quantity or quality\"."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.5 (handbook catalog 1.4: PC-1, PC-3, PC-5, PC-7, PC-21, RS-4, RS-5, TX-1, TX-2, TX-7, TX-8, RS-14; CR-12 totals)",
+ "run_at": "2026-10-17T20:23:07+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "readings": [
+    "U1-a: a product qualifies for exclusion if domestic supply is short in either quantity or quality.",
+    "U1-b: a product qualifies for exclusion only if domestic supply is short in both quantity and quality."
+   ],
+   "text": "The standard for \"sufficient quantity or quality\" is not defined."
+  },
+  {
+   "id": "U2",
+   "reading_facts": {},
+   "readings": [
+    "U2-a: the tariff lapses at the end of three years unless the third-year review extends it; the length of any extension is not stated.",
+    "U2-b: the text gives the review power over the tariff's duration but does not say whether the review must take place or whether the tariff stays in force until it does."
+   ],
+   "text": "A review in the third year may extend it."
+  },
+  {
+   "id": "U3",
+   "reading_facts": {},
+   "readings": [
+    "U3-a: an excluded product is no longer subject to the 25% tariff for any importer.",
+    "U3-b: the exclusion benefits only the steel user that applied, and other importers of the same product remain subject to the tariff."
+   ],
+   "text": "Steel users may apply to exclude a product \"not produced domestically in sufficient quantity or quality\"."
+  }
+ ],
+ "verifier_problems": []
+}
