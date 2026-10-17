@@ -1,6 +1,6 @@
 # WE-067 / Analysis: Tessford Tenant Stability Ordinance (rent cap on sitting tenancies, withdrawal route, Portable Senior Credit)
 
-Analyst: core-only re-run (Handbook 1.3)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 1.3)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -418,3 +418,139 @@ CR-8b is applied to every transfer: the capped rent (C-43 against C-45), the bas
 - No instrument type for a payment that is attached to vacating, portable within an area, sized by another asset's gap and ended by leaving; `lump_sum_subsidy` was used as the closest.
 - No generic actor class for households displaced by an owner's lawful exit (`tenants.withdrawn_buildings` was coined), nor for organized interest groups that are neither buyers nor sellers (`organizations` was coined).
 - No variable for tenure choice (renting against owning or living with family); C-36 used `quantity_demanded` with a qualifier.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the main structure of the Tessford case. Sitting tenants pay less from the medium horizon and their landlords receive less. Base-date raises make the first months `ambiguous`. Non-qualifying keepers move less, leave Tessford less and change jobs less, all on the same premise about the CR-4 exception (A-27). Qualifying seniors leave Ambry County less, while their moves out of Tessford and out of their homes are `ambiguous`. Maintenance and quality fall, and sublets rise. Withdrawals shrink the covered stock and displace households, who leave Tessford more, with the displaced seniors' signs given per reading of U1. The non-qualifying class total out of Tessford is a decrease in the medium horizon on A-26. Exempt, county and Durnside rents rise, and asset values move with them. Lobbying, the credit's payers and the administration costs are recorded on both sides. Both versions also found that PC-21's Unless clause cannot handle a benefit portable over part of the region. There are two sign differences, and in both the pattern version is right. The core version extends A-26, which is a year-3 premise, to the long horizon (C-70). It also signs qualifying seniors' moves in the announcement window `decrease` without combining them with the no-cause terminations (C-34 against C-13). The pattern version's main error is PC-1 and PC-2 applied to seekers. The cap covers sitting tenancies only and the initial rent is free, so vacancies clear at a higher initial rent (core C-46), not through excess demand and rationing. The pattern version also omitted buyouts (C-22). Buyouts are a margin of the CR-6 pressure, and they are an opposing chain that its turnover and relocation decreases need a premise against (A-N3). It also omitted the end of no-cause terminations after the effective date, the landlords' side of the window, initial rents, tenure choice under the credit, holding units empty, and several transfer items and totals. The core version omitted displaced seniors' moves out of Tessford, `quality_adjusted_price`, and A-27 on the seniors' county decrease. Both versions miss one chain. For insiders who still move, the policy raises Tessford's free rents more than county rents (the core's own A-N1), which pushes some of those moves out of Tessford.
+
+Counts: M 41, V 4, S 2, OP 27, OC 5.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | M | | The pattern cites PC-3, whose If (excess demand) is not met here (see C-6). The sign stands on PC-16 and CR-5c alone. |
+| C-2 | C-11 | M | | The core adds the landlords' mirror (C-12). |
+| C-3 | C-2 | M | | |
+| C-4 | C-60 | M | | Both sign the rent per home against the same home without the policy, with A-17. The core calls A-17 "arithmetic", but it is an empirical premise with p, as the pattern says. |
+| C-5 | C-4 | M | | |
+| C-6 | none | OC | P (analyst misapplied PC-1) | Seekers' `excess_demand`. PC-1's If needs a ceiling below the clearing level on the price the buyers face. K1 caps only sitting tenancies, and "on a new tenancy the landlord may set the initial rent" (§3). Vacancies are let at a free price, so CR-6 gives no excess demand there. The pressure sits on sitting tenancies (buyouts, maintenance, sublets, withdrawal), and the initial rent rises (core C-46, CR-5c and CR-10c). Not valid. |
+| C-7 | none | OC | P (analyst misapplied PC-2) | The rationing group for seekers follows only from C-6. The record has no waiting list and no allocation rule, as the pattern itself notes. Selection by expected tenure under a uniform initial rent is derivable in direction, but it needs a premise the case lacks (the core records it as unsigned). Not valid. |
+| C-8 | C-18 | M | | The pattern omits the buyout chain (core C-22), which moves some keepers out for a payment. PC-7's "cannot be sold" is not met against the landlord: §4 bars assignment but not surrender for payment. The decrease needs a premise that bargaining costs keep buyouts below the lock-in (core A-N3). The core also adds the no-cause rule as a second (−) route. Hidden premise in the pattern version. |
+| C-9 | C-19 | M | | Same hidden premise as C-8 (A-N3). Both versions also miss a (+) chain. For keepers who still move, the forfeit is the same whether they move within Tessford or out of it. The policy raises Tessford's free rents more than county rents (A-N1, p 0.6, which the core uses only for seniors), so some of those moves go out of Tessford (CR-9, CR-6, CR-4). It is a kind (2) chain at p ≥ 0.5, so the decrease needs a dominance premise (plausible: a forfeit of 11% to 33% of rent against a rent differential). Shared omission. |
+| C-10 | C-31 | M | | The pattern rightly applies the CR-4 exception (A-27): savings built from the gap or credit can later fund a move beyond the county. The core's C-31 omits it and says only "CR-4a". Core omission of a premise. |
+| C-11 | C-32 | M | | Both `ambiguous`, by different opposing chains. The pattern uses the credit's means effect within the county (kind 3), and the core uses Tessford rents rising more than county rents (A-N1, kind 2). Both chains are derivable, so each version is missing the other's. |
+| C-12 | C-9 | M | | The core adds the landlords' side (C-10) and tenants' means (C-44). |
+| C-13 | C-13 | M | | |
+| C-14 | C-34 (window part), C-13 | S | E (core) | Qualifying seniors' moves in March to September 2027. Pattern: `ambiguous` (terminations against waiting for the credit). Core: C-34 `decrease` for "qualifying seniors before 1 October 2027", while the terminations (C-13) reach the same month-to-month seniors in the same window. CR-12b requires them to be combined. The pattern is right. |
+| C-15 | C-34 | M | | For near-qualifiers after the effective date there is no termination chain, and both versions sign a decrease. |
+| C-16 | C-24 | M | | |
+| C-17 | C-25 | M | | |
+| C-18 | C-23 | M | | |
+| C-19 | C-27, C-53 | V | | The pattern records withdrawal as `reclassification`. The core records it as `quantity_supplied` of covered units and condominium sales. |
+| C-20 | C-27 | M | | |
+| C-21 | C-28 | M | | |
+| C-22 | C-29 | M | | The core also signs the out-of-county move for the same class. |
+| C-23 | none | OC | E (core) | Displaced seniors out of Tessford: U1-a `ambiguous`, U1-b `increase`. Derivable from the core's own C-30 chains and C-32's means chain. Core omission. |
+| C-24 | C-30 | M | | |
+| C-25 | C-14 | M | | |
+| C-26 | C-37 | M | | |
+| C-27 | C-38 | M | | |
+| C-28 | C-5 | M | | The core's C-5 puts the $90 fee into `compliance_cost` under CR-8c. The fee is a transfer to the board (CR-8b, core C-6), not resources used up. Only registration time belongs in C-5. Minor core recording error. |
+| C-29 | C-57 | M | | |
+| C-30 | C-61 | M | | |
+| C-31 | C-48 | M | | Same sign, different derivation. The pattern counts every lost vacancy as a shut-out seeker (PC-8 via PC-3). The core counts only the vacancies whose occupant would have left Tessford, since a within-city mover who stays removes a search as well (CR-9). The core's derivation is the sound one. The pattern's added CR-4c chain (sitting tenants keep more space) is valid and pushes the same way. |
+| C-32 | C-55 | V | | The pattern records shut-out residents' moves as `relocation_out_of_area` out of Tessford. The core records seekers' rentals elsewhere as `quantity_substitute`. The pattern also includes exempt tenants priced out by C-31 (CR-4 with A-22, A-15), which the core did not record. |
+| C-33 | C-53 | V | | `quantity_substitute` against `quantity_traded` for condominiums. |
+| C-34 | C-39 | M | | |
+| C-35 | C-49 | M | | |
+| C-36 | C-50 | M | | |
+| C-37 | C-59 | M | | |
+| C-38 | C-21 | M | | |
+| C-39 | C-47 | M | | The pattern's own C-52 makes qualifying seniors' turnover a kind (3) chain on covered lettings. Under CR-12 0.8 the decrease therefore needs a premise covering it (core A-N9). The pattern cites OC-4 alone. Hidden premise in the pattern version. |
+| C-40 | C-64 | M | | |
+| C-41 | C-3 | M | | |
+| C-42 | C-40 | M | | |
+| C-43 | C-41 | M | | |
+| C-44 | C-45, C-65 | V | | The pattern folds rent forgone, the fee and relocation payments into one key. The core splits off withdrawing owners' relocation payments (C-65). |
+| C-45 | C-43 | M | | |
+| C-46 | C-7 | M | | |
+| C-47 | C-6 | M | | |
+| C-48 | none | OC | E (core) | `quality_adjusted_price` `ambiguous` (lower rent against lower quality). It is a variable in 2.4, and both chains are in the core (C-1, C-25). Core omission. |
+| C-49 | C-70 (medium) | M | | |
+| C-50 | C-70 (long) | S | E (core) | Pattern: `ambiguous` in the long horizon. Core: `decrease` for "medium; long" on A-26, which states the cut "by the third year" only. Withdrawals continue as the gap widens (TS-3), and nothing bounds the long-run comparison. The pattern is right. |
+| C-51 | none | OC | J | The total over all insiders out of Tessford is `ambiguous`. It follows trivially from C-32 (kind 3) and the core's subclass totals. The core gave totals per subclass instead (C-70, C-72). |
+| C-52 | C-33 | M | | |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-8 | OP | J | The credit as displaced seniors' means, per U1. The pattern covers it within credit holders (C-41) and through U1 in C-23 and C-24. |
+| C-10 | OP | E (pattern) | Landlords' receipts from base-date raises in the window. This is the CR-8b side of the pattern's C-12. |
+| C-12 | OP | E (pattern) | Landlords' first-year receipts, `ambiguous`. The mirror of C-2. |
+| C-15 | OP | E (pattern) | No-cause terminations fall from 1 October 2027 (K2, CR-1 op 1, A-2). RS-8 asks for both windows. The pattern records only the rise in the window (C-13). |
+| C-16 | OP | E (pattern) | Units held vacant in the window for withdrawal. The pattern's own A-8 names the motive but records no key. |
+| C-17 | OP | E (pattern) | Units held vacant before withdrawal, to avoid owing relocation and notice to a new household (CR-4, A-N7). Derivable. |
+| C-20 | OP | E (pattern) | Non-qualifying keepers out of Ambry County, decrease. Same chain as C-9. The pattern used the two-area qualifier only for seniors. |
+| C-22 | OP | E (pattern) | Buyouts (`side_payments` to sitting tenants), increase on A-N2. This is a CR-6 margin on terms the rule does not regulate, since §4 does not bar payments to vacate. It is also the opposing chain behind the hidden premise in C-8 and C-9. |
+| C-26 | OP | J | The CR-6 group over the sitting-tenancy margins. Its members are signed separately in both versions. |
+| C-35 | OP | J | Near-qualifiers' moves rise just after the qualifying date. RS-8 asks for the other window, and the pattern declined it explicitly, deferring to C-52. In the medium part the core's own C-33 chains (kind 3) bear on the same key and the sign would need combining. Defensible either way. |
+| C-36 | OP | E (pattern) | Credit holders rent rather than move to family or buy, because §7(c) pays only to a landlord (CR-4, A-N6). Derivable. |
+| C-42 | OP | E (pattern) | The County office's 4% fee as `non_tax_receipts`. The pattern names it in its final check but records only the cost (C-43). |
+| C-44 | OP | E (pattern) | Sitting tenants' means fall in the window as they keep renting at the raised rent (CR-3 note). The mirror of C-12. |
+| C-46 | OP | E (pattern) | Initial rents of new covered tenancies rise. The cap on later rents moves both parties' acceptable initial rent up (CR-5c, CR-10c), and fewer vacancies raise the free price. This is what vacancy decontrol gives in place of the pattern's C-6 and C-7. |
+| C-51 | OP | J | Tessford rental stock, medium. The pattern signs covered stock (C-20) and new building (C-36) separately and gives no total. |
+| C-52 | OP | J | Tessford rental stock, long, `ambiguous`. Same choice. |
+| C-54 | OP | J | Condominium prices, `ambiguous`. The pattern states the two chains in its text and leaves them unsigned. |
+| C-56 | OP | E (pattern) | Shut-out seekers' commuting time increases. The pattern's own A-15 ("settle ... and commute") supports it. |
+| C-58 | OP | E (pattern) | County landlords' receipts increase. This is the CR-8b side of C-29. |
+| C-62 | OP | J | Durnside landlords' asset values. The pattern stopped at depth 4. |
+| C-63 | OP | E (pattern) | Landlords capture part of the credit in the long horizon (CR-6 1.1, A-N5). The pattern argues that CR-6 1.1 does not apply because the credit is fixed by the vacated unit. That holds only while the credit is below the new rent. Where it reaches the rent, the City pays the posted rent up to a limit and the holder pays nothing at the margin, which is exactly CR-6 1.1. The core is right to split by holder. |
+| C-66 | OP | E (pattern) | Displaced households' search and moving costs (CR-8c). |
+| C-67 | OP | E (pattern) | Displaced households' total means, `ambiguous`. CR-12 0.8 asks for the total where items move in opposite directions. |
+| C-68 | OP | E (pattern) | The board's fund balance, `ambiguous`. CR-8 1.0 asks for the net where fees fund the policy. |
+| C-69 | OP | J | Turnover over all non-qualifying insiders, `ambiguous`. PC-7 has no subclass split, so the pattern had no prompt. The core's total is valid. |
+| C-71 | OP | E (pattern) | Non-qualifying insiders' total out of the county, `ambiguous`. PC-21's subclass split asks for the total per area. |
+| C-72 | OP | E (pattern) | Covered seniors' total out of the county, `ambiguous` under both readings. Same reason. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.**
+  - *PC-1 and PC-2 under vacancy decontrol (analyst misapplication).* The cap binds on sitting tenancies, not on the price seekers pay. Excess demand, rationing and side payments by seekers (C-6, C-7) do not follow, and the initial rent rises instead (core C-46). PC-1's If excludes this case as written, but a note on vacancy decontrol would prevent the error.
+  - *PC-7 and PC-21, "cannot be sold".* The benefit cannot be assigned, but it can be surrendered to the landlord for a payment (buyouts, core C-22). With that open, the decreases in turnover and relocation need a premise that bargaining costs keep buyouts below the lock-in (core A-N3). Neither pattern names it.
+  - *PC-21's Then, for insiders who still move.* The forfeit is the same for a move within the area and a move out of it. But the policy raises the area's free rents (exempt units, initial rents) more than rents at destinations, so some remaining moves are diverted out of the area. This kind (2) chain needs a dominance premise. Both versions missed it for non-seniors (pattern C-9, core C-19), and the core used it only for seniors (C-32).
+  - *C-39.* The pattern's lettings decrease leaves out its own kind (3) senior-turnover chain (A-N9 in the core).
+- **Errors in the core version.**
+  - C-70 extends a year-3 premise to the long horizon (S).
+  - C-34 is not combined with the terminations in the window (S).
+  - The core omits displaced seniors' moves out of Tessford (pattern C-23) and `quality_adjusted_price` (C-48). C-31 lacks A-27.
+  - C-5 counts the board's fee as resources used up rather than as a transfer.
+- **Errors in the pattern version.**
+  - C-6 and C-7 (above). The buyout margin is missing, and with it the premise its lock-in signs need.
+  - The argument against landlords capturing the credit fails where the credit reaches the rent (C-63).
+  - Omissions: the end of no-cause terminations (C-15), initial rents (C-46), tenure choice (C-36), holding units empty (C-16, C-17), the landlords' side of the window (C-10, C-12, C-44), keepers out of the county (C-20), several transfer items and totals (C-42, C-58, C-66 to C-68), and subclass totals per area (C-71, C-72).
+- **Test of PC-21 against the core derivation.**
+  - *If, "needed interpretation":* confirmed. The core had to treat destinations separately as well (C-31 decrease, C-32 `ambiguous`).
+  - *Then, "needed interpretation" (two routes are one) and "failed" for seniors:* both confirmed. The core derives C-19 from the forfeit alone, with being priced out as part of the A-6 counterfactual, and C-32 is `ambiguous`. The core adds two further needs. One is the buyout premise (A-N3). The other is the diverted-movers chain above, which neither version applied to non-seniors.
+  - *Subclass split, "needed interpretation" (window terminations; a kind 3 subclass makes the total ambiguous):* confirmed (C-14, C-72). The core contradicts the verdict nowhere, but it errs on the long-horizon total, where the pattern version is right. It also shows that the split is needed per area (C-71), and for turnover too (C-69), where PC-7 has none.
+  - *Population caveat, "needed interpretation":* not contradicted. The core gives no population sign. It records the shut-out side as seekers' rentals elsewhere (C-55) rather than as residents' moves.
+  - *Assumes, "needed interpretation":* confirmed (A-7 per destination, A-27). The core shows a further missing premise, A-N3 on buyouts.
+  - *Unless, "failed":* confirmed. Partial portability neither blocks the county decrease (C-31) nor lets the Tessford decrease through (C-32).
+- **Proposed rewording of PC-21, checked against the core rules.**
+  - *Sorting destinations into a portable range* is supported. It is CR-4 per pair, with CR-1 1.1 mirrored for a grant kept only by staying in the range.
+  - *Moves out of the range decrease, while moves out of the area are `ambiguous` absent a premise on the means effect* is supported. It is CR-4's "a change in means alone" within the range, plus CR-12 0.8 kind 3.
+  - *A subclass with an `ambiguous` sign makes the total `ambiguous`* is supported, but the wording should add "unless a dominance premise covers both of its directions" (CR-12 0.8).
+  - *The Unless clause for full portability* is supported only where the benefit is equal at every destination. A residual difference, such as a credit capped at the new rent or set from a schedule, is CR-4 proper.
+  - *The added CR-4 exception premise* is supported. The rewording still lacks the buyout premise and the diverted-movers chain.
+  - *Residents shut out leave the area more* is supported with A-15 and A-22. Under vacancy decontrol it runs through higher free rents, not rationing.
+- **Limits of the core rules.** None produced a difference.
+  - *GAP-067-C1 (one household's non-move removes a vacancy and a search):* not a calculus gap. CR-9 applied per relation gives two chains in the same market: the vacancy not offered is a supply change, and the search not made is a demand change where the stayer would have moved within the city. CR-6 applies in each segment and CR-12b, d and e combine them. The share of stayers who would have left the city is a count over a distribution, and CR-12e 0.8 already says that this is arithmetic where the case gives the distribution (38% of movers leave) and a premise otherwise. At most it is a wording gap: CR-9 could say that one actor's single choice can sit on both sides of one market, and that the two sides are separate chains. The pattern version did not face the step. It counted every lost vacancy as a shut-out seeker (PC-3, PC-8, C-31), which overcounts but gives the same sign. Its evidence for A-20 uses only the leavers' vacancies, which is the core's count.
+  - *GAP-067-C2 (CR-4 when two options improve by nearly the same amount):* not a calculus gap. CR-4 is stated over relative cost. Split the change into a common part (the smaller improvement), which is "a change in means alone" for whoever stays within the set, and a residual difference, which is CR-4 proper with the sign of the difference. The common part follows from CR-1 1.1, mirrored by the symmetry test: a transfer kept only by staying is op 4 for those who stay and op 3 on leaving. The residual's sign differs per senior, because the registered market rent can lie above or below the unit's own letting value and the credit is capped at the new rent. That makes it kind 3, and the result is `ambiguous`. CR-12f is not needed, since near-cancellation is not cancellation by construction, and the kind 3 rule already gives the right answer. This is a wording gap: CR-4 could state the decomposition. The pattern version took the same step by reading CR-4 per pair of options, with "a change in means alone" within the county set (its Gaps (b) 1). It reached the same signs (C-11, C-52 against core C-32, C-33) and logged the step as unclear wording, which is the right classification.
+  - *Unclear core-rule wording that both versions met:*
+    - CR-1 1.1 is written for a charge, not its mirror for a grant.
+    - CR-4's "change in means alone" is stated for exact equality across options.
+    - CR-4's exception is written for burdens, not for a benefit attached to one option.
+    - CR-12 0.8 does not say whether arithmetic can bound a kind 3 chain.
+    - CR-6 1.1 does not cover a fixed sum capped at the rent.
+    - CR-12h does not cover household-specific qualifying dates.
