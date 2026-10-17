@@ -385,3 +385,4 @@ The metamorphic checks in the three repeal examples (WE-022 to WE-024) are alrea
 | WE-063 | Repeal of a Sunday-trading ban | RS-9, RS-8, TS |
 | WE-064 | Spectrum auction with a build-out obligation | EN-13, PC-17, CR-7c |
 | WE-065 | Crop deficiency payments | SB-2, CR-8, EN-12 |
+| WE-066 | Campus e-bike ban by a private school | RS-4, RS-5, RS-16, RS-8 |
