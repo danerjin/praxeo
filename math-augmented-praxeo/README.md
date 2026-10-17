@@ -132,7 +132,7 @@ python3 math-augmented-praxeo/examples/we001_annex.py
 ## Status and next steps
 
 - This is a folder on the working branch, not a separate branch. A separate branch can be cut from it if wanted.
-- The annex pass has 25 handlers, keyed by instrument, variable and actor role. They cover:
+- The annex pass has 24 handlers, keyed by instrument, variable and actor role. They cover:
   - price ceilings: quantity supplied, shortage, insiders' price, capitalized asset value, the substitute's price;
   - floors: surplus, employment and quantity demanded;
   - per-unit taxes: both prices, quantity traded, revenue shortfall;
