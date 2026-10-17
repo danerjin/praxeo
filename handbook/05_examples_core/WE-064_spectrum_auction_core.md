@@ -1,6 +1,6 @@
 # WE-064 / Analysis: Auction of 2.9 GHz radio licenses with a build-out obligation and a per-bidder cap
 
-Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -306,3 +306,75 @@ The band itself had no use in the counterfactual (the Radio Act bars transmissio
 - No variable for network coverage (share of population served by a network); `quantity_traded (mobile service in the band)` was used for C-5.
 - No variable for public borrowing (the Treasury's own borrowing); its effect could only be carried through `interest_rate` for other borrowers.
 - No actor class for holders of a right whose obligations travel with it (licensees bound by K2 after transfer); `licensees.low_value` was used.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on most of the spectrum case. The state is paid and winners hold a valuable license. Licensees build in the band and densify less in the old bands. The towns get service because of the obligation, and some licensees game it. Stakes below the affiliate line and network sharing appear, an entrant adds a network, and transfers and their substitutes are signed per reading. The incumbents' licenses and Pellow's copper lose value, and DSL loses lines and price. Riggers earn more and more are employed, and other projects are delayed. Interest rates and incumbents' share values are ambiguous, and the budget group gains on net. Both versions also re-sign the build-out obligation and the cap against no band, not against an auction without them. The differences come from chains one version left out. The pattern version records less densification (its C-10) but does not carry that chain into the markets that densification also uses: site lease rates, tower values, new towers and the world price of equipment. Its signs there leave out an opposing chain it derived itself. It also signs busy-hour quality alone where CR-6 gives only a group. The core version omits some trivially derivable keys (bidders, preparation costs, users of the band, fixed wireless lines) and the fibre-substitution chain after 2032. It also treats the tower market as ambiguous while using, for riggers, an arithmetic bound that would have signed it. No consequence needed a step the core rules lack.
+
+Counts: M 23, V 6, S 5, OP 8, OC 6.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-1 | M | | |
+| C-2 | C-2 | M | | Both read CR-7c as capture net of the price; the pattern adds SB-4, whose "captured by whoever receives them at creation" has the same flaw for a sale as CR-7c (see Findings). |
+| C-3 | C-4 | M | | Horizons differ slightly (short to medium against medium). |
+| C-4 | C-32 | S | E (pattern) | Pattern: busy-hour `quality_per_unit` increase on its own. Core: price (−), quality (+) and quantity (+) as a group with `at_least_one_as_stated`. More capacity at each price (CR-6) leaves sellers offering better terms, but which term moves needs a premise splitting the response (CR-6 0.9). The pattern version states none, and it signs the price separately as well (C-19). No pattern is involved, so this is an analyst error in the pattern version. |
+| C-5 | C-5 | V | | Pattern: `quality_per_unit` (service in the band in towns). Core: `quantity_traded` (mobile service in the band) for residents between 65% and 90%. Both note that no variable for coverage exists. |
+| C-6 | none | OC | E (core) | Qualified bidders increase from none. This follows from CR-4 (x: stay out, y: bid) and CR-12 0.9 (an activity that exists only under the policy). The core version omitted it. |
+| C-7 | none | OC | E (core) | Bidders' preparation costs (advisers, deposits held) increase (CR-8c). The core version records only licensees' coverage-reporting costs (C-11). Omission. |
+| C-8 | C-9 | M | | The core version derives it from CR-1 op 1 and CR-6 (pressure from a fixed quantity per holder) without RS-17. |
+| C-9 | C-10 | M | | |
+| C-10 | C-6 | M | | The pattern labels the class `licensees`, the core `operators.incumbent`; densification is in the old bands either way. |
+| C-11 | C-13 | M | | |
+| C-12 | C-18 | M | | |
+| C-13 | C-19 | M | | |
+| C-14 | C-17 | M | | |
+| C-15 | C-14, C-16 | V | | Split by actor and question: licensees on the deadline and its relaxation (C-14), bidders on the reading of U1 (C-16). The pattern adds waivers and the cap at re-award, which the core does not name. Each version derives these as questions that exist only under the Regulations (CR-12 0.9). |
+| C-15 (town councils) | C-15 | S | J | The pattern's variable covers lobbying on questions that exist only under the Regulations, and councils' lobbying for enforcement of the deadline is new: an increase (CR-12 0.9). The core's variable covers councils' lobbying on coverage overall: it rises for enforcement and falls because the obligation delivers coverage they would have campaigned for (CR-4 1.0). With no premise, that is `ambiguous`. Each version is right about its own variable. |
+| C-16 | C-8 | M | | |
+| C-17 | none | OC | E (core) | Users of the band rise from none (CR-1 op 2, CR-12 0.9). Trivial, but scorable, and the core version omitted it. The pattern version's re-signing of EN-13 is right. |
+| C-18 | none | OC | E (core) | Fixed wireless lines supplied by entrants increase. This is the other side of core C-33 (DSL households switch, CR-4), which the core version did not record. |
+| C-19 | C-32 | V | | `quality_adjusted_price` (per GB at a given speed) decrease is itself close to the group "price down or quality up" that core C-32 records. It leaves out the quantity member, but the claim is the same. Both versions treat the license price and the build-out as costs fixed per firm, with no unit-price chain (CR-4 0.8), and both rely on A-15. |
+| C-20 | C-37 | M | | The pattern cites RS-13; the core cites CR-9 and CR-7c. |
+| C-21 | C-38 | M | | The core lists the build-out burden (C-12) as a (−) chain. Against no band that is a baseline slip (see Findings), but the combined sign is the same. |
+| C-22 | C-33 | M | | |
+| C-23 | C-34, C-35 | V | | Split by side: Pellow's net price and households' price paid. The core's C-35 adds that switchers move "only to a cheaper or better offer". A better offer can cost more, so C-35 holds for those who stay on DSL, as its own derivation says. |
+| C-24 | C-36 | M | | |
+| C-25 | none | OC | E (both) | Pattern: site lease rates increase, by the response argument (CR-12e 1.0) with A-20. Its section 7 lists only new towers as the (−) chain. It leaves out the fall in densification sites that its own C-10 records, which is a second chain the 1.0 note says must be combined. The core version does not sign lease rates, and it calls tower business ambiguous for lack of a counterfactual densification count. Yet for riggers it uses the bound that band installations (4,000 to 5,000 a year) exceed all counterfactual installations (3,000 a year). The same bound signs site demand as an increase, given a premise that a band installation takes at least as much site capacity as a densification installation. The pattern's sign is recoverable, but not as written. |
+| C-26 | C-29 | S | E (both) | Tower asset values: the pattern says increase, the core says ambiguous. The cause is the same as for C-25. The pattern omits the densification chain, and the core does not use its own arithmetic. SB-4 is applied correctly once the yield sign is settled. |
+| C-27 | C-28 | S | E (pattern) | Pattern: new towers increase. Core: site tenancies and new towers together, `ambiguous`. Here the arithmetic does not settle it, because installations are not towers. Rural towers built for the obligation (about 2,000 projected) oppose the new urban sites that densification would have needed, and no count compares them. The pattern omits that chain. The core's lumping of tenancies with towers is allowed (one variable, two items), but recording them as two items would have kept the tenancy sign. |
+| C-28 | C-22 | M | | The pattern version does not state the densification chain for riggers. The core version states it and settles it by arithmetic (CR-12e). |
+| C-29 | C-23 | M | | |
+| C-30 | C-26 | M | | |
+| C-31 | C-27 | S | E (core) | Pattern: other installations after 2032 `ambiguous`: catch-up of delayed projects (+) against fixed wireless lowering the return on some fibre builds (−, CR-9, A-18). Core: `increase` from catch-up alone. The fibre-substitution chain is derivable (CR-9 competitor relation, CR-4 on builders), and the core version records fixed wireless as a substitute for DSL without following it to fibre builds. Core omission. |
+| C-32 | C-31 | M | | The pattern gives short to medium on A-1 alone. The core gives medium on A-23, noting that band orders displace densification orders while rigger capacity is fixed. The core's horizon is the one the rules give (see C-33). |
+| C-33 | none (core: "Not reported") | OC | E (pattern) | World price of radio equipment increase (short), by CR-6 1.0. In the short run, band orders replace densification orders that operators hold back from the announcement (core C-7) and while riggers are fixed (A-22), so Tarnesse's total orders need not rise. The pattern omits that chain. The core's treatment is right in substance, but its form is wrong: under CR-12 0.8 kind 2 it should estimate the premise (total short-run orders rise) and report `ambiguous` if p is at least 0.5. "Not reported" without a p is not one of the allowed outcomes. |
+| C-34 | C-42 | M | | |
+| C-35 | C-39, C-41 | V | | The core gives the receipts and the net separately for the group, and the TCA's appropriation as a third item (C-40). The pattern derives the group's sign from the net. |
+| C-36 | C-3 | M | | |
+| C-37 | C-20 | M | | |
+| C-38 | C-41 | V | | The pattern records the net on `treasury`; the core records it on the group. Both use arithmetic. |
+| C-39 | C-11 | M | | |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-7 | OP | E (pattern) | Densification held back in the announcement window (CR-10a, x: densify now, y: wait for the band; A-7, A-28). Valid. The pattern version's section 8 does not mention it, though it records the asset-value moves for the same window. |
+| C-12 | OP | E (pattern) | Licensees' `resources_available_other_uses` fall by the cost of about 3,500 mandated sites per network. CR-8a makes this valid against no band, since the money spent on those sites is withdrawn from other uses. The pattern's C-36 covers only the auction payment. The core's citation of CR-3a ("burdens the chosen option") is a baseline slip: licensees chose the package of license, payment and obligation, so by CR-3b they are not worse off by their own ranking against no band. The sign rests on CR-8a alone. |
+| C-21 | OP | J | Rigger certification enrolment increases (CR-4, CR-10a, A-23). The pattern version folds training into riggers' employment (C-29). |
+| C-24 | OP | E (pattern) | Riggers' wage after 2032 is `ambiguous`: delayed projects (+) against riggers trained for the build-out who remain (−, CR-10b). Valid. The pattern version gives no sign after the build-out window. |
+| C-25 | OP | E (pattern) | Fibre builders and other buyers pay more for installation work (CR-9, CR-7a, A-22). Valid. The pattern version records their lower quantity (C-30) but not the price that causes it. |
+| C-30 | OP | J | Permit waits are `ambiguous` (rural towers against fewer densification sites). The depth and the reading of CR-6 for a fee-priced public service are judgment calls, and the core version's own gap note says the clause did not fit cleanly. |
+| C-40 | OP | J | The group's means fall by the TCA's appropriation, recorded as its own item. The pattern version records the outlay (C-37) and the net (C-38) and derives the group from the net. Both follow CR-8 1.0. |
+| C-43 | OP | J | Exchange rate `ambiguous` (equipment imports against foreign finance, A-N1). The pattern version stopped the currency link as diffuse at depth 3 with no ranking premise. That stop is allowed, and the core's ambiguous sign adds little. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** (1) Busy-hour quality (C-4) is signed alone, where CR-6 0.9 gives a group (price, quality, quantity) unless a premise splits the response. (2) In site lease rates (C-25), tower values (C-26), new towers (C-27) and the short-run world equipment price (C-33), the pattern version uses CR-12e or CR-6 1.0 without the opposing chain from its own C-10 (less densification, held back from 2026). Lease rates and tower values can be recovered by arithmetic on the case's figures with a stated premise on site capacity per installation. New towers and the short-run equipment price cannot. (3) SB-4, cited for C-2, says a created asset's value is "captured by whoever receives them at creation". It has the same defect for a sold right as CR-7c, which the pattern version flagged only in CR-7c.
+- **Errors in the core version.** Omissions: qualified bidders and their preparation costs (pattern C-6, C-7), users of the band (C-17), fixed wireless lines supplied (C-18), and the fibre-substitution chain after 2032 (C-31). There is an inconsistency: the arithmetic bound used for rigger wages is not used for the tower market (C-28, C-29). On form, the short-run equipment price is "not reported" without the probability CR-12 0.8 asks for. There are two baseline slips: C-12 cites CR-3a, and C-38 lists the build-out burden as a (−) chain. Both compare the license with a license without the obligation, which is exactly the comparison the core version's own final check 3 rejects. Neither slip changes a sign. GAP-064-C2 is not a calculus gap: a reallocation of fixed capacity between two uses is a kind-2 chain that CR-12b and CR-12 0.8 already handle.
+- **Errors in the pattern version (omissions).** Densification held back in the announcement window (core C-7), licensees' spending on mandated sites (C-12), the price other buyers pay for installation work (C-25), and riggers' wage after 2032 (C-24).
+- **Test of 1.0 verdicts against the core-only version.** *PC-17, failed* ("other terms adjust" compares with a license without the term): confirmed. The core version reached the same re-signing without the pattern (its section 7, last row; final check 3). Its slips in C-12 and C-38 show the trap is easy to fall into even without PC-17. *EN-13 1.0, needed interpretation* (no users without the policy): confirmed. The core version signed transfers per reading from CR-5 and CR-7a and never derived a fall in the number of users. *CR-7c, needed interpretation for a created right sold at creation*: confirmed. The core version raised the same point independently (GAP-064-C1). That gap is a wording gap, not a calculus gap, since CR-5c and CR-8b give the split's structure. *RS-17 1.0, needed interpretation* (splitting worked; the value clause compared with no cap; a cap is a prohibition, not a notch or kink): confirmed. The core version got splitting from CR-1 op 1, CR-6 and CR-4 and signed no value loss from the cap. *Verdicts of "worked" that the core comparison contradicts in part*: CR-12 1.0 on what the response argument needs (C-25) was applied without the second chain the note requires to be combined, and CR-6 1.0 on small effects (C-33) was applied without the opposing displacement chain.
+- **Limits of the core rules.** None that produced a difference (no K). Unclear wording: CR-7c's capture clause for a right sold at creation (both versions). CR-12 1.0's cost premise is worded for a contraction; the expansion mirror is needed (pattern). CR-12e does not mention bounding by a counterfactual total (core). CR-4 1.0 does not say whether redirected lobbying counts as a change (core). CR-3 does not say that a burden inside an option the policy itself adds is no loss by the actor's ranking against the counterfactual, which is the slip the core version made (comparison).

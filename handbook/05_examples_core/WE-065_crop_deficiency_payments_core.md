@@ -1,6 +1,6 @@
 # WE-065 / Analysis: Deficiency payments to wheat growers with a Th 220 target price
 
-Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: awaiting comparison
+Analyst: core-only re-run (Handbook 1.0)  |  Rules: core rules CR-1 to CR-12 only  |  Status: compared
 
 ## 1. Policy record
 
@@ -267,3 +267,74 @@ No new premises were needed (no A-N).
 - No variable for land use by crop (area in wheat); `quantity_supplied` and `quantity_substitute` were used.
 - No variable for price risk borne or hedging; `quantity_substitute (price cover)` was used.
 - No actor class for holders of a historical entitlement (established production) as distinct from current producers; `growers.below_standard` and `growers.above_standard` were named for CR-3 0.9.
+
+## Comparison with the pattern-based analysis
+
+**Summary.** The two versions agree on the main structure of the deficiency-payment case. Growers receive payments in low-price years and the budget group pays. Under U1-a the expected price per tonne rises, more wheat and less barley are grown, feed varieties gain share, some declarations are overstated, exports rise, and the world and domestic prices fall slightly, a fall the response argument (on A-9) keeps from being reversed. Foreign growers receive and grow less. Hedging falls, and the feed-barley price is ambiguous. Wheat land rises in value from February 2027 under both readings, rents rise at renewal so landowners capture more of the payment, and growers' borrowing rates fall. Under U1-b nearly everything else is `no_change`. Most differences are in recording. The pattern version gives per-state signs (years below and at or above the line); the core version gives one contingent sign. The core version also records more of the second-order classes: milling wheat, fines, pasture rents, neighboring sellers, import buyers and the exchange rate. There are two substantive errors in the pattern version. It signs lobbying on renewal and on the target at review as an increase "against none", although that is the farm-support question that was contested on the counterfactual path. And it records the formula's mix effect on the rate (C-22) against a static projection, not against no Act, which gives a U1-b `no_change` that contradicts its own C-1. The core version omitted several keys that are easy to derive: farms growing wheat, growers' compliance costs, the value of convertible land, and import-competing industries.
+
+Counts: M 18, V 11, S 1, OP 11, OC 6.
+
+### Pattern version → core version
+
+| Pattern ID | Matched core ID(s) | Class | Cause | Note |
+| --- | --- | --- | --- | --- |
+| C-1 | C-2 | V | | The pattern signs the outlay per state of the world (years below Th 220) on `treasury`. The core gives one contingent sign over the period on the payments office, resting on A-2. |
+| C-2 | none | OC | J | Outlay in years at or above Th 220: `no_change`. True by the formula. The core rules do not require per-state signs, and the core version folded the contingency into A-2. |
+| C-3 | C-1 | V | | Per state against one contingent sign. The core splits new growers (C-35) and, under U1-b, holders by position against the standard (CR-3 0.9). |
+| C-4 | C-4 | V | | Per-tonne receipt in paying years (U1-a increase, U1-b no_change). The core states it only inside the derivation of C-4 ("in paying years the rate rises one for one", so the total is held at Th 220). That holds exactly only for a grower whose price equals the national average and in years the counterfactual price was also below the line. The sign is safe in substance. |
+| C-5 | C-26 | V | | The pattern signs the market price only in years at or above the line. The core signs the farm-gate market price, excluding the payment, in all years, which is the more general key. Both are derived from CR-6 1.0 and A-10. |
+| C-6 | C-4 | M | | Both rest on A-18 as dominance. The core adds the arithmetic on the rate. |
+| C-7 | C-3 | V | | Per state against one contingent group sign. |
+| C-8 | C-3 | M | | Whole-period group sign on A-2. |
+| C-9 | C-5 | M | | |
+| C-10 | none | OC | E (core) | Farms growing wheat: U1-a increase. This is CR-4 (x: no wheat, y: wheat) for whole farms at the margin. The core records area and conversion but not the number of farms. Omission. |
+| C-11 | C-6 | M | | |
+| C-12 | C-7 | M | | |
+| C-13 | C-10 | M | | |
+| C-14 | C-13 | M | | |
+| C-15 (U1, the formula) | C-14 | M | | These questions exist only under the Act (CR-12 0.9). |
+| C-15 (target at review, extension) | C-15 | S | P (analyst misapplied RS-7 1.0) | Pattern: increase, as "questions that exist only under the Act". Core: `ambiguous`. Whether to keep supporting wheat after 2032, and at what target, is the farm-support question that the pattern version itself says was debated in 2025 and 2026 and would have stayed contested. RS-7's 1.0 Unless clause and CR-4 1.0 require signing against that contest, which needs a premise. Relabelling the question as "renewal" does not make it new. The core is right. RS-7 as written is unclear on what counts as "the same question" (see Findings). |
+| C-16 | none | OC | E (core) | Growers' compliance costs (claims, declarations): increase (CR-8c). The core records the office's costs only. Omission. |
+| C-17 | C-23 | V | | The core records the world price once, on foreign sellers. The pattern records it for foreign buyers too. |
+| C-18 | C-23 | M | | |
+| C-19 | C-24 | M | | |
+| C-20 | C-25 | M | | |
+| C-21 | C-22 | M | | |
+| C-22 | none | OC | E (pattern) | Pattern: `subsidy_outlay` (rate per tonne in paying years), U1-a increase, U1-b `no_change`, because the shift to feed varieties lowers the national average over grades. Against no Act the outlay rises from zero under both readings (its own C-1). The comparison actually made is with the rate the counterfactual prices per grade would give, which is a static projection, as its gap (d) 2 concedes. The content is valid and derivable from the core rules (CR-4 on varieties, arithmetic on the formula), but it needs a projection variable or qualifier. As recorded, the U1-b sign is wrong. The core version did not note the mix effect at all. |
+| C-23 | C-27 | M | | |
+| C-24 | C-28 | V | | The pattern claims all inputs (seed, fertilizer, contract harvesting) increase; the core claims feed-variety wheat seed. The pattern's aggregate leaves out the inputs no longer bought for barley (C-11): wheat replacing barley moves input demand in a direction that needs a premise on input use per hectare. Conversion and intensification push up. The core's narrower key needs no such premise. |
+| C-25 | C-18 | M | | The pattern cites EN-12 for U1-b; the core cites CR-7 0.7 (a windfall when history was fixed before the measure was expected). |
+| C-26 | none | OC | E (core) | Convertible land without wheat history gains value under U1-a (CR-7c, CR-10c, A-13). The core records conversion investment (C-17) but not the asset value. Omission. |
+| C-27 | C-20 | M | | |
+| C-28 | C-19 | M | | |
+| C-29 | C-31 | M | | |
+| C-30 | none | OC | E (core) | Import-competing industries: output, employment or hours as a group, `at_least_one_decrease` under U1-a (CR-9 0.7 currency, A-17). The core records import buyers' prices (C-34) but not the producers who compete with imports. Omission. |
+| C-31 | C-33 | V | | Same chain, different variable: the pattern uses an output and employment group, the core uses net price received in thaler. |
+| C-32 | C-3 | V | | The pattern's own note says this is C-7 and C-8 again. |
+| C-33 | C-16 | M | | |
+| C-34 | C-3 | V | | The core folds the Th 4 million a year into C-3, which rests on A-2. Administration costs fall every year and need no A-2, so the pattern's separate Tier A record is the right form. |
+| C-35 | C-6 | V | | The pattern's own note marks this as C-11 again. The core adds pasture through C-17 and C-21. |
+
+### Core-only consequences
+
+| Core ID | Class | Cause | Note |
+| --- | --- | --- | --- |
+| C-8 | OP | J | Feed wheat increases (CR-12a, d). This is implied by the pattern's C-9 and C-12, and its barley chain uses it. |
+| C-9 | OP | E (pattern) | Milling wheat `ambiguous` under U1-a (more area against the switch to feed varieties). Valid and scorable. The pattern version derives both chains but does not record the key. |
+| C-11 | OP | J | Grain bought abroad to be declared. The pattern folds it into `legal_breach` (C-13). The purchase is legal and the declaration is not, so the core's separate key is the cleaner one. |
+| C-12 | OP | E (pattern) | Repayments and fines received increase under U1-a (CR-8b). Valid, though it needs a premise that some false declarations are detected by the 3% sampling, which the core folds into A-6. |
+| C-17 | OP | J | Conversion of pasture to wheat (investment). The pattern records its effects (C-26, C-35) but not the conversion itself. |
+| C-21 | OP | E (pattern) | Pasture rents increase under U1-a (CR-9, CR-7a, A-13). Valid. The pattern version does not follow the other use of the land. |
+| C-29 | OP | J | Sellers of price cover sell less: the other side of the hedging exchange (pattern C-14). |
+| C-30 | OP | E (pattern) | Neighboring sellers sell grain into Brisklund to be declared (CR-9, CR-5, A-6). The pattern version mentions it only inside C-13. |
+| C-32 | OP | J | Exchange rate (thaler rises). The pattern version uses it only as a link in C-30 and C-31. |
+| C-34 | OP | E (pattern) | Import prices in thaler fall under U1-a (CR-9 0.7). Valid. The pattern version's text says "imports rise" but records no class on that side. |
+| C-35 | OP | J | Growers without established production: U1-a increase, U1-b `no_change`. A split of the pattern's C-3 that shows the reading matters for this group. |
+
+### Findings
+
+- **Pattern overclaims or hidden premises.** (1) Lobbying on renewal and on the target at review (C-15) is treated as a new question. It is the farm-support question that was contested on the counterfactual path, so RS-7 1.0 requires `ambiguous` without a premise. (2) C-22 is signed against a static projection, not against no Act, and its U1-b `no_change` contradicts C-1. (3) The aggregate input-supplier increase (C-24) needs a premise on inputs per hectare of wheat against barley.
+- **Errors in the core version.** Omissions: farms growing wheat (pattern C-10), growers' compliance costs (C-16), the value of convertible land (C-26), import-competing industries (C-30), the formula's mix effect on the outlay (C-22, as a projection claim), and per-state signs where the contingency is a yearly price. Recording: C-3 folds every-year administration costs into a consequence conditioned on A-2. C-12 needs a detection premise. GAP-065-C1 is not a calculus gap: arithmetic on the rate is a dominance premise that CR-12e allows. GAP-065-C2 is a recording limit (one sign cannot say "no change through this channel, other channels unsigned"), not a missing rule.
+- **Errors in the pattern version (omissions).** Milling wheat (core C-9), fines (C-12), pasture rents (C-21), neighboring sellers (C-30), import buyers (C-34).
+- **Test of 1.0 verdicts against the core-only version.** No verdict was "failed". *SB-2, needed interpretation* (no wider-market clause): confirmed. The core version reached the same result directly from CR-6 0.7 and CR-6 1.0 (C-4, C-23, C-25) with no pattern. *SB-10* (correctly not applied): confirmed. The core version derives a lower domestic price (C-25), not SB-10's rise. *CR-8 0.8, contingent payers, worked with interpretation*: confirmed. The core version also struggled to record a yearly contingency and settled on one sign resting on A-2, losing the per-state signs. *CR-7c, capitalizing a contingent payment, needed interpretation*: confirmed. The core version raised the same point independently (its (b), second bullet). *CR-12 1.0, response argument read in its mirror for a price fall*: confirmed. The core version applied the same mirror reading (A-9, C-23) without remarking on it. *EN-12, needed one addition* (history belongs to the farm): partly confirmed. The core version got the U1-b windfall from CR-7 0.7 but did not note the former tenant's loss. *TX-8 mirror, worked with interpretation*: confirmed. The core version derived the currency chain directly from CR-9 0.7 (C-32 to C-34) and needed no export-subsidy wording. *Verdicts of "worked" that the core comparison contradicts*: RS-7 1.0 and CR-4 1.0 on lobbying (the renewal question was misclassified), and RS-16 1.0 as used for C-22 (the projection was recorded as the counterfactual).
+- **Limits of the core rules.** None that produced a difference (no K). Unclear wording: CR-4 1.0 and RS-7 1.0 do not say when a question settled by the policy is "the same question" as one contested on the counterfactual path. CR-1 0.7's "a transfer that no choice avoids" does not cover a transfer conditional on a status (registration). CR-7c and CR-10c are silent on a yield that is itself contingent on a market price. CR-8 0.8 has no per-state form for a yearly contingency. CR-12 1.0's cost premise needs its mirror for a price fall.
