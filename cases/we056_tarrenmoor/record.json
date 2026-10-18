@@ -1,0 +1,89 @@
+{
+ "name": "Tarrenmoor Insulin Affordability Act",
+ "jurisdiction": "Tarrenmoor (fictional)",
+ "rule_maker": "the legislature of Tarrenmoor",
+ "enacted": "12 April 2027",
+ "effective": "1 January 2028",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "price_ceiling",
+   "good": "insulin",
+   "market": "tarrenmoor",
+   "bound_actor": "pharmacies.in_state",
+   "protected_actor": "covered_residents.paying_above_cap",
+   "excluded_actor": null,
+   "neighbor_actor": null,
+   "enforcer_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "cap": 35,
+   "cap_unit": "dollars per 30-day supply of insulin collected from a covered resident",
+   "announcement_window": true,
+   "source_sentences": [
+    "Section 3 of the Act provides: \"A pharmacy shall not collect from a covered resident more than $35 for each 30-day supply of insulin.\"",
+    "A covered resident is a resident who is uninsured or enrolled in a plan regulated under the insurance code.",
+    "The cap applies to insulin dispensed on prescription and binds every \"pharmacy licensed by the Board of Pharmacy under chapter 18\".",
+    "The Board of Pharmacy enforces the cap: a $1,000 fine for each overcharge, paid into the Fund; repeated violation may lead to suspension of a license or permit.",
+    "The Board is funded by license and permit fees; the Act gives it no new money.",
+    "The bill was introduced on 15 January 2027 and signed on 12 April 2027. The Act takes effect on 1 January 2028."
+   ]
+  },
+  {
+   "id": "k2",
+   "instrument": "mandated_contract_term",
+   "good": "insulin",
+   "market": "tarrenmoor",
+   "bound_actor": "plans.state_regulated",
+   "protected_actor": "covered_residents.state_plans",
+   "enforcer_actor": "officials.enforcement",
+   "source_sentences": [
+    "Section 4(a) provides that the pharmacy bills the balance to the plan, \"which shall pay it on the terms of its pharmacy contract\"."
+   ]
+  },
+  {
+   "id": "k3",
+   "instrument": "purchase_rebate",
+   "good": "insulin",
+   "market": "tarrenmoor",
+   "bound_actor": "covered_residents.uninsured",
+   "seller_actor": "pharmacies.in_state",
+   "other_buyer_actor": "buyers.noncovered_cash",
+   "substitute_seller_actor": "sellers.substitutes",
+   "claim_handler_actor": "pharmacies.in_state",
+   "enforcer_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "debt_funded": false,
+   "eligibility_criteria": true,
+   "temporary": false,
+   "budget_capped": false,
+   "renewable": false,
+   "announcement_window": true,
+   "scrappage": false,
+   "source_sentences": [
+    "Section 4(b) establishes the Insulin Access Fund, run by the Department of Health, for insulin fills of uninsured residents.",
+    "The Fund pays the pharmacy \"the pharmacy's usual and customary price, less $35, but not more than the wholesale acquisition cost plus 20 percent, less $35\".",
+    "The usual and customary price is \"the price the pharmacy charges a cash-paying customer who is not a covered resident\".",
+    "The uninsured resident attests at the pharmacy to having no coverage.",
+    "Section 6 provides that the Fund is paid \"such sums as are necessary\" from general revenue; fines under section 7 are paid into the Fund.",
+    "The bill was introduced on 15 January 2027 and signed on 12 April 2027. The Act takes effect on 1 January 2028.",
+    "The Department of Health runs the Fund through a claims contract (about $3 million a year, paid from the Fund)."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether out-of-state mail-order pharmacies holding a nonresident permit are bound by section 3 (a pharmacy licensed under chapter 18).",
+   "readings": [
+    "U1-a: a nonresident permit holder is a pharmacy licensed under chapter 18; out-of-state mail-order pharmacies are bound and may bill the plan or the Fund for the balance",
+    "U1-b: only in-state licensees are bound; out-of-state pharmacies collect the plan's ordinary cost sharing and cannot bill the Fund"
+   ]
+  }
+ ],
+ "context": [
+  "Tarrenmoor has about 1,050 pharmacies licensed under chapter 18, section 18-4 (pharmacies located in the state), and about 140 nonresident permit holders under section 18-9.",
+  "About 70% of members of state-regulated plans pay more than $35 in a typical month; about 40% of uninsured cash buyers and 15% of high-deductible members said in a 2026 survey that they had used less insulin than prescribed because of cost.",
+  "List prices are set nationally by three manufacturers; the 58,000 users the Act reaches are about 0.7% of the national total."
+ ]
+}
