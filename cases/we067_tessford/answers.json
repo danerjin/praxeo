@@ -152,5 +152,14 @@
   "probability": 0.7,
   "rationale": "WE-067 A-5: without the ordinance sitting tenants' rents would follow the market within one or two lease cycles, so the counterfactual passes any pre-emptive raise.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.contested_otherwise",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-067 (illustrative figures), A-19: rent regulation would have been contested on the counterfactual path (election pledges in November 2026; the failed 2022 petition).",
+  "evidence": [
+   "In November 2026 a majority of the newly elected council and the mayor campaigned on rent regulation."
+  ]
  }
 ]

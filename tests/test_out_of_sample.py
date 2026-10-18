@@ -219,7 +219,6 @@ WE067_NOT_PRODUCED = {
     "C-23": "senior class, credit and the reading U1 (the parser's readings carry no engine facts)",
     "C-24": "same",
     "C-25": "same as C-13",
-    "C-27": "RS-7's Unless clause is not encoded (the counterfactual is contested, A-19)",
     "C-28": "OC-2 for registration and the fee needs a record fact and a rule; the engine's compliance cost is the exit-process form",
     "C-30": "one neighbour role per component (Durnside)",
     "C-32": "PC-21's population caveat (shut-out residents leave more) is not encoded",
@@ -252,7 +251,7 @@ WE067_NOT_PRODUCED = {
     "C-72": "senior classes",
     "C-73": "the landlords' side of C-53 (CR-8b mirror) is not encoded",
 }
-WE067_PRODUCED = {"C-1", "C-2", "C-3", "C-8", "C-9", "C-12", "C-16", "C-17", "C-18", "C-19", "C-20", "C-21", "C-22", "C-26",
+WE067_PRODUCED = {"C-1", "C-2", "C-3", "C-8", "C-9", "C-12", "C-16", "C-17", "C-18", "C-19", "C-20", "C-21", "C-22", "C-26", "C-27",
                   "C-29", "C-31", "C-34", "C-38", "C-39", "C-42", "C-44", "C-45", "C-48", "C-49", "C-53", "C-54", "C-57",
                   "C-59", "C-60"}
 
@@ -262,7 +261,11 @@ def test_consistent_with_worked_example_we067():
     rows = _rows("WE-067_rent_cap_senior_credit.md", WE067_SHORT, WE067_WINDOWS, WE067_SUBCLASSES)
     assert len(rows) == 71  # C-1 to C-73 without the removed C-6 and C-7
     _check(rows, keys, WE067_EXCEPTIONS, WE067_NOT_PRODUCED, WE067_PRODUCED)
-    assert set(WE067_KNOWN_WRONG) <= set(WE067_EXCEPTIONS) and len(WE067_PRODUCED) == 29
+    assert set(WE067_KNOWN_WRONG) <= set(WE067_EXCEPTIONS) and len(WE067_PRODUCED) == 30
+    # RS-7 Unless (A-19): lobbying on rent regulation as such is ambiguous (C-27, the item policy_field); on the provisions
+    # that exist only under the ordinance it is an increase (C-26)
+    lob = {(c["actor_class"], c["item"]): c["sign"] for c in pred["consequences"] if c["variable"] == "lobbying_effort" and c["reported"]}
+    assert lob[("landlords.covered", None)] == "increase" and lob[("landlords.covered", "policy_field")] == "ambiguous"
     # vacancy decontrol: no excess demand for new contracts, so none of the PC-2 group or LW-3 rows (PC-1 1.4)
     assert not any(k[1] in ("excess_demand", "quantity_demanded", "wait_time") for k in keys)
     by = {(c["actor_class"], c["variable"], c["window"]): c for c in pred["consequences"]}

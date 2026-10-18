@@ -102,6 +102,9 @@ class Component(BaseModel):
     third_party_payer_actor: Optional[str] = Field(default=None, description=(
         "Price ceilings: set when the cap is on what buyers pay out of pocket and a third party (an insurer, a fund) must "
         "pay the seller the rest (PC-20). The seller's price is not capped, so no shortage follows from the cap itself"))
+    field_contested: bool = Field(default=False, description=(
+        "The policy field the measure settles (rent regulation, farm support) was already fought over before it and would "
+        "stay contested without it, so lobbying on that question is signed against the counterfactual contest (RS-7 Unless)"))
     repay_on_move: bool = Field(default=False, description="Subsidies: the payment is repaid if the recipient moves or sells within a period (RS-11)")
     source_sentences: list[str] = Field(description="Sentences of the policy text this component rests on, quoted exactly")
 

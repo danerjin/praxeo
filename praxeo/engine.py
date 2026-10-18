@@ -140,6 +140,8 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
         lines.append(f'excluded({c}, "{comp.excluded_actor or "buyers.prospective"}").')
         if comp.announcement_window:
             lines.append(f"announced({c}).")
+        if comp.field_contested:
+            lines.append(f"field_contested({c}).")
         if comp.instrument == "price_ceiling":
             lines.append(f'enforcer({c}, "{comp.enforcer_actor}").')
             if comp.general_budget:
@@ -262,7 +264,7 @@ def run(record: PolicyRecord, assumptions: dict[str, Assumption], extra: str = "
         per = {}
         for label, r in runs:
             hits = [d for (a, v, w, i, _s), d in r.items() if (a, v, w, i) == (actor, variable, window, item)]
-            per[label] = hits[0] if len(hits) == 1 else None if not hits else _clash(hits)
+            per[label] = hits[0] if len(hits) == 1 else None if not hits else _resolve(hits, assumptions)
         derived = [d for d in per.values() if d]
         first = derived[0]
         signs = {lab: (d["sign"] if d else "none") for lab, d in per.items()}
@@ -295,6 +297,19 @@ def run(record: PolicyRecord, assumptions: dict[str, Assumption], extra: str = "
             sign_by_reading={} if uniform else signs,
         ))
     return consequences, base
+
+
+def _resolve(hits: list[dict], assumptions: dict[str, Assumption]) -> dict:
+    """Rules give opposite signs for one actor and variable in one run. The sign comes from the chains that are reported:
+    where exactly one sign has a minimal set with every p >= cut-off, it is that sign (an opposing chain below the cut-off
+    is not reported, so it cannot make the row ambiguous); otherwise the clash stands."""
+    def reportable(h):
+        return any(all(assumptions[a].p >= CUTOFF for a in s) for s in h["sets"])
+    signs = {h["sign"] for h in hits if reportable(h)}
+    if len(signs) == 1:
+        keep = [h for h in hits if h["sign"] in signs]
+        return keep[0] if len(keep) == 1 else _clash(keep)
+    return _clash(hits)
 
 
 def _clash(hits: list[dict]) -> dict:

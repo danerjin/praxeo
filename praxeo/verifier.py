@@ -18,7 +18,7 @@ from .schema import GROUP_SIGNS, Assumption, Consequence, PolicyRecord
 RECORD_PREDICATES = ("ceiling(", "decontrol(", "bound(", "protected(", "excluded(", "tax(", "tariff(", "neighbor(", "enforcer(",
                      "definition_line(", "renewable(", "announced(", "rolled_back(", "taxpayer(", "protected_concentrated(",
                      "subsidy(", "per_unit_sub(", "share_cap(", "criteria(", "budget_capped(", "temporary(", "scrappage(",
-                     "repay_on_move(")
+                     "repay_on_move(", "field_contested(")
 
 
 def record_roles(record: PolicyRecord) -> set[str]:

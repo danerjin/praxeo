@@ -141,3 +141,20 @@ def test_a_cap_on_the_buyers_share_is_not_a_price_ceiling():
     assert got == {("tenants.controlled", "price_paid", "decrease", None), ("insurers", "subsidy_outlay", "increase", None),
                    ("tenants.controlled", "quantity_traded", "increase", None),
                    ("tenants.controlled", "resources_available_other_uses", "increase", None)}
+
+
+def test_lobbying_on_a_contested_field_is_ambiguous():
+    """RS-7 Unless (1.0, 1.1): with the field contested without the measure, the growers' lobbying on it is ambiguous (WE-065
+    C-36) beside the increase on provisions that exist only under the measure (C-15); below the cut-off, the increase alone."""
+    from test_oos_we065 import WE65
+    rec = parser.parse_fixture(WE65 / "record.json")
+    rec.components[0].field_contested = True
+    a = {}
+    for comp in rec.components:
+        for q, text in questions_for(comp):
+            atom = f"{q.assumption}({engine._atom(comp.id)})"
+            a[atom] = engine.Assumption(id=atom, text=text, assumption_class=q.assumption_class, p=0.9)
+    lob = lambda cons: {(c.item, c.sign) for c in cons if c.variable == "lobbying_effort" and c.reported}  # noqa: E731
+    assert lob(engine.run(rec, a)[0]) == {(None, "increase"), ("policy_field", "ambiguous")}
+    a["contested_otherwise(k1)"] = a["contested_otherwise(k1)"].model_copy(update={"p": 0.3})
+    assert lob(engine.run(rec, a)[0]) == {(None, "increase")}

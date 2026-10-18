@@ -304,7 +304,20 @@ def _subsidy_specs(comp: Component) -> list[tuple[str, str, str, str]]:
     return specs
 
 
+# RS-7 Unless (1.0, 1.1), asked when the record says the policy field was contested before the measure (field_contested).
+CONTESTED_QUESTION = ("contested_otherwise", "other",
+                      "Without the measure, would the question it settles (whether and how much to regulate or support this field) still be fought over by the same groups in the period considered?",
+                      "Without the measure, the question it settles would still be contested by the same groups.")
+
+
 def _specs(comp: Component) -> list[tuple[str, str, str, str]]:
+    specs = _instrument_specs(comp)
+    if comp.field_contested:
+        specs.append(CONTESTED_QUESTION)
+    return specs
+
+
+def _instrument_specs(comp: Component) -> list[tuple[str, str, str, str]]:
     """The (atom, class, question, assumption text) list for a component, by instrument."""
     if comp.instrument == "price_ceiling" and comp.third_party_payer_actor:
         return list(SHARE_CAP_QUESTIONS)

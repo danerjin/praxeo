@@ -61,6 +61,8 @@ instrument, even when the text states no aim:
   payment), substitute_seller_actor (sellers of the goods the payment does not cover), asset_owner_actor (owners of an
   asset in slow supply whose return the payment raises); and for a payment that requires scrapping a used good,
   scrappage, used_buyer_actor, used_owner_actor (owners who keep theirs) and scrapper_actor.
+For any instrument, set field_contested to true if the text or context says the policy field the measure settles
+(rent regulation, farm support) was already being fought over before it (a campaign, a petition, a recurring debate).
 Name actor classes from the controlled list below where one fits. Otherwise use role.qualifier
 (e.g. sellers.domestic_steel); never invent a new name when a listed one fits."""
 

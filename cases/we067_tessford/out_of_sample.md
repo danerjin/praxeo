@@ -129,3 +129,7 @@ Engine rows WRONG: 1, unchanged (`tenants.prospective` side payments). The fix (
 The WRONG row is gone. PC-6's side payments by seekers (`seeker_side_payments` in `rules/price_controls.lp`, and the matching step in `config_b.py`) are now gated on the absence of vacancy decontrol, following the PC-1/PC-2 1.4 note: where the seller sets the first price of a new contract freely, the seekers have nothing to pay on the side. The landlords' key-money item (CR-8b, C-44) is kept. Landlords who evade the cap on sitting tenants' renewals still take rents above it, and section 7 lists that as a (+) chain.
 
 Engine rows: 32 (was 33), of which WRONG: 0. Table rows produced: still 29 of 71. The same fix removes the seekers' side-payments row from `sf_1994` (Proposition I also had vacancy decontrol), which now reports 27 consequences. Its scores are unchanged, because the row was not verifiable against the card.
+
+## After RS-7's Unless clause (fourth commit)
+
+RS-7's Unless clause is now encoded (`rules/lobbying.lp`). The record sets `field_contested`, because the policy text says the council campaigned on rent regulation, and the premise `contested_otherwise` takes A-19 (p = 0.85). Lobbying on rent regulation as such is now signed `ambiguous`, as the item `policy_field` (C-27). The ordinary row stays an increase for the provisions that exist only under the ordinance (C-26). Rows produced: 30 of 71 (was 29).

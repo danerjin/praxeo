@@ -1094,3 +1094,15 @@ def test_no_key_money_item_where_the_trade_above_the_cap_is_resale():
     cons = combine(engine.run(rec, a)[0], a)
     assert item(cons) is None
     assert ("tenants.prospective", "side_payments", "increase") in _reported(cons)   # the seekers still pay, to the resellers
+
+
+def test_opposite_signs_take_the_sign_of_the_reported_chains():
+    """Two rules sign one row in opposite directions: an opposing chain below the cut-off is not reported, so it does not
+    make the row ambiguous; where both are reported, the clash stands."""
+    a = {"x": Assumption(id="x", text="x", assumption_class="other", p=0.9),
+         "y": Assumption(id="y", text="y", assumption_class="other", p=0.3)}
+    up = dict(sign="increase", sets=[["x"]], derivation=[])
+    down = dict(sign="decrease", sets=[["y"]], derivation=[])
+    assert engine._resolve([up, down], a)["sign"] == "increase"
+    a["y"] = a["y"].model_copy(update={"p": 0.7})
+    assert engine._resolve([up, down], a)["sign"] == "ambiguous"

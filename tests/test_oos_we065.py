@@ -28,8 +28,9 @@ EXCEPTIONS = {
     # now signs a payment to producers as net_price_received and quantity_supplied (C-4, C-6, C-9)
     ("wheat_growers", "lobbying_effort", "increase", None):
         "KNOWN WRONG: RS-7 with the growers as the gaining sellers (renewal at the 2032 review). C-36 signs the lobbying over the "
-        "level and continuation of support `ambiguous` by RS-7's Unless clause (the question is contested without the Act too), "
-        "which is not encoded (as WE-067 C-27)",
+        "level and continuation of support `ambiguous` by RS-7's Unless clause. The clause is now encoded (rules/lobbying.lp, "
+        "`field_contested`), but the 2025 to 2026 farm-support campaign is not in the example's section 1, only in its analysis "
+        "and A-8's evidence, so a record written from the policy text cannot set the flag (test_subsidies checks the flagged case)",
 }
 
 NOT_PRODUCED = {
