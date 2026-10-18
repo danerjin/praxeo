@@ -1,0 +1,156 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-067 (illustrative figures), A-1 (binding): market rents keep rising faster than 1.8% a year, so the cap binds within the first year.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "WE-067 A-2 (enforcement): the board enforces the cap against most landlords.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.alternative_uses",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-067 A-12 (alternative_uses): the withdrawal route is used for a meaningful number of buildings.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.nontransferable",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "WE-067 A-3: covered tenancies cannot be assigned or sold, and sublets are limited to the tenant's rent.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyouts_limited",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "WE-067 A-28: buyouts move fewer keepers out of their units than the cap and the for-cause rule hold in place.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.would_leave",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "WE-067 A-6 (mobility): without the ordinance some sitting tenants would have left Tessford, priced out or for opportunities elsewhere.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.lockin_dominates",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-067 A-31: for non-qualifying keepers the lock-in from forfeiting the gap outweighs any diversion of their moves by higher free rents (the dominance premise PC-21 asks for).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.keepers_dominate",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "WE-067 A-26: by the third year the cap cuts non-qualifying keepers' moves out of Tessford by more than the displaced non-senior households add.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.substitutes",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "WE-067 A-22 (substitutability): covered and exempt Tessford units are close substitutes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.search_open",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No row. WE-067 section 2: under vacancy decontrol PC-2 does not apply; seekers pay a free initial rent and are not rationed. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.selection_open",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No row. Same as search_open: no rationing at a capped price for new tenancies. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.quality_adjustable",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "WE-067 A-10: the housing code leaves room to cut maintenance above the legal minimum.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-067 A-11 (enforcement): some sublets above the controlled rent go undetected.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.opportunities_need_move",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-067 A-25 (mobility): some job opportunities for sitting tenants would require leaving the unit.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "WE-067 A-18: landlords, tenant unions and senior advocates can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.durable_assets",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "WE-067 A-13 (durability): rental buildings last several decades, so the stock changes slowly.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-067 A-23 (expectations): buyers of buildings expect the ordinance to last many years.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.commutable",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "WE-067 A-15 (mobility): some seekers shut out of Tessford settle elsewhere in the county and in Durnside and commute.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.relet_obstructs",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "WE-067 A-34 (alternative_uses, p 0.6): in a building an owner plans to withdraw, holding a vacated unit empty pays better than re-letting it (re-letting adds a household owed $8,000 or $12,000 and 120 days' or a year's notice).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.exit_process",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "No row. Section 9 requires notice and a relocation payment, not a permit or board decision; estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.window_repricing",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-067 A-4 (expectations): enough leases renew in the window, and landlords raise rents at renewal to lift the base.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.counterfactual_catches_up",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "WE-067 A-5: without the ordinance sitting tenants' rents would follow the market within one or two lease cycles, so the counterfactual passes any pre-emptive raise.",
+  "evidence": []
+ }
+]

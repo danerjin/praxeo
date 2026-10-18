@@ -1,0 +1,47 @@
+{
+ "name": "Tessford Tenant Stability Ordinance 2027",
+ "jurisdiction": "Tessford, Ambry County (fictional)",
+ "rule_maker": "Tessford City Council",
+ "enacted": "11 May 2027",
+ "effective": "1 October 2027",
+ "stated_aim": "to protect Tessford's tenants from displacement and to allow long-standing residents, especially older residents, to remain in their homes and in their community",
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "price_ceiling",
+   "good": "rental_housing_covered",
+   "market": "tessford",
+   "bound_actor": "landlords.covered",
+   "protected_actor": "tenants.covered.other",
+   "excluded_actor": "tenants.prospective",
+   "neighbor_actor": "tenants.county",
+   "enforcer_actor": "officials.enforcement",
+   "cap": 0.018,
+   "cap_unit": "yearly increase (60% of the consumer price index change), from the base rent",
+   "vacancy_decontrol": true,
+   "announcement_window": true,
+   "general_budget": false,
+   "source_sentences": [
+    "The rent of a sitting tenant may rise by no more than 60 per cent of the annual change in the regional consumer price index in any twelve months, from the base rent.",
+    "On a new tenancy the landlord may set the initial rent.",
+    "A tenancy may not be assigned; a sublet needs the landlord's consent and may not be at more than the tenant's rent.",
+    "The ordinance was introduced on 1 March 2027, adopted on 11 May 2027 and takes effect on 1 October 2027.",
+    "funded by an annual fee of $90 per covered unit paid by the landlord and not recoverable from tenants."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether displaced seniors also receive the Portable Senior Credit (section 7 against section 9, relocation payment in full settlement).",
+   "readings": [
+    "U1-a: a senior who leaves on a withdrawal notice vacates the unit and keeps the credit as well as the $12,000",
+    "U1-b: the relocation payment settles all claims under the Ordinance, the credit included"
+   ]
+  }
+ ],
+ "context": [
+  "Tessford's market rents rose about 6% a year in 2021 to 2026; the regional consumer price index rose about 3% a year.",
+  "Across the county line, 18 km east, is Durnside (Selcombe County; about 11,000 rental homes, no rent regulation), 22 minutes from central Tessford by rail."
+ ]
+}

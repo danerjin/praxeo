@@ -1,0 +1,25 @@
+Tessford Tenant Stability Ordinance 2027, Ordinance 27-14 (fictional; summary of the policy record of handbook worked example WE-067).
+
+Tessford is a city of about 310,000 people (128,000 households, 81,000 of them renters) in Ambry County (about 640,000 people). The rest of the county is the town of Corvell (12 km away, about 14,000 rental homes), the town of Wick Hollow (25 km), and unincorporated areas with about 41,000 rental homes and a vacancy rate of about 4%. Across the county line, 18 km east, is Durnside (Selcombe County; about 11,000 rental homes, no rent regulation), 22 minutes from central Tessford by rail. No rent regulation exists anywhere in the region today.
+
+Tessford's market rents rose about 6% a year in 2021 to 2026; the regional consumer price index rose about 3% a year. Covered buildings hold 52,000 rental homes, almost all occupied; the median rent in them is about $2,000 a month. About 55% of covered tenancies are month to month; the rest are 12-month leases. State law lets a landlord end a month-to-month tenancy without cause on 60 days' notice. About 18% of covered households move out each year; about 38% of those who move leave Tessford, and 31% of those who left gave a rent increase as the main reason. Households with a member aged 65 or over (7,800 in covered homes) move out at about 6% a year; 45% of senior movers leave Tessford.
+
+In November 2026 a majority of the newly elected council and the mayor campaigned on rent regulation. The ordinance was introduced on 1 March 2027, adopted on 11 May 2027 and takes effect on 1 October 2027. Council review after five years; no expiry.
+
+Section 1 (purpose): to protect Tessford's tenants from displacement and to allow long-standing residents, especially older residents, to remain in their homes and in their community.
+
+Section 2 (covered units): every rental dwelling unit in Tessford in a building of two or more units first occupied before 1 January 1990. Single houses and condominiums rented individually, and buildings first occupied on or after that date, are exempt.
+
+Section 3 (cap): The rent of a sitting tenant may rise by no more than 60 per cent of the annual change in the regional consumer price index in any twelve months, from the base rent. The base rent is the rent in force on 1 October 2027, or for a later tenancy the initial rent. On a new tenancy the landlord may set the initial rent.
+
+Section 4 (tenancy): Eviction only for cause (non-payment, breach, nuisance, owner move-in, withdrawal under section 9). A tenancy may not be assigned; a sublet needs the landlord's consent and may not be at more than the tenant's rent.
+
+Section 7 (Portable Senior Credit): A tenant aged 65 or over who vacates a covered unit after at least three years' continuous tenancy in it, on or after the effective date, may apply for a Portable Senior Credit. The credit is the amount by which the registered market rent of the vacated unit exceeds the rent the tenant would have paid for it under section 3, recomputed on each anniversary of vacating. The City pays the credit monthly to the landlord of any rental dwelling in Ambry County in which the tenant resides, up to the rent of that dwelling. The credit ends when the tenant ceases to reside in Ambry County, or dies. The City's budget office estimates the credit at $0.6 million in 2028, rising to about $9 million by 2032, from a general fund of about $1.1 billion; no tax is named.
+
+Section 9 (withdrawal): An owner may withdraw all the units in a building from the rental market on 120 days' written notice, or one year's notice to a tenant aged 65 or over or disabled, paying each household a relocation payment of $8,000, or $12,000 for a household with a member aged 65 or over or disabled. The relocation payment is in full settlement of the tenant's claims under this Ordinance. A withdrawn unit may not be offered for rent within five years, and if offered later, only at the rent that would have applied under section 3. Owners usually sell withdrawn units as condominiums.
+
+Section 11 (rent board): registration of covered units; complaint-driven enforcement; fines up to $5,000 per violation, with refunds of overcharges; funded by an annual fee of $90 per covered unit paid by the landlord and not recoverable from tenants. The board also sets the registered market rent schedule.
+
+Section 12 (administration of the credit): under an interlocal agreement, the Ambry County Housing Office pays the credit to landlords outside Tessford, for a fee of 4% of the payments, paid by the City.
+
+Unclear: a senior who leaves on a withdrawal notice vacates the unit (section 7), but the relocation payment is in full settlement of the tenant's claims under this Ordinance (section 9). Whether displaced seniors also receive the credit is not settled; the board has issued no guidance.
