@@ -36,6 +36,16 @@ class Downstream(BaseModel):
         return self
 
 
+class Related(BaseModel):
+    """A market related to the component's good (catalog 1.4: CR-9, SB-3, RS-12): an input or factor the good's sellers use
+    (installers' electricians, builders' labour), or a complement used with the good (repairs, fuel)."""
+    kind: Literal["input", "complement"]
+    good: str = Field(description="Snake-case name of the related good, e.g. electrical_labour")
+    seller_actor: str = Field(description="Who sells it: the input's suppliers, a factor's workers, the complement's sellers")
+    price_variable: Literal["net_price_received", "wage_rate"] = Field(default="net_price_received", description="wage_rate where the sellers are workers")
+    other_user_actor: Optional[str] = Field(default=None, description="Inputs: its other buyers, who compete for it (SB-3, CR-7a)")
+
+
 class Component(BaseModel):
     """One operative provision of the policy, as the parser read it."""
     id: str
@@ -102,6 +112,7 @@ class Component(BaseModel):
     third_party_payer_actor: Optional[str] = Field(default=None, description=(
         "Price ceilings: set when the cap is on what buyers pay out of pocket and a third party (an insurer, a fund) must "
         "pay the seller the rest (PC-20). The seller's price is not capped, so no shortage follows from the cap itself"))
+    related: list[Related] = Field(default=[], description="Markets related to the good: inputs or factors its sellers use, complements used with it (CR-9, SB-3, RS-12)")
     field_contested: bool = Field(default=False, description=(
         "The policy field the measure settles (rent regulation, farm support) was already fought over before it and would "
         "stay contested without it, so lobbying on that question is signed against the counterfactual contest (RS-7 Unless)"))

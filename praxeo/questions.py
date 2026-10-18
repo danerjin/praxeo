@@ -310,8 +310,23 @@ CONTESTED_QUESTION = ("contested_otherwise", "other",
                       "Without the measure, the question it settles would still be contested by the same groups.")
 
 
+def _related_specs(comp: Component) -> list[tuple[str, str, str, str]]:
+    """One question per premise of each related market (CR-9, SB-3, RS-12), named by the relation's index."""
+    out = []
+    for i, rel in enumerate(comp.related, start=1):
+        good = rel.good.replace("_", " ")
+        if rel.kind == "complement":
+            out.append((f"related_close_r{i}", "substitutability",
+                        f"Is {good} used together with the {comp.good.replace('_', ' ')}, with few other uses, so that its sales follow the good's?",
+                        f"{good.capitalize()} is a close complement of the good, with few other uses."))
+        out.append((f"related_slow_r{i}", "durability",
+                    f"Is the supply of {good} slow to expand or contract in the period considered (training, licensing, capacity)?",
+                    f"The supply of {good} is slow to adjust."))
+    return out
+
+
 def _specs(comp: Component) -> list[tuple[str, str, str, str]]:
-    specs = _instrument_specs(comp)
+    specs = _instrument_specs(comp) + _related_specs(comp)
     if comp.field_contested:
         specs.append(CONTESTED_QUESTION)
     return specs

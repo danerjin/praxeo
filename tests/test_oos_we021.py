@@ -20,6 +20,9 @@ SHORT: dict = {}
 WINDOWS = {"September to December": "announcement", "after program ends": "after_expiry",
            "before step-downs": "before_step_down"}
 EXCEPTIONS = {
+    ("electricians", "quantity_traded", "increase", None):
+        "CR-9 (related input, `related`): installers hire more electrical work as installations rise; the table records the "
+        "labour side as the installers' workers (C-31) and the electricians' wage (C-13)",
     ("buyers.adopters", "quantity_traded", "increase", None):
         "SB-2: the buyers' side of C-2 (an exchange has two sides); the table signs the installers' side only (C-8 is the pre-step-down surge)",
     ("installers", "reclassification", "increase", None):
@@ -39,9 +42,7 @@ NOT_PRODUCED = {
     "C-9": "same as C-8 (backlogs at the thresholds); PC-2's group for the capped budget is not signed here (oversubscribed answered 0.45)",
     "C-11": "missing record fact: the text does not say the subsidy may be renewed (renewable false); panel suppliers and large users have no role",
     "C-12": "missing record fact (no role for the taxpayers who receive no payment) and rule (RS-1 with CR-1: the tax share borne by non-recipients)",
-    "C-13": "missing record fact and rule: no role for owners of the scarce input (electricians); SB-3's draw on a scarce factor raises its price is not encoded",
-    "C-14": "missing record fact and rule: buyers of the competing use of the scarce factor (other electrical work) have no role",
-    "C-15": "missing record fact: no input-supplier role for subsidies (only for tariffs and price ceilings)",
+    "C-14": "missing record fact (the rule is now encoded, `related` with other_user_actor): the text does not name the other users of electrical work; buyers of the competing use of the scarce factor (other electrical work) have no role",
     "C-17": "combiner: the ambiguous total of the + chain (PC-15) and the - chain (RS-13) is not a declared CR-12 comparison; neither rule is encoded, and non-adopters have no role",
     "C-20": "same as C-14",
     "C-22": "combiner: DM-3 (entrants' earnings over the surge and the end) is not a declared comparison",
@@ -51,7 +52,7 @@ NOT_PRODUCED = {
     "C-32": "same as C-31, with SB-6 for the fall after the program",
     "C-33": "missing rule: SB-1's receipt side (the inframarginal recipients' gain, mirror of the payers' cost); the engine signs the payers only",
 }
-PRODUCED = {"C-1", "C-2", "C-3", "C-4", "C-5", "C-10", "C-16", "C-18", "C-19", "C-21", "C-23", "C-24", "C-25", "C-26", "C-28", "C-29"}
+PRODUCED = {"C-1", "C-2", "C-3", "C-4", "C-5", "C-10", "C-13", "C-15", "C-16", "C-18", "C-19", "C-21", "C-23", "C-24", "C-25", "C-26", "C-28", "C-29"}
 
 
 def test_consistent_with_worked_example_we021():

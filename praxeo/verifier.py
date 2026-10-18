@@ -18,7 +18,7 @@ from .schema import GROUP_SIGNS, Assumption, Consequence, PolicyRecord
 RECORD_PREDICATES = ("ceiling(", "decontrol(", "bound(", "protected(", "excluded(", "tax(", "tariff(", "neighbor(", "enforcer(",
                      "definition_line(", "renewable(", "announced(", "rolled_back(", "taxpayer(", "protected_concentrated(",
                      "subsidy(", "per_unit_sub(", "share_cap(", "criteria(", "budget_capped(", "temporary(", "scrappage(",
-                     "repay_on_move(", "field_contested(")
+                     "repay_on_move(", "field_contested(", "target_qty(")
 
 
 def record_roles(record: PolicyRecord) -> set[str]:
@@ -35,6 +35,7 @@ def record_roles(record: PolicyRecord) -> set[str]:
         names += [comp.third_party_payer_actor, comp.qualifier_actor, comp.other_spending_actor, comp.future_taxpayer_actor]
         names += [comp.other_buyer_actor, comp.substitute_seller_actor, comp.asset_owner_actor, comp.claim_handler_actor,
                   comp.used_buyer_actor, comp.used_owner_actor, comp.scrapper_actor]
+        names += [n for rel in comp.related for n in (rel.seller_actor, rel.other_user_actor)]
         for d in comp.downstream:
             names += [d.actor, d.buyer_actor, d.owner_actor, d.exporter_actor, d.worker_actor]
         roles |= {n.split(".")[0] for n in names if n}

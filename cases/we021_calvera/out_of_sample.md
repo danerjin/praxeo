@@ -84,3 +84,7 @@ Not met at all: no row fell under "unsupported form" or "case-specific provision
 ## After the rule changes (second commit)
 
 The record and answers changed only where a new field or question needs it (temporary payments: `ends_as_scheduled` and `supply_slow_at_expiry`; WE-021: `qualifier_actor`, `tax_named`; WE-033: the payer group's names; WE-056: K1's payer and its two PC-20 questions). Rows produced: 16 of 33 (unchanged). Engine rows WRONG: 0 (was 1). The installers' price after the program ends now rests on a premise about supply at that date (`supply_slow_at_expiry`, judged 0.3 from A-4 and A-5), not on supply at the start. The reshaping row is now on the installers (`qualifier_actor`; K3 binds them), not on the recipients.
+
+## After related markets (third commit)
+
+The record now lists the two inputs the policy text names (`related`, `rules/relations.lp`). One is electrical labour: certification needs a licensed electrician on staff. The other is panels: the payment is per watt of panel capacity. CR-9 signs both suppliers' sales up as installations rise (C-15 for panels). SB-3 with CR-7a signs the electricians' wage up where their supply is slow (A-12: C-13). Panel supply is not slow (A-11, p = 0.05). The other users of electrical work (C-14, C-20) are not named in the policy text, so the record cannot name them, although the rule exists. Rows produced: 18 of 33 (was 16).

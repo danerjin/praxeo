@@ -159,3 +159,21 @@ def test_lobbying_on_a_contested_field_is_ambiguous():
     assert lob(engine.run(rec, a)[0]) == {(None, "increase"), ("policy_field", "ambiguous")}
     a["contested_otherwise(k1)"] = a["contested_otherwise(k1)"].model_copy(update={"p": 0.3})
     assert lob(engine.run(rec, a)[0]) == {(None, "increase")}
+
+
+def test_related_markets():
+    """CR-9, SB-3 with CR-7a, RS-12 over `Component.related`: an input in slow supply is bid up and away from its other users;
+    a complement's sales follow the good's; each premise is asked per relation."""
+    from praxeo.schema import Related
+    rec = _record()
+    rec.components[0].related = [Related(kind="input", good="mechanics", seller_actor="mechanics", price_variable="wage_rate",
+                                         other_user_actor="garages.other"),
+                                 Related(kind="complement", good="motor_fuel", seller_actor="sellers.fuel")]
+    assert {q.assumption for q, _ in questions_for(rec.components[0])} >= {"related_slow_r1", "related_close_r2", "related_slow_r2"}
+    got = _reported(rec)
+    assert {("mechanics", "quantity_traded", "increase", None), ("mechanics", "wage_rate", "increase", None),
+            ("garages.other", "price_paid", "increase", None), ("garages.other", "quantity_traded", "decrease", None),
+            ("sellers.fuel", "quantity_traded", "increase", None), ("sellers.fuel", "net_price_received", "increase", None)} <= got
+    got = _reported(rec, related_slow_r1=0.2, related_close_r2=0.2)
+    assert ("mechanics", "quantity_traded", "increase", None) in got
+    assert not any(k[0] == "garages.other" or k[0] == "sellers.fuel" or k[1] == "wage_rate" for k in got)

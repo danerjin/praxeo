@@ -110,5 +110,19 @@
   "probability": 0.3,
   "rationale": "No matching assumption in WE-021 for the end date: A-4 (installation labor cannot grow much) is stated for the first year only, and A-5 (certification is easy enough that new installers enter) says capacity expands; by the end of Year 5 installers can shrink or leave. Judged low.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.related_slow_r1",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-021 (illustrative figures), A-12: electricians and roofers are scarce and fully used elsewhere.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.related_slow_r2",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "Probability taken from the assumption table of handbook WE-021 (illustrative figures), A-11: Calvera's purchases are not large enough to raise world panel prices (p = 0.05), so panel supply to Calvera is not slow to expand.",
+  "evidence": []
  }
 ]

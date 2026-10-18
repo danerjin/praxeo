@@ -142,6 +142,11 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
             lines.append(f"announced({c}).")
         if comp.field_contested:
             lines.append(f"field_contested({c}).")
+        for i, rel in enumerate(comp.related, start=1):
+            r = f"r{i}"
+            lines.append(f'related({c}, {r}, {rel.kind}, "{rel.seller_actor}", "{rel.price_variable}", "{rel.other_user_actor or ""}").')
+            for name in (("slow",) if rel.kind == "input" else ("close", "slow")):
+                lines.append(f"rel_premise({c}, {r}, {name}, related_{name}_{r}({c})).")
         if comp.instrument == "price_ceiling":
             lines.append(f'enforcer({c}, "{comp.enforcer_actor}").')
             if comp.general_budget:

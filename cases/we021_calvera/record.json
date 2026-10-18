@@ -34,7 +34,20 @@
     "The State Energy Office administers the program, funded from 5% of the Solar Fund."
    ],
    "tax_named": true,
-   "qualifier_actor": "installers"
+   "qualifier_actor": "installers",
+   "related": [
+    {
+     "kind": "input",
+     "good": "electrical_labour",
+     "seller_actor": "electricians",
+     "price_variable": "wage_rate"
+    },
+    {
+     "kind": "input",
+     "good": "solar_panels",
+     "seller_actor": "panel_suppliers"
+    }
+   ]
   },
   {
    "id": "k2",
