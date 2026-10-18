@@ -76,9 +76,9 @@ STEPS: list[BStep] = [
           effects=(Effect("bound", "quantity_supplied", "decrease", "long", "invisible"),)),
     BStep("reclassify", "RS-5", "reclassify", needs=("cap", "alternative_uses"),
           effects=(Effect("bound", "reclassification", "increase", "long", "invisible"),)),
-    BStep("displaced_move", "CR-9", "displaced_move", needs=("reclassify",),
-          effects=(Effect("displaced", "turnover", "increase", "medium", "invisible"),)),
     BStep("nontransferable", "PC-7", "nontransferable", needs=("cap",), assumption="nontransferable"),
+    BStep("displaced_move", "CR-9", "displaced_move", needs=("reclassify", "nontransferable"),
+          effects=(Effect("displaced", "turnover", "increase", "medium", "invisible"),)),
     BStep("buyouts_limited", "PC-7", "buyouts_limited", needs=("cap",), assumption="buyouts_limited"),
     BStep("turnover", "PC-7", "turnover_falls", needs=("cap", "nontransferable", "buyouts_limited"),
           effects=(Effect("protected", "turnover", "decrease", "medium", "invisible"),)),
@@ -89,7 +89,7 @@ STEPS: list[BStep] = [
     BStep("lockin_dominates", "PC-21", "lockin_dominates", needs=("turnover",), assumption="lockin_dominates"),
     BStep("stay_in_area", "PC-21", "stay_in_area", needs=("turnover", "would_leave", "lockin_dominates"),
           effects=(Effect("keepers", "relocation_out_of_area", "decrease", "medium", "invisible"),)),
-    BStep("displaced_leave", "PC-21", "displaced_leave", needs=("reclassify", "would_leave"),
+    BStep("displaced_leave", "PC-21", "displaced_leave", needs=("reclassify", "nontransferable", "would_leave"),
           effects=(Effect("displaced", "relocation_out_of_area", "increase", "long", "invisible"),)),
     # CR-12: asked only when both subclass chains held; the combiner needs it to choose a total.
     BStep("keepers_dominate", "CR-12", "keepers_dominate", needs=("stay_in_area", "displaced_leave"),
@@ -122,8 +122,10 @@ STEPS: list[BStep] = [
     # RS-7
     BStep("can_organize", "RS-7", "can_organize", needs=("cap",), assumption="can_organize"),
     BStep("lobbying", "RS-7", "lobbying", needs=("cap", "can_organize"),
-          effects=(Effect("protected", "lobbying_effort", "increase", "medium", "invisible"),
-                   Effect("bound", "lobbying_effort", "increase", "medium", "invisible"))),
+          effects=(Effect("bound", "lobbying_effort", "increase", "medium", "invisible"),)),
+    BStep("lobbying_protected", "RS-7", "lobbying_protected", needs=("lobbying",),
+          guard=lambda c: c.protected_concentrated,
+          effects=(Effect("protected", "lobbying_effort", "increase", "medium", "invisible"),)),
     # PC-16 and OC-4
     BStep("transfer", "PC-16", "transfer", needs=("insider_gain",),
           effects=(Effect("bound", "net_price_received", "decrease", "medium", "invisible"),)),
@@ -166,6 +168,18 @@ STEPS: list[BStep] = [
 ]
 
 
+# Patterns of rules/ceiling_extensions.lp that Configuration A and B both carry (added after the out-of-sample runs on
+# WE-005, WE-006 and WE-067). Kept apart from STEPS, which mirrors rules/price_controls.lp (test_config_b checks that).
+# Not mirrored in B: the group form of PC-2 (B has no group signs) and PC-12 (it needs a record field and two further questions).
+EXTENSION_STEPS: list[BStep] = [
+    BStep("demand_rises", "LW-3", "demand_rises", needs=("excess_demand",),
+          effects=(Effect("excluded", "quantity_demanded", "increase", "short", "invisible"),)),
+    BStep("informal_buyers", "PC-6", "informal_buyers", needs=("informal",),
+          guard=lambda c: not c.vacancy_decontrol,
+          effects=(Effect("excluded", "informal_activity", "increase", "short", "invisible"),)),
+]
+
+
 def _actor(comp: Component, role: Role) -> Optional[str]:
     """The actor class a role names in this component, as engine.facts() names it; None if no protected class."""
     if role == "bound":
@@ -200,7 +214,8 @@ def _ancestors(step_id: str, by_id: dict[str, BStep]) -> list[str]:
 
 def run_config_b(record: PolicyRecord, decider: Decider) -> tuple[list[Consequence], list[dict]]:
     """Walk the steps for each price ceiling. Returns the consequences of the held chains and a log of every question asked."""
-    by_id = {s.id: s for s in STEPS}
+    all_steps = STEPS + EXTENSION_STEPS
+    by_id = {s.id: s for s in all_steps}
     cons: list[Consequence] = []
     log: list[dict] = []
     for comp in record.components:
@@ -209,7 +224,7 @@ def run_config_b(record: PolicyRecord, decider: Decider) -> tuple[list[Consequen
         c = engine._atom(comp.id)
         questions = {q.assumption: q for q in ceiling_questions(comp)}
         held: dict[str, bool] = {}
-        for step in STEPS:
+        for step in all_steps:
             if not step.guard(comp) or not all(held.get(n, False) for n in step.needs):
                 held[step.id] = False
                 continue
@@ -221,7 +236,7 @@ def run_config_b(record: PolicyRecord, decider: Decider) -> tuple[list[Consequen
             held[step.id] = ans.probability >= engine.CUTOFF
             log.append({"component": comp.id, "step": step.id, "question": q.model_dump(),
                         "answer": ans.model_dump(), "held": held[step.id]})
-        for step in STEPS:
+        for step in all_steps:
             if not held[step.id] or not step.effects:
                 continue
             chain = _ancestors(step.id, by_id)

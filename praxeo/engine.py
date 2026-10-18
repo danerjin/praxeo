@@ -102,6 +102,10 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
                 lines.append(f'taxpayer({c}, "{comp.taxpayer_actor}").')
             if comp.neighbor_actor:
                 lines.append(f'neighbor({c}, "{comp.neighbor_actor}").')
+            if comp.input_supplier_actor:
+                lines.append(f'input_supplier({c}, "{comp.input_supplier_actor}").')
+            if comp.protected_concentrated:
+                lines.append(f"protected_concentrated({c}).")
         if comp.instrument in ("per_unit_tax", "tariff"):
             lines += _tax_facts(c, comp)
     for a in assumptions:
@@ -185,9 +189,17 @@ def _derive(program: str, assumptions: dict[str, Assumption]) -> dict[tuple, dic
     out = {}
     for concl, (actor, variable, sign, horizon, visibility, tier) in effects:
         window, item = windows.get(concl), items.get(concl)
-        out[(actor, variable, window, item, sign)] = dict(
+        key = (actor, variable, window, item, sign)
+        row = dict(
             concl=concl, actor=actor, variable=variable, sign=sign, horizon=horizon, window=window, item=item,
             visibility=visibility, tier=tier, sets=minimal_by_concl[concl], derivation=_derivation(concl, steps))
+        if key in out:
+            # two components (or two rules) reach the same row: it follows under either support, so the label is the
+            # union of the minimal sets and the derivation keeps both chains
+            row["sets"] = out[key]["sets"] + row["sets"]
+            row["derivation"] = out[key]["derivation"] + [st for st in row["derivation"] if st not in out[key]["derivation"]]
+            row["horizon"] = min(horizon, out[key]["horizon"], key=HORIZON_ORDER.get)
+        out[key] = row
     return out
 
 

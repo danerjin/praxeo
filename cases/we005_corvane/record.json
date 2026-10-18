@@ -13,7 +13,7 @@
    "market": "corvane",
    "bound_actor": "stations",
    "protected_actor": "drivers.served",
-   "excluded_actor": "drivers.unserved",
+   "excluded_actor": "drivers",
    "neighbor_actor": "drivers.brennick",
    "enforcer_actor": "officials.enforcement",
    "taxpayer_actor": "taxpayers",
@@ -25,7 +25,9 @@
     "Regular gasoline sold at retail in Corvane is capped at $4.20 a gallon including taxes, midgrade at $4.50 and premium at $4.80, from Day 5 to Day 95.",
     "On Day 3 the governor announced that a cap would take effect on Day 5.",
     "Enforcement is funded by an emergency appropriation from the general fund."
-   ]
+   ],
+   "protected_concentrated": false,
+   "input_supplier_actor": "suppliers"
   }
  ],
  "unclear": [

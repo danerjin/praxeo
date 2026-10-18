@@ -159,5 +159,19 @@
   "probability": 0.9,
   "rationale": "No numbered assumption (C-21 is Tier A, 'none'); WE-005 section 2 states the first funding case of OC-3: an emergency appropriation from the general fund, a budget that rises with the new task. Estimate from the record.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.input_few_outlets",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "WE-005 A-7 (alternative_uses): most in-state refinery output has no outlet other than Corvane stations in the short run (the pipeline carries about a tenth of consumption); the price branch of PC-12.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.input_other_outlets",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "WE-005 A-6 (alternative_uses): cargoes of Corvane blend have other buyers, and the pipeline to Brennick has spare capacity; the quantity branch of PC-12.",
+  "evidence": []
  }
 ]

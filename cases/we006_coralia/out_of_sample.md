@@ -66,3 +66,9 @@ Summary: the table has 26 rows (C-1 to C-26). The engine reports 26 consequences
 | C-26 officials.enforcement enforcement_cost increase | yes | |
 
 The `alternative_uses` answer is a judgement call (p 0.55 from A-6, local sellers storing stock; A-4's 0.9 concerns outside sellers, who have no role). Both the C-8 and C-12 key matches and the WRONG displaced-turnover row depend on it.
+
+## After the rule changes (second commit)
+
+Changes that bear on this example: the single component of the first run is now three, which is the record fact the first run lacked (k1 goods sold by `sellers.local`, k2 goods brought in by `sellers.outside`, k3 rooms of `hotels.declared` with the guests `evacuees.in_rooms` as the protected role), because the engine allows one bound role per component; the excluded role is `residents.declared` (the table's actor for the PC-1 and PC-2 rows); all three say the protected buyers are a diffuse public. Answers for k2 and k3 copy k1's except where the table has a row for that bound class (k2 `alternative_uses` 0.9 from A-4; k3 `nontransferable` 0.85 from A-8, k1's 0.1 for the goods) and are marked in their rationale. New rules (`praxeo/rules/ceiling_extensions.lp`): LW-3 with PC-1, PC-2 in its group form, PC-6's informal activity by the buyers; RS-7 lobbying by the protected needs a concentrated group; the displaced-holders subclass (PC-7, RS-5) needs a right tied to holding (`nontransferable`).
+
+Rows produced: 15 of 26 (C-1 to C-6, C-8, C-11, C-12, C-14 to C-16, C-22, C-24, C-26), up from 7. Engine rows WRONG: 0 (the lobbying row of the buying public and the displaced goods-buyers' turnover are gone). `tests/test_out_of_sample.py::test_consistent_with_worked_example_we006` records each remaining gap.

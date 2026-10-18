@@ -117,3 +117,9 @@ Rows are listed in table order. "Part" means the row names classes the record ha
 | C-71 same relocation_out_of_area (county) ambiguous | no | destination not represented |
 | C-72 covered.senior, displaced.senior relocation_out_of_area (county) ambiguous | no | senior classes |
 | C-73 landlords.covered net_price_received increase (initial rents) | no | missing rule: the landlords' side of C-53 (CR-8b mirror); the only increase the engine reports for this key is the announcement-window one (C-54) |
+
+## After the rule changes (second commit)
+
+The record and answers are unchanged. None of the new patterns adds a row here: PC-2's group, LW-3 and PC-6's buyers rows are not met under vacancy decontrol (PC-1 1.4), PC-12 needs an input supplier, and RS-7 and the displaced subclass keep their results (the tenants are a concentrated group; `nontransferable` is 0.9). The rows produced stay at 29 of 71 and the engine rows are the same 33.
+
+Engine rows WRONG: 1, unchanged (`tenants.prospective` side payments). The fix (PC-6's side payments by the excluded buyers presuppose a capped price for them, so not under vacancy decontrol) would also remove the same row from `sf_1994`, whose agreement list in `tests/test_config_b.py` contains it; it was not made. The gaps that need new encodings are listed with reasons in `tests/test_out_of_sample.py::test_consistent_with_worked_example_we067`: the credit and its administration (K4, K6), RS-7's Unless clause (C-27), the buyout form of PC-6 (C-61), the senior classes, the mirrors of the window rows (C-55, C-56, C-73), and the second neighbour (Durnside).

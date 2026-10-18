@@ -178,6 +178,15 @@ STOCKPILE_QUESTION = ("stockpile_ahead", "expectations",
                       "Buyers and importers can store the good and order ahead of the effective date.")
 
 
+# PC-12, asked only for a price ceiling whose record names the suppliers of the input the capped sellers buy (input_supplier_actor).
+INPUT_FEW_OUTLETS_QUESTION = ("input_few_outlets", "alternative_uses",
+                              "Do the suppliers of the input have few outlets, in the period considered, other than the capped sellers (so that they cannot send their output elsewhere at an uncapped price)?",
+                              "The input's suppliers have few uncapped outlets: they receive less for what they sell to the capped sellers.")
+INPUT_OTHER_OUTLETS_QUESTION = ("input_other_outlets", "alternative_uses",
+                                "Do the suppliers of the input have other buyers, in the period considered, to whom they can send their output at an uncapped price?",
+                                "The input's suppliers have other buyers: they send less to the capped sellers.")
+
+
 def _specs(comp: Component) -> list[tuple[str, str, str, str]]:
     """The (atom, class, question, assumption text) list for a component, by instrument."""
     if comp.instrument == "price_ceiling":
@@ -186,6 +195,8 @@ def _specs(comp: Component) -> list[tuple[str, str, str, str]]:
             specs += [WINDOW_REPRICING_QUESTION, CATCHUP_QUESTION]
         if comp.general_budget:
             specs.append(BUDGET_QUESTION)
+        if comp.input_supplier_actor:
+            specs += [INPUT_FEW_OUTLETS_QUESTION, INPUT_OTHER_OUTLETS_QUESTION]
         return specs
     if comp.instrument not in ("per_unit_tax", "tariff"):
         return []

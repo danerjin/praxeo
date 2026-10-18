@@ -374,6 +374,17 @@ WE001_EXCEPTIONS = {
     # An item of the CR-12 comparison behind C-28 (section 7: key money, C-7, against rent forgone). The table lists the total.
     ("landlords.controlled", "resources_available_other_uses", "increase", None):
         "the key-money item of C-28's CR-12 comparison (section 7); the table lists the total, which is a decrease",
+    # Patterns added after the out-of-sample runs on WE-005, WE-006 and WE-067 (rules/ceiling_extensions.lp). WE-001's table
+    # predates them; each is the pattern's general form applied to this record.
+    ("tenants.prospective", "quantity_demanded", "increase", None):
+        "LW-3 with PC-1 (WE-005 C-3, WE-006 C-2): at the capped price the buyers outside want more; WE-001's table lists excess_demand only",
+    ("tenants.prospective", "informal_activity", "increase", None):
+        "PC-6: the buyers who pay the side payments (C-7) take part in the informal trade; WE-001 lists the sublets of the protected side (C-22)",
+    ("tenants.prospective", "wait_time", "at_least_one_increase", None):
+        "PC-2 in its group form (WE-006 C-4): implied by C-3, C-4 and C-7, which the table lists one by one",
+    ("tenants.prospective", "search_cost", "at_least_one_increase", None): "member of the PC-2 group (see above)",
+    ("tenants.prospective", "side_payments", "at_least_one_increase", None): "member of the PC-2 group (see above)",
+    ("tenants.prospective", "allocation_by_non_price_criteria", "at_least_one_increase", None): "member of the PC-2 group (see above)",
 }
 
 # Rows of WE-001's table the engine does not produce, each with the reason (what it would need).

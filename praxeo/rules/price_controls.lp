@@ -75,14 +75,17 @@ effect(stay_in_area(C), @keepers(P), "relocation_out_of_area", decrease, medium,
 % PC-7 (1.4), RS-5 and CR-9: holders displaced by conversion or withdrawal are a subclass whose turnover rises
 % (the owner's exit ends the lease). The class total of turnover is a CR-12 comparison that the handbook's worked example
 % does not settle (it lists the keepers' fall as C-5 and this rise as C-10), so the combiner forms no total.
-displaced_move(C) :- reclassify(C), not exception(cr_9, C).
+% PC-7 speaks of holders of a benefit tied to holding the good: without that tie (nontransferable) there is no holding to end.
+displaced_move(C) :- reclassify(C), holds(nontransferable(C)), not exception(cr_9, C).
 fired(rs_5, displaced_move(C), reclassify(C)) :- displaced_move(C).
+fired(pc_7, displaced_move(C), nontransferable(C)) :- displaced_move(C).
 effect(displaced_move(C), @displaced(P), "turnover", increase, medium, invisible, "B") :- displaced_move(C), protected(C, P).
 
 % PC-21 (1.4) subclass split: insiders displaced by conversion or withdrawal leave more
 % (their next-best home may be outside the area: the mobility premise).
-displaced_leave(C) :- reclassify(C), holds(would_leave(C)), not exception(pc_21, C).
+displaced_leave(C) :- reclassify(C), holds(nontransferable(C)), holds(would_leave(C)), not exception(pc_21, C).
 fired(rs_5,  displaced_leave(C), reclassify(C))  :- displaced_leave(C).
+fired(pc_7,  displaced_leave(C), nontransferable(C)) :- displaced_leave(C).
 fired(pc_21, displaced_leave(C), would_leave(C)) :- displaced_leave(C).
 effect(displaced_leave(C), @displaced(P), "relocation_out_of_area", increase, long, invisible, "B") :- displaced_leave(C), protected(C, P).
 
@@ -143,8 +146,13 @@ effect(job_lock(C), P, "job_changes", decrease, medium, invisible, "B") :- job_l
 lobbying(C) :- binding_cap(C), holds(can_organize(C)), not exception(rs_7, C).
 fired(rs_7, lobbying(C), binding_cap(C))  :- lobbying(C).
 fired(rs_7, lobbying(C), can_organize(C)) :- lobbying(C).
-effect(lobbying(C), P, "lobbying_effort", increase, medium, invisible, "B") :- lobbying(C), protected(C, P).
 effect(lobbying(C), B, "lobbying_effort", increase, medium, invisible, "B") :- lobbying(C), bound(C, B).
+% RS-7's If asks for a gain concentrated on an identifiable group. The protected buyers lobby only if the record says they are
+% such a group (sitting tenants); not where they are the whole buying public (everyone who buys fuel or water).
+lobbying_protected(C) :- lobbying(C), protected_concentrated(C).
+fired(rs_7, lobbying_protected(C), lobbying(C))                 :- lobbying_protected(C).
+fired(rs_7, lobbying_protected(C), protected_concentrated(C))   :- lobbying_protected(C).
+effect(lobbying_protected(C), P, "lobbying_effort", increase, medium, invisible, "B") :- lobbying_protected(C), protected(C, P).
 
 % PC-16: a binding ceiling is a transfer. The sellers receive less by what the insiders pay less (PC-3, insider_gain).
 transfer(C) :- insider_gain(C), not exception(pc_16, C).

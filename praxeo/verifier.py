@@ -16,7 +16,7 @@ from .engine import CUTOFF
 from .schema import GROUP_SIGNS, Assumption, Consequence, PolicyRecord
 
 RECORD_PREDICATES = ("ceiling(", "decontrol(", "bound(", "protected(", "excluded(", "tax(", "tariff(", "neighbor(", "enforcer(",
-                     "definition_line(", "renewable(", "announced(", "rolled_back(", "taxpayer(")
+                     "definition_line(", "renewable(", "announced(", "rolled_back(", "taxpayer(", "protected_concentrated(")
 
 
 def record_roles(record: PolicyRecord) -> set[str]:

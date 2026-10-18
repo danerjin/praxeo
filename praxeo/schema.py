@@ -59,7 +59,9 @@ class Component(BaseModel):
     downstream: list[Downstream] = Field(default=[], description="Users of the good as an input (RS-14)")
     taxpayer_actor: str = Field(default="taxpayers", description="Taxes and tariffs: who funds new administration if the agency budget rises (OC-3)")
     foreign_seller_actor: str = Field(default="sellers.foreign", description="Tariffs: foreign sellers of the tariffed good (OC-4)")
-    input_supplier_actor: Optional[str] = Field(default=None, description="Tariffs: suppliers of inputs to the protected domestic producers (CR-9)")
+    input_supplier_actor: Optional[str] = Field(default=None, description=(
+        "Tariffs: suppliers of inputs to the protected domestic producers (CR-9). Price ceilings: suppliers of the input "
+        "that the capped sellers buy (PC-12); the capped sellers must be the main buyers of that input"))
     domestic_seller_owner_actor: Optional[str] = Field(default=None, description="Tariffs: owners of the protected domestic producers (SB-4)")
     renewable: bool = Field(default=False, description="True when the gain depends on a later decision: the measure expires or is reviewed, and may be renewed or extended (RS-7, TS-2)")
     definition_line: bool = Field(default=False, description="True when the definitions or exemptions draw a line between covered and uncovered goods (RS-5)")
@@ -68,6 +70,9 @@ class Component(BaseModel):
     announcement_window: bool = Field(default=False, description=(
         "True when the measure was announced (enacted, put on a ballot, recommended) some time before it takes effect, "
         "so that actors can shift actions into the window (RS-8). The engine fact is announced(C)."))
+    protected_concentrated: bool = Field(default=True, description=(
+        "Price ceilings: True when the protected buyers are an identifiable group with a concentrated stake (sitting tenants), "
+        "False when they are the whole diffuse public (everyone who buys fuel). RS-7 signs the protected group's lobbying only in the first case"))
     general_budget: bool = Field(default=False, description="Price ceilings: enforcement is funded from the general budget, so OC-3 and OC-1 name the payers")
     source_sentences: list[str] = Field(description="Sentences of the policy text this component rests on, quoted exactly")
 

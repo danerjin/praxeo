@@ -7,22 +7,60 @@
  "stated_aim": null,
  "components": [
   {
-   "id": "k1",
    "instrument": "price_ceiling",
-   "good": "emergency_goods_and_rooms",
+   "cap": 1.1,
+   "cap_unit": "multiple of the seller's average price in the 30 days before the declaration, plus documented cost increases",
+   "excluded_actor": "residents.declared",
+   "enforcer_actor": "officials.enforcement",
+   "announcement_window": false,
+   "general_budget": false,
+   "protected_concentrated": false,
+   "id": "k1",
+   "good": "emergency_goods",
    "market": "declared_counties",
    "bound_actor": "sellers.local",
    "protected_actor": "buyers.served",
-   "excluded_actor": "buyers.unserved",
    "neighbor_actor": "buyers.inland",
-   "enforcer_actor": "officials.enforcement",
-   "cap": 1.1,
-   "cap_unit": "multiple of the seller's average price in the 30 days before the declaration, plus documented cost increases",
-   "announcement_window": false,
-   "general_budget": false,
    "source_sentences": [
     "The price of generators and fuel cans, bottled water, plywood, tarps and other building materials, and hotel, motel and short-term rental rooms sold or rented in the declared counties may not exceed 110% of the seller's own average price in the 30 days before the declaration.",
+    "Enforcement is funded from the Attorney General's budget."
+   ]
+  },
+  {
+   "instrument": "price_ceiling",
+   "cap": 1.1,
+   "cap_unit": "multiple of the seller's average price in the 30 days before the declaration, plus documented cost increases",
+   "excluded_actor": "residents.declared",
+   "enforcer_actor": "officials.enforcement",
+   "announcement_window": false,
+   "general_budget": false,
+   "protected_concentrated": false,
+   "id": "k2",
+   "good": "emergency_goods_brought_in",
+   "market": "declared_counties",
+   "bound_actor": "sellers.outside",
+   "protected_actor": "buyers.served",
+   "source_sentences": [
     "The rule binds every seller of these goods in the declared counties, including sellers from outside the area selling there and online sellers delivering there, for the whole declared emergency.",
+    "Enforcement is funded from the Attorney General's budget."
+   ]
+  },
+  {
+   "instrument": "price_ceiling",
+   "cap": 1.1,
+   "cap_unit": "multiple of the seller's average price in the 30 days before the declaration, plus documented cost increases",
+   "excluded_actor": "residents.declared",
+   "enforcer_actor": "officials.enforcement",
+   "announcement_window": false,
+   "general_budget": false,
+   "protected_concentrated": false,
+   "id": "k3",
+   "good": "emergency_rooms",
+   "market": "declared_counties",
+   "bound_actor": "hotels.declared",
+   "protected_actor": "evacuees.in_rooms",
+   "source_sentences": [
+    "The price of generators and fuel cans, bottled water, plywood, tarps and other building materials, and hotel, motel and short-term rental rooms sold or rented in the declared counties may not exceed 110% of the seller's own average price in the 30 days before the declaration.",
     "Enforcement is funded from the Attorney General's budget."
    ]
   }

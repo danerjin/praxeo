@@ -6,9 +6,33 @@
    "p": 0.55,
    "text": "Owners can move covered units to uses the ceiling does not reach."
   },
+  "alternative_uses(k2)": {
+   "assumption_class": "alternative_uses",
+   "id": "alternative_uses(k2)",
+   "p": 0.9,
+   "text": "Owners can move covered units to uses the ceiling does not reach."
+  },
+  "alternative_uses(k3)": {
+   "assumption_class": "alternative_uses",
+   "id": "alternative_uses(k3)",
+   "p": 0.1,
+   "text": "Owners can move covered units to uses the ceiling does not reach."
+  },
   "binding(k1)": {
    "assumption_class": "binding",
    "id": "binding(k1)",
+   "p": 0.85,
+   "text": "The ceiling binds: it is below the price the market would otherwise reach."
+  },
+  "binding(k2)": {
+   "assumption_class": "binding",
+   "id": "binding(k2)",
+   "p": 0.85,
+   "text": "The ceiling binds: it is below the price the market would otherwise reach."
+  },
+  "binding(k3)": {
+   "assumption_class": "binding",
+   "id": "binding(k3)",
    "p": 0.85,
    "text": "The ceiling binds: it is below the price the market would otherwise reach."
   },
@@ -18,9 +42,33 @@
    "p": 0.7,
    "text": "Buyouts move fewer tenants than the cap keeps in place."
   },
+  "buyouts_limited(k2)": {
+   "assumption_class": "other",
+   "id": "buyouts_limited(k2)",
+   "p": 0.7,
+   "text": "Buyouts move fewer tenants than the cap keeps in place."
+  },
+  "buyouts_limited(k3)": {
+   "assumption_class": "other",
+   "id": "buyouts_limited(k3)",
+   "p": 0.7,
+   "text": "Buyouts move fewer tenants than the cap keeps in place."
+  },
   "can_organize(k1)": {
    "assumption_class": "other",
    "id": "can_organize(k1)",
+   "p": 0.6,
+   "text": "The groups with a concentrated stake can organize and spend to keep or change the rule."
+  },
+  "can_organize(k2)": {
+   "assumption_class": "other",
+   "id": "can_organize(k2)",
+   "p": 0.3,
+   "text": "The groups with a concentrated stake can organize and spend to keep or change the rule."
+  },
+  "can_organize(k3)": {
+   "assumption_class": "other",
+   "id": "can_organize(k3)",
    "p": 0.6,
    "text": "The groups with a concentrated stake can organize and spend to keep or change the rule."
   },
@@ -30,9 +78,33 @@
    "p": 0.7,
    "text": "Shut-out buyers can buy in a neighbouring market outside the rule's reach at a bearable cost."
   },
+  "commutable(k2)": {
+   "assumption_class": "mobility",
+   "id": "commutable(k2)",
+   "p": 0.7,
+   "text": "Shut-out buyers can buy in a neighbouring market outside the rule's reach at a bearable cost."
+  },
+  "commutable(k3)": {
+   "assumption_class": "mobility",
+   "id": "commutable(k3)",
+   "p": 0.7,
+   "text": "Shut-out buyers can buy in a neighbouring market outside the rule's reach at a bearable cost."
+  },
   "durable_assets(k1)": {
    "assumption_class": "durability",
    "id": "durable_assets(k1)",
+   "p": 0.1,
+   "text": "The covered assets are durable and their supply expands slowly."
+  },
+  "durable_assets(k2)": {
+   "assumption_class": "durability",
+   "id": "durable_assets(k2)",
+   "p": 0.1,
+   "text": "The covered assets are durable and their supply expands slowly."
+  },
+  "durable_assets(k3)": {
+   "assumption_class": "durability",
+   "id": "durable_assets(k3)",
    "p": 0.1,
    "text": "The covered assets are durable and their supply expands slowly."
   },
@@ -42,9 +114,33 @@
    "p": 0.75,
    "text": "The ceiling is enforced against most bound sellers."
   },
+  "enforced(k2)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k2)",
+   "p": 0.75,
+   "text": "The ceiling is enforced against most bound sellers."
+  },
+  "enforced(k3)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k3)",
+   "p": 0.75,
+   "text": "The ceiling is enforced against most bound sellers."
+  },
   "evasion(k1)": {
    "assumption_class": "enforcement",
    "id": "evasion(k1)",
+   "p": 0.6,
+   "text": "Some exchanges take place above the ceiling without being caught."
+  },
+  "evasion(k2)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k2)",
+   "p": 0.6,
+   "text": "Some exchanges take place above the ceiling without being caught."
+  },
+  "evasion(k3)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k3)",
    "p": 0.6,
    "text": "Some exchanges take place above the ceiling without being caught."
   },
@@ -54,9 +150,33 @@
    "p": 0.05,
    "text": "Moving covered units to an alternative use requires a permit or board process."
   },
+  "exit_process(k2)": {
+   "assumption_class": "other",
+   "id": "exit_process(k2)",
+   "p": 0.05,
+   "text": "Moving covered units to an alternative use requires a permit or board process."
+  },
+  "exit_process(k3)": {
+   "assumption_class": "other",
+   "id": "exit_process(k3)",
+   "p": 0.05,
+   "text": "Moving covered units to an alternative use requires a permit or board process."
+  },
   "expected_to_last(k1)": {
    "assumption_class": "expectations",
    "id": "expected_to_last(k1)",
+   "p": 0.75,
+   "text": "Buyers of the covered assets expect the rule to last for many years."
+  },
+  "expected_to_last(k2)": {
+   "assumption_class": "expectations",
+   "id": "expected_to_last(k2)",
+   "p": 0.75,
+   "text": "Buyers of the covered assets expect the rule to last for many years."
+  },
+  "expected_to_last(k3)": {
+   "assumption_class": "expectations",
+   "id": "expected_to_last(k3)",
    "p": 0.75,
    "text": "Buyers of the covered assets expect the rule to last for many years."
   },
@@ -66,15 +186,51 @@
    "p": 0.2,
    "text": "Among all protected tenants, the fall in moves out of the area among keepers outweighs the rise among the displaced."
   },
+  "keepers_dominate(k2)": {
+   "assumption_class": "other",
+   "id": "keepers_dominate(k2)",
+   "p": 0.2,
+   "text": "Among all protected tenants, the fall in moves out of the area among keepers outweighs the rise among the displaced."
+  },
+  "keepers_dominate(k3)": {
+   "assumption_class": "other",
+   "id": "keepers_dominate(k3)",
+   "p": 0.2,
+   "text": "Among all protected tenants, the fall in moves out of the area among keepers outweighs the rise among the displaced."
+  },
   "lockin_dominates(k1)": {
    "assumption_class": "other",
    "id": "lockin_dominates(k1)",
    "p": 0.2,
    "text": "The lock-in outweighs moves diverted out of the area by higher free rents."
   },
+  "lockin_dominates(k2)": {
+   "assumption_class": "other",
+   "id": "lockin_dominates(k2)",
+   "p": 0.2,
+   "text": "The lock-in outweighs moves diverted out of the area by higher free rents."
+  },
+  "lockin_dominates(k3)": {
+   "assumption_class": "other",
+   "id": "lockin_dominates(k3)",
+   "p": 0.2,
+   "text": "The lock-in outweighs moves diverted out of the area by higher free rents."
+  },
   "nontransferable(k1)": {
    "assumption_class": "other",
    "id": "nontransferable(k1)",
+   "p": 0.1,
+   "text": "The protected buyers' right is tied to holding the tenancy and cannot be sold."
+  },
+  "nontransferable(k2)": {
+   "assumption_class": "other",
+   "id": "nontransferable(k2)",
+   "p": 0.1,
+   "text": "The protected buyers' right is tied to holding the tenancy and cannot be sold."
+  },
+  "nontransferable(k3)": {
+   "assumption_class": "other",
+   "id": "nontransferable(k3)",
    "p": 0.85,
    "text": "The protected buyers' right is tied to holding the tenancy and cannot be sold."
   },
@@ -84,9 +240,33 @@
    "p": 0.1,
    "text": "Some valued opportunities for the protected buyers would require giving up the covered unit."
   },
+  "opportunities_need_move(k2)": {
+   "assumption_class": "mobility",
+   "id": "opportunities_need_move(k2)",
+   "p": 0.1,
+   "text": "Some valued opportunities for the protected buyers would require giving up the covered unit."
+  },
+  "opportunities_need_move(k3)": {
+   "assumption_class": "mobility",
+   "id": "opportunities_need_move(k3)",
+   "p": 0.1,
+   "text": "Some valued opportunities for the protected buyers would require giving up the covered unit."
+  },
   "quality_adjustable(k1)": {
    "assumption_class": "other",
    "id": "quality_adjustable(k1)",
+   "p": 0.75,
+   "text": "Sellers have room to cut quality or maintenance above any enforced minimum."
+  },
+  "quality_adjustable(k2)": {
+   "assumption_class": "other",
+   "id": "quality_adjustable(k2)",
+   "p": 0.75,
+   "text": "Sellers have room to cut quality or maintenance above any enforced minimum."
+  },
+  "quality_adjustable(k3)": {
+   "assumption_class": "other",
+   "id": "quality_adjustable(k3)",
    "p": 0.75,
    "text": "Sellers have room to cut quality or maintenance above any enforced minimum."
   },
@@ -96,10 +276,34 @@
    "p": 0.05,
    "text": "Re-letting a vacated unit obstructs the owner's later move to an alternative use."
   },
+  "relet_obstructs(k2)": {
+   "assumption_class": "other",
+   "id": "relet_obstructs(k2)",
+   "p": 0.05,
+   "text": "Re-letting a vacated unit obstructs the owner's later move to an alternative use."
+  },
+  "relet_obstructs(k3)": {
+   "assumption_class": "other",
+   "id": "relet_obstructs(k3)",
+   "p": 0.05,
+   "text": "Re-letting a vacated unit obstructs the owner's later move to an alternative use."
+  },
   "search_open(k1)": {
    "assumption_class": "other",
    "id": "search_open(k1)",
    "p": 0.75,
+   "text": "Seekers find covered units by their own search: no public list or allocation rule assigns them."
+  },
+  "search_open(k2)": {
+   "assumption_class": "other",
+   "id": "search_open(k2)",
+   "p": 0.75,
+   "text": "Seekers find covered units by their own search: no public list or allocation rule assigns them."
+  },
+  "search_open(k3)": {
+   "assumption_class": "other",
+   "id": "search_open(k3)",
+   "p": 0.6,
    "text": "Seekers find covered units by their own search: no public list or allocation rule assigns them."
   },
   "selection_open(k1)": {
@@ -108,15 +312,51 @@
    "p": 0.8,
    "text": "Sellers may choose among applicants by criteria of their own."
   },
+  "selection_open(k2)": {
+   "assumption_class": "other",
+   "id": "selection_open(k2)",
+   "p": 0.8,
+   "text": "Sellers may choose among applicants by criteria of their own."
+  },
+  "selection_open(k3)": {
+   "assumption_class": "other",
+   "id": "selection_open(k3)",
+   "p": 0.6,
+   "text": "Sellers may choose among applicants by criteria of their own."
+  },
   "substitutes(k1)": {
    "assumption_class": "substitutability",
    "id": "substitutes(k1)",
    "p": 0.8,
    "text": "Uncovered units in the same market are close substitutes for covered ones."
   },
+  "substitutes(k2)": {
+   "assumption_class": "substitutability",
+   "id": "substitutes(k2)",
+   "p": 0.8,
+   "text": "Uncovered units in the same market are close substitutes for covered ones."
+  },
+  "substitutes(k3)": {
+   "assumption_class": "substitutability",
+   "id": "substitutes(k3)",
+   "p": 0.8,
+   "text": "Uncovered units in the same market are close substitutes for covered ones."
+  },
   "would_leave(k1)": {
    "assumption_class": "mobility",
    "id": "would_leave(k1)",
+   "p": 0.2,
+   "text": "Without the rule some protected buyers would have left the area."
+  },
+  "would_leave(k2)": {
+   "assumption_class": "mobility",
+   "id": "would_leave(k2)",
+   "p": 0.2,
+   "text": "Without the rule some protected buyers would have left the area."
+  },
+  "would_leave(k3)": {
+   "assumption_class": "mobility",
+   "id": "would_leave(k3)",
    "p": 0.2,
    "text": "Without the rule some protected buyers would have left the area."
   }
@@ -186,6 +426,12 @@
      "enforced(k1)",
      "evasion(k1)",
      "nontransferable(k1)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "evasion(k2)",
+     "nontransferable(k2)"
     ]
    ],
    "assumptions": [
@@ -226,6 +472,36 @@
       "nontransferable(k1)"
      ],
      "rule": "PC-6"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k2)",
+     "premises": [
+      "evasion(k2)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "sublet(k2)",
+     "premises": [
+      "informal(k2)",
+      "nontransferable(k2)"
+     ],
+     "rule": "PC-6"
     }
    ],
    "group": [],
@@ -236,7 +512,7 @@
    ],
    "id": "C-2",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
@@ -248,6 +524,13 @@
    "actor_class": "buyers.served",
    "assumption_sets": [
     [
+     "binding(k2)",
+     "buyouts_limited(k2)",
+     "enforced(k2)",
+     "nontransferable(k2)",
+     "opportunities_need_move(k2)"
+    ],
+    [
      "binding(k1)",
      "buyouts_limited(k1)",
      "enforced(k1)",
@@ -256,11 +539,11 @@
     ]
    ],
    "assumptions": [
-    "binding(k1)",
-    "buyouts_limited(k1)",
-    "enforced(k1)",
-    "nontransferable(k1)",
-    "opportunities_need_move(k1)"
+    "binding(k2)",
+    "buyouts_limited(k2)",
+    "enforced(k2)",
+    "nontransferable(k2)",
+    "opportunities_need_move(k2)"
    ],
    "combines": [],
    "comparison": null,
@@ -289,6 +572,31 @@
       "turnover_falls(k1)"
      ],
      "rule": "RS-11"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "turnover_falls(k2)",
+     "premises": [
+      "binding_cap(k2)",
+      "buyouts_limited(k2)",
+      "nontransferable(k2)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "job_lock(k2)",
+     "premises": [
+      "opportunities_need_move(k2)",
+      "turnover_falls(k2)"
+     ],
+     "rule": "RS-11"
     }
    ],
    "group": [],
@@ -311,56 +619,11 @@
    "assumption_sets": [
     [
      "binding(k1)",
-     "can_organize(k1)",
      "enforced(k1)"
-    ]
-   ],
-   "assumptions": [
-    "binding(k1)",
-    "can_organize(k1)",
-    "enforced(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "binding_cap(k1)",
-     "premises": [
-      "binding(k1)",
-      "enforced(k1)"
-     ],
-     "rule": "PC-1"
-    },
-    {
-     "conclusion": "lobbying(k1)",
-     "premises": [
-      "binding_cap(k1)",
-      "can_organize(k1)"
-     ],
-     "rule": "RS-7"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "medium",
-    "long"
-   ],
-   "id": "C-4",
-   "item": null,
-   "reported": true,
-   "sign": "increase",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "lobbying_effort",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "buyers.served",
-   "assumption_sets": [
+    ],
     [
-     "binding(k1)",
-     "enforced(k1)"
+     "binding(k2)",
+     "enforced(k2)"
     ]
    ],
    "assumptions": [
@@ -384,6 +647,21 @@
       "binding_cap(k1)"
      ],
      "rule": "PC-3"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-3"
     }
    ],
    "group": [],
@@ -391,7 +669,7 @@
     "medium",
     "long"
    ],
-   "id": "C-5",
+   "id": "C-4",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -408,6 +686,11 @@
      "binding(k1)",
      "enforced(k1)",
      "quality_adjustable(k1)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "quality_adjustable(k2)"
     ]
    ],
    "assumptions": [
@@ -439,6 +722,28 @@
       "quality_adjustable(k1)"
      ],
      "rule": "RS-2"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "quality_falls(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-4"
+    },
+    {
+     "conclusion": "quality_falls(k2)",
+     "premises": [
+      "quality_adjustable(k2)"
+     ],
+     "rule": "RS-2"
     }
    ],
    "group": [],
@@ -447,7 +752,7 @@
     "medium",
     "long"
    ],
-   "id": "C-6",
+   "id": "C-5",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -463,6 +768,10 @@
     [
      "binding(k1)",
      "enforced(k1)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)"
     ]
    ],
    "assumptions": [
@@ -493,6 +802,28 @@
       "insider_gain(k1)"
      ],
      "rule": "CR-8"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "rent_kept(k2)",
+     "premises": [
+      "insider_gain(k2)"
+     ],
+     "rule": "CR-8"
     }
    ],
    "group": [],
@@ -500,7 +831,7 @@
     "medium",
     "long"
    ],
-   "id": "C-7",
+   "id": "C-6",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -518,6 +849,12 @@
      "buyouts_limited(k1)",
      "enforced(k1)",
      "nontransferable(k1)"
+    ],
+    [
+     "binding(k2)",
+     "buyouts_limited(k2)",
+     "enforced(k2)",
+     "nontransferable(k2)"
     ]
    ],
    "assumptions": [
@@ -545,6 +882,23 @@
       "nontransferable(k1)"
      ],
      "rule": "PC-7"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "turnover_falls(k2)",
+     "premises": [
+      "binding_cap(k2)",
+      "buyouts_limited(k2)",
+      "nontransferable(k2)"
+     ],
+     "rule": "PC-7"
     }
    ],
    "group": [],
@@ -552,9 +906,9 @@
     "medium",
     "long"
    ],
-   "id": "C-8",
+   "id": "C-7",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "decrease",
    "sign_by_reading": {},
    "tier": "B",
@@ -569,14 +923,23 @@
      "alternative_uses(k1)",
      "binding(k1)",
      "enforced(k1)",
+     "nontransferable(k1)",
      "would_leave(k1)"
+    ],
+    [
+     "alternative_uses(k2)",
+     "binding(k2)",
+     "enforced(k2)",
+     "nontransferable(k2)",
+     "would_leave(k2)"
     ]
    ],
    "assumptions": [
-    "alternative_uses(k1)",
-    "binding(k1)",
-    "enforced(k1)",
-    "would_leave(k1)"
+    "alternative_uses(k2)",
+    "binding(k2)",
+    "enforced(k2)",
+    "nontransferable(k2)",
+    "would_leave(k2)"
    ],
    "combines": [],
    "comparison": null,
@@ -607,7 +970,51 @@
     {
      "conclusion": "displaced_leave(k1)",
      "premises": [
+      "nontransferable(k1)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "displaced_leave(k1)",
+     "premises": [
       "reclassify(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k2)",
+     "premises": [
+      "alternative_uses(k2)",
+      "binding_cap(k2)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "displaced_leave(k2)",
+     "premises": [
+      "would_leave(k2)"
+     ],
+     "rule": "PC-21"
+    },
+    {
+     "conclusion": "displaced_leave(k2)",
+     "premises": [
+      "nontransferable(k2)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "displaced_leave(k2)",
+     "premises": [
+      "reclassify(k2)"
      ],
      "rule": "RS-5"
     }
@@ -616,7 +1023,7 @@
    "horizon": [
     "long"
    ],
-   "id": "C-9",
+   "id": "C-8",
    "item": null,
    "reported": false,
    "sign": "increase",
@@ -632,13 +1039,21 @@
     [
      "alternative_uses(k1)",
      "binding(k1)",
-     "enforced(k1)"
+     "enforced(k1)",
+     "nontransferable(k1)"
+    ],
+    [
+     "alternative_uses(k2)",
+     "binding(k2)",
+     "enforced(k2)",
+     "nontransferable(k2)"
     ]
    ],
    "assumptions": [
-    "alternative_uses(k1)",
-    "binding(k1)",
-    "enforced(k1)"
+    "alternative_uses(k2)",
+    "binding(k2)",
+    "enforced(k2)",
+    "nontransferable(k2)"
    ],
    "combines": [],
    "comparison": null,
@@ -662,7 +1077,44 @@
     {
      "conclusion": "displaced_move(k1)",
      "premises": [
+      "nontransferable(k1)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "displaced_move(k1)",
+     "premises": [
       "reclassify(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k2)",
+     "premises": [
+      "alternative_uses(k2)",
+      "binding_cap(k2)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "displaced_move(k2)",
+     "premises": [
+      "nontransferable(k2)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "displaced_move(k2)",
+     "premises": [
+      "reclassify(k2)"
      ],
      "rule": "RS-5"
     }
@@ -672,9 +1124,9 @@
     "medium",
     "long"
    ],
-   "id": "C-10",
+   "id": "C-9",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
@@ -686,6 +1138,14 @@
    "actor_class": "buyers.served.keepers",
    "assumption_sets": [
     [
+     "binding(k2)",
+     "buyouts_limited(k2)",
+     "enforced(k2)",
+     "lockin_dominates(k2)",
+     "nontransferable(k2)",
+     "would_leave(k2)"
+    ],
+    [
      "binding(k1)",
      "buyouts_limited(k1)",
      "enforced(k1)",
@@ -695,12 +1155,12 @@
     ]
    ],
    "assumptions": [
-    "binding(k1)",
-    "buyouts_limited(k1)",
-    "enforced(k1)",
-    "lockin_dominates(k1)",
-    "nontransferable(k1)",
-    "would_leave(k1)"
+    "binding(k2)",
+    "buyouts_limited(k2)",
+    "enforced(k2)",
+    "lockin_dominates(k2)",
+    "nontransferable(k2)",
+    "would_leave(k2)"
    ],
    "combines": [],
    "comparison": null,
@@ -730,6 +1190,32 @@
       "would_leave(k1)"
      ],
      "rule": "PC-21"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "turnover_falls(k2)",
+     "premises": [
+      "binding_cap(k2)",
+      "buyouts_limited(k2)",
+      "nontransferable(k2)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "stay_in_area(k2)",
+     "premises": [
+      "lockin_dominates(k2)",
+      "turnover_falls(k2)",
+      "would_leave(k2)"
+     ],
+     "rule": "PC-21"
     }
    ],
    "group": [],
@@ -737,7 +1223,7 @@
     "medium",
     "long"
    ],
-   "id": "C-11",
+   "id": "C-10",
    "item": null,
    "reported": false,
    "sign": "decrease",
@@ -748,12 +1234,1248 @@
    "window": null
   },
   {
-   "actor_class": "buyers.unserved",
+   "actor_class": "evacuees.in_rooms",
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "evasion(k3)",
+     "nontransferable(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "evasion(k3)",
+    "nontransferable(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k3)",
+     "premises": [
+      "evasion(k3)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "sublet(k3)",
+     "premises": [
+      "informal(k3)",
+      "nontransferable(k3)"
+     ],
+     "rule": "PC-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "evacuees.in_rooms",
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "buyouts_limited(k3)",
+     "enforced(k3)",
+     "nontransferable(k3)",
+     "opportunities_need_move(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "buyouts_limited(k3)",
+    "enforced(k3)",
+    "nontransferable(k3)",
+    "opportunities_need_move(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "turnover_falls(k3)",
+     "premises": [
+      "binding_cap(k3)",
+      "buyouts_limited(k3)",
+      "nontransferable(k3)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "job_lock(k3)",
+     "premises": [
+      "opportunities_need_move(k3)",
+      "turnover_falls(k3)"
+     ],
+     "rule": "RS-11"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "job_changes",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "evacuees.in_rooms",
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "evacuees.in_rooms",
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "quality_adjustable(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "quality_adjustable(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "quality_falls(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-4"
+    },
+    {
+     "conclusion": "quality_falls(k3)",
+     "premises": [
+      "quality_adjustable(k3)"
+     ],
+     "rule": "RS-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_per_unit",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "evacuees.in_rooms",
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "rent_kept(k3)",
+     "premises": [
+      "insider_gain(k3)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "evacuees.in_rooms",
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "buyouts_limited(k3)",
+     "enforced(k3)",
+     "nontransferable(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "buyouts_limited(k3)",
+    "enforced(k3)",
+    "nontransferable(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "turnover_falls(k3)",
+     "premises": [
+      "binding_cap(k3)",
+      "buyouts_limited(k3)",
+      "nontransferable(k3)"
+     ],
+     "rule": "PC-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "turnover",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "evacuees.in_rooms.displaced",
+   "assumption_sets": [
+    [
+     "alternative_uses(k3)",
+     "binding(k3)",
+     "enforced(k3)",
+     "nontransferable(k3)",
+     "would_leave(k3)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k3)",
+    "binding(k3)",
+    "enforced(k3)",
+    "nontransferable(k3)",
+    "would_leave(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k3)",
+     "premises": [
+      "alternative_uses(k3)",
+      "binding_cap(k3)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "displaced_leave(k3)",
+     "premises": [
+      "would_leave(k3)"
+     ],
+     "rule": "PC-21"
+    },
+    {
+     "conclusion": "displaced_leave(k3)",
+     "premises": [
+      "nontransferable(k3)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "displaced_leave(k3)",
+     "premises": [
+      "reclassify(k3)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "relocation_out_of_area",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "evacuees.in_rooms.displaced",
+   "assumption_sets": [
+    [
+     "alternative_uses(k3)",
+     "binding(k3)",
+     "enforced(k3)",
+     "nontransferable(k3)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k3)",
+    "binding(k3)",
+    "enforced(k3)",
+    "nontransferable(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k3)",
+     "premises": [
+      "alternative_uses(k3)",
+      "binding_cap(k3)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "displaced_move(k3)",
+     "premises": [
+      "nontransferable(k3)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "displaced_move(k3)",
+     "premises": [
+      "reclassify(k3)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-18",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "turnover",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "evacuees.in_rooms.keepers",
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "buyouts_limited(k3)",
+     "enforced(k3)",
+     "lockin_dominates(k3)",
+     "nontransferable(k3)",
+     "would_leave(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "buyouts_limited(k3)",
+    "enforced(k3)",
+    "lockin_dominates(k3)",
+    "nontransferable(k3)",
+    "would_leave(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "turnover_falls(k3)",
+     "premises": [
+      "binding_cap(k3)",
+      "buyouts_limited(k3)",
+      "nontransferable(k3)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "stay_in_area(k3)",
+     "premises": [
+      "lockin_dominates(k3)",
+      "turnover_falls(k3)",
+      "would_leave(k3)"
+     ],
+     "rule": "PC-21"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-19",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "relocation_out_of_area",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hotels.declared",
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "durable_assets(k3)",
+     "enforced(k3)",
+     "expected_to_last(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "durable_assets(k3)",
+    "enforced(k3)",
+    "expected_to_last(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "capitalized(k3)",
+     "premises": [
+      "binding_cap(k3)",
+      "durable_assets(k3)",
+      "expected_to_last(k3)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-20",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hotels.declared",
+   "assumption_sets": [
+    [
+     "alternative_uses(k3)",
+     "binding(k3)",
+     "enforced(k3)",
+     "exit_process(k3)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k3)",
+    "binding(k3)",
+    "enforced(k3)",
+    "exit_process(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k3)",
+     "premises": [
+      "alternative_uses(k3)",
+      "binding_cap(k3)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "process_cost(k3)",
+     "premises": [
+      "exit_process(k3)",
+      "reclassify(k3)"
+     ],
+     "rule": "OC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-21",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hotels.declared",
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "can_organize(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "can_organize(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "lobbying(k3)",
+     "premises": [
+      "binding_cap(k3)",
+      "can_organize(k3)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-22",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hotels.declared",
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "quality_adjustable(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "quality_adjustable(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "quality_falls(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-4"
+    },
+    {
+     "conclusion": "quality_falls(k3)",
+     "premises": [
+      "quality_adjustable(k3)"
+     ],
+     "rule": "RS-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-23",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "maintenance_spending",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hotels.declared",
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "transfer(k3)",
+     "premises": [
+      "insider_gain(k3)"
+     ],
+     "rule": "PC-16"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-24",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hotels.declared",
+   "assumption_sets": [
+    [
+     "alternative_uses(k3)",
+     "binding(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k3)",
+    "binding(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "supply_falls(k3)",
+     "premises": [
+      "alternative_uses(k3)",
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-25",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hotels.declared",
+   "assumption_sets": [
+    [
+     "alternative_uses(k3)",
+     "binding(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k3)",
+    "binding(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "supply_falls(k3)",
+     "premises": [
+      "alternative_uses(k3)",
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-5"
+    },
+    {
+     "conclusion": "prevented(k3)",
+     "premises": [
+      "supply_falls(k3)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-26",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hotels.declared",
+   "assumption_sets": [
+    [
+     "alternative_uses(k3)",
+     "binding(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k3)",
+    "binding(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k3)",
+     "premises": [
+      "alternative_uses(k3)",
+      "binding_cap(k3)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-27",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hotels.declared",
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "evasion(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "evasion(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k3)",
+     "premises": [
+      "evasion(k3)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "key_money(k3)",
+     "premises": [
+      "informal(k3)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-28",
+   "item": "key_money",
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hotels.declared",
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "transfer(k3)",
+     "premises": [
+      "insider_gain(k3)"
+     ],
+     "rule": "PC-16"
+    },
+    {
+     "conclusion": "rent_forgone(k3)",
+     "premises": [
+      "transfer(k3)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-29",
+   "item": "rent_forgone",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hotels.declared",
+   "assumption_sets": [
+    [
+     "alternative_uses(k3)",
+     "binding(k3)",
+     "enforced(k3)",
+     "relet_obstructs(k3)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k3)",
+    "binding(k3)",
+    "enforced(k3)",
+    "relet_obstructs(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k3)",
+     "premises": [
+      "alternative_uses(k3)",
+      "binding_cap(k3)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "held_vacant(k3)",
+     "premises": [
+      "reclassify(k3)",
+      "relet_obstructs(k3)"
+     ],
+     "rule": "PC-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-30",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "units_held_vacant",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "administered(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "administered(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "administered(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-31",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "residents.declared",
    "assumption_sets": [
     [
      "binding(k1)",
      "enforced(k1)",
      "selection_open(k1)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "selection_open(k2)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "selection_open(k3)"
     ]
    ],
    "assumptions": [
@@ -786,6 +2508,52 @@
       "selection_open(k1)"
      ],
      "rule": "PC-2"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "selection_rationing(k2)",
+     "premises": [
+      "excess_demand(k2)",
+      "selection_open(k2)"
+     ],
+     "rule": "PC-2"
+    },
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "selection_rationing(k3)",
+     "premises": [
+      "excess_demand(k3)",
+      "selection_open(k3)"
+     ],
+     "rule": "PC-2"
     }
    ],
    "group": [],
@@ -794,7 +2562,7 @@
     "medium",
     "long"
    ],
-   "id": "C-12",
+   "id": "C-32",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -805,18 +2573,28 @@
    "window": null
   },
   {
-   "actor_class": "buyers.unserved",
+   "actor_class": "residents.declared",
    "assumption_sets": [
     [
      "binding(k1)",
      "enforced(k1)",
      "evasion(k1)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "evasion(k3)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "evasion(k2)"
     ]
    ],
    "assumptions": [
-    "binding(k1)",
-    "enforced(k1)",
-    "evasion(k1)"
+    "binding(k3)",
+    "enforced(k3)",
+    "evasion(k3)"
    ],
    "combines": [],
    "comparison": null,
@@ -849,6 +2627,64 @@
       "informal(k1)"
      ],
      "rule": "RS-10"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k2)",
+     "premises": [
+      "evasion(k2)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "no_recourse(k2)",
+     "premises": [
+      "informal(k2)"
+     ],
+     "rule": "RS-10"
+    },
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k3)",
+     "premises": [
+      "evasion(k3)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "no_recourse(k3)",
+     "premises": [
+      "informal(k3)"
+     ],
+     "rule": "RS-10"
     }
    ],
    "group": [],
@@ -857,7 +2693,7 @@
     "medium",
     "long"
    ],
-   "id": "C-13",
+   "id": "C-33",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -868,11 +2704,19 @@
    "window": null
   },
   {
-   "actor_class": "buyers.unserved",
+   "actor_class": "residents.declared",
    "assumption_sets": [
     [
      "binding(k1)",
      "enforced(k1)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)"
     ]
    ],
    "assumptions": [
@@ -896,6 +2740,36 @@
       "binding_cap(k1)"
      ],
      "rule": "PC-1"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-1"
     }
    ],
    "group": [],
@@ -904,7 +2778,7 @@
     "medium",
     "long"
    ],
-   "id": "C-14",
+   "id": "C-34",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -915,12 +2789,153 @@
    "window": null
   },
   {
-   "actor_class": "buyers.unserved",
+   "actor_class": "residents.declared",
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "evasion(k3)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "evasion(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "evasion(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "informal_buyers(k1)",
+     "premises": [
+      "informal(k1)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k2)",
+     "premises": [
+      "evasion(k2)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "informal_buyers(k2)",
+     "premises": [
+      "informal(k2)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k3)",
+     "premises": [
+      "evasion(k3)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "informal_buyers(k3)",
+     "premises": [
+      "informal(k3)"
+     ],
+     "rule": "PC-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-35",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "residents.declared",
    "assumption_sets": [
     [
      "binding(k1)",
      "enforced(k1)",
      "substitutes(k1)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "substitutes(k3)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "substitutes(k2)"
     ]
    ],
    "assumptions": [
@@ -952,13 +2967,57 @@
       "substitutes(k1)"
      ],
      "rule": "RS-4"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "outsider_price(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "outsider_price(k2)",
+     "premises": [
+      "substitutes(k2)"
+     ],
+     "rule": "RS-4"
+    },
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "outsider_price(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "outsider_price(k3)",
+     "premises": [
+      "substitutes(k3)"
+     ],
+     "rule": "RS-4"
     }
    ],
    "group": [],
    "horizon": [
     "long"
    ],
-   "id": "C-15",
+   "id": "C-36",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -969,18 +3028,134 @@
    "window": null
   },
   {
-   "actor_class": "buyers.unserved",
+   "actor_class": "residents.declared",
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "demand_rises(k1)",
+     "premises": [
+      "excess_demand(k1)"
+     ],
+     "rule": "LW-3"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "demand_rises(k2)",
+     "premises": [
+      "excess_demand(k2)"
+     ],
+     "rule": "LW-3"
+    },
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "demand_rises(k3)",
+     "premises": [
+      "excess_demand(k3)"
+     ],
+     "rule": "LW-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-37",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "residents.declared",
    "assumption_sets": [
     [
      "alternative_uses(k1)",
      "binding(k1)",
      "enforced(k1)"
+    ],
+    [
+     "alternative_uses(k2)",
+     "binding(k2)",
+     "enforced(k2)"
+    ],
+    [
+     "alternative_uses(k3)",
+     "binding(k3)",
+     "enforced(k3)"
     ]
    ],
    "assumptions": [
-    "alternative_uses(k1)",
-    "binding(k1)",
-    "enforced(k1)"
+    "alternative_uses(k2)",
+    "binding(k2)",
+    "enforced(k2)"
    ],
    "combines": [],
    "comparison": null,
@@ -1007,6 +3182,52 @@
       "supply_falls(k1)"
      ],
      "rule": "OC-4"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "supply_falls(k2)",
+     "premises": [
+      "alternative_uses(k2)",
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-5"
+    },
+    {
+     "conclusion": "prevented(k2)",
+     "premises": [
+      "supply_falls(k2)"
+     ],
+     "rule": "OC-4"
+    },
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "supply_falls(k3)",
+     "premises": [
+      "alternative_uses(k3)",
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-5"
+    },
+    {
+     "conclusion": "prevented(k3)",
+     "premises": [
+      "supply_falls(k3)"
+     ],
+     "rule": "OC-4"
     }
    ],
    "group": [],
@@ -1014,7 +3235,7 @@
     "medium",
     "long"
    ],
-   "id": "C-16",
+   "id": "C-38",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1025,8 +3246,18 @@
    "window": null
   },
   {
-   "actor_class": "buyers.unserved",
+   "actor_class": "residents.declared",
    "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "search_open(k3)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "search_open(k2)"
+    ],
     [
      "binding(k1)",
      "enforced(k1)",
@@ -1034,9 +3265,9 @@
     ]
    ],
    "assumptions": [
-    "binding(k1)",
-    "enforced(k1)",
-    "search_open(k1)"
+    "binding(k2)",
+    "enforced(k2)",
+    "search_open(k2)"
    ],
    "combines": [],
    "comparison": null,
@@ -1063,6 +3294,52 @@
       "search_open(k1)"
      ],
      "rule": "PC-2"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "search_rationing(k2)",
+     "premises": [
+      "excess_demand(k2)",
+      "search_open(k2)"
+     ],
+     "rule": "PC-2"
+    },
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "search_rationing(k3)",
+     "premises": [
+      "excess_demand(k3)",
+      "search_open(k3)"
+     ],
+     "rule": "PC-2"
     }
    ],
    "group": [],
@@ -1071,7 +3348,7 @@
     "medium",
     "long"
    ],
-   "id": "C-17",
+   "id": "C-39",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1082,18 +3359,28 @@
    "window": null
   },
   {
-   "actor_class": "buyers.unserved",
+   "actor_class": "residents.declared",
    "assumption_sets": [
     [
      "binding(k1)",
      "enforced(k1)",
      "evasion(k1)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "evasion(k3)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "evasion(k2)"
     ]
    ],
    "assumptions": [
-    "binding(k1)",
-    "enforced(k1)",
-    "evasion(k1)"
+    "binding(k3)",
+    "enforced(k3)",
+    "evasion(k3)"
    ],
    "combines": [],
    "comparison": null,
@@ -1119,6 +3406,50 @@
       "evasion(k1)"
      ],
      "rule": "RS-3"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k2)",
+     "premises": [
+      "evasion(k2)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k3)",
+     "premises": [
+      "evasion(k3)"
+     ],
+     "rule": "RS-3"
     }
    ],
    "group": [],
@@ -1127,7 +3458,7 @@
     "medium",
     "long"
    ],
-   "id": "C-18",
+   "id": "C-40",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1138,11 +3469,19 @@
    "window": null
   },
   {
-   "actor_class": "officials.enforcement",
+   "actor_class": "residents.declared",
    "assumption_sets": [
     [
      "binding(k1)",
      "enforced(k1)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)"
     ]
    ],
    "assumptions": [
@@ -1161,26 +3500,82 @@
      "rule": "PC-1"
     },
     {
-     "conclusion": "administered(k1)",
+     "conclusion": "excess_demand(k1)",
      "premises": [
       "binding_cap(k1)"
      ],
-     "rule": "OC-3"
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "rationing(k1)",
+     "premises": [
+      "excess_demand(k1)"
+     ],
+     "rule": "PC-2"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "rationing(k2)",
+     "premises": [
+      "excess_demand(k2)"
+     ],
+     "rule": "PC-2"
+    },
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "rationing(k3)",
+     "premises": [
+      "excess_demand(k3)"
+     ],
+     "rule": "PC-2"
     }
    ],
-   "group": [],
+   "group": [
+    "wait_time",
+    "search_cost",
+    "side_payments",
+    "allocation_by_non_price_criteria"
+   ],
    "horizon": [
     "short",
     "medium",
     "long"
    ],
-   "id": "C-19",
+   "id": "C-41",
    "item": null,
    "reported": true,
-   "sign": "increase",
+   "sign": "at_least_one_increase",
    "sign_by_reading": {},
-   "tier": "A",
-   "variable": "enforcement_cost",
+   "tier": "B",
+   "variable": "wait_time",
    "visibility": "invisible",
    "window": null
   },
@@ -1227,7 +3622,7 @@
     "medium",
     "long"
    ],
-   "id": "C-20",
+   "id": "C-42",
    "item": null,
    "reported": false,
    "sign": "decrease",
@@ -1286,7 +3681,7 @@
     "medium",
     "long"
    ],
-   "id": "C-21",
+   "id": "C-43",
    "item": null,
    "reported": false,
    "sign": "increase",
@@ -1335,7 +3730,7 @@
     "medium",
     "long"
    ],
-   "id": "C-22",
+   "id": "C-44",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1391,7 +3786,7 @@
     "medium",
     "long"
    ],
-   "id": "C-23",
+   "id": "C-45",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1444,7 +3839,7 @@
     "medium",
     "long"
    ],
-   "id": "C-24",
+   "id": "C-46",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1492,7 +3887,7 @@
    "horizon": [
     "long"
    ],
-   "id": "C-25",
+   "id": "C-47",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1548,7 +3943,7 @@
     "medium",
     "long"
    ],
-   "id": "C-26",
+   "id": "C-48",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1596,7 +3991,7 @@
    "horizon": [
     "long"
    ],
-   "id": "C-27",
+   "id": "C-49",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1658,7 +4053,7 @@
     "medium",
     "long"
    ],
-   "id": "C-28",
+   "id": "C-50",
    "item": "key_money",
    "reported": true,
    "sign": "increase",
@@ -1718,7 +4113,7 @@
     "medium",
     "long"
    ],
-   "id": "C-29",
+   "id": "C-51",
    "item": "rent_forgone",
    "reported": true,
    "sign": "decrease",
@@ -1777,7 +4172,610 @@
     "medium",
     "long"
    ],
-   "id": "C-30",
+   "id": "C-52",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "units_held_vacant",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.outside",
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "durable_assets(k2)",
+     "enforced(k2)",
+     "expected_to_last(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "durable_assets(k2)",
+    "enforced(k2)",
+    "expected_to_last(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "capitalized(k2)",
+     "premises": [
+      "binding_cap(k2)",
+      "durable_assets(k2)",
+      "expected_to_last(k2)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-53",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.outside",
+   "assumption_sets": [
+    [
+     "alternative_uses(k2)",
+     "binding(k2)",
+     "enforced(k2)",
+     "exit_process(k2)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k2)",
+    "binding(k2)",
+    "enforced(k2)",
+    "exit_process(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k2)",
+     "premises": [
+      "alternative_uses(k2)",
+      "binding_cap(k2)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "process_cost(k2)",
+     "premises": [
+      "exit_process(k2)",
+      "reclassify(k2)"
+     ],
+     "rule": "OC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-54",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.outside",
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "can_organize(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "can_organize(k2)",
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "lobbying(k2)",
+     "premises": [
+      "binding_cap(k2)",
+      "can_organize(k2)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-55",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.outside",
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "quality_adjustable(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)",
+    "quality_adjustable(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "quality_falls(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-4"
+    },
+    {
+     "conclusion": "quality_falls(k2)",
+     "premises": [
+      "quality_adjustable(k2)"
+     ],
+     "rule": "RS-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-56",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "maintenance_spending",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.outside",
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "transfer(k2)",
+     "premises": [
+      "insider_gain(k2)"
+     ],
+     "rule": "PC-16"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-57",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.outside",
+   "assumption_sets": [
+    [
+     "alternative_uses(k2)",
+     "binding(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k2)",
+    "binding(k2)",
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "supply_falls(k2)",
+     "premises": [
+      "alternative_uses(k2)",
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-58",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.outside",
+   "assumption_sets": [
+    [
+     "alternative_uses(k2)",
+     "binding(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k2)",
+    "binding(k2)",
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "supply_falls(k2)",
+     "premises": [
+      "alternative_uses(k2)",
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-5"
+    },
+    {
+     "conclusion": "prevented(k2)",
+     "premises": [
+      "supply_falls(k2)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-59",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.outside",
+   "assumption_sets": [
+    [
+     "alternative_uses(k2)",
+     "binding(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k2)",
+    "binding(k2)",
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k2)",
+     "premises": [
+      "alternative_uses(k2)",
+      "binding_cap(k2)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-60",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.outside",
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "evasion(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)",
+    "evasion(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k2)",
+     "premises": [
+      "evasion(k2)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "key_money(k2)",
+     "premises": [
+      "informal(k2)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-61",
+   "item": "key_money",
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.outside",
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "transfer(k2)",
+     "premises": [
+      "insider_gain(k2)"
+     ],
+     "rule": "PC-16"
+    },
+    {
+     "conclusion": "rent_forgone(k2)",
+     "premises": [
+      "transfer(k2)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-62",
+   "item": "rent_forgone",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.outside",
+   "assumption_sets": [
+    [
+     "alternative_uses(k2)",
+     "binding(k2)",
+     "enforced(k2)",
+     "relet_obstructs(k2)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k2)",
+    "binding(k2)",
+    "enforced(k2)",
+    "relet_obstructs(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k2)",
+     "premises": [
+      "alternative_uses(k2)",
+      "binding_cap(k2)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "held_vacant(k2)",
+     "premises": [
+      "reclassify(k2)",
+      "relet_obstructs(k2)"
+     ],
+     "rule": "PC-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-63",
    "item": null,
    "reported": false,
    "sign": "increase",
@@ -1802,8 +4800,8 @@
     "quality_adjustable(k1)"
    ],
    "combines": [
-    "C-5",
-    "C-6"
+    "C-4",
+    "C-5"
    ],
    "comparison": "quality_adjusted_price",
    "derivation": [
@@ -1819,6 +4817,21 @@
      "conclusion": "insider_gain(k1)",
      "premises": [
       "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k2)",
+     "premises": [
+      "binding_cap(k2)"
      ],
      "rule": "PC-3"
     },
@@ -1843,6 +4856,28 @@
       "quality_adjustable(k1)"
      ],
      "rule": "RS-2"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "quality_falls(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-4"
+    },
+    {
+     "conclusion": "quality_falls(k2)",
+     "premises": [
+      "quality_adjustable(k2)"
+     ],
+     "rule": "RS-2"
     }
    ],
    "group": [],
@@ -1850,13 +4885,180 @@
     "medium",
     "long"
    ],
-   "id": "C-31",
+   "id": "C-64",
    "item": null,
    "reported": true,
    "sign": "ambiguous",
    "sign_by_reading": {},
    "tier": "B",
    "variable": "quality_adjusted_price",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "evacuees.in_rooms",
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "quality_adjustable(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "quality_adjustable(k3)"
+   ],
+   "combines": [
+    "C-13",
+    "C-14"
+   ],
+   "comparison": "quality_adjusted_price",
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "quality_falls(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-4"
+    },
+    {
+     "conclusion": "quality_falls(k3)",
+     "premises": [
+      "quality_adjustable(k3)"
+     ],
+     "rule": "RS-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-65",
+   "item": null,
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_adjusted_price",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hotels.declared",
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "evasion(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "evasion(k3)"
+   ],
+   "combines": [
+    "C-29",
+    "C-28"
+   ],
+   "comparison": "landlords_resources",
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "transfer(k3)",
+     "premises": [
+      "insider_gain(k3)"
+     ],
+     "rule": "PC-16"
+    },
+    {
+     "conclusion": "rent_forgone(k3)",
+     "premises": [
+      "transfer(k3)"
+     ],
+     "rule": "CR-8"
+    },
+    {
+     "conclusion": "binding_cap(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k3)",
+     "premises": [
+      "binding_cap(k3)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k3)",
+     "premises": [
+      "evasion(k3)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "key_money(k3)",
+     "premises": [
+      "informal(k3)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-66",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
    "visibility": "invisible",
    "window": null
   },
@@ -1875,8 +5077,8 @@
     "evasion(k1)"
    ],
    "combines": [
-    "C-29",
-    "C-28"
+    "C-51",
+    "C-50"
    ],
    "comparison": "landlords_resources",
    "derivation": [
@@ -1944,7 +5146,101 @@
     "medium",
     "long"
    ],
-   "id": "C-32",
+   "id": "C-67",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.outside",
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "evasion(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)",
+    "evasion(k2)"
+   ],
+   "combines": [
+    "C-62",
+    "C-61"
+   ],
+   "comparison": "landlords_resources",
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "transfer(k2)",
+     "premises": [
+      "insider_gain(k2)"
+     ],
+     "rule": "PC-16"
+    },
+    {
+     "conclusion": "rent_forgone(k2)",
+     "premises": [
+      "transfer(k2)"
+     ],
+     "rule": "CR-8"
+    },
+    {
+     "conclusion": "binding_cap(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k2)",
+     "premises": [
+      "binding_cap(k2)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k2)",
+     "premises": [
+      "evasion(k2)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "key_money(k2)",
+     "premises": [
+      "informal(k2)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-68",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1956,40 +5252,76 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "ceiling(k1).\nbound(k1, \"sellers.local\").\nprotected(k1, \"buyers.served\").\nexcluded(k1, \"buyers.unserved\").\nenforcer(k1, \"officials.enforcement\").\nneighbor(k1, \"buyers.inland\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(alternative_uses(k1)).\nassumption(nontransferable(k1)).\nassumption(buyouts_limited(k1)).\nassumption(would_leave(k1)).\nassumption(lockin_dominates(k1)).\nassumption(keepers_dominate(k1)).\nassumption(substitutes(k1)).\nassumption(search_open(k1)).\nassumption(selection_open(k1)).\nassumption(quality_adjustable(k1)).\nassumption(evasion(k1)).\nassumption(opportunities_need_move(k1)).\nassumption(can_organize(k1)).\nassumption(durable_assets(k1)).\nassumption(expected_to_last(k1)).\nassumption(commutable(k1)).\nassumption(relet_obstructs(k1)).\nassumption(exit_process(k1)).\n",
+ "engine_facts": "ceiling(k1).\nbound(k1, \"sellers.local\").\nprotected(k1, \"buyers.served\").\nexcluded(k1, \"residents.declared\").\nenforcer(k1, \"officials.enforcement\").\nneighbor(k1, \"buyers.inland\").\nceiling(k2).\nbound(k2, \"sellers.outside\").\nprotected(k2, \"buyers.served\").\nexcluded(k2, \"residents.declared\").\nenforcer(k2, \"officials.enforcement\").\nceiling(k3).\nbound(k3, \"hotels.declared\").\nprotected(k3, \"evacuees.in_rooms\").\nexcluded(k3, \"residents.declared\").\nenforcer(k3, \"officials.enforcement\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(alternative_uses(k1)).\nassumption(nontransferable(k1)).\nassumption(buyouts_limited(k1)).\nassumption(would_leave(k1)).\nassumption(lockin_dominates(k1)).\nassumption(keepers_dominate(k1)).\nassumption(substitutes(k1)).\nassumption(search_open(k1)).\nassumption(selection_open(k1)).\nassumption(quality_adjustable(k1)).\nassumption(evasion(k1)).\nassumption(opportunities_need_move(k1)).\nassumption(can_organize(k1)).\nassumption(durable_assets(k1)).\nassumption(expected_to_last(k1)).\nassumption(commutable(k1)).\nassumption(relet_obstructs(k1)).\nassumption(exit_process(k1)).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(alternative_uses(k2)).\nassumption(nontransferable(k2)).\nassumption(buyouts_limited(k2)).\nassumption(would_leave(k2)).\nassumption(lockin_dominates(k2)).\nassumption(keepers_dominate(k2)).\nassumption(substitutes(k2)).\nassumption(search_open(k2)).\nassumption(selection_open(k2)).\nassumption(quality_adjustable(k2)).\nassumption(evasion(k2)).\nassumption(opportunities_need_move(k2)).\nassumption(can_organize(k2)).\nassumption(durable_assets(k2)).\nassumption(expected_to_last(k2)).\nassumption(commutable(k2)).\nassumption(relet_obstructs(k2)).\nassumption(exit_process(k2)).\nassumption(binding(k3)).\nassumption(enforced(k3)).\nassumption(alternative_uses(k3)).\nassumption(nontransferable(k3)).\nassumption(buyouts_limited(k3)).\nassumption(would_leave(k3)).\nassumption(lockin_dominates(k3)).\nassumption(keepers_dominate(k3)).\nassumption(substitutes(k3)).\nassumption(search_open(k3)).\nassumption(selection_open(k3)).\nassumption(quality_adjustable(k3)).\nassumption(evasion(k3)).\nassumption(opportunities_need_move(k3)).\nassumption(can_organize(k3)).\nassumption(durable_assets(k3)).\nassumption(expected_to_last(k3)).\nassumption(commutable(k3)).\nassumption(relet_obstructs(k3)).\nassumption(exit_process(k3)).\n",
  "explanations": [
   "C-1. Compared with no Coralia Emergency Pricing Act, price paid for buyers.inland rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); Shut-out buyers can buy in a neighbouring market outside the rule's reach at a bearable cost (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
-  "C-2. Compared with no Coralia Emergency Pricing Act, informal activity for buyers.served rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Some exchanges take place above the ceiling without being caught (p = 0.60); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.85). Reported.",
-  "C-3. Compared with no Coralia Emergency Pricing Act, job changes for buyers.served falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less; RS-11: RS-11. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); Buyouts move fewer tenants than the cap keeps in place (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.75); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.85); Some valued opportunities for the protected buyers would require giving up the covered unit (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-4. Compared with no Coralia Emergency Pricing Act, lobbying effort for buyers.served rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-7: RS-7. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The groups with a concentrated stake can organize and spend to keep or change the rule (p = 0.60); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
-  "C-5. Compared with no Coralia Emergency Pricing Act, price paid for buyers.served falls from the medium run onward (tier B, visible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
-  "C-6. Compared with no Coralia Emergency Pricing Act, quality per unit for buyers.served falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-4: PC-4; RS-2: RS-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.75). Reported.",
-  "C-7. Compared with no Coralia Emergency Pricing Act, resources available other uses for buyers.served rises from the medium run onward (tier B, visible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
-  "C-8. Compared with no Coralia Emergency Pricing Act, turnover for buyers.served falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); Buyouts move fewer tenants than the cap keeps in place (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.75); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.85). Reported.",
-  "C-9. Compared with no Coralia Emergency Pricing Act, relocation out of area for buyers.served.displaced rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-21: leaving the area forfeits the benefit, and fewer holders are priced out, so they leave the area less. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.55); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Without the rule some protected buyers would have left the area (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-10. Compared with no Coralia Emergency Pricing Act, turnover for buyers.served.displaced rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.55); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
-  "C-11. Compared with no Coralia Emergency Pricing Act, relocation out of area for buyers.served.keepers falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less; PC-21: leaving the area forfeits the benefit, and fewer holders are priced out, so they leave the area less. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); Buyouts move fewer tenants than the cap keeps in place (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.75); The lock-in outweighs moves diverted out of the area by higher free rents (p = 0.20); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.85); Without the rule some protected buyers would have left the area (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-12. Compared with no Coralia Emergency Pricing Act, allocation by non price criteria for buyers.unserved rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-2: PC-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Sellers may choose among applicants by criteria of their own (p = 0.80). Reported.",
-  "C-13. Compared with no Coralia Emergency Pricing Act, disputes settled outside courts for buyers.unserved rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3; RS-10: RS-10. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Some exchanges take place above the ceiling without being caught (p = 0.60). Reported.",
-  "C-14. Compared with no Coralia Emergency Pricing Act, excess demand for buyers.unserved rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
-  "C-15. Compared with no Coralia Emergency Pricing Act, price substitute for buyers.unserved rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Uncovered units in the same market are close substitutes for covered ones (p = 0.80). Reported.",
-  "C-16. Compared with no Coralia Emergency Pricing Act, quantity traded for buyers.unserved falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap; OC-4: OC-4. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.55); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
-  "C-17. Compared with no Coralia Emergency Pricing Act, search cost for buyers.unserved rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-2: PC-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Seekers find covered units by their own search: no public list or allocation rule assigns them (p = 0.75). Reported.",
-  "C-18. Compared with no Coralia Emergency Pricing Act, side payments for buyers.unserved rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Some exchanges take place above the ceiling without being caught (p = 0.60). Reported.",
-  "C-19. Compared with no Coralia Emergency Pricing Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
-  "C-20. Compared with no Coralia Emergency Pricing Act, asset value for sellers.local falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; SB-4: SB-4. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The covered assets are durable and their supply expands slowly (p = 0.10); The ceiling is enforced against most bound sellers (p = 0.75); Buyers of the covered assets expect the rule to last for many years (p = 0.75). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-21. Compared with no Coralia Emergency Pricing Act, compliance cost for sellers.local rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; OC-2: OC-2. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.55); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Moving covered units to an alternative use requires a permit or board process (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-22. Compared with no Coralia Emergency Pricing Act, lobbying effort for sellers.local rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-7: RS-7. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The groups with a concentrated stake can organize and spend to keep or change the rule (p = 0.60); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
-  "C-23. Compared with no Coralia Emergency Pricing Act, maintenance spending for sellers.local falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-4: PC-4; RS-2: RS-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.75). Reported.",
-  "C-24. Compared with no Coralia Emergency Pricing Act, net price received for sellers.local falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; PC-16: PC-16. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
-  "C-25. Compared with no Coralia Emergency Pricing Act, quantity supplied for sellers.local falls in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.55); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
-  "C-26. Compared with no Coralia Emergency Pricing Act, quantity traded for sellers.local falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap; OC-4: OC-4. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.55); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
-  "C-27. Compared with no Coralia Emergency Pricing Act, reclassification for sellers.local rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.55); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
-  "C-28. Compared with no Coralia Emergency Pricing Act, resources available other uses (key money) for sellers.local rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Some exchanges take place above the ceiling without being caught (p = 0.60). Reported.",
-  "C-29. Compared with no Coralia Emergency Pricing Act, resources available other uses (rent forgone) for sellers.local falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; PC-16: PC-16; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
-  "C-30. Compared with no Coralia Emergency Pricing Act, units held vacant for sellers.local rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-5: owners move resources to uses whose yield the ceiling does not cap. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.55); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Re-letting a vacated unit obstructs the owner's later move to an alternative use (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-31. Compared with no Coralia Emergency Pricing Act, quality adjusted price for buyers.served may move either way from the medium run onward (tier B, invisible). Why: CR-12 total of C-5, C-6 (no premise decides which chain is larger). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.75). Reported.",
-  "C-32. Compared with no Coralia Emergency Pricing Act, resources available other uses for sellers.local falls from the medium run onward (tier B, invisible). Why: CR-12 total of C-29, C-28 (a dominance premise decides the sign). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Some exchanges take place above the ceiling without being caught (p = 0.60). Reported."
+  "C-2. Compared with no Coralia Emergency Pricing Act, informal activity for buyers.served rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Some exchanges take place above the ceiling without being caught (p = 0.60); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.10). It also follows under 1 other minimal assumption set(s). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-3. Compared with no Coralia Emergency Pricing Act, job changes for buyers.served falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less; RS-11: RS-11. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); Buyouts move fewer tenants than the cap keeps in place (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.75); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.10); Some valued opportunities for the protected buyers would require giving up the covered unit (p = 0.10). It also follows under 1 other minimal assumption set(s). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-4. Compared with no Coralia Emergency Pricing Act, price paid for buyers.served falls from the medium run onward (tier B, visible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-5. Compared with no Coralia Emergency Pricing Act, quality per unit for buyers.served falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-4: PC-4; RS-2: RS-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-6. Compared with no Coralia Emergency Pricing Act, resources available other uses for buyers.served rises from the medium run onward (tier B, visible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-7. Compared with no Coralia Emergency Pricing Act, turnover for buyers.served falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); Buyouts move fewer tenants than the cap keeps in place (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.75); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.10). It also follows under 1 other minimal assumption set(s). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-8. Compared with no Coralia Emergency Pricing Act, relocation out of area for buyers.served.displaced rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-21: leaving the area forfeits the benefit, and fewer holders are priced out, so they leave the area less; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.90); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.10); Without the rule some protected buyers would have left the area (p = 0.20). It also follows under 1 other minimal assumption set(s). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-9. Compared with no Coralia Emergency Pricing Act, turnover for buyers.served.displaced rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.90); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.10). It also follows under 1 other minimal assumption set(s). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-10. Compared with no Coralia Emergency Pricing Act, relocation out of area for buyers.served.keepers falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less; PC-21: leaving the area forfeits the benefit, and fewer holders are priced out, so they leave the area less. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); Buyouts move fewer tenants than the cap keeps in place (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.75); The lock-in outweighs moves diverted out of the area by higher free rents (p = 0.20); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.10); Without the rule some protected buyers would have left the area (p = 0.20). It also follows under 1 other minimal assumption set(s). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-11. Compared with no Coralia Emergency Pricing Act, informal activity for evacuees.in_rooms rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Some exchanges take place above the ceiling without being caught (p = 0.60); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.85). Reported.",
+  "C-12. Compared with no Coralia Emergency Pricing Act, job changes for evacuees.in_rooms falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less; RS-11: RS-11. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); Buyouts move fewer tenants than the cap keeps in place (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.75); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.85); Some valued opportunities for the protected buyers would require giving up the covered unit (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-13. Compared with no Coralia Emergency Pricing Act, price paid for evacuees.in_rooms falls from the medium run onward (tier B, visible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
+  "C-14. Compared with no Coralia Emergency Pricing Act, quality per unit for evacuees.in_rooms falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-4: PC-4; RS-2: RS-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.75). Reported.",
+  "C-15. Compared with no Coralia Emergency Pricing Act, resources available other uses for evacuees.in_rooms rises from the medium run onward (tier B, visible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
+  "C-16. Compared with no Coralia Emergency Pricing Act, turnover for evacuees.in_rooms falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); Buyouts move fewer tenants than the cap keeps in place (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.75); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.85). Reported.",
+  "C-17. Compared with no Coralia Emergency Pricing Act, relocation out of area for evacuees.in_rooms.displaced rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-21: leaving the area forfeits the benefit, and fewer holders are priced out, so they leave the area less; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.10); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.85); Without the rule some protected buyers would have left the area (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-18. Compared with no Coralia Emergency Pricing Act, turnover for evacuees.in_rooms.displaced rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.10); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.85). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-19. Compared with no Coralia Emergency Pricing Act, relocation out of area for evacuees.in_rooms.keepers falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less; PC-21: leaving the area forfeits the benefit, and fewer holders are priced out, so they leave the area less. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); Buyouts move fewer tenants than the cap keeps in place (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.75); The lock-in outweighs moves diverted out of the area by higher free rents (p = 0.20); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.85); Without the rule some protected buyers would have left the area (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-20. Compared with no Coralia Emergency Pricing Act, asset value for hotels.declared falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; SB-4: SB-4. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The covered assets are durable and their supply expands slowly (p = 0.10); The ceiling is enforced against most bound sellers (p = 0.75); Buyers of the covered assets expect the rule to last for many years (p = 0.75). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-21. Compared with no Coralia Emergency Pricing Act, compliance cost for hotels.declared rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; OC-2: OC-2. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.10); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Moving covered units to an alternative use requires a permit or board process (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-22. Compared with no Coralia Emergency Pricing Act, lobbying effort for hotels.declared rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-7: RS-7. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The groups with a concentrated stake can organize and spend to keep or change the rule (p = 0.60); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
+  "C-23. Compared with no Coralia Emergency Pricing Act, maintenance spending for hotels.declared falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-4: PC-4; RS-2: RS-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.75). Reported.",
+  "C-24. Compared with no Coralia Emergency Pricing Act, net price received for hotels.declared falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; PC-16: PC-16. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
+  "C-25. Compared with no Coralia Emergency Pricing Act, quantity supplied for hotels.declared falls in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.10); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-26. Compared with no Coralia Emergency Pricing Act, quantity traded for hotels.declared falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap; OC-4: OC-4. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.10); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-27. Compared with no Coralia Emergency Pricing Act, reclassification for hotels.declared rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.10); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-28. Compared with no Coralia Emergency Pricing Act, resources available other uses (key money) for hotels.declared rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Some exchanges take place above the ceiling without being caught (p = 0.60). Reported.",
+  "C-29. Compared with no Coralia Emergency Pricing Act, resources available other uses (rent forgone) for hotels.declared falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; PC-16: PC-16; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
+  "C-30. Compared with no Coralia Emergency Pricing Act, units held vacant for hotels.declared rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-5: owners move resources to uses whose yield the ceiling does not cap. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.10); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Re-letting a vacated unit obstructs the owner's later move to an alternative use (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-31. Compared with no Coralia Emergency Pricing Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-32. Compared with no Coralia Emergency Pricing Act, allocation by non price criteria for residents.declared rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-2: PC-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Sellers may choose among applicants by criteria of their own (p = 0.80). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-33. Compared with no Coralia Emergency Pricing Act, disputes settled outside courts for residents.declared rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3; RS-10: RS-10. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Some exchanges take place above the ceiling without being caught (p = 0.60). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-34. Compared with no Coralia Emergency Pricing Act, excess demand for residents.declared rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-35. Compared with no Coralia Emergency Pricing Act, informal activity for residents.declared rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Some exchanges take place above the ceiling without being caught (p = 0.60). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-36. Compared with no Coralia Emergency Pricing Act, price substitute for residents.declared rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Uncovered units in the same market are close substitutes for covered ones (p = 0.80). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-37. Compared with no Coralia Emergency Pricing Act, quantity demanded for residents.declared rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; LW-3: LW-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-38. Compared with no Coralia Emergency Pricing Act, quantity traded for residents.declared falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap; OC-4: OC-4. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.90); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-39. Compared with no Coralia Emergency Pricing Act, search cost for residents.declared rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-2: PC-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Seekers find covered units by their own search: no public list or allocation rule assigns them (p = 0.75). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-40. Compared with no Coralia Emergency Pricing Act, side payments for residents.declared rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Some exchanges take place above the ceiling without being caught (p = 0.60). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-41. Compared with no Coralia Emergency Pricing Act, wait time or search cost or side payments or allocation by non price criteria for residents.declared rises for at least one of them from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-2: PC-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-42. Compared with no Coralia Emergency Pricing Act, asset value for sellers.local falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; SB-4: SB-4. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The covered assets are durable and their supply expands slowly (p = 0.10); The ceiling is enforced against most bound sellers (p = 0.75); Buyers of the covered assets expect the rule to last for many years (p = 0.75). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-43. Compared with no Coralia Emergency Pricing Act, compliance cost for sellers.local rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; OC-2: OC-2. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.55); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Moving covered units to an alternative use requires a permit or board process (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-44. Compared with no Coralia Emergency Pricing Act, lobbying effort for sellers.local rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-7: RS-7. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The groups with a concentrated stake can organize and spend to keep or change the rule (p = 0.60); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
+  "C-45. Compared with no Coralia Emergency Pricing Act, maintenance spending for sellers.local falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-4: PC-4; RS-2: RS-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.75). Reported.",
+  "C-46. Compared with no Coralia Emergency Pricing Act, net price received for sellers.local falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; PC-16: PC-16. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
+  "C-47. Compared with no Coralia Emergency Pricing Act, quantity supplied for sellers.local falls in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.55); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
+  "C-48. Compared with no Coralia Emergency Pricing Act, quantity traded for sellers.local falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap; OC-4: OC-4. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.55); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
+  "C-49. Compared with no Coralia Emergency Pricing Act, reclassification for sellers.local rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.55); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
+  "C-50. Compared with no Coralia Emergency Pricing Act, resources available other uses (key money) for sellers.local rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Some exchanges take place above the ceiling without being caught (p = 0.60). Reported.",
+  "C-51. Compared with no Coralia Emergency Pricing Act, resources available other uses (rent forgone) for sellers.local falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; PC-16: PC-16; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
+  "C-52. Compared with no Coralia Emergency Pricing Act, units held vacant for sellers.local rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-5: owners move resources to uses whose yield the ceiling does not cap. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.55); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Re-letting a vacated unit obstructs the owner's later move to an alternative use (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-53. Compared with no Coralia Emergency Pricing Act, asset value for sellers.outside falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; SB-4: SB-4. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The covered assets are durable and their supply expands slowly (p = 0.10); The ceiling is enforced against most bound sellers (p = 0.75); Buyers of the covered assets expect the rule to last for many years (p = 0.75). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-54. Compared with no Coralia Emergency Pricing Act, compliance cost for sellers.outside rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; OC-2: OC-2. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.90); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Moving covered units to an alternative use requires a permit or board process (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-55. Compared with no Coralia Emergency Pricing Act, lobbying effort for sellers.outside rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-7: RS-7. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The groups with a concentrated stake can organize and spend to keep or change the rule (p = 0.30); The ceiling is enforced against most bound sellers (p = 0.75). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-56. Compared with no Coralia Emergency Pricing Act, maintenance spending for sellers.outside falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-4: PC-4; RS-2: RS-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.75). Reported.",
+  "C-57. Compared with no Coralia Emergency Pricing Act, net price received for sellers.outside falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; PC-16: PC-16. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
+  "C-58. Compared with no Coralia Emergency Pricing Act, quantity supplied for sellers.outside falls in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.90); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
+  "C-59. Compared with no Coralia Emergency Pricing Act, quantity traded for sellers.outside falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap; OC-4: OC-4. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.90); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
+  "C-60. Compared with no Coralia Emergency Pricing Act, reclassification for sellers.outside rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.90); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
+  "C-61. Compared with no Coralia Emergency Pricing Act, resources available other uses (key money) for sellers.outside rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Some exchanges take place above the ceiling without being caught (p = 0.60). Reported.",
+  "C-62. Compared with no Coralia Emergency Pricing Act, resources available other uses (rent forgone) for sellers.outside falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; PC-16: PC-16; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75). Reported.",
+  "C-63. Compared with no Coralia Emergency Pricing Act, units held vacant for sellers.outside rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-5: owners move resources to uses whose yield the ceiling does not cap. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.90); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Re-letting a vacated unit obstructs the owner's later move to an alternative use (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-64. Compared with no Coralia Emergency Pricing Act, quality adjusted price for buyers.served may move either way from the medium run onward (tier B, invisible). Why: CR-12 total of C-4, C-5 (no premise decides which chain is larger). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.75). Reported.",
+  "C-65. Compared with no Coralia Emergency Pricing Act, quality adjusted price for evacuees.in_rooms may move either way from the medium run onward (tier B, invisible). Why: CR-12 total of C-13, C-14 (no premise decides which chain is larger). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.75). Reported.",
+  "C-66. Compared with no Coralia Emergency Pricing Act, resources available other uses for hotels.declared falls from the medium run onward (tier B, invisible). Why: CR-12 total of C-29, C-28 (a dominance premise decides the sign). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Some exchanges take place above the ceiling without being caught (p = 0.60). Reported.",
+  "C-67. Compared with no Coralia Emergency Pricing Act, resources available other uses for sellers.local falls from the medium run onward (tier B, invisible). Why: CR-12 total of C-51, C-50 (a dominance premise decides the sign). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Some exchanges take place above the ceiling without being caught (p = 0.60). Reported.",
+  "C-68. Compared with no Coralia Emergency Pricing Act, resources available other uses for sellers.outside falls from the medium run onward (tier B, invisible). Why: CR-12 total of C-62, C-61 (a dominance premise decides the sign). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.75); Some exchanges take place above the ceiling without being caught (p = 0.60). Reported."
  ],
  "questions": [
   {
@@ -2050,10 +5382,10 @@
    "answer": {
     "decider": "fixture:answers.json",
     "evidence": [],
-    "probability": 0.85,
+    "probability": 0.1,
     "question_id": "k1.nontransferable",
-    "rationale": "WE-006 A-8 (0.85): a guest who checks out loses the capped room and cannot pass it on. The row covers rooms only; the record has one component for goods and rooms.",
-    "value": "yes"
+    "rationale": "No row. Estimate from the record: the goods sold to buyers.served (generators, water, plywood) carry no right tied to holding; WE-006 A-8 (0.85) concerns rooms and is used for k3.",
+    "value": "no"
    },
    "question": {
     "assumption": "nontransferable",
@@ -2351,6 +5683,726 @@
     "options": [],
     "text": "Does moving covered units to an alternative use require passing a permit or board process?"
    }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-006 (illustrative figures), A-1 (binding). (Same answer as for k1; the component is k2.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k2.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "At the dates the rule takes effect and over the following years, is the maximum price below the price the market would otherwise reach for the covered units?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k2.enforced",
+    "rationale": "WE-006 A-3 (enforcement): the Attorney General enforces actively in the declared area, including against outside sellers. (Same answer as for k1; the component is k2.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k2.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most of the bound sellers comply with the ceiling in practice (given whatever body enforces it, its powers, and how violations come to light)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k2.alternative_uses",
+    "rationale": "WE-006 A-4 (alternative_uses): goods that could be brought in can be sold elsewhere at normal prices. The bound role of this component is sellers.outside.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "alternative_uses",
+    "assumption_class": "alternative_uses",
+    "id": "k2.alternative_uses",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound sellers move the covered resources to uses the ceiling does not reach (sale to owner-occupiers, conversion, redevelopment, keeping units off the market)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k2.nontransferable",
+    "rationale": "No row. Estimate from the record: no right tied to holding for goods bought from outside sellers.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "nontransferable",
+    "assumption_class": "other",
+    "id": "k2.nontransferable",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the right to buy at the controlled price tied to keeping the good (a sitting tenancy), so that the holder cannot sell or assign it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k2.buyouts_limited",
+    "rationale": "No row. Estimate from the record: a hotel is not likely to pay guests to leave a capped room, so buyouts move fewer guests than the cap keeps in place. (Same answer as for k1; the component is k2.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyouts_limited",
+    "assumption_class": "other",
+    "id": "k2.buyouts_limited",
+    "kind": "noul",
+    "options": [],
+    "text": "Will payments from landlords to sitting tenants for giving up the tenancy (buyouts) move fewer tenants than the cap keeps in place?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.2,
+    "question_id": "k2.would_leave",
+    "rationale": "No row. Estimate from the record: a 30-day emergency; protected buyers do not leave the area because of the cap. (Same answer as for k1; the component is k2.)",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "would_leave",
+    "assumption_class": "mobility",
+    "id": "k2.would_leave",
+    "kind": "noul",
+    "options": [],
+    "text": "Without the rule, would some of the protected buyers have moved out of the area (priced out by market rents, or for opportunities elsewhere)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.2,
+    "question_id": "k2.lockin_dominates",
+    "rationale": "No row; estimate from the record (not applicable to a 30-day emergency). (Same answer as for k1; the component is k2.)",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "lockin_dominates",
+    "assumption_class": "other",
+    "id": "k2.lockin_dominates",
+    "kind": "noul",
+    "options": [],
+    "text": "For tenants who keep a covered unit, does the lock-in outweigh moves out of the area by tenants who still move and face higher free rents in the city?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.2,
+    "question_id": "k2.keepers_dominate",
+    "rationale": "No row; estimate from the record (not applicable). (Same answer as for k1; the component is k2.)",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "keepers_dominate",
+    "assumption_class": "other",
+    "id": "k2.keepers_dominate",
+    "kind": "noul",
+    "options": [],
+    "text": "Taking all protected tenants together, will the fall in moves out of the area among those who keep their units be larger than the rise among those displaced by conversion or withdrawal?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2.substitutes",
+    "rationale": "WE-006 A-13 (substitutability): some unserved buyers have substitutes (ice, relatives' homes). (Same answer as for k1; the component is k2.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "substitutes",
+    "assumption_class": "substitutability",
+    "id": "k2.substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Are uncovered units in the same market close substitutes for covered units, for buyers who cannot obtain a covered one?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k2.search_open",
+    "rationale": "WE-006 A-19: when local stores sell out, some residents drive between stores and look for informal sellers; the premise of C-16. (Same answer as for k1; the component is k2.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "search_open",
+    "assumption_class": "other",
+    "id": "k2.search_open",
+    "kind": "noul",
+    "options": [],
+    "text": "Is there no public list or allocation rule that assigns the covered good to buyers, so that buyers have to find sellers by their own search?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2.selection_open",
+    "rationale": "WE-006 A-18: stores in the declared counties ration scarce goods by per-customer limits and by serving regular or early customers; the premise of C-5. (Same answer as for k1; the component is k2.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "selection_open",
+    "assumption_class": "other",
+    "id": "k2.selection_open",
+    "kind": "noul",
+    "options": [],
+    "text": "Are sellers free to choose among applicants for the covered good by criteria of their own (income, credit, references, connections)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k2.quality_adjustable",
+    "rationale": "WE-006 A-7: hotels may change services and stay conditions (the Act caps the charge only). (Same answer as for k1; the component is k2.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "quality_adjustable",
+    "assumption_class": "other",
+    "id": "k2.quality_adjustable",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound sellers cut quality or maintenance below what they now supply without breaking a rule that is enforced (a code, a contract term)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k2.evasion",
+    "rationale": "WE-006 A-10: some informal sales above the cap go undetected. (Same answer as for k1; the component is k2.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k2.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some exchanges of the covered good take place above the ceiling, disguised or illegal (key money, tie-in sales, sublets at market rent), without being caught?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k2.opportunities_need_move",
+    "rationale": "No row. WE-006 section 6: RS-11 was checked; the linked choice (taking jobs elsewhere) is not at stake in a 30-day emergency. Estimate from the record. (Same answer as for k1; the component is k2.)",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "opportunities_need_move",
+    "assumption_class": "mobility",
+    "id": "k2.opportunities_need_move",
+    "kind": "noul",
+    "options": [],
+    "text": "Would some valued opportunities for the protected buyers (a job, a better home) require them to give up the covered unit?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k2.can_organize",
+    "rationale": "No row for outside sellers. WE-006 A-20 (0.6) is about bound sellers who are local and hotels, with existing associations; individuals trucking goods in are unlikely to organize. Estimate from the record.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k2.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the groups with a concentrated stake in the rule (those it helps, those it burdens) organize and spend to keep or change it at a cost below their stakes?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k2.durable_assets",
+    "rationale": "No row. WE-006 section 8: no durable capital is involved apart from the stocks themselves; TS-1 and TS-3 do not apply. Estimate from the record. (Same answer as for k1; the component is k2.)",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "durable_assets",
+    "assumption_class": "durability",
+    "id": "k2.durable_assets",
+    "kind": "noul",
+    "options": [],
+    "text": "Are the assets the bound sellers use to supply the covered good durable, so that the supply of them expands only slowly?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k2.expected_to_last",
+    "rationale": "WE-006 A-14 (expectations, 0.75): sellers expect the cap to bind in future storms (the law is standing). (Same answer as for k1; the component is k2.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "expected_to_last",
+    "assumption_class": "expectations",
+    "id": "k2.expected_to_last",
+    "kind": "noul",
+    "options": [],
+    "text": "Do buyers of the covered assets expect the rule to stay in force for many years?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k2.commutable",
+    "rationale": "WE-006 A-12 (mobility): inland stores can be reached within days of landfall (this component names no neighbouring market, so the answer is not used).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "commutable",
+    "assumption_class": "mobility",
+    "id": "k2.commutable",
+    "kind": "noul",
+    "options": [],
+    "text": "Can buyers who cannot obtain a covered unit buy in a neighbouring market outside the rule's reach at a cost (travel, time) they are willing to bear?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.05,
+    "question_id": "k2.relet_obstructs",
+    "rationale": "No row; not applicable. Estimate from the record. (Same answer as for k1; the component is k2.)",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "relet_obstructs",
+    "assumption_class": "other",
+    "id": "k2.relet_obstructs",
+    "kind": "noul",
+    "options": [],
+    "text": "Does letting a vacated covered unit to a new tenant make it harder for the owner to move the unit to an alternative use later (eviction only for cause, relocation payments)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.05,
+    "question_id": "k2.exit_process",
+    "rationale": "No row; not applicable. Estimate from the record. (Same answer as for k1; the component is k2.)",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "exit_process",
+    "assumption_class": "other",
+    "id": "k2.exit_process",
+    "kind": "noul",
+    "options": [],
+    "text": "Does moving covered units to an alternative use require passing a permit or board process?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k3.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-006 (illustrative figures), A-1 (binding). (Same answer as for k1; the component is k3.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k3.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "At the dates the rule takes effect and over the following years, is the maximum price below the price the market would otherwise reach for the covered units?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k3.enforced",
+    "rationale": "WE-006 A-3 (enforcement): the Attorney General enforces actively in the declared area, including against outside sellers. (Same answer as for k1; the component is k3.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k3.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most of the bound sellers comply with the ceiling in practice (given whatever body enforces it, its powers, and how violations come to light)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k3.alternative_uses",
+    "rationale": "No row. Rooms are fixed in number (WE-006 section 9) and cannot be moved to another use within a 30-day emergency. Estimate from the record.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "alternative_uses",
+    "assumption_class": "alternative_uses",
+    "id": "k3.alternative_uses",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound sellers move the covered resources to uses the ceiling does not reach (sale to owner-occupiers, conversion, redevelopment, keeping units off the market)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k3.nontransferable",
+    "rationale": "WE-006 A-8 (0.85): a guest who checks out loses the capped room and cannot pass it on. The row covers rooms only; the record has one component for goods and rooms. (Same answer as for k1; the component is k3.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "nontransferable",
+    "assumption_class": "other",
+    "id": "k3.nontransferable",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the right to buy at the controlled price tied to keeping the good (a sitting tenancy), so that the holder cannot sell or assign it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k3.buyouts_limited",
+    "rationale": "No row. Estimate from the record: a hotel is not likely to pay guests to leave a capped room, so buyouts move fewer guests than the cap keeps in place. (Same answer as for k1; the component is k3.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyouts_limited",
+    "assumption_class": "other",
+    "id": "k3.buyouts_limited",
+    "kind": "noul",
+    "options": [],
+    "text": "Will payments from landlords to sitting tenants for giving up the tenancy (buyouts) move fewer tenants than the cap keeps in place?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.2,
+    "question_id": "k3.would_leave",
+    "rationale": "No row. Estimate from the record: a 30-day emergency; protected buyers do not leave the area because of the cap. (Same answer as for k1; the component is k3.)",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "would_leave",
+    "assumption_class": "mobility",
+    "id": "k3.would_leave",
+    "kind": "noul",
+    "options": [],
+    "text": "Without the rule, would some of the protected buyers have moved out of the area (priced out by market rents, or for opportunities elsewhere)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.2,
+    "question_id": "k3.lockin_dominates",
+    "rationale": "No row; estimate from the record (not applicable to a 30-day emergency). (Same answer as for k1; the component is k3.)",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "lockin_dominates",
+    "assumption_class": "other",
+    "id": "k3.lockin_dominates",
+    "kind": "noul",
+    "options": [],
+    "text": "For tenants who keep a covered unit, does the lock-in outweigh moves out of the area by tenants who still move and face higher free rents in the city?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.2,
+    "question_id": "k3.keepers_dominate",
+    "rationale": "No row; estimate from the record (not applicable). (Same answer as for k1; the component is k3.)",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "keepers_dominate",
+    "assumption_class": "other",
+    "id": "k3.keepers_dominate",
+    "kind": "noul",
+    "options": [],
+    "text": "Taking all protected tenants together, will the fall in moves out of the area among those who keep their units be larger than the rise among those displaced by conversion or withdrawal?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k3.substitutes",
+    "rationale": "WE-006 A-13 (substitutability): some unserved buyers have substitutes (relatives' homes).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "substitutes",
+    "assumption_class": "substitutability",
+    "id": "k3.substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Are uncovered units in the same market close substitutes for covered units, for buyers who cannot obtain a covered one?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k3.search_open",
+    "rationale": "No row for rooms. WE-006 A-19 is about stores; evacuees seeking rooms search among hotels. Estimate from the record.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "search_open",
+    "assumption_class": "other",
+    "id": "k3.search_open",
+    "kind": "noul",
+    "options": [],
+    "text": "Is there no public list or allocation rule that assigns the covered good to buyers, so that buyers have to find sellers by their own search?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k3.selection_open",
+    "rationale": "No row for rooms. WE-006 A-18 is about stores; hotels give rooms to the first arrivals. Estimate from the record.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "selection_open",
+    "assumption_class": "other",
+    "id": "k3.selection_open",
+    "kind": "noul",
+    "options": [],
+    "text": "Are sellers free to choose among applicants for the covered good by criteria of their own (income, credit, references, connections)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k3.quality_adjustable",
+    "rationale": "WE-006 A-7: hotels may change services and stay conditions (the Act caps the charge only). (Same answer as for k1; the component is k3.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "quality_adjustable",
+    "assumption_class": "other",
+    "id": "k3.quality_adjustable",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound sellers cut quality or maintenance below what they now supply without breaking a rule that is enforced (a code, a contract term)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k3.evasion",
+    "rationale": "WE-006 A-10: some informal sales above the cap go undetected. (Same answer as for k1; the component is k3.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k3.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some exchanges of the covered good take place above the ceiling, disguised or illegal (key money, tie-in sales, sublets at market rent), without being caught?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k3.opportunities_need_move",
+    "rationale": "No row. WE-006 section 6: RS-11 was checked; the linked choice (taking jobs elsewhere) is not at stake in a 30-day emergency. Estimate from the record. (Same answer as for k1; the component is k3.)",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "opportunities_need_move",
+    "assumption_class": "mobility",
+    "id": "k3.opportunities_need_move",
+    "kind": "noul",
+    "options": [],
+    "text": "Would some valued opportunities for the protected buyers (a job, a better home) require them to give up the covered unit?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k3.can_organize",
+    "rationale": "WE-006 A-20: bound sellers can organize to lobby at a cost lower than their stake (hotel and retail associations exist). (Same answer as for k1; the component is k3.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k3.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the groups with a concentrated stake in the rule (those it helps, those it burdens) organize and spend to keep or change it at a cost below their stakes?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k3.durable_assets",
+    "rationale": "No row. WE-006 section 8: no durable capital is involved apart from the stocks themselves; TS-1 and TS-3 do not apply. Estimate from the record. (Same answer as for k1; the component is k3.)",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "durable_assets",
+    "assumption_class": "durability",
+    "id": "k3.durable_assets",
+    "kind": "noul",
+    "options": [],
+    "text": "Are the assets the bound sellers use to supply the covered good durable, so that the supply of them expands only slowly?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k3.expected_to_last",
+    "rationale": "WE-006 A-14 (expectations, 0.75): sellers expect the cap to bind in future storms (the law is standing). (Same answer as for k1; the component is k3.)",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "expected_to_last",
+    "assumption_class": "expectations",
+    "id": "k3.expected_to_last",
+    "kind": "noul",
+    "options": [],
+    "text": "Do buyers of the covered assets expect the rule to stay in force for many years?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k3.commutable",
+    "rationale": "WE-006 A-12 (mobility); not used (no neighbouring market named for rooms).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "commutable",
+    "assumption_class": "mobility",
+    "id": "k3.commutable",
+    "kind": "noul",
+    "options": [],
+    "text": "Can buyers who cannot obtain a covered unit buy in a neighbouring market outside the rule's reach at a cost (travel, time) they are willing to bear?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.05,
+    "question_id": "k3.relet_obstructs",
+    "rationale": "No row; not applicable. Estimate from the record. (Same answer as for k1; the component is k3.)",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "relet_obstructs",
+    "assumption_class": "other",
+    "id": "k3.relet_obstructs",
+    "kind": "noul",
+    "options": [],
+    "text": "Does letting a vacated covered unit to a new tenant make it harder for the owner to move the unit to an alternative use later (eviction only for cause, relocation payments)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.05,
+    "question_id": "k3.exit_process",
+    "rationale": "No row; not applicable. Estimate from the record. (Same answer as for k1; the component is k3.)",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "exit_process",
+    "assumption_class": "other",
+    "id": "k3.exit_process",
+    "kind": "noul",
+    "options": [],
+    "text": "Does moving covered units to an alternative use require passing a permit or board process?"
+   }
   }
  ],
  "record": {
@@ -2367,12 +6419,12 @@
     "domestic_seller_worker_actor": null,
     "downstream": [],
     "enforcer_actor": "officials.enforcement",
-    "excluded_actor": "buyers.unserved",
+    "excluded_actor": "residents.declared",
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
     "foreign_seller_actor": "sellers.foreign",
     "general_budget": false,
-    "good": "emergency_goods_and_rooms",
+    "good": "emergency_goods",
     "id": "k1",
     "importer_actor": null,
     "input_supplier_actor": null,
@@ -2380,13 +6432,87 @@
     "market": "declared_counties",
     "neighbor_actor": "buyers.inland",
     "protected_actor": "buyers.served",
+    "protected_concentrated": false,
     "relief_applicant_actor": null,
     "renewable": false,
     "revenue_actor": "officials.enforcement",
     "seller_actor": "sellers.current",
     "source_sentences": [
      "The price of generators and fuel cans, bottled water, plywood, tarps and other building materials, and hotel, motel and short-term rental rooms sold or rented in the declared counties may not exceed 110% of the seller's own average price in the 30 days before the declaration.",
+     "Enforcement is funded from the Attorney General's budget."
+    ],
+    "taxpayer_actor": "taxpayers",
+    "vacancy_decontrol": false
+   },
+   {
+    "announcement_window": false,
+    "bound_actor": "sellers.outside",
+    "buyer_actor": "buyers.current",
+    "cap": 1.1,
+    "cap_unit": "multiple of the seller's average price in the 30 days before the declaration, plus documented cost increases",
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "enforcer_actor": "officials.enforcement",
+    "excluded_actor": "residents.declared",
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "general_budget": false,
+    "good": "emergency_goods_brought_in",
+    "id": "k2",
+    "importer_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "price_ceiling",
+    "market": "declared_counties",
+    "neighbor_actor": null,
+    "protected_actor": "buyers.served",
+    "protected_concentrated": false,
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "revenue_actor": "officials.enforcement",
+    "seller_actor": "sellers.current",
+    "source_sentences": [
      "The rule binds every seller of these goods in the declared counties, including sellers from outside the area selling there and online sellers delivering there, for the whole declared emergency.",
+     "Enforcement is funded from the Attorney General's budget."
+    ],
+    "taxpayer_actor": "taxpayers",
+    "vacancy_decontrol": false
+   },
+   {
+    "announcement_window": false,
+    "bound_actor": "hotels.declared",
+    "buyer_actor": "buyers.current",
+    "cap": 1.1,
+    "cap_unit": "multiple of the seller's average price in the 30 days before the declaration, plus documented cost increases",
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "enforcer_actor": "officials.enforcement",
+    "excluded_actor": "residents.declared",
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "general_budget": false,
+    "good": "emergency_rooms",
+    "id": "k3",
+    "importer_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "price_ceiling",
+    "market": "declared_counties",
+    "neighbor_actor": null,
+    "protected_actor": "evacuees.in_rooms",
+    "protected_concentrated": false,
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "revenue_actor": "officials.enforcement",
+    "seller_actor": "sellers.current",
+    "source_sentences": [
+     "The price of generators and fuel cans, bottled water, plywood, tarps and other building materials, and hotel, motel and short-term rental rooms sold or rented in the declared counties may not exceed 110% of the seller's own average price in the 30 days before the declaration.",
      "Enforcement is funded from the Attorney General's budget."
     ],
     "taxpayer_actor": "taxpayers",
@@ -2425,7 +6551,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T01:24:31+00:00",
+ "run_at": "2026-10-18T01:35:57+00:00",
  "sources_held_back": [],
  "unclear": [
   {
