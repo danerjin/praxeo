@@ -120,6 +120,14 @@ class Component(BaseModel):
     field_contested: bool = Field(default=False, description=(
         "The policy field the measure settles (rent regulation, farm support) was already fought over before it and would "
         "stay contested without it, so lobbying on that question is signed against the counterfactual contest (RS-7 Unless)"))
+    # licensing_requirement and quota: bound_actor is who must hold a license to sell, or whose quantity is capped; buyer_actor
+    # the buyers; enforcer_actor, general_budget and the OC-1 payer fields apply; field_contested and renewable as elsewhere.
+    right_holder_actor: Optional[str] = Field(default=None, description="Licensing and quotas: who holds the licenses or quota rights, when not the bound_actor (EN-2, EN-6), e.g. medallion_owners")
+    trainer_actor: Optional[str] = Field(default=None, description="Licensing: sellers of the training or exam the license requires (EN-1), e.g. schools.cosmetology")
+    transferable: bool = Field(default=False, description="Licensing and quotas: licenses or quota rights may be sold or leased (EN-2, SB-4)")
+    import_quota: bool = Field(default=False, description="Quotas: the quota caps imports; domestic_seller_actor and exporter_actor then apply (EN-6, TX-7, TX-8)")
+    seller_cap: bool = Field(default=False, description="Quotas: the cap is on the number of sellers or licenses, not on quantity (EN-6 1.0)")
+    wider_market: bool = Field(default=False, description="Quotas: the capped good's price is set in a wider market (fish sold regionally, a traded commodity), so the lease price of the right rations it (EN-6 Unless)")
     repay_on_move: bool = Field(default=False, description="Subsidies: the payment is repaid if the recipient moves or sells within a period (RS-11)")
     source_sentences: list[str] = Field(description="Sentences of the policy text this component rests on, quoted exactly")
 

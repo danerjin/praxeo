@@ -87,6 +87,24 @@ def _subsidy_facts(c: str, comp) -> list[str]:
     return lines
 
 
+def _en_facts(c: str, comp) -> list[str]:
+    lines = [f"{'licensing' if comp.instrument == 'licensing_requirement' else 'quota'}({c}).",
+             f'en_buyer({c}, "{comp.buyer_actor}").', f'en_holder({c}, "{comp.right_holder_actor or comp.bound_actor}").',
+             f'enforcer({c}, "{comp.enforcer_actor}").', f'taxpayer({c}, "{comp.taxpayer_actor}").']
+    payers = [comp.taxpayer_actor, comp.other_spending_actor, comp.future_taxpayer_actor]
+    lines.append(f'en_payer_group({c}, "{",".join(dict.fromkeys(p for p in payers if p))}").')
+    if comp.trainer_actor:
+        lines.append(f'en_trainer({c}, "{comp.trainer_actor}").')
+    if comp.import_quota:
+        lines += [f'en_domestic_seller({c}, "{comp.domestic_seller_actor}").', f'en_exporter({c}, "{comp.exporter_actor}").',
+                  f'en_exporter_worker({c}, "{comp.exporter_worker_actor or "workers." + comp.exporter_actor}").']
+    for pred, flag in (("transferable", comp.transferable), ("import_quota", comp.import_quota), ("seller_cap", comp.seller_cap),
+                       ("wider_market", comp.wider_market), ("general_budget", comp.general_budget), ("tax_named", comp.tax_named)):
+        if flag:
+            lines.append(f"{pred}({c}).")
+    return lines
+
+
 def _tax_facts(c: str, comp) -> list[str]:
     lines = [f"{'tax' if comp.instrument == 'per_unit_tax' else 'tariff'}({c}).",
              f'buyer({c}, "{comp.buyer_actor}").',
@@ -164,6 +182,8 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
             lines += _tax_facts(c, comp)
         if comp.instrument in SUBSIDIES:
             lines += _subsidy_facts(c, comp)
+        if comp.instrument in ("licensing_requirement", "quota"):
+            lines += _en_facts(c, comp)
     for a in assumptions:
         lines.append(f"assumption({a}).")
     return "\n".join(lines) + "\n"

@@ -1,0 +1,51 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "Probability taken from the assumption table of handbook WE-003 (illustrative figures), A-1: few current braiders already hold a cosmetology license, so the requirement binds.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-003 (illustrative figures), A-2: the board enforces the requirement often enough that many braiders comply or stop.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.some_qualify",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-003 (illustrative figures), A-10: some current braiders or new entrants choose to obtain the full license.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-003 (illustrative figures), A-3: some braiders keep working without a license and are not caught.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyer_substitutes",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-003 (illustrative figures), A-4: home braiding by family or friends is a feasible substitute for some customers.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.tests_valued_quality",
+  "value": "no",
+  "probability": 0.15,
+  "rationale": "Probability taken from the assumption table of handbook WE-003 (illustrative figures), A-5: the required training is largely unrelated to braiding quality (p = 0.85), so the license tests little that braiding customers value.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-003 (illustrative figures), A-9: schools, licensed cosmetologists and braiders can organize and spend to change or defend the requirement.",
+  "evidence": []
+ }
+]

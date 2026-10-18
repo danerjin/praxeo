@@ -320,6 +320,65 @@ CONTESTED_QUESTION = ("contested_otherwise", "other",
                       "Without the measure, the question it settles would still be contested by the same groups.")
 
 
+# Licensing (EN-1 to EN-3, EN-5, EN-11) and quotas (EN-6).
+LICENSE_QUESTIONS = [
+    ("binding", "binding",
+     "Do the license's conditions (training, exams, fees, waiting periods) go beyond what some current or would-be sellers already meet?",
+     "The requirement goes beyond what some current or would-be sellers already meet."),
+    ("enforced", "enforcement",
+     "Will the requirement be enforced often enough that many sellers comply with it or stop selling?",
+     "The requirement is enforced often enough that many sellers comply or stop."),
+    ("some_qualify", "alternative_uses",
+     "Will some current sellers or new entrants choose to obtain the license?",
+     "Some current sellers or new entrants obtain the license."),
+    ("evasion", "enforcement",
+     "Will some sellers keep selling without a license and not be caught?",
+     "Some sellers keep selling without a license and are not caught."),
+    ("buyer_substitutes", "substitutability",
+     "Can some buyers turn to a substitute for the licensed service (doing it themselves, family or friends, another service)?",
+     "Some buyers have a feasible substitute for the licensed service."),
+    ("tests_valued_quality", "other",
+     "Does the license test something buyers care about but cannot easily judge for themselves (competence, safety, honesty)?",
+     "The license tests something buyers value but cannot easily judge."),
+    ("can_organize", "other",
+     "Can the license holders (or those who train them) organize to lobby for the requirement at a cost below their stake?",
+     "The license holders can organize to lobby at a cost below their stake."),
+]
+QUOTA_QUESTIONS = [
+    ("binding", "binding",
+     "Is the cap below the quantity that would otherwise be traded, now or within the period considered (for a cap on the number of sellers: does it hold the quantity down)?",
+     "The cap holds the quantity below what would otherwise be traded."),
+    ("enforced", "enforcement",
+     "Will the cap be enforced, so that little trade takes place beyond it?",
+     "The cap is enforced."),
+    ("evasion", "enforcement",
+     "Will some trade take place beyond the cap without being caught?",
+     "Some trade takes place beyond the cap without being caught."),
+    ("can_organize", "other",
+     "Can the holders of the quota rights organize to lobby for keeping or tightening the cap at a cost below their stake?",
+     "The holders of the rights can organize to lobby at a cost below their stake."),
+]
+EN_LASTING_QUESTION = ("expected_to_last", "expectations",
+                       "Do holders and buyers of the licenses or quota rights expect the restriction to last for many years?",
+                       "Holders and buyers of the rights expect the restriction to last.")
+WIDER_PRICE_QUESTION = ("price_effect_material", "other",
+                        "Is the capped quantity a large enough part of the wider market for the cap to raise the price buyers pay there?",
+                        "The capped quantity matters enough in the wider market to raise the price there.")
+
+
+def _en_specs(comp: Component) -> list[tuple[str, str, str, str]]:
+    specs = list(LICENSE_QUESTIONS if comp.instrument == "licensing_requirement" else QUOTA_QUESTIONS)
+    if comp.transferable:
+        specs.append(EN_LASTING_QUESTION)
+    if comp.instrument == "quota" and comp.import_quota:
+        specs += [s for s in TARIFF_QUESTIONS if s[0] in ("domestic_substitutes", "no_offset")]
+    if comp.instrument == "quota" and comp.wider_market:
+        specs.append(WIDER_PRICE_QUESTION)
+    if comp.general_budget:
+        specs.append(BUDGET_QUESTION)
+    return specs
+
+
 def _related_specs(comp: Component) -> list[tuple[str, str, str, str]]:
     """One question per premise of each related market (CR-9, SB-3, RS-12), named by the relation's index."""
     out = []
@@ -357,6 +416,8 @@ def _instrument_specs(comp: Component) -> list[tuple[str, str, str, str]]:
         return specs
     if comp.instrument in ("per_unit_subsidy", "purchase_rebate", "lump_sum_subsidy"):
         return _subsidy_specs(comp)
+    if comp.instrument in ("licensing_requirement", "quota"):
+        return _en_specs(comp)
     if comp.instrument not in ("per_unit_tax", "tariff"):
         return []
     specs = list(TAX_QUESTIONS if comp.instrument == "per_unit_tax" else TARIFF_QUESTIONS)

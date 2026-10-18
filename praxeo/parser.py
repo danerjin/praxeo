@@ -71,6 +71,12 @@ instrument, even when the text states no aim:
   payment), substitute_seller_actor (sellers of the goods the payment does not cover), asset_owner_actor (owners of an
   asset in slow supply whose return the payment raises); and for a payment that requires scrapping a used good,
   scrappage, used_buyer_actor, used_owner_actor (owners who keep theirs) and scrapper_actor.
+- licensing_requirement, quota: bound_actor (who must hold a license to sell, or whose quantity is capped),
+  buyer_actor, right_holder_actor (who holds the licenses or rights, if not the bound actor), trainer_actor (sellers of
+  the training or exam a license requires), transferable (true if licenses or rights may be sold or leased),
+  import_quota (with domestic_seller_actor and exporter_actor), seller_cap (true if the cap is on the number of sellers
+  or licenses), wider_market (true if the capped good's price is set in a wider market), enforcer_actor,
+  general_budget (true if enforcement is paid from the general budget), renewable, field_contested.
 For a tax or subsidy, list in `related` the markets the text or context names as related to the good: an input or factor
 its sellers use (kind input: who sells it, price_variable wage_rate for workers, and its other users if named), or a
 complement used with it (kind complement).
