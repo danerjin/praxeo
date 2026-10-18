@@ -26,7 +26,7 @@ WINDOWS = {}
 EXCEPTIONS = {
     # the first run's two rows (growers' price_paid decrease, which was WRONG, and quantity_traded increase) are gone: SB-2
     # now signs a payment to producers as net_price_received and quantity_supplied (C-4, C-6, C-9)
-    ("wheat_growers", "lobbying_effort", "increase", None):
+    ("wheat_growers", "lobbying_effort", "U1-a: increase; U1-b: no_change", None):
         "KNOWN WRONG: RS-7 with the growers as the gaining sellers (renewal at the 2032 review). C-36 signs the lobbying over the "
         "level and continuation of support `ambiguous` by RS-7's Unless clause. The clause is now encoded (rules/lobbying.lp, "
         "`field_contested`), but the 2025 to 2026 farm-support campaign is not in the example's section 1, only in its analysis "
@@ -74,13 +74,14 @@ PRODUCED = {"C-4", "C-6", "C-7", "C-8", "C-9", "C-16", "C-25", "C-32", "C-33", "
 def test_consistent_with_worked_example_we065():
     pred, keys = _engine(WE65)
     rows = _rows("WE-065_crop_deficiency_payments.md", SHORT, WINDOWS, {})
-    # the sign cell "U1-a: x; U1-b: y" becomes its U1-a sign, the mechanism the record's rules run (see the module docstring)
-    rows = {rid: {(a, v, (re.match(r"U1-a:\s*(\w+)", s) or [None, s])[1], w) for a, v, s, w in ks} for rid, ks in rows.items()}
     assert len(rows) == 43
     _check(rows, keys, EXCEPTIONS, NOT_PRODUCED, PRODUCED)
     by = {(c["actor_class"], c["variable"], c["window"]): c for c in pred["consequences"]}
     # a payment to producers: no purchase to delay before the start (RS-8) and no dip after expiry (SB-6)
     assert not any(c["window"] for c in pred["consequences"])
-    assert by[("wheat_growers", "net_price_received", None)]["sign"] == "increase"                # C-4, C-6
+    # U1-b (a fixed historical base) makes the payment a lump sum: no price or supply response (C-4, C-6, C-9), while the
+    # land with a wheat history gains under both readings (C-25)
+    assert by[("wheat_growers", "net_price_received", None)]["sign_by_reading"] == {"U1-a": "increase", "U1-b": "none"}
+    assert by[("owners.wheat_land", "asset_value", None)]["sign"] == "increase"
     assert by[("taxpayers", "resources_available_other_uses", None)]["actor_group"] == [
         "taxpayers", "recipients.other_spending", "taxpayers.future"]                              # C-7 (OC-1)

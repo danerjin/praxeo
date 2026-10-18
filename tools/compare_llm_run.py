@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT))
 from praxeo import parser  # noqa: E402
 from praxeo.decider import FixtureDecider  # noqa: E402
 from praxeo.pipeline import run_case  # noqa: E402
-from praxeo.questions import questions_for  # noqa: E402
+from praxeo.questions import record_questions  # noqa: E402
 from praxeo.schema import PolicyRecord  # noqa: E402
 
 ROLE_FIELDS = ("instrument", "bound_actor", "protected_actor", "excluded_actor", "vacancy_decontrol", "buyer_actor",
@@ -62,11 +62,10 @@ def _remap_answers(answers: list[dict], record: PolicyRecord, out: Path) -> Path
     """Re-key answers by the LLM record's component ids (question ids are '<component>.<atom>')."""
     by_atom = {a["question_id"].split(".", 1)[1]: a for a in answers}
     keyed = []
-    for comp in record.components:
-        for q, _ in questions_for(comp):
-            atom = q.id.split(".", 1)[1]
-            if atom in by_atom:
-                keyed.append({**by_atom[atom], "question_id": q.id})
+    for _comp, q, _ in record_questions(record):
+        atom = q.id.split(".", 1)[1]
+        if atom in by_atom:
+            keyed.append({**by_atom[atom], "question_id": q.id})
     out.write_text(json.dumps(keyed, indent=1))
     return out
 

@@ -131,6 +131,11 @@ class Unclear(BaseModel):
         "Engine facts in clingo syntax per reading label, e.g. {\"U1-b\": \"exception(pc_5, c1).\"}. "
         "Written by a person who knows the rule base; a parser should leave this empty. "
         "Text that is not valid clingo is ignored by the engine and reported by the verifier."))
+    reading_fields: dict[str, dict[str, dict]] = Field(default={}, description=(
+        "Record fields that a reading changes, per reading label and component id, e.g. "
+        "{\"U1-b\": {\"k1\": {\"instrument\": \"lump_sum_subsidy\"}}} where under U1-b the payment is on a fixed historical "
+        "base. Only Component fields may be named; the engine runs each reading on the record with its fields set. "
+        "A parser may fill this, unlike reading_facts."))
 
     def labels(self) -> list[str]:
         return [r.split(":", 1)[0].strip() for r in self.readings]
@@ -147,6 +152,31 @@ class PolicyRecord(BaseModel):
     components: list[Component]
     unclear: list[Unclear] = []
     context: list[str] = Field(default=[], description="Facts about the market as it stood at enactment, each with its source")
+
+    @model_validator(mode="after")
+    def _reading_fields_name_components(self) -> "PolicyRecord":
+        ids = {c.id for c in self.components}
+        for u in self.unclear:
+            for label, by_comp in u.reading_fields.items():
+                if label not in u.labels():
+                    raise ValueError(f"{u.id}: reading_fields names unknown reading {label}")
+                for cid, fields in by_comp.items():
+                    if cid not in ids:
+                        raise ValueError(f"{u.id} {label}: unknown component {cid}")
+                    bad = set(fields) - set(Component.model_fields)
+                    if bad:
+                        raise ValueError(f"{u.id} {label}: not Component fields: {sorted(bad)}")
+        return self
+
+    def variant(self, label_by_unclear: dict[str, str]) -> "PolicyRecord":
+        """The record under one reading of each unclear provision: the readings' fields set on their components."""
+        comps = []
+        for comp in self.components:
+            update = {}
+            for u in self.unclear:
+                update.update(u.reading_fields.get(label_by_unclear.get(u.id, ""), {}).get(comp.id, {}))
+            comps.append(Component.model_validate({**comp.model_dump(), **update}) if update else comp)
+        return self.model_copy(update={"components": comps})
 
 
 # --- decider -------------------------------------------------------------

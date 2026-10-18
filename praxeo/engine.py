@@ -195,16 +195,17 @@ def invalid_reading_facts(unclear) -> list[str]:
     return bad
 
 
-def readings(record: PolicyRecord) -> list[tuple[str, str]]:
-    """Every combination of readings of the unclear provisions that carry facts: (label, facts)."""
-    branching = [u for u in record.unclear if u.reading_facts and not invalid_reading_facts(u)]
+def readings(record: PolicyRecord) -> list[tuple[str, str, PolicyRecord]]:
+    """Every combination of readings of the unclear provisions that carry facts or fields: (label, facts, the record
+    with the readings' fields set)."""
+    branching = [u for u in record.unclear if u.reading_fields or (u.reading_facts and not invalid_reading_facts(u))]
     if not branching:
-        return [("", "")]
+        return [("", "", record)]
     out = []
     for combo in itertools.product(*[u.labels() for u in branching]):
         label = "; ".join(combo)
-        extra = "\n".join(u.reading_facts.get(lab, "") for u, lab in zip(branching, combo))
-        out.append((label, extra + "\n"))
+        extra = "\n".join(u.reading_facts.get(lab, "") for u, lab in zip(branching, combo) if not invalid_reading_facts(u))
+        out.append((label, extra + "\n", record.variant({u.id: lab for u, lab in zip(branching, combo)})))
     return out
 
 
@@ -255,7 +256,8 @@ def run(record: PolicyRecord, assumptions: dict[str, Assumption], extra: str = "
     """Derive consequences. `assumptions` maps the ASP atom (e.g. 'enforced(c1)') to its estimate;
     `extra` adds facts such as `exception(pc_5, c1).` from context grounding."""
     base = facts(record, assumptions) + extra
-    runs = [(label, _derive(base + rf, assumptions)) for label, rf in readings(record)]
+    runs = [(label, _derive((base if variant is record else facts(variant, assumptions) + extra) + rf, assumptions))
+            for label, rf, variant in readings(record)]
 
     # merge across readings on (actor, variable, window, item): same sign everywhere, or a sign per reading
     keys = sorted({(a, v, w, i) for _, r in runs for (a, v, w, i, _s) in r}, key=lambda k: tuple(x or "" for x in k))

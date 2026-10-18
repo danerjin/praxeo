@@ -16,7 +16,9 @@ PARSER_SYSTEM = """You turn the text of a policy into a structured policy record
 For each operative provision, give one component: the instrument, the good and market, the actor classes it
 affects, and the sentences of the text it rests on, quoted exactly.
 If a provision can be read more than one way, record it under `unclear` with each reading; do not pick one.
-Leave `reading_facts` empty: it takes engine facts written by a person, not text.
+Leave `reading_facts` empty: it takes engine facts written by a person, not text. Where a reading changes what a
+component is or does, record it in `reading_fields` as the Component fields that reading sets, per component id (e.g.
+under a reading where the payment is on a fixed historical base, {"U1-b": {"k1": {"instrument": "lump_sum_subsidy"}}}).
 Copy into `context` only facts stated in the text about the market at enactment. Use nothing from after the enactment date.
 
 Actor roles. The rules attach consequences to the role fields, so fill every role field that applies to the

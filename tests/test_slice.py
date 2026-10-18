@@ -1106,3 +1106,21 @@ def test_opposite_signs_take_the_sign_of_the_reported_chains():
     assert engine._resolve([up, down], a)["sign"] == "increase"
     a["y"] = a["y"].model_copy(update={"p": 0.7})
     assert engine._resolve([up, down], a)["sign"] == "ambiguous"
+
+
+def test_reading_fields_name_components_and_fields():
+    """A reading may change Component fields (Unclear.reading_fields); unknown readings, components or fields are refused,
+    and the engine runs each reading on the record with its fields set."""
+    import pydantic
+    rec = _record()
+    data = rec.model_dump()
+    data["unclear"] = [{"id": "U9", "text": "t", "readings": ["U9-a: x", "U9-b: y"],
+                        "reading_fields": {"U9-b": {"c1": {"vacancy_decontrol": False}}}}]
+    ok = type(rec).model_validate(data)
+    assert ok.variant({"U9": "U9-b"}).components[0].vacancy_decontrol is False
+    assert ok.variant({"U9": "U9-a"}).components[0].vacancy_decontrol == rec.components[0].vacancy_decontrol
+    assert [lab for lab, _, _ in engine.readings(ok)] == ["U9-a", "U9-b"]
+    for bad in ({"U9-c": {"c1": {}}}, {"U9-b": {"k7": {}}}, {"U9-b": {"c1": {"no_such_field": 1}}}):
+        data["unclear"][0]["reading_fields"] = bad
+        with pytest.raises(pydantic.ValidationError):
+            type(rec).model_validate(data)

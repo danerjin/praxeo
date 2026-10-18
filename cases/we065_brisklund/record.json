@@ -39,7 +39,14 @@
    "readings": [
     "U1-a: the payment is on the harvest declared for the crop year (actual output)",
     "U1-b: the payment is on the farm's established production, the crop year fixing only the year whose price sets the rate"
-   ]
+   ],
+   "reading_fields": {
+    "U1-b": {
+     "k1": {
+      "instrument": "lump_sum_subsidy"
+     }
+    }
+   }
   }
  ],
  "context": [

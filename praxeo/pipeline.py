@@ -16,7 +16,7 @@ from .context import ground, load_sources
 from .verifier import verify
 from .decider import Decider
 from .explainer import explain
-from .questions import questions_for
+from .questions import record_questions
 from .schema import Assumption, OutcomeCard, PolicyRecord
 from .scoring import score
 
@@ -26,13 +26,12 @@ def predict(text: str, record: PolicyRecord, decider: Decider, sources: list | N
     record, held_back = ground(record, sources or [])
     answers, assumptions = [], {}
     log_start = len(decider.log) if hasattr(decider, "log") else 0
-    for comp in record.components:
-        for q, assumed in questions_for(comp):  # dispatched by instrument
-            a = decider.answer(q, record)
-            # exclude_none keeps the logged answer shape unchanged for answers without a confidence
-            answers.append({"question": q.model_dump(), "answer": a.model_dump(exclude_none=True)})
-            atom = f"{q.assumption}({engine._atom(comp.id)})"
-            assumptions[atom] = Assumption(id=atom, text=assumed, assumption_class=q.assumption_class, p=a.probability)
+    for comp, q, assumed in record_questions(record):  # dispatched by instrument, under every reading's fields
+        a = decider.answer(q, record)
+        # exclude_none keeps the logged answer shape unchanged for answers without a confidence
+        answers.append({"question": q.model_dump(), "answer": a.model_dump(exclude_none=True)})
+        atom = f"{q.assumption}({engine._atom(comp.id)})"
+        assumptions[atom] = Assumption(id=atom, text=assumed, assumption_class=q.assumption_class, p=a.probability)
     consequences, program = engine.run(record, assumptions)
     consequences = combine(consequences, assumptions)
     out = {

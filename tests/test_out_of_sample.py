@@ -20,9 +20,22 @@ WE67 = ROOT / "cases" / "we067_tessford"
 
 
 def _one_sign(cell: str) -> str:
-    """A sign cell given per reading ("U1-a: increase; U1-b: increase") whose readings all agree has that one sign."""
-    signs = set(re.findall(r"U\d+-\w+:\s*([a-z_]+)", cell))
-    return signs.pop() if len(signs) == 1 else cell
+    """A sign cell given per reading ("U1-a: increase; U1-b: increase") whose readings all agree has that one sign; one
+    whose readings differ is written in the engine's form, "U1-a: increase; U1-b: no_change"."""
+    pairs = re.findall(r"(U\d+-\w+):\s*([a-z_]+)", cell)
+    if not pairs:
+        return cell
+    signs = {s for _, s in pairs}
+    return signs.pop() if len(signs) == 1 else "; ".join(f"{lab}: {s}" for lab, s in pairs)
+
+
+def _sign(c: dict) -> str:
+    """A consequence's sign as the tables write it: per reading where the readings differ. A reading under which the engine
+    derives nothing is compared with the table's `no_change`: the engine does not tell "no change" from "nothing derived",
+    so a match there checks that no rule fires under that reading, not that the derivation establishes no change."""
+    if not c["sign_by_reading"]:
+        return c["sign"]
+    return "; ".join(f"{lab}: {'no_change' if s == 'none' else s}" for lab, s in c["sign_by_reading"].items())
 
 
 def _rows(example: str, short: dict, windows: dict, subclasses: dict) -> dict[str, set]:
@@ -54,7 +67,7 @@ def _engine(case: Path):
     record = parser.parse_fixture(case / "record.json")
     pred = predict((case / "policy.txt").read_text(), record, FixtureDecider(case / "answers.json"))
     assert pred["citation_problems"] == [] and pred["verifier_problems"] == []
-    keys = {(a, v, c["sign"], c["window"]) for c in pred["consequences"] if c["reported"]
+    keys = {(a, v, _sign(c), c["window"]) for c in pred["consequences"] if c["reported"]
             for a in (c.get("actor_group") or [c["actor_class"]]) for v in (c["group"] or [c["variable"]])}
     return pred, keys
 

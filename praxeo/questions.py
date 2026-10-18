@@ -278,8 +278,8 @@ SHARE_CAP_QUESTIONS = [
 
 
 def _subsidy_specs(comp: Component) -> list[tuple[str, str, str, str]]:
-    if comp.instrument == "lump_sum_subsidy":
-        return []
+    if comp.instrument == "lump_sum_subsidy":   # SB-2 to SB-6 need a payment per unit; SB-4 needs only an asset it attaches to
+        return [SB_SLOW_ASSET_QUESTION, SB_LASTING_QUESTION] if comp.asset_owner_actor else []
     specs = list(SUBSIDY_QUESTIONS)
     if not comp.seller_actor or comp.seller_actor == comp.bound_actor:   # the recipients sell
         specs = [SELLER_KEEPS_QUESTION if s[0] == "not_fully_captured" else s for s in specs]
@@ -375,6 +375,19 @@ def questions_for(comp: Component) -> list[tuple[Question, str]]:
     """Typed questions for a component, each with the text of the assumption it estimates."""
     return [(Question(id=f"{comp.id}.{atom}", kind="noul", text=text, assumption=atom, assumption_class=cls), assumed)
             for atom, cls, text, assumed in _specs(comp)]
+
+
+def record_questions(record) -> list[tuple[Component, Question, str]]:
+    """Typed questions for every component under every reading whose fields change it (Unclear.reading_fields), once each."""
+    from .engine import readings
+    seen, out = set(), []
+    for _label, _facts, variant in readings(record):
+        for comp in variant.components:
+            for q, assumed in questions_for(comp):
+                if q.id not in seen:
+                    seen.add(q.id)
+                    out.append((comp, q, assumed))
+    return out
 
 
 def ceiling_questions(comp: Component) -> list[Question]:

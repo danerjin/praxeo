@@ -26,7 +26,7 @@
 %   sb_recipients_sell(C).          the recipients are the sellers of the subsidized good (a payment to producers)
 %   sb_qualifier(C, A).             who must meet the criteria (default the recipients)                   (SB-5)
 % Every rule is monotone in holds/1: it negates only plain facts (exception/2, own_revenue/1, debt_funded/1, tax_named/1,
-% sb_recipients_sell/1).
+% sb_recipients_sell/1, per_unit_sub/1).
 % Signs are relative to the no-policy counterfactual.
 
 { holds(A) } :- assumption(A).
@@ -102,8 +102,14 @@ effect(sb_drawn(C), S, "quantity_traded", decrease, short, invisible, "B") :- sb
 item(sb_drawn(C), "unsubsidized_goods") :- sb_drawn(C).
 
 % SB-4: a lasting rise in the return on an asset in slow supply is capitalized in its value from the time it is expected.
-sb_capitalized(C) :- sb_takeup(C), sb_asset_owner(C, _), holds(asset_supply_slow(C)), holds(expected_to_last(C)), not exception(sb_4, C).
-fired(sb_4, sb_capitalized(C), sb_takeup(C))        :- sb_capitalized(C).
+% For a payment per unit the rise comes through take-up; a lump sum attached to an asset (paid to whoever holds land with
+% a production history) raises its return directly (found out of sample on WE-065, reading U1-b).
+sb_asset_gain(C) :- sb_takeup(C).
+fired(sb_2, sb_asset_gain(C), sb_takeup(C)) :- sb_asset_gain(C), sb_takeup(C).
+sb_asset_gain(C) :- sb_paid(C), not per_unit_sub(C).
+fired(sb_1, sb_asset_gain(C), sb_paid(C))   :- sb_asset_gain(C), sb_paid(C), not per_unit_sub(C).
+sb_capitalized(C) :- sb_asset_gain(C), sb_asset_owner(C, _), holds(asset_supply_slow(C)), holds(expected_to_last(C)), not exception(sb_4, C).
+fired(sb_4, sb_capitalized(C), sb_asset_gain(C))    :- sb_capitalized(C).
 fired(sb_4, sb_capitalized(C), asset_supply_slow(C)) :- sb_capitalized(C).
 fired(sb_4, sb_capitalized(C), expected_to_last(C))  :- sb_capitalized(C).
 effect(sb_capitalized(C), O, "asset_value", increase, short, invisible, "B") :- sb_capitalized(C), sb_asset_owner(C, O).

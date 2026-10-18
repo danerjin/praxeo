@@ -148,6 +148,7 @@ def test_lobbying_on_a_contested_field_is_ambiguous():
     C-36) beside the increase on provisions that exist only under the measure (C-15); below the cut-off, the increase alone."""
     from test_oos_we065 import WE65
     rec = parser.parse_fixture(WE65 / "record.json")
+    rec.unclear = []                      # the actual-output reading (U1-a) only
     rec.components[0].field_contested = True
     a = {}
     for comp in rec.components:

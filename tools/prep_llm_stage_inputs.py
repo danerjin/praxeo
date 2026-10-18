@@ -16,7 +16,7 @@ sys.path.insert(0, str(ROOT))
 
 from praxeo import parser, vocabulary  # noqa: E402
 from praxeo.decider import DECIDER_SYSTEM  # noqa: E402
-from praxeo.questions import questions_for  # noqa: E402
+from praxeo.questions import record_questions  # noqa: E402
 from praxeo.schema import PolicyRecord  # noqa: E402
 
 
@@ -30,7 +30,7 @@ def main(case: Path, out: Path) -> None:
         ", ".join(sorted(vocabulary.instruments())) + ". Quote source sentences exactly as they appear in policy.txt.\n\n"
         "```json\n" + json.dumps(PolicyRecord.model_json_schema(), indent=1) + "\n```\n")
     record = parser.parse_fixture(case / "record.json")
-    questions = [q.model_dump() for comp in record.components for q, _ in questions_for(comp)]
+    questions = [q.model_dump() for _comp, q, _ in record_questions(record)]
     (out / "decider_instructions.md").write_text(
         "# Decider task\n\n" + DECIDER_SYSTEM +
         "\n\nAnswer every question in `questions.json` using `record_for_decider.json` and `policy.txt`. Write "
