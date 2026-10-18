@@ -1,0 +1,58 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-016 (illustrative figures), A-1: many practitioners and would-be entrants lack the degree and would not otherwise get it, so the requirement binds.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-016 (illustrative figures), A-2: the Board enforces often enough, with unenforceable contracts as a further deterrent, that many comply or stop.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.some_qualify",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "No matching assumption in WE-016; judged from the text: the grandfathering clause licenses existing practitioners without the degree, and two degree programs graduate about 300 students a year, so some will hold the license.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-016 (illustrative figures), A-3: some unlicensed practice continues undetected, mainly in homes (enforcement is complaint-driven).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyer_substitutes",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-016 (illustrative figures), A-10: residential clients have close exempt or unlicensed substitutes (store design help, online services, doing it themselves).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.tests_valued_quality",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-016 (illustrative figures), A-13: the degree and exam cover code, egress, accessibility and plan preparation, which commercial clients need to get permits approved (for homes A-14 puts the training as largely unrelated at p = 0.45, i.e. 0.55 that it is related).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-016 (illustrative figures), A-9: license holders, schools, retailers and architects can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforcement_budget_raised",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "No matching assumption in WE-016; judged from the text: the Board is funded by license fees and the general budget, and the Act gives it a new task, so the general-budget share is paid from a budget that rises with it (the handbook treats this as certain, C-27 with no assumption).",
+  "evidence": []
+ }
+]
