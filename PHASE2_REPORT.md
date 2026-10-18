@@ -95,4 +95,4 @@ San Francisco 1994, the historical case, reports 27 consequences. Five are verif
 - **An API key:** run the LLM parser and decider through the real code path.
 - **Sources:** the Diamond, McQuade and Qian (2019) paper and the Proposition I ordinance text, to verify the San Francisco card; pre-1994 data for the annex ranges.
 - **A held-out historical case** with a sourced outcome card. This is the first real test of accuracy.
-- **Experts:** review the handbook's open questions (Q1–Q24), the rules, and the premises in §7; label the question bank (about 200 items per question type) so thresholds can be set.
+- **Experts:** review the handbook's open questions (Q1–Q25; Q25 is the TX-8 inconsistency between WE-013 and WE-042), the rules, and the premises in §7; label the question bank (about 200 items per question type) so thresholds can be set.
