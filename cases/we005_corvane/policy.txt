@@ -1,0 +1,13 @@
+Corvane Emergency Fuel Price Order (fictional; summary of the policy record of handbook worked example WE-005).
+
+Corvane is a state of about six million people. On Day 0 a fire shuts the Port Aldis refinery, which makes about 40% of the gasoline sold in the state. The owner expects repairs to take 8 to 12 weeks. Corvane requires a special clean-burning blend that few refineries outside the state make; replacement cargoes come by tanker and take 2 to 4 weeks to arrive. A products pipeline carries gasoline from Corvane refineries east to the neighboring state of Brennick, which accepts Corvane's blend. Its capacity is about a tenth of Corvane's consumption. The eastern Corvane cities are 20 to 45 minutes' drive from the Brennick line.
+
+Before the outage, regular gasoline averaged $3.90 a gallon in Corvane. By Day 3 it was $5.10. In Brennick it was about $4.00. On Day 3 the governor announced that a cap would take effect on Day 5. The order expires on Day 95. Wholesale (rack) prices are not capped.
+
+Regular gasoline sold at retail in Corvane is capped at $4.20 a gallon including taxes, midgrade at $4.50 and premium at $4.80, from Day 5 to Day 95. Diesel is exempt, and so are deliveries to commercial fleets under contracts signed before Day 0.
+
+No fees, surcharges or required purchases may be tied to a fuel sale; the posted price must be the pump price.
+
+The State Attorney General enforces the order. Fines are up to $5,000 per violation, inspectors check posted prices, and there is a public hotline. Enforcement is funded by an emergency appropriation from the general fund.
+
+The order is silent on whether stations may limit the quantity sold per customer, shorten their opening hours or refuse card payments.

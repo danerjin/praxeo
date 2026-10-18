@@ -1,0 +1,45 @@
+{
+ "name": "Corvane Emergency Fuel Price Order",
+ "jurisdiction": "Corvane (fictional)",
+ "rule_maker": "the governor of Corvane (emergency order)",
+ "enacted": "Day 3",
+ "effective": "Day 5",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "price_ceiling",
+   "good": "retail_gasoline",
+   "market": "corvane",
+   "bound_actor": "stations",
+   "protected_actor": "drivers.served",
+   "excluded_actor": "drivers.unserved",
+   "neighbor_actor": "drivers.brennick",
+   "enforcer_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "cap": 4.2,
+   "cap_unit": "dollars a gallon, regular grade, Day 5 to Day 95",
+   "announcement_window": true,
+   "general_budget": true,
+   "source_sentences": [
+    "Regular gasoline sold at retail in Corvane is capped at $4.20 a gallon including taxes, midgrade at $4.50 and premium at $4.80, from Day 5 to Day 95.",
+    "On Day 3 the governor announced that a cap would take effect on Day 5.",
+    "Enforcement is funded by an emergency appropriation from the general fund."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether stations may limit the quantity sold per customer, shorten their opening hours or refuse card payments.",
+   "readings": [
+    "U1-a: allowed (the order is silent)",
+    "U1-b: treated as violations"
+   ]
+  }
+ ],
+ "context": [
+  "Before the outage, regular gasoline averaged $3.90 a gallon in Corvane. By Day 3 it was $5.10. In Brennick it was about $4.00.",
+  "The eastern Corvane cities are 20 to 45 minutes' drive from the Brennick line."
+ ]
+}
