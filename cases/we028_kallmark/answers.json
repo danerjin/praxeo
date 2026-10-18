@@ -1,0 +1,51 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-028 (illustrative figures), A-1: without the Act landings would stay well above 40,000 tonnes a year (48,000 tonnes on average in 2022 to 2024), so the cap binds from 2028.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-028 (illustrative figures), A-2: landings are recorded and overages enforced at the designated sites.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-028 (illustrative figures), A-11: the ten small harbors are monitored only at scheduled hours, so some landings go unrecorded.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-028 (illustrative figures), A-15: recipients, processors and crew can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-028 (illustrative figures), A-3: owners expect the bill to pass and the shares to keep their value past the 2033 review.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.price_effect_material",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-028 (illustrative figures), A-28: the fall in Kallmark's exports (about a sixth of a 7% share) moves the North Basin whitefish price by more than a negligible amount.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforcement_budget_raised",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-028 (illustrative figures), A-22: the Directorate's budget is raised by the stated 18 million marks.",
+  "evidence": []
+ }
+]
