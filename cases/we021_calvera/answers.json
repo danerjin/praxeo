@@ -1,0 +1,100 @@
+[
+ {
+  "question_id": "k1.takeup",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-021 (illustrative figures), A-2: some households at the margin install because of the subsidy (the subsidy is about 18% of installed cost; surveys of intentions; payback periods).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.not_fully_captured",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-021 (illustrative figures), A-1: installers do not capture the whole subsidy (about 900 competing installers; subsidy shown on the invoice).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.quantity_expands",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-021 (illustrative figures), A-2: more systems are installed because of the subsidy (C-2 rests on A-1 and A-2).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.seller_supply_slow",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-021 (illustrative figures), A-4: installation labor cannot grow much within the first year (electrician licensing time, installer vacancies, backlog data).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.sellers_fewer_alternatives",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-021 (illustrative figures), A-18: in the first year installers have clearly fewer alternatives than households, because their capacity is fixed by the number of licensed electricians while households can wait or keep buying grid power.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.qualifying_pays",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-021 (illustrative figures), A-5: certification is easy enough that new installers enter (a licensed electrician on staff, a three-day course and a $500 fee against the subsidy).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.oversubscribed",
+  "value": "yes",
+  "probability": 0.45,
+  "rationale": "No matching assumption in WE-021; judged from the text: the text gives 900 MW as the funded total against about 105 MW a year before the policy, so over five years the cap binds only if installations run well above the old pace (about 180 MW a year, 1.7 times it); the subsidy cuts the cost by about 18%, which makes that possible but not likely.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_delay",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-021 (illustrative figures), A-8: households knew of the subsidy from September and could wait (the bill was expected to pass; four months from introduction to effect).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.pulled_forward",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-021 (illustrative figures), A-15: some adopters would have installed later without the subsidy (adoption trend; falling panel prices).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.quantity_responds",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "No matching assumption in WE-021; judged from the text: A-3 says demand changes little, not that it does not change; the surcharge is 0.12 cents on about 20 cents (0.6%), so the quantity falls at least a little, which is all the question asks. This is the premise of the wedge that carries the price rise.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.buyers_bear",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "Probability taken from the assumption table of handbook WE-021 (illustrative figures), A-3: the surcharge is passed through to customers in full by Commission order (rates are set to recover costs through per-kWh charges).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.sellers_bear",
+  "value": "yes",
+  "probability": 0.05,
+  "rationale": "Probability taken from the assumption table of handbook WE-021 (illustrative figures), A-3 read the other way: A-3 holds at 0.95 that the surcharge is passed through in full, and its 'if false' column says part falls on utilities, so utilities keeping part has the complement 0.05.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.untaxed_substitutes",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "Probability taken from the assumption table of handbook WE-021 (illustrative figures), A-10: adopters buy less grid power after installing (rooftop output is an untaxed form of the taxed good, credited at the full retail rate).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.stockpile_ahead",
+  "value": "yes",
+  "probability": 0.05,
+  "rationale": "No matching assumption in WE-021; judged from the text: retail electricity cannot be stored or ordered ahead by its buyers, so there is nothing to stockpile before the surcharge starts.",
+  "evidence": []
+ }
+]

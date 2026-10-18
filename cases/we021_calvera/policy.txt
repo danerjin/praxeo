@@ -1,0 +1,15 @@
+Calvera Rooftop Solar Incentive (fictional; summary of the policy record of handbook worked example WE-021).
+
+Calvera is a state of about 5 million people and 1.8 million households, about 60% of whom own their homes. Electricity is sold by three utilities whose rates are set by the state Utility Commission to recover their costs, almost entirely through per-kWh charges; the fixed monthly charge is small. Retail electricity costs about 20 cents per kWh. Existing law already credits rooftop solar owners for power they export at the full retail rate (net metering); this policy does not change that. Panels and inverters are imported; Calvera buys well under 1% of world output. Before the policy, about 900 installers put up about 15,000 systems a year (about 105 MW) at about $2.80 per watt, of which hardware is about $1.00 and labor, permits, sales and margin about $1.80.
+
+The governor's bill was introduced on 1 September of Year 0 with enough support to be expected to pass. It was enacted on 1 November and takes effect on 1 January of Year 1. It ends when 900 MW has been funded, or on 31 December of Year 5, whichever comes first.
+
+The subsidy applies to rooftop solar systems on residential buildings in Calvera, installed by building owners through a certified installer. It pays $0.50 per watt of panel nameplate capacity for the first 300 MW funded statewide, $0.35 for the next 300 MW, $0.20 for the next 300 MW, and then nothing. At most 10 kW per building is paid for. The subsidy is paid to the installer after the utility approves the connection, and is deducted on the customer's invoice. Funded capacity is published weekly. Commercial and ground-mounted systems are excluded.
+
+A surcharge of 0.12 cents per kWh is levied on retail electricity sales to all utility customers (households, businesses, public bodies), collected by the utilities. It raises about $60 million a year (about $10 a year for a typical household) and is paid into a state Solar Fund. The Utility Commission resets it each year to match projected payments. There are no exemptions.
+
+Installers who claim the subsidy must be certified: a licensed electrician on staff, a three-day course and a $500 fee.
+
+The State Energy Office administers the program, funded from 5% of the Solar Fund. It checks claims against utility connection records, inspects 5% of systems, and imposes clawback and loss of certification for false claims.
+
+Unclear provisions: what happens to money left in the fund when the program ends, and whether the surcharge stops at once. Assumed it stops at once and any balance is credited back on bills.
