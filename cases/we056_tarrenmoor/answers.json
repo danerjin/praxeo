@@ -1,0 +1,212 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "No matching assumption in WE-056; judged from the text: about 70% of state-plan members pay more than $35 in a typical month and the uninsured cash buyers pay about $320, so the cap is below the price paid for most covered fills.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-1: bound pharmacies comply with the $35 cap for most fills (fines and license suspension).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.alternative_uses",
+  "value": "no",
+  "probability": 0.15,
+  "rationale": "No matching assumption in WE-056; judged from the text: insulin dispensed on prescription cannot be moved to a use the cap does not reach; the exempt sales (non-residents, over-the-counter insulin) are small.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.nontransferable",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-056; judged from the text: the cap is a rule on what the pharmacy may collect per fill, not a right held through a tenancy-like relation.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyouts_limited",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No matching assumption in WE-056; judged from the text: no payments from sellers to buyers for giving up a right are mentioned; the question hardly applies.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.would_leave",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-056; judged from the text: the text gives no reason why protected residents would leave the state without the Act.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.lockin_dominates",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-056; judged from the text: no lock-in of buyers to a controlled unit appears in the text.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.keepers_dominate",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-056; judged from the text: no keepers and displaced groups appear in the text.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.substitutes",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "No matching assumption in WE-056; judged from the text: over-the-counter human insulin and private-label insulin exist, but the text describes no shut-out buyers who would need them.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.search_open",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No matching assumption in WE-056; judged from the text: nothing in the text assigns patients to pharmacies; patients choose a pharmacy (or mail order) by themselves.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.selection_open",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "No matching assumption in WE-056; judged from the text: pharmacies dispense on prescription to anyone who presents it; the text gives them no stated freedom to choose among applicants.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.quality_adjustable",
+  "value": "no",
+  "probability": 0.4,
+  "rationale": "No matching assumption in WE-056; judged from the text: service to patients is not regulated by the text, but fines and permits apply to overcharges, and the payment per fill exceeds acquisition cost.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-16: some pharmacies collect more than $35 (complaint-driven enforcement by a Board with no new staff).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.opportunities_need_move",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "No matching assumption in WE-056; judged from the text: the cap does not tie the buyer to any unit or place.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-17: pharmacies, PBMs, insurers and patient groups can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.durable_assets",
+  "value": "no",
+  "probability": 0.15,
+  "rationale": "No matching assumption in WE-056; judged from the text: dispensing insulin does not rest on durable assets whose supply expands slowly.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No matching assumption in WE-056; judged from the text: the Act has no expiry, so buyers of assets would expect it to last unless repealed.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.commutable",
+  "value": "yes",
+  "probability": 0.5,
+  "rationale": "No matching assumption in WE-056; judged from the text: Lisvane lies next door and mail order crosses the line, but the text names no shut-out buyers who would need to cross.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.relet_obstructs",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "No matching assumption in WE-056; judged from the text: there is no tenancy or later change of use in the text.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.exit_process",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-056; judged from the text: no permit process for leaving the market is mentioned (a license or permit can be suspended for repeated overcharges only).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.window_repricing",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "No matching assumption in WE-056; judged from the text: the Act was signed in April 2027 and PBM contracts for 2028 were signed in the autumn of 2027, so some contract terms can reflect it, but the patient's price is fixed by the Act itself.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.counterfactual_catches_up",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-30 (closest): list prices and pharmacy costs rise in money terms after 2028, as they would have without the Act.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.takeup",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "No matching assumption in WE-056; judged from the text: an uninsured resident who buys analog insulin at about $320 pays $35 instead, and attests at the counter; many of the 4,500 cash buyers will claim.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.not_fully_captured",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "No matching assumption in WE-056; judged from the text: section 3 fixes what the pharmacy may collect from the covered resident at $35, so the resident's net price falls whatever the pharmacy's posted price.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.quantity_expands",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-3: some covered residents used less insulin than prescribed at the old price (2026 survey), so more insulin is dispensed at $35.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.seller_supply_slow",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-056; judged from the text: every pharmacy stocks insulin and no fixed stock or long lead time is mentioned, so supply is not fixed.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.sellers_fewer_alternatives",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No matching assumption in WE-056; judged from the text: pharmacies can sell the same insulin to cash buyers who are not covered residents; no fixed stock is mentioned.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.substitutes_given_up",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-8: some over-the-counter human insulin buyers obtain a prescription to buy an analog at $35 (the gap of $50 against $35).",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.qualifying_pays",
+  "value": "no",
+  "probability": 0.4,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-25: some individual-market insulin users drop coverage because insulin now costs $35 without it (below the cut-off).",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.can_delay",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-11: some covered residents can defer storable insulin purchases from late 2027 to January 2028.",
+  "evidence": []
+ }
+]
