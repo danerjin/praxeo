@@ -47,7 +47,8 @@
      "good": "solar_panels",
      "seller_actor": "panel_suppliers"
     }
-   ]
+   ],
+   "claim_penalties": true
   },
   {
    "id": "k2",

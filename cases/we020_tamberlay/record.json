@@ -34,19 +34,26 @@
     "Renewal is possible but not promised.",
     "The grant and its administration are funded by an annual appropriation from general revenue, about $300 million a year (20,000 grants).",
     "The State Revenue Office checks the land register and declarations, and checks occupancy against driver's license and electoral roll addresses."
-   ]
+   ],
+   "claim_penalties": true
   }
  ],
  "unclear": [
   {
    "id": "U1",
    "text": "Whether the price cap will be indexed if prices rise (the text fixes it in dollars).",
-   "readings": ["U1-a: not indexed", "U1-b: indexed"]
+   "readings": [
+    "U1-a: not indexed",
+    "U1-b: indexed"
+   ]
   },
   {
    "id": "U2",
    "text": "Whether the grant will be renewed after Year 4.",
-   "readings": ["U2-a: not renewed", "U2-b: renewed"]
+   "readings": [
+    "U2-a: not renewed",
+    "U2-b: renewed"
+   ]
   }
  ],
  "context": [

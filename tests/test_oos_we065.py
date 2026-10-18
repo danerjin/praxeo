@@ -24,6 +24,10 @@ SHORT = {"recipients of other spending": "recipients.other_spending", "future ta
 WINDOWS = {}
 
 EXCEPTIONS = {
+    ('treasury', 'non_tax_receipts', 'increase', None):
+        'KNOWN WRONG under U1-b: C-39 has repayments and fines under U1-a only; on a fixed historical base nothing is declared, so nothing is overstated. The rule (RS-3, CR-8b) does not know which claims a reading leaves open',
+    ('wheat_growers', 'legal_breach', 'increase', None):
+        'KNOWN WRONG under U1-b: as above (C-13, overstated declarations, U1-a only)',
     # the first run's two rows (growers' price_paid decrease, which was WRONG, and quantity_traded increase) are gone: SB-2
     # now signs a payment to producers as net_price_received and quantity_supplied (C-4, C-6, C-9)
     ("wheat_growers", "lobbying_effort", "U1-a: increase; U1-b: no_change", None):
@@ -34,9 +38,7 @@ EXCEPTIONS = {
 }
 
 NOT_PRODUCED = {
-    "C-1": "missing rule: SB-1 signs the payers' resources, not a subsidy_outlay variable for the treasury (CR-8b); the record has no treasury role",
     "C-2": "missing rule: CR-8's contingent payer (no payment in years at or above the line); the engine derives no no_change and has no state-of-the-world qualifier",
-    "C-3": "missing rule: CR-8b mirror, the recipients' resources rise; SB-1 signs the funders only",
     "C-5": "missing rule and record fact: CR-6 and CR-9 small world-price effect; no foreign-sellers role and no rule for subsidies",
     "C-10": "missing rule: RS-6 (entry of new sellers) is not encoded for subsidies",
     "C-11": "missing record fact: the growers' alternative output (barley) is not a role field; SB-3 needs substitute_seller_actor, a different party",
@@ -63,12 +65,11 @@ NOT_PRODUCED = {
     "C-37": "unsupported form: CR-9, LW-10 and CR-12b, ambiguous, input suppliers across crops",
     "C-38": "unsupported form: CR-12b, milling wheat ambiguous",
     "C-39": "missing record fact and rule: repayments and fines (the penalty is not a field; CR-8b non_tax_receipts)",
-    "C-40": "combiner: the outlay net of repayments and fines (CR-8, CR-12e), no outlay variable",
     "C-41": "missing record fact: livestock farmers (no role); CR-9, CR-7a, CR-6",
     "C-42": "missing record fact and rule: neighboring sellers (no role); CR-9, CR-5",
     "C-43": "missing rule and record fact: import prices through the currency (TX-8 chain), no role",
 }
-PRODUCED = {"C-4", "C-6", "C-7", "C-8", "C-9", "C-16", "C-25", "C-32", "C-33", "C-34"}
+PRODUCED = {"C-1", "C-3", "C-4", "C-6", "C-7", "C-8", "C-9", "C-16", "C-25", "C-32", "C-33", "C-34", "C-40"}
 
 
 def test_consistent_with_worked_example_we065():

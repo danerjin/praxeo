@@ -22,6 +22,8 @@ WINDOWS = {"Nov–Dec 2027": "announcement", "Jan–Feb 2028": "first_months"}
 # from the pharmacies came out (11 KNOWN WRONG rows). K1 is a cap on the buyer's share that a third party makes up (PC-20,
 # `third_party_payer_actor`): the engine writes no ceiling fact for it, so none of those rules applies.
 EXCEPTIONS = {
+    ('covered_residents.uninsured', 'resources_available_other_uses', 'increase', None):
+        'SB-1 with CR-8b: what the recipients receive adds to their means; the example records the price they pay (C-1); C-39 is the same receipt for the insured',
     # defensible rows the table does not list
     ("covered_residents.uninsured", "price_paid", "decrease", None):
         "SB-2 for the Fund's recipients: a subclass of C-1's covered_residents.paying_above_cap, which section 3 of the example says includes the uninsured cash buyers",
@@ -29,7 +31,6 @@ EXCEPTIONS = {
         "SB-3 and RS-1 on A-8: recipients leave the unsubsidized good; the table has the buyers' side (C-12) and the chains' price and stocks (C-29)",
 }
 NOT_PRODUCED = {
-    "C-3": "missing record fact and rule: no role for the paying fund (taxpayer_actor is the funder); SB-1 signs the funders' resources, not subsidy_outlay",
     "C-4": "missing rule: PC-20's seller side (the receipt is set by the payer's terms, CR-6 1.1) is not encoded; PC-20 signs the buyers and the payer only",
     "C-24": "missing rule: RS-7 for a cap on the buyer's share (PC-20); the first run's row came from the ceiling rules",
     "C-6": "missing rule: SB-2 1.1 (a payment indexed to the seller's own price draws the posted price toward the limit); DM-1 needs seller_supply_slow, answered 0.1",
@@ -72,7 +73,7 @@ NOT_PRODUCED = {
     "C-50": "missing record fact: no nonresident role; U1 not run by reading; CR-7c not encoded for subsidies",
     "C-51": "missing rule and record fact: CR-8b on the plans of false attesters; no role",
 }
-PRODUCED = {"C-1", "C-2", "C-5", "C-17", "C-26", "C-37", "C-39", "C-40", "C-41"}
+PRODUCED = {"C-1", "C-2", "C-3", "C-5", "C-17", "C-26", "C-37", "C-39", "C-40", "C-41"}
 
 
 def test_consistent_with_worked_example_we056():

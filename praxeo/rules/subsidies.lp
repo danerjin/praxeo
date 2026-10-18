@@ -24,6 +24,8 @@
 %   tax_named(C).                   the record names the tax that pays (OC-1, who pays); otherwise the payers are a group
 %   sb_payer_group(C, "a,b,c").     that group: taxpayers, recipients of other spending, future taxpayers  (OC-1)
 %   sb_recipients_sell(C).          the recipients are the sellers of the subsidized good (a payment to producers)
+%   sb_payer_body(C, A).            who pays the money out (default the administering agency)            (SB-1, CR-8b)
+%   claim_penalties(C).             the text sets penalties for false claims (clawback, fines)          (RS-3, CR-8b)
 %   sb_qualifier(C, A).             who must meet the criteria (default the recipients)                   (SB-5)
 % Every rule is monotone in holds/1: it negates only plain facts (exception/2, own_revenue/1, debt_funded/1, tax_named/1,
 % sb_recipients_sell/1, per_unit_sub/1).
@@ -74,6 +76,35 @@ effect(sb_expands(C), R, "quantity_traded", increase, short, visible, "B")   :- 
 effect(sb_expands(C), R, "quantity_supplied", increase, short, visible, "B") :- sb_expands(C), sb_recipient(C, R), sb_recipients_sell(C).
 effect(sb_expands(C), S, "quantity_traded", increase, short, visible, "B") :- sb_expands(C), sb_seller(C, S).
 
+% SB-1 with CR-8b, the receipt side (found out of sample on WE-033, WE-065, WE-021, WE-056): every payment is a receipt.
+% The paying body's outlay rises (sb_payer_body: who pays out, default the administering agency), and what the recipients
+% receive adds to their means: a lump sum on payment (Tier A); a payment per unit on take-up, and for recipients who buy
+% only the part sellers do not capture (sb_recipients_gain).
+sb_outlay(C) :- sb_takeup(C).
+fired(sb_1, sb_outlay(C), sb_takeup(C)) :- sb_outlay(C), sb_takeup(C).
+sb_outlay(C) :- sb_paid(C), not per_unit_sub(C).
+fired(sb_1, sb_outlay(C), sb_paid(C))   :- sb_outlay(C), sb_paid(C), not per_unit_sub(C).
+effect(sb_outlay(C), P, "subsidy_outlay", increase, short, visible, "B") :- sb_outlay(C), sb_payer_body(C, P), per_unit_sub(C).
+effect(sb_outlay(C), P, "subsidy_outlay", increase, short, visible, "A") :- sb_outlay(C), sb_payer_body(C, P), not per_unit_sub(C).
+sb_recipients_keep(C) :- sb_paid(C), not per_unit_sub(C).
+fired(cr_8, sb_recipients_keep(C), sb_paid(C)) :- sb_recipients_keep(C), sb_paid(C), not per_unit_sub(C).
+sb_recipients_keep(C) :- sb_recipients_gain(C).
+fired(cr_8, sb_recipients_keep(C), sb_recipients_gain(C)) :- sb_recipients_keep(C), sb_recipients_gain(C).
+effect(sb_recipients_keep(C), R, "resources_available_other_uses", increase, short, invisible, "A") :- sb_recipients_keep(C), sb_recipient(C, R), not per_unit_sub(C).
+effect(sb_recipients_keep(C), R, "resources_available_other_uses", increase, short, invisible, "B") :- sb_recipients_keep(C), sb_recipient(C, R), per_unit_sub(C).
+
+% CR-1 with RS-3: where the payment can be claimed falsely and the text sets penalties for it (claim_penalties), some claims
+% are false or overstated if checks are partial (false_claims); where some are found (claims_recovered), the paying body
+% takes in repayments and fines (CR-8b).
+sb_false_claims(C) :- sb_outlay(C), claim_penalties(C), holds(false_claims(C)), not exception(rs_3, C).
+fired(rs_3, sb_false_claims(C), sb_outlay(C))   :- sb_false_claims(C).
+fired(rs_3, sb_false_claims(C), false_claims(C)) :- sb_false_claims(C).
+effect(sb_false_claims(C), R, "legal_breach", increase, short, invisible, "B") :- sb_false_claims(C), sb_recipient(C, R).
+sb_recovered(C) :- sb_false_claims(C), holds(claims_recovered(C)).
+fired(cr_8, sb_recovered(C), sb_false_claims(C))  :- sb_recovered(C).
+fired(cr_8, sb_recovered(C), claims_recovered(C)) :- sb_recovered(C).
+effect(sb_recovered(C), P, "non_tax_receipts", increase, short, invisible, "B") :- sb_recovered(C), sb_payer_body(C, P).
+
 % SB-2 with DM-1: where the sellers' supply cannot grow at once (seller_supply_slow), the added demand raises the price they
 % receive, and buyers without the subsidy pay more for the same good and buy less of it (CR-4c). Which side receives the
 % larger share is a comparison of their alternatives (DM-1), signed as subsidy_share_received only with that premise.
@@ -82,6 +113,8 @@ fired(sb_2, sb_sellers_capture(C), sb_takeup(C))         :- sb_sellers_capture(C
 fired(dm_1, sb_sellers_capture(C), seller_supply_slow(C)) :- sb_sellers_capture(C).
 effect(sb_sellers_capture(C), S, "net_price_received", increase, short, invisible, "B") :- sb_sellers_capture(C), sb_seller(C, S).
 effect(sb_sellers_capture(C), B, "price_paid", increase, short, invisible, "B")         :- sb_sellers_capture(C), sb_other_buyer(C, B).
+% CR-8b with OC-1: what they pay above the old price is lost to their other uses (found out of sample on WE-020, C-25).
+effect(sb_sellers_capture(C), B, "resources_available_other_uses", decrease, short, invisible, "B") :- sb_sellers_capture(C), sb_other_buyer(C, B).
 sb_others_cut_back(C) :- sb_sellers_capture(C), sb_other_buyer(C, _), not exception(cr_4, C).
 fired(cr_4, sb_others_cut_back(C), sb_sellers_capture(C)) :- sb_others_cut_back(C).
 effect(sb_others_cut_back(C), B, "quantity_traded", decrease, short, invisible, "B") :- sb_others_cut_back(C), sb_other_buyer(C, B).

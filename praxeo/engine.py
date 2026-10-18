@@ -66,6 +66,9 @@ def _subsidy_facts(c: str, comp) -> list[str]:
     else:
         lines.append(f"sb_recipients_sell({c}).")
     lines.append(f'sb_qualifier({c}, "{comp.qualifier_actor or comp.bound_actor}").')
+    lines.append(f'sb_payer_body({c}, "{comp.outlay_actor or comp.enforcer_actor}").')
+    if comp.claim_penalties:
+        lines.append(f"claim_penalties({c}).")
     if comp.tax_named:
         lines.append(f"tax_named({c}).")
     payers = [comp.taxpayer_actor, comp.other_spending_actor, comp.future_taxpayer_actor]

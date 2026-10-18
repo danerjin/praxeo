@@ -29,7 +29,9 @@
     "The bill was introduced with the government's majority on 10 February 2027 and enacted on 30 June 2027.",
     "It covers the crop years 2028 to 2032 (the harvests of those years; winter wheat for 2028 is sown in autumn 2027).",
     "Parliament must review the target price before 2032."
-   ]
+   ],
+   "claim_penalties": true,
+   "outlay_actor": "treasury"
   }
  ],
  "unclear": [

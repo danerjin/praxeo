@@ -17,6 +17,10 @@ SHORT = {"owners": "owners.entry_level"}
 # consequence has (the engine has no deadline rule)
 WINDOWS = {"March to June": "announcement", "before end of Year 4": "deadline"}
 EXCEPTIONS = {
+    ('officials.enforcement', 'subsidy_outlay', 'increase', None):
+        "SB-1 with CR-8b (the receipt side, added after the out-of-sample runs): the paying agency's outlay; the example records the funders, not the outlay",
+    ('buyers.first_time', 'resources_available_other_uses', 'increase', None):
+        'SB-1 with CR-8b: what the recipients receive adds to their means; the example records the price they pay',
     ("owners.entry_level", "net_price_received", "increase", None):
         "SB-2 with DM-1: the sellers' side of the capitalization (C-11, C-28); the table records the asset value and the share",
     ("owners.entry_level", "quantity_traded", "increase", None):
@@ -35,7 +39,6 @@ NOT_PRODUCED = {
     "C-20": "RS-4 for subsidies: the schema has `neighbor_actor` for price ceilings only; nothing records the border city",
     "C-21": "CR-12b: needs C-20 and C-29, and a neighbour role; the combiner declares no such comparison",
     "C-22": "OC-7 (what owners do with the gain) is not encoded",
-    "C-25": "CR-8b mirror of C-12 for the other buyers (what they pay is lost to other uses): no rule for subsidies",
     "C-26": "combiner: a CR-12 comparison of two chains on builders' total not declared (C-14 against C-16), and neither chain is produced",
     "C-27": "OC-7 (see C-22)",
     "C-29": "RS-4 for subsidies (see C-20), with the other buyers' capitalized price",
@@ -43,7 +46,7 @@ NOT_PRODUCED = {
     "C-31": "no renters role; RS-1 and CR-12a for rental units let are not encoded",
     "C-32": "no construction labor role; CR-9 and CR-7a for the price of a resource drawn in are not encoded for subsidies",
 }
-PRODUCED = {"C-1", "C-2", "C-3", "C-5", "C-7", "C-8", "C-9", "C-11", "C-12", "C-13", "C-23", "C-24", "C-28", "C-33"}
+PRODUCED = {"C-1", "C-2", "C-3", "C-5", "C-7", "C-8", "C-9", "C-11", "C-12", "C-13", "C-23", "C-24", "C-25", "C-28", "C-33"}
 
 
 def test_consistent_with_worked_example_we020():
@@ -51,6 +54,6 @@ def test_consistent_with_worked_example_we020():
     rows = _rows("WE-020_first_time_buyer_grant.md", SHORT, WINDOWS, {})
     assert len(rows) == 33
     _check(rows, keys, EXCEPTIONS, NOT_PRODUCED, PRODUCED)
-    assert len([c for c in pred["consequences"] if c["reported"]]) == 16
+    assert len([c for c in pred["consequences"] if c["reported"]]) == 19
     # SB-6's dip after Year 4 needs the grant to end as scheduled (A-15, p = 0.4): not reported (the first run's WRONG rows)
     assert not any(c["window"] == "after_expiry" and c["reported"] for c in pred["consequences"])

@@ -12,11 +12,23 @@
    "p": 0.85,
    "text": "Eligible buyers knew of the payment before it started and could delay purchases."
   },
+  "claims_recovered(k1)": {
+   "assumption_class": "enforcement",
+   "id": "claims_recovered(k1)",
+   "p": 0.6,
+   "text": "Some false claims are found, and repayments or fines are collected."
+  },
   "ends_as_scheduled(k1)": {
    "assumption_class": "expectations",
    "id": "ends_as_scheduled(k1)",
    "p": 0.65,
    "text": "The payment ends as scheduled: it is not renewed, extended or repeated soon after."
+  },
+  "false_claims(k1)": {
+   "assumption_class": "enforcement",
+   "id": "false_claims(k1)",
+   "p": 0.25,
+   "text": "Some claims are false or overstated."
   },
   "not_fully_captured(k1)": {
    "assumption_class": "other",
@@ -211,6 +223,117 @@
    "window": null
   },
   {
+   "actor_class": "buyers.new_cars.other",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "seller_supply_slow(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "seller_supply_slow(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_sellers_capture(k1)",
+     "premises": [
+      "seller_supply_slow(k1)"
+     ],
+     "rule": "DM-1"
+    },
+    {
+     "conclusion": "sb_sellers_capture(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.new_cars.scrapping",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "false_claims(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "false_claims(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_outlay(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-1"
+    },
+    {
+     "conclusion": "sb_false_claims(k1)",
+     "premises": [
+      "false_claims(k1)",
+      "sb_outlay(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "legal_breach",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
    "actor_class": "buyers.new_cars.scrapping",
    "actor_group": [],
    "assumption_sets": [
@@ -249,7 +372,7 @@
     "medium",
     "long"
    ],
-   "id": "C-3",
+   "id": "C-5",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -298,7 +421,7 @@
     "medium",
     "long"
    ],
-   "id": "C-4",
+   "id": "C-6",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -346,7 +469,7 @@
    "horizon": [
     "short"
    ],
-   "id": "C-5",
+   "id": "C-7",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -401,13 +524,69 @@
     "medium",
     "long"
    ],
-   "id": "C-6",
+   "id": "C-8",
    "item": null,
    "reported": true,
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
    "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.new_cars.scrapping",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "not_fully_captured(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "not_fully_captured(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_recipients_gain(k1)",
+     "premises": [
+      "not_fully_captured(k1)",
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_recipients_keep(k1)",
+     "premises": [
+      "sb_recipients_gain(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
    "visibility": "invisible",
    "window": null
   },
@@ -451,7 +630,7 @@
     "medium",
     "long"
    ],
-   "id": "C-7",
+   "id": "C-10",
    "item": null,
    "reported": true,
    "sign": "at_least_one_increase",
@@ -517,7 +696,7 @@
     "medium",
     "long"
    ],
-   "id": "C-8",
+   "id": "C-11",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -573,7 +752,7 @@
     "medium",
     "long"
    ],
-   "id": "C-9",
+   "id": "C-12",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -635,7 +814,7 @@
     "medium",
     "long"
    ],
-   "id": "C-10",
+   "id": "C-13",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -681,7 +860,7 @@
     "medium",
     "long"
    ],
-   "id": "C-11",
+   "id": "C-14",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -715,7 +894,7 @@
     "medium",
     "long"
    ],
-   "id": "C-12",
+   "id": "C-15",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -723,6 +902,118 @@
    "tier": "A",
    "variable": "enforcement_cost",
    "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "claims_recovered(k1)",
+     "false_claims(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "claims_recovered(k1)",
+    "false_claims(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_outlay(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-1"
+    },
+    {
+     "conclusion": "sb_false_claims(k1)",
+     "premises": [
+      "false_claims(k1)",
+      "sb_outlay(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "sb_recovered(k1)",
+     "premises": [
+      "claims_recovered(k1)",
+      "sb_false_claims(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "non_tax_receipts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_outlay(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "subsidy_outlay",
+   "visibility": "visible",
    "window": null
   },
   {
@@ -788,7 +1079,7 @@
     "medium",
     "long"
    ],
-   "id": "C-13",
+   "id": "C-18",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -822,7 +1113,7 @@
     "medium",
     "long"
    ],
-   "id": "C-14",
+   "id": "C-19",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -870,7 +1161,7 @@
     "medium",
     "long"
    ],
-   "id": "C-15",
+   "id": "C-20",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -925,7 +1216,7 @@
     "medium",
     "long"
    ],
-   "id": "C-16",
+   "id": "C-21",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1002,7 +1293,7 @@
     "medium",
     "long"
    ],
-   "id": "C-17",
+   "id": "C-22",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1051,7 +1342,7 @@
     "medium",
     "long"
    ],
-   "id": "C-18",
+   "id": "C-23",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1116,7 +1407,7 @@
     "medium",
     "long"
    ],
-   "id": "C-19",
+   "id": "C-24",
    "item": "unsubsidized_goods",
    "reported": true,
    "sign": "decrease",
@@ -1178,7 +1469,7 @@
     "medium",
     "long"
    ],
-   "id": "C-20",
+   "id": "C-25",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1243,7 +1534,7 @@
     "medium",
     "long"
    ],
-   "id": "C-21",
+   "id": "C-26",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1287,7 +1578,7 @@
     "medium",
     "long"
    ],
-   "id": "C-22",
+   "id": "C-27",
    "item": null,
    "reported": true,
    "sign": "at_least_one_decrease",
@@ -1299,30 +1590,35 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"buyers.new_cars.scrapping\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nsubsidy(k1).\nsb_recipient(k1, \"buyers.new_cars.scrapping\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nsb_claim_handler(k1, \"sellers.new_cars\").\nper_unit_sub(k1).\nsb_seller(k1, \"sellers.new_cars\").\nsb_qualifier(k1, \"buyers.new_cars.scrapping\").\nsb_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nsb_other_buyer(k1, \"buyers.new_cars.other\").\nsb_substitute_seller(k1, \"sellers.new_cars\").\nsb_used_buyer(k1, \"buyers.used_cars\").\nsb_used_owner(k1, \"owners.old_cars.keeping\").\nsb_scrapper(k1, \"dismantlers\").\ndebt_funded(k1).\ncriteria(k1).\nrenewable(k1).\nbudget_capped(k1).\ntemporary(k1).\nscrappage(k1).\nassumption(takeup(k1)).\nassumption(not_fully_captured(k1)).\nassumption(quantity_expands(k1)).\nassumption(seller_supply_slow(k1)).\nassumption(sellers_fewer_alternatives(k1)).\nassumption(substitutes_given_up(k1)).\nassumption(qualifying_pays(k1)).\nassumption(beneficiaries_organize(k1)).\nassumption(oversubscribed(k1)).\nassumption(can_delay(k1)).\nassumption(pulled_forward(k1)).\nassumption(ends_as_scheduled(k1)).\nassumption(supply_slow_at_expiry(k1)).\nassumption(would_stay_in_use(k1)).\nassumption(used_supply_slow(k1)).\n",
+ "engine_facts": "bound(k1, \"buyers.new_cars.scrapping\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nsubsidy(k1).\nsb_recipient(k1, \"buyers.new_cars.scrapping\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nsb_claim_handler(k1, \"sellers.new_cars\").\nper_unit_sub(k1).\nsb_seller(k1, \"sellers.new_cars\").\nsb_qualifier(k1, \"buyers.new_cars.scrapping\").\nsb_payer_body(k1, \"officials.enforcement\").\nclaim_penalties(k1).\nsb_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nsb_other_buyer(k1, \"buyers.new_cars.other\").\nsb_substitute_seller(k1, \"sellers.new_cars\").\nsb_used_buyer(k1, \"buyers.used_cars\").\nsb_used_owner(k1, \"owners.old_cars.keeping\").\nsb_scrapper(k1, \"dismantlers\").\ndebt_funded(k1).\ncriteria(k1).\nrenewable(k1).\nbudget_capped(k1).\ntemporary(k1).\nscrappage(k1).\nassumption(takeup(k1)).\nassumption(not_fully_captured(k1)).\nassumption(quantity_expands(k1)).\nassumption(seller_supply_slow(k1)).\nassumption(sellers_fewer_alternatives(k1)).\nassumption(false_claims(k1)).\nassumption(claims_recovered(k1)).\nassumption(substitutes_given_up(k1)).\nassumption(qualifying_pays(k1)).\nassumption(beneficiaries_organize(k1)).\nassumption(oversubscribed(k1)).\nassumption(can_delay(k1)).\nassumption(pulled_forward(k1)).\nassumption(ends_as_scheduled(k1)).\nassumption(supply_slow_at_expiry(k1)).\nassumption(would_stay_in_use(k1)).\nassumption(used_supply_slow(k1)).\n",
  "explanations": [
   "C-1. Compared with no Vestria Fleet Renewal Rebate, price paid for buyers.new_cars.other rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
   "C-2. Compared with no Vestria Fleet Renewal Rebate, quantity traded for buyers.new_cars.other falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment; CR-4: buyers who face a higher price take fewer units. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-3. Compared with no Vestria Fleet Renewal Rebate, price paid for buyers.new_cars.scrapping falls from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: Sellers do not capture the whole payment: the recipients' net price falls (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-4. Compared with no Vestria Fleet Renewal Rebate, quantity traded for buyers.new_cars.scrapping rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-5. Compared with no Vestria Fleet Renewal Rebate, quantity traded for buyers.new_cars.scrapping falls in the announcement window (before the effective date), in the short run (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Eligible buyers knew of the payment before it started and could delay purchases (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-6. Compared with no Vestria Fleet Renewal Rebate, reclassification for buyers.new_cars.scrapping rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-5: owners move units out of the rule's reach; SB-5: a payment conditional on criteria draws effort to meet them. This holds if: Some can meet the criteria at a cost below the payment's worth to them (p = 0.60); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-7. Compared with no Vestria Fleet Renewal Rebate, wait time or allocation by non price criteria for buyers.new_cars.scrapping rises for at least one of them from the short run onward (tier B, invisible). Why: LW-6: a good handed out at a fixed price in a fixed number is rationed by other means when more want it; PC-2: rationing by other means than price shows up as waiting or allocation by connections. This holds if: Demand for the payment exceeds its budget or number at some point (p = 0.60); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-8. Compared with no Vestria Fleet Renewal Rebate, price substitute for buyers.used_cars rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90); Other supply cannot quickly replace the scrapped used goods (p = 0.75); The scrapped goods would otherwise have stayed in use for some years (p = 0.85). Reported.",
-  "C-9. Compared with no Vestria Fleet Renewal Rebate, quantity substitute for buyers.used_cars falls from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90); The scrapped goods would otherwise have stayed in use for some years (p = 0.85). Reported.",
-  "C-10. Compared with no Vestria Fleet Renewal Rebate, quantity traded for buyers.used_cars falls from the medium run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock; OC-4: exchanges that no longer happen are lost to both sides. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90); The scrapped goods would otherwise have stayed in use for some years (p = 0.85). Reported.",
-  "C-11. Compared with no Vestria Fleet Renewal Rebate, quantity traded for dismantlers rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-12. Compared with no Vestria Fleet Renewal Rebate, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
-  "C-13. Compared with no Vestria Fleet Renewal Rebate, asset value for owners.old_cars.keeping rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90); Other supply cannot quickly replace the scrapped used goods (p = 0.75); The scrapped goods would otherwise have stayed in use for some years (p = 0.85). Reported.",
-  "C-14. Compared with no Vestria Fleet Renewal Rebate, compliance cost for sellers.new_cars rises from the short run onward (tier A, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.",
-  "C-15. Compared with no Vestria Fleet Renewal Rebate, lobbying effort for sellers.new_cars rises from the medium run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The sellers who gain can organize to lobby for renewal at a cost below their stake (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-16. Compared with no Vestria Fleet Renewal Rebate, net price received for sellers.new_cars rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-17. Compared with no Vestria Fleet Renewal Rebate, net price received for sellers.new_cars falls after the temporary measure expires, from the medium run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The payment ends as scheduled: it is not renewed, extended or repeated soon after (p = 0.65); Many window buyers would have bought within the next few years anyway (p = 0.85); At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); When the payment ends, the sellers cannot cut their supply at once (p = 0.60); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-18. Compared with no Vestria Fleet Renewal Rebate, quantity traded for sellers.new_cars rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-19. Compared with no Vestria Fleet Renewal Rebate, quantity traded (unsubsidized goods) for sellers.new_cars falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-1: when a good becomes dearer, buyers turn to substitutes; SB-3: resources move into the subsidized activity from the uses that would otherwise have had them. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Some recipients would otherwise have bought an unsubsidized good (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-20. Compared with no Vestria Fleet Renewal Rebate, quantity traded for sellers.new_cars falls after the temporary measure expires, from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock. This holds if: The payment ends as scheduled: it is not renewed, extended or repeated soon after (p = 0.65); Many window buyers would have bought within the next few years anyway (p = 0.85); At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-21. Compared with no Vestria Fleet Renewal Rebate, subsidy share received for sellers.new_cars rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); While supply is fixed, the sellers have clearly fewer alternatives than the recipients (p = 0.65); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-22. Compared with no Vestria Fleet Renewal Rebate, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the medium run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
+  "C-3. Compared with no Vestria Fleet Renewal Rebate, resources available other uses for buyers.new_cars.other falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-4. Compared with no Vestria Fleet Renewal Rebate, legal breach for buyers.new_cars.scrapping rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; RS-3: RS-3. This holds if: Some claims are false or overstated (p = 0.25); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-5. Compared with no Vestria Fleet Renewal Rebate, price paid for buyers.new_cars.scrapping falls from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: Sellers do not capture the whole payment: the recipients' net price falls (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-6. Compared with no Vestria Fleet Renewal Rebate, quantity traded for buyers.new_cars.scrapping rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-7. Compared with no Vestria Fleet Renewal Rebate, quantity traded for buyers.new_cars.scrapping falls in the announcement window (before the effective date), in the short run (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Eligible buyers knew of the payment before it started and could delay purchases (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-8. Compared with no Vestria Fleet Renewal Rebate, reclassification for buyers.new_cars.scrapping rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-5: owners move units out of the rule's reach; SB-5: a payment conditional on criteria draws effort to meet them. This holds if: Some can meet the criteria at a cost below the payment's worth to them (p = 0.60); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-9. Compared with no Vestria Fleet Renewal Rebate, resources available other uses for buyers.new_cars.scrapping rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: Sellers do not capture the whole payment: the recipients' net price falls (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-10. Compared with no Vestria Fleet Renewal Rebate, wait time or allocation by non price criteria for buyers.new_cars.scrapping rises for at least one of them from the short run onward (tier B, invisible). Why: LW-6: a good handed out at a fixed price in a fixed number is rationed by other means when more want it; PC-2: rationing by other means than price shows up as waiting or allocation by connections. This holds if: Demand for the payment exceeds its budget or number at some point (p = 0.60); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-11. Compared with no Vestria Fleet Renewal Rebate, price substitute for buyers.used_cars rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90); Other supply cannot quickly replace the scrapped used goods (p = 0.75); The scrapped goods would otherwise have stayed in use for some years (p = 0.85). Reported.",
+  "C-12. Compared with no Vestria Fleet Renewal Rebate, quantity substitute for buyers.used_cars falls from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90); The scrapped goods would otherwise have stayed in use for some years (p = 0.85). Reported.",
+  "C-13. Compared with no Vestria Fleet Renewal Rebate, quantity traded for buyers.used_cars falls from the medium run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock; OC-4: exchanges that no longer happen are lost to both sides. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90); The scrapped goods would otherwise have stayed in use for some years (p = 0.85). Reported.",
+  "C-14. Compared with no Vestria Fleet Renewal Rebate, quantity traded for dismantlers rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-15. Compared with no Vestria Fleet Renewal Rebate, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-16. Compared with no Vestria Fleet Renewal Rebate, non tax receipts for officials.enforcement rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; RS-3: RS-3; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: Some false claims are found, and repayments or fines are collected (p = 0.60); Some claims are false or overstated (p = 0.25); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-17. Compared with no Vestria Fleet Renewal Rebate, subsidy outlay for officials.enforcement rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-18. Compared with no Vestria Fleet Renewal Rebate, asset value for owners.old_cars.keeping rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90); Other supply cannot quickly replace the scrapped used goods (p = 0.75); The scrapped goods would otherwise have stayed in use for some years (p = 0.85). Reported.",
+  "C-19. Compared with no Vestria Fleet Renewal Rebate, compliance cost for sellers.new_cars rises from the short run onward (tier A, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.",
+  "C-20. Compared with no Vestria Fleet Renewal Rebate, lobbying effort for sellers.new_cars rises from the medium run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The sellers who gain can organize to lobby for renewal at a cost below their stake (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-21. Compared with no Vestria Fleet Renewal Rebate, net price received for sellers.new_cars rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-22. Compared with no Vestria Fleet Renewal Rebate, net price received for sellers.new_cars falls after the temporary measure expires, from the medium run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The payment ends as scheduled: it is not renewed, extended or repeated soon after (p = 0.65); Many window buyers would have bought within the next few years anyway (p = 0.85); At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); When the payment ends, the sellers cannot cut their supply at once (p = 0.60); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-23. Compared with no Vestria Fleet Renewal Rebate, quantity traded for sellers.new_cars rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-24. Compared with no Vestria Fleet Renewal Rebate, quantity traded (unsubsidized goods) for sellers.new_cars falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-1: when a good becomes dearer, buyers turn to substitutes; SB-3: resources move into the subsidized activity from the uses that would otherwise have had them. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Some recipients would otherwise have bought an unsubsidized good (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-25. Compared with no Vestria Fleet Renewal Rebate, quantity traded for sellers.new_cars falls after the temporary measure expires, from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock. This holds if: The payment ends as scheduled: it is not renewed, extended or repeated soon after (p = 0.65); Many window buyers would have bought within the next few years anyway (p = 0.85); At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-26. Compared with no Vestria Fleet Renewal Rebate, subsidy share received for sellers.new_cars rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); While supply is fixed, the sellers have clearly fewer alternatives than the recipients (p = 0.65); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-27. Compared with no Vestria Fleet Renewal Rebate, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the medium run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
  ],
  "questions": [
   {
@@ -1413,6 +1709,42 @@
     "kind": "noul",
     "options": [],
     "text": "While their supply is fixed, do the sellers have clearly fewer alternatives than the recipients (who can wait, buy something else or not buy at all)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.25,
+    "question_id": "k1.false_claims",
+    "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-11: dismantlers fake scrapping on a meaningful scale (registry deregistration checks; audits; penalties).",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "false_claims",
+    "assumption_class": "enforcement",
+    "id": "k1.false_claims",
+    "kind": "noul",
+    "options": [],
+    "text": "Given how claims are checked, will some claims for the payment be false or overstated?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.claims_recovered",
+    "rationale": "No matching assumption in WE-019; judged from the text: the registry checks registration history and deregistration and audits dismantlers, so some false claims would be found.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "claims_recovered",
+    "assumption_class": "enforcement",
+    "id": "k1.claims_recovered",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the checks find some false claims, so that repayments or fines are collected?"
    }
   },
   {
@@ -1607,6 +1939,7 @@
     "cap": null,
     "cap_unit": null,
     "claim_handler_actor": "sellers.new_cars",
+    "claim_penalties": true,
     "debt_funded": true,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -1634,6 +1967,7 @@
     "neighbor_seller_actor": null,
     "other_buyer_actor": "buyers.new_cars.other",
     "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
     "own_revenue_funded": false,
     "protected_actor": null,
     "protected_concentrated": true,
@@ -1693,7 +2027,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T20:31:35+00:00",
+ "run_at": "2026-10-18T20:45:44+00:00",
  "sources_held_back": [],
  "unclear": [
   {

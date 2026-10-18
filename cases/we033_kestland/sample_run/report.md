@@ -1,7 +1,7 @@
 # Thin-slice run: Kestland Household Support Payment Act 2027
 
-Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-18T20:31:36+00:00
-Prediction log sha256 (frozen before the outcome card was opened): `0cfd0f45daf1250e…`
+Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-18T20:45:45+00:00
+Prediction log sha256 (frozen before the outcome card was opened): `33777ef1baf66abe…`
 
 ## Policy record
 
@@ -17,20 +17,30 @@ Prediction log sha256 (frozen before the outcome card was opened): `0cfd0f45daf1
 
 | Atom | Class | p | Text |
 |---|---|---|---|
+| `false_claims(k1)` | enforcement | 0.70 | Some claims are false or overstated. |
+| `claims_recovered(k1)` | enforcement | 0.75 | Some false claims are found, and repayments or fines are collected. |
 
 ## Consequences
 
 | ID | Actor class | Variable | Sign | Horizon | Tier | Rules | Minimal assumption sets | Reported |
 |---|---|---|---|---|---|---|---|---|
 | C-1 | households.no_account | compliance_cost | increase | short+ | A | CR-8 | {} | yes |
-| C-2 | officials.enforcement | enforcement_cost | increase | short+ | A | OC-3 | {} | yes |
-| C-3 | taxpayers.later or public_spending_recipients.later | resources_available_other_uses | at_least_one_decrease | medium+ | A | SB-1, OC-1 | {} | yes |
+| C-2 | households.recipients | legal_breach | increase | short+ | B | SB-1, RS-3 | {false_claims(k1)} | yes |
+| C-3 | households.recipients | resources_available_other_uses | increase | short+ | A | SB-1, CR-8 | {} | yes |
+| C-4 | officials.enforcement | enforcement_cost | increase | short+ | A | OC-3 | {} | yes |
+| C-5 | officials.enforcement | non_tax_receipts | increase | short+ | B | SB-1, RS-3, CR-8 | {claims_recovered(k1), false_claims(k1)} | yes |
+| C-6 | officials.enforcement | subsidy_outlay | increase | short+ | A | SB-1 | {} | yes |
+| C-7 | taxpayers.later or public_spending_recipients.later | resources_available_other_uses | at_least_one_decrease | medium+ | A | SB-1, OC-1 | {} | yes |
 
 ## Explanations
 
 - C-1. Compared with no Kestland Household Support Payment Act 2027, compliance cost for households.no_account rises from the short run onward (tier A, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.
-- C-2. Compared with no Kestland Household Support Payment Act 2027, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.
-- C-3. Compared with no Kestland Household Support Payment Act 2027, resources available other uses for taxpayers.later or public_spending_recipients.later falls for at least one of them from the medium run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported.
+- C-2. Compared with no Kestland Household Support Payment Act 2027, legal breach for households.recipients rises from the short run onward (tier B, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; RS-3: RS-3. This holds if: Some claims are false or overstated (p = 0.70). Reported.
+- C-3. Compared with no Kestland Household Support Payment Act 2027, resources available other uses for households.recipients rises from the short run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.
+- C-4. Compared with no Kestland Household Support Payment Act 2027, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.
+- C-5. Compared with no Kestland Household Support Payment Act 2027, non tax receipts for officials.enforcement rises from the short run onward (tier B, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; RS-3: RS-3; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: Some false claims are found, and repayments or fines are collected (p = 0.75); Some claims are false or overstated (p = 0.70). Reported.
+- C-6. Compared with no Kestland Household Support Payment Act 2027, subsidy outlay for officials.enforcement rises from the short run onward (tier A, visible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later. This holds if: no assumption. Reported.
+- C-7. Compared with no Kestland Household Support Payment Act 2027, resources available other uses for taxpayers.later or public_spending_recipients.later falls for at least one of them from the medium run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported.
 
 ## Score against the outcome card
 

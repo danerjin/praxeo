@@ -107,6 +107,8 @@ class Component(BaseModel):
     used_buyer_actor: Optional[str] = Field(default=None, description="Subsidies with scrappage: buyers of the used goods (SB-6), e.g. buyers.used_cars")
     used_owner_actor: Optional[str] = Field(default=None, description="Subsidies with scrappage: owners who keep their used goods (SB-6, SB-4)")
     scrapper_actor: Optional[str] = Field(default=None, description="Subsidies with scrappage: who destroys the scrapped goods (SB-6), e.g. dismantlers")
+    outlay_actor: Optional[str] = Field(default=None, description="Subsidies: the body that pays the money out (a treasury, a fund), when not the enforcer_actor (SB-1, CR-8b)")
+    claim_penalties: bool = Field(default=False, description="Subsidies: the text sets penalties for false claims (clawback, repayment, fines), so false claims and their recovery are asked about (RS-3, CR-8b)")
     tax_named: bool = Field(default=False, description="Subsidies: the text names the tax that pays for the payment; otherwise it comes from a general budget and the payers are a group (OC-1, who pays)")
     other_spending_actor: Optional[str] = Field(default="recipients.other_spending", description="Subsidies from a general budget: recipients of the other spending it could fund (OC-1, who pays)")
     future_taxpayer_actor: Optional[str] = Field(default="taxpayers.future", description="Subsidies from a general budget: future taxpayers (OC-1, who pays); null where the record names the payers otherwise")

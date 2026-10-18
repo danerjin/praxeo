@@ -38,7 +38,8 @@
     "The government announced the rebate in its budget statement on 15 March.",
     "The old car is delivered to a licensed dismantler, deregistered, and crushed within 30 days.",
     "The rebate, the fees and the administration are funded by additional government bonds issued in the year, serviced and repaid from general revenue over 10 years."
-   ]
+   ],
+   "claim_penalties": true
   }
  ],
  "unclear": [

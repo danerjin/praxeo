@@ -124,5 +124,19 @@
   "probability": 0.05,
   "rationale": "Probability taken from the assumption table of handbook WE-021 (illustrative figures), A-11: Calvera's purchases are not large enough to raise world panel prices (p = 0.05), so panel supply to Calvera is not slow to expand.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.false_claims",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "Probability taken from the assumption table of handbook WE-021 (illustrative figures), A-16: fraudulent claims are made on a meaningful scale (connection-record checks; inspection rate).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.claims_recovered",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "No matching assumption in WE-021; judged from the text: claims are checked against utility connection records and 5% of systems are inspected.",
+  "evidence": []
  }
 ]

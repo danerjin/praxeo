@@ -277,10 +277,20 @@ SHARE_CAP_QUESTIONS = [
 ]
 
 
+# RS-3 with CR-8b, asked when the text sets penalties for false claims (claim_penalties).
+FALSE_CLAIMS_QUESTION = ("false_claims", "enforcement",
+                         "Given how claims are checked, will some claims for the payment be false or overstated?",
+                         "Some claims are false or overstated.")
+RECOVERED_QUESTION = ("claims_recovered", "enforcement",
+                      "Will the checks find some false claims, so that repayments or fines are collected?",
+                      "Some false claims are found, and repayments or fines are collected.")
+
+
 def _subsidy_specs(comp: Component) -> list[tuple[str, str, str, str]]:
+    claims = [FALSE_CLAIMS_QUESTION, RECOVERED_QUESTION] if comp.claim_penalties else []
     if comp.instrument == "lump_sum_subsidy":   # SB-2 to SB-6 need a payment per unit; SB-4 needs only an asset it attaches to
-        return [SB_SLOW_ASSET_QUESTION, SB_LASTING_QUESTION] if comp.asset_owner_actor else []
-    specs = list(SUBSIDY_QUESTIONS)
+        return ([SB_SLOW_ASSET_QUESTION, SB_LASTING_QUESTION] if comp.asset_owner_actor else []) + claims
+    specs = list(SUBSIDY_QUESTIONS) + claims
     if not comp.seller_actor or comp.seller_actor == comp.bound_actor:   # the recipients sell
         specs = [SELLER_KEEPS_QUESTION if s[0] == "not_fully_captured" else s for s in specs]
     if comp.substitute_seller_actor:

@@ -181,6 +181,61 @@
    "window": null
   },
   {
+   "actor_class": "buyers.noncovered_cash",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "seller_supply_slow(k3)",
+     "takeup(k3)"
+    ]
+   ],
+   "assumptions": [
+    "seller_supply_slow(k3)",
+    "takeup(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k3)",
+     "premises": [
+      "per_unit_sub(k3)",
+      "takeup(k3)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_sellers_capture(k3)",
+     "premises": [
+      "seller_supply_slow(k3)"
+     ],
+     "rule": "DM-1"
+    },
+    {
+     "conclusion": "sb_sellers_capture(k3)",
+     "premises": [
+      "sb_takeup(k3)"
+     ],
+     "rule": "SB-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
    "actor_class": "covered_residents.paying_above_cap",
    "actor_group": [],
    "assumption_sets": [
@@ -209,7 +264,7 @@
     "medium",
     "long"
    ],
-   "id": "C-3",
+   "id": "C-4",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -258,7 +313,7 @@
     "medium",
     "long"
    ],
-   "id": "C-4",
+   "id": "C-5",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -297,7 +352,7 @@
     "medium",
     "long"
    ],
-   "id": "C-5",
+   "id": "C-6",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -346,7 +401,7 @@
     "medium",
     "long"
    ],
-   "id": "C-6",
+   "id": "C-7",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -395,7 +450,7 @@
     "medium",
     "long"
    ],
-   "id": "C-7",
+   "id": "C-8",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -443,7 +498,7 @@
    "horizon": [
     "short"
    ],
-   "id": "C-8",
+   "id": "C-9",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -498,7 +553,7 @@
     "medium",
     "long"
    ],
-   "id": "C-9",
+   "id": "C-10",
    "item": null,
    "reported": false,
    "sign": "increase",
@@ -506,6 +561,108 @@
    "tier": "B",
    "variable": "reclassification",
    "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "covered_residents.uninsured",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "not_fully_captured(k3)",
+     "takeup(k3)"
+    ]
+   ],
+   "assumptions": [
+    "not_fully_captured(k3)",
+    "takeup(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k3)",
+     "premises": [
+      "per_unit_sub(k3)",
+      "takeup(k3)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_recipients_gain(k3)",
+     "premises": [
+      "not_fully_captured(k3)",
+      "sb_takeup(k3)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_recipients_keep(k3)",
+     "premises": [
+      "sb_recipients_gain(k3)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "insulin_fund",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "takeup(k3)"
+    ]
+   ],
+   "assumptions": [
+    "takeup(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k3)",
+     "premises": [
+      "per_unit_sub(k3)",
+      "takeup(k3)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_outlay(k3)",
+     "premises": [
+      "sb_takeup(k3)"
+     ],
+     "rule": "SB-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "subsidy_outlay",
+   "visibility": "visible",
    "window": null
   },
   {
@@ -532,7 +689,7 @@
     "medium",
     "long"
    ],
-   "id": "C-10",
+   "id": "C-13",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -566,7 +723,7 @@
     "medium",
     "long"
    ],
-   "id": "C-11",
+   "id": "C-14",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -621,7 +778,7 @@
     "medium",
     "long"
    ],
-   "id": "C-12",
+   "id": "C-15",
    "item": null,
    "reported": false,
    "sign": "increase",
@@ -670,7 +827,7 @@
     "medium",
     "long"
    ],
-   "id": "C-13",
+   "id": "C-16",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -735,7 +892,7 @@
     "medium",
     "long"
    ],
-   "id": "C-14",
+   "id": "C-17",
    "item": null,
    "reported": false,
    "sign": "increase",
@@ -774,7 +931,7 @@
     "medium",
     "long"
    ],
-   "id": "C-15",
+   "id": "C-18",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -839,7 +996,7 @@
     "medium",
     "long"
    ],
-   "id": "C-16",
+   "id": "C-19",
    "item": "unsubsidized_goods",
    "reported": true,
    "sign": "decrease",
@@ -884,7 +1041,7 @@
     "medium",
     "long"
    ],
-   "id": "C-17",
+   "id": "C-20",
    "item": null,
    "reported": true,
    "sign": "at_least_one_decrease",
@@ -896,25 +1053,28 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "share_cap(k1).\nshare_payer(k1, \"plans.state_regulated\").\nbound(k1, \"pharmacies.in_state\").\nprotected(k1, \"covered_residents.paying_above_cap\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nenforcer(k1, \"officials.enforcement\").\nprotected_concentrated(k1).\nbound(k2, \"plans.state_regulated\").\nprotected(k2, \"covered_residents.state_plans\").\nexcluded(k2, \"buyers.prospective\").\nbound(k3, \"covered_residents.uninsured\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nsubsidy(k3).\nsb_recipient(k3, \"covered_residents.uninsured\").\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nsb_claim_handler(k3, \"pharmacies.in_state\").\nper_unit_sub(k3).\nsb_seller(k3, \"pharmacies.in_state\").\nsb_qualifier(k3, \"covered_residents.uninsured\").\nsb_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nsb_other_buyer(k3, \"buyers.noncovered_cash\").\nsb_substitute_seller(k3, \"sellers.substitutes\").\ncriteria(k3).\nassumption(payer_complies(k1)).\nassumption(share_demand_responds(k1)).\nassumption(takeup(k3)).\nassumption(not_fully_captured(k3)).\nassumption(quantity_expands(k3)).\nassumption(seller_supply_slow(k3)).\nassumption(sellers_fewer_alternatives(k3)).\nassumption(substitutes_given_up(k3)).\nassumption(qualifying_pays(k3)).\nassumption(can_delay(k3)).\n",
+ "engine_facts": "share_cap(k1).\nshare_payer(k1, \"plans.state_regulated\").\nbound(k1, \"pharmacies.in_state\").\nprotected(k1, \"covered_residents.paying_above_cap\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nenforcer(k1, \"officials.enforcement\").\nprotected_concentrated(k1).\nbound(k2, \"plans.state_regulated\").\nprotected(k2, \"covered_residents.state_plans\").\nexcluded(k2, \"buyers.prospective\").\nbound(k3, \"covered_residents.uninsured\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nsubsidy(k3).\nsb_recipient(k3, \"covered_residents.uninsured\").\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nsb_claim_handler(k3, \"pharmacies.in_state\").\nper_unit_sub(k3).\nsb_seller(k3, \"pharmacies.in_state\").\nsb_qualifier(k3, \"covered_residents.uninsured\").\nsb_payer_body(k3, \"insulin_fund\").\nsb_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nsb_other_buyer(k3, \"buyers.noncovered_cash\").\nsb_substitute_seller(k3, \"sellers.substitutes\").\ncriteria(k3).\nassumption(payer_complies(k1)).\nassumption(share_demand_responds(k1)).\nassumption(takeup(k3)).\nassumption(not_fully_captured(k3)).\nassumption(quantity_expands(k3)).\nassumption(seller_supply_slow(k3)).\nassumption(sellers_fewer_alternatives(k3)).\nassumption(substitutes_given_up(k3)).\nassumption(qualifying_pays(k3)).\nassumption(can_delay(k3)).\n",
  "explanations": [
   "C-1. Compared with no Tarrenmoor Insulin Affordability Act, price paid for buyers.noncovered_cash rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.10); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
   "C-2. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded for buyers.noncovered_cash falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment; CR-4: buyers who face a higher price take fewer units. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.10); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-3. Compared with no Tarrenmoor Insulin Affordability Act, price paid for covered_residents.paying_above_cap falls from the short run onward (tier B, visible). Why: PC-20: PC-20. This holds if: The third party pays the sellers the rest of the price as required (p = 0.90). Reported.",
-  "C-4. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded for covered_residents.paying_above_cap rises from the short run onward (tier B, visible). Why: PC-20: PC-20; CR-4: buyers who face a higher price take fewer units. This holds if: The third party pays the sellers the rest of the price as required (p = 0.90); Buyers whose share falls buy more of the good (p = 0.85). Reported.",
-  "C-5. Compared with no Tarrenmoor Insulin Affordability Act, resources available other uses for covered_residents.paying_above_cap rises from the short run onward (tier B, invisible). Why: PC-20: PC-20. This holds if: The third party pays the sellers the rest of the price as required (p = 0.90). Reported.",
-  "C-6. Compared with no Tarrenmoor Insulin Affordability Act, price paid for covered_residents.uninsured falls from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: Sellers do not capture the whole payment: the recipients' net price falls (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-7. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded for covered_residents.uninsured rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-8. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded for covered_residents.uninsured falls in the announcement window (before the effective date), in the short run (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Eligible buyers knew of the payment before it started and could delay purchases (p = 0.65); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-9. Compared with no Tarrenmoor Insulin Affordability Act, reclassification for covered_residents.uninsured rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-5: owners move units out of the rule's reach; SB-5: a payment conditional on criteria draws effort to meet them. This holds if: Some can meet the criteria at a cost below the payment's worth to them (p = 0.40); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-10. Compared with no Tarrenmoor Insulin Affordability Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
-  "C-11. Compared with no Tarrenmoor Insulin Affordability Act, compliance cost for pharmacies.in_state rises from the short run onward (tier A, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.",
-  "C-12. Compared with no Tarrenmoor Insulin Affordability Act, net price received for pharmacies.in_state rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.10); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-13. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded for pharmacies.in_state rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-14. Compared with no Tarrenmoor Insulin Affordability Act, subsidy share received for pharmacies.in_state rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.10); While supply is fixed, the sellers have clearly fewer alternatives than the recipients (p = 0.20); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-15. Compared with no Tarrenmoor Insulin Affordability Act, subsidy outlay for plans.state_regulated rises from the short run onward (tier B, visible). Why: PC-20: PC-20. This holds if: The third party pays the sellers the rest of the price as required (p = 0.90). Reported.",
-  "C-16. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded (unsubsidized goods) for sellers.substitutes falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-1: when a good becomes dearer, buyers turn to substitutes; SB-3: resources move into the subsidized activity from the uses that would otherwise have had them. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Some recipients would otherwise have bought an unsubsidized good (p = 0.75); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-17. Compared with no Tarrenmoor Insulin Affordability Act, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
+  "C-3. Compared with no Tarrenmoor Insulin Affordability Act, resources available other uses for buyers.noncovered_cash falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.10); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-4. Compared with no Tarrenmoor Insulin Affordability Act, price paid for covered_residents.paying_above_cap falls from the short run onward (tier B, visible). Why: PC-20: PC-20. This holds if: The third party pays the sellers the rest of the price as required (p = 0.90). Reported.",
+  "C-5. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded for covered_residents.paying_above_cap rises from the short run onward (tier B, visible). Why: PC-20: PC-20; CR-4: buyers who face a higher price take fewer units. This holds if: The third party pays the sellers the rest of the price as required (p = 0.90); Buyers whose share falls buy more of the good (p = 0.85). Reported.",
+  "C-6. Compared with no Tarrenmoor Insulin Affordability Act, resources available other uses for covered_residents.paying_above_cap rises from the short run onward (tier B, invisible). Why: PC-20: PC-20. This holds if: The third party pays the sellers the rest of the price as required (p = 0.90). Reported.",
+  "C-7. Compared with no Tarrenmoor Insulin Affordability Act, price paid for covered_residents.uninsured falls from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: Sellers do not capture the whole payment: the recipients' net price falls (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-8. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded for covered_residents.uninsured rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-9. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded for covered_residents.uninsured falls in the announcement window (before the effective date), in the short run (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Eligible buyers knew of the payment before it started and could delay purchases (p = 0.65); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-10. Compared with no Tarrenmoor Insulin Affordability Act, reclassification for covered_residents.uninsured rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-5: owners move units out of the rule's reach; SB-5: a payment conditional on criteria draws effort to meet them. This holds if: Some can meet the criteria at a cost below the payment's worth to them (p = 0.40); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-11. Compared with no Tarrenmoor Insulin Affordability Act, resources available other uses for covered_residents.uninsured rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: Sellers do not capture the whole payment: the recipients' net price falls (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-12. Compared with no Tarrenmoor Insulin Affordability Act, subsidy outlay for insulin_fund rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-13. Compared with no Tarrenmoor Insulin Affordability Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-14. Compared with no Tarrenmoor Insulin Affordability Act, compliance cost for pharmacies.in_state rises from the short run onward (tier A, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.",
+  "C-15. Compared with no Tarrenmoor Insulin Affordability Act, net price received for pharmacies.in_state rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.10); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-16. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded for pharmacies.in_state rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-17. Compared with no Tarrenmoor Insulin Affordability Act, subsidy share received for pharmacies.in_state rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.10); While supply is fixed, the sellers have clearly fewer alternatives than the recipients (p = 0.20); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-18. Compared with no Tarrenmoor Insulin Affordability Act, subsidy outlay for plans.state_regulated rises from the short run onward (tier B, visible). Why: PC-20: PC-20. This holds if: The third party pays the sellers the rest of the price as required (p = 0.90). Reported.",
+  "C-19. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded (unsubsidized goods) for sellers.substitutes falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-1: when a good becomes dearer, buyers turn to substitutes; SB-3: resources move into the subsidized activity from the uses that would otherwise have had them. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Some recipients would otherwise have bought an unsubsidized good (p = 0.75); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-20. Compared with no Tarrenmoor Insulin Affordability Act, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
  ],
  "questions": [
   {
@@ -1109,6 +1269,7 @@
     "cap": 35.0,
     "cap_unit": "dollars per 30-day supply of insulin collected from a covered resident",
     "claim_handler_actor": null,
+    "claim_penalties": false,
     "debt_funded": false,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -1136,6 +1297,7 @@
     "neighbor_seller_actor": null,
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
     "own_revenue_funded": false,
     "protected_actor": "covered_residents.paying_above_cap",
     "protected_concentrated": true,
@@ -1175,6 +1337,7 @@
     "cap": null,
     "cap_unit": null,
     "claim_handler_actor": null,
+    "claim_penalties": false,
     "debt_funded": false,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -1202,6 +1365,7 @@
     "neighbor_seller_actor": null,
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
     "own_revenue_funded": false,
     "protected_actor": "covered_residents.state_plans",
     "protected_concentrated": true,
@@ -1236,6 +1400,7 @@
     "cap": null,
     "cap_unit": null,
     "claim_handler_actor": "pharmacies.in_state",
+    "claim_penalties": false,
     "debt_funded": false,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -1263,6 +1428,7 @@
     "neighbor_seller_actor": null,
     "other_buyer_actor": "buyers.noncovered_cash",
     "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": "insulin_fund",
     "own_revenue_funded": false,
     "protected_actor": null,
     "protected_concentrated": true,
@@ -1320,7 +1486,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T20:31:38+00:00",
+ "run_at": "2026-10-18T20:45:46+00:00",
  "sources_held_back": [],
  "unclear": [
   {

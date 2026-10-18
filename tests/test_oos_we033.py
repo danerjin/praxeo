@@ -17,9 +17,11 @@ WE33 = ROOT / "cases" / "we033_kestland"
 SHORT: dict = {}
 # no table cell carries a timing qualifier in its actor or variable cell (the windows are in the horizon column)
 WINDOWS: dict = {}
-EXCEPTIONS: dict = {}   # the first run's WRONG row (taxpayers alone, a plain decrease, against C-19's group) is fixed by OC-1's who pays
+EXCEPTIONS = {
+    ('households.recipients', 'legal_breach', 'increase', None):
+        'RS-3 (false claims, A-14): the table names the false claimants as their own class (C-27, claimants.false), which the record has no role for',
+}
 NOT_PRODUCED = {
-    "C-1": "missing rule: SB-1 signs the payers, not the recipients' own means (resources_available_other_uses increase, CR-8b mirror)",
     "C-3": "unsupported form: the bond sale (K2, government_borrowing) has no rule; the lenders' side of CR-5 is not derived",
     "C-4": "missing rule and question: CR-4 'A change in means alone' and 'Saving is a use' (a lump sum has no questions)",
     "C-6": "missing question: SB-5/RS-5 reclassification is gated on takeup, and a lump sum has no takeup question (A-7)",
@@ -35,7 +37,6 @@ NOT_PRODUCED = {
     "C-16": "same as C-15 (CR-7a)",
     "C-17": "same as C-15 (CR-7, CR-10b)",
     "C-18": "combiner: a CR-12b total over C-13 and C-11 is not declared",
-    "C-22": "missing rule: CR-1 operation 4 / CR-8b, the agency's outlay (`subsidy_outlay`); SB-1 signs the payers only",
     "C-23": "case-specific provision: CR-8 (a law that promises more than its budget can pay) under reading U1-b; the per-reading sign cell and the shortfall bearers have no encoding",
     "C-24": "missing rule and question: CR-4 'A change in means alone' with CR-12e against the rate chain (A-1, A-16, A-17)",
     "C-25": "missing rule: RS-8 with CR-4 for borrowers against the announced payment (A-5)",
@@ -43,12 +44,11 @@ NOT_PRODUCED = {
     "C-27": "missing rule: CR-1 operation 3 / CR-4 (comply or violate) for false claims; the record has no `claimants.false` role",
     "C-28": "missing rule and record fact: CR-8b for what a diverted payment adds to the fraudsters",
     "C-29": "missing record fact (no role for the defrauded households) and missing rule: CR-8c, OC-2",
-    "C-30": "missing rule: CR-1 operation 3 with CR-8b, repayments and fines as non_tax_receipts (the same gap as WE-067 C-47)",
     "C-31": "case-specific provision: prosecution (a second agency) has no role field",
     "C-32": "unsupported form: OC-8, CR-7c for homes; per-reading sign cell",
     "C-33": "combiner: a CR-12b ambiguity across the sales chain and the discount-rate chain is not declared; unsupported form (OC-8)",
 }
-PRODUCED = {"C-2", "C-5", "C-19"}
+PRODUCED = {"C-1", "C-2", "C-5", "C-19", "C-22", "C-30"}
 
 
 def test_consistent_with_worked_example_we033():
@@ -61,6 +61,7 @@ def test_consistent_with_worked_example_we033():
     payers = by[("taxpayers.later", "resources_available_other_uses")]
     assert payers["horizon"] == ["medium", "long"] and payers["sign"] == "at_least_one_decrease"
     assert payers["actor_group"] == ["taxpayers.later", "public_spending_recipients.later"]   # C-19
-    assert {c["tier"] for c in pred["consequences"]} == {"A"}
+    # SB-1's receipt side is Tier A for a lump sum (C-1, C-22); false claims and their recovery rest on premises (C-30)
+    assert {c["tier"] for c in pred["consequences"] if c["variable"] not in ("legal_breach", "non_tax_receipts")} == {"A"}
     # a lump sum has no questions, so nothing else is derived: no quantity, price or window rows
-    assert len(pred["consequences"]) == 3
+    assert len(pred["consequences"]) == 7

@@ -20,6 +20,12 @@ WE019_SHORT = {"owners of failing old cars": "buyers.new_cars.scrapping", "disma
 WE019_WINDOWS = {"March to June": "announcement", "after the window": "after_expiry", "year after the window": "after_expiry",
                  "cumulative": "cumulative"}
 WE019_EXCEPTIONS = {
+    ('officials.enforcement', 'subsidy_outlay', 'increase', None):
+        "SB-1 with CR-8b (the receipt side, added after the out-of-sample runs): the paying agency's outlay; the example records the funders, not the outlay",
+    ('buyers.new_cars.scrapping', 'resources_available_other_uses', 'increase', None):
+        'SB-1 with CR-8b: what the recipients receive adds to their means; the example records the price they pay',
+    ('buyers.new_cars.other', 'resources_available_other_uses', 'decrease', None):
+        'CR-8b with OC-1: what buyers without the rebate pay above the old price (C-9) is lost to their other uses; not in the table',
     ("buyers.new_cars.scrapping", "quantity_traded", "increase", None):
         "SB-2: the buyers' side of C-2 (an exchange has two sides); the table signs the sellers' side only",
     ("buyers.new_cars.other", "quantity_traded", "decrease", None):
@@ -33,8 +39,7 @@ WE019_NOT_PRODUCED = {
     "C-22": "DM-5 (the cumulative total over the surge and the dips) is not a declared comparison in the combiner",
     "C-26": "CR-10b for used parts that crushed cars would later have yielded: no rule",
 }
-WE019_PRODUCED = {"C-1", "C-2", "C-3", "C-4", "C-5", "C-6", "C-7", "C-8", "C-9", "C-10", "C-11", "C-12", "C-13", "C-14",
-                  "C-19", "C-20", "C-21", "C-23", "C-24", "C-25"}
+WE019_PRODUCED = {"C-1", "C-2", "C-3", "C-4", "C-5", "C-6", "C-7", "C-8", "C-9", "C-10", "C-11", "C-12", "C-13", "C-14", "C-19", "C-20", "C-21", "C-23", "C-24", "C-25"}
 
 
 def _record():
@@ -72,13 +77,18 @@ def _reported(rec, **p):
 
 
 def test_no_quantity_rules_for_a_lump_sum_subsidy():
-    """SB-2 needs a payment per unit; a lump sum cannot be increased by buying more. SB-1, OC-3 and the claims cost remain."""
+    """SB-2 needs a payment per unit; a lump sum cannot be increased by buying more. SB-1 (both sides), OC-3, the claims
+    cost and, with penalties for false claims, RS-3 remain."""
     rec = _record()
     rec.components[0].instrument = "lump_sum_subsidy"
     got = _reported(rec)
     assert got == {("taxpayers", "resources_available_other_uses", "at_least_one_decrease", None),
                    ("officials.enforcement", "enforcement_cost", "increase", None),
-                   ("sellers.new_cars", "compliance_cost", "increase", None)}
+                   ("sellers.new_cars", "compliance_cost", "increase", None),
+                   ("officials.enforcement", "subsidy_outlay", "increase", None),
+                   ("buyers.new_cars.scrapping", "resources_available_other_uses", "increase", None),
+                   ("buyers.new_cars.scrapping", "legal_breach", "increase", None),
+                   ("officials.enforcement", "non_tax_receipts", "increase", None)}
 
 
 def test_flags_gate_their_rules():

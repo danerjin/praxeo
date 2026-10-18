@@ -1,5 +1,18 @@
 {
- "assumptions": {},
+ "assumptions": {
+  "claims_recovered(k1)": {
+   "assumption_class": "enforcement",
+   "id": "claims_recovered(k1)",
+   "p": 0.75,
+   "text": "Some false claims are found, and repayments or fines are collected."
+  },
+  "false_claims(k1)": {
+   "assumption_class": "enforcement",
+   "id": "false_claims(k1)",
+   "p": 0.7,
+   "text": "Some claims are false or overstated."
+  }
+ },
  "citation_problems": [],
  "consequences": [
   {
@@ -37,6 +50,100 @@
    "window": null
   },
   {
+   "actor_class": "households.recipients",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "false_claims(k1)"
+    ]
+   ],
+   "assumptions": [
+    "false_claims(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_paid(k1)",
+     "premises": [
+      "subsidy(k1)"
+     ],
+     "rule": "SB-1"
+    },
+    {
+     "conclusion": "sb_outlay(k1)",
+     "premises": [
+      "sb_paid(k1)"
+     ],
+     "rule": "SB-1"
+    },
+    {
+     "conclusion": "sb_false_claims(k1)",
+     "premises": [
+      "false_claims(k1)",
+      "sb_outlay(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "legal_breach",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "households.recipients",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_paid(k1)",
+     "premises": [
+      "subsidy(k1)"
+     ],
+     "rule": "SB-1"
+    },
+    {
+     "conclusion": "sb_recipients_keep(k1)",
+     "premises": [
+      "sb_paid(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
    "actor_class": "officials.enforcement",
    "actor_group": [],
    "assumption_sets": [
@@ -60,7 +167,7 @@
     "medium",
     "long"
    ],
-   "id": "C-2",
+   "id": "C-4",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -68,6 +175,110 @@
    "tier": "A",
    "variable": "enforcement_cost",
    "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "claims_recovered(k1)",
+     "false_claims(k1)"
+    ]
+   ],
+   "assumptions": [
+    "claims_recovered(k1)",
+    "false_claims(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_paid(k1)",
+     "premises": [
+      "subsidy(k1)"
+     ],
+     "rule": "SB-1"
+    },
+    {
+     "conclusion": "sb_outlay(k1)",
+     "premises": [
+      "sb_paid(k1)"
+     ],
+     "rule": "SB-1"
+    },
+    {
+     "conclusion": "sb_false_claims(k1)",
+     "premises": [
+      "false_claims(k1)",
+      "sb_outlay(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "sb_recovered(k1)",
+     "premises": [
+      "claims_recovered(k1)",
+      "sb_false_claims(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "non_tax_receipts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_paid(k1)",
+     "premises": [
+      "subsidy(k1)"
+     ],
+     "rule": "SB-1"
+    },
+    {
+     "conclusion": "sb_outlay(k1)",
+     "premises": [
+      "sb_paid(k1)"
+     ],
+     "rule": "SB-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "subsidy_outlay",
+   "visibility": "visible",
    "window": null
   },
   {
@@ -103,7 +314,7 @@
     "medium",
     "long"
    ],
-   "id": "C-3",
+   "id": "C-7",
    "item": null,
    "reported": true,
    "sign": "at_least_one_decrease",
@@ -115,13 +326,54 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"households.recipients\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nsubsidy(k1).\nsb_recipient(k1, \"households.recipients\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers.later\").\nsb_claim_handler(k1, \"households.no_account\").\nsb_recipients_sell(k1).\nsb_qualifier(k1, \"households.recipients\").\nsb_payer_group(k1, \"taxpayers.later,public_spending_recipients.later\").\ndebt_funded(k1).\ncriteria(k1).\n",
+ "engine_facts": "bound(k1, \"households.recipients\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nsubsidy(k1).\nsb_recipient(k1, \"households.recipients\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers.later\").\nsb_claim_handler(k1, \"households.no_account\").\nsb_recipients_sell(k1).\nsb_qualifier(k1, \"households.recipients\").\nsb_payer_body(k1, \"officials.enforcement\").\nclaim_penalties(k1).\nsb_payer_group(k1, \"taxpayers.later,public_spending_recipients.later\").\ndebt_funded(k1).\ncriteria(k1).\nassumption(false_claims(k1)).\nassumption(claims_recovered(k1)).\n",
  "explanations": [
   "C-1. Compared with no Kestland Household Support Payment Act 2027, compliance cost for households.no_account rises from the short run onward (tier A, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.",
-  "C-2. Compared with no Kestland Household Support Payment Act 2027, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
-  "C-3. Compared with no Kestland Household Support Payment Act 2027, resources available other uses for taxpayers.later or public_spending_recipients.later falls for at least one of them from the medium run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
+  "C-2. Compared with no Kestland Household Support Payment Act 2027, legal breach for households.recipients rises from the short run onward (tier B, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; RS-3: RS-3. This holds if: Some claims are false or overstated (p = 0.70). Reported.",
+  "C-3. Compared with no Kestland Household Support Payment Act 2027, resources available other uses for households.recipients rises from the short run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.",
+  "C-4. Compared with no Kestland Household Support Payment Act 2027, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-5. Compared with no Kestland Household Support Payment Act 2027, non tax receipts for officials.enforcement rises from the short run onward (tier B, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; RS-3: RS-3; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: Some false claims are found, and repayments or fines are collected (p = 0.75); Some claims are false or overstated (p = 0.70). Reported.",
+  "C-6. Compared with no Kestland Household Support Payment Act 2027, subsidy outlay for officials.enforcement rises from the short run onward (tier A, visible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later. This holds if: no assumption. Reported.",
+  "C-7. Compared with no Kestland Household Support Payment Act 2027, resources available other uses for taxpayers.later or public_spending_recipients.later falls for at least one of them from the medium run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
  ],
- "questions": [],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.false_claims",
+    "rationale": "Probability taken from the assumption table of handbook WE-033 (illustrative figures), A-14: some payments are diverted by identity fraud, or made twice.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "false_claims",
+    "assumption_class": "enforcement",
+    "id": "k1.false_claims",
+    "kind": "noul",
+    "options": [],
+    "text": "Given how claims are checked, will some claims for the payment be false or overstated?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.claims_recovered",
+    "rationale": "Probability taken from the assumption table of handbook WE-033 (illustrative figures), A-18: the Tax Agency detects some false or duplicate claims and recovers repayments and fines.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "claims_recovered",
+    "assumption_class": "enforcement",
+    "id": "k1.claims_recovered",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the checks find some false claims, so that repayments or fines are collected?"
+   }
+  }
+ ],
  "record": {
   "components": [
    {
@@ -133,6 +385,7 @@
     "cap": null,
     "cap_unit": null,
     "claim_handler_actor": "households.no_account",
+    "claim_penalties": true,
     "debt_funded": true,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -160,6 +413,7 @@
     "neighbor_seller_actor": null,
     "other_buyer_actor": null,
     "other_spending_actor": "public_spending_recipients.later",
+    "outlay_actor": null,
     "own_revenue_funded": false,
     "protected_actor": null,
     "protected_concentrated": true,
@@ -231,7 +485,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T20:31:36+00:00",
+ "run_at": "2026-10-18T20:45:45+00:00",
  "sources_held_back": [],
  "unclear": [
   {

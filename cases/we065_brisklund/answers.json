@@ -82,5 +82,19 @@
   "probability": 0.7,
   "rationale": "No matching assumption in WE-065; judged from the text: wheat is sown months ahead, so growers cannot cut the area of a crop already in the ground when the scheme ends.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.false_claims",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-6: declarations are checked only by sampling, so some growers overstate or declare bought grain as their own.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.claims_recovered",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-21: the payments office's sampling finds some false declarations, and repayments and fines are collected.",
+  "evidence": []
  }
 ]

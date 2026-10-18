@@ -76,7 +76,7 @@ All four were fixed, and each fix has a test.
 |---|---|---|---|---|---|
 | Price ceilings (WE-001, San Francisco) | WE-005, WE-006, WE-067 | 41 of 123 | 57 of 123 | 6 | 1 |
 | Taxes and tariffs (WE-013) | WE-002, WE-010, WE-042, WE-046, WE-062 | 46 of 255 | 60 of 255 | 5 | 3 (all the TX-8 question, Q25) |
-| Subsidies (WE-019) | WE-020, WE-021, WE-033, WE-056, WE-065 | 42 of 191 | 54 of 191 | 16 | 1 |
+| Subsidies (WE-019) | WE-020, WE-021, WE-033, WE-056, WE-065 | 42 of 191 | 63 of 191 | 16 | 3 |
 
 Most rows not produced need roles the record cannot yet hold (related markets, factors, neighbours, foreign sellers), rules for whole families not encoded, or engine facts per reading of an unclear provision. Coverage on unseen examples is therefore low, and the first runs' WRONG rows show what a family's rules get wrong before they are corrected.
 

@@ -32,7 +32,8 @@
     "The principal and interest on the bonds are repaid from general revenue in ten equal annual installments from 2028."
    ],
    "other_spending_actor": "public_spending_recipients.later",
-   "future_taxpayer_actor": null
+   "future_taxpayer_actor": null,
+   "claim_penalties": true
   }
  ],
  "unclear": [

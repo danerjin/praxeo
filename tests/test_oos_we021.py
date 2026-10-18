@@ -20,6 +20,10 @@ SHORT: dict = {}
 WINDOWS = {"September to December": "announcement", "after program ends": "after_expiry",
            "before step-downs": "before_step_down"}
 EXCEPTIONS = {
+    ('officials.enforcement', 'subsidy_outlay', 'increase', None):
+        "SB-1 with CR-8b (the receipt side, added after the out-of-sample runs): the paying agency's outlay; the example records the funders, not the outlay",
+    ('buyers.commercial_solar', 'resources_available_other_uses', 'decrease', None):
+        "CR-8b with OC-1: the excluded commercial buyers' higher price (C-28, C-29) is lost to their other uses; not in the table",
     ("electricians", "quantity_traded", "increase", None):
         "CR-9 (related input, `related`): installers hire more electrical work as installations rise; the table records the "
         "labour side as the installers' workers (C-31) and the electricians' wage (C-13)",
@@ -50,9 +54,8 @@ NOT_PRODUCED = {
     "C-30": "missing record fact and rule: wholesale generators have no role, and RS-13 (lower midday wholesale price) is not encoded",
     "C-31": "missing record fact and rule: no worker role for subsidies and no LW-4 rule for the subsidized sellers' labor (CR-9, CR-7)",
     "C-32": "same as C-31, with SB-6 for the fall after the program",
-    "C-33": "missing rule: SB-1's receipt side (the inframarginal recipients' gain, mirror of the payers' cost); the engine signs the payers only",
 }
-PRODUCED = {"C-1", "C-2", "C-3", "C-4", "C-5", "C-10", "C-13", "C-15", "C-16", "C-18", "C-19", "C-21", "C-23", "C-24", "C-25", "C-26", "C-28", "C-29"}
+PRODUCED = {"C-1", "C-2", "C-3", "C-4", "C-5", "C-10", "C-13", "C-15", "C-16", "C-18", "C-19", "C-21", "C-23", "C-24", "C-25", "C-26", "C-28", "C-29", "C-33"}
 
 
 def test_consistent_with_worked_example_we021():

@@ -59,6 +59,8 @@ instrument, even when the text states no aim:
 - per_unit_subsidy, purchase_rebate, lump_sum_subsidy: bound_actor (who receives the payment), seller_actor (sellers
   of the subsidized good; null where the recipients are the sellers), taxpayer_actor (who funds it), enforcer_actor
   (the agency that pays and checks it), debt_funded (true if it is borrowed now and repaid from taxes later),
+  outlay_actor (the body that pays the money out, if not the enforcer), claim_penalties (true if the text sets
+  penalties for false claims: clawback, repayment, fines),
   own_revenue_funded (true if a dedicated revenue pays it), tax_named (true if the text names the tax that pays;
   otherwise the payers are taxpayers, other_spending_actor and future_taxpayer_actor as a group), qualifier_actor
   (who must meet the criteria, if not the recipients), eligibility_criteria (true if the payment depends on

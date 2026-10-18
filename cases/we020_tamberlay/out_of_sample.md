@@ -83,3 +83,7 @@ Record-level note (not a rule gap): the parser's readings for the two unclear pr
 ## After the rule changes (second commit)
 
 The record and answers changed only where a new field or question needs it (temporary payments: `ends_as_scheduled` and `supply_slow_at_expiry`; WE-021: `qualifier_actor`, `tax_named`; WE-033: the payer group's names; WE-056: K1's payer and its two PC-20 questions). Rows produced: 14 of 33 (unchanged). Engine rows WRONG: 0 (was 2). The dip and the fall in owners' prices after Year 4 now need the grant to end as scheduled (`ends_as_scheduled`, A-15, p = 0.4), so they are not reported, as in the example. The payers are now the OC-1 group (taxpayers, recipients of other spending, future taxpayers, `at_least_one_decrease`), since the record names no tax; WE-020's C-24, written under catalog 0.5 with taxpayers alone, was corrected in the handbook to the same group, so C-24 is still produced.
+
+## After the payer's side (fourth commit)
+
+SB-1's receipt side (`rules/subsidies.lp`): the paying body's `subsidy_outlay`; what recipients receive (`resources_available_other_uses`, CR-8b); with penalties for false claims in the text (`claim_penalties`), false claims (RS-3, `false_claims`) and their recovery (`non_tax_receipts`, `claims_recovered`); and the other buyers' loss where sellers capture part of the payment. Rows produced: 15 of 33 (was 14): C-25 (buyers without the grant lose what they pay above the old price, CR-8b with OC-1). The agency's outlay and the recipients' receipt are defensible rows the table does not list.

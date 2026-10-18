@@ -96,5 +96,19 @@
   "probability": 0.85,
   "rationale": "Probability taken from the assumption table of handbook WE-020 (illustrative figures), A-2: the supply of homes under the cap responds slowly (approval and build times of two to three years).",
   "evidence": []
+ },
+ {
+  "question_id": "k1.false_claims",
+  "value": "no",
+  "probability": 0.4,
+  "rationale": "No matching assumption in WE-020; judged from the text: ownership elsewhere and partner status are by sworn declaration only, but Tamberlay ownership and occupancy are checked against registers.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.claims_recovered",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "No matching assumption in WE-020; judged from the text: the Revenue Office checks the land register and occupancy records, with clawback and fines.",
+  "evidence": []
  }
 ]

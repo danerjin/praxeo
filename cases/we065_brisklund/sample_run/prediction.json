@@ -18,6 +18,12 @@
    "p": 0.1,
    "text": "Eligible buyers knew of the payment before it started and could delay purchases."
   },
+  "claims_recovered(k1)": {
+   "assumption_class": "enforcement",
+   "id": "claims_recovered(k1)",
+   "p": 0.7,
+   "text": "Some false claims are found, and repayments or fines are collected."
+  },
   "ends_as_scheduled(k1)": {
    "assumption_class": "expectations",
    "id": "ends_as_scheduled(k1)",
@@ -29,6 +35,12 @@
    "id": "expected_to_last(k1)",
    "p": 0.8,
    "text": "Buyers of the affected assets expect the payment to last for several years."
+  },
+  "false_claims(k1)": {
+   "assumption_class": "enforcement",
+   "id": "false_claims(k1)",
+   "p": 0.55,
+   "text": "Some claims are false or overstated."
   },
   "not_fully_captured(k1)": {
    "assumption_class": "other",
@@ -212,6 +224,112 @@
    "window": null
   },
   {
+   "actor_class": "treasury",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "claims_recovered(k1)",
+     "false_claims(k1)"
+    ]
+   ],
+   "assumptions": [
+    "claims_recovered(k1)",
+    "false_claims(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_outlay(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-1"
+    },
+    {
+     "conclusion": "sb_false_claims(k1)",
+     "premises": [
+      "false_claims(k1)",
+      "sb_outlay(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "sb_recovered(k1)",
+     "premises": [
+      "claims_recovered(k1)",
+      "sb_false_claims(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "non_tax_receipts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "treasury",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_outlay(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "subsidy_outlay",
+   "visibility": "visible",
+   "window": null
+  },
+  {
    "actor_class": "wheat_growers",
    "actor_group": [],
    "assumption_sets": [
@@ -235,13 +353,67 @@
     "medium",
     "long"
    ],
-   "id": "C-4",
+   "id": "C-6",
    "item": null,
    "reported": true,
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "A",
    "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "wheat_growers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "false_claims(k1)"
+    ]
+   ],
+   "assumptions": [
+    "false_claims(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_outlay(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-1"
+    },
+    {
+     "conclusion": "sb_false_claims(k1)",
+     "premises": [
+      "false_claims(k1)",
+      "sb_outlay(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "legal_breach",
    "visibility": "invisible",
    "window": null
   },
@@ -283,7 +455,7 @@
     "medium",
     "long"
    ],
-   "id": "C-5",
+   "id": "C-8",
    "item": null,
    "reported": true,
    "sign": "ambiguous",
@@ -335,7 +507,7 @@
     "medium",
     "long"
    ],
-   "id": "C-6",
+   "id": "C-9",
    "item": null,
    "reported": true,
    "sign": "ambiguous",
@@ -387,7 +559,7 @@
     "medium",
     "long"
    ],
-   "id": "C-7",
+   "id": "C-10",
    "item": null,
    "reported": true,
    "sign": "ambiguous",
@@ -399,18 +571,72 @@
    "variable": "quantity_supplied",
    "visibility": "visible",
    "window": null
+  },
+  {
+   "actor_class": "wheat_growers",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_recipients_gain(k1)",
+     "premises": [
+      "not_fully_captured(k1)",
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_recipients_keep(k1)",
+     "premises": [
+      "sb_recipients_gain(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"wheat_growers\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nsubsidy(k1).\nsb_recipient(k1, \"wheat_growers\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nsb_claim_handler(k1, \"wheat_growers\").\nper_unit_sub(k1).\nsb_recipients_sell(k1).\nsb_qualifier(k1, \"wheat_growers\").\nsb_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nsb_asset_owner(k1, \"owners.wheat_land\").\nrenewable(k1).\ntemporary(k1).\nassumption(takeup(k1)).\nassumption(not_fully_captured(k1)).\nassumption(quantity_expands(k1)).\nassumption(seller_supply_slow(k1)).\nassumption(sellers_fewer_alternatives(k1)).\nassumption(asset_supply_slow(k1)).\nassumption(expected_to_last(k1)).\nassumption(beneficiaries_organize(k1)).\nassumption(can_delay(k1)).\nassumption(pulled_forward(k1)).\nassumption(ends_as_scheduled(k1)).\nassumption(supply_slow_at_expiry(k1)).\n",
+ "engine_facts": "bound(k1, \"wheat_growers\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nsubsidy(k1).\nsb_recipient(k1, \"wheat_growers\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nsb_claim_handler(k1, \"wheat_growers\").\nper_unit_sub(k1).\nsb_recipients_sell(k1).\nsb_qualifier(k1, \"wheat_growers\").\nsb_payer_body(k1, \"treasury\").\nclaim_penalties(k1).\nsb_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nsb_asset_owner(k1, \"owners.wheat_land\").\nrenewable(k1).\ntemporary(k1).\nassumption(takeup(k1)).\nassumption(not_fully_captured(k1)).\nassumption(quantity_expands(k1)).\nassumption(seller_supply_slow(k1)).\nassumption(sellers_fewer_alternatives(k1)).\nassumption(false_claims(k1)).\nassumption(claims_recovered(k1)).\nassumption(asset_supply_slow(k1)).\nassumption(expected_to_last(k1)).\nassumption(beneficiaries_organize(k1)).\nassumption(can_delay(k1)).\nassumption(pulled_forward(k1)).\nassumption(ends_as_scheduled(k1)).\nassumption(supply_slow_at_expiry(k1)).\n",
  "explanations": [
   "C-1. Compared with no Brisklund Wheat Price Assurance Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
   "C-2. Compared with no Brisklund Wheat Price Assurance Act, asset value for owners.wheat_land rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The supply of the asset whose return the payment raises is fixed or slowly expandable (p = 0.80); Buyers of the affected assets expect the payment to last for several years (p = 0.80). Reported.",
   "C-3. Compared with no Brisklund Wheat Price Assurance Act, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported.",
-  "C-4. Compared with no Brisklund Wheat Price Assurance Act, compliance cost for wheat_growers rises from the short run onward (tier A, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.",
-  "C-5. Compared with no Brisklund Wheat Price Assurance Act, lobbying effort for wheat_growers may move either way from the medium run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The sellers who gain can organize to lobby for renewal at a cost below their stake (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Sign per reading: U1-a: increase; U1-b: none. Reported.",
-  "C-6. Compared with no Brisklund Wheat Price Assurance Act, net price received for wheat_growers may move either way from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: The producers keep part of the payment: the price they receive, including it, rises (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Sign per reading: U1-a: increase; U1-b: none. Reported.",
-  "C-7. Compared with no Brisklund Wheat Price Assurance Act, quantity supplied for wheat_growers may move either way from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Sign per reading: U1-a: increase; U1-b: none. Reported."
+  "C-4. Compared with no Brisklund Wheat Price Assurance Act, non tax receipts for treasury rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; RS-3: RS-3; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: Some false claims are found, and repayments or fines are collected (p = 0.70); Some claims are false or overstated (p = 0.55). Reported.",
+  "C-5. Compared with no Brisklund Wheat Price Assurance Act, subsidy outlay for treasury rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later. This holds if: no assumption. Reported.",
+  "C-6. Compared with no Brisklund Wheat Price Assurance Act, compliance cost for wheat_growers rises from the short run onward (tier A, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.",
+  "C-7. Compared with no Brisklund Wheat Price Assurance Act, legal breach for wheat_growers rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; RS-3: RS-3. This holds if: Some claims are false or overstated (p = 0.55). Reported.",
+  "C-8. Compared with no Brisklund Wheat Price Assurance Act, lobbying effort for wheat_growers may move either way from the medium run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The sellers who gain can organize to lobby for renewal at a cost below their stake (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Sign per reading: U1-a: increase; U1-b: none. Reported.",
+  "C-9. Compared with no Brisklund Wheat Price Assurance Act, net price received for wheat_growers may move either way from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: The producers keep part of the payment: the price they receive, including it, rises (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Sign per reading: U1-a: increase; U1-b: none. Reported.",
+  "C-10. Compared with no Brisklund Wheat Price Assurance Act, quantity supplied for wheat_growers may move either way from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Sign per reading: U1-a: increase; U1-b: none. Reported.",
+  "C-11. Compared with no Brisklund Wheat Price Assurance Act, resources available other uses for wheat_growers rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported."
  ],
  "questions": [
   {
@@ -501,6 +727,42 @@
     "kind": "noul",
     "options": [],
     "text": "While their supply is fixed, do the sellers have clearly fewer alternatives than the recipients (who can wait, buy something else or not buy at all)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.55,
+    "question_id": "k1.false_claims",
+    "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-6: declarations are checked only by sampling, so some growers overstate or declare bought grain as their own.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "false_claims",
+    "assumption_class": "enforcement",
+    "id": "k1.false_claims",
+    "kind": "noul",
+    "options": [],
+    "text": "Given how claims are checked, will some claims for the payment be false or overstated?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.claims_recovered",
+    "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-21: the payments office's sampling finds some false declarations, and repayments and fines are collected.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "claims_recovered",
+    "assumption_class": "enforcement",
+    "id": "k1.claims_recovered",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the checks find some false claims, so that repayments or fines are collected?"
    }
   },
   {
@@ -641,6 +903,7 @@
     "cap": null,
     "cap_unit": null,
     "claim_handler_actor": null,
+    "claim_penalties": true,
     "debt_funded": false,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -668,6 +931,7 @@
     "neighbor_seller_actor": null,
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": "treasury",
     "own_revenue_funded": false,
     "protected_actor": null,
     "protected_concentrated": true,
@@ -737,7 +1001,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T20:31:38+00:00",
+ "run_at": "2026-10-18T20:45:47+00:00",
  "sources_held_back": [],
  "unclear": [
   {

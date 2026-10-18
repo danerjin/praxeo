@@ -1,1 +1,16 @@
-[]
+[
+ {
+  "question_id": "k1.false_claims",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-033 (illustrative figures), A-14: some payments are diverted by identity fraud, or made twice.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.claims_recovered",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-033 (illustrative figures), A-18: the Tax Agency detects some false or duplicate claims and recovers repayments and fines.",
+  "evidence": []
+ }
+]

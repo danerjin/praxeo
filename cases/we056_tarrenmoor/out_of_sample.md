@@ -104,3 +104,7 @@ C-33, C-35, C-43 and C-44 (PBM renewals, premium tax, deductible accounting) are
 ## After the rule changes (second commit)
 
 The record and answers changed only where a new field or question needs it (temporary payments: `ends_as_scheduled` and `supply_slow_at_expiry`; WE-021: `qualifier_actor`, `tax_named`; WE-033: the payer group's names; WE-056: K1's payer and its two PC-20 questions). Rows produced: 9 of 51 (was 7). Engine rows WRONG: 0 (was 11). K1 is a cap on what buyers pay out of pocket, the rest paid by a plan or the Fund: PC-20, recorded with `third_party_payer_actor`. The engine writes no ceiling fact for it, so the shortage, its rationing group, PC-6, RS-10 and PC-16's transfer from the pharmacies no longer fire. PC-20 signs the buyers' price, quantity and kept resources and the payer's outlay (C-1, C-2, C-5, C-39). C-26 now matches because its per-reading sign is the same in both readings. C-37 is the OC-1 payer group. C-24 (lobbying) is no longer produced: it came from the ceiling rules.
+
+## After the payer's side (fourth commit)
+
+SB-1's receipt side (`rules/subsidies.lp`): the paying body's `subsidy_outlay`; what recipients receive (`resources_available_other_uses`, CR-8b); with penalties for false claims in the text (`claim_penalties`), false claims (RS-3, `false_claims`) and their recovery (`non_tax_receipts`, `claims_recovered`); and the other buyers' loss where sellers capture part of the payment. Rows produced: 10 of 51 (was 9): C-3 (the Insulin Access Fund's outlay; `outlay_actor`).

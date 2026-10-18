@@ -62,3 +62,7 @@ Ranked by the rows each would add or fix.
 ## After the rule changes (second commit)
 
 The record and answers changed only where a new field or question needs it (temporary payments: `ends_as_scheduled` and `supply_slow_at_expiry`; WE-021: `qualifier_actor`, `tax_named`; WE-033: the payer group's names; WE-056: K1's payer and its two PC-20 questions). Rows produced: 3 of 31 (was 2). Engine rows WRONG: 0 (was 1). SB-1 now follows OC-1's who-pays clause: no tax is named, so the payers are a group over actor classes (`taxpayers.later`, `public_spending_recipients.later`, `at_least_one_decrease`), which is C-19. The engine gained groups over actor classes (`Consequence.actor_group`) for this.
+
+## After the payer's side (fourth commit)
+
+SB-1's receipt side (`rules/subsidies.lp`): the paying body's `subsidy_outlay`; what recipients receive (`resources_available_other_uses`, CR-8b); with penalties for false claims in the text (`claim_penalties`), false claims (RS-3, `false_claims`) and their recovery (`non_tax_receipts`, `claims_recovered`); and the other buyers' loss where sellers capture part of the payment. Rows produced: 6 of 31 (was 3): C-1 (households receive the payment), C-22 (the Tax Agency's outlay) and C-30 (repayments and fines, A-18). The false claims (A-14) are signed on the recipients; the table names the false claimants as their own class (C-27).

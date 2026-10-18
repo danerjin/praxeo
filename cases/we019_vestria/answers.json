@@ -103,5 +103,19 @@
   "probability": 0.6,
   "rationale": "No matching assumption in WE-019; judged from the text: new cars are imported against volumes ordered months ahead (shipping lead times), so at the end of the window import volumes set for the boom cannot be cut at once; WE-019 signs the post-window price fall (C-25) and calls it weak.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.false_claims",
+  "value": "no",
+  "probability": 0.25,
+  "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-11: dismantlers fake scrapping on a meaningful scale (registry deregistration checks; audits; penalties).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.claims_recovered",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "No matching assumption in WE-019; judged from the text: the registry checks registration history and deregistration and audits dismantlers, so some false claims would be found.",
+  "evidence": []
  }
 ]

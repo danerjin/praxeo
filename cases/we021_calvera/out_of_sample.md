@@ -88,3 +88,7 @@ The record and answers changed only where a new field or question needs it (temp
 ## After related markets (third commit)
 
 The record now lists the two inputs the policy text names (`related`, `rules/relations.lp`). One is electrical labour: certification needs a licensed electrician on staff. The other is panels: the payment is per watt of panel capacity. CR-9 signs both suppliers' sales up as installations rise (C-15 for panels). SB-3 with CR-7a signs the electricians' wage up where their supply is slow (A-12: C-13). Panel supply is not slow (A-11, p = 0.05). The other users of electrical work (C-14, C-20) are not named in the policy text, so the record cannot name them, although the rule exists. Rows produced: 18 of 33 (was 16).
+
+## After the payer's side (fourth commit)
+
+SB-1's receipt side (`rules/subsidies.lp`): the paying body's `subsidy_outlay`; what recipients receive (`resources_available_other_uses`, CR-8b); with penalties for false claims in the text (`claim_penalties`), false claims (RS-3, `false_claims`) and their recovery (`non_tax_receipts`, `claims_recovered`); and the other buyers' loss where sellers capture part of the payment. Rows produced: 19 of 33 (was 18): C-33 (adopters keep part of the subsidy, SB-1 with CR-8b). False claims stay below the cut-off (A-16, p = 0.2), as in the example.
