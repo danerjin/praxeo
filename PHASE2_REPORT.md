@@ -18,7 +18,7 @@ Status of the Phase 2 build (plan §5) as of this report. Everything described h
 | 2. A few rules both ways: engine rules and typed-question schemas, through the LLM decider | Done for price ceilings (Configuration A and B); B covers no taxes, tariffs, windows or groups yet |
 | 3. Full structured policy schema; examples run from raw text | Schema covers ceilings, per-unit taxes and tariffs. The parser runs from raw text through the LLM path; both examples parsed by Haiku |
 | 4. Grow the catalog one family at a time, with exceptions, questions and tests | Price controls and taxes/tariffs: 37 patterns and core rules from the 1.4 catalog (PC-1–PC-7, PC-16, PC-21, RS-1–RS-8, RS-10, RS-11, RS-14, RS-15, TX-1, TX-2, TX-4, TX-7–TX-9, OC-1–OC-4, SB-4, TS-1, TS-2, CR-4, CR-8, CR-9). Subsidies added (SB-1 to SB-6, PC-20), built on WE-019 and run out of sample on five more examples (§5). Other families (licensing, mandates, private rules) not yet encoded |
-| 5. Context grounding, combiner, verifier, full explainer | Context: date filter only (no retrieval). Combiner: declared table of CR-12 comparisons. Verifier: in place. Explainer: templated sentences |
+| 5. Context grounding, combiner, verifier, full explainer | Context: date filter, retrieval per question and enrichment from sources (no real sources yet). Combiner: declared table of CR-12 comparisons. Verifier: in place. Explainer: templated sentences |
 | 6. Jev decider, calibrated on the question bank | Not started: no Jev access, no labelled question bank |
 | 7. Rule proposer behind a review gate | Not started |
 
@@ -30,7 +30,7 @@ Status of the Phase 2 build (plan §5) as of this report. Everything described h
 |---|---|---|
 | Parser | `parser.py` | LLM parser with structured output into the policy record. Quoted source sentences are checked in code. The prompt lists the role fields each instrument needs and a controlled list of 104 actor-class names |
 | Vocabulary | `vocabulary.py` | Variables, instruments and actor classes are read from the handbook's ontology, the single source; rules, records and outcome cards are checked against it |
-| Context | `context.py` | Only sources dated before enactment reach the decider |
+| Context | `context.py`, `parser.py` | Only sources dated before enactment are used. Each question gets the few most relevant to it (word-overlap retrieval). An enrichment step proposes related markets from them, every quote checked in code. No case has real sources yet |
 | Typed questions | `questions.py` | One concept per question (rule enforced by a test). 22 questions per rent ceiling; per-instrument sets for taxes and tariffs |
 | Decider | `decider.py`, `escalation.py` | Fixture, LLM and human deciders behind one interface. Answers below a confidence threshold escalate to a fallback and are logged |
 | Engine (Configuration A) | `engine.py`, `rules/*.lp` | clingo forward-chaining with provenance. Each conclusion carries its minimal assumption sets (ATMS-style), found by subset-minimal enumeration; this is exact because rules negate only facts, never assumptions, and is checked against brute force. Supports per-reading signs, group signs (at least one of several variables), announcement-window timing, and items within a variable |

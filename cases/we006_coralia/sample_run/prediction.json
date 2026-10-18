@@ -424,23 +424,23 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "binding(k2)",
-     "enforced(k2)",
-     "evasion(k2)",
-     "nontransferable(k2)"
-    ],
-    [
      "binding(k1)",
      "enforced(k1)",
      "evasion(k1)",
      "nontransferable(k1)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "evasion(k2)",
+     "nontransferable(k2)"
     ]
    ],
    "assumptions": [
-    "binding(k2)",
-    "enforced(k2)",
-    "evasion(k2)",
-    "nontransferable(k2)"
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)",
+    "nontransferable(k1)"
    ],
    "combines": [],
    "comparison": null,
@@ -852,16 +852,16 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "binding(k2)",
-     "buyouts_limited(k2)",
-     "enforced(k2)",
-     "nontransferable(k2)"
-    ],
-    [
      "binding(k1)",
      "buyouts_limited(k1)",
      "enforced(k1)",
      "nontransferable(k1)"
+    ],
+    [
+     "binding(k2)",
+     "buyouts_limited(k2)",
+     "enforced(k2)",
+     "nontransferable(k2)"
     ]
    ],
    "assumptions": [
@@ -1046,16 +1046,16 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "alternative_uses(k2)",
-     "binding(k2)",
-     "enforced(k2)",
-     "nontransferable(k2)"
-    ],
-    [
      "alternative_uses(k1)",
      "binding(k1)",
      "enforced(k1)",
      "nontransferable(k1)"
+    ],
+    [
+     "alternative_uses(k2)",
+     "binding(k2)",
+     "enforced(k2)",
+     "nontransferable(k2)"
     ]
    ],
    "assumptions": [
@@ -2409,21 +2409,21 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "binding(k3)",
-     "enforced(k3)"
-    ],
-    [
      "binding(k1)",
      "enforced(k1)"
     ],
     [
      "binding(k2)",
      "enforced(k2)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)"
     ]
    ],
    "assumptions": [
-    "binding(k3)",
-    "enforced(k3)"
+    "binding(k1)",
+    "enforced(k1)"
    ],
    "combines": [],
    "comparison": null,
@@ -2495,14 +2495,14 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "binding(k3)",
-     "enforced(k3)",
-     "selection_open(k3)"
-    ],
-    [
      "binding(k1)",
      "enforced(k1)",
      "selection_open(k1)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "selection_open(k3)"
     ],
     [
      "binding(k2)",
@@ -2614,20 +2614,20 @@
      "evasion(k3)"
     ],
     [
-     "binding(k2)",
-     "enforced(k2)",
-     "evasion(k2)"
-    ],
-    [
      "binding(k1)",
      "enforced(k1)",
      "evasion(k1)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "evasion(k2)"
     ]
    ],
    "assumptions": [
-    "binding(k3)",
-    "enforced(k3)",
-    "evasion(k3)"
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
@@ -2741,21 +2741,21 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "binding(k3)",
-     "enforced(k3)"
-    ],
-    [
      "binding(k1)",
      "enforced(k1)"
     ],
     [
      "binding(k2)",
      "enforced(k2)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)"
     ]
    ],
    "assumptions": [
-    "binding(k3)",
-    "enforced(k3)"
+    "binding(k1)",
+    "enforced(k1)"
    ],
    "combines": [],
    "comparison": null,
@@ -2832,20 +2832,20 @@
      "evasion(k3)"
     ],
     [
-     "binding(k2)",
-     "enforced(k2)",
-     "evasion(k2)"
-    ],
-    [
      "binding(k1)",
      "enforced(k1)",
      "evasion(k1)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "evasion(k2)"
     ]
    ],
    "assumptions": [
-    "binding(k3)",
-    "enforced(k3)",
-    "evasion(k3)"
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
@@ -2959,6 +2959,11 @@
    "actor_group": [],
    "assumption_sets": [
     [
+     "binding(k2)",
+     "enforced(k2)",
+     "substitutes(k2)"
+    ],
+    [
      "binding(k3)",
      "enforced(k3)",
      "substitutes(k3)"
@@ -2967,17 +2972,12 @@
      "binding(k1)",
      "enforced(k1)",
      "substitutes(k1)"
-    ],
-    [
-     "binding(k2)",
-     "enforced(k2)",
-     "substitutes(k2)"
     ]
    ],
    "assumptions": [
-    "binding(k3)",
-    "enforced(k3)",
-    "substitutes(k3)"
+    "binding(k2)",
+    "enforced(k2)",
+    "substitutes(k2)"
    ],
    "combines": [],
    "comparison": null,
@@ -3068,21 +3068,21 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "binding(k3)",
-     "enforced(k3)"
-    ],
-    [
      "binding(k1)",
      "enforced(k1)"
     ],
     [
      "binding(k2)",
      "enforced(k2)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)"
     ]
    ],
    "assumptions": [
-    "binding(k3)",
-    "enforced(k3)"
+    "binding(k1)",
+    "enforced(k1)"
    ],
    "combines": [],
    "comparison": null,
@@ -3175,11 +3175,6 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "alternative_uses(k3)",
-     "binding(k3)",
-     "enforced(k3)"
-    ],
-    [
      "alternative_uses(k1)",
      "binding(k1)",
      "enforced(k1)"
@@ -3188,6 +3183,11 @@
      "alternative_uses(k2)",
      "binding(k2)",
      "enforced(k2)"
+    ],
+    [
+     "alternative_uses(k3)",
+     "binding(k3)",
+     "enforced(k3)"
     ]
    ],
    "assumptions": [
@@ -3288,6 +3288,11 @@
    "actor_group": [],
    "assumption_sets": [
     [
+     "binding(k2)",
+     "enforced(k2)",
+     "search_open(k2)"
+    ],
+    [
      "binding(k3)",
      "enforced(k3)",
      "search_open(k3)"
@@ -3296,17 +3301,12 @@
      "binding(k1)",
      "enforced(k1)",
      "search_open(k1)"
-    ],
-    [
-     "binding(k2)",
-     "enforced(k2)",
-     "search_open(k2)"
     ]
    ],
    "assumptions": [
-    "binding(k1)",
-    "enforced(k1)",
-    "search_open(k1)"
+    "binding(k2)",
+    "enforced(k2)",
+    "search_open(k2)"
    ],
    "combines": [],
    "comparison": null,
@@ -3407,20 +3407,20 @@
      "evasion(k3)"
     ],
     [
-     "binding(k2)",
-     "enforced(k2)",
-     "evasion(k2)"
-    ],
-    [
      "binding(k1)",
      "enforced(k1)",
      "evasion(k1)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "evasion(k2)"
     ]
    ],
    "assumptions": [
-    "binding(k3)",
-    "enforced(k3)",
-    "evasion(k3)"
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
@@ -3534,21 +3534,21 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "binding(k3)",
-     "enforced(k3)"
-    ],
-    [
      "binding(k1)",
      "enforced(k1)"
     ],
     [
      "binding(k2)",
      "enforced(k2)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)"
     ]
    ],
    "assumptions": [
-    "binding(k3)",
-    "enforced(k3)"
+    "binding(k1)",
+    "enforced(k1)"
    ],
    "combines": [],
    "comparison": null,
@@ -6517,6 +6517,7 @@
     "excluded_actor": "residents.declared",
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "field_contested": false,
     "foreign_seller_actor": "sellers.foreign",
     "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
@@ -6536,6 +6537,7 @@
     "protected_concentrated": false,
     "qualifier_actor": null,
     "rate_rise": false,
+    "related": [],
     "relief_applicant_actor": null,
     "renewable": false,
     "repay_on_move": false,
@@ -6577,6 +6579,7 @@
     "excluded_actor": "residents.declared",
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "field_contested": false,
     "foreign_seller_actor": "sellers.foreign",
     "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
@@ -6596,6 +6599,7 @@
     "protected_concentrated": false,
     "qualifier_actor": null,
     "rate_rise": false,
+    "related": [],
     "relief_applicant_actor": null,
     "renewable": false,
     "repay_on_move": false,
@@ -6637,6 +6641,7 @@
     "excluded_actor": "residents.declared",
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "field_contested": false,
     "foreign_seller_actor": "sellers.foreign",
     "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
@@ -6656,6 +6661,7 @@
     "protected_concentrated": false,
     "qualifier_actor": null,
     "rate_rise": false,
+    "related": [],
     "relief_applicant_actor": null,
     "renewable": false,
     "repay_on_move": false,
@@ -6691,6 +6697,7 @@
    {
     "id": "U1",
     "reading_facts": {},
+    "reading_fields": {},
     "readings": [
      "U1-a: not covered (the list names goods and lodging only)",
      "U1-b: covered"
@@ -6700,6 +6707,7 @@
    {
     "id": "U2",
     "reading_facts": {},
+    "reading_fields": {},
     "readings": [
      "U2-a: not part of the price (fees are counted, conditions are not)",
      "U2-b: part of the price"
@@ -6709,12 +6717,13 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T06:36:44+00:00",
+ "run_at": "2026-10-18T20:31:33+00:00",
  "sources_held_back": [],
  "unclear": [
   {
    "id": "U1",
    "reading_facts": {},
+   "reading_fields": {},
    "readings": [
     "U1-a: not covered (the list names goods and lodging only)",
     "U1-b: covered"
@@ -6724,6 +6733,7 @@
   {
    "id": "U2",
    "reading_facts": {},
+   "reading_fields": {},
    "readings": [
     "U2-a: not part of the price (fees are counted, conditions are not)",
     "U2-b: part of the price"

@@ -44,6 +44,8 @@ class Related(BaseModel):
     seller_actor: str = Field(description="Who sells it: the input's suppliers, a factor's workers, the complement's sellers")
     price_variable: Literal["net_price_received", "wage_rate"] = Field(default="net_price_received", description="wage_rate where the sellers are workers")
     other_user_actor: Optional[str] = Field(default=None, description="Inputs: its other buyers, who compete for it (SB-3, CR-7a)")
+    source_id: Optional[str] = Field(default=None, description="The context source the relation rests on (a sources.json id); null where the policy text states it")
+    quote: Optional[str] = Field(default=None, description="The sentence of that source (or of the policy text) the relation rests on, quoted exactly")
 
 
 class Component(BaseModel):

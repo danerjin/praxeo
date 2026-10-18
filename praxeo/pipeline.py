@@ -12,7 +12,7 @@ from pathlib import Path
 
 from . import RULEBASE_VERSION, engine, parser
 from .combiner import combine
-from .context import ground, load_sources
+from .context import for_question, load_sources, split
 from .verifier import verify
 from .decider import Decider
 from .explainer import explain
@@ -22,14 +22,16 @@ from .scoring import score
 
 
 def predict(text: str, record: PolicyRecord, decider: Decider, sources: list | None = None) -> dict:
-    citation_problems = parser.check_citations(record, text)
-    record, held_back = ground(record, sources or [])
+    kept, held_back = split(record, sources or [])
+    citation_problems = parser.check_citations(record, text) + parser.check_source_quotes(record, text, kept)
     answers, assumptions = [], {}
     log_start = len(decider.log) if hasattr(decider, "log") else 0
     for comp, q, assumed in record_questions(record):  # dispatched by instrument, under every reading's fields
-        a = decider.answer(q, record)
+        # the decider sees the record plus the pre-enactment sources most relevant to this question (context.retrieve)
+        grounded, used = for_question(record, kept, f"{q.text} {comp.good}")
+        a = decider.answer(q, grounded)
         # exclude_none keeps the logged answer shape unchanged for answers without a confidence
-        answers.append({"question": q.model_dump(), "answer": a.model_dump(exclude_none=True)})
+        answers.append({"question": q.model_dump(), "answer": a.model_dump(exclude_none=True), **({"sources": used} if used else {})})
         atom = f"{q.assumption}({engine._atom(comp.id)})"
         assumptions[atom] = Assumption(id=atom, text=assumed, assumption_class=q.assumption_class, p=a.probability)
     consequences, program = engine.run(record, assumptions)

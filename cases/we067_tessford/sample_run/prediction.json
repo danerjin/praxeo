@@ -2770,6 +2770,7 @@
     "protected_concentrated": true,
     "qualifier_actor": null,
     "rate_rise": false,
+    "related": [],
     "relief_applicant_actor": null,
     "renewable": false,
     "repay_on_move": false,
@@ -2809,6 +2810,7 @@
    {
     "id": "U1",
     "reading_facts": {},
+    "reading_fields": {},
     "readings": [
      "U1-a: a senior who leaves on a withdrawal notice vacates the unit and keeps the credit as well as the $12,000",
      "U1-b: the relocation payment settles all claims under the Ordinance, the credit included"
@@ -2818,12 +2820,13 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T20:08:40+00:00",
+ "run_at": "2026-10-18T20:31:39+00:00",
  "sources_held_back": [],
  "unclear": [
   {
    "id": "U1",
    "reading_facts": {},
+   "reading_fields": {},
    "readings": [
     "U1-a: a senior who leaves on a withdrawal notice vacates the unit and keeps the credit as well as the $12,000",
     "U1-b: the relocation payment settles all claims under the Ordinance, the credit included"

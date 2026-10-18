@@ -1,7 +1,7 @@
 # Thin-slice run: Coralia Emergency Pricing Act
 
-Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-18T06:36:44+00:00
-Prediction log sha256 (frozen before the outcome card was opened): `f1f69593f1ea865c…`
+Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-18T20:31:33+00:00
+Prediction log sha256 (frozen before the outcome card was opened): `6158bbf63956fb8b…`
 
 ## Policy record
 
@@ -85,14 +85,14 @@ Prediction log sha256 (frozen before the outcome card was opened): `f1f69593f1ea
 | ID | Actor class | Variable | Sign | Horizon | Tier | Rules | Minimal assumption sets | Reported |
 |---|---|---|---|---|---|---|---|---|
 | C-1 | buyers.inland | price_paid | increase | medium+ | B | PC-1, PC-3, RS-4 | {binding(k1), commutable(k1), enforced(k1)} | yes |
-| C-2 | buyers.served | informal_activity | increase | short+ | B | PC-1, PC-6, RS-3 | {binding(k2), enforced(k2), evasion(k2), nontransferable(k2)} or {binding(k1), enforced(k1), evasion(k1), nontransferable(k1)} | no |
+| C-2 | buyers.served | informal_activity | increase | short+ | B | PC-1, PC-6, RS-3 | {binding(k1), enforced(k1), evasion(k1), nontransferable(k1)} or {binding(k2), enforced(k2), evasion(k2), nontransferable(k2)} | no |
 | C-3 | buyers.served | job_changes | decrease | medium+ | B | PC-1, PC-7, RS-11 | {binding(k1), buyouts_limited(k1), enforced(k1), nontransferable(k1), opportunities_need_move(k1)} or {binding(k2), buyouts_limited(k2), enforced(k2), nontransferable(k2), opportunities_need_move(k2)} | no |
 | C-4 | buyers.served | price_paid | decrease | medium+ | B | PC-1, PC-3 | {binding(k1), enforced(k1)} or {binding(k2), enforced(k2)} | yes |
 | C-5 | buyers.served | quality_per_unit | decrease | short+ | B | PC-1, PC-4, RS-2 | {binding(k1), enforced(k1), quality_adjustable(k1)} or {binding(k2), enforced(k2), quality_adjustable(k2)} | yes |
 | C-6 | buyers.served | resources_available_other_uses | increase | medium+ | B | PC-1, PC-3, CR-8 | {binding(k1), enforced(k1)} or {binding(k2), enforced(k2)} | yes |
-| C-7 | buyers.served | turnover | decrease | medium+ | B | PC-1, PC-7 | {binding(k2), buyouts_limited(k2), enforced(k2), nontransferable(k2)} or {binding(k1), buyouts_limited(k1), enforced(k1), nontransferable(k1)} | no |
+| C-7 | buyers.served | turnover | decrease | medium+ | B | PC-1, PC-7 | {binding(k1), buyouts_limited(k1), enforced(k1), nontransferable(k1)} or {binding(k2), buyouts_limited(k2), enforced(k2), nontransferable(k2)} | no |
 | C-8 | buyers.served.displaced | relocation_out_of_area | increase | long | B | PC-1, RS-5, PC-21, PC-7 | {alternative_uses(k1), binding(k1), enforced(k1), nontransferable(k1), would_leave(k1)} or {alternative_uses(k2), binding(k2), enforced(k2), nontransferable(k2), would_leave(k2)} | no |
-| C-9 | buyers.served.displaced | turnover | increase | medium+ | B | PC-1, RS-5, PC-7 | {alternative_uses(k2), binding(k2), enforced(k2), nontransferable(k2)} or {alternative_uses(k1), binding(k1), enforced(k1), nontransferable(k1)} | no |
+| C-9 | buyers.served.displaced | turnover | increase | medium+ | B | PC-1, RS-5, PC-7 | {alternative_uses(k1), binding(k1), enforced(k1), nontransferable(k1)} or {alternative_uses(k2), binding(k2), enforced(k2), nontransferable(k2)} | no |
 | C-10 | buyers.served.keepers | relocation_out_of_area | decrease | medium+ | B | PC-1, PC-7, PC-21 | {binding(k1), buyouts_limited(k1), enforced(k1), lockin_dominates(k1), nontransferable(k1), would_leave(k1)} or {binding(k2), buyouts_limited(k2), enforced(k2), lockin_dominates(k2), nontransferable(k2), would_leave(k2)} | no |
 | C-11 | evacuees.in_rooms | informal_activity | increase | short+ | B | PC-1, PC-6, RS-3 | {binding(k3), enforced(k3), evasion(k3), nontransferable(k3)} | yes |
 | C-12 | evacuees.in_rooms | job_changes | decrease | medium+ | B | PC-1, PC-7, RS-11 | {binding(k3), buyouts_limited(k3), enforced(k3), nontransferable(k3), opportunities_need_move(k3)} | no |
@@ -114,17 +114,17 @@ Prediction log sha256 (frozen before the outcome card was opened): `f1f69593f1ea
 | C-28 | hotels.declared | resources_available_other_uses (key_money) | increase | medium+ | B | PC-1, PC-6, RS-3, CR-8 | {binding(k3), enforced(k3), evasion(k3)} | yes |
 | C-29 | hotels.declared | resources_available_other_uses (rent_forgone) | decrease | medium+ | B | PC-1, PC-3, PC-16, CR-8 | {binding(k3), enforced(k3)} | yes |
 | C-30 | hotels.declared | units_held_vacant | increase | medium+ | B | PC-1, RS-5, PC-5 | {alternative_uses(k3), binding(k3), enforced(k3), relet_obstructs(k3)} | no |
-| C-31 | officials.enforcement | enforcement_cost | increase | short+ | A | PC-1, OC-3 | {binding(k3), enforced(k3)} or {binding(k1), enforced(k1)} or {binding(k2), enforced(k2)} | yes |
-| C-32 | residents.declared | allocation_by_non_price_criteria | increase | short+ | B | PC-1, PC-2 | {binding(k3), enforced(k3), selection_open(k3)} or {binding(k1), enforced(k1), selection_open(k1)} or {binding(k2), enforced(k2), selection_open(k2)} | yes |
-| C-33 | residents.declared | disputes_settled_outside_courts | increase | short+ | B | PC-1, PC-6, RS-3, RS-10 | {binding(k3), enforced(k3), evasion(k3)} or {binding(k2), enforced(k2), evasion(k2)} or {binding(k1), enforced(k1), evasion(k1)} | yes |
-| C-34 | residents.declared | excess_demand | increase | short+ | B | PC-1 | {binding(k3), enforced(k3)} or {binding(k1), enforced(k1)} or {binding(k2), enforced(k2)} | yes |
-| C-35 | residents.declared | informal_activity | increase | short+ | B | PC-1, PC-6, RS-3 | {binding(k3), enforced(k3), evasion(k3)} or {binding(k2), enforced(k2), evasion(k2)} or {binding(k1), enforced(k1), evasion(k1)} | yes |
-| C-36 | residents.declared | price_substitute | increase | long | B | PC-1, PC-3, RS-4 | {binding(k3), enforced(k3), substitutes(k3)} or {binding(k1), enforced(k1), substitutes(k1)} or {binding(k2), enforced(k2), substitutes(k2)} | yes |
-| C-37 | residents.declared | quantity_demanded | increase | short+ | B | PC-1, LW-3 | {binding(k3), enforced(k3)} or {binding(k1), enforced(k1)} or {binding(k2), enforced(k2)} | yes |
-| C-38 | residents.declared | quantity_traded | decrease | medium+ | B | PC-1, PC-5, OC-4 | {alternative_uses(k3), binding(k3), enforced(k3)} or {alternative_uses(k1), binding(k1), enforced(k1)} or {alternative_uses(k2), binding(k2), enforced(k2)} | yes |
-| C-39 | residents.declared | search_cost | increase | short+ | B | PC-1, PC-2 | {binding(k3), enforced(k3), search_open(k3)} or {binding(k1), enforced(k1), search_open(k1)} or {binding(k2), enforced(k2), search_open(k2)} | yes |
-| C-40 | residents.declared | side_payments | increase | short+ | B | PC-1, PC-6, RS-3 | {binding(k3), enforced(k3), evasion(k3)} or {binding(k2), enforced(k2), evasion(k2)} or {binding(k1), enforced(k1), evasion(k1)} | yes |
-| C-41 | residents.declared | wait_time or search_cost or side_payments or allocation_by_non_price_criteria | at_least_one_increase | short+ | B | PC-1, PC-2 | {binding(k3), enforced(k3)} or {binding(k1), enforced(k1)} or {binding(k2), enforced(k2)} | yes |
+| C-31 | officials.enforcement | enforcement_cost | increase | short+ | A | PC-1, OC-3 | {binding(k1), enforced(k1)} or {binding(k2), enforced(k2)} or {binding(k3), enforced(k3)} | yes |
+| C-32 | residents.declared | allocation_by_non_price_criteria | increase | short+ | B | PC-1, PC-2 | {binding(k1), enforced(k1), selection_open(k1)} or {binding(k3), enforced(k3), selection_open(k3)} or {binding(k2), enforced(k2), selection_open(k2)} | yes |
+| C-33 | residents.declared | disputes_settled_outside_courts | increase | short+ | B | PC-1, PC-6, RS-3, RS-10 | {binding(k3), enforced(k3), evasion(k3)} or {binding(k1), enforced(k1), evasion(k1)} or {binding(k2), enforced(k2), evasion(k2)} | yes |
+| C-34 | residents.declared | excess_demand | increase | short+ | B | PC-1 | {binding(k1), enforced(k1)} or {binding(k2), enforced(k2)} or {binding(k3), enforced(k3)} | yes |
+| C-35 | residents.declared | informal_activity | increase | short+ | B | PC-1, PC-6, RS-3 | {binding(k3), enforced(k3), evasion(k3)} or {binding(k1), enforced(k1), evasion(k1)} or {binding(k2), enforced(k2), evasion(k2)} | yes |
+| C-36 | residents.declared | price_substitute | increase | long | B | PC-1, PC-3, RS-4 | {binding(k2), enforced(k2), substitutes(k2)} or {binding(k3), enforced(k3), substitutes(k3)} or {binding(k1), enforced(k1), substitutes(k1)} | yes |
+| C-37 | residents.declared | quantity_demanded | increase | short+ | B | PC-1, LW-3 | {binding(k1), enforced(k1)} or {binding(k2), enforced(k2)} or {binding(k3), enforced(k3)} | yes |
+| C-38 | residents.declared | quantity_traded | decrease | medium+ | B | PC-1, PC-5, OC-4 | {alternative_uses(k1), binding(k1), enforced(k1)} or {alternative_uses(k2), binding(k2), enforced(k2)} or {alternative_uses(k3), binding(k3), enforced(k3)} | yes |
+| C-39 | residents.declared | search_cost | increase | short+ | B | PC-1, PC-2 | {binding(k2), enforced(k2), search_open(k2)} or {binding(k3), enforced(k3), search_open(k3)} or {binding(k1), enforced(k1), search_open(k1)} | yes |
+| C-40 | residents.declared | side_payments | increase | short+ | B | PC-1, PC-6, RS-3 | {binding(k3), enforced(k3), evasion(k3)} or {binding(k1), enforced(k1), evasion(k1)} or {binding(k2), enforced(k2), evasion(k2)} | yes |
+| C-41 | residents.declared | wait_time or search_cost or side_payments or allocation_by_non_price_criteria | at_least_one_increase | short+ | B | PC-1, PC-2 | {binding(k1), enforced(k1)} or {binding(k2), enforced(k2)} or {binding(k3), enforced(k3)} | yes |
 | C-42 | sellers.local | asset_value | decrease | short+ | B | PC-1, SB-4 | {binding(k1), durable_assets(k1), enforced(k1), expected_to_last(k1)} | no |
 | C-43 | sellers.local | compliance_cost | increase | medium+ | B | PC-1, RS-5, OC-2 | {alternative_uses(k1), binding(k1), enforced(k1), exit_process(k1)} | no |
 | C-44 | sellers.local | lobbying_effort | increase | medium+ | B | PC-1, RS-7 | {binding(k1), can_organize(k1), enforced(k1)} | yes |

@@ -39,7 +39,17 @@ def main(case: Path, out: Path) -> None:
         "(one or two sentences), evidence (list of record lines quoted exactly, may be empty).\n")
     (out / "record_for_decider.json").write_text(record.model_dump_json(indent=1))
     (out / "questions.json").write_text(json.dumps(questions, indent=1))
-    print(out, len(questions), "questions")
+    # enrichment (plan 5.3), only where the case has context sources: the pre-enactment ones, and the step's instructions
+    from praxeo.context import load_sources, split
+    from praxeo.parser import ENRICH_SYSTEM, Enrichment
+    kept, held = split(record, load_sources(case / "sources.json"))
+    if kept:
+        (out / "sources_kept.json").write_text(json.dumps([s.model_dump() for s in kept], indent=1))
+        (out / "enrichment_instructions.md").write_text(
+            "# Enrichment task\n\n" + ENRICH_SYSTEM + "\n\nRead `record_for_decider.json` and `sources_kept.json` (the sources dated "
+            f"before enactment; {len(held)} later ones were held back). Write `enrichment.json` matching this schema:\n\n```json\n"
+            + json.dumps(Enrichment.model_json_schema(), indent=1) + "\n```\n")
+    print(out, len(questions), "questions", f"{len(kept)} sources for enrichment" if kept else "")
 
 
 if __name__ == "__main__":

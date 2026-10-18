@@ -582,11 +582,18 @@
      "rule": "SB-2"
     },
     {
+     "conclusion": "sb_asset_gain(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
      "conclusion": "sb_capitalized(k1)",
      "premises": [
       "asset_supply_slow(k1)",
       "expected_to_last(k1)",
-      "sb_takeup(k1)"
+      "sb_asset_gain(k1)"
      ],
      "rule": "SB-4"
     }
@@ -1308,6 +1315,7 @@
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "field_contested": false,
     "foreign_seller_actor": "sellers.foreign",
     "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
@@ -1327,6 +1335,7 @@
     "protected_concentrated": true,
     "qualifier_actor": null,
     "rate_rise": false,
+    "related": [],
     "relief_applicant_actor": null,
     "renewable": true,
     "repay_on_move": true,
@@ -1372,6 +1381,7 @@
    {
     "id": "U1",
     "reading_facts": {},
+    "reading_fields": {},
     "readings": [
      "U1-a: not indexed",
      "U1-b: indexed"
@@ -1381,6 +1391,7 @@
    {
     "id": "U2",
     "reading_facts": {},
+    "reading_fields": {},
     "readings": [
      "U2-a: not renewed",
      "U2-b: renewed"
@@ -1390,12 +1401,13 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T06:36:46+00:00",
+ "run_at": "2026-10-18T20:31:35+00:00",
  "sources_held_back": [],
  "unclear": [
   {
    "id": "U1",
    "reading_facts": {},
+   "reading_fields": {},
    "readings": [
     "U1-a: not indexed",
     "U1-b: indexed"
@@ -1405,6 +1417,7 @@
   {
    "id": "U2",
    "reading_facts": {},
+   "reading_fields": {},
    "readings": [
     "U2-a: not renewed",
     "U2-b: renewed"

@@ -2069,6 +2069,7 @@
     "excluded_actor": null,
     "exporter_actor": "export_industries.other",
     "exporter_worker_actor": "workers.export_industries.other",
+    "field_contested": false,
     "foreign_seller_actor": "sellers.foreign",
     "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
@@ -2088,6 +2089,7 @@
     "protected_concentrated": true,
     "qualifier_actor": null,
     "rate_rise": false,
+    "related": [],
     "relief_applicant_actor": null,
     "renewable": true,
     "repay_on_move": false,
@@ -2125,6 +2127,7 @@
    {
     "id": "U1",
     "reading_facts": {},
+    "reading_fields": {},
     "readings": [
      "U1-a: direct identification (traced imported metal only)",
      "U1-b: substitution (same-grade metal of any origin)"
@@ -2134,12 +2137,13 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T06:36:47+00:00",
+ "run_at": "2026-10-18T20:31:37+00:00",
  "sources_held_back": [],
  "unclear": [
   {
    "id": "U1",
    "reading_facts": {},
+   "reading_fields": {},
    "readings": [
     "U1-a: direct identification (traced imported metal only)",
     "U1-b: substitution (same-grade metal of any origin)"

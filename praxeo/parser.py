@@ -3,14 +3,20 @@
 The LLM parser fills the schema and must quote the sentences each component
 rests on. `check_citations` then verifies in code that every quoted sentence
 occurs in the source text; a component whose quotes are not found is flagged.
+
+Enrichment (plan 5.3) is a second step: from the context sources dated before enactment, the LLM proposes related markets
+(`Component.related`) that the policy text does not name, each with the source it rests on and a quoted sentence.
+`check_source_quotes` verifies every quote in code against that source, and refuses a source dated on or after enactment.
 """
 from __future__ import annotations
 
 import re
 from pathlib import Path
 
+from pydantic import BaseModel
+
 from .decider import MODEL
-from .schema import PolicyRecord
+from .schema import PolicyRecord, Related, Source
 
 PARSER_SYSTEM = """You turn the text of a policy into a structured policy record for a praxeological analysis.
 For each operative provision, give one component: the instrument, the good and market, the actor classes it
@@ -93,6 +99,75 @@ def check_citations(record: PolicyRecord, text: str) -> list[str]:
             if _norm(sent) not in body:
                 problems.append(f"{comp.id}: quoted sentence not in source: {sent[:80]!r}")
     return problems
+
+
+def check_source_quotes(record: PolicyRecord, text: str, kept: list[Source]) -> list[str]:
+    """Every related market that cites a source must quote it exactly, and the source must be one dated before enactment
+    (`kept`); one that cites none and gives a quote must quote the policy text."""
+    by_id = {s.id: _norm(s.text) for s in kept}
+    body = _norm(text)
+    problems = []
+    for comp in record.components:
+        for i, rel in enumerate(comp.related, start=1):
+            where = f"{comp.id} related r{i} ({rel.good})"
+            if rel.source_id is not None and rel.source_id not in by_id:
+                problems.append(f"{where}: source {rel.source_id} is not a source dated before enactment")
+            elif rel.source_id is not None and not (rel.quote and _norm(rel.quote) in by_id[rel.source_id]):
+                problems.append(f"{where}: quote not found in source {rel.source_id}")
+            elif rel.source_id is None and rel.quote and _norm(rel.quote) not in body:
+                problems.append(f"{where}: quote not found in the policy text")
+    return problems
+
+
+ENRICH_SYSTEM = """You add related markets to a structured policy record for a praxeological analysis, using only the
+context sources given (each published before the policy was enacted). For each component, list the markets the sources
+name as related to its good: an input or factor its sellers use (kind input: who sells it, price_variable wage_rate where
+they are workers, and its other users where a source names them), or a complement used together with the good (kind
+complement). Every entry must give the id of the source it rests on and quote the sentence exactly. Add nothing a source
+does not state; an empty list is a correct answer. Name actor classes as in the record (role.qualifier)."""
+
+
+class ComponentRelations(BaseModel):
+    id: str
+    related: list[Related]
+
+
+class Enrichment(BaseModel):
+    components: list[ComponentRelations]
+
+
+def enrich(record: PolicyRecord, enrichment: Enrichment) -> PolicyRecord:
+    """The record with each component's proposed relations added to the ones it has (a relation already listed for the
+    same good and kind is kept, not duplicated)."""
+    add = {c.id: c.related for c in enrichment.components}
+    comps = []
+    for comp in record.components:
+        have = {(r.kind, r.good) for r in comp.related}
+        new = [r for r in add.get(comp.id, []) if (r.kind, r.good) not in have]
+        comps.append(comp.model_copy(update={"related": list(comp.related) + new}) if new else comp)
+    return record.model_copy(update={"components": comps})
+
+
+def enrich_llm(record: PolicyRecord, kept: list[Source], model: str = MODEL, effort: str = "medium") -> PolicyRecord:
+    """Ask the LLM for related markets from the pre-enactment sources, then add them to the record. The quotes are checked
+    afterwards by `check_source_quotes` (the pipeline reports every failure)."""
+    if not kept:
+        return record
+    import anthropic
+
+    client = anthropic.Anthropic()
+    sources = "\n\n".join(f"[{s.id}] ({s.citation}, {s.date})\n{s.text}" for s in kept)
+    resp = client.messages.parse(
+        model=model,
+        max_tokens=8000,
+        system=ENRICH_SYSTEM,
+        output_config={"effort": effort},
+        messages=[{"role": "user", "content": f"Policy record:\n\n{record.model_dump_json(indent=1)}\n\nContext sources:\n\n{sources}"}],
+        output_format=Enrichment,
+    )
+    if resp.stop_reason == "refusal" or resp.parsed_output is None:
+        raise RuntimeError(f"enrichment returned nothing (stop_reason={resp.stop_reason})")
+    return enrich(record, resp.parsed_output)
 
 
 def parse_fixture(path: Path) -> PolicyRecord:

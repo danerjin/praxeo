@@ -1,4 +1,4 @@
-"""Command line: python -m praxeo CASE_DIR [--parser fixture|llm] [--decider fixture|llm|human] [--out DIR]
+"""Command line: python -m praxeo CASE_DIR [--parser fixture|llm] [--enrichment PATH] [--decider fixture|llm|human] [--out DIR]
                                        [--thresholds PATH --fallback fixture|human|llm [--fallback-answers PATH]]"""
 from __future__ import annotations
 
@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 
 from . import parser as P
+from .context import load_sources, split
 from .decider import FixtureDecider, HumanDecider, LLMDecider
 from .escalation import EscalatingDecider, Thresholds, load_thresholds
 from .pipeline import run_case
@@ -19,6 +20,8 @@ def main() -> None:
     ap.add_argument("--parser", choices=["fixture", "llm"], default="fixture")
     ap.add_argument("--decider", choices=["fixture", "llm", "human"], default="fixture")
     ap.add_argument("--out", type=Path)
+    ap.add_argument("--enrichment", type=Path, help="related markets from the context sources as JSON (parser.Enrichment), "
+                    "in place of the LLM enrichment step; quotes are checked against sources.json")
     ap.add_argument("--thresholds", type=Path, help="JSON confidence thresholds (praxeo/escalation.py); needs --fallback")
     ap.add_argument("--fallback", choices=["fixture", "human", "llm"], help="decider for questions below threshold")
     ap.add_argument("--fallback-answers", type=Path, help="answers file for --fallback fixture")
@@ -32,6 +35,12 @@ def main() -> None:
 
     text = (a.case / "policy.txt").read_text()
     record = P.parse_fixture(a.case / "record.json") if a.parser == "fixture" else P.parse_llm(text)
+    # enrichment (plan 5.3): related markets from the sources dated before enactment, each quote checked in the pipeline
+    kept, _ = split(record, load_sources(a.case / "sources.json"))
+    if a.enrichment:
+        record = P.enrich(record, P.Enrichment.model_validate_json(a.enrichment.read_text()))
+    elif a.parser == "llm":
+        record = P.enrich_llm(record, kept)
     decider = {"fixture": lambda: FixtureDecider(a.case / "answers.json"),
                "llm": LLMDecider, "human": HumanDecider}[a.decider]()
     if a.fallback:
