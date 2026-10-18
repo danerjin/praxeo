@@ -96,6 +96,8 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
             lines.append(f"ceiling({c}).")
         if comp.vacancy_decontrol:
             lines.append(f"decontrol({c}).")
+        if comp.evasion_by_resellers:
+            lines.append(f"resale_evasion({c}).")
         lines.append(f'bound({c}, "{comp.bound_actor}").')
         if comp.protected_actor:
             lines.append(f'protected({c}, "{comp.protected_actor}").')

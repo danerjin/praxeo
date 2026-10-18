@@ -1075,3 +1075,17 @@ def test_ceiling_funding_questions_follow_the_record():
     assert [(c.variable, c.sign) for c in funded] == [("resources_available_other_uses", "decrease")]
     a["enforcement_budget_raised(k1)"] = a["enforcement_budget_raised(k1)"].model_copy(update=dict(p=0.4))
     assert not [c for c in engine.run(rec, a)[0] if c.actor_class == "taxpayers" and c.reported]
+
+
+def test_no_key_money_item_where_the_trade_above_the_cap_is_resale():
+    """CR-8b with PC-6: where the sellers' own sales above the cap are detectable, the side payment goes to resellers."""
+    rec = _record()
+    rec.unclear = []
+    rec.components[0].vacancy_decontrol = False
+    a = _timed()
+    item = lambda cons: _key_of(cons, "landlords.controlled", "resources_available_other_uses", item="key_money")  # noqa: E731
+    assert item(combine(engine.run(rec, a)[0], a)) is not None
+    rec.components[0].evasion_by_resellers = True
+    cons = combine(engine.run(rec, a)[0], a)
+    assert item(cons) is None
+    assert ("tenants.prospective", "side_payments", "increase") in _reported(cons)   # the seekers still pay, to the resellers

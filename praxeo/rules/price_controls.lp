@@ -178,7 +178,9 @@ effect(rent_kept(C), P, "resources_available_other_uses", increase, medium, visi
 % signed at the medium horizon so that it can be compared with the rent forgone (CR-12g: one horizon per comparison).
 % Under vacancy decontrol the seekers pay nothing on the side (see PC-6 above), but sellers who evade the cap on sitting
 % tenants' renewals still take rents above it (WE-067 C-44), so the item is not gated on decontrol.
-key_money(C) :- informal(C), not exception(cr_8, C).
+% Where the trade above the cap is resale by buyers (the sellers' own sales above it are detectable: a posted-price rule,
+% surcharges banned), the side payment goes to the resellers and the bound sellers receive none (found out of sample on WE-005).
+key_money(C) :- informal(C), not resale_evasion(C), not exception(cr_8, C).
 fired(cr_8, key_money(C), informal(C)) :- key_money(C).
 effect(key_money(C), B, "resources_available_other_uses", increase, medium, invisible, "B") :- key_money(C), bound(C, B).
 item(key_money(C), "key_money") :- key_money(C).

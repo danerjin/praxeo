@@ -49,6 +49,7 @@ class Component(BaseModel):
     neighbor_actor: Optional[str] = Field(default=None, description="Price ceilings: buyers in a neighbouring market outside the rule's reach, where shut-out buyers can go (RS-4), e.g. renters.neighbors")
     enforcer_actor: str = Field(default="officials.enforcement", description="Price ceilings: who administers and enforces the rule (OC-3)")
     vacancy_decontrol: bool = Field(default=False, description="True when the price of a new contract is free and the cap binds only on renewals")
+    evasion_by_resellers: bool = Field(default=False, description="Price ceilings: true when the text makes sales above the cap by the bound sellers themselves detectable (a posted-price rule, a ban on surcharges and tied purchases), so that what trade there is above the cap is resale by buyers")
     buyer_actor: str = Field(default="buyers.current", description="Taxes and tariffs: buyers of the taxed good")
     seller_actor: Optional[str] = Field(default="sellers.current", description="Per-unit taxes: sellers of the taxed good; null where the good has no private seller (a charge paid to the state for using its road)")
     domestic_seller_actor: str = Field(default="sellers.substitutes", description="Tariffs: domestic producers of the protected good")

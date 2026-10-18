@@ -82,14 +82,11 @@ WE005_EXCEPTIONS = {
     ("drivers", "allocation_by_non_price_criteria", "at_least_one_increase", None): "member of the PC-2 group (see above)",
     # produced and WRONG by the handbook: see WE005_KNOWN_WRONG
     ("drivers.brennick", "price_paid", "increase", None): "KNOWN WRONG: RS-4 alone",
-    ("stations", "resources_available_other_uses", "increase", None): "KNOWN WRONG: the key-money item",
 }
 # Engine consequences that contradict the handbook and have not been fixed (a fix needs more than a general pattern).
 WE005_KNOWN_WRONG = {
     ("drivers.brennick", "price_paid", "increase", None):
         "the handbook prunes the Brennick price because it combines the diversion of supply with the ambiguous crossing (C-17); the engine has the buyers-arrive chain only",
-    ("stations", "resources_available_other_uses", "increase", None):
-        "the item key_money gives the above-cap receipt to the stations; WE-005's K2 bans surcharges and the informal sales are resales of fuel in cans by individuals (C-9)",
 }
 WE005_NOT_PRODUCED = {
     "C-5": "PC-2's wait_time member has no question (no queue premise)",

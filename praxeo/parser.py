@@ -23,6 +23,8 @@ Actor roles. The rules attach consequences to the role fields, so fill every rol
 instrument, even when the text states no aim:
 - price_ceiling: bound_actor (sellers bound by the cap), protected_actor (buyers who hold the good at the capped
   price), excluded_actor (buyers seeking the good), vacancy_decontrol (true if the price of a new contract is free),
+  evasion_by_resellers (true if the text makes the sellers' own sales above the cap detectable, e.g. the posted price must be
+  the price charged and surcharges or tied purchases are banned),
   neighbor_actor (buyers in a neighbouring market outside the rule's reach, only if the text or context names one),
   enforcer_actor (who administers and enforces the cap, e.g. officials.enforcement).
 - per_unit_tax: bound_actor (who pays it to the state), buyer_actor, seller_actor, revenue_actor (who collects),
