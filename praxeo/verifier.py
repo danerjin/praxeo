@@ -28,7 +28,8 @@ def record_roles(record: PolicyRecord) -> set[str]:
                  comp.domestic_seller_actor, comp.importer_actor, comp.revenue_actor, comp.exporter_actor,
                  comp.exporter_worker_actor or "workers." + comp.exporter_actor, comp.neighbor_actor, comp.enforcer_actor]
         names += [comp.taxpayer_actor, comp.foreign_seller_actor, comp.input_supplier_actor,
-                  comp.domestic_seller_owner_actor, comp.relief_applicant_actor, comp.domestic_seller_worker_actor]
+                  comp.domestic_seller_owner_actor, comp.relief_applicant_actor, comp.domestic_seller_worker_actor,
+                  comp.mobile_buyer_actor, comp.neighbor_seller_actor]
         for d in comp.downstream:
             names += [d.actor, d.buyer_actor, d.owner_actor, d.exporter_actor, d.worker_actor]
         roles |= {n.split(".")[0] for n in names if n}

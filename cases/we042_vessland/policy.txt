@@ -1,0 +1,13 @@
+Vessland Aluminum Safeguard and Drawback Act (FICTIONAL: Vessland, Ostrel and the Act are invented for handbook worked example WE-042 and resemble, but are not, any real aluminum tariff).
+
+Vessland is a trading country of about 9 million people with its own currency, the crown, and a floating exchange rate. It uses about 1.0 million tonnes (t) a year of primary aluminum and semi-finished aluminum products, at a world price of about $2,500 a tonne. Two domestic smelters, with a combined capacity of 470,000 t and about 3,800 employees, produce about 400,000 t (85% of capacity); electricity is about 35% of their cost and is bought from the state grid. The other 600,000 t is imported. Vessland buys about 1.5% of the aluminum traded in the world.
+
+About 1,200 firms use aluminum (rolling and extrusion mills, can makers, cable makers, makers of vehicle parts, window frames, machinery and heat sinks), employing about 60,000 people. The aluminum content of their exports is about 250,000 t a year. Secondary producers (remelters) make about 120,000 t a year from scrap. Vessland's main industrial region lies 30 to 60 km from the border with Ostrel, which has no tariff on aluminum.
+
+The trade minister announced the measure on 3 February 2027. Parliament passed it on 20 May 2027, and it applies to aluminum entered on or after 1 September 2027. The tariff expires on 31 August 2031 unless Parliament extends it after a review in 2030.
+
+Importers of record must pay a tariff of 20% of customs value on imports of unwrought aluminum and semi-finished products (ingot, billet, slab, plate, sheet, foil over 0.2 mm, rod, wire, profiles): about $500 a tonne at $2,500. Aluminum scrap is exempt. Finished goods and parts containing aluminum (vehicles and their parts, appliances, windows and doors, fabricated structures, cable assemblies, cans and containers) are not covered.
+
+Drawback: 99% of the tariff paid on the aluminum used in manufacturing the exported goods is refunded to the exporter, on claim, for goods manufactured in Vessland "using imported aluminum on which the tariff was paid". Claims must be made within three years of the import. Goods re-imported within three years must be declared and the drawback repaid. Customs administers the drawback and the re-import rule "within its existing appropriation". Tariff receipts go to the general fund and drawback is paid out of them.
+
+It is unclear whether the drawback is available only on traced imported metal (direct identification) or whether aluminum of the same grade of any origin may stand in for imported metal (substitution). Customs has issued no guidance and no court has ruled.

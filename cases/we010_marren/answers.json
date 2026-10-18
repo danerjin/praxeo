@@ -1,0 +1,68 @@
+[
+ {
+  "question_id": "k1.quantity_responds",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-010 (illustrative figures), A-2 (substitutability): some smokers cut back or switch at the higher price.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyers_bear",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-010 (illustrative figures), A-1 (other): most of the increase is passed on in Marren shelf prices.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.sellers_bear",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-010 (illustrative figures), A-3 (mobility), the premise of C-14: border retailers cannot raise shelf prices by the full tax without losing customers across the line, so part of the tax stays with them. Applied to retailers.marren as a whole; the table signs only the border subclass.",
+  "evidence": [
+   "About 45% of Marren's population lives within a 20-minute drive of Dunmarch or of Kessick, its southern neighbor."
+  ]
+ },
+ {
+  "question_id": "k1.untaxed_substitutes",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-010 (illustrative figures), A-6 (substitutability): untaxed or lower-taxed products are acceptable substitutes for some smokers.",
+  "evidence": [
+   "Other tobacco products (roll-your-own tobacco, cigars, \"little cigars\") stay at 25% of the wholesale price."
+  ]
+ },
+ {
+  "question_id": "k1.cross_border_feasible",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-010 (illustrative figures), A-3 (mobility): many Marren smokers can easily buy in Dunmarch or Kessick.",
+  "evidence": [
+   "About 45% of Marren's population lives within a 20-minute drive of Dunmarch or of Kessick, its southern neighbor."
+  ]
+ },
+ {
+  "question_id": "k1.revenue_base_holds",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-010 (illustrative figures), A-16 (substitutability): stamped cigarette sales in Marren fall by less than half, compared with the counterfactual, in the short and medium run, so the rate rise outweighs the fall in the base.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.stockpile_ahead",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-010 (illustrative figures), A-9 (expectations): smokers know the date and can store cartons.",
+  "evidence": [
+   "The bill was introduced in June, passage was expected from early August, it was signed on 1 October, and it took effect on 1 January."
+  ]
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-010 (illustrative figures), A-7 (other): producers can make cigarette-like products that meet the 'other tobacco' definition.",
+  "evidence": [
+   "Other tobacco products (roll-your-own tobacco, cigars, \"little cigars\") stay at 25% of the wholesale price."
+  ]
+ }
+]

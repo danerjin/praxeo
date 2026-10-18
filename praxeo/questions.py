@@ -100,6 +100,19 @@ TAX_QUESTIONS = [
      "Part of the tax stays with sellers: the price they keep after tax falls."),
 ]
 
+# TX-3 with RS-1, asked of every per-unit tax: buyers' untaxed substitutes.
+SUBSTITUTES_QUESTION = ("untaxed_substitutes", "substitutability",
+                        "Do buyers of the taxed good have acceptable untaxed substitutes (other goods, or other forms of the same good) that they can turn to?",
+                        "Buyers have acceptable untaxed substitutes they can turn to.")
+# TX-4 with RS-4, asked of a per-unit tax whose record names buyers who can cross a boundary to an untaxed place.
+CROSS_BORDER_QUESTION = ("cross_border_feasible", "mobility",
+                         "Can enough of the buyers easily buy the taxed good on the other side of the boundary, in a place without the tax, for crossing to be worth its cost to them?",
+                         "Enough buyers can easily buy across the boundary, where the tax does not apply.")
+# TX-1 (1.1), asked when the measure raises the rate of an existing tax.
+BASE_HOLDS_QUESTION = ("revenue_base_holds", "substitutability",
+                       "Will the taxed base fall by less than enough to offset the rise in the rate, so that the revenue rises?",
+                       "The taxed base falls by less than enough to offset the rise in the rate.")
+
 # Tariffs (TX-7, TX-8).
 TARIFF_QUESTIONS = [
     ("binding", "binding",
@@ -201,11 +214,18 @@ def _specs(comp: Component) -> list[tuple[str, str, str, str]]:
     if comp.instrument not in ("per_unit_tax", "tariff"):
         return []
     specs = list(TAX_QUESTIONS if comp.instrument == "per_unit_tax" else TARIFF_QUESTIONS)
+    if comp.instrument == "per_unit_tax":
+        specs.append(SUBSTITUTES_QUESTION)
+        if comp.mobile_buyer_actor:
+            specs.append(CROSS_BORDER_QUESTION)
+    if comp.rate_rise:
+        specs.append(BASE_HOLDS_QUESTION)
     if comp.downstream:
         specs.append(INPUT_QUESTION)
         if any(d.competitors == "exempt" for d in comp.downstream):
             specs.append(EXEMPT_QUESTION)
-    specs.append(BUDGET_QUESTION)
+    if not comp.own_revenue_funded:  # OC-3, third funding case: the measure's own revenue pays, no budget is raised on taxpayers
+        specs.append(BUDGET_QUESTION)
     if comp.announcement_window:
         specs.append(STOCKPILE_QUESTION)
     exempt = [d for d in comp.downstream if d.competitors == "exempt"]

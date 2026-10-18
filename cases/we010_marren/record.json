@@ -1,0 +1,50 @@
+{
+ "name": "Marren Tobacco Tax Act",
+ "jurisdiction": "Marren (fictional)",
+ "rule_maker": "Marren legislature",
+ "enacted": "year 0, 1 October",
+ "effective": "year 1, 1 January",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "per_unit_tax",
+   "good": "cigarettes",
+   "market": "marren",
+   "bound_actor": "stamping_agents",
+   "buyer_actor": "smokers",
+   "seller_actor": "retailers.marren",
+   "revenue_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "announcement_window": true,
+   "definition_line": true,
+   "rate_rise": true,
+   "own_revenue_funded": true,
+   "mobile_buyer_actor": "smokers.border",
+   "neighbor_seller_actor": "retailers.neighbors",
+   "cap": 3.5,
+   "cap_unit": "dollars per pack of 20, not indexed",
+   "source_sentences": [
+    "Licensed stamping agents (wholesalers), who buy tax stamps and affix them before sale to retailers, must pay a cigarette tax raised from $1.50 to $3.50 per pack of 20, fixed in money terms (not indexed).",
+    "Other tobacco products (roll-your-own tobacco, cigars, \"little cigars\") stay at 25% of the wholesale price.",
+    "The bill was introduced in June, passage was expected from early August, it was signed on 1 October, and it took effect on 1 January.",
+    "About 45% of Marren's population lives within a 20-minute drive of Dunmarch or of Kessick, its southern neighbor.",
+    "Of the revenue from the $2.00 increase, $0.30 per pack goes to the Tobacco Unit and to the existing quit-smoking program (already funded from general revenue); the rest goes to the general fund."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether the use tax on cartons above the allowance will be collected at all in practice.",
+   "readings": [
+    "U1-a: rarely collected",
+    "U1-b: collected"
+   ]
+  }
+ ],
+ "context": [
+  "About 45% of Marren's population lives within a 20-minute drive of Dunmarch or of Kessick, its southern neighbor (WE-010 record).",
+  "Per-pack cigarette taxes are $1.50 in Marren, $0.40 in Dunmarch and $0.80 in Kessick (WE-010 record)."
+ ]
+}

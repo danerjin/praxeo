@@ -357,6 +357,46 @@
   {
    "actor_class": "importers",
    "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tariff(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "tx_files(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "TX-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers",
+   "assumption_sets": [
     [
      "binding(k1)"
     ]
@@ -389,7 +429,7 @@
     "medium",
     "long"
    ],
-   "id": "C-5",
+   "id": "C-6",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -451,7 +491,7 @@
     "medium",
     "long"
    ],
-   "id": "C-6",
+   "id": "C-7",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -484,7 +524,7 @@
     "medium",
     "long"
    ],
-   "id": "C-7",
+   "id": "C-8",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -539,7 +579,7 @@
     "medium",
     "long"
    ],
-   "id": "C-8",
+   "id": "C-9",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -579,7 +619,7 @@
     "medium",
     "long"
    ],
-   "id": "C-9",
+   "id": "C-10",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -612,7 +652,7 @@
     "medium",
     "long"
    ],
-   "id": "C-10",
+   "id": "C-11",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -664,7 +704,7 @@
     "medium",
     "long"
    ],
-   "id": "C-11",
+   "id": "C-12",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -742,7 +782,7 @@
     "medium",
     "long"
    ],
-   "id": "C-12",
+   "id": "C-13",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -794,7 +834,7 @@
     "medium",
     "long"
    ],
-   "id": "C-13",
+   "id": "C-14",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -859,7 +899,7 @@
     "medium",
     "long"
    ],
-   "id": "C-14",
+   "id": "C-15",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -945,7 +985,7 @@
    "horizon": [
     "long"
    ],
-   "id": "C-15",
+   "id": "C-16",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1010,7 +1050,7 @@
     "medium",
     "long"
    ],
-   "id": "C-16",
+   "id": "C-17",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1118,7 +1158,7 @@
     "medium",
     "long"
    ],
-   "id": "C-17",
+   "id": "C-18",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1156,7 +1196,7 @@
     "medium",
     "long"
    ],
-   "id": "C-18",
+   "id": "C-19",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1220,7 +1260,7 @@
     "medium",
     "long"
    ],
-   "id": "C-19",
+   "id": "C-20",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1272,7 +1312,7 @@
     "medium",
     "long"
    ],
-   "id": "C-20",
+   "id": "C-21",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1308,7 +1348,7 @@
    "horizon": [
     "short"
    ],
-   "id": "C-21",
+   "id": "C-22",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1370,7 +1410,7 @@
     "medium",
     "long"
    ],
-   "id": "C-22",
+   "id": "C-23",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1429,7 +1469,7 @@
     "medium",
     "long"
    ],
-   "id": "C-23",
+   "id": "C-24",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1493,7 +1533,7 @@
     "medium",
     "long"
    ],
-   "id": "C-24",
+   "id": "C-25",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1550,7 +1590,7 @@
     "medium",
     "long"
    ],
-   "id": "C-25",
+   "id": "C-26",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1643,7 +1683,7 @@
     "medium",
     "long"
    ],
-   "id": "C-26",
+   "id": "C-27",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1691,7 +1731,7 @@
     "medium",
     "long"
    ],
-   "id": "C-27",
+   "id": "C-28",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1739,7 +1779,7 @@
     "medium",
     "long"
    ],
-   "id": "C-28",
+   "id": "C-29",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1800,7 +1840,7 @@
     "medium",
     "long"
    ],
-   "id": "C-29",
+   "id": "C-30",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1851,7 +1891,7 @@
     "medium",
     "long"
    ],
-   "id": "C-30",
+   "id": "C-31",
    "item": null,
    "reported": true,
    "sign": "at_least_one_increase",
@@ -1910,7 +1950,7 @@
     "medium",
     "long"
    ],
-   "id": "C-31",
+   "id": "C-32",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1967,7 +2007,7 @@
     "medium",
     "long"
    ],
-   "id": "C-32",
+   "id": "C-33",
    "item": null,
    "reported": true,
    "sign": "at_least_one_decrease",
@@ -2041,7 +2081,7 @@
     "medium",
     "long"
    ],
-   "id": "C-33",
+   "id": "C-34",
    "item": null,
    "reported": true,
    "sign": "at_least_one_decrease",
@@ -2053,41 +2093,42 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"importers\").\nprotected(k1, \"steelmakers.domestic\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\ntariff(k1).\nbuyer(k1, \"steel_users\").\nseller(k1, \"sellers.current\").\ndomestic_seller(k1, \"steelmakers.domestic\").\nimporter(k1, \"importers\").\nrevenue(k1, \"officials.enforcement\").\nexporter(k1, \"export_industries\").\nexporter_worker(k1, \"workers.export_industries\").\ntaxpayer(k1, \"taxpayers\").\ndomestic_seller_worker(k1, \"steelworkers\").\nforeign_seller(k1, \"sellers.foreign\").\ninput_supplier(k1, \"input_suppliers\").\nseller_owner(k1, \"steelmakers.owners\").\nrelief_applicant(k1, \"steel_users\").\nrenewable(k1).\ndefinition_line(k1).\ndownstream(k1, \"steel_users\", \"buyers.steel_goods\", exempt).\ndownstream_owner(k1, \"steel_users\", \"owners.steel_users\").\ndownstream_exporter(k1, \"steel_users\", \"steel_users.exporters\").\ndownstream_worker(k1, \"steel_users\", \"workers.steel_users\").\ndownstream(k1, \"builders\", \"buyers.construction\", same).\nassumption(binding(k1)).\nassumption(domestic_substitutes(k1)).\nassumption(no_offset(k1)).\nassumption(input_not_replaceable(k1)).\nassumption(competitors_exempt(k1)).\nassumption(enforcement_budget_raised(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(reshaping_pays(k1)).\nassumption(relief_discretionary(k1)).\nassumption(relief_valuable(k1)).\nassumption(beneficiaries_organize(k1)).\nassumption(harmed_organize(k1)).\nassumption(expects_extension(k1)).\nassumption(expected_to_last(k1)).\nassumption(asset_supply_slow(k1)).\nassumption(can_relocate_capital(k1)).\nassumption(substitute_supply_expands(k1)).\nassumption(exporters_price_takers(k1)).\n",
+ "engine_facts": "bound(k1, \"importers\").\nprotected(k1, \"steelmakers.domestic\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\ntariff(k1).\nbuyer(k1, \"steel_users\").\ndomestic_seller(k1, \"steelmakers.domestic\").\nimporter(k1, \"importers\").\nrevenue(k1, \"officials.enforcement\").\nexporter(k1, \"export_industries\").\nexporter_worker(k1, \"workers.export_industries\").\nseller(k1, \"sellers.current\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\ndomestic_seller_worker(k1, \"steelworkers\").\nforeign_seller(k1, \"sellers.foreign\").\ninput_supplier(k1, \"input_suppliers\").\nseller_owner(k1, \"steelmakers.owners\").\nrelief_applicant(k1, \"steel_users\").\nrenewable(k1).\ndefinition_line(k1).\ndownstream(k1, \"steel_users\", \"buyers.steel_goods\", exempt).\ndownstream_owner(k1, \"steel_users\", \"owners.steel_users\").\ndownstream_exporter(k1, \"steel_users\", \"steel_users.exporters\").\ndownstream_worker(k1, \"steel_users\", \"workers.steel_users\").\ndownstream(k1, \"builders\", \"buyers.construction\", same).\nassumption(binding(k1)).\nassumption(domestic_substitutes(k1)).\nassumption(no_offset(k1)).\nassumption(input_not_replaceable(k1)).\nassumption(competitors_exempt(k1)).\nassumption(enforcement_budget_raised(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(reshaping_pays(k1)).\nassumption(relief_discretionary(k1)).\nassumption(relief_valuable(k1)).\nassumption(beneficiaries_organize(k1)).\nassumption(harmed_organize(k1)).\nassumption(expects_extension(k1)).\nassumption(expected_to_last(k1)).\nassumption(asset_supply_slow(k1)).\nassumption(can_relocate_capital(k1)).\nassumption(substitute_supply_expands(k1)).\nassumption(exporters_price_takers(k1)).\n",
  "explanations": [
   "C-1. Compared with no Halvern Steel Safeguard Order, price paid for buyers.construction rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.80). Reported.",
   "C-2. Compared with no Halvern Steel Safeguard Order, quantity demanded for buyers.construction falls from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; CR-4: CR-4. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.80). Reported.",
-  "C-3. Compared with no Halvern Steel Safeguard Order, quantity substitute for buyers.steel_goods rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-1: RS-1. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Many downstream users compete with sellers who do not face the higher input cost (p = 0.80); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.80); Sellers of the uncovered substitutes can expand their supply (p = 0.85). Reported.",
+  "C-3. Compared with no Halvern Steel Safeguard Order, quantity substitute for buyers.steel_goods rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-1: when a good becomes dearer, buyers turn to substitutes. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Many downstream users compete with sellers who do not face the higher input cost (p = 0.80); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.80); Sellers of the uncovered substitutes can expand their supply (p = 0.85). Reported.",
   "C-4. Compared with no Halvern Steel Safeguard Order, quantity supplied for export_industries falls from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; TX-8: foreigners who sell less to the country earn less of its currency and so buy fewer of its exports. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it (p = 0.60). Reported.",
-  "C-5. Compared with no Halvern Steel Safeguard Order, quantity traded for importers falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85). Reported.",
-  "C-6. Compared with no Halvern Steel Safeguard Order, reclassification for importers rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-5: owners move units out of the rule's reach; TX-4: TX-4. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.70). Reported.",
-  "C-7. Compared with no Halvern Steel Safeguard Order, resources available other uses for importers falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue. This holds if: no assumption. Reported.",
-  "C-8. Compared with no Halvern Steel Safeguard Order, quantity demanded for input_suppliers rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Domestic producers make close substitutes for the covered imports (p = 0.75). Reported.",
-  "C-9. Compared with no Halvern Steel Safeguard Order, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
-  "C-10. Compared with no Halvern Steel Safeguard Order, tax revenue for officials.enforcement rises from the short run onward (tier A, visible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue. This holds if: no assumption. Reported.",
-  "C-11. Compared with no Halvern Steel Safeguard Order, tax revenue vs static projection for officials.enforcement falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-9: TX-9. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85). Reported.",
-  "C-12. Compared with no Halvern Steel Safeguard Order, asset value for owners.steel_users falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; SB-4: SB-4. This holds if: The supply of the affected firms' assets is fixed or slowly expandable (p = 0.80); The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Many downstream users compete with sellers who do not face the higher input cost (p = 0.80); Investors expect the measure to stay in force for at least its stated term (p = 0.80); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.80). Reported.",
-  "C-13. Compared with no Halvern Steel Safeguard Order, quantity traded for sellers.foreign falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-4: OC-4. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85). Reported.",
-  "C-14. Compared with no Halvern Steel Safeguard Order, allocation by non price criteria for steel_users rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-2: OC-2; RS-15: RS-15. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Relief is granted case by case at officials' discretion (p = 0.70); Relief is worth more to applicants than its fee (p = 0.80). Reported.",
-  "C-15. Compared with no Halvern Steel Safeguard Order, capital stock target for steel_users falls in the long run (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-4: shut-out buyers turn to uncovered units, which are close substitutes; RS-6: sellers whose return falls sell less, and may cut staff or hours; TS-1: TS-1. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Some downstream users can move production abroad when they replace plant (p = 0.60); Many downstream users compete with sellers who do not face the higher input cost (p = 0.80); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.80). Reported.",
-  "C-16. Compared with no Halvern Steel Safeguard Order, compliance cost for steel_users rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-2: OC-2; RS-15: RS-15. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Relief is granted case by case at officials' discretion (p = 0.70); Relief is worth more to applicants than its fee (p = 0.80). Reported.",
-  "C-17. Compared with no Halvern Steel Safeguard Order, lobbying effort for steel_users rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-2: OC-2; RS-15: RS-15; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-7: RS-7. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Relief is granted case by case at officials' discretion (p = 0.70); Relief is worth more to applicants than its fee (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
-  "C-18. Compared with no Halvern Steel Safeguard Order, price paid for steel_users rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85). Reported.",
-  "C-19. Compared with no Halvern Steel Safeguard Order, quantity supplied for steel_users falls from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Many downstream users compete with sellers who do not face the higher input cost (p = 0.80); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.80). Reported.",
-  "C-20. Compared with no Halvern Steel Safeguard Order, quantity traded for steel_users falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-4: OC-4. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85). Reported.",
-  "C-21. Compared with no Halvern Steel Safeguard Order, quantity traded for steel_users rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.80). Reported.",
-  "C-22. Compared with no Halvern Steel Safeguard Order, reclassification for steel_users rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-5: owners move units out of the rule's reach; TX-4: TX-4. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.70). Reported.",
-  "C-23. Compared with no Halvern Steel Safeguard Order, resources available other uses for steel_users falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85). Reported.",
-  "C-24. Compared with no Halvern Steel Safeguard Order, quantity supplied for steel_users.exporters falls from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-6: sellers whose return falls sell less, and may cut staff or hours. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); The exporting users sell at world prices and cannot pass the higher cost on (p = 0.80); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.80). Reported.",
-  "C-25. Compared with no Halvern Steel Safeguard Order, investment target for steelmakers.domestic rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TS-2: TS-2. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Domestic producers make close substitutes for the covered imports (p = 0.75); The protected producers expect the measure to be renewed or extended (p = 0.55). Reported.",
-  "C-26. Compared with no Halvern Steel Safeguard Order, lobbying effort for steelmakers.domestic rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-2: OC-2; RS-15: RS-15; RS-7: RS-7. This holds if: The protected producers can organize to influence renewal at a cost below their stake (p = 0.85); The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Domestic producers make close substitutes for the covered imports (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
-  "C-27. Compared with no Halvern Steel Safeguard Order, net price received for steelmakers.domestic rises from the short run onward (tier B, visible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Domestic producers make close substitutes for the covered imports (p = 0.75). Reported.",
-  "C-28. Compared with no Halvern Steel Safeguard Order, quantity supplied for steelmakers.domestic rises from the short run onward (tier B, visible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Domestic producers make close substitutes for the covered imports (p = 0.75). Reported.",
-  "C-29. Compared with no Halvern Steel Safeguard Order, asset value for steelmakers.owners rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; SB-4: SB-4. This holds if: The supply of the affected firms' assets is fixed or slowly expandable (p = 0.80); The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Domestic producers make close substitutes for the covered imports (p = 0.75); Investors expect the measure to stay in force for at least its stated term (p = 0.80). Reported.",
-  "C-30. Compared with no Halvern Steel Safeguard Order, employment or hours worked for steelworkers rises for at least one of them from the short run onward (tier B, visible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Domestic producers make close substitutes for the covered imports (p = 0.75). Reported.",
-  "C-31. Compared with no Halvern Steel Safeguard Order, resources available other uses for taxpayers falls from the short run onward (tier B, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; OC-1: OC-1. This holds if: The administering agency's budget is raised to cover the new work, so taxpayers fund it (p = 0.65). Reported.",
-  "C-32. Compared with no Halvern Steel Safeguard Order, employment or hours worked for workers.export_industries falls for at least one of them from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; TX-8: foreigners who sell less to the country earn less of its currency and so buy fewer of its exports. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it (p = 0.60). Reported.",
-  "C-33. Compared with no Halvern Steel Safeguard Order, employment or hours worked for workers.steel_users falls for at least one of them from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-6: sellers whose return falls sell less, and may cut staff or hours. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Many downstream users compete with sellers who do not face the higher input cost (p = 0.80); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.80). Reported."
+  "C-5. Compared with no Halvern Steel Safeguard Order, compliance cost for importers rises from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-5: whoever must record, file or collect a tax bears the cost of doing so. This holds if: no assumption. Reported.",
+  "C-6. Compared with no Halvern Steel Safeguard Order, quantity traded for importers falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85). Reported.",
+  "C-7. Compared with no Halvern Steel Safeguard Order, reclassification for importers rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-5: owners move units out of the rule's reach; TX-4: where an untaxed place is within reach, buyers who can cross the boundary buy there and the sellers across it gain their custom. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.70). Reported.",
+  "C-8. Compared with no Halvern Steel Safeguard Order, resources available other uses for importers falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue. This holds if: no assumption. Reported.",
+  "C-9. Compared with no Halvern Steel Safeguard Order, quantity demanded for input_suppliers rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Domestic producers make close substitutes for the covered imports (p = 0.75). Reported.",
+  "C-10. Compared with no Halvern Steel Safeguard Order, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-11. Compared with no Halvern Steel Safeguard Order, tax revenue for officials.enforcement rises from the short run onward (tier A, visible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue. This holds if: no assumption. Reported.",
+  "C-12. Compared with no Halvern Steel Safeguard Order, tax revenue vs static projection for officials.enforcement falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-9: TX-9. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85). Reported.",
+  "C-13. Compared with no Halvern Steel Safeguard Order, asset value for owners.steel_users falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; SB-4: SB-4. This holds if: The supply of the affected firms' assets is fixed or slowly expandable (p = 0.80); The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Many downstream users compete with sellers who do not face the higher input cost (p = 0.80); Investors expect the measure to stay in force for at least its stated term (p = 0.80); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.80). Reported.",
+  "C-14. Compared with no Halvern Steel Safeguard Order, quantity traded for sellers.foreign falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-4: OC-4. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85). Reported.",
+  "C-15. Compared with no Halvern Steel Safeguard Order, allocation by non price criteria for steel_users rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-2: OC-2; RS-15: RS-15. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Relief is granted case by case at officials' discretion (p = 0.70); Relief is worth more to applicants than its fee (p = 0.80). Reported.",
+  "C-16. Compared with no Halvern Steel Safeguard Order, capital stock target for steel_users falls in the long run (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-4: shut-out buyers turn to uncovered units, which are close substitutes; RS-6: sellers whose return falls sell less, and may cut staff or hours; TS-1: TS-1. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Some downstream users can move production abroad when they replace plant (p = 0.60); Many downstream users compete with sellers who do not face the higher input cost (p = 0.80); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.80). Reported.",
+  "C-17. Compared with no Halvern Steel Safeguard Order, compliance cost for steel_users rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-2: OC-2; RS-15: RS-15. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Relief is granted case by case at officials' discretion (p = 0.70); Relief is worth more to applicants than its fee (p = 0.80). Reported.",
+  "C-18. Compared with no Halvern Steel Safeguard Order, lobbying effort for steel_users rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-2: OC-2; RS-15: RS-15; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-7: RS-7. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Relief is granted case by case at officials' discretion (p = 0.70); Relief is worth more to applicants than its fee (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-19. Compared with no Halvern Steel Safeguard Order, price paid for steel_users rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85). Reported.",
+  "C-20. Compared with no Halvern Steel Safeguard Order, quantity supplied for steel_users falls from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Many downstream users compete with sellers who do not face the higher input cost (p = 0.80); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.80). Reported.",
+  "C-21. Compared with no Halvern Steel Safeguard Order, quantity traded for steel_users falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-4: OC-4. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85). Reported.",
+  "C-22. Compared with no Halvern Steel Safeguard Order, quantity traded for steel_users rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.80). Reported.",
+  "C-23. Compared with no Halvern Steel Safeguard Order, reclassification for steel_users rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-5: owners move units out of the rule's reach; TX-4: where an untaxed place is within reach, buyers who can cross the boundary buy there and the sellers across it gain their custom. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.70). Reported.",
+  "C-24. Compared with no Halvern Steel Safeguard Order, resources available other uses for steel_users falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85). Reported.",
+  "C-25. Compared with no Halvern Steel Safeguard Order, quantity supplied for steel_users.exporters falls from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-6: sellers whose return falls sell less, and may cut staff or hours. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); The exporting users sell at world prices and cannot pass the higher cost on (p = 0.80); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.80). Reported.",
+  "C-26. Compared with no Halvern Steel Safeguard Order, investment target for steelmakers.domestic rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TS-2: TS-2. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Domestic producers make close substitutes for the covered imports (p = 0.75); The protected producers expect the measure to be renewed or extended (p = 0.55). Reported.",
+  "C-27. Compared with no Halvern Steel Safeguard Order, lobbying effort for steelmakers.domestic rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-2: OC-2; RS-15: RS-15; RS-7: RS-7. This holds if: The protected producers can organize to influence renewal at a cost below their stake (p = 0.85); The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Domestic producers make close substitutes for the covered imports (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-28. Compared with no Halvern Steel Safeguard Order, net price received for steelmakers.domestic rises from the short run onward (tier B, visible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Domestic producers make close substitutes for the covered imports (p = 0.75). Reported.",
+  "C-29. Compared with no Halvern Steel Safeguard Order, quantity supplied for steelmakers.domestic rises from the short run onward (tier B, visible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Domestic producers make close substitutes for the covered imports (p = 0.75). Reported.",
+  "C-30. Compared with no Halvern Steel Safeguard Order, asset value for steelmakers.owners rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; SB-4: SB-4. This holds if: The supply of the affected firms' assets is fixed or slowly expandable (p = 0.80); The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Domestic producers make close substitutes for the covered imports (p = 0.75); Investors expect the measure to stay in force for at least its stated term (p = 0.80). Reported.",
+  "C-31. Compared with no Halvern Steel Safeguard Order, employment or hours worked for steelworkers rises for at least one of them from the short run onward (tier B, visible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Domestic producers make close substitutes for the covered imports (p = 0.75). Reported.",
+  "C-32. Compared with no Halvern Steel Safeguard Order, resources available other uses for taxpayers falls from the short run onward (tier B, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; OC-1: OC-1. This holds if: The administering agency's budget is raised to cover the new work, so taxpayers fund it (p = 0.65). Reported.",
+  "C-33. Compared with no Halvern Steel Safeguard Order, employment or hours worked for workers.export_industries falls for at least one of them from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; TX-8: foreigners who sell less to the country earn less of its currency and so buy fewer of its exports. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it (p = 0.60). Reported.",
+  "C-34. Compared with no Halvern Steel Safeguard Order, employment or hours worked for workers.steel_users falls for at least one of them from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-6: sellers whose return falls sell less, and may cut staff or hours. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.85); Many downstream users compete with sellers who do not face the higher input cost (p = 0.80); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.80). Reported."
  ],
  "questions": [
   {
@@ -2479,8 +2520,13 @@
     "input_supplier_actor": "input_suppliers",
     "instrument": "tariff",
     "market": "halvern",
+    "mobile_buyer_actor": null,
     "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "own_revenue_funded": false,
     "protected_actor": "steelmakers.domestic",
+    "protected_concentrated": true,
+    "rate_rise": false,
     "relief_applicant_actor": "steel_users",
     "renewable": true,
     "revenue_actor": "officials.enforcement",
@@ -2520,7 +2566,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-17T22:27:11+00:00",
+ "run_at": "2026-10-18T01:43:09+00:00",
  "sources_held_back": [],
  "unclear": [
   {

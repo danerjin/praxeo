@@ -2564,9 +2564,13 @@
     "input_supplier_actor": null,
     "instrument": "price_ceiling",
     "market": "san_francisco",
+    "mobile_buyer_actor": null,
     "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "own_revenue_funded": false,
     "protected_actor": "tenants.controlled",
     "protected_concentrated": true,
+    "rate_rise": false,
     "relief_applicant_actor": null,
     "renewable": false,
     "revenue_actor": "officials.enforcement",
@@ -2606,7 +2610,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T01:36:05+00:00",
+ "run_at": "2026-10-18T01:43:09+00:00",
  "sources_held_back": [],
  "unclear": [
   {

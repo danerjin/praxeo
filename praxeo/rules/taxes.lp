@@ -11,6 +11,7 @@
 %                                   competitors face the same cost, `exempt` when competitors do not (RS-14)
 %   domestic_seller_worker(C, A).   employees of the protected domestic producers (optional)
 %   downstream_worker(C, A, W).     employees W of the downstream users A (optional)
+%   rate_rise(C).                   the measure raises the rate of an existing tax (TX-1, 1.1)
 %   announced(C).                   the measure was announced before it takes effect (RS-8; see timing.lp)
 %   assumption(A).                  an assumption the decider estimated
 % The choice over assumptions is repeated here so that the file stands alone; the same rule in
@@ -23,7 +24,17 @@ collected(C) :- tax(C), not exception(tx_1, C).
 collected(C) :- tariff(C), not exception(tx_1, C).
 fired(tx_1, collected(C), tax(C))    :- collected(C), tax(C).
 fired(tx_1, collected(C), tariff(C)) :- collected(C), tariff(C).
-effect(collected(C), R, "tax_revenue", increase, short, visible, "A") :- collected(C), revenue(C, R).
+% A new tax yields revenue (Tier A). A rise in the rate of an existing tax (rate_rise) yields more revenue only if the base does
+% not fall enough to offset it: Tier B, with that premise (TX-1, 1.1).
+effect(collected(C), R, "tax_revenue", increase, short, visible, "A") :- collected(C), revenue(C, R), not rate_rise(C).
+revenue_rises(C) :- collected(C), rate_rise(C), holds(revenue_base_holds(C)).
+fired(tx_1, revenue_rises(C), collected(C))          :- revenue_rises(C).
+fired(tx_1, revenue_rises(C), revenue_base_holds(C)) :- revenue_rises(C).
+effect(revenue_rises(C), R, "tax_revenue", increase, short, visible, "B") :- revenue_rises(C), revenue(C, R).
+% TX-5: whoever must record, file or collect bears a compliance cost (Tier A, given positive compliance work).
+tx_files(C) :- collected(C), not exception(tx_5, C).
+fired(tx_5, tx_files(C), collected(C)) :- tx_files(C).
+effect(tx_files(C), B, "compliance_cost", increase, short, invisible, "A") :- tx_files(C), bound(C, B).
 % Who bears it: the importers pay a tariff outright; the buyers and sellers of a taxed good bear it as TX-2 / TX-7 say.
 effect(collected(C), B, "resources_available_other_uses", decrease, short, invisible, "A") :- collected(C), tariff(C), bound(C, B).
 bears_buyer(C) :- collected(C), tax(C), holds(buyers_bear(C)).

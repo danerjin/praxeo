@@ -1,0 +1,54 @@
+[
+ {
+  "question_id": "k1.quantity_responds",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-002 (illustrative figures), A-2 (substitutability): buyers have untaxed substitutes (water, diet drinks, juice) they consider acceptable, so at least one side cuts its quantity.",
+  "evidence": [
+   "Drinks sweetened only with non-caloric sweeteners, milk-based drinks and 100% juice are exempt."
+  ]
+ },
+ {
+  "question_id": "k1.buyers_bear",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-002 (illustrative figures), A-1 (other): Lakeport retailers pass at least part of the tax on in shelf prices.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.sellers_bear",
+  "value": "no",
+  "probability": 0.4,
+  "rationale": "No row in WE-002's assumption table; my estimate from the record. A-1 says only that retailers pass 'at least part' on; the table signs no sellers' net-price row, and C-13 (the immobile buyers bear more) points to buyers bearing the larger share. Below the cut-off.",
+  "evidence": [
+   "Three neighboring towns, each 10 to 15 minutes' drive from most Lakeport homes, have no such tax."
+  ]
+ },
+ {
+  "question_id": "k1.untaxed_substitutes",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-002 (illustrative figures), A-2 (substitutability): buyers have untaxed substitutes they consider acceptable (water, diet drinks, juice).",
+  "evidence": [
+   "Drinks sweetened only with non-caloric sweeteners, milk-based drinks and 100% juice are exempt."
+  ]
+ },
+ {
+  "question_id": "k1.cross_border_feasible",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-002 (illustrative figures), A-3 (mobility): enough Lakeport residents can easily shop in the neighboring towns.",
+  "evidence": [
+   "Three neighboring towns, each 10 to 15 minutes' drive from most Lakeport homes, have no such tax."
+  ]
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-002 (illustrative figures), A-4 (other): reformulation or relabeling to an exempt category is feasible for some products.",
+  "evidence": [
+   "Drinks sweetened only with non-caloric sweeteners, milk-based drinks and 100% juice are exempt."
+  ]
+ }
+]

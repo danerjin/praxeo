@@ -1,0 +1,63 @@
+{
+ "name": "Vessland Aluminum Safeguard and Drawback Act",
+ "jurisdiction": "Vessland (fictional)",
+ "rule_maker": "Parliament of Vessland",
+ "enacted": "2027-05-20",
+ "effective": "2027-09-01",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "tariff",
+   "good": "primary_and_semi_finished_aluminum",
+   "market": "vessland",
+   "bound_actor": "importers",
+   "importer_actor": "importers",
+   "buyer_actor": "users.home",
+   "protected_actor": "smelters",
+   "domestic_seller_actor": "smelters",
+   "domestic_seller_worker_actor": "smelter_workers",
+   "domestic_seller_owner_actor": "smelters.owners",
+   "input_supplier_actor": "input_suppliers",
+   "revenue_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "foreign_seller_actor": "sellers.foreign",
+   "exporter_actor": "export_industries.other",
+   "exporter_worker_actor": "workers.export_industries.other",
+   "downstream": [
+    {
+     "actor": "users.home.finished",
+     "buyer_actor": "buyers.aluminum_goods",
+     "competitors": "exempt",
+     "owner_actor": "owners.users_home_finished",
+     "worker_actor": "workers.users_home_finished"
+    }
+   ],
+   "announcement_window": true,
+   "renewable": true,
+   "definition_line": true,
+   "cap": 0.2,
+   "cap_unit": "ad valorem, share of customs value",
+   "source_sentences": [
+    "Importers of record must pay a tariff of 20% of customs value on imports of unwrought aluminum and semi-finished products (ingot, billet, slab, plate, sheet, foil over 0.2 mm, rod, wire, profiles): about $500 a tonne at $2,500.",
+    "Finished goods and parts containing aluminum (vehicles and their parts, appliances, windows and doors, fabricated structures, cable assemblies, cans and containers) are not covered.",
+    "The trade minister announced the measure on 3 February 2027.",
+    "The tariff expires on 31 August 2031 unless Parliament extends it after a review in 2030."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether the drawback is available only on traced imported metal or also against same-grade metal of any origin.",
+   "readings": [
+    "U1-a: direct identification (traced imported metal only)",
+    "U1-b: substitution (same-grade metal of any origin)"
+   ]
+  }
+ ],
+ "context": [
+  "Two domestic smelters produce about 400,000 t against 470,000 t of capacity; the other 600,000 t used is imported (WE-042 record).",
+  "Vessland buys about 1.5% of the aluminum traded in the world and has a floating exchange rate (WE-042 record)."
+ ]
+}

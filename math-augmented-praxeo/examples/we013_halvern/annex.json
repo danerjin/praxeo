@@ -34,7 +34,7 @@
   ]
  },
  {
-  "consequence_id": "C-5",
+  "consequence_id": "C-6",
   "actor_class": "importers",
   "variable": "quantity_traded",
   "praxeological_sign": "decrease",
@@ -79,7 +79,7 @@
   ]
  },
  {
-  "consequence_id": "C-11",
+  "consequence_id": "C-12",
   "actor_class": "officials.enforcement",
   "variable": "tax_revenue_vs_static_projection",
   "praxeological_sign": "decrease",
@@ -124,7 +124,7 @@
   ]
  },
  {
-  "consequence_id": "C-18",
+  "consequence_id": "C-19",
   "actor_class": "steel_users",
   "variable": "price_paid",
   "praxeological_sign": "increase",
@@ -167,7 +167,7 @@
   ]
  },
  {
-  "consequence_id": "C-20",
+  "consequence_id": "C-21",
   "actor_class": "steel_users",
   "variable": "quantity_traded",
   "praxeological_sign": "decrease",
@@ -211,7 +211,7 @@
   ]
  },
  {
-  "consequence_id": "C-27",
+  "consequence_id": "C-28",
   "actor_class": "steelmakers.domestic",
   "variable": "net_price_received",
   "praxeological_sign": "increase",
@@ -254,7 +254,7 @@
   ]
  },
  {
-  "consequence_id": "C-28",
+  "consequence_id": "C-29",
   "actor_class": "steelmakers.domestic",
   "variable": "quantity_supplied",
   "praxeological_sign": "increase",

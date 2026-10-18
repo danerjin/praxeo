@@ -1,0 +1,56 @@
+{
+ "name": "Saldria Plastic Packaging Tax Act",
+ "jurisdiction": "Saldria (fictional)",
+ "rule_maker": "Parliament of Saldria",
+ "enacted": "2027-06-28",
+ "effective": "2028-01-01",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "per_unit_tax",
+   "good": "plastic_packaging_components",
+   "market": "saldria",
+   "bound_actor": "converters",
+   "importer_actor": "importers.packaging",
+   "buyer_actor": "packaging_users",
+   "seller_actor": "converters",
+   "revenue_actor": "state budget",
+   "enforcer_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "own_revenue_funded": true,
+   "downstream": [
+    {
+     "actor": "packaging_users",
+     "buyer_actor": "buyers.packaged_goods",
+     "competitors": "same"
+    }
+   ],
+   "announcement_window": true,
+   "definition_line": true,
+   "cap": 200.0,
+   "cap_unit": "talers per tonne",
+   "source_sentences": [
+    "A tax of 200 T per tonne is charged on plastic packaging components (a component in which plastic is the heaviest material by weight) manufactured in or imported into Saldria, empty or around imported goods, on the manufacturer or the importer of record, with quarterly returns.",
+    "\"A plastic packaging component containing 30 per cent or more recycled plastic is not chargeable.\"",
+    "\"A person who manufactured or imported less than 10 tonnes of plastic packaging components in the previous calendar year is not liable for the tax in the current year.\"",
+    "The tax was announced in the budget statement of 2 March 2027, enacted on 28 June 2027 and takes effect on 1 January 2028.",
+    "The Act appropriates 7 million T a year from the general budget for the plastics unit."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "How the 30% recycled content is measured.",
+   "readings": [
+    "U1-a: per component",
+    "U1-b: averaged over the person's components in the quarter"
+   ]
+  }
+ ],
+ "context": [
+  "Saldria produces no virgin plastic resin; all of it is imported, at world prices, and Saldria buys about 0.4% of the world's packaging resins (WE-062 record).",
+  "Converters export about 70,000 t of empty packaging a year, at prices set abroad (WE-062 record)."
+ ]
+}
