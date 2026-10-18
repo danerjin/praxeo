@@ -24,13 +24,29 @@ RULE_TEXT = {
     "CR-9": "an owner who leaves the rental market ends the leases of those who live in the building",
     "OC-3": "the measure must be administered, and a raised budget is paid for by taxpayers",
     "RS-6": "sellers whose return falls sell less, and may cut staff or hours",
+    "SB-1": "a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later",
+    "OC-1": "what the payers give up is what they would otherwise have bought",
+    "SB-2": "a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded",
+    "DM-1": "where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment",
+    "CR-4": "buyers who face a higher price take fewer units",
+    "SB-3": "resources move into the subsidized activity from the uses that would otherwise have had them",
+    "SB-4": "a lasting change in the return on an asset in slow supply is capitalized in its value",
+    "SB-5": "a payment conditional on criteria draws effort to meet them",
+    "RS-7": "a gain concentrated on an identifiable group draws its lobbying to keep or extend it",
+    "LW-6": "a good handed out at a fixed price in a fixed number is rationed by other means when more want it",
+    "PC-2": "rationing by other means than price shows up as waiting or allocation by connections",
+    "SB-6": "a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock",
+    "CR-6": "sellers facing fewer buyers than they planned for cut their price",
+    "OC-4": "exchanges that no longer happen are lost to both sides",
+    "RS-11": "a benefit lost on moving ties the holder to staying put",
     "RS-14": "a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt",
 }
 
 SIGN_WORD = {"increase": "rises", "decrease": "falls", "ambiguous": "may move either way", "no_change": "does not change",
              "at_least_one_increase": "rises for at least one of them", "at_least_one_decrease": "falls for at least one of them"}
 WINDOW_WORD = {"announcement": "in the announcement window (before the effective date)",
-               "first_months": "in the first months after the effective date"}
+               "first_months": "in the first months after the effective date",
+               "after_expiry": "after the temporary measure expires"}
 
 
 def explain(c: Consequence, assumptions: dict[str, Assumption], record: PolicyRecord) -> str:

@@ -9,7 +9,8 @@ derived. Keeping only the minimal sets yields an ATMS-style label
 Rule-base conventions beyond effect/7 (all optional, all documented in rules/*.lp):
 - group_effect(Concl, Actor, "member1,member2", Sign, Horizon, Visibility, Tier): a group consequence; Sign is
   at_least_one_increase or at_least_one_decrease and the members are comma-separated variable names.
-- window(Concl, announcement|first_months): the conclusion is signed for a timing window (RS-8), horizon short.
+- window(Concl, announcement|first_months|after_expiry): the conclusion is signed for a timing window (RS-8, SB-6);
+  an announcement-window conclusion has horizon short.
 - item(Concl, "name"): the conclusion is one named item of a variable that opposite chains move (CR-12 0.8).
 Consequences are keyed by (actor, variable, window, item). The rules stay monotone in holds/1 (only plain facts
 such as exception/2 and announced/1 are negated), which the minimal-set search relies on.
@@ -49,6 +50,31 @@ def _atom(name: str) -> str:
     """Snake-case identifier safe as an ASP constant."""
     s = "".join(ch if ch.isalnum() else "_" for ch in name.lower()).strip("_")
     return s if s[:1].isalpha() else "c_" + s
+
+
+SUBSIDIES = ("per_unit_subsidy", "purchase_rebate", "lump_sum_subsidy")
+
+
+def _subsidy_facts(c: str, comp) -> list[str]:
+    lines = [f"subsidy({c}).", f'sb_recipient({c}, "{comp.bound_actor}").',
+             f'enforcer({c}, "{comp.enforcer_actor}").', f'taxpayer({c}, "{comp.taxpayer_actor}").',
+             f'sb_claim_handler({c}, "{comp.claim_handler_actor or comp.bound_actor}").']
+    if comp.instrument != "lump_sum_subsidy":
+        lines.append(f"per_unit_sub({c}).")
+    if comp.seller_actor and comp.seller_actor != comp.bound_actor:
+        lines.append(f'sb_seller({c}, "{comp.seller_actor}").')
+    for pred, actor in (("sb_other_buyer", comp.other_buyer_actor), ("sb_substitute_seller", comp.substitute_seller_actor),
+                        ("sb_asset_owner", comp.asset_owner_actor), ("sb_used_buyer", comp.used_buyer_actor),
+                        ("sb_used_owner", comp.used_owner_actor), ("sb_scrapper", comp.scrapper_actor)):
+        if actor:
+            lines.append(f'{pred}({c}, "{actor}").')
+    for pred, flag in (("own_revenue", comp.own_revenue_funded), ("debt_funded", comp.debt_funded),
+                       ("criteria", comp.eligibility_criteria), ("renewable", comp.renewable),
+                       ("budget_capped", comp.budget_capped), ("temporary", comp.temporary),
+                       ("scrappage", comp.scrappage), ("repay_on_move", comp.repay_on_move)):
+        if flag:
+            lines.append(f"{pred}({c}).")
+    return lines
 
 
 def _tax_facts(c: str, comp) -> list[str]:
@@ -116,6 +142,8 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
                 lines.append(f"protected_concentrated({c}).")
         if comp.instrument in ("per_unit_tax", "tariff"):
             lines += _tax_facts(c, comp)
+        if comp.instrument in SUBSIDIES:
+            lines += _subsidy_facts(c, comp)
     for a in assumptions:
         lines.append(f"assumption({a}).")
     return "\n".join(lines) + "\n"

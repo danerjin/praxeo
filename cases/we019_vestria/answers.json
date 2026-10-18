@@ -1,0 +1,93 @@
+[
+ {
+  "question_id": "k1.takeup",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-2: many owners of eligible cars value the rebate above their car and the cost of buying sooner (1.1 million eligible cars against V$4,000).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.not_fully_captured",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-1: sellers do not capture the whole rebate; some 30 competing brands; the rebate is shown on the invoice.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.quantity_expands",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-2 with SB-2's premise: buyers who take the rebate buy a new car they would not have bought in the window.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.seller_supply_slow",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-7: the supply of eligible models cannot grow much within six months (shipping lead times of three to five months).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.sellers_fewer_alternatives",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-16: while their stock is fixed by earlier import orders, sellers have clearly fewer alternatives than rebate buyers, who can wait or keep their car.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.substitutes_given_up",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-12: some rebate buyers would otherwise have bought a non-eligible new model.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.qualifying_pays",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-8: some owners of failing cars can get a roadworthiness certificate for less than the rebate is worth to them.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.beneficiaries_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-9: importers and dealers have an existing association.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.oversubscribed",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-6: demand for rebates exceeds 120,000 at some point in the window (1.1 million eligible cars).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_delay",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-5: buyers knew of the scheme from March and could delay purchases.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.pulled_forward",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-3: many window buyers would have bought a new car within the next few years anyway.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.would_stay_in_use",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-4: the scrapped cars would otherwise have stayed in use (roadworthiness required; retirement at about 18 years).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.used_supply_slow",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-13: used-car imports cannot quickly replace the scrapped cars (25% duty and inspection).",
+  "evidence": []
+ }
+]

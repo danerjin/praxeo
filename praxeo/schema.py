@@ -11,7 +11,8 @@ GROUP_SIGNS = {"at_least_one_increase": "increase", "at_least_one_decrease": "de
 # Timing windows (02_ontology.md 2.5, RS-8): None is the ordinary, unwindowed consequence. "announcement" is the
 # stretch between announcement and the effective date. "first_months" is the first stretch after the effective date,
 # which the handbook signs on its own where the announcement-window response still bears on the price (WE-001 C-21).
-Window = Literal["announcement", "first_months"]
+# "after_expiry" is the stretch after a temporary measure ends, where purchases brought into its window are missing (SB-6).
+Window = Literal["announcement", "first_months", "after_expiry"]
 Horizon = Literal["short", "medium", "long"]
 HORIZON_ORDER = {"short": 0, "medium": 1, "long": 2}
 
@@ -79,6 +80,22 @@ class Component(BaseModel):
     mobile_buyer_actor: Optional[str] = Field(default=None, description="Per-unit taxes: buyers who can easily buy the taxed good across the boundary, in a neighbouring jurisdiction without the tax (TX-4, RS-4)")
     neighbor_seller_actor: Optional[str] = Field(default=None, description="Per-unit taxes: sellers just across the boundary who gain those buyers (TX-4, RS-4)")
     general_budget: bool = Field(default=False, description="Price ceilings: enforcement is funded from the general budget, so OC-3 and OC-1 name the payers")
+    # subsidies (per_unit_subsidy, purchase_rebate, lump_sum_subsidy): bound_actor is who receives the payment, seller_actor
+    # the sellers of the subsidized good (null where the recipients are the sellers), taxpayer_actor who funds it (SB-1),
+    # enforcer_actor the agency that pays and checks it (OC-3); own_revenue_funded, renewable and announcement_window apply.
+    other_buyer_actor: Optional[str] = Field(default=None, description="Subsidies: buyers of the same good who receive no payment (DM-1, CR-4c), e.g. buyers.other")
+    substitute_seller_actor: Optional[str] = Field(default=None, description="Subsidies: sellers of the unsubsidized goods the recipients would otherwise have bought (SB-3, RS-1)")
+    asset_owner_actor: Optional[str] = Field(default=None, description="Subsidies: owners of an asset in slow supply whose return the subsidy raises (SB-4), e.g. landowners")
+    claim_handler_actor: Optional[str] = Field(default=None, description="Subsidies: who files or processes claims (CR-8c); defaults to bound_actor")
+    eligibility_criteria: bool = Field(default=False, description="Subsidies: the payment is conditional on criteria the recipient must meet (SB-5)")
+    temporary: bool = Field(default=False, description="Subsidies: available only during a limited window, after which it expires (SB-6)")
+    debt_funded: bool = Field(default=False, description="Subsidies: paid from borrowing now and repaid from taxes later (SB-1)")
+    budget_capped: bool = Field(default=False, description="Subsidies: a fixed budget or number of payments, handed out first come, first served (PC-2 group form, LW-6)")
+    scrappage: bool = Field(default=False, description="Subsidies: the payment requires destroying a used good (SB-6)")
+    used_buyer_actor: Optional[str] = Field(default=None, description="Subsidies with scrappage: buyers of the used goods (SB-6), e.g. buyers.used_cars")
+    used_owner_actor: Optional[str] = Field(default=None, description="Subsidies with scrappage: owners who keep their used goods (SB-6, SB-4)")
+    scrapper_actor: Optional[str] = Field(default=None, description="Subsidies with scrappage: who destroys the scrapped goods (SB-6), e.g. dismantlers")
+    repay_on_move: bool = Field(default=False, description="Subsidies: the payment is repaid if the recipient moves or sells within a period (RS-11)")
     source_sentences: list[str] = Field(description="Sentences of the policy text this component rests on, quoted exactly")
 
     @field_validator("instrument")

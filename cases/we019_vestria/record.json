@@ -1,0 +1,59 @@
+{
+ "name": "Vestria Fleet Renewal Rebate",
+ "jurisdiction": "Vestria (fictional)",
+ "rule_maker": "the Parliament of Vestria",
+ "enacted": "20 May",
+ "effective": "1 July",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "purchase_rebate",
+   "good": "new_fuel_efficient_cars",
+   "market": "vestria",
+   "bound_actor": "buyers.new_cars.scrapping",
+   "seller_actor": "sellers.new_cars",
+   "other_buyer_actor": "buyers.new_cars.other",
+   "substitute_seller_actor": "sellers.new_cars",
+   "claim_handler_actor": "sellers.new_cars",
+   "enforcer_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "debt_funded": true,
+   "eligibility_criteria": true,
+   "temporary": true,
+   "budget_capped": true,
+   "renewable": true,
+   "announcement_window": true,
+   "scrappage": true,
+   "used_buyer_actor": "buyers.used_cars",
+   "used_owner_actor": "owners.old_cars.keeping",
+   "scrapper_actor": "dismantlers",
+   "source_sentences": [
+    "A private buyer who scraps an eligible old car receives a rebate of V$4,000 on a new car certified at 5.0 L/100 km or less, bought from a registered Vestrian dealer.",
+    "The rebate is paid by the Transport Ministry to the dealer and deducted on the invoice; one per buyer.",
+    "The old car must be 12 or more years old, registered to the buyer continuously since before 15 March, and hold a current roadworthiness certificate.",
+    "The budget is capped at V$480 million (120,000 rebates), first come, first served; the scheme closes early if the budget runs out.",
+    "It applies to purchase contracts signed from 1 July to 31 December of the same year and then expires.",
+    "Ministers have said there is no plan to repeat it, but have not ruled it out.",
+    "The government announced the rebate in its budget statement on 15 March.",
+    "The old car is delivered to a licensed dismantler, deregistered, and crushed within 30 days.",
+    "The rebate, the fees and the administration are funded by additional government bonds issued in the year, serviced and repaid from general revenue over 10 years."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether the scheme would be reopened if the budget ran out early.",
+   "readings": [
+    "U1-a: not reopened",
+    "U1-b: reopened"
+   ]
+  }
+ ],
+ "context": [
+  "About 200,000 new cars are sold in a normal year, roughly 40% of them models that use 5.0 liters of fuel per 100 km or less.",
+  "Of 4.5 million registered cars, about 1.1 million are 12 or more years old; a drivable car of that age typically sells for V$1,500 to V$5,000.",
+  "Used cars can be imported, but they pay a 25% duty and a registration inspection, so the used-car market runs mostly on the domestic fleet."
+ ]
+}

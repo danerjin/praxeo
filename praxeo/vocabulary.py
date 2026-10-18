@@ -41,7 +41,9 @@ def actor_roles() -> frozenset[str]:
 def instruments() -> frozenset[str]:
     text = ONTOLOGY.read_text()
     section = text[text.index("## 2.3"):text.index("## 2.4")]
-    return frozenset(re.findall(r"^\| `([a-z_]+)`", section, re.M))
+    # every backticked name in the first cell of a row: one row may list several instruments
+    cells = re.findall(r"^\| ([^|]*)\|", section, re.M)
+    return frozenset(n for cell in cells for n in re.findall(r"`([a-z_]+)`", cell))
 
 
 def check_instrument(name: str) -> str | None:

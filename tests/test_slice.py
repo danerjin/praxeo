@@ -197,7 +197,8 @@ def test_brier_and_logic_accuracy():
     assert s["brier"]["mean"] == pytest.approx(0.04)
     # only consequences whose assumptions the card shows all held stay in the logic score
     status = {x.assumption: x.held for x in card.assumption_status}
-    kept = [c for c in cons if c.reported and c.item is None and all(status.get(x.split("(")[0]) is True for x in c.assumptions)]
+    # (without the combiner there are no totals, so items are scored as they stand)
+    kept = [c for c in cons if c.reported and all(status.get(x.split("(")[0]) is True for x in c.assumptions)]
     assert s["logic"]["predictions"] == len(kept) < s["headline"]["predictions"]
 
 
@@ -972,10 +973,14 @@ def test_announcement_window_is_a_short_horizon_prediction_in_scoring():
 
 def test_items_are_parts_and_not_scored():
     item = _c("I", "landlords", "resources_available_other_uses", "increase", ("medium",)).model_copy(update=dict(item="key_money"))
-    total = _c("T", "landlords", "resources_available_other_uses", "decrease", ("medium",))
+    total = _c("T", "landlords", "resources_available_other_uses", "decrease", ("medium",)).model_copy(update=dict(combines=["I"]))
     card = _card([_fm("F", "landlords", "resources_available_other_uses", "effect", "decrease")])
     s = f1_block([item, total], card)
     assert s["predictions"] == 1 and s["matched"] == ["T"] and s["false_positives"] == []
+    # an item of a variable with no total (SB-3's unsubsidized goods) is scored as it stands
+    alone = _c("U", "sellers", "quantity_traded", "decrease", ("medium",)).model_copy(update=dict(item="unsubsidized_goods"))
+    s = f1_block([alone], _card([_fm("F", "sellers", "quantity_traded", "effect", "decrease")]))
+    assert s["matched"] == ["U"]
 
 
 def test_comparisons_are_declared_with_sources_and_typed_questions():

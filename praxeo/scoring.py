@@ -17,7 +17,8 @@
   members that have its direction.
 - Announcement-window consequences carry horizon ["short"] and are scored as short-horizon predictions; they are kept
   apart from the ordinary consequence of the same actor and variable when deduplicating. Items (the parts of a CR-12 total
-  over two items of one variable) are not scored: the total is.
+  over two items of one variable) are not scored: the total is. An item of a variable with no total (SB-3's unsubsidized
+  goods) is scored as it stands.
 - Variables are checked against the shared vocabulary (02_ontology.md, 2.4).
 - Assumption estimates are scored with the Brier score where the card records the status.
 """
@@ -53,7 +54,7 @@ def _refuted(c: Consequence, card: OutcomeCard) -> bool:
 def dedupe(preds: list[Consequence]) -> list[Consequence]:
     seen, out = set(), []
     for c in preds:
-        key = (c.actor_class, tuple(c.members()), tuple(c.horizon), c.window)
+        key = (c.actor_class, tuple(c.members()), tuple(c.horizon), c.window, c.item)
         if key not in seen:
             seen.add(key)
             out.append(c)
@@ -61,7 +62,8 @@ def dedupe(preds: list[Consequence]) -> list[Consequence]:
 
 
 def f1_block(preds: list[Consequence], card: OutcomeCard) -> dict:
-    preds = dedupe([c for c in preds if c.item is None])
+    totals = {(c.actor_class, c.variable, c.window) for c in preds if c.item is None and c.combines}
+    preds = dedupe([c for c in preds if c.item is None or (c.actor_class, c.variable, c.window) not in totals])
     effects = [f for f in card.findings if f.finding_type == "effect"]
     signed = [c for c in preds if c.sign != "ambiguous"]
     verifiable = [c for c in signed if any(_covers(c, f) for f in card.findings)]

@@ -200,6 +200,85 @@ INPUT_OTHER_OUTLETS_QUESTION = ("input_other_outlets", "alternative_uses",
                                 "The input's suppliers have other buyers: they send less to the capped sellers.")
 
 
+# Subsidies (SB-1 to SB-6). SB-1, OC-3 and the claims cost (CR-8c) need no premise; the rest are asked per subsidy, or only
+# when the record carries the fact or role the rule needs.
+SUBSIDY_QUESTIONS = [
+    ("takeup", "other",
+     "Will many of those eligible claim the payment, because it is worth more to them than what they must do or give up to qualify?",
+     "Many eligible recipients value the payment above the cost of qualifying, and claim it."),
+    ("not_fully_captured", "other",
+     "Will the recipients keep part of the payment, rather than sellers raising their prices by the whole of it?",
+     "Sellers do not capture the whole payment: the recipients' net price falls."),
+    ("quantity_expands", "alternative_uses",
+     "Will more of the subsidized good change hands than without the payment (because buyers buy more, or sellers can supply more)?",
+     "At least one side can expand its quantity: more of the subsidized good is traded."),
+    ("seller_supply_slow", "durability",
+     "Is the sellers' supply of the subsidized good fixed for a while (stock ordered or built before the payment, long lead times), so that it cannot grow at once to meet the added demand?",
+     "The sellers' supply of the subsidized good cannot grow at once."),
+    ("sellers_fewer_alternatives", "substitutability",
+     "While their supply is fixed, do the sellers have clearly fewer alternatives than the recipients (who can wait, buy something else or not buy at all)?",
+     "While supply is fixed, the sellers have clearly fewer alternatives than the recipients."),
+]
+SB_SUBSTITUTES_QUESTION = ("substitutes_given_up", "substitutability",
+                           "Would some recipients otherwise have bought one of the goods the payment does not cover (a non-eligible model, another form of the good)?",
+                           "Some recipients would otherwise have bought an unsubsidized good.")
+SB_LASTING_QUESTION = ("expected_to_last", "expectations",
+                       "Do buyers of the affected assets expect the payment to stay in place long enough to raise what the assets earn over several years?",
+                       "Buyers of the affected assets expect the payment to last for several years.")
+SB_SLOW_ASSET_QUESTION = ("asset_supply_slow", "durability",
+                          "Is the supply of the asset whose return the payment raises (land, homes, licenses, specific plant) fixed or slow to expand?",
+                          "The supply of the asset whose return the payment raises is fixed or slowly expandable.")
+QUALIFY_QUESTION = ("qualifying_pays", "other",
+                    "For some who do not now meet the criteria, will changing what they do or own so as to meet them cost less than the payment is worth to them?",
+                    "Some can meet the criteria at a cost below the payment's worth to them.")
+SB_ORGANIZE_QUESTION = ("beneficiaries_organize", "other",
+                        "Can the sellers who gain from the payment organize to lobby for its extension or renewal at a cost below their stake (an existing trade association, a few large firms)?",
+                        "The sellers who gain can organize to lobby for renewal at a cost below their stake.")
+OVERSUBSCRIBED_QUESTION = ("oversubscribed", "other",
+                           "Will more people want the payment than its budget or number allows at some point while it is offered?",
+                           "Demand for the payment exceeds its budget or number at some point.")
+DELAY_QUESTION = ("can_delay", "expectations",
+                  "Could those who will be eligible put off a purchase they would otherwise make before the payment starts, until it does (the payment was announced in advance)?",
+                  "Eligible buyers knew of the payment before it started and could delay purchases.")
+PULL_FORWARD_QUESTION = ("pulled_forward", "expectations",
+                         "Would many of those who buy during the payment's window have bought the same good within the following few years anyway?",
+                         "Many window buyers would have bought within the next few years anyway.")
+STAY_IN_USE_QUESTION = ("would_stay_in_use", "durability",
+                        "Would the goods scrapped to obtain the payment otherwise have stayed in use for some years?",
+                        "The scrapped goods would otherwise have stayed in use for some years.")
+USED_SUPPLY_QUESTION = ("used_supply_slow", "mobility",
+                        "Is other supply of used goods of this kind (imports, goods kept in use longer) unable to replace the scrapped ones quickly?",
+                        "Other supply cannot quickly replace the scrapped used goods.")
+SB_MOVE_QUESTION = ("opportunities_need_move", "mobility",
+                    "Would some recipients, without the repayment condition, take a job or a home elsewhere within the period in which moving means repaying the payment?",
+                    "Some recipients would otherwise move within the repayment period.")
+
+
+def _subsidy_specs(comp: Component) -> list[tuple[str, str, str, str]]:
+    if comp.instrument == "lump_sum_subsidy":
+        return []
+    specs = list(SUBSIDY_QUESTIONS)
+    if comp.substitute_seller_actor:
+        specs.append(SB_SUBSTITUTES_QUESTION)
+    if comp.asset_owner_actor:
+        specs += [SB_SLOW_ASSET_QUESTION, SB_LASTING_QUESTION]
+    if comp.eligibility_criteria:
+        specs.append(QUALIFY_QUESTION)
+    if comp.renewable:
+        specs.append(SB_ORGANIZE_QUESTION)
+    if comp.budget_capped:
+        specs.append(OVERSUBSCRIBED_QUESTION)
+    if comp.announcement_window:
+        specs.append(DELAY_QUESTION)
+    if comp.temporary:
+        specs.append(PULL_FORWARD_QUESTION)
+    if comp.scrappage:
+        specs += [STAY_IN_USE_QUESTION, USED_SUPPLY_QUESTION]
+    if comp.repay_on_move:
+        specs.append(SB_MOVE_QUESTION)
+    return specs
+
+
 def _specs(comp: Component) -> list[tuple[str, str, str, str]]:
     """The (atom, class, question, assumption text) list for a component, by instrument."""
     if comp.instrument == "price_ceiling":
@@ -211,6 +290,8 @@ def _specs(comp: Component) -> list[tuple[str, str, str, str]]:
         if comp.input_supplier_actor:
             specs += [INPUT_FEW_OUTLETS_QUESTION, INPUT_OTHER_OUTLETS_QUESTION]
         return specs
+    if comp.instrument in ("per_unit_subsidy", "purchase_rebate", "lump_sum_subsidy"):
+        return _subsidy_specs(comp)
     if comp.instrument not in ("per_unit_tax", "tariff"):
         return []
     specs = list(TAX_QUESTIONS if comp.instrument == "per_unit_tax" else TARIFF_QUESTIONS)

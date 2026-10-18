@@ -16,7 +16,9 @@ from .engine import CUTOFF
 from .schema import GROUP_SIGNS, Assumption, Consequence, PolicyRecord
 
 RECORD_PREDICATES = ("ceiling(", "decontrol(", "bound(", "protected(", "excluded(", "tax(", "tariff(", "neighbor(", "enforcer(",
-                     "definition_line(", "renewable(", "announced(", "rolled_back(", "taxpayer(", "protected_concentrated(")
+                     "definition_line(", "renewable(", "announced(", "rolled_back(", "taxpayer(", "protected_concentrated(",
+                     "subsidy(", "per_unit_sub(", "criteria(", "budget_capped(", "temporary(", "scrappage(",
+                     "repay_on_move(")
 
 
 def record_roles(record: PolicyRecord) -> set[str]:
@@ -30,6 +32,8 @@ def record_roles(record: PolicyRecord) -> set[str]:
         names += [comp.taxpayer_actor, comp.foreign_seller_actor, comp.input_supplier_actor,
                   comp.domestic_seller_owner_actor, comp.relief_applicant_actor, comp.domestic_seller_worker_actor,
                   comp.mobile_buyer_actor, comp.neighbor_seller_actor]
+        names += [comp.other_buyer_actor, comp.substitute_seller_actor, comp.asset_owner_actor, comp.claim_handler_actor,
+                  comp.used_buyer_actor, comp.used_owner_actor, comp.scrapper_actor]
         for d in comp.downstream:
             names += [d.actor, d.buyer_actor, d.owner_actor, d.exporter_actor, d.worker_actor]
         roles |= {n.split(".")[0] for n in names if n}
@@ -57,6 +61,8 @@ def verify(consequences: list[Consequence], assumptions: dict[str, Assumption], 
             problems.append(f"{c.id}: group sign `{c.sign}` on a single variable")
         if c.window == "announcement" and c.horizon != ["short"]:
             problems.append(f"{c.id}: an announcement-window consequence has horizon ['short'], not {c.horizon}")
+        if c.window == "after_expiry" and not any(comp.temporary for comp in record.components):
+            problems.append(f"{c.id}: after-expiry consequence, but the record has no temporary measure")
         if c.window == "announcement" and not any(comp.announcement_window for comp in record.components):
             problems.append(f"{c.id}: announcement-window consequence, but the record has no announcement window")
         if c.combines:

@@ -46,6 +46,17 @@ instrument, even when the text states no aim:
   owners), renewable (true if the measure expires or is reviewed and may be renewed or extended),
   definition_line (true if the definitions or exemptions draw a line between covered and uncovered goods) and
   relief_applicant_actor (who may apply for case-by-case exclusions or waivers).
+- per_unit_subsidy, purchase_rebate, lump_sum_subsidy: bound_actor (who receives the payment), seller_actor (sellers
+  of the subsidized good; null where the recipients are the sellers), taxpayer_actor (who funds it), enforcer_actor
+  (the agency that pays and checks it), debt_funded (true if it is borrowed now and repaid from taxes later),
+  own_revenue_funded (true if a dedicated revenue pays it), eligibility_criteria (true if the payment depends on
+  criteria), temporary (true if it is offered only for a limited window), budget_capped (true if a fixed budget or
+  number is handed out first come, first served), renewable, announcement_window, repay_on_move (true if the payment
+  is repaid when the recipient moves or sells within a period), claim_handler_actor (who files or processes claims,
+  if not the recipients); where the text or context names them: other_buyer_actor (buyers of the same good who get no
+  payment), substitute_seller_actor (sellers of the goods the payment does not cover), asset_owner_actor (owners of an
+  asset in slow supply whose return the payment raises); and for a payment that requires scrapping a used good,
+  scrappage, used_buyer_actor, used_owner_actor (owners who keep theirs) and scrapper_actor.
 Name actor classes from the controlled list below where one fits. Otherwise use role.qualifier
 (e.g. sellers.domestic_steel); never invent a new name when a listed one fits."""
 
