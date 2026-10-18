@@ -1,0 +1,1012 @@
+{
+ "assumptions": {
+  "binding(k1)": {
+   "assumption_class": "binding",
+   "id": "binding(k1)",
+   "p": 0.8,
+   "text": "The cap holds the quantity below what would otherwise be traded."
+  },
+  "can_organize(k1)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1)",
+   "p": 0.85,
+   "text": "The holders of the rights can organize to lobby at a cost below their stake."
+  },
+  "enforced(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k1)",
+   "p": 0.8,
+   "text": "The cap is enforced."
+  },
+  "enforcement_budget_raised(k1)": {
+   "assumption_class": "revenue_use",
+   "id": "enforcement_budget_raised(k1)",
+   "p": 0.55,
+   "text": "The administering agency's budget is raised to cover the new work, so taxpayers fund it."
+  },
+  "evasion(k1)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k1)",
+   "p": 0.75,
+   "text": "Some trade takes place beyond the cap without being caught."
+  },
+  "expected_to_last(k1)": {
+   "assumption_class": "expectations",
+   "id": "expected_to_last(k1)",
+   "p": 0.75,
+   "text": "Holders and buyers of the rights expect the restriction to last."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "drivers.taxi",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "entry_rate",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.taxi",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.taxi",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "number_of_sellers",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.taxi",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "medallion_owners.initial",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "expected_to_last(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "expected_to_last(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_capitalized(k1)",
+     "premises": [
+      "expected_to_last(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "medallion_owners.initial",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "can_organize(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "can_organize(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_lobby(k1)",
+     "premises": [
+      "can_organize(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "medallion_owners.initial",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_administered(k1)",
+     "premises": [
+      "quota_binds(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "riders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "riders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k1)",
+     "premises": [
+      "quota_binds(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "riders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_information",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "riders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "riders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k1)",
+     "premises": [
+      "quota_binds(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "riders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "taxpayers",
+   "actor_group": [
+    "taxpayers",
+    "recipients.other_spending",
+    "taxpayers.future"
+   ],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "enforcement_budget_raised(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "enforcement_budget_raised(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_administered(k1)",
+     "premises": [
+      "quota_binds(k1)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "en_funded(k1)",
+     "premises": [
+      "enforcement_budget_raised(k1)"
+     ],
+     "rule": "OC-1"
+    },
+    {
+     "conclusion": "en_funded(k1)",
+     "premises": [
+      "en_administered(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"drivers.taxi\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nquota(k1).\nen_buyer(k1, \"riders\").\nen_holder(k1, \"medallion_owners.initial\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\ntransferable(k1).\nseller_cap(k1).\ngeneral_budget(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(expected_to_last(k1)).\nassumption(enforcement_budget_raised(k1)).\n",
+ "explanations": [
+  "C-1. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, entry rate for drivers.taxi falls from the medium run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
+  "C-2. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, informal activity for drivers.taxi rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.75). Reported.",
+  "C-3. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, number of sellers for drivers.taxi falls from the medium run onward (tier B, visible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
+  "C-4. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, quantity traded for drivers.taxi falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
+  "C-5. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, asset value for medallion_owners.initial rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80); Holders and buyers of the rights expect the restriction to last (p = 0.75). Reported.",
+  "C-6. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, lobbying effort for medallion_owners.initial rises from the medium run onward (tier B, invisible). Why: EN-6: EN-6; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The holders of the rights can organize to lobby at a cost below their stake (p = 0.85); The cap is enforced (p = 0.80). Reported.",
+  "C-7. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, net price received for medallion_owners.initial rises from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
+  "C-8. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
+  "C-9. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, disputes settled outside courts for riders rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.75). Reported.",
+  "C-10. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, price paid for riders rises from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
+  "C-11. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, quality information for riders falls from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.75). Reported.",
+  "C-12. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, quantity traded for riders falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
+  "C-13. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, resources available other uses for riders falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
+  "C-14. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, search cost for riders rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.75). Reported.",
+  "C-15. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier B, invisible). Why: EN-6: EN-6; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; OC-1: what the payers give up is what they would otherwise have bought. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80); The administering agency's budget is raised to cover the new work, so taxpayers fund it (p = 0.55). Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-015 (illustrative figures), A-1: demand keeps growing about 3% a year, so at the meter rate the fixed fleet falls short of demand within about two years.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k1.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the cap below the quantity that would otherwise be traded, now or within the period considered (for a cap on the number of sellers: does it hold the quantity down)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.enforced",
+    "rationale": "No matching assumption in WE-015; judged from the text: licensed cabs on streets and ranks are visible and the Office fines and impounds, so little taxi service takes place beyond the cap; A-7 puts evasion separately.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k1.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the cap be enforced, so that little trade takes place beyond it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.evasion",
+    "rationale": "Probability taken from the assumption table of handbook WE-015 (illustrative figures), A-7: unlicensed service and off-meter deals often go undetected (12 inspectors, a large city, pick-up bans on suburban taxis hard to police).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k1.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some trade take place beyond the cap without being caught?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-015 (illustrative figures), A-9: medallion holders can organize at a cost below their stake (existing drivers' association, concentrated and identifiable gain).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the holders of the quota rights organize to lobby for keeping or tightening the cap at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.expected_to_last",
+    "rationale": "Probability taken from the assumption table of handbook WE-015 (illustrative figures), A-3: medallion holders and buyers expect the cap to last.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "expected_to_last",
+    "assumption_class": "expectations",
+    "id": "k1.expected_to_last",
+    "kind": "noul",
+    "options": [],
+    "text": "Do holders and buyers of the licenses or quota rights expect the restriction to last for many years?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.55,
+    "question_id": "k1.enforcement_budget_raised",
+    "rationale": "Probability taken from the assumption table of handbook WE-015 (illustrative figures), A-16: the Office's budget rises with the added enforcement work, rather than the 12 inspectors being moved from other duties.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforcement_budget_raised",
+    "assumption_class": "revenue_use",
+    "id": "k1.enforcement_budget_raised",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the budget of the agency that administers the measure be raised to cover the new work, rather than the work being absorbed within its existing budget?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "bound_actor": "drivers.taxi",
+    "budget_capped": false,
+    "buyer_actor": "riders",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "debt_funded": false,
+    "definition_line": true,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": true,
+    "good": "taxi_service",
+    "id": "k1",
+    "import_quota": false,
+    "importer_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "quota",
+    "market": "port_halden",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "own_revenue_funded": false,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": "medallion_owners.initial",
+    "scrappage": false,
+    "scrapper_actor": null,
+    "seller_actor": "sellers.current",
+    "seller_cap": true,
+    "source_sentences": [
+     "The number of taxi licenses is fixed at the number outstanding on the effective date, and applies to anyone offering taxi service: street hails and taxi ranks.",
+     "New licenses are issued only by council vote.",
+     "Licenses become \"medallions\" that may be sold or leased, with transfers registered and a 2% transfer fee.",
+     "Vehicles that take only bookings made at least 30 minutes ahead, at a fare agreed at booking, may operate with an uncapped private-hire permit ($300 a year).",
+     "The Taxi and Limousine Office enforces the ordinance with 12 inspectors.",
+     "Enforcement is funded from the general budget and license fees.",
+     "The ordinance was introduced by the council five months before it took effect, with passage widely expected."
+    ],
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "trainer_actor": null,
+    "transferable": true,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "wider_market": false
+   }
+  ],
+  "context": [
+   "Port Halden is a city of about 900,000 people.",
+   "Until now, anyone who passed a driver background check and a vehicle inspection could obtain a city taxi license for $400 a year; about 2,400 licenses are in use.",
+   "Demand for taxi trips has grown about 3% a year with population and tourism.",
+   "Fares are set by the city council as a meter rate, indexed each year to consumer prices; this rule predates the ordinance and is unchanged by it.",
+   "The suburbs of Brindlewick and Corvale license their own taxis, which may drop passengers in Port Halden but may not pick up there."
+  ],
+  "effective": "the effective date",
+  "enacted": "five months before the effective date",
+  "jurisdiction": "Port Halden (fictional)",
+  "name": "Port Halden Taxi Fleet Stabilization Ordinance",
+  "rule_maker": "the Port Halden city council",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U1-a: app booking counts as pre-booked.",
+     "U1-b: it does not."
+    ],
+    "text": "Whether a booking made through a smartphone app a few minutes before pickup meets the 30-minute rule."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-18T20:58:27+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U1-a: app booking counts as pre-booked.",
+    "U1-b: it does not."
+   ],
+   "text": "Whether a booking made through a smartphone app a few minutes before pickup meets the 30-minute rule."
+  }
+ ],
+ "verifier_problems": []
+}
