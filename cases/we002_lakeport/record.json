@@ -1,0 +1,43 @@
+{
+ "name": "Lakeport Beverage Tax",
+ "jurisdiction": "Lakeport (fictional)",
+ "rule_maker": "Lakeport town",
+ "enacted": "not stated",
+ "effective": "not stated",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "per_unit_tax",
+   "good": "sweetened_drinks",
+   "market": "lakeport",
+   "bound_actor": "distributors",
+   "buyer_actor": "buyers.lakeport",
+   "seller_actor": "retailers.lakeport",
+   "revenue_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "definition_line": true,
+   "cap": 0.015,
+   "cap_unit": "dollars per fluid ounce",
+   "source_sentences": [
+    "Distributors must pay an excise tax of 1.5 cents per fluid ounce on drinks with added sugar that they deliver to retailers in Lakeport.",
+    "Drinks sweetened only with non-caloric sweeteners, milk-based drinks and 100% juice are exempt.",
+    "The town's revenue department administers the tax, with distributor registration, monthly returns and audits, funded from the tax's own revenue."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether approved providers may include existing private pre-schools on equal terms.",
+   "readings": [
+    "U1-a: yes, with limits on places",
+    "U1-b: no"
+   ]
+  }
+ ],
+ "context": [
+  "Three neighboring towns, each 10 to 15 minutes' drive from most Lakeport homes, have no such tax (WE-002 record).",
+  "Many Lakeport households already do part of their grocery shopping in large stores just outside the town line (WE-002 record)."
+ ]
+}

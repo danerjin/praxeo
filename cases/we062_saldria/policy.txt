@@ -1,0 +1,15 @@
+Saldria Plastic Packaging Tax Act (FICTIONAL: Saldria and the Act are invented for handbook worked example WE-062 and resemble, but are not, any real plastic packaging tax).
+
+Saldria is a country of about 9.4 million people with its own currency, the taler (T), and a floating exchange rate. It produces no virgin plastic resin; all of it is imported, at world prices. Saldria buys about 0.4% of the world's packaging resins. About 610,000 tonnes of plastic packaging a year are placed on the Saldrian market: about 330,000 t made by domestic converters from resin (about 210 converters, about 19,000 employees), about 120,000 t imported empty and about 160,000 t arriving around imported goods. Converters export about 70,000 t of empty packaging a year, at prices set abroad. Average recycled content is about 11%. Two domestic paper and board mills and one glass container plant are running near capacity. About 3,900 firms handle 10 tonnes a year or more; about 17,000 firms handle under 10 t.
+
+The tax was announced in the budget statement of 2 March 2027, enacted on 28 June 2027 and takes effect on 1 January 2028. It has no expiry. The rate is fixed in talers and not indexed.
+
+A tax of 200 T per tonne is charged on plastic packaging components (a component in which plastic is the heaviest material by weight) manufactured in or imported into Saldria, empty or around imported goods, on the manufacturer or the importer of record, with quarterly returns. "The tax is chargeable whether or not the component is later exported, empty or filled." There is no export relief.
+
+"A plastic packaging component containing 30 per cent or more recycled plastic is not chargeable." "The proportion of recycled plastic is to be determined over the plastic packaging components a person manufactures or imports in the quarter." Recycled content must be shown by supplier declarations or mass-balance records; components without such evidence are treated as containing none.
+
+"A person who manufactured or imported less than 10 tonnes of plastic packaging components in the previous calendar year is not liable for the tax in the current year." A person over the line pays on all its chargeable tonnage.
+
+The Revenue Service enforces the tax, with registration, records and audits, and a penalty of 30% of tax underpaid. The Act appropriates 7 million T a year from the general budget for the plastics unit. The revenue goes to the general budget.
+
+It is unclear how the 30% is measured: either each kind of component must itself reach 30% to be exempt (per component), or the proportion is the average over all the person's components in the quarter, so that every component is exempt if the average reaches 30% and none if it does not (averaged). The Revenue Service has not decided and no court has ruled.

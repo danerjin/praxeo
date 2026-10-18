@@ -1,0 +1,995 @@
+{
+ "assumptions": {
+  "buyers_bear(k1)": {
+   "assumption_class": "other",
+   "id": "buyers_bear(k1)",
+   "p": 0.85,
+   "text": "Part of the tax is passed on to buyers: the price they pay rises."
+  },
+  "enforcement_budget_raised(k1)": {
+   "assumption_class": "revenue_use",
+   "id": "enforcement_budget_raised(k1)",
+   "p": 0.15,
+   "text": "The administering agency's budget is raised to cover the new work, so taxpayers fund it."
+  },
+  "input_not_replaceable(k1)": {
+   "assumption_class": "substitutability",
+   "id": "input_not_replaceable(k1)",
+   "p": 0.85,
+   "text": "The taxed good is a material part of downstream costs and cannot be replaced at the old cost."
+  },
+  "quantity_responds(k1)": {
+   "assumption_class": "substitutability",
+   "id": "quantity_responds(k1)",
+   "p": 0.95,
+   "text": "At least one side can reduce the quantity it trades in response to the tax."
+  },
+  "reshaping_pays(k1)": {
+   "assumption_class": "other",
+   "id": "reshaping_pays(k1)",
+   "p": 0.6,
+   "text": "Reshaping goods to fall outside the definitions costs some actors less than the burden."
+  },
+  "sellers_bear(k1)": {
+   "assumption_class": "other",
+   "id": "sellers_bear(k1)",
+   "p": 0.05,
+   "text": "Part of the tax stays with sellers: the price they keep after tax falls."
+  },
+  "stockpile_ahead(k1)": {
+   "assumption_class": "expectations",
+   "id": "stockpile_ahead(k1)",
+   "p": 0.05,
+   "text": "Buyers and importers can store the good and order ahead of the effective date."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "businesses.zone",
+   "assumption_sets": [
+    [
+     "buyers_bear(k1)",
+     "input_not_replaceable(k1)",
+     "quantity_responds(k1)"
+    ]
+   ],
+   "assumptions": [
+    "buyers_bear(k1)",
+    "input_not_replaceable(k1)",
+    "quantity_responds(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "buyers_pay(k1)",
+     "premises": [
+      "buyers_bear(k1)",
+      "wedge(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "buyers_pay(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "businesses.zone",
+   "assumption_sets": [
+    [
+     "buyers_bear(k1)",
+     "input_not_replaceable(k1)",
+     "quantity_responds(k1)"
+    ]
+   ],
+   "assumptions": [
+    "buyers_bear(k1)",
+    "input_not_replaceable(k1)",
+    "quantity_responds(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "buyers_pay(k1)",
+     "premises": [
+      "buyers_bear(k1)",
+      "wedge(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "buyers_pay(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_buyers_cut_back(k1)",
+     "premises": [
+      "passes_down(k1)"
+     ],
+     "rule": "CR-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.nonresident",
+   "assumption_sets": [
+    [
+     "buyers_bear(k1)",
+     "quantity_responds(k1)"
+    ]
+   ],
+   "assumptions": [
+    "buyers_bear(k1)",
+    "quantity_responds(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "buyers_pay(k1)",
+     "premises": [
+      "buyers_bear(k1)",
+      "wedge(k1)"
+     ],
+     "rule": "TX-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.nonresident",
+   "assumption_sets": [
+    [
+     "quantity_responds(k1)"
+    ]
+   ],
+   "assumptions": [
+    "quantity_responds(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.nonresident",
+   "assumption_sets": [
+    [
+     "stockpile_ahead(k1)"
+    ]
+   ],
+   "assumptions": [
+    "stockpile_ahead(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "bring_forward(k1)",
+     "premises": [
+      "announced(k1)",
+      "stockpile_ahead(k1)"
+     ],
+     "rule": "RS-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": "announcement"
+  },
+  {
+   "actor_class": "drivers.nonresident",
+   "assumption_sets": [
+    [
+     "quantity_responds(k1)",
+     "reshaping_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "quantity_responds(k1)",
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "wedge(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "tx_reshaped(k1)",
+     "premises": [
+      "definition_line(k1)",
+      "tx_burden(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "tx_reshaped(k1)",
+     "premises": [
+      "reshaping_pays(k1)"
+     ],
+     "rule": "TX-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.nonresident",
+   "assumption_sets": [
+    [
+     "buyers_bear(k1)"
+    ]
+   ],
+   "assumptions": [
+    "buyers_bear(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tax(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "bears_buyer(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "bears_buyer(k1)",
+     "premises": [
+      "buyers_bear(k1)"
+     ],
+     "rule": "TX-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tax(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "tx_administered(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tax(k1)"
+     ],
+     "rule": "TX-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "tax_revenue",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "assumption_sets": [
+    [
+     "quantity_responds(k1)"
+    ]
+   ],
+   "assumptions": [
+    "quantity_responds(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "wedge(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "tx_short_of_static(k1)",
+     "premises": [
+      "tx_burden(k1)"
+     ],
+     "rule": "TX-9"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "tax_revenue_vs_static_projection",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.current",
+   "assumption_sets": [
+    [
+     "quantity_responds(k1)",
+     "sellers_bear(k1)"
+    ]
+   ],
+   "assumptions": [
+    "quantity_responds(k1)",
+    "sellers_bear(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "sellers_lose(k1)",
+     "premises": [
+      "sellers_bear(k1)",
+      "wedge(k1)"
+     ],
+     "rule": "TX-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.current",
+   "assumption_sets": [
+    [
+     "quantity_responds(k1)"
+    ]
+   ],
+   "assumptions": [
+    "quantity_responds(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "wedge(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "tx_prevented(k1)",
+     "premises": [
+      "tx_burden(k1)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.current",
+   "assumption_sets": [
+    [
+     "sellers_bear(k1)"
+    ]
+   ],
+   "assumptions": [
+    "sellers_bear(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tax(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "bears_seller(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "bears_seller(k1)",
+     "premises": [
+      "sellers_bear(k1)"
+     ],
+     "rule": "TX-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "taxpayers",
+   "assumption_sets": [
+    [
+     "enforcement_budget_raised(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforcement_budget_raised(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tax(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "tx_administered(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "tx_budget_funded(k1)",
+     "premises": [
+      "tx_administered(k1)"
+     ],
+     "rule": "OC-1"
+    },
+    {
+     "conclusion": "tx_budget_funded(k1)",
+     "premises": [
+      "enforcement_budget_raised(k1)",
+      "tx_administered(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"drivers.nonresident\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\ntax(k1).\nbuyer(k1, \"drivers.nonresident\").\nseller(k1, \"sellers.current\").\ndomestic_seller(k1, \"sellers.substitutes\").\nimporter(k1, \"drivers.nonresident\").\nrevenue(k1, \"officials.enforcement\").\nexporter(k1, \"export_industries\").\nexporter_worker(k1, \"workers.export_industries\").\ntaxpayer(k1, \"taxpayers\").\nforeign_seller(k1, \"sellers.foreign\").\ndefinition_line(k1).\ndownstream(k1, \"goods_vehicle_operators\", \"businesses.zone\", same).\nassumption(quantity_responds(k1)).\nassumption(buyers_bear(k1)).\nassumption(sellers_bear(k1)).\nassumption(input_not_replaceable(k1)).\nassumption(enforcement_budget_raised(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(reshaping_pays(k1)).\n",
+ "explanations": [
+  "C-1. Compared with no Calderford Central Zone Charging Ordinance, price paid for businesses.zone rises from the medium run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.85); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.85); At least one side can reduce the quantity it trades in response to the tax (p = 0.95). Reported.",
+  "C-2. Compared with no Calderford Central Zone Charging Ordinance, quantity demanded for businesses.zone falls from the medium run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; CR-4: CR-4. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.85); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.85); At least one side can reduce the quantity it trades in response to the tax (p = 0.95). Reported.",
+  "C-3. Compared with no Calderford Central Zone Charging Ordinance, price paid for drivers.nonresident rises from the short run onward (tier B, visible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.85); At least one side can reduce the quantity it trades in response to the tax (p = 0.95). Reported.",
+  "C-4. Compared with no Calderford Central Zone Charging Ordinance, quantity traded for drivers.nonresident falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.95). Reported.",
+  "C-5. Compared with no Calderford Central Zone Charging Ordinance, quantity traded for drivers.nonresident rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-6. Compared with no Calderford Central Zone Charging Ordinance, reclassification for drivers.nonresident rises from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-5: owners move units out of the rule's reach; TX-4: TX-4. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.95); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.60). Reported.",
+  "C-7. Compared with no Calderford Central Zone Charging Ordinance, resources available other uses for drivers.nonresident falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.85). Reported.",
+  "C-8. Compared with no Calderford Central Zone Charging Ordinance, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-9. Compared with no Calderford Central Zone Charging Ordinance, tax revenue for officials.enforcement rises from the short run onward (tier A, visible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue. This holds if: no assumption. Reported.",
+  "C-10. Compared with no Calderford Central Zone Charging Ordinance, tax revenue vs static projection for officials.enforcement falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; TX-9: TX-9. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.95). Reported.",
+  "C-11. Compared with no Calderford Central Zone Charging Ordinance, net price received for sellers.current falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.95); Part of the tax stays with sellers: the price they keep after tax falls (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-12. Compared with no Calderford Central Zone Charging Ordinance, quantity traded for sellers.current falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; OC-4: OC-4. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.95). Reported.",
+  "C-13. Compared with no Calderford Central Zone Charging Ordinance, resources available other uses for sellers.current falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax stays with sellers: the price they keep after tax falls (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-14. Compared with no Calderford Central Zone Charging Ordinance, resources available other uses for taxpayers falls from the short run onward (tier B, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; OC-1: OC-1. This holds if: The administering agency's budget is raised to cover the new work, so taxpayers fund it (p = 0.15). Not reported: an assumption is below the 0.5 cut-off."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.95,
+    "question_id": "k1.quantity_responds",
+    "rationale": "Probability taken from the assumption table of handbook WE-046 (illustrative figures), A-1 (binding): some drivers value the day in the zone by less than $15 more than its other costs, so vehicle-days fall.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "quantity_responds",
+    "assumption_class": "substitutability",
+    "id": "k1.quantity_responds",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the quantity traded fall once the tax is in place (because buyers cut back or switch, or sellers move resources to untaxed uses)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [
+     "The registered keeper of each vehicle driven or parked in the zone on a weekday between 7:00 and 19:00 must pay $15 per vehicle per day, payable by midnight the next day."
+    ],
+    "probability": 0.85,
+    "question_id": "k1.buyers_bear",
+    "rationale": "Probability taken from the assumption table of handbook WE-046 (illustrative figures), A-2 (enforcement): the charge is enforced and drivers pay it; C-1 rests on A-2.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyers_bear",
+    "assumption_class": "other",
+    "id": "k1.buyers_bear",
+    "kind": "noul",
+    "options": [],
+    "text": "Will part of the tax be passed on to buyers, so that the price they pay rises?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.05,
+    "question_id": "k1.sellers_bear",
+    "rationale": "No row in WE-046's assumption table; my estimate from the record. There is no private seller of road space: the driver pays the city directly, so no seller's net price falls. (The record leaves seller_actor at the default.)",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "sellers_bear",
+    "assumption_class": "other",
+    "id": "k1.sellers_bear",
+    "kind": "noul",
+    "options": [],
+    "text": "Will part of the tax stay with sellers, so that the price they keep after tax falls?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.input_not_replaceable",
+    "rationale": "Probability taken from the assumption table of handbook WE-046 (illustrative figures), A-12 (other): some deliveries cannot be completed within 30 minutes (installations, large drops, multi-drop rounds), so carriers cannot avoid the charge.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "input_not_replaceable",
+    "assumption_class": "substitutability",
+    "id": "k1.input_not_replaceable",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the downstream users' costs rise materially because of the higher price of the taxed good (given how much of it they use and whether they can switch to other materials or designs in the medium run)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [
+     "It costs about $45 million a year to run and is funded from the gross revenue of the charge."
+    ],
+    "probability": 0.15,
+    "question_id": "k1.enforcement_budget_raised",
+    "rationale": "No row in WE-046's assumption table; my estimate from the record. The Charging Office is funded from the gross revenue of the charge (K4), so no separate funding falls on taxpayers. A-24 (p 0.8) covers the Parking Adjudication Office, whose budget is not raised.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "enforcement_budget_raised",
+    "assumption_class": "revenue_use",
+    "id": "k1.enforcement_budget_raised",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the budget of the agency that administers the measure be raised to cover the new work, rather than the work being absorbed within its existing budget?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [
+     "The ordinance was adopted and published on 4 January 2027; charging starts on 1 November 2027 (ten months later)."
+    ],
+    "probability": 0.05,
+    "question_id": "k1.stockpile_ahead",
+    "rationale": "No row in WE-046's assumption table; my estimate from the record. A weekday in the zone cannot be stored or bought ahead of 1 November; the announcement window changes nothing for this charge.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "stockpile_ahead",
+    "assumption_class": "expectations",
+    "id": "k1.stockpile_ahead",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the buyers or importers buy ahead of the effective date, by storing the good or placing orders early?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [
+     "Registered keepers whose registered address is in the zone receive a 90% discount, which makes the charge $1.50 a day."
+    ],
+    "probability": 0.6,
+    "question_id": "k1.reshaping_pays",
+    "rationale": "Probability taken from the assumption table of handbook WE-046 (illustrative figures), A-11 (enforcement): some non-residents can register a vehicle to a zone address without detection (the line the discount draws). A-13 (short visits, 0.7) is a second line.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "reshaping_pays",
+    "assumption_class": "other",
+    "id": "k1.reshaping_pays",
+    "kind": "noul",
+    "options": [],
+    "text": "For some of the actors bound by the measure, will reshaping goods so that they fall outside the measure's definitions cost less than the measure would cost them?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "announcement_window": true,
+    "bound_actor": "drivers.nonresident",
+    "buyer_actor": "drivers.nonresident",
+    "cap": 15.0,
+    "cap_unit": "dollars per vehicle per day (residents $1.50)",
+    "definition_line": true,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [
+     {
+      "actor": "goods_vehicle_operators",
+      "buyer_actor": "businesses.zone",
+      "competitors": "same",
+      "exporter_actor": null,
+      "owner_actor": null,
+      "worker_actor": null
+     }
+    ],
+    "enforcer_actor": "officials.enforcement",
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "general_budget": false,
+    "good": "weekday_vehicle_day_in_zone",
+    "id": "k1",
+    "importer_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "per_unit_tax",
+    "market": "calderford_central_zone",
+    "neighbor_actor": null,
+    "protected_actor": null,
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "revenue_actor": "officials.enforcement",
+    "seller_actor": "sellers.current",
+    "source_sentences": [
+     "The registered keeper of each vehicle driven or parked in the zone on a weekday between 7:00 and 19:00 must pay $15 per vehicle per day, payable by midnight the next day.",
+     "Registered keepers whose registered address is in the zone receive a 90% discount, which makes the charge $1.50 a day.",
+     "The ordinance was adopted and published on 4 January 2027; charging starts on 1 November 2027 (ten months later).",
+     "It costs about $45 million a year to run and is funded from the gross revenue of the charge."
+    ],
+    "taxpayer_actor": "taxpayers",
+    "vacancy_decontrol": false
+   }
+  ],
+  "context": [
+   "Just outside the zone lies Ringside, a band of about 1,100 shops and offices with three large parking garages, five to ten minutes' walk from the zone's edge (WE-046 record).",
+   "Peak load on bus routes into the zone is about 85% of capacity; new buses take 14 to 18 months from order to service (WE-046 record)."
+  ],
+  "effective": "2027-11-01",
+  "enacted": "2027-01-04",
+  "jurisdiction": "Calderford (fictional)",
+  "name": "Calderford Central Zone Charging Ordinance",
+  "rule_maker": "Calderford city council",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "readings": [
+     "U1-a: a short visit pays the daily charge",
+     "U1-b: a short visit is not a chargeable day"
+    ],
+    "text": "Whether a short delivery visit under thirty minutes is a chargeable day."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-18T01:25:36+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "readings": [
+    "U1-a: a short visit pays the daily charge",
+    "U1-b: a short visit is not a chargeable day"
+   ],
+   "text": "Whether a short delivery visit under thirty minutes is a chargeable day."
+  }
+ ],
+ "verifier_problems": []
+}

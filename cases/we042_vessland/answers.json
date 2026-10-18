@@ -1,0 +1,115 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-1 (binding): imports remain a material share of supply, so the domestic price is set at import parity.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.domestic_substitutes",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-4 (durability): the smelters can bring their idle 70,000 t into use within months. A-5 (secondary aluminum substitutes, 0.8) also bears; I take the lower of the two rows used for C-5 and C-6.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.no_offset",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-13 (other): trade flows are not offset by capital flows in the period considered.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.input_not_replaceable",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-22 (other): some home users keep buying covered aluminum at the higher price (few substitutes for many uses).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.competitors_exempt",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-15 (substitutability): buyers of uncovered finished goods can buy tariff-free imports, and home fabricators' capital is specific.",
+  "evidence": [
+   "Finished goods and parts containing aluminum (vehicles and their parts, appliances, windows and doors, fabricated structures, cable assemblies, cans and containers) are not covered."
+  ]
+ },
+ {
+  "question_id": "k1.enforcement_budget_raised",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-17 (revenue_use), complemented: Customs' appropriation does not rise with the new work (p 0.8), so the probability that the budget is raised is 0.2.",
+  "evidence": [
+   "Customs administers the drawback and the re-import rule \"within its existing appropriation\"."
+  ]
+ },
+ {
+  "question_id": "k1.stockpile_ahead",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-21 (expectations): users expect the tariff and can import and store metal ahead of 1 September at a cost below $500 a tonne.",
+  "evidence": [
+   "The trade minister announced the measure on 3 February 2027."
+  ]
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-7 (other): some imports can be reshaped into uncovered fabricated forms for less than $500 a tonne.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.beneficiaries_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-11 (other): smelters, users and exporters can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.harmed_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-11 (other): smelters, users and exporters can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expects_extension",
+  "value": "no",
+  "probability": 0.35,
+  "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-19 (expectations): smelters build or restart capacity beyond 470,000 t within the tariff's term, expecting renewal; the closest row to an expectation of extension.",
+  "evidence": [
+   "The tariff expires on 31 August 2031 unless Parliament extends it after a review in 2030."
+  ]
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-12 (expectations): firms are valued on expected earnings, and buyers expect the tariff to last at least its four years.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.asset_supply_slow",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No row in WE-042's assumption table; my estimate from the record. C-31 and C-32 rest on A-12 and A-15 but no row states slow asset supply. The record shows specific durable plant (potlines, electricity at 35% of cost, a smelter takes years to build) and A-15 says home fabricators' capital is specific.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_relocate_capital",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-23 (mobility): some fabrication for the Vessland market can move to plants in Ostrel within the tariff's term.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.substitute_supply_expands",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-15 (substitutability): buyers of uncovered finished goods can buy tariff-free imports; foreign makers of finished goods supply more (C-25).",
+  "evidence": []
+ }
+]

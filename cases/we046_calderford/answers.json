@@ -1,0 +1,59 @@
+[
+ {
+  "question_id": "k1.quantity_responds",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "Probability taken from the assumption table of handbook WE-046 (illustrative figures), A-1 (binding): some drivers value the day in the zone by less than $15 more than its other costs, so vehicle-days fall.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyers_bear",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-046 (illustrative figures), A-2 (enforcement): the charge is enforced and drivers pay it; C-1 rests on A-2.",
+  "evidence": [
+   "The registered keeper of each vehicle driven or parked in the zone on a weekday between 7:00 and 19:00 must pay $15 per vehicle per day, payable by midnight the next day."
+  ]
+ },
+ {
+  "question_id": "k1.sellers_bear",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "No row in WE-046's assumption table; my estimate from the record. There is no private seller of road space: the driver pays the city directly, so no seller's net price falls. (The record leaves seller_actor at the default.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.input_not_replaceable",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-046 (illustrative figures), A-12 (other): some deliveries cannot be completed within 30 minutes (installations, large drops, multi-drop rounds), so carriers cannot avoid the charge.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforcement_budget_raised",
+  "value": "no",
+  "probability": 0.15,
+  "rationale": "No row in WE-046's assumption table; my estimate from the record. The Charging Office is funded from the gross revenue of the charge (K4), so no separate funding falls on taxpayers. A-24 (p 0.8) covers the Parking Adjudication Office, whose budget is not raised.",
+  "evidence": [
+   "It costs about $45 million a year to run and is funded from the gross revenue of the charge."
+  ]
+ },
+ {
+  "question_id": "k1.stockpile_ahead",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "No row in WE-046's assumption table; my estimate from the record. A weekday in the zone cannot be stored or bought ahead of 1 November; the announcement window changes nothing for this charge.",
+  "evidence": [
+   "The ordinance was adopted and published on 4 January 2027; charging starts on 1 November 2027 (ten months later)."
+  ]
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-046 (illustrative figures), A-11 (enforcement): some non-residents can register a vehicle to a zone address without detection (the line the discount draws). A-13 (short visits, 0.7) is a second line.",
+  "evidence": [
+   "Registered keepers whose registered address is in the zone receive a 90% discount, which makes the charge $1.50 a day."
+  ]
+ }
+]
