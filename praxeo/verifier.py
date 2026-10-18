@@ -19,7 +19,8 @@ RECORD_PREDICATES = ("ceiling(", "decontrol(", "bound(", "protected(", "excluded
                      "definition_line(", "renewable(", "announced(", "rolled_back(", "taxpayer(", "protected_concentrated(",
                      "subsidy(", "per_unit_sub(", "share_cap(", "criteria(", "budget_capped(", "temporary(", "scrappage(",
                      "repay_on_move(", "field_contested(", "target_qty(", "claim_penalties(",
-                     "licensing(", "quota(", "transferable(", "import_quota(", "seller_cap(", "wider_market(", "general_budget(")
+                     "licensing(", "quota(", "transferable(", "import_quota(", "seller_cap(", "wider_market(", "general_budget(", "price_fixed(", "domestic_seller(", "downstream(", "importer(", "buyer(",
+                     "exporter(", "seller(", "renewable(", "definition_line(", "relief_applicant(")
 
 
 def record_roles(record: PolicyRecord) -> set[str]:
@@ -33,7 +34,7 @@ def record_roles(record: PolicyRecord) -> set[str]:
         names += [comp.taxpayer_actor, comp.foreign_seller_actor, comp.input_supplier_actor,
                   comp.domestic_seller_owner_actor, comp.relief_applicant_actor, comp.domestic_seller_worker_actor,
                   comp.mobile_buyer_actor, comp.neighbor_seller_actor]
-        names += [comp.outlay_actor, comp.right_holder_actor, comp.trainer_actor]
+        names += [comp.outlay_actor, comp.right_holder_actor, comp.trainer_actor, comp.informal_buyer_actor]
         names += [comp.third_party_payer_actor, comp.qualifier_actor, comp.other_spending_actor, comp.future_taxpayer_actor]
         names += [comp.other_buyer_actor, comp.substitute_seller_actor, comp.asset_owner_actor, comp.claim_handler_actor,
                   comp.used_buyer_actor, comp.used_owner_actor, comp.scrapper_actor]

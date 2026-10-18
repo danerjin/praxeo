@@ -47,6 +47,12 @@
    "id": "tests_valued_quality(k1)",
    "p": 0.75,
    "text": "The license tests something buyers value but cannot easily judge."
+  },
+  "training_common(k1)": {
+   "assumption_class": "other",
+   "id": "training_common(k1)",
+   "p": 0.75,
+   "text": "The required training was already commonly taken before the requirement."
   }
  },
  "citation_problems": [],
@@ -931,6 +937,36 @@
       "lic_binds(k1)"
      ],
      "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_training_deterred(k1)",
+     "premises": [
+      "lic_qualify(k1)",
+      "training_common(k1)"
+     ],
+     "rule": "CR-4"
+    },
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_qualify(k1)",
+     "premises": [
+      "some_qualify(k1)"
+     ],
+     "rule": "CR-8"
+    },
+    {
+     "conclusion": "lic_qualify(k1)",
+     "premises": [
+      "lic_binds(k1)"
+     ],
+     "rule": "EN-1"
     }
    ],
    "group": [],
@@ -942,7 +978,7 @@
    "id": "C-18",
    "item": null,
    "reported": true,
-   "sign": "increase",
+   "sign": "ambiguous",
    "sign_by_reading": {},
    "tier": "B",
    "variable": "quantity_demanded",
@@ -1019,7 +1055,7 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"designers\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nlicensing(k1).\nen_buyer(k1, \"clients\").\nen_holder(k1, \"designers.grandfathered\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_trainer(k1, \"schools.design\").\ngeneral_budget(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(some_qualify(k1)).\nassumption(evasion(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(tests_valued_quality(k1)).\nassumption(can_organize(k1)).\nassumption(enforcement_budget_raised(k1)).\n",
+ "engine_facts": "bound(k1, \"designers\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nlicensing(k1).\nen_buyer(k1, \"clients\").\nen_holder(k1, \"designers.grandfathered\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_trainer(k1, \"schools.design\").\nen_informal_buyer(k1, \"clients\").\ngeneral_budget(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(some_qualify(k1)).\nassumption(evasion(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(tests_valued_quality(k1)).\nassumption(can_organize(k1)).\nassumption(training_common(k1)).\nassumption(enforcement_budget_raised(k1)).\n",
  "explanations": [
   "C-1. Compared with no Arvane Interior Design Practice Act, disputes settled outside courts for clients rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some sellers keep selling without a license and are not caught (p = 0.80). Reported.",
   "C-2. Compared with no Arvane Interior Design Practice Act, price paid for clients rises from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
@@ -1038,7 +1074,7 @@
   "C-15. Compared with no Arvane Interior Design Practice Act, lobbying effort for designers.grandfathered rises from the medium run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2; EN-5: EN-5; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The license holders can organize to lobby at a cost below their stake (p = 0.80); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
   "C-16. Compared with no Arvane Interior Design Practice Act, net price received for designers.grandfathered rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
   "C-17. Compared with no Arvane Interior Design Practice Act, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
-  "C-18. Compared with no Arvane Interior Design Practice Act, quantity demanded for schools.design rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some current sellers or new entrants obtain the license (p = 0.85). Reported.",
+  "C-18. Compared with no Arvane Interior Design Practice Act, quantity demanded for schools.design may move either way from the short run onward (tier B, invisible). Why: EN-1: EN-1; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses; CR-4: buyers who face a higher price take fewer units. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some current sellers or new entrants obtain the license (p = 0.85). Reported.",
   "C-19. Compared with no Arvane Interior Design Practice Act, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; OC-1: what the payers give up is what they would otherwise have bought. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); The administering agency's budget is raised to cover the new work, so taxpayers fund it (p = 0.85). Reported."
  ],
  "questions": [
@@ -1172,6 +1208,24 @@
    "answer": {
     "decider": "fixture:answers.json",
     "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.training_common",
+    "rationale": "No matching assumption in WE-016; judged from the text: roughly 40% of the 6,000 people who offer interior design already hold a degree in it.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "training_common",
+    "assumption_class": "other",
+    "id": "k1.training_common",
+    "kind": "noul",
+    "options": [],
+    "text": "Before the requirement, did many people already take the training it requires (a degree many would-be sellers already pursued)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
     "probability": 0.85,
     "question_id": "k1.enforcement_budget_raised",
     "rationale": "No matching assumption in WE-016; judged from the text: the Board is funded by license fees and the general budget, and the Act gives it a new task, so the general-budget share is paid from a budget that rises with it (the handbook treats this as certain, C-27 with no assumption).",
@@ -1219,6 +1273,7 @@
     "id": "k1",
     "import_quota": false,
     "importer_actor": null,
+    "informal_buyer_actor": null,
     "input_supplier_actor": null,
     "instrument": "licensing_requirement",
     "market": "arvane",
@@ -1229,6 +1284,7 @@
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
     "own_revenue_funded": false,
+    "price_fixed": false,
     "protected_actor": null,
     "protected_concentrated": true,
     "qualifier_actor": null,
@@ -1292,7 +1348,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T20:58:43+00:00",
+ "run_at": "2026-10-18T21:12:06+00:00",
  "sources_held_back": [],
  "unclear": [
   {

@@ -81,3 +81,7 @@ Ranked by the number of table rows each would add or fix (a row may need two gap
 8. **Narrower items.** The condition for holding a right (C-11, CR-1/CR-4), the holding limit (C-41), claims before creation (CR-7c: C-8, C-38), and the crew settlement term (K3: C-30, C-42, C-51, which also needs a Component field that `reading_fields` can set for a rule such as "leases are covered too").
 
 Not a gap: C-2's "from the announcement" is the capitalization window of SB-4, which the engine signs without a window (the key matches); C-32's Tier A against the engine's Tier B is a difference in the gate, not in the sign.
+
+## After the rule changes (second commit)
+
+General fixes from the five out-of-sample runs on licensing and quotas (`rules/licensing.lp`): buyers of the unlicensed or unrecorded trade have their own role (`informal_buyer_actor`), so RS-3 and RS-10 fall on them, not on every buyer; trainers' demand is ambiguous where the training was already common (`training_common`, CR-4b with CR-12b); a price fixed by a rule in force without the measure (`price_fixed`) withholds the price rows and signs excess demand (PC-1); an import quota takes the tariff chains (EN-6: as under TX-7). The record names the buyers of fresh fish at home as the buyers of the unrecorded catch (`informal_buyer_actor`). Rows produced: 8 of 54 (unchanged). WRONG: 0. The three RS-10 rows are now on the right buyers (not in the table).

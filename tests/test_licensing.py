@@ -78,3 +78,33 @@ def test_quota_rules():
     assert ("quota_holders", "right_lease_price", "increase", None) in got
     assert ("buyers.sugar", "price_paid", "increase", None) not in got
     assert ("quota_holders", "net_price_received", "increase", None) not in got
+
+
+def test_fixes_from_the_out_of_sample_runs():
+    """Informal buyers (WE-055, WE-028), training already common (WE-016), a price fixed by an existing rule (WE-015)."""
+    rec = _record()
+    comp = rec.components[0]
+    comp.informal_buyer_actor = "customers.unlicensed"
+    got = _reported(rec)
+    assert ("customers.unlicensed", "search_cost", "increase", None) in got
+    assert not any(k[0] == "customers.braiding" and k[1] in ("search_cost", "disputes_settled_outside_courts") for k in got)
+    assert ("schools.cosmetology", "quantity_demanded", "increase", None) in _reported(rec, training_common=0.3)
+    assert ("schools.cosmetology", "quantity_demanded", "ambiguous", None) in _reported(rec, training_common=0.8)
+    comp.price_fixed = True
+    got = _reported(rec)
+    assert ("customers.braiding", "excess_demand", "increase", None) in got
+    assert not any(k[1] == "price_paid" or (k[0] == "braiders.licensed" and k[1] == "net_price_received") for k in got)
+
+
+def test_an_import_quota_takes_the_tariff_chains():
+    """EN-6: an import quota works as under TX-7, so the tariff rules' chains apply (found out of sample on WE-014)."""
+    from praxeo.schema import Downstream
+    rec = _record()
+    comp = rec.components[0]
+    comp.instrument, comp.bound_actor, comp.buyer_actor, comp.trainer_actor = "quota", "importers", "buyers.sugar", None
+    comp.import_quota, comp.domestic_seller_actor, comp.renewable = True, "growers.domestic", True
+    comp.downstream = [Downstream(actor="confectioners", buyer_actor="buyers.sweets", competitors="same")]
+    got = _reported(rec)
+    assert {("buyers.sweets", "price_paid", "increase", None), ("growers.domestic", "lobbying_effort", "increase", None),
+            ("growers.domestic", "investment_target", "increase", None)} <= got
+    assert not any(k[1] == "tax_revenue" for k in got)          # a quota collects no revenue

@@ -79,3 +79,7 @@ Ranked by table rows added or fixed. Each is a pattern-level change, not a WE-01
 8. **OC-1 with LW-4 for resources drawn into the protected sector** (C-26): the crops forgone. Needs a role for the buyers of the other goods the land and labor would have produced; the text does not name it. 1 row, low priority.
 
 Not a gap, but a note on roles: the table's `quota_holders` is a subclass (base-period importers) of the bound role `importers`. The engine's `importers quantity_traded decrease` is sound and covers it; matching subclass names to parent roles by prefix in the harness, as for `.served`/`.unserved`, would score C-1 in part.
+
+## After the rule changes (second commit)
+
+General fixes from the five out-of-sample runs on licensing and quotas (`rules/licensing.lp`): buyers of the unlicensed or unrecorded trade have their own role (`informal_buyer_actor`), so RS-3 and RS-10 fall on them, not on every buyer; trainers' demand is ambiguous where the training was already common (`training_common`, CR-4b with CR-12b); a price fixed by a rule in force without the measure (`price_fixed`) withholds the price rows and signs excess demand (PC-1); an import quota takes the tariff chains (EN-6: as under TX-7). Rows produced: 11 of 34 (was 10): C-24 (the growers invest on expected renewal, TS-2, through the tariff chain). The record names no downstream users, owners or workers, so RS-14, SB-4 and the labour groups stay unproduced; the tariff chain also adds reshaping into blends (RS-5) and the growers' lobbying, defensible rows not in the table. WRONG: 0.

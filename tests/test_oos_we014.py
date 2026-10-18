@@ -15,6 +15,13 @@ WE14 = ROOT / "cases" / "we014_calvar"
 SHORT = {"exporters.calvar": ["export_industries", "workers.export_industries"]}
 WINDOWS = {"announcement window": "announcement"}
 EXCEPTIONS = {
+    ("importers", "reclassification", "increase", None):
+        "RS-5 through the tariff chain (EN-6 as TX-7, added after the first run): blends at 65% sugar or less (A-8); the table records the reshaping as the trade in blends (C-9)",
+    ("buyers.sugar", "reclassification", "increase", None):
+        "RS-5, as above (buyers who import blends)",
+    ("growers.beet", "lobbying_effort", "increase", None):
+        "RS-7 through the tariff chain: the protected domestic sellers lobby for renewal at the five-year review (A-21); the table names the quota holders (C-12)",
+
     ("importers", "quantity_traded", "decrease", None):
         "EN-6 on the bound role `importers` (all importers, from the text); C-1 names the subclass quota_holders (base-period importers, section 3) and the foreign sellers",
     ("quota_holders", "net_price_received", "increase", None):
@@ -42,7 +49,6 @@ NOT_PRODUCED = {
     "C-20": "RS-4 and RS-9 for quotas: no neighbour role (see C-11)",
     "C-21": "same",
     "C-22": "RS-4 for quotas: foreign makers of the sweetened goods have no role",
-    "C-24": "TS-2: `renewable` is set for the five-year review, but only the tariff rules use it; a quota gives no investment_target for the growers",
     "C-26": "OC-1 with LW-4: the crops the land would have grown; no rule for the domestic sellers' expansion drawing resources, no buyers.field_crops role",
     "C-28": "OC-2 is not encoded (also absent in WE-067): the cost of registering and trading shares",
     "C-29": "sign form: the engine signs the OC-1 payer group (at_least_one_decrease over taxpayers, other spending, future taxpayers); the table signs taxpayers alone",
@@ -50,7 +56,7 @@ NOT_PRODUCED = {
     "C-31": "RS-6 and TS-1 for the refineries' capacity (see C-18)",
     "C-32": "OC-1 with CR-8c for the cost of reshaping into blends (see C-9)",
 }
-PRODUCED = {"C-2", "C-3", "C-4", "C-5", "C-12", "C-23", "C-25", "C-27", "C-33", "C-34"}
+PRODUCED = {"C-2", "C-3", "C-4", "C-5", "C-12", "C-23", "C-24", "C-25", "C-27", "C-33", "C-34"}
 
 
 def test_consistent_with_worked_example_we014():

@@ -19,6 +19,7 @@ SHORT = {"designers": "designers", "designers.recent": "designers", "designers.p
          "schools": "schools.design", "retailers": "retailers.furniture"}
 WINDOWS = {"announcement window": "announcement", "first months": "first_months"}
 EXCEPTIONS = {
+
     ("clients", "quality_information", "ambiguous", None):
         "the row exists in the table only as C-28 (decrease, for clients who use unlicensed designers); the engine adds EN-11's "
         "increase for the licensed designers' buyers (A-13 high) and combines them in the one buyer role the record has",
@@ -32,15 +33,10 @@ EXCEPTIONS = {
         "member of the OC-1 payer group (see above)",
     ("taxpayers.future", "resources_available_other_uses", "at_least_one_decrease", None):
         "member of the OC-1 payer group (see above)",
-    ("schools.design", "quantity_demanded", "increase", None):
-        "KNOWN WRONG: EN-1 with CR-8c gives the up chain only (those who obtain the license buy the training); C-7 is ambiguous "
-        "because degree-takers who now also face 3,500 hours and an exam turn to another career (CR-4b), the misapplication of "
-        "EN-1 that catalog 0.5 corrected",
 }
 NOT_PRODUCED = {
     "C-4": "role: compliance_cost (fees, documentation, continuing education) falls on holders by OC-2; the engine puts it on the "
            "bound role for those who qualify (some_qualify), not on the right holder `designers.grandfathered`",
-    "C-7": "wrong sign (see EXCEPTIONS): produced as an increase",
     "C-8": "missing rule: RS-5 for the exemptions of a licensing_requirement (retail staff); no definition_line use in licensing.lp",
     "C-9": "missing rule: RS-8 (announcement window) is not encoded for licensing, and no question for A-8 is asked",
     "C-16": "missing role and rule: RS-5/RS-9 complements (furniture stores); no related market for licensing",
@@ -64,7 +60,7 @@ NOT_PRODUCED = {
     "C-34": "missing role and rule: CR-9 and CR-6 for the architects' fees (no substitute-seller role for licensing)",
     "C-36": "missing record fact: K3 (stamped plans) has no component, so no building-department role; OC-3 is applied to the enforcer only",
 }
-PRODUCED = {"C-1", "C-2", "C-3", "C-5", "C-6", "C-10", "C-11", "C-12", "C-13", "C-14", "C-15", "C-18", "C-25", "C-29", "C-35"}
+PRODUCED = {"C-1", "C-2", "C-3", "C-5", "C-6", "C-7", "C-10", "C-11", "C-12", "C-13", "C-14", "C-15", "C-18", "C-25", "C-29", "C-35"}
 
 
 def test_consistent_with_worked_example_we016():
@@ -72,6 +68,6 @@ def test_consistent_with_worked_example_we016():
     rows = _rows("WE-016_interior_designer_license.md", SHORT, WINDOWS, {})
     assert len(rows) == 36
     _check(rows, keys, EXCEPTIONS, NOT_PRODUCED, PRODUCED)
-    assert set(NOT_PRODUCED) | PRODUCED == set(rows) and len(PRODUCED) == 15
+    assert set(NOT_PRODUCED) | PRODUCED == set(rows) and len(PRODUCED) == 16
     # the readings of U1 change no Component field, so the engine runs once and carries no per-reading signs
     assert not any(c["sign_by_reading"] for c in pred["consequences"])

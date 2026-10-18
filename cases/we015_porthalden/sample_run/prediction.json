@@ -313,47 +313,6 @@
    "window": null
   },
   {
-   "actor_class": "medallion_owners.initial",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "binding(k1)",
-     "enforced(k1)"
-    ]
-   ],
-   "assumptions": [
-    "binding(k1)",
-    "enforced(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "quota_binds(k1)",
-     "premises": [
-      "binding(k1)",
-      "enforced(k1)"
-     ],
-     "rule": "EN-6"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-7",
-   "item": null,
-   "reported": true,
-   "sign": "increase",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "net_price_received",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
    "actor_class": "officials.enforcement",
    "actor_group": [],
    "assumption_sets": [
@@ -391,7 +350,7 @@
     "medium",
     "long"
    ],
-   "id": "C-8",
+   "id": "C-7",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -442,7 +401,7 @@
     "medium",
     "long"
    ],
-   "id": "C-9",
+   "id": "C-8",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -477,26 +436,25 @@
      "rule": "EN-6"
     },
     {
-     "conclusion": "quota_price(k1)",
+     "conclusion": "en_shortage(k1)",
      "premises": [
       "quota_binds(k1)"
      ],
-     "rule": "EN-6"
+     "rule": "PC-1"
     }
    ],
    "group": [],
    "horizon": [
-    "short",
     "medium",
     "long"
    ],
-   "id": "C-10",
+   "id": "C-9",
    "item": null,
    "reported": true,
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
-   "variable": "price_paid",
+   "variable": "excess_demand",
    "visibility": "invisible",
    "window": null
   },
@@ -541,7 +499,7 @@
     "medium",
     "long"
    ],
-   "id": "C-11",
+   "id": "C-10",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -582,61 +540,13 @@
     "medium",
     "long"
    ],
-   "id": "C-12",
+   "id": "C-11",
    "item": null,
    "reported": true,
    "sign": "decrease",
    "sign_by_reading": {},
    "tier": "B",
    "variable": "quantity_traded",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "riders",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "binding(k1)",
-     "enforced(k1)"
-    ]
-   ],
-   "assumptions": [
-    "binding(k1)",
-    "enforced(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "quota_binds(k1)",
-     "premises": [
-      "binding(k1)",
-      "enforced(k1)"
-     ],
-     "rule": "EN-6"
-    },
-    {
-     "conclusion": "quota_price(k1)",
-     "premises": [
-      "quota_binds(k1)"
-     ],
-     "rule": "EN-6"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-13",
-   "item": null,
-   "reported": true,
-   "sign": "decrease",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "resources_available_other_uses",
    "visibility": "invisible",
    "window": null
   },
@@ -681,7 +591,7 @@
     "medium",
     "long"
    ],
-   "id": "C-14",
+   "id": "C-12",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -749,7 +659,7 @@
     "medium",
     "long"
    ],
-   "id": "C-15",
+   "id": "C-13",
    "item": null,
    "reported": true,
    "sign": "at_least_one_decrease",
@@ -761,7 +671,7 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"drivers.taxi\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nquota(k1).\nen_buyer(k1, \"riders\").\nen_holder(k1, \"medallion_owners.initial\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\ntransferable(k1).\nseller_cap(k1).\ngeneral_budget(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(expected_to_last(k1)).\nassumption(enforcement_budget_raised(k1)).\n",
+ "engine_facts": "bound(k1, \"drivers.taxi\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nquota(k1).\nen_buyer(k1, \"riders\").\nen_holder(k1, \"medallion_owners.initial\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_informal_buyer(k1, \"riders\").\ntransferable(k1).\nseller_cap(k1).\nprice_fixed(k1).\ngeneral_budget(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(expected_to_last(k1)).\nassumption(enforcement_budget_raised(k1)).\n",
  "explanations": [
   "C-1. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, entry rate for drivers.taxi falls from the medium run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
   "C-2. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, informal activity for drivers.taxi rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.75). Reported.",
@@ -769,15 +679,13 @@
   "C-4. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, quantity traded for drivers.taxi falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
   "C-5. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, asset value for medallion_owners.initial rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80); Holders and buyers of the rights expect the restriction to last (p = 0.75). Reported.",
   "C-6. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, lobbying effort for medallion_owners.initial rises from the medium run onward (tier B, invisible). Why: EN-6: EN-6; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The holders of the rights can organize to lobby at a cost below their stake (p = 0.85); The cap is enforced (p = 0.80). Reported.",
-  "C-7. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, net price received for medallion_owners.initial rises from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
-  "C-8. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
-  "C-9. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, disputes settled outside courts for riders rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.75). Reported.",
-  "C-10. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, price paid for riders rises from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
-  "C-11. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, quality information for riders falls from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.75). Reported.",
-  "C-12. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, quantity traded for riders falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
-  "C-13. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, resources available other uses for riders falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
-  "C-14. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, search cost for riders rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.75). Reported.",
-  "C-15. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier B, invisible). Why: EN-6: EN-6; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; OC-1: what the payers give up is what they would otherwise have bought. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80); The administering agency's budget is raised to cover the new work, so taxpayers fund it (p = 0.55). Reported."
+  "C-7. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
+  "C-8. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, disputes settled outside courts for riders rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.75). Reported.",
+  "C-9. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, excess demand for riders rises from the medium run onward (tier B, invisible). Why: EN-6: EN-6; PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
+  "C-10. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, quality information for riders falls from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.75). Reported.",
+  "C-11. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, quantity traded for riders falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80). Reported.",
+  "C-12. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, search cost for riders rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.75). Reported.",
+  "C-13. Compared with no Port Halden Taxi Fleet Stabilization Ordinance, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier B, invisible). Why: EN-6: EN-6; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; OC-1: what the payers give up is what they would otherwise have bought. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.80); The cap is enforced (p = 0.80); The administering agency's budget is raised to cover the new work, so taxpayers fund it (p = 0.55). Reported."
  ],
  "questions": [
   {
@@ -921,6 +829,7 @@
     "id": "k1",
     "import_quota": false,
     "importer_actor": null,
+    "informal_buyer_actor": null,
     "input_supplier_actor": null,
     "instrument": "quota",
     "market": "port_halden",
@@ -931,6 +840,7 @@
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
     "own_revenue_funded": false,
+    "price_fixed": true,
     "protected_actor": null,
     "protected_concentrated": true,
     "qualifier_actor": null,
@@ -952,7 +862,8 @@
      "Vehicles that take only bookings made at least 30 minutes ahead, at a fare agreed at booking, may operate with an uncapped private-hire permit ($300 a year).",
      "The Taxi and Limousine Office enforces the ordinance with 12 inspectors.",
      "Enforcement is funded from the general budget and license fees.",
-     "The ordinance was introduced by the council five months before it took effect, with passage widely expected."
+     "The ordinance was introduced by the council five months before it took effect, with passage widely expected.",
+     "Fares are set by the city council as a meter rate, indexed each year to consumer prices; this rule predates the ordinance and is unchanged by it."
     ],
     "substitute_seller_actor": null,
     "tax_named": false,
@@ -994,7 +905,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T20:58:27+00:00",
+ "run_at": "2026-10-18T21:12:05+00:00",
  "sources_held_back": [],
  "unclear": [
   {

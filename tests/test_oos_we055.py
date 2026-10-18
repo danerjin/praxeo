@@ -23,21 +23,17 @@ SHORT = {"unlicensed inspectors": "inspectors"}
 # 2027, from 2028), which the engine's short/medium/long windows do not carry; no engine row has a window
 WINDOWS = {}
 
-_W = "KNOWN WRONG: "
 EXCEPTIONS = {
-    ("buyers.current", "disputes_settled_outside_courts", "increase", None):
-        "defensible: RS-10 for buyers of inspections done without a license (A-16); the example signs the buyers of unlicensed "
-        "inspections only as quality_information (C-34), and the engine applies the row to the whole buyer role",
-    ("buyers.current", "quality_information", "ambiguous", None):
-        _W + "C-3 signs buyers' quality information `increase` under U1-a (and `ambiguous` only under U1-b): the information "
-        "loss of RS-3 and RS-10 falls on buyers.unlicensed (C-34), not on all buyers. The record has one buyer_actor, so the "
-        "engine sets EN-11's increase (A-4) against RS-3's decrease (A-16) on the same class and combines them to ambiguous",
+    ("buyers.current", "quality_information", "increase", None):
+        "EN-11 (the license tests what buyers value): C-3 under U1-a; its U1-b sign (ambiguous) needs a reading fact the record cannot state",
+    ("buyers.unlicensed", "search_cost", "increase", None):
+        "RS-10 for the buyers of unlicensed inspections (`informal_buyer_actor`, added after the first run); the table records their quality information only (C-34)",
+    ("buyers.unlicensed", "disputes_settled_outside_courts", "increase", None):
+        "RS-10, as above",
+
     ("buyers.current", "quantity_substitute", "increase", None):
         "defensible: EN-3 with RS-1 (A-9, A-19): buyers priced out turn to engineers or to unlicensed inspectors; the example "
         "signs the engineers' side (C-20), not the buyers' substitution",
-    ("buyers.current", "search_cost", "increase", None):
-        _W + "C-25 signs referral users' search cost `no_change` under U1-a; the engine's increase comes from RS-3 (buyers of "
-        "unlicensed inspections search more) applied to the whole buyer role, for want of a buyers.unlicensed role",
     ("inspectors", "compliance_cost", "increase", None):
         "defensible: the bound class as a whole; C-1 and C-15 sign the three classes the grandfathering line makes "
         "(grandfathered, new_requirement, prospective), none of which the record can name",
@@ -50,9 +46,9 @@ EXCEPTIONS = {
     ("inspectors", "quantity_traded", "decrease", None):
         "defensible: OC-4's sellers' side of C-7; the example signs only the buyers' side",
     ("inspectors.licensed", "lobbying_effort", "increase", None):
-        _W + "C-19 signs the inspectors' lobbying `ambiguous` (A-18: the association would have campaigned without the Act). "
-        "EN-5 and RS-7 give `increase` for the holders' gain; the contested-field row beside it is the correct one, but both "
-        "are reported, so the unqualified increase stands against the table",
+        "defensible: lobbying over the provisions that exist only under the Act (EN-5; CR-4 1.1: an increase against none), "
+        "beside the contested-field row (the item policy_field, C-19). WE-067 (C-26, C-27) and WE-065 (C-15, C-36) sign both; "
+        "WE-055 lists only the contested one. The first run counted this row WRONG",
     ("inspectors.licensed", "lobbying_effort", "ambiguous", None):
         "defensible: C-19 (RS-7 Unless, A-18) on the license holders rather than on inspectors.grandfathered, which the record "
         "cannot name; reported with the policy_field qualifier",
@@ -90,12 +86,11 @@ NOT_PRODUCED = {
     "C-31": "missing rule: CR-1 and CR-8b receipts of the Board (fees, fines); licensing.lp derives enforcement_cost only",
     "C-32": "missing rule: EN-1 1.0 entry by horizon (CR-4, CR-7a, CR-12b); the engine has entry_rate short only",
     "C-33": "missing rule: EN-1 1.0 long-run entry (CR-10b, A-32); as C-32",
-    "C-34": "missing record fact: buyers.unlicensed (clients of unlicensed inspectors); the engine signs RS-3's information loss on buyer_actor, giving the wrong class (see EXCEPTIONS)",
     "C-35": "missing record fact and rule: engineers' other clients (CR-9, CR-7a, CR-6); no role",
     "C-36": "missing record fact: the new_requirement inspectors who train and stay; CR-3 and CR-8b for trainees have no role",
     "C-37": "missing rule: CR-8b (1.0) with OC-1 for the Board's fund balance (fees and fines less costs, ambiguous); no receipts side",
 }
-PRODUCED = {"C-2", "C-5", "C-6", "C-7", "C-17", "C-29", "C-30"}
+PRODUCED = {"C-2", "C-5", "C-6", "C-7", "C-17", "C-29", "C-30", "C-34"}
 
 
 def test_consistent_with_worked_example_we055():

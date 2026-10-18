@@ -1,7 +1,7 @@
 # Thin-slice run: Westmark State Cosmetology Act, amendment 7
 
-Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-18T20:53:36+00:00
-Prediction log sha256 (frozen before the outcome card was opened): `ef644730f4ea9192…`
+Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-18T21:12:04+00:00
+Prediction log sha256 (frozen before the outcome card was opened): `dc94b08d6f37ee60…`
 
 ## Policy record
 
@@ -22,6 +22,7 @@ Prediction log sha256 (frozen before the outcome card was opened): `ef644730f4ea
 | `buyer_substitutes(k1)` | substitutability | 0.75 | Some buyers have a feasible substitute for the licensed service. |
 | `tests_valued_quality(k1)` | other | 0.15 | The license tests something buyers value but cannot easily judge. |
 | `can_organize(k1)` | other | 0.70 | The license holders can organize to lobby at a cost below their stake. |
+| `training_common(k1)` | other | 0.05 | The required training was already commonly taken before the requirement. |
 
 ## Consequences
 

@@ -8,8 +8,9 @@
 %   en_holder(C, A).                 those who hold the license or quota right (default the bound actor)    (EN-2, EN-6)
 %   en_trainer(C, A).                sellers of the training or exam the license requires                    (EN-1)
 %   transferable(C).                 licenses or quota rights may be sold or leased                          (EN-2, SB-4)
-%   import_quota(C).                 the quota caps imports                                                  (EN-6, TX-7, TX-8)
-%   en_domestic_seller(C, A). en_exporter(C, A). en_exporter_worker(C, A).  for an import quota
+%   import_quota(C).                 the quota caps imports; the tariff roles are written too (EN-6, TX-7, TX-8)
+%   en_informal_buyer(C, A).         buyers of the unlicensed or unrecorded trade (default the buyers)      (RS-3, RS-10)
+%   price_fixed(C).                  a rule in force without the measure too fixes the price               (EN-6, PC-1)
 %   seller_cap(C).                   the cap is on the number of sellers (licenses), not on quantity         (EN-6 1.0)
 %   wider_market(C).                 the capped good's price is set in a wider market                        (EN-6 Unless)
 %   enforcer(C, A). general_budget(C). en_payer_group(C, "a,b,c"). tax_named(C). taxpayer(C, A).  (OC-3, OC-1)
@@ -30,9 +31,9 @@ fired(en_1, lic_binds(C), enforced(C)) :- lic_binds(C).
 effect(lic_binds(C), B, "share_of_sellers_licensed", increase, short, visible, "B") :- lic_binds(C), bound(C, B).
 effect(lic_binds(C), B, "number_of_sellers", decrease, short, invisible, "B")       :- lic_binds(C), bound(C, B).
 effect(lic_binds(C), B, "entry_rate", decrease, short, invisible, "B")              :- lic_binds(C), bound(C, B).
-effect(lic_binds(C), X, "price_paid", increase, short, invisible, "B")              :- lic_binds(C), en_buyer(C, X).
+effect(lic_binds(C), X, "price_paid", increase, short, invisible, "B")              :- lic_binds(C), en_buyer(C, X), not price_fixed(C).
 % CR-8b: what the buyers pay above the old price is lost to their other uses.
-effect(lic_binds(C), X, "resources_available_other_uses", decrease, short, invisible, "B") :- lic_binds(C), en_buyer(C, X).
+effect(lic_binds(C), X, "resources_available_other_uses", decrease, short, invisible, "B") :- lic_binds(C), en_buyer(C, X), not price_fixed(C).
 % OC-4: the exchanges the higher price prices out are not made; both sides lose them.
 lic_prevented(C) :- lic_binds(C), not exception(oc_4, C).
 fired(oc_4, lic_prevented(C), lic_binds(C)) :- lic_prevented(C).
@@ -43,7 +44,7 @@ effect(lic_prevented(C), B, "quantity_traded", decrease, short, invisible, "B") 
 % licenses can be sold and are expected to last, their value rises (SB-4).
 lic_holders_gain(C) :- lic_binds(C), not exception(en_2, C).
 fired(en_2, lic_holders_gain(C), lic_binds(C)) :- lic_holders_gain(C).
-effect(lic_holders_gain(C), H, "net_price_received", increase, short, invisible, "B") :- lic_holders_gain(C), en_holder(C, H).
+effect(lic_holders_gain(C), H, "net_price_received", increase, short, invisible, "B") :- lic_holders_gain(C), en_holder(C, H), not price_fixed(C).
 
 % EN-1 with CR-1 and CR-8c: those who choose to qualify (some_qualify) pay for the training and exam, and its sellers sell more.
 lic_qualify(C) :- lic_binds(C), holds(some_qualify(C)), not exception(en_1, C).
@@ -51,6 +52,14 @@ fired(en_1, lic_qualify(C), lic_binds(C))     :- lic_qualify(C).
 fired(cr_8, lic_qualify(C), some_qualify(C))  :- lic_qualify(C).
 effect(lic_qualify(C), B, "compliance_cost", increase, short, invisible, "B")  :- lic_qualify(C), bound(C, B).
 effect(lic_qualify(C), T, "quantity_demanded", increase, short, invisible, "B") :- lic_qualify(C), en_trainer(C, T).
+% CR-4b with CR-12b: where the training was already commonly taken before the requirement (training_common), those who would
+% have taken it may be put off by the license's further conditions (hours, exams), so the trainers' demand is the sum of two
+% opposite chains, ambiguous without a premise (found out of sample on WE-016, C-7). The engine keeps the sign of the
+% reported chains, so the row is an increase where the premise is below the cut-off.
+lic_training_deterred(C) :- lic_qualify(C), en_trainer(C, _), holds(training_common(C)), not exception(cr_4, C).
+fired(cr_4, lic_training_deterred(C), lic_qualify(C))      :- lic_training_deterred(C).
+fired(cr_4, lic_training_deterred(C), training_common(C))  :- lic_training_deterred(C).
+effect(lic_training_deterred(C), T, "quantity_demanded", decrease, short, invisible, "B") :- lic_training_deterred(C), en_trainer(C, T).
 
 % EN-3 with OC-4: would-be sellers who do not qualify move to their next-best occupation, so paid work in the licensed trade
 % falls for them (their money earnings fall only with a further premise, not encoded).
@@ -72,9 +81,11 @@ fired(rs_3, en_informal(C), lic_binds(C))   :- en_informal(C), lic_binds(C).
 fired(rs_3, en_informal(C), quota_binds(C)) :- en_informal(C), quota_binds(C).
 fired(rs_3, en_informal(C), evasion(C))     :- en_informal(C).
 effect(en_informal(C), B, "informal_activity", increase, short, invisible, "B")               :- en_informal(C), bound(C, B).
-effect(en_informal(C), X, "search_cost", increase, short, invisible, "B")                     :- en_informal(C), en_buyer(C, X).
-effect(en_informal(C), X, "quality_information", decrease, short, invisible, "B")             :- en_informal(C), en_buyer(C, X).
-effect(en_informal(C), X, "disputes_settled_outside_courts", increase, short, invisible, "B") :- en_informal(C), en_buyer(C, X).
+% These fall on the buyers of the unlicensed or unrecorded trade (en_informal_buyer: informal_buyer_actor, default the
+% buyers), not on every buyer (found out of sample on WE-055 and WE-028).
+effect(en_informal(C), X, "search_cost", increase, short, invisible, "B")                     :- en_informal(C), en_informal_buyer(C, X).
+effect(en_informal(C), X, "quality_information", decrease, short, invisible, "B")             :- en_informal(C), en_informal_buyer(C, X).
+effect(en_informal(C), X, "disputes_settled_outside_courts", increase, short, invisible, "B") :- en_informal(C), en_informal_buyer(C, X).
 
 % EN-11: where the requirement tests something buyers value but cannot easily judge (tests_valued_quality), the license tells
 % the licensed sellers' buyers something about quality (CR-11c).
@@ -93,13 +104,13 @@ fired(en_6, quota_binds(C), binding(C)) :- quota_binds(C).
 fired(en_6, quota_binds(C), enforced(C)) :- quota_binds(C).
 effect(quota_binds(C), B, "quantity_traded", decrease, short, invisible, "B")   :- quota_binds(C), bound(C, B).
 effect(quota_binds(C), X, "quantity_traded", decrease, short, invisible, "B")   :- quota_binds(C), en_buyer(C, X).
-effect(quota_binds(C), H, "net_price_received", increase, short, invisible, "B") :- quota_binds(C), en_holder(C, H), not wider_market(C).
+effect(quota_binds(C), H, "net_price_received", increase, short, invisible, "B") :- quota_binds(C), en_holder(C, H), not wider_market(C), not price_fixed(C).
 effect(quota_binds(C), B, "number_of_sellers", decrease, medium, visible, "B")  :- quota_binds(C), seller_cap(C), bound(C, B).
 effect(quota_binds(C), B, "entry_rate", decrease, medium, invisible, "B")       :- quota_binds(C), seller_cap(C), bound(C, B).
 % The buyers' price rises where the good is priced at home. Where its price is set in a wider market (EN-6 Unless), the
 % lease price of the right rations the capped quantity, and the buyers' price rises only by as much as the capped quantity
 % matters there (price_effect_material).
-quota_price(C) :- quota_binds(C), not wider_market(C).
+quota_price(C) :- quota_binds(C), not wider_market(C), not price_fixed(C).
 fired(en_6, quota_price(C), quota_binds(C)) :- quota_price(C).
 quota_price(C) :- quota_binds(C), wider_market(C), holds(price_effect_material(C)).
 fired(en_6, quota_price(C), price_effect_material(C)) :- quota_price(C), wider_market(C).
@@ -109,18 +120,26 @@ quota_lease(C) :- quota_binds(C), wider_market(C), transferable(C), not exceptio
 fired(cr_6, quota_lease(C), quota_binds(C)) :- quota_lease(C).
 effect(quota_lease(C), H, "right_lease_price", increase, short, invisible, "B") :- quota_lease(C), en_holder(C, H).
 
-% EN-6 for an import quota, as under TX-7: domestic sellers of the same good receive more and supply more, if they make close
-% substitutes (domestic_substitutes); TX-8 applies to export industries (no_offset).
-quota_protects(C) :- quota_binds(C), import_quota(C), holds(domestic_substitutes(C)).
-fired(en_6, quota_protects(C), quota_binds(C))         :- quota_protects(C).
-fired(tx_7, quota_protects(C), domestic_substitutes(C)) :- quota_protects(C).
-effect(quota_protects(C), S, "net_price_received", increase, short, visible, "B") :- quota_protects(C), en_domestic_seller(C, S).
-effect(quota_protects(C), S, "quantity_supplied", increase, short, visible, "B")  :- quota_protects(C), en_domestic_seller(C, S).
-quota_exports_fall(C) :- quota_binds(C), import_quota(C), holds(no_offset(C)), not exception(tx_8, C).
-fired(tx_8, quota_exports_fall(C), quota_binds(C)) :- quota_exports_fall(C).
-fired(tx_8, quota_exports_fall(C), no_offset(C))   :- quota_exports_fall(C).
-effect(quota_exports_fall(C), X, "quantity_supplied", decrease, medium, invisible, "B") :- quota_exports_fall(C), en_exporter(C, X).
-group_effect(quota_exports_fall(C), W, "employment,hours_worked", at_least_one_decrease, medium, invisible, "B") :- quota_exports_fall(C), en_exporter_worker(C, W).
+% EN-6 for an import quota: "as under TX-7". A binding import quota raises the domestic price as a tariff does, so it is
+% the same conclusion as a tariff that bites (tariff_bites), and every chain the tariff rules draw from it applies: TX-7's
+% protected domestic sellers, TX-8 for exporters, RS-14 for downstream users, OC-4, SB-4, RS-5, RS-7 and TS-2 (taxes.lp,
+% spillovers.lp; found out of sample on WE-014). The engine writes the tariff roles for an import quota but not tariff/1,
+% so TX-1's revenue, which a quota does not collect, does not fire.
+% Through quota_price, so that a wider market (without a material price effect) or a fixed price stops it too.
+tariff_bites(C) :- quota_price(C), import_quota(C).
+fired(en_6, tariff_bites(C), quota_price(C)) :- tariff_bites(C), quota_price(C), import_quota(C).
+% the tariff rules' burden step (spillovers.lp) names its rule for a tariff only
+fired(en_6, tx_burden(C), tariff_bites(C)) :- tx_burden(C), quota(C).
+fired(en_6, input_cost_up(C), tariff_bites(C)) :- input_cost_up(C), quota(C).
+
+% EN-6 and EN-1 under an existing price rule (found out of sample on WE-015): where a rule in force without the measure too
+% fixes the price (price_fixed: a council-set fare), the restriction cannot raise it. Buyers' price, the holders' net price
+% and the buyers' CR-8b loss are not signed; the shortfall shows as excess demand at the fixed price instead (PC-1).
+en_shortage(C) :- lic_binds(C), price_fixed(C).
+en_shortage(C) :- quota_binds(C), price_fixed(C).
+fired(pc_1, en_shortage(C), lic_binds(C))   :- en_shortage(C), lic_binds(C).
+fired(pc_1, en_shortage(C), quota_binds(C)) :- en_shortage(C), quota_binds(C).
+effect(en_shortage(C), X, "excess_demand", increase, medium, invisible, "B") :- en_shortage(C), en_buyer(C, X).
 
 % ---------------------------------------------------------------- both
 

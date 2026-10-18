@@ -21,13 +21,15 @@ WE28 = ROOT / "cases" / "we028_kallmark"
 SHORT = {"all vessels fishing ridge cod": "share_recipients", "recipients of other public spending": "recipients.other_spending"}
 WINDOWS = {"2026–2027": "announcement"}
 EXCEPTIONS = {
+    ("buyers.fresh_domestic", "search_cost", "increase", None):
+        "RS-3 with RS-10 for the buyers of unrecorded fish, sold fresh at home (`informal_buyer_actor`, added after the first run); not in the table",
+    ("buyers.fresh_domestic", "disputes_settled_outside_courts", "increase", None):
+        "RS-10, as above",
+    ("buyers.fresh_domestic", "quality_information", "decrease", None):
+        "RS-10, as above",
+
     ("buyers.regional", "resources_available_other_uses", "decrease", None):
         "CR-8b, the mirror of C-49 (what the buyers pay above the old price); the table lists the price only",
-    ("buyers.regional", "search_cost", "increase", None):
-        "RS-3 with EN-3 on unrecorded landings (A-11): defensible in form, but the unrecorded fish is sold at home, not to the export buyers the "
-        "record's single buyer role names; the table records only the sellers' side (C-14)",
-    ("buyers.regional", "disputes_settled_outside_courts", "increase", None): "RS-10 for the unrecorded trade; same attribution as search_cost",
-    ("buyers.regional", "quality_information", "decrease", None): "EN-3 for the unrecorded trade; same attribution as search_cost; not in the table",
 }
 NOT_PRODUCED = {
     "C-4": "missing rule: EN-12 (allocation by history, CR-10a) is not encoded; rights_allocation has no rules; no announcement-window consequence for a quota",

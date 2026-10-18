@@ -54,5 +54,33 @@
   "probability": 0.7,
   "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-22: the customs budget is raised to cover inspection of bulk shipments and the register of quota rights.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.stockpile_ahead",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-6: importers know the allocation formula during the window and can finance and store extra imports.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-8: importing blends and syrups with 65% sugar or less is technically and commercially workable for some users.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.beneficiaries_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-21: growers, quota holders and manufacturers can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expects_extension",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-5: holders, growers and landowners expect the quota to survive the five-year review.",
+  "evidence": []
  }
 ]

@@ -128,6 +128,8 @@ class Component(BaseModel):
     import_quota: bool = Field(default=False, description="Quotas: the quota caps imports; domestic_seller_actor and exporter_actor then apply (EN-6, TX-7, TX-8)")
     seller_cap: bool = Field(default=False, description="Quotas: the cap is on the number of sellers or licenses, not on quantity (EN-6 1.0)")
     wider_market: bool = Field(default=False, description="Quotas: the capped good's price is set in a wider market (fish sold regionally, a traded commodity), so the lease price of the right rations it (EN-6 Unless)")
+    informal_buyer_actor: Optional[str] = Field(default=None, description="Licensing and quotas: buyers of the unlicensed or unrecorded trade (RS-3, RS-10), when not all buyers, e.g. buyers.unlicensed")
+    price_fixed: bool = Field(default=False, description="Licensing and quotas: a rule in force without the measure too fixes the good's price (a council-set fare), so the restriction shows as excess demand, not a higher price (EN-6, PC-1)")
     repay_on_move: bool = Field(default=False, description="Subsidies: the payment is repaid if the recipient moves or sells within a period (RS-11)")
     source_sentences: list[str] = Field(description="Sentences of the policy text this component rests on, quoted exactly")
 

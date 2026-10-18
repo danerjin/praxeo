@@ -366,12 +366,22 @@ WIDER_PRICE_QUESTION = ("price_effect_material", "other",
                         "The capped quantity matters enough in the wider market to raise the price there.")
 
 
+TRAINING_COMMON_QUESTION = ("training_common", "other",
+                            "Before the requirement, did many people already take the training it requires (a degree many would-be sellers already pursued)?",
+                            "The required training was already commonly taken before the requirement.")
+
+
 def _en_specs(comp: Component) -> list[tuple[str, str, str, str]]:
     specs = list(LICENSE_QUESTIONS if comp.instrument == "licensing_requirement" else QUOTA_QUESTIONS)
+    if comp.instrument == "licensing_requirement" and comp.trainer_actor:
+        specs.append(TRAINING_COMMON_QUESTION)
     if comp.transferable:
         specs.append(EN_LASTING_QUESTION)
     if comp.instrument == "quota" and comp.import_quota:
-        specs += [s for s in TARIFF_QUESTIONS if s[0] in ("domestic_substitutes", "no_offset")]
+        # the tariff chains apply (EN-6: as under TX-7): their questions, except the tariff's own binding and funding ones
+        have = {s[0] for s in specs}
+        tariff = _instrument_specs(comp.model_copy(update={"instrument": "tariff", "general_budget": False, "own_revenue_funded": True}))
+        specs += [s for s in tariff if s[0] not in have and s[0] != "binding"]
     if comp.instrument == "quota" and comp.wider_market:
         specs.append(WIDER_PRICE_QUESTION)
     if comp.general_budget:

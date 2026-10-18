@@ -1,7 +1,7 @@
 # Thin-slice run: Arvane Interior Design Practice Act
 
-Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-18T20:58:43+00:00
-Prediction log sha256 (frozen before the outcome card was opened): `62b446df23584f6b…`
+Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-18T21:12:06+00:00
+Prediction log sha256 (frozen before the outcome card was opened): `e86c745dae55764d…`
 
 ## Policy record
 
@@ -23,6 +23,7 @@ Prediction log sha256 (frozen before the outcome card was opened): `62b446df2358
 | `buyer_substitutes(k1)` | substitutability | 0.85 | Some buyers have a feasible substitute for the licensed service. |
 | `tests_valued_quality(k1)` | other | 0.75 | The license tests something buyers value but cannot easily judge. |
 | `can_organize(k1)` | other | 0.80 | The license holders can organize to lobby at a cost below their stake. |
+| `training_common(k1)` | other | 0.75 | The required training was already commonly taken before the requirement. |
 | `enforcement_budget_raised(k1)` | revenue_use | 0.85 | The administering agency's budget is raised to cover the new work, so taxpayers fund it. |
 
 ## Consequences
@@ -46,7 +47,7 @@ Prediction log sha256 (frozen before the outcome card was opened): `62b446df2358
 | C-15 | designers.grandfathered | lobbying_effort | increase | medium+ | B | EN-1, EN-2, EN-5, RS-7 | {binding(k1), can_organize(k1), enforced(k1)} | yes |
 | C-16 | designers.grandfathered | net_price_received | increase | short+ | B | EN-1, EN-2 | {binding(k1), enforced(k1)} | yes |
 | C-17 | officials.enforcement | enforcement_cost | increase | short+ | B | EN-1, OC-3 | {binding(k1), enforced(k1)} | yes |
-| C-18 | schools.design | quantity_demanded | increase | short+ | B | EN-1, CR-8 | {binding(k1), enforced(k1), some_qualify(k1)} | yes |
+| C-18 | schools.design | quantity_demanded | ambiguous | short+ | B | EN-1, CR-8, CR-4 | {binding(k1), enforced(k1), some_qualify(k1)} | yes |
 | C-19 | taxpayers or recipients.other_spending or taxpayers.future | resources_available_other_uses | at_least_one_decrease | short+ | B | EN-1, OC-3, OC-1 | {binding(k1), enforced(k1), enforcement_budget_raised(k1)} | yes |
 
 ## Explanations
@@ -68,7 +69,7 @@ Prediction log sha256 (frozen before the outcome card was opened): `62b446df2358
 - C-15. Compared with no Arvane Interior Design Practice Act, lobbying effort for designers.grandfathered rises from the medium run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2; EN-5: EN-5; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The license holders can organize to lobby at a cost below their stake (p = 0.80); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.
 - C-16. Compared with no Arvane Interior Design Practice Act, net price received for designers.grandfathered rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.
 - C-17. Compared with no Arvane Interior Design Practice Act, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.
-- C-18. Compared with no Arvane Interior Design Practice Act, quantity demanded for schools.design rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some current sellers or new entrants obtain the license (p = 0.85). Reported.
+- C-18. Compared with no Arvane Interior Design Practice Act, quantity demanded for schools.design may move either way from the short run onward (tier B, invisible). Why: EN-1: EN-1; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses; CR-4: buyers who face a higher price take fewer units. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some current sellers or new entrants obtain the license (p = 0.85). Reported.
 - C-19. Compared with no Arvane Interior Design Practice Act, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; OC-1: what the payers give up is what they would otherwise have bought. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); The administering agency's budget is raised to cover the new work, so taxpayers fund it (p = 0.85). Reported.
 
 ## Score against the outcome card

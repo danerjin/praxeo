@@ -54,5 +54,12 @@
   "probability": 0.7,
   "rationale": "Probability taken from the assumption table of handbook WE-055 (illustrative figures), A-18: without the Act the inspectors' association would have kept lobbying for licensing (campaign since 2022). A-31 (p 0.6) says agents and schools would not have lobbied; the question asks about the contest the policy text records, which is the association's campaign.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.training_common",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No matching assumption in WE-055; judged from the text: the 120-hour approved training is new (courses are approved from 1 January 2027), so it was not commonly taken before.",
+  "evidence": []
  }
 ]

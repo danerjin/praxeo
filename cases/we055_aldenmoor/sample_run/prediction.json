@@ -47,61 +47,16 @@
    "id": "tests_valued_quality(k1)",
    "p": 0.65,
    "text": "The license tests something buyers value but cannot easily judge."
+  },
+  "training_common(k1)": {
+   "assumption_class": "other",
+   "id": "training_common(k1)",
+   "p": 0.2,
+   "text": "The required training was already commonly taken before the requirement."
   }
  },
  "citation_problems": [],
  "consequences": [
-  {
-   "actor_class": "buyers.current",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "binding(k1)",
-     "enforced(k1)",
-     "evasion(k1)"
-    ]
-   ],
-   "assumptions": [
-    "binding(k1)",
-    "enforced(k1)",
-    "evasion(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "lic_binds(k1)",
-     "premises": [
-      "binding(k1)",
-      "enforced(k1)"
-     ],
-     "rule": "EN-1"
-    },
-    {
-     "conclusion": "en_informal(k1)",
-     "premises": [
-      "evasion(k1)",
-      "lic_binds(k1)"
-     ],
-     "rule": "RS-3"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-1",
-   "item": null,
-   "reported": true,
-   "sign": "increase",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "disputes_settled_outside_courts",
-   "visibility": "invisible",
-   "window": null
-  },
   {
    "actor_class": "buyers.current",
    "actor_group": [],
@@ -133,7 +88,7 @@
     "medium",
     "long"
    ],
-   "id": "C-2",
+   "id": "C-1",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -150,18 +105,13 @@
     [
      "binding(k1)",
      "enforced(k1)",
-     "evasion(k1)"
-    ],
-    [
-     "binding(k1)",
-     "enforced(k1)",
      "tests_valued_quality(k1)"
     ]
    ],
    "assumptions": [
     "binding(k1)",
     "enforced(k1)",
-    "evasion(k1)"
+    "tests_valued_quality(k1)"
    ],
    "combines": [],
    "comparison": null,
@@ -181,22 +131,6 @@
       "tests_valued_quality(k1)"
      ],
      "rule": "EN-11"
-    },
-    {
-     "conclusion": "lic_binds(k1)",
-     "premises": [
-      "binding(k1)",
-      "enforced(k1)"
-     ],
-     "rule": "EN-1"
-    },
-    {
-     "conclusion": "en_informal(k1)",
-     "premises": [
-      "evasion(k1)",
-      "lic_binds(k1)"
-     ],
-     "rule": "RS-3"
     }
    ],
    "group": [],
@@ -205,10 +139,10 @@
     "medium",
     "long"
    ],
-   "id": "C-3",
+   "id": "C-2",
    "item": null,
    "reported": true,
-   "sign": "ambiguous",
+   "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
    "variable": "quality_information",
@@ -256,7 +190,7 @@
     "medium",
     "long"
    ],
-   "id": "C-4",
+   "id": "C-3",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -304,7 +238,7 @@
     "medium",
     "long"
    ],
-   "id": "C-5",
+   "id": "C-4",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -345,7 +279,7 @@
     "medium",
     "long"
    ],
-   "id": "C-6",
+   "id": "C-5",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -356,7 +290,58 @@
    "window": null
   },
   {
-   "actor_class": "buyers.current",
+   "actor_class": "buyers.unlicensed",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "lic_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.unlicensed",
    "actor_group": [],
    "assumption_sets": [
     [
@@ -397,6 +382,57 @@
     "long"
    ],
    "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_information",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.unlicensed",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "lic_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -453,7 +489,7 @@
     "medium",
     "long"
    ],
-   "id": "C-8",
+   "id": "C-9",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -501,7 +537,7 @@
     "medium",
     "long"
    ],
-   "id": "C-9",
+   "id": "C-10",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -542,7 +578,7 @@
     "medium",
     "long"
    ],
-   "id": "C-10",
+   "id": "C-11",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -593,7 +629,7 @@
     "medium",
     "long"
    ],
-   "id": "C-11",
+   "id": "C-12",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -634,7 +670,7 @@
     "medium",
     "long"
    ],
-   "id": "C-12",
+   "id": "C-13",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -682,7 +718,7 @@
     "medium",
     "long"
    ],
-   "id": "C-13",
+   "id": "C-14",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -723,7 +759,7 @@
     "medium",
     "long"
    ],
-   "id": "C-14",
+   "id": "C-15",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -786,7 +822,7 @@
     "medium",
     "long"
    ],
-   "id": "C-15",
+   "id": "C-16",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -859,7 +895,7 @@
     "medium",
     "long"
    ],
-   "id": "C-16",
+   "id": "C-17",
    "item": "policy_field",
    "reported": true,
    "sign": "ambiguous",
@@ -907,7 +943,7 @@
     "medium",
     "long"
    ],
-   "id": "C-17",
+   "id": "C-18",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -955,7 +991,7 @@
     "medium",
     "long"
    ],
-   "id": "C-18",
+   "id": "C-19",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1012,7 +1048,7 @@
     "medium",
     "long"
    ],
-   "id": "C-19",
+   "id": "C-20",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1024,27 +1060,28 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"inspectors\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nfield_contested(k1).\nlicensing(k1).\nen_buyer(k1, \"buyers.current\").\nen_holder(k1, \"inspectors.licensed\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_trainer(k1, \"training_schools\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(some_qualify(k1)).\nassumption(evasion(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(tests_valued_quality(k1)).\nassumption(can_organize(k1)).\nassumption(contested_otherwise(k1)).\n",
+ "engine_facts": "bound(k1, \"inspectors\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nfield_contested(k1).\nlicensing(k1).\nen_buyer(k1, \"buyers.current\").\nen_holder(k1, \"inspectors.licensed\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_trainer(k1, \"training_schools\").\nen_informal_buyer(k1, \"buyers.unlicensed\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(some_qualify(k1)).\nassumption(evasion(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(tests_valued_quality(k1)).\nassumption(can_organize(k1)).\nassumption(training_common(k1)).\nassumption(contested_otherwise(k1)).\n",
  "explanations": [
-  "C-1. Compared with no Aldenmoor Home Inspector Licensing Act, disputes settled outside courts for buyers.current rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some sellers keep selling without a license and are not caught (p = 0.70). Reported.",
-  "C-2. Compared with no Aldenmoor Home Inspector Licensing Act, price paid for buyers.current rises from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
-  "C-3. Compared with no Aldenmoor Home Inspector Licensing Act, quality information for buyers.current may move either way from the short run onward (tier B, visible). Why: EN-1: EN-1; EN-11: EN-11; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some sellers keep selling without a license and are not caught (p = 0.70). It also follows under 1 other minimal assumption set(s). Reported.",
-  "C-4. Compared with no Aldenmoor Home Inspector Licensing Act, quantity substitute for buyers.current rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-1: when a good becomes dearer, buyers turn to substitutes. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); Some buyers have a feasible substitute for the licensed service (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
-  "C-5. Compared with no Aldenmoor Home Inspector Licensing Act, quantity traded for buyers.current falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
-  "C-6. Compared with no Aldenmoor Home Inspector Licensing Act, resources available other uses for buyers.current falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
-  "C-7. Compared with no Aldenmoor Home Inspector Licensing Act, search cost for buyers.current rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some sellers keep selling without a license and are not caught (p = 0.70). Reported.",
-  "C-8. Compared with no Aldenmoor Home Inspector Licensing Act, compliance cost for inspectors rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some current sellers or new entrants obtain the license (p = 0.75). Reported.",
-  "C-9. Compared with no Aldenmoor Home Inspector Licensing Act, employment for inspectors falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; EN-3: EN-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
-  "C-10. Compared with no Aldenmoor Home Inspector Licensing Act, entry rate for inspectors falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
-  "C-11. Compared with no Aldenmoor Home Inspector Licensing Act, informal activity for inspectors rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some sellers keep selling without a license and are not caught (p = 0.70). Reported.",
-  "C-12. Compared with no Aldenmoor Home Inspector Licensing Act, number of sellers for inspectors falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
-  "C-13. Compared with no Aldenmoor Home Inspector Licensing Act, quantity traded for inspectors falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
-  "C-14. Compared with no Aldenmoor Home Inspector Licensing Act, share of sellers licensed for inspectors rises from the short run onward (tier B, visible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
-  "C-15. Compared with no Aldenmoor Home Inspector Licensing Act, lobbying effort for inspectors.licensed rises from the medium run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2; EN-5: EN-5; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The license holders can organize to lobby at a cost below their stake (p = 0.85); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
-  "C-16. Compared with no Aldenmoor Home Inspector Licensing Act, lobbying effort (policy field) for inspectors.licensed may move either way from the medium run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2; EN-5: EN-5; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The license holders can organize to lobby at a cost below their stake (p = 0.85); Without the measure, the question it settles would still be contested by the same groups (p = 0.70); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
-  "C-17. Compared with no Aldenmoor Home Inspector Licensing Act, net price received for inspectors.licensed rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
-  "C-18. Compared with no Aldenmoor Home Inspector Licensing Act, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
-  "C-19. Compared with no Aldenmoor Home Inspector Licensing Act, quantity demanded for training_schools rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some current sellers or new entrants obtain the license (p = 0.75). Reported."
+  "C-1. Compared with no Aldenmoor Home Inspector Licensing Act, price paid for buyers.current rises from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-2. Compared with no Aldenmoor Home Inspector Licensing Act, quality information for buyers.current rises from the short run onward (tier B, visible). Why: EN-1: EN-1; EN-11: EN-11. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); The license tests something buyers value but cannot easily judge (p = 0.65). Reported.",
+  "C-3. Compared with no Aldenmoor Home Inspector Licensing Act, quantity substitute for buyers.current rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-1: when a good becomes dearer, buyers turn to substitutes. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); Some buyers have a feasible substitute for the licensed service (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-4. Compared with no Aldenmoor Home Inspector Licensing Act, quantity traded for buyers.current falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-5. Compared with no Aldenmoor Home Inspector Licensing Act, resources available other uses for buyers.current falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-6. Compared with no Aldenmoor Home Inspector Licensing Act, disputes settled outside courts for buyers.unlicensed rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some sellers keep selling without a license and are not caught (p = 0.70). Reported.",
+  "C-7. Compared with no Aldenmoor Home Inspector Licensing Act, quality information for buyers.unlicensed falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some sellers keep selling without a license and are not caught (p = 0.70). Reported.",
+  "C-8. Compared with no Aldenmoor Home Inspector Licensing Act, search cost for buyers.unlicensed rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some sellers keep selling without a license and are not caught (p = 0.70). Reported.",
+  "C-9. Compared with no Aldenmoor Home Inspector Licensing Act, compliance cost for inspectors rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some current sellers or new entrants obtain the license (p = 0.75). Reported.",
+  "C-10. Compared with no Aldenmoor Home Inspector Licensing Act, employment for inspectors falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; EN-3: EN-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-11. Compared with no Aldenmoor Home Inspector Licensing Act, entry rate for inspectors falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-12. Compared with no Aldenmoor Home Inspector Licensing Act, informal activity for inspectors rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some sellers keep selling without a license and are not caught (p = 0.70). Reported.",
+  "C-13. Compared with no Aldenmoor Home Inspector Licensing Act, number of sellers for inspectors falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-14. Compared with no Aldenmoor Home Inspector Licensing Act, quantity traded for inspectors falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-15. Compared with no Aldenmoor Home Inspector Licensing Act, share of sellers licensed for inspectors rises from the short run onward (tier B, visible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-16. Compared with no Aldenmoor Home Inspector Licensing Act, lobbying effort for inspectors.licensed rises from the medium run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2; EN-5: EN-5; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The license holders can organize to lobby at a cost below their stake (p = 0.85); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-17. Compared with no Aldenmoor Home Inspector Licensing Act, lobbying effort (policy field) for inspectors.licensed may move either way from the medium run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2; EN-5: EN-5; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The license holders can organize to lobby at a cost below their stake (p = 0.85); Without the measure, the question it settles would still be contested by the same groups (p = 0.70); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-18. Compared with no Aldenmoor Home Inspector Licensing Act, net price received for inspectors.licensed rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-19. Compared with no Aldenmoor Home Inspector Licensing Act, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-20. Compared with no Aldenmoor Home Inspector Licensing Act, quantity demanded for training_schools rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some current sellers or new entrants obtain the license (p = 0.75). Reported."
  ],
  "questions": [
   {
@@ -1177,6 +1214,24 @@
    "answer": {
     "decider": "fixture:answers.json",
     "evidence": [],
+    "probability": 0.2,
+    "question_id": "k1.training_common",
+    "rationale": "No matching assumption in WE-055; judged from the text: the 120-hour approved training is new (courses are approved from 1 January 2027), so it was not commonly taken before.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "training_common",
+    "assumption_class": "other",
+    "id": "k1.training_common",
+    "kind": "noul",
+    "options": [],
+    "text": "Before the requirement, did many people already take the training it requires (a degree many would-be sellers already pursued)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
     "probability": 0.7,
     "question_id": "k1.contested_otherwise",
     "rationale": "Probability taken from the assumption table of handbook WE-055 (illustrative figures), A-18: without the Act the inspectors' association would have kept lobbying for licensing (campaign since 2022). A-31 (p 0.6) says agents and schools would not have lobbied; the question asks about the contest the policy text records, which is the association's campaign.",
@@ -1224,6 +1279,7 @@
     "id": "k1",
     "import_quota": false,
     "importer_actor": null,
+    "informal_buyer_actor": "buyers.unlicensed",
     "input_supplier_actor": null,
     "instrument": "licensing_requirement",
     "market": "aldenmoor",
@@ -1234,6 +1290,7 @@
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
     "own_revenue_funded": false,
+    "price_fixed": false,
     "protected_actor": null,
     "protected_concentrated": true,
     "qualifier_actor": null,
@@ -1293,7 +1350,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T20:58:25+00:00",
+ "run_at": "2026-10-18T21:12:07+00:00",
  "sources_held_back": [],
  "unclear": [
   {

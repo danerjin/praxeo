@@ -27,8 +27,10 @@
     "Vehicles that take only bookings made at least 30 minutes ahead, at a fare agreed at booking, may operate with an uncapped private-hire permit ($300 a year).",
     "The Taxi and Limousine Office enforces the ordinance with 12 inspectors.",
     "Enforcement is funded from the general budget and license fees.",
-    "The ordinance was introduced by the council five months before it took effect, with passage widely expected."
-   ]
+    "The ordinance was introduced by the council five months before it took effect, with passage widely expected.",
+    "Fares are set by the city council as a meter rate, indexed each year to consumer prices; this rule predates the ordinance and is unchanged by it."
+   ],
+   "price_fixed": true
   }
  ],
  "unclear": [

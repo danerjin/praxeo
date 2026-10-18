@@ -54,5 +54,12 @@
   "probability": 0.85,
   "rationale": "No matching assumption in WE-016; judged from the text: the Board is funded by license fees and the general budget, and the Act gives it a new task, so the general-budget share is paid from a budget that rises with it (the handbook treats this as certain, C-27 with no assumption).",
   "evidence": []
+ },
+ {
+  "question_id": "k1.training_common",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "No matching assumption in WE-016; judged from the text: roughly 40% of the 6,000 people who offer interior design already hold a degree in it.",
+  "evidence": []
  }
 ]

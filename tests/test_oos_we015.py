@@ -17,6 +17,7 @@ SHORT = {"taxi operators": "drivers.taxi"}
 WINDOWS = {"announcement window": "announcement"}
 
 EXCEPTIONS = {
+
     ("drivers.taxi", "entry_rate", "decrease", None):
         "EN-6 with seller_cap on the bound role; the table has the same fall for the would-be entrants (C-4, drivers.prospective), a class the quota record has no role field for",
     ("drivers.taxi", "informal_activity", "increase", None):
@@ -33,17 +34,10 @@ EXCEPTIONS = {
     ("recipients.other_spending", "resources_available_other_uses", "at_least_one_decrease", None): "same group, member 2 (OC-1, who pays)",
     ("taxpayers.future", "resources_available_other_uses", "at_least_one_decrease", None): "same group, member 3 (OC-1, who pays)",
     # produced and WRONG by the example
-    ("medallion_owners.initial", "net_price_received", "increase", None):
-        "KNOWN WRONG: EN-6 raises the holders' price received, but the fare is the meter rate, the same as in the counterfactual (R1, C-28); the holders gain through more paid trips and lease income (C-13, earnings)",
-    ("riders", "price_paid", "increase", None):
-        "KNOWN WRONG: EN-6's price rise presupposes a free price; the meter rate is fixed and unchanged by the ordinance (C-5 to C-9: 'the cap does not raise the fare'; C-28: the meter fare is the same as in the counterfactual)",
-    ("riders", "resources_available_other_uses", "decrease", None):
-        "KNOWN WRONG: CR-8b on the higher price (above); no higher money price, so nothing is lost to other uses on that account",
 }
 NOT_PRODUCED = {
     "C-3": "missing rule: RS-8 for a quota or license cap (licenses taken out in the announcement window); the record sets announcement_window but no EN rule reads it",
     "C-4": "missing role: no field for would-be entrants in a quota (excluded_actor is not read); the rule signs entry_rate on the bound role (an exception above)",
-    "C-5": "missing record fact: the existing meter rate (R1) has no field in the record (GAP-015-3, `existing_rules`), so PC-1 does not run on the fixed fare",
     "C-6": "same: PC-1 and PC-2 on R1 (and A-18, no question)",
     "C-7": "same: PC-2 on R1; no role for outlying riders",
     "C-8": "same: PC-4 and RS-2 on R1; TS-1 for durable vehicles is not encoded for a cap",
@@ -71,7 +65,7 @@ NOT_PRODUCED = {
     "C-32": "missing rule: CR-8c for the resources spent on lobbying (EN-5 and RS-7 sign the lobbying only)",
     "C-33": "missing rule: RS-8 with CR-9 for the first-year fleet from window licenses (A-4, A-14 have no question)",
 }
-PRODUCED = {"C-1", "C-2", "C-12", "C-23", "C-34"}
+PRODUCED = {"C-1", "C-2", "C-5", "C-12", "C-23", "C-34"}
 
 
 def test_consistent_with_worked_example_we015():

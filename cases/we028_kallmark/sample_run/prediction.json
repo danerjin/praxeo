@@ -46,7 +46,7 @@
  "citation_problems": [],
  "consequences": [
   {
-   "actor_class": "buyers.regional",
+   "actor_class": "buyers.fresh_domestic",
    "actor_group": [],
    "assumption_sets": [
     [
@@ -97,19 +97,19 @@
    "window": null
   },
   {
-   "actor_class": "buyers.regional",
+   "actor_class": "buyers.fresh_domestic",
    "actor_group": [],
    "assumption_sets": [
     [
      "binding(k1)",
      "enforced(k1)",
-     "price_effect_material(k1)"
+     "evasion(k1)"
     ]
    ],
    "assumptions": [
     "binding(k1)",
     "enforced(k1)",
-    "price_effect_material(k1)"
+    "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
@@ -123,12 +123,12 @@
      "rule": "EN-6"
     },
     {
-     "conclusion": "quota_price(k1)",
+     "conclusion": "en_informal(k1)",
      "premises": [
-      "price_effect_material(k1)",
+      "evasion(k1)",
       "quota_binds(k1)"
      ],
-     "rule": "EN-6"
+     "rule": "RS-3"
     }
    ],
    "group": [],
@@ -140,15 +140,15 @@
    "id": "C-2",
    "item": null,
    "reported": true,
-   "sign": "increase",
+   "sign": "decrease",
    "sign_by_reading": {},
    "tier": "B",
-   "variable": "price_paid",
+   "variable": "quality_information",
    "visibility": "invisible",
    "window": null
   },
   {
-   "actor_class": "buyers.regional",
+   "actor_class": "buyers.fresh_domestic",
    "actor_group": [],
    "assumption_sets": [
     [
@@ -191,10 +191,61 @@
    "id": "C-3",
    "item": null,
    "reported": true,
-   "sign": "decrease",
+   "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
-   "variable": "quality_information",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.regional",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "price_effect_material(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "price_effect_material(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k1)",
+     "premises": [
+      "price_effect_material(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
    "visibility": "invisible",
    "window": null
   },
@@ -229,7 +280,7 @@
     "medium",
     "long"
    ],
-   "id": "C-4",
+   "id": "C-5",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -280,64 +331,13 @@
     "medium",
     "long"
    ],
-   "id": "C-5",
+   "id": "C-6",
    "item": null,
    "reported": true,
    "sign": "decrease",
    "sign_by_reading": {},
    "tier": "B",
    "variable": "resources_available_other_uses",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "buyers.regional",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "binding(k1)",
-     "enforced(k1)",
-     "evasion(k1)"
-    ]
-   ],
-   "assumptions": [
-    "binding(k1)",
-    "enforced(k1)",
-    "evasion(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "quota_binds(k1)",
-     "premises": [
-      "binding(k1)",
-      "enforced(k1)"
-     ],
-     "rule": "EN-6"
-    },
-    {
-     "conclusion": "en_informal(k1)",
-     "premises": [
-      "evasion(k1)",
-      "quota_binds(k1)"
-     ],
-     "rule": "RS-3"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-6",
-   "item": null,
-   "reported": true,
-   "sign": "increase",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "search_cost",
    "visibility": "invisible",
    "window": null
   },
@@ -699,14 +699,14 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"vessel_owners.history\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nquota(k1).\nen_buyer(k1, \"buyers.regional\").\nen_holder(k1, \"share_recipients\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending\").\ntransferable(k1).\nwider_market(k1).\ngeneral_budget(k1).\nbound(k2, \"vessel_owners.history\").\nprotected(k2, \"share_recipients\").\nexcluded(k2, \"buyers.prospective\").\nannounced(k2).\nbound(k3, \"vessel_owners.history\").\nprotected(k3, \"crew\").\nexcluded(k3, \"buyers.prospective\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(expected_to_last(k1)).\nassumption(price_effect_material(k1)).\nassumption(enforcement_budget_raised(k1)).\n",
+ "engine_facts": "bound(k1, \"vessel_owners.history\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nquota(k1).\nen_buyer(k1, \"buyers.regional\").\nen_holder(k1, \"share_recipients\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending\").\nen_informal_buyer(k1, \"buyers.fresh_domestic\").\ntransferable(k1).\nwider_market(k1).\ngeneral_budget(k1).\nbound(k2, \"vessel_owners.history\").\nprotected(k2, \"share_recipients\").\nexcluded(k2, \"buyers.prospective\").\nannounced(k2).\nbound(k3, \"vessel_owners.history\").\nprotected(k3, \"crew\").\nexcluded(k3, \"buyers.prospective\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(expected_to_last(k1)).\nassumption(price_effect_material(k1)).\nassumption(enforcement_budget_raised(k1)).\n",
  "explanations": [
-  "C-1. Compared with no Kallmark Ridge Cod Fishery Act, disputes settled outside courts for buyers.regional rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
-  "C-2. Compared with no Kallmark Ridge Cod Fishery Act, price paid for buyers.regional rises from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); The capped quantity matters enough in the wider market to raise the price there (p = 0.60). Reported.",
-  "C-3. Compared with no Kallmark Ridge Cod Fishery Act, quality information for buyers.regional falls from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
-  "C-4. Compared with no Kallmark Ridge Cod Fishery Act, quantity traded for buyers.regional falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80). Reported.",
-  "C-5. Compared with no Kallmark Ridge Cod Fishery Act, resources available other uses for buyers.regional falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); The capped quantity matters enough in the wider market to raise the price there (p = 0.60). Reported.",
-  "C-6. Compared with no Kallmark Ridge Cod Fishery Act, search cost for buyers.regional rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
+  "C-1. Compared with no Kallmark Ridge Cod Fishery Act, disputes settled outside courts for buyers.fresh_domestic rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
+  "C-2. Compared with no Kallmark Ridge Cod Fishery Act, quality information for buyers.fresh_domestic falls from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
+  "C-3. Compared with no Kallmark Ridge Cod Fishery Act, search cost for buyers.fresh_domestic rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
+  "C-4. Compared with no Kallmark Ridge Cod Fishery Act, price paid for buyers.regional rises from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); The capped quantity matters enough in the wider market to raise the price there (p = 0.60). Reported.",
+  "C-5. Compared with no Kallmark Ridge Cod Fishery Act, quantity traded for buyers.regional falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80). Reported.",
+  "C-6. Compared with no Kallmark Ridge Cod Fishery Act, resources available other uses for buyers.regional falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); The capped quantity matters enough in the wider market to raise the price there (p = 0.60). Reported.",
   "C-7. Compared with no Kallmark Ridge Cod Fishery Act, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80). Reported.",
   "C-8. Compared with no Kallmark Ridge Cod Fishery Act, asset value for share_recipients rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Holders and buyers of the rights expect the restriction to last (p = 0.70). Reported.",
   "C-9. Compared with no Kallmark Ridge Cod Fishery Act, lobbying effort for share_recipients rises from the medium run onward (tier B, invisible). Why: EN-6: EN-6; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The holders of the rights can organize to lobby at a cost below their stake (p = 0.85); The cap is enforced (p = 0.80). Reported.",
@@ -875,6 +875,7 @@
     "id": "k1",
     "import_quota": false,
     "importer_actor": null,
+    "informal_buyer_actor": "buyers.fresh_domestic",
     "input_supplier_actor": null,
     "instrument": "quota",
     "market": "kallmark",
@@ -885,6 +886,7 @@
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
     "own_revenue_funded": false,
+    "price_fixed": false,
     "protected_actor": null,
     "protected_concentrated": true,
     "qualifier_actor": null,
@@ -908,7 +910,8 @@
      "Ridge cod may be landed only at 13 designated sites (the three processing ports and ten small harbors), where it is weighed by dockside monitors whose fee (15 marks a tonne) the vessel owner pays.",
      "Penalties: forfeiture of the catch, a fine of three times its value, and suspension of shares after a third offense.",
      "The Directorate's budget is raised by 18 million marks a year from the general budget.",
-     "The bill was introduced by the government on 3 February 2026, with its allocation formula published, and passage was widely expected."
+     "The bill was introduced by the government on 3 February 2026, with its allocation formula published, and passage was widely expected.",
+     "About 30% is sold fresh in Kallmark to fish shops and restaurants."
     ],
     "substitute_seller_actor": null,
     "tax_named": false,
@@ -952,6 +955,7 @@
     "id": "k2",
     "import_quota": false,
     "importer_actor": null,
+    "informal_buyer_actor": null,
     "input_supplier_actor": null,
     "instrument": "rights_allocation",
     "market": "kallmark",
@@ -962,6 +966,7 @@
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
     "own_revenue_funded": false,
+    "price_fixed": false,
     "protected_actor": "share_recipients",
     "protected_concentrated": true,
     "qualifier_actor": null,
@@ -1024,6 +1029,7 @@
     "id": "k3",
     "import_quota": false,
     "importer_actor": null,
+    "informal_buyer_actor": null,
     "input_supplier_actor": null,
     "instrument": "term_prohibition",
     "market": "kallmark",
@@ -1034,6 +1040,7 @@
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
     "own_revenue_funded": false,
+    "price_fixed": false,
     "protected_actor": "crew",
     "protected_concentrated": true,
     "qualifier_actor": null,
@@ -1094,7 +1101,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T20:58:43+00:00",
+ "run_at": "2026-10-18T21:12:06+00:00",
  "sources_held_back": [],
  "unclear": [
   {

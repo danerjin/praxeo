@@ -47,5 +47,12 @@
   "probability": 0.7,
   "rationale": "Probability taken from the assumption table of handbook WE-003 (illustrative figures), A-9: schools, licensed cosmetologists and braiders can organize and spend to change or defend the requirement.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.training_common",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "Probability taken from the assumption table of handbook WE-003 (illustrative figures), A-1: few current braiders already hold a cosmetology license (p = 0.95 that the requirement binds), so cosmetology school was not commonly taken by would-be braiders.",
+  "evidence": []
  }
 ]

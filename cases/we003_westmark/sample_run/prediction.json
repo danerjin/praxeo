@@ -41,6 +41,12 @@
    "id": "tests_valued_quality(k1)",
    "p": 0.15,
    "text": "The license tests something buyers value but cannot easily judge."
+  },
+  "training_common(k1)": {
+   "assumption_class": "other",
+   "id": "training_common(k1)",
+   "p": 0.05,
+   "text": "The required training was already commonly taken before the requirement."
   }
  },
  "citation_problems": [],
@@ -924,7 +930,7 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"braiders\").\nexcluded(k1, \"buyers.prospective\").\nlicensing(k1).\nen_buyer(k1, \"customers.braiding\").\nen_holder(k1, \"braiders.licensed\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_trainer(k1, \"schools.cosmetology\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(some_qualify(k1)).\nassumption(evasion(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(tests_valued_quality(k1)).\nassumption(can_organize(k1)).\n",
+ "engine_facts": "bound(k1, \"braiders\").\nexcluded(k1, \"buyers.prospective\").\nlicensing(k1).\nen_buyer(k1, \"customers.braiding\").\nen_holder(k1, \"braiders.licensed\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_trainer(k1, \"schools.cosmetology\").\nen_informal_buyer(k1, \"customers.braiding\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(some_qualify(k1)).\nassumption(evasion(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(tests_valued_quality(k1)).\nassumption(can_organize(k1)).\nassumption(training_common(k1)).\n",
  "explanations": [
   "C-1. Compared with no Westmark State Cosmetology Act, amendment 7, compliance cost for braiders rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.95); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some current sellers or new entrants obtain the license (p = 0.80). Reported.",
   "C-2. Compared with no Westmark State Cosmetology Act, amendment 7, employment for braiders falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; EN-3: EN-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.95); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
@@ -1071,6 +1077,24 @@
     "options": [],
     "text": "Can the license holders (or those who train them) organize to lobby for the requirement at a cost below their stake?"
    }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.05,
+    "question_id": "k1.training_common",
+    "rationale": "Probability taken from the assumption table of handbook WE-003 (illustrative figures), A-1: few current braiders already hold a cosmetology license (p = 0.95 that the requirement binds), so cosmetology school was not commonly taken by would-be braiders.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "training_common",
+    "assumption_class": "other",
+    "id": "k1.training_common",
+    "kind": "noul",
+    "options": [],
+    "text": "Before the requirement, did many people already take the training it requires (a degree many would-be sellers already pursued)?"
+   }
   }
  ],
  "record": {
@@ -1105,6 +1129,7 @@
     "id": "k1",
     "import_quota": false,
     "importer_actor": null,
+    "informal_buyer_actor": null,
     "input_supplier_actor": null,
     "instrument": "licensing_requirement",
     "market": "westmark",
@@ -1115,6 +1140,7 @@
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
     "own_revenue_funded": false,
+    "price_fixed": false,
     "protected_actor": null,
     "protected_concentrated": true,
     "qualifier_actor": null,
@@ -1161,7 +1187,7 @@
   "unclear": []
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T20:53:36+00:00",
+ "run_at": "2026-10-18T21:12:04+00:00",
  "sources_held_back": [],
  "unclear": [],
  "verifier_problems": []

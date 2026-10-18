@@ -1,7 +1,7 @@
 # Thin-slice run: Kallmark Ridge Cod Fishery Act
 
-Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-18T20:58:43+00:00
-Prediction log sha256 (frozen before the outcome card was opened): `e21a48e7ecf7f17b…`
+Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-18T21:12:06+00:00
+Prediction log sha256 (frozen before the outcome card was opened): `8edcb36ab7701ead…`
 
 ## Policy record
 
@@ -30,12 +30,12 @@ Prediction log sha256 (frozen before the outcome card was opened): `e21a48e7ecf7
 
 | ID | Actor class | Variable | Sign | Horizon | Tier | Rules | Minimal assumption sets | Reported |
 |---|---|---|---|---|---|---|---|---|
-| C-1 | buyers.regional | disputes_settled_outside_courts | increase | short+ | B | EN-6, RS-3 | {binding(k1), enforced(k1), evasion(k1)} | yes |
-| C-2 | buyers.regional | price_paid | increase | short+ | B | EN-6 | {binding(k1), enforced(k1), price_effect_material(k1)} | yes |
-| C-3 | buyers.regional | quality_information | decrease | short+ | B | EN-6, RS-3 | {binding(k1), enforced(k1), evasion(k1)} | yes |
-| C-4 | buyers.regional | quantity_traded | decrease | short+ | B | EN-6 | {binding(k1), enforced(k1)} | yes |
-| C-5 | buyers.regional | resources_available_other_uses | decrease | short+ | B | EN-6 | {binding(k1), enforced(k1), price_effect_material(k1)} | yes |
-| C-6 | buyers.regional | search_cost | increase | short+ | B | EN-6, RS-3 | {binding(k1), enforced(k1), evasion(k1)} | yes |
+| C-1 | buyers.fresh_domestic | disputes_settled_outside_courts | increase | short+ | B | EN-6, RS-3 | {binding(k1), enforced(k1), evasion(k1)} | yes |
+| C-2 | buyers.fresh_domestic | quality_information | decrease | short+ | B | EN-6, RS-3 | {binding(k1), enforced(k1), evasion(k1)} | yes |
+| C-3 | buyers.fresh_domestic | search_cost | increase | short+ | B | EN-6, RS-3 | {binding(k1), enforced(k1), evasion(k1)} | yes |
+| C-4 | buyers.regional | price_paid | increase | short+ | B | EN-6 | {binding(k1), enforced(k1), price_effect_material(k1)} | yes |
+| C-5 | buyers.regional | quantity_traded | decrease | short+ | B | EN-6 | {binding(k1), enforced(k1)} | yes |
+| C-6 | buyers.regional | resources_available_other_uses | decrease | short+ | B | EN-6 | {binding(k1), enforced(k1), price_effect_material(k1)} | yes |
 | C-7 | officials.enforcement | enforcement_cost | increase | short+ | B | EN-6, OC-3 | {binding(k1), enforced(k1)} | yes |
 | C-8 | share_recipients | asset_value | increase | short+ | B | EN-6, SB-4 | {binding(k1), enforced(k1), expected_to_last(k1)} | yes |
 | C-9 | share_recipients | lobbying_effort | increase | medium+ | B | EN-6, RS-7 | {binding(k1), can_organize(k1), enforced(k1)} | yes |
@@ -46,12 +46,12 @@ Prediction log sha256 (frozen before the outcome card was opened): `e21a48e7ecf7
 
 ## Explanations
 
-- C-1. Compared with no Kallmark Ridge Cod Fishery Act, disputes settled outside courts for buyers.regional rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.
-- C-2. Compared with no Kallmark Ridge Cod Fishery Act, price paid for buyers.regional rises from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); The capped quantity matters enough in the wider market to raise the price there (p = 0.60). Reported.
-- C-3. Compared with no Kallmark Ridge Cod Fishery Act, quality information for buyers.regional falls from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.
-- C-4. Compared with no Kallmark Ridge Cod Fishery Act, quantity traded for buyers.regional falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80). Reported.
-- C-5. Compared with no Kallmark Ridge Cod Fishery Act, resources available other uses for buyers.regional falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); The capped quantity matters enough in the wider market to raise the price there (p = 0.60). Reported.
-- C-6. Compared with no Kallmark Ridge Cod Fishery Act, search cost for buyers.regional rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.
+- C-1. Compared with no Kallmark Ridge Cod Fishery Act, disputes settled outside courts for buyers.fresh_domestic rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.
+- C-2. Compared with no Kallmark Ridge Cod Fishery Act, quality information for buyers.fresh_domestic falls from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.
+- C-3. Compared with no Kallmark Ridge Cod Fishery Act, search cost for buyers.fresh_domestic rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.
+- C-4. Compared with no Kallmark Ridge Cod Fishery Act, price paid for buyers.regional rises from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); The capped quantity matters enough in the wider market to raise the price there (p = 0.60). Reported.
+- C-5. Compared with no Kallmark Ridge Cod Fishery Act, quantity traded for buyers.regional falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80). Reported.
+- C-6. Compared with no Kallmark Ridge Cod Fishery Act, resources available other uses for buyers.regional falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); The capped quantity matters enough in the wider market to raise the price there (p = 0.60). Reported.
 - C-7. Compared with no Kallmark Ridge Cod Fishery Act, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80). Reported.
 - C-8. Compared with no Kallmark Ridge Cod Fishery Act, asset value for share_recipients rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Holders and buyers of the rights expect the restriction to last (p = 0.70). Reported.
 - C-9. Compared with no Kallmark Ridge Cod Fishery Act, lobbying effort for share_recipients rises from the medium run onward (tier B, invisible). Why: EN-6: EN-6; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The holders of the rights can organize to lobby at a cost below their stake (p = 0.85); The cap is enforced (p = 0.80). Reported.
