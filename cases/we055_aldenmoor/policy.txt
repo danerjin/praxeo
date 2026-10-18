@@ -1,0 +1,21 @@
+Aldenmoor Home Inspector Licensing Act (fictional; summary of the policy record of handbook worked example WE-055).
+
+The State of Aldenmoor has about 68,000 home sales a year. About 54,000 buyers commission a pre-purchase inspection; sellers commission about 4,000 pre-listing inspections, and builders and buyers about 3,000 inspections of new homes under construction: about 61,000 inspections a year. The average fee is about $450. About 610 people inspect homes for pay. About 400 began practice before 1 January 2025 (they will have three years of practice by 31 December 2027); of these, about 320 will have at least 250 fee-paid inspections in the three years before that date at their present pace, about 60 began practice between 1 July 2024 and 31 December 2024 and reach three years only during the application window, and about 80 are part-timers with three years or more but a pace of 40 to 80 inspections a year. About 210 began on or after 1 January 2025 and cannot reach three years by 31 December 2027. About 70 people enter a year and about 50 leave. About 45% of inspectors hold a voluntary national certification (100 hours of training and an exam); about 40% carry no errors-and-omissions or liability insurance. About 35 licensed professional engineers inspect homes. A state survey of agents finds that about 70% of buyers hire an inspector their agent recommended.
+
+Approved training will cost about $3,200 in tuition and about three weeks of time; the exam about $200, with an expected pass rate of about 70%; the required insurance ($300,000 of errors-and-omissions and general liability cover) about $1,800 a year; the license fee $250 a year. The neighboring State of Linmouth has no license; about 12% of Aldenmoor's sales are in the Brask River metro on the border, where about 40 Linmouth inspectors do some Aldenmoor jobs.
+
+The bill was introduced on 12 January 2026 and enacted on 3 June 2026. Training courses are approved from 1 January 2027 and the exam is offered from March 2027. From 1 July 2027 no one may begin practice without a license; those in practice on that date may continue until 31 December 2027; from 1 January 2028 every inspector must hold a license. No expiry.
+
+Inspections of residential property in Aldenmoor are covered, wherever the inspector lives. Linmouth, across the Brask River, has no license.
+
+K1, license. Anyone inspecting a home for pay in Aldenmoor must hold a license: 120 hours of approved training, a state exam, $300,000 of insurance and $250 a year. A license not renewed for 12 months can be restored only by meeting the requirements for a new license. Licensed professional engineers and architects are exempt.
+
+K2, grandfathering. Incumbent inspectors are licensed without training or exam on application between 1 July and 31 December 2027, if at the date of application the applicant has at least three years of practice and at least 250 fee-paid inspections in those three years, documented by reports. Insurance and fee are still required.
+
+K3, enforcement on complaint. The Home Inspector Board, with two investigators, is funded by license, exam and application fees. Unlicensed practice carries a fine of up to $2,500 per inspection; licensees face suspension or revocation. The Board shall investigate an alleged violation of this Act only upon a written complaint by a buyer of residential property or by a licensed real-estate agent.
+
+K4, agents and inspectors. A real-estate licensee shall not direct, steer or require a client to use a particular home inspector.
+
+Unclear provision U1, agents' recommendations. K4 forbids an agent to "direct, steer or require" a client to use a particular inspector. Reading U1-a: the provision forbids only requiring or conditioning (making a transaction depend on the inspector); an agent may still name or recommend inspectors when asked, as now. Reading U1-b: naming a particular inspector is "steering"; an agent may give a client only the Board's public list of licensed inspectors.
+
+About 210 incumbents (34%) cannot be grandfathered and must train or stop. The counterfactual is Aldenmoor without the Act: no license, inspectors entering and leaving as now, agents recommending inspectors as now, and the inspectors' association continuing the campaign for licensing that it had run since 2022.
