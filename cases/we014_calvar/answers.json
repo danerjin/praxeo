@@ -1,0 +1,58 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-1: without the quota Calvar would keep importing well over 350,000 tonnes a year (about 750,000 now), so the quota binds from the first year.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-2: customs enforces the quota at the ports; only two ports admit bulk cargo, every shipment is inspected, and imports without rights are seized and fined three times their value.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.3,
+  "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-12: bulk sugar is smuggled on a meaningful scale; bulk entry is port-only with inspection, so evasion is below the cut-off.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-21: growers, quota holders and manufacturers can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-5: holders, growers and landowners expect the quota to survive the five-year review.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.domestic_substitutes",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-3: domestic beet sugar and refined imported sugar are close substitutes for buyers.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.no_offset",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-17: lower imports are not offset by capital flows or other adjustments within the medium horizon.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforcement_budget_raised",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-22: the customs budget is raised to cover inspection of bulk shipments and the register of quota rights.",
+  "evidence": []
+ }
+]

@@ -1,0 +1,1202 @@
+{
+ "assumptions": {
+  "binding(k1)": {
+   "assumption_class": "binding",
+   "id": "binding(k1)",
+   "p": 0.95,
+   "text": "The cap holds the quantity below what would otherwise be traded."
+  },
+  "can_organize(k1)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1)",
+   "p": 0.85,
+   "text": "The holders of the rights can organize to lobby at a cost below their stake."
+  },
+  "domestic_substitutes(k1)": {
+   "assumption_class": "substitutability",
+   "id": "domestic_substitutes(k1)",
+   "p": 0.9,
+   "text": "Domestic producers make close substitutes for the covered imports."
+  },
+  "enforced(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k1)",
+   "p": 0.85,
+   "text": "The cap is enforced."
+  },
+  "enforcement_budget_raised(k1)": {
+   "assumption_class": "revenue_use",
+   "id": "enforcement_budget_raised(k1)",
+   "p": 0.7,
+   "text": "The administering agency's budget is raised to cover the new work, so taxpayers fund it."
+  },
+  "evasion(k1)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k1)",
+   "p": 0.3,
+   "text": "Some trade takes place beyond the cap without being caught."
+  },
+  "expected_to_last(k1)": {
+   "assumption_class": "expectations",
+   "id": "expected_to_last(k1)",
+   "p": 0.65,
+   "text": "Holders and buyers of the rights expect the restriction to last."
+  },
+  "no_offset(k1)": {
+   "assumption_class": "other",
+   "id": "no_offset(k1)",
+   "p": 0.6,
+   "text": "Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "buyers.sugar",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.sugar",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k1)",
+     "premises": [
+      "quota_binds(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.sugar",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_information",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.sugar",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.sugar",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k1)",
+     "premises": [
+      "quota_binds(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.sugar",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "export_industries",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "no_offset(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "no_offset(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_exports_fall(k1)",
+     "premises": [
+      "no_offset(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "TX-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "growers.beet",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "domestic_substitutes(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "domestic_substitutes(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_protects(k1)",
+     "premises": [
+      "quota_binds(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_protects(k1)",
+     "premises": [
+      "domestic_substitutes(k1)"
+     ],
+     "rule": "TX-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "growers.beet",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "domestic_substitutes(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "domestic_substitutes(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_protects(k1)",
+     "premises": [
+      "quota_binds(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_protects(k1)",
+     "premises": [
+      "domestic_substitutes(k1)"
+     ],
+     "rule": "TX-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "importers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_administered(k1)",
+     "premises": [
+      "quota_binds(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "quota_holders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "expected_to_last(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "expected_to_last(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_capitalized(k1)",
+     "premises": [
+      "expected_to_last(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "quota_holders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "can_organize(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "can_organize(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_lobby(k1)",
+     "premises": [
+      "can_organize(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "quota_holders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "taxpayers",
+   "actor_group": [
+    "taxpayers",
+    "recipients.other_spending",
+    "taxpayers.future"
+   ],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "enforcement_budget_raised(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "enforcement_budget_raised(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_administered(k1)",
+     "premises": [
+      "quota_binds(k1)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "en_funded(k1)",
+     "premises": [
+      "enforcement_budget_raised(k1)"
+     ],
+     "rule": "OC-1"
+    },
+    {
+     "conclusion": "en_funded(k1)",
+     "premises": [
+      "en_administered(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.export_industries",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "no_offset(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "no_offset(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_exports_fall(k1)",
+     "premises": [
+      "no_offset(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "TX-8"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked"
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"importers\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nquota(k1).\nen_buyer(k1, \"buyers.sugar\").\nen_holder(k1, \"quota_holders\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_domestic_seller(k1, \"growers.beet\").\nen_exporter(k1, \"export_industries\").\nen_exporter_worker(k1, \"workers.export_industries\").\ntransferable(k1).\nimport_quota(k1).\ngeneral_budget(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(expected_to_last(k1)).\nassumption(domestic_substitutes(k1)).\nassumption(no_offset(k1)).\nassumption(enforcement_budget_raised(k1)).\n",
+ "explanations": [
+  "C-1. Compared with no Calvar Sugar Market Act, disputes settled outside courts for buyers.sugar rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.85); Some trade takes place beyond the cap without being caught (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-2. Compared with no Calvar Sugar Market Act, price paid for buyers.sugar rises from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.85). Reported.",
+  "C-3. Compared with no Calvar Sugar Market Act, quality information for buyers.sugar falls from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.85); Some trade takes place beyond the cap without being caught (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-4. Compared with no Calvar Sugar Market Act, quantity traded for buyers.sugar falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.85). Reported.",
+  "C-5. Compared with no Calvar Sugar Market Act, resources available other uses for buyers.sugar falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.85). Reported.",
+  "C-6. Compared with no Calvar Sugar Market Act, search cost for buyers.sugar rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.85); Some trade takes place beyond the cap without being caught (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-7. Compared with no Calvar Sugar Market Act, quantity supplied for export_industries falls from the medium run onward (tier B, invisible). Why: EN-6: EN-6; TX-8: foreigners who sell less to the country earn less of its currency and so buy fewer of its exports. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.85); Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it (p = 0.60). Reported.",
+  "C-8. Compared with no Calvar Sugar Market Act, net price received for growers.beet rises from the short run onward (tier B, visible). Why: EN-6: EN-6; TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); Domestic producers make close substitutes for the covered imports (p = 0.90); The cap is enforced (p = 0.85). Reported.",
+  "C-9. Compared with no Calvar Sugar Market Act, quantity supplied for growers.beet rises from the short run onward (tier B, visible). Why: EN-6: EN-6; TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); Domestic producers make close substitutes for the covered imports (p = 0.90); The cap is enforced (p = 0.85). Reported.",
+  "C-10. Compared with no Calvar Sugar Market Act, informal activity for importers rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.85); Some trade takes place beyond the cap without being caught (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-11. Compared with no Calvar Sugar Market Act, quantity traded for importers falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.85). Reported.",
+  "C-12. Compared with no Calvar Sugar Market Act, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.85). Reported.",
+  "C-13. Compared with no Calvar Sugar Market Act, asset value for quota_holders rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.85); Holders and buyers of the rights expect the restriction to last (p = 0.65). Reported.",
+  "C-14. Compared with no Calvar Sugar Market Act, lobbying effort for quota_holders rises from the medium run onward (tier B, invisible). Why: EN-6: EN-6; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The holders of the rights can organize to lobby at a cost below their stake (p = 0.85); The cap is enforced (p = 0.85). Reported.",
+  "C-15. Compared with no Calvar Sugar Market Act, net price received for quota_holders rises from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.85). Reported.",
+  "C-16. Compared with no Calvar Sugar Market Act, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier B, invisible). Why: EN-6: EN-6; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; OC-1: what the payers give up is what they would otherwise have bought. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.85); The administering agency's budget is raised to cover the new work, so taxpayers fund it (p = 0.70). Reported.",
+  "C-17. Compared with no Calvar Sugar Market Act, employment or hours worked for workers.export_industries falls for at least one of them from the medium run onward (tier B, invisible). Why: EN-6: EN-6; TX-8: foreigners who sell less to the country earn less of its currency and so buy fewer of its exports. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.85); Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it (p = 0.60). Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.95,
+    "question_id": "k1.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-1: without the quota Calvar would keep importing well over 350,000 tonnes a year (about 750,000 now), so the quota binds from the first year.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k1.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the cap below the quantity that would otherwise be traded, now or within the period considered (for a cap on the number of sellers: does it hold the quantity down)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-2: customs enforces the quota at the ports; only two ports admit bulk cargo, every shipment is inspected, and imports without rights are seized and fined three times their value.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k1.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the cap be enforced, so that little trade takes place beyond it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k1.evasion",
+    "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-12: bulk sugar is smuggled on a meaningful scale; bulk entry is port-only with inspection, so evasion is below the cut-off.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k1.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some trade take place beyond the cap without being caught?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-21: growers, quota holders and manufacturers can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the holders of the quota rights organize to lobby for keeping or tightening the cap at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.65,
+    "question_id": "k1.expected_to_last",
+    "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-5: holders, growers and landowners expect the quota to survive the five-year review.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "expected_to_last",
+    "assumption_class": "expectations",
+    "id": "k1.expected_to_last",
+    "kind": "noul",
+    "options": [],
+    "text": "Do holders and buyers of the licenses or quota rights expect the restriction to last for many years?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.domestic_substitutes",
+    "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-3: domestic beet sugar and refined imported sugar are close substitutes for buyers.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "domestic_substitutes",
+    "assumption_class": "substitutability",
+    "id": "k1.domestic_substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Do domestic producers make goods that buyers can use in place of the covered imports, so that dearer imports send buyers to them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.no_offset",
+    "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-17: lower imports are not offset by capital flows or other adjustments within the medium horizon.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "no_offset",
+    "assumption_class": "other",
+    "id": "k1.no_offset",
+    "kind": "noul",
+    "options": [],
+    "text": "When the country buys fewer imports, foreigners earn less of its currency. Through the exchange rate (the currency rises against what it would otherwise be) this makes the country's exports dearer abroad, so export industries sell less: that is the mechanism, not an offset to it. Over the medium run, will this chain operate, rather than being cancelled by foreigners investing or lending more in the country?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.enforcement_budget_raised",
+    "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-22: the customs budget is raised to cover inspection of bulk shipments and the register of quota rights.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforcement_budget_raised",
+    "assumption_class": "revenue_use",
+    "id": "k1.enforcement_budget_raised",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the budget of the agency that administers the measure be raised to cover the new work, rather than the work being absorbed within its existing budget?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "bound_actor": "importers",
+    "budget_capped": false,
+    "buyer_actor": "buyers.sugar",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "debt_funded": false,
+    "definition_line": true,
+    "domestic_seller_actor": "growers.beet",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": true,
+    "good": "raw_sugar",
+    "id": "k1",
+    "import_quota": true,
+    "importer_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "quota",
+    "market": "calvar",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "own_revenue_funded": false,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": true,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": "quota_holders",
+    "scrappage": false,
+    "scrapper_actor": null,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "source_sentences": [
+     "Imports of raw and refined sugar, and of mixtures containing more than 65% sugar by weight, are limited to 350,000 tonnes a year from the effective date, and importers are bound by the limit.",
+     "The quota has no expiry, but parliament must review it after five years.",
+     "The annual quota is divided into shares that are allocated free to importers, in proportion to each importer's sugar imports over the 36 months before the effective date.",
+     "Shares are permanent and may be sold or leased; transfers are registered with customs.",
+     "The customs service enforces the quota.",
+     "Imports without quota rights are seized and fined three times their value.",
+     "Bulk cargo may enter only through Quellport and Varo, where every shipment is inspected; the land crossing at Varnholt is checked by sample.",
+     "Enforcement is funded from the general budget."
+    ],
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "trainer_actor": null,
+    "transferable": true,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "wider_market": false
+   }
+  ],
+  "context": [
+   "The Republic of Calvar (about 20 million people) uses about 1.2 million tonnes of sugar a year.",
+   "Domestic farmers grow sugar beet, which four beet factories turn into about 450,000 tonnes of white sugar.",
+   "The rest, about 750,000 tonnes, is imported, mostly as raw cane sugar that two refineries at the ports of Quellport and Varo refine.",
+   "World sugar prices have been below the cost of most Calvarian beet growers for years.",
+   "Corn syrup is made from domestic corn by two wet mills.",
+   "Calvar's only land neighbor, Ostria, has no sugar quota; the border town of Varnholt (150,000 people) is 20 minutes from Ostrian supermarkets, but Calvar's main cities are 200 km or more from the border.",
+   "The bill was introduced with government backing nine months before the effective date and passed four months later."
+  ],
+  "effective": "nine months after the bill was introduced",
+  "enacted": "four months after the bill was introduced",
+  "jurisdiction": "Republic of Calvar (fictional)",
+  "name": "Calvar Sugar Market Act",
+  "rule_maker": "the Calvar parliament",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "u1",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U1-a: the threshold counts sugar against total weight (assumed)",
+     "U1-b: the threshold counts sugar against dry weight"
+    ],
+    "text": "Whether the 65% threshold counts sugar against dry weight or total weight. Assumed total weight, the reading more favorable to importers of syrups and blends."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-18T20:58:30+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "u1",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U1-a: the threshold counts sugar against total weight (assumed)",
+    "U1-b: the threshold counts sugar against dry weight"
+   ],
+   "text": "Whether the 65% threshold counts sugar against dry weight or total weight. Assumed total weight, the reading more favorable to importers of syrups and blends."
+  }
+ ],
+ "verifier_problems": []
+}
