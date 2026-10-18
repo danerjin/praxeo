@@ -21,10 +21,6 @@ EXCEPTIONS = {
         "SB-2 with DM-1: the sellers' side of the capitalization (C-11, C-28); the table records the asset value and the share",
     ("owners.entry_level", "quantity_traded", "increase", None):
         "SB-2: the sellers' side of C-2 (an exchange has two sides); the table signs the buyers' side only",
-    ("taxpayers", "resources_available_other_uses", "at_least_one_decrease", None):
-        "OC-1, who pays (catalog 1.4): no tax is named, so the payers are a group over taxpayers, recipients of other spending and future taxpayers (at_least_one_decrease); WE-020, written before the clause, signs taxpayers alone (C-24)",
-    ("recipients.other_spending", "resources_available_other_uses", "at_least_one_decrease", None): "member of the OC-1 group (see above)",
-    ("taxpayers.future", "resources_available_other_uses", "at_least_one_decrease", None): "member of the OC-1 group (see above)",
 }
 NOT_PRODUCED = {
     "C-4": "RS-8 is encoded for the recipients' delay only; the sellers holding back listings (TS-2) has no rule and no question",
@@ -39,7 +35,6 @@ NOT_PRODUCED = {
     "C-20": "RS-4 for subsidies: the schema has `neighbor_actor` for price ceilings only; nothing records the border city",
     "C-21": "CR-12b: needs C-20 and C-29, and a neighbour role; the combiner declares no such comparison",
     "C-22": "OC-7 (what owners do with the gain) is not encoded",
-    "C-24": "sign form: the engine signs the OC-1 payer group (see EXCEPTIONS); the table signs taxpayers alone, a plain decrease",
     "C-25": "CR-8b mirror of C-12 for the other buyers (what they pay is lost to other uses): no rule for subsidies",
     "C-26": "combiner: a CR-12 comparison of two chains on builders' total not declared (C-14 against C-16), and neither chain is produced",
     "C-27": "OC-7 (see C-22)",
@@ -48,7 +43,7 @@ NOT_PRODUCED = {
     "C-31": "no renters role; RS-1 and CR-12a for rental units let are not encoded",
     "C-32": "no construction labor role; CR-9 and CR-7a for the price of a resource drawn in are not encoded for subsidies",
 }
-PRODUCED = {"C-1", "C-2", "C-3", "C-5", "C-7", "C-8", "C-9", "C-11", "C-12", "C-13", "C-23", "C-28", "C-33"}
+PRODUCED = {"C-1", "C-2", "C-3", "C-5", "C-7", "C-8", "C-9", "C-11", "C-12", "C-13", "C-23", "C-24", "C-28", "C-33"}
 
 
 def test_consistent_with_worked_example_we020():

@@ -142,10 +142,10 @@ Second-order checks:
 | ID | Actor class | Variable | Sign | What is given up | Rules |
 |---|---|---|---|---|---|
 | C-23 | `officials.enforcement` | `enforcement_cost` | increase | Register checks, occupancy checks, clawbacks. | OC-3 |
-| C-24 | `taxpayers` (including renters and existing owners) | `resources_available_other_uses` | decrease | What taxpayers would have bought with about $300 million a year plus administration, or what other state spending it would have funded. | SB-1, TX-1, OC-1, OC-3 |
+| C-24 | `taxpayers` (including renters and existing owners), `recipients.other_spending`, `taxpayers.future` | `resources_available_other_uses` | at_least_one_decrease | About $300 million a year plus administration from general revenue: what taxpayers would have bought, or what other state spending it would have funded, or later taxes if the state borrows. | SB-1, OC-1 (who pays), OC-3 |
 | C-25 | `buyers.other` who still buy under the cap | `resources_available_other_uses` | decrease | The extra paid for the same homes because of capitalization (C-12): money no longer available for other purposes. | OC-1, SB-4 |
 
-C-23, C-24: OC-3's and SB-1's funding cases. The grant and its administration are an annual appropriation from general revenue (K3), a budget that rises with the new task, so taxpayers bear them. By SB-1 the recipients' side is recorded too: first-time buyers (C-1) and, through prices, owners of homes under the cap (C-11, C-28).
+C-23, C-24: OC-3's and SB-1's funding cases. The grant and its administration are an annual appropriation from general revenue (K3), a budget that rises with the new task. The record names no tax that pays for them, so by OC-1 (who pays) the payers are a group: taxpayers, recipients of other state spending and future taxpayers, at least one of whom loses (C-24). By SB-1 the recipients' side is recorded too: first-time buyers (C-1) and, through prices, owners of homes under the cap (C-11, C-28).
 
 C-25 is limited to buyers who still buy under the cap at the higher price. Those priced out (C-13) buy in Lowen, above the cap or not at all, and may spend less; their resources are not signed.
 
@@ -191,7 +191,7 @@ Purchases that other buyers no longer make are already recorded as C-13, and the
 - *Renters* find fewer entry-level homes let, as landlords sell to grant holders and some renters buy (C-30, C-31).
 - *Lowen's commuter suburbs* lose some first-time buyers to Tamberlay (C-20) and gain some buyers without a grant (C-29). *Agents and conveyancers* earn more (C-19). Owners who trade up push up prices of larger homes (C-22).
 - Owners, builders and agents lobby for renewal and a higher cap (C-9).
-- *Taxpayers*, renters among them, fund the grant and its administration (C-23, C-24).
+- *Taxpayers* (renters among them), *recipients of other state spending*, or *future taxpayers* fund the grant and its administration (C-23, C-24).
 
 **Ambiguous effects.** Whether rents rise or fall (landlords selling to grant holders against renters leaving to buy) (C-18). Whether total home building rises or only shifts toward homes under the cap (C-26). Whether Lowen's suburbs sell more or fewer homes to Tamberlay-employed buyers (C-21).
 
@@ -226,7 +226,7 @@ Purchases that other buyers no longer make are already recorded as C-13, and the
 | C-21 | neighboring_jurisdictions | quantity_traded (homes in Lowen suburbs) | ambiguous | short–medium | invisible | B | RS-4 (C-20) vs RS-4 (C-29); CR-12b | A-2, A-12, A-20 |
 | C-22 | owners.entry_level (trading up) | price_paid (homes above cap) | increase | medium | invisible | B | SB-4, OC-7, LW-3 | A-2, A-18, A-19 |
 | C-23 | officials.enforcement | enforcement_cost | increase | short | invisible | A | OC-3 | none |
-| C-24 | taxpayers | resources_available_other_uses | decrease | short–medium | invisible | A | SB-1, TX-1, OC-1, OC-3 | none |
+| C-24 | taxpayers, recipients.other_spending, taxpayers.future | resources_available_other_uses | at_least_one_decrease | short–medium | invisible | A | SB-1, OC-1 (who pays), OC-3 | none |
 | C-25 | buyers.other (still buying under the cap) | resources_available_other_uses | decrease | short–medium | invisible | B | SB-4, OC-1 | A-2, A-3 |
 | C-26 | builders | quantity_traded (all new homes) | ambiguous | medium | invisible | B | C-14 vs C-16 | A-10, A-11 |
 | C-27 | owners.entry_level (selling or borrowing) | resources_available_other_uses | increase | medium | invisible | B | SB-4, OC-7 | A-2, A-3, A-19 |
@@ -244,3 +244,4 @@ Purchases that other buyers no longer make are already recorded as C-13, and the
 - GAP-020-3 (closed in catalog 0.3: variable `subsidy_share_received`, set by DM-1 extended to subsidies). The split is recorded as C-28, with A-20.
 - Catalog 0.5: corrected after the core-only comparison (see ../05_examples_core/WE-020_first_time_buyer_grant_core.md): RS-4 applied to buyers without a grant too (C-29), so Lowen sales (C-21) become ambiguous; DM-1's split now compares shares only; added landlords' rental supply (C-30), rental units let (C-31), construction wages (C-32) and applicants' compliance cost (C-33); agents' commission premise (A-21) added; C-25 limited to buyers who still pay the higher price; C-9 limited to the groups A-17 covers; SB-4 limited-duration wording, SB-1 recipients and OC-3 funding stated.
 - Comparison conclusion kept in part: as in WE-019, the split of the grant is kept as a comparison of shares (owners receive more of it than buyers do), resting on A-20, rather than dropped; catalog 0.5 (CR-7b, DM-1) allows this with a stated premise.
+- Catalog 1.4: C-24 corrected to follow OC-1's who-pays clause. The record names no tax, so the payers are the group of taxpayers, recipients of other spending and future taxpayers (`at_least_one_decrease`), not taxpayers alone.

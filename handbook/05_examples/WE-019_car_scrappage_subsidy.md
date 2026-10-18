@@ -125,7 +125,7 @@ Second-order checks:
 - **In the window.** If the budget would be exhausted before December (A-6), the six months shrink in practice: buyers race to sign early and queue for scarce cars (C-7), and the price capture in C-8 is greatest then, when the stock of eligible models is fixed by import orders placed before the scheme (A-7). Importers can redirect later shipments toward eligible models, which weakens C-8 toward the end of the window.
 - **After the window.** The dip (C-6) is spread over the period in which the pulled-forward buyers would otherwise have bought, mostly the next one to three years. Dealers discount more in the dip (C-25). Dealer staffing and importer allocations set for the boom are cut back in the dip.
 - **Used cars.** The scrapped cars would have been retired over the following years anyway (A-4). The used-car price effect (C-13, C-14) starts at the announcement, is largest early, and fades as the missing cohort reaches the age at which it would have been scrapped. Used-car imports, slowed by duty, also add supply over time.
-- **Funding.** The rebate is paid in the window but funded by bonds repaid over ten years (K3), so the cost to taxpayers (C-20) is medium to long while the gain is short.
+- **Funding.** The rebate is paid in the window but funded by bonds repaid over ten years (K3), so the cost to the payers (C-20) is medium to long while the gain is short.
 - **Expectations.** If buyers come to expect a repeat scheme (TS-2), some delay purchases in later years to wait for it, deepening future dips. The lobbying in C-11 makes that more likely, but the government's stated position puts A-15 below the cut-off (p = 0.35), so the deeper later dip is not reported, and DM-5 nets the surge against the dips (C-22, A-20).
 
 ## 9. Opportunity costs
@@ -133,10 +133,10 @@ Second-order checks:
 | ID | Actor class | Variable | Sign | What is given up | Rules |
 |---|---|---|---|---|---|
 | C-19 | `officials.enforcement` | `enforcement_cost` | increase | Registry checks, dismantler audits and fee payments. | OC-3 |
-| C-20 | `taxpayers` | `resources_available_other_uses` | decrease | What taxpayers would have bought with the taxes that repay V$480 million of bonds plus interest, the dismantler fees and the administration (C-19). | SB-1, TX-1, OC-1, OC-3 |
+| C-20 | `taxpayers`, `recipients.other_spending`, `taxpayers.future` | `resources_available_other_uses` | at_least_one_decrease | V$480 million of bonds plus interest, the dismantler fees and the administration (C-19), repaid from general revenue: through higher taxes, or through other spending that its recipients no longer receive, or both. | SB-1, OC-1 (who pays), OC-3 |
 | C-21 | `buyers.used_cars` | `quantity_traded` (resales of the scrapped cars) | decrease | The sales in which the scrapped cars would later have passed to another owner. Both sides lose the gain each expected. | SB-6, OC-4 |
 
-C-19, C-20: OC-3's and SB-1's funding cases. The rebate, the dismantler fees and the registry's work are funded by bonds repaid from general revenue over ten years (K3), a budget that rises with the new task, so the cost falls on future taxpayers. By SB-1 the recipients' side is recorded too: the rebate goes to rebate buyers and, through prices, to importers and dealers (C-1, C-8, C-23); the handling fees go to dismantlers (C-4). Whether the bonds also crowd out private borrowers depends on who buys them, which the record does not say; not reported.
+C-19, C-20: OC-3's and SB-1's funding cases. The rebate, the dismantler fees and the registry's work are funded by bonds repaid from general revenue over ten years (K3), a budget that rises with the new task. The record names no tax that repays the bonds, so by OC-1 (who pays) the payers are a group: taxpayers, recipients of other spending and future taxpayers, at least one of whom loses (C-20); naming taxpayers alone would say more than the record supports. By SB-1 the recipients' side is recorded too: the rebate goes to rebate buyers and, through prices, to importers and dealers (C-1, C-8, C-23); the handling fees go to dismantlers (C-4). Whether the bonds also crowd out private borrowers depends on who buys them, which the record does not say; not reported.
 
 C-12 is signed for the window only. Because the scheme is temporary, SB-3's Unless clause applies: the effect on purchases outside the window is the timing shift recorded in C-5, C-6 and C-22, not a lasting reduction.
 
@@ -179,7 +179,7 @@ The destroyed cars are a usable capital good turned into scrap metal. For the ow
 - *Owners of failing cars* repair them just enough to qualify (C-10).
 - *Repair shops, parts suppliers and fuel sellers*: see ambiguous effects.
 - *Importers and dealers* lobby for an extension or repeat (C-11).
-- *Taxpayers* repay the borrowing and fund the registry's work over ten years (C-19, C-20).
+- *Taxpayers, or recipients of other public spending,* repay the borrowing and fund the registry's work over ten years (C-19, C-20).
 
 **Ambiguous effects.** Whether independent repair shops and parts suppliers do more or less work on older cars (fewer old cars against owners keeping theirs longer) (C-16, C-17). Whether fuel sales fall (fewer, less efficient old cars against more driving in cheaper-to-run new cars) (C-18).
 
@@ -210,7 +210,7 @@ The destroyed cars are a usable capital good turned into scrap metal. For the ow
 | C-17 | parts_suppliers | quantity_demanded (parts for old models) | ambiguous | medium | invisible | B | RS-12 (both chains of C-16) | A-4, A-14, A-17 |
 | C-18 | sellers.fuel | quantity_traded (motor fuel) | ambiguous | medium | invisible | B | RS-12 vs LW-3 | A-2, A-4, A-17, A-18 |
 | C-19 | officials.enforcement | enforcement_cost | increase | short | invisible | A | OC-3 | none |
-| C-20 | taxpayers | resources_available_other_uses | decrease | medium–long | invisible | A | SB-1, TX-1, OC-1, OC-3 | none |
+| C-20 | taxpayers, recipients.other_spending, taxpayers.future | resources_available_other_uses | at_least_one_decrease | medium–long | invisible | A | SB-1, OC-1 (who pays), OC-3 | none |
 | C-21 | buyers.used_cars | quantity_traded (resales of scrapped cars) | decrease | medium | invisible | B | SB-6, OC-4 | A-4 |
 | C-22 | sellers.new_cars | quantity_traded (eligible, cumulative to three years after) | increase | medium | invisible | B | SB-6, RS-8, DM-5 | A-2, A-3, A-5, A-19, A-20 |
 | C-23 | sellers.new_cars | subsidy_share_received (rebate) | increase | short | invisible | B | SB-2, DM-1 | A-7, A-16 |
@@ -225,3 +225,4 @@ The destroyed cars are a usable capital good turned into scrap metal. For the ow
 - GAP-019-3 (closed in catalog 0.3: DM-5). C-22 is now an increase, with A-19 (some window purchases are additional) and A-20 (the dips contain only moved purchases).
 - Catalog 0.5: corrected after the core-only comparison (see ../05_examples_core/WE-019_car_scrappage_subsidy_core.md): DM-1's split now compares shares only (sellers receive more than buyers, not "the larger part"); added dealers' compliance cost (C-24), lower seller prices in the post-window dip (C-25) and fewer used parts (C-26); C-7 made a PC-2 group; C-11 limited to the group A-9 covers; SB-4 timing for older cars' value with the buyers' side noted (OC-7); SB-1 recipients, OC-3 funding and SB-3's Unless clause stated. The fuel sign (C-18) is kept ambiguous: the core version's decrease rests on a new premise (A-N3) that the comparison itself judges thin.
 - Comparison conclusion kept in part: the comparison judged "sellers receive the larger part of the rebate" an overclaim. Catalog 0.5 (CR-7b, DM-1) allows comparing the two sides' shares, not sizes, given a premise that one side's alternatives are clearly worse (A-16), so the claim is kept, reworded as a comparison of shares.
+- Catalog 1.4: C-20 corrected to follow OC-1's who-pays clause. The record names no tax that repays the bonds, so the payers are the group of taxpayers, recipients of other spending and future taxpayers (`at_least_one_decrease`), not taxpayers alone.

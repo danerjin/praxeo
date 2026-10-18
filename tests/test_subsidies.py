@@ -20,10 +20,6 @@ WE019_SHORT = {"owners of failing old cars": "buyers.new_cars.scrapping", "disma
 WE019_WINDOWS = {"March to June": "announcement", "after the window": "after_expiry", "year after the window": "after_expiry",
                  "cumulative": "cumulative"}
 WE019_EXCEPTIONS = {
-    ("taxpayers", "resources_available_other_uses", "at_least_one_decrease", None):
-        "OC-1, who pays (catalog 1.4): no tax is named, so the payers are a group over taxpayers, recipients of other spending and future taxpayers (at_least_one_decrease); WE-019, written before the clause, signs taxpayers alone (C-20)",
-    ("recipients.other_spending", "resources_available_other_uses", "at_least_one_decrease", None): "member of the OC-1 group (see above)",
-    ("taxpayers.future", "resources_available_other_uses", "at_least_one_decrease", None): "member of the OC-1 group (see above)",
     ("buyers.new_cars.scrapping", "quantity_traded", "increase", None):
         "SB-2: the buyers' side of C-2 (an exchange has two sides); the table signs the sellers' side only",
     ("buyers.new_cars.other", "quantity_traded", "decrease", None):
@@ -35,11 +31,10 @@ WE019_NOT_PRODUCED = {
     "C-17": "same (RS-12 through repairs)",
     "C-18": "same (RS-12 against LW-3 for fuel)",
     "C-22": "DM-5 (the cumulative total over the surge and the dips) is not a declared comparison in the combiner",
-    "C-20": "sign form: the engine signs the OC-1 payer group (see WE019_EXCEPTIONS); the table signs taxpayers alone, a plain decrease",
     "C-26": "CR-10b for used parts that crushed cars would later have yielded: no rule",
 }
 WE019_PRODUCED = {"C-1", "C-2", "C-3", "C-4", "C-5", "C-6", "C-7", "C-8", "C-9", "C-10", "C-11", "C-12", "C-13", "C-14",
-                  "C-19", "C-21", "C-23", "C-24", "C-25"}
+                  "C-19", "C-20", "C-21", "C-23", "C-24", "C-25"}
 
 
 def _record():
