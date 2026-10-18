@@ -25,12 +25,21 @@
   ]
  },
  {
-  "question_id": "k1.enforcement_budget_raised",
-  "value": "no",
-  "probability": 0.15,
-  "rationale": "No row in WE-002's assumption table; my estimate from the record. The record says the administration is funded from the tax's own revenue (handbook OC-3, third funding case), so no separate budget is raised on taxpayers.",
+  "question_id": "k1.untaxed_substitutes",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-002 (illustrative figures), A-2 (substitutability): buyers have untaxed substitutes they consider acceptable (water, diet drinks, juice).",
   "evidence": [
-   "The town's revenue department administers the tax, with distributor registration, monthly returns and audits, funded from the tax's own revenue."
+   "Drinks sweetened only with non-caloric sweeteners, milk-based drinks and 100% juice are exempt."
+  ]
+ },
+ {
+  "question_id": "k1.cross_border_feasible",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-002 (illustrative figures), A-3 (mobility): enough Lakeport residents can easily shop in the neighboring towns.",
+  "evidence": [
+   "Three neighboring towns, each 10 to 15 minutes' drive from most Lakeport homes, have no such tax."
   ]
  },
  {

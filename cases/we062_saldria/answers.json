@@ -21,20 +21,18 @@
   "evidence": []
  },
  {
+  "question_id": "k1.untaxed_substitutes",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-6 (substitutability): paper and board, glass and metal packaging serve some of the same ends as plastic for some users.",
+  "evidence": []
+ },
+ {
   "question_id": "k1.input_not_replaceable",
   "value": "yes",
   "probability": 0.75,
   "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-11 (substitutability): packaging is a material part of the cost of some packaged goods (6% to 10% for bottled water and pre-packed produce) and their sellers cannot switch fully at the old cost.",
   "evidence": []
- },
- {
-  "question_id": "k1.enforcement_budget_raised",
-  "value": "yes",
-  "probability": 0.9,
-  "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-24 (revenue_use): the plastics unit is funded by the 7 million T appropriation in the Act, from the general budget that receives the tax.",
-  "evidence": [
-   "The Act appropriates 7 million T a year from the general budget for the plastics unit."
-  ]
  },
  {
   "question_id": "k1.stockpile_ahead",

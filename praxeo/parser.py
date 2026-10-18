@@ -26,9 +26,14 @@ instrument, even when the text states no aim:
   neighbor_actor (buyers in a neighbouring market outside the rule's reach, only if the text or context names one),
   enforcer_actor (who administers and enforces the cap, e.g. officials.enforcement).
 - per_unit_tax: bound_actor (who pays it to the state), buyer_actor, seller_actor, revenue_actor (who collects),
-  taxpayer_actor (who funds new administration; default taxpayers), definition_line (true if the definitions or
+  taxpayer_actor (who funds new administration; default taxpayers), enforcer_actor (the agency that administers it,
+  default officials.enforcement; revenue_actor may be a budget), definition_line (true if the definitions or
   exemptions draw a line between covered and uncovered goods), relief_applicant_actor (who may apply for
-  case-by-case exclusions or waivers, if the text provides them).
+  case-by-case exclusions or waivers, if the text provides them), rate_rise (true if the measure raises the rate of
+  an existing tax), own_revenue_funded (true if the administration is paid from the measure's own revenue or the
+  budget that receives it), mobile_buyer_actor and neighbor_seller_actor (buyers who can easily buy across the
+  boundary, and the sellers there, if an untaxed place is within reach). seller_actor is null where the good has no
+  private seller (a charge paid to the state for using its road).
 - tariff: bound_actor and importer_actor (importers of record), buyer_actor (domestic users of the good),
   domestic_seller_actor and protected_actor (domestic producers the tariff shelters), revenue_actor,
   exporter_actor and exporter_worker_actor (export industries and their workers), and `downstream` (each group

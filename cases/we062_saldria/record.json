@@ -15,8 +15,10 @@
    "importer_actor": "importers.packaging",
    "buyer_actor": "packaging_users",
    "seller_actor": "converters",
-   "revenue_actor": "officials.enforcement",
+   "revenue_actor": "state budget",
+   "enforcer_actor": "officials.enforcement",
    "taxpayer_actor": "taxpayers",
+   "own_revenue_funded": true,
    "downstream": [
     {
      "actor": "packaging_users",

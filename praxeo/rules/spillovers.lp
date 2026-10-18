@@ -3,6 +3,10 @@
 % (collected, wedge, tariff_bites, protected_sellers, passes_down, exempt_squeeze) and share its input facts.
 % Further input facts, written by praxeo/engine.py from the policy record (all optional unless noted):
 %   taxpayer(C, A).                 who funds new administration (default taxpayers)       (OC-3)
+%   enforcer(C, A).                 the agency that administers the measure (default officials.enforcement)  (OC-3)
+%   own_revenue(C).                 the administration is paid from the measure's own revenue  (OC-3, third case)
+%   mobile_buyer(C, A).             buyers who can easily buy across the boundary           (TX-4, RS-4)
+%   neighbor_seller(C, A).          sellers just across the boundary                        (TX-4, RS-4)
 %   foreign_seller(C, A).           foreign sellers of the tariffed good (default sellers.foreign)  (OC-4)
 %   input_supplier(C, A).           suppliers of inputs to the protected domestic producers  (CR-9)
 %   seller_owner(C, A).             owners of the protected domestic producers               (SB-4)
@@ -25,8 +29,12 @@ fired(tx_7, tx_burden(C), tariff_bites(C)) :- tx_burden(C), tariff(C).
 % nothing is derived for that funding.
 tx_administered(C) :- collected(C), not exception(oc_3, C).
 fired(oc_3, tx_administered(C), collected(C)) :- tx_administered(C).
-effect(tx_administered(C), R, "enforcement_cost", increase, short, invisible, "A") :- tx_administered(C), revenue(C, R).
-tx_budget_funded(C) :- tx_administered(C), holds(enforcement_budget_raised(C)).
+% The cost falls on the agency that administers the measure (enforcer, default officials.enforcement), which need not be the one
+% that receives the revenue (the state or town budget).
+effect(tx_administered(C), E, "enforcement_cost", increase, short, invisible, "A") :- tx_administered(C), enforcer(C, E).
+% Not where the measure's own revenue (or the budget that receives it) pays: it reduces what the revenue does elsewhere, not
+% general taxpayers' means (OC-3, third funding case; own_revenue(C)).
+tx_budget_funded(C) :- tx_administered(C), holds(enforcement_budget_raised(C)), not own_revenue(C).
 fired(oc_3, tx_budget_funded(C), tx_administered(C))              :- tx_budget_funded(C).
 fired(oc_3, tx_budget_funded(C), enforcement_budget_raised(C)) :- tx_budget_funded(C).
 fired(oc_1, tx_budget_funded(C), tx_administered(C))              :- tx_budget_funded(C).
@@ -54,6 +62,20 @@ fired(rs_5, tx_reshaped(C), definition_line(C))    :- tx_reshaped(C).
 fired(tx_4, tx_reshaped(C), reshaping_pays(C))     :- tx_reshaped(C).
 effect(tx_reshaped(C), X, "reclassification", increase, short, invisible, "B") :- tx_reshaped(C), bound(C, X).
 effect(tx_reshaped(C), X, "reclassification", increase, short, invisible, "B") :- tx_reshaped(C), buyer(C, X).
+
+% TX-3 with RS-1: buyers of a taxed good turn to untaxed substitutes, if they have acceptable ones.
+tx_substitution(C) :- tx_burden(C), tax(C), holds(untaxed_substitutes(C)), not exception(tx_3, C).
+fired(tx_3, tx_substitution(C), tx_burden(C))             :- tx_substitution(C).
+fired(rs_1, tx_substitution(C), untaxed_substitutes(C))   :- tx_substitution(C).
+effect(tx_substitution(C), B, "quantity_substitute", increase, short, invisible, "B") :- tx_substitution(C), buyer(C, B).
+
+% TX-4 with RS-4: where an untaxed place is within reach, buyers who can easily cross the boundary buy there, and the sellers
+% across it gain their custom. Assumes the boundary is near enough for crossing to be worth its cost (cross_border_feasible).
+tx_crosses(C) :- tx_burden(C), tax(C), mobile_buyer(C, _), holds(cross_border_feasible(C)), not exception(tx_4, C).
+fired(tx_4, tx_crosses(C), tx_burden(C))                 :- tx_crosses(C).
+fired(tx_4, tx_crosses(C), cross_border_feasible(C))     :- tx_crosses(C).
+effect(tx_crosses(C), B, "cross_border_purchases", increase, short, invisible, "B") :- tx_crosses(C), mobile_buyer(C, B).
+effect(tx_crosses(C), S, "quantity_traded", increase, short, invisible, "B")        :- tx_crosses(C), neighbor_seller(C, S).
 
 % RS-15 with OC-2: relief granted case by case, and worth more than its fee, is allocated by non-price criteria; applying
 % costs time; applicants lobby, as do those who gain when relief is denied (the protected producers).

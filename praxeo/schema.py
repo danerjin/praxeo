@@ -50,7 +50,7 @@ class Component(BaseModel):
     enforcer_actor: str = Field(default="officials.enforcement", description="Price ceilings: who administers and enforces the rule (OC-3)")
     vacancy_decontrol: bool = Field(default=False, description="True when the price of a new contract is free and the cap binds only on renewals")
     buyer_actor: str = Field(default="buyers.current", description="Taxes and tariffs: buyers of the taxed good")
-    seller_actor: str = Field(default="sellers.current", description="Per-unit taxes: sellers of the taxed good")
+    seller_actor: Optional[str] = Field(default="sellers.current", description="Per-unit taxes: sellers of the taxed good; null where the good has no private seller (a charge paid to the state for using its road)")
     domestic_seller_actor: str = Field(default="sellers.substitutes", description="Tariffs: domestic producers of the protected good")
     importer_actor: Optional[str] = Field(default=None, description="Tariffs: importers of record; defaults to bound_actor")
     revenue_actor: str = Field(default="officials.enforcement", description="Taxes and tariffs: who collects")
@@ -68,6 +68,10 @@ class Component(BaseModel):
     announcement_window: bool = Field(default=False, description=(
         "True when the measure was announced (enacted, put on a ballot, recommended) some time before it takes effect, "
         "so that actors can shift actions into the window (RS-8). The engine fact is announced(C)."))
+    rate_rise: bool = Field(default=False, description="Taxes and tariffs: the measure raises the rate of an existing tax, so that the revenue rises only if the base does not fall enough to offset it (TX-1, 1.1)")
+    own_revenue_funded: bool = Field(default=False, description="Taxes and tariffs: the cost of administering the measure is paid from its own revenue or from the budget that receives it, not from a budget raised on taxpayers (OC-3, third funding case)")
+    mobile_buyer_actor: Optional[str] = Field(default=None, description="Per-unit taxes: buyers who can easily buy the taxed good across the boundary, in a neighbouring jurisdiction without the tax (TX-4, RS-4)")
+    neighbor_seller_actor: Optional[str] = Field(default=None, description="Per-unit taxes: sellers just across the boundary who gain those buyers (TX-4, RS-4)")
     general_budget: bool = Field(default=False, description="Price ceilings: enforcement is funded from the general budget, so OC-3 and OC-1 name the payers")
     source_sentences: list[str] = Field(description="Sentences of the policy text this component rests on, quoted exactly")
 

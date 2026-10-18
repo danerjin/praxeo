@@ -19,7 +19,14 @@
   "question_id": "k1.sellers_bear",
   "value": "no",
   "probability": 0.05,
-  "rationale": "No row in WE-046's assumption table; my estimate from the record. There is no private seller of road space: the driver pays the city directly, so no seller's net price falls. (The record leaves seller_actor at the default.)",
+  "rationale": "No row in WE-046's assumption table; my estimate from the record. There is no private seller of road space: the driver pays the city directly, so no seller's net price falls. (The record sets seller_actor to null.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.untaxed_substitutes",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-046 (illustrative figures), A-5 (substitutability): some drivers switch to bus, tram or Ringside parking.",
   "evidence": []
  },
  {
@@ -28,15 +35,6 @@
   "probability": 0.85,
   "rationale": "Probability taken from the assumption table of handbook WE-046 (illustrative figures), A-12 (other): some deliveries cannot be completed within 30 minutes (installations, large drops, multi-drop rounds), so carriers cannot avoid the charge.",
   "evidence": []
- },
- {
-  "question_id": "k1.enforcement_budget_raised",
-  "value": "no",
-  "probability": 0.15,
-  "rationale": "No row in WE-046's assumption table; my estimate from the record. The Charging Office is funded from the gross revenue of the charge (K4), so no separate funding falls on taxpayers. A-24 (p 0.8) covers the Parking Adjudication Office, whose budget is not raised.",
-  "evidence": [
-   "It costs about $45 million a year to run and is funded from the gross revenue of the charge."
-  ]
  },
  {
   "question_id": "k1.stockpile_ahead",

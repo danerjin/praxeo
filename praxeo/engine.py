@@ -54,12 +54,14 @@ def _atom(name: str) -> str:
 def _tax_facts(c: str, comp) -> list[str]:
     lines = [f"{'tax' if comp.instrument == 'per_unit_tax' else 'tariff'}({c}).",
              f'buyer({c}, "{comp.buyer_actor}").',
-             f'seller({c}, "{comp.seller_actor}").',
              f'domestic_seller({c}, "{comp.domestic_seller_actor}").',
              f'importer({c}, "{comp.importer_actor or comp.bound_actor}").',
              f'revenue({c}, "{comp.revenue_actor}").',
              f'exporter({c}, "{comp.exporter_actor}").',
              f'exporter_worker({c}, "{comp.exporter_worker_actor or "workers." + comp.exporter_actor}").']
+    if comp.seller_actor:
+        lines.append(f'seller({c}, "{comp.seller_actor}").')
+    lines.append(f'enforcer({c}, "{comp.enforcer_actor}").')
     lines.append(f'taxpayer({c}, "{comp.taxpayer_actor}").')
     if comp.domestic_seller_worker_actor:
         lines.append(f'domestic_seller_worker({c}, "{comp.domestic_seller_worker_actor}").')
@@ -68,7 +70,11 @@ def _tax_facts(c: str, comp) -> list[str]:
                         ("relief_applicant", comp.relief_applicant_actor)):
         if actor:
             lines.append(f'{pred}({c}, "{actor}").')
-    for pred, flag in (("renewable", comp.renewable), ("definition_line", comp.definition_line)):
+    for pred, actor in (("mobile_buyer", comp.mobile_buyer_actor), ("neighbor_seller", comp.neighbor_seller_actor)):
+        if actor:
+            lines.append(f'{pred}({c}, "{actor}").')
+    for pred, flag in (("renewable", comp.renewable), ("definition_line", comp.definition_line),
+                       ("rate_rise", comp.rate_rise), ("own_revenue", comp.own_revenue_funded)):
         if flag:
             lines.append(f"{pred}({c}).")
     for d in comp.downstream:

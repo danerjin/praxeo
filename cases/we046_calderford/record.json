@@ -13,8 +13,10 @@
    "market": "calderford_central_zone",
    "bound_actor": "drivers.nonresident",
    "buyer_actor": "drivers.nonresident",
+   "seller_actor": null,
    "revenue_actor": "officials.enforcement",
    "taxpayer_actor": "taxpayers",
+   "own_revenue_funded": true,
    "downstream": [
     {
      "actor": "goods_vehicle_operators",

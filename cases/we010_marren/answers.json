@@ -23,13 +23,29 @@
   ]
  },
  {
-  "question_id": "k1.enforcement_budget_raised",
-  "value": "no",
-  "probability": 0.2,
-  "rationale": "No row in WE-010's assumption table; my estimate from the record. K5 sends $0.30 a pack of the new revenue to the Tobacco Unit and the quit program, so the unit is paid from the tax's own revenue and no separate funding falls on taxpayers (C-32 is OC-3, 'own revenue').",
+  "question_id": "k1.untaxed_substitutes",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-010 (illustrative figures), A-6 (substitutability): untaxed or lower-taxed products are acceptable substitutes for some smokers.",
   "evidence": [
-   "Of the revenue from the $2.00 increase, $0.30 per pack goes to the Tobacco Unit and to the existing quit-smoking program (already funded from general revenue); the rest goes to the general fund."
+   "Other tobacco products (roll-your-own tobacco, cigars, \"little cigars\") stay at 25% of the wholesale price."
   ]
+ },
+ {
+  "question_id": "k1.cross_border_feasible",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-010 (illustrative figures), A-3 (mobility): many Marren smokers can easily buy in Dunmarch or Kessick.",
+  "evidence": [
+   "About 45% of Marren's population lives within a 20-minute drive of Dunmarch or of Kessick, its southern neighbor."
+  ]
+ },
+ {
+  "question_id": "k1.revenue_base_holds",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-010 (illustrative figures), A-16 (substitutability): stamped cigarette sales in Marren fall by less than half, compared with the counterfactual, in the short and medium run, so the rate rise outweighs the fall in the base.",
+  "evidence": []
  },
  {
   "question_id": "k1.stockpile_ahead",

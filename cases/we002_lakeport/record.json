@@ -17,9 +17,13 @@
    "revenue_actor": "officials.enforcement",
    "taxpayer_actor": "taxpayers",
    "definition_line": true,
+   "own_revenue_funded": true,
+   "mobile_buyer_actor": "buyers.lakeport.mobile",
+   "neighbor_seller_actor": "retailers.neighbors",
    "cap": 0.015,
    "cap_unit": "dollars per fluid ounce",
    "source_sentences": [
+    "Three neighboring towns, each 10 to 15 minutes' drive from most Lakeport homes, have no such tax.",
     "Distributors must pay an excise tax of 1.5 cents per fluid ounce on drinks with added sugar that they deliver to retailers in Lakeport.",
     "Drinks sweetened only with non-caloric sweeteners, milk-based drinks and 100% juice are exempt.",
     "The town's revenue department administers the tax, with distributor registration, monthly returns and audits, funded from the tax's own revenue."

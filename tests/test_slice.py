@@ -437,6 +437,10 @@ WE013_EXCEPTIONS = {
     # C-22 names its actor in prose ("owners of steel-using firms"); the record's fixture gives the class a name.
     ("owners.steel_users", "asset_value", "decrease", None):
         "C-22's actor is the prose 'owners of steel-using firms'; the record names that class owners.steel_users",
+    # TX-5 (Tier A) came after WE-013: whoever files entries and pays the tariff bears a compliance cost. The table lists only the
+    # steel users' cost of the exclusion process (C-10); WE-042 C-45 records the importers' cost for a tariff.
+    ("importers", "compliance_cost", "increase", None):
+        "TX-5: compliance cost of the importers of record; the table omits it (WE-042 C-45 records it for a tariff)",
 }
 
 # Rows of the table the engine does not produce, each with the reason (kept so the gap stays visible).
