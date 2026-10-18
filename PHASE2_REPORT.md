@@ -17,12 +17,12 @@ Status of the Phase 2 build (plan §5) as of this report. Everything described h
 | 1. Thin slice: one rule, one worked example, one historical case, end to end with scoring | Done (San Francisco 1994; WE-001 as a consistency check) |
 | 2. A few rules both ways: engine rules and typed-question schemas, through the LLM decider | Done for price ceilings (Configuration A and B); B covers no taxes, tariffs, windows or groups yet |
 | 3. Full structured policy schema; examples run from raw text | Schema covers ceilings, per-unit taxes and tariffs. The parser runs from raw text through the LLM path; both examples parsed by Haiku |
-| 4. Grow the catalog one family at a time, with exceptions, questions and tests | Price controls and taxes/tariffs: 37 patterns and core rules from the 1.4 catalog (PC-1–PC-7, PC-16, PC-21, RS-1–RS-8, RS-10, RS-11, RS-14, RS-15, TX-1, TX-2, TX-4, TX-7–TX-9, OC-1–OC-4, SB-4, TS-1, TS-2, CR-4, CR-8, CR-9). Other families (licensing, subsidies, mandates, private rules) not yet encoded |
+| 4. Grow the catalog one family at a time, with exceptions, questions and tests | Price controls and taxes/tariffs: 37 patterns and core rules from the 1.4 catalog (PC-1–PC-7, PC-16, PC-21, RS-1–RS-8, RS-10, RS-11, RS-14, RS-15, TX-1, TX-2, TX-4, TX-7–TX-9, OC-1–OC-4, SB-4, TS-1, TS-2, CR-4, CR-8, CR-9). Subsidies added (SB-1 to SB-6, PC-20), built on WE-019 and run out of sample on five more examples (§5). Other families (licensing, mandates, private rules) not yet encoded |
 | 5. Context grounding, combiner, verifier, full explainer | Context: date filter only (no retrieval). Combiner: declared table of CR-12 comparisons. Verifier: in place. Explainer: templated sentences |
 | 6. Jev decider, calibrated on the question bank | Not started: no Jev access, no labelled question bank |
 | 7. Rule proposer behind a review gate | Not started |
 
-**Exit test** (both configurations reproduce every Phase 1 worked example from raw text): not met. Two of 67 examples are encoded, Configuration B lags A, and the expert review of derivations has not happened.
+**Exit test** (both configurations reproduce every Phase 1 worked example from raw text): not met. Three of 67 examples were used to build rules and thirteen more were run out of sample; Configuration B lags A, and the expert review of derivations has not happened.
 
 ## 3. What the analyser does now
 
@@ -70,6 +70,16 @@ All four were fixed, and each fix has a test.
 | WE-001 rent freeze | 31 | 28 | Two rows rest on facts specific to this case that the record lacks (a homebuyers' market relation; the K3 relocation payment). One needs the new-construction exemption as a fact, and one of its chains rests on the negation of an assumption, which the engine keeps out to stay exact |
 | WE-013 steel tariff | 32 | 31 | One row needs a class the record does not name. The return-on-capital row is left ambiguous by the handbook itself |
 
+**Out of sample.** Thirteen more examples were encoded after their family's rules were built, without changing any rule first; subagents wrote the records and answers from the policy text and the assumption tables. Each first run is kept in the case's `out_of_sample.md`, and rules were then changed only where a gap was general (a pattern-level fix, citing the catalog).
+
+| Family (built on) | Examples run out of sample | Rows produced, first run | After general fixes | WRONG engine rows, first run | After |
+|---|---|---|---|---|---|
+| Price ceilings (WE-001, San Francisco) | WE-005, WE-006, WE-067 | 41 of 123 | 57 of 123 | 6 | 1 |
+| Taxes and tariffs (WE-013) | WE-002, WE-010, WE-042, WE-046, WE-062 | 46 of 255 | 60 of 255 | 5 | 3 (all the TX-8 question, Q25) |
+| Subsidies (WE-019) | WE-020, WE-021, WE-033, WE-056, WE-065 | 42 of 191 | 51 of 191 | 16 | 1 |
+
+Most rows not produced need roles the record cannot yet hold (related markets, factors, neighbours, foreign sellers), rules for whole families not encoded, or engine facts per reading of an unclear provision. Coverage on unseen examples is therefore low, and the first runs' WRONG rows show what a family's rules get wrong before they are corrected.
+
 San Francisco 1994, the historical case, reports 27 consequences. Five are verifiable against its card: headline F1 1.00, logic F1 0.57, assumption Brier score 0.06.
 
 ## 6. The mathematical annex
@@ -88,7 +98,7 @@ San Francisco 1994, the historical case, reports 27 consequences. Five are verif
 3. **The LLM code path has not run.** Subagents stood in for it.
 4. **Calibration is untested.** There is no labelled question bank, so confidence thresholds are placeholders.
 5. **Premises added from the examples.** The engine encodes some premises that the examples' derivations need but no pattern states (`relet_obstructs`, `exit_process`, and three illustrative WE-013 probabilities). They await expert review.
-6. **Narrow coverage.** Only two of 67 worked examples and two intervention families are encoded.
+6. **Narrow coverage.** Three intervention families are encoded; on unseen examples the engine produces about a quarter to a third of the handbook's rows.
 
 ## 8. What needs people
 
