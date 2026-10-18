@@ -60,7 +60,6 @@ def test_b_matches_a_on_sf_1994():
         ("tenants.prospective", "price_paid", "increase"),
         ("tenants.prospective", "price_substitute", "increase"),
         ("tenants.prospective", "quantity_traded", "decrease"),
-        ("tenants.prospective", "side_payments", "increase"),
     ])
     # A derives compliance_cost (OC-2) but cannot report it: exit_process is at p 0.45. B stops at that question.
     assert res["a_unreported"] == [("landlords.controlled", "compliance_cost", "increase")]

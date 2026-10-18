@@ -202,13 +202,8 @@ WE067_EXCEPTIONS = {
         "the key-money item of C-44's CR-12 comparison: section 7 lists 'rents above the cap taken by landlords who evade' as a (+) chain",
     ("tenants.prospective", "disputes_settled_outside_courts", "increase", None):
         "RS-10 for the sublet trade (A-11): the subtenants are households seeking a home; WE-001 C-23 has the same row",
-    ("tenants.prospective", "side_payments", "increase", None):
-        "KNOWN WRONG: seekers pay a free initial rent under vacancy decontrol; the handbook removed their rationing group (C-6, C-7)",
 }
-WE067_KNOWN_WRONG = {
-    ("tenants.prospective", "side_payments", "increase", None):
-        "PC-6's side payments by seekers presuppose a capped price for them. Fixing it (gating on vacancy decontrol) changes sf_1994, whose side_payments row is in test_config_b's agreement list",
-}
+WE067_KNOWN_WRONG: dict = {}   # the seekers' side payments under vacancy decontrol: fixed in PC-6 (1.4 decontrol note)
 WE067_NOT_PRODUCED = {
     "C-4": "unsupported form: the Portable Senior Credit (K4) is a payment attached to renting elsewhere",
     "C-5": "unsupported form (K4): no subsidy rule",

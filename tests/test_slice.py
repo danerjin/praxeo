@@ -284,7 +284,8 @@ def test_pc2_members_are_not_met_under_vacancy_decontrol():
     got = _reported(engine.run(rec, _all_assumptions())[0])
     assert ("tenants.prospective", "search_cost", "increase") not in got
     assert ("tenants.prospective", "allocation_by_non_price_criteria", "increase") not in got
-    assert ("tenants.prospective", "side_payments", "increase") in got  # PC-6 does not depend on excess demand
+    # PC-6 (1.4 decontrol note): the seekers pay the free initial price, so nothing on the side
+    assert ("tenants.prospective", "side_payments", "increase") not in got
 
 
 def test_neighbour_effect_needs_a_neighbour_in_the_record():

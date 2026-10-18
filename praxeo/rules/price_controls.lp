@@ -115,11 +115,15 @@ fired(rs_2, quality_falls(C), quality_adjustable(C)) :- quality_falls(C).
 effect(quality_falls(C), P, "quality_per_unit", decrease, short, invisible, "B") :- quality_falls(C), protected(C, P).
 effect(quality_falls(C), B, "maintenance_spending", decrease, short, invisible, "B") :- quality_falls(C), bound(C, B).
 
-% PC-6 with RS-3: some exchanges happen above the ceiling, disguised or illegal. Seekers pay side payments.
+% PC-6 with RS-3: some exchanges happen above the ceiling, disguised or illegal. Seekers pay side payments
+% (key money) only where the price of a new contract is capped: under vacancy decontrol the seller sets the
+% first price freely, so there is nothing to pay on the side (PC-1/PC-2 1.4 note; found out of sample on WE-067).
 informal(C) :- binding_cap(C), holds(evasion(C)), not exception(pc_6, C).
 fired(pc_6, informal(C), binding_cap(C)) :- informal(C).
 fired(rs_3, informal(C), evasion(C))     :- informal(C).
-effect(informal(C), X, "side_payments", increase, short, invisible, "B") :- informal(C), excluded(C, X).
+seeker_side_payments(C) :- informal(C), not decontrol(C), not exception(pc_6, C).
+fired(pc_6, seeker_side_payments(C), informal(C)) :- seeker_side_payments(C).
+effect(seeker_side_payments(C), X, "side_payments", increase, short, invisible, "B") :- seeker_side_payments(C), excluded(C, X).
 
 % PC-6, sublet form: where the protected buyers' right cannot be assigned, they sublet at the market price.
 % (PC-6 signs informal_activity without naming who; only this form is encoded.)
@@ -172,6 +176,8 @@ effect(rent_kept(C), P, "resources_available_other_uses", increase, medium, visi
 
 % CR-8b with PC-6 (RS-3): sellers who sell above the ceiling receive the side payment the seekers make (C-7). The item is
 % signed at the medium horizon so that it can be compared with the rent forgone (CR-12g: one horizon per comparison).
+% Under vacancy decontrol the seekers pay nothing on the side (see PC-6 above), but sellers who evade the cap on sitting
+% tenants' renewals still take rents above it (WE-067 C-44), so the item is not gated on decontrol.
 key_money(C) :- informal(C), not exception(cr_8, C).
 fired(cr_8, key_money(C), informal(C)) :- key_money(C).
 effect(key_money(C), B, "resources_available_other_uses", increase, medium, invisible, "B") :- key_money(C), bound(C, B).

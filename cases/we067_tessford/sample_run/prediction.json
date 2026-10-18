@@ -1762,62 +1762,6 @@
    "window": null
   },
   {
-   "actor_class": "tenants.prospective",
-   "assumption_sets": [
-    [
-     "binding(k1)",
-     "enforced(k1)",
-     "evasion(k1)"
-    ]
-   ],
-   "assumptions": [
-    "binding(k1)",
-    "enforced(k1)",
-    "evasion(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "binding_cap(k1)",
-     "premises": [
-      "binding(k1)",
-      "enforced(k1)"
-     ],
-     "rule": "PC-1"
-    },
-    {
-     "conclusion": "informal(k1)",
-     "premises": [
-      "binding_cap(k1)"
-     ],
-     "rule": "PC-6"
-    },
-    {
-     "conclusion": "informal(k1)",
-     "premises": [
-      "evasion(k1)"
-     ],
-     "rule": "RS-3"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-30",
-   "item": null,
-   "reported": true,
-   "sign": "increase",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "side_payments",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
    "actor_class": "tenants.covered.other",
    "assumption_sets": [
     [
@@ -1916,7 +1860,7 @@
     "medium",
     "long"
    ],
-   "id": "C-31",
+   "id": "C-30",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1989,7 +1933,7 @@
     "medium",
     "long"
    ],
-   "id": "C-32",
+   "id": "C-31",
    "item": null,
    "reported": true,
    "sign": "ambiguous",
@@ -2083,7 +2027,7 @@
     "medium",
     "long"
    ],
-   "id": "C-33",
+   "id": "C-32",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -2148,7 +2092,7 @@
    "horizon": [
     "short"
    ],
-   "id": "C-34",
+   "id": "C-33",
    "item": null,
    "reported": true,
    "sign": "ambiguous",
@@ -2191,11 +2135,10 @@
   "C-27. Compared with no Tessford Tenant Stability Ordinance 2027, price paid for tenants.prospective rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.90); Buyouts move fewer tenants than the cap keeps in place (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.80); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.90). Reported.",
   "C-28. Compared with no Tessford Tenant Stability Ordinance 2027, price substitute for tenants.prospective rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.90); The ceiling is enforced against most bound sellers (p = 0.80); Uncovered units in the same market are close substitutes for covered ones (p = 0.85). Reported.",
   "C-29. Compared with no Tessford Tenant Stability Ordinance 2027, quantity traded for tenants.prospective falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap; OC-4: OC-4. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.75); The ceiling binds: it is below the price the market would otherwise reach (p = 0.90); The ceiling is enforced against most bound sellers (p = 0.80). Reported.",
-  "C-30. Compared with no Tessford Tenant Stability Ordinance 2027, side payments for tenants.prospective rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.90); The ceiling is enforced against most bound sellers (p = 0.80); Some exchanges take place above the ceiling without being caught (p = 0.75). Reported.",
-  "C-31. Compared with no Tessford Tenant Stability Ordinance 2027, relocation out of area for tenants.covered.other falls from the medium run onward (tier B, invisible). Why: CR-12 total of C-25, C-23 (a dominance premise decides the sign). This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.75); The ceiling binds: it is below the price the market would otherwise reach (p = 0.90); Buyouts move fewer tenants than the cap keeps in place (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.80); Among all protected tenants, the fall in moves out of the area among keepers outweighs the rise among the displaced (p = 0.70); The lock-in outweighs moves diverted out of the area by higher free rents (p = 0.75); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.90); Without the rule some protected buyers would have left the area (p = 0.95). Reported.",
-  "C-32. Compared with no Tessford Tenant Stability Ordinance 2027, quality adjusted price for tenants.covered.other may move either way from the medium run onward (tier B, invisible). Why: CR-12 total of C-18, C-20 (no premise decides which chain is larger). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.90); The ceiling is enforced against most bound sellers (p = 0.80); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.85). Reported.",
-  "C-33. Compared with no Tessford Tenant Stability Ordinance 2027, resources available other uses for landlords.covered falls from the medium run onward (tier B, invisible). Why: CR-12 total of C-11, C-10 (a dominance premise decides the sign). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.90); The ceiling is enforced against most bound sellers (p = 0.80); Some exchanges take place above the ceiling without being caught (p = 0.75). Reported.",
-  "C-34. Compared with no Tessford Tenant Stability Ordinance 2027, price paid for tenants.covered.other may move either way in the first months after the effective date, in the short run (tier B, invisible). Why: CR-12 total of C-18, C-19 (no premise decides which chain is larger). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.90); The ceiling is enforced against most bound sellers (p = 0.80); Enough contracts come up for repricing in the announcement window, and sellers can raise the price on them (p = 0.75). Reported."
+  "C-30. Compared with no Tessford Tenant Stability Ordinance 2027, relocation out of area for tenants.covered.other falls from the medium run onward (tier B, invisible). Why: CR-12 total of C-25, C-23 (a dominance premise decides the sign). This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.75); The ceiling binds: it is below the price the market would otherwise reach (p = 0.90); Buyouts move fewer tenants than the cap keeps in place (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.80); Among all protected tenants, the fall in moves out of the area among keepers outweighs the rise among the displaced (p = 0.70); The lock-in outweighs moves diverted out of the area by higher free rents (p = 0.75); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.90); Without the rule some protected buyers would have left the area (p = 0.95). Reported.",
+  "C-31. Compared with no Tessford Tenant Stability Ordinance 2027, quality adjusted price for tenants.covered.other may move either way from the medium run onward (tier B, invisible). Why: CR-12 total of C-18, C-20 (no premise decides which chain is larger). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.90); The ceiling is enforced against most bound sellers (p = 0.80); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.85). Reported.",
+  "C-32. Compared with no Tessford Tenant Stability Ordinance 2027, resources available other uses for landlords.covered falls from the medium run onward (tier B, invisible). Why: CR-12 total of C-11, C-10 (a dominance premise decides the sign). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.90); The ceiling is enforced against most bound sellers (p = 0.80); Some exchanges take place above the ceiling without being caught (p = 0.75). Reported.",
+  "C-33. Compared with no Tessford Tenant Stability Ordinance 2027, price paid for tenants.covered.other may move either way in the first months after the effective date, in the short run (tier B, invisible). Why: CR-12 total of C-18, C-19 (no premise decides which chain is larger). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.90); The ceiling is enforced against most bound sellers (p = 0.80); Enough contracts come up for repricing in the announcement window, and sellers can raise the price on them (p = 0.75). Reported."
  ],
  "questions": [
   {
@@ -2620,9 +2563,13 @@
     "input_supplier_actor": null,
     "instrument": "price_ceiling",
     "market": "tessford",
+    "mobile_buyer_actor": null,
     "neighbor_actor": "tenants.county",
+    "neighbor_seller_actor": null,
+    "own_revenue_funded": false,
     "protected_actor": "tenants.covered.other",
     "protected_concentrated": true,
+    "rate_rise": false,
     "relief_applicant_actor": null,
     "renewable": false,
     "revenue_actor": "officials.enforcement",
@@ -2661,7 +2608,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T01:36:04+00:00",
+ "run_at": "2026-10-18T05:55:52+00:00",
  "sources_held_back": [],
  "unclear": [
   {

@@ -108,8 +108,10 @@ STEPS: list[BStep] = [
                    Effect("bound", "maintenance_spending", "decrease", "short", "invisible"))),
     # PC-6 with RS-3, then RS-10
     BStep("evasion", "RS-3", "evasion", needs=("cap",), assumption="evasion"),
-    BStep("informal", "PC-6", "informal", needs=("cap", "evasion"),
-          effects=(Effect("excluded", "side_payments", "increase", "short", "invisible"),)),
+    BStep("informal", "PC-6", "informal", needs=("cap", "evasion")),
+    BStep("seeker_side_payments", "PC-6", "seeker_side_payments", needs=("informal",),
+          effects=(Effect("excluded", "side_payments", "increase", "short", "invisible"),),
+          guard=lambda c: not c.vacancy_decontrol),
     BStep("sublet", "PC-6", "sublet", needs=("informal", "nontransferable"),
           effects=(Effect("protected", "informal_activity", "increase", "short", "invisible"),)),
     BStep("no_recourse", "RS-10", "no_recourse", needs=("informal",),

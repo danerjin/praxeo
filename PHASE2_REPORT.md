@@ -70,7 +70,7 @@ All four were fixed, and each fix has a test.
 | WE-001 rent freeze | 31 | 28 | Two rows rest on facts specific to this case that the record lacks (a homebuyers' market relation; the K3 relocation payment). One needs the new-construction exemption as a fact, and one of its chains rests on the negation of an assumption, which the engine keeps out to stay exact |
 | WE-013 steel tariff | 32 | 31 | One row needs a class the record does not name. The return-on-capital row is left ambiguous by the handbook itself |
 
-San Francisco 1994, the historical case, reports 28 consequences. Five are verifiable against its card: headline F1 1.00, logic F1 0.57, assumption Brier score 0.06.
+San Francisco 1994, the historical case, reports 27 consequences. Five are verifiable against its card: headline F1 1.00, logic F1 0.57, assumption Brier score 0.06.
 
 ## 6. The mathematical annex
 
