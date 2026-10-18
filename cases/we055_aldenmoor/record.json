@@ -1,0 +1,47 @@
+{
+ "name": "Aldenmoor Home Inspector Licensing Act",
+ "jurisdiction": "Aldenmoor (fictional)",
+ "rule_maker": "the Aldenmoor legislature",
+ "enacted": "3 June 2026",
+ "effective": "1 July 2027 for new entrants; 1 January 2028 for all inspectors",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "licensing_requirement",
+   "good": "home_inspection",
+   "market": "aldenmoor",
+   "bound_actor": "inspectors",
+   "buyer_actor": "buyers.current",
+   "right_holder_actor": "inspectors.licensed",
+   "trainer_actor": "training_schools",
+   "enforcer_actor": "officials.enforcement",
+   "announcement_window": true,
+   "field_contested": true,
+   "source_sentences": [
+    "Anyone inspecting a home for pay in Aldenmoor must hold a license: 120 hours of approved training, a state exam, $300,000 of insurance and $250 a year.",
+    "Licensed professional engineers and architects are exempt.",
+    "The Home Inspector Board, with two investigators, is funded by license, exam and application fees.",
+    "The bill was introduced on 12 January 2026 and enacted on 3 June 2026.",
+    "the inspectors' association continuing the campaign for licensing that it had run since 2022"
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "K4 forbids an agent to \"direct, steer or require\" a client to use a particular inspector.",
+   "readings": [
+    "U1-a: the provision forbids only requiring or conditioning (making a transaction depend on the inspector); an agent may still name or recommend inspectors when asked, as now.",
+    "U1-b: naming a particular inspector is \"steering\"; an agent may give a client only the Board's public list of licensed inspectors."
+   ],
+   "reading_facts": {},
+   "reading_fields": {}
+  }
+ ],
+ "context": [
+  "About 610 people inspect homes for pay.",
+  "A state survey of agents finds that about 70% of buyers hire an inspector their agent recommended.",
+  "The neighboring State of Linmouth has no license; about 12% of Aldenmoor's sales are in the Brask River metro on the border, where about 40 Linmouth inspectors do some Aldenmoor jobs."
+ ]
+}
