@@ -1,0 +1,53 @@
+{
+ "name": "Port Halden Taxi Fleet Stabilization Ordinance",
+ "jurisdiction": "Port Halden (fictional)",
+ "rule_maker": "the Port Halden city council",
+ "enacted": "five months before the effective date",
+ "effective": "the effective date",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "quota",
+   "good": "taxi_service",
+   "market": "port_halden",
+   "bound_actor": "drivers.taxi",
+   "buyer_actor": "riders",
+   "right_holder_actor": "medallion_owners.initial",
+   "enforcer_actor": "officials.enforcement",
+   "transferable": true,
+   "seller_cap": true,
+   "general_budget": true,
+   "announcement_window": true,
+   "definition_line": true,
+   "source_sentences": [
+    "The number of taxi licenses is fixed at the number outstanding on the effective date, and applies to anyone offering taxi service: street hails and taxi ranks.",
+    "New licenses are issued only by council vote.",
+    "Licenses become \"medallions\" that may be sold or leased, with transfers registered and a 2% transfer fee.",
+    "Vehicles that take only bookings made at least 30 minutes ahead, at a fare agreed at booking, may operate with an uncapped private-hire permit ($300 a year).",
+    "The Taxi and Limousine Office enforces the ordinance with 12 inspectors.",
+    "Enforcement is funded from the general budget and license fees.",
+    "The ordinance was introduced by the council five months before it took effect, with passage widely expected."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether a booking made through a smartphone app a few minutes before pickup meets the 30-minute rule.",
+   "readings": [
+    "U1-a: app booking counts as pre-booked.",
+    "U1-b: it does not."
+   ],
+   "reading_facts": {},
+   "reading_fields": {}
+  }
+ ],
+ "context": [
+  "Port Halden is a city of about 900,000 people.",
+  "Until now, anyone who passed a driver background check and a vehicle inspection could obtain a city taxi license for $400 a year; about 2,400 licenses are in use.",
+  "Demand for taxi trips has grown about 3% a year with population and tourism.",
+  "Fares are set by the city council as a meter rate, indexed each year to consumer prices; this rule predates the ordinance and is unchanged by it.",
+  "The suburbs of Brindlewick and Corvale license their own taxis, which may drop passengers in Port Halden but may not pick up there."
+ ]
+}
