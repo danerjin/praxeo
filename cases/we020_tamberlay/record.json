@@ -1,0 +1,58 @@
+{
+ "name": "Tamberlay Home Start Grant",
+ "jurisdiction": "Tamberlay (fictional)",
+ "rule_maker": "the legislature of Tamberlay",
+ "enacted": "15 May of Year 1",
+ "effective": "1 July of Year 1",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "purchase_rebate",
+   "good": "entry_level_homes",
+   "market": "tamberlay",
+   "bound_actor": "buyers.first_time",
+   "seller_actor": "owners.entry_level",
+   "other_buyer_actor": "buyers.other",
+   "asset_owner_actor": "owners.entry_level",
+   "claim_handler_actor": "buyers.first_time",
+   "enforcer_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "eligibility_criteria": true,
+   "temporary": true,
+   "renewable": true,
+   "announcement_window": true,
+   "repay_on_move": true,
+   "source_sentences": [
+    "The grant is $15,000 for first-time buyers who apply, paid at settlement and usable toward the deposit, for the purchase of a home in Tamberlay.",
+    "The contract price must be $450,000 or less (fixed in money terms).",
+    "The home must be the buyer's principal residence for 24 months; otherwise the full grant is repaid.",
+    "Neither the applicant nor the applicant's spouse or declared partner has ever owned residential property, anywhere.",
+    "One grant per household.",
+    "The governor announced the grant in the budget speech on 10 March of Year 1.",
+    "It applies to purchase contracts signed from 1 July of Year 1 to 30 June of Year 4, with a legislative review in Year 3.",
+    "Renewal is possible but not promised.",
+    "The grant and its administration are funded by an annual appropriation from general revenue, about $300 million a year (20,000 grants).",
+    "The State Revenue Office checks the land register and declarations, and checks occupancy against driver's license and electoral roll addresses."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether the price cap will be indexed if prices rise (the text fixes it in dollars).",
+   "readings": ["U1-a: not indexed", "U1-b: indexed"]
+  },
+  {
+   "id": "U2",
+   "text": "Whether the grant will be renewed after Year 4.",
+   "readings": ["U2-a: not renewed", "U2-b: renewed"]
+  }
+ ],
+ "context": [
+  "About 60,000 homes are sold there in a normal year, roughly a third of them for $450,000 or less, and first-time buyers account for about 18,000 purchases.",
+  "Builders complete about 12,000 new homes a year; zoning approval and permits take 12 to 24 months and construction another 9 to 15, so the stock of homes responds slowly to prices.",
+  "Tamberlay's largest city, Kessford, sits on the border with the state of Lowen, whose suburbs are within a 30-minute commute and which has no comparable grant.",
+  "Entry-level home prices in Tamberlay have been rising about 4% a year."
+ ]
+}

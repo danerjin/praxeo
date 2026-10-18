@@ -1,0 +1,86 @@
+[
+ {
+  "question_id": "k1.takeup",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "No matching assumption in WE-020; judged from the text: a $15,000 grant against the cost of qualifying (24 months in the home, declarations) for a pool of about 18,000 first-time buyers a year, with 20,000 grants funded.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.not_fully_captured",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-020 (illustrative figures), A-1: prices under the cap rise by less than the grant, because many buyers in the segment get no grant and some supply responds.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.quantity_expands",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-020 (illustrative figures), A-4: some renters at the margin buy sooner because of the grant (the deposit binds first-time buyers).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.seller_supply_slow",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-020 (illustrative figures), A-2: the supply of homes under the cap responds slowly (approval 12 to 24 months, construction 9 to 15).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.sellers_fewer_alternatives",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-020 (illustrative figures), A-20: while supply is slow, owners of homes under the cap have clearly fewer alternatives than first-time buyers, who can keep renting, wait, buy above the cap or buy in Lowen.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.asset_supply_slow",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-020 (illustrative figures), A-2: the supply of homes under the cap responds slowly.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-020 (illustrative figures), A-3: buyers, sellers and builders expect the grant to last at least through Year 4.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.qualifying_pays",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-020 (illustrative figures), A-7: couples can arrange title or partner declarations so that a prior owner's household qualifies (declaration-based partner check, no register outside Tamberlay).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.beneficiaries_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-020 (illustrative figures), A-17: owners, builders and agents can organize to lobby at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_delay",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-020 (illustrative figures), A-5: first-time buyers knew of the grant from March and could delay.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.pulled_forward",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "No matching assumption in WE-020; judged from the text: first-time buyers in a three-year window are mostly households that would buy within a few years anyway; the text gives no sign that the window creates buyers who never would.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.opportunities_need_move",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-020 (illustrative figures), A-9: some recipients receive job offers in the first 24 months that would require moving.",
+  "evidence": []
+ }
+]
