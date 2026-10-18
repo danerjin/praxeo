@@ -1,0 +1,242 @@
+{
+ "assumptions": {},
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "households.no_account",
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_claims(k1)",
+     "premises": [
+      "subsidy(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_administered(k1)",
+     "premises": [
+      "subsidy(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "taxpayers.later",
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_paid(k1)",
+     "premises": [
+      "subsidy(k1)"
+     ],
+     "rule": "SB-1"
+    },
+    {
+     "conclusion": "sb_tax_funded(k1)",
+     "premises": [
+      "sb_paid(k1)"
+     ],
+     "rule": "OC-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"households.recipients\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nsubsidy(k1).\nsb_recipient(k1, \"households.recipients\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers.later\").\nsb_claim_handler(k1, \"households.no_account\").\ndebt_funded(k1).\ncriteria(k1).\n",
+ "explanations": [
+  "C-1. Compared with no Kestland Household Support Payment Act 2027, compliance cost for households.no_account rises from the short run onward (tier A, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.",
+  "C-2. Compared with no Kestland Household Support Payment Act 2027, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-3. Compared with no Kestland Household Support Payment Act 2027, resources available other uses for taxpayers.later falls from the medium run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
+ ],
+ "questions": [],
+ "record": {
+  "components": [
+   {
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "bound_actor": "households.recipients",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": "households.no_account",
+    "debt_funded": true,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": true,
+    "enforcer_actor": "officials.enforcement",
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "general_budget": false,
+    "good": "household_cash_payment",
+    "id": "k1",
+    "importer_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "lump_sum_subsidy",
+    "market": "kestland",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "own_revenue_funded": false,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "rate_rise": false,
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "scrappage": false,
+    "scrapper_actor": null,
+    "seller_actor": null,
+    "source_sentences": [
+     "Households resident in Kestland on 1 April 2027 receive 1,000 crowns per household, once, tax-free, not counted as income for benefits.",
+     "The Tax Agency pays by direct deposit from 1 July 2027 to the 3.4 million households with bank details on file.",
+     "Others apply by form, with identity documents, by 31 December 2027, and are paid within eight weeks.",
+     "Non-resident citizens are not eligible.",
+     "The Finance Minister announced the payment in the budget speech on 4 March 2027.",
+     "Parliament enacted it on 29 April 2027.",
+     "The Tax Agency runs payment runs, application processing, a call center and identity checks.",
+     "False claims must be repaid, with a fine of 2,000 crowns, and may be prosecuted as fraud.",
+     "The administration is funded from the borrowing.",
+     "The principal and interest on the bonds are repaid from general revenue in ten equal annual installments from 2028."
+    ],
+    "substitute_seller_actor": null,
+    "taxpayer_actor": "taxpayers.later",
+    "temporary": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false
+   }
+  ],
+  "context": [
+   "Government debt is about 45% of the yearly product, and the government sells about 35 billion crowns of bonds in a typical year; about 30% of its bonds are held abroad.",
+   "About 35% of households report less than one month's income in liquid savings.",
+   "A survey of intentions by Kestland Statistics in March 2027 found that 30% of households planned to save most of the payment, 40% to pay bills or debts, and 30% to spend it on goods and services.",
+   "A 2014 energy rebate of 300 crowns per household was followed by higher card spending in the following two months."
+  ],
+  "effective": "1 July 2027",
+  "enacted": "29 April 2027",
+  "jurisdiction": "Kestland (fictional)",
+  "name": "Kestland Household Support Payment Act 2027",
+  "rule_maker": "the Parliament of Kestland",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "readings": [
+     "U1-a: one payment per registered address",
+     "U1-b: one payment per tax-filing unit, so the payments due (about 4.6 million) exceed the borrowing of 4.1 billion crowns"
+    ],
+    "text": "What a household is: one payment per registered address, or one per tax-filing unit."
+   },
+   {
+    "id": "U2",
+    "reading_facts": {},
+    "readings": [
+     "U2-a: higher taxes",
+     "U2-b: spending restraint"
+    ],
+    "text": "How the later installments are funded: higher taxes, lower spending, or both."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-18T06:20:02+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "readings": [
+    "U1-a: one payment per registered address",
+    "U1-b: one payment per tax-filing unit, so the payments due (about 4.6 million) exceed the borrowing of 4.1 billion crowns"
+   ],
+   "text": "What a household is: one payment per registered address, or one per tax-filing unit."
+  },
+  {
+   "id": "U2",
+   "reading_facts": {},
+   "readings": [
+    "U2-a: higher taxes",
+    "U2-b: spending restraint"
+   ],
+   "text": "How the later installments are funded: higher taxes, lower spending, or both."
+  }
+ ],
+ "verifier_problems": []
+}
