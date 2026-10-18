@@ -41,6 +41,7 @@
  "consequences": [
   {
    "actor_class": "buyers.lakeport",
+   "actor_group": [],
    "assumption_sets": [
     [
      "buyers_bear(k1)",
@@ -89,6 +90,7 @@
   },
   {
    "actor_class": "buyers.lakeport",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)",
@@ -150,6 +152,7 @@
   },
   {
    "actor_class": "buyers.lakeport",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)"
@@ -202,6 +205,7 @@
   },
   {
    "actor_class": "buyers.lakeport",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)",
@@ -264,6 +268,7 @@
   },
   {
    "actor_class": "buyers.lakeport",
+   "actor_group": [],
    "assumption_sets": [
     [
      "buyers_bear(k1)"
@@ -315,6 +320,7 @@
   },
   {
    "actor_class": "buyers.lakeport.mobile",
+   "actor_group": [],
    "assumption_sets": [
     [
      "cross_border_feasible(k1)",
@@ -370,6 +376,7 @@
   },
   {
    "actor_class": "distributors",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -410,6 +417,7 @@
   },
   {
    "actor_class": "distributors",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)"
@@ -448,6 +456,7 @@
   },
   {
    "actor_class": "distributors",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)",
@@ -510,6 +519,7 @@
   },
   {
    "actor_class": "officials.enforcement",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -550,6 +560,7 @@
   },
   {
    "actor_class": "officials.enforcement",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -583,6 +594,7 @@
   },
   {
    "actor_class": "officials.enforcement",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)"
@@ -635,6 +647,7 @@
   },
   {
    "actor_class": "retailers.lakeport",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)",
@@ -683,6 +696,7 @@
   },
   {
    "actor_class": "retailers.lakeport",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)"
@@ -735,6 +749,7 @@
   },
   {
    "actor_class": "retailers.lakeport",
+   "actor_group": [],
    "assumption_sets": [
     [
      "sellers_bear(k1)"
@@ -786,6 +801,7 @@
   },
   {
    "actor_class": "retailers.neighbors",
+   "actor_group": [],
    "assumption_sets": [
     [
      "cross_border_feasible(k1)",
@@ -845,7 +861,7 @@
  "explanations": [
   "C-1. Compared with no Lakeport Beverage Tax, price paid for buyers.lakeport rises from the short run onward (tier B, visible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.90); At least one side can reduce the quantity it trades in response to the tax (p = 0.90). Reported.",
   "C-2. Compared with no Lakeport Beverage Tax, quantity substitute for buyers.lakeport rises from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-1: when a good becomes dearer, buyers turn to substitutes; TX-3: buyers of a taxed good turn to the untaxed alternatives they have. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.90); Buyers have acceptable untaxed substitutes they can turn to (p = 0.90). Reported.",
-  "C-3. Compared with no Lakeport Beverage Tax, quantity traded for buyers.lakeport falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; OC-4: OC-4. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.90). Reported.",
+  "C-3. Compared with no Lakeport Beverage Tax, quantity traded for buyers.lakeport falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; OC-4: exchanges that no longer happen are lost to both sides. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.90). Reported.",
   "C-4. Compared with no Lakeport Beverage Tax, reclassification for buyers.lakeport rises from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-5: owners move units out of the rule's reach; TX-4: where an untaxed place is within reach, buyers who can cross the boundary buy there and the sellers across it gain their custom. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.90); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.70). Reported.",
   "C-5. Compared with no Lakeport Beverage Tax, resources available other uses for buyers.lakeport falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.90). Reported.",
   "C-6. Compared with no Lakeport Beverage Tax, cross border purchases for buyers.lakeport.mobile rises from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; TX-4: where an untaxed place is within reach, buyers who can cross the boundary buy there and the sellers across it gain their custom. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.80); At least one side can reduce the quantity it trades in response to the tax (p = 0.90). Reported.",
@@ -856,7 +872,7 @@
   "C-11. Compared with no Lakeport Beverage Tax, tax revenue for officials.enforcement rises from the short run onward (tier A, visible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue. This holds if: no assumption. Reported.",
   "C-12. Compared with no Lakeport Beverage Tax, tax revenue vs static projection for officials.enforcement falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; TX-9: TX-9. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.90). Reported.",
   "C-13. Compared with no Lakeport Beverage Tax, net price received for retailers.lakeport falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.90); Part of the tax stays with sellers: the price they keep after tax falls (p = 0.40). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-14. Compared with no Lakeport Beverage Tax, quantity traded for retailers.lakeport falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; OC-4: OC-4. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.90). Reported.",
+  "C-14. Compared with no Lakeport Beverage Tax, quantity traded for retailers.lakeport falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; OC-4: exchanges that no longer happen are lost to both sides. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.90). Reported.",
   "C-15. Compared with no Lakeport Beverage Tax, resources available other uses for retailers.lakeport falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax stays with sellers: the price they keep after tax falls (p = 0.40). Not reported: an assumption is below the 0.5 cut-off.",
   "C-16. Compared with no Lakeport Beverage Tax, quantity traded for retailers.neighbors rises from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; TX-4: where an untaxed place is within reach, buyers who can cross the boundary buy there and the sellers across it gain their custom. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.80); At least one side can reduce the quantity it trades in response to the tax (p = 0.90). Reported."
  ],
@@ -984,20 +1000,27 @@
   "components": [
    {
     "announcement_window": false,
+    "asset_owner_actor": null,
     "bound_actor": "distributors",
+    "budget_capped": false,
     "buyer_actor": "buyers.lakeport",
     "cap": 0.015,
     "cap_unit": "dollars per fluid ounce",
+    "claim_handler_actor": null,
+    "debt_funded": false,
     "definition_line": true,
     "domestic_seller_actor": "sellers.substitutes",
     "domestic_seller_owner_actor": null,
     "domestic_seller_worker_actor": null,
     "downstream": [],
+    "eligibility_criteria": false,
     "enforcer_actor": "officials.enforcement",
+    "evasion_by_resellers": false,
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
     "good": "sweetened_drinks",
     "id": "k1",
@@ -1008,12 +1031,19 @@
     "mobile_buyer_actor": "buyers.lakeport.mobile",
     "neighbor_actor": null,
     "neighbor_seller_actor": "retailers.neighbors",
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
     "own_revenue_funded": true,
     "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
     "rate_rise": false,
     "relief_applicant_actor": null,
     "renewable": false,
+    "repay_on_move": false,
     "revenue_actor": "officials.enforcement",
+    "scrappage": false,
+    "scrapper_actor": null,
     "seller_actor": "retailers.lakeport",
     "source_sentences": [
      "Three neighboring towns, each 10 to 15 minutes' drive from most Lakeport homes, have no such tax.",
@@ -1021,7 +1051,13 @@
      "Drinks sweetened only with non-caloric sweeteners, milk-based drinks and 100% juice are exempt.",
      "The town's revenue department administers the tax, with distributor registration, monthly returns and audits, funded from the tax's own revenue."
     ],
+    "substitute_seller_actor": null,
+    "tax_named": false,
     "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
     "vacancy_decontrol": false
    }
   ],
@@ -1048,7 +1084,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T01:36:08+00:00",
+ "run_at": "2026-10-18T06:36:42+00:00",
  "sources_held_back": [],
  "unclear": [
   {

@@ -12,6 +12,12 @@
    "p": 0.8,
    "text": "Eligible buyers knew of the payment before it started and could delay purchases."
   },
+  "ends_as_scheduled(k1)": {
+   "assumption_class": "expectations",
+   "id": "ends_as_scheduled(k1)",
+   "p": 0.8,
+   "text": "The payment ends as scheduled: it is not renewed, extended or repeated soon after."
+  },
   "not_fully_captured(k1)": {
    "assumption_class": "other",
    "id": "not_fully_captured(k1)",
@@ -72,6 +78,12 @@
    "p": 0.05,
    "text": "Buyers and importers can store the good and order ahead of the effective date."
   },
+  "supply_slow_at_expiry(k1)": {
+   "assumption_class": "durability",
+   "id": "supply_slow_at_expiry(k1)",
+   "p": 0.3,
+   "text": "When the payment ends, the sellers cannot cut their supply at once."
+  },
   "takeup(k1)": {
    "assumption_class": "other",
    "id": "takeup(k1)",
@@ -89,6 +101,7 @@
  "consequences": [
   {
    "actor_class": "buyers.adopters",
+   "actor_group": [],
    "assumption_sets": [
     [
      "not_fully_captured(k1)",
@@ -137,6 +150,7 @@
   },
   {
    "actor_class": "buyers.adopters",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_expands(k1)",
@@ -185,6 +199,7 @@
   },
   {
    "actor_class": "buyers.adopters",
+   "actor_group": [],
    "assumption_sets": [
     [
      "can_delay(k1)",
@@ -232,60 +247,7 @@
   },
   {
    "actor_class": "buyers.adopters",
-   "assumption_sets": [
-    [
-     "qualifying_pays(k1)",
-     "takeup(k1)"
-    ]
-   ],
-   "assumptions": [
-    "qualifying_pays(k1)",
-    "takeup(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "sb_takeup(k1)",
-     "premises": [
-      "per_unit_sub(k1)",
-      "takeup(k1)"
-     ],
-     "rule": "SB-2"
-    },
-    {
-     "conclusion": "sb_reshaped(k1)",
-     "premises": [
-      "qualifying_pays(k1)"
-     ],
-     "rule": "RS-5"
-    },
-    {
-     "conclusion": "sb_reshaped(k1)",
-     "premises": [
-      "sb_takeup(k1)"
-     ],
-     "rule": "SB-5"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-4",
-   "item": null,
-   "reported": true,
-   "sign": "increase",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "reclassification",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "buyers.adopters",
+   "actor_group": [],
    "assumption_sets": [
     [
      "oversubscribed(k1)",
@@ -323,7 +285,7 @@
     "medium",
     "long"
    ],
-   "id": "C-5",
+   "id": "C-4",
    "item": null,
    "reported": false,
    "sign": "at_least_one_increase",
@@ -335,6 +297,7 @@
   },
   {
    "actor_class": "buyers.commercial_solar",
+   "actor_group": [],
    "assumption_sets": [
     [
      "seller_supply_slow(k1)",
@@ -377,7 +340,7 @@
     "medium",
     "long"
    ],
-   "id": "C-6",
+   "id": "C-5",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -389,6 +352,7 @@
   },
   {
    "actor_class": "buyers.commercial_solar",
+   "actor_group": [],
    "assumption_sets": [
     [
      "seller_supply_slow(k1)",
@@ -438,7 +402,7 @@
     "medium",
     "long"
    ],
-   "id": "C-7",
+   "id": "C-6",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -450,6 +414,7 @@
   },
   {
    "actor_class": "customers.electricity",
+   "actor_group": [],
    "assumption_sets": [
     [
      "buyers_bear(k2)",
@@ -486,7 +451,7 @@
     "medium",
     "long"
    ],
-   "id": "C-8",
+   "id": "C-7",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -498,6 +463,7 @@
   },
   {
    "actor_class": "customers.electricity",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k2)",
@@ -547,7 +513,7 @@
     "medium",
     "long"
    ],
-   "id": "C-9",
+   "id": "C-8",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -559,6 +525,7 @@
   },
   {
    "actor_class": "customers.electricity",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k2)"
@@ -599,7 +566,7 @@
     "medium",
     "long"
    ],
-   "id": "C-10",
+   "id": "C-9",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -611,6 +578,7 @@
   },
   {
    "actor_class": "customers.electricity",
+   "actor_group": [],
    "assumption_sets": [
     [
      "stockpile_ahead(k2)"
@@ -635,7 +603,7 @@
    "horizon": [
     "short"
    ],
-   "id": "C-11",
+   "id": "C-10",
    "item": null,
    "reported": false,
    "sign": "increase",
@@ -647,6 +615,7 @@
   },
   {
    "actor_class": "customers.electricity",
+   "actor_group": [],
    "assumption_sets": [
     [
      "buyers_bear(k2)"
@@ -686,7 +655,7 @@
     "medium",
     "long"
    ],
-   "id": "C-12",
+   "id": "C-11",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -698,6 +667,7 @@
   },
   {
    "actor_class": "installers",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -719,7 +689,7 @@
     "medium",
     "long"
    ],
-   "id": "C-13",
+   "id": "C-12",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -731,6 +701,7 @@
   },
   {
    "actor_class": "installers",
+   "actor_group": [],
    "assumption_sets": [
     [
      "seller_supply_slow(k1)",
@@ -773,7 +744,7 @@
     "medium",
     "long"
    ],
-   "id": "C-14",
+   "id": "C-13",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -785,18 +756,21 @@
   },
   {
    "actor_class": "installers",
+   "actor_group": [],
    "assumption_sets": [
     [
+     "ends_as_scheduled(k1)",
      "pulled_forward(k1)",
      "quantity_expands(k1)",
-     "seller_supply_slow(k1)",
+     "supply_slow_at_expiry(k1)",
      "takeup(k1)"
     ]
    ],
    "assumptions": [
+    "ends_as_scheduled(k1)",
     "pulled_forward(k1)",
     "quantity_expands(k1)",
-    "seller_supply_slow(k1)",
+    "supply_slow_at_expiry(k1)",
     "takeup(k1)"
    ],
    "combines": [],
@@ -821,6 +795,7 @@
     {
      "conclusion": "sb_dip(k1)",
      "premises": [
+      "ends_as_scheduled(k1)",
       "pulled_forward(k1)",
       "sb_expands(k1)"
      ],
@@ -829,7 +804,7 @@
     {
      "conclusion": "sb_dip_price(k1)",
      "premises": [
-      "seller_supply_slow(k1)"
+      "supply_slow_at_expiry(k1)"
      ],
      "rule": "CR-6"
     },
@@ -846,9 +821,9 @@
     "medium",
     "long"
    ],
-   "id": "C-15",
+   "id": "C-14",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "decrease",
    "sign_by_reading": {},
    "tier": "B",
@@ -858,6 +833,7 @@
   },
   {
    "actor_class": "installers",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_expands(k1)",
@@ -894,7 +870,7 @@
     "medium",
     "long"
    ],
-   "id": "C-16",
+   "id": "C-15",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -906,14 +882,17 @@
   },
   {
    "actor_class": "installers",
+   "actor_group": [],
    "assumption_sets": [
     [
+     "ends_as_scheduled(k1)",
      "pulled_forward(k1)",
      "quantity_expands(k1)",
      "takeup(k1)"
     ]
    ],
    "assumptions": [
+    "ends_as_scheduled(k1)",
     "pulled_forward(k1)",
     "quantity_expands(k1)",
     "takeup(k1)"
@@ -940,6 +919,7 @@
     {
      "conclusion": "sb_dip(k1)",
      "premises": [
+      "ends_as_scheduled(k1)",
       "pulled_forward(k1)",
       "sb_expands(k1)"
      ],
@@ -952,7 +932,7 @@
     "medium",
     "long"
    ],
-   "id": "C-17",
+   "id": "C-16",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -964,6 +944,62 @@
   },
   {
    "actor_class": "installers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "qualifying_pays(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "qualifying_pays(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_reshaped(k1)",
+     "premises": [
+      "qualifying_pays(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "sb_reshaped(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "installers",
+   "actor_group": [],
    "assumption_sets": [
     [
      "seller_supply_slow(k1)",
@@ -1028,6 +1064,7 @@
   },
   {
    "actor_class": "officials.enforcement",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -1075,6 +1112,7 @@
   },
   {
    "actor_class": "officials.enforcement",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -1108,6 +1146,7 @@
   },
   {
    "actor_class": "officials.enforcement",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k2)"
@@ -1160,6 +1199,7 @@
   },
   {
    "actor_class": "utilities",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -1200,6 +1240,7 @@
   },
   {
    "actor_class": "utilities",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k2)",
@@ -1248,6 +1289,7 @@
   },
   {
    "actor_class": "utilities",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k2)"
@@ -1286,6 +1328,7 @@
   },
   {
    "actor_class": "utilities",
+   "actor_group": [],
    "assumption_sets": [
     [
      "sellers_bear(k2)"
@@ -1337,25 +1380,25 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"buyers.adopters\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nsubsidy(k1).\nsb_recipient(k1, \"buyers.adopters\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"customers.electricity\").\nsb_claim_handler(k1, \"installers\").\nper_unit_sub(k1).\nsb_seller(k1, \"installers\").\nsb_other_buyer(k1, \"buyers.commercial_solar\").\nown_revenue(k1).\ncriteria(k1).\nbudget_capped(k1).\ntemporary(k1).\nbound(k2, \"utilities\").\nexcluded(k2, \"buyers.prospective\").\nannounced(k2).\ntax(k2).\nbuyer(k2, \"customers.electricity\").\ndomestic_seller(k2, \"sellers.substitutes\").\nimporter(k2, \"utilities\").\nrevenue(k2, \"officials.enforcement\").\nexporter(k2, \"export_industries\").\nexporter_worker(k2, \"workers.export_industries\").\nseller(k2, \"utilities\").\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nforeign_seller(k2, \"sellers.foreign\").\nown_revenue(k2).\nassumption(takeup(k1)).\nassumption(not_fully_captured(k1)).\nassumption(quantity_expands(k1)).\nassumption(seller_supply_slow(k1)).\nassumption(sellers_fewer_alternatives(k1)).\nassumption(qualifying_pays(k1)).\nassumption(oversubscribed(k1)).\nassumption(can_delay(k1)).\nassumption(pulled_forward(k1)).\nassumption(quantity_responds(k2)).\nassumption(buyers_bear(k2)).\nassumption(sellers_bear(k2)).\nassumption(untaxed_substitutes(k2)).\nassumption(stockpile_ahead(k2)).\n",
+ "engine_facts": "bound(k1, \"buyers.adopters\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nsubsidy(k1).\nsb_recipient(k1, \"buyers.adopters\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"customers.electricity\").\nsb_claim_handler(k1, \"installers\").\nper_unit_sub(k1).\nsb_seller(k1, \"installers\").\nsb_qualifier(k1, \"installers\").\ntax_named(k1).\nsb_payer_group(k1, \"customers.electricity,recipients.other_spending,taxpayers.future\").\nsb_other_buyer(k1, \"buyers.commercial_solar\").\nown_revenue(k1).\ncriteria(k1).\nbudget_capped(k1).\ntemporary(k1).\nbound(k2, \"utilities\").\nexcluded(k2, \"buyers.prospective\").\nannounced(k2).\ntax(k2).\nbuyer(k2, \"customers.electricity\").\ndomestic_seller(k2, \"sellers.substitutes\").\nimporter(k2, \"utilities\").\nrevenue(k2, \"officials.enforcement\").\nexporter(k2, \"export_industries\").\nexporter_worker(k2, \"workers.export_industries\").\nseller(k2, \"utilities\").\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nforeign_seller(k2, \"sellers.foreign\").\nown_revenue(k2).\nassumption(takeup(k1)).\nassumption(not_fully_captured(k1)).\nassumption(quantity_expands(k1)).\nassumption(seller_supply_slow(k1)).\nassumption(sellers_fewer_alternatives(k1)).\nassumption(qualifying_pays(k1)).\nassumption(oversubscribed(k1)).\nassumption(can_delay(k1)).\nassumption(pulled_forward(k1)).\nassumption(ends_as_scheduled(k1)).\nassumption(supply_slow_at_expiry(k1)).\nassumption(quantity_responds(k2)).\nassumption(buyers_bear(k2)).\nassumption(sellers_bear(k2)).\nassumption(untaxed_substitutes(k2)).\nassumption(stockpile_ahead(k2)).\n",
  "explanations": [
   "C-1. Compared with no Calvera Rooftop Solar Incentive, price paid for buyers.adopters falls from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: Sellers do not capture the whole payment: the recipients' net price falls (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
   "C-2. Compared with no Calvera Rooftop Solar Incentive, quantity traded for buyers.adopters rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
   "C-3. Compared with no Calvera Rooftop Solar Incentive, quantity traded for buyers.adopters falls in the announcement window (before the effective date), in the short run (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Eligible buyers knew of the payment before it started and could delay purchases (p = 0.80); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-4. Compared with no Calvera Rooftop Solar Incentive, reclassification for buyers.adopters rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-5: owners move units out of the rule's reach; SB-5: a payment conditional on criteria draws effort to meet them. This holds if: Some can meet the criteria at a cost below the payment's worth to them (p = 0.80); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-5. Compared with no Calvera Rooftop Solar Incentive, wait time or allocation by non price criteria for buyers.adopters rises for at least one of them from the short run onward (tier B, invisible). Why: LW-6: a good handed out at a fixed price in a fixed number is rationed by other means when more want it; PC-2: rationing by other means than price shows up as waiting or allocation by connections. This holds if: Demand for the payment exceeds its budget or number at some point (p = 0.45); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-6. Compared with no Calvera Rooftop Solar Incentive, price paid for buyers.commercial_solar rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-7. Compared with no Calvera Rooftop Solar Incentive, quantity traded for buyers.commercial_solar falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment; CR-4: buyers who face a higher price take fewer units. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-8. Compared with no Calvera Rooftop Solar Incentive, price paid for customers.electricity rises from the short run onward (tier B, visible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.95); At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
-  "C-9. Compared with no Calvera Rooftop Solar Incentive, quantity substitute for customers.electricity rises from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-1: when a good becomes dearer, buyers turn to substitutes; TX-3: buyers of a taxed good turn to the untaxed alternatives they have. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85); Buyers have acceptable untaxed substitutes they can turn to (p = 0.95). Reported.",
-  "C-10. Compared with no Calvera Rooftop Solar Incentive, quantity traded for customers.electricity falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; OC-4: exchanges that no longer happen are lost to both sides. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
-  "C-11. Compared with no Calvera Rooftop Solar Incentive, quantity traded for customers.electricity rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-12. Compared with no Calvera Rooftop Solar Incentive, resources available other uses for customers.electricity falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.95). Reported.",
-  "C-13. Compared with no Calvera Rooftop Solar Incentive, compliance cost for installers rises from the short run onward (tier A, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.",
-  "C-14. Compared with no Calvera Rooftop Solar Incentive, net price received for installers rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-15. Compared with no Calvera Rooftop Solar Incentive, net price received for installers falls after the temporary measure expires, from the medium run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: Many window buyers would have bought within the next few years anyway (p = 0.80); At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); The sellers' supply of the subsidized good cannot grow at once (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-16. Compared with no Calvera Rooftop Solar Incentive, quantity traded for installers rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-17. Compared with no Calvera Rooftop Solar Incentive, quantity traded for installers falls after the temporary measure expires, from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock. This holds if: Many window buyers would have bought within the next few years anyway (p = 0.80); At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-4. Compared with no Calvera Rooftop Solar Incentive, wait time or allocation by non price criteria for buyers.adopters rises for at least one of them from the short run onward (tier B, invisible). Why: LW-6: a good handed out at a fixed price in a fixed number is rationed by other means when more want it; PC-2: rationing by other means than price shows up as waiting or allocation by connections. This holds if: Demand for the payment exceeds its budget or number at some point (p = 0.45); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-5. Compared with no Calvera Rooftop Solar Incentive, price paid for buyers.commercial_solar rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-6. Compared with no Calvera Rooftop Solar Incentive, quantity traded for buyers.commercial_solar falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment; CR-4: buyers who face a higher price take fewer units. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-7. Compared with no Calvera Rooftop Solar Incentive, price paid for customers.electricity rises from the short run onward (tier B, visible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.95); At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
+  "C-8. Compared with no Calvera Rooftop Solar Incentive, quantity substitute for customers.electricity rises from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-1: when a good becomes dearer, buyers turn to substitutes; TX-3: buyers of a taxed good turn to the untaxed alternatives they have. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85); Buyers have acceptable untaxed substitutes they can turn to (p = 0.95). Reported.",
+  "C-9. Compared with no Calvera Rooftop Solar Incentive, quantity traded for customers.electricity falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; OC-4: exchanges that no longer happen are lost to both sides. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
+  "C-10. Compared with no Calvera Rooftop Solar Incentive, quantity traded for customers.electricity rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-11. Compared with no Calvera Rooftop Solar Incentive, resources available other uses for customers.electricity falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.95). Reported.",
+  "C-12. Compared with no Calvera Rooftop Solar Incentive, compliance cost for installers rises from the short run onward (tier A, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.",
+  "C-13. Compared with no Calvera Rooftop Solar Incentive, net price received for installers rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-14. Compared with no Calvera Rooftop Solar Incentive, net price received for installers falls after the temporary measure expires, from the medium run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The payment ends as scheduled: it is not renewed, extended or repeated soon after (p = 0.80); Many window buyers would have bought within the next few years anyway (p = 0.80); At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); When the payment ends, the sellers cannot cut their supply at once (p = 0.30); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-15. Compared with no Calvera Rooftop Solar Incentive, quantity traded for installers rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-16. Compared with no Calvera Rooftop Solar Incentive, quantity traded for installers falls after the temporary measure expires, from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock. This holds if: The payment ends as scheduled: it is not renewed, extended or repeated soon after (p = 0.80); Many window buyers would have bought within the next few years anyway (p = 0.80); At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-17. Compared with no Calvera Rooftop Solar Incentive, reclassification for installers rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-5: owners move units out of the rule's reach; SB-5: a payment conditional on criteria draws effort to meet them. This holds if: Some can meet the criteria at a cost below the payment's worth to them (p = 0.80); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
   "C-18. Compared with no Calvera Rooftop Solar Incentive, subsidy share received for installers rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); While supply is fixed, the sellers have clearly fewer alternatives than the recipients (p = 0.65); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
   "C-19. Compared with no Calvera Rooftop Solar Incentive, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; TX-1: a tax that is collected takes resources from those who bear it and yields revenue. This holds if: no assumption. Reported.",
   "C-20. Compared with no Calvera Rooftop Solar Incentive, tax revenue for officials.enforcement rises from the short run onward (tier A, visible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue. This holds if: no assumption. Reported.",
@@ -1532,6 +1575,42 @@
    "answer": {
     "decider": "fixture:answers.json",
     "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.ends_as_scheduled",
+    "rationale": "No matching assumption in WE-021; judged from the text: the program ends when 900 MW has been funded or on 31 December of Year 5, and the text says nothing of a renewal.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "ends_as_scheduled",
+    "assumption_class": "expectations",
+    "id": "k1.ends_as_scheduled",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the payment end when its window closes, rather than being renewed, extended or repeated soon after?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k1.supply_slow_at_expiry",
+    "rationale": "No matching assumption in WE-021 for the end date: A-4 (installation labor cannot grow much) is stated for the first year only, and A-5 (certification is easy enough that new installers enter) says capacity expands; by the end of Year 5 installers can shrink or leave. Judged low.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "supply_slow_at_expiry",
+    "assumption_class": "durability",
+    "id": "k1.supply_slow_at_expiry",
+    "kind": "noul",
+    "options": [],
+    "text": "When the payment ends, will the sellers still be unable to cut their supply at once (stock already ordered, capacity built for the window)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
     "probability": 0.85,
     "question_id": "k2.quantity_responds",
     "rationale": "No matching assumption in WE-021; judged from the text: A-3 says demand changes little, not that it does not change; the surcharge is 0.12 cents on about 20 cents (0.6%), so the quantity falls at least a little, which is all the question asks. This is the premise of the wedge that carries the price rise.",
@@ -1643,6 +1722,7 @@
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
     "good": "rooftop_solar_systems",
     "id": "k1",
@@ -1654,9 +1734,11 @@
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
     "other_buyer_actor": "buyers.commercial_solar",
+    "other_spending_actor": "recipients.other_spending",
     "own_revenue_funded": true,
     "protected_actor": null,
     "protected_concentrated": true,
+    "qualifier_actor": "installers",
     "rate_rise": false,
     "relief_applicant_actor": null,
     "renewable": false,
@@ -1677,8 +1759,10 @@
      "The State Energy Office administers the program, funded from 5% of the Solar Fund."
     ],
     "substitute_seller_actor": null,
+    "tax_named": true,
     "taxpayer_actor": "customers.electricity",
     "temporary": true,
+    "third_party_payer_actor": null,
     "used_buyer_actor": null,
     "used_owner_actor": null,
     "vacancy_decontrol": false
@@ -1705,6 +1789,7 @@
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
     "good": "retail_electricity",
     "id": "k2",
@@ -1716,9 +1801,11 @@
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
     "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
     "own_revenue_funded": true,
     "protected_actor": null,
     "protected_concentrated": true,
+    "qualifier_actor": null,
     "rate_rise": false,
     "relief_applicant_actor": null,
     "renewable": false,
@@ -1734,8 +1821,10 @@
      "The State Energy Office administers the program, funded from 5% of the Solar Fund."
     ],
     "substitute_seller_actor": null,
+    "tax_named": false,
     "taxpayer_actor": "taxpayers",
     "temporary": false,
+    "third_party_payer_actor": null,
     "used_buyer_actor": null,
     "used_owner_actor": null,
     "vacancy_decontrol": false
@@ -1767,7 +1856,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T06:20:36+00:00",
+ "run_at": "2026-10-18T06:36:46+00:00",
  "sources_held_back": [],
  "unclear": [
   {

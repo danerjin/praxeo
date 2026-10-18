@@ -53,6 +53,7 @@
  "consequences": [
   {
    "actor_class": "officials.enforcement",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -93,6 +94,7 @@
   },
   {
    "actor_class": "officials.enforcement",
+   "actor_group": [],
    "assumption_sets": [
     [
      "revenue_base_holds(k1)"
@@ -138,6 +140,7 @@
   },
   {
    "actor_class": "officials.enforcement",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)"
@@ -190,6 +193,7 @@
   },
   {
    "actor_class": "retailers.marren",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)",
@@ -238,6 +242,7 @@
   },
   {
    "actor_class": "retailers.marren",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)"
@@ -290,6 +295,7 @@
   },
   {
    "actor_class": "retailers.marren",
+   "actor_group": [],
    "assumption_sets": [
     [
      "sellers_bear(k1)"
@@ -341,6 +347,7 @@
   },
   {
    "actor_class": "retailers.neighbors",
+   "actor_group": [],
    "assumption_sets": [
     [
      "cross_border_feasible(k1)",
@@ -396,6 +403,7 @@
   },
   {
    "actor_class": "smokers",
+   "actor_group": [],
    "assumption_sets": [
     [
      "buyers_bear(k1)",
@@ -444,6 +452,7 @@
   },
   {
    "actor_class": "smokers",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)",
@@ -505,6 +514,7 @@
   },
   {
    "actor_class": "smokers",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)"
@@ -557,6 +567,7 @@
   },
   {
    "actor_class": "smokers",
+   "actor_group": [],
    "assumption_sets": [
     [
      "stockpile_ahead(k1)"
@@ -593,6 +604,7 @@
   },
   {
    "actor_class": "smokers",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)",
@@ -655,6 +667,7 @@
   },
   {
    "actor_class": "smokers",
+   "actor_group": [],
    "assumption_sets": [
     [
      "buyers_bear(k1)"
@@ -706,6 +719,7 @@
   },
   {
    "actor_class": "smokers.border",
+   "actor_group": [],
    "assumption_sets": [
     [
      "cross_border_feasible(k1)",
@@ -761,6 +775,7 @@
   },
   {
    "actor_class": "stamping_agents",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -801,6 +816,7 @@
   },
   {
    "actor_class": "stamping_agents",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)"
@@ -839,6 +855,7 @@
   },
   {
    "actor_class": "stamping_agents",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)",
@@ -907,12 +924,12 @@
   "C-2. Compared with no Marren Tobacco Tax Act, tax revenue for officials.enforcement rises from the short run onward (tier B, visible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue. This holds if: The taxed base falls by less than enough to offset the rise in the rate (p = 0.80). Reported.",
   "C-3. Compared with no Marren Tobacco Tax Act, tax revenue vs static projection for officials.enforcement falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; TX-9: TX-9. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
   "C-4. Compared with no Marren Tobacco Tax Act, net price received for retailers.marren falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85); Part of the tax stays with sellers: the price they keep after tax falls (p = 0.85). Reported.",
-  "C-5. Compared with no Marren Tobacco Tax Act, quantity traded for retailers.marren falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; OC-4: OC-4. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
+  "C-5. Compared with no Marren Tobacco Tax Act, quantity traded for retailers.marren falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; OC-4: exchanges that no longer happen are lost to both sides. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
   "C-6. Compared with no Marren Tobacco Tax Act, resources available other uses for retailers.marren falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax stays with sellers: the price they keep after tax falls (p = 0.85). Reported.",
   "C-7. Compared with no Marren Tobacco Tax Act, quantity traded for retailers.neighbors rises from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; TX-4: where an untaxed place is within reach, buyers who can cross the boundary buy there and the sellers across it gain their custom. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.85); At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
   "C-8. Compared with no Marren Tobacco Tax Act, price paid for smokers rises from the short run onward (tier B, visible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.85); At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
   "C-9. Compared with no Marren Tobacco Tax Act, quantity substitute for smokers rises from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-1: when a good becomes dearer, buyers turn to substitutes; TX-3: buyers of a taxed good turn to the untaxed alternatives they have. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85); Buyers have acceptable untaxed substitutes they can turn to (p = 0.75). Reported.",
-  "C-10. Compared with no Marren Tobacco Tax Act, quantity traded for smokers falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; OC-4: OC-4. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
+  "C-10. Compared with no Marren Tobacco Tax Act, quantity traded for smokers falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; OC-4: exchanges that no longer happen are lost to both sides. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
   "C-11. Compared with no Marren Tobacco Tax Act, quantity traded for smokers rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.80). Reported.",
   "C-12. Compared with no Marren Tobacco Tax Act, reclassification for smokers rises from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-5: owners move units out of the rule's reach; TX-4: where an untaxed place is within reach, buyers who can cross the boundary buy there and the sellers across it gain their custom. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.70). Reported.",
   "C-13. Compared with no Marren Tobacco Tax Act, resources available other uses for smokers falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.85). Reported.",
@@ -1081,20 +1098,27 @@
   "components": [
    {
     "announcement_window": true,
+    "asset_owner_actor": null,
     "bound_actor": "stamping_agents",
+    "budget_capped": false,
     "buyer_actor": "smokers",
     "cap": 3.5,
     "cap_unit": "dollars per pack of 20, not indexed",
+    "claim_handler_actor": null,
+    "debt_funded": false,
     "definition_line": true,
     "domestic_seller_actor": "sellers.substitutes",
     "domestic_seller_owner_actor": null,
     "domestic_seller_worker_actor": null,
     "downstream": [],
+    "eligibility_criteria": false,
     "enforcer_actor": "officials.enforcement",
+    "evasion_by_resellers": false,
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
     "good": "cigarettes",
     "id": "k1",
@@ -1105,12 +1129,19 @@
     "mobile_buyer_actor": "smokers.border",
     "neighbor_actor": null,
     "neighbor_seller_actor": "retailers.neighbors",
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
     "own_revenue_funded": true,
     "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
     "rate_rise": true,
     "relief_applicant_actor": null,
     "renewable": false,
+    "repay_on_move": false,
     "revenue_actor": "officials.enforcement",
+    "scrappage": false,
+    "scrapper_actor": null,
     "seller_actor": "retailers.marren",
     "source_sentences": [
      "Licensed stamping agents (wholesalers), who buy tax stamps and affix them before sale to retailers, must pay a cigarette tax raised from $1.50 to $3.50 per pack of 20, fixed in money terms (not indexed).",
@@ -1119,7 +1150,13 @@
      "About 45% of Marren's population lives within a 20-minute drive of Dunmarch or of Kessick, its southern neighbor.",
      "Of the revenue from the $2.00 increase, $0.30 per pack goes to the Tobacco Unit and to the existing quit-smoking program (already funded from general revenue); the rest goes to the general fund."
     ],
+    "substitute_seller_actor": null,
+    "tax_named": false,
     "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
     "vacancy_decontrol": false
    }
   ],
@@ -1146,7 +1183,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T01:36:09+00:00",
+ "run_at": "2026-10-18T06:36:45+00:00",
  "sources_held_back": [],
  "unclear": [
   {

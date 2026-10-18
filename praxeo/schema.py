@@ -95,6 +95,13 @@ class Component(BaseModel):
     used_buyer_actor: Optional[str] = Field(default=None, description="Subsidies with scrappage: buyers of the used goods (SB-6), e.g. buyers.used_cars")
     used_owner_actor: Optional[str] = Field(default=None, description="Subsidies with scrappage: owners who keep their used goods (SB-6, SB-4)")
     scrapper_actor: Optional[str] = Field(default=None, description="Subsidies with scrappage: who destroys the scrapped goods (SB-6), e.g. dismantlers")
+    tax_named: bool = Field(default=False, description="Subsidies: the text names the tax that pays for the payment; otherwise it comes from a general budget and the payers are a group (OC-1, who pays)")
+    other_spending_actor: Optional[str] = Field(default="recipients.other_spending", description="Subsidies from a general budget: recipients of the other spending it could fund (OC-1, who pays)")
+    future_taxpayer_actor: Optional[str] = Field(default="taxpayers.future", description="Subsidies from a general budget: future taxpayers (OC-1, who pays); null where the record names the payers otherwise")
+    qualifier_actor: Optional[str] = Field(default=None, description="Subsidies: who must meet the criteria, when not the recipients (SB-5), e.g. installers who must be certified")
+    third_party_payer_actor: Optional[str] = Field(default=None, description=(
+        "Price ceilings: set when the cap is on what buyers pay out of pocket and a third party (an insurer, a fund) must "
+        "pay the seller the rest (PC-20). The seller's price is not capped, so no shortage follows from the cap itself"))
     repay_on_move: bool = Field(default=False, description="Subsidies: the payment is repaid if the recipient moves or sells within a period (RS-11)")
     source_sentences: list[str] = Field(description="Sentences of the policy text this component rests on, quoted exactly")
 
@@ -198,6 +205,10 @@ class Consequence(BaseModel):
     group: list[str] = Field(default=[], description=(
         "Members of a group consequence: the sign is then at_least_one_increase or at_least_one_decrease and `variable` "
         "is the first member. Empty for an ordinary consequence."))
+    actor_group: list[str] = Field(default=[], description=(
+        "Members of a group over actor classes (OC-1, who pays: taxpayers, recipients of other spending): at least one "
+        "of them moves, so the sign is at_least_one_increase or at_least_one_decrease and `actor_class` is the first. "
+        "Empty for an ordinary consequence."))
     item: Optional[str] = Field(default=None, description=(
         "Qualifier of one item of a variable that a policy moves in opposite directions (CR-12 0.8: two items in one "
         "variable). Items are parts: the CR-12 total over them is a separate consequence with no item, and scoring uses the total."))
@@ -206,6 +217,10 @@ class Consequence(BaseModel):
     def members(self) -> list[str]:
         """The variables the consequence is about: the group, or the one variable."""
         return list(self.group) or [self.variable]
+
+    def actors(self) -> list[str]:
+        """The actor classes the consequence is about: the actor group, or the one class."""
+        return list(self.actor_group) or [self.actor_class]
 
 
 # --- outcome card --------------------------------------------------------

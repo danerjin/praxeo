@@ -63,6 +63,13 @@ def _subsidy_facts(c: str, comp) -> list[str]:
         lines.append(f"per_unit_sub({c}).")
     if comp.seller_actor and comp.seller_actor != comp.bound_actor:
         lines.append(f'sb_seller({c}, "{comp.seller_actor}").')
+    else:
+        lines.append(f"sb_recipients_sell({c}).")
+    lines.append(f'sb_qualifier({c}, "{comp.qualifier_actor or comp.bound_actor}").')
+    if comp.tax_named:
+        lines.append(f"tax_named({c}).")
+    payers = [comp.taxpayer_actor, comp.other_spending_actor, comp.future_taxpayer_actor]
+    lines.append(f'sb_payer_group({c}, "{",".join(dict.fromkeys(p for p in payers if p))}").')
     for pred, actor in (("sb_other_buyer", comp.other_buyer_actor), ("sb_substitute_seller", comp.substitute_seller_actor),
                         ("sb_asset_owner", comp.asset_owner_actor), ("sb_used_buyer", comp.used_buyer_actor),
                         ("sb_used_owner", comp.used_owner_actor), ("sb_scrapper", comp.scrapper_actor)):
@@ -118,7 +125,10 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
     lines = []
     for comp in record.components:
         c = _atom(comp.id)
-        if comp.instrument == "price_ceiling":
+        if comp.instrument == "price_ceiling" and comp.third_party_payer_actor:
+            # PC-20: a cap on the buyer's share, the rest paid by a third party; the seller's price is not capped
+            lines += [f"share_cap({c}).", f'share_payer({c}, "{comp.third_party_payer_actor}").']
+        elif comp.instrument == "price_ceiling":
             lines.append(f"ceiling({c}).")
         if comp.vacancy_decontrol:
             lines.append(f"decontrol({c}).")
@@ -261,12 +271,15 @@ def run(record: PolicyRecord, assumptions: dict[str, Assumption], extra: str = "
         minimal = [list(s) for s in sets if not any(set(o) < set(s) for o in sets)]
         best = max(minimal, key=lambda s: (math.prod(assumptions[a].p for a in s), -len(s)))
         members = variable.split(",") if "," in variable else []
+        # a group_effect over actor classes names them as one comma-separated string (OC-1, who pays)
+        actors = actor.split(",") if "," in actor else []
         # an announcement-window response is a short-horizon prediction; other effects hold from their first horizon on
         first_h = min(HORIZON_ORDER[d["horizon"]] for d in derived)
         horizon = ["short"] if window == "announcement" else [h for h in HORIZON_ORDER if HORIZON_ORDER[h] >= first_h]
         consequences.append(Consequence(
             id=f"C-{n}",
-            actor_class=actor,
+            actor_class=actors[0] if actors else actor,
+            actor_group=actors,
             variable=members[0] if members else variable,
             group=members,
             window=window,

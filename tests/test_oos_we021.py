@@ -22,16 +22,12 @@ WINDOWS = {"September to December": "announcement", "after program ends": "after
 EXCEPTIONS = {
     ("buyers.adopters", "quantity_traded", "increase", None):
         "SB-2: the buyers' side of C-2 (an exchange has two sides); the table signs the installers' side only (C-8 is the pre-step-down surge)",
-    ("buyers.adopters", "reclassification", "increase", None):
-        "SB-5 with RS-5 on the criteria of K1 (certified installer, residential rooftop, 10 kW); not in the table. Defensible at the "
-        "residential/commercial line, but the answer to qualifying_pays rests on A-5, which is about installers' entry, not recipients' reshaping",
+    ("installers", "reclassification", "increase", None):
+        "SB-5 with RS-5 where the criteria bind the installers (K3 certification; `qualifier_actor`, added after the first run, "
+        "which put the row on the recipients); the table records the installers' response as entry (C-6), not as reshaping",
     ("customers.electricity", "quantity_substitute", "increase", None):
         "TX-3 with RS-1: customers turn to untaxed own generation; the table covers only adopters' fall in grid purchases (C-16, A-10) "
         "and says the priced-out purchases are too few for an entry (A-3)",
-    ("installers", "net_price_received", "decrease", "after_expiry"):
-        "KNOWN WRONG: SB-6 with CR-6 uses seller_supply_slow (A-4), which the handbook states for the first year only; by the end of a "
-        "five-year program entrants have certified (C-6) and the subsidy has passed to buyers (section 8). The table has the fall in "
-        "installers' quantity (C-18) and ambiguous earnings (C-22), not a price fall",
     ("officials.enforcement", "tax_revenue_vs_static_projection", "decrease", None):
         "TX-9: the revenue falls short of the static projection because the quantity falls (quantity_responds); not in the table, "
         "which has the fund's receipt only (C-24)",
@@ -73,3 +69,6 @@ def test_consistent_with_worked_example_we021():
     # the announcement dip (C-10) and the dip after the program (C-18)
     assert by[("buyers.adopters", "quantity_traded", "announcement", None)]["horizon"] == ["short"]
     assert by[("installers", "quantity_traded", "after_expiry", None)]["sign"] == "decrease"
+    # the first run's WRONG row: the price after expiry now rests on supply at that date (supply_slow_at_expiry, judged low
+    # from A-4 and A-5), not on supply at the start
+    assert not by[("installers", "net_price_received", "after_expiry", None)]["reported"]

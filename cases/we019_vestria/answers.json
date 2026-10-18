@@ -89,5 +89,19 @@
   "probability": 0.75,
   "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-13: used-car imports cannot quickly replace the scrapped cars (25% duty and inspection).",
   "evidence": []
+ },
+ {
+  "question_id": "k1.ends_as_scheduled",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-20: buyers do not expect a repeat scheme (the opposite of A-15, p = 0.35); ministers have said there is no plan to repeat it.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.supply_slow_at_expiry",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "No matching assumption in WE-019; judged from the text: new cars are imported against volumes ordered months ahead (shipping lead times), so at the end of the window import volumes set for the boom cannot be cut at once; WE-019 signs the post-window price fall (C-25) and calls it weak.",
+  "evidence": []
  }
 ]

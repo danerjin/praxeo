@@ -79,3 +79,7 @@ Ranked by the rows each would add or fix.
 6. **Intermediaries and construction labor as role fields with RS-style premises** (C-19, C-32, and the intermediaries and builders part of C-9). These come with item 1 once related actor classes can be named.
 
 Record-level note (not a rule gap): the parser's readings for the two unclear provisions (price-cap indexation, renewal) carry no engine facts, as the schema requires; reading U2 (renewal) is exactly the fact SB-6 needs in item 2, so a person who writes `reading_facts` for it would change the after-expiry rows between readings.
+
+## After the rule changes (second commit)
+
+The record and answers changed only where a new field or question needs it (temporary payments: `ends_as_scheduled` and `supply_slow_at_expiry`; WE-021: `qualifier_actor`, `tax_named`; WE-033: the payer group's names; WE-056: K1's payer and its two PC-20 questions). Rows produced: 13 of 33 (was 14). Engine rows WRONG: 0 (was 2). The dip and the fall in owners' prices after Year 4 now need the grant to end as scheduled (`ends_as_scheduled`, A-15, p = 0.4), so they are not reported, as in the example. C-24 is no longer produced by key: the payers are now the OC-1 group (taxpayers, recipients of other spending, future taxpayers, `at_least_one_decrease`), since the record names no tax; WE-020 was written before that clause and signs taxpayers alone.

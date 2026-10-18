@@ -48,3 +48,20 @@ effect(input_prevented(C), X, "quantity_traded", decrease, short, invisible, "B"
 #show group_effect/7.
 #show window/2.
 #show item/2.
+
+% PC-20 (catalog 1.4): a cap on what buyers pay out of pocket, where a third party (an insurer, a fund) must pay the seller
+% the rest (share_cap, share_payer; the engine writes no ceiling/1 fact for it). No shortage follows from the cap itself,
+% so none of PC-1 to PC-7 applies. If the third party pays as required (payer_complies), buyers whose share falls pay less
+% and buy more of the good (CR-4, if their demand responds: share_demand_responds) and keep the difference for other
+% uses, and the third party's outlay rises (CR-8b). Its own payers (premiums, a budget) and the seller's price under the payer's terms are not encoded.
+share_capped(C) :- share_cap(C), holds(payer_complies(C)), not exception(pc_20, C).
+fired(pc_20, share_capped(C), share_cap(C))      :- share_capped(C).
+fired(pc_20, share_capped(C), payer_complies(C)) :- share_capped(C).
+effect(share_capped(C), P, "price_paid", decrease, short, visible, "B")   :- share_capped(C), protected(C, P).
+effect(share_capped(C), T, "subsidy_outlay", increase, short, visible, "B") :- share_capped(C), share_payer(C, T).
+% CR-8b: what the buyers no longer pay, they keep for other uses.
+effect(share_capped(C), P, "resources_available_other_uses", increase, short, invisible, "B") :- share_capped(C), protected(C, P).
+share_buy_more(C) :- share_capped(C), holds(share_demand_responds(C)), not exception(cr_4, C).
+fired(cr_4, share_buy_more(C), share_capped(C))           :- share_buy_more(C).
+fired(cr_4, share_buy_more(C), share_demand_responds(C))  :- share_buy_more(C).
+effect(share_buy_more(C), P, "quantity_traded", increase, short, visible, "B") :- share_buy_more(C), protected(C, P).

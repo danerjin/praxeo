@@ -17,12 +17,7 @@ WE33 = ROOT / "cases" / "we033_kestland"
 SHORT: dict = {}
 # no table cell carries a timing qualifier in its actor or variable cell (the windows are in the horizon column)
 WINDOWS: dict = {}
-EXCEPTIONS = {
-    ("taxpayers.later", "resources_available_other_uses", "decrease", None):
-        "KNOWN WRONG: SB-1 signs the payers of the installments as `decrease`; the table (C-19) signs a group over the later "
-        "taxpayers and the later recipients of public spending (`at_least_one_decrease`), because the record does not say "
-        "whether taxes or spending bear the repayment (A-4, p 0.45). The engine asserts more than the example",
-}
+EXCEPTIONS: dict = {}   # the first run's WRONG row (taxpayers alone, a plain decrease, against C-19's group) is fixed by OC-1's who pays
 NOT_PRODUCED = {
     "C-1": "missing rule: SB-1 signs the payers, not the recipients' own means (resources_available_other_uses increase, CR-8b mirror)",
     "C-3": "unsupported form: the bond sale (K2, government_borrowing) has no rule; the lenders' side of CR-5 is not derived",
@@ -40,7 +35,6 @@ NOT_PRODUCED = {
     "C-16": "same as C-15 (CR-7a)",
     "C-17": "same as C-15 (CR-7, CR-10b)",
     "C-18": "combiner: a CR-12b total over C-13 and C-11 is not declared",
-    "C-19": "missing rule: SB-1 with debt_funded and an unnamed revenue source gives the group `at_least_one_decrease` over the payers and the recipients of other spending (OC-1 'Who pays: a group'); the engine gives `decrease` for the taxpayers only (see EXCEPTIONS) and the record has no role for the second class",
     "C-22": "missing rule: CR-1 operation 4 / CR-8b, the agency's outlay (`subsidy_outlay`); SB-1 signs the payers only",
     "C-23": "case-specific provision: CR-8 (a law that promises more than its budget can pay) under reading U1-b; the per-reading sign cell and the shortfall bearers have no encoding",
     "C-24": "missing rule and question: CR-4 'A change in means alone' with CR-12e against the rate chain (A-1, A-16, A-17)",
@@ -54,7 +48,7 @@ NOT_PRODUCED = {
     "C-32": "unsupported form: OC-8, CR-7c for homes; per-reading sign cell",
     "C-33": "combiner: a CR-12b ambiguity across the sales chain and the discount-rate chain is not declared; unsupported form (OC-8)",
 }
-PRODUCED = {"C-2", "C-5"}
+PRODUCED = {"C-2", "C-5", "C-19"}
 
 
 def test_consistent_with_worked_example_we033():
@@ -62,10 +56,11 @@ def test_consistent_with_worked_example_we033():
     rows = _rows("WE-033_household_cash_rebate.md", SHORT, WINDOWS, {})
     assert len(rows) == 31
     _check(rows, keys, EXCEPTIONS, NOT_PRODUCED, PRODUCED)
-    assert all(v.startswith("KNOWN WRONG:") for v in EXCEPTIONS.values())
     by = {(c["actor_class"], c["variable"]): c for c in pred["consequences"]}
     # SB-1 with borrowing is Tier A from the medium horizon (as C-19 says: 2028 to 2037); OC-3 and the claims cost are Tier A
-    assert by[("taxpayers.later", "resources_available_other_uses")]["horizon"] == ["medium", "long"]
+    payers = by[("taxpayers.later", "resources_available_other_uses")]
+    assert payers["horizon"] == ["medium", "long"] and payers["sign"] == "at_least_one_decrease"
+    assert payers["actor_group"] == ["taxpayers.later", "public_spending_recipients.later"]   # C-19
     assert {c["tier"] for c in pred["consequences"]} == {"A"}
     # a lump sum has no questions, so nothing else is derived: no quantity, price or window rows
     assert len(pred["consequences"]) == 3

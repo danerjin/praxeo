@@ -18,6 +18,12 @@
    "p": 0.1,
    "text": "Eligible buyers knew of the payment before it started and could delay purchases."
   },
+  "ends_as_scheduled(k1)": {
+   "assumption_class": "expectations",
+   "id": "ends_as_scheduled(k1)",
+   "p": 0.45,
+   "text": "The payment ends as scheduled: it is not renewed, extended or repeated soon after."
+  },
   "expected_to_last(k1)": {
    "assumption_class": "expectations",
    "id": "expected_to_last(k1)",
@@ -28,7 +34,7 @@
    "assumption_class": "other",
    "id": "not_fully_captured(k1)",
    "p": 0.9,
-   "text": "Sellers do not capture the whole payment: the recipients' net price falls."
+   "text": "The producers keep part of the payment: the price they receive, including it, rises."
   },
   "pulled_forward(k1)": {
    "assumption_class": "expectations",
@@ -54,6 +60,12 @@
    "p": 0.3,
    "text": "While supply is fixed, the sellers have clearly fewer alternatives than the recipients."
   },
+  "supply_slow_at_expiry(k1)": {
+   "assumption_class": "durability",
+   "id": "supply_slow_at_expiry(k1)",
+   "p": 0.7,
+   "text": "When the payment ends, the sellers cannot cut their supply at once."
+  },
   "takeup(k1)": {
    "assumption_class": "other",
    "id": "takeup(k1)",
@@ -65,6 +77,7 @@
  "consequences": [
   {
    "actor_class": "officials.enforcement",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -98,6 +111,7 @@
   },
   {
    "actor_class": "owners.wheat_land",
+   "actor_group": [],
    "assumption_sets": [
     [
      "asset_supply_slow(k1)",
@@ -149,6 +163,11 @@
   },
   {
    "actor_class": "taxpayers",
+   "actor_group": [
+    "taxpayers",
+    "recipients.other_spending",
+    "taxpayers.future"
+   ],
    "assumption_sets": [
     []
    ],
@@ -180,7 +199,7 @@
    "id": "C-3",
    "item": null,
    "reported": true,
-   "sign": "decrease",
+   "sign": "at_least_one_decrease",
    "sign_by_reading": {},
    "tier": "A",
    "variable": "resources_available_other_uses",
@@ -189,6 +208,7 @@
   },
   {
    "actor_class": "wheat_growers",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -222,6 +242,55 @@
   },
   {
    "actor_class": "wheat_growers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "beneficiaries_organize(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "beneficiaries_organize(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_lobbies(k1)",
+     "premises": [
+      "beneficiaries_organize(k1)",
+      "sb_takeup(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "wheat_growers",
+   "actor_group": [],
    "assumption_sets": [
     [
      "not_fully_captured(k1)",
@@ -258,18 +327,19 @@
     "medium",
     "long"
    ],
-   "id": "C-5",
+   "id": "C-6",
    "item": null,
    "reported": true,
-   "sign": "decrease",
+   "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
-   "variable": "price_paid",
+   "variable": "net_price_received",
    "visibility": "visible",
    "window": null
   },
   {
    "actor_class": "wheat_growers",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_expands(k1)",
@@ -306,74 +376,27 @@
     "medium",
     "long"
    ],
-   "id": "C-6",
+   "id": "C-7",
    "item": null,
    "reported": true,
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
-   "variable": "quantity_traded",
+   "variable": "quantity_supplied",
    "visibility": "visible",
    "window": null
-  },
-  {
-   "actor_class": "wheat_growers",
-   "assumption_sets": [
-    [
-     "can_delay(k1)",
-     "takeup(k1)"
-    ]
-   ],
-   "assumptions": [
-    "can_delay(k1)",
-    "takeup(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "sb_takeup(k1)",
-     "premises": [
-      "per_unit_sub(k1)",
-      "takeup(k1)"
-     ],
-     "rule": "SB-2"
-    },
-    {
-     "conclusion": "sb_delayed(k1)",
-     "premises": [
-      "announced(k1)",
-      "can_delay(k1)",
-      "sb_takeup(k1)"
-     ],
-     "rule": "RS-8"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short"
-   ],
-   "id": "C-7",
-   "item": null,
-   "reported": false,
-   "sign": "decrease",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "quantity_traded",
-   "visibility": "invisible",
-   "window": "announcement"
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"wheat_growers\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nsubsidy(k1).\nsb_recipient(k1, \"wheat_growers\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nsb_claim_handler(k1, \"wheat_growers\").\nper_unit_sub(k1).\nsb_asset_owner(k1, \"owners.wheat_land\").\nrenewable(k1).\ntemporary(k1).\nassumption(takeup(k1)).\nassumption(not_fully_captured(k1)).\nassumption(quantity_expands(k1)).\nassumption(seller_supply_slow(k1)).\nassumption(sellers_fewer_alternatives(k1)).\nassumption(asset_supply_slow(k1)).\nassumption(expected_to_last(k1)).\nassumption(beneficiaries_organize(k1)).\nassumption(can_delay(k1)).\nassumption(pulled_forward(k1)).\n",
+ "engine_facts": "bound(k1, \"wheat_growers\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nsubsidy(k1).\nsb_recipient(k1, \"wheat_growers\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nsb_claim_handler(k1, \"wheat_growers\").\nper_unit_sub(k1).\nsb_recipients_sell(k1).\nsb_qualifier(k1, \"wheat_growers\").\nsb_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nsb_asset_owner(k1, \"owners.wheat_land\").\nrenewable(k1).\ntemporary(k1).\nassumption(takeup(k1)).\nassumption(not_fully_captured(k1)).\nassumption(quantity_expands(k1)).\nassumption(seller_supply_slow(k1)).\nassumption(sellers_fewer_alternatives(k1)).\nassumption(asset_supply_slow(k1)).\nassumption(expected_to_last(k1)).\nassumption(beneficiaries_organize(k1)).\nassumption(can_delay(k1)).\nassumption(pulled_forward(k1)).\nassumption(ends_as_scheduled(k1)).\nassumption(supply_slow_at_expiry(k1)).\n",
  "explanations": [
   "C-1. Compared with no Brisklund Wheat Price Assurance Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
   "C-2. Compared with no Brisklund Wheat Price Assurance Act, asset value for owners.wheat_land rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The supply of the asset whose return the payment raises is fixed or slowly expandable (p = 0.80); Buyers of the affected assets expect the payment to last for several years (p = 0.80); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-3. Compared with no Brisklund Wheat Price Assurance Act, resources available other uses for taxpayers falls from the short run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported.",
+  "C-3. Compared with no Brisklund Wheat Price Assurance Act, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported.",
   "C-4. Compared with no Brisklund Wheat Price Assurance Act, compliance cost for wheat_growers rises from the short run onward (tier A, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.",
-  "C-5. Compared with no Brisklund Wheat Price Assurance Act, price paid for wheat_growers falls from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: Sellers do not capture the whole payment: the recipients' net price falls (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-6. Compared with no Brisklund Wheat Price Assurance Act, quantity traded for wheat_growers rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-7. Compared with no Brisklund Wheat Price Assurance Act, quantity traded for wheat_growers falls in the announcement window (before the effective date), in the short run (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Eligible buyers knew of the payment before it started and could delay purchases (p = 0.10); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off."
+  "C-5. Compared with no Brisklund Wheat Price Assurance Act, lobbying effort for wheat_growers rises from the medium run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The sellers who gain can organize to lobby for renewal at a cost below their stake (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-6. Compared with no Brisklund Wheat Price Assurance Act, net price received for wheat_growers rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: The producers keep part of the payment: the price they receive, including it, rises (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-7. Compared with no Brisklund Wheat Price Assurance Act, quantity supplied for wheat_growers rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported."
  ],
  "questions": [
   {
@@ -409,7 +432,7 @@
     "id": "k1.not_fully_captured",
     "kind": "noul",
     "options": [],
-    "text": "Will the recipients keep part of the payment, rather than sellers raising their prices by the whole of it?"
+    "text": "Will the producers who receive the payment keep part of it, rather than passing all of it on to their buyers in lower prices?"
    }
   },
   {
@@ -555,6 +578,42 @@
     "options": [],
     "text": "Would many of those who buy during the payment's window have bought the same good within the following few years anyway?"
    }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.45,
+    "question_id": "k1.ends_as_scheduled",
+    "rationale": "No matching assumption in WE-065; judged from the text: the scheme covers the crop years 2028 to 2032 and Parliament must review the target price, so renewal is open.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "ends_as_scheduled",
+    "assumption_class": "expectations",
+    "id": "k1.ends_as_scheduled",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the payment end when its window closes, rather than being renewed, extended or repeated soon after?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.supply_slow_at_expiry",
+    "rationale": "No matching assumption in WE-065; judged from the text: wheat is sown months ahead, so growers cannot cut the area of a crop already in the ground when the scheme ends.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "supply_slow_at_expiry",
+    "assumption_class": "durability",
+    "id": "k1.supply_slow_at_expiry",
+    "kind": "noul",
+    "options": [],
+    "text": "When the payment ends, will the sellers still be unable to cut their supply at once (stock already ordered, capacity built for the window)?"
+   }
   }
  ],
  "record": {
@@ -581,6 +640,7 @@
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
     "good": "wheat",
     "id": "k1",
@@ -592,9 +652,11 @@
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
     "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
     "own_revenue_funded": false,
     "protected_actor": null,
     "protected_concentrated": true,
+    "qualifier_actor": null,
     "rate_rise": false,
     "relief_applicant_actor": null,
     "renewable": true,
@@ -615,8 +677,10 @@
      "Parliament must review the target price before 2032."
     ],
     "substitute_seller_actor": null,
+    "tax_named": false,
     "taxpayer_actor": "taxpayers",
     "temporary": true,
+    "third_party_payer_actor": null,
     "used_buyer_actor": null,
     "used_owner_actor": null,
     "vacancy_decontrol": false
@@ -650,7 +714,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T06:19:59+00:00",
+ "run_at": "2026-10-18T06:36:48+00:00",
  "sources_held_back": [],
  "unclear": [
   {

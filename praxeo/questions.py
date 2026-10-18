@@ -254,10 +254,35 @@ SB_MOVE_QUESTION = ("opportunities_need_move", "mobility",
                     "Some recipients would otherwise move within the repayment period.")
 
 
+# SB-6 after expiry: the dip needs the payment to end as scheduled; its price side needs a premise about supply at that date.
+ENDS_QUESTION = ("ends_as_scheduled", "expectations",
+                 "Will the payment end when its window closes, rather than being renewed, extended or repeated soon after?",
+                 "The payment ends as scheduled: it is not renewed, extended or repeated soon after.")
+EXPIRY_SUPPLY_QUESTION = ("supply_slow_at_expiry", "durability",
+                          "When the payment ends, will the sellers still be unable to cut their supply at once (stock already ordered, capacity built for the window)?",
+                          "When the payment ends, the sellers cannot cut their supply at once.")
+# SB-2 where the recipients are the sellers (a payment to producers per unit sold): which way the capture runs.
+SELLER_KEEPS_QUESTION = ("not_fully_captured", "other",
+                         "Will the producers who receive the payment keep part of it, rather than passing all of it on to their buyers in lower prices?",
+                         "The producers keep part of the payment: the price they receive, including it, rises.")
+
+# PC-20: a cap on the buyer's share, the rest paid by a third party.
+SHARE_CAP_QUESTIONS = [
+    ("payer_complies", "enforcement",
+     "Will the third party (the insurer or fund) pay the sellers the rest of the price as the rule requires?",
+     "The third party pays the sellers the rest of the price as required."),
+    ("share_demand_responds", "substitutability",
+     "Will buyers whose out-of-pocket share falls buy more of the good (fewer skipped or rationed purchases)?",
+     "Buyers whose share falls buy more of the good."),
+]
+
+
 def _subsidy_specs(comp: Component) -> list[tuple[str, str, str, str]]:
     if comp.instrument == "lump_sum_subsidy":
         return []
     specs = list(SUBSIDY_QUESTIONS)
+    if not comp.seller_actor or comp.seller_actor == comp.bound_actor:   # the recipients sell
+        specs = [SELLER_KEEPS_QUESTION if s[0] == "not_fully_captured" else s for s in specs]
     if comp.substitute_seller_actor:
         specs.append(SB_SUBSTITUTES_QUESTION)
     if comp.asset_owner_actor:
@@ -271,7 +296,7 @@ def _subsidy_specs(comp: Component) -> list[tuple[str, str, str, str]]:
     if comp.announcement_window:
         specs.append(DELAY_QUESTION)
     if comp.temporary:
-        specs.append(PULL_FORWARD_QUESTION)
+        specs += [PULL_FORWARD_QUESTION, ENDS_QUESTION, EXPIRY_SUPPLY_QUESTION]
     if comp.scrappage:
         specs += [STAY_IN_USE_QUESTION, USED_SUPPLY_QUESTION]
     if comp.repay_on_move:
@@ -281,6 +306,8 @@ def _subsidy_specs(comp: Component) -> list[tuple[str, str, str, str]]:
 
 def _specs(comp: Component) -> list[tuple[str, str, str, str]]:
     """The (atom, class, question, assumption text) list for a component, by instrument."""
+    if comp.instrument == "price_ceiling" and comp.third_party_payer_actor:
+        return list(SHARE_CAP_QUESTIONS)
     if comp.instrument == "price_ceiling":
         specs = list(CEILING_QUESTIONS)
         if comp.announcement_window:

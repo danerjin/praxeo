@@ -17,7 +17,7 @@ from .schema import GROUP_SIGNS, Assumption, Consequence, PolicyRecord
 
 RECORD_PREDICATES = ("ceiling(", "decontrol(", "bound(", "protected(", "excluded(", "tax(", "tariff(", "neighbor(", "enforcer(",
                      "definition_line(", "renewable(", "announced(", "rolled_back(", "taxpayer(", "protected_concentrated(",
-                     "subsidy(", "per_unit_sub(", "criteria(", "budget_capped(", "temporary(", "scrappage(",
+                     "subsidy(", "per_unit_sub(", "share_cap(", "criteria(", "budget_capped(", "temporary(", "scrappage(",
                      "repay_on_move(")
 
 
@@ -32,6 +32,7 @@ def record_roles(record: PolicyRecord) -> set[str]:
         names += [comp.taxpayer_actor, comp.foreign_seller_actor, comp.input_supplier_actor,
                   comp.domestic_seller_owner_actor, comp.relief_applicant_actor, comp.domestic_seller_worker_actor,
                   comp.mobile_buyer_actor, comp.neighbor_seller_actor]
+        names += [comp.third_party_payer_actor, comp.qualifier_actor, comp.other_spending_actor, comp.future_taxpayer_actor]
         names += [comp.other_buyer_actor, comp.substitute_seller_actor, comp.asset_owner_actor, comp.claim_handler_actor,
                   comp.used_buyer_actor, comp.used_owner_actor, comp.scrapper_actor]
         for d in comp.downstream:
@@ -51,14 +52,16 @@ def verify(consequences: list[Consequence], assumptions: dict[str, Assumption], 
     by_id = {c.id: c for c in consequences}
     named = record_roles(record)
     for c in consequences:
-        known = c.actor_class.split(".")[0] in named
-        for msg in [vocabulary.check_variable(v) for v in c.members()] + [None if known else vocabulary.check_actor(c.actor_class)]:
+        actor_msgs = [None if a.split(".")[0] in named else vocabulary.check_actor(a) for a in c.actors()]
+        for msg in [vocabulary.check_variable(v) for v in c.members()] + actor_msgs:
             if msg:
                 problems.append(f"{c.id}: {msg}")
         if c.group and (len(c.group) < 2 or c.variable != c.group[0] or c.sign not in GROUP_SIGNS and c.sign != "ambiguous"):
             problems.append(f"{c.id}: a group consequence needs two or more members, a group sign (or ambiguous by reading), and its first member as `variable`")
-        if c.sign in GROUP_SIGNS and not c.group:
-            problems.append(f"{c.id}: group sign `{c.sign}` on a single variable")
+        if c.actor_group and (len(c.actor_group) < 2 or c.actor_class != c.actor_group[0] or c.group):
+            problems.append(f"{c.id}: an actor group needs two or more classes, its first as `actor_class`, and one variable")
+        if c.sign in GROUP_SIGNS and not (c.group or c.actor_group):
+            problems.append(f"{c.id}: group sign `{c.sign}` on a single variable and class")
         if c.window == "announcement" and c.horizon != ["short"]:
             problems.append(f"{c.id}: an announcement-window consequence has horizon ['short'], not {c.horizon}")
         if c.window == "after_expiry" and not any(comp.temporary for comp in record.components):

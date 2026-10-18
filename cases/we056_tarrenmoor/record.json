@@ -27,7 +27,8 @@
     "The Board of Pharmacy enforces the cap: a $1,000 fine for each overcharge, paid into the Fund; repeated violation may lead to suspension of a license or permit.",
     "The Board is funded by license and permit fees; the Act gives it no new money.",
     "The bill was introduced on 15 January 2027 and signed on 12 April 2027. The Act takes effect on 1 January 2028."
-   ]
+   ],
+   "third_party_payer_actor": "plans.state_regulated"
   },
   {
    "id": "k2",

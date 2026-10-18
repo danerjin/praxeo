@@ -82,5 +82,19 @@
   "probability": 0.7,
   "rationale": "Probability taken from the assumption table of handbook WE-020 (illustrative figures), A-9: some recipients receive job offers in the first 24 months that would require moving.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.ends_as_scheduled",
+  "value": "no",
+  "probability": 0.4,
+  "rationale": "Probability taken from the assumption table of handbook WE-020 (illustrative figures), A-15: the grant is not renewed after Year 4 (p = 0.4; legislative review in Year 3, renewal possible).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.supply_slow_at_expiry",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-020 (illustrative figures), A-2: the supply of homes under the cap responds slowly (approval and build times of two to three years).",
+  "evidence": []
  }
 ]

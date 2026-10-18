@@ -121,7 +121,8 @@ def report(pred: dict, scores: dict | None, card: OutcomeCard | None, digest: st
         sets = " or ".join("{" + ", ".join(s) + "}" for s in c["assumption_sets"])
         var = " or ".join(c["group"]) if c.get("group") else c["variable"]
         var += (f" ({c['item']})" if c.get("item") else "") + (f" [{c['window']} window]" if c.get("window") else "")
-        lines.append(f"| {c['id']} | {c['actor_class']} | {var} | {c['sign'] if not c['sign_by_reading'] else '; '.join(f'{k}: {v}' for k, v in c['sign_by_reading'].items())} | {c['horizon'][0]}{'+' if len(c['horizon']) > 1 else ''} | {c['tier']} | {rules} | {sets} | {'yes' if c['reported'] else 'no'} |")
+        who = " or ".join(c["actor_group"]) if c.get("actor_group") else c["actor_class"]
+        lines.append(f"| {c['id']} | {who} | {var} | {c['sign'] if not c['sign_by_reading'] else '; '.join(f'{k}: {v}' for k, v in c['sign_by_reading'].items())} | {c['horizon'][0]}{'+' if len(c['horizon']) > 1 else ''} | {c['tier']} | {rules} | {sets} | {'yes' if c['reported'] else 'no'} |")
     lines += ["", "## Explanations", ""] + [f"- {e}" for e in pred["explanations"]]
     if card is None:
         lines += ["", "## Score against the outcome card", "",

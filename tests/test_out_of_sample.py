@@ -19,6 +19,12 @@ WE6 = ROOT / "cases" / "we006_coralia"
 WE67 = ROOT / "cases" / "we067_tessford"
 
 
+def _one_sign(cell: str) -> str:
+    """A sign cell given per reading ("U1-a: increase; U1-b: increase") whose readings all agree has that one sign."""
+    signs = set(re.findall(r"U\d+-\w+:\s*([a-z_]+)", cell))
+    return signs.pop() if len(signs) == 1 else cell
+
+
 def _rows(example: str, short: dict, windows: dict, subclasses: dict) -> dict[str, set]:
     """The example's normal-form table as {row id: {(actor class, variable, sign, window)}}. `short` maps the table's actor
     name to one or more record role names; `windows` maps a cell qualifier to a timing window; `subclasses` maps a cell
@@ -39,16 +45,17 @@ def _rows(example: str, short: dict, windows: dict, subclasses: dict) -> dict[st
                 for n in ([names] if isinstance(names, str) else names):
                     for v in _split_top(var_cell):
                         keys.add((n + suffix, re.sub(r"\s*\(.*", "", v).strip(), cells[3], window))
-            rows[cells[0]] = keys
+            rows[cells[0]] = {(a, v, _one_sign(s), w) for a, v, s, w in keys}
     return rows
 
 
 def _engine(case: Path):
+    """Reported consequences as keys; a group over variables or over actor classes gives one key per member."""
     record = parser.parse_fixture(case / "record.json")
     pred = predict((case / "policy.txt").read_text(), record, FixtureDecider(case / "answers.json"))
     assert pred["citation_problems"] == [] and pred["verifier_problems"] == []
-    keys = {(c["actor_class"], v, c["sign"], c["window"]) for c in pred["consequences"] if c["reported"]
-            for v in (c["group"] or [c["variable"]])}
+    keys = {(a, v, c["sign"], c["window"]) for c in pred["consequences"] if c["reported"]
+            for a in (c.get("actor_group") or [c["actor_class"]]) for v in (c["group"] or [c["variable"]])}
     return pred, keys
 
 

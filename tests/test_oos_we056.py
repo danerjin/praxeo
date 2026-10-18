@@ -13,48 +13,25 @@ WE56 = ROOT / "cases" / "we056_tarrenmoor"
 SHORT = {
     "covered_residents": ["covered_residents.uninsured", "covered_residents.paying_above_cap"],
     "lobbying groups": ["pharmacies.in_state", "covered_residents.paying_above_cap"],
+    # the OC-1 payer group's members, written in prose
+    "recipients of other state spending": "recipients.other_spending", "future taxpayers": "taxpayers.future",
 }
 WINDOWS = {"Nov–Dec 2027": "announcement", "Jan–Feb 2028": "first_months"}
 
-_NO_SHORTAGE = ("PC-1 and PC-16 do not apply (section 2 of the example): the pharmacy receives the balance from the plan or "
-                "the Fund, so no excess demand forms")
+# The first run recorded K1 as a price_ceiling, and the PC-1 shortage, its rationing group, PC-6, RS-10 and PC-16's transfer
+# from the pharmacies came out (11 KNOWN WRONG rows). K1 is a cap on the buyer's share that a third party makes up (PC-20,
+# `third_party_payer_actor`): the engine writes no ceiling fact for it, so none of those rules applies.
 EXCEPTIONS = {
-    # K1 recorded as a price_ceiling: the PC-1 shortage and its rationing group, for the engine's default excluded role
-    ("buyers.prospective", "excess_demand", "increase", None): "KNOWN WRONG: " + _NO_SHORTAGE + "; the record has no excluded role and the engine fills buyers.prospective",
-    ("buyers.prospective", "quantity_demanded", "increase", None): "KNOWN WRONG: PC-1 (as excess_demand)",
-    ("buyers.prospective", "wait_time", "at_least_one_increase", None): "KNOWN WRONG: member of the PC-2 group; the example removes rationing",
-    ("buyers.prospective", "search_cost", "at_least_one_increase", None): "KNOWN WRONG: member of the PC-2 group",
-    ("buyers.prospective", "side_payments", "at_least_one_increase", None): "KNOWN WRONG: member of the PC-2 group",
-    ("buyers.prospective", "allocation_by_non_price_criteria", "at_least_one_increase", None): "KNOWN WRONG: member of the PC-2 group",
-    ("buyers.prospective", "search_cost", "increase", None): "KNOWN WRONG: PC-2 member (as above)",
-    ("buyers.prospective", "side_payments", "increase", None): "KNOWN WRONG: PC-2 member and PC-6 for buyers shut out by a shortage",
-    ("buyers.prospective", "informal_activity", "increase", None): "KNOWN WRONG: PC-6 with RS-3 for the shut-out buyers",
-    ("buyers.prospective", "disputes_settled_outside_courts", "increase", None): "KNOWN WRONG: RS-10 for the informal trade of the shut-out buyers",
-    # K1's PC-16 transfer from the pharmacies, and PC-5's supply fall
-    ("pharmacies.in_state", "net_price_received", "ambiguous", None):
-        "KNOWN WRONG: PC-16 puts the patients' saving on the pharmacies against SB-2's increase; the example has the pharmacy's receipt unchanged or higher (C-4, C-6)",
-    ("pharmacies.in_state", "quantity_traded", "ambiguous", None):
-        "KNOWN WRONG: SB-2's increase against PC-5's supply fall (alternative_uses answered 0.15); the example has an increase (C-26)",
-    ("pharmacies.in_state", "resources_available_other_uses", "decrease", None):
-        "KNOWN WRONG: CR-8 with PC-16 takes the patients' saving from the pharmacies (item rent_forgone, and the total); the transfer runs from plans and the Fund (CR-8b)",
     # defensible rows the table does not list
-    ("pharmacies.in_state", "resources_available_other_uses", "increase", None):
-        "item key_money (PC-6, RS-3, CR-8) on A-16: some pharmacies collect more than $35 and keep it; the table has the breach (C-23), not the receipt",
     ("covered_residents.uninsured", "price_paid", "decrease", None):
         "SB-2 for the Fund's recipients: a subclass of C-1's covered_residents.paying_above_cap, which section 3 of the example says includes the uninsured cash buyers",
-    ("covered_residents.paying_above_cap", "price_paid", "decrease", "first_months"):
-        "same sign as C-1: the combiner forms the first-months row from the cap chain when window_repricing is unreported",
-    ("covered_residents.paying_above_cap", "quality_adjusted_price", "decrease", None):
-        "price falls with the product unchanged; C-10 and C-11 sign the product, not this variable",
     ("sellers.substitutes", "quantity_traded", "decrease", None):
         "SB-3 and RS-1 on A-8: recipients leave the unsubsidized good; the table has the buyers' side (C-12) and the chains' price and stocks (C-29)",
-    ("taxpayers", "resources_available_other_uses", "decrease", None):
-        "SB-1 with OC-1 (Tier A): the engine signs the funders' decrease plainly; the table has the at_least_one_decrease group over three classes (C-37)",
 }
 NOT_PRODUCED = {
-    "C-2": "unsupported form: K2 (a plan must pay the balance) is a mandated_contract_term; no rule signs the payer's outlay",
     "C-3": "missing record fact and rule: no role for the paying fund (taxpayer_actor is the funder); SB-1 signs the funders' resources, not subsidy_outlay",
-    "C-4": "missing rule: PC-20 / CR-6 1.1 (a cap on the buyer's share made up by a third party) is not encoded; the engine's row for this key is the WRONG ambiguous",
+    "C-4": "missing rule: PC-20's seller side (the receipt is set by the payer's terms, CR-6 1.1) is not encoded; PC-20 signs the buyers and the payer only",
+    "C-24": "missing rule: RS-7 for a cap on the buyer's share (PC-20); the first run's row came from the ceiling rules",
     "C-6": "missing rule: SB-2 1.1 (a payment indexed to the seller's own price draws the posted price toward the limit); DM-1 needs seller_supply_slow, answered 0.1",
     "C-7": "missing rule: same mechanism (the cash buyers outside the Act pay the drawn-up usual price)",
     "C-8": "missing rule: RS-2 for sellers serving a payer-paid customer; PC-4 signs the protected buyers' quality only",
@@ -73,7 +50,6 @@ NOT_PRODUCED = {
     "C-22": "missing rule and record fact: RS-3 for false attestation (SB-5 with criteria signs no breach); no role for self-funded residents",
     "C-23": "missing rule: A-16 (evasion, 0.6) gives PC-6 key money for the pharmacies, not legal_breach (RS-3 as a breach is not encoded)",
     "C-25": "missing record fact: U1's readings carry no engine facts (parser leaves reading_facts empty) and no nonresident or mail-order role; RS-4 for mail order is not encoded",
-    "C-26": "WRONG row instead: the engine signs pharmacies.in_state quantity_traded ambiguous (SB-2 against PC-5), not increase",
     "C-27": "missing record fact: no role for the nonresident pharmacies; U1 not run by reading",
     "C-28": "missing record fact: no mail-order users role; U1 not run by reading",
     "C-29": "missing rule: RS-16 and CR-10b for the substitute sellers' price and stocks; SB-3 signs quantity only",
@@ -84,7 +60,6 @@ NOT_PRODUCED = {
     "C-34": "missing record fact and rule: shares of manufacturers; SB-4 needs asset_owner_actor and the record has none",
     "C-35": "combiner: CR-12b total of the premium tax chains is not a declared comparison; also TX-10 and the premium tax are case-specific",
     "C-36": "missing rule and record fact: fines paid into the fund (OC-3 own-revenue case with CR-8b); no fund role",
-    "C-37": "sign form: the engine signs taxpayers alone with a plain decrease (SB-1, Tier A); the table signs three classes as at_least_one_decrease",
     "C-38": "unsupported form: K2; OC-1 for premium payers has no rule",
     "C-42": "missing rule: OC-3's absorbed-in-the-existing-budget case is not encoded for ceilings (the enforcement question is asked only with general_budget)",
     "C-43": "case-specific provision: deductible accounting in high-deductible plans (A-28); no hdhp role",
@@ -97,7 +72,7 @@ NOT_PRODUCED = {
     "C-50": "missing record fact: no nonresident role; U1 not run by reading; CR-7c not encoded for subsidies",
     "C-51": "missing rule and record fact: CR-8b on the plans of false attesters; no role",
 }
-PRODUCED = {"C-1", "C-5", "C-17", "C-24", "C-39", "C-40", "C-41"}
+PRODUCED = {"C-1", "C-2", "C-5", "C-17", "C-26", "C-37", "C-39", "C-40", "C-41"}
 
 
 def test_consistent_with_worked_example_we056():
@@ -105,5 +80,7 @@ def test_consistent_with_worked_example_we056():
     rows = _rows("WE-056_insulin_price_cap.md", SHORT, WINDOWS, {})
     assert len(rows) == 51
     _check(rows, keys, EXCEPTIONS, NOT_PRODUCED, PRODUCED)
-    assert {k for k, v in EXCEPTIONS.items() if v.startswith("KNOWN WRONG")} >= {
-        ("buyers.prospective", "excess_demand", "increase", None), ("pharmacies.in_state", "net_price_received", "ambiguous", None)}
+    assert not any(v.startswith("KNOWN WRONG") for v in EXCEPTIONS.values())
+    # PC-20: no shortage from a cap on the buyer's share, so none of the ceiling rules' rows
+    assert not any(k[0] == "buyers.prospective" for k in keys)
+    assert ("plans.state_regulated", "subsidy_outlay", "increase", None) in keys                       # C-2

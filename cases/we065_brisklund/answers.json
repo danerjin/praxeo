@@ -68,5 +68,19 @@
   "probability": 0.1,
   "rationale": "No matching assumption in WE-065; judged from the text: the payment goes with each year's output over five crop years and does not reward a one-off purchase, so there is nothing for growers to bring forward into the window.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.ends_as_scheduled",
+  "value": "no",
+  "probability": 0.45,
+  "rationale": "No matching assumption in WE-065; judged from the text: the scheme covers the crop years 2028 to 2032 and Parliament must review the target price, so renewal is open.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.supply_slow_at_expiry",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No matching assumption in WE-065; judged from the text: wheat is sown months ahead, so growers cannot cut the area of a crop already in the ground when the scheme ends.",
+  "evidence": []
  }
 ]

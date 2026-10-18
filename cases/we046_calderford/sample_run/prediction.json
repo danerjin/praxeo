@@ -47,6 +47,7 @@
  "consequences": [
   {
    "actor_class": "businesses.zone",
+   "actor_group": [],
    "assumption_sets": [
     [
      "buyers_bear(k1)",
@@ -111,6 +112,7 @@
   },
   {
    "actor_class": "businesses.zone",
+   "actor_group": [],
    "assumption_sets": [
     [
      "buyers_bear(k1)",
@@ -182,6 +184,7 @@
   },
   {
    "actor_class": "drivers.nonresident",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -222,6 +225,7 @@
   },
   {
    "actor_class": "drivers.nonresident",
+   "actor_group": [],
    "assumption_sets": [
     [
      "buyers_bear(k1)",
@@ -270,6 +274,7 @@
   },
   {
    "actor_class": "drivers.nonresident",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)",
@@ -331,6 +336,7 @@
   },
   {
    "actor_class": "drivers.nonresident",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)"
@@ -369,6 +375,7 @@
   },
   {
    "actor_class": "drivers.nonresident",
+   "actor_group": [],
    "assumption_sets": [
     [
      "stockpile_ahead(k1)"
@@ -405,6 +412,7 @@
   },
   {
    "actor_class": "drivers.nonresident",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)",
@@ -467,6 +475,7 @@
   },
   {
    "actor_class": "drivers.nonresident",
+   "actor_group": [],
    "assumption_sets": [
     [
      "buyers_bear(k1)"
@@ -518,6 +527,7 @@
   },
   {
    "actor_class": "officials.enforcement",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -558,6 +568,7 @@
   },
   {
    "actor_class": "officials.enforcement",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -591,6 +602,7 @@
   },
   {
    "actor_class": "officials.enforcement",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)"
@@ -646,7 +658,7 @@
  "engine_facts": "bound(k1, \"drivers.nonresident\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\ntax(k1).\nbuyer(k1, \"drivers.nonresident\").\ndomestic_seller(k1, \"sellers.substitutes\").\nimporter(k1, \"drivers.nonresident\").\nrevenue(k1, \"officials.enforcement\").\nexporter(k1, \"export_industries\").\nexporter_worker(k1, \"workers.export_industries\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nforeign_seller(k1, \"sellers.foreign\").\ndefinition_line(k1).\nown_revenue(k1).\ndownstream(k1, \"goods_vehicle_operators\", \"businesses.zone\", same).\nassumption(quantity_responds(k1)).\nassumption(buyers_bear(k1)).\nassumption(sellers_bear(k1)).\nassumption(untaxed_substitutes(k1)).\nassumption(input_not_replaceable(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(reshaping_pays(k1)).\n",
  "explanations": [
   "C-1. Compared with no Calderford Central Zone Charging Ordinance, price paid for businesses.zone rises from the medium run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.85); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.85); At least one side can reduce the quantity it trades in response to the tax (p = 0.95). Reported.",
-  "C-2. Compared with no Calderford Central Zone Charging Ordinance, quantity demanded for businesses.zone falls from the medium run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; CR-4: CR-4. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.85); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.85); At least one side can reduce the quantity it trades in response to the tax (p = 0.95). Reported.",
+  "C-2. Compared with no Calderford Central Zone Charging Ordinance, quantity demanded for businesses.zone falls from the medium run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; CR-4: buyers who face a higher price take fewer units. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.85); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.85); At least one side can reduce the quantity it trades in response to the tax (p = 0.95). Reported.",
   "C-3. Compared with no Calderford Central Zone Charging Ordinance, compliance cost for drivers.nonresident rises from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-5: whoever must record, file or collect a tax bears the cost of doing so. This holds if: no assumption. Reported.",
   "C-4. Compared with no Calderford Central Zone Charging Ordinance, price paid for drivers.nonresident rises from the short run onward (tier B, visible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.85); At least one side can reduce the quantity it trades in response to the tax (p = 0.95). Reported.",
   "C-5. Compared with no Calderford Central Zone Charging Ordinance, quantity substitute for drivers.nonresident rises from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-1: when a good becomes dearer, buyers turn to substitutes; TX-3: buyers of a taxed good turn to the untaxed alternatives they have. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.95); Buyers have acceptable untaxed substitutes they can turn to (p = 0.90). Reported.",
@@ -796,10 +808,14 @@
   "components": [
    {
     "announcement_window": true,
+    "asset_owner_actor": null,
     "bound_actor": "drivers.nonresident",
+    "budget_capped": false,
     "buyer_actor": "drivers.nonresident",
     "cap": 15.0,
     "cap_unit": "dollars per vehicle per day (residents $1.50)",
+    "claim_handler_actor": null,
+    "debt_funded": false,
     "definition_line": true,
     "domestic_seller_actor": "sellers.substitutes",
     "domestic_seller_owner_actor": null,
@@ -814,11 +830,14 @@
       "worker_actor": null
      }
     ],
+    "eligibility_criteria": false,
     "enforcer_actor": "officials.enforcement",
+    "evasion_by_resellers": false,
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
     "good": "weekday_vehicle_day_in_zone",
     "id": "k1",
@@ -829,12 +848,19 @@
     "mobile_buyer_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
     "own_revenue_funded": true,
     "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
     "rate_rise": false,
     "relief_applicant_actor": null,
     "renewable": false,
+    "repay_on_move": false,
     "revenue_actor": "officials.enforcement",
+    "scrappage": false,
+    "scrapper_actor": null,
     "seller_actor": null,
     "source_sentences": [
      "The registered keeper of each vehicle driven or parked in the zone on a weekday between 7:00 and 19:00 must pay $15 per vehicle per day, payable by midnight the next day.",
@@ -842,7 +868,13 @@
      "The ordinance was adopted and published on 4 January 2027; charging starts on 1 November 2027 (ten months later).",
      "It costs about $45 million a year to run and is funded from the gross revenue of the charge."
     ],
+    "substitute_seller_actor": null,
+    "tax_named": false,
     "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
     "vacancy_decontrol": false
    }
   ],
@@ -869,7 +901,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T01:36:09+00:00",
+ "run_at": "2026-10-18T06:36:47+00:00",
  "sources_held_back": [],
  "unclear": [
   {

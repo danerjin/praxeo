@@ -30,7 +30,7 @@ from .schema import GROUP_SIGNS, Assumption, Consequence, Finding, OutcomeCard
 
 def _covers(c: Consequence, f: Finding) -> bool:
     """The finding is about this prediction's actor and horizon, and about its variable (any member, for a group)."""
-    return c.actor_class == f.actor_class and f.variable in c.members() and bool(set(c.horizon) & set(f.horizon))
+    return f.actor_class in c.actors() and f.variable in c.members() and bool(set(c.horizon) & set(f.horizon))
 
 
 def _direction(c: Consequence) -> str:
@@ -45,24 +45,26 @@ def _refuted(c: Consequence, card: OutcomeCard) -> bool:
     """A verifiable prediction is a false positive. An ordinary one is when no finding matches. A group prediction is
     only when every member has a finding for the actor and horizon, and each is a null or the opposite direction."""
     findings = [f for f in card.findings if _covers(c, f)]
-    if not c.group:
+    if not (c.group or c.actor_group):
         return not any(_matches(c, f) for f in findings)
     return (not any(_matches(c, f) for f in findings)
-            and all(any(f.variable == m for f in findings) for m in c.group))
+            and all(any((f.actor_class, f.variable) == (a, m) for f in findings) for a in c.actors() for m in c.members()))
 
 
 def dedupe(preds: list[Consequence]) -> list[Consequence]:
     seen, out = set(), []
     for c in preds:
-        key = (c.actor_class, tuple(c.members()), tuple(c.horizon), c.window, c.item)
+        key = (tuple(c.actors()), tuple(c.members()), tuple(c.horizon), c.window, c.item)
         if key not in seen:
             seen.add(key)
             out.append(c)
     return out
 
 
-def f1_block(preds: list[Consequence], card: OutcomeCard) -> dict:
-    totals = {(c.actor_class, c.variable, c.window) for c in preds if c.item is None and c.combines}
+def f1_block(preds: list[Consequence], card: OutcomeCard, every: list[Consequence] | None = None) -> dict:
+    """`every` is the whole prediction, of which `preds` may be a subset (the logic score): an item is left out wherever
+    the prediction has a total over its variable, whether or not the total is in the subset."""
+    totals = {(c.actor_class, c.variable, c.window) for c in (every or preds) if c.item is None and c.combines}
     preds = dedupe([c for c in preds if c.item is None or (c.actor_class, c.variable, c.window) not in totals])
     effects = [f for f in card.findings if f.finding_type == "effect"]
     signed = [c for c in preds if c.sign != "ambiguous"]
@@ -117,14 +119,15 @@ def role_names(card: OutcomeCard, record) -> dict[str, str]:
 def score(consequences: list[Consequence], assumptions: dict[str, Assumption], card: OutcomeCard, record=None) -> dict:
     if record is not None and card.actor_roles:
         names = role_names(card, record)
-        consequences = [c.model_copy(update={"actor_class": names.get(c.actor_class, c.actor_class)}) for c in consequences]
+        consequences = [c.model_copy(update={"actor_class": names.get(c.actor_class, c.actor_class),
+                                             "actor_group": [names.get(a, a) for a in c.actor_group]}) for c in consequences]
     status = {s.assumption: s.held for s in card.assumption_status}
     reported = [c for c in consequences if c.reported]
     held = [c for c in reported if c.assumptions and all(status.get(_bare(a)) is True for a in c.assumptions)]
     brier = [(a, assumptions[a].p, status[_bare(a)]) for a in assumptions if status.get(_bare(a)) is not None]
     return {
-        "headline": f1_block(reported, card),
-        "logic": f1_block(held, card),
+        "headline": f1_block(reported, card, consequences),
+        "logic": f1_block(held, card, consequences),
         "brier": {
             "items": [{"assumption": a, "p": p, "held": h, "score": (p - float(h)) ** 2} for a, p, h in brier],
             "mean": sum((p - float(h)) ** 2 for _, p, h in brier) / len(brier) if brier else None,

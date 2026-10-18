@@ -32,7 +32,9 @@
     "Commercial and ground-mounted systems are excluded.",
     "Installers who claim the subsidy must be certified: a licensed electrician on staff, a three-day course and a $500 fee.",
     "The State Energy Office administers the program, funded from 5% of the Solar Fund."
-   ]
+   ],
+   "tax_named": true,
+   "qualifier_actor": "installers"
   },
   {
    "id": "k2",

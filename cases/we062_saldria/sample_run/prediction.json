@@ -47,6 +47,7 @@
  "consequences": [
   {
    "actor_class": "buyers.packaged_goods",
+   "actor_group": [],
    "assumption_sets": [
     [
      "buyers_bear(k1)",
@@ -111,6 +112,7 @@
   },
   {
    "actor_class": "buyers.packaged_goods",
+   "actor_group": [],
    "assumption_sets": [
     [
      "buyers_bear(k1)",
@@ -182,6 +184,7 @@
   },
   {
    "actor_class": "converters",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -222,6 +225,7 @@
   },
   {
    "actor_class": "converters",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)",
@@ -270,6 +274,7 @@
   },
   {
    "actor_class": "converters",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)"
@@ -308,6 +313,7 @@
   },
   {
    "actor_class": "converters",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)",
@@ -370,6 +376,7 @@
   },
   {
    "actor_class": "converters",
+   "actor_group": [],
    "assumption_sets": [
     [
      "sellers_bear(k1)"
@@ -421,6 +428,7 @@
   },
   {
    "actor_class": "officials.enforcement",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -461,6 +469,7 @@
   },
   {
    "actor_class": "packaging_users",
+   "actor_group": [],
    "assumption_sets": [
     [
      "buyers_bear(k1)",
@@ -509,6 +518,7 @@
   },
   {
    "actor_class": "packaging_users",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)",
@@ -570,6 +580,7 @@
   },
   {
    "actor_class": "packaging_users",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)"
@@ -622,6 +633,7 @@
   },
   {
    "actor_class": "packaging_users",
+   "actor_group": [],
    "assumption_sets": [
     [
      "stockpile_ahead(k1)"
@@ -658,6 +670,7 @@
   },
   {
    "actor_class": "packaging_users",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)",
@@ -720,6 +733,7 @@
   },
   {
    "actor_class": "packaging_users",
+   "actor_group": [],
    "assumption_sets": [
     [
      "buyers_bear(k1)"
@@ -771,6 +785,7 @@
   },
   {
    "actor_class": "state budget",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -804,6 +819,7 @@
   },
   {
    "actor_class": "state budget",
+   "actor_group": [],
    "assumption_sets": [
     [
      "quantity_responds(k1)"
@@ -859,7 +875,7 @@
  "engine_facts": "bound(k1, \"converters\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\ntax(k1).\nbuyer(k1, \"packaging_users\").\ndomestic_seller(k1, \"sellers.substitutes\").\nimporter(k1, \"importers.packaging\").\nrevenue(k1, \"state budget\").\nexporter(k1, \"export_industries\").\nexporter_worker(k1, \"workers.export_industries\").\nseller(k1, \"converters\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nforeign_seller(k1, \"sellers.foreign\").\ndefinition_line(k1).\nown_revenue(k1).\ndownstream(k1, \"packaging_users\", \"buyers.packaged_goods\", same).\nassumption(quantity_responds(k1)).\nassumption(buyers_bear(k1)).\nassumption(sellers_bear(k1)).\nassumption(untaxed_substitutes(k1)).\nassumption(input_not_replaceable(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(reshaping_pays(k1)).\n",
  "explanations": [
   "C-1. Compared with no Saldria Plastic Packaging Tax Act, price paid for buyers.packaged_goods rises from the medium run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.75); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.75); At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
-  "C-2. Compared with no Saldria Plastic Packaging Tax Act, quantity demanded for buyers.packaged_goods falls from the medium run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; CR-4: CR-4. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.75); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.75); At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
+  "C-2. Compared with no Saldria Plastic Packaging Tax Act, quantity demanded for buyers.packaged_goods falls from the medium run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; CR-4: buyers who face a higher price take fewer units. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.75); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.75); At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
   "C-3. Compared with no Saldria Plastic Packaging Tax Act, compliance cost for converters rises from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-5: whoever must record, file or collect a tax bears the cost of doing so. This holds if: no assumption. Reported.",
   "C-4. Compared with no Saldria Plastic Packaging Tax Act, net price received for converters falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85); Part of the tax stays with sellers: the price they keep after tax falls (p = 0.75). Reported.",
   "C-5. Compared with no Saldria Plastic Packaging Tax Act, quantity traded for converters falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
@@ -868,7 +884,7 @@
   "C-8. Compared with no Saldria Plastic Packaging Tax Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
   "C-9. Compared with no Saldria Plastic Packaging Tax Act, price paid for packaging_users rises from the short run onward (tier B, visible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.75); At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
   "C-10. Compared with no Saldria Plastic Packaging Tax Act, quantity substitute for packaging_users rises from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-1: when a good becomes dearer, buyers turn to substitutes; TX-3: buyers of a taxed good turn to the untaxed alternatives they have. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85); Buyers have acceptable untaxed substitutes they can turn to (p = 0.80). Reported.",
-  "C-11. Compared with no Saldria Plastic Packaging Tax Act, quantity traded for packaging_users falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; OC-4: OC-4. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
+  "C-11. Compared with no Saldria Plastic Packaging Tax Act, quantity traded for packaging_users falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; OC-4: exchanges that no longer happen are lost to both sides. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
   "C-12. Compared with no Saldria Plastic Packaging Tax Act, quantity traded for packaging_users rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.75). Reported.",
   "C-13. Compared with no Saldria Plastic Packaging Tax Act, reclassification for packaging_users rises from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-5: owners move units out of the rule's reach; TX-4: where an untaxed place is within reach, buyers who can cross the boundary buy there and the sellers across it gain their custom. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.65). Reported.",
   "C-14. Compared with no Saldria Plastic Packaging Tax Act, resources available other uses for packaging_users falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.75). Reported.",
@@ -1011,10 +1027,14 @@
   "components": [
    {
     "announcement_window": true,
+    "asset_owner_actor": null,
     "bound_actor": "converters",
+    "budget_capped": false,
     "buyer_actor": "packaging_users",
     "cap": 200.0,
     "cap_unit": "talers per tonne",
+    "claim_handler_actor": null,
+    "debt_funded": false,
     "definition_line": true,
     "domestic_seller_actor": "sellers.substitutes",
     "domestic_seller_owner_actor": null,
@@ -1029,11 +1049,14 @@
       "worker_actor": null
      }
     ],
+    "eligibility_criteria": false,
     "enforcer_actor": "officials.enforcement",
+    "evasion_by_resellers": false,
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
     "good": "plastic_packaging_components",
     "id": "k1",
@@ -1044,12 +1067,19 @@
     "mobile_buyer_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
     "own_revenue_funded": true,
     "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
     "rate_rise": false,
     "relief_applicant_actor": null,
     "renewable": false,
+    "repay_on_move": false,
     "revenue_actor": "state budget",
+    "scrappage": false,
+    "scrapper_actor": null,
     "seller_actor": "converters",
     "source_sentences": [
      "A tax of 200 T per tonne is charged on plastic packaging components (a component in which plastic is the heaviest material by weight) manufactured in or imported into Saldria, empty or around imported goods, on the manufacturer or the importer of record, with quarterly returns.",
@@ -1058,7 +1088,13 @@
      "The tax was announced in the budget statement of 2 March 2027, enacted on 28 June 2027 and takes effect on 1 January 2028.",
      "The Act appropriates 7 million T a year from the general budget for the plastics unit."
     ],
+    "substitute_seller_actor": null,
+    "tax_named": false,
     "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
     "vacancy_decontrol": false
    }
   ],
@@ -1085,7 +1121,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T01:36:09+00:00",
+ "run_at": "2026-10-18T06:36:48+00:00",
  "sources_held_back": [],
  "unclear": [
   {

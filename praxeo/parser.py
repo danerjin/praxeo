@@ -26,7 +26,9 @@ instrument, even when the text states no aim:
   evasion_by_resellers (true if the text makes the sellers' own sales above the cap detectable, e.g. the posted price must be
   the price charged and surcharges or tied purchases are banned),
   neighbor_actor (buyers in a neighbouring market outside the rule's reach, only if the text or context names one),
-  enforcer_actor (who administers and enforces the cap, e.g. officials.enforcement).
+  enforcer_actor (who administers and enforces the cap, e.g. officials.enforcement). Where the cap is on what buyers
+  pay out of pocket and an insurer or fund must pay the seller the rest, set third_party_payer_actor to that payer and
+  protected_actor to the buyers whose share is capped: the seller's own price is not capped.
 - per_unit_tax: bound_actor (who pays it to the state), buyer_actor, seller_actor, revenue_actor (who collects),
   taxpayer_actor (who funds new administration; default taxpayers), enforcer_actor (the agency that administers it,
   default officials.enforcement; revenue_actor may be a budget), definition_line (true if the definitions or
@@ -49,7 +51,9 @@ instrument, even when the text states no aim:
 - per_unit_subsidy, purchase_rebate, lump_sum_subsidy: bound_actor (who receives the payment), seller_actor (sellers
   of the subsidized good; null where the recipients are the sellers), taxpayer_actor (who funds it), enforcer_actor
   (the agency that pays and checks it), debt_funded (true if it is borrowed now and repaid from taxes later),
-  own_revenue_funded (true if a dedicated revenue pays it), eligibility_criteria (true if the payment depends on
+  own_revenue_funded (true if a dedicated revenue pays it), tax_named (true if the text names the tax that pays;
+  otherwise the payers are taxpayers, other_spending_actor and future_taxpayer_actor as a group), qualifier_actor
+  (who must meet the criteria, if not the recipients), eligibility_criteria (true if the payment depends on
   criteria), temporary (true if it is offered only for a limited window), budget_capped (true if a fixed budget or
   number is handed out first come, first served), renewable, announcement_window, repay_on_move (true if the payment
   is repaid when the recipient moves or sells within a period), claim_handler_actor (who files or processes claims,

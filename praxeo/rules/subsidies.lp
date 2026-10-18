@@ -21,20 +21,29 @@
 %   sb_used_buyer(C, A). sb_used_owner(C, A). sb_scrapper(C, A).  buyers and other owners of used goods, and who
 %                                   destroys the scrapped goods (SB-6)
 %   repay_on_move(C).               the payment is repaid if the recipient moves within a period          (RS-11)
-% Every rule is monotone in holds/1: it negates only plain facts (exception/2, own_revenue/1, debt_funded/1).
+%   tax_named(C).                   the record names the tax that pays (OC-1, who pays); otherwise the payers are a group
+%   sb_payer_group(C, "a,b,c").     that group: taxpayers, recipients of other spending, future taxpayers  (OC-1)
+%   sb_recipients_sell(C).          the recipients are the sellers of the subsidized good (a payment to producers)
+%   sb_qualifier(C, A).             who must meet the criteria (default the recipients)                   (SB-5)
+% Every rule is monotone in holds/1: it negates only plain facts (exception/2, own_revenue/1, debt_funded/1, tax_named/1,
+% sb_recipients_sell/1).
 % Signs are relative to the no-policy counterfactual.
 
 { holds(A) } :- assumption(A).
 
-% SB-1 with TX-1 and OC-1: the subsidy is funded by someone. Taxes now, or borrowing repaid from taxes later, take what the
-% taxpayers would have spent (Tier A, given payment). Not from a dedicated revenue (own_revenue): that reduces what the
-% revenue does elsewhere, which the record does not name.
+% SB-1 with TX-1 and OC-1: the subsidy is funded by someone (Tier A, given payment). Not from a dedicated revenue
+% (own_revenue): that reduces what the revenue does elsewhere, which the record does not name. OC-1, who pays: where the
+% record names the tax that pays (tax_named), its payers lose; otherwise the means come from a general budget, and the
+% payers are a group over actor classes (taxpayers, recipients of other spending, future taxpayers: sb_payer_group, one
+% comma-separated string) with at_least_one_decrease. Borrowed now and repaid later (debt_funded): from the medium horizon.
 sb_paid(C) :- subsidy(C), not exception(sb_1, C).
 fired(sb_1, sb_paid(C), subsidy(C)) :- sb_paid(C).
 sb_tax_funded(C) :- sb_paid(C), not own_revenue(C).
 fired(oc_1, sb_tax_funded(C), sb_paid(C)) :- sb_tax_funded(C).
-effect(sb_tax_funded(C), T, "resources_available_other_uses", decrease, short, invisible, "A")  :- sb_tax_funded(C), taxpayer(C, T), not debt_funded(C).
-effect(sb_tax_funded(C), T, "resources_available_other_uses", decrease, medium, invisible, "A") :- sb_tax_funded(C), taxpayer(C, T), debt_funded(C).
+effect(sb_tax_funded(C), T, "resources_available_other_uses", decrease, short, invisible, "A")  :- sb_tax_funded(C), tax_named(C), taxpayer(C, T), not debt_funded(C).
+effect(sb_tax_funded(C), T, "resources_available_other_uses", decrease, medium, invisible, "A") :- sb_tax_funded(C), tax_named(C), taxpayer(C, T), debt_funded(C).
+group_effect(sb_tax_funded(C), G, "resources_available_other_uses", at_least_one_decrease, short, invisible, "A")  :- sb_tax_funded(C), sb_payer_group(C, G), not tax_named(C), not debt_funded(C).
+group_effect(sb_tax_funded(C), G, "resources_available_other_uses", at_least_one_decrease, medium, invisible, "A") :- sb_tax_funded(C), sb_payer_group(C, G), not tax_named(C), debt_funded(C).
 
 % OC-3: the payments must be administered; the cost falls on the agency that pays them (Tier A).
 sb_administered(C) :- subsidy(C), not exception(oc_3, C).
@@ -55,11 +64,14 @@ fired(sb_2, sb_takeup(C), takeup(C))       :- sb_takeup(C).
 sb_recipients_gain(C) :- sb_takeup(C), holds(not_fully_captured(C)).
 fired(sb_2, sb_recipients_gain(C), sb_takeup(C))          :- sb_recipients_gain(C).
 fired(sb_2, sb_recipients_gain(C), not_fully_captured(C)) :- sb_recipients_gain(C).
-effect(sb_recipients_gain(C), R, "price_paid", decrease, short, visible, "B") :- sb_recipients_gain(C), sb_recipient(C, R).
+% Recipients who buy pay less; recipients who sell (a payment to producers per unit sold, sb_recipients_sell) receive more.
+effect(sb_recipients_gain(C), R, "price_paid", decrease, short, visible, "B")         :- sb_recipients_gain(C), sb_recipient(C, R), not sb_recipients_sell(C).
+effect(sb_recipients_gain(C), R, "net_price_received", increase, short, visible, "B") :- sb_recipients_gain(C), sb_recipient(C, R), sb_recipients_sell(C).
 sb_expands(C) :- sb_takeup(C), holds(quantity_expands(C)).
 fired(sb_2, sb_expands(C), sb_takeup(C))       :- sb_expands(C).
 fired(sb_2, sb_expands(C), quantity_expands(C)) :- sb_expands(C).
-effect(sb_expands(C), R, "quantity_traded", increase, short, visible, "B") :- sb_expands(C), sb_recipient(C, R).
+effect(sb_expands(C), R, "quantity_traded", increase, short, visible, "B")   :- sb_expands(C), sb_recipient(C, R), not sb_recipients_sell(C).
+effect(sb_expands(C), R, "quantity_supplied", increase, short, visible, "B") :- sb_expands(C), sb_recipient(C, R), sb_recipients_sell(C).
 effect(sb_expands(C), S, "quantity_traded", increase, short, visible, "B") :- sb_expands(C), sb_seller(C, S).
 
 % SB-2 with DM-1: where the sellers' supply cannot grow at once (seller_supply_slow), the added demand raises the price they
@@ -101,14 +113,19 @@ effect(sb_capitalized(C), O, "asset_value", increase, short, invisible, "B") :- 
 sb_reshaped(C) :- sb_takeup(C), criteria(C), holds(qualifying_pays(C)), not exception(sb_5, C).
 fired(sb_5, sb_reshaped(C), sb_takeup(C))       :- sb_reshaped(C).
 fired(rs_5, sb_reshaped(C), qualifying_pays(C)) :- sb_reshaped(C).
-effect(sb_reshaped(C), R, "reclassification", increase, short, invisible, "B") :- sb_reshaped(C), sb_recipient(C, R).
+% The criteria bind whoever must meet them (sb_qualifier: the recipients unless the record names another class, such as
+% installers who must be certified).
+effect(sb_reshaped(C), Q, "reclassification", increase, short, invisible, "B") :- sb_reshaped(C), sb_qualifier(C, Q).
 
 % SB-5 with RS-7: a gain concentrated on the sellers that depends on a later decision (renewal or review) draws their
 % lobbying, if they can organize at a cost below their stake (beneficiaries_organize).
-sb_lobbies(C) :- sb_takeup(C), renewable(C), sb_seller(C, _), holds(beneficiaries_organize(C)), not exception(rs_7, C).
+% The sellers who gain are the recipients themselves where they sell.
+sb_gaining_seller(C, S) :- sb_seller(C, S).
+sb_gaining_seller(C, R) :- sb_recipient(C, R), sb_recipients_sell(C).
+sb_lobbies(C) :- sb_takeup(C), renewable(C), sb_gaining_seller(C, _), holds(beneficiaries_organize(C)), not exception(rs_7, C).
 fired(rs_7, sb_lobbies(C), sb_takeup(C))              :- sb_lobbies(C).
 fired(rs_7, sb_lobbies(C), beneficiaries_organize(C)) :- sb_lobbies(C).
-effect(sb_lobbies(C), S, "lobbying_effort", increase, medium, invisible, "B") :- sb_lobbies(C), sb_seller(C, S).
+effect(sb_lobbies(C), S, "lobbying_effort", increase, medium, invisible, "B") :- sb_lobbies(C), sb_gaining_seller(C, S).
 
 % PC-2 (group form) with LW-6: a payment handed out at a fixed price in a fixed number is rationed by other means than price
 % when more want it than the budget allows (oversubscribed): claimants race and queue, or claims go by connections. Which
@@ -120,7 +137,8 @@ group_effect(sb_rationed(C), R, "wait_time,allocation_by_non_price_criteria", at
 
 % RS-8: recipients who mean to claim (takeup) and learn of the subsidy before it starts delay purchases they would have made
 % in the meantime (can_delay).
-sb_delayed(C) :- sb_takeup(C), announced(C), holds(can_delay(C)), not exception(rs_8, C).
+% A purchase subsidy only: a payment to producers per unit sold is not a purchase the recipients can put off.
+sb_delayed(C) :- sb_takeup(C), announced(C), not sb_recipients_sell(C), holds(can_delay(C)), not exception(rs_8, C).
 fired(rs_8, sb_delayed(C), sb_takeup(C)) :- sb_delayed(C).
 fired(rs_8, sb_delayed(C), announced(C)) :- sb_delayed(C).
 fired(rs_8, sb_delayed(C), can_delay(C)) :- sb_delayed(C).
@@ -128,16 +146,20 @@ window(sb_delayed(C), announcement) :- sb_delayed(C).
 effect(sb_delayed(C), R, "quantity_traded", decrease, short, invisible, "B") :- sb_delayed(C), sb_recipient(C, R).
 
 % SB-6: a temporary purchase subsidy moves purchases into its window. After it expires, buyers who brought their purchase
-% forward do not buy again (pulled_forward), so sellers sell less than they would have; where their supply cannot adjust
-% at once (seller_supply_slow) the price they receive falls in that window (CR-6).
-sb_dip(C) :- sb_expands(C), temporary(C), holds(pulled_forward(C)), not exception(sb_6, C).
-fired(sb_6, sb_dip(C), sb_expands(C))     :- sb_dip(C).
-fired(sb_6, sb_dip(C), pulled_forward(C)) :- sb_dip(C).
+% forward do not buy again (pulled_forward), so sellers sell less than they would have. The dip needs the payment to end
+% as scheduled (ends_as_scheduled): a renewal or a repeat moves the purchases on again (found out of sample on WE-020,
+% where non-renewal is below the cut-off). Where the sellers' supply still cannot adjust when the payment ends
+% (supply_slow_at_expiry: a premise about that date, not the start; found out of sample on WE-021) the price they
+% receive falls in that window (CR-6).
+sb_dip(C) :- sb_expands(C), temporary(C), not sb_recipients_sell(C), holds(pulled_forward(C)), holds(ends_as_scheduled(C)), not exception(sb_6, C).
+fired(sb_6, sb_dip(C), sb_expands(C))        :- sb_dip(C).
+fired(sb_6, sb_dip(C), pulled_forward(C))    :- sb_dip(C).
+fired(sb_6, sb_dip(C), ends_as_scheduled(C)) :- sb_dip(C).
 window(sb_dip(C), after_expiry) :- sb_dip(C).
 effect(sb_dip(C), S, "quantity_traded", decrease, short, invisible, "B") :- sb_dip(C), sb_seller(C, S).
-sb_dip_price(C) :- sb_dip(C), holds(seller_supply_slow(C)).
-fired(sb_6, sb_dip_price(C), sb_dip(C))             :- sb_dip_price(C).
-fired(cr_6, sb_dip_price(C), seller_supply_slow(C)) :- sb_dip_price(C).
+sb_dip_price(C) :- sb_dip(C), holds(supply_slow_at_expiry(C)).
+fired(sb_6, sb_dip_price(C), sb_dip(C))                :- sb_dip_price(C).
+fired(cr_6, sb_dip_price(C), supply_slow_at_expiry(C)) :- sb_dip_price(C).
 window(sb_dip_price(C), after_expiry) :- sb_dip_price(C).
 effect(sb_dip_price(C), S, "net_price_received", decrease, medium, invisible, "B") :- sb_dip_price(C), sb_seller(C, S).
 

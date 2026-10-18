@@ -69,7 +69,7 @@ def explain(c: Consequence, assumptions: dict[str, Assumption], record: PolicyRe
         chain = f"CR-12 total of {', '.join(c.combines)}" + (" (no premise decides which chain is larger)" if c.sign == "ambiguous" else " (a dominance premise decides the sign)" if len(c.combines) > 1 else " (only one subclass's chain is reported)")
     return (
         f"{c.id}. Compared with no {record.name}, {' or '.join(v.replace('_', ' ') for v in c.members())}"
-        f"{' (' + c.item.replace('_', ' ') + ')' if c.item else ''} for {c.actor_class} "
+        f"{' (' + c.item.replace('_', ' ') + ')' if c.item else ''} for {' or '.join(c.actors())} "
         f"{SIGN_WORD[c.sign]} {when} (tier {c.tier}, {c.visibility}). "
         f"Why: {chain}. This holds if: {conds}.{alt} {status}"
     )

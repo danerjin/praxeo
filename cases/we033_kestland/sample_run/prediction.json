@@ -4,6 +4,7 @@
  "consequences": [
   {
    "actor_class": "households.no_account",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -37,6 +38,7 @@
   },
   {
    "actor_class": "officials.enforcement",
+   "actor_group": [],
    "assumption_sets": [
     []
    ],
@@ -70,6 +72,10 @@
   },
   {
    "actor_class": "taxpayers.later",
+   "actor_group": [
+    "taxpayers.later",
+    "public_spending_recipients.later"
+   ],
    "assumption_sets": [
     []
    ],
@@ -100,7 +106,7 @@
    "id": "C-3",
    "item": null,
    "reported": true,
-   "sign": "decrease",
+   "sign": "at_least_one_decrease",
    "sign_by_reading": {},
    "tier": "A",
    "variable": "resources_available_other_uses",
@@ -109,11 +115,11 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"households.recipients\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nsubsidy(k1).\nsb_recipient(k1, \"households.recipients\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers.later\").\nsb_claim_handler(k1, \"households.no_account\").\ndebt_funded(k1).\ncriteria(k1).\n",
+ "engine_facts": "bound(k1, \"households.recipients\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nsubsidy(k1).\nsb_recipient(k1, \"households.recipients\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers.later\").\nsb_claim_handler(k1, \"households.no_account\").\nsb_recipients_sell(k1).\nsb_qualifier(k1, \"households.recipients\").\nsb_payer_group(k1, \"taxpayers.later,public_spending_recipients.later\").\ndebt_funded(k1).\ncriteria(k1).\n",
  "explanations": [
   "C-1. Compared with no Kestland Household Support Payment Act 2027, compliance cost for households.no_account rises from the short run onward (tier A, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.",
   "C-2. Compared with no Kestland Household Support Payment Act 2027, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
-  "C-3. Compared with no Kestland Household Support Payment Act 2027, resources available other uses for taxpayers.later falls from the medium run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
+  "C-3. Compared with no Kestland Household Support Payment Act 2027, resources available other uses for taxpayers.later or public_spending_recipients.later falls for at least one of them from the medium run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
  ],
  "questions": [],
  "record": {
@@ -140,6 +146,7 @@
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": null,
     "general_budget": false,
     "good": "household_cash_payment",
     "id": "k1",
@@ -151,9 +158,11 @@
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
     "other_buyer_actor": null,
+    "other_spending_actor": "public_spending_recipients.later",
     "own_revenue_funded": false,
     "protected_actor": null,
     "protected_concentrated": true,
+    "qualifier_actor": null,
     "rate_rise": false,
     "relief_applicant_actor": null,
     "renewable": false,
@@ -175,8 +184,10 @@
      "The principal and interest on the bonds are repaid from general revenue in ten equal annual installments from 2028."
     ],
     "substitute_seller_actor": null,
+    "tax_named": false,
     "taxpayer_actor": "taxpayers.later",
     "temporary": false,
+    "third_party_payer_actor": null,
     "used_buyer_actor": null,
     "used_owner_actor": null,
     "vacancy_decontrol": false
@@ -216,7 +227,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T06:20:02+00:00",
+ "run_at": "2026-10-18T06:36:47+00:00",
  "sources_held_back": [],
  "unclear": [
   {

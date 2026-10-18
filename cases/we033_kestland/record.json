@@ -30,7 +30,9 @@
     "False claims must be repaid, with a fine of 2,000 crowns, and may be prosecuted as fraud.",
     "The administration is funded from the borrowing.",
     "The principal and interest on the bonds are repaid from general revenue in ten equal annual installments from 2028."
-   ]
+   ],
+   "other_spending_actor": "public_spending_recipients.later",
+   "future_taxpayer_actor": null
   }
  ],
  "unclear": [
