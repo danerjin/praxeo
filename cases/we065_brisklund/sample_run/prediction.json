@@ -1,0 +1,667 @@
+{
+ "assumptions": {
+  "asset_supply_slow(k1)": {
+   "assumption_class": "durability",
+   "id": "asset_supply_slow(k1)",
+   "p": 0.8,
+   "text": "The supply of the asset whose return the payment raises is fixed or slowly expandable."
+  },
+  "beneficiaries_organize(k1)": {
+   "assumption_class": "other",
+   "id": "beneficiaries_organize(k1)",
+   "p": 0.9,
+   "text": "The sellers who gain can organize to lobby for renewal at a cost below their stake."
+  },
+  "can_delay(k1)": {
+   "assumption_class": "expectations",
+   "id": "can_delay(k1)",
+   "p": 0.1,
+   "text": "Eligible buyers knew of the payment before it started and could delay purchases."
+  },
+  "expected_to_last(k1)": {
+   "assumption_class": "expectations",
+   "id": "expected_to_last(k1)",
+   "p": 0.8,
+   "text": "Buyers of the affected assets expect the payment to last for several years."
+  },
+  "not_fully_captured(k1)": {
+   "assumption_class": "other",
+   "id": "not_fully_captured(k1)",
+   "p": 0.9,
+   "text": "Sellers do not capture the whole payment: the recipients' net price falls."
+  },
+  "pulled_forward(k1)": {
+   "assumption_class": "expectations",
+   "id": "pulled_forward(k1)",
+   "p": 0.1,
+   "text": "Many window buyers would have bought within the next few years anyway."
+  },
+  "quantity_expands(k1)": {
+   "assumption_class": "alternative_uses",
+   "id": "quantity_expands(k1)",
+   "p": 0.85,
+   "text": "At least one side can expand its quantity: more of the subsidized good is traded."
+  },
+  "seller_supply_slow(k1)": {
+   "assumption_class": "durability",
+   "id": "seller_supply_slow(k1)",
+   "p": 0.25,
+   "text": "The sellers' supply of the subsidized good cannot grow at once."
+  },
+  "sellers_fewer_alternatives(k1)": {
+   "assumption_class": "substitutability",
+   "id": "sellers_fewer_alternatives(k1)",
+   "p": 0.3,
+   "text": "While supply is fixed, the sellers have clearly fewer alternatives than the recipients."
+  },
+  "takeup(k1)": {
+   "assumption_class": "other",
+   "id": "takeup(k1)",
+   "p": 0.9,
+   "text": "Many eligible recipients value the payment above the cost of qualifying, and claim it."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "officials.enforcement",
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_administered(k1)",
+     "premises": [
+      "subsidy(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.wheat_land",
+   "assumption_sets": [
+    [
+     "asset_supply_slow(k1)",
+     "expected_to_last(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "asset_supply_slow(k1)",
+    "expected_to_last(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_capitalized(k1)",
+     "premises": [
+      "asset_supply_slow(k1)",
+      "expected_to_last(k1)",
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "taxpayers",
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_paid(k1)",
+     "premises": [
+      "subsidy(k1)"
+     ],
+     "rule": "SB-1"
+    },
+    {
+     "conclusion": "sb_tax_funded(k1)",
+     "premises": [
+      "sb_paid(k1)"
+     ],
+     "rule": "OC-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "wheat_growers",
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_claims(k1)",
+     "premises": [
+      "subsidy(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "wheat_growers",
+   "assumption_sets": [
+    [
+     "not_fully_captured(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "not_fully_captured(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_recipients_gain(k1)",
+     "premises": [
+      "not_fully_captured(k1)",
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "wheat_growers",
+   "assumption_sets": [
+    [
+     "quantity_expands(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "quantity_expands(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_expands(k1)",
+     "premises": [
+      "quantity_expands(k1)",
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "wheat_growers",
+   "assumption_sets": [
+    [
+     "can_delay(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "can_delay(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_delayed(k1)",
+     "premises": [
+      "announced(k1)",
+      "can_delay(k1)",
+      "sb_takeup(k1)"
+     ],
+     "rule": "RS-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": "announcement"
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"wheat_growers\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nsubsidy(k1).\nsb_recipient(k1, \"wheat_growers\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nsb_claim_handler(k1, \"wheat_growers\").\nper_unit_sub(k1).\nsb_asset_owner(k1, \"owners.wheat_land\").\nrenewable(k1).\ntemporary(k1).\nassumption(takeup(k1)).\nassumption(not_fully_captured(k1)).\nassumption(quantity_expands(k1)).\nassumption(seller_supply_slow(k1)).\nassumption(sellers_fewer_alternatives(k1)).\nassumption(asset_supply_slow(k1)).\nassumption(expected_to_last(k1)).\nassumption(beneficiaries_organize(k1)).\nassumption(can_delay(k1)).\nassumption(pulled_forward(k1)).\n",
+ "explanations": [
+  "C-1. Compared with no Brisklund Wheat Price Assurance Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-2. Compared with no Brisklund Wheat Price Assurance Act, asset value for owners.wheat_land rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The supply of the asset whose return the payment raises is fixed or slowly expandable (p = 0.80); Buyers of the affected assets expect the payment to last for several years (p = 0.80); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-3. Compared with no Brisklund Wheat Price Assurance Act, resources available other uses for taxpayers falls from the short run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported.",
+  "C-4. Compared with no Brisklund Wheat Price Assurance Act, compliance cost for wheat_growers rises from the short run onward (tier A, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.",
+  "C-5. Compared with no Brisklund Wheat Price Assurance Act, price paid for wheat_growers falls from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: Sellers do not capture the whole payment: the recipients' net price falls (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-6. Compared with no Brisklund Wheat Price Assurance Act, quantity traded for wheat_growers rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-7. Compared with no Brisklund Wheat Price Assurance Act, quantity traded for wheat_growers falls in the announcement window (before the effective date), in the short run (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Eligible buyers knew of the payment before it started and could delay purchases (p = 0.10); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.takeup",
+    "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-1: the Act is in force for 2028 to 2032 and payments are made as it provides (open-ended appropriation, payments office set up); growers of registered farms claim a payment paid on the Register.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "takeup",
+    "assumption_class": "other",
+    "id": "k1.takeup",
+    "kind": "noul",
+    "options": [],
+    "text": "Will many of those eligible claim the payment, because it is worth more to them than what they must do or give up to qualify?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.not_fully_captured",
+    "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-18: the effect of Brisklund's added output on the world price is far smaller than the expected payment per tonne, so the growers keep nearly all of the payment.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "not_fully_captured",
+    "assumption_class": "other",
+    "id": "k1.not_fully_captured",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the recipients keep part of the payment, rather than sellers raising their prices by the whole of it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.quantity_expands",
+    "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-3: some growers at the margin sow more wheat, or grow it more intensively, when the expected price including the payment rises (given the payment is on actual output, U1-a).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "quantity_expands",
+    "assumption_class": "alternative_uses",
+    "id": "k1.quantity_expands",
+    "kind": "noul",
+    "options": [],
+    "text": "Will more of the subsidized good change hands than without the payment (because buyers buy more, or sellers can supply more)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.25,
+    "question_id": "k1.seller_supply_slow",
+    "rationale": "No matching assumption in WE-065; judged from the text: growers can move land between wheat and barley from year to year and the winter wheat for 2028 is sown after enactment (autumn 2027), so supply is not fixed for the first crop years; the contrary row, A-12, concerns the land with wheat history and is used for the asset question.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "seller_supply_slow",
+    "assumption_class": "durability",
+    "id": "k1.seller_supply_slow",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the sellers' supply of the subsidized good fixed for a while (stock ordered or built before the payment, long lead times), so that it cannot grow at once to meet the added demand?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k1.sellers_fewer_alternatives",
+    "rationale": "No matching assumption in WE-065; judged from the text: the payment goes to the growers, who are the sellers, and there is no group of sellers apart from the recipients; the question presupposes buyers receiving the payment, so it has little meaning for a payment to producers.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "sellers_fewer_alternatives",
+    "assumption_class": "substitutability",
+    "id": "k1.sellers_fewer_alternatives",
+    "kind": "noul",
+    "options": [],
+    "text": "While their supply is fixed, do the sellers have clearly fewer alternatives than the recipients (who can wait, buy something else or not buy at all)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.asset_supply_slow",
+    "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-12: wheat land with history is in fixed supply in the short run, and converting other land to wheat does not get cheaper per hectare as more is converted.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "asset_supply_slow",
+    "assumption_class": "durability",
+    "id": "k1.asset_supply_slow",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the supply of the asset whose return the payment raises (land, homes, licenses, specific plant) fixed or slow to expand?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.expected_to_last",
+    "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-11: land buyers expected the Act from February 2027 and expect it to run its term, with some chance of renewal.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "expected_to_last",
+    "assumption_class": "expectations",
+    "id": "k1.expected_to_last",
+    "kind": "noul",
+    "options": [],
+    "text": "Do buyers of the affected assets expect the payment to stay in place long enough to raise what the assets earn over several years?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.beneficiaries_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-8: farm unions, millers and holders of established production can organize at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "beneficiaries_organize",
+    "assumption_class": "other",
+    "id": "k1.beneficiaries_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the sellers who gain from the payment organize to lobby for its extension or renewal at a cost below their stake (an existing trade association, a few large firms)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k1.can_delay",
+    "rationale": "No matching assumption in WE-065; judged from the text: the payment is on the wheat of the crop years 2028 to 2032 and nothing is bought by a recipient, so there is no purchase that growers could put off until the Act starts; the first crop is sown after enactment.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "can_delay",
+    "assumption_class": "expectations",
+    "id": "k1.can_delay",
+    "kind": "noul",
+    "options": [],
+    "text": "Could those who will be eligible put off a purchase they would otherwise make before the payment starts, until it does (the payment was announced in advance)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k1.pulled_forward",
+    "rationale": "No matching assumption in WE-065; judged from the text: the payment goes with each year's output over five crop years and does not reward a one-off purchase, so there is nothing for growers to bring forward into the window.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "pulled_forward",
+    "assumption_class": "expectations",
+    "id": "k1.pulled_forward",
+    "kind": "noul",
+    "options": [],
+    "text": "Would many of those who buy during the payment's window have bought the same good within the following few years anyway?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "announcement_window": true,
+    "asset_owner_actor": "owners.wheat_land",
+    "bound_actor": "wheat_growers",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "general_budget": false,
+    "good": "wheat",
+    "id": "k1",
+    "importer_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "per_unit_subsidy",
+    "market": "brisklund",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "own_revenue_funded": false,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "rate_rise": false,
+    "relief_applicant_actor": null,
+    "renewable": true,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "scrappage": false,
+    "scrapper_actor": null,
+    "seller_actor": null,
+    "source_sentences": [
+     "A deficiency payment is paid to the holder (the person registered as farming the land) of each registered farm.",
+     "The payment rate is Th 220 less the national average farm-gate price for the marketing year, when that price is below Th 220; otherwise zero.",
+     "It is paid in December after the marketing year.",
+     "The payments are funded as follows: \"Such sums as are needed for payments under this Act shall be paid out of the Consolidated Fund.\"",
+     "The Ministry of Agriculture's payments office administers the claims on the Farm Register, at a cost of about Th 4 million a year from its general appropriation.",
+     "Harvest declarations are checked by sampling (about 3% of farms a year); false declarations are subject to repayment and a fine of up to twice the payment.",
+     "The bill was introduced with the government's majority on 10 February 2027 and enacted on 30 June 2027.",
+     "It covers the crop years 2028 to 2032 (the harvests of those years; winter wheat for 2028 is sown in autumn 2027).",
+     "Parliament must review the target price before 2032."
+    ],
+    "substitute_seller_actor": null,
+    "taxpayer_actor": "taxpayers",
+    "temporary": true,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false
+   }
+  ],
+  "context": [
+   "About 18,000 farms grow wheat on about 570,000 hectares; at about 7.0 tonnes a hectare they produce about 4.0 million tonnes a year.",
+   "About 2.5 million tonnes are used at home (1.4 by millers, 1.1 as animal feed) and about 1.5 million tonnes are exported.",
+   "World wheat production is about 800 million tonnes and world trade about 200 million; Brisklund's exports are under 1% of world trade.",
+   "The farm-gate price follows the export price less freight.",
+   "Over the past ten marketing years the national average farm-gate price ranged from Th 175 to Th 285 a tonne, averaged about Th 232, and was below Th 220 in four of the ten years, by about Th 20 on average in those years.",
+   "About 40% of wheat land is rented, on leases of three to five years; wheat land sells for about Th 12,000 a hectare and rents for about Th 300 a hectare a year.",
+   "Futures for the 2028 harvest trade at about Th 228."
+  ],
+  "effective": "crop year 2028",
+  "enacted": "30 June 2027",
+  "jurisdiction": "Brisklund (fictional)",
+  "name": "Brisklund Wheat Price Assurance Act",
+  "rule_maker": "the Parliament of Brisklund",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "readings": [
+     "U1-a: the payment is on the harvest declared for the crop year (actual output)",
+     "U1-b: the payment is on the farm's established production, the crop year fixing only the year whose price sets the rate"
+    ],
+    "text": "Whether the payment is made on each farm's actual output (the harvest declared for the crop year) or on a fixed historical base (its established production)."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-18T06:19:59+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "readings": [
+    "U1-a: the payment is on the harvest declared for the crop year (actual output)",
+    "U1-b: the payment is on the farm's established production, the crop year fixing only the year whose price sets the rate"
+   ],
+   "text": "Whether the payment is made on each farm's actual output (the harvest declared for the crop year) or on a fixed historical base (its established production)."
+  }
+ ],
+ "verifier_problems": []
+}
