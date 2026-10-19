@@ -1,0 +1,5425 @@
+{
+ "assumptions": {
+  "alternatives_worse(k1a)": {
+   "assumption_class": "mobility",
+   "id": "alternatives_worse(k1a)",
+   "p": 0.3,
+   "text": "The recipients' alternatives are worse than the providers'."
+  },
+  "alternatives_worse(k1p)": {
+   "assumption_class": "mobility",
+   "id": "alternatives_worse(k1p)",
+   "p": 0.3,
+   "text": "The recipients' alternatives are worse than the providers'."
+  },
+  "binding(k1a)": {
+   "assumption_class": "binding",
+   "id": "binding(k1a)",
+   "p": 0.9,
+   "text": "The term was absent from some contracts, so the mandate binds for them."
+  },
+  "binding(k1p)": {
+   "assumption_class": "binding",
+   "id": "binding(k1p)",
+   "p": 0.9,
+   "text": "The term was absent from some contracts, so the mandate binds for them."
+  },
+  "binding(k2a)": {
+   "assumption_class": "binding",
+   "id": "binding(k2a)",
+   "p": 0.9,
+   "text": "The term was in use."
+  },
+  "binding(k2d)": {
+   "assumption_class": "binding",
+   "id": "binding(k2d)",
+   "p": 0.9,
+   "text": "The term was in use."
+  },
+  "binding(k2p)": {
+   "assumption_class": "binding",
+   "id": "binding(k2p)",
+   "p": 0.9,
+   "text": "The term was in use."
+  },
+  "binding(k3a)": {
+   "assumption_class": "binding",
+   "id": "binding(k3a)",
+   "p": 0.8,
+   "text": "The standard binds on some designs."
+  },
+  "binding(k3p)": {
+   "assumption_class": "binding",
+   "id": "binding(k3p)",
+   "p": 0.8,
+   "text": "The standard binds on some designs."
+  },
+  "buyers_value_standard(k3a)": {
+   "assumption_class": "other",
+   "id": "buyers_value_standard(k3a)",
+   "p": 0.7,
+   "text": "Buyers value the standard enough to prefer covered units."
+  },
+  "buyers_value_standard(k3p)": {
+   "assumption_class": "other",
+   "id": "buyers_value_standard(k3p)",
+   "p": 0.7,
+   "text": "Buyers value the standard enough to prefer covered units."
+  },
+  "can_organize(k1a)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1a)",
+   "p": 0.85,
+   "text": "The bound providers can organize to lobby."
+  },
+  "can_organize(k1p)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1p)",
+   "p": 0.85,
+   "text": "The bound providers can organize to lobby."
+  },
+  "can_organize(k2a)": {
+   "assumption_class": "other",
+   "id": "can_organize(k2a)",
+   "p": 0.85,
+   "text": "The parties that used the term can organize to lobby."
+  },
+  "can_organize(k2d)": {
+   "assumption_class": "other",
+   "id": "can_organize(k2d)",
+   "p": 0.85,
+   "text": "The parties that used the term can organize to lobby."
+  },
+  "can_organize(k2p)": {
+   "assumption_class": "other",
+   "id": "can_organize(k2p)",
+   "p": 0.85,
+   "text": "The parties that used the term can organize to lobby."
+  },
+  "can_organize(k3a)": {
+   "assumption_class": "other",
+   "id": "can_organize(k3a)",
+   "p": 0.85,
+   "text": "The makers can organize to lobby."
+  },
+  "can_organize(k3p)": {
+   "assumption_class": "other",
+   "id": "can_organize(k3p)",
+   "p": 0.85,
+   "text": "The makers can organize to lobby."
+  },
+  "compete_with_bound(k1p)": {
+   "assumption_class": "substitutability",
+   "id": "compete_with_bound(k1p)",
+   "p": 0.9,
+   "text": "The unbound firms compete with the bound providers."
+  },
+  "complaint_unlikely(k1a)": {
+   "assumption_class": "enforcement",
+   "id": "complaint_unlikely(k1a)",
+   "p": 0.6,
+   "text": "Complaints are unlikely from some recipients."
+  },
+  "complaint_unlikely(k1p)": {
+   "assumption_class": "enforcement",
+   "id": "complaint_unlikely(k1p)",
+   "p": 0.7,
+   "text": "Complaints are unlikely from some recipients."
+  },
+  "complaints_filed(k1a)": {
+   "assumption_class": "enforcement",
+   "id": "complaints_filed(k1a)",
+   "p": 0.7,
+   "text": "Complaints are filed in meaningful numbers."
+  },
+  "complaints_filed(k1p)": {
+   "assumption_class": "enforcement",
+   "id": "complaints_filed(k1p)",
+   "p": 0.7,
+   "text": "Complaints are filed in meaningful numbers."
+  },
+  "conditions_differ(k1p)": {
+   "assumption_class": "other",
+   "id": "conditions_differ(k1p)",
+   "p": 0.2,
+   "text": "Some existing policies offer the term on conditions the mandate forbids."
+  },
+  "contested_otherwise(k1a)": {
+   "assumption_class": "other",
+   "id": "contested_otherwise(k1a)",
+   "p": 0.8,
+   "text": "The groups that gain from or are bound by the measure would have lobbied on the same question without it."
+  },
+  "contested_otherwise(k1p)": {
+   "assumption_class": "other",
+   "id": "contested_otherwise(k1p)",
+   "p": 0.8,
+   "text": "The groups that gain from or are bound by the measure would have lobbied on the same question without it."
+  },
+  "contested_otherwise(k2a)": {
+   "assumption_class": "other",
+   "id": "contested_otherwise(k2a)",
+   "p": 0.8,
+   "text": "The groups that gain from or are bound by the measure would have lobbied on the same question without it."
+  },
+  "contested_otherwise(k2d)": {
+   "assumption_class": "other",
+   "id": "contested_otherwise(k2d)",
+   "p": 0.8,
+   "text": "The groups that gain from or are bound by the measure would have lobbied on the same question without it."
+  },
+  "contested_otherwise(k2p)": {
+   "assumption_class": "other",
+   "id": "contested_otherwise(k2p)",
+   "p": 0.8,
+   "text": "The groups that gain from or are bound by the measure would have lobbied on the same question without it."
+  },
+  "contested_otherwise(k3a)": {
+   "assumption_class": "other",
+   "id": "contested_otherwise(k3a)",
+   "p": 0.8,
+   "text": "The groups that gain from or are bound by the measure would have lobbied on the same question without it."
+  },
+  "contested_otherwise(k3p)": {
+   "assumption_class": "other",
+   "id": "contested_otherwise(k3p)",
+   "p": 0.8,
+   "text": "The groups that gain from or are bound by the measure would have lobbied on the same question without it."
+  },
+  "enforced(k1a)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k1a)",
+   "p": 0.7,
+   "text": "Most bound providers comply."
+  },
+  "enforced(k1p)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k1p)",
+   "p": 0.7,
+   "text": "Most bound providers comply."
+  },
+  "enforced(k3a)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k3a)",
+   "p": 0.7,
+   "text": "Most makers comply."
+  },
+  "enforced(k3p)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k3p)",
+   "p": 0.7,
+   "text": "Most makers comply."
+  },
+  "recipients_organize(k1a)": {
+   "assumption_class": "other",
+   "id": "recipients_organize(k1a)",
+   "p": 0.85,
+   "text": "The recipients can organize to lobby."
+  },
+  "recipients_organize(k1p)": {
+   "assumption_class": "other",
+   "id": "recipients_organize(k1p)",
+   "p": 0.3,
+   "text": "The recipients can organize to lobby."
+  },
+  "reshaping_pays(k1a)": {
+   "assumption_class": "other",
+   "id": "reshaping_pays(k1a)",
+   "p": 0.55,
+   "text": "Reshaping goods to fall outside the definitions costs some actors less than the burden."
+  },
+  "rivals_bound(k1a)": {
+   "assumption_class": "other",
+   "id": "rivals_bound(k1a)",
+   "p": 0.9,
+   "text": "Most of the providers' rivals are bound too."
+  },
+  "rivals_bound(k1p)": {
+   "assumption_class": "other",
+   "id": "rivals_bound(k1p)",
+   "p": 0.9,
+   "text": "Most of the providers' rivals are bound too."
+  },
+  "stock_competes(k3a)": {
+   "assumption_class": "substitutability",
+   "id": "stock_competes(k3a)",
+   "p": 0.7,
+   "text": "Existing units compete with new ones."
+  },
+  "stock_competes(k3p)": {
+   "assumption_class": "substitutability",
+   "id": "stock_competes(k3p)",
+   "p": 0.6,
+   "text": "Existing units compete with new ones."
+  },
+  "substitute_terms(k2a)": {
+   "assumption_class": "substitutability",
+   "id": "substitute_terms(k2a)",
+   "p": 0.8,
+   "text": "Lawful substitute terms give part of the same protection."
+  },
+  "substitute_terms(k2d)": {
+   "assumption_class": "substitutability",
+   "id": "substitute_terms(k2d)",
+   "p": 0.4,
+   "text": "Lawful substitute terms give part of the same protection."
+  },
+  "substitute_terms(k2p)": {
+   "assumption_class": "substitutability",
+   "id": "substitute_terms(k2p)",
+   "p": 0.8,
+   "text": "Lawful substitute terms give part of the same protection."
+  },
+  "term_valued(k2a)": {
+   "assumption_class": "other",
+   "id": "term_valued(k2a)",
+   "p": 0.85,
+   "text": "The party that used the term valued its protection."
+  },
+  "term_valued(k2d)": {
+   "assumption_class": "other",
+   "id": "term_valued(k2d)",
+   "p": 0.6,
+   "text": "The party that used the term valued its protection."
+  },
+  "term_valued(k2p)": {
+   "assumption_class": "other",
+   "id": "term_valued(k2p)",
+   "p": 0.85,
+   "text": "The party that used the term valued its protection."
+  },
+  "valued_on_earnings(k1a)": {
+   "assumption_class": "expectations",
+   "id": "valued_on_earnings(k1a)",
+   "p": 0.85,
+   "text": "The providers' businesses are valued on expected earnings."
+  },
+  "valued_on_earnings(k1p)": {
+   "assumption_class": "expectations",
+   "id": "valued_on_earnings(k1p)",
+   "p": 0.85,
+   "text": "The providers' businesses are valued on expected earnings."
+  },
+  "wages_adjust(k1a)": {
+   "assumption_class": "other",
+   "id": "wages_adjust(k1a)",
+   "p": 0.1,
+   "text": "The wage can adjust over the medium run."
+  },
+  "wages_adjust(k1p)": {
+   "assumption_class": "other",
+   "id": "wages_adjust(k1p)",
+   "p": 0.1,
+   "text": "The wage can adjust over the medium run."
+  },
+  "wages_sticky(k1a)": {
+   "assumption_class": "other",
+   "id": "wages_sticky(k1a)",
+   "p": 0.8,
+   "text": "The other money terms are fixed in the short run."
+  },
+  "wages_sticky(k1p)": {
+   "assumption_class": "other",
+   "id": "wages_sticky(k1p)",
+   "p": 0.8,
+   "text": "The other money terms are fixed in the short run."
+  },
+  "worth_less(k1a)": {
+   "assumption_class": "other",
+   "id": "worth_less(k1a)",
+   "p": 0.6,
+   "text": "The term is worth less to the marginal recipient than it costs the provider."
+  },
+  "worth_less(k1p)": {
+   "assumption_class": "other",
+   "id": "worth_less(k1p)",
+   "p": 0.6,
+   "text": "The term is worth less to the marginal recipient than it costs the provider."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "buyers.prospective",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3p)",
+     "enforced(k3p)"
+    ],
+    [
+     "binding(k1a)",
+     "enforced(k1a)",
+     "rivals_bound(k1a)",
+     "wages_sticky(k1a)"
+    ],
+    [
+     "binding(k1a)",
+     "enforced(k1a)",
+     "rivals_bound(k1a)",
+     "worth_less(k1a)"
+    ],
+    [
+     "binding(k3a)",
+     "enforced(k3a)"
+    ],
+    [
+     "binding(k1p)",
+     "enforced(k1p)",
+     "rivals_bound(k1p)",
+     "wages_sticky(k1p)"
+    ],
+    [
+     "binding(k1p)",
+     "enforced(k1p)",
+     "rivals_bound(k1p)",
+     "worth_less(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3p)",
+    "enforced(k3p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_binds(k3a)",
+     "premises": [
+      "binding(k3a)",
+      "enforced(k3a)"
+     ],
+     "rule": "EN-14"
+    },
+    {
+     "conclusion": "st_binds(k3p)",
+     "premises": [
+      "binding(k3p)",
+      "enforced(k3p)"
+     ],
+     "rule": "EN-14"
+    },
+    {
+     "conclusion": "mc_binds(k1a)",
+     "premises": [
+      "binding(k1a)",
+      "enforced(k1a)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1a)",
+     "premises": [
+      "worth_less(k1a)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1a)",
+     "premises": [
+      "mc_binds(k1a)",
+      "wages_sticky(k1a)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_pass(k1a)",
+     "premises": [
+      "mc_cost_stays(k1a)",
+      "rivals_bound(k1a)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "mc_binds(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "enforced(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1p)",
+     "premises": [
+      "worth_less(k1p)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1p)",
+     "premises": [
+      "mc_binds(k1p)",
+      "wages_sticky(k1p)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_pass(k1p)",
+     "premises": [
+      "mc_cost_stays(k1p)",
+      "rivals_bound(k1p)"
+     ],
+     "rule": "RS-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.prospective",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1a)",
+     "enforced(k1a)",
+     "rivals_bound(k1a)",
+     "wages_sticky(k1a)"
+    ],
+    [
+     "binding(k1a)",
+     "enforced(k1a)",
+     "rivals_bound(k1a)",
+     "worth_less(k1a)"
+    ],
+    [
+     "binding(k1p)",
+     "enforced(k1p)",
+     "rivals_bound(k1p)",
+     "wages_sticky(k1p)"
+    ],
+    [
+     "binding(k1p)",
+     "enforced(k1p)",
+     "rivals_bound(k1p)",
+     "worth_less(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1a)",
+    "enforced(k1a)",
+    "rivals_bound(k1a)",
+    "wages_sticky(k1a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1a)",
+     "premises": [
+      "binding(k1a)",
+      "enforced(k1a)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1a)",
+     "premises": [
+      "worth_less(k1a)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1a)",
+     "premises": [
+      "mc_binds(k1a)",
+      "wages_sticky(k1a)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_pass(k1a)",
+     "premises": [
+      "mc_cost_stays(k1a)",
+      "rivals_bound(k1a)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "mc_binds(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "enforced(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1p)",
+     "premises": [
+      "worth_less(k1p)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1p)",
+     "premises": [
+      "mc_binds(k1p)",
+      "wages_sticky(k1p)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_pass(k1p)",
+     "premises": [
+      "mc_cost_stays(k1p)",
+      "rivals_bound(k1p)"
+     ],
+     "rule": "RS-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.prospective",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3p)",
+     "enforced(k3p)"
+    ],
+    [
+     "binding(k3a)",
+     "enforced(k3a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3p)",
+    "enforced(k3p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_binds(k3a)",
+     "premises": [
+      "binding(k3a)",
+      "enforced(k3a)"
+     ],
+     "rule": "EN-14"
+    },
+    {
+     "conclusion": "st_binds(k3p)",
+     "premises": [
+      "binding(k3p)",
+      "enforced(k3p)"
+     ],
+     "rule": "EN-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "specification_level",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "dealers.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2d)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2d)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tb_voided(k2d)",
+     "premises": [
+      "voids_existing(k2d)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "dealers.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2d)",
+     "can_organize(k2d)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2d)",
+    "can_organize(k2d)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_lobby(k2d)",
+     "premises": [
+      "binding(k2d)",
+      "can_organize(k2d)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "dealers.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2d)",
+     "can_organize(k2d)",
+     "contested_otherwise(k2d)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2d)",
+    "can_organize(k2d)",
+    "contested_otherwise(k2d)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_lobby(k2d)",
+     "premises": [
+      "binding(k2d)",
+      "can_organize(k2d)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "contested_lobby(mc_lobby(k2d))",
+     "premises": [
+      "contested_otherwise(k2d)",
+      "mc_lobby(k2d)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": "policy_field",
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "dealers.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2d)",
+     "substitute_terms(k2d)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2d)",
+    "substitute_terms(k2d)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tb_substitute(k2d)",
+     "premises": [
+      "substitute_terms(k2d)"
+     ],
+     "rule": "PC-18"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "term_prevalence",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2a)"
+    ],
+    [
+     "binding(k1a)",
+     "enforced(k1a)",
+     "valued_on_earnings(k1a)",
+     "wages_sticky(k1a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tb_voided(k2a)",
+     "premises": [
+      "voids_existing(k2a)"
+     ],
+     "rule": "CR-8"
+    },
+    {
+     "conclusion": "mc_binds(k1a)",
+     "premises": [
+      "binding(k1a)",
+      "enforced(k1a)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1a)",
+     "premises": [
+      "mc_binds(k1a)",
+      "wages_sticky(k1a)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "mc_capitalized(k1a)",
+     "premises": [
+      "mc_returns(k1a)",
+      "valued_on_earnings(k1a)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_binds(k3a)",
+     "premises": [
+      "binding(k3a)",
+      "enforced(k3a)"
+     ],
+     "rule": "EN-14"
+    },
+    {
+     "conclusion": "mc_compliance(k1a)",
+     "premises": [
+      "mandate(k1a)"
+     ],
+     "rule": "OC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1a)",
+     "complaint_unlikely(k1a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1a)",
+    "complaint_unlikely(k1a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_breach(k1a)",
+     "premises": [
+      "binding(k1a)",
+      "complaint_only(k1a)",
+      "complaint_unlikely(k1a)"
+     ],
+     "rule": "RS-20"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "legal_breach",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1a)",
+     "can_organize(k1a)"
+    ],
+    [
+     "binding(k3a)",
+     "can_organize(k3a)"
+    ],
+    [
+     "binding(k2a)",
+     "can_organize(k2a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1a)",
+    "can_organize(k1a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_lobby(k1a)",
+     "premises": [
+      "binding(k1a)",
+      "can_organize(k1a)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "mc_lobby(k2a)",
+     "premises": [
+      "binding(k2a)",
+      "can_organize(k2a)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "mc_lobby(k3a)",
+     "premises": [
+      "binding(k3a)",
+      "can_organize(k3a)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3a)",
+     "can_organize(k3a)",
+     "contested_otherwise(k3a)"
+    ],
+    [
+     "binding(k2a)",
+     "can_organize(k2a)",
+     "contested_otherwise(k2a)"
+    ],
+    [
+     "binding(k1a)",
+     "can_organize(k1a)",
+     "contested_otherwise(k1a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2a)",
+    "can_organize(k2a)",
+    "contested_otherwise(k2a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_lobby(k1a)",
+     "premises": [
+      "binding(k1a)",
+      "can_organize(k1a)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "contested_lobby(mc_lobby(k1a))",
+     "premises": [
+      "contested_otherwise(k1a)",
+      "mc_lobby(k1a)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "mc_lobby(k2a)",
+     "premises": [
+      "binding(k2a)",
+      "can_organize(k2a)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "contested_lobby(mc_lobby(k2a))",
+     "premises": [
+      "contested_otherwise(k2a)",
+      "mc_lobby(k2a)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "mc_lobby(k3a)",
+     "premises": [
+      "binding(k3a)",
+      "can_organize(k3a)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "contested_lobby(mc_lobby(k3a))",
+     "premises": [
+      "contested_otherwise(k3a)",
+      "mc_lobby(k3a)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": "policy_field",
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1a)",
+     "enforced(k1a)",
+     "wages_sticky(k1a)"
+    ],
+    [
+     "binding(k1a)",
+     "enforced(k1a)",
+     "worth_less(k1a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1a)",
+    "enforced(k1a)",
+    "wages_sticky(k1a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1a)",
+     "premises": [
+      "binding(k1a)",
+      "enforced(k1a)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1a)",
+     "premises": [
+      "worth_less(k1a)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1a)",
+     "premises": [
+      "mc_binds(k1a)",
+      "wages_sticky(k1a)"
+     ],
+     "rule": "CR-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3a)",
+     "enforced(k3a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3a)",
+    "enforced(k3a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_binds(k3a)",
+     "premises": [
+      "binding(k3a)",
+      "enforced(k3a)"
+     ],
+     "rule": "EN-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1a)",
+     "enforced(k1a)",
+     "reshaping_pays(k1a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1a)",
+    "enforced(k1a)",
+    "reshaping_pays(k1a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_reshaped(k1a)",
+     "premises": [
+      "definition_line(k1a)",
+      "reshaping_pays(k1a)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1a)",
+     "enforced(k1a)",
+     "wages_sticky(k1a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1a)",
+    "enforced(k1a)",
+    "wages_sticky(k1a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1a)",
+     "premises": [
+      "binding(k1a)",
+      "enforced(k1a)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1a)",
+     "premises": [
+      "mc_binds(k1a)",
+      "wages_sticky(k1a)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1a)",
+     "enforced(k1a)",
+     "wages_sticky(k1a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1a)",
+    "enforced(k1a)",
+    "wages_sticky(k1a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1a)",
+     "premises": [
+      "binding(k1a)",
+      "enforced(k1a)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1a)",
+     "premises": [
+      "mc_binds(k1a)",
+      "wages_sticky(k1a)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "return_on_capital",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2a)",
+     "substitute_terms(k2a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2a)",
+    "substitute_terms(k2a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tb_substitute(k2a)",
+     "premises": [
+      "substitute_terms(k2a)"
+     ],
+     "rule": "PC-18"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-18",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "term_prevalence",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1p)",
+     "enforced(k1p)",
+     "valued_on_earnings(k1p)",
+     "wages_sticky(k1p)"
+    ],
+    [
+     "binding(k2p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tb_voided(k2p)",
+     "premises": [
+      "voids_existing(k2p)"
+     ],
+     "rule": "CR-8"
+    },
+    {
+     "conclusion": "mc_binds(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "enforced(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1p)",
+     "premises": [
+      "mc_binds(k1p)",
+      "wages_sticky(k1p)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "mc_capitalized(k1p)",
+     "premises": [
+      "mc_returns(k1p)",
+      "valued_on_earnings(k1p)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-19",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_binds(k3p)",
+     "premises": [
+      "binding(k3p)",
+      "enforced(k3p)"
+     ],
+     "rule": "EN-14"
+    },
+    {
+     "conclusion": "mc_compliance(k1p)",
+     "premises": [
+      "mandate(k1p)"
+     ],
+     "rule": "OC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-20",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1p)",
+     "complaint_unlikely(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1p)",
+    "complaint_unlikely(k1p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_breach(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "complaint_only(k1p)",
+      "complaint_unlikely(k1p)"
+     ],
+     "rule": "RS-20"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-21",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "legal_breach",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1p)",
+     "can_organize(k1p)"
+    ],
+    [
+     "binding(k2p)",
+     "can_organize(k2p)"
+    ],
+    [
+     "binding(k3p)",
+     "can_organize(k3p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1p)",
+    "can_organize(k1p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_lobby(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "can_organize(k1p)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "mc_lobby(k2p)",
+     "premises": [
+      "binding(k2p)",
+      "can_organize(k2p)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "mc_lobby(k3p)",
+     "premises": [
+      "binding(k3p)",
+      "can_organize(k3p)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-22",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2p)",
+     "can_organize(k2p)",
+     "contested_otherwise(k2p)"
+    ],
+    [
+     "binding(k3p)",
+     "can_organize(k3p)",
+     "contested_otherwise(k3p)"
+    ],
+    [
+     "binding(k1p)",
+     "can_organize(k1p)",
+     "contested_otherwise(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2p)",
+    "can_organize(k2p)",
+    "contested_otherwise(k2p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_lobby(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "can_organize(k1p)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "contested_lobby(mc_lobby(k1p))",
+     "premises": [
+      "contested_otherwise(k1p)",
+      "mc_lobby(k1p)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "mc_lobby(k2p)",
+     "premises": [
+      "binding(k2p)",
+      "can_organize(k2p)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "contested_lobby(mc_lobby(k2p))",
+     "premises": [
+      "contested_otherwise(k2p)",
+      "mc_lobby(k2p)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "mc_lobby(k3p)",
+     "premises": [
+      "binding(k3p)",
+      "can_organize(k3p)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "contested_lobby(mc_lobby(k3p))",
+     "premises": [
+      "contested_otherwise(k3p)",
+      "mc_lobby(k3p)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-23",
+   "item": "policy_field",
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1p)",
+     "enforced(k1p)",
+     "wages_sticky(k1p)"
+    ],
+    [
+     "binding(k1p)",
+     "enforced(k1p)",
+     "worth_less(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1p)",
+    "enforced(k1p)",
+    "wages_sticky(k1p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "enforced(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1p)",
+     "premises": [
+      "worth_less(k1p)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1p)",
+     "premises": [
+      "mc_binds(k1p)",
+      "wages_sticky(k1p)"
+     ],
+     "rule": "CR-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-24",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3p)",
+     "enforced(k3p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3p)",
+    "enforced(k3p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_binds(k3p)",
+     "premises": [
+      "binding(k3p)",
+      "enforced(k3p)"
+     ],
+     "rule": "EN-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-25",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1p)",
+     "enforced(k1p)",
+     "wages_sticky(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1p)",
+    "enforced(k1p)",
+    "wages_sticky(k1p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "enforced(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1p)",
+     "premises": [
+      "mc_binds(k1p)",
+      "wages_sticky(k1p)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-26",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1p)",
+     "enforced(k1p)",
+     "wages_sticky(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1p)",
+    "enforced(k1p)",
+    "wages_sticky(k1p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "enforced(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1p)",
+     "premises": [
+      "mc_binds(k1p)",
+      "wages_sticky(k1p)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-27",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "return_on_capital",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2p)",
+     "substitute_terms(k2p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2p)",
+    "substitute_terms(k2p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tb_substitute(k2p)",
+     "premises": [
+      "substitute_terms(k2p)"
+     ],
+     "rule": "PC-18"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-28",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "term_prevalence",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.phone.matching",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1p)",
+     "compete_with_bound(k1p)",
+     "enforced(k1p)",
+     "valued_on_earnings(k1p)",
+     "wages_sticky(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1p)",
+    "compete_with_bound(k1p)",
+    "enforced(k1p)",
+    "valued_on_earnings(k1p)",
+    "wages_sticky(k1p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "enforced(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1p)",
+     "premises": [
+      "mc_binds(k1p)",
+      "wages_sticky(k1p)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "mc_capitalized(k1p)",
+     "premises": [
+      "mc_returns(k1p)",
+      "valued_on_earnings(k1p)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "mc_rivals_value(k1p)",
+     "premises": [
+      "compete_with_bound(k1p)",
+      "mc_capitalized(k1p)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-29",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.phone.matching",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "conditions_differ(k1p)",
+     "enforced(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "conditions_differ(k1p)",
+    "enforced(k1p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_rewrite(k1p)",
+     "premises": [
+      "conditions_differ(k1p)",
+      "enforced(k1p)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-30",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "makers.phone.matching",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1p)",
+     "compete_with_bound(k1p)",
+     "enforced(k1p)",
+     "worth_less(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1p)",
+    "compete_with_bound(k1p)",
+    "enforced(k1p)",
+    "worth_less(k1p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "enforced(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_others_medium(k1p)",
+     "premises": [
+      "worth_less(k1p)"
+     ],
+     "rule": "CR-2"
+    },
+    {
+     "conclusion": "mc_others_medium(k1p)",
+     "premises": [
+      "mc_binds(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_rivals(k1p)",
+     "premises": [
+      "compete_with_bound(k1p)",
+      "mc_others_medium(k1p)"
+     ],
+     "rule": "CR-9"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-31",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_administered(k1a)",
+     "premises": [
+      "mandate(k1a)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "mc_administered(k1p)",
+     "premises": [
+      "mandate(k1p)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "mc_administered(k2a)",
+     "premises": [
+      "term_ban(k2a)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "mc_administered(k2d)",
+     "premises": [
+      "term_ban(k2d)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "mc_administered(k2p)",
+     "premises": [
+      "term_ban(k2p)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "mc_administered(k3a)",
+     "premises": [
+      "standard(k3a)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "mc_administered(k3p)",
+     "premises": [
+      "standard(k3p)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-32",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "complaints_filed(k1a)"
+    ]
+   ],
+   "assumptions": [
+    "complaints_filed(k1a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_complaints(k1a)",
+     "premises": [
+      "complaint_only(k1a)",
+      "complaints_filed(k1a)"
+     ],
+     "rule": "OC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-33",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1a)",
+     "enforced(k1a)",
+     "wages_sticky(k1a)"
+    ],
+    [
+     "binding(k1a)",
+     "enforced(k1a)",
+     "wages_adjust(k1a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1a)",
+    "enforced(k1a)",
+    "wages_sticky(k1a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1a)",
+     "premises": [
+      "binding(k1a)",
+      "enforced(k1a)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_others_short(k1a)",
+     "premises": [
+      "wages_sticky(k1a)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_others_short(k1a)",
+     "premises": [
+      "mc_binds(k1a)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_wage(k1a)",
+     "premises": [
+      "wages_adjust(k1a)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_wage(k1a)",
+     "premises": [
+      "mc_binds(k1a)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_earn_down(k1a)",
+     "premises": [
+      "mc_others_short(k1a)",
+      "mc_wage(k1a)"
+     ],
+     "rule": "CR-12"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-34",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "earnings",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1a)",
+     "enforced(k1a)",
+     "wages_sticky(k1a)"
+    ],
+    [
+     "binding(k1a)",
+     "enforced(k1a)",
+     "worth_less(k1a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1a)",
+    "enforced(k1a)",
+    "wages_sticky(k1a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1a)",
+     "premises": [
+      "binding(k1a)",
+      "enforced(k1a)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_others_medium(k1a)",
+     "premises": [
+      "worth_less(k1a)"
+     ],
+     "rule": "CR-2"
+    },
+    {
+     "conclusion": "mc_others_medium(k1a)",
+     "premises": [
+      "mc_binds(k1a)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_others_short(k1a)",
+     "premises": [
+      "wages_sticky(k1a)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_others_short(k1a)",
+     "premises": [
+      "mc_binds(k1a)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked",
+    "non_wage_compensation"
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-35",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1a)",
+     "recipients_organize(k1a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1a)",
+    "recipients_organize(k1a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_recipients_lobby(k1a)",
+     "premises": [
+      "binding(k1a)",
+      "recipients_organize(k1a)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-36",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1a)",
+     "contested_otherwise(k1a)",
+     "recipients_organize(k1a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1a)",
+    "contested_otherwise(k1a)",
+    "recipients_organize(k1a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_recipients_lobby(k1a)",
+     "premises": [
+      "binding(k1a)",
+      "recipients_organize(k1a)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "contested_lobby(mc_recipients_lobby(k1a))",
+     "premises": [
+      "contested_otherwise(k1a)",
+      "mc_recipients_lobby(k1a)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-37",
+   "item": "policy_field",
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1a)",
+     "enforced(k1a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1a)",
+    "enforced(k1a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1a)",
+     "premises": [
+      "binding(k1a)",
+      "enforced(k1a)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-38",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "non_wage_compensation",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternatives_worse(k1a)",
+     "binding(k1a)",
+     "enforced(k1a)",
+     "wages_adjust(k1a)"
+    ]
+   ],
+   "assumptions": [
+    "alternatives_worse(k1a)",
+    "binding(k1a)",
+    "enforced(k1a)",
+    "wages_adjust(k1a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1a)",
+     "premises": [
+      "binding(k1a)",
+      "enforced(k1a)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_wage(k1a)",
+     "premises": [
+      "wages_adjust(k1a)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_wage(k1a)",
+     "premises": [
+      "mc_binds(k1a)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_incidence(k1a)",
+     "premises": [
+      "alternatives_worse(k1a)",
+      "mc_wage(k1a)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-39",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "tax_share_borne",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1a)",
+     "enforced(k1a)",
+     "wages_adjust(k1a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1a)",
+    "enforced(k1a)",
+    "wages_adjust(k1a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1a)",
+     "premises": [
+      "binding(k1a)",
+      "enforced(k1a)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_wage(k1a)",
+     "premises": [
+      "wages_adjust(k1a)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_wage(k1a)",
+     "premises": [
+      "mc_binds(k1a)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-40",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "wage_rate",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.ag",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2a)",
+     "term_valued(k2a)"
+    ],
+    [
+     "binding(k2d)",
+     "term_valued(k2d)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2a)",
+    "term_valued(k2a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tb_binds(k2a)",
+     "premises": [
+      "binding(k2a)"
+     ],
+     "rule": "PC-18"
+    },
+    {
+     "conclusion": "tb_others(k2a)",
+     "premises": [
+      "term_valued(k2a)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "tb_others(k2a)",
+     "premises": [
+      "tb_binds(k2a)"
+     ],
+     "rule": "PC-18"
+    },
+    {
+     "conclusion": "tb_binds(k2d)",
+     "premises": [
+      "binding(k2d)"
+     ],
+     "rule": "PC-18"
+    },
+    {
+     "conclusion": "tb_others(k2d)",
+     "premises": [
+      "term_valued(k2d)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "tb_others(k2d)",
+     "premises": [
+      "tb_binds(k2d)"
+     ],
+     "rule": "PC-18"
+    }
+   ],
+   "group": [
+    "wage_rate",
+    "non_wage_compensation"
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-41",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "wage_rate",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.ag.exempt",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3a)",
+     "buyers_value_standard(k3a)",
+     "enforced(k3a)"
+    ],
+    [
+     "binding(k3a)",
+     "enforced(k3a)",
+     "stock_competes(k3a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3a)",
+    "buyers_value_standard(k3a)",
+    "enforced(k3a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_valued(k3a)",
+     "premises": [
+      "buyers_value_standard(k3a)"
+     ],
+     "rule": "EN-14"
+    },
+    {
+     "conclusion": "st_stock(k3a)",
+     "premises": [
+      "stock_competes(k3a)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "st_stock(k3a)",
+     "premises": [
+      "stock_exempt(k3a)"
+     ],
+     "rule": "EN-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-42",
+   "item": null,
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.ag.exempt",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3a)",
+     "enforced(k3a)",
+     "stock_competes(k3a)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3a)",
+    "enforced(k3a)",
+    "stock_competes(k3a)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_stock(k3a)",
+     "premises": [
+      "stock_competes(k3a)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "st_stock(k3a)",
+     "premises": [
+      "stock_exempt(k3a)"
+     ],
+     "rule": "EN-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-43",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "stock_age",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "complaints_filed(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "complaints_filed(k1p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_complaints(k1p)",
+     "premises": [
+      "complaint_only(k1p)",
+      "complaints_filed(k1p)"
+     ],
+     "rule": "OC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-44",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1p)",
+     "enforced(k1p)",
+     "wages_sticky(k1p)"
+    ],
+    [
+     "binding(k1p)",
+     "enforced(k1p)",
+     "wages_adjust(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1p)",
+    "enforced(k1p)",
+    "wages_sticky(k1p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "enforced(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_others_short(k1p)",
+     "premises": [
+      "wages_sticky(k1p)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_others_short(k1p)",
+     "premises": [
+      "mc_binds(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_wage(k1p)",
+     "premises": [
+      "wages_adjust(k1p)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_wage(k1p)",
+     "premises": [
+      "mc_binds(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_earn_down(k1p)",
+     "premises": [
+      "mc_others_short(k1p)",
+      "mc_wage(k1p)"
+     ],
+     "rule": "CR-12"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-45",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "earnings",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1p)",
+     "enforced(k1p)",
+     "wages_sticky(k1p)"
+    ],
+    [
+     "binding(k1p)",
+     "enforced(k1p)",
+     "worth_less(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1p)",
+    "enforced(k1p)",
+    "wages_sticky(k1p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "enforced(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_others_medium(k1p)",
+     "premises": [
+      "worth_less(k1p)"
+     ],
+     "rule": "CR-2"
+    },
+    {
+     "conclusion": "mc_others_medium(k1p)",
+     "premises": [
+      "mc_binds(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_others_short(k1p)",
+     "premises": [
+      "wages_sticky(k1p)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_others_short(k1p)",
+     "premises": [
+      "mc_binds(k1p)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked",
+    "non_wage_compensation"
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-46",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1p)",
+     "recipients_organize(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1p)",
+    "recipients_organize(k1p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_recipients_lobby(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "recipients_organize(k1p)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-47",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1p)",
+     "contested_otherwise(k1p)",
+     "recipients_organize(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1p)",
+    "contested_otherwise(k1p)",
+    "recipients_organize(k1p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_recipients_lobby(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "recipients_organize(k1p)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "contested_lobby(mc_recipients_lobby(k1p))",
+     "premises": [
+      "contested_otherwise(k1p)",
+      "mc_recipients_lobby(k1p)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-48",
+   "item": "policy_field",
+   "reported": false,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1p)",
+     "enforced(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1p)",
+    "enforced(k1p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "enforced(k1p)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-49",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "non_wage_compensation",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternatives_worse(k1p)",
+     "binding(k1p)",
+     "enforced(k1p)",
+     "wages_adjust(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "alternatives_worse(k1p)",
+    "binding(k1p)",
+    "enforced(k1p)",
+    "wages_adjust(k1p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "enforced(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_wage(k1p)",
+     "premises": [
+      "wages_adjust(k1p)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_wage(k1p)",
+     "premises": [
+      "mc_binds(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_incidence(k1p)",
+     "premises": [
+      "alternatives_worse(k1p)",
+      "mc_wage(k1p)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-50",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "tax_share_borne",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1p)",
+     "enforced(k1p)",
+     "wages_adjust(k1p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1p)",
+    "enforced(k1p)",
+    "wages_adjust(k1p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1p)",
+     "premises": [
+      "binding(k1p)",
+      "enforced(k1p)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_wage(k1p)",
+     "premises": [
+      "wages_adjust(k1p)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_wage(k1p)",
+     "premises": [
+      "mc_binds(k1p)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-51",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "wage_rate",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.phone",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2p)",
+     "term_valued(k2p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2p)",
+    "term_valued(k2p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tb_binds(k2p)",
+     "premises": [
+      "binding(k2p)"
+     ],
+     "rule": "PC-18"
+    },
+    {
+     "conclusion": "tb_others(k2p)",
+     "premises": [
+      "term_valued(k2p)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "tb_others(k2p)",
+     "premises": [
+      "tb_binds(k2p)"
+     ],
+     "rule": "PC-18"
+    }
+   ],
+   "group": [
+    "wage_rate",
+    "non_wage_compensation"
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-52",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "wage_rate",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.phone.exempt",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3p)",
+     "buyers_value_standard(k3p)",
+     "enforced(k3p)"
+    ],
+    [
+     "binding(k3p)",
+     "enforced(k3p)",
+     "stock_competes(k3p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3p)",
+    "buyers_value_standard(k3p)",
+    "enforced(k3p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_valued(k3p)",
+     "premises": [
+      "buyers_value_standard(k3p)"
+     ],
+     "rule": "EN-14"
+    },
+    {
+     "conclusion": "st_stock(k3p)",
+     "premises": [
+      "stock_competes(k3p)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "st_stock(k3p)",
+     "premises": [
+      "stock_exempt(k3p)"
+     ],
+     "rule": "EN-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-53",
+   "item": null,
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.phone.exempt",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3p)",
+     "enforced(k3p)",
+     "stock_competes(k3p)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3p)",
+    "enforced(k3p)",
+    "stock_competes(k3p)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_stock(k3p)",
+     "premises": [
+      "stock_competes(k3p)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "st_stock(k3p)",
+     "premises": [
+      "stock_exempt(k3p)"
+     ],
+     "rule": "EN-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-54",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "stock_age",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1a, \"makers.ag\").\nexcluded(k1a, \"buyers.prospective\").\nannounced(k1a).\nfield_contested(k1a).\nmandate(k1a).\nenforcer(k1a, \"officials.enforcement\").\ntaxpayer(k1a, \"taxpayers\").\nmc_payer_group(k1a, \"taxpayers,recipients.other_spending\").\nmc_recipient(k1a, \"owners.ag\").\nmc_output_buyer(k1a, \"buyers.prospective\").\ncomplaint_only(k1a).\ndefinition_line(k1a).\nbound(k1p, \"makers.phone\").\nexcluded(k1p, \"buyers.prospective\").\nannounced(k1p).\nfield_contested(k1p).\nmandate(k1p).\nenforcer(k1p, \"officials.enforcement\").\ntaxpayer(k1p, \"taxpayers\").\nmc_payer_group(k1p, \"taxpayers,recipients.other_spending\").\nmc_recipient(k1p, \"owners.phone\").\nmc_already(k1p, \"makers.phone.matching\").\nmc_output_buyer(k1p, \"buyers.prospective\").\nmc_rival(k1p, \"makers.phone.matching\").\ncomplaint_only(k1p).\nbound(k2a, \"makers.ag\").\nexcluded(k2a, \"buyers.prospective\").\nannounced(k2a).\nfield_contested(k2a).\nterm_ban(k2a).\nenforcer(k2a, \"officials.enforcement\").\ntaxpayer(k2a, \"taxpayers\").\nmc_payer_group(k2a, \"taxpayers,recipients.other_spending\").\ntb_freed(k2a, \"owners.ag\").\nvoids_existing(k2a).\nbound(k2d, \"dealers.ag\").\nexcluded(k2d, \"buyers.prospective\").\nannounced(k2d).\nfield_contested(k2d).\nterm_ban(k2d).\nenforcer(k2d, \"officials.enforcement\").\ntaxpayer(k2d, \"taxpayers\").\nmc_payer_group(k2d, \"taxpayers,recipients.other_spending\").\ntb_freed(k2d, \"owners.ag\").\nvoids_existing(k2d).\nbound(k2p, \"makers.phone\").\nexcluded(k2p, \"buyers.prospective\").\nannounced(k2p).\nfield_contested(k2p).\nterm_ban(k2p).\nenforcer(k2p, \"officials.enforcement\").\ntaxpayer(k2p, \"taxpayers\").\nmc_payer_group(k2p, \"taxpayers,recipients.other_spending\").\ntb_freed(k2p, \"owners.phone\").\nvoids_existing(k2p).\nbound(k3a, \"makers.ag\").\nexcluded(k3a, \"buyers.prospective\").\nannounced(k3a).\nfield_contested(k3a).\nstandard(k3a).\nenforcer(k3a, \"officials.enforcement\").\ntaxpayer(k3a, \"taxpayers\").\nmc_payer_group(k3a, \"taxpayers,recipients.other_spending\").\nst_buyer(k3a, \"buyers.prospective\").\nst_stock_owner(k3a, \"owners.ag.exempt\").\nstock_exempt(k3a).\nbound(k3p, \"makers.phone\").\nexcluded(k3p, \"buyers.prospective\").\nannounced(k3p).\nfield_contested(k3p).\nstandard(k3p).\nenforcer(k3p, \"officials.enforcement\").\ntaxpayer(k3p, \"taxpayers\").\nmc_payer_group(k3p, \"taxpayers,recipients.other_spending\").\nst_buyer(k3p, \"buyers.prospective\").\nst_stock_owner(k3p, \"owners.phone.exempt\").\nstock_exempt(k3p).\nassumption(binding(k1a)).\nassumption(enforced(k1a)).\nassumption(wages_sticky(k1a)).\nassumption(wages_adjust(k1a)).\nassumption(worth_less(k1a)).\nassumption(alternatives_worse(k1a)).\nassumption(valued_on_earnings(k1a)).\nassumption(can_organize(k1a)).\nassumption(recipients_organize(k1a)).\nassumption(rivals_bound(k1a)).\nassumption(reshaping_pays(k1a)).\nassumption(complaint_unlikely(k1a)).\nassumption(complaints_filed(k1a)).\nassumption(contested_otherwise(k1a)).\nassumption(binding(k1p)).\nassumption(enforced(k1p)).\nassumption(wages_sticky(k1p)).\nassumption(wages_adjust(k1p)).\nassumption(worth_less(k1p)).\nassumption(alternatives_worse(k1p)).\nassumption(valued_on_earnings(k1p)).\nassumption(can_organize(k1p)).\nassumption(recipients_organize(k1p)).\nassumption(conditions_differ(k1p)).\nassumption(rivals_bound(k1p)).\nassumption(compete_with_bound(k1p)).\nassumption(complaint_unlikely(k1p)).\nassumption(complaints_filed(k1p)).\nassumption(contested_otherwise(k1p)).\nassumption(binding(k2a)).\nassumption(term_valued(k2a)).\nassumption(substitute_terms(k2a)).\nassumption(can_organize(k2a)).\nassumption(contested_otherwise(k2a)).\nassumption(binding(k2d)).\nassumption(term_valued(k2d)).\nassumption(substitute_terms(k2d)).\nassumption(can_organize(k2d)).\nassumption(contested_otherwise(k2d)).\nassumption(binding(k2p)).\nassumption(term_valued(k2p)).\nassumption(substitute_terms(k2p)).\nassumption(can_organize(k2p)).\nassumption(contested_otherwise(k2p)).\nassumption(binding(k3a)).\nassumption(enforced(k3a)).\nassumption(can_organize(k3a)).\nassumption(stock_competes(k3a)).\nassumption(buyers_value_standard(k3a)).\nassumption(contested_otherwise(k3a)).\nassumption(binding(k3p)).\nassumption(enforced(k3p)).\nassumption(can_organize(k3p)).\nassumption(stock_competes(k3p)).\nassumption(buyers_value_standard(k3p)).\nassumption(contested_otherwise(k3p)).\n",
+ "explanations": [
+  "C-1. Compared with no Kestrava Fair Repair Act, price paid for buyers.prospective rises from the short run onward (tier B, invisible). Why: EN-14: EN-14; PC-17: PC-17; CR-12: CR-12; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The standard binds on some designs (p = 0.80); Most makers comply (p = 0.70). It also follows under 5 other minimal assumption set(s). Reported.",
+  "C-2. Compared with no Kestrava Fair Repair Act, quantity traded for buyers.prospective falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Most of the providers' rivals are bound too (p = 0.90); The other money terms are fixed in the short run (p = 0.80). It also follows under 3 other minimal assumption set(s). Reported.",
+  "C-3. Compared with no Kestrava Fair Repair Act, specification level for buyers.prospective rises from the short run onward (tier B, visible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.80); Most makers comply (p = 0.70). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-4. Compared with no Kestrava Fair Repair Act, asset value for dealers.ag falls from the short run onward (tier B, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The term was in use (p = 0.90). Reported.",
+  "C-5. Compared with no Kestrava Fair Repair Act, lobbying effort for dealers.ag rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was in use (p = 0.90); The parties that used the term can organize to lobby (p = 0.85). Reported.",
+  "C-6. Compared with no Kestrava Fair Repair Act, lobbying effort (policy field) for dealers.ag may move either way from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was in use (p = 0.90); The parties that used the term can organize to lobby (p = 0.85); The groups that gain from or are bound by the measure would have lobbied on the same question without it (p = 0.80). Reported.",
+  "C-7. Compared with no Kestrava Fair Repair Act, term prevalence for dealers.ag rises from the short run onward (tier B, invisible). Why: PC-18: PC-18. This holds if: The term was in use (p = 0.90); Lawful substitute terms give part of the same protection (p = 0.40). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-8. Compared with no Kestrava Fair Repair Act, asset value for makers.ag falls from the short run onward (tier B, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses; PC-17: PC-17; CR-7: CR-7. This holds if: The term was in use (p = 0.90). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-9. Compared with no Kestrava Fair Repair Act, compliance cost for makers.ag rises from the short run onward (tier A, invisible). Why: EN-14: EN-14; OC-2: OC-2. This holds if: no assumption. Reported.",
+  "C-10. Compared with no Kestrava Fair Repair Act, legal breach for makers.ag rises from the short run onward (tier B, invisible). Why: RS-20: RS-20. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Complaints are unlikely from some recipients (p = 0.60). Reported.",
+  "C-11. Compared with no Kestrava Fair Repair Act, lobbying effort for makers.ag rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The bound providers can organize to lobby (p = 0.85). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-12. Compared with no Kestrava Fair Repair Act, lobbying effort (policy field) for makers.ag may move either way from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was in use (p = 0.90); The parties that used the term can organize to lobby (p = 0.85); The groups that gain from or are bound by the measure would have lobbied on the same question without it (p = 0.80). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-13. Compared with no Kestrava Fair Repair Act, price paid for makers.ag rises from the short run onward (tier B, visible). Why: PC-17: PC-17; CR-12: CR-12; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-14. Compared with no Kestrava Fair Repair Act, quantity supplied for makers.ag falls from the medium run onward (tier B, invisible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.80); Most makers comply (p = 0.70). Reported.",
+  "C-15. Compared with no Kestrava Fair Repair Act, reclassification for makers.ag rises from the medium run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.55). Reported.",
+  "C-16. Compared with no Kestrava Fair Repair Act, resources available other uses for makers.ag falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). Reported.",
+  "C-17. Compared with no Kestrava Fair Repair Act, return on capital for makers.ag falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). Reported.",
+  "C-18. Compared with no Kestrava Fair Repair Act, term prevalence for makers.ag rises from the short run onward (tier B, invisible). Why: PC-18: PC-18. This holds if: The term was in use (p = 0.90); Lawful substitute terms give part of the same protection (p = 0.80). Reported.",
+  "C-19. Compared with no Kestrava Fair Repair Act, asset value for makers.phone falls from the short run onward (tier B, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses; PC-17: PC-17; CR-7: CR-7. This holds if: The term was in use (p = 0.90). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-20. Compared with no Kestrava Fair Repair Act, compliance cost for makers.phone rises from the short run onward (tier A, invisible). Why: EN-14: EN-14; OC-2: OC-2. This holds if: no assumption. Reported.",
+  "C-21. Compared with no Kestrava Fair Repair Act, legal breach for makers.phone rises from the short run onward (tier B, invisible). Why: RS-20: RS-20. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Complaints are unlikely from some recipients (p = 0.70). Reported.",
+  "C-22. Compared with no Kestrava Fair Repair Act, lobbying effort for makers.phone rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The bound providers can organize to lobby (p = 0.85). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-23. Compared with no Kestrava Fair Repair Act, lobbying effort (policy field) for makers.phone may move either way from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was in use (p = 0.90); The parties that used the term can organize to lobby (p = 0.85); The groups that gain from or are bound by the measure would have lobbied on the same question without it (p = 0.80). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-24. Compared with no Kestrava Fair Repair Act, price paid for makers.phone rises from the short run onward (tier B, visible). Why: PC-17: PC-17; CR-12: CR-12; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-25. Compared with no Kestrava Fair Repair Act, quantity supplied for makers.phone falls from the medium run onward (tier B, invisible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.80); Most makers comply (p = 0.70). Reported.",
+  "C-26. Compared with no Kestrava Fair Repair Act, resources available other uses for makers.phone falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). Reported.",
+  "C-27. Compared with no Kestrava Fair Repair Act, return on capital for makers.phone falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). Reported.",
+  "C-28. Compared with no Kestrava Fair Repair Act, term prevalence for makers.phone rises from the short run onward (tier B, invisible). Why: PC-18: PC-18. This holds if: The term was in use (p = 0.90); Lawful substitute terms give part of the same protection (p = 0.80). Reported.",
+  "C-29. Compared with no Kestrava Fair Repair Act, asset value for makers.phone.matching rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.90); Most bound providers comply (p = 0.70); The providers' businesses are valued on expected earnings (p = 0.85); The other money terms are fixed in the short run (p = 0.80). Reported.",
+  "C-30. Compared with no Kestrava Fair Repair Act, compliance cost for makers.phone.matching rises from the short run onward (tier B, invisible). Why: PC-17: PC-17. This holds if: Some existing policies offer the term on conditions the mandate forbids (p = 0.20); Most bound providers comply (p = 0.70). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-31. Compared with no Kestrava Fair Repair Act, quantity supplied for makers.phone.matching rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-2: CR-2; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.90); Most bound providers comply (p = 0.70); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
+  "C-32. Compared with no Kestrava Fair Repair Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-33. Compared with no Kestrava Fair Repair Act, compliance cost for owners.ag rises from the short run onward (tier B, invisible). Why: OC-2: OC-2. This holds if: Complaints are filed in meaningful numbers (p = 0.70). Reported.",
+  "C-34. Compared with no Kestrava Fair Repair Act, earnings for owners.ag falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price; CR-12: CR-12. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-35. Compared with no Kestrava Fair Repair Act, employment or hours worked or non wage compensation for owners.ag falls for at least one of them from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-2: CR-2; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-36. Compared with no Kestrava Fair Repair Act, lobbying effort for owners.ag rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The recipients can organize to lobby (p = 0.85). Reported.",
+  "C-37. Compared with no Kestrava Fair Repair Act, lobbying effort (policy field) for owners.ag may move either way from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The groups that gain from or are bound by the measure would have lobbied on the same question without it (p = 0.80); The recipients can organize to lobby (p = 0.85). Reported.",
+  "C-38. Compared with no Kestrava Fair Repair Act, non wage compensation for owners.ag rises from the short run onward (tier B, visible). Why: PC-17: PC-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70). Reported.",
+  "C-39. Compared with no Kestrava Fair Repair Act, tax share borne for owners.ag rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price; CR-7: CR-7. This holds if: The recipients' alternatives are worse than the providers' (p = 0.30); The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The wage can adjust over the medium run (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-40. Compared with no Kestrava Fair Repair Act, wage rate for owners.ag falls from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The wage can adjust over the medium run (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-41. Compared with no Kestrava Fair Repair Act, wage rate or non wage compensation for owners.ag falls for at least one of them from the medium run onward (tier B, invisible). Why: PC-18: PC-18; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was in use (p = 0.90); The party that used the term valued its protection (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-42. Compared with no Kestrava Fair Repair Act, asset value for owners.ag.exempt may move either way from the medium run onward (tier B, invisible). Why: EN-14: EN-14; CR-7: CR-7. This holds if: The standard binds on some designs (p = 0.80); Buyers value the standard enough to prefer covered units (p = 0.70); Most makers comply (p = 0.70). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-43. Compared with no Kestrava Fair Repair Act, stock age for owners.ag.exempt rises in the long run (tier B, invisible). Why: CR-7: CR-7; EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.80); Most makers comply (p = 0.70); Existing units compete with new ones (p = 0.70). Reported.",
+  "C-44. Compared with no Kestrava Fair Repair Act, compliance cost for owners.phone rises from the short run onward (tier B, invisible). Why: OC-2: OC-2. This holds if: Complaints are filed in meaningful numbers (p = 0.70). Reported.",
+  "C-45. Compared with no Kestrava Fair Repair Act, earnings for owners.phone falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price; CR-12: CR-12. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-46. Compared with no Kestrava Fair Repair Act, employment or hours worked or non wage compensation for owners.phone falls for at least one of them from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-2: CR-2; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-47. Compared with no Kestrava Fair Repair Act, lobbying effort for owners.phone rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The recipients can organize to lobby (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-48. Compared with no Kestrava Fair Repair Act, lobbying effort (policy field) for owners.phone may move either way from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The groups that gain from or are bound by the measure would have lobbied on the same question without it (p = 0.80); The recipients can organize to lobby (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-49. Compared with no Kestrava Fair Repair Act, non wage compensation for owners.phone rises from the short run onward (tier B, visible). Why: PC-17: PC-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70). Reported.",
+  "C-50. Compared with no Kestrava Fair Repair Act, tax share borne for owners.phone rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price; CR-7: CR-7. This holds if: The recipients' alternatives are worse than the providers' (p = 0.30); The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The wage can adjust over the medium run (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-51. Compared with no Kestrava Fair Repair Act, wage rate for owners.phone falls from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The wage can adjust over the medium run (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-52. Compared with no Kestrava Fair Repair Act, wage rate or non wage compensation for owners.phone falls for at least one of them from the medium run onward (tier B, invisible). Why: PC-18: PC-18; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was in use (p = 0.90); The party that used the term valued its protection (p = 0.85). Reported.",
+  "C-53. Compared with no Kestrava Fair Repair Act, asset value for owners.phone.exempt may move either way from the medium run onward (tier B, invisible). Why: EN-14: EN-14; CR-7: CR-7. This holds if: The standard binds on some designs (p = 0.80); Buyers value the standard enough to prefer covered units (p = 0.70); Most makers comply (p = 0.70). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-54. Compared with no Kestrava Fair Repair Act, stock age for owners.phone.exempt rises in the long run (tier B, invisible). Why: CR-7: CR-7; EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.80); Most makers comply (p = 0.70); Existing units compete with new ones (p = 0.60). Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1a.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-2: before the Act makers did not offer independents and owners genuine parts, tools and software on the terms they gave authorized repairers.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k1a.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the mandated term absent from some contracts that would otherwise be made?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1a.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-1: most makers comply with K1 in most cases (penalty up to $10,000 per violation, reputational cost, organized complainants).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k1a.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most bound providers comply with the mandate in practice?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1a.wages_sticky",
+    "rationale": "No matching assumption in WE-059; judged from the text: covered units already sold carry the term and the prices of those sales cannot be renegotiated (section 6, values paragraph), so the cost stays with the maker in the short run; the nearest row, A-6, says makers bear the cost (0.85).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "wages_sticky",
+    "assumption_class": "other",
+    "id": "k1a.wages_sticky",
+    "kind": "noul",
+    "options": [],
+    "text": "In the short run, are the other money terms of these contracts (wages, prices) fixed by pay scales, contracts or raise cycles?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k1a.wages_adjust",
+    "rationale": "No matching assumption in WE-059; judged from the text: read as asked for a sale, the price of the contract is what the owner pays, and nothing in the text has it fall; makers seek to recover the cost by raising price or cutting other terms (A-6, A-18). The question is worded for a wage that falls.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "wages_adjust",
+    "assumption_class": "other",
+    "id": "k1a.wages_adjust",
+    "kind": "noul",
+    "options": [],
+    "text": "Over the medium run, can the wage (or price) of these contracts adjust downward, for instance through smaller raises?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1a.worth_less",
+    "rationale": "No matching assumption in WE-059; judged from the text: the owner's gain is the lower repair cost (A-22: buyers value the term, 0.7) but the maker also bears support, portal and compliance costs beyond the transferred margin (C-40), and A-25 (0.7) has the costs outweighing the gain from buyers' valuation; section 6 does not rank them for new sales (C-30), so only a modest probability.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "worth_less",
+    "assumption_class": "other",
+    "id": "k1a.worth_less",
+    "kind": "noul",
+    "options": [],
+    "text": "For the marginal contract, is the term worth less to the recipient than it costs the provider?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k1a.alternatives_worse",
+    "rationale": "No matching assumption in WE-059; judged from the text: owners can buy another brand or, near the line, in Darnholt, and phones are sold nationally; the text does not say owners' alternatives are clearly worse than makers'. A-19 compares dealers with makers, not owners.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "alternatives_worse",
+    "assumption_class": "mobility",
+    "id": "k1a.alternatives_worse",
+    "kind": "noul",
+    "options": [],
+    "text": "Over the medium to long run, are the recipients' alternatives to bound contracts clearly worse than the providers' alternatives?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1a.valued_on_earnings",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-12: investors value makers' expected repair-input margins in Kestrava.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "valued_on_earnings",
+    "assumption_class": "expectations",
+    "id": "k1a.valued_on_earnings",
+    "kind": "noul",
+    "options": [],
+    "text": "Are the providers' businesses valued on expected earnings, so that a lower expected return lowers their sale value?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1a.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: makers, dealers, farm groups and repair associations can organize at a cost below their stakes (campaigns on the 2023 and 2025 bills).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1a.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound providers organize to lobby over the mandate at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1a.recipients_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: farm groups and repair associations can organize at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "recipients_organize",
+    "assumption_class": "other",
+    "id": "k1a.recipients_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the recipients of the term organize to lobby to widen it at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1a.rivals_bound",
+    "rationale": "No matching assumption in WE-059; judged from the text: coverage attaches to equipment sold to a purchaser in Kestrava, so every maker selling there is bound; section 6 speaks of the Act binding 'every rival at once' (C-26).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "rivals_bound",
+    "assumption_class": "other",
+    "id": "k1a.rivals_bound",
+    "kind": "noul",
+    "options": [],
+    "text": "Are most of the providers' rivals in their output market bound by the mandate too?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.55,
+    "question_id": "k1a.reshaping_pays",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-9: some compact tractors can be designed and marketed for grounds care at a cost below the burden of coverage.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "reshaping_pays",
+    "assumption_class": "other",
+    "id": "k1a.reshaping_pays",
+    "kind": "noul",
+    "options": [],
+    "text": "For some of the actors bound by the measure, will reshaping goods so that they fall outside the measure's definitions cost less than the measure would cost them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1a.complaint_unlikely",
+    "rationale": "No matching assumption in WE-059; judged from the text: section 5 (C-20) has complaints from farmers and organized independents more than from phone owners, but small farms may not know the law or may not complain over small sums; the nearest row, A-10, is 0.7 and covers the offers that fall short.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "complaint_unlikely",
+    "assumption_class": "enforcement",
+    "id": "k1a.complaint_unlikely",
+    "kind": "noul",
+    "options": [],
+    "text": "Are complaints unlikely from some recipients (short tenure, unaware of the law, fear of retaliation, small sums)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1a.complaints_filed",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-10: the Attorney General acts only on complaint and some makers' offers fall short; section 5 (C-44) has owners and independents who receive short offers complain.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "complaints_filed",
+    "assumption_class": "enforcement",
+    "id": "k1a.complaints_filed",
+    "kind": "noul",
+    "options": [],
+    "text": "Will complaints be filed in meaningful numbers?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1a.contested_otherwise",
+    "rationale": "No matching assumption in WE-059; judged from the text: similar bills failed in 2023 and 2025 after campaigns on both sides and section 5 says the question 'would likely have returned' without the Act (C-22).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "contested_otherwise",
+    "assumption_class": "other",
+    "id": "k1a.contested_otherwise",
+    "kind": "noul",
+    "options": [],
+    "text": "Would the groups that gain from the measure (or are bound by it) have lobbied on the same question without it, because that question (how far to regulate or support this field) was already being fought over?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1p.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-2: before the Act makers did not offer independents and owners genuine parts, tools and software on the terms they gave authorized repairers, except one phone maker's national program.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k1p.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the mandated term absent from some contracts that would otherwise be made?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1p.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-1: most makers comply with K1 in most cases (penalty up to $10,000 per violation, reputational cost, organized complainants).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k1p.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most bound providers comply with the mandate in practice?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1p.wages_sticky",
+    "rationale": "No matching assumption in WE-059; judged from the text: covered units already sold carry the term and the prices of those sales cannot be renegotiated (section 6, values paragraph), so the cost stays with the maker in the short run; the nearest row, A-6, says makers bear the cost (0.85).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "wages_sticky",
+    "assumption_class": "other",
+    "id": "k1p.wages_sticky",
+    "kind": "noul",
+    "options": [],
+    "text": "In the short run, are the other money terms of these contracts (wages, prices) fixed by pay scales, contracts or raise cycles?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k1p.wages_adjust",
+    "rationale": "No matching assumption in WE-059; judged from the text: read as asked for a sale, the price of the contract is what the owner pays, and nothing in the text has it fall; makers seek to recover the cost by raising price or cutting other terms (A-6, A-18). The question is worded for a wage that falls.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "wages_adjust",
+    "assumption_class": "other",
+    "id": "k1p.wages_adjust",
+    "kind": "noul",
+    "options": [],
+    "text": "Over the medium run, can the wage (or price) of these contracts adjust downward, for instance through smaller raises?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1p.worth_less",
+    "rationale": "No matching assumption in WE-059; judged from the text: the owner's gain is the lower repair cost (A-22: buyers value the term, 0.7) but the maker also bears support, portal and compliance costs beyond the transferred margin (C-40), and A-25 (0.7) has the costs outweighing the gain from buyers' valuation; section 6 does not rank them for new sales (C-30), so only a modest probability.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "worth_less",
+    "assumption_class": "other",
+    "id": "k1p.worth_less",
+    "kind": "noul",
+    "options": [],
+    "text": "For the marginal contract, is the term worth less to the recipient than it costs the provider?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k1p.alternatives_worse",
+    "rationale": "No matching assumption in WE-059; judged from the text: owners can buy another brand or, near the line, in Darnholt, and phones are sold nationally; the text does not say owners' alternatives are clearly worse than makers'. A-19 compares dealers with makers, not owners.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "alternatives_worse",
+    "assumption_class": "mobility",
+    "id": "k1p.alternatives_worse",
+    "kind": "noul",
+    "options": [],
+    "text": "Over the medium to long run, are the recipients' alternatives to bound contracts clearly worse than the providers' alternatives?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1p.valued_on_earnings",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-12: investors value makers' expected repair-input margins in Kestrava.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "valued_on_earnings",
+    "assumption_class": "expectations",
+    "id": "k1p.valued_on_earnings",
+    "kind": "noul",
+    "options": [],
+    "text": "Are the providers' businesses valued on expected earnings, so that a lower expected return lowers their sale value?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1p.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: makers, dealers, farm groups and repair associations can organize at a cost below their stakes (campaigns on the 2023 and 2025 bills).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1p.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound providers organize to lobby over the mandate at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k1p.recipients_organize",
+    "rationale": "No matching assumption in WE-059; judged from the text: phone owners are some 5.4 million diffuse buyers; section 5 (RS-20 paragraph) has farmers and organized independents acting more than phone owners; the organized side is the independents' association, not the owner class recorded as recipient.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "recipients_organize",
+    "assumption_class": "other",
+    "id": "k1p.recipients_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the recipients of the term organize to lobby to widen it at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.2,
+    "question_id": "k1p.conditions_differ",
+    "rationale": "No matching assumption in WE-059; judged from the text: the one national phone program already matches K1 on price (A-2, 'Figures'); its server pairing is K3's question, not a condition K1 forbids.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "conditions_differ",
+    "assumption_class": "other",
+    "id": "k1p.conditions_differ",
+    "kind": "noul",
+    "options": [],
+    "text": "Do some existing policies that already offer the term do so on conditions the mandate forbids?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1p.rivals_bound",
+    "rationale": "No matching assumption in WE-059; judged from the text: coverage attaches to equipment sold to a purchaser in Kestrava, so every maker selling there is bound; section 6 speaks of the Act binding 'every rival at once' (C-26).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "rivals_bound",
+    "assumption_class": "other",
+    "id": "k1p.rivals_bound",
+    "kind": "noul",
+    "options": [],
+    "text": "Are most of the providers' rivals in their output market bound by the mandate too?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1p.compete_with_bound",
+    "rationale": "No matching assumption in WE-059; judged from the text: three makers sell about 90% of phones, so the maker already offering the term sells in the same market as the bound makers.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "compete_with_bound",
+    "assumption_class": "substitutability",
+    "id": "k1p.compete_with_bound",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the exempt or already-compliant firms compete in the same output markets as the bound providers?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1p.complaint_unlikely",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-10: the Attorney General acts only on complaint and some makers' offers fall short; section 5 (RS-20 paragraph) has phone owners complaining less than farmers.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "complaint_unlikely",
+    "assumption_class": "enforcement",
+    "id": "k1p.complaint_unlikely",
+    "kind": "noul",
+    "options": [],
+    "text": "Are complaints unlikely from some recipients (short tenure, unaware of the law, fear of retaliation, small sums)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1p.complaints_filed",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-10: the Attorney General acts only on complaint and some makers' offers fall short; section 5 (C-44) has owners and independents who receive short offers complain.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "complaints_filed",
+    "assumption_class": "enforcement",
+    "id": "k1p.complaints_filed",
+    "kind": "noul",
+    "options": [],
+    "text": "Will complaints be filed in meaningful numbers?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1p.contested_otherwise",
+    "rationale": "No matching assumption in WE-059; judged from the text: similar bills failed in 2023 and 2025 after campaigns on both sides and section 5 says the question 'would likely have returned' without the Act (C-22).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "contested_otherwise",
+    "assumption_class": "other",
+    "id": "k1p.contested_otherwise",
+    "kind": "noul",
+    "options": [],
+    "text": "Would the groups that gain from the measure (or are bound by it) have lobbied on the same question without it, because that question (how far to regulate or support this field) was already being fought over?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k2a.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-2: anti-repair terms were in use before the Act (K2 binds makers of farm equipment).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k2a.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Was the prohibited term in use in contracts of this kind?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2a.term_valued",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-6: makers bear costs from K1 and K2 (the margin the terms protected) and seek to recover them through other terms of sale; the nearest row to the maker valuing the protection.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "term_valued",
+    "assumption_class": "other",
+    "id": "k2a.term_valued",
+    "kind": "noul",
+    "options": [],
+    "text": "Did the party that used the term value its protection enough to pay for it through other terms?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2a.substitute_terms",
+    "rationale": "No matching assumption in WE-059; judged from the text: section 5 (C-10) names lawful substitutes: warranty exclusions for damage caused by the repair itself (section 4(b)), service bundles, expiring software subscriptions.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "substitute_terms",
+    "assumption_class": "substitutability",
+    "id": "k2a.substitute_terms",
+    "kind": "noul",
+    "options": [],
+    "text": "Are there lawful substitute terms that give part of the same protection?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2a.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: makers, dealers, farm groups and repair associations can organize at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k2a.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the parties that used the term organize to lobby over the prohibition at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2a.contested_otherwise",
+    "rationale": "No matching assumption in WE-059; judged from the text: similar bills failed in 2023 and 2025 after campaigns on both sides and section 5 says the question would likely have returned without the Act (C-22).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "contested_otherwise",
+    "assumption_class": "other",
+    "id": "k2a.contested_otherwise",
+    "kind": "noul",
+    "options": [],
+    "text": "Would the groups that gain from the measure (or are bound by it) have lobbied on the same question without it, because that question (how far to regulate or support this field) was already being fought over?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k2d.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-2: anti-repair terms were in use before the Act (K2 binds dealers).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k2d.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Was the prohibited term in use in contracts of this kind?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k2d.term_valued",
+    "rationale": "No matching assumption in WE-059; judged from the text: dealers' service revenue ($520 million a year) is what the anti-repair terms protect; but A-6 names makers only and section 5 does not describe dealers paying for the protection through other terms.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "term_valued",
+    "assumption_class": "other",
+    "id": "k2d.term_valued",
+    "kind": "noul",
+    "options": [],
+    "text": "Did the party that used the term value its protection enough to pay for it through other terms?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.4,
+    "question_id": "k2d.substitute_terms",
+    "rationale": "No matching assumption in WE-059; judged from the text: section 5 (C-10) lists the substitute terms for makers; the text gives dealers none of their own beyond the warranty exclusion in section 4(b), which is the maker's warranty.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "substitute_terms",
+    "assumption_class": "substitutability",
+    "id": "k2d.substitute_terms",
+    "kind": "noul",
+    "options": [],
+    "text": "Are there lawful substitute terms that give part of the same protection?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2d.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: makers, dealers, farm groups and repair associations can organize at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k2d.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the parties that used the term organize to lobby over the prohibition at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2d.contested_otherwise",
+    "rationale": "No matching assumption in WE-059; judged from the text: similar bills failed in 2023 and 2025 after campaigns on both sides and section 5 says the question would likely have returned without the Act (C-22).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "contested_otherwise",
+    "assumption_class": "other",
+    "id": "k2d.contested_otherwise",
+    "kind": "noul",
+    "options": [],
+    "text": "Would the groups that gain from the measure (or are bound by it) have lobbied on the same question without it, because that question (how far to regulate or support this field) was already being fought over?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k2p.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-2: anti-repair terms were in use before the Act (K2 binds makers of phones).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k2p.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Was the prohibited term in use in contracts of this kind?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2p.term_valued",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-6: makers bear costs from K1 and K2 and seek to recover them through other terms of sale; the nearest row to the maker valuing the protection.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "term_valued",
+    "assumption_class": "other",
+    "id": "k2p.term_valued",
+    "kind": "noul",
+    "options": [],
+    "text": "Did the party that used the term value its protection enough to pay for it through other terms?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2p.substitute_terms",
+    "rationale": "No matching assumption in WE-059; judged from the text: section 5 (C-10) names lawful substitutes: warranty exclusions for damage caused by the repair itself (section 4(b)), service bundles, expiring software subscriptions.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "substitute_terms",
+    "assumption_class": "substitutability",
+    "id": "k2p.substitute_terms",
+    "kind": "noul",
+    "options": [],
+    "text": "Are there lawful substitute terms that give part of the same protection?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2p.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: makers, dealers, farm groups and repair associations can organize at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k2p.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the parties that used the term organize to lobby over the prohibition at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2p.contested_otherwise",
+    "rationale": "No matching assumption in WE-059; judged from the text: similar bills failed in 2023 and 2025 after campaigns on both sides and section 5 says the question would likely have returned without the Act (C-22).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "contested_otherwise",
+    "assumption_class": "other",
+    "id": "k2p.contested_otherwise",
+    "kind": "noul",
+    "options": [],
+    "text": "Would the groups that gain from the measure (or are bound by it) have lobbied on the same question without it, because that question (how far to regulate or support this field) was already being fought over?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k3a.binding",
+    "rationale": "No matching assumption in WE-059; judged from the text: makers pair screens, batteries and cameras to the device (phones) and electronic parts on farm equipment need the maker's software to be calibrated or paired, so section 5(c) rules out some designs under either reading of U1; K3 binds under U1-a for every maker that pairs and under U1-b except for the one maker whose server pairing already meets it.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k3a.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Does the standard rule out some designs of new units that would otherwise be built or sold?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k3a.enforced",
+    "rationale": "No matching assumption in WE-059; judged from the text: same enforcement setting as K1 (penalty up to $10,000 per violation, organized complainants); the nearest row, A-1, is about K1 and is 0.7.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k3a.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most makers of new units comply with the standard?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k3a.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: makers, dealers, farm groups and repair associations can organize at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k3a.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the makers of new units organize to lobby over the standard at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k3a.stock_competes",
+    "rationale": "No matching assumption in WE-059; judged from the text: section 6 (C-28) records covered and exempt tractors as substitutes; no assumption row states it.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "stock_competes",
+    "assumption_class": "substitutability",
+    "id": "k3a.stock_competes",
+    "kind": "noul",
+    "options": [],
+    "text": "Do existing units compete with new units for the same buyers?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k3a.buyers_value_standard",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-22: buyers of new covered equipment value access to repair inputs.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyers_value_standard",
+    "assumption_class": "other",
+    "id": "k3a.buyers_value_standard",
+    "kind": "noul",
+    "options": [],
+    "text": "Do buyers value what the standard requires enough to prefer covered units over the existing stock?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k3a.contested_otherwise",
+    "rationale": "No matching assumption in WE-059; judged from the text: similar bills failed in 2023 and 2025 after campaigns on both sides and section 5 says the question would likely have returned without the Act (C-22).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "contested_otherwise",
+    "assumption_class": "other",
+    "id": "k3a.contested_otherwise",
+    "kind": "noul",
+    "options": [],
+    "text": "Would the groups that gain from the measure (or are bound by it) have lobbied on the same question without it, because that question (how far to regulate or support this field) was already being fought over?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k3p.binding",
+    "rationale": "No matching assumption in WE-059; judged from the text: makers pair screens, batteries and cameras to the device (phones) and electronic parts on farm equipment need the maker's software to be calibrated or paired, so section 5(c) rules out some designs under either reading of U1; K3 binds under U1-a for every maker that pairs and under U1-b except for the one maker whose server pairing already meets it.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k3p.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Does the standard rule out some designs of new units that would otherwise be built or sold?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k3p.enforced",
+    "rationale": "No matching assumption in WE-059; judged from the text: same enforcement setting as K1 (penalty up to $10,000 per violation, organized complainants); the nearest row, A-1, is about K1 and is 0.7.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k3p.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most makers of new units comply with the standard?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k3p.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: makers, dealers, farm groups and repair associations can organize at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k3p.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the makers of new units organize to lobby over the standard at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k3p.stock_competes",
+    "rationale": "No matching assumption in WE-059; judged from the text: phones sold before 2023 and newer phones are bought by the same buyers, though phones in use are replaced about every three years so the old stock shrinks fast.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "stock_competes",
+    "assumption_class": "substitutability",
+    "id": "k3p.stock_competes",
+    "kind": "noul",
+    "options": [],
+    "text": "Do existing units compete with new units for the same buyers?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k3p.buyers_value_standard",
+    "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-22: buyers of new covered equipment value access to repair inputs.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyers_value_standard",
+    "assumption_class": "other",
+    "id": "k3p.buyers_value_standard",
+    "kind": "noul",
+    "options": [],
+    "text": "Do buyers value what the standard requires enough to prefer covered units over the existing stock?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k3p.contested_otherwise",
+    "rationale": "No matching assumption in WE-059; judged from the text: similar bills failed in 2023 and 2025 after campaigns on both sides and section 5 says the question would likely have returned without the Act (C-22).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "contested_otherwise",
+    "assumption_class": "other",
+    "id": "k3p.contested_otherwise",
+    "kind": "noul",
+    "options": [],
+    "text": "Would the groups that gain from the measure (or are bound by it) have lobbied on the same question without it, because that question (how far to regulate or support this field) was already being fought over?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": true,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "makers.ag",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": true,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": true,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": true,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": null,
+    "general_budget": false,
+    "good": "farm_equipment_repair_inputs",
+    "holder_cap": false,
+    "id": "k1a",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "mandated_contract_term",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "kestrava_farm_equipment",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": "buyers.prospective",
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": "owners.ag",
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "K1, duty to supply (a mandated term of every sale of covered equipment, owed to the owner and to any independent repair provider).",
+     "The term covers parts, tools, documentation and diagnostic software, including the means to reset, calibrate and pair parts.",
+     "It binds makers of covered equipment.",
+     "Independents can buy many mechanical parts at list from dealers but cannot buy the software, without which many electronic parts cannot be calibrated or paired.",
+     "The Attorney General enforces the Act under the Unfair Trade Practices Act, on complaint; civil penalty up to $10,000 per violation; no private right of action."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": "makers.phone.matching",
+    "already_recipient_actor": null,
+    "announcement_window": true,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "makers.phone",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": true,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": true,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": null,
+    "general_budget": false,
+    "good": "phone_repair_inputs",
+    "holder_cap": false,
+    "id": "k1p",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "mandated_contract_term",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "kestrava_phones",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": "buyers.prospective",
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": "owners.phone",
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [
+     "makers.phone.matching"
+    ],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "K1, duty to supply (a mandated term of every sale of covered equipment, owed to the owner and to any independent repair provider).",
+     "It binds makers of covered equipment.",
+     "One maker already sells genuine parts and rents tools to owners in all states at the prices its authorized providers pay, and pairs the part through its server after the repair.",
+     "The maker's existing national phone program already matches K1 on price and meets U1-b's pairing condition.",
+     "The Attorney General enforces the Act under the Unfair Trade Practices Act, on complaint; civil penalty up to $10,000 per violation; no private right of action."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": true,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "makers.ag",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": true,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": null,
+    "general_budget": false,
+    "good": "farm_equipment_sale_terms",
+    "holder_cap": false,
+    "id": "k2a",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "term_prohibition",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "kestrava_farm_equipment",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": "owners.ag",
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "K2, void terms.",
+     "Terms in contracts for the sale, lease or license of covered equipment (including software licenses) that prohibit or restrict repair by the owner or a person of the owner's choice, or that void a warranty because of such repair, are void: \"Any such term is void.\"",
+     "It binds makers, dealers and lessors, in existing and new contracts, from 1 September 2028.",
+     "A warranty may still exclude damage caused by the repair itself (\u00a74(b))."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": true,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": true,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "dealers.ag",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": true,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": null,
+    "general_budget": false,
+    "good": "farm_equipment_sale_terms",
+    "holder_cap": false,
+    "id": "k2d",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "term_prohibition",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "kestrava_farm_equipment",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": "owners.ag",
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "K2, void terms.",
+     "Terms in contracts for the sale, lease or license of covered equipment (including software licenses) that prohibit or restrict repair by the owner or a person of the owner's choice, or that void a warranty because of such repair, are void: \"Any such term is void.\"",
+     "It binds makers, dealers and lessors, in existing and new contracts, from 1 September 2028.",
+     "Four makers sell through 140 authorized dealer locations, which are independent businesses under dealer agreements; about 260 independent shops repair farm equipment."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": true,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": true,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "makers.phone",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": true,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": null,
+    "general_budget": false,
+    "good": "phone_sale_terms",
+    "holder_cap": false,
+    "id": "k2p",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "term_prohibition",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "kestrava_phones",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": "owners.phone",
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "K2, void terms.",
+     "Terms in contracts for the sale, lease or license of covered equipment (including software licenses) that prohibit or restrict repair by the owner or a person of the owner's choice, or that void a warranty because of such repair, are void: \"Any such term is void.\"",
+     "It binds makers, dealers and lessors, in existing and new contracts, from 1 September 2028.",
+     "A warranty may still exclude damage caused by the repair itself (\u00a74(b))."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": true,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": true,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "makers.ag",
+    "budget_capped": false,
+    "buyer_actor": "buyers.prospective",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": true,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": null,
+    "general_budget": false,
+    "good": "farm_equipment_software",
+    "holder_cap": false,
+    "id": "k3a",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "product_standard",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "kestrava_farm_equipment",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": null,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "K3, software locks (a rule on the software of covered equipment, binding makers).",
+     "\u00a75(c): \"A manufacturer shall not use a software lock to prevent the functioning of a part supplied, repaired or replaced in accordance with this Act.\"",
+     "Equipment sold before that date is not covered.",
+     "About 70% of tractors in use were sold before 2023 and are not covered, and tractors last 15 to 25 years."
+    ],
+    "stock_exempt": true,
+    "stock_owner_actor": "owners.ag.exempt",
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": true,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "makers.phone",
+    "budget_capped": false,
+    "buyer_actor": "buyers.prospective",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": true,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": null,
+    "general_budget": false,
+    "good": "phone_software",
+    "holder_cap": false,
+    "id": "k3p",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "product_standard",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "kestrava_phones",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": null,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "K3, software locks (a rule on the software of covered equipment, binding makers).",
+     "\u00a75(c): \"A manufacturer shall not use a software lock to prevent the functioning of a part supplied, repaired or replaced in accordance with this Act.\"",
+     "Equipment sold before that date is not covered.",
+     "Phones in use are replaced about every three years, so by 2030 nearly all phones in use will be covered;"
+    ],
+    "stock_exempt": true,
+    "stock_owner_actor": "owners.phone.exempt",
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   }
+  ],
+  "context": [
+   "Similar bills were introduced in Kestrava in 2023 and 2025 and failed after campaigns on both sides.",
+   "The counterfactual law is that a maker may refuse to sell parts, tools and software to anyone but its authorized repairers; contract and license terms restricting repair are enforceable; parts pairing is lawful."
+  ],
+  "effective": "1 September 2028",
+  "enacted": "1 March 2027",
+  "jurisdiction": "Kestrava (fictional)",
+  "name": "Kestrava Fair Repair Act",
+  "rule_maker": "the Kestrava legislature",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U1-a: pairing that needs the maker's authorization is itself the lock \u00a75(c) forbids; any part installed, genuine, salvaged or non-genuine, must work fully without contacting the maker, and makers must remove pairing from covered devices and leave it out of new ones",
+     "U1-b: \u00a73(a)(iv) presupposes that pairing continues; a lock is lawful if the owner (or a repairer acting for the owner) can pair a genuine part using a tool the maker supplies on fair and reasonable terms"
+    ],
+    "text": "\u00a75(c) forbids \"a software lock to prevent the functioning of a part supplied, repaired or replaced in accordance with this Act\". \u00a72(f): \"'Software lock' means any technical measure that restricts the functioning of a part unless the manufacturer authorizes it.\""
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-19T20:04:37+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U1-a: pairing that needs the maker's authorization is itself the lock \u00a75(c) forbids; any part installed, genuine, salvaged or non-genuine, must work fully without contacting the maker, and makers must remove pairing from covered devices and leave it out of new ones",
+    "U1-b: \u00a73(a)(iv) presupposes that pairing continues; a lock is lawful if the owner (or a repairer acting for the owner) can pair a genuine part using a tool the maker supplies on fair and reasonable terms"
+   ],
+   "text": "\u00a75(c) forbids \"a software lock to prevent the functioning of a part supplied, repaired or replaced in accordance with this Act\". \u00a72(f): \"'Software lock' means any technical measure that restricts the functioning of a part unless the manufacturer authorizes it.\""
+  }
+ ],
+ "verifier_problems": []
+}
