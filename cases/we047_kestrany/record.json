@@ -1,0 +1,156 @@
+{
+ "name": "Kestrany Sugar Import Regime Act",
+ "jurisdiction": "Kestrany's customs territory (fictional)",
+ "rule_maker": "the Kestrany legislature",
+ "enacted": "10 June 2026",
+ "effective": "1 January 2027",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "tariff",
+   "good": "sugar",
+   "market": "kestrany",
+   "bound_actor": "importers.history",
+   "importer_actor": "importers.history",
+   "buyer_actor": "buyers.household",
+   "protected_actor": "mills.domestic",
+   "domestic_seller_actor": "mills.domestic",
+   "domestic_seller_worker_actor": "workers.mills",
+   "domestic_seller_owner_actor": "owners.mills",
+   "input_supplier_actor": "input_suppliers",
+   "revenue_actor": "officials.enforcement",
+   "enforcer_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "foreign_seller_actor": "sellers.foreign",
+   "exporter_actor": "export_industries",
+   "downstream": [
+    {
+     "actor": "buyers.industrial",
+     "buyer_actor": "buyers.sugar_goods",
+     "competitors": "exempt",
+     "owner_actor": "owners.food_manufacturers",
+     "exporter_actor": "food_manufacturers.exporters",
+     "worker_actor": "workers.food"
+    }
+   ],
+   "announcement_window": true,
+   "renewable": true,
+   "definition_line": true,
+   "rate_rise": true,
+   "cap": 0.6,
+   "cap_unit": "ad valorem, out-of-quota rate",
+   "related": [
+    {
+     "kind": "input",
+     "good": "sugar_beet",
+     "seller_actor": "growers.beet",
+     "price_variable": "net_price_received",
+     "source_id": null,
+     "quote": "Domestic beet sugar supplies about 1,100,000 t, from about 4,000 growers on about 120,000 ha and two processors (Ardmouth Sugar and the Pellmont Beet Co-operative) with six mills running at about 90% of capacity."
+    }
+   ],
+   "source_sentences": [
+    "Importers of record pay a tariff of 2% ad valorem on imports of raw and white sugar covered by a licence, up to 400,000 t a year in total, and 60% ad valorem on all other sugar imports.",
+    "Sugar-containing goods are not covered (as now).",
+    "The bill, including the base period, was published on 2 March 2026, passed on 10 June 2026, and takes effect for the quota year beginning 1 January 2027 (ten months after it was proposed).",
+    "No expiry; the quota volume is reviewed in 2031.",
+    "Customs applies the rates; the Ministry of Trade's licence office keeps the register of quota shares and licences.",
+    "Imports above a firm's licence pay the out-of-quota rate; misdeclaration is penalized as under existing customs law."
+   ]
+  },
+  {
+   "id": "k2",
+   "instrument": "quota",
+   "good": "sugar",
+   "market": "kestrany",
+   "bound_actor": "importers.history",
+   "importer_actor": "importers.history",
+   "buyer_actor": "buyers.household",
+   "right_holder_actor": "importers.history",
+   "domestic_seller_actor": "mills.domestic",
+   "domestic_seller_worker_actor": "workers.mills",
+   "domestic_seller_owner_actor": "owners.mills",
+   "input_supplier_actor": null,
+   "revenue_actor": "officials.enforcement",
+   "enforcer_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "foreign_seller_actor": "sellers.foreign",
+   "exporter_actor": "export_industries",
+   "entrant_actor": "importers.new",
+   "downstream": [
+    {
+     "actor": "buyers.industrial",
+     "buyer_actor": "buyers.sugar_goods",
+     "competitors": "exempt",
+     "owner_actor": "owners.food_manufacturers",
+     "exporter_actor": "food_manufacturers.exporters",
+     "worker_actor": "workers.food"
+    }
+   ],
+   "import_quota": true,
+   "transferable": true,
+   "allocation_by_history": true,
+   "base_period_after_announcement": false,
+   "wider_market": false,
+   "announcement_window": true,
+   "renewable": true,
+   "definition_line": true,
+   "cap": 400000,
+   "cap_unit": "tonnes a year",
+   "source_sentences": [
+    "Importers of record pay a tariff of 2% ad valorem on imports of raw and white sugar covered by a licence, up to 400,000 t a year in total, and 60% ad valorem on all other sugar imports.",
+    "A licence covers raw or white sugar tonne for tonne.",
+    "Shares and licences may be sold or leased to any registered importer; transfers are registered with the licence office for a $200 fee.",
+    "Registration as an importer is open to any firm for $500.",
+    "Section 9: \"A licence not used by 30 September of the quota year is surrendered.\"",
+    "Imports above a firm's licence pay the out-of-quota rate; misdeclaration is penalized as under existing customs law.",
+    "No expiry; the quota volume is reviewed in 2031.",
+    "The bill, including the base period, was published on 2 March 2026, passed on 10 June 2026, and takes effect for the quota year beginning 1 January 2027 (ten months after it was proposed)."
+   ]
+  },
+  {
+   "id": "k3",
+   "instrument": "rights_allocation",
+   "good": "sugar_import_quota_shares",
+   "market": "kestrany",
+   "bound_actor": "officials.enforcement",
+   "protected_actor": "importers.history",
+   "enforcer_actor": "officials.enforcement",
+   "transferable": true,
+   "announcement_window": true,
+   "source_sentences": [
+    "Each firm that imported sugar in 2023 to 2025 receives a permanent share of the 400,000 t equal to its share of total imports in those years.",
+    "Each December, licences for the next year are issued to share holders pro rata."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Surrendered licences. Section 9 surrenders licences not used by 30 September. Section 4(2): \"The tariff quota shall be allocated in full in each quota year.\" Section 12: \"The Minister may make rules for the allocation of quantities among registered importers on application.\"",
+   "readings": [
+    "U1-a: surrendered quantities return to the quota and must be allocated again in the same year (section 4(2)), to registered importers on application under section 12",
+    "U1-b: surrender cancels the licence; section 4(2) refers to the December issue, and the surrendered quantity lapses for that year"
+   ],
+   "reading_fields": {
+    "U1-a": {
+     "k2": {
+      "relief_applicant_actor": "importers.new"
+     }
+    }
+   }
+  }
+ ],
+ "context": [
+  "Kestrany consumes about 1,750,000 tonnes (t) of sugar a year, about 60% by food and drink manufacturers and 40% by households.",
+  "Imports averaged about 650,000 t a year in 2023 to 2025: about 450,000 t of raw cane sugar refined at two port refineries in Vellport, and about 200,000 t of white sugar.",
+  "Kestrany takes about 1.2% of world sugar trade, bought from many exporters.",
+  "Under the existing flat 25% ad valorem tariff, white sugar lands at about $550 a tonne, which sets the domestic white price; tariff revenue is about $62.5 million a year.",
+  "Nine firms imported in 2023 to 2025: the two Vellport refiners (66% of imports), four trading houses (25%), and three manufacturers that import directly (a soft-drink bottler and two confectioners, 9%).",
+  "Kestrany's food manufacturers export about a fifth of their output, and imported confectionery, biscuits and soft-drink concentrates (not covered by the sugar tariff) hold about a quarter of the home market.",
+  "Two wet mills make glucose syrup from domestic maize.",
+  "The licence office's funding is not stated.",
+  "Existing rules that stay in the counterfactual: the flat 25% tariff on raw and white sugar; customs classification of sugar mixtures; the general budget, which receives the tariff."
+ ]
+}

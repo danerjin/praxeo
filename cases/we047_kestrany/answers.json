@@ -1,0 +1,282 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-1: at the old landed price import demand (about 650,000 t) exceeds the 400,000 t of licences, so the marginal tonne pays the 60% rate and the quota binds; foreign supply is from many exporters (A-4, p = 0.85), so the sellers abroad do not absorb the rate.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.domestic_substitutes",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "No matching assumption in WE-047; judged from the text: domestic beet sugar supplies about 1,100,000 t of the 1,750,000 t consumed and is the same good as imported white sugar, which sets its price.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.no_offset",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-21: the change in imports is not offset by capital flows within the medium term.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.revenue_base_holds",
+  "value": "no",
+  "probability": 0.15,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-25: out-of-quota imports stay below 200,000 t a year (p = 0.85), so the base taxed at the higher rate falls far below the 650,000 t now taxed at 25% and revenue falls; the base does not hold.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.input_not_replaceable",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "No matching assumption in WE-047; judged from the text: sugar is the main sweetener of food and drink makers (60% of consumption); glucose syrup substitutes only in some uses and its two wet mills would have to expand, so most sugar is not replaceable at the old cost.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.competitors_exempt",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-8: domestic food manufacturers compete at home with imported sugar-containing goods that the act does not cover (about a quarter of the home market).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforcement_budget_raised",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-27: the licence office's budget is raised with its task.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.stockpile_ahead",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-10: sugar can be imported ahead in 2026 at 25% and stored into 2027, to sell higher after January.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-14: some sugar can be imported as mixtures classified outside the sugar heading at a lower duty.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.beneficiaries_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-17: licence holders, growers, manufacturers and would-be importers can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.harmed_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-17: manufacturers and would-be importers can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expects_extension",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-11: investors expect the act to last at least until the 2031 review (it has no expiry).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-11: investors expect the act to last at least until the 2031 review.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.asset_supply_slow",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-3: domestic supply cannot expand at the old cost enough within five years (beet rotations, mills at 90% of capacity, haul radius), so the assets of mills and land are slow to expand.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_relocate_capital",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "No matching assumption in WE-047; judged from the text: the text names no downstream plant that could move abroad; the manufacturers sell at home and export a fifth of their output, and relocation is possible but not shown.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.substitute_supply_expands",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-047; judged from the text: foreign makers of sugar-containing goods already hold about a quarter of the home market and are not covered by the act, so they can sell more at home.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.exporters_price_takers",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-9: food exporters sell at prices set in world markets.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.related_slow_r1",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-3: beet is grown in rotation (one year in four) within the mills' haul radius, so beet supply is slow to expand.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-1: at the old landed price import demand (about 650,000 t) exceeds the 400,000 t of licences, so the marginal tonne pays the 60% rate and the quota binds; foreign supply is from many exporters (A-4, p = 0.85), so the sellers abroad do not absorb the rate.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.enforced",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-2: customs enforce the out-of-quota rate and the licence limits, with the licence office keeping the register.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.evasion",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No matching assumption in WE-047; judged from the text: customs apply the rates and misdeclaration is penalized as under existing customs law; the text names no smuggling route, so uncaught trade beyond the cap is not expected on a meaningful scale.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-17: licence holders can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.expected_to_last",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-11: investors expect the act to last at least until the 2031 review.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.values_differ",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-7: holders value licences differently (refiners with spare capacity against trading houses).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.trade_cheap",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-6: licences and shares trade and lease at low cost ($200 transfer fee, a register).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.domestic_substitutes",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "No matching assumption in WE-047; judged from the text: domestic beet sugar supplies about 1,100,000 t of the 1,750,000 t consumed and is the same good as imported white sugar, which sets its price.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.no_offset",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-21: the change in imports is not offset by capital flows within the medium term.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.input_not_replaceable",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "No matching assumption in WE-047; judged from the text: sugar is the main sweetener of food and drink makers (60% of consumption); glucose syrup substitutes only in some uses and its two wet mills would have to expand, so most sugar is not replaceable at the old cost.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.competitors_exempt",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-8: domestic food manufacturers compete at home with imported sugar-containing goods that the act does not cover (about a quarter of the home market).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.stockpile_ahead",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-10: sugar can be imported ahead in 2026 at 25% and stored into 2027, to sell higher after January.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.reshaping_pays",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-14: some sugar can be imported as mixtures classified outside the sugar heading at a lower duty.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.relief_discretionary",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-20: under U1-a the Minister's rules allocate the surrendered quantities otherwise than by price, on application.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.relief_valuable",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "No matching assumption in WE-047; judged from the text: a surrendered tonne carries the gap between the domestic price and the in-quota landed cost (over $100 a tonne), against registration of $500.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.beneficiaries_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-17: licence holders, growers, manufacturers and would-be importers can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.harmed_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-17: manufacturers and would-be importers can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.expects_extension",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-11: investors expect the act to last at least until the 2031 review (it has no expiry).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.asset_supply_slow",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-3: domestic supply cannot expand at the old cost enough within five years (beet rotations, mills at 90% of capacity, haul radius), so the assets of mills and land are slow to expand.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.can_relocate_capital",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "No matching assumption in WE-047; judged from the text: the text names no downstream plant that could move abroad; the manufacturers sell at home and export a fifth of their output, and relocation is possible but not shown.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.substitute_supply_expands",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-047; judged from the text: foreign makers of sugar-containing goods already hold about a quarter of the home market and are not covered by the act, so they can sell more at home.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.exporters_price_takers",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-9: food exporters sell at prices set in world markets.",
+  "evidence": []
+ }
+]
