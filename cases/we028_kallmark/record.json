@@ -34,7 +34,12 @@
     "The bill was introduced by the government on 3 February 2026, with its allocation formula published, and passage was widely expected.",
     "About 30% is sold fresh in Kallmark to fish shops and restaurants."
    ],
-   "informal_buyer_actor": "buyers.fresh_domestic"
+   "informal_buyer_actor": "buyers.fresh_domestic",
+   "allocation_by_history": true,
+   "base_period_after_announcement": true,
+   "entrant_actor": "entrants.prospective",
+   "worker_actor": "crew",
+   "input_supplier_actor": "ports.minor"
   },
   {
    "id": "k2",

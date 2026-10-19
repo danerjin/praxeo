@@ -10,6 +10,9 @@
 %   transferable(C).                 licenses or quota rights may be sold or leased                          (EN-2, SB-4)
 %   import_quota(C).                 the quota caps imports; the tariff roles are written too (EN-6, TX-7, TX-8)
 %   en_informal_buyer(C, A).         buyers of the unlicensed or unrecorded trade (default the buyers)      (RS-3, RS-10)
+%   allocation_by_history(C).        the right is allocated in proportion to past activity in a base period  (EN-12)
+%   base_after_announcement(C).      the base period runs after the measure was announced                  (EN-12)
+%   en_entrant(C, A). en_worker(C, A). en_supplier(C, A).  would-be entrants; the bound sellers' workers and suppliers
 %   price_fixed(C).                  a rule in force without the measure too fixes the price               (EN-6, PC-1)
 %   seller_cap(C).                   the cap is on the number of sellers (licenses), not on quantity         (EN-6 1.0)
 %   wider_market(C).                 the capped good's price is set in a wider market                        (EN-6 Unless)
@@ -142,6 +145,39 @@ fired(pc_1, en_shortage(C), quota_binds(C)) :- en_shortage(C), quota_binds(C).
 effect(en_shortage(C), X, "excess_demand", increase, medium, invisible, "B") :- en_shortage(C), en_buyer(C, X).
 
 % ---------------------------------------------------------------- both
+
+% EN-12: a right allocated in proportion to an activity over a base period. Where the base period ended before the measure
+% became expected (history_before), the allocation is a windfall to those with history (CR-7c): the right's value rises for
+% its holders. Where the base period runs after the announcement (base_after_announcement), and actors know the rule
+% (allocation_known), they race to build history in that window (CR-10a): the capped activity, investment in it, entry and
+% the work of their crews rise; the racing uses resources up (CR-8c); and assets that carry history gain value (CR-7c, SB-4).
+en_windfall(C) :- quota_binds(C), allocation_by_history(C), not base_after_announcement(C), not exception(en_12, C).
+fired(en_12, en_windfall(C), quota_binds(C)) :- en_windfall(C).
+effect(en_windfall(C), H, "asset_value", increase, short, invisible, "B") :- en_windfall(C), en_holder(C, H).
+en_race(C) :- quota(C), allocation_by_history(C), base_after_announcement(C), holds(allocation_known(C)), not exception(en_12, C).
+fired(en_12, en_race(C), allocation_by_history(C)) :- en_race(C).
+fired(cr_10, en_race(C), allocation_known(C))      :- en_race(C).
+window(en_race(C), announcement) :- en_race(C).
+effect(en_race(C), B, "quantity_traded", increase, short, invisible, "B")                  :- en_race(C), bound(C, B).
+effect(en_race(C), B, "investment_target", increase, short, invisible, "B")                :- en_race(C), bound(C, B).
+effect(en_race(C), B, "resources_available_other_uses", decrease, short, invisible, "B")   :- en_race(C), bound(C, B).
+effect(en_race(C), B, "asset_value", increase, short, invisible, "B")                      :- en_race(C), bound(C, B).
+effect(en_race(C), E, "entry_rate", increase, short, invisible, "B")                       :- en_race(C), en_entrant(C, E).
+group_effect(en_race(C), W, "employment,hours_worked", at_least_one_increase, short, invisible, "B") :- en_race(C), en_worker(C, W).
+
+% EN-13: where the rights can be traded or leased at low cost (trade_cheap) and holders' costs or values differ (values_differ), rights move
+% to those who value them most (CR-5, CR-7a): fewer users, and in the long run fewer vessels or plants; more per remaining
+% user; lessors receive the lease price instead of producing; and the workers and suppliers of those who leave lose (CR-9).
+en_consolidate(C) :- quota_binds(C), transferable(C), holds(values_differ(C)), holds(trade_cheap(C)), not exception(en_13, C).
+fired(en_13, en_consolidate(C), quota_binds(C))    :- en_consolidate(C).
+fired(en_13, en_consolidate(C), values_differ(C))  :- en_consolidate(C).
+fired(en_13, en_consolidate(C), trade_cheap(C))    :- en_consolidate(C).
+effect(en_consolidate(C), B, "number_of_sellers", decrease, medium, invisible, "B")    :- en_consolidate(C), bound(C, B).
+effect(en_consolidate(C), B, "capital_stock_target", decrease, long, invisible, "B")   :- en_consolidate(C), bound(C, B).
+effect(en_consolidate(C), B, "quantity_supplied", increase, medium, invisible, "B")    :- en_consolidate(C), bound(C, B).
+effect(en_consolidate(C), H, "right_lease_price", increase, medium, invisible, "B")    :- en_consolidate(C), en_holder(C, H).
+effect(en_consolidate(C), S, "quantity_traded", decrease, medium, invisible, "B")      :- en_consolidate(C), en_supplier(C, S).
+group_effect(en_consolidate(C), W, "employment,hours_worked", at_least_one_decrease, medium, invisible, "B") :- en_consolidate(C), en_worker(C, W).
 
 % EN-2 and EN-6 with SB-4: where licenses or quota rights can be sold, and the restriction is expected to last, the holders'
 % gain is capitalized in the value of the right from the time it is expected.

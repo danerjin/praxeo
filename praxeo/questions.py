@@ -366,6 +366,15 @@ WIDER_PRICE_QUESTION = ("price_effect_material", "other",
                         "The capped quantity matters enough in the wider market to raise the price there.")
 
 
+ALLOCATION_KNOWN_QUESTION = ("allocation_known", "expectations",
+                             "During the base period, will actors know (or expect) that rights will be allocated by their activity in it?",
+                             "Actors know the allocation rule during the base period.")
+VALUES_DIFFER_QUESTION = ("values_differ", "other",
+                          "Do holders of the rights differ in their costs, or in the value they get from the right?",
+                          "Holders' costs or values differ.")
+TRADE_CHEAP_QUESTION = ("trade_cheap", "mobility",
+                        "Can the rights be sold or leased at low cost (a register, few restrictions on who may hold them)?",
+                        "Rights can be sold or leased at low cost.")
 TRAINING_COMMON_QUESTION = ("training_common", "other",
                             "Before the requirement, did many people already take the training it requires (a degree many would-be sellers already pursued)?",
                             "The required training was already commonly taken before the requirement.")
@@ -377,6 +386,10 @@ def _en_specs(comp: Component) -> list[tuple[str, str, str, str]]:
         specs.append(TRAINING_COMMON_QUESTION)
     if comp.transferable:
         specs.append(EN_LASTING_QUESTION)
+    if comp.instrument == "quota" and comp.transferable:
+        specs += [VALUES_DIFFER_QUESTION, TRADE_CHEAP_QUESTION]
+    if comp.instrument == "quota" and comp.allocation_by_history and comp.base_period_after_announcement:
+        specs.append(ALLOCATION_KNOWN_QUESTION)
     if comp.instrument == "quota" and comp.import_quota:
         # the tariff chains apply (EN-6: as under TX-7): their questions, except the tariff's own binding and funding ones
         have = {s[0] for s in specs}

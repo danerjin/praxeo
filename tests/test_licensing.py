@@ -108,3 +108,24 @@ def test_an_import_quota_takes_the_tariff_chains():
     assert {("buyers.sweets", "price_paid", "increase", None), ("growers.domestic", "lobbying_effort", "increase", None),
             ("growers.domestic", "investment_target", "increase", None)} <= got
     assert not any(k[1] == "tax_revenue" for k in got)          # a quota collects no revenue
+
+
+def test_allocation_by_history_and_consolidation():
+    """EN-12: a base period before the measure was expected gives a windfall; one after the announcement gives a race in the
+    window. EN-13: tradable rights consolidate where values differ and trade is cheap."""
+    rec = _record()
+    comp = rec.components[0]
+    comp.instrument, comp.bound_actor, comp.buyer_actor, comp.trainer_actor = "quota", "boats", "buyers.fish", None
+    comp.right_holder_actor, comp.transferable, comp.allocation_by_history = "share_holders", True, True
+    comp.worker_actor = "crew"
+    got = _reported(rec)
+    assert ("share_holders", "asset_value", "increase", None) in got                                  # windfall
+    assert not any(k[3] == "announcement" for k in got)
+    assert {("boats", "number_of_sellers", "decrease", None), ("share_holders", "right_lease_price", "increase", None),
+            ("crew", "employment", "at_least_one_decrease", None)} <= got
+    assert not any(k[1] == "number_of_sellers" for k in _reported(rec, trade_cheap=0.3))
+    comp.base_period_after_announcement = True
+    got = _reported(rec)
+    assert {("boats", "quantity_traded", "increase", "announcement"), ("boats", "investment_target", "increase", "announcement"),
+            ("crew", "employment", "at_least_one_increase", "announcement")} <= got
+    assert not any(k[3] == "announcement" for k in _reported(rec, allocation_known=0.3))

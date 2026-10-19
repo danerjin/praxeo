@@ -47,5 +47,26 @@
   "probability": 0.9,
   "rationale": "Probability taken from the assumption table of handbook WE-028 (illustrative figures), A-22: the Directorate's budget is raised by the stated 18 million marks.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.allocation_known",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-028 (illustrative figures), A-4: owners know the formula from the introduction of the bill, expect passage, and have idle vessels or spare capacity to land more in 2026 and 2027.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.values_differ",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-028 (illustrative figures), A-6: costs per tonne differ materially among vessels.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.trade_cheap",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-028 (illustrative figures), A-6: transfers are not blocked for most owners by the 8% limit; shares are registered and may be sold.",
+  "evidence": []
  }
 ]

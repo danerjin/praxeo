@@ -21,6 +21,12 @@ WE28 = ROOT / "cases" / "we028_kallmark"
 SHORT = {"all vessels fishing ridge cod": "share_recipients", "recipients of other public spending": "recipients.other_spending"}
 WINDOWS = {"2026–2027": "announcement"}
 EXCEPTIONS = {
+    ("vessel_owners.history", "number_of_sellers", "decrease", None):
+        "EN-13 (consolidation, added after the first run): C-9 signs it for operators.high_cost, a subclass the record has no role for",
+    ("vessel_owners.history", "quantity_supplied", "increase", None):
+        "EN-13: C-40 signs more per vessel for operators.low_cost, a subclass the record has no role for",
+    ("vessel_owners.history", "asset_value", "increase", "announcement"):
+        "the race of EN-12 (added after the first run): vessels with history gain value in the window; C-8 signs it for vessel_owners.at_announcement, a subclass",
     ("buyers.fresh_domestic", "search_cost", "increase", None):
         "RS-3 with RS-10 for the buyers of unrecorded fish, sold fresh at home (`informal_buyer_actor`, added after the first run); not in the table",
     ("buyers.fresh_domestic", "disputes_settled_outside_courts", "increase", None):
@@ -32,26 +38,19 @@ EXCEPTIONS = {
         "CR-8b, the mirror of C-49 (what the buyers pay above the old price); the table lists the price only",
 }
 NOT_PRODUCED = {
-    "C-4": "missing rule: EN-12 (allocation by history, CR-10a) is not encoded; rights_allocation has no rules; no announcement-window consequence for a quota",
-    "C-5": "same as C-4 (CR-10a, CR-7a); investment_target is not a variable of any quota rule",
-    "C-6": "same as C-4; also no role for entrants.prospective",
     "C-7": "missing rule and question: entry under a cap that must be bought or leased (EN-6 signs entry_rate only for seller_cap); no A-27 question; no entrant role",
     "C-8": "missing rule and role: CR-7c claims before creation (the claim rides on vessels sold in the window); no vessel_owners.at_announcement role",
     "C-9": "missing rule: EN-13 (consolidation under tradable rights) is not encoded; no operators.high_cost role",
-    "C-10": "same as C-9 (CR-10b, TS-1)",
     "C-11": "missing rule and role: CR-1/CR-4 on the condition for holding a right (only vessel owners may hold shares); no holders.non_fishing role",
     "C-12": "missing rule: physical-unit quota on heterogeneous output (high-grading; CR-4 on land-or-discard) is not encoded; no A-9 question",
     "C-13": "same as C-12 (and the discard ban as an RS-3 margin)",
     "C-16": "missing rule and role: RS-5 for vessels bought to hold shares (A-14); no processors role in a quota record",
-    "C-18": "missing record fact and rule: CR-9 for the crew; `related` is read for taxes and subsidies only and the quota rules have no factor-market rule",
-    "C-19": "same as C-18, and EN-12 (the race window)",
     "C-20": "missing rule: RS-6/CR-7a, displaced boats move to the open saithe and ling fisheries; the quota record has no substitute-seller role",
     "C-21": "missing record fact: one buyer role per quota; the record names the regional buyers (C-49), and the fresh domestic buyers (EN-6 Unless: the home part is rationed by its own price) have no second role",
     "C-22": "missing rule: EN-6's Unless clause signs the lease price only and suppresses the holders' net_price_received; the processors competing for fish (CR-9, A-17, A-18) are not modeled",
     "C-23": "missing record fact and rule: CR-9 for the plants as buyers of the capped good; no processors role",
     "C-24": "same as C-23 (CR-7b)",
     "C-25": "same as C-23, with RS-6 for plant workers",
-    "C-26": "missing rule: CR-9 and CR-7a for the landing ports; no ports roles",
     "C-27": "missing record fact and rule: RS-12 for the suppliers of fuel, ice and repairs (section 1 does not name them as complements); EN-12 for the race window",
     "C-28": "missing record fact and rule: RS-12 for the complements; `related` is not read for quotas",
     "C-29": "missing rule and combiner: CR-12b over vessels without shares (RS-13, CR-7c against CR-1, CR-4); no vessel-market roles",
@@ -62,7 +61,6 @@ NOT_PRODUCED = {
     "C-36": "missing rule: RS-16 and RS-13 for the price of substitutes; ambiguous combiner",
     "C-37": "missing rule: CR-9 and CR-12b for the processing ports; no ports roles",
     "C-38": "missing rule and role: CR-7c for the plants (asset_value of processors), owners' role absent",
-    "C-39": "missing rule: CR-8c for the race (EN-12, CR-7c Unless)",
     "C-40": "missing rule: EN-13 (catch per remaining vessel); no operators.low_cost role",
     "C-41": "missing record fact and rule: RS-7 for the firms near the 8% limit; the limit is not a field and there is no vessel_owners.large role",
     "C-42": "case-specific provision: U1 is on K3 (term_prohibition, no rules); the per-reading sign cell cannot be produced and reading_fields has no Component field for it",
@@ -79,7 +77,7 @@ NOT_PRODUCED = {
     "C-54": "same as C-53 (the sellers' side)",
     "C-55": "missing record fact and rule: CR-8b and CR-9 for the monitors hired; K4 is folded into K1 and the monitors have no role",
 }
-PRODUCED = {"C-1", "C-2", "C-3", "C-14", "C-17", "C-32", "C-33", "C-49"}
+PRODUCED = {"C-1", "C-2", "C-3", "C-4", "C-5", "C-6", "C-10", "C-14", "C-17", "C-18", "C-19", "C-26", "C-32", "C-33", "C-39", "C-49"}
 
 
 def test_consistent_with_worked_example_we028():

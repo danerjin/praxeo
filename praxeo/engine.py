@@ -96,10 +96,14 @@ def _en_facts(c: str, comp) -> list[str]:
     if comp.trainer_actor:
         lines.append(f'en_trainer({c}, "{comp.trainer_actor}").')
     lines.append(f'en_informal_buyer({c}, "{comp.informal_buyer_actor or comp.buyer_actor}").')
+    for pred, actor in (("en_entrant", comp.entrant_actor), ("en_worker", comp.worker_actor), ("en_supplier", comp.input_supplier_actor)):
+        if actor:
+            lines.append(f'{pred}({c}, "{actor}").')
     if comp.import_quota:   # the tariff roles, without tariff/1 (a quota collects no revenue): see licensing.lp
         lines += [l for l in _tax_facts(c, comp) if not l.startswith(("tariff(", "tax(", "revenue("))]
     for pred, flag in (("transferable", comp.transferable), ("import_quota", comp.import_quota), ("seller_cap", comp.seller_cap),
-                       ("price_fixed", comp.price_fixed),
+                       ("price_fixed", comp.price_fixed), ("allocation_by_history", comp.allocation_by_history),
+                       ("base_after_announcement", comp.base_period_after_announcement),
                        ("wider_market", comp.wider_market), ("general_budget", comp.general_budget), ("tax_named", comp.tax_named)):
         if flag:
             lines.append(f"{pred}({c}).")
