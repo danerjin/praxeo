@@ -1,0 +1,657 @@
+{
+ "assumptions": {
+  "binding(k1)": {
+   "assumption_class": "binding",
+   "id": "binding(k1)",
+   "p": 0.8,
+   "text": "The term was in use."
+  },
+  "can_organize(k1)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1)",
+   "p": 0.8,
+   "text": "The parties that used the term can organize to lobby."
+  },
+  "substitute_terms(k1)": {
+   "assumption_class": "substitutability",
+   "id": "substitute_terms(k1)",
+   "p": 0.85,
+   "text": "Lawful substitute terms give part of the same protection."
+  },
+  "term_valued(k1)": {
+   "assumption_class": "other",
+   "id": "term_valued(k1)",
+   "p": 0.7,
+   "text": "The party that used the term valued its protection."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "employers.restraining",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tb_voided(k1)",
+     "premises": [
+      "voids_existing(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.restraining",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "can_organize(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "can_organize(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_lobby(k1)",
+     "premises": [
+      "binding(k1)",
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.restraining",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "substitute_terms(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "substitute_terms(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tb_substitute(k1)",
+     "premises": [
+      "substitute_terms(k1)"
+     ],
+     "rule": "PC-18"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "term_prevalence",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_administered(k1)",
+     "premises": [
+      "term_ban(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.bound",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tb_mobile(k1)",
+     "premises": [
+      "restrains_mobility(k1)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "job_changes",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.bound",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "term_valued(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "term_valued(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tb_binds(k1)",
+     "premises": [
+      "binding(k1)"
+     ],
+     "rule": "PC-18"
+    },
+    {
+     "conclusion": "tb_others(k1)",
+     "premises": [
+      "term_valued(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "tb_others(k1)",
+     "premises": [
+      "tb_binds(k1)"
+     ],
+     "rule": "PC-18"
+    }
+   ],
+   "group": [
+    "wage_rate",
+    "non_wage_compensation"
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "wage_rate",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"employers.restraining\").\nexcluded(k1, \"buyers.prospective\").\nterm_ban(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nmc_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\ntb_freed(k1, \"workers.bound\").\nrestrains_mobility(k1).\nvoids_existing(k1).\nbound(k2, \"employers.restraining\").\nexcluded(k2, \"buyers.prospective\").\nassumption(binding(k1)).\nassumption(term_valued(k1)).\nassumption(substitute_terms(k1)).\nassumption(can_organize(k1)).\n",
+ "explanations": [
+  "C-1. Compared with no Teravel Freedom to Work Act, asset value for employers.restraining falls from the short run onward (tier B, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The term was in use (p = 0.80). Reported.",
+  "C-2. Compared with no Teravel Freedom to Work Act, lobbying effort for employers.restraining rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was in use (p = 0.80); The parties that used the term can organize to lobby (p = 0.80). Reported.",
+  "C-3. Compared with no Teravel Freedom to Work Act, term prevalence for employers.restraining rises from the short run onward (tier B, invisible). Why: PC-18: PC-18. This holds if: The term was in use (p = 0.80); Lawful substitute terms give part of the same protection (p = 0.85). Reported.",
+  "C-4. Compared with no Teravel Freedom to Work Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-5. Compared with no Teravel Freedom to Work Act, job changes for workers.bound rises from the short run onward (tier B, invisible). Why: CR-7: CR-7. This holds if: The term was in use (p = 0.80). Reported.",
+  "C-6. Compared with no Teravel Freedom to Work Act, wage rate or non wage compensation for workers.bound falls for at least one of them from the medium run onward (tier B, invisible). Why: PC-18: PC-18; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was in use (p = 0.80); The party that used the term valued its protection (p = 0.70). Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-1: non-competes deter some bound workers from moves they would otherwise make; about 17% of workers had signed one and employers filed about 400 enforcement suits a year.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k1.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Was the prohibited term in use in contracts of this kind?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.term_valued",
+    "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-5: in a material share of trainee jobs the non-compete protected the employer's recovery of the cost of general training (A-15 gives the same 0.7 for the firms' expected yield).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "term_valued",
+    "assumption_class": "other",
+    "id": "k1.term_valued",
+    "kind": "noul",
+    "options": [],
+    "text": "Did the party that used the term value its protection enough to pay for it through other terms?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.substitute_terms",
+    "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-4: reshaping restraints into the forms the Act preserves (confidentiality, non-solicitation for up to 12 months, unvested deferred pay) costs many employers less than the protection it restores. The text itself names these preserved terms.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "substitute_terms",
+    "assumption_class": "substitutability",
+    "id": "k1.substitute_terms",
+    "kind": "noul",
+    "options": [],
+    "text": "Are there lawful substitute terms that give part of the same protection?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-13: employers' associations, worker groups and start-up associations can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the parties that used the term organize to lobby over the prohibition at a cost below their stake?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": false,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "employers.restraining",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": false,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "non_compete_clauses",
+    "holder_cap": false,
+    "id": "k1",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "term_prohibition",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "teravel_labor",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": "workers.bound",
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": true,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "Any term of an employment or independent-contractor agreement that prohibits or restricts a worker, after the work relationship ends, from working for another person or carrying on a business, or that imposes a penalty for doing so, is void.",
+     "The Act binds employers of workers who primarily work in Teravel, whatever law the contract chooses.",
+     "This applies to agreements made before, on or after the effective date, and pending cases are decided under the Act.",
+     "A worker may sue an employer that tries to enforce a void term, or puts one in a contract after the effective date.",
+     "There is no new appropriation; the Bureau works from its existing budget."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": true,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": false,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "employers.restraining",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": false,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "notice_of_void_term",
+    "holder_cap": false,
+    "id": "k2",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "disclosure_mandate",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "teravel_labor",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": "workers.bound",
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "Every employer that has a non-compete with a current worker, or with a former worker who left after 1 January 2024, must give written notice by 1 March 2026 that the term is void."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   }
+  ],
+  "context": [
+   "A 2024 survey by the state labor department found that about 17% had signed a non-compete clause.",
+   "Until now Teravel courts enforced \"reasonable\" non-competes (up to two years, within the employer's trading area) under common law."
+  ],
+  "effective": "1 January 2026",
+  "enacted": "12 June 2025",
+  "jurisdiction": "Teravel (fictional)",
+  "name": "Teravel Freedom to Work Act",
+  "rule_maker": "the Teravel legislature",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U1-a: yes, any paid notice period in which the worker remains employed is preserved",
+     "U1-b: no, a notice period long enough to keep the worker out of the field is a restraint \"in effect\", and is void"
+    ],
+    "text": "Does the exemption for \"a notice period during which the worker remains employed\" cover a notice period of six to twelve months, paid in full, with no duties, during which the worker may not work for anyone else?"
+   },
+   {
+    "id": "U2",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U2-a: yes, it penalizes leaving, and leaving is how one comes to work for another",
+     "U2-b: no, it applies to every departure, whatever the worker does next, and only recovers a cost"
+    ],
+    "text": "Is a term that requires a worker who leaves within 24 months to repay employer-paid training a \"penalty\" for working for another person?"
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-19T20:00:28+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U1-a: yes, any paid notice period in which the worker remains employed is preserved",
+    "U1-b: no, a notice period long enough to keep the worker out of the field is a restraint \"in effect\", and is void"
+   ],
+   "text": "Does the exemption for \"a notice period during which the worker remains employed\" cover a notice period of six to twelve months, paid in full, with no duties, during which the worker may not work for anyone else?"
+  },
+  {
+   "id": "U2",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U2-a: yes, it penalizes leaving, and leaving is how one comes to work for another",
+    "U2-b: no, it applies to every departure, whatever the worker does next, and only recovers a cost"
+   ],
+   "text": "Is a term that requires a worker who leaves within 24 months to repay employer-paid training a \"penalty\" for working for another person?"
+  }
+ ],
+ "verifier_problems": []
+}
