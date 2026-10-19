@@ -82,5 +82,19 @@
   "probability": 0.65,
   "rationale": "Probability taken from the assumption table of handbook WE-014 (illustrative figures), A-5: holders, growers and landowners expect the quota to survive the five-year review.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.values_differ",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No matching assumption in WE-014; judged from the text: the holders range from two port refineries to smaller traders, whose costs and uses of the right differ.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.trade_cheap",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-014; judged from the text: shares are permanent, may be sold or leased, and transfers are registered with customs.",
+  "evidence": []
  }
 ]

@@ -40,5 +40,19 @@
   "probability": 0.55,
   "rationale": "Probability taken from the assumption table of handbook WE-015 (illustrative figures), A-16: the Office's budget rises with the added enforcement work, rather than the 12 inspectors being moved from other duties.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.values_differ",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "No matching assumption in WE-015; judged from the text: holders range from owner-drivers to fleet operators, whose costs differ.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.trade_cheap",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No matching assumption in WE-015; judged from the text: medallions may be sold or leased, with transfers registered and a 2% transfer fee.",
+  "evidence": []
  }
 ]

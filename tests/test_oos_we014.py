@@ -15,6 +15,14 @@ WE14 = ROOT / "cases" / "we014_calvar"
 SHORT = {"exporters.calvar": ["export_industries", "workers.export_industries"]}
 WINDOWS = {"announcement window": "announcement"}
 EXCEPTIONS = {
+    ("importers", "capital_stock_target", "decrease", None):
+        "EN-13 (consolidation under tradable rights, added after the first run): the rights are transferable and holders differ; the example does not apply EN-13",
+    ("importers", "number_of_sellers", "decrease", None):
+        "EN-13 (consolidation under tradable rights, added after the first run): the rights are transferable and holders differ; the example does not apply EN-13",
+    ("importers", "quantity_supplied", "increase", None):
+        "EN-13 (consolidation under tradable rights, added after the first run): the rights are transferable and holders differ; the example does not apply EN-13",
+    ("quota_holders", "right_lease_price", "increase", None):
+        "EN-13 (consolidation under tradable rights, added after the first run): the rights are transferable and holders differ; the example does not apply EN-13",
     ("importers", "reclassification", "increase", None):
         "RS-5 through the tariff chain (EN-6 as TX-7, added after the first run): blends at 65% sugar or less (A-8); the table records the reshaping as the trade in blends (C-9)",
     ("buyers.sugar", "reclassification", "increase", None):
