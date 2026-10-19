@@ -1,0 +1,697 @@
+{
+ "assumptions": {
+  "binding(k1)": {
+   "assumption_class": "binding",
+   "id": "binding(k1)",
+   "p": 0.7,
+   "text": "The standard binds on some designs."
+  },
+  "buyers_value_standard(k1)": {
+   "assumption_class": "other",
+   "id": "buyers_value_standard(k1)",
+   "p": 0.3,
+   "text": "Buyers value the standard enough to prefer covered units."
+  },
+  "can_organize(k1)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1)",
+   "p": 0.9,
+   "text": "The makers can organize to lobby."
+  },
+  "enforced(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k1)",
+   "p": 0.9,
+   "text": "Most makers comply."
+  },
+  "stock_competes(k1)": {
+   "assumption_class": "substitutability",
+   "id": "stock_competes(k1)",
+   "p": 0.8,
+   "text": "Existing units compete with new ones."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "builders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "builders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "can_organize(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "can_organize(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_lobby(k1)",
+     "premises": [
+      "binding(k1)",
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "builders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.new_homes",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.new_homes",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "specification_level",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_administered(k1)",
+     "premises": [
+      "standard(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.existing_homes",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "stock_competes(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "stock_competes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_stock(k1)",
+     "premises": [
+      "stock_competes(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "st_stock(k1)",
+     "premises": [
+      "stock_exempt(k1)"
+     ],
+     "rule": "EN-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.existing_homes",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "stock_competes(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "stock_competes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_stock(k1)",
+     "premises": [
+      "stock_competes(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "st_stock(k1)",
+     "premises": [
+      "stock_exempt(k1)"
+     ],
+     "rule": "EN-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "stock_age",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "taxpayers.current",
+   "actor_group": [
+    "taxpayers.current",
+    "recipients.other_spending",
+    "taxpayers.future"
+   ],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_funded(k1)",
+     "premises": [
+      "general_budget(k1)"
+     ],
+     "rule": "OC-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"builders\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nstandard(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers.current\").\nmc_payer_group(k1, \"taxpayers.current,recipients.other_spending,taxpayers.future\").\nst_buyer(k1, \"buyers.new_homes\").\nmc_outside(k1, \"homeowners.renovating\").\nst_stock_owner(k1, \"owners.existing_homes\").\nstock_exempt(k1).\ndefinition_line(k1).\ngeneral_budget(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(can_organize(k1)).\nassumption(stock_competes(k1)).\nassumption(buyers_value_standard(k1)).\n",
+ "explanations": [
+  "C-1. Compared with no Westmere Residential Energy Performance Act, compliance cost for builders rises from the short run onward (tier B, invisible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
+  "C-2. Compared with no Westmere Residential Energy Performance Act, lobbying effort for builders rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The standard binds on some designs (p = 0.70); The makers can organize to lobby (p = 0.90). Reported.",
+  "C-3. Compared with no Westmere Residential Energy Performance Act, quantity supplied for builders falls from the medium run onward (tier B, invisible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
+  "C-4. Compared with no Westmere Residential Energy Performance Act, price paid for buyers.new_homes rises from the short run onward (tier B, invisible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
+  "C-5. Compared with no Westmere Residential Energy Performance Act, specification level for buyers.new_homes rises from the short run onward (tier B, visible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
+  "C-6. Compared with no Westmere Residential Energy Performance Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-7. Compared with no Westmere Residential Energy Performance Act, asset value for owners.existing_homes rises from the medium run onward (tier B, invisible). Why: CR-7: CR-7; EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90); Existing units compete with new ones (p = 0.80). Reported.",
+  "C-8. Compared with no Westmere Residential Energy Performance Act, stock age for owners.existing_homes rises in the long run (tier B, invisible). Why: CR-7: CR-7; EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90); Existing units compete with new ones (p = 0.80). Reported.",
+  "C-9. Compared with no Westmere Residential Energy Performance Act, resources available other uses for taxpayers.current or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier A, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-031 (illustrative figures), A-4: the Year 1 standard binds on some designs (a few percent of homes), since the maximum is the 90th percentile of a sample of homes permitted in Year -2 and the median DEI has fallen since.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k1.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Does the standard rule out some designs of new units that would otherwise be built or sold?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-031 (illustrative figures), A-2: building departments do not issue permits without a DEI report, nor certificates of occupancy without a rater's certificate.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k1.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most makers of new units comply with the standard?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-031 (illustrative figures), A-17: builders' associations can organize to lobby at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the makers of new units organize to lobby over the standard at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.stock_competes",
+    "rationale": "Probability taken from the assumption table of handbook WE-031 (illustrative figures), A-7: buyers have substitutes for new site-built homes in the state, among them existing homes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "stock_competes",
+    "assumption_class": "substitutability",
+    "id": "k1.stock_competes",
+    "kind": "noul",
+    "options": [],
+    "text": "Do existing units compete with new units for the same buyers?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k1.buyers_value_standard",
+    "rationale": "No row of the assumption table of handbook WE-031 matches; judged from the text. The policy text says buyers asked for efficient homes and the median DEI has fallen for ten years, but also that the standard removes designs buyers would have chosen (CR-2: buyers who would have chosen a less efficient design ranked it higher); nothing in the record says buyers prefer covered homes to the existing stock.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "buyers_value_standard",
+    "assumption_class": "other",
+    "id": "k1.buyers_value_standard",
+    "kind": "noul",
+    "options": [],
+    "text": "Do buyers value what the standard requires enough to prefer covered units over the existing stock?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": true,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "builders",
+    "budget_capped": false,
+    "buyer_actor": "buyers.new_homes",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": true,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": false,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": true,
+    "good": "new_homes",
+    "holder_cap": false,
+    "id": "k1",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "product_standard",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "westmere_housing",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": "homeowners.renovating",
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": null,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "K1, the performance standard: new homes whose DEI exceeds a maximum may not be built.",
+     "The standard covers new residential buildings of three stories or fewer above grade, including homes rebuilt after demolition, and it binds builders and owners who apply for a building permit.",
+     "The existing homes of the state are not covered by it.",
+     "On 1 January of each later year the maximum falls by 4% of the Year 1 value.",
+     "Renovations and alterations of existing homes are exempt.",
+     "Manufactured homes built to the national standard are exempt.",
+     "A certificate of occupancy requires a rater's certificate.",
+     "The Energy Office audits 2% of certificates.",
+     "The Energy Office's audit unit is funded by a new general-fund appropriation."
+    ],
+    "stock_exempt": true,
+    "stock_owner_actor": "owners.existing_homes",
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers.current",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   }
+  ],
+  "context": [
+   "The State Energy Office's records show that the median DEI of new homes has fallen by about 1.5% a year for ten years without any state code, as heat pumps became cheaper, buyers asked for efficient homes, and the utilities' rebate program paid for homes that beat its baseline.",
+   "The Halden metropolitan area, with about a quarter of the state's new building, straddles the state line with the neighboring state of Brennick, which has no comparable code."
+  ],
+  "effective": "1 January of Year 1",
+  "enacted": "15 June of Year 0",
+  "jurisdiction": "Westmere (fictional)",
+  "name": "Westmere Residential Energy Performance Act",
+  "rule_maker": "the Westmere legislature",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U1-a: no adjustment beyond the per-square-foot measure",
+     "U1-b: homes above 2,500 square feet are held to the maximum as if they were 2,500 square feet"
+    ],
+    "text": "The Act requires the Energy Office to adjust the index for dwelling size, but it does not say what the adjustment is."
+   },
+   {
+    "id": "U2",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U2-a: the code in force on the filing date",
+     "U2-b: the code in force when the rebate is claimed at completion"
+    ],
+    "text": "The Act does not say which code the rebate's \"applicable state energy code\" means for a home vested under K2."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-19T20:01:13+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U1-a: no adjustment beyond the per-square-foot measure",
+    "U1-b: homes above 2,500 square feet are held to the maximum as if they were 2,500 square feet"
+   ],
+   "text": "The Act requires the Energy Office to adjust the index for dwelling size, but it does not say what the adjustment is."
+  },
+  {
+   "id": "U2",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U2-a: the code in force on the filing date",
+    "U2-b: the code in force when the rebate is claimed at completion"
+   ],
+   "text": "The Act does not say which code the rebate's \"applicable state energy code\" means for a home vested under K2."
+  }
+ ],
+ "verifier_problems": []
+}
