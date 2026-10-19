@@ -1,0 +1,107 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "No row in WE-061's assumption table; my estimate from the text. The record states that no app worker is an employee now and that the platforms prevailed under the old test, so employee status is absent from every contract. Section 2 of the example names A-1 for this, but A-1 is about enforcement.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-1: the Act is enforced: audits and private suits with double damages make treating workers as contractors without a valid agreement costly.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.wages_sticky",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-29: fare shares are not cut in the first months (30 days' notice; scrutiny at launch). The other money term of the contract here is the fare share.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.wages_adjust",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-28: section 9 does not fix the fare share, and companies can cut fare shares and bonuses after launch.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.worth_less",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "No row in WE-061's assumption table; my estimate from the text. For workers at the margin of choosing employee status the cover and the floor are worth less than the 11% contributions, the top-up and the flexibility the company takes back (sections 4 and 5 of the example); A-5 puts only 65% of low-fare workers on employee status. Close to the cut-off.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.alternatives_worse",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "No row in WE-061's assumption table; my estimate from the text. Workers can sign the contractor agreement, work on several platforms (45% do), or move trips to Selvane (A-14), so their alternatives are not clearly worse than the platforms'. The example signs no incidence row.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.valued_on_earnings",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-11: buyers of shares expect the Act to survive the court challenge and repeal campaign, so the platforms' shares are valued on expected earnings.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-16: companies, drivers' groups and unions can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.recipients_organize",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-16: companies, drivers' groups and unions can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.floor_binds",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-3: some hours on a trip pay below 16 per hour (about a fifth). The floor here is the Act's own section 5 (K2), not an existing minimum wage, which does not reach app workers; the question is answered for that floor.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_screen",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-31: the floor's surplus of employee hours is rationed by stricter criteria than the counterfactual's dispatch ranking (shift allocation, acceptance thresholds); dispatch already ranks drivers by rating and acceptance.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.rivals_bound",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-4 (loosely): platforms pass part of their added cost into fares, which presupposes that the other platforms, all with well over 100 workers, face the same cost. Taxis and the small cooperatives are not bound.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.compete_with_bound",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-10: taxis are a substitute for some app rides at fares fixed by the city. The small delivery services (A-15, 0.5) are the other unbound rivals.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.5,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-8: some services can be reshaped to meet the three conditions at a cost below the Act's burden.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.staying_small_pays",
+  "value": "yes",
+  "probability": 0.5,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-15: some delivery services can operate with fewer than 100 Lanvik workers.",
+  "evidence": []
+ }
+]
