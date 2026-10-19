@@ -16,8 +16,10 @@ Consequences are keyed by (actor, variable, window, item). The rules stay monoto
 such as exception/2 and announced/1 are negated), which the minimal-set search relies on.
 
 Unclear provisions: the engine runs once per reading (adding that reading's
-facts) and merges the results; where the readings disagree, the consequence
-carries a sign per reading (02_ontology.md, per-reading signs).
+facts, fields and settled premises) and merges the results; where the readings
+disagree, the consequence carries a sign per reading (02_ontology.md, per-reading
+signs). A premise a reading settles is a fact under it, or absent, and is left
+out of the labels.
 """
 from __future__ import annotations
 
@@ -307,7 +309,8 @@ def invalid_reading_facts(unclear) -> list[str]:
 def readings(record: PolicyRecord) -> list[tuple[str, str, PolicyRecord]]:
     """Every combination of readings of the unclear provisions that carry facts or fields: (label, facts, the record
     with the readings' fields set)."""
-    branching = [u for u in record.unclear if u.reading_fields or (u.reading_facts and not invalid_reading_facts(u))]
+    branching = [u for u in record.unclear
+                 if u.reading_fields or u.reading_premises or (u.reading_facts and not invalid_reading_facts(u))]
     if not branching:
         return [("", "", record)]
     out = []
@@ -318,11 +321,21 @@ def readings(record: PolicyRecord) -> list[tuple[str, str, PolicyRecord]]:
     return out
 
 
+def reading_premises(record: PolicyRecord, label: str) -> dict[str, bool]:
+    """The premises a combination of readings ("U1-a; U2-b") settles: {assumption atom: holds?} (Unclear.reading_premises)."""
+    out = {}
+    for u in record.unclear:
+        for lab in filter(None, label.split("; ")):
+            for cid, atoms in u.reading_premises.get(lab, {}).items():
+                out.update({f"{a}({_atom(cid)})": v for a, v in atoms.items()})
+    return out
+
+
 def _name(sym: clingo.Symbol) -> str:
     return sym.string if sym.type == clingo.SymbolType.String else sym.name
 
 
-def _derive(program: str, assumptions: dict[str, Assumption]) -> dict[tuple, dict]:
+def _derive(program: str, assumptions: dict[str, Assumption], fixed: frozenset = frozenset()) -> dict[tuple, dict]:
     """One engine run. Returns {(actor, variable, window, item, sign): {horizon, visibility, tier, concl, sets, derivation}}.
     For a group consequence `variable` is the comma-separated member list.
 
@@ -350,7 +363,7 @@ def _derive(program: str, assumptions: dict[str, Assumption]) -> dict[tuple, dic
         key = (actor, variable, window, item, sign)
         row = dict(
             concl=concl, actor=actor, variable=variable, sign=sign, horizon=horizon, window=window, item=item,
-            visibility=visibility, tier=tier, sets=minimal_by_concl[concl], derivation=_derivation(concl, steps))
+            visibility=visibility, tier=tier, sets=[s - fixed for s in minimal_by_concl[concl]], derivation=_derivation(concl, steps))
         if key in out:
             # two components (or two rules) reach the same row: it follows under either support, so the label is the
             # union of the minimal sets and the derivation keeps both chains
@@ -365,8 +378,16 @@ def run(record: PolicyRecord, assumptions: dict[str, Assumption], extra: str = "
     """Derive consequences. `assumptions` maps the ASP atom (e.g. 'enforced(c1)') to its estimate;
     `extra` adds facts such as `exception(pc_5, c1).` from context grounding."""
     base = facts(record, assumptions) + extra
-    runs = [(label, _derive((base if variant is record else facts(variant, assumptions) + extra) + rf, assumptions))
-            for label, rf, variant in readings(record)]
+    runs = []
+    for label, rf, variant in readings(record):
+        # a premise the reading settles is a fact under it (true) or absent (false), and stays out of the labels
+        settled = {a: v for a, v in reading_premises(record, label).items() if a in assumptions}
+        if settled:
+            kept = {a: x for a, x in assumptions.items() if a not in settled}
+            program = facts(variant, kept) + extra + rf + "".join(f"holds({a}).\n" for a, v in settled.items() if v)
+        else:
+            program = (base if variant is record else facts(variant, assumptions) + extra) + rf
+        runs.append((label, _derive(program, assumptions, frozenset(settled))))
 
     # merge across readings on (actor, variable, window, item): same sign everywhere, or a sign per reading
     keys = sorted({(a, v, w, i) for _, r in runs for (a, v, w, i, _s) in r}, key=lambda k: tuple(x or "" for x in k))

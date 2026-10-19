@@ -25,6 +25,9 @@ If a provision can be read more than one way, record it under `unclear` with eac
 Leave `reading_facts` empty: it takes engine facts written by a person, not text. Where a reading changes what a
 component is or does, record it in `reading_fields` as the Component fields that reading sets, per component id (e.g.
 under a reading where the payment is on a fixed historical base, {"U1-b": {"k1": {"instrument": "lump_sum_subsidy"}}}).
+Where a reading settles a premise instead (under one reading a line is drawn that firms can reshape around, under the
+other it is not), record it in `reading_premises`: per reading and component id, the premise's question atom and whether
+it holds under that reading (e.g. {"U1-a": {"k1": {"reshaping_pays": true}}, "U1-b": {"k1": {"reshaping_pays": false}}}).
 Copy into `context` only facts stated in the text about the market at enactment. Use nothing from after the enactment date.
 
 Actor roles. The rules attach consequences to the role fields, so fill every role field that applies to the

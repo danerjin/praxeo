@@ -63,6 +63,13 @@ def verify(consequences: list[Consequence], assumptions: dict[str, Assumption], 
         bad = invalid_reading_facts(u)
         if bad:
             problems.append(f"{u.id}: reading facts for {bad} are not valid clingo and were ignored")
+    from .questions import questions_for
+    asked = {comp.id: {q.assumption for q, _ in questions_for(comp)} for comp in record.components}
+    for u in record.unclear:
+        for lab, by_comp in u.reading_premises.items():
+            for cid, atoms in by_comp.items():
+                for atom in set(atoms) - asked.get(cid, set()):
+                    problems.append(f"{u.id} {lab}: premise `{atom}` is not asked of {cid}, so the reading settles nothing")
     by_id = {c.id: c for c in consequences}
     named = record_roles(record)
     for c in consequences:

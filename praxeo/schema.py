@@ -218,6 +218,11 @@ class Unclear(BaseModel):
         "{\"U1-b\": {\"k1\": {\"instrument\": \"lump_sum_subsidy\"}}} where under U1-b the payment is on a fixed historical "
         "base. Only Component fields may be named; the engine runs each reading on the record with its fields set. "
         "A parser may fill this, unlike reading_facts."))
+    reading_premises: dict[str, dict[str, dict[str, bool]]] = Field(default={}, description=(
+        "Premises that a reading settles, per reading label and component id: the question's atom and whether it holds "
+        "under that reading, e.g. {\"U1-a\": {\"k1\": {\"reshaping_pays\": true}}, \"U1-b\": {\"k1\": {\"reshaping_pays\": false}}} "
+        "where under U1-b the line the reshaping would cross is not drawn. Use it where a reading changes what is true, "
+        "not a record field. Under the reading the premise is given (true) or removed (false), whatever its estimate."))
 
     def labels(self) -> list[str]:
         return [r.split(":", 1)[0].strip() for r in self.readings]
@@ -248,6 +253,11 @@ class PolicyRecord(BaseModel):
                     bad = set(fields) - set(Component.model_fields)
                     if bad:
                         raise ValueError(f"{u.id} {label}: not Component fields: {sorted(bad)}")
+            for label, by_comp in u.reading_premises.items():
+                if label not in u.labels():
+                    raise ValueError(f"{u.id}: reading_premises names unknown reading {label}")
+                if set(by_comp) - ids:
+                    raise ValueError(f"{u.id} {label}: unknown components {sorted(set(by_comp) - ids)}")
         return self
 
     def variant(self, label_by_unclear: dict[str, str]) -> "PolicyRecord":

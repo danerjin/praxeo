@@ -130,3 +130,28 @@ def test_play_or_pay_required_inputs_disclosure_and_fixed_cost_per_item():
             ("sellers.exempt", "term_prevalence", "increase", None), ("sellers.covered", "variety", "decrease", None)} <= got
     assert ("buyers.current", "quantity_demanded", "ambiguous", None) in _reported(rec(**d))
     assert not any(k[1] == "quantity_demanded" for k in _reported(rec(**d), buyers_unaware=0.3))
+
+
+def test_a_reading_that_settles_a_premise():
+    """Unclear.reading_premises: under one reading a premise holds whatever its estimate, under the other it fails; the
+    engine signs per reading, and a settled premise is not part of the label."""
+    from praxeo.schema import Component, PolicyRecord, Unclear
+    comp = Component(id="k1", instrument="mandated_contract_term", good="g", market="m", bound_actor="employers",
+                     recipient_actor="workers", definition_line=True, outside_actor="contractors", source_sentences=["x"])
+    u = Unclear(id="U1", text="t", readings=["U1-a: the line is drawn", "U1-b: it is not"],
+                reading_premises={"U1-a": {"k1": {"reshaping_pays": True}}, "U1-b": {"k1": {"reshaping_pays": False}}})
+    rec = PolicyRecord(name="n", jurisdiction="j", rule_maker="r", enacted="e", effective="f", components=[comp], unclear=[u])
+    a = {f"{q.assumption}(k1)": engine.Assumption(id=f"{q.assumption}(k1)", text=t, assumption_class=q.assumption_class,
+                                                  p=0.2 if q.assumption == "reshaping_pays" else 0.9)
+         for q, t in questions_for(comp)}
+    cons = {(c.actor_class, c.variable): c for c in engine.run(rec, a)[0]}
+    c = cons[("contractors", "reclassification")]
+    assert c.sign_by_reading == {"U1-a": "increase", "U1-b": "none"}
+    assert c.reported and "reshaping_pays(k1)" not in c.assumptions          # settled by U1-a, so its 0.2 estimate is moot
+    # without the reading the premise's estimate decides, and 0.2 is below the cut-off
+    rec2 = rec.model_copy(update={"unclear": []})
+    assert not {(x.actor_class, x.variable): x for x in engine.run(rec2, a)[0]}[("contractors", "reclassification")].reported
+    import pytest
+    with pytest.raises(ValueError):
+        PolicyRecord(name="n", jurisdiction="j", rule_maker="r", enacted="e", effective="f", components=[comp],
+                     unclear=[u.model_copy(update={"reading_premises": {"U1-c": {"k1": {"reshaping_pays": True}}}})])
