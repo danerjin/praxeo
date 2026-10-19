@@ -1,0 +1,1769 @@
+{
+ "assumptions": {
+  "buyer_substitutes(k1)": {
+   "assumption_class": "substitutability",
+   "id": "buyer_substitutes(k1)",
+   "p": 0.8,
+   "text": "Legal substitutes are acceptable to some buyers."
+  },
+  "can_organize(k1)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1)",
+   "p": 0.6,
+   "text": "The former sellers or the buyers can organize to seek repeal."
+  },
+  "concentrate_easy(k1)": {
+   "assumption_class": "other",
+   "id": "concentrate_easy(k1)",
+   "p": 0.75,
+   "text": "A concentrated form can be made with simple means."
+  },
+  "cross_border_feasible(k1)": {
+   "assumption_class": "mobility",
+   "id": "cross_border_feasible(k1)",
+   "p": 0.65,
+   "text": "Enough buyers can easily buy across the boundary, where the tax does not apply."
+  },
+  "demand_persists(k1)": {
+   "assumption_class": "other",
+   "id": "demand_persists(k1)",
+   "p": 0.9,
+   "text": "A meaningful share of buyers keep wanting the good after the ban."
+  },
+  "enforced(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k1)",
+   "p": 0.95,
+   "text": "The legal sellers comply with the ban."
+  },
+  "enforcement_risk(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforcement_risk(k1)",
+   "p": 0.8,
+   "text": "Informal sellers face a real risk of punishment."
+  },
+  "evasion(k1)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k1)",
+   "p": 0.85,
+   "text": "Enforcement is imperfect: many informal sales go undetected."
+  },
+  "no_other_use(k1)": {
+   "assumption_class": "alternative_uses",
+   "id": "no_other_use(k1)",
+   "p": 0.85,
+   "text": "The legal sellers cannot replace the banned good with other products for most of their business."
+  },
+  "records_checked(k1)": {
+   "assumption_class": "other",
+   "id": "records_checked(k1)",
+   "p": 0.6,
+   "text": "Convictions are recorded and checked by employers."
+  },
+  "reshaping_pays(k1)": {
+   "assumption_class": "other",
+   "id": "reshaping_pays(k1)",
+   "p": 0.6,
+   "text": "Reshaping goods to fall outside the definitions costs some actors less than the burden."
+  },
+  "stockpile_ahead(k1)": {
+   "assumption_class": "expectations",
+   "id": "stockpile_ahead(k1)",
+   "p": 0.75,
+   "text": "Buyers and importers can store the good and order ahead of the effective date."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "halvet.sellers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "cross_border_feasible(k1)"
+    ]
+   ],
+   "assumptions": [
+    "cross_border_feasible(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_cross(k1)",
+     "premises": [
+      "cross_border_feasible(k1)"
+     ],
+     "rule": "RS-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers.lirva",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_administered(k1)",
+     "premises": [
+      "prohibition(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_revenue(k1)",
+     "premises": [
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "TX-10"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "tax_revenue",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.informal",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.informal",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.informal",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "reshaping_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_reshaped(k1)",
+     "premises": [
+      "reshaping_pays(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.informal",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "concentrate_easy(k1)",
+     "demand_persists(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "concentrate_easy(k1)",
+    "demand_persists(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "pr_concentrate(k1)",
+     "premises": [
+      "concentrate_easy(k1)",
+      "pr_underground(k1)"
+     ],
+     "rule": "EN-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "share_concentrated_forms",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.substitutes",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "reshaping_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_reshaped(k1)",
+     "premises": [
+      "reshaping_pays(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "shops.lirva",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)",
+     "no_other_use(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)",
+    "no_other_use(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "CR-1"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "no_other_use(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "shops.lirva",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)",
+     "no_other_use(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)",
+    "no_other_use(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "CR-1"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "no_other_use(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "shops.lirva",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_run_down(k1)",
+     "premises": [
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "RS-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "inventory_held",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "shops.lirva",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "can_organize(k1)"
+    ]
+   ],
+   "assumptions": [
+    "can_organize(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_lobby(k1)",
+     "premises": [
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "shops.lirva",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "number_of_sellers",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "shops.lirva",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "shops.lirva",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_stocks_lost(k1)",
+     "premises": [
+      "stocks_destroyed(k1)"
+     ],
+     "rule": "OC-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "taxpayers",
+   "actor_group": [
+    "taxpayers",
+    "recipients.other_spending",
+    "taxpayers.future"
+   ],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_funded(k1)",
+     "premises": [
+      "general_budget(k1)"
+     ],
+     "rule": "OC-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.convicted",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "enforcement_risk(k1)",
+     "records_checked(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "enforcement_risk(k1)",
+    "records_checked(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "enforcement_risk(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_records(k1)",
+     "premises": [
+      "pr_risk_price(k1)",
+      "records_checked(k1)"
+     ],
+     "rule": "EN-10"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-18",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "can_organize(k1)"
+    ]
+   ],
+   "assumptions": [
+    "can_organize(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_lobby(k1)",
+     "premises": [
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-19",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "enforcement_risk(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "enforcement_risk(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "enforcement_risk(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-20",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "enforcement_risk(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "enforcement_risk(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "enforcement_risk(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-21",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "stockpile_ahead(k1)"
+    ]
+   ],
+   "assumptions": [
+    "stockpile_ahead(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_stock_up(k1)",
+     "premises": [
+      "announced(k1)",
+      "stockpile_ahead(k1)"
+     ],
+     "rule": "RS-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short"
+   ],
+   "id": "C-22",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": "announcement"
+  },
+  {
+   "actor_class": "users.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "buyer_substitutes(k1)"
+    ]
+   ],
+   "assumptions": [
+    "buyer_substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_substitute(k1)",
+     "premises": [
+      "buyer_substitutes(k1)"
+     ],
+     "rule": "RS-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-23",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_substitute",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-24",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "users.informal",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-25",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.informal",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-26",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_information",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.informal",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-27",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_variability",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.informal",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-28",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.mobile",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "cross_border_feasible(k1)"
+    ]
+   ],
+   "assumptions": [
+    "cross_border_feasible(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_cross(k1)",
+     "premises": [
+      "cross_border_feasible(k1)"
+     ],
+     "rule": "RS-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-29",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "cross_border_purchases",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.mobile",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "cross_border_feasible(k1)"
+    ]
+   ],
+   "assumptions": [
+    "cross_border_feasible(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_cross(k1)",
+     "premises": [
+      "cross_border_feasible(k1)"
+     ],
+     "rule": "RS-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-30",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.prospective",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "enforcement_risk(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "enforcement_risk(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "enforcement_risk(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-31",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"shops.lirva\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nprohibition(k1).\npr_buyer(k1, \"users.current\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nrevenue(k1, \"officials.enforcement\").\npr_informal_buyer(k1, \"users.informal\").\npr_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\npr_informal_seller(k1, \"sellers.informal\").\npr_importer(k1, \"importers.lirva\").\npr_prospective(k1, \"users.prospective\").\npr_convicted(k1, \"users.convicted\").\nmobile_buyer(k1, \"users.mobile\").\nneighbor_seller(k1, \"halvet.sellers\").\npr_substitute_seller(k1, \"sellers.substitutes\").\ndefinition_line(k1).\nvolume_penalties(k1).\nstocks_destroyed(k1).\ntaxed_before(k1).\ngeneral_budget(k1).\nassumption(enforced(k1)).\nassumption(demand_persists(k1)).\nassumption(evasion(k1)).\nassumption(enforcement_risk(k1)).\nassumption(no_other_use(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(can_organize(k1)).\nassumption(cross_border_feasible(k1)).\nassumption(reshaping_pays(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(concentrate_easy(k1)).\nassumption(records_checked(k1)).\n",
+ "explanations": [
+  "C-1. Compared with no Corrin Lirva Control Act, quantity traded for halvet.sellers rises from the short run onward (tier B, invisible). Why: RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.65). Reported.",
+  "C-2. Compared with no Corrin Lirva Control Act, quantity traded for importers.lirva falls from the short run onward (tier B, invisible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.95). Reported.",
+  "C-3. Compared with no Corrin Lirva Control Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-4. Compared with no Corrin Lirva Control Act, tax revenue for officials.enforcement falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; TX-10: TX-10. This holds if: The legal sellers comply with the ban (p = 0.95). Reported.",
+  "C-5. Compared with no Corrin Lirva Control Act, disputes settled outside courts for sellers.informal rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.90); Enforcement is imperfect: many informal sales go undetected (p = 0.85). Reported.",
+  "C-6. Compared with no Corrin Lirva Control Act, informal activity for sellers.informal rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.90); Enforcement is imperfect: many informal sales go undetected (p = 0.85). Reported.",
+  "C-7. Compared with no Corrin Lirva Control Act, reclassification for sellers.informal rises from the short run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.60). Reported.",
+  "C-8. Compared with no Corrin Lirva Control Act, share concentrated forms for sellers.informal rises from the medium run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; EN-8: EN-8. This holds if: A concentrated form can be made with simple means (p = 0.75); A meaningful share of buyers keep wanting the good after the ban (p = 0.90); Enforcement is imperfect: many informal sales go undetected (p = 0.85). Reported.",
+  "C-9. Compared with no Corrin Lirva Control Act, reclassification for sellers.substitutes rises from the short run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.60). Reported.",
+  "C-10. Compared with no Corrin Lirva Control Act, asset value for shops.lirva falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.95); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.85). Reported.",
+  "C-11. Compared with no Corrin Lirva Control Act, employment for shops.lirva falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.95); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.85). Reported.",
+  "C-12. Compared with no Corrin Lirva Control Act, inventory held for shops.lirva falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: The legal sellers comply with the ban (p = 0.95). Reported.",
+  "C-13. Compared with no Corrin Lirva Control Act, lobbying effort for shops.lirva rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.60). Reported.",
+  "C-14. Compared with no Corrin Lirva Control Act, number of sellers for shops.lirva falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.95). Reported.",
+  "C-15. Compared with no Corrin Lirva Control Act, quantity traded for shops.lirva falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.95). Reported.",
+  "C-16. Compared with no Corrin Lirva Control Act, resources available other uses for shops.lirva falls from the short run onward (tier A, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported.",
+  "C-17. Compared with no Corrin Lirva Control Act, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier A, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported.",
+  "C-18. Compared with no Corrin Lirva Control Act, employment for users.convicted falls in the long run (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7; EN-10: EN-10. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.90); Informal sellers face a real risk of punishment (p = 0.80); Convictions are recorded and checked by employers (p = 0.60). Reported.",
+  "C-19. Compared with no Corrin Lirva Control Act, lobbying effort for users.current rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.60). Reported.",
+  "C-20. Compared with no Corrin Lirva Control Act, price paid for users.current rises from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.90); Informal sellers face a real risk of punishment (p = 0.80). Reported.",
+  "C-21. Compared with no Corrin Lirva Control Act, quantity demanded for users.current falls from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.90); Informal sellers face a real risk of punishment (p = 0.80). Reported.",
+  "C-22. Compared with no Corrin Lirva Control Act, quantity demanded for users.current rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.75). Reported.",
+  "C-23. Compared with no Corrin Lirva Control Act, quantity substitute for users.current rises from the short run onward (tier B, invisible). Why: RS-1: when a good becomes dearer, buyers turn to substitutes. This holds if: Legal substitutes are acceptable to some buyers (p = 0.80). Reported.",
+  "C-24. Compared with no Corrin Lirva Control Act, quantity traded for users.current falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.95). Reported.",
+  "C-25. Compared with no Corrin Lirva Control Act, disputes settled outside courts for users.informal rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.90); Enforcement is imperfect: many informal sales go undetected (p = 0.85). Reported.",
+  "C-26. Compared with no Corrin Lirva Control Act, quality information for users.informal falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.90); Enforcement is imperfect: many informal sales go undetected (p = 0.85). Reported.",
+  "C-27. Compared with no Corrin Lirva Control Act, quality variability for users.informal rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.90); Enforcement is imperfect: many informal sales go undetected (p = 0.85). Reported.",
+  "C-28. Compared with no Corrin Lirva Control Act, search cost for users.informal rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.90); Enforcement is imperfect: many informal sales go undetected (p = 0.85). Reported.",
+  "C-29. Compared with no Corrin Lirva Control Act, cross border purchases for users.mobile rises from the short run onward (tier B, invisible). Why: RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.65). Reported.",
+  "C-30. Compared with no Corrin Lirva Control Act, search cost for users.mobile rises from the short run onward (tier B, invisible). Why: RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.65). Reported.",
+  "C-31. Compared with no Corrin Lirva Control Act, quantity demanded for users.prospective falls in the long run (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.90); Informal sellers face a real risk of punishment (p = 0.80). Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.95,
+    "question_id": "k1.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-2: licensed shops comply.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k1.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the legal sellers comply with the ban (stop selling openly)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.demand_persists",
+    "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-1: a meaningful share of regular users keep using lirva after the ban.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "demand_persists",
+    "assumption_class": "other",
+    "id": "k1.demand_persists",
+    "kind": "noul",
+    "options": [],
+    "text": "Will a meaningful share of buyers keep wanting the good after the ban?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.evasion",
+    "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-3: enforcement is imperfect: many informal sales go undetected.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k1.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will many informal sales go undetected?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.enforcement_risk",
+    "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-4: enforcement is active enough that informal sellers face a real risk.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforcement_risk",
+    "assumption_class": "enforcement",
+    "id": "k1.enforcement_risk",
+    "kind": "noul",
+    "options": [],
+    "text": "Will enforcement be active enough that informal sellers face a real risk of punishment?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.no_other_use",
+    "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-11: specialist shops cannot replace lirva sales with other products for most of their staff.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "no_other_use",
+    "assumption_class": "alternative_uses",
+    "id": "k1.no_other_use",
+    "kind": "noul",
+    "options": [],
+    "text": "Are the legal sellers unable to replace the banned good with other products for most of their business?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.buyer_substitutes",
+    "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-7: legal substitutes are acceptable to some users.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyer_substitutes",
+    "assumption_class": "substitutability",
+    "id": "k1.buyer_substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Are some legal substitutes acceptable to some buyers?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-12: users and former shop owners can organize.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the former legal sellers or the buyers organize to seek repeal at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.65,
+    "question_id": "k1.cross_border_feasible",
+    "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-6: enough users live within reach of Halvet and will carry home amounts under 50 g.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "cross_border_feasible",
+    "assumption_class": "mobility",
+    "id": "k1.cross_border_feasible",
+    "kind": "noul",
+    "options": [],
+    "text": "Can enough of the buyers easily buy the taxed good on the other side of the boundary, in a place without the tax, for crossing to be worth its cost to them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.reshaping_pays",
+    "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-8: related plants and blends outside the definitions can be sold.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "reshaping_pays",
+    "assumption_class": "other",
+    "id": "k1.reshaping_pays",
+    "kind": "noul",
+    "options": [],
+    "text": "For some of the actors bound by the measure, will reshaping goods so that they fall outside the measure's definitions cost less than the measure would cost them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.stockpile_ahead",
+    "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-5: users know the date and can store dried leaf for months.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "stockpile_ahead",
+    "assumption_class": "expectations",
+    "id": "k1.stockpile_ahead",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the buyers or importers buy ahead of the effective date, by storing the good or placing orders early?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.concentrate_easy",
+    "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-10: extract can be made with simple equipment.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "concentrate_easy",
+    "assumption_class": "other",
+    "id": "k1.concentrate_easy",
+    "kind": "noul",
+    "options": [],
+    "text": "Can a concentrated form of the good be made with simple means?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.records_checked",
+    "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-16: convictions are recorded and employers check them.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "records_checked",
+    "assumption_class": "other",
+    "id": "k1.records_checked",
+    "kind": "noul",
+    "options": [],
+    "text": "Do employers check the recorded convictions of people they hire?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "allocation_by_history": false,
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "bound_actor": "shops.lirva",
+    "budget_capped": false,
+    "buyer_actor": "users.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "convicted_actor": "users.convicted",
+    "debt_funded": false,
+    "definition_line": true,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": true,
+    "good": "lirva",
+    "holder_cap": false,
+    "id": "k1",
+    "import_quota": false,
+    "importer_actor": "importers.lirva",
+    "informal_buyer_actor": "users.informal",
+    "informal_seller_actor": "sellers.informal",
+    "input_supplier_actor": null,
+    "instrument": "prohibition",
+    "market": "corrin",
+    "mobile_buyer_actor": "users.mobile",
+    "neighbor_actor": null,
+    "neighbor_seller_actor": "halvet.sellers",
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "own_revenue_funded": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": "users.prospective",
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "source_sentences": [
+     "From the effective date, making, selling, possessing for sale, importing and growing lirva, its active compound lirvine, and any product containing either are prohibited, except for licensed research.",
+     "Penalties are graded by the total weight of material, including any carrier or mixture.",
+     "Existing stocks must be destroyed or exported by the effective date.",
+     "No compensation is paid.",
+     "The neighboring state of Halvet keeps lirva legal; its border is 40 to 90 minutes' drive from Corrin's two largest cities.",
+     "The Act was passed six months before it took effect.",
+     "The state police drug unit, local police and the state laboratory enforce the Act, with an added budget for investigators and lab testing from the general budget."
+    ],
+    "stocks_destroyed": true,
+    "substitute_seller_actor": "sellers.substitutes",
+    "tax_named": false,
+    "taxed_before": true,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "volume_penalties": true,
+    "wider_market": false,
+    "worker_actor": null
+   }
+  ],
+  "context": [
+   "It has been sold legally in the State of Corrin (about 6 million people) for fifteen years, in about 400 specialist tea shops, in convenience stores and online, and has been subject to the general sales tax.",
+   "A concentrated extract, made by soaking the leaf in alcohol and drying the result, gives the same effect at about 0.25 g; it is about 5% of current sales."
+  ],
+  "effective": "the effective date",
+  "enacted": "six months before the effective date",
+  "jurisdiction": "Corrin (fictional)",
+  "name": "Corrin Lirva Control Act",
+  "rule_maker": "the Corrin legislature",
+  "stated_aim": null,
+  "unclear": []
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-19T18:49:52+00:00",
+ "sources_held_back": [],
+ "unclear": [],
+ "verifier_problems": []
+}

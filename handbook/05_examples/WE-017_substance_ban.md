@@ -130,9 +130,9 @@ Stopping points: landlords of closed shop premises are diffuse at depth 3; stopp
 |---|---|---|---|---|---|
 | C-21 | `shops.lirva` | `resources_available_other_uses` | decrease | Stock destroyed or sold abroad at a discount without compensation; fixtures and know-how specific to lirva. | OC-1 |
 | C-22 | `users.mobile` | `search_cost` (travel to Halvet) | increase | Time and travel cost of buying across the border. | OC-2 |
-| C-23 | `taxpayers` | `resources_available_other_uses` | decrease | What the enforcement budget (C-16) would otherwise have funded. | OC-3, OC-1 |
+| C-23 | `taxpayers`, `recipients.other_spending`, `taxpayers.future` | `resources_available_other_uses` | at_least_one_decrease | What the enforcement budget (C-16) would otherwise have funded: higher taxes, other spending its recipients no longer receive, or later taxes. | OC-3, OC-1 (who pays) |
 
-C-23: OC-3's funding case. K4 adds budget for the new task from the general budget, so the cost falls on taxpayers, not on other enforcement.
+C-23: OC-3's funding case. K4 adds budget for the new task from the general budget, so the cost does not fall on other enforcement. The record names no tax, so by OC-1 (who pays) the payers are a group: taxpayers, recipients of other spending and future taxpayers, at least one of whom loses.
 
 Prevented exchanges are recorded as C-1 and are not listed again.
 
@@ -167,7 +167,7 @@ Prevented exchanges are recorded as C-1 and are not listed again.
 - *Users* stockpiled before the date (C-5), and afterwards pay more per dose (C-4). Some buy in Halvet and carry home small amounts (C-6, C-22); some switch to alcohol or other products (C-7); some buy from informal sellers, who are harder to find (C-12), whose product is harder to judge in advance (C-24) and varies more in strength (C-13). Disputes with sellers cannot go to court (C-15). Total use falls, by less than legal sales do (C-25), and fewer people start using lirva (C-19).
 - *Sellers* shift toward extract, because the penalty depends on weight and extract packs about twenty times as many doses into a gram (C-9). Products from related plants are sold as alternatives (C-8).
 - *Shops* lose the value of their businesses as soon as the Act passes (C-27), run their stock down before the date (C-29), lose what stock remains, and their staff lose their jobs in lirva retail (C-21, C-10). Importers lose their trade (C-28). Halvet shops gain (C-14).
-- *The state* spends more on police, laboratories, courts and, over the years, prisons (C-16), funded by taxpayers (C-23). The general sales tax loses the part of lirva spending that moves to informal and Halvet sellers (C-17). Those convicted find it harder to get jobs later (C-18).
+- *The state* spends more on police, laboratories, courts and, over the years, prisons (C-16), funded from the general budget: by taxpayers, recipients of other spending or future taxpayers (C-23). The general sales tax loses the part of lirva spending that moves to informal and Halvet sellers (C-17). Those convicted find it harder to get jobs later (C-18).
 - Users and former shop owners lobby for repeal (C-11).
 
 **Ambiguous effects.** The legal price in the last weeks before the ban (C-30). Total state tax revenue, counting excises on substitutes such as alcohol as well as the sales tax (C-26). Whether informal sellers earn more or less than they would have selling legally (C-20).
@@ -202,7 +202,7 @@ Prevented exchanges are recorded as C-1 and are not listed again.
 | C-20 | sellers.informal | earnings | ambiguous | medium | invisible | B | C-4 vs penalties | A-1, A-3, A-4 |
 | C-21 | shops.lirva | resources_available_other_uses | decrease | short | invisible | A | OC-1 | none |
 | C-22 | users.mobile | search_cost | increase | short | invisible | B | OC-2 | A-6 |
-| C-23 | taxpayers | resources_available_other_uses | decrease | short | invisible | A | OC-3, OC-1 | none |
+| C-23 | taxpayers, recipients.other_spending, taxpayers.future | resources_available_other_uses | at_least_one_decrease | short | invisible | A | OC-3, OC-1 (who pays) | none |
 | C-24 | users.informal | quality_information | decrease | short | invisible | B | RS-3, RS-10 | A-3 |
 | C-25 | users.current | quantity_demanded (all sources, after the effective date) | decrease | short–medium | invisible | B | EN-7, RS-1 | A-1, A-4 |
 | C-26 | officials.enforcement, taxpayers | tax_revenue (all state taxes, including excises) | ambiguous | short | invisible | B | C-17 vs C-7 (TX-10) | A-6, A-7, A-15 |
@@ -221,3 +221,4 @@ Prevented exchanges are recorded as C-1 and are not listed again.
 
 Also on the update: users' total use, previously a prose row in section 7, is now C-25 (`quantity_demanded`, all sources), and A-15's type is corrected from `revenue_use` to `substitutability`.
 - Catalog 0.5: corrected after the core-only comparison (see ../05_examples_core/WE-017_substance_ban_core.md): added the fall in shop businesses' value at passage (C-27, SB-4), importers' lost trade (C-28), shops running stock down before the date (C-29) and the ambiguous legal price in the final weeks (C-30); stockpiles moved from a (+) to a (−) chain on purchases after the date in section 7 (sign unchanged); C-10 rederived from the removal of the activity rather than RS-6; OC-3's funding case stated.
+- Catalog 1.4: C-23 corrected to follow OC-1's who-pays clause. The record names no tax, so the payers are the group of taxpayers, recipients of other spending and future taxpayers (`at_least_one_decrease`), not taxpayers alone.

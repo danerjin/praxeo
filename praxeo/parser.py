@@ -84,6 +84,12 @@ instrument, even when the text states no aim:
   rights; revenue_actor receives the price), informal_buyer_actor (buyers of the unlicensed or unrecorded trade, if not all buyers), price_fixed (true if a rule
   in force before the measure fixes the good's price, such as a council-set fare); for an import quota, the tariff
   roles too (domestic_seller_actor, exporter_actor, downstream, and the owner and worker roles).
+- prohibition: bound_actor (who sold it legally until now), buyer_actor, informal_seller_actor and informal_buyer_actor
+  (who sells and buys it outside the law), importer_actor, prospective_buyer_actor, convicted_actor, mobile_buyer_actor
+  and neighbor_seller_actor (buyers who can buy where it stays legal, and the sellers there), substitute_seller_actor
+  (sellers of goods just outside the definitions, with definition_line), volume_penalties (true if penalties are graded
+  by weight or bulk), stocks_destroyed (true if stocks must be destroyed without compensation), taxed_before (true if
+  the good was taxed before; revenue_actor collects it), announcement_window, general_budget.
 For a tax or subsidy, list in `related` the markets the text or context names as related to the good: an input or factor
 its sellers use (kind input: who sells it, price_variable wage_rate for workers, and its other users if named), or a
 complement used with it (kind complement).

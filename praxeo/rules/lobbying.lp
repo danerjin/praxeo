@@ -13,6 +13,7 @@ lobby_concl(tx_lobbies_sellers(C), C) :- tx_lobbies_sellers(C).
 lobby_concl(tx_lobbies_users(C), C)   :- tx_lobbies_users(C).
 lobby_concl(sb_lobbies(C), C)         :- sb_lobbies(C).
 lobby_concl(en_lobby(C), C)           :- en_lobby(C).
+lobby_concl(pr_lobby(C), C)           :- pr_lobby(C).
 
 contested_lobby(X) :- lobby_concl(X, C), field_contested(C), holds(contested_otherwise(C)), not exception(rs_7, C).
 fired(rs_7, contested_lobby(X), X)                     :- contested_lobby(X).

@@ -12,6 +12,18 @@
    "p": 0.85,
    "text": "The cap holds the quantity below what would otherwise be traded."
   },
+  "buyer_substitutes(k1)": {
+   "assumption_class": "substitutability",
+   "id": "buyer_substitutes(k1)",
+   "p": 0.7,
+   "text": "Legal substitutes are acceptable to some buyers."
+  },
+  "can_organize(k1)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1)",
+   "p": 0.85,
+   "text": "The former sellers or the buyers can organize to seek repeal."
+  },
   "can_organize(k2)": {
    "assumption_class": "other",
    "id": "can_organize(k2)",
@@ -21,7 +33,7 @@
   "contested_otherwise(k1)": {
    "assumption_class": "other",
    "id": "contested_otherwise(k1)",
-   "p": 0.4,
+   "p": 0.75,
    "text": "The groups that gain from or are bound by the measure would have lobbied on the same question without it."
   },
   "contested_otherwise(k2)": {
@@ -30,11 +42,35 @@
    "p": 0.4,
    "text": "The groups that gain from or are bound by the measure would have lobbied on the same question without it."
   },
+  "demand_persists(k1)": {
+   "assumption_class": "other",
+   "id": "demand_persists(k1)",
+   "p": 0.7,
+   "text": "A meaningful share of buyers keep wanting the good after the ban."
+  },
+  "enforced(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k1)",
+   "p": 0.9,
+   "text": "The legal sellers comply with the ban."
+  },
   "enforced(k2)": {
    "assumption_class": "enforcement",
    "id": "enforced(k2)",
    "p": 0.9,
    "text": "The cap is enforced."
+  },
+  "enforcement_risk(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforcement_risk(k1)",
+   "p": 0.9,
+   "text": "Informal sellers face a real risk of punishment."
+  },
+  "evasion(k1)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k1)",
+   "p": 0.1,
+   "text": "Enforcement is imperfect: many informal sales go undetected."
   },
   "evasion(k2)": {
    "assumption_class": "enforcement",
@@ -47,6 +83,18 @@
    "id": "expected_to_last(k2)",
    "p": 0.7,
    "text": "Holders and buyers of the rights expect the restriction to last."
+  },
+  "no_other_use(k1)": {
+   "assumption_class": "alternative_uses",
+   "id": "no_other_use(k1)",
+   "p": 0.7,
+   "text": "The legal sellers cannot replace the banned good with other products for most of their business."
+  },
+  "stockpile_ahead(k1)": {
+   "assumption_class": "expectations",
+   "id": "stockpile_ahead(k1)",
+   "p": 0.05,
+   "text": "Buyers and importers can store the good and order ahead of the effective date."
   },
   "trade_cheap(k2)": {
    "assumption_class": "mobility",
@@ -731,21 +779,501 @@
    "window": "announcement"
   },
   {
-   "actor_class": "officials.enforcement",
+   "actor_class": "buyers.current",
    "actor_group": [],
    "assumption_sets": [
     [
-     "binding(k2)",
-     "enforced(k2)"
+     "demand_persists(k1)",
+     "evasion(k1)"
     ]
    ],
    "assumptions": [
-    "binding(k2)",
-    "enforced(k2)"
+    "demand_persists(k1)",
+    "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "can_organize(k1)"
+    ]
+   ],
+   "assumptions": [
+    "can_organize(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_lobby(k1)",
+     "premises": [
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "can_organize(k1)",
+     "contested_otherwise(k1)"
+    ]
+   ],
+   "assumptions": [
+    "can_organize(k1)",
+    "contested_otherwise(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_lobby(k1)",
+     "premises": [
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "contested_lobby(pr_lobby(k1))",
+     "premises": [
+      "contested_otherwise(k1)",
+      "pr_lobby(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": "policy_field",
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "enforcement_risk(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "enforcement_risk(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "enforcement_risk(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-18",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-19",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_information",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-20",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_variability",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "enforcement_risk(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "enforcement_risk(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "enforcement_risk(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-21",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "stockpile_ahead(k1)"
+    ]
+   ],
+   "assumptions": [
+    "stockpile_ahead(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_stock_up(k1)",
+     "premises": [
+      "announced(k1)",
+      "stockpile_ahead(k1)"
+     ],
+     "rule": "RS-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short"
+   ],
+   "id": "C-22",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": "announcement"
+  },
+  {
+   "actor_class": "buyers.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "buyer_substitutes(k1)"
+    ]
+   ],
+   "assumptions": [
+    "buyer_substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_substitute(k1)",
+     "premises": [
+      "buyer_substitutes(k1)"
+     ],
+     "rule": "RS-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-23",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_substitute",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-24",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-25",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_administered(k1)",
+     "premises": [
+      "prohibition(k1)"
+     ],
+     "rule": "OC-3"
+    },
     {
      "conclusion": "quota_binds(k2)",
      "premises": [
@@ -768,7 +1296,7 @@
     "medium",
     "long"
    ],
-   "id": "C-15",
+   "id": "C-26",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -776,6 +1304,274 @@
    "tier": "B",
    "variable": "enforcement_cost",
    "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "operators.night",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)",
+     "no_other_use(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)",
+    "no_other_use(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "CR-1"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "no_other_use(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-27",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "operators.night",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)",
+     "no_other_use(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)",
+    "no_other_use(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "CR-1"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "no_other_use(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-28",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "operators.night",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "can_organize(k1)"
+    ]
+   ],
+   "assumptions": [
+    "can_organize(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_lobby(k1)",
+     "premises": [
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-29",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "operators.night",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "can_organize(k1)",
+     "contested_otherwise(k1)"
+    ]
+   ],
+   "assumptions": [
+    "can_organize(k1)",
+    "contested_otherwise(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_lobby(k1)",
+     "premises": [
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "contested_lobby(pr_lobby(k1))",
+     "premises": [
+      "contested_otherwise(k1)",
+      "pr_lobby(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-30",
+   "item": "policy_field",
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "operators.night",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-31",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "number_of_sellers",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "operators.night",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-32",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "visible",
    "window": null
   },
   {
@@ -819,7 +1615,7 @@
     "medium",
     "long"
    ],
-   "id": "C-16",
+   "id": "C-33",
    "item": null,
    "reported": false,
    "sign": "increase",
@@ -867,7 +1663,7 @@
     "medium",
     "long"
    ],
-   "id": "C-17",
+   "id": "C-34",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -918,7 +1714,7 @@
     "medium",
     "long"
    ],
-   "id": "C-18",
+   "id": "C-35",
    "item": null,
    "reported": false,
    "sign": "decrease",
@@ -959,7 +1755,7 @@
     "medium",
     "long"
    ],
-   "id": "C-19",
+   "id": "C-36",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1007,7 +1803,7 @@
     "medium",
     "long"
    ],
-   "id": "C-20",
+   "id": "C-37",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1058,7 +1854,7 @@
     "medium",
     "long"
    ],
-   "id": "C-21",
+   "id": "C-38",
    "item": null,
    "reported": false,
    "sign": "increase",
@@ -1114,7 +1910,7 @@
     "medium",
     "long"
    ],
-   "id": "C-22",
+   "id": "C-39",
    "item": null,
    "reported": true,
    "sign": "at_least_one_decrease",
@@ -1160,7 +1956,7 @@
    "horizon": [
     "short"
    ],
-   "id": "C-23",
+   "id": "C-40",
    "item": null,
    "reported": true,
    "sign": "at_least_one_increase",
@@ -1172,7 +1968,7 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"operators.night\").\nprotected(k1, \"neighbors.wxi\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nfield_contested(k1).\nbound(k2, \"airlines.history\").\nexcluded(k2, \"buyers.prospective\").\nannounced(k2).\nfield_contested(k2).\nquota(k2).\nen_buyer(k2, \"travelers.wxi\").\nen_holder(k2, \"airlines.history\").\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nen_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_informal_buyer(k2, \"travelers.wxi\").\nen_revenue(k2, \"officials.enforcement\").\nen_entrant(k2, \"airlines.prospective\").\nen_worker(k2, \"workers.wxi\").\ntransferable(k2).\nallocation_by_history(k2).\nbase_after_announcement(k2).\nbound(k3, \"officials.enforcement\").\nprotected(k3, \"airlines.history\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nbound(k5, \"officials.enforcement\").\nprotected(k5, \"operators.night\").\nexcluded(k5, \"airlines.prospective\").\nassumption(contested_otherwise(k1)).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(evasion(k2)).\nassumption(can_organize(k2)).\nassumption(expected_to_last(k2)).\nassumption(values_differ(k2)).\nassumption(trade_cheap(k2)).\nassumption(allocation_known(k2)).\nassumption(contested_otherwise(k2)).\n",
+ "engine_facts": "bound(k1, \"operators.night\").\nprotected(k1, \"neighbors.wxi\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nfield_contested(k1).\nprohibition(k1).\npr_buyer(k1, \"buyers.current\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nrevenue(k1, \"officials.enforcement\").\npr_informal_buyer(k1, \"buyers.current\").\npr_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nbound(k2, \"airlines.history\").\nexcluded(k2, \"buyers.prospective\").\nannounced(k2).\nfield_contested(k2).\nquota(k2).\nen_buyer(k2, \"travelers.wxi\").\nen_holder(k2, \"airlines.history\").\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nen_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_informal_buyer(k2, \"travelers.wxi\").\nen_revenue(k2, \"officials.enforcement\").\nen_entrant(k2, \"airlines.prospective\").\nen_worker(k2, \"workers.wxi\").\ntransferable(k2).\nallocation_by_history(k2).\nbase_after_announcement(k2).\nbound(k3, \"officials.enforcement\").\nprotected(k3, \"airlines.history\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nbound(k5, \"officials.enforcement\").\nprotected(k5, \"operators.night\").\nexcluded(k5, \"airlines.prospective\").\nassumption(enforced(k1)).\nassumption(demand_persists(k1)).\nassumption(evasion(k1)).\nassumption(enforcement_risk(k1)).\nassumption(no_other_use(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(can_organize(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(contested_otherwise(k1)).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(evasion(k2)).\nassumption(can_organize(k2)).\nassumption(expected_to_last(k2)).\nassumption(values_differ(k2)).\nassumption(trade_cheap(k2)).\nassumption(allocation_known(k2)).\nassumption(contested_otherwise(k2)).\n",
  "explanations": [
   "C-1. Compared with no Wexcombe Airport Night Curfew and Slot Order, asset value for airlines.history rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90); Holders and buyers of the rights expect the restriction to last (p = 0.70). Reported.",
   "C-2. Compared with no Wexcombe Airport Night Curfew and Slot Order, asset value for airlines.history rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported.",
@@ -1188,25 +1984,186 @@
   "C-12. Compared with no Wexcombe Airport Night Curfew and Slot Order, resources available other uses for airlines.history falls in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported.",
   "C-13. Compared with no Wexcombe Airport Night Curfew and Slot Order, right lease price for airlines.history rises from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90); Rights can be sold or leased at low cost (p = 0.75); Holders' costs or values differ (p = 0.80). Reported.",
   "C-14. Compared with no Wexcombe Airport Night Curfew and Slot Order, entry rate for airlines.prospective rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported.",
-  "C-15. Compared with no Wexcombe Airport Night Curfew and Slot Order, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90). Reported.",
-  "C-16. Compared with no Wexcombe Airport Night Curfew and Slot Order, disputes settled outside courts for travelers.wxi rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90); Some trade takes place beyond the cap without being caught (p = 0.15). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-17. Compared with no Wexcombe Airport Night Curfew and Slot Order, price paid for travelers.wxi rises from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90). Reported.",
-  "C-18. Compared with no Wexcombe Airport Night Curfew and Slot Order, quality information for travelers.wxi falls from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90); Some trade takes place beyond the cap without being caught (p = 0.15). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-19. Compared with no Wexcombe Airport Night Curfew and Slot Order, quantity traded for travelers.wxi falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90). Reported.",
-  "C-20. Compared with no Wexcombe Airport Night Curfew and Slot Order, resources available other uses for travelers.wxi falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90). Reported.",
-  "C-21. Compared with no Wexcombe Airport Night Curfew and Slot Order, search cost for travelers.wxi rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90); Some trade takes place beyond the cap without being caught (p = 0.15). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-22. Compared with no Wexcombe Airport Night Curfew and Slot Order, employment or hours worked for workers.wxi falls for at least one of them from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90); Rights can be sold or leased at low cost (p = 0.75); Holders' costs or values differ (p = 0.80). Reported.",
-  "C-23. Compared with no Wexcombe Airport Night Curfew and Slot Order, employment or hours worked for workers.wxi rises for at least one of them in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported."
+  "C-15. Compared with no Wexcombe Airport Night Curfew and Slot Order, disputes settled outside courts for buyers.current rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); Enforcement is imperfect: many informal sales go undetected (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-16. Compared with no Wexcombe Airport Night Curfew and Slot Order, lobbying effort for buyers.current rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.85). Reported.",
+  "C-17. Compared with no Wexcombe Airport Night Curfew and Slot Order, lobbying effort (policy field) for buyers.current may move either way from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.85); The groups that gain from or are bound by the measure would have lobbied on the same question without it (p = 0.75). Reported.",
+  "C-18. Compared with no Wexcombe Airport Night Curfew and Slot Order, price paid for buyers.current rises from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); Informal sellers face a real risk of punishment (p = 0.90). Reported.",
+  "C-19. Compared with no Wexcombe Airport Night Curfew and Slot Order, quality information for buyers.current falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); Enforcement is imperfect: many informal sales go undetected (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-20. Compared with no Wexcombe Airport Night Curfew and Slot Order, quality variability for buyers.current rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); Enforcement is imperfect: many informal sales go undetected (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-21. Compared with no Wexcombe Airport Night Curfew and Slot Order, quantity demanded for buyers.current falls from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); Informal sellers face a real risk of punishment (p = 0.90). Reported.",
+  "C-22. Compared with no Wexcombe Airport Night Curfew and Slot Order, quantity demanded for buyers.current rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-23. Compared with no Wexcombe Airport Night Curfew and Slot Order, quantity substitute for buyers.current rises from the short run onward (tier B, invisible). Why: RS-1: when a good becomes dearer, buyers turn to substitutes. This holds if: Legal substitutes are acceptable to some buyers (p = 0.70). Reported.",
+  "C-24. Compared with no Wexcombe Airport Night Curfew and Slot Order, quantity traded for buyers.current falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.90). Reported.",
+  "C-25. Compared with no Wexcombe Airport Night Curfew and Slot Order, search cost for buyers.current rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); Enforcement is imperfect: many informal sales go undetected (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-26. Compared with no Wexcombe Airport Night Curfew and Slot Order, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; EN-6: EN-6. This holds if: no assumption. Reported.",
+  "C-27. Compared with no Wexcombe Airport Night Curfew and Slot Order, asset value for operators.night falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.90); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.70). Reported.",
+  "C-28. Compared with no Wexcombe Airport Night Curfew and Slot Order, employment for operators.night falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.90); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.70). Reported.",
+  "C-29. Compared with no Wexcombe Airport Night Curfew and Slot Order, lobbying effort for operators.night rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.85). Reported.",
+  "C-30. Compared with no Wexcombe Airport Night Curfew and Slot Order, lobbying effort (policy field) for operators.night may move either way from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.85); The groups that gain from or are bound by the measure would have lobbied on the same question without it (p = 0.75). Reported.",
+  "C-31. Compared with no Wexcombe Airport Night Curfew and Slot Order, number of sellers for operators.night falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.90). Reported.",
+  "C-32. Compared with no Wexcombe Airport Night Curfew and Slot Order, quantity traded for operators.night falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.90). Reported.",
+  "C-33. Compared with no Wexcombe Airport Night Curfew and Slot Order, disputes settled outside courts for travelers.wxi rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90); Some trade takes place beyond the cap without being caught (p = 0.15). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-34. Compared with no Wexcombe Airport Night Curfew and Slot Order, price paid for travelers.wxi rises from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90). Reported.",
+  "C-35. Compared with no Wexcombe Airport Night Curfew and Slot Order, quality information for travelers.wxi falls from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90); Some trade takes place beyond the cap without being caught (p = 0.15). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-36. Compared with no Wexcombe Airport Night Curfew and Slot Order, quantity traded for travelers.wxi falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90). Reported.",
+  "C-37. Compared with no Wexcombe Airport Night Curfew and Slot Order, resources available other uses for travelers.wxi falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90). Reported.",
+  "C-38. Compared with no Wexcombe Airport Night Curfew and Slot Order, search cost for travelers.wxi rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90); Some trade takes place beyond the cap without being caught (p = 0.15). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-39. Compared with no Wexcombe Airport Night Curfew and Slot Order, employment or hours worked for workers.wxi falls for at least one of them from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.85); The cap is enforced (p = 0.90); Rights can be sold or leased at low cost (p = 0.75); Holders' costs or values differ (p = 0.80). Reported.",
+  "C-40. Compared with no Wexcombe Airport Night Curfew and Slot Order, employment or hours worked for workers.wxi rises for at least one of them in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported."
  ],
  "questions": [
   {
    "answer": {
     "decider": "fixture:answers.json",
     "evidence": [],
-    "probability": 0.4,
-    "question_id": "k1.contested_otherwise",
-    "rationale": "Re-answered after the question was reworded to ask about the groups that gain from or are bound by the measure. No matching assumption in WE-054 for those groups; judged from the text: the residents' campaign has run since 2023, but the text does not say the airlines that now hold the night slots lobbied on night flying before; their stake, the slot rights, exists only under the order. (A-32 is about night operators opposing the campaign.)",
+    "probability": 0.9,
+    "question_id": "k1.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-2: the WAA detects every movement from air traffic control's log and imposes penalties.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k1.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the legal sellers comply with the ban (stop selling openly)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.demand_persists",
+    "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-27: some night services are neither moved to the shoulders nor to Pellham, so demand for night flights persists.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "demand_persists",
+    "assumption_class": "other",
+    "id": "k1.demand_persists",
+    "kind": "noul",
+    "options": [],
+    "text": "Will a meaningful share of buyers keep wanting the good after the ban?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k1.evasion",
+    "rationale": "No matching assumption in WE-054 for undetected night movements; judged from the text and A-2: every movement is logged by air traffic control, so none goes undetected (A-14's late operations are detected and penalized).",
     "value": "no"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k1.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will many informal sales go undetected?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.enforcement_risk",
+    "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-2: every movement is detected and penalized.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforcement_risk",
+    "assumption_class": "enforcement",
+    "id": "k1.enforcement_risk",
+    "kind": "noul",
+    "options": [],
+    "text": "Will enforcement be active enough that informal sellers face a real risk of punishment?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.no_other_use",
+    "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-16: the integrator's WXI sort facility has no equally valuable other use.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "no_other_use",
+    "assumption_class": "alternative_uses",
+    "id": "k1.no_other_use",
+    "kind": "noul",
+    "options": [],
+    "text": "Are the legal sellers unable to replace the banned good with other products for most of their business?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.buyer_substitutes",
+    "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-11: some travelers find Pellham a substitute.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyer_substitutes",
+    "assumption_class": "substitutability",
+    "id": "k1.buyer_substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Are some legal substitutes acceptable to some buyers?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-15: night operators, slot holders, would-be entrants and residents' associations can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the former legal sellers or the buyers organize to seek repeal at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.05,
+    "question_id": "k1.stockpile_ahead",
+    "rationale": "No matching assumption in WE-054; judged from the text: flights cannot be stored or bought ahead of the curfew.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "stockpile_ahead",
+    "assumption_class": "expectations",
+    "id": "k1.stockpile_ahead",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the buyers or importers buy ahead of the effective date, by storing the good or placing orders early?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.contested_otherwise",
+    "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-32: without the order, night operators (the class the curfew binds) would have opposed the residents' campaign for a curfew, which had run since 2023.",
+    "value": "yes"
    },
    "question": {
     "assumption": "contested_otherwise",
@@ -1394,6 +2351,7 @@
     "cap_unit": null,
     "claim_handler_actor": null,
     "claim_penalties": false,
+    "convicted_actor": null,
     "debt_funded": false,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -1417,6 +2375,7 @@
     "import_quota": false,
     "importer_actor": null,
     "informal_buyer_actor": null,
+    "informal_seller_actor": null,
     "input_supplier_actor": null,
     "instrument": "prohibition",
     "market": "wxi",
@@ -1428,6 +2387,7 @@
     "outlay_actor": null,
     "own_revenue_funded": false,
     "price_fixed": false,
+    "prospective_buyer_actor": null,
     "protected_actor": "neighbors.wxi",
     "protected_concentrated": true,
     "qualifier_actor": null,
@@ -1451,8 +2411,10 @@
      "Enforcement is by the WAA, from air traffic control's movement log.",
      "The penalties are $50,000 per movement in the curfew without a dispensation and $10,000 per daytime movement without a slot; slots of a holder fined three times in a season may be withdrawn."
     ],
+    "stocks_destroyed": false,
     "substitute_seller_actor": null,
     "tax_named": false,
+    "taxed_before": false,
     "taxpayer_actor": "taxpayers",
     "temporary": false,
     "third_party_payer_actor": null,
@@ -1461,6 +2423,7 @@
     "used_buyer_actor": null,
     "used_owner_actor": null,
     "vacancy_decontrol": false,
+    "volume_penalties": false,
     "wider_market": false,
     "worker_actor": null
    },
@@ -1476,6 +2439,7 @@
     "cap_unit": null,
     "claim_handler_actor": null,
     "claim_penalties": false,
+    "convicted_actor": null,
     "debt_funded": false,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -1499,6 +2463,7 @@
     "import_quota": false,
     "importer_actor": null,
     "informal_buyer_actor": null,
+    "informal_seller_actor": null,
     "input_supplier_actor": null,
     "instrument": "quota",
     "market": "wxi",
@@ -1510,6 +2475,7 @@
     "outlay_actor": null,
     "own_revenue_funded": false,
     "price_fixed": false,
+    "prospective_buyer_actor": null,
     "protected_actor": null,
     "protected_concentrated": true,
     "qualifier_actor": null,
@@ -1536,8 +2502,10 @@
      "The penalties are $50,000 per movement in the curfew without a dispensation and $10,000 per daytime movement without a slot; slots of a holder fined three times in a season may be withdrawn.",
      "Fourteen airlines operate in the daytime; the three largest operate about 60% of daytime movements."
     ],
+    "stocks_destroyed": false,
     "substitute_seller_actor": null,
     "tax_named": false,
+    "taxed_before": false,
     "taxpayer_actor": "taxpayers",
     "temporary": false,
     "third_party_payer_actor": null,
@@ -1546,6 +2514,7 @@
     "used_buyer_actor": null,
     "used_owner_actor": null,
     "vacancy_decontrol": false,
+    "volume_penalties": false,
     "wider_market": false,
     "worker_actor": "workers.wxi"
    },
@@ -1561,6 +2530,7 @@
     "cap_unit": null,
     "claim_handler_actor": null,
     "claim_penalties": false,
+    "convicted_actor": null,
     "debt_funded": false,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -1584,6 +2554,7 @@
     "import_quota": false,
     "importer_actor": null,
     "informal_buyer_actor": null,
+    "informal_seller_actor": null,
     "input_supplier_actor": null,
     "instrument": "rights_allocation",
     "market": "wxi",
@@ -1595,6 +2566,7 @@
     "outlay_actor": null,
     "own_revenue_funded": false,
     "price_fixed": false,
+    "prospective_buyer_actor": null,
     "protected_actor": "airlines.history",
     "protected_concentrated": true,
     "qualifier_actor": null,
@@ -1616,8 +2588,10 @@
      "The 380 daily slots are issued free to airlines in proportion to the daytime movements each operated in the summer 2026 and winter 2026/27 seasons, each slot in the hour of the movement that earned it.",
      "The WAA issues them."
     ],
+    "stocks_destroyed": false,
     "substitute_seller_actor": null,
     "tax_named": false,
+    "taxed_before": false,
     "taxpayer_actor": "taxpayers",
     "temporary": false,
     "third_party_payer_actor": null,
@@ -1626,6 +2600,7 @@
     "used_buyer_actor": null,
     "used_owner_actor": null,
     "vacancy_decontrol": false,
+    "volume_penalties": false,
     "wider_market": false,
     "worker_actor": null
    },
@@ -1641,6 +2616,7 @@
     "cap_unit": null,
     "claim_handler_actor": null,
     "claim_penalties": false,
+    "convicted_actor": null,
     "debt_funded": false,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -1664,6 +2640,7 @@
     "import_quota": false,
     "importer_actor": null,
     "informal_buyer_actor": null,
+    "informal_seller_actor": null,
     "input_supplier_actor": null,
     "instrument": "rights_allocation",
     "market": "wxi",
@@ -1675,6 +2652,7 @@
     "outlay_actor": null,
     "own_revenue_funded": false,
     "price_fixed": false,
+    "prospective_buyer_actor": null,
     "protected_actor": "operators.night",
     "protected_concentrated": true,
     "qualifier_actor": null,
@@ -1694,8 +2672,10 @@
     "source_sentences": [
      "Slots of a holder that ceases to operate at WXI, or that uses a slot on fewer than 80% of a season's days, return to the WAA and are reissued free, first to night operators (those with night movements in winter 2026/27) in proportion to their night movements, then to new entrants."
     ],
+    "stocks_destroyed": false,
     "substitute_seller_actor": null,
     "tax_named": false,
+    "taxed_before": false,
     "taxpayer_actor": "taxpayers",
     "temporary": false,
     "third_party_payer_actor": null,
@@ -1704,6 +2684,7 @@
     "used_buyer_actor": null,
     "used_owner_actor": null,
     "vacancy_decontrol": false,
+    "volume_penalties": false,
     "wider_market": false,
     "worker_actor": null
    }
@@ -1736,7 +2717,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-19T06:08:26+00:00",
+ "run_at": "2026-10-19T18:49:53+00:00",
  "sources_held_back": [],
  "unclear": [
   {

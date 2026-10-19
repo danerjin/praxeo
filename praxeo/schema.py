@@ -135,6 +135,14 @@ class Component(BaseModel):
     holder_cap: bool = Field(default=False, description="Quotas: the cap limits each holder's share (no one may hold more than a set part), not the total quantity (RS-17 1.1)")
     self_supply: bool = Field(default=False, description="Quotas: the capped quantity is taken for the bound actors' own use (groundwater pumped for their fields), not sold")
     rights_sold: bool = Field(default=False, description="Licensing and quotas: the state sells the rights (an auction); revenue_actor receives the price (OC-1 1.0, CR-8b)")
+    # prohibition: bound_actor is the legal sellers until now; buyer_actor its buyers; importer_actor, mobile_buyer_actor,
+    # neighbor_seller_actor, substitute_seller_actor, definition_line, announcement_window and general_budget apply.
+    informal_seller_actor: Optional[str] = Field(default=None, description="Prohibitions: who sells the good outside the law after the ban (EN-7, RS-3)")
+    prospective_buyer_actor: Optional[str] = Field(default=None, description="Prohibitions: would-be buyers who would have started using the good (EN-7, LW-3)")
+    convicted_actor: Optional[str] = Field(default=None, description="Prohibitions: those convicted under the ban (EN-10)")
+    volume_penalties: bool = Field(default=False, description="Prohibitions: penalties are graded by bulk or weight rather than potency (EN-8)")
+    stocks_destroyed: bool = Field(default=False, description="Prohibitions: existing stocks must be destroyed or exported without compensation (OC-1)")
+    taxed_before: bool = Field(default=False, description="Prohibitions: the good was subject to a tax before the ban; revenue_actor collects it (TX-10)")
     informal_buyer_actor: Optional[str] = Field(default=None, description="Licensing and quotas: buyers of the unlicensed or unrecorded trade (RS-3, RS-10), when not all buyers, e.g. buyers.unlicensed")
     price_fixed: bool = Field(default=False, description="Licensing and quotas: a rule in force without the measure too fixes the good's price (a council-set fare), so the restriction shows as excess demand, not a higher price (EN-6, PC-1)")
     repay_on_move: bool = Field(default=False, description="Subsidies: the payment is repaid if the recipient moves or sells within a period (RS-11)")

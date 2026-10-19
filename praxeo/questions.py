@@ -407,6 +407,53 @@ def _en_specs(comp: Component) -> list[tuple[str, str, str, str]]:
     return specs
 
 
+# Prohibitions (EN-7, EN-8, EN-10).
+PROHIBITION_QUESTIONS = [
+    ("enforced", "enforcement",
+     "Will the legal sellers comply with the ban (stop selling openly)?",
+     "The legal sellers comply with the ban."),
+    ("demand_persists", "other",
+     "Will a meaningful share of buyers keep wanting the good after the ban?",
+     "A meaningful share of buyers keep wanting the good after the ban."),
+    ("evasion", "enforcement",
+     "Will many informal sales go undetected?",
+     "Enforcement is imperfect: many informal sales go undetected."),
+    ("enforcement_risk", "enforcement",
+     "Will enforcement be active enough that informal sellers face a real risk of punishment?",
+     "Informal sellers face a real risk of punishment."),
+    ("no_other_use", "alternative_uses",
+     "Are the legal sellers unable to replace the banned good with other products for most of their business?",
+     "The legal sellers cannot replace the banned good with other products for most of their business."),
+    ("buyer_substitutes", "substitutability",
+     "Are some legal substitutes acceptable to some buyers?",
+     "Legal substitutes are acceptable to some buyers."),
+    ("can_organize", "other",
+     "Can the former legal sellers or the buyers organize to seek repeal at a cost below their stake?",
+     "The former sellers or the buyers can organize to seek repeal."),
+]
+CONCENTRATE_QUESTION = ("concentrate_easy", "other",
+                        "Can a concentrated form of the good be made with simple means?",
+                        "A concentrated form can be made with simple means.")
+RECORDS_QUESTION = ("records_checked", "other",
+                    "Do employers check the recorded convictions of people they hire?",
+                    "Convictions are recorded and checked by employers.")
+
+
+def _prohibition_specs(comp: Component) -> list[tuple[str, str, str, str]]:
+    specs = list(PROHIBITION_QUESTIONS)
+    if comp.mobile_buyer_actor:
+        specs.append(CROSS_BORDER_QUESTION)
+    if comp.definition_line:
+        specs.append(RESHAPING_QUESTION)
+    if comp.announcement_window:
+        specs.append(STOCKPILE_QUESTION)
+    if comp.volume_penalties:
+        specs.append(CONCENTRATE_QUESTION)
+    if comp.convicted_actor:
+        specs.append(RECORDS_QUESTION)
+    return specs
+
+
 def _related_specs(comp: Component) -> list[tuple[str, str, str, str]]:
     """One question per premise of each related market (CR-9, SB-3, RS-12), named by the relation's index."""
     out = []
@@ -446,6 +493,8 @@ def _instrument_specs(comp: Component) -> list[tuple[str, str, str, str]]:
         return _subsidy_specs(comp)
     if comp.instrument in ("licensing_requirement", "quota"):
         return _en_specs(comp)
+    if comp.instrument == "prohibition":
+        return _prohibition_specs(comp)
     if comp.instrument not in ("per_unit_tax", "tariff"):
         return []
     specs = list(TAX_QUESTIONS if comp.instrument == "per_unit_tax" else TARIFF_QUESTIONS)

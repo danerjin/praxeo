@@ -20,6 +20,26 @@ WE54 = ROOT / "cases" / "we054_wexcombe"
 SHORT = {}
 WINDOWS = {"base seasons": "announcement"}
 EXCEPTIONS = {
+    ("buyers.current", "lobbying_effort", "ambiguous", None):
+        "RS-7 Unless on the curfew's buyers (item policy_field), as for the night operators (C-46); prohibition rules (rules/prohibition.lp, added after the first run) on the curfew (k1): the buyers of night flights carry the default role name buyers.current, which the table does not use; it signs the travelers' moves to Pellham (C-22 to C-24)",
+    ("buyers.current", "lobbying_effort", "increase", None):
+        "RS-7 on the curfew's buyers; prohibition rules (rules/prohibition.lp, added after the first run) on the curfew (k1): the buyers of night flights carry the default role name buyers.current, which the table does not use; it signs the travelers' moves to Pellham (C-22 to C-24)",
+    ("buyers.current", "price_paid", "increase", None):
+        "EN-7's risk price on the curfew's buyers; prohibition rules (rules/prohibition.lp, added after the first run) on the curfew (k1): the buyers of night flights carry the default role name buyers.current, which the table does not use; it signs the travelers' moves to Pellham (C-22 to C-24)",
+    ("buyers.current", "quantity_demanded", "decrease", None):
+        "EN-7 with CR-4; prohibition rules (rules/prohibition.lp, added after the first run) on the curfew (k1): the buyers of night flights carry the default role name buyers.current, which the table does not use; it signs the travelers' moves to Pellham (C-22 to C-24)",
+    ("buyers.current", "quantity_substitute", "increase", None):
+        "RS-1 (A-11, Pellham); prohibition rules (rules/prohibition.lp, added after the first run) on the curfew (k1): the buyers of night flights carry the default role name buyers.current, which the table does not use; it signs the travelers' moves to Pellham (C-22 to C-24)",
+    ("buyers.current", "quantity_traded", "decrease", None):
+        "EN-7: night trade stops; prohibition rules (rules/prohibition.lp, added after the first run) on the curfew (k1): the buyers of night flights carry the default role name buyers.current, which the table does not use; it signs the travelers' moves to Pellham (C-22 to C-24)",
+    ("operators.night", "asset_value", "decrease", None):
+        "KNOWN WRONG: EN-7 with SB-4 signs the loss on the sort hall (A-16) alone; C-45 signs the night operators' assets ambiguous, the hall's loss against the value of their priority claim to freed slots (C-44, A-31), a comparison no rule forms",
+    ("operators.night", "employment", "decrease", None):
+        "EN-7 with CR-1 (A-16): night work stops at WXI; the table records employment at WXI as a whole (C-25)",
+    ("operators.night", "lobbying_effort", "increase", None):
+        "RS-7 over provisions that exist only under the order, beside the contested-field row (C-46, A-32)",
+    ("operators.night", "number_of_sellers", "decrease", None):
+        "EN-7: night operators stop operating at night at WXI; not in the table",
     ("airlines.history", "quantity_traded", "decrease", None):
         "EN-6 for the capped movements; the same fact as C-2, which the table writes as quantity_supplied",
     ("airlines.history", "quantity_traded", "increase", "announcement"):
@@ -68,18 +88,16 @@ NOT_PRODUCED = {
     "C-36": "missing rule: CR-12b combiner over the airlines' operations as a whole (slot value against scarcity); the engine signs the slot value alone",
     "C-38": "missing rule: CR-9 over proximity for the noise office",
     "C-40": "missing rule: OC-2/CR-8c compliance cost for quotas is not encoded",
-    "C-41": "missing rule: OC-4/CR-5a for night services that stop",
     "C-42": "missing rule: OC-3 with CR-8b for penalty receipts; no question for them",
     "C-44": "missing rule: K5 is a `rights_allocation` and no rule reads it (CR-1, CR-7c, CR-3b)",
     "C-45": "missing rule and role: CR-12b over night operators' businesses as a whole",
-    "C-46": "missing role and rule: night operators' lobbying; the engine's contested-field row went to the slot holders",
     "C-47": "missing rule: RS-13/CR-9 for off-peak fares in the race window (EN-12 signs no price)",
     "C-48": "missing rule and role: CR-9/LW-10 for hauliers",
     "C-50": "missing rule: CR-8b for the payers of penalties",
     "C-51": "missing rule and role: EN-6 1.0 with CR-9 for the national buyers of overnight parcels; K1 has no rules",
     "C-52": "missing rule: OC-1/CR-8b for the WAA's fund balance; funding from charges is not `general_budget`",
 }
-PRODUCED = {"C-3", "C-4", "C-12", "C-16", "C-19", "C-20", "C-21", "C-25", "C-37", "C-39", "C-43", "C-49"}
+PRODUCED = {"C-3", "C-4", "C-12", "C-16", "C-19", "C-20", "C-21", "C-25", "C-37", "C-39", "C-41", "C-43", "C-46", "C-49"}
 
 
 def test_consistent_with_worked_example_we054():

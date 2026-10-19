@@ -1,9 +1,9 @@
 [
  {
   "question_id": "k1.contested_otherwise",
-  "value": "no",
-  "probability": 0.4,
-  "rationale": "Re-answered after the question was reworded to ask about the groups that gain from or are bound by the measure. No matching assumption in WE-054 for those groups; judged from the text: the residents' campaign has run since 2023, but the text does not say the airlines that now hold the night slots lobbied on night flying before; their stake, the slot rights, exists only under the order. (A-32 is about night operators opposing the campaign.)",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-32: without the order, night operators (the class the curfew binds) would have opposed the residents' campaign for a curfew, which had run since 2023.",
   "evidence": []
  },
  {
@@ -67,6 +67,62 @@
   "value": "no",
   "probability": 0.4,
   "rationale": "Re-answered after the question was reworded to ask about the groups that gain from or are bound by the measure. No matching assumption in WE-054 for those groups; judged from the text: the residents' campaign has run since 2023, but the text does not say the airlines that now hold the night slots lobbied on night flying before; their stake, the slot rights, exists only under the order. (A-32 is about night operators opposing the campaign.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-2: the WAA detects every movement from air traffic control's log and imposes penalties.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.demand_persists",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-27: some night services are neither moved to the shoulders nor to Pellham, so demand for night flights persists.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-054 for undetected night movements; judged from the text and A-2: every movement is logged by air traffic control, so none goes undetected (A-14's late operations are detected and penalized).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforcement_risk",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-2: every movement is detected and penalized.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.no_other_use",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-16: the integrator's WXI sort facility has no equally valuable other use.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyer_substitutes",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-11: some travelers find Pellham a substitute.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-15: night operators, slot holders, would-be entrants and residents' associations can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.stockpile_ahead",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "No matching assumption in WE-054; judged from the text: flights cannot be stored or bought ahead of the curfew.",
   "evidence": []
  }
 ]

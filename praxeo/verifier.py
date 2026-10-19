@@ -19,7 +19,7 @@ RECORD_PREDICATES = ("ceiling(", "decontrol(", "bound(", "protected(", "excluded
                      "definition_line(", "renewable(", "announced(", "rolled_back(", "taxpayer(", "protected_concentrated(",
                      "subsidy(", "per_unit_sub(", "share_cap(", "criteria(", "budget_capped(", "temporary(", "scrappage(",
                      "repay_on_move(", "field_contested(", "target_qty(", "claim_penalties(",
-                     "licensing(", "quota(", "transferable(", "import_quota(", "seller_cap(", "wider_market(", "general_budget(", "price_fixed(", "allocation_by_history(", "rights_sold(", "holder_cap(", "self_supply(", "domestic_seller(", "downstream(", "importer(", "buyer(",
+                     "licensing(", "quota(", "transferable(", "import_quota(", "seller_cap(", "wider_market(", "general_budget(", "price_fixed(", "allocation_by_history(", "prohibition(", "volume_penalties(", "stocks_destroyed(", "taxed_before(", "mobile_buyer(", "rights_sold(", "holder_cap(", "self_supply(", "domestic_seller(", "downstream(", "importer(", "buyer(",
                      "exporter(", "seller(", "renewable(", "definition_line(", "relief_applicant(")
 
 
@@ -34,7 +34,8 @@ def record_roles(record: PolicyRecord) -> set[str]:
         names += [comp.taxpayer_actor, comp.foreign_seller_actor, comp.input_supplier_actor,
                   comp.domestic_seller_owner_actor, comp.relief_applicant_actor, comp.domestic_seller_worker_actor,
                   comp.mobile_buyer_actor, comp.neighbor_seller_actor]
-        names += [comp.outlay_actor, comp.right_holder_actor, comp.trainer_actor, comp.informal_buyer_actor, comp.entrant_actor, comp.worker_actor]
+        names += [comp.outlay_actor, comp.right_holder_actor, comp.trainer_actor, comp.informal_buyer_actor, comp.entrant_actor, comp.worker_actor,
+                  comp.informal_seller_actor, comp.prospective_buyer_actor, comp.convicted_actor]
         names += [comp.third_party_payer_actor, comp.qualifier_actor, comp.other_spending_actor, comp.future_taxpayer_actor]
         names += [comp.other_buyer_actor, comp.substitute_seller_actor, comp.asset_owner_actor, comp.claim_handler_actor,
                   comp.used_buyer_actor, comp.used_owner_actor, comp.scrapper_actor]

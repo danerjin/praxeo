@@ -1,0 +1,86 @@
+[
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-2: licensed shops comply.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.demand_persists",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-1: a meaningful share of regular users keep using lirva after the ban.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-3: enforcement is imperfect: many informal sales go undetected.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforcement_risk",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-4: enforcement is active enough that informal sellers face a real risk.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.no_other_use",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-11: specialist shops cannot replace lirva sales with other products for most of their staff.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyer_substitutes",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-7: legal substitutes are acceptable to some users.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-12: users and former shop owners can organize.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.cross_border_feasible",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-6: enough users live within reach of Halvet and will carry home amounts under 50 g.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-8: related plants and blends outside the definitions can be sold.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.stockpile_ahead",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-5: users know the date and can store dried leaf for months.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.concentrate_easy",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-10: extract can be made with simple equipment.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.records_checked",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-16: convictions are recorded and employers check them.",
+  "evidence": []
+ }
+]

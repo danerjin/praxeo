@@ -87,6 +87,26 @@ def _subsidy_facts(c: str, comp) -> list[str]:
     return lines
 
 
+def _prohibition_facts(c: str, comp) -> list[str]:
+    lines = [f"prohibition({c}).", f'pr_buyer({c}, "{comp.buyer_actor}").', f'enforcer({c}, "{comp.enforcer_actor}").',
+             f'taxpayer({c}, "{comp.taxpayer_actor}").', f'revenue({c}, "{comp.revenue_actor}").',
+             f'pr_informal_buyer({c}, "{comp.informal_buyer_actor or comp.buyer_actor}").']
+    payers = [comp.taxpayer_actor, comp.other_spending_actor, comp.future_taxpayer_actor]
+    lines.append(f'pr_payer_group({c}, "{",".join(dict.fromkeys(p for p in payers if p))}").')
+    for pred, actor in (("pr_informal_seller", comp.informal_seller_actor), ("pr_importer", comp.importer_actor),
+                        ("pr_prospective", comp.prospective_buyer_actor), ("pr_convicted", comp.convicted_actor),
+                        ("mobile_buyer", comp.mobile_buyer_actor), ("neighbor_seller", comp.neighbor_seller_actor),
+                        ("pr_substitute_seller", comp.substitute_seller_actor)):
+        if actor:
+            lines.append(f'{pred}({c}, "{actor}").')
+    for pred, flag in (("definition_line", comp.definition_line), ("volume_penalties", comp.volume_penalties),
+                       ("stocks_destroyed", comp.stocks_destroyed), ("taxed_before", comp.taxed_before),
+                       ("general_budget", comp.general_budget), ("tax_named", comp.tax_named)):
+        if flag:
+            lines.append(f"{pred}({c}).")
+    return lines
+
+
 def _en_facts(c: str, comp) -> list[str]:
     lines = [f"{'licensing' if comp.instrument == 'licensing_requirement' else 'quota'}({c}).",
              f'en_buyer({c}, "{comp.buyer_actor}").', f'en_holder({c}, "{comp.right_holder_actor or comp.bound_actor}").',
@@ -191,6 +211,8 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
             lines += _subsidy_facts(c, comp)
         if comp.instrument in ("licensing_requirement", "quota"):
             lines += _en_facts(c, comp)
+        if comp.instrument == "prohibition":
+            lines += _prohibition_facts(c, comp)
     for a in assumptions:
         lines.append(f"assumption({a}).")
     return "\n".join(lines) + "\n"
