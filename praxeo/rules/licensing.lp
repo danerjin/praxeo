@@ -219,7 +219,7 @@ en_funded(C) :- en_administered(C), general_budget(C), holds(enforcement_budget_
 fired(oc_3, en_funded(C), en_administered(C))           :- en_funded(C).
 fired(oc_1, en_funded(C), enforcement_budget_raised(C)) :- en_funded(C).
 effect(en_funded(C), T, "resources_available_other_uses", decrease, short, invisible, "B") :- en_funded(C), tax_named(C), taxpayer(C, T).
-group_effect(en_funded(C), G, "resources_available_other_uses", at_least_one_decrease, short, invisible, "B") :- en_funded(C), en_payer_group(C, G), not tax_named(C), not rights_sold(C).
+group_effect(en_funded(C), G, "resources_available_other_uses", at_least_one_decrease, short, invisible, "B") :- en_funded(C), en_payer_group(C, G), not tax_named(C), not rights_sold(C), not fees_to_budget(C).
 % Rights sold by the state (an auction, rights_sold) bring receipts into the budget that pays the administration (OC-1 1.0,
 % CR-8b): the receiving budget's non-tax receipts rise, and the payers' net is not signed without a premise on which is
 % larger (found out of sample on WE-064).

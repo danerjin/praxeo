@@ -12,17 +12,29 @@
    "p": 0.85,
    "text": "Legal substitutes are acceptable to some buyers."
   },
+  "buyers_organize(k1)": {
+   "assumption_class": "other",
+   "id": "buyers_organize(k1)",
+   "p": 0.85,
+   "text": "The buyers have a concentrated stake and can organize for repeal."
+  },
+  "buyers_organize(k2)": {
+   "assumption_class": "other",
+   "id": "buyers_organize(k2)",
+   "p": 0.85,
+   "text": "The buyers have a concentrated stake and can organize for repeal."
+  },
   "can_organize(k1)": {
    "assumption_class": "other",
    "id": "can_organize(k1)",
    "p": 0.85,
-   "text": "The former sellers or the buyers can organize to seek repeal."
+   "text": "The former legal sellers can organize to seek repeal."
   },
   "can_organize(k2)": {
    "assumption_class": "other",
    "id": "can_organize(k2)",
    "p": 0.85,
-   "text": "The former sellers or the buyers can organize to seek repeal."
+   "text": "The former legal sellers can organize to seek repeal."
   },
   "demand_persists(k1)": {
    "assumption_class": "other",
@@ -111,20 +123,30 @@
    "assumption_sets": [
     [
      "demand_persists(k1)",
+     "enforced(k1)",
      "evasion(k1)"
     ]
    ],
    "assumptions": [
     "demand_persists(k1)",
+    "enforced(k1)",
     "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k1)",
      "premises": [
-      "demand_persists(k1)"
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
      ],
      "rule": "EN-7"
     },
@@ -157,19 +179,19 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "can_organize(k1)"
+     "buyers_organize(k1)"
     ]
    ],
    "assumptions": [
-    "can_organize(k1)"
+    "buyers_organize(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
-     "conclusion": "pr_lobby(k1)",
+     "conclusion": "pr_buyers_lobby(k1)",
      "premises": [
-      "can_organize(k1)"
+      "buyers_organize(k1)"
      ],
      "rule": "RS-7"
     }
@@ -195,16 +217,42 @@
    "assumption_sets": [
     [
      "demand_persists(k1)",
-     "enforcement_risk(k1)"
+     "enforced(k1)",
+     "enforcement_risk(k1)",
+     "evasion(k1)"
     ]
    ],
    "assumptions": [
     "demand_persists(k1)",
-    "enforcement_risk(k1)"
+    "enforced(k1)",
+    "enforcement_risk(k1)",
+    "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
     {
      "conclusion": "pr_risk_price(k1)",
      "premises": [
@@ -215,7 +263,7 @@
     {
      "conclusion": "pr_risk_price(k1)",
      "premises": [
-      "demand_persists(k1)"
+      "pr_underground(k1)"
      ],
      "rule": "EN-7"
     }
@@ -228,7 +276,7 @@
    ],
    "id": "C-3",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
@@ -242,20 +290,30 @@
    "assumption_sets": [
     [
      "demand_persists(k1)",
+     "enforced(k1)",
      "evasion(k1)"
     ]
    ],
    "assumptions": [
     "demand_persists(k1)",
+    "enforced(k1)",
     "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k1)",
      "premises": [
-      "demand_persists(k1)"
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
      ],
      "rule": "EN-7"
     },
@@ -289,20 +347,30 @@
    "assumption_sets": [
     [
      "demand_persists(k1)",
+     "enforced(k1)",
      "evasion(k1)"
     ]
    ],
    "assumptions": [
     "demand_persists(k1)",
+    "enforced(k1)",
     "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k1)",
      "premises": [
-      "demand_persists(k1)"
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
      ],
      "rule": "EN-7"
     },
@@ -336,16 +404,42 @@
    "assumption_sets": [
     [
      "demand_persists(k1)",
-     "enforcement_risk(k1)"
+     "enforced(k1)",
+     "enforcement_risk(k1)",
+     "evasion(k1)"
     ]
    ],
    "assumptions": [
     "demand_persists(k1)",
-    "enforcement_risk(k1)"
+    "enforced(k1)",
+    "enforcement_risk(k1)",
+    "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
     {
      "conclusion": "pr_risk_price(k1)",
      "premises": [
@@ -356,7 +450,7 @@
     {
      "conclusion": "pr_risk_price(k1)",
      "premises": [
-      "demand_persists(k1)"
+      "pr_underground(k1)"
      ],
      "rule": "EN-7"
     }
@@ -369,7 +463,7 @@
    ],
    "id": "C-6",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "decrease",
    "sign_by_reading": {},
    "tier": "B",
@@ -496,20 +590,30 @@
    "assumption_sets": [
     [
      "demand_persists(k1)",
+     "enforced(k1)",
      "evasion(k1)"
     ]
    ],
    "assumptions": [
     "demand_persists(k1)",
+    "enforced(k1)",
     "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k1)",
      "premises": [
-      "demand_persists(k1)"
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
      ],
      "rule": "EN-7"
     },
@@ -543,20 +647,30 @@
    "assumption_sets": [
     [
      "demand_persists(k2)",
+     "enforced(k2)",
      "evasion(k2)"
     ]
    ],
    "assumptions": [
     "demand_persists(k2)",
+    "enforced(k2)",
     "evasion(k2)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k2)",
      "premises": [
-      "demand_persists(k2)"
+      "demand_persists(k2)",
+      "pr_legal_stops(k2)"
      ],
      "rule": "EN-7"
     },
@@ -589,19 +703,19 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "can_organize(k2)"
+     "buyers_organize(k2)"
     ]
    ],
    "assumptions": [
-    "can_organize(k2)"
+    "buyers_organize(k2)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
-     "conclusion": "pr_lobby(k2)",
+     "conclusion": "pr_buyers_lobby(k2)",
      "premises": [
-      "can_organize(k2)"
+      "buyers_organize(k2)"
      ],
      "rule": "RS-7"
     }
@@ -627,16 +741,42 @@
    "assumption_sets": [
     [
      "demand_persists(k2)",
-     "enforcement_risk(k2)"
+     "enforced(k2)",
+     "enforcement_risk(k2)",
+     "evasion(k2)"
     ]
    ],
    "assumptions": [
     "demand_persists(k2)",
-    "enforcement_risk(k2)"
+    "enforced(k2)",
+    "enforcement_risk(k2)",
+    "evasion(k2)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k2)",
+     "premises": [
+      "demand_persists(k2)",
+      "pr_legal_stops(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k2)",
+     "premises": [
+      "evasion(k2)"
+     ],
+     "rule": "RS-3"
+    },
     {
      "conclusion": "pr_risk_price(k2)",
      "premises": [
@@ -647,7 +787,7 @@
     {
      "conclusion": "pr_risk_price(k2)",
      "premises": [
-      "demand_persists(k2)"
+      "pr_underground(k2)"
      ],
      "rule": "EN-7"
     }
@@ -660,7 +800,7 @@
    ],
    "id": "C-13",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
@@ -674,20 +814,30 @@
    "assumption_sets": [
     [
      "demand_persists(k2)",
+     "enforced(k2)",
      "evasion(k2)"
     ]
    ],
    "assumptions": [
     "demand_persists(k2)",
+    "enforced(k2)",
     "evasion(k2)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k2)",
      "premises": [
-      "demand_persists(k2)"
+      "demand_persists(k2)",
+      "pr_legal_stops(k2)"
      ],
      "rule": "EN-7"
     },
@@ -721,20 +871,30 @@
    "assumption_sets": [
     [
      "demand_persists(k2)",
+     "enforced(k2)",
      "evasion(k2)"
     ]
    ],
    "assumptions": [
     "demand_persists(k2)",
+    "enforced(k2)",
     "evasion(k2)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k2)",
      "premises": [
-      "demand_persists(k2)"
+      "demand_persists(k2)",
+      "pr_legal_stops(k2)"
      ],
      "rule": "EN-7"
     },
@@ -768,16 +928,42 @@
    "assumption_sets": [
     [
      "demand_persists(k2)",
-     "enforcement_risk(k2)"
+     "enforced(k2)",
+     "enforcement_risk(k2)",
+     "evasion(k2)"
     ]
    ],
    "assumptions": [
     "demand_persists(k2)",
-    "enforcement_risk(k2)"
+    "enforced(k2)",
+    "enforcement_risk(k2)",
+    "evasion(k2)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k2)",
+     "premises": [
+      "demand_persists(k2)",
+      "pr_legal_stops(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k2)",
+     "premises": [
+      "evasion(k2)"
+     ],
+     "rule": "RS-3"
+    },
     {
      "conclusion": "pr_risk_price(k2)",
      "premises": [
@@ -788,7 +974,7 @@
     {
      "conclusion": "pr_risk_price(k2)",
      "premises": [
-      "demand_persists(k2)"
+      "pr_underground(k2)"
      ],
      "rule": "EN-7"
     }
@@ -801,7 +987,7 @@
    ],
    "id": "C-16",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "decrease",
    "sign_by_reading": {},
    "tier": "B",
@@ -928,20 +1114,30 @@
    "assumption_sets": [
     [
      "demand_persists(k2)",
+     "enforced(k2)",
      "evasion(k2)"
     ]
    ],
    "assumptions": [
     "demand_persists(k2)",
+    "enforced(k2)",
     "evasion(k2)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k2)",
      "premises": [
-      "demand_persists(k2)"
+      "demand_persists(k2)",
+      "pr_legal_stops(k2)"
      ],
      "rule": "EN-7"
     },
@@ -1179,14 +1375,17 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "enforced(k1)"
+     "enforced(k1)",
+     "no_other_use(k1)"
     ],
     [
-     "enforced(k2)"
+     "enforced(k2)",
+     "no_other_use(k2)"
     ]
    ],
    "assumptions": [
-    "enforced(k1)"
+    "enforced(k1)",
+    "no_other_use(k1)"
    ],
    "combines": [],
    "comparison": null,
@@ -1199,11 +1398,39 @@
      "rule": "EN-7"
     },
     {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "CR-1"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "no_other_use(k1)"
+     ],
+     "rule": "SB-4"
+    },
+    {
      "conclusion": "pr_legal_stops(k2)",
      "premises": [
       "enforced(k2)"
      ],
      "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_specific(k2)",
+     "premises": [
+      "pr_legal_stops(k2)"
+     ],
+     "rule": "CR-1"
+    },
+    {
+     "conclusion": "pr_specific(k2)",
+     "premises": [
+      "no_other_use(k2)"
+     ],
+     "rule": "SB-4"
     }
    ],
    "group": [],
@@ -1214,7 +1441,7 @@
    ],
    "id": "C-24",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "decrease",
    "sign_by_reading": {},
    "tier": "B",
@@ -1395,32 +1622,32 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"importers\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nprohibition(k1).\npr_buyer(k1, \"buyers.new_combustion\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nrevenue(k1, \"officials.enforcement\").\npr_informal_buyer(k1, \"buyers.new_combustion\").\npr_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\npr_substitute_seller(k1, \"importers.used\").\ndefinition_line(k1).\nbound(k2, \"importers\").\nexcluded(k2, \"buyers.prospective\").\nannounced(k2).\nprohibition(k2).\npr_buyer(k2, \"buyers.new_phev\").\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nrevenue(k2, \"officials.enforcement\").\npr_informal_buyer(k2, \"buyers.new_phev\").\npr_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nbound(k5, \"owners.bev\").\nexcluded(k5, \"buyers.prospective\").\nannounced(k5).\nassumption(enforced(k1)).\nassumption(demand_persists(k1)).\nassumption(evasion(k1)).\nassumption(enforcement_risk(k1)).\nassumption(no_other_use(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(can_organize(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(enforced(k2)).\nassumption(demand_persists(k2)).\nassumption(evasion(k2)).\nassumption(enforcement_risk(k2)).\nassumption(no_other_use(k2)).\nassumption(buyer_substitutes(k2)).\nassumption(can_organize(k2)).\nassumption(stockpile_ahead(k2)).\nassumption(reshaping_pays(k1)).\n",
+ "engine_facts": "bound(k1, \"importers\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nprohibition(k1).\npr_buyer(k1, \"buyers.new_combustion\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nrevenue(k1, \"officials.enforcement\").\npr_informal_buyer(k1, \"buyers.new_combustion\").\npr_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\npr_substitute_seller(k1, \"importers.used\").\ndefinition_line(k1).\nbound(k2, \"importers\").\nexcluded(k2, \"buyers.prospective\").\nannounced(k2).\nprohibition(k2).\npr_buyer(k2, \"buyers.new_phev\").\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nrevenue(k2, \"officials.enforcement\").\npr_informal_buyer(k2, \"buyers.new_phev\").\npr_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nbound(k5, \"owners.bev\").\nexcluded(k5, \"buyers.prospective\").\nannounced(k5).\nassumption(enforced(k1)).\nassumption(demand_persists(k1)).\nassumption(evasion(k1)).\nassumption(enforcement_risk(k1)).\nassumption(no_other_use(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(can_organize(k1)).\nassumption(buyers_organize(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(enforced(k2)).\nassumption(demand_persists(k2)).\nassumption(evasion(k2)).\nassumption(enforcement_risk(k2)).\nassumption(no_other_use(k2)).\nassumption(buyer_substitutes(k2)).\nassumption(can_organize(k2)).\nassumption(buyers_organize(k2)).\nassumption(stockpile_ahead(k2)).\nassumption(reshaping_pays(k1)).\n",
  "explanations": [
-  "C-1. Compared with no Vessmark Clean Cars Act, disputes settled outside courts for buyers.new_combustion rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-2. Compared with no Vessmark Clean Cars Act, lobbying effort for buyers.new_combustion rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.85). Reported.",
-  "C-3. Compared with no Vessmark Clean Cars Act, price paid for buyers.new_combustion rises from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.85); Informal sellers face a real risk of punishment (p = 0.70). Reported.",
-  "C-4. Compared with no Vessmark Clean Cars Act, quality information for buyers.new_combustion falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-5. Compared with no Vessmark Clean Cars Act, quality variability for buyers.new_combustion rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-6. Compared with no Vessmark Clean Cars Act, quantity demanded for buyers.new_combustion falls from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.85); Informal sellers face a real risk of punishment (p = 0.70). Reported.",
+  "C-1. Compared with no Vessmark Clean Cars Act, disputes settled outside courts for buyers.new_combustion rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.85); The legal sellers comply with the ban (p = 0.95); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-2. Compared with no Vessmark Clean Cars Act, lobbying effort for buyers.new_combustion rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The buyers have a concentrated stake and can organize for repeal (p = 0.85). Reported.",
+  "C-3. Compared with no Vessmark Clean Cars Act, price paid for buyers.new_combustion rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; CR-7: CR-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.85); The legal sellers comply with the ban (p = 0.95); Informal sellers face a real risk of punishment (p = 0.70); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-4. Compared with no Vessmark Clean Cars Act, quality information for buyers.new_combustion falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.85); The legal sellers comply with the ban (p = 0.95); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-5. Compared with no Vessmark Clean Cars Act, quality variability for buyers.new_combustion rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.85); The legal sellers comply with the ban (p = 0.95); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-6. Compared with no Vessmark Clean Cars Act, quantity demanded for buyers.new_combustion falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; CR-7: CR-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.85); The legal sellers comply with the ban (p = 0.95); Informal sellers face a real risk of punishment (p = 0.70); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
   "C-7. Compared with no Vessmark Clean Cars Act, quantity demanded for buyers.new_combustion rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.85). Reported.",
   "C-8. Compared with no Vessmark Clean Cars Act, quantity substitute for buyers.new_combustion rises from the short run onward (tier B, invisible). Why: RS-1: when a good becomes dearer, buyers turn to substitutes. This holds if: Legal substitutes are acceptable to some buyers (p = 0.80). Reported.",
   "C-9. Compared with no Vessmark Clean Cars Act, quantity traded for buyers.new_combustion falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.95). Reported.",
-  "C-10. Compared with no Vessmark Clean Cars Act, search cost for buyers.new_combustion rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-11. Compared with no Vessmark Clean Cars Act, disputes settled outside courts for buyers.new_phev rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-12. Compared with no Vessmark Clean Cars Act, lobbying effort for buyers.new_phev rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.85). Reported.",
-  "C-13. Compared with no Vessmark Clean Cars Act, price paid for buyers.new_phev rises from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Informal sellers face a real risk of punishment (p = 0.70). Reported.",
-  "C-14. Compared with no Vessmark Clean Cars Act, quality information for buyers.new_phev falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-15. Compared with no Vessmark Clean Cars Act, quality variability for buyers.new_phev rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-16. Compared with no Vessmark Clean Cars Act, quantity demanded for buyers.new_phev falls from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Informal sellers face a real risk of punishment (p = 0.70). Reported.",
+  "C-10. Compared with no Vessmark Clean Cars Act, search cost for buyers.new_combustion rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.85); The legal sellers comply with the ban (p = 0.95); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-11. Compared with no Vessmark Clean Cars Act, disputes settled outside courts for buyers.new_phev rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); The legal sellers comply with the ban (p = 0.95); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-12. Compared with no Vessmark Clean Cars Act, lobbying effort for buyers.new_phev rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The buyers have a concentrated stake and can organize for repeal (p = 0.85). Reported.",
+  "C-13. Compared with no Vessmark Clean Cars Act, price paid for buyers.new_phev rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; CR-7: CR-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); The legal sellers comply with the ban (p = 0.95); Informal sellers face a real risk of punishment (p = 0.70); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-14. Compared with no Vessmark Clean Cars Act, quality information for buyers.new_phev falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); The legal sellers comply with the ban (p = 0.95); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-15. Compared with no Vessmark Clean Cars Act, quality variability for buyers.new_phev rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); The legal sellers comply with the ban (p = 0.95); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-16. Compared with no Vessmark Clean Cars Act, quantity demanded for buyers.new_phev falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; CR-7: CR-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); The legal sellers comply with the ban (p = 0.95); Informal sellers face a real risk of punishment (p = 0.70); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
   "C-17. Compared with no Vessmark Clean Cars Act, quantity demanded for buyers.new_phev rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.70). Reported.",
   "C-18. Compared with no Vessmark Clean Cars Act, quantity substitute for buyers.new_phev rises from the short run onward (tier B, invisible). Why: RS-1: when a good becomes dearer, buyers turn to substitutes. This holds if: Legal substitutes are acceptable to some buyers (p = 0.85). Reported.",
   "C-19. Compared with no Vessmark Clean Cars Act, quantity traded for buyers.new_phev falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.95). Reported.",
-  "C-20. Compared with no Vessmark Clean Cars Act, search cost for buyers.new_phev rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-20. Compared with no Vessmark Clean Cars Act, search cost for buyers.new_phev rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); The legal sellers comply with the ban (p = 0.95); Enforcement is imperfect: many informal sales go undetected (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
   "C-21. Compared with no Vessmark Clean Cars Act, asset value for importers falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.95); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.10). It also follows under 1 other minimal assumption set(s). Not reported: an assumption is below the 0.5 cut-off.",
   "C-22. Compared with no Vessmark Clean Cars Act, employment for importers falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.95); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.10). It also follows under 1 other minimal assumption set(s). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-23. Compared with no Vessmark Clean Cars Act, lobbying effort for importers rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
-  "C-24. Compared with no Vessmark Clean Cars Act, number of sellers for importers falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.95). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-23. Compared with no Vessmark Clean Cars Act, lobbying effort for importers rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former legal sellers can organize to seek repeal (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-24. Compared with no Vessmark Clean Cars Act, number of sellers for importers falls from the short run onward (tier B, visible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.95); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.10). It also follows under 1 other minimal assumption set(s). Not reported: an assumption is below the 0.5 cut-off.",
   "C-25. Compared with no Vessmark Clean Cars Act, quantity traded for importers falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.95). It also follows under 1 other minimal assumption set(s). Reported.",
   "C-26. Compared with no Vessmark Clean Cars Act, quantity traded for importers.used may move either way from the short run onward (tier B, invisible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.95). Sign per reading: U1-a: decrease; U1-b: none. Reported.",
   "C-27. Compared with no Vessmark Clean Cars Act, reclassification for importers.used may move either way from the short run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.60). Sign per reading: U1-a: none; U1-b: increase. Reported.",
@@ -1550,7 +1777,25 @@
     "id": "k1.can_organize",
     "kind": "noul",
     "options": [],
-    "text": "Can the former legal sellers or the buyers organize to seek repeal at a cost below their stake?"
+    "text": "Can the former legal sellers organize to seek repeal at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.buyers_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-050 (illustrative figures), A-15: dealers, fuel retailers and motoring clubs can each organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyers_organize",
+    "assumption_class": "other",
+    "id": "k1.buyers_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the buyers have a stake in the banned good large enough to organize for repeal at a cost below it?"
    }
   },
   {
@@ -1694,7 +1939,25 @@
     "id": "k2.can_organize",
     "kind": "noul",
     "options": [],
-    "text": "Can the former legal sellers or the buyers organize to seek repeal at a cost below their stake?"
+    "text": "Can the former legal sellers organize to seek repeal at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2.buyers_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-050 (illustrative figures), A-15: motoring clubs can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyers_organize",
+    "assumption_class": "other",
+    "id": "k2.buyers_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the buyers have a stake in the banned good large enough to organize for repeal at a cost below it?"
    }
   },
   {
@@ -1762,6 +2025,7 @@
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "fees_to_budget": false,
     "field_contested": false,
     "foreign_seller_actor": "sellers.foreign",
     "future_taxpayer_actor": "taxpayers.future",
@@ -1783,6 +2047,7 @@
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
     "own_revenue_funded": false,
+    "practice_ban": false,
     "price_fixed": false,
     "prospective_buyer_actor": null,
     "protected_actor": null,
@@ -1851,6 +2116,7 @@
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "fees_to_budget": false,
     "field_contested": false,
     "foreign_seller_actor": "sellers.foreign",
     "future_taxpayer_actor": "taxpayers.future",
@@ -1872,6 +2138,7 @@
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
     "own_revenue_funded": false,
+    "practice_ban": false,
     "price_fixed": false,
     "prospective_buyer_actor": null,
     "protected_actor": null,
@@ -1937,6 +2204,7 @@
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "fees_to_budget": false,
     "field_contested": false,
     "foreign_seller_actor": "sellers.foreign",
     "future_taxpayer_actor": "taxpayers.future",
@@ -1958,6 +2226,7 @@
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
     "own_revenue_funded": false,
+    "practice_ban": false,
     "price_fixed": false,
     "prospective_buyer_actor": null,
     "protected_actor": null,
@@ -2034,7 +2303,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-19T18:53:52+00:00",
+ "run_at": "2026-10-19T19:14:08+00:00",
  "sources_held_back": [],
  "unclear": [
   {

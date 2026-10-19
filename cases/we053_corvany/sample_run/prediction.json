@@ -18,11 +18,17 @@
    "p": 0.65,
    "text": "Some buyers have a feasible substitute for the licensed service."
   },
+  "buyers_organize(k1)": {
+   "assumption_class": "other",
+   "id": "buyers_organize(k1)",
+   "p": 0.85,
+   "text": "The buyers have a concentrated stake and can organize for repeal."
+  },
   "can_organize(k1)": {
    "assumption_class": "other",
    "id": "can_organize(k1)",
    "p": 0.85,
-   "text": "The former sellers or the buyers can organize to seek repeal."
+   "text": "The former legal sellers can organize to seek repeal."
   },
   "can_organize(k3)": {
    "assumption_class": "other",
@@ -161,19 +167,19 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "can_organize(k1)"
+     "buyers_organize(k1)"
     ]
    ],
    "assumptions": [
-    "can_organize(k1)"
+    "buyers_organize(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
-     "conclusion": "pr_lobby(k1)",
+     "conclusion": "pr_buyers_lobby(k1)",
      "premises": [
-      "can_organize(k1)"
+      "buyers_organize(k1)"
      ],
      "rule": "RS-7"
     }
@@ -198,10 +204,6 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "demand_persists(k1)",
-     "enforcement_risk(k1)"
-    ],
-    [
      "binding(k3)",
      "enforced(k3)"
     ]
@@ -213,20 +215,6 @@
    "combines": [],
    "comparison": null,
    "derivation": [
-    {
-     "conclusion": "pr_risk_price(k1)",
-     "premises": [
-      "enforcement_risk(k1)"
-     ],
-     "rule": "CR-7"
-    },
-    {
-     "conclusion": "pr_risk_price(k1)",
-     "premises": [
-      "demand_persists(k1)"
-     ],
-     "rule": "EN-7"
-    },
     {
      "conclusion": "lic_binds(k3)",
      "premises": [
@@ -329,53 +317,6 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "demand_persists(k1)",
-     "enforcement_risk(k1)"
-    ]
-   ],
-   "assumptions": [
-    "demand_persists(k1)",
-    "enforcement_risk(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "pr_risk_price(k1)",
-     "premises": [
-      "enforcement_risk(k1)"
-     ],
-     "rule": "CR-7"
-    },
-    {
-     "conclusion": "pr_risk_price(k1)",
-     "premises": [
-      "demand_persists(k1)"
-     ],
-     "rule": "EN-7"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-5",
-   "item": null,
-   "reported": false,
-   "sign": "decrease",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "quantity_demanded",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "firms.covered",
-   "actor_group": [],
-   "assumption_sets": [
-    [
      "stockpile_ahead(k1)"
     ]
    ],
@@ -398,7 +339,7 @@
    "horizon": [
     "short"
    ],
-   "id": "C-6",
+   "id": "C-5",
    "item": null,
    "reported": false,
    "sign": "increase",
@@ -413,12 +354,12 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "buyer_substitutes(k1)"
-    ],
-    [
      "binding(k3)",
      "buyer_substitutes(k3)",
      "enforced(k3)"
+    ],
+    [
+     "buyer_substitutes(k1)"
     ]
    ],
    "assumptions": [
@@ -457,7 +398,7 @@
     "medium",
     "long"
    ],
-   "id": "C-7",
+   "id": "C-6",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -472,11 +413,11 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "enforced(k1)"
-    ],
-    [
      "binding(k3)",
      "enforced(k3)"
+    ],
+    [
+     "enforced(k1)"
     ]
    ],
    "assumptions": [
@@ -514,7 +455,7 @@
     "medium",
     "long"
    ],
-   "id": "C-8",
+   "id": "C-7",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -555,7 +496,7 @@
     "medium",
     "long"
    ],
-   "id": "C-9",
+   "id": "C-8",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -606,7 +547,7 @@
     "medium",
     "long"
    ],
-   "id": "C-10",
+   "id": "C-9",
    "item": null,
    "reported": false,
    "sign": "increase",
@@ -644,7 +585,7 @@
     "medium",
     "long"
    ],
-   "id": "C-11",
+   "id": "C-10",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -693,7 +634,7 @@
     "medium",
     "long"
    ],
-   "id": "C-12",
+   "id": "C-11",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -747,7 +688,7 @@
     "medium",
     "long"
    ],
-   "id": "C-13",
+   "id": "C-12",
    "item": null,
    "reported": false,
    "sign": "decrease",
@@ -801,13 +742,61 @@
     "medium",
     "long"
    ],
-   "id": "C-14",
+   "id": "C-13",
    "item": null,
    "reported": false,
    "sign": "decrease",
    "sign_by_reading": {},
    "tier": "B",
    "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.foreign",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_breach(k1)",
+     "premises": [
+      "evasion(k1)",
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "legal_breach",
    "visibility": "invisible",
    "window": null
   },
@@ -853,11 +842,13 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "enforced(k1)"
+     "enforced(k1)",
+     "no_other_use(k1)"
     ]
    ],
    "assumptions": [
-    "enforced(k1)"
+    "enforced(k1)",
+    "no_other_use(k1)"
    ],
    "combines": [],
    "comparison": null,
@@ -868,6 +859,20 @@
       "enforced(k1)"
      ],
      "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "CR-1"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "no_other_use(k1)"
+     ],
+     "rule": "SB-4"
     }
    ],
    "group": [],
@@ -878,7 +883,7 @@
    ],
    "id": "C-16",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "decrease",
    "sign_by_reading": {},
    "tier": "B",
@@ -922,194 +927,6 @@
    "tier": "B",
    "variable": "quantity_traded",
    "visibility": "visible",
-   "window": null
-  },
-  {
-   "actor_class": "sellers.foreign.online",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "demand_persists(k1)",
-     "evasion(k1)"
-    ]
-   ],
-   "assumptions": [
-    "demand_persists(k1)",
-    "evasion(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "pr_underground(k1)",
-     "premises": [
-      "demand_persists(k1)"
-     ],
-     "rule": "EN-7"
-    },
-    {
-     "conclusion": "pr_underground(k1)",
-     "premises": [
-      "evasion(k1)"
-     ],
-     "rule": "RS-3"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-18",
-   "item": null,
-   "reported": true,
-   "sign": "increase",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "disputes_settled_outside_courts",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "sellers.foreign.online",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "demand_persists(k1)",
-     "evasion(k1)"
-    ]
-   ],
-   "assumptions": [
-    "demand_persists(k1)",
-    "evasion(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "pr_underground(k1)",
-     "premises": [
-      "demand_persists(k1)"
-     ],
-     "rule": "EN-7"
-    },
-    {
-     "conclusion": "pr_underground(k1)",
-     "premises": [
-      "evasion(k1)"
-     ],
-     "rule": "RS-3"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-19",
-   "item": null,
-   "reported": true,
-   "sign": "decrease",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "quality_information",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "sellers.foreign.online",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "demand_persists(k1)",
-     "evasion(k1)"
-    ]
-   ],
-   "assumptions": [
-    "demand_persists(k1)",
-    "evasion(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "pr_underground(k1)",
-     "premises": [
-      "demand_persists(k1)"
-     ],
-     "rule": "EN-7"
-    },
-    {
-     "conclusion": "pr_underground(k1)",
-     "premises": [
-      "evasion(k1)"
-     ],
-     "rule": "RS-3"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-20",
-   "item": null,
-   "reported": true,
-   "sign": "increase",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "quality_variability",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "sellers.foreign.online",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "demand_persists(k1)",
-     "evasion(k1)"
-    ]
-   ],
-   "assumptions": [
-    "demand_persists(k1)",
-    "evasion(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "pr_underground(k1)",
-     "premises": [
-      "demand_persists(k1)"
-     ],
-     "rule": "EN-7"
-    },
-    {
-     "conclusion": "pr_underground(k1)",
-     "premises": [
-      "evasion(k1)"
-     ],
-     "rule": "RS-3"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-21",
-   "item": null,
-   "reported": true,
-   "sign": "increase",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "search_cost",
-   "visibility": "invisible",
    "window": null
   },
   {
@@ -1159,7 +976,7 @@
     "medium",
     "long"
    ],
-   "id": "C-22",
+   "id": "C-18",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1207,7 +1024,7 @@
     "medium",
     "long"
    ],
-   "id": "C-23",
+   "id": "C-19",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1248,7 +1065,7 @@
     "medium",
     "long"
    ],
-   "id": "C-24",
+   "id": "C-20",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1299,7 +1116,7 @@
     "medium",
     "long"
    ],
-   "id": "C-25",
+   "id": "C-21",
    "item": null,
    "reported": false,
    "sign": "increase",
@@ -1362,7 +1179,7 @@
     "medium",
     "long"
    ],
-   "id": "C-26",
+   "id": "C-22",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1410,7 +1227,7 @@
     "medium",
     "long"
    ],
-   "id": "C-27",
+   "id": "C-23",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1451,7 +1268,7 @@
     "medium",
     "long"
    ],
-   "id": "C-28",
+   "id": "C-24",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1499,7 +1316,7 @@
     "medium",
     "long"
    ],
-   "id": "C-29",
+   "id": "C-25",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1540,7 +1357,7 @@
     "medium",
     "long"
    ],
-   "id": "C-30",
+   "id": "C-26",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1549,109 +1366,37 @@
    "variable": "share_of_sellers_licensed",
    "visibility": "visible",
    "window": null
-  },
-  {
-   "actor_class": "taxpayers",
-   "actor_group": [
-    "taxpayers",
-    "recipients.other_spending",
-    "taxpayers.future"
-   ],
-   "assumption_sets": [
-    []
-   ],
-   "assumptions": [],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "pr_funded(k1)",
-     "premises": [
-      "general_budget(k1)"
-     ],
-     "rule": "OC-1"
-    },
-    {
-     "conclusion": "lic_binds(k3)",
-     "premises": [
-      "binding(k3)",
-      "enforced(k3)"
-     ],
-     "rule": "EN-1"
-    },
-    {
-     "conclusion": "en_administered(k3)",
-     "premises": [
-      "lic_binds(k3)"
-     ],
-     "rule": "OC-3"
-    },
-    {
-     "conclusion": "en_funded(k3)",
-     "premises": [
-      "enforcement_budget_raised(k3)"
-     ],
-     "rule": "OC-1"
-    },
-    {
-     "conclusion": "en_funded(k3)",
-     "premises": [
-      "en_administered(k3)"
-     ],
-     "rule": "OC-3"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-31",
-   "item": null,
-   "reported": true,
-   "sign": "at_least_one_decrease",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "resources_available_other_uses",
-   "visibility": "invisible",
-   "window": null
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"sellers.foreign\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nprohibition(k1).\npr_buyer(k1, \"firms.covered\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nrevenue(k1, \"officials.enforcement\").\npr_informal_buyer(k1, \"sellers.foreign.online\").\npr_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\npr_substitute_seller(k1, \"firms.near_threshold\").\ndefinition_line(k1).\ngeneral_budget(k1).\nbound(k3, \"sellers.substitutes\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nlicensing(k3).\nen_buyer(k3, \"firms.covered\").\nen_holder(k3, \"sellers.substitutes\").\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nen_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_informal_buyer(k3, \"firms.covered\").\nen_revenue(k3, \"officials.enforcement\").\ngeneral_budget(k3).\nassumption(enforced(k1)).\nassumption(demand_persists(k1)).\nassumption(evasion(k1)).\nassumption(enforcement_risk(k1)).\nassumption(no_other_use(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(can_organize(k1)).\nassumption(reshaping_pays(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(binding(k3)).\nassumption(enforced(k3)).\nassumption(some_qualify(k3)).\nassumption(evasion(k3)).\nassumption(buyer_substitutes(k3)).\nassumption(tests_valued_quality(k3)).\nassumption(can_organize(k3)).\nassumption(enforcement_budget_raised(k3)).\n",
+ "engine_facts": "bound(k1, \"sellers.foreign\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nprohibition(k1).\npr_buyer(k1, \"firms.covered\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nrevenue(k1, \"officials.enforcement\").\npr_informal_buyer(k1, \"sellers.foreign.online\").\npr_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\npr_substitute_seller(k1, \"firms.near_threshold\").\ndefinition_line(k1).\npractice_ban(k1).\nfees_to_budget(k1).\ngeneral_budget(k1).\nbound(k3, \"sellers.substitutes\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nlicensing(k3).\nen_buyer(k3, \"firms.covered\").\nen_holder(k3, \"sellers.substitutes\").\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nen_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_informal_buyer(k3, \"firms.covered\").\nen_revenue(k3, \"officials.enforcement\").\nfees_to_budget(k3).\ngeneral_budget(k3).\nassumption(enforced(k1)).\nassumption(demand_persists(k1)).\nassumption(evasion(k1)).\nassumption(enforcement_risk(k1)).\nassumption(no_other_use(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(can_organize(k1)).\nassumption(buyers_organize(k1)).\nassumption(reshaping_pays(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(binding(k3)).\nassumption(enforced(k3)).\nassumption(some_qualify(k3)).\nassumption(evasion(k3)).\nassumption(buyer_substitutes(k3)).\nassumption(tests_valued_quality(k3)).\nassumption(can_organize(k3)).\nassumption(enforcement_budget_raised(k3)).\n",
  "explanations": [
   "C-1. Compared with no Corvany Personal Data Residency Act, disputes settled outside courts for firms.covered rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85); Some sellers keep selling without a license and are not caught (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-2. Compared with no Corvany Personal Data Residency Act, lobbying effort for firms.covered rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.85). Reported.",
-  "C-3. Compared with no Corvany Personal Data Residency Act, price paid for firms.covered rises from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7; EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-2. Compared with no Corvany Personal Data Residency Act, lobbying effort for firms.covered rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The buyers have a concentrated stake and can organize for repeal (p = 0.85). Reported.",
+  "C-3. Compared with no Corvany Personal Data Residency Act, price paid for firms.covered rises from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
   "C-4. Compared with no Corvany Personal Data Residency Act, quality information for firms.covered may move either way from the short run onward (tier B, visible). Why: EN-1: EN-1; EN-11: EN-11; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85); The license tests something buyers value but cannot easily judge (p = 0.40). It also follows under 1 other minimal assumption set(s). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-5. Compared with no Corvany Personal Data Residency Act, quantity demanded for firms.covered falls from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.95); Informal sellers face a real risk of punishment (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-6. Compared with no Corvany Personal Data Residency Act, quantity demanded for firms.covered rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-7. Compared with no Corvany Personal Data Residency Act, quantity substitute for firms.covered rises from the short run onward (tier B, invisible). Why: RS-1: when a good becomes dearer, buyers turn to substitutes; EN-1: EN-1. This holds if: Legal substitutes are acceptable to some buyers (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
-  "C-8. Compared with no Corvany Personal Data Residency Act, quantity traded for firms.covered falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; EN-1: EN-1; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The legal sellers comply with the ban (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
-  "C-9. Compared with no Corvany Personal Data Residency Act, resources available other uses for firms.covered falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
-  "C-10. Compared with no Corvany Personal Data Residency Act, search cost for firms.covered rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85); Some sellers keep selling without a license and are not caught (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-11. Compared with no Corvany Personal Data Residency Act, reclassification for firms.near_threshold rises from the short run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.75). Reported.",
-  "C-12. Compared with no Corvany Personal Data Residency Act, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; EN-1: EN-1. This holds if: no assumption. Reported.",
-  "C-13. Compared with no Corvany Personal Data Residency Act, asset value for sellers.foreign falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.85); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-14. Compared with no Corvany Personal Data Residency Act, employment for sellers.foreign falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.85); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-15. Compared with no Corvany Personal Data Residency Act, lobbying effort for sellers.foreign rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.85). Reported.",
-  "C-16. Compared with no Corvany Personal Data Residency Act, number of sellers for sellers.foreign falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.85). Reported.",
+  "C-5. Compared with no Corvany Personal Data Residency Act, quantity demanded for firms.covered rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-6. Compared with no Corvany Personal Data Residency Act, quantity substitute for firms.covered rises from the short run onward (tier B, invisible). Why: RS-1: when a good becomes dearer, buyers turn to substitutes; EN-1: EN-1. This holds if: Legal substitutes are acceptable to some buyers (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-7. Compared with no Corvany Personal Data Residency Act, quantity traded for firms.covered falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; EN-1: EN-1; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The legal sellers comply with the ban (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-8. Compared with no Corvany Personal Data Residency Act, resources available other uses for firms.covered falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
+  "C-9. Compared with no Corvany Personal Data Residency Act, search cost for firms.covered rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85); Some sellers keep selling without a license and are not caught (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-10. Compared with no Corvany Personal Data Residency Act, reclassification for firms.near_threshold rises from the short run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.75). Reported.",
+  "C-11. Compared with no Corvany Personal Data Residency Act, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; EN-1: EN-1. This holds if: no assumption. Reported.",
+  "C-12. Compared with no Corvany Personal Data Residency Act, asset value for sellers.foreign falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.85); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-13. Compared with no Corvany Personal Data Residency Act, employment for sellers.foreign falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.85); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-14. Compared with no Corvany Personal Data Residency Act, legal breach for sellers.foreign rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: The legal sellers comply with the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.70). Reported.",
+  "C-15. Compared with no Corvany Personal Data Residency Act, lobbying effort for sellers.foreign rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former legal sellers can organize to seek repeal (p = 0.85). Reported.",
+  "C-16. Compared with no Corvany Personal Data Residency Act, number of sellers for sellers.foreign falls from the short run onward (tier B, visible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.85); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
   "C-17. Compared with no Corvany Personal Data Residency Act, quantity traded for sellers.foreign falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.85). Reported.",
-  "C-18. Compared with no Corvany Personal Data Residency Act, disputes settled outside courts for sellers.foreign.online rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.95); Enforcement is imperfect: many informal sales go undetected (p = 0.70). Reported.",
-  "C-19. Compared with no Corvany Personal Data Residency Act, quality information for sellers.foreign.online falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.95); Enforcement is imperfect: many informal sales go undetected (p = 0.70). Reported.",
-  "C-20. Compared with no Corvany Personal Data Residency Act, quality variability for sellers.foreign.online rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.95); Enforcement is imperfect: many informal sales go undetected (p = 0.70). Reported.",
-  "C-21. Compared with no Corvany Personal Data Residency Act, search cost for sellers.foreign.online rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.95); Enforcement is imperfect: many informal sales go undetected (p = 0.70). Reported.",
-  "C-22. Compared with no Corvany Personal Data Residency Act, compliance cost for sellers.substitutes rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85); Some current sellers or new entrants obtain the license (p = 0.90). Reported.",
-  "C-23. Compared with no Corvany Personal Data Residency Act, employment for sellers.substitutes falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; EN-3: EN-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
-  "C-24. Compared with no Corvany Personal Data Residency Act, entry rate for sellers.substitutes falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
-  "C-25. Compared with no Corvany Personal Data Residency Act, informal activity for sellers.substitutes rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85); Some sellers keep selling without a license and are not caught (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-26. Compared with no Corvany Personal Data Residency Act, lobbying effort for sellers.substitutes rises from the medium run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2; EN-5: EN-5; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The license holders can organize to lobby at a cost below their stake (p = 0.85); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
-  "C-27. Compared with no Corvany Personal Data Residency Act, net price received for sellers.substitutes rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
-  "C-28. Compared with no Corvany Personal Data Residency Act, number of sellers for sellers.substitutes falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
-  "C-29. Compared with no Corvany Personal Data Residency Act, quantity traded for sellers.substitutes falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
-  "C-30. Compared with no Corvany Personal Data Residency Act, share of sellers licensed for sellers.substitutes rises from the short run onward (tier B, visible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
-  "C-31. Compared with no Corvany Personal Data Residency Act, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier B, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought; EN-1: EN-1; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported."
+  "C-18. Compared with no Corvany Personal Data Residency Act, compliance cost for sellers.substitutes rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85); Some current sellers or new entrants obtain the license (p = 0.90). Reported.",
+  "C-19. Compared with no Corvany Personal Data Residency Act, employment for sellers.substitutes falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; EN-3: EN-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
+  "C-20. Compared with no Corvany Personal Data Residency Act, entry rate for sellers.substitutes falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
+  "C-21. Compared with no Corvany Personal Data Residency Act, informal activity for sellers.substitutes rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85); Some sellers keep selling without a license and are not caught (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-22. Compared with no Corvany Personal Data Residency Act, lobbying effort for sellers.substitutes rises from the medium run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2; EN-5: EN-5; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The license holders can organize to lobby at a cost below their stake (p = 0.85); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
+  "C-23. Compared with no Corvany Personal Data Residency Act, net price received for sellers.substitutes rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
+  "C-24. Compared with no Corvany Personal Data Residency Act, number of sellers for sellers.substitutes falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
+  "C-25. Compared with no Corvany Personal Data Residency Act, quantity traded for sellers.substitutes falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
+  "C-26. Compared with no Corvany Personal Data Residency Act, share of sellers licensed for sellers.substitutes rises from the short run onward (tier B, visible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported."
  ],
  "questions": [
   {
@@ -1777,7 +1522,25 @@
     "id": "k1.can_organize",
     "kind": "noul",
     "options": [],
-    "text": "Can the former legal sellers or the buyers organize to seek repeal at a cost below their stake?"
+    "text": "Can the former legal sellers organize to seek repeal at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.buyers_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-053 (illustrative figures), A-13: local operators, providers and controllers near the line can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyers_organize",
+    "assumption_class": "other",
+    "id": "k1.buyers_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the buyers have a stake in the banned good large enough to organize for repeal at a cost below it?"
    }
   },
   {
@@ -1989,6 +1752,7 @@
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "fees_to_budget": true,
     "field_contested": false,
     "foreign_seller_actor": "sellers.foreign",
     "future_taxpayer_actor": "taxpayers.future",
@@ -2010,6 +1774,7 @@
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
     "own_revenue_funded": false,
+    "practice_ban": true,
     "price_fixed": false,
     "prospective_buyer_actor": null,
     "protected_actor": null,
@@ -2036,7 +1801,8 @@
      "The bill was introduced on 14 October 2026 and enacted on 1 July 2027.",
      "The requirement applies from 1 January 2029, 18 months after enactment.",
      "Enforcement (K4): the Data Protection Office enforces the Act.",
-     "The Office receives a supplementary appropriation of 6 million crowns a year from the general budget."
+     "The Office receives a supplementary appropriation of 6 million crowns a year from the general budget.",
+     "Fees go to the general budget."
     ],
     "stocks_destroyed": false,
     "substitute_seller_actor": "firms.near_threshold",
@@ -2080,6 +1846,7 @@
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "fees_to_budget": true,
     "field_contested": false,
     "foreign_seller_actor": "sellers.foreign",
     "future_taxpayer_actor": "taxpayers.future",
@@ -2101,6 +1868,7 @@
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
     "own_revenue_funded": false,
+    "practice_ban": false,
     "price_fixed": false,
     "prospective_buyer_actor": null,
     "protected_actor": null,
@@ -2166,7 +1934,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-19T18:54:23+00:00",
+ "run_at": "2026-10-19T19:14:09+00:00",
  "sources_held_back": [],
  "unclear": [
   {

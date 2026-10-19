@@ -142,6 +142,8 @@ class Component(BaseModel):
     convicted_actor: Optional[str] = Field(default=None, description="Prohibitions: those convicted under the ban (EN-10)")
     volume_penalties: bool = Field(default=False, description="Prohibitions: penalties are graded by bulk or weight rather than potency (EN-8)")
     stocks_destroyed: bool = Field(default=False, description="Prohibitions: existing stocks must be destroyed or exported without compensation (OC-1)")
+    practice_ban: bool = Field(default=False, description="Prohibitions: the ban forbids a way of doing a legal business (hosting data abroad), not a good; evasion is then a legal breach by the bound firms, not an informal market (RS-3)")
+    fees_to_budget: bool = Field(default=False, description="Prohibitions, licensing and quotas: fees or fines from the measure are paid into the budget that funds its enforcement, so the payers' net is not signed (OC-1 1.0)")
     taxed_before: bool = Field(default=False, description="Prohibitions: the good was subject to a tax before the ban; revenue_actor collects it (TX-10)")
     informal_buyer_actor: Optional[str] = Field(default=None, description="Licensing and quotas: buyers of the unlicensed or unrecorded trade (RS-3, RS-10), when not all buyers, e.g. buyers.unlicensed")
     price_fixed: bool = Field(default=False, description="Licensing and quotas: a rule in force without the measure too fixes the good's price (a council-set fare), so the restriction shows as excess demand, not a higher price (EN-6, PC-1)")

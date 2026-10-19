@@ -45,7 +45,7 @@ def test_premises_gate_their_chains():
     rec = _record()
     got = _reported(rec, evasion=0.3)
     assert not any(k[1] in ("informal_activity", "quality_variability", "share_concentrated_forms") for k in got)
-    assert ("users.current", "price_paid", "increase", None) in got                       # the risk price needs no evasion
+    assert ("users.current", "price_paid", "increase", None) not in got                   # the risk price needs an informal trade (EN-7)
     got = _reported(rec, enforcement_risk=0.3)
     assert not any(k[1] == "price_paid" or k[0] == "users.convicted" for k in got)
     got = _reported(rec, enforced=0.3)

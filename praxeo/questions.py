@@ -408,6 +408,12 @@ def _en_specs(comp: Component) -> list[tuple[str, str, str, str]]:
 
 
 # Prohibitions (EN-7, EN-8, EN-10).
+BUYERS_ORGANIZE_QUESTION = ("buyers_organize", "other",
+                            "Do the buyers have a stake in the banned good large enough to organize for repeal at a cost below it?",
+                            "The buyers have a concentrated stake and can organize for repeal.")
+CROSSING_TRIP_QUESTION = ("crossing_extra_trip", "mobility",
+                          "Would buying across the boundary take trips the buyers would not otherwise make?",
+                          "Buying across the boundary takes trips the buyers would not otherwise make.")
 PROHIBITION_QUESTIONS = [
     ("enforced", "enforcement",
      "Will the legal sellers comply with the ban (stop selling openly)?",
@@ -428,8 +434,9 @@ PROHIBITION_QUESTIONS = [
      "Are some legal substitutes acceptable to some buyers?",
      "Legal substitutes are acceptable to some buyers."),
     ("can_organize", "other",
-     "Can the former legal sellers or the buyers organize to seek repeal at a cost below their stake?",
-     "The former sellers or the buyers can organize to seek repeal."),
+     "Can the former legal sellers organize to seek repeal at a cost below their stake?",
+     "The former legal sellers can organize to seek repeal."),
+    BUYERS_ORGANIZE_QUESTION,
 ]
 CONCENTRATE_QUESTION = ("concentrate_easy", "other",
                         "Can a concentrated form of the good be made with simple means?",
@@ -442,7 +449,7 @@ RECORDS_QUESTION = ("records_checked", "other",
 def _prohibition_specs(comp: Component) -> list[tuple[str, str, str, str]]:
     specs = list(PROHIBITION_QUESTIONS)
     if comp.mobile_buyer_actor:
-        specs.append(CROSS_BORDER_QUESTION)
+        specs += [CROSS_BORDER_QUESTION, CROSSING_TRIP_QUESTION]
     if comp.definition_line:
         specs.append(RESHAPING_QUESTION)
     if comp.announcement_window:

@@ -21,10 +21,6 @@ EXCEPTIONS = {
         "RS-7 for the buyers; the table names the organized part of them, the motoring clubs, and the dealers and importers (C-18)",
     ("buyers.new_phev", "lobbying_effort", "increase", None):
         "RS-7 for the PHEV buyers; the table names the motoring clubs and the trade (C-18)",
-    ("buyers.new_combustion", "quantity_demanded", "decrease", None):
-        "same direction as C-1 (quantity traded falls), but derived through the risk price of EN-7, which is KNOWN WRONG here (next entry)",
-    ("buyers.new_phev", "quantity_demanded", "decrease", None):
-        "same direction as C-2, derived through the same risk price",
     ("buyers.new_phev", "quantity_substitute", "increase", None):
         "RS-1: would-be PHEV buyers turn to BEVs and used cars; the table signs it for K1's buyers (C-5), not for K2's",
     ("buyers.new_phev", "quantity_demanded", "increase", "announcement"):
@@ -32,14 +28,8 @@ EXCEPTIONS = {
     ("importers.used", "quantity_traded", "U1-a: decrease; U1-b: no_change", None):
         "the U1-a half is C-13; under U1-b the engine derives nothing where the table has an increase (RS-4 with A-20): an omission, not a contradiction",
     # produced and WRONG by the handbook
-    ("buyers.new_combustion", "price_paid", "increase", None):
-        "KNOWN WRONG: EN-7's risk price presupposes an informal trade in the banned good; a new car cannot be registered, so there is none (A-2, A-14 below the cut-off); the table has no price for the banned cars",
-    ("buyers.new_phev", "price_paid", "increase", None):
-        "KNOWN WRONG: same",
     ("buyers.new_combustion", "quantity_demanded", "increase", "announcement"):
         "KNOWN WRONG: RS-8's rush alone; the table's C-9 is ambiguous because the sellers' withdrawal of models (A-8) and the wait for pre-registered stock (A-29) run against it",
-    ("importers", "number_of_sellers", "decrease", None):
-        "KNOWN WRONG: EN-7 removes sellers whose business is the banned good; the 12 importers and 600 dealers keep selling BEVs, PHEVs and used cars, and the table lists no exit",
 }
 NOT_PRODUCED = {
     "C-3": "lump_sum_tax has no rules (TX-1 with CR-8b is not encoded for it): the road charge's loss to BEV owners",
@@ -93,7 +83,7 @@ def test_out_of_sample_we050():
     assert len(rows) == 47
     _check(rows, keys, EXCEPTIONS, NOT_PRODUCED, PRODUCED)
     assert len(PRODUCED) == 6 and len(NOT_PRODUCED) == 41
-    assert sum(1 for v in EXCEPTIONS.values() if v.startswith("KNOWN WRONG")) == 4
+    assert sum(1 for v in EXCEPTIONS.values() if v.startswith("KNOWN WRONG")) == 1   # 4 in the first run; three fixed (the risk price needs an informal trade; fewer sellers needs no_other_use)
     # the road charge (lump_sum_tax) yields nothing, and K1's and K2's readings differ only for the used importers
     assert not any(k[0] == "owners.bev" for k in keys)
     assert {c["actor_class"] for c in pred["consequences"] if c["sign_by_reading"]} == {"importers.used"}

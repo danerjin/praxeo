@@ -117,5 +117,19 @@
   "probability": 0.7,
   "rationale": "No matching assumption in WE-050; judged from the text: buyers know the 2038 date; the text gives no PHEV-specific rush, but replacement cycles of 6 to 10 years (A-7 for combustion cars, 0.85) make buying ahead feasible.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.buyers_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-050 (illustrative figures), A-15: dealers, fuel retailers and motoring clubs can each organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.buyers_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-050 (illustrative figures), A-15: motoring clubs can organize at a cost below their stake.",
+  "evidence": []
  }
 ]

@@ -32,11 +32,6 @@ EXCEPTIONS = {
     ("resellers.brokers", "resources_available_other_uses", "increase", None): "CR-8b: the premiums brokers take above the cap where they evade (C-9, C-10)",
     ("neighboring_jurisdictions", "price_paid", "increase", None):
         "KNOWN WRONG: C-39 is ambiguous (A-20: brokers shift buying to Brackmere City, an opposing chain with A-19); the engine has the shut-out fans' chain alone",
-    ("resellers.brokers", "disputes_settled_outside_courts", "increase", None):
-        "KNOWN WRONG: EN-7 and RS-10 for the bot ban presuppose that legal trade stops (enforced) and moves underground; K2 only backs a term already in R1 (A-13, 0.45, below the cut-off) and the rule does not require enforced",
-    ("resellers.brokers", "quality_information", "decrease", None): "KNOWN WRONG: same, the bot users' black market (K2)",
-    ("resellers.brokers", "quality_variability", "increase", None): "KNOWN WRONG: same",
-    ("resellers.brokers", "search_cost", "increase", None): "KNOWN WRONG: same",
     ("resellers.brokers", "quantity_substitute", "increase", None): "KNOWN WRONG: RS-1 for the bot ban turns the bot users to substitutes although the ban is not enforced enough to change what they buy (A-13); the example has no such row",
 }
 
@@ -85,4 +80,4 @@ def test_out_of_sample_we037():
     rows = _rows("WE-037_ticket_resale_cap.md", SHORT, WINDOWS, {})
     assert len(rows) == 47
     _check(rows, keys, EXCEPTIONS, NOT_PRODUCED, PRODUCED)
-    assert len(keys) == 31
+    assert len(keys) == 27   # 31 in the first run; the bot ban's four RS-10 rows need it enforced (A-13 below the cut-off)

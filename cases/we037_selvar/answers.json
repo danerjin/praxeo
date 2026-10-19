@@ -201,5 +201,12 @@
   "probability": 0.4,
   "rationale": "No matching assumption in WE-037; judged from the text: bot vendors are mostly outside the state and unlikely to organize a repeal effort.",
   "evidence": []
+ },
+ {
+  "question_id": "k2.buyers_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-9: brokers, platforms, fan groups and primary sellers can organize at a cost below their stakes.",
+  "evidence": []
  }
 ]

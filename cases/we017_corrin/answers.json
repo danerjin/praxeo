@@ -82,5 +82,19 @@
   "probability": 0.6,
   "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-16: convictions are recorded and employers check them.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.buyers_organize",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-017 (illustrative figures), A-12: users and former shop owners can organize.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.crossing_extra_trip",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "No matching assumption in WE-017; judged from the text: the Halvet border is 40 to 90 minutes' drive from the two largest cities, a trip users would not otherwise make (A-6 covers whether they go).",
+  "evidence": []
  }
 ]

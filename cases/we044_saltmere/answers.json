@@ -124,5 +124,19 @@
   "probability": 0.9,
   "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-20: the $520,000 for the Registry Unit is new general-fund money.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.buyers_organize",
+  "value": "no",
+  "probability": 0.15,
+  "rationale": "No matching assumption in WE-044; judged from the text: A-14 names hosts, platforms, hotels and neighborhood associations; visiting guests have no organization.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.crossing_extra_trip",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "No matching assumption in WE-044; judged from the text: staying outside the city means extra travel into it for most visitors.",
+  "evidence": []
  }
 ]

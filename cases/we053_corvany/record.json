@@ -28,8 +28,11 @@
     "The bill was introduced on 14 October 2026 and enacted on 1 July 2027.",
     "The requirement applies from 1 January 2029, 18 months after enactment.",
     "Enforcement (K4): the Data Protection Office enforces the Act.",
-    "The Office receives a supplementary appropriation of 6 million crowns a year from the general budget."
-   ]
+    "The Office receives a supplementary appropriation of 6 million crowns a year from the general budget.",
+    "Fees go to the general budget."
+   ],
+   "practice_ban": true,
+   "fees_to_budget": true
   },
   {
    "id": "k3",
@@ -45,7 +48,8 @@
     "Facility certificate (K3): data centers in Corvany that host covered data need a license (a certificate) for the facility, which the facility operators must hold.",
     "It requires an annual audit of physical security and access logs and a fee of 40,000 crowns per facility a year.",
     "Fees go to the general budget."
-   ]
+   ],
+   "fees_to_budget": true
   }
  ],
  "unclear": [

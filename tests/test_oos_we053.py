@@ -22,6 +22,8 @@ SHORT = {
 }
 WINDOWS = {"migration services, window": "announcement"}
 EXCEPTIONS = {
+    ("sellers.foreign", "legal_breach", "increase", None):
+        "RS-3 for a ban on a practice (practice_ban, added after the first run): C-13 signs it for sellers.foreign.online, a subclass the record has no role for",
     ("firms.covered", "lobbying_effort", "increase", None):
         "RS-7 on the buyers (K1); section 5 (lobbying) names covered controllers beside the operators and providers (A-13), but C-14 lists only the operators, providers and controllers near the line",
     ("firms.covered", "price_paid", "increase", None):
@@ -30,16 +32,6 @@ EXCEPTIONS = {
         "RS-1: covered controllers turn to local hosting; the table has it as the sellers' side (C-2) and as the price of the substitute (C-17), not this row",
     ("firms.covered", "quantity_traded", "decrease", None):
         "OC-4, the buyers' side of C-6 (hosting bought from abroad falls); C-7 is only backup storage, with the sign per reading",
-    ("sellers.foreign", "number_of_sellers", "decrease", None):
-        "EN-7: providers without a Corvany presence stop selling to covered controllers (A-6); the table has it on the buyers' side (C-5)",
-    ("sellers.foreign.online", "disputes_settled_outside_courts", "increase", None):
-        "KNOWN WRONG: RS-10 for the buyers of an underground trade; C-13 says the foreign services' breach is within a legal market, not informal trade, and nothing is settled outside courts",
-    ("sellers.foreign.online", "quality_information", "decrease", None):
-        "KNOWN WRONG: RS-10 (see above); a foreign service that ignores the law keeps buying hosting in an open market",
-    ("sellers.foreign.online", "quality_variability", "increase", None):
-        "KNOWN WRONG: RS-10 (see above)",
-    ("sellers.foreign.online", "search_cost", "increase", None):
-        "KNOWN WRONG: RS-10 (see above); the breach (C-13, legal_breach) costs the service no search",
     ("sellers.substitutes", "employment", "decrease", None):
         "KNOWN WRONG: EN-1 and EN-3 on K3 alone (the certificate drives some operators out); the table has operators' demand rising under K1 (C-2) and staff at data centers rising (C-38, workers.data_centers)",
     ("sellers.substitutes", "entry_rate", "decrease", None):
@@ -50,12 +42,6 @@ EXCEPTIONS = {
         "KNOWN WRONG: OC-4 with EN-1 on K3 alone (exchanges the certificate prevents); C-2 has the operators' quantity supplied increasing",
     ("sellers.substitutes", "share_of_sellers_licensed", "increase", None):
         "EN-1 with some_qualify: more of the operators are licensed; not in the table (C-20 speaks of the number of facilities hosting covered data)",
-    ("taxpayers", "resources_available_other_uses", "at_least_one_decrease", None):
-        "KNOWN WRONG: OC-1 for the supplementary appropriation alone; C-32 is ambiguous because the same general budget receives the certificate fees and fines (C-33; CR-8, 1.0)",
-    ("recipients.other_spending", "resources_available_other_uses", "at_least_one_decrease", None):
-        "KNOWN WRONG: same as taxpayers (C-32)",
-    ("taxpayers.future", "resources_available_other_uses", "at_least_one_decrease", None):
-        "KNOWN WRONG: same as taxpayers (C-32)",
 }
 NOT_PRODUCED = {
     "C-1": "K2 (officer, statement) has no instrument in the ontology, so no compliance cost per controller; the prohibition rules give no cost to the buyers (CR-4 0.8, a cost fixed per firm)",

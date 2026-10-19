@@ -101,6 +101,7 @@ def _prohibition_facts(c: str, comp) -> list[str]:
             lines.append(f'{pred}({c}, "{actor}").')
     for pred, flag in (("definition_line", comp.definition_line), ("volume_penalties", comp.volume_penalties),
                        ("stocks_destroyed", comp.stocks_destroyed), ("taxed_before", comp.taxed_before),
+                       ("practice_ban", comp.practice_ban), ("fees_to_budget", comp.fees_to_budget),
                        ("general_budget", comp.general_budget), ("tax_named", comp.tax_named)):
         if flag:
             lines.append(f"{pred}({c}).")
@@ -125,6 +126,7 @@ def _en_facts(c: str, comp) -> list[str]:
     for pred, flag in (("transferable", comp.transferable), ("import_quota", comp.import_quota), ("seller_cap", comp.seller_cap),
                        ("price_fixed", comp.price_fixed), ("allocation_by_history", comp.allocation_by_history),
                        ("holder_cap", comp.holder_cap), ("self_supply", comp.self_supply), ("rights_sold", comp.rights_sold),
+                       ("fees_to_budget", comp.fees_to_budget),
                        ("base_after_announcement", comp.base_period_after_announcement),
                        ("wider_market", comp.wider_market), ("general_budget", comp.general_budget), ("tax_named", comp.tax_named)):
         if flag:

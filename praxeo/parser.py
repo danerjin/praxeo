@@ -89,7 +89,9 @@ instrument, even when the text states no aim:
   and neighbor_seller_actor (buyers who can buy where it stays legal, and the sellers there), substitute_seller_actor
   (sellers of goods just outside the definitions, with definition_line), volume_penalties (true if penalties are graded
   by weight or bulk), stocks_destroyed (true if stocks must be destroyed without compensation), taxed_before (true if
-  the good was taxed before; revenue_actor collects it), announcement_window, general_budget.
+  the good was taxed before; revenue_actor collects it), practice_ban (true if the ban forbids a way of doing a legal
+  business, not a good), fees_to_budget (true if fees or fines go to the budget that funds enforcement),
+  announcement_window, general_budget.
 For a tax or subsidy, list in `related` the markets the text or context names as related to the good: an input or factor
 its sellers use (kind input: who sells it, price_variable wage_rate for workers, and its other users if named), or a
 complement used with it (kind complement).

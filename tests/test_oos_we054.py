@@ -20,14 +20,6 @@ WE54 = ROOT / "cases" / "we054_wexcombe"
 SHORT = {}
 WINDOWS = {"base seasons": "announcement"}
 EXCEPTIONS = {
-    ("buyers.current", "lobbying_effort", "ambiguous", None):
-        "RS-7 Unless on the curfew's buyers (item policy_field), as for the night operators (C-46); prohibition rules (rules/prohibition.lp, added after the first run) on the curfew (k1): the buyers of night flights carry the default role name buyers.current, which the table does not use; it signs the travelers' moves to Pellham (C-22 to C-24)",
-    ("buyers.current", "lobbying_effort", "increase", None):
-        "RS-7 on the curfew's buyers; prohibition rules (rules/prohibition.lp, added after the first run) on the curfew (k1): the buyers of night flights carry the default role name buyers.current, which the table does not use; it signs the travelers' moves to Pellham (C-22 to C-24)",
-    ("buyers.current", "price_paid", "increase", None):
-        "EN-7's risk price on the curfew's buyers; prohibition rules (rules/prohibition.lp, added after the first run) on the curfew (k1): the buyers of night flights carry the default role name buyers.current, which the table does not use; it signs the travelers' moves to Pellham (C-22 to C-24)",
-    ("buyers.current", "quantity_demanded", "decrease", None):
-        "EN-7 with CR-4; prohibition rules (rules/prohibition.lp, added after the first run) on the curfew (k1): the buyers of night flights carry the default role name buyers.current, which the table does not use; it signs the travelers' moves to Pellham (C-22 to C-24)",
     ("buyers.current", "quantity_substitute", "increase", None):
         "RS-1 (A-11, Pellham); prohibition rules (rules/prohibition.lp, added after the first run) on the curfew (k1): the buyers of night flights carry the default role name buyers.current, which the table does not use; it signs the travelers' moves to Pellham (C-22 to C-24)",
     ("buyers.current", "quantity_traded", "decrease", None):

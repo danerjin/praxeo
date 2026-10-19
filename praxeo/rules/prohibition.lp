@@ -9,7 +9,8 @@
 %   pr_importer(C, A). pr_prospective(C, A). pr_convicted(C, A).  legal importers; would-be users; those convicted
 %   mobile_buyer(C, A). neighbor_seller(C, A).            buyers who can buy where it stays legal, and the sellers there
 %   pr_substitute_seller(C, A).       sellers of goods just outside the ban's definitions (RS-5)
-%   definition_line(C). announced(C). volume_penalties(C). stocks_destroyed(C). taxed_before(C).
+%   definition_line(C). announced(C). volume_penalties(C). stocks_destroyed(C). taxed_before(C). practice_ban(C).
+%   fees_to_budget(C).                fees or fines from the measure are paid into the budget that funds its enforcement
 %   enforcer(C, A). general_budget(C). tax_named(C). taxpayer(C, A). pr_payer_group(C, "a,b,c"). revenue(C, A).
 % Every rule is monotone in holds/1: it negates only plain facts.
 
@@ -21,11 +22,13 @@ pr_legal_stops(C) :- prohibition(C), holds(enforced(C)), not exception(en_7, C).
 fired(en_7, pr_legal_stops(C), enforced(C)) :- pr_legal_stops(C).
 effect(pr_legal_stops(C), B, "quantity_traded", decrease, short, visible, "B")   :- pr_legal_stops(C), bound(C, B).
 effect(pr_legal_stops(C), X, "quantity_traded", decrease, short, visible, "B")   :- pr_legal_stops(C), pr_buyer(C, X).
-effect(pr_legal_stops(C), B, "number_of_sellers", decrease, short, visible, "B") :- pr_legal_stops(C), bound(C, B).
 effect(pr_legal_stops(C), I, "quantity_traded", decrease, short, invisible, "B") :- pr_legal_stops(C), pr_importer(C, I).
 pr_specific(C) :- pr_legal_stops(C), holds(no_other_use(C)), not exception(sb_4, C).
 fired(cr_1, pr_specific(C), pr_legal_stops(C)) :- pr_specific(C).
 fired(sb_4, pr_specific(C), no_other_use(C))   :- pr_specific(C).
+% Fewer legal sellers only where they cannot turn to other products (found out of sample on WE-018 and WE-050, where shops
+% and importers keep selling the rest of their range).
+effect(pr_specific(C), B, "number_of_sellers", decrease, short, visible, "B") :- pr_specific(C), bound(C, B).
 effect(pr_specific(C), B, "employment", decrease, short, invisible, "B")  :- pr_specific(C), bound(C, B).
 effect(pr_specific(C), B, "asset_value", decrease, short, invisible, "B") :- pr_specific(C), bound(C, B).
 % OC-1: stocks that must be destroyed without compensation are a loss to their owners (Tier A, given the ban).
@@ -39,7 +42,11 @@ effect(pr_run_down(C), B, "inventory_held", decrease, short, invisible, "B") :- 
 
 % EN-7 with RS-3: where some buyers keep valuing the good (demand_persists) and enforcement is imperfect (evasion), trade moves
 % outside the law; RS-10 applies to it: search, quality variability and information, disputes outside the courts.
-pr_underground(C) :- prohibition(C), holds(demand_persists(C)), holds(evasion(C)), not exception(rs_3, C).
+% Only an enforced ban drives trade underground: unenforced, it carries on openly (found out of sample on WE-037). A ban on a
+% practice of legal firms (practice_ban: hosting data abroad) makes evasion a legal breach by those firms, not an informal
+% market (found out of sample on WE-053).
+pr_underground(C) :- pr_legal_stops(C), holds(demand_persists(C)), holds(evasion(C)), not practice_ban(C), not exception(rs_3, C).
+fired(en_7, pr_underground(C), pr_legal_stops(C))  :- pr_underground(C).
 fired(en_7, pr_underground(C), demand_persists(C)) :- pr_underground(C).
 fired(rs_3, pr_underground(C), evasion(C))         :- pr_underground(C).
 effect(pr_underground(C), S, "informal_activity", increase, short, invisible, "B")               :- pr_underground(C), pr_informal_seller(C, S).
@@ -49,10 +56,16 @@ effect(pr_underground(C), X, "quality_information", decrease, short, invisible, 
 effect(pr_underground(C), X, "disputes_settled_outside_courts", increase, short, invisible, "B") :- pr_underground(C), pr_informal_buyer(C, X).
 effect(pr_underground(C), S, "disputes_settled_outside_courts", increase, short, invisible, "B") :- pr_underground(C), pr_informal_seller(C, S).
 
-% EN-7 with CR-7: where enforcement is a real risk to informal sellers (enforcement_risk), the price includes compensation for
-% it: buyers pay more per unit, and fewer buy over time (CR-4, LW-3): current buyers and would-be buyers.
-pr_risk_price(C) :- prohibition(C), holds(demand_persists(C)), holds(enforcement_risk(C)), not exception(en_7, C).
-fired(en_7, pr_risk_price(C), demand_persists(C))  :- pr_risk_price(C).
+pr_breach(C) :- pr_legal_stops(C), practice_ban(C), holds(evasion(C)), not exception(rs_3, C).
+fired(rs_3, pr_breach(C), pr_legal_stops(C)) :- pr_breach(C).
+fired(rs_3, pr_breach(C), evasion(C))        :- pr_breach(C).
+effect(pr_breach(C), B, "legal_breach", increase, short, invisible, "B") :- pr_breach(C), bound(C, B).
+
+% EN-7 with CR-7: where an informal trade exists and enforcement is a real risk to it (enforcement_risk), its price includes
+% compensation for that risk: buyers pay more per unit, and fewer buy over time (CR-4, LW-3), current and would-be buyers.
+% Without an informal trade there is no risk price (found out of sample on WE-050: a new car cannot be registered).
+pr_risk_price(C) :- pr_underground(C), holds(enforcement_risk(C)), not exception(en_7, C).
+fired(en_7, pr_risk_price(C), pr_underground(C))   :- pr_risk_price(C).
 fired(cr_7, pr_risk_price(C), enforcement_risk(C)) :- pr_risk_price(C).
 effect(pr_risk_price(C), X, "price_paid", increase, short, invisible, "B")         :- pr_risk_price(C), pr_buyer(C, X).
 effect(pr_risk_price(C), X, "quantity_demanded", decrease, short, invisible, "B")  :- pr_risk_price(C), pr_buyer(C, X).
@@ -81,7 +94,10 @@ effect(pr_substitute(C), X, "quantity_substitute", increase, short, invisible, "
 pr_cross(C) :- prohibition(C), mobile_buyer(C, _), holds(cross_border_feasible(C)), not exception(rs_4, C).
 fired(rs_4, pr_cross(C), cross_border_feasible(C)) :- pr_cross(C).
 effect(pr_cross(C), M, "cross_border_purchases", increase, short, invisible, "B") :- pr_cross(C), mobile_buyer(C, M).
-effect(pr_cross(C), M, "search_cost", increase, short, invisible, "B")            :- pr_cross(C), mobile_buyer(C, M).
+pr_cross_trip(C) :- pr_cross(C), holds(crossing_extra_trip(C)).
+fired(oc_2, pr_cross_trip(C), crossing_extra_trip(C)) :- pr_cross_trip(C).
+% The time it costs, only where the crossing is a trip they would not otherwise make (found out of sample on WE-018).
+effect(pr_cross_trip(C), M, "search_cost", increase, short, invisible, "B") :- pr_cross_trip(C), mobile_buyer(C, M).
 effect(pr_cross(C), N, "quantity_traded", increase, short, invisible, "B")        :- pr_cross(C), neighbor_seller(C, N).
 
 % RS-5: where the ban's definitions draw a line, goods just outside it are sold (reshaping_pays).
@@ -102,12 +118,15 @@ pr_revenue(C) :- pr_legal_stops(C), taxed_before(C), not exception(tx_10, C).
 fired(tx_10, pr_revenue(C), pr_legal_stops(C)) :- pr_revenue(C).
 effect(pr_revenue(C), R, "tax_revenue", decrease, short, invisible, "B") :- pr_revenue(C), revenue(C, R).
 
-% RS-7: a concentrated harm draws lobbying for repeal by those who can organize (can_organize): the former legal sellers and
-% the buyers.
+% RS-7: a concentrated harm draws lobbying for repeal by those who can organize (can_organize): the former legal sellers.
 pr_lobby(C) :- prohibition(C), holds(can_organize(C)), not exception(rs_7, C).
 fired(rs_7, pr_lobby(C), can_organize(C)) :- pr_lobby(C).
 effect(pr_lobby(C), B, "lobbying_effort", increase, medium, invisible, "B") :- pr_lobby(C), bound(C, B).
-effect(pr_lobby(C), X, "lobbying_effort", increase, medium, invisible, "B") :- pr_lobby(C), pr_buyer(C, X).
+% The buyers lobby only where they too have a concentrated stake and can organize (buyers_organize; found out of sample on
+% WE-018: nobody campaigns over a 2-cent bag).
+pr_buyers_lobby(C) :- prohibition(C), holds(buyers_organize(C)), not exception(rs_7, C).
+fired(rs_7, pr_buyers_lobby(C), buyers_organize(C)) :- pr_buyers_lobby(C).
+effect(pr_buyers_lobby(C), X, "lobbying_effort", increase, medium, invisible, "B") :- pr_buyers_lobby(C), pr_buyer(C, X).
 
 % OC-3: a ban must be enforced (Tier A); with a raised general budget, OC-1's payers bear it (the payer group unless a tax
 % is named).
@@ -117,7 +136,9 @@ effect(pr_administered(C), E, "enforcement_cost", increase, short, invisible, "A
 pr_funded(C) :- pr_administered(C), general_budget(C), not exception(oc_1, C).
 fired(oc_1, pr_funded(C), general_budget(C)) :- pr_funded(C).
 effect(pr_funded(C), T, "resources_available_other_uses", decrease, short, invisible, "A") :- pr_funded(C), tax_named(C), taxpayer(C, T).
-group_effect(pr_funded(C), G, "resources_available_other_uses", at_least_one_decrease, short, invisible, "A") :- pr_funded(C), pr_payer_group(C, G), not tax_named(C).
+% Not where fees or fines from the measure are paid into the same budget (fees_to_budget): the payers' net is then unsigned
+% without a premise on which is larger (OC-1 1.0; found out of sample on WE-053).
+group_effect(pr_funded(C), G, "resources_available_other_uses", at_least_one_decrease, short, invisible, "A") :- pr_funded(C), pr_payer_group(C, G), not tax_named(C), not fees_to_budget(C).
 
 #show holds/1.
 #show fired/3.

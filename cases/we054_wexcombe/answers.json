@@ -124,5 +124,12 @@
   "probability": 0.05,
   "rationale": "No matching assumption in WE-054; judged from the text: flights cannot be stored or bought ahead of the curfew.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.buyers_organize",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No matching assumption in WE-054; judged from the text: A-15 names night operators, slot holders, entrants and residents' associations; the buyers of night flights are dispersed travelers and shippers.",
+  "evidence": []
  }
 ]

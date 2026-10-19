@@ -26,12 +26,6 @@ EXCEPTIONS = {
         "member of the OC-1 group; the table assumes a budget that rises with the task, so the cost falls on current taxpayers (C-19)",
     ("recipients.other_spending", "resources_available_other_uses", "at_least_one_decrease", None):
         "member of the OC-1 group; the table assumes a budget that rises with the task (C-19)",
-    ("retailers.brennick", "number_of_sellers", "decrease", None):
-        "KNOWN WRONG: EN-7 reads a ban as driving legal sellers out; here the ban is on a free giveaway and every store keeps selling its goods",
-    ("shoppers", "lobbying_effort", "increase", None):
-        "KNOWN WRONG: RS-7 gives the banned good's buyers lobbying; the table has makers, substitute makers and retailers only (C-11), and shoppers have no concentrated stake in a 2-cent bag",
-    ("shoppers.edge", "search_cost", "increase", None):
-        "KNOWN WRONG: RS-4's crossing cost; section 9 says no separate travel cost is recorded, since edge shoppers find the other store about as convenient",
 }
 NOT_PRODUCED = {
     "C-2": "K2 is a price_floor, which has no rules; the engine's price_paid (the risk price) needs demand_persists, which is unreported at 0.2",

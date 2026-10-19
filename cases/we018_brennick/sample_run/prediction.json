@@ -6,17 +6,29 @@
    "p": 0.95,
    "text": "Legal substitutes are acceptable to some buyers."
   },
+  "buyers_organize(k1)": {
+   "assumption_class": "other",
+   "id": "buyers_organize(k1)",
+   "p": 0.1,
+   "text": "The buyers have a concentrated stake and can organize for repeal."
+  },
   "can_organize(k1)": {
    "assumption_class": "other",
    "id": "can_organize(k1)",
    "p": 0.7,
-   "text": "The former sellers or the buyers can organize to seek repeal."
+   "text": "The former legal sellers can organize to seek repeal."
   },
   "cross_border_feasible(k1)": {
    "assumption_class": "mobility",
    "id": "cross_border_feasible(k1)",
    "p": 0.55,
    "text": "Enough buyers can easily buy across the boundary, where the tax does not apply."
+  },
+  "crossing_extra_trip(k1)": {
+   "assumption_class": "mobility",
+   "id": "crossing_extra_trip(k1)",
+   "p": 0.2,
+   "text": "Buying across the boundary takes trips the buyers would not otherwise make."
   },
   "demand_persists(k1)": {
    "assumption_class": "other",
@@ -247,11 +259,13 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "enforced(k1)"
+     "enforced(k1)",
+     "no_other_use(k1)"
     ]
    ],
    "assumptions": [
-    "enforced(k1)"
+    "enforced(k1)",
+    "no_other_use(k1)"
    ],
    "combines": [],
    "comparison": null,
@@ -262,6 +276,20 @@
       "enforced(k1)"
      ],
      "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "CR-1"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "no_other_use(k1)"
+     ],
+     "rule": "SB-4"
     }
    ],
    "group": [],
@@ -272,7 +300,7 @@
    ],
    "id": "C-5",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "decrease",
    "sign_by_reading": {},
    "tier": "B",
@@ -362,20 +390,30 @@
    "assumption_sets": [
     [
      "demand_persists(k1)",
+     "enforced(k1)",
      "evasion(k1)"
     ]
    ],
    "assumptions": [
     "demand_persists(k1)",
+    "enforced(k1)",
     "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k1)",
      "premises": [
-      "demand_persists(k1)"
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
      ],
      "rule": "EN-7"
     },
@@ -409,20 +447,30 @@
    "assumption_sets": [
     [
      "demand_persists(k1)",
+     "enforced(k1)",
      "evasion(k1)"
     ]
    ],
    "assumptions": [
     "demand_persists(k1)",
+    "enforced(k1)",
     "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k1)",
      "premises": [
-      "demand_persists(k1)"
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
      ],
      "rule": "EN-7"
     },
@@ -532,20 +580,30 @@
    "assumption_sets": [
     [
      "demand_persists(k1)",
+     "enforced(k1)",
      "evasion(k1)"
     ]
    ],
    "assumptions": [
     "demand_persists(k1)",
+    "enforced(k1)",
     "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k1)",
      "premises": [
-      "demand_persists(k1)"
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
      ],
      "rule": "EN-7"
     },
@@ -578,19 +636,19 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "can_organize(k1)"
+     "buyers_organize(k1)"
     ]
    ],
    "assumptions": [
-    "can_organize(k1)"
+    "buyers_organize(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
-     "conclusion": "pr_lobby(k1)",
+     "conclusion": "pr_buyers_lobby(k1)",
      "premises": [
-      "can_organize(k1)"
+      "buyers_organize(k1)"
      ],
      "rule": "RS-7"
     }
@@ -602,7 +660,7 @@
    ],
    "id": "C-13",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
@@ -616,16 +674,42 @@
    "assumption_sets": [
     [
      "demand_persists(k1)",
-     "enforcement_risk(k1)"
+     "enforced(k1)",
+     "enforcement_risk(k1)",
+     "evasion(k1)"
     ]
    ],
    "assumptions": [
     "demand_persists(k1)",
-    "enforcement_risk(k1)"
+    "enforced(k1)",
+    "enforcement_risk(k1)",
+    "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
     {
      "conclusion": "pr_risk_price(k1)",
      "premises": [
@@ -636,7 +720,7 @@
     {
      "conclusion": "pr_risk_price(k1)",
      "premises": [
-      "demand_persists(k1)"
+      "pr_underground(k1)"
      ],
      "rule": "EN-7"
     }
@@ -663,20 +747,30 @@
    "assumption_sets": [
     [
      "demand_persists(k1)",
+     "enforced(k1)",
      "evasion(k1)"
     ]
    ],
    "assumptions": [
     "demand_persists(k1)",
+    "enforced(k1)",
     "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k1)",
      "premises": [
-      "demand_persists(k1)"
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
      ],
      "rule": "EN-7"
     },
@@ -710,20 +804,30 @@
    "assumption_sets": [
     [
      "demand_persists(k1)",
+     "enforced(k1)",
      "evasion(k1)"
     ]
    ],
    "assumptions": [
     "demand_persists(k1)",
+    "enforced(k1)",
     "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k1)",
      "premises": [
-      "demand_persists(k1)"
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
      ],
      "rule": "EN-7"
     },
@@ -757,16 +861,42 @@
    "assumption_sets": [
     [
      "demand_persists(k1)",
-     "enforcement_risk(k1)"
+     "enforced(k1)",
+     "enforcement_risk(k1)",
+     "evasion(k1)"
     ]
    ],
    "assumptions": [
     "demand_persists(k1)",
-    "enforcement_risk(k1)"
+    "enforced(k1)",
+    "enforcement_risk(k1)",
+    "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
     {
      "conclusion": "pr_risk_price(k1)",
      "premises": [
@@ -777,7 +907,7 @@
     {
      "conclusion": "pr_risk_price(k1)",
      "premises": [
-      "demand_persists(k1)"
+      "pr_underground(k1)"
      ],
      "rule": "EN-7"
     }
@@ -917,20 +1047,30 @@
    "assumption_sets": [
     [
      "demand_persists(k1)",
+     "enforced(k1)",
      "evasion(k1)"
     ]
    ],
    "assumptions": [
     "demand_persists(k1)",
+    "enforced(k1)",
     "evasion(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k1)",
      "premises": [
-      "demand_persists(k1)"
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
      ],
      "rule": "EN-7"
     },
@@ -1001,21 +1141,23 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "cross_border_feasible(k1)"
+     "cross_border_feasible(k1)",
+     "crossing_extra_trip(k1)"
     ]
    ],
    "assumptions": [
-    "cross_border_feasible(k1)"
+    "cross_border_feasible(k1)",
+    "crossing_extra_trip(k1)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
-     "conclusion": "pr_cross(k1)",
+     "conclusion": "pr_cross_trip(k1)",
      "premises": [
-      "cross_border_feasible(k1)"
+      "crossing_extra_trip(k1)"
      ],
-     "rule": "RS-4"
+     "rule": "OC-2"
     }
    ],
    "group": [],
@@ -1026,7 +1168,7 @@
    ],
    "id": "C-23",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
@@ -1074,31 +1216,31 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"retailers.brennick\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nprohibition(k1).\npr_buyer(k1, \"shoppers\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nrevenue(k1, \"officials.enforcement\").\npr_informal_buyer(k1, \"shoppers\").\npr_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\npr_informal_seller(k1, \"retailers.small\").\nmobile_buyer(k1, \"shoppers.edge\").\nneighbor_seller(k1, \"retailers.fallow_creek\").\npr_substitute_seller(k1, \"sellers.substitutes\").\ndefinition_line(k1).\ngeneral_budget(k1).\nbound(k2, \"retailers.brennick\").\nprotected(k2, \"shoppers.assistance\").\nexcluded(k2, \"buyers.prospective\").\nassumption(enforced(k1)).\nassumption(demand_persists(k1)).\nassumption(evasion(k1)).\nassumption(enforcement_risk(k1)).\nassumption(no_other_use(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(can_organize(k1)).\nassumption(cross_border_feasible(k1)).\nassumption(reshaping_pays(k1)).\nassumption(stockpile_ahead(k1)).\n",
+ "engine_facts": "bound(k1, \"retailers.brennick\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nprohibition(k1).\npr_buyer(k1, \"shoppers\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nrevenue(k1, \"officials.enforcement\").\npr_informal_buyer(k1, \"shoppers\").\npr_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\npr_informal_seller(k1, \"retailers.small\").\nmobile_buyer(k1, \"shoppers.edge\").\nneighbor_seller(k1, \"retailers.fallow_creek\").\npr_substitute_seller(k1, \"sellers.substitutes\").\ndefinition_line(k1).\ngeneral_budget(k1).\nbound(k2, \"retailers.brennick\").\nprotected(k2, \"shoppers.assistance\").\nexcluded(k2, \"buyers.prospective\").\nassumption(enforced(k1)).\nassumption(demand_persists(k1)).\nassumption(evasion(k1)).\nassumption(enforcement_risk(k1)).\nassumption(no_other_use(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(can_organize(k1)).\nassumption(buyers_organize(k1)).\nassumption(cross_border_feasible(k1)).\nassumption(crossing_extra_trip(k1)).\nassumption(reshaping_pays(k1)).\nassumption(stockpile_ahead(k1)).\n",
  "explanations": [
   "C-1. Compared with no Brennick Carryout Bag Ordinance, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
   "C-2. Compared with no Brennick Carryout Bag Ordinance, asset value for retailers.brennick falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.85); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
   "C-3. Compared with no Brennick Carryout Bag Ordinance, employment for retailers.brennick falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.85); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-4. Compared with no Brennick Carryout Bag Ordinance, lobbying effort for retailers.brennick rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.70). Reported.",
-  "C-5. Compared with no Brennick Carryout Bag Ordinance, number of sellers for retailers.brennick falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.85). Reported.",
+  "C-4. Compared with no Brennick Carryout Bag Ordinance, lobbying effort for retailers.brennick rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former legal sellers can organize to seek repeal (p = 0.70). Reported.",
+  "C-5. Compared with no Brennick Carryout Bag Ordinance, number of sellers for retailers.brennick falls from the short run onward (tier B, visible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.85); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
   "C-6. Compared with no Brennick Carryout Bag Ordinance, quantity traded for retailers.brennick falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.85). Reported.",
   "C-7. Compared with no Brennick Carryout Bag Ordinance, quantity traded for retailers.fallow_creek rises from the short run onward (tier B, invisible). Why: RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.55). Reported.",
-  "C-8. Compared with no Brennick Carryout Bag Ordinance, disputes settled outside courts for retailers.small rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-9. Compared with no Brennick Carryout Bag Ordinance, informal activity for retailers.small rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-8. Compared with no Brennick Carryout Bag Ordinance, disputes settled outside courts for retailers.small rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); The legal sellers comply with the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-9. Compared with no Brennick Carryout Bag Ordinance, informal activity for retailers.small rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); The legal sellers comply with the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
   "C-10. Compared with no Brennick Carryout Bag Ordinance, reclassification for retailers.small rises from the short run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.60). Reported.",
   "C-11. Compared with no Brennick Carryout Bag Ordinance, reclassification for sellers.substitutes rises from the short run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.60). Reported.",
-  "C-12. Compared with no Brennick Carryout Bag Ordinance, disputes settled outside courts for shoppers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-13. Compared with no Brennick Carryout Bag Ordinance, lobbying effort for shoppers rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.70). Reported.",
-  "C-14. Compared with no Brennick Carryout Bag Ordinance, price paid for shoppers rises from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); Informal sellers face a real risk of punishment (p = 0.50). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-15. Compared with no Brennick Carryout Bag Ordinance, quality information for shoppers falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-16. Compared with no Brennick Carryout Bag Ordinance, quality variability for shoppers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-17. Compared with no Brennick Carryout Bag Ordinance, quantity demanded for shoppers falls from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); Informal sellers face a real risk of punishment (p = 0.50). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-12. Compared with no Brennick Carryout Bag Ordinance, disputes settled outside courts for shoppers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); The legal sellers comply with the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-13. Compared with no Brennick Carryout Bag Ordinance, lobbying effort for shoppers rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The buyers have a concentrated stake and can organize for repeal (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-14. Compared with no Brennick Carryout Bag Ordinance, price paid for shoppers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; CR-7: CR-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); The legal sellers comply with the ban (p = 0.85); Informal sellers face a real risk of punishment (p = 0.50); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-15. Compared with no Brennick Carryout Bag Ordinance, quality information for shoppers falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); The legal sellers comply with the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-16. Compared with no Brennick Carryout Bag Ordinance, quality variability for shoppers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); The legal sellers comply with the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-17. Compared with no Brennick Carryout Bag Ordinance, quantity demanded for shoppers falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; CR-7: CR-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); The legal sellers comply with the ban (p = 0.85); Informal sellers face a real risk of punishment (p = 0.50); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
   "C-18. Compared with no Brennick Carryout Bag Ordinance, quantity demanded for shoppers rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.70). Reported.",
   "C-19. Compared with no Brennick Carryout Bag Ordinance, quantity substitute for shoppers rises from the short run onward (tier B, invisible). Why: RS-1: when a good becomes dearer, buyers turn to substitutes. This holds if: Legal substitutes are acceptable to some buyers (p = 0.95). Reported.",
   "C-20. Compared with no Brennick Carryout Bag Ordinance, quantity traded for shoppers falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.85). Reported.",
-  "C-21. Compared with no Brennick Carryout Bag Ordinance, search cost for shoppers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-21. Compared with no Brennick Carryout Bag Ordinance, search cost for shoppers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); The legal sellers comply with the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
   "C-22. Compared with no Brennick Carryout Bag Ordinance, cross border purchases for shoppers.edge rises from the short run onward (tier B, invisible). Why: RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.55). Reported.",
-  "C-23. Compared with no Brennick Carryout Bag Ordinance, search cost for shoppers.edge rises from the short run onward (tier B, invisible). Why: RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.55). Reported.",
+  "C-23. Compared with no Brennick Carryout Bag Ordinance, search cost for shoppers.edge rises from the short run onward (tier B, invisible). Why: OC-2: OC-2. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.55); Buying across the boundary takes trips the buyers would not otherwise make (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
   "C-24. Compared with no Brennick Carryout Bag Ordinance, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier A, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
  ],
  "questions": [
@@ -1225,7 +1367,25 @@
     "id": "k1.can_organize",
     "kind": "noul",
     "options": [],
-    "text": "Can the former legal sellers or the buyers organize to seek repeal at a cost below their stake?"
+    "text": "Can the former legal sellers organize to seek repeal at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k1.buyers_organize",
+    "rationale": "No matching assumption in WE-018; judged from the text: A-8 names bag makers and retailers as able to organize; shoppers' stake in a bag is a few cents.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "buyers_organize",
+    "assumption_class": "other",
+    "id": "k1.buyers_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the buyers have a stake in the banned good large enough to organize for repeal at a cost below it?"
    }
   },
   {
@@ -1244,6 +1404,24 @@
     "kind": "noul",
     "options": [],
     "text": "Can enough of the buyers easily buy the taxed good on the other side of the boundary, in a place without the tax, for crossing to be worth its cost to them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.2,
+    "question_id": "k1.crossing_extra_trip",
+    "rationale": "No matching assumption in WE-018; judged from the text: shoppers near the edge already shop across the line, so buying bags there takes no extra trip.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "crossing_extra_trip",
+    "assumption_class": "mobility",
+    "id": "k1.crossing_extra_trip",
+    "kind": "noul",
+    "options": [],
+    "text": "Would buying across the boundary take trips the buyers would not otherwise make?"
    }
   },
   {
@@ -1311,6 +1489,7 @@
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "fees_to_budget": false,
     "field_contested": false,
     "foreign_seller_actor": "sellers.foreign",
     "future_taxpayer_actor": "taxpayers.future",
@@ -1332,6 +1511,7 @@
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
     "own_revenue_funded": false,
+    "practice_ban": false,
     "price_fixed": false,
     "prospective_buyer_actor": null,
     "protected_actor": null,
@@ -1400,6 +1580,7 @@
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "fees_to_budget": false,
     "field_contested": false,
     "foreign_seller_actor": "sellers.foreign",
     "future_taxpayer_actor": "taxpayers.future",
@@ -1421,6 +1602,7 @@
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
     "own_revenue_funded": false,
+    "practice_ban": false,
     "price_fixed": false,
     "prospective_buyer_actor": null,
     "protected_actor": "shoppers.assistance",
@@ -1484,7 +1666,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-19T18:52:36+00:00",
+ "run_at": "2026-10-19T19:14:04+00:00",
  "sources_held_back": [],
  "unclear": [
   {

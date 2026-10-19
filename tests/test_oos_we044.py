@@ -33,8 +33,6 @@ EXCEPTIONS = {
         "RS-3 and RS-10 on K3's unregistered lets (the k3 buyers): the table puts the underground trade on guests.off_platform (C-13)",
     ("guests.whole_unit", "quality_information", "decrease", None):
         "same chain as the row above (K3's unregistered lets); the table has it for guests.off_platform (C-12)",
-    ("guests.whole_unit", "lobbying_effort", "increase", None):
-        "RS-7 for the buyers; C-15 lists hosts, platforms, hotels and associations, not the guests (a diffuse group)",
     ("guests.whole_unit", "price_paid", "increase", None):
         "KNOWN WRONG: EN-7 and CR-7, a risk premium paid by the legal buyers; A-27 and C-14 say hosts in breach screen guests and do not price the risk guest by guest, and the lawful on-platform guests face no such premium",
     ("guests.whole_unit", "quantity_demanded", "decrease", None):
@@ -51,8 +49,6 @@ EXCEPTIONS = {
         "RS-10, the sellers' side of C-13",
     ("hosts.in_breach", "reclassification", "increase", None):
         "RS-5 on the informal sellers; C-59 has the reclassification on hosts.non_primary, the unsplit class",
-    ("hosts.non_primary", "number_of_sellers", "decrease", None):
-        "EN-7: fewer lawful hosts, the head count behind C-1 (the table signs nights, not hosts)",
     ("hosts.primary", "employment", "decrease", None):
         "KNOWN WRONG: EN-3 on K3 as a licence that excludes entrants from an occupation; K3 is a registration fee and proof of residence on an exempt use (CR-4 fixed cost per outlet, C-17), nobody is excluded from a trade and there is no employment effect",
     ("hosts.primary", "entry_rate", "decrease", None):

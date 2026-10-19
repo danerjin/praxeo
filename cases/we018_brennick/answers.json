@@ -1,12 +1,86 @@
 [
- {"question_id": "k1.enforced", "value": "yes", "probability": 0.85, "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-1: most retailers comply, chains in particular.", "evidence": []},
- {"question_id": "k1.demand_persists", "value": "yes", "probability": 0.2, "rationale": "No matching assumption in WE-018; judged from the text: a thin bag costs the stores about 2 cents and a legal replacement is cheap, so few shoppers would keep wanting the banned bag itself.", "evidence": []},
- {"question_id": "k1.evasion", "value": "yes", "probability": 0.6, "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-5: some small stores keep handing out thin bags, or waive the fee, without being caught.", "evidence": []},
- {"question_id": "k1.enforcement_risk", "value": "yes", "probability": 0.5, "rationale": "No matching assumption in WE-018; judged from the text: enforcement is complaint-driven and starts with a written warning, so the risk of punishment is real but modest.", "evidence": []},
- {"question_id": "k1.no_other_use", "value": "yes", "probability": 0.1, "rationale": "No matching assumption in WE-018; judged from the text: carryout bags are a small part of what retailers sell, so the stores keep selling their goods and their staff are not tied to bags.", "evidence": []},
- {"question_id": "k1.buyer_substitutes", "value": "yes", "probability": 0.95, "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-2: shoppers accept reusable and paper bags as substitutes.", "evidence": []},
- {"question_id": "k1.can_organize", "value": "yes", "probability": 0.7, "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-8: bag makers and retailers can organize at a cost below their stake.", "evidence": []},
- {"question_id": "k1.cross_border_feasible", "value": "yes", "probability": 0.55, "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-6: some shoppers near Route 9 are close to indifferent between stores on either side of the line.", "evidence": []},
- {"question_id": "k1.reshaping_pays", "value": "yes", "probability": 0.6, "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-4: thick plastic reusable bags can be sold cheaply at the till, and shoppers buy them.", "evidence": []},
- {"question_id": "k1.stockpile_ahead", "value": "yes", "probability": 0.7, "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-7: shoppers take extra free bags in the announcement window.", "evidence": []}
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-1: most retailers comply, chains in particular.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.demand_persists",
+  "value": "yes",
+  "probability": 0.2,
+  "rationale": "No matching assumption in WE-018; judged from the text: a thin bag costs the stores about 2 cents and a legal replacement is cheap, so few shoppers would keep wanting the banned bag itself.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-5: some small stores keep handing out thin bags, or waive the fee, without being caught.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforcement_risk",
+  "value": "yes",
+  "probability": 0.5,
+  "rationale": "No matching assumption in WE-018; judged from the text: enforcement is complaint-driven and starts with a written warning, so the risk of punishment is real but modest.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.no_other_use",
+  "value": "yes",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-018; judged from the text: carryout bags are a small part of what retailers sell, so the stores keep selling their goods and their staff are not tied to bags.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyer_substitutes",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-2: shoppers accept reusable and paper bags as substitutes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-8: bag makers and retailers can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.cross_border_feasible",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-6: some shoppers near Route 9 are close to indifferent between stores on either side of the line.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-4: thick plastic reusable bags can be sold cheaply at the till, and shoppers buy them.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.stockpile_ahead",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-7: shoppers take extra free bags in the announcement window.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyers_organize",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-018; judged from the text: A-8 names bag makers and retailers as able to organize; shoppers' stake in a bag is a few cents.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.crossing_extra_trip",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No matching assumption in WE-018; judged from the text: shoppers near the edge already shop across the line, so buying bags there takes no extra trip.",
+  "evidence": []
+ }
 ]

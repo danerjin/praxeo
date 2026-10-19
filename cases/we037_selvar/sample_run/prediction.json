@@ -18,6 +18,12 @@
    "p": 0.6,
    "text": "Legal substitutes are acceptable to some buyers."
   },
+  "buyers_organize(k2)": {
+   "assumption_class": "other",
+   "id": "buyers_organize(k2)",
+   "p": 0.85,
+   "text": "The buyers have a concentrated stake and can organize for repeal."
+  },
   "buyouts_limited(k1)": {
    "assumption_class": "other",
    "id": "buyouts_limited(k1)",
@@ -34,7 +40,7 @@
    "assumption_class": "other",
    "id": "can_organize(k2)",
    "p": 0.4,
-   "text": "The former sellers or the buyers can organize to seek repeal."
+   "text": "The former legal sellers can organize to seek repeal."
   },
   "commutable(k1)": {
    "assumption_class": "mobility",
@@ -327,11 +333,13 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "enforced(k2)"
+     "enforced(k2)",
+     "no_other_use(k2)"
     ]
    ],
    "assumptions": [
-    "enforced(k2)"
+    "enforced(k2)",
+    "no_other_use(k2)"
    ],
    "combines": [],
    "comparison": null,
@@ -342,6 +350,20 @@
       "enforced(k2)"
      ],
      "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_specific(k2)",
+     "premises": [
+      "pr_legal_stops(k2)"
+     ],
+     "rule": "CR-1"
+    },
+    {
+     "conclusion": "pr_specific(k2)",
+     "premises": [
+      "no_other_use(k2)"
+     ],
+     "rule": "SB-4"
     }
    ],
    "group": [],
@@ -1797,20 +1819,30 @@
    "assumption_sets": [
     [
      "demand_persists(k2)",
+     "enforced(k2)",
      "evasion(k2)"
     ]
    ],
    "assumptions": [
     "demand_persists(k2)",
+    "enforced(k2)",
     "evasion(k2)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k2)",
      "premises": [
-      "demand_persists(k2)"
+      "demand_persists(k2)",
+      "pr_legal_stops(k2)"
      ],
      "rule": "EN-7"
     },
@@ -1830,7 +1862,7 @@
    ],
    "id": "C-30",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
@@ -1848,21 +1880,19 @@
      "enforced(k1)"
     ],
     [
-     "can_organize(k2)"
+     "buyers_organize(k2)"
     ]
    ],
    "assumptions": [
-    "binding(k1)",
-    "can_organize(k1)",
-    "enforced(k1)"
+    "buyers_organize(k2)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
-     "conclusion": "pr_lobby(k2)",
+     "conclusion": "pr_buyers_lobby(k2)",
      "premises": [
-      "can_organize(k2)"
+      "buyers_organize(k2)"
      ],
      "rule": "RS-7"
     },
@@ -2059,16 +2089,42 @@
    "assumption_sets": [
     [
      "demand_persists(k2)",
-     "enforcement_risk(k2)"
+     "enforced(k2)",
+     "enforcement_risk(k2)",
+     "evasion(k2)"
     ]
    ],
    "assumptions": [
     "demand_persists(k2)",
-    "enforcement_risk(k2)"
+    "enforced(k2)",
+    "enforcement_risk(k2)",
+    "evasion(k2)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k2)",
+     "premises": [
+      "demand_persists(k2)",
+      "pr_legal_stops(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k2)",
+     "premises": [
+      "evasion(k2)"
+     ],
+     "rule": "RS-3"
+    },
     {
      "conclusion": "pr_risk_price(k2)",
      "premises": [
@@ -2079,7 +2135,7 @@
     {
      "conclusion": "pr_risk_price(k2)",
      "premises": [
-      "demand_persists(k2)"
+      "pr_underground(k2)"
      ],
      "rule": "EN-7"
     }
@@ -2106,20 +2162,30 @@
    "assumption_sets": [
     [
      "demand_persists(k2)",
+     "enforced(k2)",
      "evasion(k2)"
     ]
    ],
    "assumptions": [
     "demand_persists(k2)",
+    "enforced(k2)",
     "evasion(k2)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k2)",
      "premises": [
-      "demand_persists(k2)"
+      "demand_persists(k2)",
+      "pr_legal_stops(k2)"
      ],
      "rule": "EN-7"
     },
@@ -2139,7 +2205,7 @@
    ],
    "id": "C-36",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "decrease",
    "sign_by_reading": {},
    "tier": "B",
@@ -2153,20 +2219,30 @@
    "assumption_sets": [
     [
      "demand_persists(k2)",
+     "enforced(k2)",
      "evasion(k2)"
     ]
    ],
    "assumptions": [
     "demand_persists(k2)",
+    "enforced(k2)",
     "evasion(k2)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k2)",
      "premises": [
-      "demand_persists(k2)"
+      "demand_persists(k2)",
+      "pr_legal_stops(k2)"
      ],
      "rule": "EN-7"
     },
@@ -2186,7 +2262,7 @@
    ],
    "id": "C-37",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
@@ -2200,16 +2276,42 @@
    "assumption_sets": [
     [
      "demand_persists(k2)",
-     "enforcement_risk(k2)"
+     "enforced(k2)",
+     "enforcement_risk(k2)",
+     "evasion(k2)"
     ]
    ],
    "assumptions": [
     "demand_persists(k2)",
-    "enforcement_risk(k2)"
+    "enforced(k2)",
+    "enforcement_risk(k2)",
+    "evasion(k2)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k2)",
+     "premises": [
+      "demand_persists(k2)",
+      "pr_legal_stops(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k2)",
+     "premises": [
+      "evasion(k2)"
+     ],
+     "rule": "RS-3"
+    },
     {
      "conclusion": "pr_risk_price(k2)",
      "premises": [
@@ -2220,7 +2322,7 @@
     {
      "conclusion": "pr_risk_price(k2)",
      "premises": [
-      "demand_persists(k2)"
+      "pr_underground(k2)"
      ],
      "rule": "EN-7"
     }
@@ -2575,20 +2677,30 @@
    "assumption_sets": [
     [
      "demand_persists(k2)",
+     "enforced(k2)",
      "evasion(k2)"
     ]
    ],
    "assumptions": [
     "demand_persists(k2)",
+    "enforced(k2)",
     "evasion(k2)"
    ],
    "combines": [],
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
      "conclusion": "pr_underground(k2)",
      "premises": [
-      "demand_persists(k2)"
+      "demand_persists(k2)",
+      "pr_legal_stops(k2)"
      ],
      "rule": "EN-7"
     },
@@ -2608,7 +2720,7 @@
    ],
    "id": "C-45",
    "item": null,
-   "reported": true,
+   "reported": false,
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
@@ -2870,12 +2982,12 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "ceiling(k1).\nbound(k1, \"resellers.brokers\").\nprotected(k1, \"buyers.insiders\").\nexcluded(k1, \"buyers.outsiders\").\nannounced(k1).\nenforcer(k1, \"officials.enforcement\").\nneighbor(k1, \"neighboring_jurisdictions\").\nbound(k2, \"bot_vendors\").\nexcluded(k2, \"buyers.prospective\").\nprohibition(k2).\npr_buyer(k2, \"resellers.brokers\").\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nrevenue(k2, \"officials.enforcement\").\npr_informal_buyer(k2, \"resellers.brokers\").\npr_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(alternative_uses(k1)).\nassumption(nontransferable(k1)).\nassumption(buyouts_limited(k1)).\nassumption(would_leave(k1)).\nassumption(lockin_dominates(k1)).\nassumption(keepers_dominate(k1)).\nassumption(substitutes(k1)).\nassumption(search_open(k1)).\nassumption(selection_open(k1)).\nassumption(quality_adjustable(k1)).\nassumption(evasion(k1)).\nassumption(opportunities_need_move(k1)).\nassumption(can_organize(k1)).\nassumption(durable_assets(k1)).\nassumption(expected_to_last(k1)).\nassumption(commutable(k1)).\nassumption(relet_obstructs(k1)).\nassumption(exit_process(k1)).\nassumption(window_repricing(k1)).\nassumption(counterfactual_catches_up(k1)).\nassumption(enforced(k2)).\nassumption(demand_persists(k2)).\nassumption(evasion(k2)).\nassumption(enforcement_risk(k2)).\nassumption(no_other_use(k2)).\nassumption(buyer_substitutes(k2)).\nassumption(can_organize(k2)).\n",
+ "engine_facts": "ceiling(k1).\nbound(k1, \"resellers.brokers\").\nprotected(k1, \"buyers.insiders\").\nexcluded(k1, \"buyers.outsiders\").\nannounced(k1).\nenforcer(k1, \"officials.enforcement\").\nneighbor(k1, \"neighboring_jurisdictions\").\nbound(k2, \"bot_vendors\").\nexcluded(k2, \"buyers.prospective\").\nprohibition(k2).\npr_buyer(k2, \"resellers.brokers\").\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nrevenue(k2, \"officials.enforcement\").\npr_informal_buyer(k2, \"resellers.brokers\").\npr_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(alternative_uses(k1)).\nassumption(nontransferable(k1)).\nassumption(buyouts_limited(k1)).\nassumption(would_leave(k1)).\nassumption(lockin_dominates(k1)).\nassumption(keepers_dominate(k1)).\nassumption(substitutes(k1)).\nassumption(search_open(k1)).\nassumption(selection_open(k1)).\nassumption(quality_adjustable(k1)).\nassumption(evasion(k1)).\nassumption(opportunities_need_move(k1)).\nassumption(can_organize(k1)).\nassumption(durable_assets(k1)).\nassumption(expected_to_last(k1)).\nassumption(commutable(k1)).\nassumption(relet_obstructs(k1)).\nassumption(exit_process(k1)).\nassumption(window_repricing(k1)).\nassumption(counterfactual_catches_up(k1)).\nassumption(enforced(k2)).\nassumption(demand_persists(k2)).\nassumption(evasion(k2)).\nassumption(enforcement_risk(k2)).\nassumption(no_other_use(k2)).\nassumption(buyer_substitutes(k2)).\nassumption(can_organize(k2)).\nassumption(buyers_organize(k2)).\n",
  "explanations": [
   "C-1. Compared with no Selvar Fair Ticket Act, asset value for bot_vendors falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.45); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.70). Not reported: an assumption is below the 0.5 cut-off.",
   "C-2. Compared with no Selvar Fair Ticket Act, employment for bot_vendors falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.45); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.70). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-3. Compared with no Selvar Fair Ticket Act, lobbying effort for bot_vendors rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.40). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-4. Compared with no Selvar Fair Ticket Act, number of sellers for bot_vendors falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.45). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-3. Compared with no Selvar Fair Ticket Act, lobbying effort for bot_vendors rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former legal sellers can organize to seek repeal (p = 0.40). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-4. Compared with no Selvar Fair Ticket Act, number of sellers for bot_vendors falls from the short run onward (tier B, visible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.45); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.70). Not reported: an assumption is below the 0.5 cut-off.",
   "C-5. Compared with no Selvar Fair Ticket Act, quantity traded for bot_vendors falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.45). Not reported: an assumption is below the 0.5 cut-off.",
   "C-6. Compared with no Selvar Fair Ticket Act, informal activity for buyers.insiders rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Some exchanges take place above the ceiling without being caught (p = 0.80); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
   "C-7. Compared with no Selvar Fair Ticket Act, job changes for buyers.insiders falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less; RS-11: a benefit lost on moving ties the holder to staying put. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); Buyouts move fewer tenants than the cap keeps in place (p = 0.30); The ceiling is enforced against most bound sellers (p = 0.85); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.10); Some valued opportunities for the protected buyers would require giving up the covered unit (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
@@ -2901,22 +3013,22 @@
   "C-27. Compared with no Selvar Fair Ticket Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage. This holds if: no assumption. Reported.",
   "C-28. Compared with no Selvar Fair Ticket Act, asset value for resellers.brokers falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The covered assets are durable and their supply expands slowly (p = 0.15); The ceiling is enforced against most bound sellers (p = 0.85); Buyers of the covered assets expect the rule to last for many years (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
   "C-29. Compared with no Selvar Fair Ticket Act, compliance cost for resellers.brokers rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; OC-2: OC-2. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.60); The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Moving covered units to an alternative use requires a permit or board process (p = 0.02). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-30. Compared with no Selvar Fair Ticket Act, disputes settled outside courts for resellers.brokers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Enforcement is imperfect: many informal sales go undetected (p = 0.80). Reported.",
-  "C-31. Compared with no Selvar Fair Ticket Act, lobbying effort for resellers.brokers rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it; PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The groups with a concentrated stake can organize and spend to keep or change the rule (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-30. Compared with no Selvar Fair Ticket Act, disputes settled outside courts for resellers.brokers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); The legal sellers comply with the ban (p = 0.45); Enforcement is imperfect: many informal sales go undetected (p = 0.80). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-31. Compared with no Selvar Fair Ticket Act, lobbying effort for resellers.brokers rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it; PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage. This holds if: The buyers have a concentrated stake and can organize for repeal (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
   "C-32. Compared with no Selvar Fair Ticket Act, maintenance spending for resellers.brokers falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-4: PC-4; RS-2: RS-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
   "C-33. Compared with no Selvar Fair Ticket Act, net price received for resellers.brokers falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; PC-16: PC-16. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
   "C-34. Compared with no Selvar Fair Ticket Act, net price received for resellers.brokers rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Enough contracts come up for repricing in the announcement window, and sellers can raise the price on them (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-35. Compared with no Selvar Fair Ticket Act, price paid for resellers.brokers rises from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Informal sellers face a real risk of punishment (p = 0.45). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-36. Compared with no Selvar Fair Ticket Act, quality information for resellers.brokers falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Enforcement is imperfect: many informal sales go undetected (p = 0.80). Reported.",
-  "C-37. Compared with no Selvar Fair Ticket Act, quality variability for resellers.brokers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Enforcement is imperfect: many informal sales go undetected (p = 0.80). Reported.",
-  "C-38. Compared with no Selvar Fair Ticket Act, quantity demanded for resellers.brokers falls from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Informal sellers face a real risk of punishment (p = 0.45). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-35. Compared with no Selvar Fair Ticket Act, price paid for resellers.brokers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; CR-7: CR-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); The legal sellers comply with the ban (p = 0.45); Informal sellers face a real risk of punishment (p = 0.45); Enforcement is imperfect: many informal sales go undetected (p = 0.80). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-36. Compared with no Selvar Fair Ticket Act, quality information for resellers.brokers falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); The legal sellers comply with the ban (p = 0.45); Enforcement is imperfect: many informal sales go undetected (p = 0.80). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-37. Compared with no Selvar Fair Ticket Act, quality variability for resellers.brokers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); The legal sellers comply with the ban (p = 0.45); Enforcement is imperfect: many informal sales go undetected (p = 0.80). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-38. Compared with no Selvar Fair Ticket Act, quantity demanded for resellers.brokers falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; CR-7: CR-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); The legal sellers comply with the ban (p = 0.45); Informal sellers face a real risk of punishment (p = 0.45); Enforcement is imperfect: many informal sales go undetected (p = 0.80). Not reported: an assumption is below the 0.5 cut-off.",
   "C-39. Compared with no Selvar Fair Ticket Act, quantity substitute for resellers.brokers rises from the short run onward (tier B, invisible). Why: RS-1: when a good becomes dearer, buyers turn to substitutes. This holds if: Legal substitutes are acceptable to some buyers (p = 0.60). Reported.",
   "C-40. Compared with no Selvar Fair Ticket Act, quantity supplied for resellers.brokers falls in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.60); The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
   "C-41. Compared with no Selvar Fair Ticket Act, quantity traded for resellers.brokers falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap; OC-4: exchanges that no longer happen are lost to both sides. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.60); The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
   "C-42. Compared with no Selvar Fair Ticket Act, reclassification for resellers.brokers rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.60); The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
   "C-43. Compared with no Selvar Fair Ticket Act, resources available other uses (key money) for resellers.brokers rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Some exchanges take place above the ceiling without being caught (p = 0.80). Reported.",
   "C-44. Compared with no Selvar Fair Ticket Act, resources available other uses (rent forgone) for resellers.brokers falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; PC-16: PC-16; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
-  "C-45. Compared with no Selvar Fair Ticket Act, search cost for resellers.brokers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Enforcement is imperfect: many informal sales go undetected (p = 0.80). Reported.",
+  "C-45. Compared with no Selvar Fair Ticket Act, search cost for resellers.brokers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); The legal sellers comply with the ban (p = 0.45); Enforcement is imperfect: many informal sales go undetected (p = 0.80). Not reported: an assumption is below the 0.5 cut-off.",
   "C-46. Compared with no Selvar Fair Ticket Act, units held vacant for resellers.brokers rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-5: owners move resources to uses whose yield the ceiling does not cap. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.60); The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Re-letting a vacated unit obstructs the owner's later move to an alternative use (p = 0.02). Not reported: an assumption is below the 0.5 cut-off.",
   "C-47. Compared with no Selvar Fair Ticket Act, quality adjusted price for buyers.insiders falls from the medium run onward (tier B, invisible). Why: CR-12 total of C-8 (only one subclass's chain is reported). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
   "C-48. Compared with no Selvar Fair Ticket Act, resources available other uses for resellers.brokers falls from the medium run onward (tier B, invisible). Why: CR-12 total of C-44, C-43 (a dominance premise decides the sign). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Some exchanges take place above the ceiling without being caught (p = 0.80). Reported.",
@@ -3442,7 +3554,25 @@
     "id": "k2.can_organize",
     "kind": "noul",
     "options": [],
-    "text": "Can the former legal sellers or the buyers organize to seek repeal at a cost below their stake?"
+    "text": "Can the former legal sellers organize to seek repeal at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2.buyers_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-9: brokers, platforms, fan groups and primary sellers can organize at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyers_organize",
+    "assumption_class": "other",
+    "id": "k2.buyers_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the buyers have a stake in the banned good large enough to organize for repeal at a cost below it?"
    }
   }
  ],
@@ -3474,6 +3604,7 @@
     "excluded_actor": "buyers.outsiders",
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "fees_to_budget": false,
     "field_contested": false,
     "foreign_seller_actor": "sellers.foreign",
     "future_taxpayer_actor": "taxpayers.future",
@@ -3495,6 +3626,7 @@
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
     "own_revenue_funded": false,
+    "practice_ban": false,
     "price_fixed": false,
     "prospective_buyer_actor": null,
     "protected_actor": "buyers.insiders",
@@ -3564,6 +3696,7 @@
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "fees_to_budget": false,
     "field_contested": false,
     "foreign_seller_actor": "sellers.foreign",
     "future_taxpayer_actor": "taxpayers.future",
@@ -3585,6 +3718,7 @@
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
     "own_revenue_funded": false,
+    "practice_ban": false,
     "price_fixed": false,
     "prospective_buyer_actor": null,
     "protected_actor": null,
@@ -3649,7 +3783,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-19T18:53:56+00:00",
+ "run_at": "2026-10-19T19:14:06+00:00",
  "sources_held_back": [],
  "unclear": [
   {

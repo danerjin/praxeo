@@ -19,7 +19,7 @@ RECORD_PREDICATES = ("ceiling(", "decontrol(", "bound(", "protected(", "excluded
                      "definition_line(", "renewable(", "announced(", "rolled_back(", "taxpayer(", "protected_concentrated(",
                      "subsidy(", "per_unit_sub(", "share_cap(", "criteria(", "budget_capped(", "temporary(", "scrappage(",
                      "repay_on_move(", "field_contested(", "target_qty(", "claim_penalties(",
-                     "licensing(", "quota(", "transferable(", "import_quota(", "seller_cap(", "wider_market(", "general_budget(", "price_fixed(", "allocation_by_history(", "prohibition(", "volume_penalties(", "stocks_destroyed(", "taxed_before(", "mobile_buyer(", "rights_sold(", "holder_cap(", "self_supply(", "domestic_seller(", "downstream(", "importer(", "buyer(",
+                     "licensing(", "quota(", "transferable(", "import_quota(", "seller_cap(", "wider_market(", "general_budget(", "price_fixed(", "allocation_by_history(", "prohibition(", "volume_penalties(", "practice_ban(", "fees_to_budget(", "stocks_destroyed(", "taxed_before(", "mobile_buyer(", "rights_sold(", "holder_cap(", "self_supply(", "domestic_seller(", "downstream(", "importer(", "buyer(",
                      "exporter(", "seller(", "renewable(", "definition_line(", "relief_applicant(")
 
 
