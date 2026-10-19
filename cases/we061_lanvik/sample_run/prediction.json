@@ -1,0 +1,2149 @@
+{
+ "assumptions": {
+  "alternatives_worse(k1)": {
+   "assumption_class": "mobility",
+   "id": "alternatives_worse(k1)",
+   "p": 0.3,
+   "text": "The recipients' alternatives are worse than the providers'."
+  },
+  "binding(k1)": {
+   "assumption_class": "binding",
+   "id": "binding(k1)",
+   "p": 0.95,
+   "text": "The term was absent from some contracts, so the mandate binds for them."
+  },
+  "can_organize(k1)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1)",
+   "p": 0.9,
+   "text": "The bound providers can organize to lobby."
+  },
+  "can_screen(k1)": {
+   "assumption_class": "other",
+   "id": "can_screen(k1)",
+   "p": 0.7,
+   "text": "Providers can tell which applicants will cost more under the term."
+  },
+  "compete_with_bound(k1)": {
+   "assumption_class": "substitutability",
+   "id": "compete_with_bound(k1)",
+   "p": 0.75,
+   "text": "The unbound firms compete with the bound providers."
+  },
+  "enforced(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k1)",
+   "p": 0.8,
+   "text": "Most bound providers comply."
+  },
+  "floor_binds(k1)": {
+   "assumption_class": "binding",
+   "id": "floor_binds(k1)",
+   "p": 0.9,
+   "text": "An existing floor holds some recipients' wage."
+  },
+  "recipients_organize(k1)": {
+   "assumption_class": "other",
+   "id": "recipients_organize(k1)",
+   "p": 0.9,
+   "text": "The recipients can organize to lobby."
+  },
+  "reshaping_pays(k1)": {
+   "assumption_class": "other",
+   "id": "reshaping_pays(k1)",
+   "p": 0.5,
+   "text": "Reshaping goods to fall outside the definitions costs some actors less than the burden."
+  },
+  "rivals_bound(k1)": {
+   "assumption_class": "other",
+   "id": "rivals_bound(k1)",
+   "p": 0.8,
+   "text": "Most of the providers' rivals are bound too."
+  },
+  "staying_small_pays(k1)": {
+   "assumption_class": "other",
+   "id": "staying_small_pays(k1)",
+   "p": 0.5,
+   "text": "Some firms near the threshold value staying below it more than an extra hire."
+  },
+  "valued_on_earnings(k1)": {
+   "assumption_class": "expectations",
+   "id": "valued_on_earnings(k1)",
+   "p": 0.7,
+   "text": "The providers' businesses are valued on expected earnings."
+  },
+  "wages_adjust(k1)": {
+   "assumption_class": "other",
+   "id": "wages_adjust(k1)",
+   "p": 0.75,
+   "text": "The wage can adjust over the medium run."
+  },
+  "wages_sticky(k1)": {
+   "assumption_class": "other",
+   "id": "wages_sticky(k1)",
+   "p": 0.6,
+   "text": "The other money terms are fixed in the short run."
+  },
+  "worth_less(k1)": {
+   "assumption_class": "other",
+   "id": "worth_less(k1)",
+   "p": 0.55,
+   "text": "The term is worth less to the marginal recipient than it costs the provider."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "drivers.contractor",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "reshaping_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_reshaped(k1)",
+     "premises": [
+      "definition_line(k1)",
+      "reshaping_pays(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.employee",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "can_screen(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "can_screen(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_screen(k1)",
+     "premises": [
+      "can_screen(k1)",
+      "mc_binds(k1)"
+     ],
+     "rule": "RS-23"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "allocation_by_non_price_criteria",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.employee",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "wages_adjust(k1)"
+    ],
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "wages_sticky(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "wages_adjust(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_others_short(k1)",
+     "premises": [
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_others_short(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_wage(k1)",
+     "premises": [
+      "wages_adjust(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_wage(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_earn_down(k1)",
+     "premises": [
+      "mc_others_short(k1)",
+      "mc_wage(k1)"
+     ],
+     "rule": "CR-12"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "earnings",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.employee",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "floor_binds(k1)"
+    ],
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "worth_less(k1)"
+    ],
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "wages_sticky(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "floor_binds(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_floor(k1)",
+     "premises": [
+      "floor_binds(k1)",
+      "mc_binds(k1)"
+     ],
+     "rule": "PC-10"
+    },
+    {
+     "conclusion": "mc_others_medium(k1)",
+     "premises": [
+      "worth_less(k1)"
+     ],
+     "rule": "CR-2"
+    },
+    {
+     "conclusion": "mc_others_medium(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_others_short(k1)",
+     "premises": [
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_others_short(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked",
+    "non_wage_compensation"
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.employee",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "recipients_organize(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "recipients_organize(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_recipients_lobby(k1)",
+     "premises": [
+      "binding(k1)",
+      "recipients_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.employee",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "non_wage_compensation",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.employee",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternatives_worse(k1)",
+     "binding(k1)",
+     "enforced(k1)",
+     "wages_adjust(k1)"
+    ]
+   ],
+   "assumptions": [
+    "alternatives_worse(k1)",
+    "binding(k1)",
+    "enforced(k1)",
+    "wages_adjust(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_wage(k1)",
+     "premises": [
+      "wages_adjust(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_wage(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_incidence(k1)",
+     "premises": [
+      "alternatives_worse(k1)",
+      "mc_wage(k1)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "tax_share_borne",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.employee",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "wages_adjust(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "wages_adjust(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_wage(k1)",
+     "premises": [
+      "wages_adjust(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_wage(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "wage_rate",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_administered(k1)",
+     "premises": [
+      "mandate(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "platforms",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "valued_on_earnings(k1)",
+     "wages_sticky(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "valued_on_earnings(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "mc_capitalized(k1)",
+     "premises": [
+      "mc_returns(k1)",
+      "valued_on_earnings(k1)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "platforms",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_compliance(k1)",
+     "premises": [
+      "mandate(k1)"
+     ],
+     "rule": "OC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "platforms",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "can_organize(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "can_organize(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_lobby(k1)",
+     "premises": [
+      "binding(k1)",
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "platforms",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "worth_less(k1)"
+    ],
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "wages_sticky(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1)",
+     "premises": [
+      "worth_less(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "platforms",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "reshaping_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_reshaped(k1)",
+     "premises": [
+      "definition_line(k1)",
+      "reshaping_pays(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "platforms",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "wages_sticky(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "platforms",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "wages_sticky(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "return_on_capital",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "riders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "rivals_bound(k1)",
+     "worth_less(k1)"
+    ],
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "rivals_bound(k1)",
+     "wages_sticky(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "rivals_bound(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1)",
+     "premises": [
+      "worth_less(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_pass(k1)",
+     "premises": [
+      "mc_cost_stays(k1)",
+      "rivals_bound(k1)"
+     ],
+     "rule": "RS-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "riders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "rivals_bound(k1)",
+     "worth_less(k1)"
+    ],
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "rivals_bound(k1)",
+     "wages_sticky(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "rivals_bound(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1)",
+     "premises": [
+      "worth_less(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_pass(k1)",
+     "premises": [
+      "mc_cost_stays(k1)",
+      "rivals_bound(k1)"
+     ],
+     "rule": "RS-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-18",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.small_platform",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "compete_with_bound(k1)",
+     "enforced(k1)",
+     "valued_on_earnings(k1)",
+     "wages_sticky(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "compete_with_bound(k1)",
+    "enforced(k1)",
+    "valued_on_earnings(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "mc_capitalized(k1)",
+     "premises": [
+      "mc_returns(k1)",
+      "valued_on_earnings(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "mc_rivals_value(k1)",
+     "premises": [
+      "compete_with_bound(k1)",
+      "mc_capitalized(k1)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-19",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.small_platform",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "staying_small_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "staying_small_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_threshold(k1)",
+     "premises": [
+      "binding(k1)",
+      "size_threshold(k1)",
+      "staying_small_pays(k1)"
+     ],
+     "rule": "RS-17"
+    },
+    {
+     "conclusion": "mc_stay_small(k1)",
+     "premises": [
+      "mc_threshold(k1)"
+     ],
+     "rule": "RS-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-20",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "number_of_sellers",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.small_platform",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "compete_with_bound(k1)",
+     "enforced(k1)",
+     "worth_less(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "compete_with_bound(k1)",
+    "enforced(k1)",
+    "worth_less(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_others_medium(k1)",
+     "premises": [
+      "worth_less(k1)"
+     ],
+     "rule": "CR-2"
+    },
+    {
+     "conclusion": "mc_others_medium(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_rivals(k1)",
+     "premises": [
+      "compete_with_bound(k1)",
+      "mc_others_medium(k1)"
+     ],
+     "rule": "CR-9"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-21",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.substitutes",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "compete_with_bound(k1)",
+     "enforced(k1)",
+     "valued_on_earnings(k1)",
+     "wages_sticky(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "compete_with_bound(k1)",
+    "enforced(k1)",
+    "valued_on_earnings(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "mc_capitalized(k1)",
+     "premises": [
+      "mc_returns(k1)",
+      "valued_on_earnings(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "mc_rivals_value(k1)",
+     "premises": [
+      "compete_with_bound(k1)",
+      "mc_capitalized(k1)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-22",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.substitutes",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "compete_with_bound(k1)",
+     "enforced(k1)",
+     "worth_less(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "compete_with_bound(k1)",
+    "enforced(k1)",
+    "worth_less(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_others_medium(k1)",
+     "premises": [
+      "worth_less(k1)"
+     ],
+     "rule": "CR-2"
+    },
+    {
+     "conclusion": "mc_others_medium(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_rivals(k1)",
+     "premises": [
+      "compete_with_bound(k1)",
+      "mc_others_medium(k1)"
+     ],
+     "rule": "CR-9"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-23",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "taxpayers",
+   "actor_group": [
+    "taxpayers",
+    "recipients.other_spending",
+    "taxpayers.future"
+   ],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_funded(k1)",
+     "premises": [
+      "general_budget(k1)"
+     ],
+     "rule": "OC-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-24",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"platforms\").\nexcluded(k1, \"buyers.prospective\").\nmandate(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nmc_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nmc_recipient(k1, \"drivers.employee\").\nmc_floor_recipient(k1, \"drivers.employee\").\nmc_applicant(k1, \"drivers.employee\").\nmc_output_buyer(k1, \"riders\").\nmc_outside(k1, \"drivers.contractor\").\nmc_below_threshold(k1, \"sellers.small_platform\").\nmc_rival(k1, \"sellers.small_platform\").\nmc_rival(k1, \"sellers.substitutes\").\nsize_threshold(k1).\ndefinition_line(k1).\ngeneral_budget(k1).\nbound(k2, \"platforms\").\nprotected(k2, \"drivers.employee\").\nexcluded(k2, \"buyers.prospective\").\nbound(k5, \"platforms\").\nprotected(k5, \"drivers.contractor\").\nexcluded(k5, \"buyers.prospective\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(wages_sticky(k1)).\nassumption(wages_adjust(k1)).\nassumption(worth_less(k1)).\nassumption(alternatives_worse(k1)).\nassumption(valued_on_earnings(k1)).\nassumption(can_organize(k1)).\nassumption(recipients_organize(k1)).\nassumption(floor_binds(k1)).\nassumption(can_screen(k1)).\nassumption(rivals_bound(k1)).\nassumption(compete_with_bound(k1)).\nassumption(reshaping_pays(k1)).\nassumption(staying_small_pays(k1)).\n",
+ "explanations": [
+  "C-1. Compared with no Lanvik App-Based Work Act 2027, reclassification for drivers.contractor rises from the medium run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.50). Reported.",
+  "C-2. Compared with no Lanvik App-Based Work Act 2027, allocation by non price criteria for drivers.employee rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; RS-23: RS-23. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Providers can tell which applicants will cost more under the term (p = 0.70); Most bound providers comply (p = 0.80). Reported.",
+  "C-3. Compared with no Lanvik App-Based Work Act 2027, earnings for drivers.employee falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price; CR-12: CR-12. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80); The wage can adjust over the medium run (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-4. Compared with no Lanvik App-Based Work Act 2027, employment or hours worked or non wage compensation for drivers.employee falls for at least one of them from the short run onward (tier B, invisible). Why: PC-17: PC-17; PC-10: PC-10; CR-2: CR-2; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80); An existing floor holds some recipients' wage (p = 0.90). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-5. Compared with no Lanvik App-Based Work Act 2027, lobbying effort for drivers.employee rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); The recipients can organize to lobby (p = 0.90). Reported.",
+  "C-6. Compared with no Lanvik App-Based Work Act 2027, non wage compensation for drivers.employee rises from the short run onward (tier B, visible). Why: PC-17: PC-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80). Reported.",
+  "C-7. Compared with no Lanvik App-Based Work Act 2027, tax share borne for drivers.employee rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price; CR-7: CR-7. This holds if: The recipients' alternatives are worse than the providers' (p = 0.30); The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80); The wage can adjust over the medium run (p = 0.75). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-8. Compared with no Lanvik App-Based Work Act 2027, wage rate for drivers.employee falls from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80); The wage can adjust over the medium run (p = 0.75). Reported.",
+  "C-9. Compared with no Lanvik App-Based Work Act 2027, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-10. Compared with no Lanvik App-Based Work Act 2027, asset value for platforms falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80); The providers' businesses are valued on expected earnings (p = 0.70); The other money terms are fixed in the short run (p = 0.60). Reported.",
+  "C-11. Compared with no Lanvik App-Based Work Act 2027, compliance cost for platforms rises from the short run onward (tier A, invisible). Why: OC-2: OC-2. This holds if: no assumption. Reported.",
+  "C-12. Compared with no Lanvik App-Based Work Act 2027, lobbying effort for platforms rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); The bound providers can organize to lobby (p = 0.90). Reported.",
+  "C-13. Compared with no Lanvik App-Based Work Act 2027, price paid for platforms rises from the short run onward (tier B, visible). Why: PC-17: PC-17; CR-12: CR-12; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80); The other money terms are fixed in the short run (p = 0.60). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-14. Compared with no Lanvik App-Based Work Act 2027, reclassification for platforms rises from the medium run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.50). Reported.",
+  "C-15. Compared with no Lanvik App-Based Work Act 2027, resources available other uses for platforms falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80); The other money terms are fixed in the short run (p = 0.60). Reported.",
+  "C-16. Compared with no Lanvik App-Based Work Act 2027, return on capital for platforms falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80); The other money terms are fixed in the short run (p = 0.60). Reported.",
+  "C-17. Compared with no Lanvik App-Based Work Act 2027, price paid for riders rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80); Most of the providers' rivals are bound too (p = 0.80); The other money terms are fixed in the short run (p = 0.60). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-18. Compared with no Lanvik App-Based Work Act 2027, quantity traded for riders falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80); Most of the providers' rivals are bound too (p = 0.80); The other money terms are fixed in the short run (p = 0.60). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-19. Compared with no Lanvik App-Based Work Act 2027, asset value for sellers.small_platform rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); The unbound firms compete with the bound providers (p = 0.75); Most bound providers comply (p = 0.80); The providers' businesses are valued on expected earnings (p = 0.70); The other money terms are fixed in the short run (p = 0.60). Reported.",
+  "C-20. Compared with no Lanvik App-Based Work Act 2027, number of sellers for sellers.small_platform rises from the medium run onward (tier B, invisible). Why: RS-17: RS-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Some firms near the threshold value staying below it more than an extra hire (p = 0.50). Reported.",
+  "C-21. Compared with no Lanvik App-Based Work Act 2027, quantity supplied for sellers.small_platform rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-2: CR-2; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); The unbound firms compete with the bound providers (p = 0.75); Most bound providers comply (p = 0.80); The term is worth less to the marginal recipient than it costs the provider (p = 0.55). Reported.",
+  "C-22. Compared with no Lanvik App-Based Work Act 2027, asset value for sellers.substitutes rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); The unbound firms compete with the bound providers (p = 0.75); Most bound providers comply (p = 0.80); The providers' businesses are valued on expected earnings (p = 0.70); The other money terms are fixed in the short run (p = 0.60). Reported.",
+  "C-23. Compared with no Lanvik App-Based Work Act 2027, quantity supplied for sellers.substitutes rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-2: CR-2; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); The unbound firms compete with the bound providers (p = 0.75); Most bound providers comply (p = 0.80); The term is worth less to the marginal recipient than it costs the provider (p = 0.55). Reported.",
+  "C-24. Compared with no Lanvik App-Based Work Act 2027, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier A, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.95,
+    "question_id": "k1.binding",
+    "rationale": "No row in WE-061's assumption table; my estimate from the text. The record states that no app worker is an employee now and that the platforms prevailed under the old test, so employee status is absent from every contract. Section 2 of the example names A-1 for this, but A-1 is about enforcement.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k1.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the mandated term absent from some contracts that would otherwise be made?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-1: the Act is enforced: audits and private suits with double damages make treating workers as contractors without a valid agreement costly.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k1.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most bound providers comply with the mandate in practice?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.wages_sticky",
+    "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-29: fare shares are not cut in the first months (30 days' notice; scrutiny at launch). The other money term of the contract here is the fare share.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "wages_sticky",
+    "assumption_class": "other",
+    "id": "k1.wages_sticky",
+    "kind": "noul",
+    "options": [],
+    "text": "In the short run, are the other money terms of these contracts (wages, prices) fixed by pay scales, contracts or raise cycles?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.wages_adjust",
+    "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-28: section 9 does not fix the fare share, and companies can cut fare shares and bonuses after launch.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "wages_adjust",
+    "assumption_class": "other",
+    "id": "k1.wages_adjust",
+    "kind": "noul",
+    "options": [],
+    "text": "Over the medium run, can the wage (or price) of these contracts adjust downward, for instance through smaller raises?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.55,
+    "question_id": "k1.worth_less",
+    "rationale": "No row in WE-061's assumption table; my estimate from the text. For workers at the margin of choosing employee status the cover and the floor are worth less than the 11% contributions, the top-up and the flexibility the company takes back (sections 4 and 5 of the example); A-5 puts only 65% of low-fare workers on employee status. Close to the cut-off.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "worth_less",
+    "assumption_class": "other",
+    "id": "k1.worth_less",
+    "kind": "noul",
+    "options": [],
+    "text": "For the marginal contract, is the term worth less to the recipient than it costs the provider?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k1.alternatives_worse",
+    "rationale": "No row in WE-061's assumption table; my estimate from the text. Workers can sign the contractor agreement, work on several platforms (45% do), or move trips to Selvane (A-14), so their alternatives are not clearly worse than the platforms'. The example signs no incidence row.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "alternatives_worse",
+    "assumption_class": "mobility",
+    "id": "k1.alternatives_worse",
+    "kind": "noul",
+    "options": [],
+    "text": "Over the medium to long run, are the recipients' alternatives to bound contracts clearly worse than the providers' alternatives?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.valued_on_earnings",
+    "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-11: buyers of shares expect the Act to survive the court challenge and repeal campaign, so the platforms' shares are valued on expected earnings.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "valued_on_earnings",
+    "assumption_class": "expectations",
+    "id": "k1.valued_on_earnings",
+    "kind": "noul",
+    "options": [],
+    "text": "Are the providers' businesses valued on expected earnings, so that a lower expected return lowers their sale value?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-16: companies, drivers' groups and unions can organize at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound providers organize to lobby over the mandate at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.recipients_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-16: companies, drivers' groups and unions can organize at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "recipients_organize",
+    "assumption_class": "other",
+    "id": "k1.recipients_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the recipients of the term organize to lobby to widen it at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.floor_binds",
+    "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-3: some hours on a trip pay below 16 per hour (about a fifth). The floor here is the Act's own section 5 (K2), not an existing minimum wage, which does not reach app workers; the question is answered for that floor.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "floor_binds",
+    "assumption_class": "binding",
+    "id": "k1.floor_binds",
+    "kind": "noul",
+    "options": [],
+    "text": "Does an existing price floor (a minimum wage) hold the wage of some recipients, so that it cannot fall?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.can_screen",
+    "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-31: the floor's surplus of employee hours is rationed by stricter criteria than the counterfactual's dispatch ranking (shift allocation, acceptance thresholds); dispatch already ranks drivers by rating and acceptance.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_screen",
+    "assumption_class": "other",
+    "id": "k1.can_screen",
+    "kind": "noul",
+    "options": [],
+    "text": "Can providers tell in advance which applicants will cost them more under the term?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.rivals_bound",
+    "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-4 (loosely): platforms pass part of their added cost into fares, which presupposes that the other platforms, all with well over 100 workers, face the same cost. Taxis and the small cooperatives are not bound.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "rivals_bound",
+    "assumption_class": "other",
+    "id": "k1.rivals_bound",
+    "kind": "noul",
+    "options": [],
+    "text": "Are most of the providers' rivals in their output market bound by the mandate too?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.compete_with_bound",
+    "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-10: taxis are a substitute for some app rides at fares fixed by the city. The small delivery services (A-15, 0.5) are the other unbound rivals.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "compete_with_bound",
+    "assumption_class": "substitutability",
+    "id": "k1.compete_with_bound",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the exempt or already-compliant firms compete in the same output markets as the bound providers?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.5,
+    "question_id": "k1.reshaping_pays",
+    "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-8: some services can be reshaped to meet the three conditions at a cost below the Act's burden.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "reshaping_pays",
+    "assumption_class": "other",
+    "id": "k1.reshaping_pays",
+    "kind": "noul",
+    "options": [],
+    "text": "For some of the actors bound by the measure, will reshaping goods so that they fall outside the measure's definitions cost less than the measure would cost them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.5,
+    "question_id": "k1.staying_small_pays",
+    "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-15: some delivery services can operate with fewer than 100 Lanvik workers.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "staying_small_pays",
+    "assumption_class": "other",
+    "id": "k1.staying_small_pays",
+    "kind": "noul",
+    "options": [],
+    "text": "Do some firms near the size threshold value staying below it more than an extra hire?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": false,
+    "applicant_actor": "drivers.employee",
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": "sellers.small_platform",
+    "bound_actor": "platforms",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": true,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": false,
+    "floor_bound_actor": "drivers.employee",
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": true,
+    "good": "app_based_work",
+    "holder_cap": false,
+    "id": "k1",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "mandated_contract_term",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "lanvik_app_work",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": "riders",
+    "outside_actor": "drivers.contractor",
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": "drivers.employee",
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [
+     "sellers.small_platform",
+     "sellers.substitutes"
+    ],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": true,
+    "source_sentences": [
+     "An app-based worker is an employee of the network company unless the company proves that (a) the worker is free from its control and direction in performing the work, (b) the work is outside the usual course of its business, and (c) the worker is customarily engaged in an independently established trade.",
+     "Section 3 applies to natural persons who perform rides or deliveries through a network company with 100 or more app-based workers in Lanvik.",
+     "The Department of Labor enforces the Act by audit; workers have a private right of action for double damages; the penalty for misclassification is 5,000 per worker.",
+     "The Department's budget is raised by 4 million a year from the general fund."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": false,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "platforms",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": false,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "engaged_time",
+    "holder_cap": false,
+    "id": "k2",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "price_floor",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "lanvik_app_work",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": "drivers.employee",
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": null,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "An employee shall be paid at least the state minimum wage for all engaged time."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": false,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "platforms",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": false,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "app_based_work",
+    "holder_cap": false,
+    "id": "k5",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "mandate_with_charge",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "lanvik_app_work",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": "drivers.contractor",
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": null,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "A network company may elect to offer its app-based workers in Lanvik a contractor agreement; an election applies to all its Lanvik workers.",
+     "A worker who signs one is not an employee for the purposes of sections 5 to 7 for the following twelve months, and may revoke it at each anniversary.",
+     "Employee status must be offered as the default, on a separate screen, and the choice must be freely made."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   }
+  ],
+  "context": [
+   "Today no app-based worker is an employee; the counterfactual law is contractor status under the old common-law test, under which the platforms prevailed in the courts, and the existing minimum wage, overtime and insurance laws do not reach them.",
+   "Platforms set and change workers' fare shares and bonuses unilaterally, usually several times a year, with 30 days' notice.",
+   "About 20% of hours on a trip pay less than 16 per hour on a trip (bicycle couriers on short orders, long low-fare rides)."
+  ],
+  "effective": "1 October 2027",
+  "enacted": "15 March 2027",
+  "jurisdiction": "Lanvik (fictional)",
+  "name": "Lanvik App-Based Work Act 2027",
+  "rule_maker": "the Lanvik legislature",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U1-a: no. A worker may log off at will, so only time on a trip, and any shift a company schedules, is engaged time",
+     "U1-b: yes. The apps reduce the priority of workers who decline requests, so all logged-in time is engaged time"
+    ],
+    "text": "Is time logged in and waiting time \"during which the worker is required by the network company to remain available\"?"
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-19T20:02:08+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U1-a: no. A worker may log off at will, so only time on a trip, and any shift a company schedules, is engaged time",
+    "U1-b: yes. The apps reduce the priority of workers who decline requests, so all logged-in time is engaged time"
+   ],
+   "text": "Is time logged in and waiting time \"during which the worker is required by the network company to remain available\"?"
+  }
+ ],
+ "verifier_problems": []
+}
