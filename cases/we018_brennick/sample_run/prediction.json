@@ -1,0 +1,1501 @@
+{
+ "assumptions": {
+  "buyer_substitutes(k1)": {
+   "assumption_class": "substitutability",
+   "id": "buyer_substitutes(k1)",
+   "p": 0.95,
+   "text": "Legal substitutes are acceptable to some buyers."
+  },
+  "can_organize(k1)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1)",
+   "p": 0.7,
+   "text": "The former sellers or the buyers can organize to seek repeal."
+  },
+  "cross_border_feasible(k1)": {
+   "assumption_class": "mobility",
+   "id": "cross_border_feasible(k1)",
+   "p": 0.55,
+   "text": "Enough buyers can easily buy across the boundary, where the tax does not apply."
+  },
+  "demand_persists(k1)": {
+   "assumption_class": "other",
+   "id": "demand_persists(k1)",
+   "p": 0.2,
+   "text": "A meaningful share of buyers keep wanting the good after the ban."
+  },
+  "enforced(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k1)",
+   "p": 0.85,
+   "text": "The legal sellers comply with the ban."
+  },
+  "enforcement_risk(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforcement_risk(k1)",
+   "p": 0.5,
+   "text": "Informal sellers face a real risk of punishment."
+  },
+  "evasion(k1)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k1)",
+   "p": 0.6,
+   "text": "Enforcement is imperfect: many informal sales go undetected."
+  },
+  "no_other_use(k1)": {
+   "assumption_class": "alternative_uses",
+   "id": "no_other_use(k1)",
+   "p": 0.1,
+   "text": "The legal sellers cannot replace the banned good with other products for most of their business."
+  },
+  "reshaping_pays(k1)": {
+   "assumption_class": "other",
+   "id": "reshaping_pays(k1)",
+   "p": 0.6,
+   "text": "Reshaping goods to fall outside the definitions costs some actors less than the burden."
+  },
+  "stockpile_ahead(k1)": {
+   "assumption_class": "expectations",
+   "id": "stockpile_ahead(k1)",
+   "p": 0.7,
+   "text": "Buyers and importers can store the good and order ahead of the effective date."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_administered(k1)",
+     "premises": [
+      "prohibition(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "retailers.brennick",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)",
+     "no_other_use(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)",
+    "no_other_use(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "CR-1"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "no_other_use(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "retailers.brennick",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)",
+     "no_other_use(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)",
+    "no_other_use(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "CR-1"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "no_other_use(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "retailers.brennick",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "can_organize(k1)"
+    ]
+   ],
+   "assumptions": [
+    "can_organize(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_lobby(k1)",
+     "premises": [
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "retailers.brennick",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "number_of_sellers",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "retailers.brennick",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "retailers.fallow_creek",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "cross_border_feasible(k1)"
+    ]
+   ],
+   "assumptions": [
+    "cross_border_feasible(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_cross(k1)",
+     "premises": [
+      "cross_border_feasible(k1)"
+     ],
+     "rule": "RS-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "retailers.small",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "retailers.small",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "retailers.small",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "reshaping_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_reshaped(k1)",
+     "premises": [
+      "reshaping_pays(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.substitutes",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "reshaping_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_reshaped(k1)",
+     "premises": [
+      "reshaping_pays(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "shoppers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "shoppers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "can_organize(k1)"
+    ]
+   ],
+   "assumptions": [
+    "can_organize(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_lobby(k1)",
+     "premises": [
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "shoppers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "enforcement_risk(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "enforcement_risk(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "enforcement_risk(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "shoppers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_information",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "shoppers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_variability",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "shoppers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "enforcement_risk(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "enforcement_risk(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "enforcement_risk(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "shoppers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "stockpile_ahead(k1)"
+    ]
+   ],
+   "assumptions": [
+    "stockpile_ahead(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_stock_up(k1)",
+     "premises": [
+      "announced(k1)",
+      "stockpile_ahead(k1)"
+     ],
+     "rule": "RS-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short"
+   ],
+   "id": "C-18",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": "announcement"
+  },
+  {
+   "actor_class": "shoppers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "buyer_substitutes(k1)"
+    ]
+   ],
+   "assumptions": [
+    "buyer_substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_substitute(k1)",
+     "premises": [
+      "buyer_substitutes(k1)"
+     ],
+     "rule": "RS-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-19",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_substitute",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "shoppers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-20",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "shoppers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-21",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "shoppers.edge",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "cross_border_feasible(k1)"
+    ]
+   ],
+   "assumptions": [
+    "cross_border_feasible(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_cross(k1)",
+     "premises": [
+      "cross_border_feasible(k1)"
+     ],
+     "rule": "RS-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-22",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "cross_border_purchases",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "shoppers.edge",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "cross_border_feasible(k1)"
+    ]
+   ],
+   "assumptions": [
+    "cross_border_feasible(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_cross(k1)",
+     "premises": [
+      "cross_border_feasible(k1)"
+     ],
+     "rule": "RS-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-23",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "taxpayers",
+   "actor_group": [
+    "taxpayers",
+    "recipients.other_spending",
+    "taxpayers.future"
+   ],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_funded(k1)",
+     "premises": [
+      "general_budget(k1)"
+     ],
+     "rule": "OC-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-24",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"retailers.brennick\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nprohibition(k1).\npr_buyer(k1, \"shoppers\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nrevenue(k1, \"officials.enforcement\").\npr_informal_buyer(k1, \"shoppers\").\npr_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\npr_informal_seller(k1, \"retailers.small\").\nmobile_buyer(k1, \"shoppers.edge\").\nneighbor_seller(k1, \"retailers.fallow_creek\").\npr_substitute_seller(k1, \"sellers.substitutes\").\ndefinition_line(k1).\ngeneral_budget(k1).\nbound(k2, \"retailers.brennick\").\nprotected(k2, \"shoppers.assistance\").\nexcluded(k2, \"buyers.prospective\").\nassumption(enforced(k1)).\nassumption(demand_persists(k1)).\nassumption(evasion(k1)).\nassumption(enforcement_risk(k1)).\nassumption(no_other_use(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(can_organize(k1)).\nassumption(cross_border_feasible(k1)).\nassumption(reshaping_pays(k1)).\nassumption(stockpile_ahead(k1)).\n",
+ "explanations": [
+  "C-1. Compared with no Brennick Carryout Bag Ordinance, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-2. Compared with no Brennick Carryout Bag Ordinance, asset value for retailers.brennick falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.85); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-3. Compared with no Brennick Carryout Bag Ordinance, employment for retailers.brennick falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.85); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-4. Compared with no Brennick Carryout Bag Ordinance, lobbying effort for retailers.brennick rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.70). Reported.",
+  "C-5. Compared with no Brennick Carryout Bag Ordinance, number of sellers for retailers.brennick falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.85). Reported.",
+  "C-6. Compared with no Brennick Carryout Bag Ordinance, quantity traded for retailers.brennick falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.85). Reported.",
+  "C-7. Compared with no Brennick Carryout Bag Ordinance, quantity traded for retailers.fallow_creek rises from the short run onward (tier B, invisible). Why: RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.55). Reported.",
+  "C-8. Compared with no Brennick Carryout Bag Ordinance, disputes settled outside courts for retailers.small rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-9. Compared with no Brennick Carryout Bag Ordinance, informal activity for retailers.small rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-10. Compared with no Brennick Carryout Bag Ordinance, reclassification for retailers.small rises from the short run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.60). Reported.",
+  "C-11. Compared with no Brennick Carryout Bag Ordinance, reclassification for sellers.substitutes rises from the short run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.60). Reported.",
+  "C-12. Compared with no Brennick Carryout Bag Ordinance, disputes settled outside courts for shoppers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-13. Compared with no Brennick Carryout Bag Ordinance, lobbying effort for shoppers rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.70). Reported.",
+  "C-14. Compared with no Brennick Carryout Bag Ordinance, price paid for shoppers rises from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); Informal sellers face a real risk of punishment (p = 0.50). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-15. Compared with no Brennick Carryout Bag Ordinance, quality information for shoppers falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-16. Compared with no Brennick Carryout Bag Ordinance, quality variability for shoppers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-17. Compared with no Brennick Carryout Bag Ordinance, quantity demanded for shoppers falls from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); Informal sellers face a real risk of punishment (p = 0.50). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-18. Compared with no Brennick Carryout Bag Ordinance, quantity demanded for shoppers rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.70). Reported.",
+  "C-19. Compared with no Brennick Carryout Bag Ordinance, quantity substitute for shoppers rises from the short run onward (tier B, invisible). Why: RS-1: when a good becomes dearer, buyers turn to substitutes. This holds if: Legal substitutes are acceptable to some buyers (p = 0.95). Reported.",
+  "C-20. Compared with no Brennick Carryout Bag Ordinance, quantity traded for shoppers falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.85). Reported.",
+  "C-21. Compared with no Brennick Carryout Bag Ordinance, search cost for shoppers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.20); Enforcement is imperfect: many informal sales go undetected (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-22. Compared with no Brennick Carryout Bag Ordinance, cross border purchases for shoppers.edge rises from the short run onward (tier B, invisible). Why: RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.55). Reported.",
+  "C-23. Compared with no Brennick Carryout Bag Ordinance, search cost for shoppers.edge rises from the short run onward (tier B, invisible). Why: RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.55). Reported.",
+  "C-24. Compared with no Brennick Carryout Bag Ordinance, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier A, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-1: most retailers comply, chains in particular.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k1.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the legal sellers comply with the ban (stop selling openly)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.2,
+    "question_id": "k1.demand_persists",
+    "rationale": "No matching assumption in WE-018; judged from the text: a thin bag costs the stores about 2 cents and a legal replacement is cheap, so few shoppers would keep wanting the banned bag itself.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "demand_persists",
+    "assumption_class": "other",
+    "id": "k1.demand_persists",
+    "kind": "noul",
+    "options": [],
+    "text": "Will a meaningful share of buyers keep wanting the good after the ban?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.evasion",
+    "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-5: some small stores keep handing out thin bags, or waive the fee, without being caught.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k1.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will many informal sales go undetected?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.5,
+    "question_id": "k1.enforcement_risk",
+    "rationale": "No matching assumption in WE-018; judged from the text: enforcement is complaint-driven and starts with a written warning, so the risk of punishment is real but modest.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforcement_risk",
+    "assumption_class": "enforcement",
+    "id": "k1.enforcement_risk",
+    "kind": "noul",
+    "options": [],
+    "text": "Will enforcement be active enough that informal sellers face a real risk of punishment?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k1.no_other_use",
+    "rationale": "No matching assumption in WE-018; judged from the text: carryout bags are a small part of what retailers sell, so the stores keep selling their goods and their staff are not tied to bags.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "no_other_use",
+    "assumption_class": "alternative_uses",
+    "id": "k1.no_other_use",
+    "kind": "noul",
+    "options": [],
+    "text": "Are the legal sellers unable to replace the banned good with other products for most of their business?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.95,
+    "question_id": "k1.buyer_substitutes",
+    "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-2: shoppers accept reusable and paper bags as substitutes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyer_substitutes",
+    "assumption_class": "substitutability",
+    "id": "k1.buyer_substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Are some legal substitutes acceptable to some buyers?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-8: bag makers and retailers can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the former legal sellers or the buyers organize to seek repeal at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.55,
+    "question_id": "k1.cross_border_feasible",
+    "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-6: some shoppers near Route 9 are close to indifferent between stores on either side of the line.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "cross_border_feasible",
+    "assumption_class": "mobility",
+    "id": "k1.cross_border_feasible",
+    "kind": "noul",
+    "options": [],
+    "text": "Can enough of the buyers easily buy the taxed good on the other side of the boundary, in a place without the tax, for crossing to be worth its cost to them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.reshaping_pays",
+    "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-4: thick plastic reusable bags can be sold cheaply at the till, and shoppers buy them.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "reshaping_pays",
+    "assumption_class": "other",
+    "id": "k1.reshaping_pays",
+    "kind": "noul",
+    "options": [],
+    "text": "For some of the actors bound by the measure, will reshaping goods so that they fall outside the measure's definitions cost less than the measure would cost them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.stockpile_ahead",
+    "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-7: shoppers take extra free bags in the announcement window.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "stockpile_ahead",
+    "assumption_class": "expectations",
+    "id": "k1.stockpile_ahead",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the buyers or importers buy ahead of the effective date, by storing the good or placing orders early?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "allocation_by_history": false,
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "bound_actor": "retailers.brennick",
+    "budget_capped": false,
+    "buyer_actor": "shoppers",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "convicted_actor": null,
+    "debt_funded": false,
+    "definition_line": true,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": true,
+    "good": "single_use_plastic_carryout_bags",
+    "holder_cap": false,
+    "id": "k1",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": "shoppers",
+    "informal_seller_actor": "retailers.small",
+    "input_supplier_actor": null,
+    "instrument": "prohibition",
+    "market": "brennick",
+    "mobile_buyer_actor": "shoppers.edge",
+    "neighbor_actor": null,
+    "neighbor_seller_actor": "retailers.fallow_creek",
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "own_revenue_funded": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "source_sentences": [
+     "From the effective date, all retailers in Brennick are prohibited from providing single-use plastic carryout bags (plastic bags with handles, thinner than 4 mil (0.1 mm)) at the point of sale.",
+     "Exempt are bags without handles for produce, meat and bulk goods inside the store, pharmacy prescription bags, and restaurant takeout bags.",
+     "The neighboring town of Fallow Creek has no bag rules; two large supermarkets there are within 1 km of the city line on Route 9, close to several Brennick neighborhoods.",
+     "The ordinance was passed nine months before it took effect.",
+     "The City Office of Sustainability enforces the ordinance on a complaint-driven basis: a written warning, then fines of $100, $250 and $500 per day of violation.",
+     "Enforcement is funded from the general budget."
+    ],
+    "stocks_destroyed": false,
+    "substitute_seller_actor": "sellers.substitutes",
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "allocation_by_history": false,
+    "announcement_window": false,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "bound_actor": "retailers.brennick",
+    "budget_capped": false,
+    "buyer_actor": "shoppers",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "convicted_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": true,
+    "good": "paper_carryout_bags",
+    "holder_cap": false,
+    "id": "k2",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "price_floor",
+    "market": "brennick",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "own_revenue_funded": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": "shoppers.assistance",
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "source_sentences": [
+     "Recycled-paper carryout bags may be provided only for a charge of at least 10 cents a bag, kept by the retailer and shown on the receipt.",
+     "Reusable bags (designed for at least 125 uses; at least 4 mil if plastic) may be sold at any price.",
+     "Customers paying with food-assistance benefits receive paper bags free."
+    ],
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   }
+  ],
+  "context": [
+   "Retailers there have given away thin plastic carryout bags at the checkout, at a cost to them of about 2 cents a bag, built into their prices.",
+   "Surveys suggest that about 60% of households reuse some of them as bin liners or for pet waste."
+  ],
+  "effective": "the effective date",
+  "enacted": "nine months before the effective date",
+  "jurisdiction": "Brennick (fictional)",
+  "name": "Brennick Carryout Bag Ordinance",
+  "rule_maker": "the Brennick city council",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U1-a: a maker's claim is accepted, since the ordinance sets no test"
+    ],
+    "text": "how a bag's design for 125 uses is verified"
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-19T18:52:36+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U1-a: a maker's claim is accepted, since the ordinance sets no test"
+   ],
+   "text": "how a bag's design for 125 uses is verified"
+  }
+ ],
+ "verifier_problems": []
+}
