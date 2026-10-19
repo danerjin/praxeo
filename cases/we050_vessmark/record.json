@@ -1,0 +1,88 @@
+{
+ "name": "Vessmark Clean Cars Act",
+ "jurisdiction": "Vessmark (fictional)",
+ "rule_maker": "the Vessmark legislature",
+ "enacted": "30 June 2026",
+ "effective": "1 January 2035",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "prohibition",
+   "good": "new_combustion_cars",
+   "market": "vessmark",
+   "bound_actor": "importers",
+   "buyer_actor": "buyers.new_combustion",
+   "enforcer_actor": "officials.enforcement",
+   "definition_line": true,
+   "substitute_seller_actor": "importers.used",
+   "announcement_window": true,
+   "source_sentences": [
+    "From 1 January 2035 the Registry shall not register for the first time a new passenger car fitted with an internal combustion engine.",
+    "'new passenger car' means a passenger car that has not previously been registered.",
+    "Nothing in this Act affects the use, sale, transfer or re-registration of a car registered before the date in section 3 or 4.",
+    "Registration is refused; selling an unregistrable new car as new is an offence, fine $5,000.",
+    "The Registry's budget is fixed by law; no new funds.",
+    "The bill was introduced on 3 March 2026, passed on 18 June 2026 by a large cross-party majority, and enacted on 30 June 2026."
+   ]
+  },
+  {
+   "id": "k2",
+   "instrument": "prohibition",
+   "good": "new_phevs",
+   "market": "vessmark",
+   "bound_actor": "importers",
+   "buyer_actor": "buyers.new_phev",
+   "enforcer_actor": "officials.enforcement",
+   "announcement_window": true,
+   "source_sentences": [
+    "plug-in hybrids with at least 50 km of electric range are exempt until 31 December 2037 and banned from 1 January 2038.",
+    "Registration is refused; selling an unregistrable new car as new is an offence, fine $5,000.",
+    "The bill was introduced on 3 March 2026, passed on 18 June 2026 by a large cross-party majority, and enacted on 30 June 2026."
+   ]
+  },
+  {
+   "id": "k5",
+   "instrument": "lump_sum_tax",
+   "good": "bev_ownership",
+   "market": "vessmark",
+   "bound_actor": "owners.bev",
+   "buyer_actor": "owners.bev",
+   "seller_actor": null,
+   "revenue_actor": "officials.enforcement",
+   "announcement_window": true,
+   "source_sentences": [
+    "a charge of $250 a year is levied on each battery-electric passenger car from 1 January 2035, paid by its owner, collected with the annual registration renewal and paid to the general budget.",
+    "Plug-in hybrids, which pay fuel excise, are exempt from the charge.",
+    "The bill was introduced on 3 March 2026, passed on 18 June 2026 by a large cross-party majority, and enacted on 30 June 2026."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether a used car imported from abroad after 2035 counts as a new passenger car: 'not previously been registered' (section 2) does not say registered where.",
+   "readings": [
+    "U1-a: previously registered in Vessmark: a car first registered in Vessmark after 2035 is new whatever its age, so used combustion cars imported from abroad can no longer be registered",
+    "U1-b: previously registered anywhere: a used combustion car registered in Drevland can still be imported and registered after 2035, and so can a new one registered in Drevland first"
+   ],
+   "reading_fields": {
+    "U1-a": {
+     "k1": {
+      "importer_actor": "importers.used",
+      "definition_line": false
+     }
+    },
+    "U1-b": {
+     "k1": {
+      "importer_actor": null
+     }
+    }
+   }
+  }
+ ],
+ "context": [
+  "About 25,000 of them are imported used from Drevland, the larger neighbor to the south (about 3.5 million used-car sales a year), which has no ban and no announced date.",
+  "Fuel excise is $0.70 a liter, about $600 a year for an average combustion car, and raises about $2.6 billion a year for the general budget."
+ ]
+}
