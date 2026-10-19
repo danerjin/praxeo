@@ -1,0 +1,64 @@
+{
+ "name": "Teravel Freedom to Work Act",
+ "jurisdiction": "Teravel (fictional)",
+ "rule_maker": "the Teravel legislature",
+ "enacted": "12 June 2025",
+ "effective": "1 January 2026",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "term_prohibition",
+   "good": "non_compete_clauses",
+   "market": "teravel_labor",
+   "bound_actor": "employers.restraining",
+   "recipient_actor": "workers.bound",
+   "restrains_mobility": true,
+   "voids_existing": true,
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": false,
+   "source_sentences": [
+    "Any term of an employment or independent-contractor agreement that prohibits or restricts a worker, after the work relationship ends, from working for another person or carrying on a business, or that imposes a penalty for doing so, is void.",
+    "The Act binds employers of workers who primarily work in Teravel, whatever law the contract chooses.",
+    "This applies to agreements made before, on or after the effective date, and pending cases are decided under the Act.",
+    "A worker may sue an employer that tries to enforce a void term, or puts one in a contract after the effective date.",
+    "There is no new appropriation; the Bureau works from its existing budget."
+   ]
+  },
+  {
+   "id": "k2",
+   "instrument": "disclosure_mandate",
+   "good": "notice_of_void_term",
+   "market": "teravel_labor",
+   "bound_actor": "employers.restraining",
+   "recipient_actor": "workers.bound",
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": false,
+   "source_sentences": [
+    "Every employer that has a non-compete with a current worker, or with a former worker who left after 1 January 2024, must give written notice by 1 March 2026 that the term is void."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Does the exemption for \"a notice period during which the worker remains employed\" cover a notice period of six to twelve months, paid in full, with no duties, during which the worker may not work for anyone else?",
+   "readings": [
+    "U1-a: yes, any paid notice period in which the worker remains employed is preserved",
+    "U1-b: no, a notice period long enough to keep the worker out of the field is a restraint \"in effect\", and is void"
+   ]
+  },
+  {
+   "id": "U2",
+   "text": "Is a term that requires a worker who leaves within 24 months to repay employer-paid training a \"penalty\" for working for another person?",
+   "readings": [
+    "U2-a: yes, it penalizes leaving, and leaving is how one comes to work for another",
+    "U2-b: no, it applies to every departure, whatever the worker does next, and only recovers a cost"
+   ]
+  }
+ ],
+ "context": [
+  "A 2024 survey by the state labor department found that about 17% had signed a non-compete clause.",
+  "Until now Teravel courts enforced \"reasonable\" non-competes (up to two years, within the employer's trading area) under common law."
+ ]
+}

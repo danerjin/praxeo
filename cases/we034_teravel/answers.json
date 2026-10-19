@@ -1,0 +1,30 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-1: non-competes deter some bound workers from moves they would otherwise make; about 17% of workers had signed one and employers filed about 400 enforcement suits a year.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.term_valued",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-5: in a material share of trainee jobs the non-compete protected the employer's recovery of the cost of general training (A-15 gives the same 0.7 for the firms' expected yield).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.substitute_terms",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-4: reshaping restraints into the forms the Act preserves (confidentiality, non-solicitation for up to 12 months, unvested deferred pay) costs many employers less than the protection it restores. The text itself names these preserved terms.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-13: employers' associations, worker groups and start-up associations can organize at a cost below their stake.",
+  "evidence": []
+ }
+]
