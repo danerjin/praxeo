@@ -1,0 +1,23 @@
+Vessmark Clean Cars Act (fictional; summary of the policy record of handbook worked example WE-050).
+
+Vessmark is a country of about 9 million people with about 4.8 million registered passenger cars, of average age 10 years. Cars are scrapped at about 17 years on average, about 260,000 a year. Vessmark has no car assembly: every new car is imported by about 12 brand importers and sold through about 600 dealers. Vessmark buys about 0.4% of the world's new cars.
+
+In 2025 about 280,000 new cars were sold: 196,000 (70%) with combustion engines only (petrol, diesel, conventional hybrids), 28,000 (10%) plug-in hybrids (PHEVs) and 56,000 (20%) battery-electric cars (BEVs). A typical new combustion compact costs about $30,000 and a comparable BEV about $36,000; the importers' association forecasts the gap at about $2,000 by 2035. Its forecast without new rules is that BEVs reach about 50% of new sales by 2035 and about 80% by 2045, the rest combustion and PHEVs. A five-year-old combustion compact sells for about $15,000.
+
+About 650,000 used cars change hands a year. About 25,000 of them are imported used from Drevland, the larger neighbor to the south (about 3.5 million used-car sales a year), which has no ban and no announced date. Used cars are already imported at import parity: Vessmark's used prices for comparable cars sit about $1,800 above Drevland's, the cost of transport, the state's import roadworthiness inspection ($900) and registration. The inspection is done only at state test centers, whose capacity is about 40,000 cars a year.
+
+Vessmark has about 2,100 fuel stations and 9,000 public chargers. Fuel excise is $0.70 a liter, about $600 a year for an average combustion car, and raises about $2.6 billion a year for the general budget. About 3,500 independent repair shops employ about 14,000 mechanics. Existing rules, in force on both paths: the fuel excise; the import inspection; a resident may drive a foreign-registered car in Vessmark for at most six months.
+
+The bill was introduced on 3 March 2026, passed on 18 June 2026 by a large cross-party majority, and enacted on 30 June 2026. It has no expiry. Section 9 requires the Minister to report on "the readiness of the charging network" by 30 June 2031 and allows the Minister, by order, to postpone the dates in sections 3 and 4 by up to three years.
+
+Section 3 (end of sale): "From 1 January 2035 the Registry shall not register for the first time a new passenger car fitted with an internal combustion engine." Section 2: "'new passenger car' means a passenger car that has not previously been registered." The Vehicle Registry, importers and dealers are bound.
+
+Section 4 (plug-in hybrids): plug-in hybrids with at least 50 km of electric range are exempt until 31 December 2037 and banned from 1 January 2038.
+
+Section 5 (existing cars): "Nothing in this Act affects the use, sale, transfer or re-registration of a car registered before the date in section 3 or 4."
+
+Section 7 (enforcement): Registration is refused; selling an unregistrable new car as new is an offence, fine $5,000. The Registry's budget is fixed by law; no new funds.
+
+Section 8 (road charge): a charge of $250 a year is levied on each battery-electric passenger car from 1 January 2035, paid by its owner, collected with the annual registration renewal and paid to the general budget. Its stated purpose is "to replace fuel excise". Plug-in hybrids, which pay fuel excise, are exempt from the charge.
+
+Unclear provision: "not previously been registered" (section 2). The Act does not say registered where. Reading U1-a: previously registered in Vessmark. A car first registered in Vessmark after 2035 is "new" whatever its age, so used combustion cars imported from abroad can no longer be registered. Reading U1-b: previously registered anywhere. A used combustion car registered in Drevland can still be imported and registered after 2035, and so can a new one registered in Drevland first. The Registry has issued no rule and no court has ruled.
