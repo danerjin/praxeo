@@ -1,0 +1,128 @@
+[
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-2: platforms comply with the registry rule (display numbers, remove listings on notice), so open on-platform lets stop.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.demand_persists",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-4: some guests keep wanting whole units in Saltmere enough to book them directly.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-3: for some units complaints are unlikely, so the expected fine is below the gain from breach (enforcement is on complaint only).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforcement_risk",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-19: neighbors file complaints about unlawful lets in meaningful numbers and some lead to fines.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.no_other_use",
+  "value": "no",
+  "probability": 0.15,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-5, inverted: A-5 puts at 0.85 that most non-primary units can be let on 12-month leases, so the statement that the hosts cannot replace short lets with other uses for most of their business is 0.15.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyer_substitutes",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-8: hotels are a substitute for whole units for some guests.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-14: hosts, platforms, hotels and neighborhood associations can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.cross_border_feasible",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-10: Elsdon is near enough (12 km from Harbor) for some guests.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-38: some owners reshape short stays into nominal 30-night contracts, or claim primary residence on documents they can change at low cost.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.stockpile_ahead",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-15: guests can book summer stays earlier than they otherwise would.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.binding",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "No matching assumption in WE-044; judged from the text: the $250 fee (against $150 under the old registration) and proof of residence are a fixed cost per host that goes beyond what some hosts who let only a few nights already meet.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.enforced",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-2: platforms display registration numbers and remove listings on notice, so lets without a number largely stop.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.some_qualify",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "No matching assumption in WE-044; judged from the text: about 550 primary-residence units are let, about 65% of hosts already register under the old rule, and registration is the only way to keep letting short.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.evasion",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-22: hosts listing on more than one platform can exceed 90 nights without the per-platform reports revealing it (and list under another unit's number).",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.buyer_substitutes",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-8: hotels are a substitute for whole units for some guests.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.tests_valued_quality",
+  "value": "no",
+  "probability": 0.15,
+  "rationale": "No matching assumption in WE-044; judged from the text: registration requires only proof of residence and a fee; it tests nothing about the stay that guests value and cannot judge.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-14: hosts, platforms, hotels and neighborhood associations can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.enforcement_budget_raised",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-20: the $520,000 for the Registry Unit is new general-fund money.",
+  "evidence": []
+ }
+]
