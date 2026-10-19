@@ -68,5 +68,26 @@
   "probability": 0.85,
   "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-3: some covered residents used less insulin than prescribed at the old price.",
   "evidence": []
+ },
+ {
+  "question_id": "k2.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "No separate assumption in WE-056; judged from the record: plans did not pay the balance above $35 before the Act, so the term binds (A-1 covers the cap itself, 0.9).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.enforced",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-1: bound pharmacies comply and receive the plan's payment.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-17: pharmacies, PBMs, insurers and patient groups can organize at a cost below their stakes.",
+  "evidence": []
  }
 ]

@@ -66,14 +66,13 @@ NOT_PRODUCED = {
     "C-34": "missing rule: OC-8/CR-8a for the loan market; no borrowers role and no A-26/A-27 question",
     "C-35": "group sign differs: the engine signs the budget payers a decrease from the TCA costs alone (see EXCEPTIONS)",
     "C-36": "role: CR-8b is signed for the bidders (the record's buyer role) where the table has the licensees paying; no OC-1 rule for the price of the created right",
-    "C-39": "missing rule: OC-2/CR-8c for the licensees' coverage proof (mandated_contract_term has no rules)",
     "C-40": "missing rule: CR-10a for investment moved in the window before an auction (EN-12's race is for history, and K3 has no base period)",
     "C-41": "missing rule: OC-1/CR-8a for the cost of a mandated term (PC-17 not encoded)",
     "C-42": "missing rule and role: CR-10b/CR-12b for riggers' wages after 2032",
     "C-43": "missing rule and role: CR-9/CR-6 for the price other projects pay for installation work",
     "C-44": "missing rule and role: CR-6 on the world price (small), foreign buyers of equipment",
 }
-PRODUCED = {"C-1", "C-2", "C-37", "C-38"}
+PRODUCED = {"C-1", "C-2", "C-37", "C-38", "C-39"}  # C-39 from mandates.lp (OC-2 on a mandate with no named recipient)
 
 
 def test_consistent_with_worked_example_we064():
@@ -81,9 +80,9 @@ def test_consistent_with_worked_example_we064():
     rows = _rows("WE-064_spectrum_auction.md", SHORT, WINDOWS, {})
     assert len(rows) == 44
     _check(rows, keys, EXCEPTIONS, NOT_PRODUCED, PRODUCED)
-    # only the quota component has rules: every reported row traces to K3
+    # every reported row with premises traces to the quota (K3) or to the coverage obligation (K2, mandates.lp)
     by = {(c["actor_class"], c["variable"]): c for c in pred["consequences"] if c["reported"]}
-    assert all(any("k3" in a for a in c["assumptions"]) for c in by.values() if c["assumptions"])
+    assert all(any(k in a for k in ("k2", "k3") for a in c["assumptions"]) for c in by.values() if c["assumptions"])
     # rights sold at auction: the treasury's receipts (C-38, rights_sold, added after the first run), and no payer group
     assert by[("treasury", "non_tax_receipts")]["sign"] == "increase"
     assert ("taxpayers", "resources_available_other_uses") not in by

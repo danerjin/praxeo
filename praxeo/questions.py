@@ -461,6 +461,136 @@ def _prohibition_specs(comp: Component) -> list[tuple[str, str, str, str]]:
     return specs
 
 
+# Mandated contract terms (PC-17 with RS-11, RS-14, RS-17, RS-18, RS-20, RS-23), prohibited terms (PC-18) and standards on new
+# units (EN-14): mandates.lp.
+MANDATE_QUESTIONS = [
+    ("binding", "binding",
+     "Is the mandated term absent from some contracts that would otherwise be made?",
+     "The term was absent from some contracts, so the mandate binds for them."),
+    ("enforced", "enforcement",
+     "Will most bound providers comply with the mandate in practice?",
+     "Most bound providers comply."),
+    ("wages_sticky", "other",
+     "In the short run, are the other money terms of these contracts (wages, prices) fixed by pay scales, contracts or raise cycles?",
+     "The other money terms are fixed in the short run."),
+    ("wages_adjust", "other",
+     "Over the medium run, can the wage (or price) of these contracts adjust downward, for instance through smaller raises?",
+     "The wage can adjust over the medium run."),
+    ("worth_less", "other",
+     "For the marginal contract, is the term worth less to the recipient than it costs the provider?",
+     "The term is worth less to the marginal recipient than it costs the provider."),
+    ("alternatives_worse", "mobility",
+     "Over the medium to long run, are the recipients' alternatives to bound contracts clearly worse than the providers' alternatives?",
+     "The recipients' alternatives are worse than the providers'."),
+    ("valued_on_earnings", "expectations",
+     "Are the providers' businesses valued on expected earnings, so that a lower expected return lowers their sale value?",
+     "The providers' businesses are valued on expected earnings."),
+    ("can_organize", "other",
+     "Can the bound providers organize to lobby over the mandate at a cost below their stake?",
+     "The bound providers can organize to lobby."),
+    ("recipients_organize", "other",
+     "Can the recipients of the term organize to lobby to widen it at a cost below their stake?",
+     "The recipients can organize to lobby."),
+]
+FLOOR_BINDS_QUESTION = ("floor_binds", "binding",
+                        "Does an existing price floor (a minimum wage) hold the wage of some recipients, so that it cannot fall?",
+                        "An existing floor holds some recipients' wage.")
+CAN_SCREEN_QUESTION = ("can_screen", "other",
+                       "Can providers tell in advance which applicants will cost them more under the term?",
+                       "Providers can tell which applicants will cost more under the term.")
+CONDITIONS_DIFFER_QUESTION = ("conditions_differ", "other",
+                              "Do some existing policies that already offer the term do so on conditions the mandate forbids?",
+                              "Some existing policies offer the term on conditions the mandate forbids.")
+HOURS_SHIFT_QUESTION = ("hours_shift", "substitutability",
+                        "Can providers move hours between recipients below the cap and recipients above it?",
+                        "Providers can move hours between recipients below and above the cap.")
+ABSENCE_USED_QUESTION = ("absence_used", "other",
+                         "Will some recipients take paid time off they would otherwise have spent at work?",
+                         "Some recipients take paid time off they would otherwise have worked.")
+UNPAID_ABSENCE_QUESTION = ("unpaid_absence_before", "other",
+                           "Without the mandate, would some recipients have taken unpaid time off for the same reasons?",
+                           "Some recipients would have taken unpaid time off without the mandate.")
+COVERED_QUESTION = ("absences_covered", "other",
+                    "Do providers cover absent shifts by buying cover from outside sellers (agencies, on-call staff)?",
+                    "Providers buy cover for absent shifts.")
+RIVALS_BOUND_QUESTION = ("rivals_bound", "other",
+                         "Are most of the providers' rivals in their output market bound by the mandate too?",
+                         "Most of the providers' rivals are bound too.")
+RIVALS_UNBOUND_QUESTION = ("rivals_unbound", "mobility",
+                           "Do some providers sell against rivals across a boundary who are not bound?",
+                           "Some providers compete with unbound rivals across a boundary.")
+COMPETE_QUESTION = ("compete_with_bound", "substitutability",
+                    "Do the exempt or already-compliant firms compete in the same output markets as the bound providers?",
+                    "The unbound firms compete with the bound providers.")
+MOVE_MARGINAL_QUESTION = ("move_marginal", "mobility",
+                          "Are some job changes marginal enough that losing what the term gives on leaving would decide them?",
+                          "Some job changes are marginal enough to be decided by the loss on leaving.")
+COMPLAINT_UNLIKELY_QUESTION = ("complaint_unlikely", "enforcement",
+                               "Are complaints unlikely from some recipients (short tenure, unaware of the law, fear of retaliation, small sums)?",
+                               "Complaints are unlikely from some recipients.")
+COMPLAINTS_FILED_QUESTION = ("complaints_filed", "enforcement",
+                             "Will complaints be filed in meaningful numbers?",
+                             "Complaints are filed in meaningful numbers.")
+STAYING_SMALL_QUESTION = ("staying_small_pays", "other",
+                          "Do some firms near the size threshold value staying below it more than an extra hire?",
+                          "Some firms near the threshold value staying below it more than an extra hire.")
+TERM_BAN_QUESTIONS = [
+    ("binding", "binding",
+     "Was the prohibited term in use in contracts of this kind?",
+     "The term was in use."),
+    ("term_valued", "other",
+     "Did the party that used the term value its protection enough to pay for it through other terms?",
+     "The party that used the term valued its protection."),
+    ("substitute_terms", "substitutability",
+     "Are there lawful substitute terms that give part of the same protection?",
+     "Lawful substitute terms give part of the same protection."),
+    ("can_organize", "other",
+     "Can the parties that used the term organize to lobby over the prohibition at a cost below their stake?",
+     "The parties that used the term can organize to lobby."),
+]
+STANDARD_QUESTIONS = [
+    ("binding", "binding",
+     "Does the standard rule out some designs of new units that would otherwise be built or sold?",
+     "The standard binds on some designs."),
+    ("enforced", "enforcement",
+     "Will most makers of new units comply with the standard?",
+     "Most makers comply."),
+    ("can_organize", "other",
+     "Can the makers of new units organize to lobby over the standard at a cost below their stake?",
+     "The makers can organize to lobby."),
+]
+STOCK_COMPETES_QUESTION = ("stock_competes", "substitutability",
+                           "Do existing units compete with new units for the same buyers?",
+                           "Existing units compete with new ones.")
+VALUE_STANDARD_QUESTION = ("buyers_value_standard", "other",
+                           "Do buyers value what the standard requires enough to prefer covered units over the existing stock?",
+                           "Buyers value the standard enough to prefer covered units.")
+
+
+def _mandate_specs(comp: Component) -> list[tuple[str, str, str, str]]:
+    if comp.instrument == "term_prohibition":
+        return list(TERM_BAN_QUESTIONS)
+    if comp.instrument == "product_standard":
+        specs = list(STANDARD_QUESTIONS)
+        if comp.stock_exempt:
+            specs += [STOCK_COMPETES_QUESTION, VALUE_STANDARD_QUESTION]
+        return specs
+    if not comp.recipient_actor:   # no counterparty named: only the binding, compliance and lobbying questions (mandates.lp)
+        return [q for q in MANDATE_QUESTIONS if q[0] in ("binding", "enforced", "can_organize")]
+    specs = list(MANDATE_QUESTIONS)
+    for cond, q in ((comp.floor_bound_actor, FLOOR_BINDS_QUESTION), (comp.applicant_actor, CAN_SCREEN_QUESTION),
+                    (comp.already_provider_actor, CONDITIONS_DIFFER_QUESTION), (comp.per_head_cap, HOURS_SHIFT_QUESTION),
+                    (comp.paid_absence, ABSENCE_USED_QUESTION), (comp.paid_absence, UNPAID_ABSENCE_QUESTION),
+                    (comp.cover_seller_actor, COVERED_QUESTION), (comp.output_buyer_actor, RIVALS_BOUND_QUESTION),
+                    (comp.tradable_actor, RIVALS_UNBOUND_QUESTION), (comp.rival_actors, COMPETE_QUESTION),
+                    (comp.definition_line, RESHAPING_QUESTION), (comp.forfeit_on_leaving, MOVE_MARGINAL_QUESTION),
+                    (comp.complaint_only, COMPLAINT_UNLIKELY_QUESTION), (comp.complaint_only, COMPLAINTS_FILED_QUESTION),
+                    (comp.size_threshold, STAYING_SMALL_QUESTION)):
+        if cond:
+            specs.append(q)
+    return specs
+
+
 def _related_specs(comp: Component) -> list[tuple[str, str, str, str]]:
     """One question per premise of each related market (CR-9, SB-3, RS-12), named by the relation's index."""
     out = []
@@ -502,6 +632,8 @@ def _instrument_specs(comp: Component) -> list[tuple[str, str, str, str]]:
         return _en_specs(comp)
     if comp.instrument == "prohibition":
         return _prohibition_specs(comp)
+    if comp.instrument in ("mandated_contract_term", "term_prohibition", "product_standard"):
+        return _mandate_specs(comp)
     if comp.instrument not in ("per_unit_tax", "tariff"):
         return []
     specs = list(TAX_QUESTIONS if comp.instrument == "per_unit_tax" else TARIFF_QUESTIONS)

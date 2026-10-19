@@ -108,6 +108,44 @@ def _prohibition_facts(c: str, comp) -> list[str]:
     return lines
 
 
+def _mandate_facts(c: str, comp) -> list[str]:
+    """Facts for mandates.lp: a mandated term (PC-17), a prohibited term (PC-18) or a standard on new units (EN-14)."""
+    kind = {"mandated_contract_term": "mandate", "term_prohibition": "term_ban", "product_standard": "standard"}[comp.instrument]
+    lines = [f"{kind}({c}).", f'enforcer({c}, "{comp.enforcer_actor}").', f'taxpayer({c}, "{comp.taxpayer_actor}").']
+    payers = [comp.taxpayer_actor, comp.other_spending_actor, comp.future_taxpayer_actor]
+    lines.append(f'mc_payer_group({c}, "{",".join(dict.fromkeys(p for p in payers if p))}").')
+    recipient = {"mandate": "mc_recipient", "term_ban": "tb_freed", "standard": None}[kind]
+    if recipient and comp.recipient_actor:
+        lines.append(f'{recipient}({c}, "{comp.recipient_actor}").')
+    if kind == "standard":
+        lines.append(f'st_buyer({c}, "{comp.buyer_actor}").')
+    for pred, actor in (("mc_floor_recipient", comp.floor_bound_actor), ("mc_applicant", comp.applicant_actor),
+                        ("mc_already", comp.already_provider_actor), ("mc_already_recipient", comp.already_recipient_actor),
+                        ("mc_below_cap", comp.below_cap_actor), ("mc_above_cap", comp.above_cap_actor),
+                        ("mc_cover_seller", comp.cover_seller_actor), ("mc_output_buyer", comp.output_buyer_actor),
+                        ("mc_tradable", comp.tradable_actor), ("neighbor_seller", comp.neighbor_seller_actor),
+                        ("mc_outside", comp.outside_actor), ("mc_complainant", comp.complainant_actor),
+                        ("mc_violator", comp.violator_actor), ("mc_near_threshold", comp.near_threshold_actor),
+                        ("mc_below_threshold", comp.below_threshold_actor), ("mc_margin_recipient", comp.margin_recipient_actor),
+                        ("st_stock_owner", comp.stock_owner_actor)):
+        if actor:
+            lines.append(f'{pred}({c}, "{actor}").')
+    lines += [f'mc_rival({c}, "{a}").' for a in comp.rival_actors]
+    for pred, flag in (("per_head_cap", comp.per_head_cap), ("paid_absence", comp.paid_absence),
+                       ("forfeit_on_leaving", comp.forfeit_on_leaving), ("complaint_only", comp.complaint_only),
+                       ("size_threshold", comp.size_threshold), ("threshold_staff_split", comp.threshold_staff_split),
+                       ("threshold_partial_count", comp.threshold_partial_count), ("margin_covered", comp.margin_covered),
+                       ("restrains_mobility", comp.restrains_mobility), ("voids_existing", comp.voids_existing),
+                       ("stock_exempt", comp.stock_exempt), ("definition_line", comp.definition_line),
+                       ("general_budget", comp.general_budget), ("tax_named", comp.tax_named)):
+        if flag:
+            lines.append(f"{pred}({c}).")
+    return lines
+
+
+MANDATES = ("mandated_contract_term", "term_prohibition", "product_standard")
+
+
 def _en_facts(c: str, comp) -> list[str]:
     lines = [f"{'licensing' if comp.instrument == 'licensing_requirement' else 'quota'}({c}).",
              f'en_buyer({c}, "{comp.buyer_actor}").', f'en_holder({c}, "{comp.right_holder_actor or comp.bound_actor}").',
@@ -215,6 +253,8 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
             lines += _en_facts(c, comp)
         if comp.instrument == "prohibition":
             lines += _prohibition_facts(c, comp)
+        if comp.instrument in MANDATES:
+            lines += _mandate_facts(c, comp)
     for a in assumptions:
         lines.append(f"assumption({a}).")
     return "\n".join(lines) + "\n"

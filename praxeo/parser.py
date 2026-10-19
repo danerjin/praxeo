@@ -92,6 +92,22 @@ instrument, even when the text states no aim:
   the good was taxed before; revenue_actor collects it), practice_ban (true if the ban forbids a way of doing a legal
   business, not a good), fees_to_budget (true if fees or fines go to the budget that funds enforcement),
   announcement_window, general_budget.
+- mandated_contract_term: bound_actor (who must provide the term and did not), recipient_actor (who receives it),
+  floor_bound_actor (recipients whose wage an existing minimum wage holds), applicant_actor (would-be recipients, where
+  the term's cost differs by recipient), already_provider_actor and already_recipient_actor (providers who already offer
+  the term, and their recipients), per_head_cap (true if the term per head stops at a cap) with below_cap_actor and
+  above_cap_actor, paid_absence (true if the term is paid time off) with cover_seller_actor, output_buyer_actor (buyers
+  of the providers' output), tradable_actor with neighbor_seller_actor (providers selling against unbound rivals across a
+  boundary, and those rivals), rival_actors (unbound rivals in the same output market: exempt firms, firms already
+  offering the term), definition_line with outside_actor (those engaged outside the definitions, such as contractors),
+  forfeit_on_leaving (true if what the term gives is lost on leaving), complaint_only (true if enforced only on
+  complaint) with complainant_actor and violator_actor, size_threshold with near_threshold_actor and
+  below_threshold_actor, enforcer_actor, general_budget.
+- term_prohibition: bound_actor (the party that used the term), recipient_actor (the party freed from it),
+  restrains_mobility (true if the term restrained that party's moves, as a non-compete clause does), voids_existing
+  (true if existing contracts are voided too).
+- product_standard: bound_actor (makers of new units), buyer_actor (buyers of new units), stock_exempt (true if existing
+  units are exempt) with stock_owner_actor, enforcer_actor, general_budget.
 For a tax or subsidy, list in `related` the markets the text or context names as related to the good: an input or factor
 its sellers use (kind input: who sells it, price_variable wage_rate for workers, and its other users if named), or a
 complement used with it (kind complement).

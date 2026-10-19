@@ -12,7 +12,7 @@ WE56 = ROOT / "cases" / "we056_tarrenmoor"
 # the table's class totals are matched to the record's subclasses; "lobbying groups" to the roles the record has for them
 SHORT = {
     "covered_residents": ["covered_residents.uninsured", "covered_residents.paying_above_cap"],
-    "lobbying groups": ["pharmacies.in_state", "covered_residents.paying_above_cap"],
+    "lobbying groups": ["pharmacies.in_state", "covered_residents.paying_above_cap", "plans.state_regulated"],  # A-17 names insurers
     # the OC-1 payer group's members, written in prose
     "recipients of other state spending": "recipients.other_spending", "future taxpayers": "taxpayers.future",
 }
@@ -22,6 +22,8 @@ WINDOWS = {"Nov–Dec 2027": "announcement", "Jan–Feb 2028": "first_months"}
 # from the pharmacies came out (11 KNOWN WRONG rows). K1 is a cap on the buyer's share that a third party makes up (PC-20,
 # `third_party_payer_actor`): the engine writes no ceiling fact for it, so none of those rules applies.
 EXCEPTIONS = {
+    ("plans.state_regulated", "compliance_cost", "increase", None):
+        "OC-2 on K2 (mandates.lp, Tier A): plans must process the balance bills; the table records the outlay (C-2), not the processing",
     ('covered_residents.uninsured', 'resources_available_other_uses', 'increase', None):
         'SB-1 with CR-8b: what the recipients receive adds to their means; the example records the price they pay (C-1); C-39 is the same receipt for the insured',
     # defensible rows the table does not list
@@ -32,7 +34,6 @@ EXCEPTIONS = {
 }
 NOT_PRODUCED = {
     "C-4": "missing rule: PC-20's seller side (the receipt is set by the payer's terms, CR-6 1.1) is not encoded; PC-20 signs the buyers and the payer only",
-    "C-24": "missing rule: RS-7 for a cap on the buyer's share (PC-20); the first run's row came from the ceiling rules",
     "C-6": "missing rule: SB-2 1.1 (a payment indexed to the seller's own price draws the posted price toward the limit); DM-1 needs seller_supply_slow, answered 0.1",
     "C-7": "missing rule: same mechanism (the cash buyers outside the Act pay the drawn-up usual price)",
     "C-8": "missing rule: RS-2 for sellers serving a payer-paid customer; PC-4 signs the protected buyers' quality only",
@@ -73,7 +74,7 @@ NOT_PRODUCED = {
     "C-50": "missing record fact: no nonresident role; U1 not run by reading; CR-7c not encoded for subsidies",
     "C-51": "missing rule and record fact: CR-8b on the plans of false attesters; no role",
 }
-PRODUCED = {"C-1", "C-2", "C-3", "C-5", "C-17", "C-26", "C-37", "C-39", "C-40", "C-41"}
+PRODUCED = {"C-1", "C-2", "C-3", "C-5", "C-17", "C-24", "C-26", "C-37", "C-39", "C-40", "C-41"}  # C-24: RS-7 for the plans bound by K2 (mandates.lp)
 
 
 def test_consistent_with_worked_example_we056():

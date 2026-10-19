@@ -68,5 +68,33 @@
   "probability": 0.8,
   "rationale": "Probability taken from the assumption table of handbook WE-028 (illustrative figures), A-6: transfers are not blocked for most owners by the 8% limit; shares are registered and may be sold.",
   "evidence": []
+ },
+ {
+  "question_id": "k3.binding",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "No matching assumption in WE-028; judged from the record: without the Act there is no quota to acquire, so crew settlements deducted no quota costs; against the no-Act counterfactual the prohibited deduction was not in use (PC-18 binding).",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.term_valued",
+  "value": "yes",
+  "probability": 0.5,
+  "rationale": "No matching assumption in WE-028; judged: owners would value deducting quota costs, but the term was not in use (see binding).",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.substitute_terms",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Taken from WE-028 C-51 (A-6, A-8, A-26): owners can move to share agreements with a lower crew share.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-028 (illustrative figures), A-15: recipients, processors and crew can organize at a cost below their stake.",
+  "evidence": []
  }
 ]

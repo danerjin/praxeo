@@ -20,7 +20,10 @@ RECORD_PREDICATES = ("ceiling(", "decontrol(", "bound(", "protected(", "excluded
                      "subsidy(", "per_unit_sub(", "share_cap(", "criteria(", "budget_capped(", "temporary(", "scrappage(",
                      "repay_on_move(", "field_contested(", "target_qty(", "claim_penalties(",
                      "licensing(", "quota(", "transferable(", "import_quota(", "seller_cap(", "wider_market(", "general_budget(", "price_fixed(", "allocation_by_history(", "prohibition(", "volume_penalties(", "practice_ban(", "fees_to_budget(", "stocks_destroyed(", "taxed_before(", "mobile_buyer(", "rights_sold(", "holder_cap(", "self_supply(", "domestic_seller(", "downstream(", "importer(", "buyer(",
-                     "exporter(", "seller(", "renewable(", "definition_line(", "relief_applicant(")
+                     "exporter(", "seller(", "renewable(", "definition_line(", "relief_applicant(",
+                     "mandate(", "term_ban(", "standard(", "per_head_cap(", "paid_absence(", "forfeit_on_leaving(", "complaint_only(",
+                     "size_threshold(", "threshold_staff_split(", "threshold_partial_count(", "margin_covered(", "restrains_mobility(",
+                     "voids_existing(", "stock_exempt(")
 
 
 def record_roles(record: PolicyRecord) -> set[str]:
@@ -39,6 +42,11 @@ def record_roles(record: PolicyRecord) -> set[str]:
         names += [comp.third_party_payer_actor, comp.qualifier_actor, comp.other_spending_actor, comp.future_taxpayer_actor]
         names += [comp.other_buyer_actor, comp.substitute_seller_actor, comp.asset_owner_actor, comp.claim_handler_actor,
                   comp.used_buyer_actor, comp.used_owner_actor, comp.scrapper_actor]
+        names += [comp.recipient_actor, comp.floor_bound_actor, comp.applicant_actor, comp.already_provider_actor,
+                  comp.already_recipient_actor, comp.below_cap_actor, comp.above_cap_actor, comp.cover_seller_actor,
+                  comp.output_buyer_actor, comp.tradable_actor, comp.outside_actor, comp.complainant_actor, comp.violator_actor,
+                  comp.near_threshold_actor, comp.below_threshold_actor, comp.margin_recipient_actor, comp.stock_owner_actor,
+                  *comp.rival_actors]
         names += [n for rel in comp.related for n in (rel.seller_actor, rel.other_user_actor)]
         for d in comp.downstream:
             names += [d.actor, d.buyer_actor, d.owner_actor, d.exporter_actor, d.worker_actor]

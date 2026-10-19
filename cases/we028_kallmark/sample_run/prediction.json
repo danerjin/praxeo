@@ -12,11 +12,23 @@
    "p": 0.9,
    "text": "The cap holds the quantity below what would otherwise be traded."
   },
+  "binding(k3)": {
+   "assumption_class": "binding",
+   "id": "binding(k3)",
+   "p": 0.3,
+   "text": "The term was in use."
+  },
   "can_organize(k1)": {
    "assumption_class": "other",
    "id": "can_organize(k1)",
    "p": 0.85,
    "text": "The holders of the rights can organize to lobby at a cost below their stake."
+  },
+  "can_organize(k3)": {
+   "assumption_class": "other",
+   "id": "can_organize(k3)",
+   "p": 0.85,
+   "text": "The parties that used the term can organize to lobby."
   },
   "enforced(k1)": {
    "assumption_class": "enforcement",
@@ -47,6 +59,18 @@
    "id": "price_effect_material(k1)",
    "p": 0.6,
    "text": "The capped quantity matters enough in the wider market to raise the price there."
+  },
+  "substitute_terms(k3)": {
+   "assumption_class": "substitutability",
+   "id": "substitute_terms(k3)",
+   "p": 0.6,
+   "text": "Lawful substitute terms give part of the same protection."
+  },
+  "term_valued(k3)": {
+   "assumption_class": "other",
+   "id": "term_valued(k3)",
+   "p": 0.5,
+   "text": "The party that used the term valued its protection."
   },
   "trade_cheap(k1)": {
    "assumption_class": "mobility",
@@ -508,18 +532,19 @@
    "actor_class": "officials.enforcement",
    "actor_group": [],
    "assumption_sets": [
-    [
-     "binding(k1)",
-     "enforced(k1)"
-    ]
+    []
    ],
-   "assumptions": [
-    "binding(k1)",
-    "enforced(k1)"
-   ],
+   "assumptions": [],
    "combines": [],
    "comparison": null,
    "derivation": [
+    {
+     "conclusion": "mc_administered(k3)",
+     "premises": [
+      "term_ban(k3)"
+     ],
+     "rule": "OC-3"
+    },
     {
      "conclusion": "quota_binds(k1)",
      "premises": [
@@ -1024,6 +1049,46 @@
    "actor_group": [],
    "assumption_sets": [
     [
+     "binding(k3)",
+     "can_organize(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "can_organize(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_lobby(k3)",
+     "premises": [
+      "binding(k3)",
+      "can_organize(k3)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-20",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "vessel_owners.history",
+   "actor_group": [],
+   "assumption_sets": [
+    [
      "binding(k1)",
      "enforced(k1)",
      "trade_cheap(k1)",
@@ -1062,7 +1127,7 @@
     "medium",
     "long"
    ],
-   "id": "C-20",
+   "id": "C-21",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1103,7 +1168,7 @@
     "medium",
     "long"
    ],
-   "id": "C-21",
+   "id": "C-22",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1146,7 +1211,7 @@
    "horizon": [
     "short"
    ],
-   "id": "C-22",
+   "id": "C-23",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1189,7 +1254,7 @@
    "horizon": [
     "short"
    ],
-   "id": "C-23",
+   "id": "C-24",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1198,10 +1263,50 @@
    "variable": "resources_available_other_uses",
    "visibility": "invisible",
    "window": "announcement"
+  },
+  {
+   "actor_class": "vessel_owners.history",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "substitute_terms(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "substitute_terms(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tb_substitute(k3)",
+     "premises": [
+      "substitute_terms(k3)"
+     ],
+     "rule": "PC-18"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-25",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "term_prevalence",
+   "visibility": "invisible",
+   "window": null
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"vessel_owners.history\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nquota(k1).\nen_buyer(k1, \"buyers.regional\").\nen_holder(k1, \"share_recipients\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending\").\nen_informal_buyer(k1, \"buyers.fresh_domestic\").\nen_revenue(k1, \"officials.enforcement\").\nen_entrant(k1, \"entrants.prospective\").\nen_worker(k1, \"crew\").\nen_supplier(k1, \"ports.minor\").\ntransferable(k1).\nallocation_by_history(k1).\nbase_after_announcement(k1).\nwider_market(k1).\ngeneral_budget(k1).\nbound(k2, \"vessel_owners.history\").\nprotected(k2, \"share_recipients\").\nexcluded(k2, \"buyers.prospective\").\nannounced(k2).\nbound(k3, \"vessel_owners.history\").\nprotected(k3, \"crew\").\nexcluded(k3, \"buyers.prospective\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(expected_to_last(k1)).\nassumption(values_differ(k1)).\nassumption(trade_cheap(k1)).\nassumption(allocation_known(k1)).\nassumption(price_effect_material(k1)).\nassumption(enforcement_budget_raised(k1)).\n",
+ "engine_facts": "bound(k1, \"vessel_owners.history\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nquota(k1).\nen_buyer(k1, \"buyers.regional\").\nen_holder(k1, \"share_recipients\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending\").\nen_informal_buyer(k1, \"buyers.fresh_domestic\").\nen_revenue(k1, \"officials.enforcement\").\nen_entrant(k1, \"entrants.prospective\").\nen_worker(k1, \"crew\").\nen_supplier(k1, \"ports.minor\").\ntransferable(k1).\nallocation_by_history(k1).\nbase_after_announcement(k1).\nwider_market(k1).\ngeneral_budget(k1).\nbound(k2, \"vessel_owners.history\").\nprotected(k2, \"share_recipients\").\nexcluded(k2, \"buyers.prospective\").\nannounced(k2).\nbound(k3, \"vessel_owners.history\").\nprotected(k3, \"crew\").\nexcluded(k3, \"buyers.prospective\").\nterm_ban(k3).\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nmc_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(expected_to_last(k1)).\nassumption(values_differ(k1)).\nassumption(trade_cheap(k1)).\nassumption(allocation_known(k1)).\nassumption(price_effect_material(k1)).\nassumption(enforcement_budget_raised(k1)).\nassumption(binding(k3)).\nassumption(term_valued(k3)).\nassumption(substitute_terms(k3)).\nassumption(can_organize(k3)).\n",
  "explanations": [
   "C-1. Compared with no Kallmark Ridge Cod Fishery Act, disputes settled outside courts for buyers.fresh_domestic rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
   "C-2. Compared with no Kallmark Ridge Cod Fishery Act, quality information for buyers.fresh_domestic falls from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
@@ -1212,7 +1317,7 @@
   "C-7. Compared with no Kallmark Ridge Cod Fishery Act, employment or hours worked for crew falls for at least one of them from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.80). Reported.",
   "C-8. Compared with no Kallmark Ridge Cod Fishery Act, employment or hours worked for crew rises for at least one of them in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported.",
   "C-9. Compared with no Kallmark Ridge Cod Fishery Act, entry rate for entrants.prospective rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported.",
-  "C-10. Compared with no Kallmark Ridge Cod Fishery Act, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80). Reported.",
+  "C-10. Compared with no Kallmark Ridge Cod Fishery Act, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; EN-6: EN-6. This holds if: no assumption. Reported.",
   "C-11. Compared with no Kallmark Ridge Cod Fishery Act, quantity traded for ports.minor falls from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.80). Reported.",
   "C-12. Compared with no Kallmark Ridge Cod Fishery Act, asset value for share_recipients rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Holders and buyers of the rights expect the restriction to last (p = 0.70). Reported.",
   "C-13. Compared with no Kallmark Ridge Cod Fishery Act, lobbying effort for share_recipients rises from the medium run onward (tier B, invisible). Why: EN-6: EN-6; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The holders of the rights can organize to lobby at a cost below their stake (p = 0.85); The cap is enforced (p = 0.80). Reported.",
@@ -1222,10 +1327,12 @@
   "C-17. Compared with no Kallmark Ridge Cod Fishery Act, capital stock target for vessel_owners.history falls in the long run (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.80). Reported.",
   "C-18. Compared with no Kallmark Ridge Cod Fishery Act, informal activity for vessel_owners.history rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
   "C-19. Compared with no Kallmark Ridge Cod Fishery Act, investment target for vessel_owners.history rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported.",
-  "C-20. Compared with no Kallmark Ridge Cod Fishery Act, number of sellers for vessel_owners.history falls from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.80). Reported.",
-  "C-21. Compared with no Kallmark Ridge Cod Fishery Act, quantity traded for vessel_owners.history falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80). Reported.",
-  "C-22. Compared with no Kallmark Ridge Cod Fishery Act, quantity traded for vessel_owners.history rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported.",
-  "C-23. Compared with no Kallmark Ridge Cod Fishery Act, resources available other uses for vessel_owners.history falls in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported."
+  "C-20. Compared with no Kallmark Ridge Cod Fishery Act, lobbying effort for vessel_owners.history rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was in use (p = 0.30); The parties that used the term can organize to lobby (p = 0.85). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-21. Compared with no Kallmark Ridge Cod Fishery Act, number of sellers for vessel_owners.history falls from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.80). Reported.",
+  "C-22. Compared with no Kallmark Ridge Cod Fishery Act, quantity traded for vessel_owners.history falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80). Reported.",
+  "C-23. Compared with no Kallmark Ridge Cod Fishery Act, quantity traded for vessel_owners.history rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported.",
+  "C-24. Compared with no Kallmark Ridge Cod Fishery Act, resources available other uses for vessel_owners.history falls in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported.",
+  "C-25. Compared with no Kallmark Ridge Cod Fishery Act, term prevalence for vessel_owners.history rises from the short run onward (tier B, invisible). Why: PC-18: PC-18. This holds if: The term was in use (p = 0.30); Lawful substitute terms give part of the same protection (p = 0.60). Not reported: an assumption is below the 0.5 cut-off."
  ],
  "questions": [
   {
@@ -1407,15 +1514,93 @@
     "options": [],
     "text": "Will the budget of the agency that administers the measure be raised to cover the new work, rather than the work being absorbed within its existing budget?"
    }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k3.binding",
+    "rationale": "No matching assumption in WE-028; judged from the record: without the Act there is no quota to acquire, so crew settlements deducted no quota costs; against the no-Act counterfactual the prohibited deduction was not in use (PC-18 binding).",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k3.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Was the prohibited term in use in contracts of this kind?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.5,
+    "question_id": "k3.term_valued",
+    "rationale": "No matching assumption in WE-028; judged: owners would value deducting quota costs, but the term was not in use (see binding).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "term_valued",
+    "assumption_class": "other",
+    "id": "k3.term_valued",
+    "kind": "noul",
+    "options": [],
+    "text": "Did the party that used the term value its protection enough to pay for it through other terms?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k3.substitute_terms",
+    "rationale": "Taken from WE-028 C-51 (A-6, A-8, A-26): owners can move to share agreements with a lower crew share.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "substitute_terms",
+    "assumption_class": "substitutability",
+    "id": "k3.substitute_terms",
+    "kind": "noul",
+    "options": [],
+    "text": "Are there lawful substitute terms that give part of the same protection?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k3.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-028 (illustrative figures), A-15: recipients, processors and crew can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k3.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the parties that used the term organize to lobby over the prohibition at a cost below their stake?"
+   }
   }
  ],
  "record": {
   "components": [
    {
+    "above_cap_actor": null,
     "allocation_by_history": true,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
     "announcement_window": true,
+    "applicant_actor": null,
     "asset_owner_actor": null,
     "base_period_after_announcement": true,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
     "bound_actor": "vessel_owners.history",
     "budget_capped": false,
     "buyer_actor": "buyers.regional",
@@ -1423,6 +1608,10 @@
     "cap_unit": null,
     "claim_handler_actor": null,
     "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
     "debt_funded": false,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -1436,8 +1625,11 @@
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "fees_to_budget": false,
     "field_contested": false,
+    "floor_bound_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
     "future_taxpayer_actor": null,
     "general_budget": true,
     "good": "ridge_cod",
@@ -1446,33 +1638,47 @@
     "import_quota": false,
     "importer_actor": null,
     "informal_buyer_actor": "buyers.fresh_domestic",
+    "informal_seller_actor": null,
     "input_supplier_actor": "ports.minor",
     "instrument": "quota",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
     "market": "kallmark",
     "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
     "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
     "price_fixed": false,
+    "prospective_buyer_actor": null,
     "protected_actor": null,
     "protected_concentrated": true,
     "qualifier_actor": null,
     "rate_rise": false,
+    "recipient_actor": null,
     "related": [],
     "relief_applicant_actor": null,
     "renewable": true,
     "repay_on_move": false,
+    "restrains_mobility": false,
     "revenue_actor": "officials.enforcement",
     "right_holder_actor": "share_recipients",
     "rights_sold": false,
+    "rival_actors": [],
     "scrappage": false,
     "scrapper_actor": null,
     "self_supply": false,
     "seller_actor": "sellers.current",
     "seller_cap": false,
+    "size_threshold": false,
     "source_sentences": [
      "The Act sets a total allowable catch of ridge cod of 40,000 tonnes a year for 2028 to 2032, binding vessel owners.",
      "From 2033 the total is set each year by the Ministry of Fisheries \"having regard to scientific advice\".",
@@ -1485,24 +1691,40 @@
      "The bill was introduced by the government on 3 February 2026, with its allocation formula published, and passage was widely expected.",
      "About 30% is sold fresh in Kallmark to fish shops and restaurants."
     ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
     "substitute_seller_actor": null,
     "tax_named": false,
+    "taxed_before": false,
     "taxpayer_actor": "taxpayers",
     "temporary": false,
     "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
     "trainer_actor": null,
     "transferable": true,
     "used_buyer_actor": null,
     "used_owner_actor": null,
     "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
     "wider_market": true,
     "worker_actor": "crew"
    },
    {
+    "above_cap_actor": null,
     "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
     "announcement_window": true,
+    "applicant_actor": null,
     "asset_owner_actor": null,
     "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
     "bound_actor": "vessel_owners.history",
     "budget_capped": false,
     "buyer_actor": "buyers.current",
@@ -1510,6 +1732,10 @@
     "cap_unit": null,
     "claim_handler_actor": null,
     "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
     "debt_funded": false,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -1523,8 +1749,11 @@
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "fees_to_budget": false,
     "field_contested": false,
+    "floor_bound_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
     "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
     "good": "ridge_cod_quota_shares",
@@ -1533,57 +1762,87 @@
     "import_quota": false,
     "importer_actor": null,
     "informal_buyer_actor": null,
+    "informal_seller_actor": null,
     "input_supplier_actor": null,
     "instrument": "rights_allocation",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
     "market": "kallmark",
     "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
     "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
     "price_fixed": false,
+    "prospective_buyer_actor": null,
     "protected_actor": "share_recipients",
     "protected_concentrated": true,
     "qualifier_actor": null,
     "rate_rise": false,
+    "recipient_actor": null,
     "related": [],
     "relief_applicant_actor": null,
     "renewable": false,
     "repay_on_move": false,
+    "restrains_mobility": false,
     "revenue_actor": "officials.enforcement",
     "right_holder_actor": null,
     "rights_sold": false,
+    "rival_actors": [],
     "scrappage": false,
     "scrapper_actor": null,
     "self_supply": false,
     "seller_actor": "sellers.current",
     "seller_cap": false,
+    "size_threshold": false,
     "source_sentences": [
      "The catch is divided into one million shares.",
      "On 1 January 2028, shares are given free to the registered owner of each vessel on 31 December 2027, in proportion to that vessel's recorded ridge cod landings in 2025, 2026 and 2027 together.",
      "Only owners of at least one registered vessel may hold shares.",
      "No owner, with affiliates, may hold more than 8% of all shares."
     ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
     "substitute_seller_actor": null,
     "tax_named": false,
+    "taxed_before": false,
     "taxpayer_actor": "taxpayers",
     "temporary": false,
     "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
     "trainer_actor": null,
     "transferable": true,
     "used_buyer_actor": null,
     "used_owner_actor": null,
     "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
     "wider_market": false,
     "worker_actor": null
    },
    {
+    "above_cap_actor": null,
     "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
     "announcement_window": false,
+    "applicant_actor": null,
     "asset_owner_actor": null,
     "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
     "bound_actor": "vessel_owners.history",
     "budget_capped": false,
     "buyer_actor": "buyers.current",
@@ -1591,6 +1850,10 @@
     "cap_unit": null,
     "claim_handler_actor": null,
     "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
     "debt_funded": false,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -1604,8 +1867,11 @@
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "fees_to_budget": false,
     "field_contested": false,
+    "floor_bound_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
     "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
     "good": "crew_share_agreement",
@@ -1614,47 +1880,71 @@
     "import_quota": false,
     "importer_actor": null,
     "informal_buyer_actor": null,
+    "informal_seller_actor": null,
     "input_supplier_actor": null,
     "instrument": "term_prohibition",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
     "market": "kallmark",
     "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
     "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
     "price_fixed": false,
+    "prospective_buyer_actor": null,
     "protected_actor": "crew",
     "protected_concentrated": true,
     "qualifier_actor": null,
     "rate_rise": false,
+    "recipient_actor": null,
     "related": [],
     "relief_applicant_actor": null,
     "renewable": false,
     "repay_on_move": false,
+    "restrains_mobility": false,
     "revenue_actor": "officials.enforcement",
     "right_holder_actor": null,
     "rights_sold": false,
+    "rival_actors": [],
     "scrappage": false,
     "scrapper_actor": null,
     "self_supply": false,
     "seller_actor": "sellers.current",
     "seller_cap": false,
+    "size_threshold": false,
     "source_sentences": [
      "The Act says: \"The cost of acquiring quota shall not be deducted as a trip expense in crew settlements.\"",
      "This is a rule on the deductions from trip revenue before the crew share in the private crew share agreement, binding vessel owners."
     ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
     "substitute_seller_actor": null,
     "tax_named": false,
+    "taxed_before": false,
     "taxpayer_actor": "taxpayers",
     "temporary": false,
     "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
     "trainer_actor": null,
     "transferable": false,
     "used_buyer_actor": null,
     "used_owner_actor": null,
     "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
     "wider_market": false,
     "worker_actor": null
    }
@@ -1688,7 +1978,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-19T06:08:23+00:00",
+ "run_at": "2026-10-19T19:57:00+00:00",
  "sources_held_back": [],
  "unclear": [
   {

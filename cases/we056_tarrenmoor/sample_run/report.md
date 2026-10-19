@@ -1,7 +1,7 @@
 # Thin-slice run: Tarrenmoor Insulin Affordability Act
 
-Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-18T20:45:46+00:00
-Prediction log sha256 (frozen before the outcome card was opened): `48fa25772af29de2…`
+Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-19T19:57:01+00:00
+Prediction log sha256 (frozen before the outcome card was opened): `a72f430bdf884157…`
 
 ## Policy record
 
@@ -20,6 +20,9 @@ Prediction log sha256 (frozen before the outcome card was opened): `48fa25772af2
 |---|---|---|---|
 | `payer_complies(k1)` | enforcement | 0.90 | The third party pays the sellers the rest of the price as required. |
 | `share_demand_responds(k1)` | substitutability | 0.85 | Buyers whose share falls buy more of the good. |
+| `binding(k2)` | binding | 0.90 | The term was absent from some contracts, so the mandate binds for them. |
+| `enforced(k2)` | enforcement | 0.90 | Most bound providers comply. |
+| `can_organize(k2)` | other | 0.85 | The bound providers can organize to lobby. |
 | `takeup(k3)` | other | 0.90 | Many eligible recipients value the payment above the cost of qualifying, and claim it. |
 | `not_fully_captured(k3)` | other | 0.90 | Sellers do not capture the whole payment: the recipients' net price falls. |
 | `quantity_expands(k3)` | alternative_uses | 0.85 | At least one side can expand its quantity: more of the subsidized good is traded. |
@@ -50,9 +53,11 @@ Prediction log sha256 (frozen before the outcome card was opened): `48fa25772af2
 | C-15 | pharmacies.in_state | net_price_received | increase | short+ | B | SB-2, DM-1 | {seller_supply_slow(k3), takeup(k3)} | no |
 | C-16 | pharmacies.in_state | quantity_traded | increase | short+ | B | SB-2 | {quantity_expands(k3), takeup(k3)} | yes |
 | C-17 | pharmacies.in_state | subsidy_share_received | increase | short+ | B | SB-2, DM-1 | {seller_supply_slow(k3), sellers_fewer_alternatives(k3), takeup(k3)} | no |
-| C-18 | plans.state_regulated | subsidy_outlay | increase | short+ | B | PC-20 | {payer_complies(k1)} | yes |
-| C-19 | sellers.substitutes | quantity_traded (unsubsidized_goods) | decrease | short+ | B | SB-2, RS-1, SB-3 | {quantity_expands(k3), substitutes_given_up(k3), takeup(k3)} | yes |
-| C-20 | taxpayers or recipients.other_spending or taxpayers.future | resources_available_other_uses | at_least_one_decrease | short+ | A | SB-1, OC-1 | {} | yes |
+| C-18 | plans.state_regulated | compliance_cost | increase | short+ | A | OC-2 | {} | yes |
+| C-19 | plans.state_regulated | lobbying_effort | increase | medium+ | B | RS-7 | {binding(k2), can_organize(k2)} | yes |
+| C-20 | plans.state_regulated | subsidy_outlay | increase | short+ | B | PC-20 | {payer_complies(k1)} | yes |
+| C-21 | sellers.substitutes | quantity_traded (unsubsidized_goods) | decrease | short+ | B | SB-2, RS-1, SB-3 | {quantity_expands(k3), substitutes_given_up(k3), takeup(k3)} | yes |
+| C-22 | taxpayers or recipients.other_spending or taxpayers.future | resources_available_other_uses | at_least_one_decrease | short+ | A | SB-1, OC-1 | {} | yes |
 
 ## Explanations
 
@@ -73,9 +78,11 @@ Prediction log sha256 (frozen before the outcome card was opened): `48fa25772af2
 - C-15. Compared with no Tarrenmoor Insulin Affordability Act, net price received for pharmacies.in_state rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.10); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.
 - C-16. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded for pharmacies.in_state rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.
 - C-17. Compared with no Tarrenmoor Insulin Affordability Act, subsidy share received for pharmacies.in_state rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.10); While supply is fixed, the sellers have clearly fewer alternatives than the recipients (p = 0.20); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.
-- C-18. Compared with no Tarrenmoor Insulin Affordability Act, subsidy outlay for plans.state_regulated rises from the short run onward (tier B, visible). Why: PC-20: PC-20. This holds if: The third party pays the sellers the rest of the price as required (p = 0.90). Reported.
-- C-19. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded (unsubsidized goods) for sellers.substitutes falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-1: when a good becomes dearer, buyers turn to substitutes; SB-3: resources move into the subsidized activity from the uses that would otherwise have had them. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Some recipients would otherwise have bought an unsubsidized good (p = 0.75); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.
-- C-20. Compared with no Tarrenmoor Insulin Affordability Act, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported.
+- C-18. Compared with no Tarrenmoor Insulin Affordability Act, compliance cost for plans.state_regulated rises from the short run onward (tier A, invisible). Why: OC-2: OC-2. This holds if: no assumption. Reported.
+- C-19. Compared with no Tarrenmoor Insulin Affordability Act, lobbying effort for plans.state_regulated rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The bound providers can organize to lobby (p = 0.85). Reported.
+- C-20. Compared with no Tarrenmoor Insulin Affordability Act, subsidy outlay for plans.state_regulated rises from the short run onward (tier B, visible). Why: PC-20: PC-20. This holds if: The third party pays the sellers the rest of the price as required (p = 0.90). Reported.
+- C-21. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded (unsubsidized goods) for sellers.substitutes falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-1: when a good becomes dearer, buyers turn to substitutes; SB-3: resources move into the subsidized activity from the uses that would otherwise have had them. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Some recipients would otherwise have bought an unsubsidized good (p = 0.75); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.
+- C-22. Compared with no Tarrenmoor Insulin Affordability Act, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported.
 
 ## Score against the outcome card
 

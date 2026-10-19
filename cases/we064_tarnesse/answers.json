@@ -61,5 +61,26 @@
   "probability": 0.6,
   "rationale": "Probability taken from the assumption table of handbook WE-064 (illustrative figures), A-17: some operators win blocks at prices below their own value for them (the cap holds the clearing price at the third-highest bidder's value).",
   "evidence": []
+ },
+ {
+  "question_id": "k2.binding",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-064 (illustrative figures), A-8: licensees would not, on their own, cover 90% of the population with the band by 2032.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.enforced",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-064 (illustrative figures), A-3: the obligation is enforced; revocation is credible.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-064 (illustrative figures), A-13: licensees, entrants and town councils can organize to lobby at a cost below their stakes.",
+  "evidence": []
  }
 ]

@@ -1,10 +1,28 @@
 {
  "assumptions": {
+  "binding(k2)": {
+   "assumption_class": "binding",
+   "id": "binding(k2)",
+   "p": 0.9,
+   "text": "The term was absent from some contracts, so the mandate binds for them."
+  },
   "can_delay(k3)": {
    "assumption_class": "expectations",
    "id": "can_delay(k3)",
    "p": 0.65,
    "text": "Eligible buyers knew of the payment before it started and could delay purchases."
+  },
+  "can_organize(k2)": {
+   "assumption_class": "other",
+   "id": "can_organize(k2)",
+   "p": 0.85,
+   "text": "The bound providers can organize to lobby."
+  },
+  "enforced(k2)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k2)",
+   "p": 0.9,
+   "text": "Most bound providers comply."
   },
   "not_fully_captured(k3)": {
    "assumption_class": "other",
@@ -681,6 +699,13 @@
       "subsidy(k3)"
      ],
      "rule": "OC-3"
+    },
+    {
+     "conclusion": "mc_administered(k2)",
+     "premises": [
+      "mandate(k2)"
+     ],
+     "rule": "OC-3"
     }
    ],
    "group": [],
@@ -906,6 +931,80 @@
    "actor_class": "plans.state_regulated",
    "actor_group": [],
    "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_compliance(k2)",
+     "premises": [
+      "mandate(k2)"
+     ],
+     "rule": "OC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-18",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "plans.state_regulated",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "can_organize(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "can_organize(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_lobby(k2)",
+     "premises": [
+      "binding(k2)",
+      "can_organize(k2)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-19",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "plans.state_regulated",
+   "actor_group": [],
+   "assumption_sets": [
     [
      "payer_complies(k1)"
     ]
@@ -931,7 +1030,7 @@
     "medium",
     "long"
    ],
-   "id": "C-18",
+   "id": "C-20",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -996,7 +1095,7 @@
     "medium",
     "long"
    ],
-   "id": "C-19",
+   "id": "C-21",
    "item": "unsubsidized_goods",
    "reported": true,
    "sign": "decrease",
@@ -1041,7 +1140,7 @@
     "medium",
     "long"
    ],
-   "id": "C-20",
+   "id": "C-22",
    "item": null,
    "reported": true,
    "sign": "at_least_one_decrease",
@@ -1053,7 +1152,7 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "share_cap(k1).\nshare_payer(k1, \"plans.state_regulated\").\nbound(k1, \"pharmacies.in_state\").\nprotected(k1, \"covered_residents.paying_above_cap\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nenforcer(k1, \"officials.enforcement\").\nprotected_concentrated(k1).\nbound(k2, \"plans.state_regulated\").\nprotected(k2, \"covered_residents.state_plans\").\nexcluded(k2, \"buyers.prospective\").\nbound(k3, \"covered_residents.uninsured\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nsubsidy(k3).\nsb_recipient(k3, \"covered_residents.uninsured\").\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nsb_claim_handler(k3, \"pharmacies.in_state\").\nper_unit_sub(k3).\nsb_seller(k3, \"pharmacies.in_state\").\nsb_qualifier(k3, \"covered_residents.uninsured\").\nsb_payer_body(k3, \"insulin_fund\").\nsb_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nsb_other_buyer(k3, \"buyers.noncovered_cash\").\nsb_substitute_seller(k3, \"sellers.substitutes\").\ncriteria(k3).\nassumption(payer_complies(k1)).\nassumption(share_demand_responds(k1)).\nassumption(takeup(k3)).\nassumption(not_fully_captured(k3)).\nassumption(quantity_expands(k3)).\nassumption(seller_supply_slow(k3)).\nassumption(sellers_fewer_alternatives(k3)).\nassumption(substitutes_given_up(k3)).\nassumption(qualifying_pays(k3)).\nassumption(can_delay(k3)).\n",
+ "engine_facts": "share_cap(k1).\nshare_payer(k1, \"plans.state_regulated\").\nbound(k1, \"pharmacies.in_state\").\nprotected(k1, \"covered_residents.paying_above_cap\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nenforcer(k1, \"officials.enforcement\").\nprotected_concentrated(k1).\nbound(k2, \"plans.state_regulated\").\nprotected(k2, \"covered_residents.state_plans\").\nexcluded(k2, \"buyers.prospective\").\nmandate(k2).\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nmc_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nbound(k3, \"covered_residents.uninsured\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nsubsidy(k3).\nsb_recipient(k3, \"covered_residents.uninsured\").\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nsb_claim_handler(k3, \"pharmacies.in_state\").\nper_unit_sub(k3).\nsb_seller(k3, \"pharmacies.in_state\").\nsb_qualifier(k3, \"covered_residents.uninsured\").\nsb_payer_body(k3, \"insulin_fund\").\nsb_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nsb_other_buyer(k3, \"buyers.noncovered_cash\").\nsb_substitute_seller(k3, \"sellers.substitutes\").\ncriteria(k3).\nassumption(payer_complies(k1)).\nassumption(share_demand_responds(k1)).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(can_organize(k2)).\nassumption(takeup(k3)).\nassumption(not_fully_captured(k3)).\nassumption(quantity_expands(k3)).\nassumption(seller_supply_slow(k3)).\nassumption(sellers_fewer_alternatives(k3)).\nassumption(substitutes_given_up(k3)).\nassumption(qualifying_pays(k3)).\nassumption(can_delay(k3)).\n",
  "explanations": [
   "C-1. Compared with no Tarrenmoor Insulin Affordability Act, price paid for buyers.noncovered_cash rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.10); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
   "C-2. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded for buyers.noncovered_cash falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment; CR-4: buyers who face a higher price take fewer units. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.10); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
@@ -1072,9 +1171,11 @@
   "C-15. Compared with no Tarrenmoor Insulin Affordability Act, net price received for pharmacies.in_state rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.10); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
   "C-16. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded for pharmacies.in_state rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
   "C-17. Compared with no Tarrenmoor Insulin Affordability Act, subsidy share received for pharmacies.in_state rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.10); While supply is fixed, the sellers have clearly fewer alternatives than the recipients (p = 0.20); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-18. Compared with no Tarrenmoor Insulin Affordability Act, subsidy outlay for plans.state_regulated rises from the short run onward (tier B, visible). Why: PC-20: PC-20. This holds if: The third party pays the sellers the rest of the price as required (p = 0.90). Reported.",
-  "C-19. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded (unsubsidized goods) for sellers.substitutes falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-1: when a good becomes dearer, buyers turn to substitutes; SB-3: resources move into the subsidized activity from the uses that would otherwise have had them. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Some recipients would otherwise have bought an unsubsidized good (p = 0.75); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
-  "C-20. Compared with no Tarrenmoor Insulin Affordability Act, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
+  "C-18. Compared with no Tarrenmoor Insulin Affordability Act, compliance cost for plans.state_regulated rises from the short run onward (tier A, invisible). Why: OC-2: OC-2. This holds if: no assumption. Reported.",
+  "C-19. Compared with no Tarrenmoor Insulin Affordability Act, lobbying effort for plans.state_regulated rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The bound providers can organize to lobby (p = 0.85). Reported.",
+  "C-20. Compared with no Tarrenmoor Insulin Affordability Act, subsidy outlay for plans.state_regulated rises from the short run onward (tier B, visible). Why: PC-20: PC-20. This holds if: The third party pays the sellers the rest of the price as required (p = 0.90). Reported.",
+  "C-21. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded (unsubsidized goods) for sellers.substitutes falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-1: when a good becomes dearer, buyers turn to substitutes; SB-3: resources move into the subsidized activity from the uses that would otherwise have had them. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.85); Some recipients would otherwise have bought an unsubsidized good (p = 0.75); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-22. Compared with no Tarrenmoor Insulin Affordability Act, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
  ],
  "questions": [
   {
@@ -1111,6 +1212,60 @@
     "kind": "noul",
     "options": [],
     "text": "Will buyers whose out-of-pocket share falls buy more of the good (fewer skipped or rationed purchases)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k2.binding",
+    "rationale": "No separate assumption in WE-056; judged from the record: plans did not pay the balance above $35 before the Act, so the term binds (A-1 covers the cap itself, 0.9).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k2.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the mandated term absent from some contracts that would otherwise be made?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k2.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-1: bound pharmacies comply and receive the plan's payment.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k2.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most bound providers comply with the mandate in practice?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-17: pharmacies, PBMs, insurers and patient groups can organize at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k2.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound providers organize to lobby over the mandate at a cost below their stake?"
    }
   },
   {
@@ -1261,8 +1416,16 @@
  "record": {
   "components": [
    {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
     "announcement_window": true,
+    "applicant_actor": null,
     "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
     "bound_actor": "pharmacies.in_state",
     "budget_capped": false,
     "buyer_actor": "buyers.current",
@@ -1270,6 +1433,10 @@
     "cap_unit": "dollars per 30-day supply of insulin collected from a covered resident",
     "claim_handler_actor": null,
     "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
     "debt_funded": false,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -1278,39 +1445,65 @@
     "downstream": [],
     "eligibility_criteria": false,
     "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
     "evasion_by_resellers": false,
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "fees_to_budget": false,
     "field_contested": false,
+    "floor_bound_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
     "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
     "good": "insulin",
+    "holder_cap": false,
     "id": "k1",
+    "import_quota": false,
     "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
     "input_supplier_actor": null,
     "instrument": "price_ceiling",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
     "market": "tarrenmoor",
     "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
     "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
     "protected_actor": "covered_residents.paying_above_cap",
     "protected_concentrated": true,
     "qualifier_actor": null,
     "rate_rise": false,
+    "recipient_actor": null,
     "related": [],
     "relief_applicant_actor": null,
     "renewable": false,
     "repay_on_move": false,
+    "restrains_mobility": false,
     "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
     "scrappage": false,
     "scrapper_actor": null,
+    "self_supply": false,
     "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
     "source_sentences": [
      "Section 3 of the Act provides: \"A pharmacy shall not collect from a covered resident more than $35 for each 30-day supply of insulin.\"",
      "A covered resident is a resident who is uninsured or enrolled in a plan regulated under the insurance code.",
@@ -1319,18 +1512,40 @@
      "The Board is funded by license and permit fees; the Act gives it no new money.",
      "The bill was introduced on 15 January 2027 and signed on 12 April 2027. The Act takes effect on 1 January 2028."
     ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
     "substitute_seller_actor": null,
     "tax_named": false,
+    "taxed_before": false,
     "taxpayer_actor": "taxpayers",
     "temporary": false,
     "third_party_payer_actor": "plans.state_regulated",
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
     "used_buyer_actor": null,
     "used_owner_actor": null,
-    "vacancy_decontrol": false
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
    },
    {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
     "announcement_window": false,
+    "applicant_actor": null,
     "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
     "bound_actor": "plans.state_regulated",
     "budget_capped": false,
     "buyer_actor": "buyers.current",
@@ -1338,6 +1553,10 @@
     "cap_unit": null,
     "claim_handler_actor": null,
     "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
     "debt_funded": false,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -1346,54 +1565,102 @@
     "downstream": [],
     "eligibility_criteria": false,
     "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
     "evasion_by_resellers": false,
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "fees_to_budget": false,
     "field_contested": false,
+    "floor_bound_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
     "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
     "good": "insulin",
+    "holder_cap": false,
     "id": "k2",
+    "import_quota": false,
     "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
     "input_supplier_actor": null,
     "instrument": "mandated_contract_term",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
     "market": "tarrenmoor",
     "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
     "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
     "protected_actor": "covered_residents.state_plans",
     "protected_concentrated": true,
     "qualifier_actor": null,
     "rate_rise": false,
+    "recipient_actor": null,
     "related": [],
     "relief_applicant_actor": null,
     "renewable": false,
     "repay_on_move": false,
+    "restrains_mobility": false,
     "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
     "scrappage": false,
     "scrapper_actor": null,
+    "self_supply": false,
     "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
     "source_sentences": [
      "Section 4(a) provides that the pharmacy bills the balance to the plan, \"which shall pay it on the terms of its pharmacy contract\"."
     ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
     "substitute_seller_actor": null,
     "tax_named": false,
+    "taxed_before": false,
     "taxpayer_actor": "taxpayers",
     "temporary": false,
     "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
     "used_buyer_actor": null,
     "used_owner_actor": null,
-    "vacancy_decontrol": false
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
    },
    {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
     "announcement_window": true,
+    "applicant_actor": null,
     "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
     "bound_actor": "covered_residents.uninsured",
     "budget_capped": false,
     "buyer_actor": "buyers.current",
@@ -1401,6 +1668,10 @@
     "cap_unit": null,
     "claim_handler_actor": "pharmacies.in_state",
     "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "convicted_actor": null,
+    "cover_seller_actor": null,
     "debt_funded": false,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -1409,39 +1680,65 @@
     "downstream": [],
     "eligibility_criteria": true,
     "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
     "evasion_by_resellers": false,
     "excluded_actor": null,
     "exporter_actor": "export_industries",
     "exporter_worker_actor": null,
+    "fees_to_budget": false,
     "field_contested": false,
+    "floor_bound_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
     "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
     "good": "insulin",
+    "holder_cap": false,
     "id": "k3",
+    "import_quota": false,
     "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
     "input_supplier_actor": null,
     "instrument": "purchase_rebate",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
     "market": "tarrenmoor",
     "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
     "other_buyer_actor": "buyers.noncovered_cash",
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": "insulin_fund",
+    "output_buyer_actor": null,
+    "outside_actor": null,
     "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
     "protected_actor": null,
     "protected_concentrated": true,
     "qualifier_actor": null,
     "rate_rise": false,
+    "recipient_actor": null,
     "related": [],
     "relief_applicant_actor": null,
     "renewable": false,
     "repay_on_move": false,
+    "restrains_mobility": false,
     "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
     "scrappage": false,
     "scrapper_actor": null,
+    "self_supply": false,
     "seller_actor": "pharmacies.in_state",
+    "seller_cap": false,
+    "size_threshold": false,
     "source_sentences": [
      "Section 4(b) establishes the Insulin Access Fund, run by the Department of Health, for insulin fills of uninsured residents.",
      "The Fund pays the pharmacy \"the pharmacy's usual and customary price, less $35, but not more than the wholesale acquisition cost plus 20 percent, less $35\".",
@@ -1451,14 +1748,28 @@
      "The bill was introduced on 15 January 2027 and signed on 12 April 2027. The Act takes effect on 1 January 2028.",
      "The Department of Health runs the Fund through a claims contract (about $3 million a year, paid from the Fund)."
     ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
     "substitute_seller_actor": "sellers.substitutes",
     "tax_named": false,
+    "taxed_before": false,
     "taxpayer_actor": "taxpayers",
     "temporary": false,
     "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
     "used_buyer_actor": null,
     "used_owner_actor": null,
-    "vacancy_decontrol": false
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
    }
   ],
   "context": [
@@ -1486,7 +1797,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-18T20:45:46+00:00",
+ "run_at": "2026-10-19T19:57:01+00:00",
  "sources_held_back": [],
  "unclear": [
   {
