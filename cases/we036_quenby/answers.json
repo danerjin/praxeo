@@ -1,0 +1,149 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-1: about 135,000 full-timers at firms of 50+ FTE are offered nothing and about 105,000 are offered less than K1 requires, so K1 binds for them.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "No assumption row matches; probability judged from the text of the record: employers report each employee's offer status on quarterly withholding returns and the charge is assessed with them, so a bound employer either offers or pays; the handbook's A-18 (p 0.55) has only some firms misreporting, so most comply.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.wages_sticky",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-3: money wages are fixed in the short run by pay scales and yearly raises in at-will employment.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.wages_adjust",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-6: wages above the minimum can adjust over the medium horizon, as raises are set.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.worth_less",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-7: at players, for the marginal pair, cover at 30% is worth less to the worker than its cost to the employer.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.alternatives_worse",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-23: over the medium to long run, workers' alternatives to bound employment are clearly worse than employers' alternatives.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.valued_on_earnings",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-21: business values reflect expected earnings, and buyers expected the Act from its introduction.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-19: insurers, unions, employer associations and the large chains can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.recipients_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-19, which names unions among those who can organize at a cost below their stakes; the recipients are workers at bound firms, about 6% of private employees being under collective agreements.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.floor_binds",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-9: the minimum wage binds for some workers at bound firms (11% of private employees at or near $14).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.conditions_differ",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-1, which rests on the survey: about 105,000 full-timers are offered a plan that falls short on benefits or on the employer's share. (A-5, p 0.7, is the narrower premise that some of those firms upgrade rather than pay; the question asks only whether such plans exist.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.hours_shift",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-11: between 30 and 40 hours, extra hours from existing full-timers substitute for extra full-time heads.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.rivals_bound",
+  "value": "no",
+  "probability": 0.4,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-24: most competitors of mid-size bound firms in local services are bound at a material per-head cost, p = 0.4 (they are mostly small exempt firms or capped chains). The answer is no, with P(yes) 0.4.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.rivals_unbound",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-26: Quenby's tradable producers compete with Tarnley producers, which is not bound.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.compete_with_bound",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-22: firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-17: contracting out and franchising are open to some firms near 50 at a cost below the term or the charge (A-34, p 0.55, gives the same figure for agency labor under the cap).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.move_marginal",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-35: some newly covered workers are near the margin between staying and moving to an unbound job.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.staying_small_pays",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-14: some firms near 50 FTE value staying below the line more than the extra work.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.binding",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-5: some firms with plans short of K1 upgrade them rather than pay, so the standard rules out the lean designs for them.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.enforced",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "No assumption row matches; probability judged from the text of the record: the Department of Insurance certifies plans under K2 and keeps the list, and a plan not on it does not count under K1, so insurers that sell to bound firms submit plans that meet it.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-19: insurers can organize at a cost below their stakes.",
+  "evidence": []
+ }
+]

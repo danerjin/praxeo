@@ -1,0 +1,94 @@
+{
+ "name": "Quenby Fair Share Health Cover Act",
+ "jurisdiction": "Quenby (fictional)",
+ "rule_maker": "the Quenby legislature",
+ "enacted": "4 January 2027",
+ "effective": "1 January 2028",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "mandated_contract_term",
+   "good": "employer_health_cover",
+   "market": "quenby_labor",
+   "bound_actor": "employers.bound",
+   "recipient_actor": "workers.uncovered",
+   "floor_bound_actor": "workers.min_wage",
+   "already_provider_actor": "employers.lean_plans",
+   "already_recipient_actor": "workers.lean_plans",
+   "per_head_cap": true,
+   "below_cap_actor": "workers.near_30",
+   "above_cap_actor": "workers.full_time",
+   "output_buyer_actor": "buyers.local_services",
+   "tradable_actor": "employers.tradable",
+   "neighbor_seller_actor": "neighboring_jurisdictions",
+   "rival_actors": [
+    "employers.compliant",
+    "employers.small"
+   ],
+   "definition_line": true,
+   "outside_actor": "sellers.contract_services",
+   "forfeit_on_leaving": true,
+   "size_threshold": true,
+   "near_threshold_actor": "employers.near_50",
+   "below_threshold_actor": "employers.small",
+   "threshold_staff_split": true,
+   "margin_recipient_actor": "workers.seasonal",
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": true,
+   "future_taxpayer_actor": null,
+   "source_sentences": [
+    "The Act requires employers with 50 or more FTE to either offer each employee averaging 30 or more hours a week (130 hours in a month), from the first of the month after 60 days of employment, a plan meeting K2 with an employer contribution of at least 70% of the employee-only premium; or pay $250 a month ($3,000 a year) to the Department of Revenue for each such employee not so offered.",
+    "An employee who is offered and declines counts as offered.",
+    "Public employers and employees averaging under 30 hours are exempt.",
+    "Employers under 50 FTE are exempt.",
+    "Firms under common control are counted together.",
+    "Agency workers count for the agency.",
+    "No firm pays more than $300,000 a year under K1 (reached at 100 uncovered employees).",
+    "Employers report each employee's offer status on quarterly withholding returns; the charge is assessed with them.",
+    "Charges are paid into the general fund.",
+    "A new appropriation of $4.1 million a year from the general fund pays for 32 staff."
+   ]
+  },
+  {
+   "id": "k2",
+   "instrument": "product_standard",
+   "good": "group_health_plans",
+   "market": "quenby_group_insurance",
+   "bound_actor": "insurers.group",
+   "buyer_actor": "employers.players",
+   "enforcer_actor": "officials.enforcement",
+   "source_sentences": [
+    "A plan counts under K1 only if it covers hospital, physician, prescription and maternity care, with a deductible no higher than $2,500, on a list kept by the Department of Insurance.",
+    "The standard binds insurers and self-insured employers.",
+    "The Department of Insurance certifies plans under K2."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "The Act defines a seasonal worker (employed no more than 120 days in a calendar year in work that recurs at the same season) but does not say whether seasonal workers count toward the 50.",
+   "readings": [
+    "U1-a: they count by their hours, like any other employee",
+    "U1-b: they are left out of the count"
+   ],
+   "reading_fields": {
+    "U1-a": {
+     "k1": {
+      "margin_covered": true
+     }
+    },
+    "U1-b": {
+     "k1": {
+      "threshold_partial_count": true
+     }
+    }
+   }
+  }
+ ],
+ "context": [
+  "A state insurance department survey found that, of those 1.15 million, about 79% (910,000) are already offered a plan that meets the Act's benefit standard with an employer share of at least 70%; about 9% (105,000) are offered a plan that falls short on benefits or on the employer's share; and about 12% (135,000) are offered nothing.",
+  "Quenby's minimum wage is $14.00 an hour, indexed to prices; about 11% of private employees earn at or near it, mostly in retail, food service, cleaning, security and care."
+ ]
+}
