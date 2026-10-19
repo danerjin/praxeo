@@ -570,11 +570,44 @@ VALUE_STANDARD_QUESTION = ("buyers_value_standard", "other",
                            "Buyers value the standard enough to prefer covered units.")
 
 
+SOME_PAY_QUESTION = ("some_pay", "other",
+                     "Will some bound firms pay the charge rather than provide the term?",
+                     "Some bound firms pay the charge rather than provide the term.")
+SMALL_ITEMS_QUESTION = ("small_items", "other",
+                        "Do some of the items, models or versions the measure covers sell in numbers too small to cover its fixed cost per item?",
+                        "Some covered items sell in numbers too small to cover the fixed cost per item.")
+DISCLOSURE_QUESTIONS = [
+    ("enforced", "enforcement",
+     "Will most covered sellers make the required disclosure?",
+     "Most covered sellers disclose."),
+    ("buyers_unaware", "other",
+     "Did some buyers not already know the disclosed fact, while caring about it?",
+     "Some buyers did not already know the disclosed fact and care about it."),
+    ("disclosed_deters", "other",
+     "Will some buyers who learn the disclosed fact buy less of the covered good?",
+     "Some buyers who learn the fact buy less."),
+    ("disclosed_attracts", "other",
+     "Will some buyers who learn the disclosed fact buy more of the covered good?",
+     "Some buyers who learn the fact buy more."),
+    ("can_organize", "other",
+     "Can the covered sellers organize to lobby over the disclosure rule at a cost below their stake?",
+     "The covered sellers can organize to lobby."),
+]
+COMPARE_WELL_QUESTION = ("exempt_compare_well", "other",
+                         "Do some exempt sellers have goods that compare well on the disclosed fact?",
+                         "Some exempt sellers' goods compare well on the disclosed fact.")
 EMPLOYMENT_ONLY = {"wages_sticky", "wages_adjust", "alternatives_worse", "valued_on_earnings", "floor_binds", "can_screen",
                    "hours_shift", "absence_used", "unpaid_absence_before", "absences_covered", "rivals_bound", "move_marginal"}
 
 
 def _mandate_specs(comp: Component) -> list[tuple[str, str, str, str]]:
+    extra = [SMALL_ITEMS_QUESTION] if comp.fixed_cost_per_item else []
+    if comp.instrument == "disclosure_mandate":
+        return list(DISCLOSURE_QUESTIONS) + ([COMPARE_WELL_QUESTION] if comp.rival_actors else []) + extra
+    return _mandate_specs_core(comp) + extra + ([SOME_PAY_QUESTION] if comp.charge_payer_actor else [])
+
+
+def _mandate_specs_core(comp: Component) -> list[tuple[str, str, str, str]]:
     employment = comp.contract_kind == "employment"
     if comp.instrument == "term_prohibition":
         specs = [q for q in TERM_BAN_QUESTIONS if employment or q[0] != "term_valued"]
@@ -643,7 +676,7 @@ def _instrument_specs(comp: Component) -> list[tuple[str, str, str, str]]:
         return _en_specs(comp)
     if comp.instrument == "prohibition":
         return _prohibition_specs(comp)
-    if comp.instrument in ("mandated_contract_term", "term_prohibition", "product_standard"):
+    if comp.instrument in ("mandated_contract_term", "mandate_with_charge", "term_prohibition", "product_standard", "disclosure_mandate"):
         return _mandate_specs(comp)
     if comp.instrument not in ("per_unit_tax", "tariff"):
         return []

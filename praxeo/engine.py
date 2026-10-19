@@ -110,19 +110,22 @@ def _prohibition_facts(c: str, comp) -> list[str]:
 
 def _mandate_facts(c: str, comp) -> list[str]:
     """Facts for mandates.lp: a mandated term (PC-17), a prohibited term (PC-18) or a standard on new units (EN-14)."""
-    kind = {"mandated_contract_term": "mandate", "term_prohibition": "term_ban", "product_standard": "standard"}[comp.instrument]
+    kind = {"mandated_contract_term": "mandate", "mandate_with_charge": "mandate", "term_prohibition": "term_ban",
+            "product_standard": "standard", "disclosure_mandate": "disclosure"}[comp.instrument]
     lines = [f"{kind}({c}).", f'enforcer({c}, "{comp.enforcer_actor}").', f'taxpayer({c}, "{comp.taxpayer_actor}").']
-    if comp.contract_kind == "employment" and kind != "standard":
+    if comp.contract_kind == "employment" and kind in ("mandate", "term_ban"):
         lines.append(f"employment({c}).")
     payers = [comp.taxpayer_actor, comp.other_spending_actor, comp.future_taxpayer_actor]
     lines.append(f'mc_payer_group({c}, "{",".join(dict.fromkeys(p for p in payers if p))}").')
-    recipient = {"mandate": "mc_recipient", "term_ban": "tb_freed", "standard": None}[kind]
+    recipient = {"mandate": "mc_recipient", "term_ban": "tb_freed"}.get(kind)
     if recipient and comp.recipient_actor:
         lines.append(f'{recipient}({c}, "{comp.recipient_actor}").')
     if kind == "term_ban" and comp.applicant_actor:
         lines.append(f'mc_applicant({c}, "{comp.applicant_actor}").')
-    if kind == "standard":
+    if kind in ("standard", "disclosure"):
         lines.append(f'st_buyer({c}, "{comp.buyer_actor}").')
+    if comp.charge_payer_actor:
+        lines.append(f'mc_charge_receiver({c}, "{comp.revenue_actor}").')
     for pred, actor in (("mc_floor_recipient", comp.floor_bound_actor), ("mc_applicant", comp.applicant_actor),
                         ("mc_already", comp.already_provider_actor), ("mc_already_recipient", comp.already_recipient_actor),
                         ("mc_below_cap", comp.below_cap_actor), ("mc_above_cap", comp.above_cap_actor),
@@ -131,7 +134,9 @@ def _mandate_facts(c: str, comp) -> list[str]:
                         ("mc_outside", comp.outside_actor), ("mc_complainant", comp.complainant_actor),
                         ("mc_violator", comp.violator_actor), ("mc_near_threshold", comp.near_threshold_actor),
                         ("mc_below_threshold", comp.below_threshold_actor), ("mc_margin_recipient", comp.margin_recipient_actor),
-                        ("st_stock_owner", comp.stock_owner_actor)):
+                        ("st_stock_owner", comp.stock_owner_actor), ("mc_charge_payer", comp.charge_payer_actor),
+                        ("mc_player_recipient", comp.player_recipient_actor),
+                        ("mc_charge_payer_worker", comp.charge_payer_worker_actor), ("mc_charge_capped", comp.charge_capped_actor)):
         if actor:
             lines.append(f'{pred}({c}, "{actor}").')
     lines += [f'mc_rival({c}, "{a}").' for a in comp.rival_actors]
@@ -141,13 +146,14 @@ def _mandate_facts(c: str, comp) -> list[str]:
                        ("threshold_partial_count", comp.threshold_partial_count), ("margin_covered", comp.margin_covered),
                        ("restrains_mobility", comp.restrains_mobility), ("voids_existing", comp.voids_existing),
                        ("stock_exempt", comp.stock_exempt), ("definition_line", comp.definition_line),
+                       ("fixed_cost_per_item", comp.fixed_cost_per_item),
                        ("general_budget", comp.general_budget), ("tax_named", comp.tax_named)):
         if flag:
             lines.append(f"{pred}({c}).")
     return lines
 
 
-MANDATES = ("mandated_contract_term", "term_prohibition", "product_standard")
+MANDATES = ("mandated_contract_term", "mandate_with_charge", "term_prohibition", "product_standard", "disclosure_mandate")
 
 
 def _en_facts(c: str, comp) -> list[str]:
@@ -237,7 +243,7 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
         for i, rel in enumerate(comp.related, start=1):
             r = f"r{i}"
             lines.append(f'related({c}, {r}, {rel.kind}, "{rel.seller_actor}", "{rel.price_variable}", "{rel.other_user_actor or ""}").')
-            for name in (("slow",) if rel.kind == "input" else ("close", "slow")):
+            for name in (("close", "slow") if rel.kind == "complement" else ("slow",)):
                 lines.append(f"rel_premise({c}, {r}, {name}, related_{name}_{r}({c})).")
         if comp.instrument == "price_ceiling":
             lines.append(f'enforcer({c}, "{comp.enforcer_actor}").')

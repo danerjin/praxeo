@@ -24,11 +24,23 @@
    "p": 0.15,
    "text": "The buyers have a concentrated stake and can organize for repeal."
   },
+  "buyers_unaware(k2)": {
+   "assumption_class": "other",
+   "id": "buyers_unaware(k2)",
+   "p": 0.3,
+   "text": "Some buyers did not already know the disclosed fact and care about it."
+  },
   "can_organize(k1)": {
    "assumption_class": "other",
    "id": "can_organize(k1)",
    "p": 0.85,
    "text": "The former legal sellers can organize to seek repeal."
+  },
+  "can_organize(k2)": {
+   "assumption_class": "other",
+   "id": "can_organize(k2)",
+   "p": 0.85,
+   "text": "The covered sellers can organize to lobby."
   },
   "can_organize(k3)": {
    "assumption_class": "other",
@@ -54,11 +66,29 @@
    "p": 0.7,
    "text": "A meaningful share of buyers keep wanting the good after the ban."
   },
+  "disclosed_attracts(k2)": {
+   "assumption_class": "other",
+   "id": "disclosed_attracts(k2)",
+   "p": 0.2,
+   "text": "Some buyers who learn the fact buy more."
+  },
+  "disclosed_deters(k2)": {
+   "assumption_class": "other",
+   "id": "disclosed_deters(k2)",
+   "p": 0.2,
+   "text": "Some buyers who learn the fact buy less."
+  },
   "enforced(k1)": {
    "assumption_class": "enforcement",
    "id": "enforced(k1)",
    "p": 0.85,
    "text": "The legal sellers comply with the ban."
+  },
+  "enforced(k2)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k2)",
+   "p": 0.85,
+   "text": "Most covered sellers disclose."
   },
   "enforced(k3)": {
    "assumption_class": "enforcement",
@@ -620,6 +650,11 @@
      "enforced(k1)",
      "enforcement_risk(k1)",
      "evasion(k1)"
+    ],
+    [
+     "buyers_unaware(k2)",
+     "disclosed_deters(k2)",
+     "enforced(k2)"
     ]
    ],
    "assumptions": [
@@ -666,6 +701,13 @@
       "pr_underground(k1)"
      ],
      "rule": "EN-7"
+    },
+    {
+     "conclusion": "ds_less(k2)",
+     "premises": [
+      "disclosed_deters(k2)"
+     ],
+     "rule": "EN-15"
     }
    ],
    "group": [],
@@ -1860,6 +1902,13 @@
      "rule": "OC-3"
     },
     {
+     "conclusion": "mc_administered(k2)",
+     "premises": [
+      "disclosure(k2)"
+     ],
+     "rule": "OC-3"
+    },
+    {
      "conclusion": "lic_binds(k3)",
      "premises": [
       "binding(k3)",
@@ -1937,6 +1986,91 @@
    "window": null
   },
   {
+   "actor_class": "platforms",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "ds_binds(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-15"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-37",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "platforms",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "can_organize(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "can_organize(k2)",
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_rule_binds(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "mc_lobby(k2)",
+     "premises": [
+      "can_organize(k2)",
+      "mc_rule_binds(k2)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-38",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
    "actor_class": "taxpayers",
    "actor_group": [
     "taxpayers",
@@ -1993,7 +2127,7 @@
     "medium",
     "long"
    ],
-   "id": "C-37",
+   "id": "C-39",
    "item": null,
    "reported": true,
    "sign": "at_least_one_decrease",
@@ -2005,7 +2139,7 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"hosts.non_primary\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nprohibition(k1).\npr_buyer(k1, \"guests.whole_unit\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nrevenue(k1, \"officials.revenue\").\npr_informal_buyer(k1, \"guests.off_platform\").\npr_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\npr_informal_seller(k1, \"hosts.in_breach\").\nmobile_buyer(k1, \"guests.whole_unit\").\nneighbor_seller(k1, \"neighboring_jurisdictions\").\npr_substitute_seller(k1, \"hosts.mid_term\").\ndefinition_line(k1).\ntaxed_before(k1).\ngeneral_budget(k1).\nbound(k2, \"platforms\").\nexcluded(k2, \"buyers.prospective\").\nbound(k3, \"hosts.primary\").\nexcluded(k3, \"buyers.prospective\").\nlicensing(k3).\nen_buyer(k3, \"guests.whole_unit\").\nen_holder(k3, \"hosts.primary\").\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nen_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_informal_buyer(k3, \"guests.whole_unit\").\nen_revenue(k3, \"officials.enforcement\").\ngeneral_budget(k3).\nassumption(enforced(k1)).\nassumption(demand_persists(k1)).\nassumption(evasion(k1)).\nassumption(enforcement_risk(k1)).\nassumption(no_other_use(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(can_organize(k1)).\nassumption(buyers_organize(k1)).\nassumption(cross_border_feasible(k1)).\nassumption(crossing_extra_trip(k1)).\nassumption(reshaping_pays(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(binding(k3)).\nassumption(enforced(k3)).\nassumption(some_qualify(k3)).\nassumption(evasion(k3)).\nassumption(buyer_substitutes(k3)).\nassumption(tests_valued_quality(k3)).\nassumption(can_organize(k3)).\nassumption(enforcement_budget_raised(k3)).\n",
+ "engine_facts": "bound(k1, \"hosts.non_primary\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nprohibition(k1).\npr_buyer(k1, \"guests.whole_unit\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nrevenue(k1, \"officials.revenue\").\npr_informal_buyer(k1, \"guests.off_platform\").\npr_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\npr_informal_seller(k1, \"hosts.in_breach\").\nmobile_buyer(k1, \"guests.whole_unit\").\nneighbor_seller(k1, \"neighboring_jurisdictions\").\npr_substitute_seller(k1, \"hosts.mid_term\").\ndefinition_line(k1).\ntaxed_before(k1).\ngeneral_budget(k1).\nbound(k2, \"platforms\").\nexcluded(k2, \"buyers.prospective\").\ndisclosure(k2).\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nmc_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nst_buyer(k2, \"guests.whole_unit\").\nbound(k3, \"hosts.primary\").\nexcluded(k3, \"buyers.prospective\").\nlicensing(k3).\nen_buyer(k3, \"guests.whole_unit\").\nen_holder(k3, \"hosts.primary\").\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nen_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_informal_buyer(k3, \"guests.whole_unit\").\nen_revenue(k3, \"officials.enforcement\").\ngeneral_budget(k3).\nassumption(enforced(k1)).\nassumption(demand_persists(k1)).\nassumption(evasion(k1)).\nassumption(enforcement_risk(k1)).\nassumption(no_other_use(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(can_organize(k1)).\nassumption(buyers_organize(k1)).\nassumption(cross_border_feasible(k1)).\nassumption(crossing_extra_trip(k1)).\nassumption(reshaping_pays(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(enforced(k2)).\nassumption(buyers_unaware(k2)).\nassumption(disclosed_deters(k2)).\nassumption(disclosed_attracts(k2)).\nassumption(can_organize(k2)).\nassumption(binding(k3)).\nassumption(enforced(k3)).\nassumption(some_qualify(k3)).\nassumption(evasion(k3)).\nassumption(buyer_substitutes(k3)).\nassumption(tests_valued_quality(k3)).\nassumption(can_organize(k3)).\nassumption(enforcement_budget_raised(k3)).\n",
  "explanations": [
   "C-1. Compared with no Saltmere Housing Preservation Ordinance, disputes settled outside courts for guests.off_platform rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); The legal sellers comply with the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.75). Reported.",
   "C-2. Compared with no Saltmere Housing Preservation Ordinance, quality information for guests.off_platform falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); The legal sellers comply with the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.75). Reported.",
@@ -2016,7 +2150,7 @@
   "C-7. Compared with no Saltmere Housing Preservation Ordinance, lobbying effort for guests.whole_unit rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The buyers have a concentrated stake and can organize for repeal (p = 0.15). Not reported: an assumption is below the 0.5 cut-off.",
   "C-8. Compared with no Saltmere Housing Preservation Ordinance, price paid for guests.whole_unit rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; CR-7: CR-7; EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
   "C-9. Compared with no Saltmere Housing Preservation Ordinance, quality information for guests.whole_unit falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85); Some sellers keep selling without a license and are not caught (p = 0.60). Reported.",
-  "C-10. Compared with no Saltmere Housing Preservation Ordinance, quantity demanded for guests.whole_unit falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; CR-7: CR-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); The legal sellers comply with the ban (p = 0.85); Informal sellers face a real risk of punishment (p = 0.80); Enforcement is imperfect: many informal sales go undetected (p = 0.75). Reported.",
+  "C-10. Compared with no Saltmere Housing Preservation Ordinance, quantity demanded for guests.whole_unit falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; CR-7: CR-7; EN-15: EN-15. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); The legal sellers comply with the ban (p = 0.85); Informal sellers face a real risk of punishment (p = 0.80); Enforcement is imperfect: many informal sales go undetected (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
   "C-11. Compared with no Saltmere Housing Preservation Ordinance, quantity demanded for guests.whole_unit rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.70). Reported.",
   "C-12. Compared with no Saltmere Housing Preservation Ordinance, quantity substitute for guests.whole_unit rises from the short run onward (tier B, invisible). Why: RS-1: when a good becomes dearer, buyers turn to substitutes; EN-1: EN-1. This holds if: Legal substitutes are acceptable to some buyers (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
   "C-13. Compared with no Saltmere Housing Preservation Ordinance, quantity traded for guests.whole_unit falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; EN-1: EN-1; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The legal sellers comply with the ban (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
@@ -2043,7 +2177,9 @@
   "C-34. Compared with no Saltmere Housing Preservation Ordinance, quantity traded for neighboring_jurisdictions rises from the short run onward (tier B, invisible). Why: RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.70). Reported.",
   "C-35. Compared with no Saltmere Housing Preservation Ordinance, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; EN-1: EN-1. This holds if: no assumption. Reported.",
   "C-36. Compared with no Saltmere Housing Preservation Ordinance, tax revenue for officials.revenue falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; TX-10: TX-10. This holds if: The legal sellers comply with the ban (p = 0.85). Reported.",
-  "C-37. Compared with no Saltmere Housing Preservation Ordinance, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier B, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought; EN-1: EN-1; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported."
+  "C-37. Compared with no Saltmere Housing Preservation Ordinance, compliance cost for platforms rises from the short run onward (tier B, invisible). Why: EN-15: EN-15. This holds if: Most covered sellers disclose (p = 0.85). Reported.",
+  "C-38. Compared with no Saltmere Housing Preservation Ordinance, lobbying effort for platforms rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The covered sellers can organize to lobby (p = 0.85); Most covered sellers disclose (p = 0.85). Reported.",
+  "C-39. Compared with no Saltmere Housing Preservation Ordinance, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier B, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought; EN-1: EN-1; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported."
  ],
  "questions": [
   {
@@ -2266,6 +2402,96 @@
    "answer": {
     "decider": "fixture:answers.json",
     "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-2: platforms comply with K2: they display numbers, remove listings on notice and report nights.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k2.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most covered sellers make the required disclosure?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k2.buyers_unaware",
+    "rationale": "No matching assumption in WE-044; judged from the text: the registration number tells guests little they care about; K2 works by removing listings, not by informing guests.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "buyers_unaware",
+    "assumption_class": "other",
+    "id": "k2.buyers_unaware",
+    "kind": "noul",
+    "options": [],
+    "text": "Did some buyers not already know the disclosed fact, while caring about it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.2,
+    "question_id": "k2.disclosed_deters",
+    "rationale": "No matching assumption in WE-044; judged from the text: guests are not expected to shun listings because a number is displayed.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "disclosed_deters",
+    "assumption_class": "other",
+    "id": "k2.disclosed_deters",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some buyers who learn the disclosed fact buy less of the covered good?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.2,
+    "question_id": "k2.disclosed_attracts",
+    "rationale": "No matching assumption in WE-044; judged from the text: nor to seek them out.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "disclosed_attracts",
+    "assumption_class": "other",
+    "id": "k2.disclosed_attracts",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some buyers who learn the disclosed fact buy more of the covered good?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-14: hosts, platforms, hotels and neighborhood associations can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k2.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the covered sellers organize to lobby over the disclosure rule at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
     "probability": 0.6,
     "question_id": "k3.binding",
     "rationale": "No matching assumption in WE-044; judged from the text: the $250 fee (against $150 under the old registration) and proof of residence are a fixed cost per host that goes beyond what some hosts who let only a few nights already meet.",
@@ -2410,18 +2636,31 @@
  "record": {
   "components": [
    {
+    "above_cap_actor": null,
     "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
     "announcement_window": true,
+    "applicant_actor": null,
     "asset_owner_actor": null,
     "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
     "bound_actor": "hosts.non_primary",
     "budget_capped": false,
     "buyer_actor": "guests.whole_unit",
     "cap": null,
     "cap_unit": null,
+    "charge_capped_actor": null,
+    "charge_payer_actor": null,
+    "charge_payer_worker_actor": null,
     "claim_handler_actor": null,
     "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "contract_kind": "employment",
     "convicted_actor": null,
+    "cover_seller_actor": null,
     "debt_funded": false,
     "definition_line": true,
     "domestic_seller_actor": "sellers.substitutes",
@@ -2437,7 +2676,10 @@
     "exporter_worker_actor": null,
     "fees_to_budget": false,
     "field_contested": false,
+    "fixed_cost_per_item": false,
+    "floor_bound_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
     "future_taxpayer_actor": "taxpayers.future",
     "general_budget": true,
     "good": "whole_unit_short_term_rentals",
@@ -2449,14 +2691,22 @@
     "informal_seller_actor": "hosts.in_breach",
     "input_supplier_actor": null,
     "instrument": "prohibition",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
     "market": "saltmere",
     "mobile_buyer_actor": "guests.whole_unit",
+    "near_threshold_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": "neighboring_jurisdictions",
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
     "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "player_recipient_actor": null,
     "practice_ban": false,
     "price_fixed": false,
     "prospective_buyer_actor": null,
@@ -2464,18 +2714,22 @@
     "protected_concentrated": true,
     "qualifier_actor": null,
     "rate_rise": false,
+    "recipient_actor": null,
     "related": [],
     "relief_applicant_actor": null,
     "renewable": false,
     "repay_on_move": false,
+    "restrains_mobility": false,
     "revenue_actor": "officials.revenue",
     "right_holder_actor": null,
     "rights_sold": false,
+    "rival_actors": [],
     "scrappage": false,
     "scrapper_actor": null,
     "self_supply": false,
     "seller_actor": "sellers.current",
     "seller_cap": false,
+    "size_threshold": false,
     "source_sentences": [
      "From 1 July 2027, no whole unit may be let for under 30 nights unless it is the owner's primary residence, registered under the registry, and then for no more than 90 nights in a calendar year (45 nights for July to December 2027).",
      "Stays booked and confirmed before 1 July 2027 may be completed if they end by 30 September 2027; all other bookings for later dates must be cancelled and refunded in full.",
@@ -2486,6 +2740,8 @@
      "The fine is $2,500 for a first violation and $5,000 for each later one, within existing appropriations, and fines go to the general fund.",
      "A transient occupancy tax of 12% applies to stays under 30 nights, hotels and STRs alike, and platforms collect it for STRs (about $18.7 million a year from whole-unit STRs and about $46 million from hotels)."
     ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
     "stocks_destroyed": false,
     "substitute_seller_actor": "hosts.mid_term",
     "tax_named": false,
@@ -2493,28 +2749,46 @@
     "taxpayer_actor": "taxpayers",
     "temporary": false,
     "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
     "trainer_actor": null,
     "transferable": false,
     "used_buyer_actor": null,
     "used_owner_actor": null,
     "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
     "volume_penalties": false,
     "wider_market": false,
     "worker_actor": null
    },
    {
+    "above_cap_actor": null,
     "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
     "announcement_window": false,
+    "applicant_actor": null,
     "asset_owner_actor": null,
     "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
     "bound_actor": "platforms",
     "budget_capped": false,
     "buyer_actor": "guests.whole_unit",
     "cap": null,
     "cap_unit": null,
+    "charge_capped_actor": null,
+    "charge_payer_actor": null,
+    "charge_payer_worker_actor": null,
     "claim_handler_actor": null,
     "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "contract_kind": "employment",
     "convicted_actor": null,
+    "cover_seller_actor": null,
     "debt_funded": false,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -2530,7 +2804,10 @@
     "exporter_worker_actor": null,
     "fees_to_budget": false,
     "field_contested": false,
+    "fixed_cost_per_item": false,
+    "floor_bound_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
     "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
     "good": "whole_unit_short_term_rentals",
@@ -2542,14 +2819,22 @@
     "informal_seller_actor": null,
     "input_supplier_actor": null,
     "instrument": "disclosure_mandate",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
     "market": "saltmere",
     "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
     "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "player_recipient_actor": null,
     "practice_ban": false,
     "price_fixed": false,
     "prospective_buyer_actor": null,
@@ -2557,22 +2842,28 @@
     "protected_concentrated": true,
     "qualifier_actor": null,
     "rate_rise": false,
+    "recipient_actor": null,
     "related": [],
     "relief_applicant_actor": null,
     "renewable": false,
     "repay_on_move": false,
+    "restrains_mobility": false,
     "revenue_actor": "officials.enforcement",
     "right_holder_actor": null,
     "rights_sold": false,
+    "rival_actors": [],
     "scrappage": false,
     "scrapper_actor": null,
     "self_supply": false,
     "seller_actor": "sellers.current",
     "seller_cap": false,
+    "size_threshold": false,
     "source_sentences": [
      "From 1 July 2027, booking platforms must display a valid registration number on every whole-unit listing, remove a listing within 10 days of a city notice that it is non-compliant, and report nights booked per registration number each quarter.",
      "The fine is $1,000 per listing per day after the 10 days."
     ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
     "stocks_destroyed": false,
     "substitute_seller_actor": null,
     "tax_named": false,
@@ -2580,28 +2871,46 @@
     "taxpayer_actor": "taxpayers",
     "temporary": false,
     "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
     "trainer_actor": null,
     "transferable": false,
     "used_buyer_actor": null,
     "used_owner_actor": null,
     "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
     "volume_penalties": false,
     "wider_market": false,
     "worker_actor": null
    },
    {
+    "above_cap_actor": null,
     "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
     "announcement_window": false,
+    "applicant_actor": null,
     "asset_owner_actor": null,
     "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
     "bound_actor": "hosts.primary",
     "budget_capped": false,
     "buyer_actor": "guests.whole_unit",
     "cap": null,
     "cap_unit": null,
+    "charge_capped_actor": null,
+    "charge_payer_actor": null,
+    "charge_payer_worker_actor": null,
     "claim_handler_actor": null,
     "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "contract_kind": "employment",
     "convicted_actor": null,
+    "cover_seller_actor": null,
     "debt_funded": false,
     "definition_line": false,
     "domestic_seller_actor": "sellers.substitutes",
@@ -2617,7 +2926,10 @@
     "exporter_worker_actor": null,
     "fees_to_budget": false,
     "field_contested": false,
+    "fixed_cost_per_item": false,
+    "floor_bound_actor": null,
     "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
     "future_taxpayer_actor": "taxpayers.future",
     "general_budget": true,
     "good": "primary_residence_short_term_lets",
@@ -2629,14 +2941,22 @@
     "informal_seller_actor": null,
     "input_supplier_actor": null,
     "instrument": "licensing_requirement",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
     "market": "saltmere",
     "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
     "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "player_recipient_actor": null,
     "practice_ban": false,
     "price_fixed": false,
     "prospective_buyer_actor": null,
@@ -2644,23 +2964,29 @@
     "protected_concentrated": true,
     "qualifier_actor": null,
     "rate_rise": false,
+    "recipient_actor": null,
     "related": [],
     "relief_applicant_actor": null,
     "renewable": false,
     "repay_on_move": false,
+    "restrains_mobility": false,
     "revenue_actor": "officials.enforcement",
     "right_holder_actor": null,
     "rights_sold": false,
+    "rival_actors": [],
     "scrappage": false,
     "scrapper_actor": null,
     "self_supply": false,
     "seller_actor": "sellers.current",
     "seller_cap": false,
+    "size_threshold": false,
     "source_sentences": [
      "Owners who let their primary residence must register for $250 a year, with proof of residence (driver's license, voter registration, homestead tax exemption).",
      "The registry is run by a new Registry Unit of five staff at $520,000 a year, a new appropriation from the general fund.",
      "It replaces the existing STR registration for whole units."
     ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
     "stocks_destroyed": false,
     "substitute_seller_actor": null,
     "tax_named": false,
@@ -2668,11 +2994,16 @@
     "taxpayer_actor": "taxpayers",
     "temporary": false,
     "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
     "trainer_actor": null,
     "transferable": false,
     "used_buyer_actor": null,
     "used_owner_actor": null,
     "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
     "volume_penalties": false,
     "wider_market": false,
     "worker_actor": null
@@ -2703,7 +3034,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-19T19:14:07+00:00",
+ "run_at": "2026-10-19T21:37:51+00:00",
  "sources_held_back": [],
  "unclear": [
   {

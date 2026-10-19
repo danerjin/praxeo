@@ -102,6 +102,12 @@
    "p": 0.65,
    "text": "Some providers compete with unbound rivals across a boundary."
   },
+  "some_pay(k1)": {
+   "assumption_class": "other",
+   "id": "some_pay(k1)",
+   "p": 0.9,
+   "text": "Some bound firms pay the charge rather than provide the term."
+  },
   "staying_small_pays(k1)": {
    "assumption_class": "other",
    "id": "staying_small_pays(k1)",
@@ -143,13 +149,13 @@
      "binding(k1)",
      "enforced(k1)",
      "rivals_bound(k1)",
-     "worth_less(k1)"
+     "wages_sticky(k1)"
     ],
     [
      "binding(k1)",
      "enforced(k1)",
      "rivals_bound(k1)",
-     "wages_sticky(k1)"
+     "worth_less(k1)"
     ]
    ],
    "assumptions": [
@@ -217,13 +223,13 @@
      "binding(k1)",
      "enforced(k1)",
      "rivals_bound(k1)",
-     "worth_less(k1)"
+     "wages_sticky(k1)"
     ],
     [
      "binding(k1)",
      "enforced(k1)",
      "rivals_bound(k1)",
-     "wages_sticky(k1)"
+     "worth_less(k1)"
     ]
    ],
    "assumptions": [
@@ -395,10 +401,17 @@
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "mc_rule_binds(k1)",
+     "premises": [
+      "binding(k1)"
+     ],
+     "rule": "RS-7"
+    },
+    {
      "conclusion": "mc_lobby(k1)",
      "premises": [
-      "binding(k1)",
-      "can_organize(k1)"
+      "can_organize(k1)",
+      "mc_rule_binds(k1)"
      ],
      "rule": "RS-7"
     }
@@ -626,6 +639,56 @@
    "window": null
   },
   {
+   "actor_class": "employers.capped",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "some_pay(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "some_pay(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_pays(k1)",
+     "premises": [
+      "some_pay(k1)"
+     ],
+     "rule": "CR-4"
+    },
+    {
+     "conclusion": "mc_pays(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
    "actor_class": "employers.compliant",
    "actor_group": [],
    "assumption_sets": [
@@ -686,7 +749,7 @@
     "medium",
     "long"
    ],
-   "id": "C-10",
+   "id": "C-11",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -752,7 +815,7 @@
     "medium",
     "long"
    ],
-   "id": "C-11",
+   "id": "C-12",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -793,7 +856,7 @@
     "medium",
     "long"
    ],
-   "id": "C-12",
+   "id": "C-13",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -835,7 +898,7 @@
     "medium",
     "long"
    ],
-   "id": "C-13",
+   "id": "C-14",
    "item": "counted_staff",
    "reported": true,
    "sign": "decrease",
@@ -883,7 +946,7 @@
     "medium",
     "long"
    ],
-   "id": "C-14",
+   "id": "C-15",
    "item": "other_staff",
    "reported": true,
    "sign": "ambiguous",
@@ -893,6 +956,106 @@
    },
    "tier": "B",
    "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.payers_midsize",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "some_pay(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "some_pay(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_pays(k1)",
+     "premises": [
+      "some_pay(k1)"
+     ],
+     "rule": "CR-4"
+    },
+    {
+     "conclusion": "mc_pays(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.payers_midsize",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "some_pay(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "some_pay(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_pays(k1)",
+     "premises": [
+      "some_pay(k1)"
+     ],
+     "rule": "CR-4"
+    },
+    {
+     "conclusion": "mc_pays(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
    "visibility": "invisible",
    "window": null
   },
@@ -927,7 +1090,7 @@
     "medium",
     "long"
    ],
-   "id": "C-15",
+   "id": "C-18",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -968,7 +1131,7 @@
     "medium",
     "long"
    ],
-   "id": "C-16",
+   "id": "C-19",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1039,7 +1202,7 @@
     "medium",
     "long"
    ],
-   "id": "C-17",
+   "id": "C-20",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1087,7 +1250,7 @@
     "medium",
     "long"
    ],
-   "id": "C-18",
+   "id": "C-21",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1153,7 +1316,7 @@
     "medium",
     "long"
    ],
-   "id": "C-19",
+   "id": "C-22",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1218,13 +1381,63 @@
    "horizon": [
     "long"
    ],
-   "id": "C-20",
+   "id": "C-23",
    "item": null,
    "reported": true,
    "sign": "decrease",
    "sign_by_reading": {},
    "tier": "B",
    "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "general_fund",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "some_pay(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "some_pay(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_pays(k1)",
+     "premises": [
+      "some_pay(k1)"
+     ],
+     "rule": "CR-4"
+    },
+    {
+     "conclusion": "mc_pays(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-24",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "non_tax_receipts",
    "visibility": "invisible",
    "window": null
   },
@@ -1259,7 +1472,7 @@
     "medium",
     "long"
    ],
-   "id": "C-21",
+   "id": "C-25",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1286,10 +1499,17 @@
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "mc_rule_binds(k2)",
+     "premises": [
+      "binding(k2)"
+     ],
+     "rule": "RS-7"
+    },
+    {
      "conclusion": "mc_lobby(k2)",
      "premises": [
-      "binding(k2)",
-      "can_organize(k2)"
+      "can_organize(k2)",
+      "mc_rule_binds(k2)"
      ],
      "rule": "RS-7"
     }
@@ -1299,7 +1519,7 @@
     "medium",
     "long"
    ],
-   "id": "C-22",
+   "id": "C-26",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1339,7 +1559,7 @@
     "medium",
     "long"
    ],
-   "id": "C-23",
+   "id": "C-27",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -1405,7 +1625,7 @@
     "medium",
     "long"
    ],
-   "id": "C-24",
+   "id": "C-28",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1446,7 +1666,7 @@
     "medium",
     "long"
    ],
-   "id": "C-25",
+   "id": "C-29",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1488,7 +1708,7 @@
     "medium",
     "long"
    ],
-   "id": "C-26",
+   "id": "C-30",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1525,7 +1745,7 @@
     "medium",
     "long"
    ],
-   "id": "C-27",
+   "id": "C-31",
    "item": null,
    "reported": true,
    "sign": "at_least_one_decrease",
@@ -1533,6 +1753,89 @@
    "tier": "A",
    "variable": "resources_available_other_uses",
    "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.at_players",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "move_marginal(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "move_marginal(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_lockin(k1)",
+     "premises": [
+      "forfeit_on_leaving(k1)",
+      "move_marginal(k1)"
+     ],
+     "rule": "RS-11"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-32",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "job_changes",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.at_players",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-33",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "non_wage_compensation",
+   "visibility": "visible",
    "window": null
   },
   {
@@ -1601,7 +1904,7 @@
     "medium",
     "long"
    ],
-   "id": "C-28",
+   "id": "C-34",
    "item": null,
    "reported": true,
    "sign": "ambiguous",
@@ -1642,7 +1945,7 @@
     "medium",
     "long"
    ],
-   "id": "C-29",
+   "id": "C-35",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -1697,7 +2000,7 @@
     "medium",
     "long"
    ],
-   "id": "C-30",
+   "id": "C-36",
    "item": null,
    "reported": true,
    "sign": "at_least_one_decrease",
@@ -1742,7 +2045,7 @@
     "medium",
     "long"
    ],
-   "id": "C-31",
+   "id": "C-37",
    "item": null,
    "reported": true,
    "sign": "at_least_one_decrease",
@@ -1782,7 +2085,7 @@
     "medium",
     "long"
    ],
-   "id": "C-32",
+   "id": "C-38",
    "item": null,
    "reported": true,
    "sign": "ambiguous",
@@ -1848,13 +2151,72 @@
     "medium",
     "long"
    ],
-   "id": "C-33",
+   "id": "C-39",
    "item": null,
    "reported": true,
    "sign": "decrease",
    "sign_by_reading": {},
    "tier": "B",
    "variable": "earnings",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "some_pay(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "some_pay(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_pays(k1)",
+     "premises": [
+      "some_pay(k1)"
+     ],
+     "rule": "CR-4"
+    },
+    {
+     "conclusion": "mc_pays(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_pay_wedge(k1)",
+     "premises": [
+      "mc_pays(k1)"
+     ],
+     "rule": "TX-2"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked"
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-40",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
    "visibility": "invisible",
    "window": null
   },
@@ -1928,55 +2290,13 @@
     "medium",
     "long"
    ],
-   "id": "C-34",
+   "id": "C-41",
    "item": null,
    "reported": true,
    "sign": "at_least_one_decrease",
    "sign_by_reading": {},
    "tier": "B",
    "variable": "employment",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "workers.uncovered",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "binding(k1)",
-     "enforced(k1)",
-     "move_marginal(k1)"
-    ]
-   ],
-   "assumptions": [
-    "binding(k1)",
-    "enforced(k1)",
-    "move_marginal(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "mc_lockin(k1)",
-     "premises": [
-      "forfeit_on_leaving(k1)",
-      "move_marginal(k1)"
-     ],
-     "rule": "RS-11"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "medium",
-    "long"
-   ],
-   "id": "C-35",
-   "item": null,
-   "reported": true,
-   "sign": "decrease",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "job_changes",
    "visibility": "invisible",
    "window": null
   },
@@ -2010,7 +2330,7 @@
     "medium",
     "long"
    ],
-   "id": "C-36",
+   "id": "C-42",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -2018,47 +2338,6 @@
    "tier": "B",
    "variable": "lobbying_effort",
    "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "workers.uncovered",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "binding(k1)",
-     "enforced(k1)"
-    ]
-   ],
-   "assumptions": [
-    "binding(k1)",
-    "enforced(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "mc_binds(k1)",
-     "premises": [
-      "binding(k1)",
-      "enforced(k1)"
-     ],
-     "rule": "PC-17"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-37",
-   "item": null,
-   "reported": true,
-   "sign": "increase",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "non_wage_compensation",
-   "visibility": "visible",
    "window": null
   },
   {
@@ -2117,7 +2396,7 @@
     "medium",
     "long"
    ],
-   "id": "C-38",
+   "id": "C-43",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -2173,7 +2452,7 @@
     "medium",
     "long"
    ],
-   "id": "C-39",
+   "id": "C-44",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -2185,7 +2464,7 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"employers.bound\").\nexcluded(k1, \"buyers.prospective\").\nmandate(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nemployment(k1).\nmc_payer_group(k1, \"taxpayers,recipients.other_spending\").\nmc_recipient(k1, \"workers.uncovered\").\nmc_floor_recipient(k1, \"workers.min_wage\").\nmc_already(k1, \"employers.lean_plans\").\nmc_already_recipient(k1, \"workers.lean_plans\").\nmc_below_cap(k1, \"workers.near_30\").\nmc_above_cap(k1, \"workers.full_time\").\nmc_output_buyer(k1, \"buyers.local_services\").\nmc_tradable(k1, \"employers.tradable\").\nneighbor_seller(k1, \"neighboring_jurisdictions\").\nmc_outside(k1, \"sellers.contract_services\").\nmc_near_threshold(k1, \"employers.near_50\").\nmc_below_threshold(k1, \"employers.small\").\nmc_margin_recipient(k1, \"workers.seasonal\").\nmc_rival(k1, \"employers.compliant\").\nmc_rival(k1, \"employers.small\").\nper_head_cap(k1).\nforfeit_on_leaving(k1).\nsize_threshold(k1).\nthreshold_staff_split(k1).\ndefinition_line(k1).\ngeneral_budget(k1).\nbound(k2, \"insurers.group\").\nexcluded(k2, \"buyers.prospective\").\nstandard(k2).\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nmc_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nst_buyer(k2, \"employers.players\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(wages_sticky(k1)).\nassumption(wages_adjust(k1)).\nassumption(worth_less(k1)).\nassumption(alternatives_worse(k1)).\nassumption(valued_on_earnings(k1)).\nassumption(can_organize(k1)).\nassumption(recipients_organize(k1)).\nassumption(floor_binds(k1)).\nassumption(conditions_differ(k1)).\nassumption(hours_shift(k1)).\nassumption(rivals_bound(k1)).\nassumption(rivals_unbound(k1)).\nassumption(compete_with_bound(k1)).\nassumption(reshaping_pays(k1)).\nassumption(move_marginal(k1)).\nassumption(staying_small_pays(k1)).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(can_organize(k2)).\nassumption(buyers_value_standard(k2)).\n",
+ "engine_facts": "bound(k1, \"employers.bound\").\nexcluded(k1, \"buyers.prospective\").\nmandate(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nemployment(k1).\nmc_payer_group(k1, \"taxpayers,recipients.other_spending\").\nmc_recipient(k1, \"workers.uncovered\").\nmc_charge_receiver(k1, \"general_fund\").\nmc_floor_recipient(k1, \"workers.min_wage\").\nmc_already(k1, \"employers.lean_plans\").\nmc_already_recipient(k1, \"workers.lean_plans\").\nmc_below_cap(k1, \"workers.near_30\").\nmc_above_cap(k1, \"workers.full_time\").\nmc_output_buyer(k1, \"buyers.local_services\").\nmc_tradable(k1, \"employers.tradable\").\nneighbor_seller(k1, \"neighboring_jurisdictions\").\nmc_outside(k1, \"sellers.contract_services\").\nmc_near_threshold(k1, \"employers.near_50\").\nmc_below_threshold(k1, \"employers.small\").\nmc_margin_recipient(k1, \"workers.seasonal\").\nmc_charge_payer(k1, \"employers.payers_midsize\").\nmc_player_recipient(k1, \"workers.at_players\").\nmc_charge_payer_worker(k1, \"workers.uncovered\").\nmc_charge_capped(k1, \"employers.capped\").\nmc_rival(k1, \"employers.compliant\").\nmc_rival(k1, \"employers.small\").\nper_head_cap(k1).\nforfeit_on_leaving(k1).\nsize_threshold(k1).\nthreshold_staff_split(k1).\ndefinition_line(k1).\ngeneral_budget(k1).\nbound(k2, \"insurers.group\").\nexcluded(k2, \"buyers.prospective\").\nstandard(k2).\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nmc_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nst_buyer(k2, \"employers.players\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(wages_sticky(k1)).\nassumption(wages_adjust(k1)).\nassumption(worth_less(k1)).\nassumption(alternatives_worse(k1)).\nassumption(valued_on_earnings(k1)).\nassumption(can_organize(k1)).\nassumption(recipients_organize(k1)).\nassumption(floor_binds(k1)).\nassumption(conditions_differ(k1)).\nassumption(hours_shift(k1)).\nassumption(rivals_bound(k1)).\nassumption(rivals_unbound(k1)).\nassumption(compete_with_bound(k1)).\nassumption(reshaping_pays(k1)).\nassumption(move_marginal(k1)).\nassumption(staying_small_pays(k1)).\nassumption(some_pay(k1)).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(can_organize(k2)).\nassumption(buyers_value_standard(k2)).\n",
  "explanations": [
   "C-1. Compared with no Quenby Fair Share Health Cover Act, price paid for buyers.local_services rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Most of the providers' rivals are bound too (p = 0.40); The other money terms are fixed in the short run (p = 0.75). It also follows under 1 other minimal assumption set(s). Not reported: an assumption is below the 0.5 cut-off.",
   "C-2. Compared with no Quenby Fair Share Health Cover Act, quantity traded for buyers.local_services falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Most of the providers' rivals are bound too (p = 0.40); The other money terms are fixed in the short run (p = 0.75). It also follows under 1 other minimal assumption set(s). Not reported: an assumption is below the 0.5 cut-off.",
@@ -2196,36 +2475,41 @@
   "C-7. Compared with no Quenby Fair Share Health Cover Act, reclassification for employers.bound rises from the medium run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.55). Reported.",
   "C-8. Compared with no Quenby Fair Share Health Cover Act, resources available other uses for employers.bound falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); The other money terms are fixed in the short run (p = 0.75). Reported.",
   "C-9. Compared with no Quenby Fair Share Health Cover Act, return on capital for employers.bound falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); The other money terms are fixed in the short run (p = 0.75). Reported.",
-  "C-10. Compared with no Quenby Fair Share Health Cover Act, asset value for employers.compliant rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.65); Most bound providers comply (p = 0.90); The providers' businesses are valued on expected earnings (p = 0.70); The other money terms are fixed in the short run (p = 0.75). Reported.",
-  "C-11. Compared with no Quenby Fair Share Health Cover Act, quantity supplied for employers.compliant rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.65); Most bound providers comply (p = 0.90); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
-  "C-12. Compared with no Quenby Fair Share Health Cover Act, compliance cost for employers.lean_plans rises from the short run onward (tier B, invisible). Why: PC-17: PC-17. This holds if: Some existing policies offer the term on conditions the mandate forbids (p = 0.90); Most bound providers comply (p = 0.90). Reported.",
-  "C-13. Compared with no Quenby Fair Share Health Cover Act, employment (counted staff) for employers.near_50 falls from the short run onward (tier B, invisible). Why: RS-17: RS-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Some firms near the threshold value staying below it more than an extra hire (p = 0.70). Reported.",
-  "C-14. Compared with no Quenby Fair Share Health Cover Act, employment (other staff) for employers.near_50 may move either way from the medium run onward (tier B, invisible). Why: RS-17: RS-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Some firms near the threshold value staying below it more than an extra hire (p = 0.70). Sign per reading: U1-a: decrease; U1-b: increase. Reported.",
-  "C-15. Compared with no Quenby Fair Share Health Cover Act, price paid for employers.players rises from the short run onward (tier B, invisible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
-  "C-16. Compared with no Quenby Fair Share Health Cover Act, specification level for employers.players rises from the short run onward (tier B, visible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
-  "C-17. Compared with no Quenby Fair Share Health Cover Act, asset value for employers.small rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.65); Most bound providers comply (p = 0.90); The providers' businesses are valued on expected earnings (p = 0.70); The other money terms are fixed in the short run (p = 0.75). Reported.",
-  "C-18. Compared with no Quenby Fair Share Health Cover Act, number of sellers for employers.small rises from the medium run onward (tier B, invisible). Why: RS-17: RS-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Some firms near the threshold value staying below it more than an extra hire (p = 0.70). Reported.",
-  "C-19. Compared with no Quenby Fair Share Health Cover Act, quantity supplied for employers.small rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.65); Most bound providers comply (p = 0.90); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
-  "C-20. Compared with no Quenby Fair Share Health Cover Act, quantity supplied for employers.tradable falls in the long run (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Some providers compete with unbound rivals across a boundary (p = 0.65); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
-  "C-21. Compared with no Quenby Fair Share Health Cover Act, compliance cost for insurers.group rises from the short run onward (tier B, invisible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
-  "C-22. Compared with no Quenby Fair Share Health Cover Act, lobbying effort for insurers.group rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The standard binds on some designs (p = 0.70); The makers can organize to lobby (p = 0.85). Reported.",
-  "C-23. Compared with no Quenby Fair Share Health Cover Act, quantity supplied for insurers.group falls from the medium run onward (tier B, invisible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
-  "C-24. Compared with no Quenby Fair Share Health Cover Act, quantity supplied for neighboring_jurisdictions rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Some providers compete with unbound rivals across a boundary (p = 0.65); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
-  "C-25. Compared with no Quenby Fair Share Health Cover Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
-  "C-26. Compared with no Quenby Fair Share Health Cover Act, reclassification for sellers.contract_services rises from the medium run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.55). Reported.",
-  "C-27. Compared with no Quenby Fair Share Health Cover Act, resources available other uses for taxpayers or recipients.other_spending falls for at least one of them from the short run onward (tier A, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported.",
-  "C-28. Compared with no Quenby Fair Share Health Cover Act, hours worked for workers.full_time may move either way from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; CR-4: buyers who face a higher price take fewer units; RS-18: RS-18. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Providers can move hours between recipients below and above the cap (p = 0.65). It also follows under 1 other minimal assumption set(s). Reported.",
-  "C-29. Compared with no Quenby Fair Share Health Cover Act, non wage compensation for workers.lean_plans rises from the short run onward (tier B, invisible). Why: PC-17: PC-17. This holds if: Some existing policies offer the term on conditions the mandate forbids (p = 0.90); Most bound providers comply (p = 0.90). Reported.",
-  "C-30. Compared with no Quenby Fair Share Health Cover Act, employment or hours worked or non wage compensation for workers.min_wage falls for at least one of them from the short run onward (tier B, invisible). Why: PC-17: PC-17; PC-10: PC-10. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); A floor holds some recipients' wage (p = 0.85). Reported.",
-  "C-31. Compared with no Quenby Fair Share Health Cover Act, employment or hours worked for workers.near_30 falls for at least one of them from the medium run onward (tier B, invisible). Why: RS-18: RS-18. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Providers can move hours between recipients below and above the cap (p = 0.65). Reported.",
-  "C-32. Compared with no Quenby Fair Share Health Cover Act, non wage compensation for workers.seasonal may move either way from the short run onward (tier B, invisible). Why: CR-1: CR-1. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90). Sign per reading: U1-a: increase; U1-b: none. Reported.",
-  "C-33. Compared with no Quenby Fair Share Health Cover Act, earnings for workers.uncovered falls from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price; CR-12: CR-12. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); The wage can adjust over the medium run (p = 0.80). Reported.",
-  "C-34. Compared with no Quenby Fair Share Health Cover Act, employment or hours worked or non wage compensation for workers.uncovered falls for at least one of them from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-2: CR-2; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); The other money terms are fixed in the short run (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
-  "C-35. Compared with no Quenby Fair Share Health Cover Act, job changes for workers.uncovered falls from the medium run onward (tier B, invisible). Why: RS-11: a benefit lost on moving ties the holder to staying put. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Some job changes are marginal enough to be decided by the loss on leaving (p = 0.60). Reported.",
-  "C-36. Compared with no Quenby Fair Share Health Cover Act, lobbying effort for workers.uncovered rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The recipients can organize to lobby (p = 0.85). Reported.",
-  "C-37. Compared with no Quenby Fair Share Health Cover Act, non wage compensation for workers.uncovered rises from the short run onward (tier B, visible). Why: PC-17: PC-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90). Reported.",
-  "C-38. Compared with no Quenby Fair Share Health Cover Act, tax share borne for workers.uncovered rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price; CR-7: CR-7. This holds if: The recipients' alternatives are worse than the providers' (p = 0.60); The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); The wage can adjust over the medium run (p = 0.80). Reported.",
-  "C-39. Compared with no Quenby Fair Share Health Cover Act, wage rate for workers.uncovered falls from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); The wage can adjust over the medium run (p = 0.80). Reported."
+  "C-10. Compared with no Quenby Fair Share Health Cover Act, resources available other uses for employers.capped falls from the short run onward (tier B, invisible). Why: CR-4: buyers who face a higher price take fewer units; PC-17: PC-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Some bound firms pay the charge rather than provide the term (p = 0.90). Reported.",
+  "C-11. Compared with no Quenby Fair Share Health Cover Act, asset value for employers.compliant rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.65); Most bound providers comply (p = 0.90); The providers' businesses are valued on expected earnings (p = 0.70); The other money terms are fixed in the short run (p = 0.75). Reported.",
+  "C-12. Compared with no Quenby Fair Share Health Cover Act, quantity supplied for employers.compliant rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.65); Most bound providers comply (p = 0.90); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
+  "C-13. Compared with no Quenby Fair Share Health Cover Act, compliance cost for employers.lean_plans rises from the short run onward (tier B, invisible). Why: PC-17: PC-17. This holds if: Some existing policies offer the term on conditions the mandate forbids (p = 0.90); Most bound providers comply (p = 0.90). Reported.",
+  "C-14. Compared with no Quenby Fair Share Health Cover Act, employment (counted staff) for employers.near_50 falls from the short run onward (tier B, invisible). Why: RS-17: RS-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Some firms near the threshold value staying below it more than an extra hire (p = 0.70). Reported.",
+  "C-15. Compared with no Quenby Fair Share Health Cover Act, employment (other staff) for employers.near_50 may move either way from the medium run onward (tier B, invisible). Why: RS-17: RS-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Some firms near the threshold value staying below it more than an extra hire (p = 0.70). Sign per reading: U1-a: decrease; U1-b: increase. Reported.",
+  "C-16. Compared with no Quenby Fair Share Health Cover Act, price paid for employers.payers_midsize rises from the short run onward (tier B, invisible). Why: CR-4: buyers who face a higher price take fewer units; PC-17: PC-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Some bound firms pay the charge rather than provide the term (p = 0.90). Reported.",
+  "C-17. Compared with no Quenby Fair Share Health Cover Act, resources available other uses for employers.payers_midsize falls from the short run onward (tier B, invisible). Why: CR-4: buyers who face a higher price take fewer units; PC-17: PC-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Some bound firms pay the charge rather than provide the term (p = 0.90). Reported.",
+  "C-18. Compared with no Quenby Fair Share Health Cover Act, price paid for employers.players rises from the short run onward (tier B, invisible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
+  "C-19. Compared with no Quenby Fair Share Health Cover Act, specification level for employers.players rises from the short run onward (tier B, visible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
+  "C-20. Compared with no Quenby Fair Share Health Cover Act, asset value for employers.small rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.65); Most bound providers comply (p = 0.90); The providers' businesses are valued on expected earnings (p = 0.70); The other money terms are fixed in the short run (p = 0.75). Reported.",
+  "C-21. Compared with no Quenby Fair Share Health Cover Act, number of sellers for employers.small rises from the medium run onward (tier B, invisible). Why: RS-17: RS-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Some firms near the threshold value staying below it more than an extra hire (p = 0.70). Reported.",
+  "C-22. Compared with no Quenby Fair Share Health Cover Act, quantity supplied for employers.small rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.65); Most bound providers comply (p = 0.90); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
+  "C-23. Compared with no Quenby Fair Share Health Cover Act, quantity supplied for employers.tradable falls in the long run (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Some providers compete with unbound rivals across a boundary (p = 0.65); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
+  "C-24. Compared with no Quenby Fair Share Health Cover Act, non tax receipts for general_fund rises from the short run onward (tier B, invisible). Why: CR-4: buyers who face a higher price take fewer units; PC-17: PC-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Some bound firms pay the charge rather than provide the term (p = 0.90). Reported.",
+  "C-25. Compared with no Quenby Fair Share Health Cover Act, compliance cost for insurers.group rises from the short run onward (tier B, invisible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
+  "C-26. Compared with no Quenby Fair Share Health Cover Act, lobbying effort for insurers.group rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The standard binds on some designs (p = 0.70); The makers can organize to lobby (p = 0.85). Reported.",
+  "C-27. Compared with no Quenby Fair Share Health Cover Act, quantity supplied for insurers.group falls from the medium run onward (tier B, invisible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
+  "C-28. Compared with no Quenby Fair Share Health Cover Act, quantity supplied for neighboring_jurisdictions rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Some providers compete with unbound rivals across a boundary (p = 0.65); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
+  "C-29. Compared with no Quenby Fair Share Health Cover Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-30. Compared with no Quenby Fair Share Health Cover Act, reclassification for sellers.contract_services rises from the medium run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.55). Reported.",
+  "C-31. Compared with no Quenby Fair Share Health Cover Act, resources available other uses for taxpayers or recipients.other_spending falls for at least one of them from the short run onward (tier A, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported.",
+  "C-32. Compared with no Quenby Fair Share Health Cover Act, job changes for workers.at_players falls from the medium run onward (tier B, invisible). Why: RS-11: a benefit lost on moving ties the holder to staying put. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Some job changes are marginal enough to be decided by the loss on leaving (p = 0.60). Reported.",
+  "C-33. Compared with no Quenby Fair Share Health Cover Act, non wage compensation for workers.at_players rises from the short run onward (tier B, visible). Why: PC-17: PC-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90). Reported.",
+  "C-34. Compared with no Quenby Fair Share Health Cover Act, hours worked for workers.full_time may move either way from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; CR-4: buyers who face a higher price take fewer units; RS-18: RS-18. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Providers can move hours between recipients below and above the cap (p = 0.65). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-35. Compared with no Quenby Fair Share Health Cover Act, non wage compensation for workers.lean_plans rises from the short run onward (tier B, invisible). Why: PC-17: PC-17. This holds if: Some existing policies offer the term on conditions the mandate forbids (p = 0.90); Most bound providers comply (p = 0.90). Reported.",
+  "C-36. Compared with no Quenby Fair Share Health Cover Act, employment or hours worked or non wage compensation for workers.min_wage falls for at least one of them from the short run onward (tier B, invisible). Why: PC-17: PC-17; PC-10: PC-10. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); A floor holds some recipients' wage (p = 0.85). Reported.",
+  "C-37. Compared with no Quenby Fair Share Health Cover Act, employment or hours worked for workers.near_30 falls for at least one of them from the medium run onward (tier B, invisible). Why: RS-18: RS-18. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Providers can move hours between recipients below and above the cap (p = 0.65). Reported.",
+  "C-38. Compared with no Quenby Fair Share Health Cover Act, non wage compensation for workers.seasonal may move either way from the short run onward (tier B, invisible). Why: CR-1: CR-1. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90). Sign per reading: U1-a: increase; U1-b: none. Reported.",
+  "C-39. Compared with no Quenby Fair Share Health Cover Act, earnings for workers.uncovered falls from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price; CR-12: CR-12. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); The wage can adjust over the medium run (p = 0.80). Reported.",
+  "C-40. Compared with no Quenby Fair Share Health Cover Act, employment or hours worked for workers.uncovered falls for at least one of them from the medium run onward (tier B, invisible). Why: CR-4: buyers who face a higher price take fewer units; PC-17: PC-17; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); Some bound firms pay the charge rather than provide the term (p = 0.90). Reported.",
+  "C-41. Compared with no Quenby Fair Share Health Cover Act, employment or hours worked or non wage compensation for workers.uncovered falls for at least one of them from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-2: CR-2; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); The other money terms are fixed in the short run (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-42. Compared with no Quenby Fair Share Health Cover Act, lobbying effort for workers.uncovered rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The recipients can organize to lobby (p = 0.85). Reported.",
+  "C-43. Compared with no Quenby Fair Share Health Cover Act, tax share borne for workers.uncovered rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price; CR-7: CR-7. This holds if: The recipients' alternatives are worse than the providers' (p = 0.60); The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); The wage can adjust over the medium run (p = 0.80). Reported.",
+  "C-44. Compared with no Quenby Fair Share Health Cover Act, wage rate for workers.uncovered falls from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.90); The wage can adjust over the medium run (p = 0.80). Reported."
  ],
  "questions": [
   {
@@ -2556,6 +2840,24 @@
    "answer": {
     "decider": "fixture:answers.json",
     "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.some_pay",
+    "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-4: some bound firms choose to pay the charge for at least some full-timers (all the capped firms, many mid-size low-wage firms).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "some_pay",
+    "assumption_class": "other",
+    "id": "k1.some_pay",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some bound firms pay the charge rather than provide the term?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
     "probability": 0.7,
     "question_id": "k2.binding",
     "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-5: some firms with plans short of K1 upgrade them rather than pay, so the standard rules out the lean designs for them.",
@@ -2643,6 +2945,9 @@
     "buyer_actor": "buyers.current",
     "cap": null,
     "cap_unit": null,
+    "charge_capped_actor": "employers.capped",
+    "charge_payer_actor": "employers.payers_midsize",
+    "charge_payer_worker_actor": "workers.uncovered",
     "claim_handler_actor": null,
     "claim_penalties": false,
     "complainant_actor": null,
@@ -2665,6 +2970,7 @@
     "exporter_worker_actor": null,
     "fees_to_budget": false,
     "field_contested": false,
+    "fixed_cost_per_item": false,
     "floor_bound_actor": "workers.min_wage",
     "foreign_seller_actor": "sellers.foreign",
     "forfeit_on_leaving": true,
@@ -2694,6 +3000,7 @@
     "own_revenue_funded": false,
     "paid_absence": false,
     "per_head_cap": true,
+    "player_recipient_actor": "workers.at_players",
     "practice_ban": false,
     "price_fixed": false,
     "prospective_buyer_actor": null,
@@ -2707,7 +3014,7 @@
     "renewable": false,
     "repay_on_move": false,
     "restrains_mobility": false,
-    "revenue_actor": "officials.enforcement",
+    "revenue_actor": "general_fund",
     "right_holder_actor": null,
     "rights_sold": false,
     "rival_actors": [
@@ -2771,6 +3078,9 @@
     "buyer_actor": "employers.players",
     "cap": null,
     "cap_unit": null,
+    "charge_capped_actor": null,
+    "charge_payer_actor": null,
+    "charge_payer_worker_actor": null,
     "claim_handler_actor": null,
     "claim_penalties": false,
     "complainant_actor": null,
@@ -2793,6 +3103,7 @@
     "exporter_worker_actor": null,
     "fees_to_budget": false,
     "field_contested": false,
+    "fixed_cost_per_item": false,
     "floor_bound_actor": null,
     "foreign_seller_actor": "sellers.foreign",
     "forfeit_on_leaving": false,
@@ -2822,6 +3133,7 @@
     "own_revenue_funded": false,
     "paid_absence": false,
     "per_head_cap": false,
+    "player_recipient_actor": null,
     "practice_ban": false,
     "price_fixed": false,
     "prospective_buyer_actor": null,
@@ -2909,7 +3221,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-19T20:21:04+00:00",
+ "run_at": "2026-10-19T21:37:50+00:00",
  "sources_held_back": [],
  "unclear": [
   {

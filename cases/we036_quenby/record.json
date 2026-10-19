@@ -48,7 +48,12 @@
     "Employers report each employee's offer status on quarterly withholding returns; the charge is assessed with them.",
     "Charges are paid into the general fund.",
     "A new appropriation of $4.1 million a year from the general fund pays for 32 staff."
-   ]
+   ],
+   "player_recipient_actor": "workers.at_players",
+   "charge_payer_actor": "employers.payers_midsize",
+   "charge_payer_worker_actor": "workers.uncovered",
+   "charge_capped_actor": "employers.capped",
+   "revenue_actor": "general_fund"
   },
   {
    "id": "k2",

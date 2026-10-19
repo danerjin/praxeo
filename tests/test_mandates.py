@@ -98,3 +98,35 @@ def test_term_prohibition_and_standard_from_the_catalog():
                      recipient_actor="owners", contract_kind="sale", source_sentences=["x"])
     rec = PolicyRecord(name="n", jurisdiction="j", rule_maker="r", enacted="e", effective="f", components=[sale])
     assert not any(k[1] in ("wage_rate", "employment", "hours_worked", "earnings", "price_paid") for k in _reported(rec))
+
+
+def test_play_or_pay_required_inputs_disclosure_and_fixed_cost_per_item():
+    from praxeo.schema import Component, PolicyRecord, Related
+
+    def rec(**f):
+        base = dict(id="k1", good="g", market="m", source_sentences=["x"])
+        return PolicyRecord(name="n", jurisdiction="j", rule_maker="r", enacted="e", effective="f", components=[Component(**{**base, **f})])
+    # play or pay (PC-17 0.9): the term goes to the players' workers only; the payers face TX-2 and the state receives the charge
+    got = _reported(rec(instrument="mandate_with_charge", bound_actor="employers.bound", recipient_actor="workers.all",
+                        player_recipient_actor="workers.at_players", charge_payer_actor="employers.payers",
+                        charge_payer_worker_actor="workers.at_payers", charge_capped_actor="employers.capped",
+                        revenue_actor="fund"))
+    assert {("workers.at_players", "non_wage_compensation", "increase", None), ("employers.payers", "price_paid", "increase", None),
+            ("fund", "non_tax_receipts", "increase", None), ("workers.at_payers", "employment", "at_least_one_decrease", None),
+            ("employers.capped", "resources_available_other_uses", "decrease", None)} <= got
+    assert ("workers.all", "non_wage_compensation", "increase", None) not in got
+    assert not any(k[0] == "employers.capped" and k[1] == "price_paid" for k in got)   # a fixed cost above the cap
+    # an input the standard requires: more demand, not the derived fall of relations.lp
+    got = _reported(rec(instrument="product_standard", bound_actor="builders", buyer_actor="buyers.new",
+                        related=[Related(kind="required", good="ratings", seller_actor="raters", other_user_actor="buyers.audits")]))
+    assert {("raters", "quantity_traded", "increase", None), ("raters", "net_price_received", "increase", None),
+            ("buyers.audits", "price_paid", "increase", None)} <= got
+    assert ("raters", "quantity_traded", "decrease", None) not in got
+    # EN-15: direction needs its own premise; both directions reported give ambiguous
+    d = dict(instrument="disclosure_mandate", bound_actor="sellers.covered", buyer_actor="buyers.current",
+             rival_actors=["sellers.exempt"], fixed_cost_per_item=True)
+    got = _reported(rec(**d), disclosed_attracts=0.2)
+    assert {("buyers.current", "quantity_demanded", "decrease", None), ("sellers.covered", "compliance_cost", "increase", None),
+            ("sellers.exempt", "term_prevalence", "increase", None), ("sellers.covered", "variety", "decrease", None)} <= got
+    assert ("buyers.current", "quantity_demanded", "ambiguous", None) in _reported(rec(**d))
+    assert not any(k[1] == "quantity_demanded" for k in _reported(rec(**d), buyers_unaware=0.3))

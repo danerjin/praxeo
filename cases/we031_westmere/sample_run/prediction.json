@@ -24,6 +24,12 @@
    "p": 0.9,
    "text": "Most makers comply."
   },
+  "related_slow_r1(k1)": {
+   "assumption_class": "durability",
+   "id": "related_slow_r1(k1)",
+   "p": 0.7,
+   "text": "The supply of energy ratings is slow to adjust."
+  },
   "stock_competes(k1)": {
    "assumption_class": "substitutability",
    "id": "stock_competes(k1)",
@@ -91,10 +97,17 @@
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "mc_rule_binds(k1)",
+     "premises": [
+      "binding(k1)"
+     ],
+     "rule": "RS-7"
+    },
+    {
      "conclusion": "mc_lobby(k1)",
      "premises": [
-      "binding(k1)",
-      "can_organize(k1)"
+      "can_organize(k1)",
+      "mc_rule_binds(k1)"
      ],
      "rule": "RS-7"
     }
@@ -155,6 +168,148 @@
    "window": null
   },
   {
+   "actor_class": "buyers.home_energy_audits",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "related_slow_r1(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "related_slow_r1(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-14"
+    },
+    {
+     "conclusion": "mc_measure_binds(k1)",
+     "premises": [
+      "st_binds(k1)"
+     ],
+     "rule": "CR-9"
+    },
+    {
+     "conclusion": "rel_required(k1,r1)",
+     "premises": [
+      "mc_measure_binds(k1)"
+     ],
+     "rule": "CR-9"
+    },
+    {
+     "conclusion": "rel_required_scarce(k1,r1)",
+     "premises": [
+      "related_slow_r1(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "rel_required_scarce(k1,r1)",
+     "premises": [
+      "rel_required(k1,r1)"
+     ],
+     "rule": "SB-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.home_energy_audits",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "related_slow_r1(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "related_slow_r1(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-14"
+    },
+    {
+     "conclusion": "mc_measure_binds(k1)",
+     "premises": [
+      "st_binds(k1)"
+     ],
+     "rule": "CR-9"
+    },
+    {
+     "conclusion": "rel_required(k1,r1)",
+     "premises": [
+      "mc_measure_binds(k1)"
+     ],
+     "rule": "CR-9"
+    },
+    {
+     "conclusion": "rel_required_scarce(k1,r1)",
+     "premises": [
+      "related_slow_r1(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "rel_required_scarce(k1,r1)",
+     "premises": [
+      "rel_required(k1,r1)"
+     ],
+     "rule": "SB-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
    "actor_class": "buyers.new_homes",
    "actor_group": [],
    "assumption_sets": [
@@ -185,7 +340,7 @@
     "medium",
     "long"
    ],
-   "id": "C-4",
+   "id": "C-6",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -226,7 +381,7 @@
     "medium",
     "long"
    ],
-   "id": "C-5",
+   "id": "C-7",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -260,7 +415,7 @@
     "medium",
     "long"
    ],
-   "id": "C-6",
+   "id": "C-8",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -308,7 +463,7 @@
     "medium",
     "long"
    ],
-   "id": "C-7",
+   "id": "C-9",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -355,13 +510,139 @@
    "horizon": [
     "long"
    ],
-   "id": "C-8",
+   "id": "C-10",
    "item": null,
    "reported": true,
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
    "variable": "stock_age",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "raters",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "related_slow_r1(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "related_slow_r1(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-14"
+    },
+    {
+     "conclusion": "mc_measure_binds(k1)",
+     "premises": [
+      "st_binds(k1)"
+     ],
+     "rule": "CR-9"
+    },
+    {
+     "conclusion": "rel_required(k1,r1)",
+     "premises": [
+      "mc_measure_binds(k1)"
+     ],
+     "rule": "CR-9"
+    },
+    {
+     "conclusion": "rel_required_scarce(k1,r1)",
+     "premises": [
+      "related_slow_r1(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "rel_required_scarce(k1,r1)",
+     "premises": [
+      "rel_required(k1,r1)"
+     ],
+     "rule": "SB-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "raters",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "st_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-14"
+    },
+    {
+     "conclusion": "mc_measure_binds(k1)",
+     "premises": [
+      "st_binds(k1)"
+     ],
+     "rule": "CR-9"
+    },
+    {
+     "conclusion": "rel_required(k1,r1)",
+     "premises": [
+      "mc_measure_binds(k1)"
+     ],
+     "rule": "CR-9"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
    "visibility": "invisible",
    "window": null
   },
@@ -393,7 +674,7 @@
     "medium",
     "long"
    ],
-   "id": "C-9",
+   "id": "C-13",
    "item": null,
    "reported": true,
    "sign": "at_least_one_decrease",
@@ -405,17 +686,21 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"builders\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nstandard(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers.current\").\nmc_payer_group(k1, \"taxpayers.current,recipients.other_spending,taxpayers.future\").\nst_buyer(k1, \"buyers.new_homes\").\nmc_outside(k1, \"homeowners.renovating\").\nst_stock_owner(k1, \"owners.existing_homes\").\nstock_exempt(k1).\ndefinition_line(k1).\ngeneral_budget(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(can_organize(k1)).\nassumption(buyers_value_standard(k1)).\nassumption(stock_competes(k1)).\n",
+ "engine_facts": "bound(k1, \"builders\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nrelated(k1, r1, required, \"raters\", \"net_price_received\", \"buyers.home_energy_audits\").\nrel_premise(k1, r1, slow, related_slow_r1(k1)).\nstandard(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers.current\").\nmc_payer_group(k1, \"taxpayers.current,recipients.other_spending,taxpayers.future\").\nst_buyer(k1, \"buyers.new_homes\").\nmc_outside(k1, \"homeowners.renovating\").\nst_stock_owner(k1, \"owners.existing_homes\").\nstock_exempt(k1).\ndefinition_line(k1).\ngeneral_budget(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(can_organize(k1)).\nassumption(buyers_value_standard(k1)).\nassumption(stock_competes(k1)).\nassumption(related_slow_r1(k1)).\n",
  "explanations": [
   "C-1. Compared with no Westmere Residential Energy Performance Act, compliance cost for builders rises from the short run onward (tier B, invisible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
   "C-2. Compared with no Westmere Residential Energy Performance Act, lobbying effort for builders rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The standard binds on some designs (p = 0.70); The makers can organize to lobby (p = 0.90). Reported.",
   "C-3. Compared with no Westmere Residential Energy Performance Act, quantity supplied for builders falls from the medium run onward (tier B, invisible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
-  "C-4. Compared with no Westmere Residential Energy Performance Act, price paid for buyers.new_homes rises from the short run onward (tier B, invisible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
-  "C-5. Compared with no Westmere Residential Energy Performance Act, specification level for buyers.new_homes rises from the short run onward (tier B, visible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
-  "C-6. Compared with no Westmere Residential Energy Performance Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
-  "C-7. Compared with no Westmere Residential Energy Performance Act, asset value for owners.existing_homes rises from the medium run onward (tier B, invisible). Why: CR-7: CR-7; EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90); Existing units compete with new ones (p = 0.80). Reported.",
-  "C-8. Compared with no Westmere Residential Energy Performance Act, stock age for owners.existing_homes rises in the long run (tier B, invisible). Why: CR-7: CR-7; EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90); Existing units compete with new ones (p = 0.80). Reported.",
-  "C-9. Compared with no Westmere Residential Energy Performance Act, resources available other uses for taxpayers.current or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier A, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
+  "C-4. Compared with no Westmere Residential Energy Performance Act, price paid for buyers.home_energy_audits rises from the short run onward (tier B, invisible). Why: EN-14: EN-14; CR-9: an owner who leaves the rental market ends the leases of those who live in the building; CR-7: CR-7; SB-3: resources move into the subsidized activity from the uses that would otherwise have had them. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90); The supply of energy ratings is slow to adjust (p = 0.70). Reported.",
+  "C-5. Compared with no Westmere Residential Energy Performance Act, quantity traded for buyers.home_energy_audits falls from the short run onward (tier B, invisible). Why: EN-14: EN-14; CR-9: an owner who leaves the rental market ends the leases of those who live in the building; CR-7: CR-7; SB-3: resources move into the subsidized activity from the uses that would otherwise have had them. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90); The supply of energy ratings is slow to adjust (p = 0.70). Reported.",
+  "C-6. Compared with no Westmere Residential Energy Performance Act, price paid for buyers.new_homes rises from the short run onward (tier B, invisible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
+  "C-7. Compared with no Westmere Residential Energy Performance Act, specification level for buyers.new_homes rises from the short run onward (tier B, visible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
+  "C-8. Compared with no Westmere Residential Energy Performance Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-9. Compared with no Westmere Residential Energy Performance Act, asset value for owners.existing_homes rises from the medium run onward (tier B, invisible). Why: CR-7: CR-7; EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90); Existing units compete with new ones (p = 0.80). Reported.",
+  "C-10. Compared with no Westmere Residential Energy Performance Act, stock age for owners.existing_homes rises in the long run (tier B, invisible). Why: CR-7: CR-7; EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90); Existing units compete with new ones (p = 0.80). Reported.",
+  "C-11. Compared with no Westmere Residential Energy Performance Act, net price received for raters rises from the short run onward (tier B, invisible). Why: EN-14: EN-14; CR-9: an owner who leaves the rental market ends the leases of those who live in the building; CR-7: CR-7; SB-3: resources move into the subsidized activity from the uses that would otherwise have had them. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90); The supply of energy ratings is slow to adjust (p = 0.70). Reported.",
+  "C-12. Compared with no Westmere Residential Energy Performance Act, quantity traded for raters rises from the short run onward (tier B, invisible). Why: EN-14: EN-14; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
+  "C-13. Compared with no Westmere Residential Energy Performance Act, resources available other uses for taxpayers.current or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier A, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
  ],
  "questions": [
   {
@@ -507,6 +792,24 @@
     "options": [],
     "text": "Do existing units compete with new units for the same buyers?"
    }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.related_slow_r1",
+    "rationale": "Probability taken from the assumption table of handbook WE-031 (illustrative figures), A-14: rater capacity cannot grow much within the first two years (six-month certification; about 70 active raters for new homes).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "related_slow_r1",
+    "assumption_class": "durability",
+    "id": "k1.related_slow_r1",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the supply of energy ratings slow to expand or contract in the period considered (training, licensing, capacity)?"
+   }
   }
  ],
  "record": {
@@ -527,6 +830,9 @@
     "buyer_actor": "buyers.new_homes",
     "cap": null,
     "cap_unit": null,
+    "charge_capped_actor": null,
+    "charge_payer_actor": null,
+    "charge_payer_worker_actor": null,
     "claim_handler_actor": null,
     "claim_penalties": false,
     "complainant_actor": null,
@@ -549,6 +855,7 @@
     "exporter_worker_actor": null,
     "fees_to_budget": false,
     "field_contested": false,
+    "fixed_cost_per_item": false,
     "floor_bound_actor": null,
     "foreign_seller_actor": "sellers.foreign",
     "forfeit_on_leaving": false,
@@ -578,6 +885,7 @@
     "own_revenue_funded": false,
     "paid_absence": false,
     "per_head_cap": false,
+    "player_recipient_actor": null,
     "practice_ban": false,
     "price_fixed": false,
     "prospective_buyer_actor": null,
@@ -586,7 +894,17 @@
     "qualifier_actor": null,
     "rate_rise": false,
     "recipient_actor": null,
-    "related": [],
+    "related": [
+     {
+      "good": "energy_ratings",
+      "kind": "required",
+      "other_user_actor": "buyers.home_energy_audits",
+      "price_variable": "net_price_received",
+      "quote": "A certificate of occupancy requires a rater's certificate.",
+      "seller_actor": "raters",
+      "source_id": null
+     }
+    ],
     "relief_applicant_actor": null,
     "renewable": false,
     "repay_on_move": false,
@@ -670,7 +988,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-19T20:21:01+00:00",
+ "run_at": "2026-10-19T21:37:46+00:00",
  "sources_held_back": [],
  "unclear": [
   {

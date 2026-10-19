@@ -32,6 +32,17 @@
     "A certificate of occupancy requires a rater's certificate.",
     "The Energy Office audits 2% of certificates.",
     "The Energy Office's audit unit is funded by a new general-fund appropriation."
+   ],
+   "related": [
+    {
+     "kind": "required",
+     "good": "energy_ratings",
+     "seller_actor": "raters",
+     "price_variable": "net_price_received",
+     "other_user_actor": "buyers.home_energy_audits",
+     "source_id": null,
+     "quote": "A certificate of occupancy requires a rater's certificate."
+    }
    ]
   }
  ],

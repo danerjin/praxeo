@@ -24,7 +24,6 @@ EXCEPTIONS = {
         "defensible: the substitute terms of the preserved forms, on the whole class; the table has the net trainers (C-4), whose substitutes the example derives the same way (A-4)",
 }
 NOT_PRODUCED = {
-    "C-2": "unsupported form: K4 is a disclosure_mandate, which has no rules; PC-18 adds no compliance cost for the bound employers",
     "C-3": "missing record fact and rule: no founders role (a term ban has no entrant field); CR-4b entry by the freed party is not encoded",
     "C-4": "role: the engine signs the bound class employers.restraining; the table's net_trainers is a subclass",
     "C-5": "unsupported form: a sign per reading of a term the Act's exemption may or may not preserve; the reading changes no Component field and the rule has no paid-notice term",
@@ -66,7 +65,7 @@ def test_consistent_with_worked_example_we034():
     rows = _rows("WE-034_noncompete_ban.md", {}, {}, {})
     assert len(rows) == 39
     _check(rows, keys, EXCEPTIONS, NOT_PRODUCED, PRODUCED)
-    assert PRODUCED == {"C-1", "C-7", "C-8", "C-23", "C-38", "C-39"}  # C-1 and C-23 at the first run; the rest after the rule changes
+    assert PRODUCED == {"C-1", "C-2", "C-7", "C-8", "C-23", "C-38", "C-39"}  # C-1 and C-23 at the first run; the rest after the rule changes
     wrong = {k for k, v in EXCEPTIONS.items() if v.startswith("KNOWN WRONG")}
     assert wrong == set()  # the group on workers.bound (2 keys at the first run) moved to workers.trainees (PC-18 fix)
     assert all(v.startswith(("defensible:", "KNOWN WRONG:")) for v in EXCEPTIONS.values())

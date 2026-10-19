@@ -102,12 +102,20 @@ instrument, even when the text states no aim:
   offering the term), definition_line with outside_actor (those engaged outside the definitions, such as contractors),
   forfeit_on_leaving (true if what the term gives is lost on leaving), complaint_only (true if enforced only on
   complaint) with complainant_actor and violator_actor, size_threshold with near_threshold_actor and
-  below_threshold_actor, enforcer_actor, general_budget.
+  below_threshold_actor, enforcer_actor, general_budget; contract_kind (employment, or sale where the term sits in the
+  sale of a good); fixed_cost_per_item (true if the term costs a fixed sum per model or item offered).
+- mandate_with_charge (play or pay): as mandated_contract_term, with player_recipient_actor (the recipients at firms that
+  provide the term), charge_payer_actor and charge_payer_worker_actor (firms that pay the charge instead, and their
+  workers), charge_capped_actor (payers above a cap per firm), revenue_actor (who receives the charge).
+- disclosure_mandate: bound_actor (sellers who must disclose), buyer_actor (the buyers informed), rival_actors (exempt
+  sellers), fixed_cost_per_item, enforcer_actor, general_budget.
 - term_prohibition: bound_actor (the party that used the term), recipient_actor (the party freed from it),
   restrains_mobility (true if the term restrained that party's moves, as a non-compete clause does), voids_existing
-  (true if existing contracts are voided too).
+  (true if existing contracts are voided too), applicant_actor (the prospective counterparties of new contracts),
+  contract_kind.
 - product_standard: bound_actor (makers of new units), buyer_actor (buyers of new units), stock_exempt (true if existing
-  units are exempt) with stock_owner_actor, enforcer_actor, general_budget.
+  units are exempt) with stock_owner_actor, enforcer_actor, general_budget, fixed_cost_per_item; list in `related` with
+  kind required the inputs the standard requires per unit (ratings, certified parts).
 For a tax or subsidy, list in `related` the markets the text or context names as related to the good: an input or factor
 its sellers use (kind input: who sells it, price_variable wage_rate for workers, and its other users if named), or a
 complement used with it (kind complement).

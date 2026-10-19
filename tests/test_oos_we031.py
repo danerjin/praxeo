@@ -14,6 +14,10 @@ ROOT = Path(__file__).resolve().parents[1]
 WE31 = ROOT / "cases" / "we031_westmere"
 
 EXCEPTIONS = {
+    ("raters", "net_price_received", "increase", None):
+        "defensible: SB-3 with CR-7a on a required input in slow supply (A-14): the raters' side of the price builders pay for ratings (C-15); after the rule changes",
+    ("buyers.home_energy_audits", "quantity_traded", "decrease", None):
+        "defensible: CR-4c, the other users of raters buy fewer audits at the higher price; C-42 signs their price only; after the rule changes",
     ("buyers.new_homes", "specification_level", "increase", None):
         "defensible: EN-14 puts specification_level on the buyers of the new units (the homes they get); the table puts it on the builders (C-2), whose designs it constrains",
     ("owners.existing_homes", "stock_age", "increase", None):
@@ -49,19 +53,17 @@ NOT_PRODUCED = {
     "C-34": "unsupported form: as C-33",
     "C-35": "combiner and unsupported form: price in Years 1 to 3 sets the compliance chain against the looser rebate (existing rule); the engine gives increase over short to long (C-4)",
     "C-36": "combiner and unsupported form: as C-35, for quantity",
-    "C-37": "missing rule and role: CR-1 and CR-9 for the rating service K3 requires on every home; derived demand through target_qty would give the opposite sign (see out_of_sample.md)",
     "C-38": "missing rule and role: CR-7c and CR-10c for raters' certifications",
     "C-39": "missing rule and role: CR-4 on variety (plans offered) by small builders",
     "C-40": "missing rule and role: CR-7b pair incidence between lot owners and builders",
     "C-41": "missing rule and role: CR-7c and CR-10c for makers of efficiency products",
-    "C-42": "missing rule and role: CR-6, CR-9 on auditors drawn into rating (buyers.home_energy_audits)",
     "C-43": "unsupported form: the existing rebate's outlay (utilities.rebate_program) under a moved threshold",
     "C-44": "unsupported form: as C-43",
     "C-45": "unsupported form and sign form: the rebate budget's other side (ratepayers) as an at_least_one group, from the existing rule",
     "C-46": "unsupported form and sign form: as C-45",
     "C-47": "missing rule and sign form: RS-6, resources moving to commercial building; a mixed group (price_paid -, quantity_traded +) that no sign encodes",
 }
-PRODUCED = {"C-1", "C-3", "C-4", "C-5", "C-18", "C-21", "C-30"}
+PRODUCED = {"C-1", "C-3", "C-4", "C-5", "C-18", "C-21", "C-30", "C-37", "C-42"}  # C-37 and C-42 after the rule changes
 
 
 def test_consistent_with_worked_example_we031():
@@ -69,6 +71,6 @@ def test_consistent_with_worked_example_we031():
     rows = _rows("WE-031_building_energy_code.md", {}, {}, {})
     assert len(rows) == 47
     _check(rows, keys, EXCEPTIONS, NOT_PRODUCED, PRODUCED)
-    assert len(PRODUCED) == 7 and len(NOT_PRODUCED) == 40
+    assert len(PRODUCED) == 9 and len(NOT_PRODUCED) == 38  # 7 and 40 at the first run; C-37 and C-42 after the rule changes (a required input)
     # nothing is below the cut-off: the engine reports every consequence it derives
-    assert all(c["reported"] for c in pred["consequences"]) and len(pred["consequences"]) == 9
+    assert all(c["reported"] for c in pred["consequences"]) and len(pred["consequences"]) == 13  # 9 at the first run; 4 from the required input

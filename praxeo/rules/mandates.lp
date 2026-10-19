@@ -24,6 +24,10 @@
 %   threshold_partial_count(C). margin_covered(C). definition_line(C). general_budget(C). tax_named(C).
 %   term_ban(C). tb_freed(C, A). restrains_mobility(C). voids_existing(C).       PC-18
 %   standard(C). st_buyer(C, A). stock_exempt(C). st_stock_owner(C, A).            EN-14
+%   disclosure(C). (st_buyer: the buyers the disclosure informs; mc_rival: exempt sellers)   EN-15
+%   mc_player_recipient(C, A).     play or pay: the recipients who get the term
+%   mc_charge_payer(C, A). mc_charge_payer_worker(C, A). mc_charge_capped(C, A). mc_charge_receiver(C, A).  play or pay
+%   fixed_cost_per_item(C).        RS-24
 %   enforcer(C, A). taxpayer(C, A). mc_payer_group(C, "a,b,c").
 % Every rule is monotone in holds/1: it negates only plain facts.
 
@@ -38,7 +42,11 @@
 mc_binds(C) :- mandate(C), mc_recipient(C, _), holds(binding(C)), holds(enforced(C)), not exception(pc_17, C).
 fired(pc_17, mc_binds(C), binding(C))  :- mc_binds(C).
 fired(pc_17, mc_binds(C), enforced(C)) :- mc_binds(C).
-effect(mc_binds(C), R, "non_wage_compensation", increase, short, visible, "B") :- mc_binds(C), mc_recipient(C, R).
+effect(mc_binds(C), R, "non_wage_compensation", increase, short, visible, "B") :- mc_binds(C), mc_term_holder(C, R).
+% Who holds the term: the recipients, or under play or pay only those at firms that provide it (found out of sample on WE-036).
+mc_has_players(C) :- mc_player_recipient(C, _).
+mc_term_holder(C, R) :- mc_player_recipient(C, R).
+mc_term_holder(C, R) :- mc_recipient(C, R), not mc_has_players(C).
 
 % The cost stays with the providers while the other terms are fixed (wages_sticky, short run; CR-6 0.8) or, after they
 % adjust, where the term is worth less to the recipient than it costs the provider (worth_less; CR-2 0.7, CR-12e).
@@ -200,7 +208,7 @@ effect(mc_reshaped(C), O, "reclassification", increase, medium, invisible, "B") 
 mc_lockin(C) :- mc_binds(C), employment(C), forfeit_on_leaving(C), holds(move_marginal(C)), not exception(rs_11, C).
 fired(rs_11, mc_lockin(C), forfeit_on_leaving(C)) :- mc_lockin(C).
 fired(rs_11, mc_lockin(C), move_marginal(C))      :- mc_lockin(C).
-effect(mc_lockin(C), R, "job_changes", decrease, medium, invisible, "B") :- mc_lockin(C), mc_recipient(C, R).
+effect(mc_lockin(C), R, "job_changes", decrease, medium, invisible, "B") :- mc_lockin(C), mc_term_holder(C, R).
 
 % RS-20: enforcement only on complaint. Where complaint is unlikely for some recipients (complaint_unlikely), breach rises
 % from none (1.0 baseline); where complaints are filed (complaints_filed), recipients spend time on them, and awards pass
@@ -250,9 +258,12 @@ effect(mc_compliance(C), B, "compliance_cost", increase, short, invisible, "A") 
 mc_rule_binds(C) :- mandate(C), holds(binding(C)).
 mc_rule_binds(C) :- standard(C), holds(binding(C)).
 mc_rule_binds(C) :- term_ban(C), holds(binding(C)).
+mc_rule_binds(C) :- disclosure(C), holds(enforced(C)).
+fired(rs_7, mc_rule_binds(C), binding(C))  :- mc_rule_binds(C), holds(binding(C)).
+fired(rs_7, mc_rule_binds(C), enforced(C)) :- mc_rule_binds(C), disclosure(C).
 mc_lobby(C) :- mc_rule_binds(C), holds(can_organize(C)), not exception(rs_7, C).
-fired(rs_7, mc_lobby(C), binding(C))      :- mc_lobby(C).
-fired(rs_7, mc_lobby(C), can_organize(C)) :- mc_lobby(C).
+fired(rs_7, mc_lobby(C), mc_rule_binds(C)) :- mc_lobby(C).
+fired(rs_7, mc_lobby(C), can_organize(C))  :- mc_lobby(C).
 effect(mc_lobby(C), B, "lobbying_effort", increase, medium, invisible, "B") :- mc_lobby(C), bound(C, B).
 mc_recipients_lobby(C) :- mandate(C), holds(binding(C)), holds(recipients_organize(C)), not exception(rs_7, C).
 fired(rs_7, mc_recipients_lobby(C), binding(C))             :- mc_recipients_lobby(C).
@@ -265,10 +276,12 @@ lobby_concl(mc_recipients_lobby(C), C) :- mc_recipients_lobby(C).
 mc_rule(C) :- mandate(C).
 mc_rule(C) :- standard(C).
 mc_rule(C) :- term_ban(C), enforcer(C, _).
+mc_rule(C) :- disclosure(C).
 mc_administered(C) :- mc_rule(C), enforcer(C, _), not exception(oc_3, C).
 fired(oc_3, mc_administered(C), mandate(C))  :- mc_administered(C), mandate(C).
 fired(oc_3, mc_administered(C), standard(C)) :- mc_administered(C), standard(C).
 fired(oc_3, mc_administered(C), term_ban(C)) :- mc_administered(C), term_ban(C).
+fired(oc_3, mc_administered(C), disclosure(C)) :- mc_administered(C), disclosure(C).
 effect(mc_administered(C), E, "enforcement_cost", increase, short, invisible, "A") :- mc_administered(C), enforcer(C, E).
 mc_funded(C) :- mc_administered(C), general_budget(C), not exception(oc_1, C).
 fired(oc_1, mc_funded(C), general_budget(C)) :- mc_funded(C).
@@ -339,6 +352,75 @@ effect(st_valued(C), O, "stock_age", decrease, long, invisible, "B")     :- st_v
 st_drawn(C) :- st_binds(C), holds(buyers_value_standard(C)), not exception(en_14, C).
 fired(en_14, st_drawn(C), buyers_value_standard(C)) :- st_drawn(C).
 effect(st_drawn(C), B, "quantity_supplied", increase, medium, invisible, "B") :- st_drawn(C), bound(C, B).
+
+% ------------------------------------------------------------------ PC-17 0.9: a mandate with a buy-out charge (play or pay)
+
+% The bound class is split by response (CR-1 0.7): PC-17 applies to the firms that provide the term (bound, with their
+% recipients); TX-2 to those that pay the charge to the state instead (some_pay). The charge is a wedge on the payers'
+% labour: their cost per head rises, the quantity of labour they buy falls (employment or hours, at least one), and the
+% state receives the charge (CR-8b). Above a cap per firm the charge no longer varies with heads (RS-18 0.9): a fixed cost,
+% which lowers those payers' means but not their hiring. Found out of sample on WE-036.
+mc_pays(C) :- mandate(C), mc_charge_payer(C, _), holds(binding(C)), holds(enforced(C)), holds(some_pay(C)), not exception(tx_2, C).
+fired(pc_17, mc_pays(C), binding(C))  :- mc_pays(C).
+fired(pc_17, mc_pays(C), enforced(C)) :- mc_pays(C).
+fired(cr_4, mc_pays(C), some_pay(C))  :- mc_pays(C).
+effect(mc_pays(C), P, "price_paid", increase, short, invisible, "B") :- mc_pays(C), employment(C), mc_charge_payer(C, P).
+effect(mc_pays(C), P, "resources_available_other_uses", decrease, short, invisible, "B") :- mc_pays(C), mc_charge_payer(C, P).
+effect(mc_pays(C), K, "resources_available_other_uses", decrease, short, invisible, "B") :- mc_pays(C), mc_charge_capped(C, K).
+effect(mc_pays(C), R, "non_tax_receipts", increase, short, invisible, "B") :- mc_pays(C), mc_charge_receiver(C, R).
+mc_pay_wedge(C) :- mc_pays(C), employment(C), mc_charge_payer_worker(C, _).
+fired(tx_2, mc_pay_wedge(C), mc_pays(C)) :- mc_pay_wedge(C).
+group_effect(mc_pay_wedge(C), W, "employment,hours_worked", at_least_one_decrease, medium, invisible, "B") :- mc_pay_wedge(C), mc_charge_payer_worker(C, W).
+
+% ------------------------------------------------------------------ Inputs the measure requires (CR-9)
+
+% A standard or mandate that requires an input per unit (ratings, efficient windows, certified plans) raises the demand for
+% it where the measure binds: its sellers sell more. relations.lp's derived demand (fewer units, less input) does not apply
+% to it (found out of sample on WE-031). Where its supply is slow (related_slow_rN), its price rises and its other users pay
+% more and use less (SB-3, CR-7a).
+mc_measure_binds(C) :- st_binds(C).
+mc_measure_binds(C) :- mc_binds(C).
+fired(cr_9, mc_measure_binds(C), st_binds(C)) :- mc_measure_binds(C), st_binds(C).
+fired(cr_9, mc_measure_binds(C), mc_binds(C)) :- mc_measure_binds(C), mc_binds(C).
+rel_required(C, R) :- mc_measure_binds(C), related(C, R, required, _, _, _), not exception(cr_9, C).
+fired(cr_9, rel_required(C, R), mc_measure_binds(C)) :- rel_required(C, R).
+effect(rel_required(C, R), S, "quantity_traded", increase, short, invisible, "B") :- rel_required(C, R), related(C, R, required, S, _, _).
+rel_required_scarce(C, R) :- rel_required(C, R), rel_premise(C, R, slow, A), holds(A).
+fired(sb_3, rel_required_scarce(C, R), rel_required(C, R)) :- rel_required_scarce(C, R).
+fired(cr_7, rel_required_scarce(C, R), A) :- rel_required_scarce(C, R), rel_premise(C, R, slow, A).
+effect(rel_required_scarce(C, R), S, V, increase, short, invisible, "B") :- rel_required_scarce(C, R), related(C, R, required, S, V, _).
+effect(rel_required_scarce(C, R), O, "price_paid", increase, short, invisible, "B") :- rel_required_scarce(C, R), related(C, R, required, _, _, O), O != "".
+effect(rel_required_scarce(C, R), O, "quantity_traded", decrease, short, invisible, "B") :- rel_required_scarce(C, R), related(C, R, required, _, _, O), O != "".
+
+% ------------------------------------------------------------------ EN-15: a disclosure mandate
+
+% Covered sellers who comply (enforced) bear the cost of disclosing (CR-4 0.8). Buyers' choices change only where they did
+% not already know and care (buyers_unaware, CR-11 0.7), and the direction is a premise of its own: fewer purchases where the
+% disclosed fact deters (disclosed_deters), more where it attracts (disclosed_attracts); both reported gives ambiguous.
+% Exempt sellers whose goods compare well disclose voluntarily (exempt_compare_well, CR-11 0.9).
+ds_binds(C) :- disclosure(C), holds(enforced(C)), not exception(en_15, C).
+fired(en_15, ds_binds(C), enforced(C)) :- ds_binds(C).
+effect(ds_binds(C), B, "compliance_cost", increase, short, invisible, "B") :- ds_binds(C), bound(C, B).
+ds_informs(C) :- ds_binds(C), holds(buyers_unaware(C)).
+fired(cr_11, ds_informs(C), buyers_unaware(C)) :- ds_informs(C).
+ds_less(C) :- ds_informs(C), holds(disclosed_deters(C)).
+fired(en_15, ds_less(C), disclosed_deters(C)) :- ds_less(C).
+effect(ds_less(C), X, "quantity_demanded", decrease, short, invisible, "B") :- ds_less(C), st_buyer(C, X).
+ds_more(C) :- ds_informs(C), holds(disclosed_attracts(C)).
+fired(en_15, ds_more(C), disclosed_attracts(C)) :- ds_more(C).
+effect(ds_more(C), X, "quantity_demanded", increase, short, invisible, "B") :- ds_more(C), st_buyer(C, X).
+ds_voluntary(C) :- ds_binds(C), mc_rival(C, _), holds(exempt_compare_well(C)), not exception(en_15, C).
+fired(cr_11, ds_voluntary(C), exempt_compare_well(C)) :- ds_voluntary(C).
+effect(ds_voluntary(C), V, "term_prevalence", increase, short, invisible, "B") :- ds_voluntary(C), mc_rival(C, V).
+
+% ------------------------------------------------------------------ RS-24: a fixed cost per item
+
+% Where the measure attaches a cost fixed per item, model or version (testing, labeling, parts per model) and some items
+% sell in small numbers (small_items), sellers drop them: variety falls.
+mc_items(C) :- mc_rule_binds(C), fixed_cost_per_item(C), holds(small_items(C)), not exception(rs_24, C).
+fired(rs_24, mc_items(C), mc_rule_binds(C)) :- mc_items(C).
+fired(rs_24, mc_items(C), small_items(C))   :- mc_items(C).
+effect(mc_items(C), B, "variety", decrease, medium, invisible, "B") :- mc_items(C), bound(C, B).
 
 #show holds/1.
 #show fired/3.

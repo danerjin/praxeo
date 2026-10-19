@@ -138,5 +138,40 @@
   "probability": 0.6,
   "rationale": "No matching assumption in WE-044; judged from the text: staying outside the city means extra travel into it for most visitors.",
   "evidence": []
+ },
+ {
+  "question_id": "k2.enforced",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-2: platforms comply with K2: they display numbers, remove listings on notice and report nights.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.buyers_unaware",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "No matching assumption in WE-044; judged from the text: the registration number tells guests little they care about; K2 works by removing listings, not by informing guests.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.disclosed_deters",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No matching assumption in WE-044; judged from the text: guests are not expected to shun listings because a number is displayed.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.disclosed_attracts",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No matching assumption in WE-044; judged from the text: nor to seek them out.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-14: hosts, platforms, hotels and neighborhood associations can organize at a cost below their stake.",
+  "evidence": []
  }
 ]

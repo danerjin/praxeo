@@ -6,11 +6,41 @@
    "p": 0.8,
    "text": "The term was in use."
   },
+  "buyers_unaware(k2)": {
+   "assumption_class": "other",
+   "id": "buyers_unaware(k2)",
+   "p": 0.8,
+   "text": "Some buyers did not already know the disclosed fact and care about it."
+  },
   "can_organize(k1)": {
    "assumption_class": "other",
    "id": "can_organize(k1)",
    "p": 0.8,
    "text": "The parties that used the term can organize to lobby."
+  },
+  "can_organize(k2)": {
+   "assumption_class": "other",
+   "id": "can_organize(k2)",
+   "p": 0.8,
+   "text": "The covered sellers can organize to lobby."
+  },
+  "disclosed_attracts(k2)": {
+   "assumption_class": "other",
+   "id": "disclosed_attracts(k2)",
+   "p": 0.1,
+   "text": "Some buyers who learn the fact buy more."
+  },
+  "disclosed_deters(k2)": {
+   "assumption_class": "other",
+   "id": "disclosed_deters(k2)",
+   "p": 0.1,
+   "text": "Some buyers who learn the fact buy less."
+  },
+  "enforced(k2)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k2)",
+   "p": 0.8,
+   "text": "Most covered sellers disclose."
   },
   "paid_below_rivals(k1)": {
    "assumption_class": "other",
@@ -33,6 +63,60 @@
  },
  "citation_problems": [],
  "consequences": [
+  {
+   "actor_class": "buyers.current",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "buyers_unaware(k2)",
+     "disclosed_attracts(k2)",
+     "enforced(k2)"
+    ],
+    [
+     "buyers_unaware(k2)",
+     "disclosed_deters(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "buyers_unaware(k2)",
+    "disclosed_attracts(k2)",
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "ds_more(k2)",
+     "premises": [
+      "disclosed_attracts(k2)"
+     ],
+     "rule": "EN-15"
+    },
+    {
+     "conclusion": "ds_less(k2)",
+     "premises": [
+      "disclosed_deters(k2)"
+     ],
+     "rule": "EN-15"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": false,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": null
+  },
   {
    "actor_class": "employers.restraining",
    "actor_group": [],
@@ -61,7 +145,7 @@
     "medium",
     "long"
    ],
-   "id": "C-1",
+   "id": "C-2",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -76,8 +160,50 @@
    "actor_group": [],
    "assumption_sets": [
     [
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "ds_binds(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-15"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.restraining",
+   "actor_group": [],
+   "assumption_sets": [
+    [
      "binding(k1)",
      "can_organize(k1)"
+    ],
+    [
+     "can_organize(k2)",
+     "enforced(k2)"
     ]
    ],
    "assumptions": [
@@ -88,10 +214,32 @@
    "comparison": null,
    "derivation": [
     {
+     "conclusion": "mc_rule_binds(k1)",
+     "premises": [
+      "binding(k1)"
+     ],
+     "rule": "RS-7"
+    },
+    {
      "conclusion": "mc_lobby(k1)",
      "premises": [
-      "binding(k1)",
-      "can_organize(k1)"
+      "can_organize(k1)",
+      "mc_rule_binds(k1)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "mc_rule_binds(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "mc_lobby(k2)",
+     "premises": [
+      "can_organize(k2)",
+      "mc_rule_binds(k2)"
      ],
      "rule": "RS-7"
     }
@@ -101,7 +249,7 @@
     "medium",
     "long"
    ],
-   "id": "C-2",
+   "id": "C-4",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -139,7 +287,7 @@
     "medium",
     "long"
    ],
-   "id": "C-3",
+   "id": "C-5",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -179,7 +327,7 @@
     "medium",
     "long"
    ],
-   "id": "C-4",
+   "id": "C-6",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -205,6 +353,13 @@
       "term_ban(k1)"
      ],
      "rule": "OC-3"
+    },
+    {
+     "conclusion": "mc_administered(k2)",
+     "premises": [
+      "disclosure(k2)"
+     ],
+     "rule": "OC-3"
     }
    ],
    "group": [],
@@ -213,7 +368,7 @@
     "medium",
     "long"
    ],
-   "id": "C-5",
+   "id": "C-7",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -251,7 +406,7 @@
     "medium",
     "long"
    ],
-   "id": "C-6",
+   "id": "C-8",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -289,7 +444,7 @@
     "medium",
     "long"
    ],
-   "id": "C-7",
+   "id": "C-9",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -343,7 +498,7 @@
     "medium",
     "long"
    ],
-   "id": "C-8",
+   "id": "C-10",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -400,7 +555,7 @@
     "medium",
     "long"
    ],
-   "id": "C-9",
+   "id": "C-11",
    "item": null,
    "reported": true,
    "sign": "at_least_one_decrease",
@@ -412,17 +567,19 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"employers.restraining\").\nexcluded(k1, \"buyers.prospective\").\nterm_ban(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nemployment(k1).\nmc_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\ntb_freed(k1, \"workers.bound\").\nmc_applicant(k1, \"workers.trainees\").\nmc_applicant(k1, \"workers.trainees\").\nrestrains_mobility(k1).\nvoids_existing(k1).\nbound(k2, \"employers.restraining\").\nexcluded(k2, \"buyers.prospective\").\nassumption(binding(k1)).\nassumption(term_valued(k1)).\nassumption(substitute_terms(k1)).\nassumption(can_organize(k1)).\nassumption(paid_below_rivals(k1)).\n",
+ "engine_facts": "bound(k1, \"employers.restraining\").\nexcluded(k1, \"buyers.prospective\").\nterm_ban(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nemployment(k1).\nmc_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\ntb_freed(k1, \"workers.bound\").\nmc_applicant(k1, \"workers.trainees\").\nmc_applicant(k1, \"workers.trainees\").\nrestrains_mobility(k1).\nvoids_existing(k1).\nbound(k2, \"employers.restraining\").\nexcluded(k2, \"buyers.prospective\").\ndisclosure(k2).\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nmc_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nst_buyer(k2, \"buyers.current\").\nassumption(binding(k1)).\nassumption(term_valued(k1)).\nassumption(substitute_terms(k1)).\nassumption(can_organize(k1)).\nassumption(paid_below_rivals(k1)).\nassumption(enforced(k2)).\nassumption(buyers_unaware(k2)).\nassumption(disclosed_deters(k2)).\nassumption(disclosed_attracts(k2)).\nassumption(can_organize(k2)).\n",
  "explanations": [
-  "C-1. Compared with no Teravel Freedom to Work Act, asset value for employers.restraining falls from the short run onward (tier B, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The term was in use (p = 0.80). Reported.",
-  "C-2. Compared with no Teravel Freedom to Work Act, lobbying effort for employers.restraining rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was in use (p = 0.80); The parties that used the term can organize to lobby (p = 0.80). Reported.",
-  "C-3. Compared with no Teravel Freedom to Work Act, resources available other uses for employers.restraining falls from the short run onward (tier B, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The term was in use (p = 0.80). Reported.",
-  "C-4. Compared with no Teravel Freedom to Work Act, term prevalence for employers.restraining rises from the short run onward (tier B, invisible). Why: PC-18: PC-18. This holds if: The term was in use (p = 0.80); Lawful substitute terms give part of the same protection (p = 0.85). Reported.",
-  "C-5. Compared with no Teravel Freedom to Work Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
-  "C-6. Compared with no Teravel Freedom to Work Act, job changes for workers.bound rises from the short run onward (tier B, invisible). Why: CR-7: CR-7. This holds if: The term was in use (p = 0.80). Reported.",
-  "C-7. Compared with no Teravel Freedom to Work Act, resources available other uses for workers.bound rises from the short run onward (tier B, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The term was in use (p = 0.80). Reported.",
-  "C-8. Compared with no Teravel Freedom to Work Act, wage rate for workers.bound rises from the short run onward (tier B, invisible). Why: CR-7: CR-7; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was in use (p = 0.80); Some of the bound parties are paid less than a rival would pay them (p = 0.75). Reported.",
-  "C-9. Compared with no Teravel Freedom to Work Act, wage rate or non wage compensation or employment for workers.trainees falls for at least one of them from the medium run onward (tier B, invisible). Why: PC-18: PC-18; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was in use (p = 0.80); The party that used the term valued its protection (p = 0.70). Reported."
+  "C-1. Compared with no Teravel Freedom to Work Act, quantity demanded for buyers.current may move either way from the short run onward (tier B, invisible). Why: EN-15: EN-15. This holds if: Some buyers did not already know the disclosed fact and care about it (p = 0.80); Some buyers who learn the fact buy more (p = 0.10); Most covered sellers disclose (p = 0.80). It also follows under 1 other minimal assumption set(s). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-2. Compared with no Teravel Freedom to Work Act, asset value for employers.restraining falls from the short run onward (tier B, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The term was in use (p = 0.80). Reported.",
+  "C-3. Compared with no Teravel Freedom to Work Act, compliance cost for employers.restraining rises from the short run onward (tier B, invisible). Why: EN-15: EN-15. This holds if: Most covered sellers disclose (p = 0.80). Reported.",
+  "C-4. Compared with no Teravel Freedom to Work Act, lobbying effort for employers.restraining rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was in use (p = 0.80); The parties that used the term can organize to lobby (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-5. Compared with no Teravel Freedom to Work Act, resources available other uses for employers.restraining falls from the short run onward (tier B, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The term was in use (p = 0.80). Reported.",
+  "C-6. Compared with no Teravel Freedom to Work Act, term prevalence for employers.restraining rises from the short run onward (tier B, invisible). Why: PC-18: PC-18. This holds if: The term was in use (p = 0.80); Lawful substitute terms give part of the same protection (p = 0.85). Reported.",
+  "C-7. Compared with no Teravel Freedom to Work Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-8. Compared with no Teravel Freedom to Work Act, job changes for workers.bound rises from the short run onward (tier B, invisible). Why: CR-7: CR-7. This holds if: The term was in use (p = 0.80). Reported.",
+  "C-9. Compared with no Teravel Freedom to Work Act, resources available other uses for workers.bound rises from the short run onward (tier B, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The term was in use (p = 0.80). Reported.",
+  "C-10. Compared with no Teravel Freedom to Work Act, wage rate for workers.bound rises from the short run onward (tier B, invisible). Why: CR-7: CR-7; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was in use (p = 0.80); Some of the bound parties are paid less than a rival would pay them (p = 0.75). Reported.",
+  "C-11. Compared with no Teravel Freedom to Work Act, wage rate or non wage compensation or employment for workers.trainees falls for at least one of them from the medium run onward (tier B, invisible). Why: PC-18: PC-18; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was in use (p = 0.80); The party that used the term valued its protection (p = 0.70). Reported."
  ],
  "questions": [
   {
@@ -514,6 +671,96 @@
     "options": [],
     "text": "Are some of the parties bound by the term paid less than a rival would pay them?"
    }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-2: employers stop enforcing, and workers learn that the clause is void (K4 notices).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k2.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most covered sellers make the required disclosure?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2.buyers_unaware",
+    "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-2: workers learn from the K4 notices that the clause is void, which they did not know.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyers_unaware",
+    "assumption_class": "other",
+    "id": "k2.buyers_unaware",
+    "kind": "noul",
+    "options": [],
+    "text": "Did some buyers not already know the disclosed fact, while caring about it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k2.disclosed_deters",
+    "rationale": "No matching assumption in WE-034; judged from the text: the notice is not about a good anyone buys; workers act on it by moving (C-1), not by buying less.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "disclosed_deters",
+    "assumption_class": "other",
+    "id": "k2.disclosed_deters",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some buyers who learn the disclosed fact buy less of the covered good?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k2.disclosed_attracts",
+    "rationale": "No matching assumption in WE-034; judged from the text: as for disclosed_deters, the notice changes no purchase.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "disclosed_attracts",
+    "assumption_class": "other",
+    "id": "k2.disclosed_attracts",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some buyers who learn the disclosed fact buy more of the covered good?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-13: employers' associations can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k2.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the covered sellers organize to lobby over the disclosure rule at a cost below their stake?"
+   }
   }
  ],
  "record": {
@@ -534,6 +781,9 @@
     "buyer_actor": "buyers.current",
     "cap": null,
     "cap_unit": null,
+    "charge_capped_actor": null,
+    "charge_payer_actor": null,
+    "charge_payer_worker_actor": null,
     "claim_handler_actor": null,
     "claim_penalties": false,
     "complainant_actor": null,
@@ -556,6 +806,7 @@
     "exporter_worker_actor": null,
     "fees_to_budget": false,
     "field_contested": false,
+    "fixed_cost_per_item": false,
     "floor_bound_actor": null,
     "foreign_seller_actor": "sellers.foreign",
     "forfeit_on_leaving": false,
@@ -585,6 +836,7 @@
     "own_revenue_funded": false,
     "paid_absence": false,
     "per_head_cap": false,
+    "player_recipient_actor": null,
     "practice_ban": false,
     "price_fixed": false,
     "prospective_buyer_actor": null,
@@ -654,6 +906,9 @@
     "buyer_actor": "buyers.current",
     "cap": null,
     "cap_unit": null,
+    "charge_capped_actor": null,
+    "charge_payer_actor": null,
+    "charge_payer_worker_actor": null,
     "claim_handler_actor": null,
     "claim_penalties": false,
     "complainant_actor": null,
@@ -676,6 +931,7 @@
     "exporter_worker_actor": null,
     "fees_to_budget": false,
     "field_contested": false,
+    "fixed_cost_per_item": false,
     "floor_bound_actor": null,
     "foreign_seller_actor": "sellers.foreign",
     "forfeit_on_leaving": false,
@@ -705,6 +961,7 @@
     "own_revenue_funded": false,
     "paid_absence": false,
     "per_head_cap": false,
+    "player_recipient_actor": null,
     "practice_ban": false,
     "price_fixed": false,
     "prospective_buyer_actor": null,
@@ -789,7 +1046,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-19T20:21:01+00:00",
+ "run_at": "2026-10-19T21:37:47+00:00",
  "sources_held_back": [],
  "unclear": [
   {

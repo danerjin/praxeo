@@ -33,5 +33,40 @@
   "probability": 0.75,
   "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-7: some bound workers are paid less than a rival would pay them.",
   "evidence": []
+ },
+ {
+  "question_id": "k2.enforced",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-2: employers stop enforcing, and workers learn that the clause is void (K4 notices).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.buyers_unaware",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-2: workers learn from the K4 notices that the clause is void, which they did not know.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.disclosed_deters",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-034; judged from the text: the notice is not about a good anyone buys; workers act on it by moving (C-1), not by buying less.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.disclosed_attracts",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-034; judged from the text: as for disclosed_deters, the notice changes no purchase.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.can_organize",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-13: employers' associations can organize at a cost below their stake.",
+  "evidence": []
  }
 ]

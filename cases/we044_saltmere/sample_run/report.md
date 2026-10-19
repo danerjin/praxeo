@@ -1,7 +1,7 @@
 # Thin-slice run: Saltmere Housing Preservation Ordinance
 
-Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-19T19:14:07+00:00
-Prediction log sha256 (frozen before the outcome card was opened): `8e58d6e60c2ca4de…`
+Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-19T21:37:51+00:00
+Prediction log sha256 (frozen before the outcome card was opened): `10070acba67e1e58…`
 
 ## Policy record
 
@@ -30,6 +30,11 @@ Prediction log sha256 (frozen before the outcome card was opened): `8e58d6e60c2c
 | `crossing_extra_trip(k1)` | mobility | 0.60 | Buying across the boundary takes trips the buyers would not otherwise make. |
 | `reshaping_pays(k1)` | other | 0.60 | Reshaping goods to fall outside the definitions costs some actors less than the burden. |
 | `stockpile_ahead(k1)` | expectations | 0.70 | Buyers and importers can store the good and order ahead of the effective date. |
+| `enforced(k2)` | enforcement | 0.85 | Most covered sellers disclose. |
+| `buyers_unaware(k2)` | other | 0.30 | Some buyers did not already know the disclosed fact and care about it. |
+| `disclosed_deters(k2)` | other | 0.20 | Some buyers who learn the fact buy less. |
+| `disclosed_attracts(k2)` | other | 0.20 | Some buyers who learn the fact buy more. |
+| `can_organize(k2)` | other | 0.85 | The covered sellers can organize to lobby. |
 | `binding(k3)` | binding | 0.60 | The requirement goes beyond what some current or would-be sellers already meet. |
 | `enforced(k3)` | enforcement | 0.85 | The requirement is enforced often enough that many sellers comply or stop. |
 | `some_qualify(k3)` | alternative_uses | 0.90 | Some current sellers or new entrants obtain the license. |
@@ -52,7 +57,7 @@ Prediction log sha256 (frozen before the outcome card was opened): `8e58d6e60c2c
 | C-7 | guests.whole_unit | lobbying_effort | increase | medium+ | B | RS-7 | {buyers_organize(k1)} | no |
 | C-8 | guests.whole_unit | price_paid | increase | short+ | B | EN-7, RS-3, CR-7, EN-1 | {demand_persists(k1), enforced(k1), enforcement_risk(k1), evasion(k1)} or {binding(k3), enforced(k3)} | yes |
 | C-9 | guests.whole_unit | quality_information | decrease | short+ | B | EN-1, RS-3 | {binding(k3), enforced(k3), evasion(k3)} | yes |
-| C-10 | guests.whole_unit | quantity_demanded | decrease | short+ | B | EN-7, RS-3, CR-7 | {demand_persists(k1), enforced(k1), enforcement_risk(k1), evasion(k1)} | yes |
+| C-10 | guests.whole_unit | quantity_demanded | decrease | short+ | B | EN-7, RS-3, CR-7, EN-15 | {demand_persists(k1), enforced(k1), enforcement_risk(k1), evasion(k1)} or {buyers_unaware(k2), disclosed_deters(k2), enforced(k2)} | yes |
 | C-11 | guests.whole_unit | quantity_demanded [announcement window] | increase | short | B | RS-8 | {stockpile_ahead(k1)} | yes |
 | C-12 | guests.whole_unit | quantity_substitute | increase | short+ | B | RS-1, EN-1 | {buyer_substitutes(k1)} or {binding(k3), buyer_substitutes(k3), enforced(k3)} | yes |
 | C-13 | guests.whole_unit | quantity_traded | decrease | short+ | B | EN-7, EN-1, OC-4 | {enforced(k1)} or {binding(k3), enforced(k3)} | yes |
@@ -79,7 +84,9 @@ Prediction log sha256 (frozen before the outcome card was opened): `8e58d6e60c2c
 | C-34 | neighboring_jurisdictions | quantity_traded | increase | short+ | B | RS-4 | {cross_border_feasible(k1)} | yes |
 | C-35 | officials.enforcement | enforcement_cost | increase | short+ | B | OC-3, EN-1 | {} | yes |
 | C-36 | officials.revenue | tax_revenue | decrease | short+ | B | EN-7, TX-10 | {enforced(k1)} | yes |
-| C-37 | taxpayers or recipients.other_spending or taxpayers.future | resources_available_other_uses | at_least_one_decrease | short+ | B | OC-1, EN-1, OC-3 | {} | yes |
+| C-37 | platforms | compliance_cost | increase | short+ | B | EN-15 | {enforced(k2)} | yes |
+| C-38 | platforms | lobbying_effort | increase | medium+ | B | RS-7 | {can_organize(k2), enforced(k2)} | yes |
+| C-39 | taxpayers or recipients.other_spending or taxpayers.future | resources_available_other_uses | at_least_one_decrease | short+ | B | OC-1, EN-1, OC-3 | {} | yes |
 
 ## Explanations
 
@@ -92,7 +99,7 @@ Prediction log sha256 (frozen before the outcome card was opened): `8e58d6e60c2c
 - C-7. Compared with no Saltmere Housing Preservation Ordinance, lobbying effort for guests.whole_unit rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The buyers have a concentrated stake and can organize for repeal (p = 0.15). Not reported: an assumption is below the 0.5 cut-off.
 - C-8. Compared with no Saltmere Housing Preservation Ordinance, price paid for guests.whole_unit rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; CR-7: CR-7; EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.
 - C-9. Compared with no Saltmere Housing Preservation Ordinance, quality information for guests.whole_unit falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85); Some sellers keep selling without a license and are not caught (p = 0.60). Reported.
-- C-10. Compared with no Saltmere Housing Preservation Ordinance, quantity demanded for guests.whole_unit falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; CR-7: CR-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); The legal sellers comply with the ban (p = 0.85); Informal sellers face a real risk of punishment (p = 0.80); Enforcement is imperfect: many informal sales go undetected (p = 0.75). Reported.
+- C-10. Compared with no Saltmere Housing Preservation Ordinance, quantity demanded for guests.whole_unit falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; CR-7: CR-7; EN-15: EN-15. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); The legal sellers comply with the ban (p = 0.85); Informal sellers face a real risk of punishment (p = 0.80); Enforcement is imperfect: many informal sales go undetected (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.
 - C-11. Compared with no Saltmere Housing Preservation Ordinance, quantity demanded for guests.whole_unit rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.70). Reported.
 - C-12. Compared with no Saltmere Housing Preservation Ordinance, quantity substitute for guests.whole_unit rises from the short run onward (tier B, invisible). Why: RS-1: when a good becomes dearer, buyers turn to substitutes; EN-1: EN-1. This holds if: Legal substitutes are acceptable to some buyers (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.
 - C-13. Compared with no Saltmere Housing Preservation Ordinance, quantity traded for guests.whole_unit falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; EN-1: EN-1; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The legal sellers comply with the ban (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.
@@ -119,7 +126,9 @@ Prediction log sha256 (frozen before the outcome card was opened): `8e58d6e60c2c
 - C-34. Compared with no Saltmere Housing Preservation Ordinance, quantity traded for neighboring_jurisdictions rises from the short run onward (tier B, invisible). Why: RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.70). Reported.
 - C-35. Compared with no Saltmere Housing Preservation Ordinance, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; EN-1: EN-1. This holds if: no assumption. Reported.
 - C-36. Compared with no Saltmere Housing Preservation Ordinance, tax revenue for officials.revenue falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; TX-10: TX-10. This holds if: The legal sellers comply with the ban (p = 0.85). Reported.
-- C-37. Compared with no Saltmere Housing Preservation Ordinance, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier B, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought; EN-1: EN-1; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.
+- C-37. Compared with no Saltmere Housing Preservation Ordinance, compliance cost for platforms rises from the short run onward (tier B, invisible). Why: EN-15: EN-15. This holds if: Most covered sellers disclose (p = 0.85). Reported.
+- C-38. Compared with no Saltmere Housing Preservation Ordinance, lobbying effort for platforms rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The covered sellers can organize to lobby (p = 0.85); Most covered sellers disclose (p = 0.85). Reported.
+- C-39. Compared with no Saltmere Housing Preservation Ordinance, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier B, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought; EN-1: EN-1; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.
 
 ## Score against the outcome card
 

@@ -79,7 +79,6 @@ NOT_PRODUCED = {
     "C-7": "missing rule and role: the owner's own-use element (units_held_vacant, A-6); no rule for a ban on a use of one's own property",
     "C-9": "missing variable: no rule signs legal_breach; breach of a cap on a lawful use (nights above 90, another unit's number) is not a prohibition form the rules know",
     "C-14": "missing rule and question: RS-20 (complaint-only enforcement) and A-27 (screening by hosts in breach)",
-    "C-16": "unsupported form: the platform duty (K2) is a disclosure_mandate, an instrument with no rules; no CR-8c for intermediaries",
     "C-18": "missing rule: RS-8 (0.9) opposing timing chain (the leasing season, A-16) and the CR-12b combiner; the engine reports the (+) chain alone (see the KNOWN WRONG exception)",
     "C-19": "missing rule: same as C-18, with A-17 for the guests who move trips before July",
     "C-21": "missing role and record fact: guests with bookings cancelled and refunded under the transition clause",

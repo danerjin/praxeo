@@ -152,5 +152,12 @@
   "probability": 0.3,
   "rationale": "No matching assumption in WE-036; judged from the text: firms buy plans meeting K2 because K1 counts only those plans, not because they value the benefit standard over lean plans (the demand comes from K1, C-24).",
   "evidence": []
+ },
+ {
+  "question_id": "k1.some_pay",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-036 (illustrative figures), A-4: some bound firms choose to pay the charge for at least some full-timers (all the capped firms, many mid-size low-wage firms).",
+  "evidence": []
  }
 ]

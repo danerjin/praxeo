@@ -38,12 +38,13 @@ class Downstream(BaseModel):
 
 class Related(BaseModel):
     """A market related to the component's good (catalog 1.4: CR-9, SB-3, RS-12): an input or factor the good's sellers use
-    (installers' electricians, builders' labour), or a complement used with the good (repairs, fuel)."""
-    kind: Literal["input", "complement"]
+    (installers' electricians, builders' labour), a complement used with the good (repairs, fuel), or an input a standard or
+    mandate requires per unit (energy ratings, efficient windows), whose demand rises when the measure binds."""
+    kind: Literal["input", "complement", "required"]
     good: str = Field(description="Snake-case name of the related good, e.g. electrical_labour")
     seller_actor: str = Field(description="Who sells it: the input's suppliers, a factor's workers, the complement's sellers")
     price_variable: Literal["net_price_received", "wage_rate"] = Field(default="net_price_received", description="wage_rate where the sellers are workers")
-    other_user_actor: Optional[str] = Field(default=None, description="Inputs: its other buyers, who compete for it (SB-3, CR-7a)")
+    other_user_actor: Optional[str] = Field(default=None, description="Inputs and required inputs: its other buyers, who compete for it (SB-3, CR-7a)")
     source_id: Optional[str] = Field(default=None, description="The context source the relation rests on (a sources.json id); null where the policy text states it")
     quote: Optional[str] = Field(default=None, description="The sentence of that source (or of the policy text) the relation rests on, quoted exactly")
 
@@ -181,6 +182,11 @@ class Component(BaseModel):
     restrains_mobility: bool = Field(default=False, description="Term prohibitions: the prohibited term restrained the freed party's mobility (a non-compete clause) (PC-18, CR-7)")
     voids_existing: bool = Field(default=False, description="Term prohibitions: existing contracts carrying the term are voided, not only new ones (PC-18, CR-8)")
     stock_exempt: bool = Field(default=False, description="Product standards: existing units are exempt; only new units must meet the standard (EN-14)")
+    charge_payer_actor: Optional[str] = Field(default=None, description="Play or pay (PC-17 0.9): bound firms that pay the charge to the state instead of providing the term; TX-2 applies to them")
+    player_recipient_actor: Optional[str] = Field(default=None, description="Play or pay: the recipients at firms that provide the term, who receive it; the term itself and lock-in are signed on them, the other terms' adjustment on recipient_actor (all the bound firms' workers)")
+    charge_payer_worker_actor: Optional[str] = Field(default=None, description="Play or pay: the workers of those firms, who do not receive the term")
+    charge_capped_actor: Optional[str] = Field(default=None, description="Play or pay with a charge capped per firm: payers above the cap, for whom the charge is a fixed cost (RS-18 0.9)")
+    fixed_cost_per_item: bool = Field(default=False, description="Mandates, standards and disclosure: the measure attaches a cost fixed per item, model or version offered (RS-24)")
     stock_owner_actor: Optional[str] = Field(default=None, description="Product standards with the stock exempt: owners of existing units (EN-14)")
     source_sentences: list[str] = Field(description="Sentences of the policy text this component rests on, quoted exactly")
 

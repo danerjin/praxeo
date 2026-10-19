@@ -103,5 +103,26 @@
   "probability": 0.5,
   "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-15: some delivery services can operate with fewer than 100 Lanvik workers.",
   "evidence": []
+ },
+ {
+  "question_id": "k5.binding",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-2: each company elects to offer contractor agreements, so the premium binds on the trips under them.",
+  "evidence": []
+ },
+ {
+  "question_id": "k5.enforced",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "No separate assumption in WE-061; judged from the text: the premium is paid per completed trip through the companies' own payment systems, which the Department audits.",
+  "evidence": []
+ },
+ {
+  "question_id": "k5.can_organize",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-16: companies, drivers' groups and unions can organize at a cost below their stakes.",
+  "evidence": []
  }
 ]
