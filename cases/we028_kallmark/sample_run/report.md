@@ -1,7 +1,7 @@
 # Thin-slice run: Kallmark Ridge Cod Fishery Act
 
-Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-19T05:43:54+00:00
-Prediction log sha256 (frozen before the outcome card was opened): `b703a0e2c79845fd…`
+Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-19T06:08:23+00:00
+Prediction log sha256 (frozen before the outcome card was opened): `65bcaf5685b8842f…`
 
 ## Policy record
 
@@ -53,10 +53,9 @@ Prediction log sha256 (frozen before the outcome card was opened): `b703a0e2c798
 | C-18 | vessel_owners.history | informal_activity | increase | short+ | B | EN-6, RS-3 | {binding(k1), enforced(k1), evasion(k1)} | yes |
 | C-19 | vessel_owners.history | investment_target [announcement window] | increase | short | B | CR-10, EN-12 | {allocation_known(k1)} | yes |
 | C-20 | vessel_owners.history | number_of_sellers | decrease | medium+ | B | EN-6, EN-13 | {binding(k1), enforced(k1), trade_cheap(k1), values_differ(k1)} | yes |
-| C-21 | vessel_owners.history | quantity_supplied | increase | medium+ | B | EN-6, EN-13 | {binding(k1), enforced(k1), trade_cheap(k1), values_differ(k1)} | yes |
-| C-22 | vessel_owners.history | quantity_traded | decrease | short+ | B | EN-6 | {binding(k1), enforced(k1)} | yes |
-| C-23 | vessel_owners.history | quantity_traded [announcement window] | increase | short | B | CR-10, EN-12 | {allocation_known(k1)} | yes |
-| C-24 | vessel_owners.history | resources_available_other_uses [announcement window] | decrease | short | B | CR-10, EN-12 | {allocation_known(k1)} | yes |
+| C-21 | vessel_owners.history | quantity_traded | decrease | short+ | B | EN-6 | {binding(k1), enforced(k1)} | yes |
+| C-22 | vessel_owners.history | quantity_traded [announcement window] | increase | short | B | CR-10, EN-12 | {allocation_known(k1)} | yes |
+| C-23 | vessel_owners.history | resources_available_other_uses [announcement window] | decrease | short | B | CR-10, EN-12 | {allocation_known(k1)} | yes |
 
 ## Explanations
 
@@ -80,10 +79,9 @@ Prediction log sha256 (frozen before the outcome card was opened): `b703a0e2c798
 - C-18. Compared with no Kallmark Ridge Cod Fishery Act, informal activity for vessel_owners.history rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.
 - C-19. Compared with no Kallmark Ridge Cod Fishery Act, investment target for vessel_owners.history rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported.
 - C-20. Compared with no Kallmark Ridge Cod Fishery Act, number of sellers for vessel_owners.history falls from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.80). Reported.
-- C-21. Compared with no Kallmark Ridge Cod Fishery Act, quantity supplied for vessel_owners.history rises from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.80). Reported.
-- C-22. Compared with no Kallmark Ridge Cod Fishery Act, quantity traded for vessel_owners.history falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80). Reported.
-- C-23. Compared with no Kallmark Ridge Cod Fishery Act, quantity traded for vessel_owners.history rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported.
-- C-24. Compared with no Kallmark Ridge Cod Fishery Act, resources available other uses for vessel_owners.history falls in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported.
+- C-21. Compared with no Kallmark Ridge Cod Fishery Act, quantity traded for vessel_owners.history falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80). Reported.
+- C-22. Compared with no Kallmark Ridge Cod Fishery Act, quantity traded for vessel_owners.history rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported.
+- C-23. Compared with no Kallmark Ridge Cod Fishery Act, resources available other uses for vessel_owners.history falls in the announcement window (before the effective date), in the short run (tier B, invisible). Why: CR-10: CR-10; EN-12: EN-12. This holds if: Actors know the allocation rule during the base period (p = 0.80). Reported.
 
 ## Score against the outcome card
 

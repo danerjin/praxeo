@@ -316,8 +316,8 @@ def _subsidy_specs(comp: Component) -> list[tuple[str, str, str, str]]:
 
 # RS-7 Unless (1.0, 1.1), asked when the record says the policy field was contested before the measure (field_contested).
 CONTESTED_QUESTION = ("contested_otherwise", "other",
-                      "Without the measure, would the question it settles (whether and how much to regulate or support this field) still be fought over by the same groups in the period considered?",
-                      "Without the measure, the question it settles would still be contested by the same groups.")
+                      "Would the groups that gain from the measure (or are bound by it) have lobbied on the same question without it, because that question (how far to regulate or support this field) was already being fought over?",
+                      "The groups that gain from or are bound by the measure would have lobbied on the same question without it.")
 
 
 # Licensing (EN-1 to EN-3, EN-5, EN-11) and quotas (EN-6).
@@ -375,6 +375,9 @@ VALUES_DIFFER_QUESTION = ("values_differ", "other",
 TRADE_CHEAP_QUESTION = ("trade_cheap", "mobility",
                         "Can the rights be sold or leased at low cost (a register, few restrictions on who may hold them)?",
                         "Rights can be sold or leased at low cost.")
+SALE_VALUE_QUESTION = ("value_above_price", "other",
+                       "Will some buyers of the rights win them at a price below their own value for them?",
+                       "Some buyers win the rights below their own value for them.")
 TRAINING_COMMON_QUESTION = ("training_common", "other",
                             "Before the requirement, did many people already take the training it requires (a degree many would-be sellers already pursued)?",
                             "The required training was already commonly taken before the requirement.")
@@ -388,6 +391,8 @@ def _en_specs(comp: Component) -> list[tuple[str, str, str, str]]:
         specs.append(EN_LASTING_QUESTION)
     if comp.instrument == "quota" and comp.transferable:
         specs += [VALUES_DIFFER_QUESTION, TRADE_CHEAP_QUESTION]
+    if comp.rights_sold:
+        specs.append(SALE_VALUE_QUESTION)
     if comp.instrument == "quota" and comp.allocation_by_history and comp.base_period_after_announcement:
         specs.append(ALLOCATION_KNOWN_QUESTION)
     if comp.instrument == "quota" and comp.import_quota:

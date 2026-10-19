@@ -1,9 +1,9 @@
 [
  {
   "question_id": "k1.contested_otherwise",
-  "value": "yes",
-  "probability": 0.75,
-  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-32: without the order, night operators would have opposed the residents' campaign, which had run since 2023, so the question stays contested.",
+  "value": "no",
+  "probability": 0.4,
+  "rationale": "Re-answered after the question was reworded to ask about the groups that gain from or are bound by the measure. No matching assumption in WE-054 for those groups; judged from the text: the residents' campaign has run since 2023, but the text does not say the airlines that now hold the night slots lobbied on night flying before; their stake, the slot rights, exists only under the order. (A-32 is about night operators opposing the campaign.)",
   "evidence": []
  },
  {
@@ -64,9 +64,9 @@
  },
  {
   "question_id": "k2.contested_otherwise",
-  "value": "yes",
-  "probability": 0.75,
-  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-32: without the order, night operators would have opposed the residents' campaign, which had run since 2023.",
+  "value": "no",
+  "probability": 0.4,
+  "rationale": "Re-answered after the question was reworded to ask about the groups that gain from or are bound by the measure. No matching assumption in WE-054 for those groups; judged from the text: the residents' campaign has run since 2023, but the text does not say the airlines that now hold the night slots lobbied on night flying before; their stake, the slot rights, exists only under the order. (A-32 is about night operators opposing the campaign.)",
   "evidence": []
  }
 ]

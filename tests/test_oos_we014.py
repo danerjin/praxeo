@@ -19,8 +19,6 @@ EXCEPTIONS = {
         "EN-13 (consolidation under tradable rights, added after the first run): the rights are transferable and holders differ; the example does not apply EN-13",
     ("importers", "number_of_sellers", "decrease", None):
         "EN-13 (consolidation under tradable rights, added after the first run): the rights are transferable and holders differ; the example does not apply EN-13",
-    ("importers", "quantity_supplied", "increase", None):
-        "EN-13 (consolidation under tradable rights, added after the first run): the rights are transferable and holders differ; the example does not apply EN-13",
     ("quota_holders", "right_lease_price", "increase", None):
         "EN-13 (consolidation under tradable rights, added after the first run): the rights are transferable and holders differ; the example does not apply EN-13",
     ("importers", "reclassification", "increase", None):

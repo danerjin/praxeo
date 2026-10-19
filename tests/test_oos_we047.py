@@ -43,8 +43,6 @@ EXCEPTIONS = {
         "EN-13 (consolidation, long run): fewer importing firms, less import capital; the table counts importers (C-10) and does not sign their capital",
     ("importers.history", "net_price_received", "increase", None):
         "EN-6 for holders when the price is not set in a wider market: the importers sell at the higher domestic price (the quota rent, C-8's other side); the table signs the lease price and the share value, not the importers' selling price",
-    ("importers.history", "quantity_supplied", "increase", None):
-        "EN-13: more per remaining importer; the table has no per-remaining-importer row (C-9 is the lessors' side) and the class also has C-4's fall in imports",
     ("importers.history", "resources_available_other_uses", "decrease", None):
         "TX-1 puts the 60% on the tariff's bound importers (CR-8b); under TX-7 at the marginal rate the buyers bear it (C-5) and the holders gain the rent (C-3, C-35, C-46 ambiguous for refiners); defensible only for the importers above their licence (C-2)",
     ("importers.new", "lobbying_effort", "U1-a: increase; U1-b: no_change", None):
@@ -86,8 +84,7 @@ NOT_PRODUCED = {
     "C-53": "missing rule: RS-8 with CR-6 for the world price in the window",
     "C-54": "missing record fact and rule: port warehouses as complements (RS-12, CR-9) are not in section 1; `related` is read for taxes and subsidies on the good's own complements",
 }
-PRODUCED = {"C-3", "C-4", "C-5", "C-6", "C-7", "C-8", "C-10", "C-13", "C-14", "C-16", "C-23", "C-26", "C-27", "C-28", "C-29",
-            "C-30", "C-33", "C-34", "C-37", "C-38", "C-39", "C-42", "C-44", "C-45", "C-48", "C-49"}
+PRODUCED = {"C-3", "C-4", "C-5", "C-6", "C-7", "C-8", "C-10", "C-13", "C-14", "C-16", "C-23", "C-26", "C-27", "C-28", "C-29", "C-30", "C-33", "C-34", "C-37", "C-38", "C-39", "C-42", "C-44", "C-45", "C-48", "C-49"}
 
 
 def test_consistent_with_worked_example_we047():

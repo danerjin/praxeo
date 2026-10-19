@@ -70,13 +70,14 @@ All four were fixed, and each fix has a test.
 | WE-001 rent freeze | 31 | 28 | Two rows rest on facts specific to this case that the record lacks (a homebuyers' market relation; the K3 relocation payment). One needs the new-construction exemption as a fact, and one of its chains rests on the negation of an assumption, which the engine keeps out to stay exact |
 | WE-013 steel tariff | 32 | 31 | One row needs a class the record does not name. The return-on-capital row is left ambiguous by the handbook itself |
 
-**Out of sample.** Eighteen more examples were encoded after their family's rules were built, without changing any rule first; subagents wrote the records and answers from the policy text and the assumption tables. Each first run is kept in the case's `out_of_sample.md`, and rules were then changed only where a gap was general (a pattern-level fix, citing the catalog).
+**Out of sample.** Twenty-two more examples were encoded after their family's rules were built, without changing any rule first; subagents wrote the records and answers from the policy text and the assumption tables. Each first run is kept in the case's `out_of_sample.md`, and rules were then changed only where a gap was general (a pattern-level fix, citing the catalog).
 
 | Family (built on) | Examples run out of sample | Rows produced, first run | After general fixes | WRONG engine rows, first run | After |
 |---|---|---|---|---|---|
 | Price ceilings (WE-001, San Francisco) | WE-005, WE-006, WE-067 | 41 of 123 | 57 of 123 | 6 | 1 |
 | Taxes and tariffs (WE-013) | WE-002, WE-010, WE-042, WE-046, WE-062 | 46 of 255 | 60 of 255 | 5 | 3 (all the TX-8 question, Q25) |
 | Licensing and quotas (WE-003; quotas from the catalog text) | WE-014, WE-015, WE-016, WE-028, WE-055 | 45 of 195 | 49 of 195 | 7 | 0 |
+| EN-12 and EN-13 (WE-028) | WE-039, WE-047, WE-054, WE-064 | 44 of 210 | 50 of 210 | 10 | 2 (the TX-8 question, Q25) |
 | Subsidies (WE-019) | WE-020, WE-021, WE-033, WE-056, WE-065 | 42 of 191 | 63 of 191 | 16 | 3 |
 
 Most rows not produced need roles the record cannot yet hold (related markets, factors, neighbours, foreign sellers), rules for whole families not encoded, or engine facts per reading of an unclear provision. Coverage on unseen examples is therefore low, and the first runs' WRONG rows show what a family's rules get wrong before they are corrected.

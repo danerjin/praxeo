@@ -20,21 +20,7 @@ WE64 = ROOT / "cases" / "we064_tarnesse"
 
 SHORT = {"recipients of other spending": "recipients.other_spending", "future taxpayers": "taxpayers.future"}
 WINDOWS: dict = {}
-KW = "KNOWN WRONG: "
 EXCEPTIONS = {
-    ("bidders", "price_paid", "increase", None):
-        KW + "EN-6 signs a higher price for the buyers of the capped good. The cap here is per holder and the six blocks are sold either way: "
-        "the example's A-17 has the cap holding the clearing price down at the third-highest bidder's value, so the price of blocks does not rise",
-    ("bidders", "quantity_traded", "decrease", None):
-        KW + "EN-6 cuts the quantity traded; the auction sells all six blocks (A-1), so only their split among bidders changes (C-8, C-9)",
-    ("bidders", "resources_available_other_uses", "decrease", None):
-        KW + "CR-8b on the higher price above (bidders pay more); the example's payment loss falls on the licensees (C-36), and the cap does not raise the price",
-    ("licensees", "asset_value", "U1-a: increase; U1-b: no_change", None):
-        KW + "right sign under U1-a but derived from the cap (SB-4 on a capped right), not from the sale of a created right (CR-7c); under U1-b "
-        "the engine derives nothing (SB-4 needs transferable), where C-2 has an increase under both readings (CR-7, assets without a market price)",
-    ("licensees", "net_price_received", "increase", None):
-        "EN-6's holders' gain from a restricted supply, as the cap keeps the clearing price down (A-17) the winners gain through a lower price paid, "
-        "not a higher price received (the holders sell nothing): same direction as C-2, wrong variable; not in the table",
     ("licensees", "lobbying_effort", "increase", None):
         "RS-7 for the holders of the rights; C-15 signs the same for lobbying groups (operators, entrants, town councils), a wider role the record has no field for",
     ("bidders", "informal_activity", "increase", None):
@@ -44,17 +30,8 @@ EXCEPTIONS = {
         "search and quality chains do not fit; not in the table",
     ("bidders", "quality_information", "decrease", None): "RS-10, as above; not in the table",
     ("bidders", "disputes_settled_outside_courts", "increase", None): "RS-10, as above; not in the table",
-    ("taxpayers", "resources_available_other_uses", "at_least_one_decrease", None):
-        KW + "OC-3 with OC-1 puts the TCA's added costs on the payers (true, C-37) but the auction payments into the Consolidated Fund (K4, no component) "
-        "outweigh them: C-35 signs the group an increase and C-38 the net receipts an increase",
-    ("recipients.other_spending", "resources_available_other_uses", "at_least_one_decrease", None):
-        KW + "member of the same group (see above)",
-    ("taxpayers.future", "resources_available_other_uses", "at_least_one_decrease", None):
-        KW + "member of the same group (see above)",
 }
 NOT_PRODUCED = {
-    "C-1": "missing rule and instrument: nothing encoded for `rights_allocation` (CR-5c, CR-8b); the receipts clause (K4) has no instrument in the ontology",
-    "C-2": "sign cell differs: the engine's asset_value is per reading (U1-b: none) where the table has an increase under both (see EXCEPTIONS)",
     "C-3": "missing rule: PC-17 for the build-out (`mandated_contract_term` has no rules or questions) and CR-1/CR-4 for investment in a created right; no A-1/A-3 question",
     "C-4": "missing rule: CR-9/LW-10 for customers of the service the right permits; no customers role is read for a quota on holdings",
     "C-5": "missing rule: PC-17 (mandated_contract_term) for service in towns",
@@ -89,7 +66,6 @@ NOT_PRODUCED = {
     "C-34": "missing rule: OC-8/CR-8a for the loan market; no borrowers role and no A-26/A-27 question",
     "C-35": "group sign differs: the engine signs the budget payers a decrease from the TCA costs alone (see EXCEPTIONS)",
     "C-36": "role: CR-8b is signed for the bidders (the record's buyer role) where the table has the licensees paying; no OC-1 rule for the price of the created right",
-    "C-38": "missing rule and instrument: net receipts of the Treasury (OC-3 with the K4 receipts); OC-3 signs the agency's cost and the payers only",
     "C-39": "missing rule: OC-2/CR-8c for the licensees' coverage proof (mandated_contract_term has no rules)",
     "C-40": "missing rule: CR-10a for investment moved in the window before an auction (EN-12's race is for history, and K3 has no base period)",
     "C-41": "missing rule: OC-1/CR-8a for the cost of a mandated term (PC-17 not encoded)",
@@ -97,7 +73,7 @@ NOT_PRODUCED = {
     "C-43": "missing rule and role: CR-9/CR-6 for the price other projects pay for installation work",
     "C-44": "missing rule and role: CR-6 on the world price (small), foreign buyers of equipment",
 }
-PRODUCED = {"C-37"}
+PRODUCED = {"C-1", "C-2", "C-37", "C-38"}
 
 
 def test_consistent_with_worked_example_we064():
@@ -107,7 +83,10 @@ def test_consistent_with_worked_example_we064():
     _check(rows, keys, EXCEPTIONS, NOT_PRODUCED, PRODUCED)
     # only the quota component has rules: every reported row traces to K3
     by = {(c["actor_class"], c["variable"]): c for c in pred["consequences"] if c["reported"]}
-    assert all(any("k3" in a for a in c["assumptions"]) for c in by.values())
+    assert all(any("k3" in a for a in c["assumptions"]) for c in by.values() if c["assumptions"])
+    # rights sold at auction: the treasury's receipts (C-38, rights_sold, added after the first run), and no payer group
+    assert by[("treasury", "non_tax_receipts")]["sign"] == "increase"
+    assert ("taxpayers", "resources_available_other_uses") not in by
     # EN-13 is not reported: trade_cheap (p 0.4) is below the cut-off; EN-12 does not apply to a right sold at auction
     assert not any(c["reported"] and c["variable"] in ("capital_stock_target", "right_lease_price", "number_of_sellers")
                    for c in pred["consequences"])

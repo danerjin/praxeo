@@ -32,10 +32,6 @@ EXCEPTIONS = {
         "EN-12 with CR-7c, assets that carry history gain value in the window; the table has the slots' value (C-3) with no window",
     ("airlines.history", "capital_stock_target", "decrease", None):
         "EN-13 (long run); not in the table, and aircraft move between airports, so the WXI fleet is not a rule-derived sign against no order",
-    ("airlines.history", "quantity_supplied", "increase", None):
-        "KNOWN WRONG: EN-13's 'quantity per remaining user increases'; the example drops this claim (corrections: against no order the cap lowers total movements, and C-12 rests on blocked entry and whole-holding exits)",
-    ("airlines.history", "lobbying_effort", "ambiguous", None):
-        "KNOWN WRONG: RS-7 Unless (contested field) attached to the slot holders; the example keeps the holders' lobbying an increase (C-16, slots exist only under the order) and gives the contest to neighbors.wxi (C-17) and operators.night (C-46)",
     ("workers.wxi", "employment", "at_least_one_increase", "announcement"):
         "EN-12 crews: employment follows the added base-season flights (A-25); the table lists no row for workers in the window",
     ("workers.wxi", "hours_worked", "at_least_one_increase", "announcement"):

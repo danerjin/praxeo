@@ -23,8 +23,6 @@ WINDOWS = {"2026–2027": "announcement"}
 EXCEPTIONS = {
     ("vessel_owners.history", "number_of_sellers", "decrease", None):
         "EN-13 (consolidation, added after the first run): C-9 signs it for operators.high_cost, a subclass the record has no role for",
-    ("vessel_owners.history", "quantity_supplied", "increase", None):
-        "EN-13: C-40 signs more per vessel for operators.low_cost, a subclass the record has no role for",
     ("vessel_owners.history", "asset_value", "increase", "announcement"):
         "the race of EN-12 (added after the first run): vessels with history gain value in the window; C-8 signs it for vessel_owners.at_announcement, a subclass",
     ("buyers.fresh_domestic", "search_cost", "increase", None):

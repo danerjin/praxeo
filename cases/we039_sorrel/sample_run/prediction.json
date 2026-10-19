@@ -108,302 +108,6 @@
    "window": null
   },
   {
-   "actor_class": "growers.nuts",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "binding(k1)",
-     "enforced(k1)",
-     "evasion(k1)"
-    ]
-   ],
-   "assumptions": [
-    "binding(k1)",
-    "enforced(k1)",
-    "evasion(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "quota_binds(k1)",
-     "premises": [
-      "binding(k1)",
-      "enforced(k1)"
-     ],
-     "rule": "EN-6"
-    },
-    {
-     "conclusion": "en_informal(k1)",
-     "premises": [
-      "evasion(k1)",
-      "quota_binds(k1)"
-     ],
-     "rule": "RS-3"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-2",
-   "item": null,
-   "reported": true,
-   "sign": "increase",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "disputes_settled_outside_courts",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "growers.nuts",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "binding(k1)",
-     "enforced(k1)",
-     "price_effect_material(k1)"
-    ]
-   ],
-   "assumptions": [
-    "binding(k1)",
-    "enforced(k1)",
-    "price_effect_material(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "quota_binds(k1)",
-     "premises": [
-      "binding(k1)",
-      "enforced(k1)"
-     ],
-     "rule": "EN-6"
-    },
-    {
-     "conclusion": "quota_price(k1)",
-     "premises": [
-      "price_effect_material(k1)",
-      "quota_binds(k1)"
-     ],
-     "rule": "EN-6"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-3",
-   "item": null,
-   "reported": false,
-   "sign": "increase",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "price_paid",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "growers.nuts",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "binding(k1)",
-     "enforced(k1)",
-     "evasion(k1)"
-    ]
-   ],
-   "assumptions": [
-    "binding(k1)",
-    "enforced(k1)",
-    "evasion(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "quota_binds(k1)",
-     "premises": [
-      "binding(k1)",
-      "enforced(k1)"
-     ],
-     "rule": "EN-6"
-    },
-    {
-     "conclusion": "en_informal(k1)",
-     "premises": [
-      "evasion(k1)",
-      "quota_binds(k1)"
-     ],
-     "rule": "RS-3"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-4",
-   "item": null,
-   "reported": true,
-   "sign": "decrease",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "quality_information",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "growers.nuts",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "binding(k1)",
-     "enforced(k1)"
-    ]
-   ],
-   "assumptions": [
-    "binding(k1)",
-    "enforced(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "quota_binds(k1)",
-     "premises": [
-      "binding(k1)",
-      "enforced(k1)"
-     ],
-     "rule": "EN-6"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-5",
-   "item": null,
-   "reported": true,
-   "sign": "decrease",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "quantity_traded",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "growers.nuts",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "binding(k1)",
-     "enforced(k1)",
-     "price_effect_material(k1)"
-    ]
-   ],
-   "assumptions": [
-    "binding(k1)",
-    "enforced(k1)",
-    "price_effect_material(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "quota_binds(k1)",
-     "premises": [
-      "binding(k1)",
-      "enforced(k1)"
-     ],
-     "rule": "EN-6"
-    },
-    {
-     "conclusion": "quota_price(k1)",
-     "premises": [
-      "price_effect_material(k1)",
-      "quota_binds(k1)"
-     ],
-     "rule": "EN-6"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-6",
-   "item": null,
-   "reported": false,
-   "sign": "decrease",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "resources_available_other_uses",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "growers.nuts",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "binding(k1)",
-     "enforced(k1)",
-     "evasion(k1)"
-    ]
-   ],
-   "assumptions": [
-    "binding(k1)",
-    "enforced(k1)",
-    "evasion(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "quota_binds(k1)",
-     "premises": [
-      "binding(k1)",
-      "enforced(k1)"
-     ],
-     "rule": "EN-6"
-    },
-    {
-     "conclusion": "en_informal(k1)",
-     "premises": [
-      "evasion(k1)",
-      "quota_binds(k1)"
-     ],
-     "rule": "RS-3"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-7",
-   "item": null,
-   "reported": true,
-   "sign": "increase",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "search_cost",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
    "actor_class": "landholders.history",
    "actor_group": [],
    "assumption_sets": [
@@ -449,7 +153,7 @@
     "medium",
     "long"
    ],
-   "id": "C-8",
+   "id": "C-2",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -499,7 +203,7 @@
     "medium",
     "long"
    ],
-   "id": "C-9",
+   "id": "C-3",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -556,7 +260,7 @@
     "medium",
     "long"
    ],
-   "id": "C-10",
+   "id": "C-4",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -604,7 +308,7 @@
     "medium",
     "long"
    ],
-   "id": "C-11",
+   "id": "C-5",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -656,7 +360,7 @@
    "horizon": [
     "long"
    ],
-   "id": "C-12",
+   "id": "C-6",
    "item": null,
    "reported": true,
    "sign": "decrease",
@@ -707,13 +411,13 @@
     "medium",
     "long"
    ],
-   "id": "C-13",
+   "id": "C-7",
    "item": null,
    "reported": true,
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
-   "variable": "informal_activity",
+   "variable": "legal_breach",
    "visibility": "invisible",
    "window": null
   },
@@ -760,66 +464,13 @@
     "medium",
     "long"
    ],
-   "id": "C-14",
+   "id": "C-8",
    "item": null,
    "reported": true,
    "sign": "decrease",
    "sign_by_reading": {},
    "tier": "B",
    "variable": "number_of_sellers",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "pumpers",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "binding(k1)",
-     "enforced(k1)",
-     "trade_cheap(k1)",
-     "values_differ(k1)"
-    ]
-   ],
-   "assumptions": [
-    "binding(k1)",
-    "enforced(k1)",
-    "trade_cheap(k1)",
-    "values_differ(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "quota_binds(k1)",
-     "premises": [
-      "binding(k1)",
-      "enforced(k1)"
-     ],
-     "rule": "EN-6"
-    },
-    {
-     "conclusion": "en_consolidate(k1)",
-     "premises": [
-      "quota_binds(k1)",
-      "trade_cheap(k1)",
-      "values_differ(k1)"
-     ],
-     "rule": "EN-13"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "medium",
-    "long"
-   ],
-   "id": "C-15",
-   "item": null,
-   "reported": true,
-   "sign": "increase",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "quantity_supplied",
    "visibility": "invisible",
    "window": null
   },
@@ -854,36 +505,29 @@
     "medium",
     "long"
    ],
-   "id": "C-16",
+   "id": "C-9",
    "item": null,
    "reported": true,
    "sign": "decrease",
    "sign_by_reading": {},
    "tier": "B",
-   "variable": "quantity_traded",
-   "visibility": "invisible",
+   "variable": "quantity_supplied",
+   "visibility": "visible",
    "window": null
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"pumpers\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nquota(k1).\nen_buyer(k1, \"growers.nuts\").\nen_holder(k1, \"landholders.history\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_informal_buyer(k1, \"growers.nuts\").\nen_entrant(k1, \"growers.prospective\").\nen_worker(k1, \"farm_workers\").\ntransferable(k1).\nallocation_by_history(k1).\nwider_market(k1).\nbound(k2, \"officials.enforcement\").\nprotected(k2, \"landholders.history\").\nexcluded(k2, \"buyers.prospective\").\nannounced(k2).\nbound(k3, \"officials.enforcement\").\nprotected(k3, \"landholders.no_history.eligible\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(expected_to_last(k1)).\nassumption(values_differ(k1)).\nassumption(trade_cheap(k1)).\nassumption(price_effect_material(k1)).\n",
+ "engine_facts": "bound(k1, \"pumpers\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nquota(k1).\nen_buyer(k1, \"growers.nuts\").\nen_holder(k1, \"landholders.history\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_informal_buyer(k1, \"growers.nuts\").\nen_revenue(k1, \"officials.enforcement\").\nen_entrant(k1, \"growers.prospective\").\nen_worker(k1, \"farm_workers\").\ntransferable(k1).\nallocation_by_history(k1).\nself_supply(k1).\nwider_market(k1).\nbound(k2, \"officials.enforcement\").\nprotected(k2, \"landholders.history\").\nexcluded(k2, \"buyers.prospective\").\nannounced(k2).\nbound(k3, \"officials.enforcement\").\nprotected(k3, \"landholders.no_history.eligible\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(expected_to_last(k1)).\nassumption(values_differ(k1)).\nassumption(trade_cheap(k1)).\nassumption(price_effect_material(k1)).\n",
  "explanations": [
   "C-1. Compared with no Sorrel Basin Groundwater Allocation Plan, employment or hours worked for farm_workers falls for at least one of them from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.85). Reported.",
-  "C-2. Compared with no Sorrel Basin Groundwater Allocation Plan, disputes settled outside courts for growers.nuts rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
-  "C-3. Compared with no Sorrel Basin Groundwater Allocation Plan, price paid for growers.nuts rises from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); The capped quantity matters enough in the wider market to raise the price there (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-4. Compared with no Sorrel Basin Groundwater Allocation Plan, quality information for growers.nuts falls from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
-  "C-5. Compared with no Sorrel Basin Groundwater Allocation Plan, quantity traded for growers.nuts falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75). Reported.",
-  "C-6. Compared with no Sorrel Basin Groundwater Allocation Plan, resources available other uses for growers.nuts falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); The capped quantity matters enough in the wider market to raise the price there (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-7. Compared with no Sorrel Basin Groundwater Allocation Plan, search cost for growers.nuts rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
-  "C-8. Compared with no Sorrel Basin Groundwater Allocation Plan, asset value for landholders.history rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value; EN-12: EN-12. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75). Reported.",
-  "C-9. Compared with no Sorrel Basin Groundwater Allocation Plan, lobbying effort for landholders.history rises from the medium run onward (tier B, invisible). Why: EN-6: EN-6; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The holders of the rights can organize to lobby at a cost below their stake (p = 0.85); The cap is enforced (p = 0.75). Reported.",
-  "C-10. Compared with no Sorrel Basin Groundwater Allocation Plan, right lease price for landholders.history rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75). Reported.",
-  "C-11. Compared with no Sorrel Basin Groundwater Allocation Plan, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75). Reported.",
-  "C-12. Compared with no Sorrel Basin Groundwater Allocation Plan, capital stock target for pumpers falls in the long run (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.85). Reported.",
-  "C-13. Compared with no Sorrel Basin Groundwater Allocation Plan, informal activity for pumpers rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
-  "C-14. Compared with no Sorrel Basin Groundwater Allocation Plan, number of sellers for pumpers falls from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.85). Reported.",
-  "C-15. Compared with no Sorrel Basin Groundwater Allocation Plan, quantity supplied for pumpers rises from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.85). Reported.",
-  "C-16. Compared with no Sorrel Basin Groundwater Allocation Plan, quantity traded for pumpers falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75). Reported."
+  "C-2. Compared with no Sorrel Basin Groundwater Allocation Plan, asset value for landholders.history rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value; EN-12: EN-12. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75). Reported.",
+  "C-3. Compared with no Sorrel Basin Groundwater Allocation Plan, lobbying effort for landholders.history rises from the medium run onward (tier B, invisible). Why: EN-6: EN-6; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The holders of the rights can organize to lobby at a cost below their stake (p = 0.85); The cap is enforced (p = 0.75). Reported.",
+  "C-4. Compared with no Sorrel Basin Groundwater Allocation Plan, right lease price for landholders.history rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75). Reported.",
+  "C-5. Compared with no Sorrel Basin Groundwater Allocation Plan, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75). Reported.",
+  "C-6. Compared with no Sorrel Basin Groundwater Allocation Plan, capital stock target for pumpers falls in the long run (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.85). Reported.",
+  "C-7. Compared with no Sorrel Basin Groundwater Allocation Plan, legal breach for pumpers rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
+  "C-8. Compared with no Sorrel Basin Groundwater Allocation Plan, number of sellers for pumpers falls from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.85). Reported.",
+  "C-9. Compared with no Sorrel Basin Groundwater Allocation Plan, quantity supplied for pumpers falls from the short run onward (tier B, visible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75). Reported."
  ],
  "questions": [
   {
@@ -1063,6 +707,7 @@
     "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
     "good": "groundwater",
+    "holder_cap": false,
     "id": "k1",
     "import_quota": false,
     "importer_actor": null,
@@ -1088,8 +733,10 @@
     "repay_on_move": false,
     "revenue_actor": "officials.enforcement",
     "right_holder_actor": "landholders.history",
+    "rights_sold": false,
     "scrappage": false,
     "scrapper_actor": null,
+    "self_supply": true,
     "seller_actor": "sellers.current",
     "seller_cap": false,
     "source_sentences": [
@@ -1147,6 +794,7 @@
     "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
     "good": "groundwater_shares",
+    "holder_cap": false,
     "id": "k2",
     "import_quota": false,
     "importer_actor": null,
@@ -1172,8 +820,10 @@
     "repay_on_move": false,
     "revenue_actor": "officials.enforcement",
     "right_holder_actor": null,
+    "rights_sold": false,
     "scrappage": false,
     "scrapper_actor": null,
+    "self_supply": false,
     "seller_actor": "sellers.current",
     "seller_cap": false,
     "source_sentences": [
@@ -1224,6 +874,7 @@
     "future_taxpayer_actor": "taxpayers.future",
     "general_budget": false,
     "good": "groundwater_shares_reserve",
+    "holder_cap": false,
     "id": "k3",
     "import_quota": false,
     "importer_actor": null,
@@ -1249,8 +900,10 @@
     "repay_on_move": false,
     "revenue_actor": "officials.enforcement",
     "right_holder_actor": null,
+    "rights_sold": false,
     "scrappage": false,
     "scrapper_actor": null,
+    "self_supply": false,
     "seller_actor": "sellers.current",
     "seller_cap": false,
     "source_sentences": [
@@ -1300,7 +953,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-19T05:51:59+00:00",
+ "run_at": "2026-10-19T06:08:23+00:00",
  "sources_held_back": [],
  "unclear": [
   {

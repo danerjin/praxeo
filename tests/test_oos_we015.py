@@ -19,8 +19,6 @@ WINDOWS = {"announcement window": "announcement"}
 EXCEPTIONS = {
     ("drivers.taxi", "capital_stock_target", "decrease", None):
         "EN-13 (consolidation under tradable rights, added after the first run): the rights are transferable and holders differ; the example does not apply EN-13",
-    ("drivers.taxi", "quantity_supplied", "increase", None):
-        "EN-13 (consolidation under tradable rights, added after the first run): the rights are transferable and holders differ; the example does not apply EN-13",
     ("medallion_owners.initial", "right_lease_price", "increase", None):
         "EN-13 (consolidation under tradable rights, added after the first run): the rights are transferable and holders differ; the example does not apply EN-13",
 

@@ -79,7 +79,9 @@ instrument, even when the text states no aim:
   general_budget (true if enforcement is paid from the general budget), renewable, field_contested,
   allocation_by_history (rights given in proportion to past activity), base_period_after_announcement (true if that
   base period runs after the announcement), entrant_actor, worker_actor (the bound sellers' workers),
-  input_supplier_actor (their suppliers), informal_buyer_actor (buyers of the unlicensed or unrecorded trade, if not all buyers), price_fixed (true if a rule
+  input_supplier_actor (their suppliers), holder_cap (true if the cap is on each holder's share, not the total),
+  self_supply (true if the capped quantity is taken for the holders' own use), rights_sold (true if the state sells the
+  rights; revenue_actor receives the price), informal_buyer_actor (buyers of the unlicensed or unrecorded trade, if not all buyers), price_fixed (true if a rule
   in force before the measure fixes the good's price, such as a council-set fare); for an import quota, the tariff
   roles too (domestic_seller_actor, exporter_actor, downstream, and the owner and worker roles).
 For a tax or subsidy, list in `related` the markets the text or context names as related to the good: an input or factor

@@ -21,29 +21,14 @@ WE39 = ROOT / "cases" / "we039_sorrel"
 SHORT = {}
 WINDOWS = {}
 EXCEPTIONS = {
-    ("pumpers", "quantity_supplied", "increase", None):
-        "KNOWN WRONG: EN-13's 'more per remaining user' is put on the whole class `pumpers`; C-1 and C-47 have the same key, a decrease (total groundwater pumped falls)",
-    ("pumpers", "quantity_traded", "decrease", None):
-        "EN-6: the capped quantity falls; the table has this event as C-1 under `quantity_supplied` (a cap on the pumpers' own pumping, not an exchange)",
-    ("growers.nuts", "quantity_traded", "decrease", None):
-        "EN-6 for the buyers of the capped good (`buyer_actor`); the table has C-34 for growers.field and C-37 (leases, an increase) for the lessors, and nut growers' output is C-6; defensible only as pumped water, not as leased water",
     ("pumpers", "number_of_sellers", "decrease", None):
         "EN-13 (consolidation): C-7 signs the same fall for growers.field and growers.nuts, the farms that irrigate; the record has one class, `pumpers`",
     ("landholders.history", "right_lease_price", "increase", None):
         "EN-6 Unless (quota_lease) on the record's right holder; the table puts the lease price on `pumpers` (C-4), a role that also holds the shares in the handbook",
     ("landholders.history", "lobbying_effort", "increase", None):
         "RS-7 for the holders of the rights (A-11); C-14 names growers, landholders.no_history and local water groups, not the history holders",
-    ("pumpers", "informal_activity", "increase", None):
-        "RS-3 (A-10): the same over-pumping as C-13, which uses `legal_breach` because the trade stays inside a legal activity",
-    ("growers.nuts", "search_cost", "increase", None):
-        "RS-3 with EN-3 for 'buyers of unrecorded trade'; over-pumping is self-supply, so there are no such buyers (misattributed to the buyer role); not in the table",
-    ("growers.nuts", "quality_information", "decrease", None):
-        "as above (misattributed); not in the table",
-    ("growers.nuts", "disputes_settled_outside_courts", "increase", None):
-        "RS-10 for the same trade (misattributed); not in the table",
 }
 NOT_PRODUCED = {
-    "C-1": "unsupported form: the capped quantity is signed as quantity_traded (EN-6), the table has quantity_supplied for a cap on the bound pumpers' own pumping (autistic, no exchange)",
     "C-3": "missing rule: the lottery branch of EN-12 (K3 rights_allocation, CR-7c) has no rule; no winners role",
     "C-4": "missing role: the engine signs the lease price on the record's right holder (`landholders.history`); the table has `pumpers`; one right-holder field cannot serve C-2 and C-4",
     "C-5": "missing record fact and rule: EN-6 Inputs clause (0.9), the output of the capped input falls; the record has no output relation and no growers.field role",
@@ -54,7 +39,6 @@ NOT_PRODUCED = {
     "C-10": "missing rule: CR-10a for plantings from the announcement (EN-12's first branch signs only the holders' asset value); no question A-20",
     "C-11": "missing rule: the lottery branch of EN-12 (RS-5, RS-8, CR-7c competing to qualify); K3 has no rules, no A-13 and A-21 questions",
     "C-12": "missing rule: CR-8c for the lottery entry costs (K3)",
-    "C-13": "unsupported form: the over-pumping is signed as informal_activity (RS-3, C-13 uses legal_breach: the trade stays within a legal activity)",
     "C-14": "missing role: RS-7 is signed for the rights holders only; growers, landholders.no_history and local water groups have no role in the quota record",
     "C-15": "missing rule and record fact: RS-1 for buyers of the capped input turning to a substitute (surface water); the substitute question exists for licensing only",
     "C-16": "missing rule and record fact: RS-4 for relocation to the uncapped Lowther Basin; neighbor_actor is for price ceilings",
@@ -85,7 +69,6 @@ NOT_PRODUCED = {
     "C-44": "missing record fact and rule: CR-7b for local input dealers; as C-20",
     "C-45": "missing rule and record fact: CR-9, CR-4c for other districts' buyers of surface water; as C-15",
     "C-46": "missing rule and record fact: CR-9 after a shared_facility link (well drillers), Tier C",
-    "C-47": "unsupported form: the capped quantity is signed as quantity_traded (EN-6), the table has quantity_supplied; also CR-12 split of the Tier B sign",
     "C-48": "missing rule and record fact: EN-6 Inputs clause for the long run, CR-12e; as C-6",
     "C-49": "missing rule and combiner: CR-9 shared_facility, CR-10b, CR-12b",
     "C-50": "missing record fact and rule: EN-6 Inputs clause for field crops; as C-5",
@@ -99,7 +82,7 @@ NOT_PRODUCED = {
     "C-59": "same as C-58 with the Tier C aquifer chain and CR-12e",
     "C-60": "missing rule and record fact: resource_stock of a shared facility (CR-9 shared_facility, CR-8), Tier C",
 }
-PRODUCED = {"C-2", "C-19", "C-30", "C-42", "C-52"}
+PRODUCED = {"C-1", "C-2", "C-13", "C-19", "C-30", "C-42", "C-47", "C-52"}
 
 
 def test_consistent_with_worked_example_we039():

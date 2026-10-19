@@ -13,6 +13,8 @@
 %   allocation_by_history(C).        the right is allocated in proportion to past activity in a base period  (EN-12)
 %   base_after_announcement(C).      the base period runs after the measure was announced                  (EN-12)
 %   en_entrant(C, A). en_worker(C, A). en_supplier(C, A).  would-be entrants; the bound sellers' workers and suppliers
+%   holder_cap(C). self_supply(C). rights_sold(C). en_revenue(C, A).  a cap per holder; capped self-use; rights sold
+%                                    by the state, with the budget that receives the price
 %   price_fixed(C).                  a rule in force without the measure too fixes the price               (EN-6, PC-1)
 %   seller_cap(C).                   the cap is on the number of sellers (licenses), not on quantity         (EN-6 1.0)
 %   wider_market(C).                 the capped good's price is set in a wider market                        (EN-6 Unless)
@@ -83,12 +85,14 @@ en_informal(C) :- quota_binds(C), holds(evasion(C)), not exception(rs_3, C).
 fired(rs_3, en_informal(C), lic_binds(C))   :- en_informal(C), lic_binds(C).
 fired(rs_3, en_informal(C), quota_binds(C)) :- en_informal(C), quota_binds(C).
 fired(rs_3, en_informal(C), evasion(C))     :- en_informal(C).
-effect(en_informal(C), B, "informal_activity", increase, short, invisible, "B")               :- en_informal(C), bound(C, B).
+effect(en_informal(C), B, "informal_activity", increase, short, invisible, "B")               :- en_informal(C), bound(C, B), not self_supply(C).
+% Taking more than one's own cap is a breach, not a trade (self-supply): no buyers search or dispute.
+effect(en_informal(C), B, "legal_breach", increase, short, invisible, "B")                    :- en_informal(C), bound(C, B), self_supply(C).
 % These fall on the buyers of the unlicensed or unrecorded trade (en_informal_buyer: informal_buyer_actor, default the
 % buyers), not on every buyer (found out of sample on WE-055 and WE-028).
-effect(en_informal(C), X, "search_cost", increase, short, invisible, "B")                     :- en_informal(C), en_informal_buyer(C, X).
-effect(en_informal(C), X, "quality_information", decrease, short, invisible, "B")             :- en_informal(C), en_informal_buyer(C, X).
-effect(en_informal(C), X, "disputes_settled_outside_courts", increase, short, invisible, "B") :- en_informal(C), en_informal_buyer(C, X).
+effect(en_informal(C), X, "search_cost", increase, short, invisible, "B")                     :- en_informal(C), en_informal_buyer(C, X), not self_supply(C).
+effect(en_informal(C), X, "quality_information", decrease, short, invisible, "B")             :- en_informal(C), en_informal_buyer(C, X), not self_supply(C).
+effect(en_informal(C), X, "disputes_settled_outside_courts", increase, short, invisible, "B") :- en_informal(C), en_informal_buyer(C, X), not self_supply(C).
 
 % EN-11: where the requirement tests something buyers value but cannot easily judge (tests_valued_quality), the license tells
 % the licensed sellers' buyers something about quality (CR-11c).
@@ -103,19 +107,25 @@ effect(lic_signal(C), X, "quality_information", increase, short, visible, "B") :
 % the price buyers pay; holders of the rights gain. A cap on the number of sellers (seller_cap) cuts quantity only where the
 % cap holds quantity down, which is what `binding` asks there (EN-6 1.0); it also cuts the number of sellers and their entry.
 quota_binds(C) :- quota(C), holds(binding(C)), holds(enforced(C)), not exception(en_6, C).
+% A cap on each holder's share (holder_cap: no holder may own more than a set part), not on the total, leaves the total traded
+% as it is, so EN-6's quantity and price rows do not follow from it (RS-17 1.1; found out of sample on WE-064).
+quota_total(C) :- quota_binds(C), not holder_cap(C).
+% Self-supply (self_supply: groundwater pumped for one's own fields): the capped quantity is what the bound actors take for
+% their own use; there is no market in it, so no buyer rows (found out of sample on WE-039).
 fired(en_6, quota_binds(C), binding(C)) :- quota_binds(C).
 fired(en_6, quota_binds(C), enforced(C)) :- quota_binds(C).
-effect(quota_binds(C), B, "quantity_traded", decrease, short, invisible, "B")   :- quota_binds(C), bound(C, B).
-effect(quota_binds(C), X, "quantity_traded", decrease, short, invisible, "B")   :- quota_binds(C), en_buyer(C, X).
-effect(quota_binds(C), H, "net_price_received", increase, short, invisible, "B") :- quota_binds(C), en_holder(C, H), not wider_market(C), not price_fixed(C).
-effect(quota_binds(C), B, "number_of_sellers", decrease, medium, visible, "B")  :- quota_binds(C), seller_cap(C), bound(C, B).
-effect(quota_binds(C), B, "entry_rate", decrease, medium, invisible, "B")       :- quota_binds(C), seller_cap(C), bound(C, B).
+effect(quota_binds(C), B, "quantity_traded", decrease, short, invisible, "B")   :- quota_total(C), bound(C, B), not self_supply(C).
+effect(quota_binds(C), B, "quantity_supplied", decrease, short, visible, "B")   :- quota_total(C), bound(C, B), self_supply(C).
+effect(quota_binds(C), X, "quantity_traded", decrease, short, invisible, "B")   :- quota_total(C), en_buyer(C, X), not self_supply(C).
+effect(quota_binds(C), H, "net_price_received", increase, short, invisible, "B") :- quota_total(C), en_holder(C, H), not wider_market(C), not price_fixed(C), not self_supply(C).
+effect(quota_binds(C), B, "number_of_sellers", decrease, medium, visible, "B")  :- quota_total(C), seller_cap(C), bound(C, B).
+effect(quota_binds(C), B, "entry_rate", decrease, medium, invisible, "B")       :- quota_total(C), seller_cap(C), bound(C, B).
 % The buyers' price rises where the good is priced at home. Where its price is set in a wider market (EN-6 Unless), the
 % lease price of the right rations the capped quantity, and the buyers' price rises only by as much as the capped quantity
 % matters there (price_effect_material).
-quota_price(C) :- quota_binds(C), not wider_market(C), not price_fixed(C).
+quota_price(C) :- quota_total(C), not wider_market(C), not price_fixed(C), not self_supply(C).
 fired(en_6, quota_price(C), quota_binds(C)) :- quota_price(C).
-quota_price(C) :- quota_binds(C), wider_market(C), holds(price_effect_material(C)).
+quota_price(C) :- quota_total(C), wider_market(C), holds(price_effect_material(C)), not self_supply(C).
 fired(en_6, quota_price(C), price_effect_material(C)) :- quota_price(C), wider_market(C).
 effect(quota_price(C), X, "price_paid", increase, short, invisible, "B") :- quota_price(C), en_buyer(C, X).
 effect(quota_price(C), X, "resources_available_other_uses", decrease, short, invisible, "B") :- quota_price(C), en_buyer(C, X).
@@ -166,15 +176,16 @@ effect(en_race(C), E, "entry_rate", increase, short, invisible, "B")            
 group_effect(en_race(C), W, "employment,hours_worked", at_least_one_increase, short, invisible, "B") :- en_race(C), en_worker(C, W).
 
 % EN-13: where the rights can be traded or leased at low cost (trade_cheap) and holders' costs or values differ (values_differ), rights move
-% to those who value them most (CR-5, CR-7a): fewer users, and in the long run fewer vessels or plants; more per remaining
-% user; lessors receive the lease price instead of producing; and the workers and suppliers of those who leave lose (CR-9).
+% to those who value them most (CR-5, CR-7a): fewer users, and in the long run fewer vessels or plants; lessors receive the
+% lease price instead of producing; and the workers and suppliers of those who leave lose (CR-9). "More per remaining user"
+% is not signed: against no policy (EN-13 1.0) the cap holds total use down, so the comparison per user is open (found out
+% of sample on WE-039 and WE-054).
 en_consolidate(C) :- quota_binds(C), transferable(C), holds(values_differ(C)), holds(trade_cheap(C)), not exception(en_13, C).
 fired(en_13, en_consolidate(C), quota_binds(C))    :- en_consolidate(C).
 fired(en_13, en_consolidate(C), values_differ(C))  :- en_consolidate(C).
 fired(en_13, en_consolidate(C), trade_cheap(C))    :- en_consolidate(C).
 effect(en_consolidate(C), B, "number_of_sellers", decrease, medium, invisible, "B")    :- en_consolidate(C), bound(C, B).
 effect(en_consolidate(C), B, "capital_stock_target", decrease, long, invisible, "B")   :- en_consolidate(C), bound(C, B).
-effect(en_consolidate(C), B, "quantity_supplied", increase, medium, invisible, "B")    :- en_consolidate(C), bound(C, B).
 effect(en_consolidate(C), H, "right_lease_price", increase, medium, invisible, "B")    :- en_consolidate(C), en_holder(C, H).
 effect(en_consolidate(C), S, "quantity_traded", decrease, medium, invisible, "B")      :- en_consolidate(C), en_supplier(C, S).
 group_effect(en_consolidate(C), W, "employment,hours_worked", at_least_one_decrease, medium, invisible, "B") :- en_consolidate(C), en_worker(C, W).
@@ -208,7 +219,19 @@ en_funded(C) :- en_administered(C), general_budget(C), holds(enforcement_budget_
 fired(oc_3, en_funded(C), en_administered(C))           :- en_funded(C).
 fired(oc_1, en_funded(C), enforcement_budget_raised(C)) :- en_funded(C).
 effect(en_funded(C), T, "resources_available_other_uses", decrease, short, invisible, "B") :- en_funded(C), tax_named(C), taxpayer(C, T).
-group_effect(en_funded(C), G, "resources_available_other_uses", at_least_one_decrease, short, invisible, "B") :- en_funded(C), en_payer_group(C, G), not tax_named(C).
+group_effect(en_funded(C), G, "resources_available_other_uses", at_least_one_decrease, short, invisible, "B") :- en_funded(C), en_payer_group(C, G), not tax_named(C), not rights_sold(C).
+% Rights sold by the state (an auction, rights_sold) bring receipts into the budget that pays the administration (OC-1 1.0,
+% CR-8b): the receiving budget's non-tax receipts rise, and the payers' net is not signed without a premise on which is
+% larger (found out of sample on WE-064).
+en_sale(C) :- en(C), rights_sold(C), not exception(cr_8, C).
+fired(cr_8, en_sale(C), rights_sold(C)) :- en_sale(C).
+effect(en_sale(C), R, "non_tax_receipts", increase, short, visible, "B") :- en_sale(C), en_revenue(C, R).
+% SB-4 1.1 with CR-7c: a right sold at creation is worth to its buyer only what exceeds the price paid; where some buyers win
+% it below their own value for it (value_above_price), the holders' asset value rises by that difference.
+en_sale_gain(C) :- en_sale(C), holds(value_above_price(C)).
+fired(sb_4, en_sale_gain(C), en_sale(C))            :- en_sale_gain(C).
+fired(cr_7, en_sale_gain(C), value_above_price(C))  :- en_sale_gain(C).
+effect(en_sale_gain(C), H, "asset_value", increase, short, visible, "B") :- en_sale_gain(C), en_holder(C, H).
 
 #show holds/1.
 #show fired/3.

@@ -66,7 +66,10 @@
     "Affiliates are those where one controls more than 50%, or has the right to appoint a majority of the board.",
     "The cap binds each bidder and later holder.",
     "The TCA runs the auction and monitors coverage; its added costs are M9 million for the auction and M2 million a year for monitoring, funded by an increase in its annual appropriation from the general budget."
-   ]
+   ],
+   "holder_cap": true,
+   "rights_sold": true,
+   "revenue_actor": "treasury"
   }
  ],
  "unclear": [
@@ -78,8 +81,22 @@
     "U1-b: reg. 9(3) bars any transfer until the obligation is met or the deadline passes"
    ],
    "reading_fields": {
-    "U1-a": {"k1": {"transferable": true}, "k3": {"transferable": true}},
-    "U1-b": {"k1": {"transferable": false}, "k3": {"transferable": false}}
+    "U1-a": {
+     "k1": {
+      "transferable": true
+     },
+     "k3": {
+      "transferable": true
+     }
+    },
+    "U1-b": {
+     "k1": {
+      "transferable": false
+     },
+     "k3": {
+      "transferable": false
+     }
+    }
    }
   }
  ],
