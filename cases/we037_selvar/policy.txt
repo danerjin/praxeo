@@ -1,0 +1,21 @@
+Selvar Fair Ticket Act (fictional; summary of the policy record of handbook worked example WE-037).
+
+The State of Selvar has about 6.8 million people. Its largest city, Dunholt, has an 18,000-seat arena, a 64,000-seat stadium (home of a football club with nine home games a year), an amphitheater and three large theaters. About 9.5 million tickets a year are sold for events in Selvar. About 11% (1.05 million) are resold. Of those, about 52% (545,000) are resold above face value plus 10%, at a median markup of 70% and several times face value for the most sought-after events; the rest are resold at less, many below face value, mostly for events that do not sell out.
+
+About 60% of resale listings come from professional brokers (about 600 of them, 40 based in Selvar); the rest from fans who cannot attend. By value, 68% of Selvar resales go through two national platforms with offices and staff in Selvar, 9% through the football club's own exchange, 11% through platforms based abroad with no presence in Selvar, and 12% through social media and in person. Typical platform fees are 18% of the resale price charged to the buyer and 10% to the seller.
+
+Primary sellers set their own prices. A national promoter that runs about 60% of arena concerts uses demand-based pricing on about 10% of seats at high-demand events and fixed face values on the rest; many artists and the theaters use fixed face values only. The football club sells 38,000 season tickets, with a waiting list of about 9,000; brokers hold about 15% of season tickets. Season ticket holders may transfer their seat rights through the club for a fee, and those rights trade at a price. The State of Brackmere, whose capital Brackmere City is 55 minutes from Dunholt, has a 14,000-seat arena and no resale law; about 40% of the arena tours that play Dunholt also play Brackmere City.
+
+The bill was introduced on 3 February 2027, signed on 12 May 2027, and applies to resales made on or after 1 September 2027. It has no expiry.
+
+Resale cap: no person who resells or offers to resell a ticket to an event held in Selvar, and no platform that lists or processes payment for a resale, may resell above face value plus 10%. Face value is the price charged by the primary seller, including taxes and the primary seller's own fees, as printed or recorded by the primary seller. The Act asserts jurisdiction over any resale of a ticket to an event in Selvar, wherever the parties or platform are. Resale by registered charities at auction is exempt. Resale contracts made before 1 September 2027 are exempt.
+
+Bot ban: software that evades a primary seller's purchase limits or access controls is prohibited, for any person who uses or sells it. The civil penalty is $2,500 per ticket obtained with it.
+
+Primary sales: "Nothing in this Act limits the price at which a primary seller or venue may sell a ticket."
+
+Enforcement: the Attorney General's consumer division enforces the resale cap and the bot ban. The civil penalty is up to $500 per ticket resold above the cap. A buyer may recover three times the excess paid. No new appropriation is made: the division absorbs the work within its existing $14 million budget.
+
+Existing rules, in force without the Act too: primary sellers' terms forbid bots and purchase limits, and tickets bought in breach may be cancelled, enforced by the seller alone; a primary seller may make tickets non-transferable or limit resale to its own exchange; consumer protection law prohibits fake tickets and speculative listings of tickets not held, enforced by the same division.
+
+Unclear provision: section 3 caps "the price" of a resale at face value plus 10%; section 5 says "nothing in this Act prevents a platform from charging a reasonable fee for its services". It is unclear whether platform fees charged to the buyer are part of the price, so that the buyer pays at most face value plus 10% in total, or whether platform fees are charged on top of the capped price, with "reasonable" undefined.

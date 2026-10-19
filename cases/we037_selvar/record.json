@@ -1,0 +1,63 @@
+{
+ "name": "Selvar Fair Ticket Act",
+ "jurisdiction": "Selvar (fictional)",
+ "rule_maker": "the Selvar legislature",
+ "enacted": "signed on 12 May 2027",
+ "effective": "1 September 2027",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "price_ceiling",
+   "good": "resold_event_tickets",
+   "market": "selvar",
+   "bound_actor": "resellers.brokers",
+   "protected_actor": "buyers.insiders",
+   "excluded_actor": "buyers.outsiders",
+   "neighbor_actor": "neighboring_jurisdictions",
+   "enforcer_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "announcement_window": true,
+   "protected_concentrated": false,
+   "evasion_by_resellers": false,
+   "general_budget": false,
+   "source_sentences": [
+    "Resale cap: no person who resells or offers to resell a ticket to an event held in Selvar, and no platform that lists or processes payment for a resale, may resell above face value plus 10%.",
+    "Face value is the price charged by the primary seller, including taxes and the primary seller's own fees, as printed or recorded by the primary seller.",
+    "The Act asserts jurisdiction over any resale of a ticket to an event in Selvar, wherever the parties or platform are.",
+    "Resale by registered charities at auction is exempt.",
+    "The bill was introduced on 3 February 2027, signed on 12 May 2027, and applies to resales made on or after 1 September 2027.",
+    "The civil penalty is up to $500 per ticket resold above the cap.",
+    "No new appropriation is made: the division absorbs the work within its existing $14 million budget."
+   ]
+  },
+  {
+   "id": "k2",
+   "instrument": "prohibition",
+   "good": "ticket_bot_software",
+   "market": "selvar",
+   "bound_actor": "bot_vendors",
+   "buyer_actor": "resellers.brokers",
+   "enforcer_actor": "officials.enforcement",
+   "source_sentences": [
+    "Bot ban: software that evades a primary seller's purchase limits or access controls is prohibited, for any person who uses or sells it.",
+    "The civil penalty is $2,500 per ticket obtained with it.",
+    "Existing rules, in force without the Act too: primary sellers' terms forbid bots and purchase limits, and tickets bought in breach may be cancelled, enforced by the seller alone; a primary seller may make tickets non-transferable or limit resale to its own exchange; consumer protection law prohibits fake tickets and speculative listings of tickets not held, enforced by the same division."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Section 3 caps \"the price\" of a resale at face value plus 10%; section 5 says \"nothing in this Act prevents a platform from charging a reasonable fee for its services\". It is unclear whether platform fees charged to the buyer are part of the price, so that the buyer pays at most face value plus 10% in total, or whether platform fees are charged on top of the capped price, with \"reasonable\" undefined.",
+   "readings": [
+    "U1-a: platform fees charged to the buyer are part of the price, so the buyer pays at most face value plus 10% in total",
+    "U1-b: platform fees are charged on top of the capped price, and \"reasonable\" is not defined"
+   ]
+  }
+ ],
+ "context": [
+  "About 9.5 million tickets a year are sold for events in Selvar. About 11% (1.05 million) are resold. Of those, about 52% (545,000) are resold above face value plus 10%, at a median markup of 70% and several times face value for the most sought-after events; the rest are resold at less, many below face value, mostly for events that do not sell out.",
+  "The State of Brackmere, whose capital Brackmere City is 55 minutes from Dunholt, has a 14,000-seat arena and no resale law; about 40% of the arena tours that play Dunholt also play Brackmere City."
+ ]
+}

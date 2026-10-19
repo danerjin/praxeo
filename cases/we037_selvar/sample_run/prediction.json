@@ -1,0 +1,3667 @@
+{
+ "assumptions": {
+  "alternative_uses(k1)": {
+   "assumption_class": "alternative_uses",
+   "id": "alternative_uses(k1)",
+   "p": 0.6,
+   "text": "Owners can move covered units to uses the ceiling does not reach."
+  },
+  "binding(k1)": {
+   "assumption_class": "binding",
+   "id": "binding(k1)",
+   "p": 0.95,
+   "text": "The ceiling binds: it is below the price the market would otherwise reach."
+  },
+  "buyer_substitutes(k2)": {
+   "assumption_class": "substitutability",
+   "id": "buyer_substitutes(k2)",
+   "p": 0.6,
+   "text": "Legal substitutes are acceptable to some buyers."
+  },
+  "buyouts_limited(k1)": {
+   "assumption_class": "other",
+   "id": "buyouts_limited(k1)",
+   "p": 0.3,
+   "text": "Buyouts move fewer tenants than the cap keeps in place."
+  },
+  "can_organize(k1)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1)",
+   "p": 0.85,
+   "text": "The groups with a concentrated stake can organize and spend to keep or change the rule."
+  },
+  "can_organize(k2)": {
+   "assumption_class": "other",
+   "id": "can_organize(k2)",
+   "p": 0.4,
+   "text": "The former sellers or the buyers can organize to seek repeal."
+  },
+  "commutable(k1)": {
+   "assumption_class": "mobility",
+   "id": "commutable(k1)",
+   "p": 0.55,
+   "text": "Shut-out buyers can buy in a neighbouring market outside the rule's reach at a bearable cost."
+  },
+  "counterfactual_catches_up(k1)": {
+   "assumption_class": "counterfactual_trend",
+   "id": "counterfactual_catches_up(k1)",
+   "p": 0.3,
+   "text": "Without the rule, the market price soon passes any raise made in the announcement window."
+  },
+  "demand_persists(k2)": {
+   "assumption_class": "other",
+   "id": "demand_persists(k2)",
+   "p": 0.6,
+   "text": "A meaningful share of buyers keep wanting the good after the ban."
+  },
+  "durable_assets(k1)": {
+   "assumption_class": "durability",
+   "id": "durable_assets(k1)",
+   "p": 0.15,
+   "text": "The covered assets are durable and their supply expands slowly."
+  },
+  "enforced(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k1)",
+   "p": 0.85,
+   "text": "The ceiling is enforced against most bound sellers."
+  },
+  "enforced(k2)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k2)",
+   "p": 0.45,
+   "text": "The legal sellers comply with the ban."
+  },
+  "enforcement_risk(k2)": {
+   "assumption_class": "enforcement",
+   "id": "enforcement_risk(k2)",
+   "p": 0.45,
+   "text": "Informal sellers face a real risk of punishment."
+  },
+  "evasion(k1)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k1)",
+   "p": 0.8,
+   "text": "Some exchanges take place above the ceiling without being caught."
+  },
+  "evasion(k2)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k2)",
+   "p": 0.8,
+   "text": "Enforcement is imperfect: many informal sales go undetected."
+  },
+  "exit_process(k1)": {
+   "assumption_class": "other",
+   "id": "exit_process(k1)",
+   "p": 0.02,
+   "text": "Moving covered units to an alternative use requires a permit or board process."
+  },
+  "expected_to_last(k1)": {
+   "assumption_class": "expectations",
+   "id": "expected_to_last(k1)",
+   "p": 0.6,
+   "text": "Buyers of the covered assets expect the rule to last for many years."
+  },
+  "keepers_dominate(k1)": {
+   "assumption_class": "other",
+   "id": "keepers_dominate(k1)",
+   "p": 0.1,
+   "text": "Among all protected tenants, the fall in moves out of the area among keepers outweighs the rise among the displaced."
+  },
+  "lockin_dominates(k1)": {
+   "assumption_class": "other",
+   "id": "lockin_dominates(k1)",
+   "p": 0.1,
+   "text": "The lock-in outweighs moves diverted out of the area by higher free rents."
+  },
+  "no_other_use(k2)": {
+   "assumption_class": "alternative_uses",
+   "id": "no_other_use(k2)",
+   "p": 0.7,
+   "text": "The legal sellers cannot replace the banned good with other products for most of their business."
+  },
+  "nontransferable(k1)": {
+   "assumption_class": "other",
+   "id": "nontransferable(k1)",
+   "p": 0.1,
+   "text": "The protected buyers' right is tied to holding the tenancy and cannot be sold."
+  },
+  "opportunities_need_move(k1)": {
+   "assumption_class": "mobility",
+   "id": "opportunities_need_move(k1)",
+   "p": 0.05,
+   "text": "Some valued opportunities for the protected buyers would require giving up the covered unit."
+  },
+  "quality_adjustable(k1)": {
+   "assumption_class": "other",
+   "id": "quality_adjustable(k1)",
+   "p": 0.3,
+   "text": "Sellers have room to cut quality or maintenance above any enforced minimum."
+  },
+  "relet_obstructs(k1)": {
+   "assumption_class": "other",
+   "id": "relet_obstructs(k1)",
+   "p": 0.02,
+   "text": "Re-letting a vacated unit obstructs the owner's later move to an alternative use."
+  },
+  "search_open(k1)": {
+   "assumption_class": "other",
+   "id": "search_open(k1)",
+   "p": 0.8,
+   "text": "Seekers find covered units by their own search: no public list or allocation rule assigns them."
+  },
+  "selection_open(k1)": {
+   "assumption_class": "other",
+   "id": "selection_open(k1)",
+   "p": 0.7,
+   "text": "Sellers may choose among applicants by criteria of their own."
+  },
+  "substitutes(k1)": {
+   "assumption_class": "substitutability",
+   "id": "substitutes(k1)",
+   "p": 0.7,
+   "text": "Uncovered units in the same market are close substitutes for covered ones."
+  },
+  "window_repricing(k1)": {
+   "assumption_class": "expectations",
+   "id": "window_repricing(k1)",
+   "p": 0.2,
+   "text": "Enough contracts come up for repricing in the announcement window, and sellers can raise the price on them."
+  },
+  "would_leave(k1)": {
+   "assumption_class": "mobility",
+   "id": "would_leave(k1)",
+   "p": 0.1,
+   "text": "Without the rule some protected buyers would have left the area."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "bot_vendors",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k2)",
+     "no_other_use(k2)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k2)",
+    "no_other_use(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_specific(k2)",
+     "premises": [
+      "pr_legal_stops(k2)"
+     ],
+     "rule": "CR-1"
+    },
+    {
+     "conclusion": "pr_specific(k2)",
+     "premises": [
+      "no_other_use(k2)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "bot_vendors",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k2)",
+     "no_other_use(k2)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k2)",
+    "no_other_use(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_specific(k2)",
+     "premises": [
+      "pr_legal_stops(k2)"
+     ],
+     "rule": "CR-1"
+    },
+    {
+     "conclusion": "pr_specific(k2)",
+     "premises": [
+      "no_other_use(k2)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "bot_vendors",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "can_organize(k2)"
+    ]
+   ],
+   "assumptions": [
+    "can_organize(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_lobby(k2)",
+     "premises": [
+      "can_organize(k2)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "bot_vendors",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "number_of_sellers",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "bot_vendors",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.insiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)",
+     "nontransferable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)",
+    "nontransferable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "sublet(k1)",
+     "premises": [
+      "informal(k1)",
+      "nontransferable(k1)"
+     ],
+     "rule": "PC-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.insiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "buyouts_limited(k1)",
+     "enforced(k1)",
+     "nontransferable(k1)",
+     "opportunities_need_move(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "buyouts_limited(k1)",
+    "enforced(k1)",
+    "nontransferable(k1)",
+    "opportunities_need_move(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "turnover_falls(k1)",
+     "premises": [
+      "binding_cap(k1)",
+      "buyouts_limited(k1)",
+      "nontransferable(k1)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "job_lock(k1)",
+     "premises": [
+      "opportunities_need_move(k1)",
+      "turnover_falls(k1)"
+     ],
+     "rule": "RS-11"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "job_changes",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.insiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.insiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "window_repricing(k1)"
+    ]
+   ],
+   "assumptions": [
+    "window_repricing(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "rush(k1)",
+     "premises": [
+      "announced(k1)",
+      "window_repricing(k1)"
+     ],
+     "rule": "RS-8"
+    },
+    {
+     "conclusion": "rush_pays(k1)",
+     "premises": [
+      "rush(k1)"
+     ],
+     "rule": "RS-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": "announcement"
+  },
+  {
+   "actor_class": "buyers.insiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "quality_adjustable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "quality_adjustable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "quality_falls(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-4"
+    },
+    {
+     "conclusion": "quality_falls(k1)",
+     "premises": [
+      "quality_adjustable(k1)"
+     ],
+     "rule": "RS-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_per_unit",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.insiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "rent_kept(k1)",
+     "premises": [
+      "insider_gain(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.insiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "buyouts_limited(k1)",
+     "enforced(k1)",
+     "nontransferable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "buyouts_limited(k1)",
+    "enforced(k1)",
+    "nontransferable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "turnover_falls(k1)",
+     "premises": [
+      "binding_cap(k1)",
+      "buyouts_limited(k1)",
+      "nontransferable(k1)"
+     ],
+     "rule": "PC-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "turnover",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.insiders.displaced",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternative_uses(k1)",
+     "binding(k1)",
+     "enforced(k1)",
+     "nontransferable(k1)",
+     "would_leave(k1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k1)",
+    "binding(k1)",
+    "enforced(k1)",
+    "nontransferable(k1)",
+    "would_leave(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k1)",
+     "premises": [
+      "alternative_uses(k1)",
+      "binding_cap(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "displaced_leave(k1)",
+     "premises": [
+      "would_leave(k1)"
+     ],
+     "rule": "PC-21"
+    },
+    {
+     "conclusion": "displaced_leave(k1)",
+     "premises": [
+      "nontransferable(k1)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "displaced_leave(k1)",
+     "premises": [
+      "reclassify(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "relocation_out_of_area",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.insiders.displaced",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternative_uses(k1)",
+     "binding(k1)",
+     "enforced(k1)",
+     "nontransferable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k1)",
+    "binding(k1)",
+    "enforced(k1)",
+    "nontransferable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k1)",
+     "premises": [
+      "alternative_uses(k1)",
+      "binding_cap(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "displaced_move(k1)",
+     "premises": [
+      "nontransferable(k1)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "displaced_move(k1)",
+     "premises": [
+      "reclassify(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "turnover",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.insiders.keepers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "buyouts_limited(k1)",
+     "enforced(k1)",
+     "lockin_dominates(k1)",
+     "nontransferable(k1)",
+     "would_leave(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "buyouts_limited(k1)",
+    "enforced(k1)",
+    "lockin_dominates(k1)",
+    "nontransferable(k1)",
+    "would_leave(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "turnover_falls(k1)",
+     "premises": [
+      "binding_cap(k1)",
+      "buyouts_limited(k1)",
+      "nontransferable(k1)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "stay_in_area(k1)",
+     "premises": [
+      "lockin_dominates(k1)",
+      "turnover_falls(k1)",
+      "would_leave(k1)"
+     ],
+     "rule": "PC-21"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "relocation_out_of_area",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.outsiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "selection_open(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "selection_open(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "selection_rationing(k1)",
+     "premises": [
+      "excess_demand(k1)",
+      "selection_open(k1)"
+     ],
+     "rule": "PC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "allocation_by_non_price_criteria",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.outsiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "no_recourse(k1)",
+     "premises": [
+      "informal(k1)"
+     ],
+     "rule": "RS-10"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.outsiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-18",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "excess_demand",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.outsiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "informal_buyers(k1)",
+     "premises": [
+      "informal(k1)"
+     ],
+     "rule": "PC-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-19",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.outsiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "substitutes(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "outsider_price(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "outsider_price(k1)",
+     "premises": [
+      "substitutes(k1)"
+     ],
+     "rule": "RS-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-20",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_substitute",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.outsiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "demand_rises(k1)",
+     "premises": [
+      "excess_demand(k1)"
+     ],
+     "rule": "LW-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-21",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.outsiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternative_uses(k1)",
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k1)",
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "supply_falls(k1)",
+     "premises": [
+      "alternative_uses(k1)",
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-5"
+    },
+    {
+     "conclusion": "prevented(k1)",
+     "premises": [
+      "supply_falls(k1)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-22",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.outsiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "search_open(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "search_open(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "search_rationing(k1)",
+     "premises": [
+      "excess_demand(k1)",
+      "search_open(k1)"
+     ],
+     "rule": "PC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-23",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.outsiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "seeker_side_payments(k1)",
+     "premises": [
+      "informal(k1)"
+     ],
+     "rule": "PC-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-24",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "side_payments",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.outsiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "rationing(k1)",
+     "premises": [
+      "excess_demand(k1)"
+     ],
+     "rule": "PC-2"
+    }
+   ],
+   "group": [
+    "wait_time",
+    "search_cost",
+    "side_payments",
+    "allocation_by_non_price_criteria"
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-25",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "wait_time",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "neighboring_jurisdictions",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "commutable(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "commutable(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "cross_boundary(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "cross_boundary(k1)",
+     "premises": [
+      "commutable(k1)"
+     ],
+     "rule": "RS-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-26",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_administered(k2)",
+     "premises": [
+      "prohibition(k2)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "administered(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-27",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "durable_assets(k1)",
+     "enforced(k1)",
+     "expected_to_last(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "durable_assets(k1)",
+    "enforced(k1)",
+    "expected_to_last(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "capitalized(k1)",
+     "premises": [
+      "binding_cap(k1)",
+      "durable_assets(k1)",
+      "expected_to_last(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-28",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternative_uses(k1)",
+     "binding(k1)",
+     "enforced(k1)",
+     "exit_process(k1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k1)",
+    "binding(k1)",
+    "enforced(k1)",
+    "exit_process(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k1)",
+     "premises": [
+      "alternative_uses(k1)",
+      "binding_cap(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "process_cost(k1)",
+     "premises": [
+      "exit_process(k1)",
+      "reclassify(k1)"
+     ],
+     "rule": "OC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-29",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k2)",
+     "evasion(k2)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k2)",
+    "evasion(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k2)",
+     "premises": [
+      "demand_persists(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k2)",
+     "premises": [
+      "evasion(k2)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-30",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "can_organize(k1)",
+     "enforced(k1)"
+    ],
+    [
+     "can_organize(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "can_organize(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_lobby(k2)",
+     "premises": [
+      "can_organize(k2)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "lobbying(k1)",
+     "premises": [
+      "binding_cap(k1)",
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-31",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "quality_adjustable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "quality_adjustable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "quality_falls(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-4"
+    },
+    {
+     "conclusion": "quality_falls(k1)",
+     "premises": [
+      "quality_adjustable(k1)"
+     ],
+     "rule": "RS-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-32",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "maintenance_spending",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "transfer(k1)",
+     "premises": [
+      "insider_gain(k1)"
+     ],
+     "rule": "PC-16"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-33",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "window_repricing(k1)"
+    ]
+   ],
+   "assumptions": [
+    "window_repricing(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "rush(k1)",
+     "premises": [
+      "announced(k1)",
+      "window_repricing(k1)"
+     ],
+     "rule": "RS-8"
+    },
+    {
+     "conclusion": "rush_pays(k1)",
+     "premises": [
+      "rush(k1)"
+     ],
+     "rule": "RS-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short"
+   ],
+   "id": "C-34",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": "announcement"
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k2)",
+     "enforcement_risk(k2)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k2)",
+    "enforcement_risk(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_risk_price(k2)",
+     "premises": [
+      "enforcement_risk(k2)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "pr_risk_price(k2)",
+     "premises": [
+      "demand_persists(k2)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-35",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k2)",
+     "evasion(k2)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k2)",
+    "evasion(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k2)",
+     "premises": [
+      "demand_persists(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k2)",
+     "premises": [
+      "evasion(k2)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-36",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_information",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k2)",
+     "evasion(k2)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k2)",
+    "evasion(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k2)",
+     "premises": [
+      "demand_persists(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k2)",
+     "premises": [
+      "evasion(k2)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-37",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_variability",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k2)",
+     "enforcement_risk(k2)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k2)",
+    "enforcement_risk(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_risk_price(k2)",
+     "premises": [
+      "enforcement_risk(k2)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "pr_risk_price(k2)",
+     "premises": [
+      "demand_persists(k2)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-38",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "buyer_substitutes(k2)"
+    ]
+   ],
+   "assumptions": [
+    "buyer_substitutes(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_substitute(k2)",
+     "premises": [
+      "buyer_substitutes(k2)"
+     ],
+     "rule": "RS-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-39",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_substitute",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternative_uses(k1)",
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k1)",
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "supply_falls(k1)",
+     "premises": [
+      "alternative_uses(k1)",
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-40",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternative_uses(k1)",
+     "binding(k1)",
+     "enforced(k1)"
+    ],
+    [
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k1)",
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "supply_falls(k1)",
+     "premises": [
+      "alternative_uses(k1)",
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-5"
+    },
+    {
+     "conclusion": "prevented(k1)",
+     "premises": [
+      "supply_falls(k1)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-41",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternative_uses(k1)",
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k1)",
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k1)",
+     "premises": [
+      "alternative_uses(k1)",
+      "binding_cap(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-42",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "key_money(k1)",
+     "premises": [
+      "informal(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-43",
+   "item": "key_money",
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "transfer(k1)",
+     "premises": [
+      "insider_gain(k1)"
+     ],
+     "rule": "PC-16"
+    },
+    {
+     "conclusion": "rent_forgone(k1)",
+     "premises": [
+      "transfer(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-44",
+   "item": "rent_forgone",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k2)",
+     "evasion(k2)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k2)",
+    "evasion(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_underground(k2)",
+     "premises": [
+      "demand_persists(k2)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k2)",
+     "premises": [
+      "evasion(k2)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-45",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternative_uses(k1)",
+     "binding(k1)",
+     "enforced(k1)",
+     "relet_obstructs(k1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k1)",
+    "binding(k1)",
+    "enforced(k1)",
+    "relet_obstructs(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k1)",
+     "premises": [
+      "alternative_uses(k1)",
+      "binding_cap(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "held_vacant(k1)",
+     "premises": [
+      "reclassify(k1)",
+      "relet_obstructs(k1)"
+     ],
+     "rule": "PC-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-46",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "units_held_vacant",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.insiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [
+    "C-8"
+   ],
+   "comparison": "quality_adjusted_price",
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-47",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_adjusted_price",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "resellers.brokers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [
+    "C-44",
+    "C-43"
+   ],
+   "comparison": "landlords_resources",
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "transfer(k1)",
+     "premises": [
+      "insider_gain(k1)"
+     ],
+     "rule": "PC-16"
+    },
+    {
+     "conclusion": "rent_forgone(k1)",
+     "premises": [
+      "transfer(k1)"
+     ],
+     "rule": "CR-8"
+    },
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "key_money(k1)",
+     "premises": [
+      "informal(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-48",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.insiders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [
+    "C-8"
+   ],
+   "comparison": "first_months_price",
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short"
+   ],
+   "id": "C-49",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": "first_months"
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "ceiling(k1).\nbound(k1, \"resellers.brokers\").\nprotected(k1, \"buyers.insiders\").\nexcluded(k1, \"buyers.outsiders\").\nannounced(k1).\nenforcer(k1, \"officials.enforcement\").\nneighbor(k1, \"neighboring_jurisdictions\").\nbound(k2, \"bot_vendors\").\nexcluded(k2, \"buyers.prospective\").\nprohibition(k2).\npr_buyer(k2, \"resellers.brokers\").\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nrevenue(k2, \"officials.enforcement\").\npr_informal_buyer(k2, \"resellers.brokers\").\npr_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(alternative_uses(k1)).\nassumption(nontransferable(k1)).\nassumption(buyouts_limited(k1)).\nassumption(would_leave(k1)).\nassumption(lockin_dominates(k1)).\nassumption(keepers_dominate(k1)).\nassumption(substitutes(k1)).\nassumption(search_open(k1)).\nassumption(selection_open(k1)).\nassumption(quality_adjustable(k1)).\nassumption(evasion(k1)).\nassumption(opportunities_need_move(k1)).\nassumption(can_organize(k1)).\nassumption(durable_assets(k1)).\nassumption(expected_to_last(k1)).\nassumption(commutable(k1)).\nassumption(relet_obstructs(k1)).\nassumption(exit_process(k1)).\nassumption(window_repricing(k1)).\nassumption(counterfactual_catches_up(k1)).\nassumption(enforced(k2)).\nassumption(demand_persists(k2)).\nassumption(evasion(k2)).\nassumption(enforcement_risk(k2)).\nassumption(no_other_use(k2)).\nassumption(buyer_substitutes(k2)).\nassumption(can_organize(k2)).\n",
+ "explanations": [
+  "C-1. Compared with no Selvar Fair Ticket Act, asset value for bot_vendors falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.45); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.70). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-2. Compared with no Selvar Fair Ticket Act, employment for bot_vendors falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.45); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.70). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-3. Compared with no Selvar Fair Ticket Act, lobbying effort for bot_vendors rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former sellers or the buyers can organize to seek repeal (p = 0.40). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-4. Compared with no Selvar Fair Ticket Act, number of sellers for bot_vendors falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.45). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-5. Compared with no Selvar Fair Ticket Act, quantity traded for bot_vendors falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.45). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-6. Compared with no Selvar Fair Ticket Act, informal activity for buyers.insiders rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Some exchanges take place above the ceiling without being caught (p = 0.80); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-7. Compared with no Selvar Fair Ticket Act, job changes for buyers.insiders falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less; RS-11: a benefit lost on moving ties the holder to staying put. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); Buyouts move fewer tenants than the cap keeps in place (p = 0.30); The ceiling is enforced against most bound sellers (p = 0.85); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.10); Some valued opportunities for the protected buyers would require giving up the covered unit (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-8. Compared with no Selvar Fair Ticket Act, price paid for buyers.insiders falls from the medium run onward (tier B, visible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
+  "C-9. Compared with no Selvar Fair Ticket Act, price paid for buyers.insiders rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Enough contracts come up for repricing in the announcement window, and sellers can raise the price on them (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-10. Compared with no Selvar Fair Ticket Act, quality per unit for buyers.insiders falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-4: PC-4; RS-2: RS-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-11. Compared with no Selvar Fair Ticket Act, resources available other uses for buyers.insiders rises from the medium run onward (tier B, visible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
+  "C-12. Compared with no Selvar Fair Ticket Act, turnover for buyers.insiders falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); Buyouts move fewer tenants than the cap keeps in place (p = 0.30); The ceiling is enforced against most bound sellers (p = 0.85); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-13. Compared with no Selvar Fair Ticket Act, relocation out of area for buyers.insiders.displaced rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-21: leaving the area forfeits the benefit, and fewer holders are priced out, so they leave the area less; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.60); The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.10); Without the rule some protected buyers would have left the area (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-14. Compared with no Selvar Fair Ticket Act, turnover for buyers.insiders.displaced rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.60); The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-15. Compared with no Selvar Fair Ticket Act, relocation out of area for buyers.insiders.keepers falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less; PC-21: leaving the area forfeits the benefit, and fewer holders are priced out, so they leave the area less. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); Buyouts move fewer tenants than the cap keeps in place (p = 0.30); The ceiling is enforced against most bound sellers (p = 0.85); The lock-in outweighs moves diverted out of the area by higher free rents (p = 0.10); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.10); Without the rule some protected buyers would have left the area (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-16. Compared with no Selvar Fair Ticket Act, allocation by non price criteria for buyers.outsiders rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-2: rationing by other means than price shows up as waiting or allocation by connections. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Sellers may choose among applicants by criteria of their own (p = 0.70). Reported.",
+  "C-17. Compared with no Selvar Fair Ticket Act, disputes settled outside courts for buyers.outsiders rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3; RS-10: RS-10. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Some exchanges take place above the ceiling without being caught (p = 0.80). Reported.",
+  "C-18. Compared with no Selvar Fair Ticket Act, excess demand for buyers.outsiders rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
+  "C-19. Compared with no Selvar Fair Ticket Act, informal activity for buyers.outsiders rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Some exchanges take place above the ceiling without being caught (p = 0.80). Reported.",
+  "C-20. Compared with no Selvar Fair Ticket Act, price substitute for buyers.outsiders rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Uncovered units in the same market are close substitutes for covered ones (p = 0.70). Reported.",
+  "C-21. Compared with no Selvar Fair Ticket Act, quantity demanded for buyers.outsiders rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; LW-3: LW-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
+  "C-22. Compared with no Selvar Fair Ticket Act, quantity traded for buyers.outsiders falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap; OC-4: exchanges that no longer happen are lost to both sides. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.60); The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
+  "C-23. Compared with no Selvar Fair Ticket Act, search cost for buyers.outsiders rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-2: rationing by other means than price shows up as waiting or allocation by connections. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Seekers find covered units by their own search: no public list or allocation rule assigns them (p = 0.80). Reported.",
+  "C-24. Compared with no Selvar Fair Ticket Act, side payments for buyers.outsiders rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Some exchanges take place above the ceiling without being caught (p = 0.80). Reported.",
+  "C-25. Compared with no Selvar Fair Ticket Act, wait time or search cost or side payments or allocation by non price criteria for buyers.outsiders rises for at least one of them from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-2: rationing by other means than price shows up as waiting or allocation by connections. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
+  "C-26. Compared with no Selvar Fair Ticket Act, price paid for neighboring_jurisdictions rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); Shut-out buyers can buy in a neighbouring market outside the rule's reach at a bearable cost (p = 0.55); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
+  "C-27. Compared with no Selvar Fair Ticket Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage. This holds if: no assumption. Reported.",
+  "C-28. Compared with no Selvar Fair Ticket Act, asset value for resellers.brokers falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The covered assets are durable and their supply expands slowly (p = 0.15); The ceiling is enforced against most bound sellers (p = 0.85); Buyers of the covered assets expect the rule to last for many years (p = 0.60). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-29. Compared with no Selvar Fair Ticket Act, compliance cost for resellers.brokers rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; OC-2: OC-2. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.60); The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Moving covered units to an alternative use requires a permit or board process (p = 0.02). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-30. Compared with no Selvar Fair Ticket Act, disputes settled outside courts for resellers.brokers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Enforcement is imperfect: many informal sales go undetected (p = 0.80). Reported.",
+  "C-31. Compared with no Selvar Fair Ticket Act, lobbying effort for resellers.brokers rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it; PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The groups with a concentrated stake can organize and spend to keep or change the rule (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-32. Compared with no Selvar Fair Ticket Act, maintenance spending for resellers.brokers falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-4: PC-4; RS-2: RS-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-33. Compared with no Selvar Fair Ticket Act, net price received for resellers.brokers falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; PC-16: PC-16. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
+  "C-34. Compared with no Selvar Fair Ticket Act, net price received for resellers.brokers rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Enough contracts come up for repricing in the announcement window, and sellers can raise the price on them (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-35. Compared with no Selvar Fair Ticket Act, price paid for resellers.brokers rises from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Informal sellers face a real risk of punishment (p = 0.45). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-36. Compared with no Selvar Fair Ticket Act, quality information for resellers.brokers falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Enforcement is imperfect: many informal sales go undetected (p = 0.80). Reported.",
+  "C-37. Compared with no Selvar Fair Ticket Act, quality variability for resellers.brokers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Enforcement is imperfect: many informal sales go undetected (p = 0.80). Reported.",
+  "C-38. Compared with no Selvar Fair Ticket Act, quantity demanded for resellers.brokers falls from the short run onward (tier B, invisible). Why: CR-7: CR-7; EN-7: EN-7. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Informal sellers face a real risk of punishment (p = 0.45). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-39. Compared with no Selvar Fair Ticket Act, quantity substitute for resellers.brokers rises from the short run onward (tier B, invisible). Why: RS-1: when a good becomes dearer, buyers turn to substitutes. This holds if: Legal substitutes are acceptable to some buyers (p = 0.60). Reported.",
+  "C-40. Compared with no Selvar Fair Ticket Act, quantity supplied for resellers.brokers falls in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.60); The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
+  "C-41. Compared with no Selvar Fair Ticket Act, quantity traded for resellers.brokers falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap; OC-4: exchanges that no longer happen are lost to both sides. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.60); The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-42. Compared with no Selvar Fair Ticket Act, reclassification for resellers.brokers rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.60); The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
+  "C-43. Compared with no Selvar Fair Ticket Act, resources available other uses (key money) for resellers.brokers rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Some exchanges take place above the ceiling without being caught (p = 0.80). Reported.",
+  "C-44. Compared with no Selvar Fair Ticket Act, resources available other uses (rent forgone) for resellers.brokers falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; PC-16: PC-16; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
+  "C-45. Compared with no Selvar Fair Ticket Act, search cost for resellers.brokers rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.60); Enforcement is imperfect: many informal sales go undetected (p = 0.80). Reported.",
+  "C-46. Compared with no Selvar Fair Ticket Act, units held vacant for resellers.brokers rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-5: owners move resources to uses whose yield the ceiling does not cap. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.60); The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Re-letting a vacated unit obstructs the owner's later move to an alternative use (p = 0.02). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-47. Compared with no Selvar Fair Ticket Act, quality adjusted price for buyers.insiders falls from the medium run onward (tier B, invisible). Why: CR-12 total of C-8 (only one subclass's chain is reported). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
+  "C-48. Compared with no Selvar Fair Ticket Act, resources available other uses for resellers.brokers falls from the medium run onward (tier B, invisible). Why: CR-12 total of C-44, C-43 (a dominance premise decides the sign). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85); Some exchanges take place above the ceiling without being caught (p = 0.80). Reported.",
+  "C-49. Compared with no Selvar Fair Ticket Act, price paid for buyers.insiders falls in the first months after the effective date, in the short run (tier B, invisible). Why: CR-12 total of C-8 (only one subclass's chain is reported). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.95); The ceiling is enforced against most bound sellers (p = 0.85). Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.95,
+    "question_id": "k1.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-1: for high-demand events the market resale price is above face value plus 10%, so the cap binds.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k1.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "At the dates the rule takes effect and over the following years, is the maximum price below the price the market would otherwise reach for the covered units?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-2: compliant platforms, which carry 77% of resale by value, enforce the cap on their listings.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k1.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most of the bound sellers comply with the ceiling in practice (given whatever body enforces it, its powers, and how violations come to light)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.alternative_uses",
+    "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-12: some sellers move to packages whose other items carry most of the price, which the Attorney General does not treat as tickets.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "alternative_uses",
+    "assumption_class": "alternative_uses",
+    "id": "k1.alternative_uses",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound sellers move the covered resources to uses the ceiling does not reach (sale to owner-occupiers, conversion, redevelopment, keeping units off the market)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k1.nontransferable",
+    "rationale": "No matching assumption in WE-037; judged from the text: a ticket holder may resell, so the right to buy at the capped price is not tied to a holding and is not barred from sale.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "nontransferable",
+    "assumption_class": "other",
+    "id": "k1.nontransferable",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the right to buy at the controlled price tied to keeping the good (a sitting tenancy), so that the holder cannot sell or assign it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k1.buyouts_limited",
+    "rationale": "No matching assumption in WE-037; judged from the text: the text has no tenancy or buyout; judged unlikely.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyouts_limited",
+    "assumption_class": "other",
+    "id": "k1.buyouts_limited",
+    "kind": "noul",
+    "options": [],
+    "text": "Will payments from landlords to sitting tenants for giving up the tenancy (buyouts) move fewer tenants than the cap keeps in place?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k1.would_leave",
+    "rationale": "No matching assumption in WE-037; judged from the text: nothing suggests protected buyers of resale tickets would have left the area.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "would_leave",
+    "assumption_class": "mobility",
+    "id": "k1.would_leave",
+    "kind": "noul",
+    "options": [],
+    "text": "Without the rule, would some of the protected buyers have moved out of the area (priced out by market rents, or for opportunities elsewhere)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k1.lockin_dominates",
+    "rationale": "No matching assumption in WE-037; judged from the text: no lock-in of a holding arises for resale tickets.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "lockin_dominates",
+    "assumption_class": "other",
+    "id": "k1.lockin_dominates",
+    "kind": "noul",
+    "options": [],
+    "text": "For tenants who keep a covered unit, does the lock-in outweigh moves out of the area by tenants who still move and face higher free rents in the city?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k1.keepers_dominate",
+    "rationale": "No matching assumption in WE-037; judged from the text: no tenancy-like holders; judged unlikely.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "keepers_dominate",
+    "assumption_class": "other",
+    "id": "k1.keepers_dominate",
+    "kind": "noul",
+    "options": [],
+    "text": "Taking all protected tenants together, will the fall in moves out of the area among those who keep their units be larger than the rise among those displaced by conversion or withdrawal?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.substitutes",
+    "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-10: some fans who would have bought on resale try the primary sale, including demand-priced seats.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "substitutes",
+    "assumption_class": "substitutability",
+    "id": "k1.substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Are uncovered units in the same market close substitutes for covered units, for buyers who cannot obtain a covered one?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.search_open",
+    "rationale": "No matching assumption in WE-037; judged from the text: the text has no public list or allocation rule for capped resale tickets; buyers search platforms and channels themselves.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "search_open",
+    "assumption_class": "other",
+    "id": "k1.search_open",
+    "kind": "noul",
+    "options": [],
+    "text": "Is there no public list or allocation rule that assigns the covered good to buyers, so that buyers have to find sellers by their own search?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.selection_open",
+    "rationale": "No matching assumption in WE-037; judged from the text: resellers may choose among buyers by their own criteria (who pays on the side, who takes a package).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "selection_open",
+    "assumption_class": "other",
+    "id": "k1.selection_open",
+    "kind": "noul",
+    "options": [],
+    "text": "Are sellers free to choose among applicants for the covered good by criteria of their own (income, credit, references, connections)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k1.quality_adjustable",
+    "rationale": "No matching assumption in WE-037; judged from the text: a ticket is a standardized good with printed face value; little room to cut quality.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "quality_adjustable",
+    "assumption_class": "other",
+    "id": "k1.quality_adjustable",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound sellers cut quality or maintenance below what they now supply without breaking a rule that is enforced (a code, a contract term)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.evasion",
+    "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-4: the expected penalty for individual above-cap resales outside compliant platforms is small enough that some take place.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k1.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some exchanges of the covered good take place above the ceiling, disguised or illegal (key money, tie-in sales, sublets at market rent), without being caught?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.05,
+    "question_id": "k1.opportunities_need_move",
+    "rationale": "No matching assumption in WE-037; judged from the text: holding a resale ticket does not tie buyers to anything they would give up.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "opportunities_need_move",
+    "assumption_class": "mobility",
+    "id": "k1.opportunities_need_move",
+    "kind": "noul",
+    "options": [],
+    "text": "Would some valued opportunities for the protected buyers (a job, a better home) require them to give up the covered unit?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-9: brokers, platforms, fan groups and primary sellers can organize at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the groups with a concentrated stake in the rule (those it helps, those it burdens) organize and spend to keep or change it at a cost below their stakes?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.15,
+    "question_id": "k1.durable_assets",
+    "rationale": "No matching assumption in WE-037; judged from the text: tickets are for one event; supply of the covered good does not expand slowly (season seat rights are the nearest durable asset).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "durable_assets",
+    "assumption_class": "durability",
+    "id": "k1.durable_assets",
+    "kind": "noul",
+    "options": [],
+    "text": "Are the assets the bound sellers use to supply the covered good durable, so that the supply of them expands only slowly?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.expected_to_last",
+    "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-18: broker businesses were valued on expected earnings and their buyers expected the cap from introduction (the Act has no expiry).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "expected_to_last",
+    "assumption_class": "expectations",
+    "id": "k1.expected_to_last",
+    "kind": "noul",
+    "options": [],
+    "text": "Do buyers of the covered assets expect the rule to stay in force for many years?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.55,
+    "question_id": "k1.commutable",
+    "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-19: some fans of a touring act substitute the Brackmere City stop for Dunholt.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "commutable",
+    "assumption_class": "mobility",
+    "id": "k1.commutable",
+    "kind": "noul",
+    "options": [],
+    "text": "Can buyers who cannot obtain a covered unit buy in a neighbouring market outside the rule's reach at a cost (travel, time) they are willing to bear?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.02,
+    "question_id": "k1.relet_obstructs",
+    "rationale": "No matching assumption in WE-037; judged from the text: no vacated unit is re-let; not a feature of ticket resale.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "relet_obstructs",
+    "assumption_class": "other",
+    "id": "k1.relet_obstructs",
+    "kind": "noul",
+    "options": [],
+    "text": "Does letting a vacated covered unit to a new tenant make it harder for the owner to move the unit to an alternative use later (eviction only for cause, relocation payments)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.02,
+    "question_id": "k1.exit_process",
+    "rationale": "No matching assumption in WE-037; judged from the text: no permit or board process is needed to move tickets to another use.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "exit_process",
+    "assumption_class": "other",
+    "id": "k1.exit_process",
+    "kind": "noul",
+    "options": [],
+    "text": "Does moving covered units to an alternative use require passing a permit or board process?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.2,
+    "question_id": "k1.window_repricing",
+    "rationale": "No matching assumption in WE-037; judged from the text: the question is about contracts repriced in the window and price rises on them. Resale tickets are not repriced under contract and the Act does not raise any price in the window; A-8 (holders and buyers time their sales and purchases) is about quantities, not this statement.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "window_repricing",
+    "assumption_class": "expectations",
+    "id": "k1.window_repricing",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound sellers reprice a meaningful share of their contracts in the announcement window, before the rule takes effect?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k1.counterfactual_catches_up",
+    "rationale": "No matching assumption in WE-037; judged from the text: the text does not say how the resale market would move without the Act; judged unlikely.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "counterfactual_catches_up",
+    "assumption_class": "counterfactual_trend",
+    "id": "k1.counterfactual_catches_up",
+    "kind": "noul",
+    "options": [],
+    "text": "Without the rule, would prices on renewed contracts follow the market path within a year or two, so that the market price soon passes any raise made in the announcement window?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.45,
+    "question_id": "k2.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-13: the bot ban is enforced enough to cut bot purchases beyond what the sellers' own terms already did (at the cut-off).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k2.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the legal sellers comply with the ban (stop selling openly)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k2.demand_persists",
+    "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-6: some brokers keep reselling Selvar tickets outside the cap and keep using bots for it.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "demand_persists",
+    "assumption_class": "other",
+    "id": "k2.demand_persists",
+    "kind": "noul",
+    "options": [],
+    "text": "Will a meaningful share of buyers keep wanting the good after the ban?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2.evasion",
+    "rationale": "No matching assumption in WE-037; judged from the text: the existing sellers' terms already forbid bots and most bot users are outside the state, so many uses go undetected.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k2.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will many informal sales go undetected?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.45,
+    "question_id": "k2.enforcement_risk",
+    "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-13: enforcement is weak because most bot users are out of state (at the cut-off).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforcement_risk",
+    "assumption_class": "enforcement",
+    "id": "k2.enforcement_risk",
+    "kind": "noul",
+    "options": [],
+    "text": "Will enforcement be active enough that informal sellers face a real risk of punishment?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k2.no_other_use",
+    "rationale": "No matching assumption in WE-037; judged from the text: bot vendors sell software whose main use is evading purchase limits; judged unlikely to have other business to replace it.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "no_other_use",
+    "assumption_class": "alternative_uses",
+    "id": "k2.no_other_use",
+    "kind": "noul",
+    "options": [],
+    "text": "Are the legal sellers unable to replace the banned good with other products for most of their business?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k2.buyer_substitutes",
+    "rationale": "No matching assumption in WE-037; judged from the text: brokers can buy by hand, with more staff or with accounts, as acceptable substitutes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyer_substitutes",
+    "assumption_class": "substitutability",
+    "id": "k2.buyer_substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Are some legal substitutes acceptable to some buyers?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.4,
+    "question_id": "k2.can_organize",
+    "rationale": "No matching assumption in WE-037; judged from the text: bot vendors are mostly outside the state and unlikely to organize a repeal effort.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k2.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the former legal sellers or the buyers organize to seek repeal at a cost below their stake?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "allocation_by_history": false,
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "bound_actor": "resellers.brokers",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "convicted_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": "buyers.outsiders",
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "resold_event_tickets",
+    "holder_cap": false,
+    "id": "k1",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "price_ceiling",
+    "market": "selvar",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": "neighboring_jurisdictions",
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "own_revenue_funded": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": "buyers.insiders",
+    "protected_concentrated": false,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "source_sentences": [
+     "Resale cap: no person who resells or offers to resell a ticket to an event held in Selvar, and no platform that lists or processes payment for a resale, may resell above face value plus 10%.",
+     "Face value is the price charged by the primary seller, including taxes and the primary seller's own fees, as printed or recorded by the primary seller.",
+     "The Act asserts jurisdiction over any resale of a ticket to an event in Selvar, wherever the parties or platform are.",
+     "Resale by registered charities at auction is exempt.",
+     "The bill was introduced on 3 February 2027, signed on 12 May 2027, and applies to resales made on or after 1 September 2027.",
+     "The civil penalty is up to $500 per ticket resold above the cap.",
+     "No new appropriation is made: the division absorbs the work within its existing $14 million budget."
+    ],
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "allocation_by_history": false,
+    "announcement_window": false,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "bound_actor": "bot_vendors",
+    "budget_capped": false,
+    "buyer_actor": "resellers.brokers",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "convicted_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "ticket_bot_software",
+    "holder_cap": false,
+    "id": "k2",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "prohibition",
+    "market": "selvar",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "own_revenue_funded": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "source_sentences": [
+     "Bot ban: software that evades a primary seller's purchase limits or access controls is prohibited, for any person who uses or sells it.",
+     "The civil penalty is $2,500 per ticket obtained with it.",
+     "Existing rules, in force without the Act too: primary sellers' terms forbid bots and purchase limits, and tickets bought in breach may be cancelled, enforced by the seller alone; a primary seller may make tickets non-transferable or limit resale to its own exchange; consumer protection law prohibits fake tickets and speculative listings of tickets not held, enforced by the same division."
+    ],
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   }
+  ],
+  "context": [
+   "About 9.5 million tickets a year are sold for events in Selvar. About 11% (1.05 million) are resold. Of those, about 52% (545,000) are resold above face value plus 10%, at a median markup of 70% and several times face value for the most sought-after events; the rest are resold at less, many below face value, mostly for events that do not sell out.",
+   "The State of Brackmere, whose capital Brackmere City is 55 minutes from Dunholt, has a 14,000-seat arena and no resale law; about 40% of the arena tours that play Dunholt also play Brackmere City."
+  ],
+  "effective": "1 September 2027",
+  "enacted": "signed on 12 May 2027",
+  "jurisdiction": "Selvar (fictional)",
+  "name": "Selvar Fair Ticket Act",
+  "rule_maker": "the Selvar legislature",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U1-a: platform fees charged to the buyer are part of the price, so the buyer pays at most face value plus 10% in total",
+     "U1-b: platform fees are charged on top of the capped price, and \"reasonable\" is not defined"
+    ],
+    "text": "Section 3 caps \"the price\" of a resale at face value plus 10%; section 5 says \"nothing in this Act prevents a platform from charging a reasonable fee for its services\". It is unclear whether platform fees charged to the buyer are part of the price, so that the buyer pays at most face value plus 10% in total, or whether platform fees are charged on top of the capped price, with \"reasonable\" undefined."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-19T18:53:56+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U1-a: platform fees charged to the buyer are part of the price, so the buyer pays at most face value plus 10% in total",
+    "U1-b: platform fees are charged on top of the capped price, and \"reasonable\" is not defined"
+   ],
+   "text": "Section 3 caps \"the price\" of a resale at face value plus 10%; section 5 says \"nothing in this Act prevents a platform from charging a reasonable fee for its services\". It is unclear whether platform fees charged to the buyer are part of the price, so that the buyer pays at most face value plus 10% in total, or whether platform fees are charged on top of the capped price, with \"reasonable\" undefined."
+  }
+ ],
+ "verifier_problems": []
+}
