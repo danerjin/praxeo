@@ -1,0 +1,205 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-1: for high-demand events the market resale price is above face value plus 10%, so the cap binds.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-2: compliant platforms, which carry 77% of resale by value, enforce the cap on their listings.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.alternative_uses",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-12: some sellers move to packages whose other items carry most of the price, which the Attorney General does not treat as tickets.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.nontransferable",
+  "value": "yes",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-037; judged from the text: a ticket holder may resell, so the right to buy at the capped price is not tied to a holding and is not barred from sale.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyouts_limited",
+  "value": "yes",
+  "probability": 0.3,
+  "rationale": "No matching assumption in WE-037; judged from the text: the text has no tenancy or buyout; judged unlikely.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.would_leave",
+  "value": "yes",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-037; judged from the text: nothing suggests protected buyers of resale tickets would have left the area.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.lockin_dominates",
+  "value": "yes",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-037; judged from the text: no lock-in of a holding arises for resale tickets.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.keepers_dominate",
+  "value": "yes",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-037; judged from the text: no tenancy-like holders; judged unlikely.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.substitutes",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-10: some fans who would have bought on resale try the primary sale, including demand-priced seats.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.search_open",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-037; judged from the text: the text has no public list or allocation rule for capped resale tickets; buyers search platforms and channels themselves.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.selection_open",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No matching assumption in WE-037; judged from the text: resellers may choose among buyers by their own criteria (who pays on the side, who takes a package).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.quality_adjustable",
+  "value": "yes",
+  "probability": 0.3,
+  "rationale": "No matching assumption in WE-037; judged from the text: a ticket is a standardized good with printed face value; little room to cut quality.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-4: the expected penalty for individual above-cap resales outside compliant platforms is small enough that some take place.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.opportunities_need_move",
+  "value": "yes",
+  "probability": 0.05,
+  "rationale": "No matching assumption in WE-037; judged from the text: holding a resale ticket does not tie buyers to anything they would give up.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-9: brokers, platforms, fan groups and primary sellers can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.durable_assets",
+  "value": "yes",
+  "probability": 0.15,
+  "rationale": "No matching assumption in WE-037; judged from the text: tickets are for one event; supply of the covered good does not expand slowly (season seat rights are the nearest durable asset).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-18: broker businesses were valued on expected earnings and their buyers expected the cap from introduction (the Act has no expiry).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.commutable",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-19: some fans of a touring act substitute the Brackmere City stop for Dunholt.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.relet_obstructs",
+  "value": "yes",
+  "probability": 0.02,
+  "rationale": "No matching assumption in WE-037; judged from the text: no vacated unit is re-let; not a feature of ticket resale.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.exit_process",
+  "value": "yes",
+  "probability": 0.02,
+  "rationale": "No matching assumption in WE-037; judged from the text: no permit or board process is needed to move tickets to another use.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.window_repricing",
+  "value": "yes",
+  "probability": 0.2,
+  "rationale": "No matching assumption in WE-037; judged from the text: the question is about contracts repriced in the window and price rises on them. Resale tickets are not repriced under contract and the Act does not raise any price in the window; A-8 (holders and buyers time their sales and purchases) is about quantities, not this statement.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.counterfactual_catches_up",
+  "value": "yes",
+  "probability": 0.3,
+  "rationale": "No matching assumption in WE-037; judged from the text: the text does not say how the resale market would move without the Act; judged unlikely.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.enforced",
+  "value": "yes",
+  "probability": 0.45,
+  "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-13: the bot ban is enforced enough to cut bot purchases beyond what the sellers' own terms already did (at the cut-off).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.demand_persists",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-6: some brokers keep reselling Selvar tickets outside the cap and keep using bots for it.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.evasion",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-037; judged from the text: the existing sellers' terms already forbid bots and most bot users are outside the state, so many uses go undetected.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.enforcement_risk",
+  "value": "yes",
+  "probability": 0.45,
+  "rationale": "Probability taken from the assumption table of handbook WE-037 (illustrative figures), A-13: enforcement is weak because most bot users are out of state (at the cut-off).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.no_other_use",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No matching assumption in WE-037; judged from the text: bot vendors sell software whose main use is evading purchase limits; judged unlikely to have other business to replace it.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.buyer_substitutes",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "No matching assumption in WE-037; judged from the text: brokers can buy by hand, with more staff or with accounts, as acceptable substitutes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.can_organize",
+  "value": "yes",
+  "probability": 0.4,
+  "rationale": "No matching assumption in WE-037; judged from the text: bot vendors are mostly outside the state and unlikely to organize a repeal effort.",
+  "evidence": []
+ }
+]
