@@ -1,0 +1,72 @@
+[
+ {
+  "question_id": "k1.contested_otherwise",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-32: without the order, night operators would have opposed the residents' campaign, which had run since 2023, so the question stays contested.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.binding",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-1: without the order daytime movements would grow above 380 a day (about 3% a year) and off-peak runway capacity allows it.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.enforced",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-2: the WAA detects every movement from air traffic control's log and imposes penalties.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.evasion",
+  "value": "yes",
+  "probability": 0.15,
+  "rationale": "No matching assumption in WE-054; judged from the text: the log records every movement and the penalty is $10,000 per movement without a slot, so little daytime flying beyond the cap goes uncaught (A-14 concerns operators who are caught and pay in the curfew, not trade that escapes).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-15: night operators, slot holders, would-be entrants and residents' associations can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.expected_to_last",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-3: holders expect slots to last past the 2032 review without reallocation.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.values_differ",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-10: airlines differ in the value they get from a WXI slot.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.trade_cheap",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-4: a slot market forms; slots are sold, leased and retimed at low transaction cost.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.allocation_known",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-5: airlines expected base-season history to set their share (the draft named the base seasons) and some could add off-peak daytime movements at a cost below the expected value of the extra slots.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.contested_otherwise",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-054 (illustrative figures), A-32: without the order, night operators would have opposed the residents' campaign, which had run since 2023.",
+  "evidence": []
+ }
+]
