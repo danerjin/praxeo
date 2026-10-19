@@ -112,11 +112,15 @@ def _mandate_facts(c: str, comp) -> list[str]:
     """Facts for mandates.lp: a mandated term (PC-17), a prohibited term (PC-18) or a standard on new units (EN-14)."""
     kind = {"mandated_contract_term": "mandate", "term_prohibition": "term_ban", "product_standard": "standard"}[comp.instrument]
     lines = [f"{kind}({c}).", f'enforcer({c}, "{comp.enforcer_actor}").', f'taxpayer({c}, "{comp.taxpayer_actor}").']
+    if comp.contract_kind == "employment" and kind != "standard":
+        lines.append(f"employment({c}).")
     payers = [comp.taxpayer_actor, comp.other_spending_actor, comp.future_taxpayer_actor]
     lines.append(f'mc_payer_group({c}, "{",".join(dict.fromkeys(p for p in payers if p))}").')
     recipient = {"mandate": "mc_recipient", "term_ban": "tb_freed", "standard": None}[kind]
     if recipient and comp.recipient_actor:
         lines.append(f'{recipient}({c}, "{comp.recipient_actor}").')
+    if kind == "term_ban" and comp.applicant_actor:
+        lines.append(f'mc_applicant({c}, "{comp.applicant_actor}").')
     if kind == "standard":
         lines.append(f'st_buyer({c}, "{comp.buyer_actor}").')
     for pred, actor in (("mc_floor_recipient", comp.floor_bound_actor), ("mc_applicant", comp.applicant_actor),

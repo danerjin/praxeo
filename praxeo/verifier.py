@@ -21,7 +21,7 @@ RECORD_PREDICATES = ("ceiling(", "decontrol(", "bound(", "protected(", "excluded
                      "repay_on_move(", "field_contested(", "target_qty(", "claim_penalties(",
                      "licensing(", "quota(", "transferable(", "import_quota(", "seller_cap(", "wider_market(", "general_budget(", "price_fixed(", "allocation_by_history(", "prohibition(", "volume_penalties(", "practice_ban(", "fees_to_budget(", "stocks_destroyed(", "taxed_before(", "mobile_buyer(", "rights_sold(", "holder_cap(", "self_supply(", "domestic_seller(", "downstream(", "importer(", "buyer(",
                      "exporter(", "seller(", "renewable(", "definition_line(", "relief_applicant(",
-                     "mandate(", "term_ban(", "standard(", "per_head_cap(", "paid_absence(", "forfeit_on_leaving(", "complaint_only(",
+                     "mandate(", "employment(", "term_ban(", "standard(", "per_head_cap(", "paid_absence(", "forfeit_on_leaving(", "complaint_only(",
                      "size_threshold(", "threshold_staff_split(", "threshold_partial_count(", "margin_covered(", "restrains_mobility(",
                      "voids_existing(", "stock_exempt(")
 

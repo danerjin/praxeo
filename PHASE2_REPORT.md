@@ -17,7 +17,7 @@ Status of the Phase 2 build (plan §5) as of this report. Everything described h
 | 1. Thin slice: one rule, one worked example, one historical case, end to end with scoring | Done (San Francisco 1994; WE-001 as a consistency check) |
 | 2. A few rules both ways: engine rules and typed-question schemas, through the LLM decider | Done for price ceilings (Configuration A and B); B covers no taxes, tariffs, windows or groups yet |
 | 3. Full structured policy schema; examples run from raw text | Schema covers ceilings, per-unit taxes and tariffs. The parser runs from raw text through the LLM path; both examples parsed by Haiku |
-| 4. Grow the catalog one family at a time, with exceptions, questions and tests | Price controls and taxes/tariffs: 37 patterns and core rules from the 1.4 catalog (PC-1–PC-7, PC-16, PC-21, RS-1–RS-8, RS-10, RS-11, RS-14, RS-15, TX-1, TX-2, TX-4, TX-7–TX-9, OC-1–OC-4, SB-4, TS-1, TS-2, CR-4, CR-8, CR-9). Subsidies added (SB-1 to SB-6, PC-20), built on WE-019 and run out of sample on five more examples (§5). Licensing and quotas added (EN-1 to EN-3, EN-5, EN-6, EN-11), built on WE-003 with the quota rules from the catalog text, and run out of sample on five examples (§5). Prohibitions added (EN-7, EN-8, EN-10, built on WE-017). Other families (mandates, standards, private rules) not yet encoded |
+| 4. Grow the catalog one family at a time, with exceptions, questions and tests | Price controls and taxes/tariffs: 37 patterns and core rules from the 1.4 catalog (PC-1–PC-7, PC-16, PC-21, RS-1–RS-8, RS-10, RS-11, RS-14, RS-15, TX-1, TX-2, TX-4, TX-7–TX-9, OC-1–OC-4, SB-4, TS-1, TS-2, CR-4, CR-8, CR-9). Subsidies added (SB-1 to SB-6, PC-20), built on WE-019 and run out of sample on five more examples (§5). Licensing and quotas added (EN-1 to EN-3, EN-5, EN-6, EN-11), built on WE-003 with the quota rules from the catalog text, and run out of sample on five examples (§5). Prohibitions added (EN-7, EN-8, EN-10, built on WE-017). Mandates added (PC-17 built on WE-029; PC-18 and EN-14 from the catalog text) and run out of sample on five examples (§5). Other families (disclosure, play or pay, private rules) not yet encoded |
 | 5. Context grounding, combiner, verifier, full explainer | Context: date filter, retrieval per question and enrichment from sources (no real sources yet). Combiner: declared table of CR-12 comparisons. Verifier: in place. Explainer: templated sentences |
 | 6. Jev decider, calibrated on the question bank | Not started: no Jev access, no labelled question bank |
 | 7. Rule proposer behind a review gate | Not started |
@@ -70,7 +70,7 @@ All four were fixed, and each fix has a test.
 | WE-001 rent freeze | 31 | 28 | Two rows rest on facts specific to this case that the record lacks (a homebuyers' market relation; the K3 relocation payment). One needs the new-construction exemption as a fact, and one of its chains rests on the negation of an assumption, which the engine keeps out to stay exact |
 | WE-013 steel tariff | 32 | 31 | One row needs a class the record does not name. The return-on-capital row is left ambiguous by the handbook itself |
 
-**Out of sample.** Twenty-seven more examples were encoded after their family's rules were built, without changing any rule first; subagents wrote the records and answers from the policy text and the assumption tables. Each first run is kept in the case's `out_of_sample.md`, and rules were then changed only where a gap was general (a pattern-level fix, citing the catalog).
+**Out of sample.** Thirty-two more examples were encoded after their family's rules were built, without changing any rule first; subagents wrote the records and answers from the policy text and the assumption tables. Each first run is kept in the case's `out_of_sample.md`, and rules were then changed only where a gap was general (a pattern-level fix, citing the catalog).
 
 | Family (built on) | Examples run out of sample | Rows produced, first run | After general fixes | WRONG engine rows, first run | After |
 |---|---|---|---|---|---|
@@ -80,6 +80,7 @@ All four were fixed, and each fix has a test.
 | EN-12 and EN-13 (WE-028) | WE-039, WE-047, WE-054, WE-064 | 44 of 210 | 50 of 210 | 10 | 2 (the TX-8 question, Q25) |
 | Prohibitions (WE-017) | WE-018, WE-037, WE-044, WE-050, WE-053 | 45 of 221 | 45 of 221 | 28 (keys) | 11 |
 | Subsidies (WE-019) | WE-020, WE-021, WE-033, WE-056, WE-065 | 42 of 191 | 63 of 191 | 16 | 3 |
+| Mandates (WE-029; PC-18 and EN-14 from the catalog text) | WE-031, WE-034, WE-036, WE-059, WE-061 | 53 of 236 | 58 of 236 | 23 (keys) | 7 |
 
 Most rows not produced need roles the record cannot yet hold (related markets, factors, neighbours, foreign sellers), rules for whole families not encoded, or engine facts per reading of an unclear provision. Coverage on unseen examples is therefore low, and the first runs' WRONG rows show what a family's rules get wrong before they are corrected.
 

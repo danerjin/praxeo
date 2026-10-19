@@ -1,7 +1,7 @@
 # Thin-slice run: Westmere Residential Energy Performance Act
 
-Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-19T20:01:13+00:00
-Prediction log sha256 (frozen before the outcome card was opened): `c626f5a9846b5df3…`
+Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-19T20:21:01+00:00
+Prediction log sha256 (frozen before the outcome card was opened): `dc6c5f94ca489745…`
 
 ## Policy record
 
@@ -20,8 +20,8 @@ Prediction log sha256 (frozen before the outcome card was opened): `c626f5a9846b
 | `binding(k1)` | binding | 0.70 | The standard binds on some designs. |
 | `enforced(k1)` | enforcement | 0.90 | Most makers comply. |
 | `can_organize(k1)` | other | 0.90 | The makers can organize to lobby. |
-| `stock_competes(k1)` | substitutability | 0.80 | Existing units compete with new ones. |
 | `buyers_value_standard(k1)` | other | 0.30 | Buyers value the standard enough to prefer covered units. |
+| `stock_competes(k1)` | substitutability | 0.80 | Existing units compete with new ones. |
 
 ## Consequences
 

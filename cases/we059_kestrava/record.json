@@ -27,7 +27,8 @@
     "It binds makers of covered equipment.",
     "Independents can buy many mechanical parts at list from dealers but cannot buy the software, without which many electronic parts cannot be calibrated or paired.",
     "The Attorney General enforces the Act under the Unfair Trade Practices Act, on complaint; civil penalty up to $10,000 per violation; no private right of action."
-   ]
+   ],
+   "contract_kind": "sale"
   },
   {
    "id": "k1p",
@@ -38,7 +39,9 @@
    "recipient_actor": "owners.phone",
    "already_provider_actor": "makers.phone.matching",
    "output_buyer_actor": "buyers.prospective",
-   "rival_actors": ["makers.phone.matching"],
+   "rival_actors": [
+    "makers.phone.matching"
+   ],
    "complaint_only": true,
    "announcement_window": true,
    "field_contested": true,
@@ -51,7 +54,8 @@
     "One maker already sells genuine parts and rents tools to owners in all states at the prices its authorized providers pay, and pairs the part through its server after the repair.",
     "The maker's existing national phone program already matches K1 on price and meets U1-b's pairing condition.",
     "The Attorney General enforces the Act under the Unfair Trade Practices Act, on complaint; civil penalty up to $10,000 per violation; no private right of action."
-   ]
+   ],
+   "contract_kind": "sale"
   },
   {
    "id": "k2a",
@@ -71,7 +75,8 @@
     "Terms in contracts for the sale, lease or license of covered equipment (including software licenses) that prohibit or restrict repair by the owner or a person of the owner's choice, or that void a warranty because of such repair, are void: \"Any such term is void.\"",
     "It binds makers, dealers and lessors, in existing and new contracts, from 1 September 2028.",
     "A warranty may still exclude damage caused by the repair itself (§4(b))."
-   ]
+   ],
+   "contract_kind": "sale"
   },
   {
    "id": "k2d",
@@ -91,7 +96,8 @@
     "Terms in contracts for the sale, lease or license of covered equipment (including software licenses) that prohibit or restrict repair by the owner or a person of the owner's choice, or that void a warranty because of such repair, are void: \"Any such term is void.\"",
     "It binds makers, dealers and lessors, in existing and new contracts, from 1 September 2028.",
     "Four makers sell through 140 authorized dealer locations, which are independent businesses under dealer agreements; about 260 independent shops repair farm equipment."
-   ]
+   ],
+   "contract_kind": "sale"
   },
   {
    "id": "k2p",
@@ -111,7 +117,8 @@
     "Terms in contracts for the sale, lease or license of covered equipment (including software licenses) that prohibit or restrict repair by the owner or a person of the owner's choice, or that void a warranty because of such repair, are void: \"Any such term is void.\"",
     "It binds makers, dealers and lessors, in existing and new contracts, from 1 September 2028.",
     "A warranty may still exclude damage caused by the repair itself (§4(b))."
-   ]
+   ],
+   "contract_kind": "sale"
   },
   {
    "id": "k3a",

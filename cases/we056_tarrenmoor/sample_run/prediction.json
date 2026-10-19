@@ -1152,7 +1152,7 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "share_cap(k1).\nshare_payer(k1, \"plans.state_regulated\").\nbound(k1, \"pharmacies.in_state\").\nprotected(k1, \"covered_residents.paying_above_cap\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nenforcer(k1, \"officials.enforcement\").\nprotected_concentrated(k1).\nbound(k2, \"plans.state_regulated\").\nprotected(k2, \"covered_residents.state_plans\").\nexcluded(k2, \"buyers.prospective\").\nmandate(k2).\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nmc_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nbound(k3, \"covered_residents.uninsured\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nsubsidy(k3).\nsb_recipient(k3, \"covered_residents.uninsured\").\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nsb_claim_handler(k3, \"pharmacies.in_state\").\nper_unit_sub(k3).\nsb_seller(k3, \"pharmacies.in_state\").\nsb_qualifier(k3, \"covered_residents.uninsured\").\nsb_payer_body(k3, \"insulin_fund\").\nsb_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nsb_other_buyer(k3, \"buyers.noncovered_cash\").\nsb_substitute_seller(k3, \"sellers.substitutes\").\ncriteria(k3).\nassumption(payer_complies(k1)).\nassumption(share_demand_responds(k1)).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(can_organize(k2)).\nassumption(takeup(k3)).\nassumption(not_fully_captured(k3)).\nassumption(quantity_expands(k3)).\nassumption(seller_supply_slow(k3)).\nassumption(sellers_fewer_alternatives(k3)).\nassumption(substitutes_given_up(k3)).\nassumption(qualifying_pays(k3)).\nassumption(can_delay(k3)).\n",
+ "engine_facts": "share_cap(k1).\nshare_payer(k1, \"plans.state_regulated\").\nbound(k1, \"pharmacies.in_state\").\nprotected(k1, \"covered_residents.paying_above_cap\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nenforcer(k1, \"officials.enforcement\").\nprotected_concentrated(k1).\nbound(k2, \"plans.state_regulated\").\nprotected(k2, \"covered_residents.state_plans\").\nexcluded(k2, \"buyers.prospective\").\nmandate(k2).\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nemployment(k2).\nmc_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nbound(k3, \"covered_residents.uninsured\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nsubsidy(k3).\nsb_recipient(k3, \"covered_residents.uninsured\").\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nsb_claim_handler(k3, \"pharmacies.in_state\").\nper_unit_sub(k3).\nsb_seller(k3, \"pharmacies.in_state\").\nsb_qualifier(k3, \"covered_residents.uninsured\").\nsb_payer_body(k3, \"insulin_fund\").\nsb_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nsb_other_buyer(k3, \"buyers.noncovered_cash\").\nsb_substitute_seller(k3, \"sellers.substitutes\").\ncriteria(k3).\nassumption(payer_complies(k1)).\nassumption(share_demand_responds(k1)).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(can_organize(k2)).\nassumption(takeup(k3)).\nassumption(not_fully_captured(k3)).\nassumption(quantity_expands(k3)).\nassumption(seller_supply_slow(k3)).\nassumption(sellers_fewer_alternatives(k3)).\nassumption(substitutes_given_up(k3)).\nassumption(qualifying_pays(k3)).\nassumption(can_delay(k3)).\n",
  "explanations": [
   "C-1. Compared with no Tarrenmoor Insulin Affordability Act, price paid for buyers.noncovered_cash rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.10); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
   "C-2. Compared with no Tarrenmoor Insulin Affordability Act, quantity traded for buyers.noncovered_cash falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment; CR-4: buyers who face a higher price take fewer units. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.10); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
@@ -1435,6 +1435,7 @@
     "claim_penalties": false,
     "complainant_actor": null,
     "complaint_only": false,
+    "contract_kind": "employment",
     "convicted_actor": null,
     "cover_seller_actor": null,
     "debt_funded": false,
@@ -1555,6 +1556,7 @@
     "claim_penalties": false,
     "complainant_actor": null,
     "complaint_only": false,
+    "contract_kind": "employment",
     "convicted_actor": null,
     "cover_seller_actor": null,
     "debt_funded": false,
@@ -1670,6 +1672,7 @@
     "claim_penalties": false,
     "complainant_actor": null,
     "complaint_only": false,
+    "contract_kind": "employment",
     "convicted_actor": null,
     "cover_seller_actor": null,
     "debt_funded": false,
@@ -1797,7 +1800,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-19T19:57:01+00:00",
+ "run_at": "2026-10-19T20:21:09+00:00",
  "sources_held_back": [],
  "unclear": [
   {

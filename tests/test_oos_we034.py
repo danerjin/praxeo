@@ -22,10 +22,6 @@ EXCEPTIONS = {
         "defensible: RS-7 on the bound class; the table has the net trainers and the worker and start-up associations (C-13)",
     ("employers.restraining", "term_prevalence", "increase", None):
         "defensible: the substitute terms of the preserved forms, on the whole class; the table has the net trainers (C-4), whose substitutes the example derives the same way (A-4)",
-    ("workers.bound", "wage_rate", "at_least_one_decrease", None):
-        "KNOWN WRONG: the group (CR-5c, CR-6) is applied to the workers whose existing contracts are voided; the table has their wage_rate rising (C-8) and the group only for new hires, workers.trainees (C-7)",
-    ("workers.bound", "non_wage_compensation", "at_least_one_decrease", None):
-        "KNOWN WRONG: member of the same group; the table has the bound workers' non_wage_compensation rising (C-26, retention pay and deferred pay) and the group only for workers.trainees (C-7)",
 }
 NOT_PRODUCED = {
     "C-2": "unsupported form: K4 is a disclosure_mandate, which has no rules; PC-18 adds no compliance cost for the bound employers",
@@ -33,8 +29,6 @@ NOT_PRODUCED = {
     "C-4": "role: the engine signs the bound class employers.restraining; the table's net_trainers is a subclass",
     "C-5": "unsupported form: a sign per reading of a term the Act's exemption may or may not preserve; the reading changes no Component field and the rule has no paid-notice term",
     "C-6": "unsupported form: a sign per reading for training repayment; same",
-    "C-7": "role: the engine puts the CR-5c, CR-6 group on workers.bound (existing contracts); the would-be counterparties of new contracts (workers.trainees) have no field in a term ban",
-    "C-8": "missing rule: CR-7a, CR-9 (the gain from mobility settles on the freed workers' pay); the engine's group on the same class has the opposite sign",
     "C-9": "missing rule: CR-4a and RS-11 (fewer moves out of the field); only moves to rivals are derived",
     "C-10": "combiner: job_changes (all) needs a declared comparison of the (+) and (-) chains",
     "C-11": "missing rule: RS-8 timing around the effective date and the pending-cases clause; PC-18 has no window",
@@ -63,8 +57,6 @@ NOT_PRODUCED = {
     "C-35": "missing record fact and rule: no hiring-intensive firms role; CR-4 and CR-7a for location",
     "C-36": "missing record fact and rule: neighbouring jurisdiction's gain (RS-4, CR-4); a term ban has no neighbour field",
     "C-37": "missing record fact and rule: the mirror of C-36 for entry; no neighbour field",
-    "C-38": "sign form: the engine signs the employers' loss as asset_value only (CR-8 voiding); the resources_available_other_uses form (CR-8b) is not derived",
-    "C-39": "missing rule: the counterparty's side of the CR-8 voiding transfer (the freed workers gain what the employers lose) is not derived",
 }
 PRODUCED = {f"C-{i}" for i in range(1, 40)} - set(NOT_PRODUCED)
 
@@ -74,8 +66,7 @@ def test_consistent_with_worked_example_we034():
     rows = _rows("WE-034_noncompete_ban.md", {}, {}, {})
     assert len(rows) == 39
     _check(rows, keys, EXCEPTIONS, NOT_PRODUCED, PRODUCED)
-    assert PRODUCED == {"C-1", "C-23"}
+    assert PRODUCED == {"C-1", "C-7", "C-8", "C-23", "C-38", "C-39"}  # C-1 and C-23 at the first run; the rest after the rule changes
     wrong = {k for k, v in EXCEPTIONS.items() if v.startswith("KNOWN WRONG")}
-    assert wrong == {("workers.bound", "wage_rate", "at_least_one_decrease", None),
-                     ("workers.bound", "non_wage_compensation", "at_least_one_decrease", None)}
+    assert wrong == set()  # the group on workers.bound (2 keys at the first run) moved to workers.trainees (PC-18 fix)
     assert all(v.startswith(("defensible:", "KNOWN WRONG:")) for v in EXCEPTIONS.values())

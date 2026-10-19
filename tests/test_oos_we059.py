@@ -17,35 +17,21 @@ WE59 = ROOT / "cases" / "we059_kestrava"
 # bound makers, the dealers (K2) and the farm owners (the recipients who organize)
 SHORT = {"lobbying groups": ["makers.ag", "makers.phone", "dealers.ag", "owners.ag"]}
 
-_EMPLOYMENT = ("KNOWN WRONG: PC-17's employment frame applied to a sale. Owners are buyers, not workers: the example's own adjustment "
-               "for them is price (+), warranty (-) and models (-) (C-9, C-10)")
 EXCEPTIONS = {
+    ("dealers.ag", "resources_available_other_uses", "decrease", None):
+        "defensible: CR-8b, voiding of the dealers' anti-repair terms (K2, voids_existing): what the dealers lose the owners keep (C-39 is the owners' side); after the rule changes",
+    ("owners.ag.exempt", "stock_age", "ambiguous", None):
+        "defensible: EN-14 with its Unless clause (buyers value repairability, A-22): kept in use longer against drawn to covered units; C-29 signs the same ambiguous for covered units; after the rule changes",
+    ("owners.phone.exempt", "stock_age", "ambiguous", None):
+        "defensible: same, for phones sold before 2023",
+    ("makers.ag", "quantity_supplied", "ambiguous", None):
+        "defensible: EN-14's fewer new units against the Unless clause (A-22); C-30 records the same as quantity_traded, ambiguous; after the rule changes",
+    ("makers.phone", "quantity_supplied", "ambiguous", None):
+        "defensible: same, for phones (C-30)",
     # ---- EN-14 and RS-14 on new units
-    ("buyers.prospective", "quantity_traded", "decrease", None):
-        "KNOWN WRONG: RS-14 with the cost staying with makers has new-equipment buyers buy less; C-30 gives ambiguous, because buyers value the term (A-22) against the dearer farm units (C-46). The engine answers buyers_value_standard = yes (K3) but the pass-through rule does not consult it",
-    ("makers.ag", "quantity_supplied", "decrease", None):
-        "KNOWN WRONG: EN-14's 'fewer units are built' for new farm equipment; C-30 (new covered equipment sold) is ambiguous (A-22), and section 6 applies EN-14's Unless clause only to the exempt stock",
-    ("makers.phone", "quantity_supplied", "decrease", None):
-        "KNOWN WRONG: same, for phones (C-30)",
     ("buyers.prospective", "specification_level", "increase", None):
         "defensible: EN-14, the standard raises what new units must do; the example records the same fact as pairing removed or constrained (C-12) and as buyers valuing repairability (A-22, C-38)",
     # ---- PC-17 / PC-18 groups: the employment variables on buyers
-    ("owners.ag", "employment", "at_least_one_decrease", None): _EMPLOYMENT + " (farm owners)",
-    ("owners.ag", "hours_worked", "at_least_one_decrease", None): _EMPLOYMENT + " (farm owners)",
-    ("owners.ag", "non_wage_compensation", "at_least_one_decrease", None):
-        _EMPLOYMENT + "; the group (PC-17, and PC-18's wage_rate and non_wage_compensation) can be satisfied only through this member, read as warranty and other terms, which C-9 has only as one of three members",
-    ("owners.ag", "wage_rate", "at_least_one_decrease", None):
-        "KNOWN WRONG: PC-18's 'the freed party is offered less on wage and benefits' applied to owners, who have no wage; the example's version is the maker's price and substitute terms (C-10)",
-    ("owners.ag", "earnings", "decrease", None):
-        "KNOWN WRONG: CR-12 earnings fall from fewer jobs and hours, taken from the PC-17 group; owners have no earnings from this contract, and C-39 has owners with more to spend, not less",
-    ("owners.phone", "employment", "at_least_one_decrease", None): _EMPLOYMENT + " (phone owners)",
-    ("owners.phone", "hours_worked", "at_least_one_decrease", None): _EMPLOYMENT + " (phone owners)",
-    ("owners.phone", "non_wage_compensation", "at_least_one_decrease", None):
-        _EMPLOYMENT + "; as for farm owners, only the warranty reading survives",
-    ("owners.phone", "wage_rate", "at_least_one_decrease", None):
-        "KNOWN WRONG: PC-18's wage and benefits group applied to phone owners (see farm owners)",
-    ("owners.phone", "earnings", "decrease", None):
-        "KNOWN WRONG: earnings of phone owners from the PC-17 group (see farm owners)",
     ("owners.ag", "non_wage_compensation", "increase", None):
         "defensible: the mandated term itself, received by the owners; the example records it as cheaper genuine parts and tools (C-1) and as information (C-37), under other variables",
     ("owners.phone", "non_wage_compensation", "increase", None):
@@ -55,17 +41,10 @@ EXCEPTIONS = {
         "KNOWN WRONG: PC-18 signs the shift to substitute terms alone on substitute_terms; C-10 keeps it in a group with the price (at_least_one_as_stated), 'not netted' and not a price alone (final check 2); A-6 names no member",
     ("makers.phone", "term_prevalence", "increase", None):
         "KNOWN WRONG: same, for phones (C-10)",
-    ("makers.phone", "price_paid", "increase", None):
-        "KNOWN WRONG: the makers' price of the term rises for phones; section 5 says phone prices are sold nationally, A-6 names no member and the phone price stays a member of the group C-9. Only the farm price is signed alone (C-46, on A-18)",
     # ---- makers and rivals
-    ("makers.ag", "return_on_capital", "decrease", None):
-        "defensible: CR-7b, the cost stays with makers while prices are fixed (units already sold); the example's measure of the loss is asset value (C-26) and compliance cost (C-40)",
-    ("makers.phone", "return_on_capital", "decrease", None): "defensible: same, for phone makers",
     ("makers.ag", "resources_available_other_uses", "decrease", None):
         "defensible: CR-8b, the margin passes to the buyers of parts; the example signs owners' means only under conditions (C-39) and records makers' loss as value and cost",
     ("makers.phone", "resources_available_other_uses", "decrease", None): "defensible: same, for phone makers",
-    ("makers.phone.matching", "asset_value", "increase", None):
-        "defensible: CR-7c, CR-9 for the one maker whose program already matches K1 (A-2): rivals are bound and it is not. The example speaks of the gain from rivals being bound (A-25) but gives the maker no row",
     ("makers.phone.matching", "quantity_supplied", "increase", None):
         "defensible: CR-9, the unbound rival sells more. The chain runs through the PC-17 group (others adjust, at least one), which the example's rule (CR-12 1.1: a group is not a chain) would not allow",
     # ---- lobbying: the Unless item
@@ -81,9 +60,6 @@ EXCEPTIONS = {
         "defensible: RS-20, recipients spend time on complaints; the example records the complaints themselves (C-44), not their cost",
     ("owners.phone", "compliance_cost", "increase", None): "defensible: same, phone owners",
     # ---- the exempt stock
-    ("owners.ag.exempt", "stock_age", "increase", None):
-        "KNOWN WRONG: EN-14's 'the stock is kept in use longer' is not gated by its own Unless clause; Gaps found (e) 'EN-14': the kept-longer conclusion applies to covered units, not to the exempt ones (C-29)",
-    ("owners.phone.exempt", "stock_age", "increase", None): "KNOWN WRONG: same, for phones sold before 2023",
     ("owners.phone.exempt", "asset_value", "ambiguous", None):
         "defensible: EN-14 with its Unless clause for the phones sold before 2023; the example applies it to tractors only (C-28)",
 }
@@ -120,7 +96,6 @@ NOT_PRODUCED = {
     "C-36": "role: buyers.used; missing rule: CR-11c, information conveyed by a lock",
     "C-37": "missing rule: EN-15 (disclosure mandate: diagnostic documentation); variable quality_information",
     "C-38": "unsupported form: product_attribute (separately replaceable parts) and TS-3 are not encoded",
-    "C-39": "missing rule: CR-8b for the owners who keep buying; depends on C-4, which is not produced",
     "C-41": "missing rule: OC-3's fixed-budget case (other complaints wait, time per complaint); role: complainants.other",
     "C-42": "role: independents; missing rule: CR-4 and CR-8a for inputs bought to use the access",
     "C-43": "missing rule: CR-9 for the dealers' parts counter",
@@ -139,4 +114,4 @@ def test_consistent_with_worked_example_we059():
     assert all(r.startswith(("defensible:", "KNOWN WRONG:")) for r in EXCEPTIONS.values())
     assert all(r.startswith(("missing rule", "missing record fact", "role", "combiner", "sign form", "unsupported form", "below cut-off"))
                for r in NOT_PRODUCED.values())
-    assert len(PRODUCED) == 8
+    assert len(PRODUCED) == 9  # 8 at the first run; C-39 after the rule changes (CR-8b on both sides of a voided term)

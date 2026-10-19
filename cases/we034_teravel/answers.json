@@ -26,5 +26,12 @@
   "probability": 0.8,
   "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-13: employers' associations, worker groups and start-up associations can organize at a cost below their stake.",
   "evidence": []
+ },
+ {
+  "question_id": "k1.paid_below_rivals",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-7: some bound workers are paid less than a rival would pay them.",
+  "evidence": []
  }
 ]

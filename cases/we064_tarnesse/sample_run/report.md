@@ -1,7 +1,7 @@
 # Thin-slice run: Tarnesse 2.9 GHz Award Regulations
 
-Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-19T19:57:02+00:00
-Prediction log sha256 (frozen before the outcome card was opened): `c3135ed5c4011013…`
+Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-19T20:21:10+00:00
+Prediction log sha256 (frozen before the outcome card was opened): `71d0ed6152e75414…`
 
 ## Policy record
 
@@ -43,7 +43,7 @@ Prediction log sha256 (frozen before the outcome card was opened): `c3135ed5c401
 | C-6 | bidders | search_cost | increase | short+ | B | EN-6, RS-3 | {binding(k3), enforced(k3), evasion(k3)} | yes |
 | C-7 | licensees | asset_value | increase | short+ | B | CR-8, CR-7, SB-4, EN-6 | {binding(k3), enforced(k3), expected_to_last(k3)} or {value_above_price(k3)} | yes |
 | C-8 | licensees | compliance_cost | increase | short+ | A | OC-2 | {} | yes |
-| C-9 | licensees | lobbying_effort | increase | medium+ | B | RS-7, EN-6 | {binding(k3), can_organize(k3), enforced(k3)} or {binding(k2), can_organize(k2)} | yes |
+| C-9 | licensees | lobbying_effort | increase | medium+ | B | RS-7, EN-6 | {binding(k2), can_organize(k2)} or {binding(k3), can_organize(k3), enforced(k3)} | yes |
 | C-10 | licensees | right_lease_price | U1-a: increase; U1-b: none | medium+ | B | EN-6, EN-13 | {binding(k3), enforced(k3), trade_cheap(k3), values_differ(k3)} | no |
 | C-11 | officials.enforcement | enforcement_cost | increase | short+ | B | OC-3, EN-6 | {} | yes |
 | C-12 | tower_owners | quantity_traded | U1-a: decrease; U1-b: none | medium+ | B | EN-6, EN-13 | {binding(k3), enforced(k3), trade_cheap(k3), values_differ(k3)} | no |

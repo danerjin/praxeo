@@ -152,9 +152,10 @@ class Component(BaseModel):
     # receives it; enforcer_actor, general_budget, definition_line, neighbor_seller_actor and the OC-1 payer fields apply.
     # term_prohibition (PC-18): bound_actor is the party that used the term, recipient_actor the party freed from it.
     # product_standard (EN-14): bound_actor makes new units, buyer_actor buys them.
+    contract_kind: Literal["employment", "sale"] = Field(default="employment", description="Mandates and term prohibitions: the kind of contract the term sits in; the wage, hours, jobs and earnings chains apply only to employment (PC-17 1.1: for a sale the price and other features adjust)")
     recipient_actor: Optional[str] = Field(default=None, description="Mandates: who receives the mandated term (workers.uncovered); term prohibitions: the party freed from the term")
-    floor_bound_actor: Optional[str] = Field(default=None, description="Mandates: recipients whose wage an existing floor (a minimum wage) holds, so the other terms bear the cost (PC-10)")
-    applicant_actor: Optional[str] = Field(default=None, description="Mandates: would-be recipients among whom providers choose, where the term's cost differs by recipient (RS-23)")
+    floor_bound_actor: Optional[str] = Field(default=None, description="Mandates: recipients whose wage a floor (a minimum wage, existing or set by the same measure) holds, so the other terms bear the cost (PC-10); may be the recipient_actor itself")
+    applicant_actor: Optional[str] = Field(default=None, description="Mandates: would-be recipients among whom providers choose, where the term's cost differs by recipient (RS-23); term prohibitions: the prospective counterparties of new contracts, on whom the other terms adjust (PC-18)")
     already_provider_actor: Optional[str] = Field(default=None, description="Mandates: providers who already offer the term, possibly on other conditions (PC-17: not binding for them)")
     already_recipient_actor: Optional[str] = Field(default=None, description="Mandates: recipients of those providers whose conditions the mandate changes")
     per_head_cap: bool = Field(default=False, description="Mandates: the term per head stops at a cap (leave accrued up to a maximum), so hours above the cap carry no cost (RS-18)")

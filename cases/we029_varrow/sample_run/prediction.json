@@ -70,7 +70,7 @@
    "assumption_class": "binding",
    "id": "floor_binds(k1)",
    "p": 0.85,
-   "text": "An existing floor holds some recipients' wage."
+   "text": "A floor holds some recipients' wage."
   },
   "hours_shift(k1)": {
    "assumption_class": "substitutability",
@@ -155,13 +155,13 @@
      "binding(k1)",
      "enforced(k1)",
      "rivals_bound(k1)",
-     "worth_less(k1)"
+     "wages_sticky(k1)"
     ],
     [
      "binding(k1)",
      "enforced(k1)",
      "rivals_bound(k1)",
-     "wages_sticky(k1)"
+     "worth_less(k1)"
     ]
    ],
    "assumptions": [
@@ -229,13 +229,13 @@
      "binding(k1)",
      "enforced(k1)",
      "rivals_bound(k1)",
-     "worth_less(k1)"
+     "wages_sticky(k1)"
     ],
     [
      "binding(k1)",
      "enforced(k1)",
      "rivals_bound(k1)",
-     "wages_sticky(k1)"
+     "worth_less(k1)"
     ]
    ],
    "assumptions": [
@@ -478,24 +478,24 @@
      "rule": "PC-17"
     },
     {
-     "conclusion": "mc_others_medium(k1)",
+     "conclusion": "mc_cost_after(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_after(k1)",
      "premises": [
       "worth_less(k1)"
      ],
      "rule": "CR-2"
     },
     {
-     "conclusion": "mc_others_medium(k1)",
-     "premises": [
-      "mc_binds(k1)"
-     ],
-     "rule": "PC-17"
-    },
-    {
      "conclusion": "mc_rivals(k1)",
      "premises": [
       "compete_with_bound(k1)",
-      "mc_others_medium(k1)"
+      "mc_cost_after(k1)"
      ],
      "rule": "CR-9"
     }
@@ -756,24 +756,24 @@
      "rule": "PC-17"
     },
     {
-     "conclusion": "mc_others_medium(k1)",
+     "conclusion": "mc_cost_after(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_after(k1)",
      "premises": [
       "worth_less(k1)"
      ],
      "rule": "CR-2"
     },
     {
-     "conclusion": "mc_others_medium(k1)",
-     "premises": [
-      "mc_binds(k1)"
-     ],
-     "rule": "PC-17"
-    },
-    {
      "conclusion": "mc_rivals(k1)",
      "premises": [
       "compete_with_bound(k1)",
-      "mc_others_medium(k1)"
+      "mc_cost_after(k1)"
      ],
      "rule": "CR-9"
     }
@@ -822,23 +822,23 @@
      "rule": "PC-17"
     },
     {
-     "conclusion": "mc_others_medium(k1)",
+     "conclusion": "mc_cost_after(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_after(k1)",
      "premises": [
       "worth_less(k1)"
      ],
      "rule": "CR-2"
     },
     {
-     "conclusion": "mc_others_medium(k1)",
-     "premises": [
-      "mc_binds(k1)"
-     ],
-     "rule": "PC-17"
-    },
-    {
      "conclusion": "mc_relocate(k1)",
      "premises": [
-      "mc_others_medium(k1)",
+      "mc_cost_after(k1)",
       "rivals_unbound(k1)"
      ],
      "rule": "RS-4"
@@ -1331,23 +1331,23 @@
      "rule": "PC-17"
     },
     {
-     "conclusion": "mc_others_medium(k1)",
+     "conclusion": "mc_cost_after(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_after(k1)",
      "premises": [
       "worth_less(k1)"
      ],
      "rule": "CR-2"
     },
     {
-     "conclusion": "mc_others_medium(k1)",
-     "premises": [
-      "mc_binds(k1)"
-     ],
-     "rule": "PC-17"
-    },
-    {
      "conclusion": "mc_relocate(k1)",
      "premises": [
-      "mc_others_medium(k1)",
+      "mc_cost_after(k1)",
       "rivals_unbound(k1)"
      ],
      "rule": "RS-4"
@@ -1573,12 +1573,12 @@
     [
      "binding(k1)",
      "enforced(k1)",
-     "hours_shift(k1)"
+     "worth_less(k1)"
     ],
     [
      "binding(k1)",
      "enforced(k1)",
-     "worth_less(k1)"
+     "hours_shift(k1)"
     ]
    ],
    "assumptions": [
@@ -1598,23 +1598,23 @@
      "rule": "PC-17"
     },
     {
-     "conclusion": "mc_others_medium(k1)",
+     "conclusion": "mc_cost_after(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_after(k1)",
      "premises": [
       "worth_less(k1)"
      ],
      "rule": "CR-2"
     },
     {
-     "conclusion": "mc_others_medium(k1)",
-     "premises": [
-      "mc_binds(k1)"
-     ],
-     "rule": "PC-17"
-    },
-    {
      "conclusion": "mc_cap_cost(k1)",
      "premises": [
-      "mc_others_medium(k1)"
+      "mc_cost_after(k1)"
      ],
      "rule": "CR-4"
     },
@@ -1959,11 +1959,6 @@
      "binding(k1)",
      "enforced(k1)",
      "unpaid_absence_before(k1)"
-    ],
-    [
-     "binding(k1)",
-     "enforced(k1)",
-     "wages_sticky(k1)"
     ]
    ],
    "assumptions": [
@@ -1979,20 +1974,6 @@
      "premises": [
       "binding(k1)",
       "enforced(k1)"
-     ],
-     "rule": "PC-17"
-    },
-    {
-     "conclusion": "mc_others_short(k1)",
-     "premises": [
-      "wages_sticky(k1)"
-     ],
-     "rule": "CR-6"
-    },
-    {
-     "conclusion": "mc_others_short(k1)",
-     "premises": [
-      "mc_binds(k1)"
      ],
      "rule": "PC-17"
     },
@@ -2013,7 +1994,6 @@
     {
      "conclusion": "mc_earn_down(k1)",
      "premises": [
-      "mc_others_short(k1)",
       "mc_wage(k1)"
      ],
      "rule": "CR-12"
@@ -2037,7 +2017,6 @@
    ],
    "group": [],
    "horizon": [
-    "short",
     "medium",
     "long"
    ],
@@ -2429,20 +2408,20 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"employers.uncovered\").\nexcluded(k1, \"buyers.prospective\").\nmandate(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nmc_payer_group(k1, \"taxpayers,recipients.other_spending\").\nmc_recipient(k1, \"workers.uncovered\").\nmc_floor_recipient(k1, \"workers.min_wage\").\nmc_applicant(k1, \"workers.prospective\").\nmc_already(k1, \"employers.compliant\").\nmc_already_recipient(k1, \"workers.pto_noncompliant\").\nmc_below_cap(k1, \"workers.part_time\").\nmc_above_cap(k1, \"workers.full_time\").\nmc_cover_seller(k1, \"staffing_agencies\").\nmc_output_buyer(k1, \"buyers.local_services\").\nmc_tradable(k1, \"employers.tradable\").\nneighbor_seller(k1, \"neighboring_jurisdictions\").\nmc_outside(k1, \"contractors\").\nmc_complainant(k1, \"workers.complainants\").\nmc_violator(k1, \"employers.violating\").\nmc_near_threshold(k1, \"employers.near_threshold\").\nmc_below_threshold(k1, \"employers.small\").\nmc_margin_recipient(k1, \"workers.size_ambiguous\").\nmc_rival(k1, \"employers.compliant\").\nmc_rival(k1, \"employers.small\").\nper_head_cap(k1).\npaid_absence(k1).\nforfeit_on_leaving(k1).\ncomplaint_only(k1).\nsize_threshold(k1).\nthreshold_staff_split(k1).\ndefinition_line(k1).\ngeneral_budget(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(wages_sticky(k1)).\nassumption(wages_adjust(k1)).\nassumption(worth_less(k1)).\nassumption(alternatives_worse(k1)).\nassumption(valued_on_earnings(k1)).\nassumption(can_organize(k1)).\nassumption(recipients_organize(k1)).\nassumption(floor_binds(k1)).\nassumption(can_screen(k1)).\nassumption(conditions_differ(k1)).\nassumption(hours_shift(k1)).\nassumption(absence_used(k1)).\nassumption(unpaid_absence_before(k1)).\nassumption(absences_covered(k1)).\nassumption(rivals_bound(k1)).\nassumption(rivals_unbound(k1)).\nassumption(compete_with_bound(k1)).\nassumption(reshaping_pays(k1)).\nassumption(move_marginal(k1)).\nassumption(complaint_unlikely(k1)).\nassumption(complaints_filed(k1)).\nassumption(staying_small_pays(k1)).\n",
+ "engine_facts": "bound(k1, \"employers.uncovered\").\nexcluded(k1, \"buyers.prospective\").\nmandate(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nemployment(k1).\nmc_payer_group(k1, \"taxpayers,recipients.other_spending\").\nmc_recipient(k1, \"workers.uncovered\").\nmc_floor_recipient(k1, \"workers.min_wage\").\nmc_applicant(k1, \"workers.prospective\").\nmc_already(k1, \"employers.compliant\").\nmc_already_recipient(k1, \"workers.pto_noncompliant\").\nmc_below_cap(k1, \"workers.part_time\").\nmc_above_cap(k1, \"workers.full_time\").\nmc_cover_seller(k1, \"staffing_agencies\").\nmc_output_buyer(k1, \"buyers.local_services\").\nmc_tradable(k1, \"employers.tradable\").\nneighbor_seller(k1, \"neighboring_jurisdictions\").\nmc_outside(k1, \"contractors\").\nmc_complainant(k1, \"workers.complainants\").\nmc_violator(k1, \"employers.violating\").\nmc_near_threshold(k1, \"employers.near_threshold\").\nmc_below_threshold(k1, \"employers.small\").\nmc_margin_recipient(k1, \"workers.size_ambiguous\").\nmc_rival(k1, \"employers.compliant\").\nmc_rival(k1, \"employers.small\").\nper_head_cap(k1).\npaid_absence(k1).\nforfeit_on_leaving(k1).\ncomplaint_only(k1).\nsize_threshold(k1).\nthreshold_staff_split(k1).\ndefinition_line(k1).\ngeneral_budget(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(wages_sticky(k1)).\nassumption(wages_adjust(k1)).\nassumption(worth_less(k1)).\nassumption(alternatives_worse(k1)).\nassumption(valued_on_earnings(k1)).\nassumption(can_organize(k1)).\nassumption(recipients_organize(k1)).\nassumption(floor_binds(k1)).\nassumption(can_screen(k1)).\nassumption(conditions_differ(k1)).\nassumption(hours_shift(k1)).\nassumption(absence_used(k1)).\nassumption(unpaid_absence_before(k1)).\nassumption(absences_covered(k1)).\nassumption(rivals_bound(k1)).\nassumption(rivals_unbound(k1)).\nassumption(compete_with_bound(k1)).\nassumption(reshaping_pays(k1)).\nassumption(move_marginal(k1)).\nassumption(complaint_unlikely(k1)).\nassumption(complaints_filed(k1)).\nassumption(staying_small_pays(k1)).\n",
  "explanations": [
   "C-1. Compared with no Varrow Healthy Workplaces Act, price paid for buyers.local_services rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Most of the providers' rivals are bound too (p = 0.70); The other money terms are fixed in the short run (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
   "C-2. Compared with no Varrow Healthy Workplaces Act, quantity traded for buyers.local_services falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Most of the providers' rivals are bound too (p = 0.70); The other money terms are fixed in the short run (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
   "C-3. Compared with no Varrow Healthy Workplaces Act, reclassification for contractors rises from the medium run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.55). Reported.",
   "C-4. Compared with no Varrow Healthy Workplaces Act, asset value for employers.compliant rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.60); Most bound providers comply (p = 0.70); The providers' businesses are valued on expected earnings (p = 0.70); The other money terms are fixed in the short run (p = 0.80). Reported.",
   "C-5. Compared with no Varrow Healthy Workplaces Act, compliance cost for employers.compliant rises from the short run onward (tier B, invisible). Why: PC-17: PC-17. This holds if: Some existing policies offer the term on conditions the mandate forbids (p = 0.80); Most bound providers comply (p = 0.70). Reported.",
-  "C-6. Compared with no Varrow Healthy Workplaces Act, quantity supplied for employers.compliant rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-2: CR-2; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.60); Most bound providers comply (p = 0.70); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
+  "C-6. Compared with no Varrow Healthy Workplaces Act, quantity supplied for employers.compliant rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.60); Most bound providers comply (p = 0.70); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
   "C-7. Compared with no Varrow Healthy Workplaces Act, employment (counted staff) for employers.near_threshold falls from the short run onward (tier B, invisible). Why: RS-17: RS-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Some firms near the threshold value staying below it more than an extra hire (p = 0.60). Reported.",
   "C-8. Compared with no Varrow Healthy Workplaces Act, employment (other staff) for employers.near_threshold may move either way from the medium run onward (tier B, invisible). Why: RS-17: RS-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Some firms near the threshold value staying below it more than an extra hire (p = 0.60). Sign per reading: U2-a: decrease; U2-b: increase. Reported.",
   "C-9. Compared with no Varrow Healthy Workplaces Act, asset value for employers.small rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.60); Most bound providers comply (p = 0.70); The providers' businesses are valued on expected earnings (p = 0.70); The other money terms are fixed in the short run (p = 0.80). Reported.",
   "C-10. Compared with no Varrow Healthy Workplaces Act, number of sellers for employers.small rises from the medium run onward (tier B, invisible). Why: RS-17: RS-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Some firms near the threshold value staying below it more than an extra hire (p = 0.60). Reported.",
-  "C-11. Compared with no Varrow Healthy Workplaces Act, quantity supplied for employers.small rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-2: CR-2; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.60); Most bound providers comply (p = 0.70); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
-  "C-12. Compared with no Varrow Healthy Workplaces Act, quantity supplied for employers.tradable falls in the long run (tier B, invisible). Why: PC-17: PC-17; CR-2: CR-2; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Some providers compete with unbound rivals across a boundary (p = 0.65); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
+  "C-11. Compared with no Varrow Healthy Workplaces Act, quantity supplied for employers.small rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.60); Most bound providers comply (p = 0.70); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
+  "C-12. Compared with no Varrow Healthy Workplaces Act, quantity supplied for employers.tradable falls in the long run (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Some providers compete with unbound rivals across a boundary (p = 0.65); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
   "C-13. Compared with no Varrow Healthy Workplaces Act, asset value for employers.uncovered falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The providers' businesses are valued on expected earnings (p = 0.70); The other money terms are fixed in the short run (p = 0.80). Reported.",
   "C-14. Compared with no Varrow Healthy Workplaces Act, compliance cost for employers.uncovered rises from the short run onward (tier A, invisible). Why: OC-2: OC-2. This holds if: no assumption. Reported.",
   "C-15. Compared with no Varrow Healthy Workplaces Act, legal breach for employers.uncovered rises from the short run onward (tier B, invisible). Why: RS-20: RS-20. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Complaints are unlikely from some recipients (p = 0.80). Reported.",
@@ -2452,19 +2431,19 @@
   "C-19. Compared with no Varrow Healthy Workplaces Act, resources available other uses for employers.uncovered falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). Reported.",
   "C-20. Compared with no Varrow Healthy Workplaces Act, return on capital for employers.uncovered falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). Reported.",
   "C-21. Compared with no Varrow Healthy Workplaces Act, resources available other uses for employers.violating falls from the short run onward (tier B, invisible). Why: RS-20: RS-20; OC-2: OC-2; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Complaints are unlikely from some recipients (p = 0.80); Complaints are filed in meaningful numbers (p = 0.85). Reported.",
-  "C-22. Compared with no Varrow Healthy Workplaces Act, quantity supplied for neighboring_jurisdictions rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-2: CR-2; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Some providers compete with unbound rivals across a boundary (p = 0.65); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
+  "C-22. Compared with no Varrow Healthy Workplaces Act, quantity supplied for neighboring_jurisdictions rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Some providers compete with unbound rivals across a boundary (p = 0.65); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
   "C-23. Compared with no Varrow Healthy Workplaces Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
   "C-24. Compared with no Varrow Healthy Workplaces Act, quantity traded for staffing_agencies rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-4: buyers who face a higher price take fewer units; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: Some recipients take paid time off they would otherwise have worked (p = 0.90); Providers buy cover for absent shifts (p = 0.65); The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70). Reported.",
   "C-25. Compared with no Varrow Healthy Workplaces Act, resources available other uses for taxpayers or recipients.other_spending falls for at least one of them from the short run onward (tier A, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported.",
   "C-26. Compared with no Varrow Healthy Workplaces Act, resources available other uses for workers.complainants rises from the short run onward (tier B, invisible). Why: RS-20: RS-20; OC-2: OC-2; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Complaints are unlikely from some recipients (p = 0.80); Complaints are filed in meaningful numbers (p = 0.85). Reported.",
-  "C-27. Compared with no Varrow Healthy Workplaces Act, hours worked for workers.full_time may move either way from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-2: CR-2; CR-4: buyers who face a higher price take fewer units; CR-9: an owner who leaves the rental market ends the leases of those who live in the building; RS-18: RS-18. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Providers can move hours between recipients below and above the cap (p = 0.70). It also follows under 2 other minimal assumption set(s). Reported.",
-  "C-28. Compared with no Varrow Healthy Workplaces Act, employment or hours worked or non wage compensation for workers.min_wage falls for at least one of them from the short run onward (tier B, invisible). Why: PC-17: PC-17; PC-10: PC-10. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); An existing floor holds some recipients' wage (p = 0.85). Reported.",
+  "C-27. Compared with no Varrow Healthy Workplaces Act, hours worked for workers.full_time may move either way from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; CR-4: buyers who face a higher price take fewer units; CR-9: an owner who leaves the rental market ends the leases of those who live in the building; RS-18: RS-18. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Providers can move hours between recipients below and above the cap (p = 0.70). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-28. Compared with no Varrow Healthy Workplaces Act, employment or hours worked or non wage compensation for workers.min_wage falls for at least one of them from the short run onward (tier B, invisible). Why: PC-17: PC-17; PC-10: PC-10. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); A floor holds some recipients' wage (p = 0.85). Reported.",
   "C-29. Compared with no Varrow Healthy Workplaces Act, employment or hours worked for workers.part_time falls for at least one of them from the medium run onward (tier B, invisible). Why: RS-18: RS-18. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Providers can move hours between recipients below and above the cap (p = 0.70). Reported.",
   "C-30. Compared with no Varrow Healthy Workplaces Act, allocation by non price criteria for workers.prospective rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; RS-23: RS-23. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Providers can tell which applicants will cost more under the term (p = 0.55); Most bound providers comply (p = 0.70). Reported.",
   "C-31. Compared with no Varrow Healthy Workplaces Act, non wage compensation for workers.pto_noncompliant rises from the short run onward (tier B, invisible). Why: PC-17: PC-17. This holds if: Some existing policies offer the term on conditions the mandate forbids (p = 0.80); Most bound providers comply (p = 0.70). Reported.",
   "C-32. Compared with no Varrow Healthy Workplaces Act, non wage compensation for workers.size_ambiguous may move either way from the short run onward (tier B, invisible). Why: CR-1: CR-1. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70). Sign per reading: U2-a: increase; U2-b: none. Reported.",
   "C-33. Compared with no Varrow Healthy Workplaces Act, compliance cost for workers.uncovered rises from the short run onward (tier B, invisible). Why: OC-2: OC-2. This holds if: Complaints are filed in meaningful numbers (p = 0.85). Reported.",
-  "C-34. Compared with no Varrow Healthy Workplaces Act, earnings for workers.uncovered may move either way from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price; CR-12: CR-12; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Some recipients would have taken unpaid time off without the mandate (p = 0.95). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-34. Compared with no Varrow Healthy Workplaces Act, earnings for workers.uncovered may move either way from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price; CR-12: CR-12; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Some recipients would have taken unpaid time off without the mandate (p = 0.95). It also follows under 1 other minimal assumption set(s). Reported.",
   "C-35. Compared with no Varrow Healthy Workplaces Act, employment or hours worked or non wage compensation for workers.uncovered falls for at least one of them from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-2: CR-2; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
   "C-36. Compared with no Varrow Healthy Workplaces Act, hours worked for workers.uncovered falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-4: buyers who face a higher price take fewer units. This holds if: Some recipients take paid time off they would otherwise have worked (p = 0.90); The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70). Reported.",
   "C-37. Compared with no Varrow Healthy Workplaces Act, job changes for workers.uncovered falls from the medium run onward (tier B, invisible). Why: RS-11: a benefit lost on moving ties the holder to staying put. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Some job changes are marginal enough to be decided by the loss on leaving (p = 0.55). Reported.",
@@ -2651,7 +2630,7 @@
     "id": "k1.floor_binds",
     "kind": "noul",
     "options": [],
-    "text": "Does an existing price floor (a minimum wage) hold the wage of some recipients, so that it cannot fall?"
+    "text": "Does a price floor (a minimum wage, existing or set by the same measure) hold the wage of some recipients, so that it cannot fall?"
    }
   },
   {
@@ -2929,6 +2908,7 @@
     "claim_penalties": false,
     "complainant_actor": "workers.complainants",
     "complaint_only": true,
+    "contract_kind": "employment",
     "convicted_actor": null,
     "cover_seller_actor": "staffing_agencies",
     "debt_funded": false,
@@ -3080,7 +3060,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-19T19:56:59+00:00",
+ "run_at": "2026-10-19T20:21:00+00:00",
  "sources_held_back": [],
  "unclear": [
   {

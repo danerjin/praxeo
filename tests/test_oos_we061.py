@@ -19,14 +19,6 @@ SHORT = {"lobbying groups": ["platforms", "drivers.employee"],
          "recipients of other spending": "recipients.other_spending",
          "future taxpayers": "taxpayers.future"}
 EXCEPTIONS = {
-    ("drivers.employee", "wage_rate", "decrease", None):
-        "KNOWN WRONG: PC-17 with CR-6 (wages_adjust) signs the recipients' wage down. The example says the floor (section 5) holds "
-        "the wage of workers paid below 16 (C-1: increase) and that only the pressure above the floor goes to margins, as a group "
-        "(C-8, wage_rate above the floor); a plain decrease for all employees contradicts C-1. mc_wage has no condition for a floor "
-        "that comes with the mandate",
-    ("drivers.employee", "earnings", "decrease", None):
-        "KNOWN WRONG: the single earnings chain (fewer jobs and hours, lower wage) is reported alone. The example has the floor "
-        "(C-1) as the opposing chain and signs earnings ambiguous (C-33); the engine's opposing chain needs a paid absence",
     ("platforms", "asset_value", "decrease", None):
         "defensible: CR-7c on the bound actor; the table puts the fall on the platforms' shareholders, owners.platforms (C-27)",
     ("platforms", "return_on_capital", "decrease", None):
@@ -85,5 +77,5 @@ def test_consistent_with_worked_example_we061():
     _check(rows, keys, EXCEPTIONS, NOT_PRODUCED, PRODUCED)
     assert PRODUCED | set(NOT_PRODUCED) == set(rows)
     known_wrong = {k for k, v in EXCEPTIONS.items() if v.startswith("KNOWN WRONG")}
-    assert known_wrong == {("drivers.employee", "wage_rate", "decrease", None), ("drivers.employee", "earnings", "decrease", None)}
+    assert known_wrong == set()  # 2 at the first run: no wage-down chain where a floor holds the recipients (fix after the run)
     assert all(v.startswith(("defensible", "KNOWN WRONG")) for v in EXCEPTIONS.values())

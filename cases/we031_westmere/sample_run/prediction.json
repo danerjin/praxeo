@@ -405,7 +405,7 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"builders\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nstandard(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers.current\").\nmc_payer_group(k1, \"taxpayers.current,recipients.other_spending,taxpayers.future\").\nst_buyer(k1, \"buyers.new_homes\").\nmc_outside(k1, \"homeowners.renovating\").\nst_stock_owner(k1, \"owners.existing_homes\").\nstock_exempt(k1).\ndefinition_line(k1).\ngeneral_budget(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(can_organize(k1)).\nassumption(stock_competes(k1)).\nassumption(buyers_value_standard(k1)).\n",
+ "engine_facts": "bound(k1, \"builders\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nstandard(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers.current\").\nmc_payer_group(k1, \"taxpayers.current,recipients.other_spending,taxpayers.future\").\nst_buyer(k1, \"buyers.new_homes\").\nmc_outside(k1, \"homeowners.renovating\").\nst_stock_owner(k1, \"owners.existing_homes\").\nstock_exempt(k1).\ndefinition_line(k1).\ngeneral_budget(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(can_organize(k1)).\nassumption(buyers_value_standard(k1)).\nassumption(stock_competes(k1)).\n",
  "explanations": [
   "C-1. Compared with no Westmere Residential Energy Performance Act, compliance cost for builders rises from the short run onward (tier B, invisible). Why: EN-14: EN-14. This holds if: The standard binds on some designs (p = 0.70); Most makers comply (p = 0.90). Reported.",
   "C-2. Compared with no Westmere Residential Energy Performance Act, lobbying effort for builders rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The standard binds on some designs (p = 0.70); The makers can organize to lobby (p = 0.90). Reported.",
@@ -476,24 +476,6 @@
    "answer": {
     "decider": "fixture:answers.json",
     "evidence": [],
-    "probability": 0.8,
-    "question_id": "k1.stock_competes",
-    "rationale": "Probability taken from the assumption table of handbook WE-031 (illustrative figures), A-7: buyers have substitutes for new site-built homes in the state, among them existing homes.",
-    "value": "yes"
-   },
-   "question": {
-    "assumption": "stock_competes",
-    "assumption_class": "substitutability",
-    "id": "k1.stock_competes",
-    "kind": "noul",
-    "options": [],
-    "text": "Do existing units compete with new units for the same buyers?"
-   }
-  },
-  {
-   "answer": {
-    "decider": "fixture:answers.json",
-    "evidence": [],
     "probability": 0.3,
     "question_id": "k1.buyers_value_standard",
     "rationale": "No row of the assumption table of handbook WE-031 matches; judged from the text. The policy text says buyers asked for efficient homes and the median DEI has fallen for ten years, but also that the standard removes designs buyers would have chosen (CR-2: buyers who would have chosen a less efficient design ranked it higher); nothing in the record says buyers prefer covered homes to the existing stock.",
@@ -506,6 +488,24 @@
     "kind": "noul",
     "options": [],
     "text": "Do buyers value what the standard requires enough to prefer covered units over the existing stock?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.stock_competes",
+    "rationale": "Probability taken from the assumption table of handbook WE-031 (illustrative figures), A-7: buyers have substitutes for new site-built homes in the state, among them existing homes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "stock_competes",
+    "assumption_class": "substitutability",
+    "id": "k1.stock_competes",
+    "kind": "noul",
+    "options": [],
+    "text": "Do existing units compete with new units for the same buyers?"
    }
   }
  ],
@@ -531,6 +531,7 @@
     "claim_penalties": false,
     "complainant_actor": null,
     "complaint_only": false,
+    "contract_kind": "employment",
     "convicted_actor": null,
     "cover_seller_actor": null,
     "debt_funded": false,
@@ -669,7 +670,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-19T20:01:13+00:00",
+ "run_at": "2026-10-19T20:21:01+00:00",
  "sources_held_back": [],
  "unclear": [
   {

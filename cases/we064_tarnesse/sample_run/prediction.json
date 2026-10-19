@@ -502,13 +502,13 @@
    "actor_group": [],
    "assumption_sets": [
     [
+     "binding(k2)",
+     "can_organize(k2)"
+    ],
+    [
      "binding(k3)",
      "can_organize(k3)",
      "enforced(k3)"
-    ],
-    [
-     "binding(k2)",
-     "can_organize(k2)"
     ]
    ],
    "assumptions": [
@@ -755,7 +755,7 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"bidders\").\nprotected(k1, \"licensees\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nbound(k2, \"licensees\").\nprotected(k2, \"customers.towns\").\nexcluded(k2, \"buyers.prospective\").\nmandate(k2).\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nmc_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nbound(k3, \"bidders\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nquota(k3).\nen_buyer(k3, \"bidders\").\nen_holder(k3, \"licensees\").\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nen_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_informal_buyer(k3, \"bidders\").\nen_revenue(k3, \"treasury\").\nen_entrant(k3, \"entrants\").\nen_supplier(k3, \"tower_owners\").\ntransferable(k3).\nholder_cap(k3).\nrights_sold(k3).\ngeneral_budget(k3).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(can_organize(k2)).\nassumption(binding(k3)).\nassumption(enforced(k3)).\nassumption(evasion(k3)).\nassumption(can_organize(k3)).\nassumption(expected_to_last(k3)).\nassumption(values_differ(k3)).\nassumption(trade_cheap(k3)).\nassumption(value_above_price(k3)).\nassumption(enforcement_budget_raised(k3)).\n",
+ "engine_facts": "bound(k1, \"bidders\").\nprotected(k1, \"licensees\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nbound(k2, \"licensees\").\nprotected(k2, \"customers.towns\").\nexcluded(k2, \"buyers.prospective\").\nmandate(k2).\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nemployment(k2).\nmc_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nbound(k3, \"bidders\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nquota(k3).\nen_buyer(k3, \"bidders\").\nen_holder(k3, \"licensees\").\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nen_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_informal_buyer(k3, \"bidders\").\nen_revenue(k3, \"treasury\").\nen_entrant(k3, \"entrants\").\nen_supplier(k3, \"tower_owners\").\ntransferable(k3).\nholder_cap(k3).\nrights_sold(k3).\ngeneral_budget(k3).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(can_organize(k2)).\nassumption(binding(k3)).\nassumption(enforced(k3)).\nassumption(evasion(k3)).\nassumption(can_organize(k3)).\nassumption(expected_to_last(k3)).\nassumption(values_differ(k3)).\nassumption(trade_cheap(k3)).\nassumption(value_above_price(k3)).\nassumption(enforcement_budget_raised(k3)).\n",
  "explanations": [
   "C-1. Compared with no Tarnesse 2.9 GHz Award Regulations, capital stock target for bidders may move either way in the long run (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.60); The cap is enforced (p = 0.85); Rights can be sold or leased at low cost (p = 0.40); Holders' costs or values differ (p = 0.60). Sign per reading: U1-a: decrease; U1-b: none. Not reported: an assumption is below the 0.5 cut-off.",
   "C-2. Compared with no Tarnesse 2.9 GHz Award Regulations, disputes settled outside courts for bidders rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.60); The cap is enforced (p = 0.85); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
@@ -1011,6 +1011,7 @@
     "claim_penalties": false,
     "complainant_actor": null,
     "complaint_only": false,
+    "contract_kind": "employment",
     "convicted_actor": null,
     "cover_seller_actor": null,
     "debt_funded": false,
@@ -1130,6 +1131,7 @@
     "claim_penalties": false,
     "complainant_actor": null,
     "complaint_only": false,
+    "contract_kind": "employment",
     "convicted_actor": null,
     "cover_seller_actor": null,
     "debt_funded": false,
@@ -1247,6 +1249,7 @@
     "claim_penalties": false,
     "complainant_actor": null,
     "complaint_only": false,
+    "contract_kind": "employment",
     "convicted_actor": null,
     "cover_seller_actor": null,
     "debt_funded": false,
@@ -1394,7 +1397,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-19T19:57:02+00:00",
+ "run_at": "2026-10-19T20:21:10+00:00",
  "sources_held_back": [],
  "unclear": [
   {

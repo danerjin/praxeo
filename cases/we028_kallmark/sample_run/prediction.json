@@ -1306,7 +1306,7 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"vessel_owners.history\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nquota(k1).\nen_buyer(k1, \"buyers.regional\").\nen_holder(k1, \"share_recipients\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending\").\nen_informal_buyer(k1, \"buyers.fresh_domestic\").\nen_revenue(k1, \"officials.enforcement\").\nen_entrant(k1, \"entrants.prospective\").\nen_worker(k1, \"crew\").\nen_supplier(k1, \"ports.minor\").\ntransferable(k1).\nallocation_by_history(k1).\nbase_after_announcement(k1).\nwider_market(k1).\ngeneral_budget(k1).\nbound(k2, \"vessel_owners.history\").\nprotected(k2, \"share_recipients\").\nexcluded(k2, \"buyers.prospective\").\nannounced(k2).\nbound(k3, \"vessel_owners.history\").\nprotected(k3, \"crew\").\nexcluded(k3, \"buyers.prospective\").\nterm_ban(k3).\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nmc_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(expected_to_last(k1)).\nassumption(values_differ(k1)).\nassumption(trade_cheap(k1)).\nassumption(allocation_known(k1)).\nassumption(price_effect_material(k1)).\nassumption(enforcement_budget_raised(k1)).\nassumption(binding(k3)).\nassumption(term_valued(k3)).\nassumption(substitute_terms(k3)).\nassumption(can_organize(k3)).\n",
+ "engine_facts": "bound(k1, \"vessel_owners.history\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nquota(k1).\nen_buyer(k1, \"buyers.regional\").\nen_holder(k1, \"share_recipients\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending\").\nen_informal_buyer(k1, \"buyers.fresh_domestic\").\nen_revenue(k1, \"officials.enforcement\").\nen_entrant(k1, \"entrants.prospective\").\nen_worker(k1, \"crew\").\nen_supplier(k1, \"ports.minor\").\ntransferable(k1).\nallocation_by_history(k1).\nbase_after_announcement(k1).\nwider_market(k1).\ngeneral_budget(k1).\nbound(k2, \"vessel_owners.history\").\nprotected(k2, \"share_recipients\").\nexcluded(k2, \"buyers.prospective\").\nannounced(k2).\nbound(k3, \"vessel_owners.history\").\nprotected(k3, \"crew\").\nexcluded(k3, \"buyers.prospective\").\nterm_ban(k3).\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nemployment(k3).\nmc_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(expected_to_last(k1)).\nassumption(values_differ(k1)).\nassumption(trade_cheap(k1)).\nassumption(allocation_known(k1)).\nassumption(price_effect_material(k1)).\nassumption(enforcement_budget_raised(k1)).\nassumption(binding(k3)).\nassumption(term_valued(k3)).\nassumption(substitute_terms(k3)).\nassumption(can_organize(k3)).\n",
  "explanations": [
   "C-1. Compared with no Kallmark Ridge Cod Fishery Act, disputes settled outside courts for buyers.fresh_domestic rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
   "C-2. Compared with no Kallmark Ridge Cod Fishery Act, quality information for buyers.fresh_domestic falls from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.80); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
@@ -1610,6 +1610,7 @@
     "claim_penalties": false,
     "complainant_actor": null,
     "complaint_only": false,
+    "contract_kind": "employment",
     "convicted_actor": null,
     "cover_seller_actor": null,
     "debt_funded": false,
@@ -1734,6 +1735,7 @@
     "claim_penalties": false,
     "complainant_actor": null,
     "complaint_only": false,
+    "contract_kind": "employment",
     "convicted_actor": null,
     "cover_seller_actor": null,
     "debt_funded": false,
@@ -1852,6 +1854,7 @@
     "claim_penalties": false,
     "complainant_actor": null,
     "complaint_only": false,
+    "contract_kind": "employment",
     "convicted_actor": null,
     "cover_seller_actor": null,
     "debt_funded": false,
@@ -1978,7 +1981,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-19T19:57:00+00:00",
+ "run_at": "2026-10-19T20:21:08+00:00",
  "sources_held_back": [],
  "unclear": [
   {

@@ -14,38 +14,10 @@
   "evidence": []
  },
  {
-  "question_id": "k1a.wages_sticky",
-  "value": "yes",
-  "probability": 0.8,
-  "rationale": "No matching assumption in WE-059; judged from the text: covered units already sold carry the term and the prices of those sales cannot be renegotiated (section 6, values paragraph), so the cost stays with the maker in the short run; the nearest row, A-6, says makers bear the cost (0.85).",
-  "evidence": []
- },
- {
-  "question_id": "k1a.wages_adjust",
-  "value": "no",
-  "probability": 0.1,
-  "rationale": "No matching assumption in WE-059; judged from the text: read as asked for a sale, the price of the contract is what the owner pays, and nothing in the text has it fall; makers seek to recover the cost by raising price or cutting other terms (A-6, A-18). The question is worded for a wage that falls.",
-  "evidence": []
- },
- {
   "question_id": "k1a.worth_less",
   "value": "yes",
   "probability": 0.6,
   "rationale": "No matching assumption in WE-059; judged from the text: the owner's gain is the lower repair cost (A-22: buyers value the term, 0.7) but the maker also bears support, portal and compliance costs beyond the transferred margin (C-40), and A-25 (0.7) has the costs outweighing the gain from buyers' valuation; section 6 does not rank them for new sales (C-30), so only a modest probability.",
-  "evidence": []
- },
- {
-  "question_id": "k1a.alternatives_worse",
-  "value": "no",
-  "probability": 0.3,
-  "rationale": "No matching assumption in WE-059; judged from the text: owners can buy another brand or, near the line, in Darnholt, and phones are sold nationally; the text does not say owners' alternatives are clearly worse than makers'. A-19 compares dealers with makers, not owners.",
-  "evidence": []
- },
- {
-  "question_id": "k1a.valued_on_earnings",
-  "value": "yes",
-  "probability": 0.85,
-  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-12: investors value makers' expected repair-input margins in Kestrava.",
   "evidence": []
  },
  {
@@ -60,13 +32,6 @@
   "value": "yes",
   "probability": 0.85,
   "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: farm groups and repair associations can organize at a cost below their stakes.",
-  "evidence": []
- },
- {
-  "question_id": "k1a.rivals_bound",
-  "value": "yes",
-  "probability": 0.9,
-  "rationale": "No matching assumption in WE-059; judged from the text: coverage attaches to equipment sold to a purchaser in Kestrava, so every maker selling there is bound; section 6 speaks of the Act binding 'every rival at once' (C-26).",
   "evidence": []
  },
  {
@@ -112,38 +77,10 @@
   "evidence": []
  },
  {
-  "question_id": "k1p.wages_sticky",
-  "value": "yes",
-  "probability": 0.8,
-  "rationale": "No matching assumption in WE-059; judged from the text: covered units already sold carry the term and the prices of those sales cannot be renegotiated (section 6, values paragraph), so the cost stays with the maker in the short run; the nearest row, A-6, says makers bear the cost (0.85).",
-  "evidence": []
- },
- {
-  "question_id": "k1p.wages_adjust",
-  "value": "no",
-  "probability": 0.1,
-  "rationale": "No matching assumption in WE-059; judged from the text: read as asked for a sale, the price of the contract is what the owner pays, and nothing in the text has it fall; makers seek to recover the cost by raising price or cutting other terms (A-6, A-18). The question is worded for a wage that falls.",
-  "evidence": []
- },
- {
   "question_id": "k1p.worth_less",
   "value": "yes",
   "probability": 0.6,
   "rationale": "No matching assumption in WE-059; judged from the text: the owner's gain is the lower repair cost (A-22: buyers value the term, 0.7) but the maker also bears support, portal and compliance costs beyond the transferred margin (C-40), and A-25 (0.7) has the costs outweighing the gain from buyers' valuation; section 6 does not rank them for new sales (C-30), so only a modest probability.",
-  "evidence": []
- },
- {
-  "question_id": "k1p.alternatives_worse",
-  "value": "no",
-  "probability": 0.3,
-  "rationale": "No matching assumption in WE-059; judged from the text: owners can buy another brand or, near the line, in Darnholt, and phones are sold nationally; the text does not say owners' alternatives are clearly worse than makers'. A-19 compares dealers with makers, not owners.",
-  "evidence": []
- },
- {
-  "question_id": "k1p.valued_on_earnings",
-  "value": "yes",
-  "probability": 0.85,
-  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-12: investors value makers' expected repair-input margins in Kestrava.",
   "evidence": []
  },
  {
@@ -165,13 +102,6 @@
   "value": "no",
   "probability": 0.2,
   "rationale": "No matching assumption in WE-059; judged from the text: the one national phone program already matches K1 on price (A-2, 'Figures'); its server pairing is K3's question, not a condition K1 forbids.",
-  "evidence": []
- },
- {
-  "question_id": "k1p.rivals_bound",
-  "value": "yes",
-  "probability": 0.9,
-  "rationale": "No matching assumption in WE-059; judged from the text: coverage attaches to equipment sold to a purchaser in Kestrava, so every maker selling there is bound; section 6 speaks of the Act binding 'every rival at once' (C-26).",
   "evidence": []
  },
  {
@@ -210,13 +140,6 @@
   "evidence": []
  },
  {
-  "question_id": "k2a.term_valued",
-  "value": "yes",
-  "probability": 0.85,
-  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-6: makers bear costs from K1 and K2 (the margin the terms protected) and seek to recover them through other terms of sale; the nearest row to the maker valuing the protection.",
-  "evidence": []
- },
- {
   "question_id": "k2a.substitute_terms",
   "value": "yes",
   "probability": 0.8,
@@ -245,13 +168,6 @@
   "evidence": []
  },
  {
-  "question_id": "k2d.term_valued",
-  "value": "yes",
-  "probability": 0.6,
-  "rationale": "No matching assumption in WE-059; judged from the text: dealers' service revenue ($520 million a year) is what the anti-repair terms protect; but A-6 names makers only and section 5 does not describe dealers paying for the protection through other terms.",
-  "evidence": []
- },
- {
   "question_id": "k2d.substitute_terms",
   "value": "no",
   "probability": 0.4,
@@ -277,13 +193,6 @@
   "value": "yes",
   "probability": 0.9,
   "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-2: anti-repair terms were in use before the Act (K2 binds makers of phones).",
-  "evidence": []
- },
- {
-  "question_id": "k2p.term_valued",
-  "value": "yes",
-  "probability": 0.85,
-  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-6: makers bear costs from K1 and K2 and seek to recover them through other terms of sale; the nearest row to the maker valuing the protection.",
   "evidence": []
  },
  {

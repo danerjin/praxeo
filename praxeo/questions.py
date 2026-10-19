@@ -493,8 +493,11 @@ MANDATE_QUESTIONS = [
      "The recipients can organize to lobby."),
 ]
 FLOOR_BINDS_QUESTION = ("floor_binds", "binding",
-                        "Does an existing price floor (a minimum wage) hold the wage of some recipients, so that it cannot fall?",
-                        "An existing floor holds some recipients' wage.")
+                        "Does a price floor (a minimum wage, existing or set by the same measure) hold the wage of some recipients, so that it cannot fall?",
+                        "A floor holds some recipients' wage.")
+PAID_BELOW_QUESTION = ("paid_below_rivals", "other",
+                       "Are some of the parties bound by the term paid less than a rival would pay them?",
+                       "Some of the bound parties are paid less than a rival would pay them.")
 CAN_SCREEN_QUESTION = ("can_screen", "other",
                        "Can providers tell in advance which applicants will cost them more under the term?",
                        "Providers can tell which applicants will cost more under the term.")
@@ -567,13 +570,21 @@ VALUE_STANDARD_QUESTION = ("buyers_value_standard", "other",
                            "Buyers value the standard enough to prefer covered units.")
 
 
+EMPLOYMENT_ONLY = {"wages_sticky", "wages_adjust", "alternatives_worse", "valued_on_earnings", "floor_binds", "can_screen",
+                   "hours_shift", "absence_used", "unpaid_absence_before", "absences_covered", "rivals_bound", "move_marginal"}
+
+
 def _mandate_specs(comp: Component) -> list[tuple[str, str, str, str]]:
+    employment = comp.contract_kind == "employment"
     if comp.instrument == "term_prohibition":
-        return list(TERM_BAN_QUESTIONS)
+        specs = [q for q in TERM_BAN_QUESTIONS if employment or q[0] != "term_valued"]
+        if comp.restrains_mobility and employment:
+            specs.append(PAID_BELOW_QUESTION)
+        return specs
     if comp.instrument == "product_standard":
-        specs = list(STANDARD_QUESTIONS)
+        specs = list(STANDARD_QUESTIONS) + [VALUE_STANDARD_QUESTION]   # the Unless clause opposes the new-unit quantity too
         if comp.stock_exempt:
-            specs += [STOCK_COMPETES_QUESTION, VALUE_STANDARD_QUESTION]
+            specs.append(STOCK_COMPETES_QUESTION)
         return specs
     if not comp.recipient_actor:   # no counterparty named: only the binding, compliance and lobbying questions (mandates.lp)
         return [q for q in MANDATE_QUESTIONS if q[0] in ("binding", "enforced", "can_organize")]
@@ -588,7 +599,7 @@ def _mandate_specs(comp: Component) -> list[tuple[str, str, str, str]]:
                     (comp.size_threshold, STAYING_SMALL_QUESTION)):
         if cond:
             specs.append(q)
-    return specs
+    return specs if employment else [q for q in specs if q[0] not in EMPLOYMENT_ONLY]
 
 
 def _related_specs(comp: Component) -> list[tuple[str, str, str, str]]:

@@ -74,11 +74,16 @@ def test_threshold_items_by_reading():
 def test_term_prohibition_and_standard_from_the_catalog():
     from praxeo.schema import Component, PolicyRecord
     ban = Component(id="k1", instrument="term_prohibition", good="noncompete", market="m", bound_actor="employers",
-                    recipient_actor="workers", restrains_mobility=True, voids_existing=True, source_sentences=["x"])
+                    recipient_actor="workers", applicant_actor="workers.prospective", restrains_mobility=True,
+                    voids_existing=True, source_sentences=["x"])
     rec = PolicyRecord(name="n", jurisdiction="j", rule_maker="r", enacted="e", effective="f", components=[ban])
     got = _reported(rec)
-    assert {("workers", "job_changes", "increase", None), ("employers", "term_prevalence", "increase", None),
-            ("workers", "wage_rate", "at_least_one_decrease", None), ("employers", "asset_value", "decrease", None)} <= got
+    # holders of voided contracts move and are bid up; the other terms of new contracts fall on prospective counterparties
+    assert {("workers", "job_changes", "increase", None), ("workers", "wage_rate", "increase", None),
+            ("employers", "term_prevalence", "increase", None), ("workers.prospective", "wage_rate", "at_least_one_decrease", None),
+            ("employers", "resources_available_other_uses", "decrease", None),
+            ("workers", "resources_available_other_uses", "increase", None)} <= got
+    assert not any(k[0] == "workers" and k[2] == "at_least_one_decrease" for k in got)
     std = Component(id="k1", instrument="product_standard", good="homes", market="m", bound_actor="builders",
                     buyer_actor="buyers.new_homes", stock_exempt=True, stock_owner_actor="owners.existing", source_sentences=["x"])
     rec = PolicyRecord(name="n", jurisdiction="j", rule_maker="r", enacted="e", effective="f", components=[std])
@@ -86,4 +91,10 @@ def test_term_prohibition_and_standard_from_the_catalog():
     assert {("buyers.new_homes", "price_paid", "increase", None), ("builders", "quantity_supplied", "decrease", None),
             ("owners.existing", "asset_value", "increase", None), ("owners.existing", "stock_age", "increase", None)} <= got
     got = _reported(rec)                                                          # EN-14 Unless: buyers value the standard
-    assert ("owners.existing", "asset_value", "ambiguous", None) in got
+    assert {("owners.existing", "asset_value", "ambiguous", None), ("owners.existing", "stock_age", "ambiguous", None),
+            ("builders", "quantity_supplied", "ambiguous", None)} <= got
+    # a sale contract: no wage, hours or jobs chains (PC-17 1.1)
+    sale = Component(id="k1", instrument="mandated_contract_term", good="repair_parts", market="m", bound_actor="makers",
+                     recipient_actor="owners", contract_kind="sale", source_sentences=["x"])
+    rec = PolicyRecord(name="n", jurisdiction="j", rule_maker="r", enacted="e", effective="f", components=[sale])
+    assert not any(k[1] in ("wage_rate", "employment", "hours_worked", "earnings", "price_paid") for k in _reported(rec))

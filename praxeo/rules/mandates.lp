@@ -3,6 +3,8 @@
 % OC-1, OC-2 and OC-3 where a mandate brings them in. PC-17 was developed on WE-029 (paid sick leave); PC-18 and EN-14 are
 % written from the catalog alone. Input facts, written by praxeo/engine.py from the policy record:
 %   mandate(C).                    a mandated_contract_term: every contract of a kind must carry a term
+%   employment(C).                 the contract is an employment contract (Component.contract_kind); the wage, hours, jobs
+%                                  and earnings chains apply only then (found out of sample on WE-059: a sale contract)
 %   bound(C, A).                   who must provide it (employers without the term)
 %   mc_recipient(C, A).            who receives it (their workers)
 %   mc_floor_recipient(C, A).      recipients whose wage an existing floor holds (PC-10)
@@ -45,36 +47,45 @@ mc_cost_stays(C) :- mc_binds(C), holds(worth_less(C)).
 fired(cr_6, mc_cost_stays(C), mc_binds(C))     :- mc_cost_stays(C).
 fired(cr_6, mc_cost_stays(C), wages_sticky(C)) :- mc_cost_stays(C), holds(wages_sticky(C)).
 fired(cr_12, mc_cost_stays(C), worth_less(C))  :- mc_cost_stays(C), holds(worth_less(C)).
-effect(mc_cost_stays(C), B, "price_paid", increase, short, visible, "B") :- mc_cost_stays(C), bound(C, B).
+% The provider's cost per unit is recorded as price_paid only for labour; for a sale the price is a member of the adjusting
+% group (PC-17 1.1), not a cost (found out of sample on WE-059).
+effect(mc_cost_stays(C), B, "price_paid", increase, short, visible, "B") :- mc_cost_stays(C), employment(C), bound(C, B).
+% The cost that stays after the other terms adjust, as a chain of its own: later chains rest on it, never on the group
+% (CR-12 1.1: a group is not a chain; found out of sample on WE-059).
+mc_cost_after(C) :- mc_binds(C), holds(worth_less(C)).
+fired(cr_12, mc_cost_after(C), mc_binds(C))   :- mc_cost_after(C).
+fired(cr_2, mc_cost_after(C), worth_less(C))  :- mc_cost_after(C).
 
 % PC-17 Then: the bargaining range moves, so the other terms adjust, at least one: jobs, hours, other benefits. Short run
 % while the wage is fixed; medium run where the term is worth less than it costs.
-mc_others_short(C) :- mc_binds(C), holds(wages_sticky(C)).
+mc_others_short(C) :- mc_binds(C), employment(C), holds(wages_sticky(C)).
 fired(pc_17, mc_others_short(C), mc_binds(C))     :- mc_others_short(C).
 fired(cr_6, mc_others_short(C), wages_sticky(C))  :- mc_others_short(C).
 group_effect(mc_others_short(C), R, "employment,hours_worked,non_wage_compensation", at_least_one_decrease, short, invisible, "B") :- mc_others_short(C), mc_recipient(C, R).
-mc_others_medium(C) :- mc_binds(C), holds(worth_less(C)).
+mc_others_medium(C) :- mc_binds(C), employment(C), holds(worth_less(C)).
 fired(pc_17, mc_others_medium(C), mc_binds(C))  :- mc_others_medium(C).
 fired(cr_2, mc_others_medium(C), worth_less(C)) :- mc_others_medium(C).
 group_effect(mc_others_medium(C), R, "employment,hours_worked,non_wage_compensation", at_least_one_decrease, medium, invisible, "B") :- mc_others_medium(C), mc_recipient(C, R).
 
 % PC-17 with CR-4 on each side and CR-6: where the wage can adjust (wages_adjust), it falls; both sides push it the same way,
 % so no comparison of value and cost is needed.
-mc_wage(C) :- mc_binds(C), holds(wages_adjust(C)), not exception(pc_17, C).
+mc_wage(C) :- mc_binds(C), employment(C), holds(wages_adjust(C)), not exception(pc_17, C).
 fired(pc_17, mc_wage(C), mc_binds(C))     :- mc_wage(C).
 fired(cr_6, mc_wage(C), wages_adjust(C))  :- mc_wage(C).
-effect(mc_wage(C), R, "wage_rate", decrease, medium, invisible, "B") :- mc_wage(C), mc_recipient(C, R).
+% Not for recipients whose wage a floor holds, whether the floor exists or the measure sets it (found out of sample on WE-061).
+effect(mc_wage(C), R, "wage_rate", decrease, medium, invisible, "B") :- mc_wage(C), mc_recipient(C, R), not mc_floor_recipient(C, R).
+mc_wage_moves(C) :- mc_wage(C), mc_recipient(C, R), not mc_floor_recipient(C, R).
 
 % CR-7b: who bears the term's gross cost. Where the recipients' alternatives are worse than the providers' (alternatives_worse),
 % the recipients bear the larger share as the wage adjusts.
 mc_incidence(C) :- mc_wage(C), holds(alternatives_worse(C)), not exception(cr_7, C).
 fired(cr_7, mc_incidence(C), mc_wage(C))             :- mc_incidence(C).
 fired(cr_7, mc_incidence(C), alternatives_worse(C))  :- mc_incidence(C).
-effect(mc_incidence(C), R, "tax_share_borne", increase, medium, invisible, "B") :- mc_incidence(C), mc_recipient(C, R).
+effect(mc_incidence(C), R, "tax_share_borne", increase, medium, invisible, "B") :- mc_incidence(C), mc_recipient(C, R), not mc_floor_recipient(C, R).
 
-% PC-10 through an existing floor: where the wage cannot fall (floor_binds), the cost stays with providers at every horizon
+% PC-10 through a floor (existing, or set by the same measure): where the wage cannot fall (floor_binds), the cost stays with providers at every horizon
 % and the other terms of the recipients at the floor adjust, at least one.
-mc_floor(C) :- mc_binds(C), mc_floor_recipient(C, _), holds(floor_binds(C)), not exception(pc_10, C).
+mc_floor(C) :- mc_binds(C), employment(C), mc_floor_recipient(C, _), holds(floor_binds(C)), not exception(pc_10, C).
 fired(pc_10, mc_floor(C), mc_binds(C))      :- mc_floor(C).
 fired(pc_10, mc_floor(C), floor_binds(C))   :- mc_floor(C).
 group_effect(mc_floor(C), R, "employment,hours_worked,non_wage_compensation", at_least_one_decrease, short, invisible, "B") :- mc_floor(C), mc_floor_recipient(C, R).
@@ -82,7 +93,7 @@ group_effect(mc_floor(C), R, "employment,hours_worked,non_wage_compensation", at
 % CR-7b, CR-7c: while the cost stays with providers, their returns and their means fall (CR-8b: the term is paid to the
 % recipients); owners of businesses valued on expected earnings (valued_on_earnings) see the value fall when the mandate
 % becomes expected.
-mc_returns(C) :- mc_binds(C), holds(wages_sticky(C)).
+mc_returns(C) :- mc_binds(C), employment(C), holds(wages_sticky(C)).
 fired(cr_7, mc_returns(C), mc_binds(C))     :- mc_returns(C).
 fired(cr_7, mc_returns(C), wages_sticky(C)) :- mc_returns(C).
 effect(mc_returns(C), B, "return_on_capital", decrease, short, invisible, "B") :- mc_returns(C), bound(C, B).
@@ -92,21 +103,19 @@ fired(cr_7, mc_capitalized(C), mc_returns(C))           :- mc_capitalized(C).
 fired(cr_7, mc_capitalized(C), valued_on_earnings(C))   :- mc_capitalized(C).
 effect(mc_capitalized(C), B, "asset_value", decrease, short, invisible, "B") :- mc_capitalized(C), bound(C, B).
 
-% CR-12: recipients' earnings. A paid absence that replaces an unpaid one (unpaid_absence_before) raises them; fewer jobs
-% and hours, or a lower wage, lower them. Both chains are kept; where both are reported the sign is ambiguous (_resolve).
-mc_earn_up(C) :- mc_binds(C), paid_absence(C), holds(unpaid_absence_before(C)).
+% CR-12: recipients' earnings. A paid absence that replaces an unpaid one (unpaid_absence_before) raises them; a lower wage
+% lowers them. The group of C-4 is not a chain here: its benefits member does not move earnings (CR-12 1.1). Both chains are kept; where both are reported the sign is ambiguous (_resolve).
+mc_earn_up(C) :- mc_binds(C), employment(C), paid_absence(C), holds(unpaid_absence_before(C)).
 fired(cr_8, mc_earn_up(C), mc_binds(C))               :- mc_earn_up(C).
 fired(cr_8, mc_earn_up(C), unpaid_absence_before(C))  :- mc_earn_up(C).
 effect(mc_earn_up(C), R, "earnings", increase, short, invisible, "B") :- mc_earn_up(C), mc_recipient(C, R).
-mc_earn_down(C) :- mc_others_short(C).
-mc_earn_down(C) :- mc_wage(C).
-fired(cr_12, mc_earn_down(C), mc_others_short(C)) :- mc_earn_down(C), mc_others_short(C).
-fired(cr_12, mc_earn_down(C), mc_wage(C))         :- mc_earn_down(C), mc_wage(C).
-effect(mc_earn_down(C), R, "earnings", decrease, short, invisible, "B") :- mc_earn_down(C), mc_recipient(C, R).
+mc_earn_down(C) :- mc_wage_moves(C).
+fired(cr_12, mc_earn_down(C), mc_wage(C)) :- mc_earn_down(C).
+effect(mc_earn_down(C), R, "earnings", decrease, medium, invisible, "B") :- mc_earn_down(C), mc_recipient(C, R), not mc_floor_recipient(C, R).
 
 % A paid absence (CR-3b, CR-4): absence is now cheaper than unpaid absence, so where some recipients use it (absence_used)
 % hours present fall; where providers cover absent shifts (absences_covered), sellers of cover sell more.
-mc_absence(C) :- mc_binds(C), paid_absence(C), holds(absence_used(C)), not exception(cr_4, C).
+mc_absence(C) :- mc_binds(C), employment(C), paid_absence(C), holds(absence_used(C)), not exception(cr_4, C).
 fired(cr_4, mc_absence(C), mc_binds(C))       :- mc_absence(C).
 fired(cr_4, mc_absence(C), absence_used(C))   :- mc_absence(C).
 effect(mc_absence(C), R, "hours_worked", decrease, short, invisible, "B") :- mc_absence(C), mc_recipient(C, R).
@@ -119,7 +128,7 @@ effect(mc_cover(C), S, "quantity_traded", increase, short, invisible, "B") :- mc
 % recipient adds nothing. Where providers can move hours between them (hours_shift), those below the cap lose jobs or hours;
 % those above it gain hours from the shift and from covering absences, and lose them to the general cost rise (worth_less):
 % opposite chains, ambiguous where both are reported.
-mc_cap_shift(C) :- mc_binds(C), per_head_cap(C), holds(hours_shift(C)), not exception(rs_18, C).
+mc_cap_shift(C) :- mc_binds(C), employment(C), per_head_cap(C), holds(hours_shift(C)), not exception(rs_18, C).
 fired(rs_18, mc_cap_shift(C), per_head_cap(C)) :- mc_cap_shift(C).
 fired(rs_18, mc_cap_shift(C), hours_shift(C))  :- mc_cap_shift(C).
 group_effect(mc_cap_shift(C), R, "employment,hours_worked", at_least_one_decrease, medium, invisible, "B") :- mc_cap_shift(C), mc_below_cap(C, R).
@@ -127,13 +136,13 @@ effect(mc_cap_shift(C), R, "hours_worked", increase, medium, invisible, "B") :- 
 mc_cap_cover(C) :- mc_cover(C), per_head_cap(C).
 fired(rs_18, mc_cap_cover(C), mc_cover(C)) :- mc_cap_cover(C).
 effect(mc_cap_cover(C), R, "hours_worked", increase, medium, invisible, "B") :- mc_cap_cover(C), mc_above_cap(C, R).
-mc_cap_cost(C) :- mc_others_medium(C), per_head_cap(C).
-fired(cr_4, mc_cap_cost(C), mc_others_medium(C)) :- mc_cap_cost(C).
+mc_cap_cost(C) :- mc_cost_after(C), employment(C), per_head_cap(C).
+fired(cr_4, mc_cap_cost(C), mc_cost_after(C)) :- mc_cap_cost(C).
 effect(mc_cap_cost(C), R, "hours_worked", decrease, medium, invisible, "B") :- mc_cap_cost(C), mc_above_cap(C, R).
 
 % RS-23: the term's cost differs by recipient while its terms are uniform; where providers can tell (can_screen), they choose
 % among applicants by non-price criteria.
-mc_screen(C) :- mc_binds(C), mc_applicant(C, _), holds(can_screen(C)), not exception(rs_23, C).
+mc_screen(C) :- mc_binds(C), employment(C), mc_applicant(C, _), holds(can_screen(C)), not exception(rs_23, C).
 fired(rs_23, mc_screen(C), mc_binds(C))    :- mc_screen(C).
 fired(rs_23, mc_screen(C), can_screen(C))  :- mc_screen(C).
 effect(mc_screen(C), P, "allocation_by_non_price_criteria", increase, medium, invisible, "B") :- mc_screen(C), mc_applicant(C, P).
@@ -153,7 +162,7 @@ effect(mc_margin(C), R, "non_wage_compensation", increase, short, invisible, "B"
 
 % RS-14 with CR-9: where the cost stays with providers and their rivals in the output market are bound too (rivals_bound),
 % the price of the output rises and its buyers buy less (CR-4c).
-mc_pass(C) :- mc_cost_stays(C), mc_output_buyer(C, _), holds(rivals_bound(C)), not exception(rs_14, C).
+mc_pass(C) :- mc_cost_stays(C), employment(C), mc_output_buyer(C, _), holds(rivals_bound(C)), not exception(rs_14, C).
 fired(rs_14, mc_pass(C), mc_cost_stays(C))  :- mc_pass(C).
 fired(rs_14, mc_pass(C), rivals_bound(C))   :- mc_pass(C).
 effect(mc_pass(C), X, "price_paid", increase, short, invisible, "B")       :- mc_pass(C), mc_output_buyer(C, X).
@@ -161,8 +170,8 @@ effect(mc_pass(C), X, "quantity_traded", decrease, short, invisible, "B")  :- mc
 
 % RS-4, RS-6: providers selling against unbound rivals across a boundary (rivals_unbound) lose output to them over time,
 % where the cost stays after the wage adjusts (worth_less).
-mc_relocate(C) :- mc_others_medium(C), mc_tradable(C, _), holds(rivals_unbound(C)), not exception(rs_4, C).
-fired(rs_4, mc_relocate(C), mc_others_medium(C)) :- mc_relocate(C).
+mc_relocate(C) :- mc_cost_after(C), mc_tradable(C, _), holds(rivals_unbound(C)), not exception(rs_4, C).
+fired(rs_4, mc_relocate(C), mc_cost_after(C)) :- mc_relocate(C).
 fired(rs_4, mc_relocate(C), rivals_unbound(C))   :- mc_relocate(C).
 effect(mc_relocate(C), T, "quantity_supplied", decrease, long, invisible, "B") :- mc_relocate(C), mc_tradable(C, T).
 effect(mc_relocate(C), N, "quantity_supplied", increase, medium, invisible, "B") :- mc_relocate(C), neighbor_seller(C, N).
@@ -170,8 +179,8 @@ effect(mc_relocate(C), N, "quantity_supplied", increase, medium, invisible, "B")
 % CR-9, CR-7c: unbound rivals of the providers (exempt or already offering the term) gain sales where they compete with them
 % (compete_with_bound) and the cost stays after the wage adjusts; the expected gain is capitalized where firms are valued on
 % expected earnings.
-mc_rivals(C) :- mc_others_medium(C), mc_rival(C, _), holds(compete_with_bound(C)), not exception(cr_9, C).
-fired(cr_9, mc_rivals(C), mc_others_medium(C))    :- mc_rivals(C).
+mc_rivals(C) :- mc_cost_after(C), mc_rival(C, _), holds(compete_with_bound(C)), not exception(cr_9, C).
+fired(cr_9, mc_rivals(C), mc_cost_after(C))       :- mc_rivals(C).
 fired(cr_9, mc_rivals(C), compete_with_bound(C))  :- mc_rivals(C).
 effect(mc_rivals(C), V, "quantity_supplied", increase, medium, invisible, "B") :- mc_rivals(C), mc_rival(C, V).
 mc_rivals_value(C) :- mc_capitalized(C), mc_rival(C, _), holds(compete_with_bound(C)), not exception(cr_7, C).
@@ -188,7 +197,7 @@ effect(mc_reshaped(C), O, "reclassification", increase, medium, invisible, "B") 
 
 % RS-11: where something the term gives is lost on leaving (a balance, a waiting period), job changes at the margin
 % (move_marginal) fall.
-mc_lockin(C) :- mc_binds(C), forfeit_on_leaving(C), holds(move_marginal(C)), not exception(rs_11, C).
+mc_lockin(C) :- mc_binds(C), employment(C), forfeit_on_leaving(C), holds(move_marginal(C)), not exception(rs_11, C).
 fired(rs_11, mc_lockin(C), forfeit_on_leaving(C)) :- mc_lockin(C).
 fired(rs_11, mc_lockin(C), move_marginal(C))      :- mc_lockin(C).
 effect(mc_lockin(C), R, "job_changes", decrease, medium, invisible, "B") :- mc_lockin(C), mc_recipient(C, R).
@@ -276,12 +285,20 @@ fired(pc_18, tb_binds(C), binding(C)) :- tb_binds(C).
 tb_mobile(C) :- tb_binds(C), restrains_mobility(C).
 fired(cr_7, tb_mobile(C), restrains_mobility(C)) :- tb_mobile(C).
 effect(tb_mobile(C), F, "job_changes", increase, short, invisible, "B") :- tb_mobile(C), tb_freed(C, F).
-% CR-5c, CR-6: the party who valued the term offers less on the other terms (wage, training it funds), at least one, where it
-% valued the term (term_valued); and shifts to substitute terms where they exist (substitute_terms).
-tb_others(C) :- tb_binds(C), holds(term_valued(C)), not exception(pc_18, C).
+% CR-7 (a means made mobile) with CR-6: where some holders were paid less than a rival would pay (paid_below_rivals), their
+% pay rises as rivals can bid for them (found out of sample on WE-034, C-8).
+tb_bid(C) :- tb_mobile(C), employment(C), holds(paid_below_rivals(C)).
+fired(cr_7, tb_bid(C), tb_mobile(C))           :- tb_bid(C).
+fired(cr_6, tb_bid(C), paid_below_rivals(C))   :- tb_bid(C).
+effect(tb_bid(C), F, "wage_rate", increase, short, invisible, "B") :- tb_bid(C), tb_freed(C, F).
+% CR-5c, CR-6: the party who valued the term offers less on the other terms of new contracts (wage, training it funds,
+% hires), at least one, where it valued the term (term_valued). The group falls on the prospective counterparties
+% (mc_applicant), not on holders of voided contracts, whose terms move the other way (found out of sample on WE-034, C-7, C-8).
+% Shifts to substitute terms where they exist (substitute_terms).
+tb_others(C) :- tb_binds(C), employment(C), mc_applicant(C, _), holds(term_valued(C)), not exception(pc_18, C).
 fired(pc_18, tb_others(C), tb_binds(C))     :- tb_others(C).
 fired(cr_6, tb_others(C), term_valued(C))   :- tb_others(C).
-group_effect(tb_others(C), F, "wage_rate,non_wage_compensation", at_least_one_decrease, medium, invisible, "B") :- tb_others(C), tb_freed(C, F).
+group_effect(tb_others(C), P, "wage_rate,non_wage_compensation,employment", at_least_one_decrease, medium, invisible, "B") :- tb_others(C), mc_applicant(C, P).
 tb_substitute(C) :- tb_binds(C), holds(substitute_terms(C)), not exception(pc_18, C).
 fired(pc_18, tb_substitute(C), substitute_terms(C)) :- tb_substitute(C).
 effect(tb_substitute(C), B, "term_prevalence", increase, short, invisible, "B") :- tb_substitute(C), bound(C, B).
@@ -289,6 +306,9 @@ effect(tb_substitute(C), B, "term_prevalence", increase, short, invisible, "B") 
 tb_voided(C) :- tb_binds(C), voids_existing(C).
 fired(cr_8, tb_voided(C), voids_existing(C)) :- tb_voided(C).
 effect(tb_voided(C), B, "asset_value", decrease, short, invisible, "B") :- tb_voided(C), bound(C, B).
+% CR-8b: both sides of the transfer (found out of sample on WE-034, C-38 and C-39).
+effect(tb_voided(C), B, "resources_available_other_uses", decrease, short, invisible, "B") :- tb_voided(C), bound(C, B).
+effect(tb_voided(C), F, "resources_available_other_uses", increase, short, invisible, "B") :- tb_voided(C), tb_freed(C, F).
 
 % ------------------------------------------------------------------ EN-14: a standard on new units, the stock exempt
 
@@ -314,6 +334,11 @@ effect(st_stock(C), O, "stock_age", increase, long, invisible, "B")     :- st_st
 st_valued(C) :- st_binds(C), stock_exempt(C), holds(buyers_value_standard(C)), not exception(en_14, C).
 fired(en_14, st_valued(C), buyers_value_standard(C)) :- st_valued(C).
 effect(st_valued(C), O, "asset_value", decrease, medium, invisible, "B") :- st_valued(C), st_stock_owner(C, O).
+effect(st_valued(C), O, "stock_age", decrease, long, invisible, "B")     :- st_valued(C), st_stock_owner(C, O).
+% The same demand opposes "fewer new units built", with or without an exempt stock (found out of sample on WE-059, C-30).
+st_drawn(C) :- st_binds(C), holds(buyers_value_standard(C)), not exception(en_14, C).
+fired(en_14, st_drawn(C), buyers_value_standard(C)) :- st_drawn(C).
+effect(st_drawn(C), B, "quantity_supplied", increase, medium, invisible, "B") :- st_drawn(C), bound(C, B).
 
 #show holds/1.
 #show fired/3.
