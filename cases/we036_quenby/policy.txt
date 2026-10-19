@@ -1,0 +1,25 @@
+Quenby Fair Share Health Cover Act (fictional; summary of the policy record of handbook worked example WE-036).
+
+The State of Quenby has about 5.1 million people and 2.2 million private-sector employees. Its largest city, Marisport, lies on the border with the State of Tarnley, which has no such law; about 35,000 people commute across the border each day. Quenby's minimum wage is $14.00 an hour, indexed to prices; about 11% of private employees earn at or near it, mostly in retail, food service, cleaning, security and care.
+
+Firms with 50 or more full-time equivalents (FTE) employ about 1.45 million people, of whom about 1.15 million average 30 or more hours a week. A state insurance department survey found that, of those 1.15 million, about 79% (910,000) are already offered a plan that meets the Act's benefit standard with an employer share of at least 70%; about 9% (105,000) are offered a plan that falls short on benefits or on the employer's share; and about 12% (135,000) are offered nothing. The 135,000 work at about 2,100 firms: about 62,000 at 45 large firms (national retail and food chains, staffing, security) each with more than 100 such employees, and about 73,000 at about 2,050 mid-size firms, about 36 per firm on average. About 1,300 firms have 40 to 49 FTE, and about 1,100 have 50 to 60. About 380 firms (farms, food processing, ski and lake resorts, landscaping) have 30 to 49 year-round FTE and would reach 50 if the hours of their seasonal workers counted.
+
+The average premium for an employee-only plan that meets the standard is $7,400 a year, so a 70% share is $5,180. For a full-time worker at the minimum wage (2,080 hours, $29,120), that is 17.8% of pay, or $2.49 per hour at 40 hours a week and $3.32 at 30. The penalty of $3,000 a year is $1.44 per hour at 40 hours and $1.92 at 30. For a capped firm with 1,500 uncovered full-timers, the $300,000 cap is $200 per head a year.
+
+The bill was introduced on 9 November 2026 with the governor's support, signed on 4 January 2027, and takes effect on 1 January 2028. Status for 2028 is decided by the firm's average FTE over 2027. It has no expiry.
+
+K1, play or pay. The Act requires employers with 50 or more FTE to either offer each employee averaging 30 or more hours a week (130 hours in a month), from the first of the month after 60 days of employment, a plan meeting K2 with an employer contribution of at least 70% of the employee-only premium; or pay $250 a month ($3,000 a year) to the Department of Revenue for each such employee not so offered. An employee who is offered and declines counts as offered. Public employers and employees averaging under 30 hours are exempt.
+
+K2, benefit standard. A plan counts under K1 only if it covers hospital, physician, prescription and maternity care, with a deductible no higher than $2,500, on a list kept by the Department of Insurance. The standard binds insurers and self-insured employers.
+
+K3, size threshold. Employers under 50 FTE are exempt. FTE is the monthly average over the previous calendar year of (employees averaging 130 hours a month) plus (all other employees' hours divided by 130). Firms under common control are counted together. Agency workers count for the agency.
+
+K4, cap. No firm pays more than $300,000 a year under K1 (reached at 100 uncovered employees).
+
+K5, enforcement. Employers report each employee's offer status on quarterly withholding returns; the charge is assessed with them. Misreporting: twice the unpaid charge. The Department of Insurance certifies plans under K2. Charges are paid into the general fund. A new appropriation of $4.1 million a year from the general fund pays for 32 staff.
+
+Existing rules (in force in the counterfactual too): a minimum wage of $14.00 an hour, indexed yearly; an exclusion of employer contributions to health premiums from the employee's income for Quenby's 4.5% income tax, while wages are taxed; an Indigent Care Program that pays hospitals for care for uninsured residents below 200% of the poverty line, about $310 million a year from the general fund, of which about $9 million is administration; and an overtime rule of 1.5 times the regular rate for hours above 40 a week.
+
+Unclear provision U1. The Act defines a seasonal worker (employed no more than 120 days in a calendar year in work that recurs at the same season) but does not say whether seasonal workers count toward the 50. Reading U1-a: they count by their hours, like any other employee. Reading U1-b: they are left out of the count. Under both readings, a seasonal worker who averages 30 or more hours at a bound firm is owed an offer after 60 days.
+
+The counterfactual is Quenby without the Act, with the same minimum wage, tax exclusion, Indigent Care Program and overtime rule.
