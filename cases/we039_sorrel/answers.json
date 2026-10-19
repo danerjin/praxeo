@@ -1,0 +1,58 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "Probability taken from the assumption table of handbook WE-039 (illustrative figures), A-1: without the cap, pumping would stay near 300,000 af and above 210,000.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-039 (illustrative figures), A-2: the cap is enforced against most pumpers; meters, telemetry and satellite checks detect most over-pumping.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-039 (illustrative figures), A-10: detection is weak for some wells, so some pumpers over-pump.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-039 (illustrative figures), A-11: South growers, North communities and landholders without history can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-039 (illustrative figures), A-3: holders expect shares to last, without early reallocation (shares are permanent; the 2032 review may scale them but not reassign them).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.values_differ",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-039 (illustrative figures), A-16: tree nuts earn more per af than field crops for most growers, so holders' values of an af differ.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.trade_cheap",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-039 (illustrative figures), A-4: a lease market forms; transaction costs are low enough for holders to lease to others within a season.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.price_effect_material",
+  "value": "yes",
+  "probability": 0.3,
+  "rationale": "Probability taken from the assumption table of handbook WE-039 (illustrative figures), A-19: the fall in basin tree-nut output moves national tree-nut prices by more than a negligible amount (basin share about 5%); A-18 gives 0.15 for field crops.",
+  "evidence": []
+ }
+]

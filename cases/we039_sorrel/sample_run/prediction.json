@@ -1,0 +1,1318 @@
+{
+ "assumptions": {
+  "binding(k1)": {
+   "assumption_class": "binding",
+   "id": "binding(k1)",
+   "p": 0.95,
+   "text": "The cap holds the quantity below what would otherwise be traded."
+  },
+  "can_organize(k1)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1)",
+   "p": 0.85,
+   "text": "The holders of the rights can organize to lobby at a cost below their stake."
+  },
+  "enforced(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k1)",
+   "p": 0.75,
+   "text": "The cap is enforced."
+  },
+  "evasion(k1)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k1)",
+   "p": 0.55,
+   "text": "Some trade takes place beyond the cap without being caught."
+  },
+  "expected_to_last(k1)": {
+   "assumption_class": "expectations",
+   "id": "expected_to_last(k1)",
+   "p": 0.75,
+   "text": "Holders and buyers of the rights expect the restriction to last."
+  },
+  "price_effect_material(k1)": {
+   "assumption_class": "other",
+   "id": "price_effect_material(k1)",
+   "p": 0.3,
+   "text": "The capped quantity matters enough in the wider market to raise the price there."
+  },
+  "trade_cheap(k1)": {
+   "assumption_class": "mobility",
+   "id": "trade_cheap(k1)",
+   "p": 0.8,
+   "text": "Rights can be sold or leased at low cost."
+  },
+  "values_differ(k1)": {
+   "assumption_class": "other",
+   "id": "values_differ(k1)",
+   "p": 0.85,
+   "text": "Holders' costs or values differ."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "farm_workers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "trade_cheap(k1)",
+     "values_differ(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "trade_cheap(k1)",
+    "values_differ(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_consolidate(k1)",
+     "premises": [
+      "quota_binds(k1)",
+      "trade_cheap(k1)",
+      "values_differ(k1)"
+     ],
+     "rule": "EN-13"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked"
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "growers.nuts",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "growers.nuts",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "price_effect_material(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "price_effect_material(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k1)",
+     "premises": [
+      "price_effect_material(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "growers.nuts",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_information",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "growers.nuts",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "growers.nuts",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "price_effect_material(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "price_effect_material(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k1)",
+     "premises": [
+      "price_effect_material(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "growers.nuts",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "landholders.history",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_capitalized(k1)",
+     "premises": [
+      "expected_to_last(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "SB-4"
+    },
+    {
+     "conclusion": "en_windfall(k1)",
+     "premises": [
+      "quota_binds(k1)"
+     ],
+     "rule": "EN-12"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "landholders.history",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "can_organize(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "can_organize(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_lobby(k1)",
+     "premises": [
+      "can_organize(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "landholders.history",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_consolidate(k1)",
+     "premises": [
+      "quota_binds(k1)",
+      "trade_cheap(k1)",
+      "values_differ(k1)"
+     ],
+     "rule": "EN-13"
+    },
+    {
+     "conclusion": "quota_lease(k1)",
+     "premises": [
+      "quota_binds(k1)"
+     ],
+     "rule": "CR-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "right_lease_price",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_administered(k1)",
+     "premises": [
+      "quota_binds(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "pumpers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "trade_cheap(k1)",
+     "values_differ(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "trade_cheap(k1)",
+    "values_differ(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_consolidate(k1)",
+     "premises": [
+      "quota_binds(k1)",
+      "trade_cheap(k1)",
+      "values_differ(k1)"
+     ],
+     "rule": "EN-13"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "capital_stock_target",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "pumpers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "quota_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "pumpers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "trade_cheap(k1)",
+     "values_differ(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "trade_cheap(k1)",
+    "values_differ(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_consolidate(k1)",
+     "premises": [
+      "quota_binds(k1)",
+      "trade_cheap(k1)",
+      "values_differ(k1)"
+     ],
+     "rule": "EN-13"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "number_of_sellers",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "pumpers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "trade_cheap(k1)",
+     "values_differ(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "trade_cheap(k1)",
+    "values_differ(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_consolidate(k1)",
+     "premises": [
+      "quota_binds(k1)",
+      "trade_cheap(k1)",
+      "values_differ(k1)"
+     ],
+     "rule": "EN-13"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "pumpers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"pumpers\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nquota(k1).\nen_buyer(k1, \"growers.nuts\").\nen_holder(k1, \"landholders.history\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_informal_buyer(k1, \"growers.nuts\").\nen_entrant(k1, \"growers.prospective\").\nen_worker(k1, \"farm_workers\").\ntransferable(k1).\nallocation_by_history(k1).\nwider_market(k1).\nbound(k2, \"officials.enforcement\").\nprotected(k2, \"landholders.history\").\nexcluded(k2, \"buyers.prospective\").\nannounced(k2).\nbound(k3, \"officials.enforcement\").\nprotected(k3, \"landholders.no_history.eligible\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(expected_to_last(k1)).\nassumption(values_differ(k1)).\nassumption(trade_cheap(k1)).\nassumption(price_effect_material(k1)).\n",
+ "explanations": [
+  "C-1. Compared with no Sorrel Basin Groundwater Allocation Plan, employment or hours worked for farm_workers falls for at least one of them from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.85). Reported.",
+  "C-2. Compared with no Sorrel Basin Groundwater Allocation Plan, disputes settled outside courts for growers.nuts rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
+  "C-3. Compared with no Sorrel Basin Groundwater Allocation Plan, price paid for growers.nuts rises from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); The capped quantity matters enough in the wider market to raise the price there (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-4. Compared with no Sorrel Basin Groundwater Allocation Plan, quality information for growers.nuts falls from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
+  "C-5. Compared with no Sorrel Basin Groundwater Allocation Plan, quantity traded for growers.nuts falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75). Reported.",
+  "C-6. Compared with no Sorrel Basin Groundwater Allocation Plan, resources available other uses for growers.nuts falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); The capped quantity matters enough in the wider market to raise the price there (p = 0.30). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-7. Compared with no Sorrel Basin Groundwater Allocation Plan, search cost for growers.nuts rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
+  "C-8. Compared with no Sorrel Basin Groundwater Allocation Plan, asset value for landholders.history rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value; EN-12: EN-12. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75). Reported.",
+  "C-9. Compared with no Sorrel Basin Groundwater Allocation Plan, lobbying effort for landholders.history rises from the medium run onward (tier B, invisible). Why: EN-6: EN-6; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The holders of the rights can organize to lobby at a cost below their stake (p = 0.85); The cap is enforced (p = 0.75). Reported.",
+  "C-10. Compared with no Sorrel Basin Groundwater Allocation Plan, right lease price for landholders.history rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75). Reported.",
+  "C-11. Compared with no Sorrel Basin Groundwater Allocation Plan, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75). Reported.",
+  "C-12. Compared with no Sorrel Basin Groundwater Allocation Plan, capital stock target for pumpers falls in the long run (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.85). Reported.",
+  "C-13. Compared with no Sorrel Basin Groundwater Allocation Plan, informal activity for pumpers rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
+  "C-14. Compared with no Sorrel Basin Groundwater Allocation Plan, number of sellers for pumpers falls from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.85). Reported.",
+  "C-15. Compared with no Sorrel Basin Groundwater Allocation Plan, quantity supplied for pumpers rises from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.85). Reported.",
+  "C-16. Compared with no Sorrel Basin Groundwater Allocation Plan, quantity traded for pumpers falls from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.95); The cap is enforced (p = 0.75). Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.95,
+    "question_id": "k1.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-039 (illustrative figures), A-1: without the cap, pumping would stay near 300,000 af and above 210,000.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k1.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the cap below the quantity that would otherwise be traded, now or within the period considered (for a cap on the number of sellers: does it hold the quantity down)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-039 (illustrative figures), A-2: the cap is enforced against most pumpers; meters, telemetry and satellite checks detect most over-pumping.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k1.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the cap be enforced, so that little trade takes place beyond it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.55,
+    "question_id": "k1.evasion",
+    "rationale": "Probability taken from the assumption table of handbook WE-039 (illustrative figures), A-10: detection is weak for some wells, so some pumpers over-pump.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k1.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some trade take place beyond the cap without being caught?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-039 (illustrative figures), A-11: South growers, North communities and landholders without history can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the holders of the quota rights organize to lobby for keeping or tightening the cap at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.expected_to_last",
+    "rationale": "Probability taken from the assumption table of handbook WE-039 (illustrative figures), A-3: holders expect shares to last, without early reallocation (shares are permanent; the 2032 review may scale them but not reassign them).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "expected_to_last",
+    "assumption_class": "expectations",
+    "id": "k1.expected_to_last",
+    "kind": "noul",
+    "options": [],
+    "text": "Do holders and buyers of the licenses or quota rights expect the restriction to last for many years?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.values_differ",
+    "rationale": "Probability taken from the assumption table of handbook WE-039 (illustrative figures), A-16: tree nuts earn more per af than field crops for most growers, so holders' values of an af differ.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "values_differ",
+    "assumption_class": "other",
+    "id": "k1.values_differ",
+    "kind": "noul",
+    "options": [],
+    "text": "Do holders of the rights differ in their costs, or in the value they get from the right?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.trade_cheap",
+    "rationale": "Probability taken from the assumption table of handbook WE-039 (illustrative figures), A-4: a lease market forms; transaction costs are low enough for holders to lease to others within a season.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "trade_cheap",
+    "assumption_class": "mobility",
+    "id": "k1.trade_cheap",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the rights be sold or leased at low cost (a register, few restrictions on who may hold them)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k1.price_effect_material",
+    "rationale": "Probability taken from the assumption table of handbook WE-039 (illustrative figures), A-19: the fall in basin tree-nut output moves national tree-nut prices by more than a negligible amount (basin share about 5%); A-18 gives 0.15 for field crops.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "price_effect_material",
+    "assumption_class": "other",
+    "id": "k1.price_effect_material",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the capped quantity a large enough part of the wider market for the cap to raise the price buyers pay there?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "allocation_by_history": true,
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "bound_actor": "pumpers",
+    "budget_capped": false,
+    "buyer_actor": "growers.nuts",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": "growers.prospective",
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "groundwater",
+    "id": "k1",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "quota",
+    "market": "sorrel_basin",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "own_revenue_funded": true,
+    "price_fixed": false,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": true,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": "landholders.history",
+    "scrappage": false,
+    "scrapper_actor": null,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "source_sentences": [
+     "The plan caps the groundwater pumped from the basin at 210,000 af a year (70% of the 2017 to 2021 average), binding holders of non-domestic wells.",
+     "Domestic wells pumping under 2 af a year are exempt.",
+     "Shares may be sold, and a year's allocation leased, separately from land.",
+     "Crops are sold in national markets: the basin grows about 5% of the nation's tree nuts and under 1% of each field crop.",
+     "Meters with telemetry are required on every non-domestic well by 1 October 2027, at the owner's cost (about $3,000 a well); readings are monthly; satellite checks of crop water use are made.",
+     "The penalty is $600 per af pumped over allocation, with loss of shares for repeated violation.",
+     "The SBWA is funded by an annual fee of $10 per af of shares held (about $2.1 million a year).",
+     "No expiry; the cap is reviewed in 2032.",
+     "The Sorrel Basin Water Authority (SBWA) published its draft plan, including the 2017 to 2021 base period, on 15 March 2022.",
+     "About 6,000 people work on farms in the basin."
+    ],
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "trainer_actor": null,
+    "transferable": true,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "wider_market": true,
+    "worker_actor": "farm_workers"
+   },
+   {
+    "allocation_by_history": true,
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "bound_actor": "officials.enforcement",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "groundwater_shares",
+    "id": "k2",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "rights_allocation",
+    "market": "sorrel_basin",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "own_revenue_funded": false,
+    "price_fixed": false,
+    "protected_actor": "landholders.history",
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "scrappage": false,
+    "scrapper_actor": null,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "source_sentences": [
+     "90% of the cap (189,000 af) is issued by the SBWA as permanent shares of the annual cap, to whoever holds a parcel on 1 July 2027, in proportion to the parcel's average metered or estimated pumping in water years 2017 to 2021.",
+     "A holder receives about 63% of its history.",
+     "Before March 2022 no allocation method had been proposed in the basin; the state's groundwater act allows allocation by history, by area or by auction."
+    ],
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "trainer_actor": null,
+    "transferable": true,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "allocation_by_history": false,
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "bound_actor": "officials.enforcement",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "groundwater_shares_reserve",
+    "id": "k3",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "rights_allocation",
+    "market": "sorrel_basin",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "own_revenue_funded": false,
+    "price_fixed": false,
+    "protected_actor": "landholders.no_history.eligible",
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "scrappage": false,
+    "scrapper_actor": null,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "source_sentences": [
+     "10% of the cap (21,000 af) is issued by the SBWA as permanent shares in blocks of 100 af, drawn by lottery in September 2027.",
+     "Eligible: each parcel of at least 20 acres in the basin, held on 1 July 2027, with no K2 allocation; one entry per parcel; entry fee $500."
+    ],
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "trainer_actor": null,
+    "transferable": true,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "wider_market": false,
+    "worker_actor": null
+   }
+  ],
+  "context": [
+   "Average pumping in water years 2017 to 2021 was about 300,000 acre-feet (af) a year: North 110,000 (mostly field crops: cotton, alfalfa, grain), Central 70,000 (mixed), South 120,000 (mostly tree nuts).",
+   "The survey estimates the basin's long-run sustainable yield at about 200,000 af a year.",
+   "Over 2017 to 2021 the water table fell about 2.5 feet a year on average and about 4 feet a year in South.",
+   "About 2,400 agricultural wells and about 4,000 domestic wells draw on the aquifer; about 60 agricultural wells a year were deepened or replaced (about $80,000 each), and about 150 domestic wells went dry in 2017 to 2021.",
+   "The county runs an emergency water program for households with dry wells.",
+   "The Sorrel Irrigation District delivers canal water to about 30,000 acres in North; surface water also trades between districts in the region, at about $250 per af in normal years.",
+   "To the east, the Lowther Basin has no cap; its plan is due in 2030."
+  ],
+  "effective": "1 October 2027",
+  "enacted": "18 November 2026",
+  "jurisdiction": "Sorrel Basin, State of Castellan (fictional)",
+  "name": "Sorrel Basin Groundwater Allocation Plan",
+  "rule_maker": "the Sorrel Basin Water Authority (SBWA)",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U1-a: a share may be pumped only from a well in the sub-basin where the parcel that earned it lies",
+     "U1-b: a share may be pumped anywhere in the basin; the impact rules only set conditions on individual wells (spacing, monitoring)"
+    ],
+    "text": "Trading across sub-basins: whether a share may be pumped only in the sub-basin where its parcel lies, or anywhere in the basin."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-19T05:51:59+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U1-a: a share may be pumped only from a well in the sub-basin where the parcel that earned it lies",
+    "U1-b: a share may be pumped anywhere in the basin; the impact rules only set conditions on individual wells (spacing, monitoring)"
+   ],
+   "text": "Trading across sub-basins: whether a share may be pumped only in the sub-basin where its parcel lies, or anywhere in the basin."
+  }
+ ],
+ "verifier_problems": []
+}

@@ -1,0 +1,94 @@
+{
+ "name": "Sorrel Basin Groundwater Allocation Plan",
+ "jurisdiction": "Sorrel Basin, State of Castellan (fictional)",
+ "rule_maker": "the Sorrel Basin Water Authority (SBWA)",
+ "enacted": "18 November 2026",
+ "effective": "1 October 2027",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "quota",
+   "good": "groundwater",
+   "market": "sorrel_basin",
+   "bound_actor": "pumpers",
+   "buyer_actor": "growers.nuts",
+   "right_holder_actor": "landholders.history",
+   "transferable": true,
+   "wider_market": true,
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": false,
+   "own_revenue_funded": true,
+   "renewable": true,
+   "announcement_window": true,
+   "allocation_by_history": true,
+   "base_period_after_announcement": false,
+   "entrant_actor": "growers.prospective",
+   "worker_actor": "farm_workers",
+   "source_sentences": [
+    "The plan caps the groundwater pumped from the basin at 210,000 af a year (70% of the 2017 to 2021 average), binding holders of non-domestic wells.",
+    "Domestic wells pumping under 2 af a year are exempt.",
+    "Shares may be sold, and a year's allocation leased, separately from land.",
+    "Crops are sold in national markets: the basin grows about 5% of the nation's tree nuts and under 1% of each field crop.",
+    "Meters with telemetry are required on every non-domestic well by 1 October 2027, at the owner's cost (about $3,000 a well); readings are monthly; satellite checks of crop water use are made.",
+    "The penalty is $600 per af pumped over allocation, with loss of shares for repeated violation.",
+    "The SBWA is funded by an annual fee of $10 per af of shares held (about $2.1 million a year).",
+    "No expiry; the cap is reviewed in 2032.",
+    "The Sorrel Basin Water Authority (SBWA) published its draft plan, including the 2017 to 2021 base period, on 15 March 2022.",
+    "About 6,000 people work on farms in the basin."
+   ]
+  },
+  {
+   "id": "k2",
+   "instrument": "rights_allocation",
+   "good": "groundwater_shares",
+   "market": "sorrel_basin",
+   "bound_actor": "officials.enforcement",
+   "protected_actor": "landholders.history",
+   "enforcer_actor": "officials.enforcement",
+   "transferable": true,
+   "announcement_window": true,
+   "allocation_by_history": true,
+   "base_period_after_announcement": false,
+   "source_sentences": [
+    "90% of the cap (189,000 af) is issued by the SBWA as permanent shares of the annual cap, to whoever holds a parcel on 1 July 2027, in proportion to the parcel's average metered or estimated pumping in water years 2017 to 2021.",
+    "A holder receives about 63% of its history.",
+    "Before March 2022 no allocation method had been proposed in the basin; the state's groundwater act allows allocation by history, by area or by auction."
+   ]
+  },
+  {
+   "id": "k3",
+   "instrument": "rights_allocation",
+   "good": "groundwater_shares_reserve",
+   "market": "sorrel_basin",
+   "bound_actor": "officials.enforcement",
+   "protected_actor": "landholders.no_history.eligible",
+   "enforcer_actor": "officials.enforcement",
+   "transferable": true,
+   "announcement_window": true,
+   "source_sentences": [
+    "10% of the cap (21,000 af) is issued by the SBWA as permanent shares in blocks of 100 af, drawn by lottery in September 2027.",
+    "Eligible: each parcel of at least 20 acres in the basin, held on 1 July 2027, with no K2 allocation; one entry per parcel; entry fee $500."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Trading across sub-basins: whether a share may be pumped only in the sub-basin where its parcel lies, or anywhere in the basin.",
+   "readings": [
+    "U1-a: a share may be pumped only from a well in the sub-basin where the parcel that earned it lies",
+    "U1-b: a share may be pumped anywhere in the basin; the impact rules only set conditions on individual wells (spacing, monitoring)"
+   ]
+  }
+ ],
+ "context": [
+  "Average pumping in water years 2017 to 2021 was about 300,000 acre-feet (af) a year: North 110,000 (mostly field crops: cotton, alfalfa, grain), Central 70,000 (mixed), South 120,000 (mostly tree nuts).",
+  "The survey estimates the basin's long-run sustainable yield at about 200,000 af a year.",
+  "Over 2017 to 2021 the water table fell about 2.5 feet a year on average and about 4 feet a year in South.",
+  "About 2,400 agricultural wells and about 4,000 domestic wells draw on the aquifer; about 60 agricultural wells a year were deepened or replaced (about $80,000 each), and about 150 domestic wells went dry in 2017 to 2021.",
+  "The county runs an emergency water program for households with dry wells.",
+  "The Sorrel Irrigation District delivers canal water to about 30,000 acres in North; surface water also trades between districts in the region, at about $250 per af in normal years.",
+  "To the east, the Lowther Basin has no cap; its plan is due in 2030."
+ ]
+}
