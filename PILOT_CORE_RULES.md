@@ -90,3 +90,19 @@ On every blind record the core layer equals or passes the pattern engine. It has
 - the earmark of a revenue;
 - an assumption that defeats a fact;
 - product markets made from a held good.
+
+## Step 3: CR-12 on the core output
+
+Three CR-12 pieces were added to `core.lp`. Opposing chains on one key were already ambiguous before this step, and a chain below the cut-off still does not count.
+- **Class totals over parts (`parts`, a).** A whole's total takes every chain that reaches its parts.
+- **Dominance premises (`dominance`, e).** They are applied after the run. A settled sign rests on the dominance premise too.
+- **The first months after a line binds (h with CR-10b).** A price set before the line stays in force against the line.
+
+**Results:**
+- WE-001 is 30 of 30 in sample. C-21, the first-months total, is produced, against 28 for the pattern engine.
+- The blind writers were offered the new facts in general terms (r3).
+  - The WE-005 writer added none. Section 1 names no total over drivers and no assumption that settles a clash. Its two conflicting rows stay: served drivers cross less and unserved drivers cross more, where the example's analyst chose to report border drivers as one ambiguous class. Each part is correctly signed. The class the table nets them into is the analyst's choice, and the text does not give it.
+  - The WE-008 writer linked the plants' product sales to their milk purchases and added a class total over Velmora plants. The plants' milk purchases are now ambiguous rather than wrongly a decrease.
+  - Two rows still conflict for WE-008: the plants' quantity demanded falls and their out-of-state purchases rise. The plants' position is netted across exchanges only on the variable a link reaches. Netting their CR-4 choice as a whole (burdened on the input, made whole on the output) is not in the layer.
+
+Blind scores after step 3: WE-005 13 of 26, WE-008 11 of 28, WE-002 9 of 26, WE-010 16 of 33. They are unchanged by step 3 itself, and each is equal to or above the pattern engine.
