@@ -98,6 +98,13 @@
    "variable": "quantity_traded"
   },
   {
+   "source_actor": "plants.commodity",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "plants.commodity",
+   "variable": "quantity_traded"
+  },
+  {
    "source_actor": "officials.enforcement",
    "source_variable": "inventory_held",
    "relation": "substitute",
@@ -105,6 +112,10 @@
    "variable": "quantity_traded",
    "premises": ["a9", "a12"]
   }
+ ],
+ "parts": [
+  {"part": "plants.commodity", "whole": "plants.velmora"},
+  {"part": "plants.specialty", "whole": "plants.velmora"}
  ],
  "backstops": [
   {"component": "k2", "exchange": "e3", "buyer": "officials.enforcement", "outlay_variable": "subsidy_outlay"}
