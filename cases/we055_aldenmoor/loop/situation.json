@@ -1,0 +1,502 @@
+{
+ "name": "WE-055 home inspector licensing (expand-loop blind run)",
+ "exchanges": [
+  {
+   "id": "e_unlic",
+   "buyer": "buyers.homebuyers",
+   "seller": "inspectors.unlicensed",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_lic",
+   "buyer": "buyers.homebuyers",
+   "seller": "inspectors.licensed",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q18_some_grandfather_applicants_overstate_th"
+   ],
+   "exchange": "e_lic",
+   "kind": "outside",
+   "side": null,
+   "actor": "inspectors.nearline",
+   "variables": [
+    "legal_breach"
+   ]
+  },
+  {
+   "premises": [
+    "q21_some_unlicensed_practice_continues_where"
+   ],
+   "exchange": "e_unlic",
+   "kind": "outside",
+   "side": null,
+   "actor": "inspectors.unlicensed",
+   "variables": [
+    "informal_activity"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q11_some_buyers_at_the_margin_go_without_an_"
+   ],
+   "component": "k1",
+   "chooser": "buyers.homebuyers",
+   "actor": "buyers.homebuyers",
+   "variables": [
+    "informal_activity"
+   ]
+  },
+  {
+   "premises": [
+    "q13_for_some_part_time_inspectors_insurance_"
+   ],
+   "component": "k1_fee",
+   "chooser": "inspectors.licensed",
+   "actor": "workers.alternative_work",
+   "variables": [
+    "employment"
+   ]
+  },
+  {
+   "premises": [
+    "q14_some_grandfathered_inspectors_would_othe"
+   ],
+   "component": "k1_fee",
+   "chooser": "inspectors.licensed",
+   "actor": "inspectors.licensed",
+   "variables": [
+    "employment"
+   ]
+  },
+  {
+   "premises": [
+    "q13_for_some_part_time_inspectors_insurance_"
+   ],
+   "component": "k1",
+   "chooser": "inspectors.unlicensed",
+   "actor": "workers.alternative_work",
+   "variables": [
+    "employment"
+   ]
+  },
+  {
+   "premises": [
+    "q22_most_linmouth_inspectors_serving_aldenmo"
+   ],
+   "component": "k1",
+   "chooser": "inspectors.unlicensed",
+   "actor": "inspectors.linmouth",
+   "variables": [
+    "quantity_traded"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q10_agents_schools_and_the_inspectors_associ"
+   ],
+   "component": "k1",
+   "actor": "agents.realestate"
+  },
+  {
+   "premises": [
+    "q10_agents_schools_and_the_inspectors_associ"
+   ],
+   "component": "k1",
+   "actor": "inspectors.licensed"
+  },
+  {
+   "premises": [
+    "q10_agents_schools_and_the_inspectors_associ"
+   ],
+   "component": "k1",
+   "actor": "schools.training"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q12_some_exempt_engineers_add_home_inspectio"
+   ],
+   "source_actor": "buyers.homebuyers",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "engineers.exempt",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "a8",
+    "q15_engineers_supply_cannot_expand_at_unchan"
+   ],
+   "source_actor": "inspectors.licensed",
+   "source_variable": "number_of_sellers",
+   "relation": "supply",
+   "actor": "inspectors.licensed",
+   "variable": "net_price_received"
+  },
+  {
+   "premises": [
+    "q16_in_the_long_run_licensed_inspectors_leav"
+   ],
+   "source_actor": "inspectors.licensed",
+   "source_variable": "return_on_capital",
+   "relation": "yield",
+   "actor": "inspectors.entrant",
+   "variable": "entry_rate"
+  },
+  {
+   "premises": [
+    "q19_near_line_inspectors_win_the_extra_jobs_"
+   ],
+   "source_actor": "inspectors.nearline",
+   "source_variable": "quantity_supplied",
+   "relation": "supply",
+   "actor": "inspectors.nearline",
+   "variable": "net_price_received"
+  },
+  {
+   "premises": [
+    "q20_total_inspections_in_the_window_are_set_"
+   ],
+   "source_actor": "inspectors.nearline",
+   "source_variable": "quantity_supplied",
+   "relation": "substitute",
+   "actor": "inspectors.rivals",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q23_grandfathered_inspectors_stay_in_the_occ"
+   ],
+   "source_actor": "inspectors.unlicensed",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "inspectors.licensed",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q15_engineers_supply_cannot_expand_at_unchan"
+   ],
+   "source_actor": "engineers.exempt",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "engineers.exempt",
+   "variable": "net_price_received"
+  },
+  {
+   "premises": [
+    "a33",
+    "q16_in_the_long_run_licensed_inspectors_leav"
+   ],
+   "source_actor": "inspectors.entrant",
+   "source_variable": "entry_rate",
+   "relation": "supply",
+   "actor": "buyers.homebuyers",
+   "variable": "price_paid"
+  }
+ ],
+ "assets": [],
+ "yields": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "exchange": "e_lic",
+   "side": "seller",
+   "actor": "inspectors.licensed"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "inspectors.licensed"
+  },
+  {
+   "component": "k4",
+   "actor": "agents.realestate"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k3",
+   "actor": "officials.board"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k3",
+   "actor": "inspectors.licensed",
+   "premises": []
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "k1_fee",
+   "exchange": "e_lic",
+   "payer_side": "seller",
+   "receiver": "officials.board",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "capped_payers": [],
+   "basis": "operating"
+  },
+  {
+   "component": "k1_training",
+   "exchange": "e_lic",
+   "payer_side": "seller",
+   "receiver": "schools.training",
+   "receipt_variable": "enrollment",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [
+    "a2"
+   ],
+   "capped_payers": [],
+   "basis": "operating"
+  },
+  {
+   "component": "k1_insurance",
+   "exchange": "e_lic",
+   "payer_side": "seller",
+   "receiver": "insurers.liability",
+   "receipt_variable": "quantity_traded",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [
+    "a27"
+   ],
+   "capped_payers": [],
+   "basis": "operating"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a8",
+    "a33"
+   ],
+   "exchange": "e_lic",
+   "side": "buyer"
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "s1"
+   ]
+  },
+  {
+   "component": "k2",
+   "premises": [
+    "s1"
+   ]
+  },
+  {
+   "component": "k1_training",
+   "premises": [
+    "s1"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q17_inspectors_who_must_train_enroll_in_the_"
+   ],
+   "component": "k1_training",
+   "actor": "inspectors.licensed",
+   "variable": "enrollment",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "banned": [
+  {
+   "premises": [
+    "a1",
+    "a3"
+   ],
+   "component": "k1",
+   "exchange": "e_unlic"
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [
+  {
+   "premises": [
+    "a12"
+   ],
+   "component": "k2",
+   "actor": "inspectors.nearline",
+   "variable": "quantity_supplied"
+  }
+ ],
+ "expires": [
+  {
+   "component": "k2",
+   "premises": [
+    "s2"
+   ]
+  }
+ ],
+ "parts": [],
+ "dominance": [
+  {
+   "premises": [
+    "q13_for_some_part_time_inspectors_insurance_"
+   ],
+   "actor": "workers.alternative_work",
+   "variable": "employment",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "The requirements cost some current and would-be inspectors more than they would otherwise spend.",
+   "class": "binding",
+   "p": 0.9
+  },
+  "a2": {
+   "text": "Some incumbents who cannot be grandfathered train and sit the exam to stay in practice.",
+   "class": "other",
+   "p": 0.75
+  },
+  "a3": {
+   "text": "Despite complaint-only enforcement, unlicensed practice is deterred for most inspections: agents' forms and lenders ask for the license number, and buyers and agents complain.",
+   "class": "enforcement",
+   "p": 0.7
+  },
+  "a8": {
+   "text": "Exempt engineers and unlicensed practice cannot replace the excluded supply at the old fee (the response is partial).",
+   "class": "other",
+   "p": 0.75
+  },
+  "a12": {
+   "text": "Some near-line inspectors would otherwise fall short of 250 inspections by their application date, and can find extra jobs.",
+   "class": "other",
+   "p": 0.7
+  },
+  "a27": {
+   "text": "Some inspectors carried no insurance before.",
+   "class": "other",
+   "p": 0.85
+  },
+  "a33": {
+   "text": "Inspectors' cost per inspection does not fall below its counterfactual level as the number of inspectors falls (constant or rising cost).",
+   "class": "other",
+   "p": 0.75
+  },
+  "s1": {
+   "text": "Inspectors and buyers know the Act's dates and expect the license to be required on them.",
+   "class": "expectations",
+   "p": 0.9
+  },
+  "s2": {
+   "text": "Incumbents expect the grandfathering window to close on 31 December 2027 and not be reopened.",
+   "class": "expectations",
+   "p": 0.85
+  },
+  "q10_agents_schools_and_the_inspectors_associ": {
+   "text": "Agents, schools and the inspectors' association can organize at a cost below their stake.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q11_some_buyers_at_the_margin_go_without_an_": {
+   "text": "Some buyers at the margin go without an inspection or use an unlicensed inspector when the fee rises.",
+   "p": 0.6,
+   "class": "substitutability"
+  },
+  "q12_some_exempt_engineers_add_home_inspectio": {
+   "text": "Some exempt engineers add home inspections, and some buyers accept them.",
+   "p": 0.6,
+   "class": "substitutability"
+  },
+  "q13_for_some_part_time_inspectors_insurance_": {
+   "text": "For some part-time inspectors, insurance and the fee exceed their margin, so they stop.",
+   "p": 0.7,
+   "class": "alternative_uses"
+  },
+  "q14_some_grandfathered_inspectors_would_othe": {
+   "text": "Some grandfathered inspectors would otherwise leave for a year or more and return.",
+   "p": 0.6,
+   "class": "mobility"
+  },
+  "q15_engineers_supply_cannot_expand_at_unchan": {
+   "text": "Engineers' supply cannot expand at unchanged cost in the period.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q16_in_the_long_run_licensed_inspectors_leav": {
+   "text": "In the long run, licensed inspectors leave at a lower rate from a smaller stock than inspectors would without the Act, so replacement entry is below the counterfactual flow.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q17_inspectors_who_must_train_enroll_in_the_": {
+   "text": "Inspectors who must train enroll in the first approved courses rather than wait for the 2027 deadline.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "q18_some_grandfather_applicants_overstate_th": {
+   "text": "Some grandfather applicants overstate their inspections, and the Board, checking on paper and acting otherwise only on complaint, misses it.",
+   "p": 0.45,
+   "class": "enforcement"
+  },
+  "q19_near_line_inspectors_win_the_extra_jobs_": {
+   "text": "Near-line inspectors win the extra jobs mainly by cutting fees.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q20_total_inspections_in_the_window_are_set_": {
+   "text": "Total inspections in the window are set by home sales, not raised by the rush.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q21_some_unlicensed_practice_continues_where": {
+   "text": "Some unlicensed practice continues where complaint is least likely.",
+   "p": 0.7,
+   "class": "enforcement"
+  },
+  "q22_most_linmouth_inspectors_serving_aldenmo": {
+   "text": "Most Linmouth inspectors serving Aldenmoor do too few jobs there to cover the license's costs.",
+   "p": 0.65,
+   "class": "alternative_uses"
+  },
+  "q23_grandfathered_inspectors_stay_in_the_occ": {
+   "text": "Grandfathered inspectors stay in the occupation and their volume does not fall: rivals' exit takes away more inspections than buyers drop.",
+   "p": 0.65,
+   "class": "other"
+  }
+ }
+}
