@@ -10,7 +10,13 @@ core rule CR-1 (what it does to actors' options), as a Situation record. Fill on
   would trade at a held price but cannot, and the criteria by which the scarce side can choose among them);
 - held: a price the policy holds below (a maximum) or above (a minimum), with its binding and enforcement premises;
 - charges and moves: a payment the policy attaches to trading (who pays, who receives, the receipt variable), and which
-  side's price takes it, with the premise on the other side's response;
+  side's price takes it, with the premise on the other side's response; a charge paid in kind to the counterparty (a
+  mandated term) with its quantity premises; a sum fixed per seller (basis "operating"); a charge that is one branch of a
+  choice the policy gives the payer (branch premises); payers whose total is capped;
+- grants (a payment to one side of an exchange), capped (a rule fixing the quantity traded, with the holders of the
+  permission), banned (a rule stopping the legal trade), expires (the measure ends and is expected to);
+- thresholds (the measure binds only above a size: those near the line, the measure of size), qualifies (a right the policy
+  creates is allocated by history in a period after it is expected);
 - backstops (a buyer of last resort), discretion (an option granted case by case), means (a transfer no choice avoids),
   announced and early_price (a measure known before it binds), transfers, compliance, enforcers, funded or fixed_budget;
 - assumptions: only the premises those facts use, each a statement whose truth is asked one at a time (one concept each).

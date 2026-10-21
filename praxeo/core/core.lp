@@ -20,6 +20,9 @@
 %   link(A0, V0, Rel, A, V, P1, P2, P3).    CR-9: a change in A0's V0 reaches A's V through relation Rel
 %   asset(E, Side, Owner, P1, P2, P3). yield(E, Side, A, P1, P2, P3).   CR-7c, CR-7b: assets and returns tied to a side
 %   transfer(E, P1, P2, P3).                CR-8b: the held price is a transfer between those who still trade
+%   branch(C, P1, P2, P3): C is one branch of a choice given to the payer. charge_capped(C, A): A's total is capped.
+%   threshold(C, A, V, P1, P2, P3): C binds above a line in V; A are those near it. qualifies(C, A, V, P1, P2, P3): a right
+%   C creates is allocated by A's V in a period after it is expected.
 %   operating(C): a charge fixed per seller, not per unit (CR-4 0.8).
 %   compliance(C, A). enforcer(C, A). funded(C, A, P1, P2, P3). fixed_budget(C, A, P1, P2, P3).   CR-8c
 %   charge(C, E, Side, Receiver).           CR-1 op 3: C attaches a payment to trading in E, paid by Side, to Receiver
@@ -111,6 +114,7 @@ chooser(C, A, worse)  :- h(C, E, D), long(D, S), unsatisfied(E, S, A).
 chooser(C, A, better) :- h(C, E, _), favored(E, S), party(E, S, A).
 chooser(C, A, worse)  :- c_charged(C, E), charge(C, E, S, _), party(E, S, A).
 chooser(C, A, better) :- c_granted(C, E), grant(C, E, S, _), party(E, S, A).
+chooser(C, R, better) :- c_charged(C, E), charge(C, E, _, R), party(E, _, R).
 chooser(C, A, worse)  :- c_capped(C, E), party(E, buyer, A).
 chooser(C, A, worse)  :- c_capped(C, E), unsatisfied(E, seller, A).
 chooser(C, A, better) :- c_capped(C, E), holder(C, E, A).
@@ -230,8 +234,16 @@ group_effect(p_link(A0, V0, R, A, V), A, V, G, medium, invisible, "B") :- p_link
 % (moves/5, CR-6 0.9); the buyers' price rises and the sellers' net price falls, whichever side pays. The payment is the receiver's revenue and
 % a sum the payers who keep trading cannot avoid (CR-8b, CR-3); with fewer trades, the revenue falls short of the payment
 % times the old base (CR-4 with CR-8b).
-c_charged(C, E) :- charge(C, E, _, _).
+% A charge that is one branch of a choice the policy gives the payer (pay, or provide in kind) holds only with the
+% premise that some payers take that branch (branch/4).
+has_branch(C) :- branch(C, _, _, _).
+c_charged(C, E) :- charge(C, E, _, _), not has_branch(C).
+c_charged(C, E) :- charge(C, E, _, _), branch(C, P1, P2, P3), ok(P1), ok(P2), ok(P3).
 fired(cr_1, c_charged(C, E), charge(C, E, S, R)) :- c_charged(C, E), charge(C, E, S, R).
+fired(cr_4, c_charged(C, E), P) :- c_charged(C, E), branch(C, P1, P2, P3), P = (P1; P2; P3), P != none.
+% Payers whose total is capped pay a fixed sum at the margin (charge_capped/2): it takes from their means (CR-8b) and
+% bears on none of their choices at the margin (CR-4 0.8).
+effect(c_paid(C, E), A, "resources_available_other_uses", decrease, short, invisible, "A") :- c_paid(C, E), charge_capped(C, A).
 effect(c_qty(C, E), A, "quantity_traded", decrease, short, invisible, "B") :- c_qty(C, E), c_charged(C, E), party(E, _, A).
 % The fall (or rise) in trades rests on a premise where the record gives one: a payment that is worth something to the side
 % that receives it in kind (a mandated term) can be recovered through the other terms (CR-7, gross and net), so its effect
@@ -301,6 +313,15 @@ timing_dir(worse, bring_forward, increase). timing_dir(worse, carry_over, decrea
 timing_dir(better, bring_forward, decrease). timing_dir(better, carry_over, increase).
 effect(p_timing(C, A, V), A, V, D, short, invisible, "B") :- p_timing(C, A, V), timing(C, A, V, M, _, _, _), chooser(C, A, W), timing_dir(W, M, D).
 window(p_timing(C, A, V), announcement) :- p_timing(C, A, V).
+% Before a measure that makes an option better ends (expires), those who time the action into its period rush it into
+% the stretch before the end (the deadline window), and take less of it after (p_after).
+p_deadline(C, A, V) :- timing(C, A, V, bring_forward, P1, P2, P3), expires(C, Q1, Q2, Q3), chooser(C, A, better),
+                       ok(P1), ok(P2), ok(P3), ok(Q1), ok(Q2), ok(Q3).
+fired(cr_10, p_deadline(C, A, V), P) :- p_deadline(C, A, V), expires(C, P1, P2, P3), P = (P1; P2; P3), P != none.
+fired(cr_10, p_deadline(C, A, V), P) :- p_deadline(C, A, V), timing(C, A, V, _, P1, P2, P3), P = (P1; P2; P3), P != none.
+effect(p_deadline(C, A, V), A, V, increase, short, invisible, "B") :- p_deadline(C, A, V).
+window(p_deadline(C, A, V), deadline) :- p_deadline(C, A, V).
+timing_concl(p_deadline(C, A, V)) :- timing(C, A, V, _, _, _, _), expires(C, _, _, _).
 % A line that is coming: the burdened side sets the price on the far side of it before it binds (early_price).
 p_early_price(C, E) :- h(C, E, _), early_price(E, P1, P2, P3), announced(C, Q1, Q2, Q3), ok(P1), ok(P2), ok(P3), ok(Q1), ok(Q2), ok(Q3).
 fired(cr_10, p_early_price(C, E), h(C, E, D)) :- p_early_price(C, E), h(C, E, D).
@@ -370,6 +391,30 @@ fired(cr_10, p_after(C, A, V), P) :- p_after(C, A, V), timing(C, A, V, _, P1, P2
 effect(p_after(C, A, V), A, V, decrease, short, invisible, "B") :- p_after(C, A, V).
 window(p_after(C, A, V), after_expiry) :- p_after(C, A, V).
 timing_concl(p_after(C, A, V)) :- timing(C, A, V, _, _, _, _), expires(C, _, _, _).
+
+% ---------------------------------------------------------------- CR-4 at a line: a measure that binds above a size
+% Where a component binds only on actors whose V exceeds a line (threshold/6: those near it, the measure V of size), crossing
+% the line is an option made worse for those near it: they hold V below the line, and they choose among the alternatives
+% to growing past it (CR-4b).
+p_threshold(C, A, V) :- threshold(C, A, V, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+fired(cr_4, p_threshold(C, A, V), P) :- p_threshold(C, A, V), threshold(C, A, V, P1, P2, P3), P = (P1; P2; P3), P != none.
+effect(p_threshold(C, A, V), A, V, decrease, medium, invisible, "B") :- p_threshold(C, A, V).
+chooser(C, A, worse) :- p_threshold(C, A, _).
+c_acts(C) :- p_threshold(C, _, _).
+
+% ---------------------------------------------------------------- CR-7c: a claim before its creation
+% Where a right the policy will create is allocated by each actor's V in a period after the rule is expected
+% (qualifies/6), actors compete to qualify: V rises in that period (the announcement window), and what they spend on
+% qualifying is used up (CR-8c).
+p_qualify(C, A, V) :- qualifies(C, A, V, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+fired(cr_7, p_qualify(C, A, V), P) :- p_qualify(C, A, V), qualifies(C, A, V, P1, P2, P3), P = (P1; P2; P3), P != none.
+effect(p_qualify(C, A, V), A, V, increase, short, invisible, "B") :- p_qualify(C, A, V).
+window(p_qualify(C, A, V), announcement) :- p_qualify(C, A, V).
+timing_concl(p_qualify(C, A, V)) :- qualifies(C, A, V, _, _, _).
+effect(p_qualify_cost(C, A), A, "resources_available_other_uses", decrease, short, invisible, "B") :- p_qualify_cost(C, A).
+p_qualify_cost(C, A) :- p_qualify(C, A, _).
+fired(cr_8, p_qualify_cost(C, A), p_qualify(C, A, V)) :- p_qualify_cost(C, A), p_qualify(C, A, V).
+c_acts(C) :- p_qualify(C, _, _).
 
 % ---------------------------------------------------------------- CR-6: a rule that fixes the quantity
 % Where a component caps the quantity traded in E (capped, with its binding and enforcement premises) and leaves the price

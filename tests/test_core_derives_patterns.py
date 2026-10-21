@@ -9,7 +9,7 @@ P = {"text": "premise", "p": 0.9}
 def _run(**parts):
     sit = {"name": "check", "exchanges": [], **parts}
     used = {p for v in parts.values() if isinstance(v, list) for x in v if isinstance(x, dict)
-            for p in x.get("premises", []) + x.get("quantity_premises", [])}
+            for p in x.get("premises", []) + x.get("quantity_premises", []) + x.get("branch_premises", [])}
     sit["assumptions"] = {k: P for k in used | {"a1"}}
     return {(c.actor_class, c.variable if not c.group else ",".join(c.group), c.sign, c.window)
             for c in S.run(S.Situation(**sit)) if c.reported}
@@ -222,3 +222,47 @@ def test_sb_3_more_offered_lowers_the_price_against_a_grants_rise():
 
 def test_oc_1_complying_uses_up_means():
     assert ("buyers", "resources_available_other_uses", "decrease", None) in _run(**TAX, compliance=[{"component": "k", "actor": "buyers"}])
+
+
+JOBS = [{"id": "e", "buyer": "employers", "seller": "workers", "buyer_price_var": "labor_cost", "seller_price_var": "wage_rate"}]
+
+
+def test_en_14_play_or_pay_each_branch_needs_its_premise():
+    ch = [{"component": "k_offer", "exchange": "e", "payer_side": "buyer", "receiver": "workers.at_players",
+           "receipt_variable": "non_wage_compensation", "branch_premises": ["a2"]},
+          {"component": "k_pay", "exchange": "e", "payer_side": "buyer", "receiver": "officials.revenue",
+           "receipt_variable": "non_tax_receipts", "branch_premises": ["a3"]}]
+    got = _run(exchanges=JOBS, charges=ch)
+    assert ("workers.at_players", "non_wage_compensation", "increase", None) in got
+    assert ("officials.revenue", "non_tax_receipts", "increase", None) in got
+    sit = {"name": "check", "exchanges": JOBS, "charges": ch,
+           "assumptions": {"a2": {"text": "Some offer", "p": 0.3}, "a3": {"text": "Some pay", "p": 0.9}}}
+    got = {(c.actor_class, c.variable, c.sign) for c in S.run(S.Situation(**sit)) if c.reported}
+    assert ("workers.at_players", "non_wage_compensation", "increase") not in got
+    assert ("officials.revenue", "non_tax_receipts", "increase") in got
+
+
+def test_a_capped_charge_takes_means_but_bears_on_no_margin():
+    ch = [{"component": "k", "exchange": "e", "payer_side": "buyer", "receiver": "officials.revenue",
+           "receipt_variable": "non_tax_receipts", "capped_payers": ["employers.capped"]}]
+    assert ("employers.capped", "resources_available_other_uses", "decrease", None) in _run(exchanges=JOBS, charges=ch)
+
+
+def test_a_line_drawn_in_size_holds_those_near_it_below_it():
+    alt = [{"component": "k", "chooser": "employers.near_line", "actor": "employers.near_line", "variables": ["reclassification"], "premises": ["a3"]}]
+    got = _run(exchanges=JOBS, thresholds=[{"component": "k", "actor": "employers.near_line", "variable": "employment", "premises": ["a2"]}],
+               alternatives=alt)
+    assert ("employers.near_line", "employment", "decrease", None) in got
+    assert ("employers.near_line", "reclassification", "increase", None) in got
+
+
+def test_cr_7c_a_race_to_qualify_for_an_allocation_by_history():
+    got = _run(exchanges=JOBS, qualifies=[{"component": "k", "actor": "vessel_owners", "variable": "quantity_supplied", "premises": ["a2"]}])
+    assert ("vessel_owners", "quantity_supplied", "increase", "announcement") in got
+    assert ("vessel_owners", "resources_available_other_uses", "decrease", None) in got
+
+
+def test_rs_8_the_rush_before_a_grant_ends():
+    t = [{"component": "k", "actor": "producers", "variable": "investment", "mode": "bring_forward", "premises": ["a4"]}]
+    got = _run(**GRANT, timing=t, expires=[{"component": "k", "premises": ["a5"]}])
+    assert ("producers", "investment", "increase", "deadline") in got and ("producers", "investment", "decrease", "after_expiry") in got

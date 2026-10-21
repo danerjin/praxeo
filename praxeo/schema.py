@@ -11,8 +11,9 @@ GROUP_SIGNS = {"at_least_one_increase": "increase", "at_least_one_decrease": "de
 # Timing windows (02_ontology.md 2.5, RS-8): None is the ordinary, unwindowed consequence. "announcement" is the
 # stretch between announcement and the effective date. "first_months" is the first stretch after the effective date,
 # which the handbook signs on its own where the announcement-window response still bears on the price (WE-001 C-21).
-# "after_expiry" is the stretch after a temporary measure ends, where purchases brought into its window are missing (SB-6).
-Window = Literal["announcement", "first_months", "after_expiry"]
+# "after_expiry" is the stretch after a temporary measure ends, where purchases brought into its window are missing (SB-6);
+# "deadline" the stretch before it ends, into which they are rushed.
+Window = Literal["announcement", "first_months", "after_expiry", "deadline"]
 Horizon = Literal["short", "medium", "long"]
 HORIZON_ORDER = {"short": 0, "medium": 1, "long": 2}
 

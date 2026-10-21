@@ -87,6 +87,8 @@ class Charge(BaseModel):
     receipt_variable: str = Field(description="tax_revenue for a tax, non_tax_receipts for a fee, non_wage_compensation for a mandated term")
     quantity_premises: list[str] = Field(default=[], max_length=3, description="Premises the fall in trades rests on, where the payment is worth something to its receiver (a mandated term)")
     projection_variable: Optional[str] = Field(default=None, description="tax_revenue_vs_static_projection for a tax")
+    branch_premises: list[str] = Field(default=[], max_length=3, description="Where the charge is one branch of a choice the policy gives the payer (pay, or provide in kind): the premise that some payers take it")
+    capped_payers: list[str] = Field(default=[], description="Payers whose total under the charge is capped: they pay a fixed sum at the margin")
     basis: Literal["unit", "operating"] = Field(default="unit", description="operating: a sum fixed per seller (a licence fee), not per unit sold (CR-4 0.8)")
 
 
@@ -96,6 +98,18 @@ class Grant(BaseModel):
     recipient_side: Side
     payer: str = Field(description="Who pays it out (an agency or fund)")
     outlay_variable: Optional[str] = Field(default="subsidy_outlay")
+
+
+class Threshold(Premised):
+    component: str
+    actor: str = Field(description="Those near the line, below it")
+    variable: str = Field(description="The measure of size the line is drawn in (employment, quantity_supplied)")
+
+
+class Qualifies(Premised):
+    component: str
+    actor: str = Field(description="Those who compete to qualify")
+    variable: str = Field(description="What the allocation is based on (quantity_supplied, quantity_traded)")
 
 
 class Capped(Premised):
@@ -176,6 +190,8 @@ class Situation(BaseModel):
     grants: list[Grant] = []
     capped: list[Capped] = []
     banned: list[Banned] = []
+    thresholds: list[Threshold] = Field(default=[], description="CR-4 at a line: the component binds only above a size")
+    qualifies: list[Qualifies] = Field(default=[], description="CR-7c: a right the policy creates is allocated by history in a period after it is expected")
     expires: list[dict] = Field(default=[], description="{'component', 'premises'}: the measure ends and is expected to")
     parts: list[dict] = Field(default=[], description="{'part', 'whole'}: CR-12, a class total over its parts")
     dominance: list[Dominance] = []
@@ -232,6 +248,9 @@ def facts(s: Situation) -> str:
             out.append(f"qty_premise({ch.component}, {ch.exchange}, {_p(ch.quantity_premises)}).")
         if ch.projection_variable:
             out.append(f"projection_var({ch.component}, {_q(ch.projection_variable)}).")
+        if ch.branch_premises:
+            out.append(f"branch({ch.component}, {_p(ch.branch_premises)}).")
+        out += [f"charge_capped({ch.component}, {_q(a)})." for a in ch.capped_payers]
         if ch.basis == "operating":
             out.append(f"operating({ch.component}).")
     for m in s.moves:
@@ -261,6 +280,10 @@ def facts(s: Situation) -> str:
             out.append(f"wider_price({c.exchange}).")
     for b in s.banned:
         out.append(f"banned({b.component}, {b.exchange}, {_p(b.premises)}).")
+    for t in s.thresholds:
+        out.append(f"threshold({t.component}, {_q(t.actor)}, {_q(t.variable)}, {_p(t.premises)}).")
+    for t in s.qualifies:
+        out.append(f"qualifies({t.component}, {_q(t.actor)}, {_q(t.variable)}, {_p(t.premises)}).")
     for e in s.expires:
         out.append(f"expires({e['component']}, {_p(e.get('premises', []))}).")
     for pt in s.parts:
