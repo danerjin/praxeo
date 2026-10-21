@@ -1,0 +1,37 @@
+# WE-005 situation record: notes (written blind)
+
+Source: section 1 of WE-005 (policy text, K1 to K3, unclear provisions) and assumptions a1 to a16 (= A-1 to A-16; statement, type, p copied).
+
+## Facts and what they rest on
+- Exchange e1 (drivers.current buy from stations.retail; drivers.unserved are the unsatisfied buyers; price vars price_paid / net_price_received): K1 "gasoline sold at retail", "retail stations".
+- Exchange e2 (stations.retail buy from refiners.corvane): "Wholesale (rack) prices are not capped." No held fact on e2; it only names the parties.
+- held k1 e1 below (a1, a2): K1 cap $4.20 with "Days 5 to 95"; binds if a1, is enforced if a2.
+- criteria wait_time, search_cost for drivers.unserved; criterion facts wait_time and search_cost (a3: drivers queue and search).
+- adjust, seller side, on drivers.current: quality_per_unit (hours, service, payment terms) and transaction_size (per-car limits) (a4; "Unclear provisions" reads these as allowed).
+- outside: drivers.current informal_activity (a5, resale in cans).
+- alt k1 stations.retail reclassification (a15, exemption reshaping; p 0.15).
+- alt k1 drivers.unserved quantity_substitute (a10, transit, car-sharing, dropped trips).
+- alt k1 drivers.unserved and drivers.current cross_border_purchases (a11; eastern cities 20 to 45 minutes from the Brennick line; the favored buyers use it less, the unserved more).
+- stake k1 stations.retail (a16, retailers' association).
+- link stations.retail quantity_traded -> input -> refiners.corvane quantity_traded (a7).
+- link refiners.corvane quantity_traded -> substitute -> buyers.brennick quantity_traded (a6, pipeline to Brennick, other buyers).
+- link drivers.unserved quantity_traded -> substitute -> stations.brennick quantity_traded (a11).
+- link drivers.unserved quantity_traded -> substitute -> transit_operators quantity_traded (a10).
+- link stations.retail quantity_traded -> complement -> stations.retail quantity_complement (a12, in-store goods on fuel trips).
+- yield e1 seller stations.retail (a1); asset e1 seller stations.retail (a13, order expected to end on Day 95, so the loss is capitalized for the limited period).
+- transfer e1 (a1): the held price moves means from stations to drivers who still buy.
+- compliance k1 stations.retail ("Retail stations" are bound); enforcer k1 officials.enforcement (K3, Attorney General); funded k1 taxpayers (K3 "emergency appropriation from the general fund"; stated in the text, so no premise).
+
+## Left out, and why
+- a8 (shifting purchases by two days around the effective date), a9 (speeding repair), a14 (expected extension beyond Day 95): no fact in the format can carry them without a dated window (a8, a14) or an actor whose option the cap changes (a9). a14 would only qualify a13.
+- The allocation_by_non_price_criteria criterion: no assumption supports it.
+- fixed_budget: none; the appropriation is new.
+- Quantity-supplied cut by stations, rack price, diesel and pre-Day-0 fleet contracts exemptions: no assumption.
+
+## What the format could not hold
+- K2 (no surcharges or tied purchases) closes the side_payments margin and K1 and K2 both burden stations; the format has no way to record a closed margin, or a restriction on terms as a second held component. Compliance and enforcement are recorded once, on k1.
+- Dated operations (CR-1 0.7): announcement on Day 3, effect on Day 5, expiry on Day 95; windows, rush before Day 5, stocks held for the last days (a8, a13, a14).
+- Two-sided cross-border price gap: Brennick at $4.00 against the cap at $4.20 (the cap can be above the neighboring price); cross_border_purchases uses the premise only.
+- Commodity-specific caps by grade (regular, midgrade, premium) are one held component here.
+- A repairer's (refinery owner's) option to speed repair is not an option the cap changes through any party of e1.
+- Tier of the information in section 1 that is not an assumption (the 10% pipeline capacity, 40% refinery share) has no place.
