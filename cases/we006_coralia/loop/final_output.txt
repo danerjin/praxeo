@@ -1,4 +1,5 @@
-DONE in 3 rounds, 16 questions
+DONE in 3 rounds, 17 questions
+R buyers.inland price_paid  increase
 R buyers.local price_paid  decrease
 R buyers.local quantity_traded announcement decrease
 R buyers.local resources_available_other_uses  increase

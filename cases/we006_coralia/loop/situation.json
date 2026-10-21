@@ -316,6 +316,16 @@
    "variable": "quantity_supplied"
   },
   {
+   "premises": [
+    "q21_supply_of_covered_goods_in_the_inland_co"
+   ],
+   "source_actor": "sellers.inland",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "buyers.inland",
+   "variable": "price_paid"
+  },
+  {
    "premises": [],
    "source_actor": "sellers.repair_outside",
    "source_variable": "quantity_supplied",
@@ -512,6 +522,11 @@
    "text": "As the Attorney General applies K2, the extra costs of an emergency trip (own time, risk, unsold stock, value elsewhere) are mostly not accepted as documented costs.",
    "p": 0.75,
    "class": "alternative_uses"
+  },
+  "q21_supply_of_covered_goods_in_the_inland_co": {
+   "text": "Supply of covered goods in the inland counties is slow to respond in the first weeks.",
+   "p": 0.6,
+   "class": "other"
   }
  }
 }

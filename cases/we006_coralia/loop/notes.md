@@ -54,3 +54,15 @@ See `final_output.txt` (and `situation.json`). 48 reported lines. Highlights: pr
 8. An `adjust` margin names the party it falls on as `actor`, but the party that controls it is the node that must propose it (hotels propose a margin on guests.local). The `split()` keying by `actor` would put it at the wrong node.
 9. Timing-window effects (stockpiling, buyers' earlier purchases) do not propagate through links, by design; no consequence beyond the window is reached.
 10. The class repair crews is outside the Act's coverage per the text; the chain through it rests on A-11 and A-22 alone, and the engine reports it as a reached effect with no flag that the market is uncovered.
+
+## Revision r2 (engine at a54331b: revisits, CR-4 for price movers, `supply_price`)
+
+Rerun with the round-1 files unchanged: still DONE in 3 rounds, 16 questions, same 48 consequences (revisits replayed the existing proposals, duplicates dropped; no node was listed as pending).
+
+One revision, from section 1 only ("The inland counties ... are not declared", A-12 inland stores reachable): at sellers.inland, a `supply_price` link from sellers.inland quantity_traded to a new class buyers.inland price_paid. Premise: "Supply of covered goods in the inland counties is slow to respond in the first weeks." This is not in the assumption table; p = 0.6 was JUDGED by me (roads and stock are fixed in the first days; no figure in section 1). It adds 1 question (17 in all) and the consequence buyers.inland price_paid increase (49 consequences in total).
+
+buyers.inland then became a node; I proposed nothing for it (CR-4 now fires for it as a price mover, but no assumption names an alternative of inland buyers; a premise would have been invented). The new rules otherwise changed nothing here: the burdened and favored parties were already choosers through the held exchanges.
+
+Still not holdable: limits 2 (one exchange per seller class), 4 to 10 above; limit 1 and limit 3 are now resolved by the engine.
+
+Final: DONE in 3 rounds, 17 questions (16 from the table, 1 judged), 49 consequences; see `final_output.txt`.
