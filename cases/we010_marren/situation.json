@@ -1,0 +1,388 @@
+{
+ "name": "WE-010 cigarette tax increase (core-rule pilot)",
+ "exchanges": [
+  {
+   "id": "e_ret",
+   "buyer": "smokers.marren",
+   "seller": "retailers.marren",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_wh",
+   "buyer": "retailers.marren",
+   "seller": "wholesalers.stamping"
+  },
+  {
+   "id": "e_border",
+   "buyer": "smokers.marren",
+   "seller": "sellers.neighboring",
+   "buyer_price_var": "price_paid"
+  },
+  {
+   "id": "e_smuggle",
+   "buyer": "smokers.marren",
+   "seller": "intermediaries.smuggling",
+   "buyer_price_var": "price_paid"
+  },
+  {
+   "id": "e_other",
+   "buyer": "smokers.marren",
+   "seller": "sellers.substitutes",
+   "buyer_price_var": "price_paid"
+  }
+ ],
+ "charges": [
+  {
+   "component": "k1",
+   "exchange": "e_ret",
+   "payer_side": "buyer",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "tax_revenue",
+   "projection_variable": "tax_revenue_vs_static_projection"
+  }
+ ],
+ "moves": [
+  {
+   "exchange": "e_ret",
+   "side": "buyer",
+   "premises": [
+    "a1"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "component": "k1",
+   "chooser": "smokers.marren",
+   "actor": "smokers.marren",
+   "variables": [
+    "cross_border_purchases"
+   ],
+   "premises": [
+    "a3",
+    "a11"
+   ]
+  },
+  {
+   "component": "k1",
+   "chooser": "smokers.marren",
+   "actor": "smokers.marren",
+   "variables": [
+    "informal_activity"
+   ],
+   "premises": [
+    "a4"
+   ]
+  },
+  {
+   "component": "k1",
+   "chooser": "smokers.marren",
+   "actor": "intermediaries.smuggling",
+   "variables": [
+    "informal_activity"
+   ],
+   "premises": [
+    "a4"
+   ]
+  },
+  {
+   "component": "k1",
+   "chooser": "smokers.marren",
+   "actor": "smokers.marren",
+   "variables": [
+    "quantity_substitute"
+   ],
+   "premises": [
+    "a6"
+   ]
+  },
+  {
+   "component": "k1",
+   "chooser": "smokers.marren",
+   "actor": "producers",
+   "variables": [
+    "reclassification"
+   ],
+   "premises": [
+    "a7"
+   ]
+  },
+  {
+   "component": "k1",
+   "chooser": "smokers.marren",
+   "actor": "smokers.marren",
+   "variables": [
+    "inventory_held"
+   ],
+   "premises": [
+    "a9"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "component": "k1",
+   "actor": "retailers.border",
+   "premises": [
+    "a8"
+   ]
+  },
+  {
+   "component": "k1",
+   "actor": "health_groups",
+   "premises": [
+    "a8"
+   ]
+  },
+  {
+   "component": "k1",
+   "actor": "producers",
+   "premises": [
+    "a8"
+   ]
+  }
+ ],
+ "links": [
+  {
+   "source_actor": "smokers.marren",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "smokers.marren",
+   "variable": "quantity_demanded",
+   "premises": [
+    "a2"
+   ]
+  },
+  {
+   "source_actor": "smokers.marren",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "sellers.substitutes",
+   "variable": "net_price_received",
+   "premises": [
+    "a6"
+   ]
+  },
+  {
+   "source_actor": "smokers.marren",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "sellers.substitutes",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a6"
+   ]
+  },
+  {
+   "source_actor": "smokers.marren",
+   "source_variable": "cross_border_purchases",
+   "relation": "same_act",
+   "actor": "sellers.neighboring",
+   "variable": "quantity_traded",
+   "premises": [
+    "a3"
+   ]
+  },
+  {
+   "source_actor": "smokers.marren",
+   "source_variable": "cross_border_purchases",
+   "relation": "complement",
+   "actor": "sellers.complements",
+   "variable": "quantity_traded",
+   "premises": [
+    "a10"
+   ]
+  },
+  {
+   "source_actor": "smokers.marren",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "retailers.marren",
+   "variable": "quantity_complement",
+   "premises": [
+    "a10"
+   ]
+  },
+  {
+   "source_actor": "smokers.marren",
+   "source_variable": "informal_activity",
+   "relation": "same_act",
+   "actor": "intermediaries.smuggling",
+   "variable": "informal_activity",
+   "premises": [
+    "a4"
+   ]
+  },
+  {
+   "source_actor": "intermediaries.smuggling",
+   "source_variable": "informal_activity",
+   "relation": "yield",
+   "actor": "intermediaries.smuggling",
+   "variable": "investment_target",
+   "premises": [
+    "a5"
+   ]
+  },
+  {
+   "source_actor": "intermediaries.smuggling",
+   "source_variable": "informal_activity",
+   "relation": "same_act",
+   "actor": "officials.enforcement",
+   "variable": "side_payments",
+   "premises": [
+    "a12"
+   ]
+  },
+  {
+   "source_actor": "retailers.marren",
+   "source_variable": "quantity_traded",
+   "relation": "yield",
+   "actor": "retailers.marren",
+   "variable": "number_of_sellers",
+   "premises": [
+    "a14"
+   ]
+  },
+  {
+   "source_actor": "retailers.marren",
+   "source_variable": "number_of_sellers",
+   "relation": "substitute",
+   "actor": "sellers.neighboring",
+   "variable": "number_of_sellers",
+   "premises": [
+    "a14"
+   ]
+  },
+  {
+   "source_actor": "sellers.neighboring",
+   "source_variable": "quantity_traded",
+   "relation": "yield",
+   "actor": "factor_owners.border_sites",
+   "variable": "asset_value",
+   "premises": [
+    "a17",
+    "a3"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "wholesalers.stamping"
+  },
+  {
+   "component": "k2",
+   "actor": "wholesalers.stamping"
+  },
+  {
+   "component": "k2",
+   "actor": "retailers.marren"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "means": [
+  {
+   "component": "k2",
+   "actor": "wholesalers.stamping",
+   "direction": "out"
+  },
+  {
+   "component": "k2",
+   "actor": "retailers.marren",
+   "direction": "out"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Most of the increase is passed on in Marren shelf prices.",
+   "class": "other",
+   "p": 0.85
+  },
+  "a2": {
+   "text": "Some smokers cut back or switch at the higher price.",
+   "class": "substitutability",
+   "p": 0.85
+  },
+  "a3": {
+   "text": "Many Marren smokers can easily buy in Dunmarch or Kessick.",
+   "class": "mobility",
+   "p": 0.85
+  },
+  "a4": {
+   "text": "Enforcement against casual resale and carrying above the allowance is weak, and the use tax is rarely collected.",
+   "class": "enforcement",
+   "p": 0.8
+  },
+  "a5": {
+   "text": "Smuggling networks expect the price gap to last for years.",
+   "class": "expectations",
+   "p": 0.65
+  },
+  "a6": {
+   "text": "Untaxed or lower-taxed products are acceptable substitutes for some smokers.",
+   "class": "substitutability",
+   "p": 0.75
+  },
+  "a7": {
+   "text": "Producers can make cigarette-like products that meet the \"other tobacco\" definition.",
+   "class": "other",
+   "p": 0.7
+  },
+  "a8": {
+   "text": "Border retailers, health groups and producers organize to change the rules.",
+   "class": "other",
+   "p": 0.7
+  },
+  "a9": {
+   "text": "Smokers know the date and can store cartons.",
+   "class": "expectations",
+   "p": 0.8
+  },
+  "a10": {
+   "text": "Cross-border cigarette buyers also buy fuel, snacks and other goods on the same trip.",
+   "class": "other",
+   "p": 0.75
+  },
+  "a11": {
+   "text": "The cost of a trip is large relative to the saving on one pack but small relative to the saving on a carton.",
+   "class": "other",
+   "p": 0.8
+  },
+  "a12": {
+   "text": "Smuggling networks corrupt enforcement officers on a meaningful scale.",
+   "class": "enforcement",
+   "p": 0.25
+  },
+  "a13": {
+   "text": "Dunmarch or Kessick limit sales to Marren residents.",
+   "class": "other",
+   "p": 0.2
+  },
+  "a14": {
+   "text": "Marren border retailers move across the line within five years.",
+   "class": "mobility",
+   "p": 0.35
+  },
+  "a15": {
+   "text": "The quit program was already funded from general revenue, and the act has no maintenance-of-effort clause.",
+   "class": "revenue_use",
+   "p": 0.6
+  },
+  "a16": {
+   "text": "Stamped cigarette sales in Marren fall by less than half, compared with the counterfactual, in the short and medium run.",
+   "class": "substitutability",
+   "p": 0.8
+  },
+  "a17": {
+   "text": "Retail sites near the crossings are in fixed supply in the medium run (zoning, the few sites on the approaches to the bridges).",
+   "class": "durability",
+   "p": 0.7
+  }
+ }
+}
