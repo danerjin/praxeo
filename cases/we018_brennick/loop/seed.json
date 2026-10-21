@@ -1,0 +1,39 @@
+{
+ "name": "WE-018 Brennick Carryout Bag Ordinance (loop seed)",
+ "exchanges": [
+  {"id": "e_plastic", "buyer": "shoppers.brennick", "seller": "retailers.brennick",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_paper", "buyer": "shoppers.brennick", "seller": "retailers.brennick",
+   "unsatisfied_seller": "retailers.brennick",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "held": [
+  {"component": "k2", "exchange": "e_paper", "direction": "above", "premises": ["a1"]}
+ ],
+ "banned": [
+  {"component": "k1", "exchange": "e_plastic", "premises": ["a1"]}
+ ],
+ "transfers": [
+  {"exchange": "e_paper", "premises": ["s2"]}
+ ],
+ "compliance": [
+  {"component": "k1", "actor": "retailers.brennick"},
+  {"component": "k2", "actor": "retailers.brennick"}
+ ],
+ "enforcers": [
+  {"component": "k3", "actor": "officials.enforcement"}
+ ],
+ "funded": [
+  {"component": "k3", "actor": "taxpayers", "premises": ["s3"]}
+ ],
+ "announced": [
+  {"component": "k1", "premises": ["s4"]},
+  {"component": "k2", "premises": ["s4"]}
+ ],
+ "assumptions": {
+  "a1": {"text": "Most retailers comply, chains in particular.", "p": 0.85, "class": "enforcement"},
+  "s2": {"text": "The paper bag charge is kept by the retailer.", "p": 0.97, "class": "other"},
+  "s3": {"text": "The Office of Sustainability is funded from the general budget.", "p": 0.95, "class": "other"},
+  "s4": {"text": "Shoppers and retailers expect the ordinance to take effect.", "p": 0.95, "class": "expectations"}
+ }
+}

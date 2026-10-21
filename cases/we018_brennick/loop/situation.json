@@ -1,0 +1,389 @@
+{
+ "name": "WE-018 Brennick Carryout Bag Ordinance (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_plastic",
+   "buyer": "shoppers.brennick",
+   "seller": "retailers.brennick",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_paper",
+   "buyer": "shoppers.brennick",
+   "seller": "retailers.brennick",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": "retailers.brennick",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "component": "k2",
+   "exchange": "e_paper",
+   "direction": "above"
+  }
+ ],
+ "margins": [
+  {
+   "premises": [
+    "q6_some_small_stores_keep_handing_out_thin_"
+   ],
+   "exchange": "e_plastic",
+   "kind": "outside",
+   "side": null,
+   "actor": "retailers.brennick",
+   "variables": [
+    "informal_activity"
+   ]
+  },
+  {
+   "premises": [
+    "q6_some_small_stores_keep_handing_out_thin_"
+   ],
+   "exchange": "e_paper",
+   "kind": "outside",
+   "side": null,
+   "actor": "retailers.brennick",
+   "variables": [
+    "informal_activity"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q5_thick_plastic_reusable_bags_can_be_sold_"
+   ],
+   "component": "k1",
+   "chooser": "retailers.brennick",
+   "actor": "retailers.brennick",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q10_many_households_reused_carryout_bags_as_"
+   ],
+   "component": "k1",
+   "chooser": "shoppers.brennick",
+   "actor": "buyers.substitutes",
+   "variables": [
+    "quantity_substitute"
+   ]
+  },
+  {
+   "premises": [
+    "q12_some_shoppers_near_route_9_are_close_to_",
+    "q13_a_shopper_who_changes_store_moves_the_wh"
+   ],
+   "component": "k2",
+   "chooser": "shoppers.brennick",
+   "actor": "shoppers.brennick",
+   "variables": [
+    "cross_border_purchases"
+   ]
+  },
+  {
+   "premises": [
+    "q12_some_shoppers_near_route_9_are_close_to_"
+   ],
+   "component": "k1",
+   "chooser": "shoppers.brennick",
+   "actor": "shoppers.brennick",
+   "variables": [
+    "cross_border_purchases"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q7_bag_makers_and_retailers_can_organize_at"
+   ],
+   "component": "k1",
+   "actor": "retailers.brennick"
+  },
+  {
+   "premises": [
+    "q7_bag_makers_and_retailers_can_organize_at"
+   ],
+   "component": "k1",
+   "actor": "sellers.bag_makers"
+  }
+ ],
+ "links": [
+  {
+   "premises": [],
+   "source_actor": "retailers.brennick",
+   "source_variable": "quantity_traded",
+   "relation": "same_act",
+   "actor": "sellers.bag_makers",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q8_stores_near_the_line_adjust_staff_hours_"
+   ],
+   "source_actor": "retailers.brennick",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.retailers_brennick",
+   "variable": "employment,hours_worked"
+  },
+  {
+   "premises": [
+    "q11_shoppers_accept_reusable_and_paper_bags_"
+   ],
+   "source_actor": "shoppers.brennick",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "buyers.substitutes",
+   "variable": "quantity_substitute"
+  },
+  {
+   "premises": [],
+   "source_actor": "shoppers.brennick",
+   "source_variable": "cross_border_purchases",
+   "relation": "same_act",
+   "actor": "retailers.fallow_creek",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q13_a_shopper_who_changes_store_moves_the_wh"
+   ],
+   "source_actor": "shoppers.brennick",
+   "source_variable": "cross_border_purchases",
+   "relation": "substitute",
+   "actor": "retailers.brennick",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [],
+   "source_actor": "buyers.substitutes",
+   "source_variable": "quantity_substitute",
+   "relation": "same_act",
+   "actor": "sellers.substitutes",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q15_brennick_s_demand_is_large_enough_to_mov"
+   ],
+   "source_actor": "buyers.substitutes",
+   "source_variable": "quantity_substitute",
+   "relation": "supply_price",
+   "actor": "buyers.substitutes",
+   "variable": "price_substitute"
+  },
+  {
+   "premises": [
+    "q8_stores_near_the_line_adjust_staff_hours_"
+   ],
+   "source_actor": "retailers.fallow_creek",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.retailers_fallow_creek",
+   "variable": "employment,hours_worked"
+  },
+  {
+   "premises": [],
+   "source_actor": "sellers.bag_makers",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.bag_makers",
+   "variable": "employment,hours_worked"
+  },
+  {
+   "premises": [
+    "q5_thick_plastic_reusable_bags_can_be_sold_"
+   ],
+   "source_actor": "sellers.bag_makers",
+   "source_variable": "quantity_supplied",
+   "relation": "substitute",
+   "actor": "sellers.substitutes",
+   "variable": "quantity_supplied"
+  }
+ ],
+ "assets": [],
+ "yields": [],
+ "transfers": [
+  {
+   "exchange": "e_paper",
+   "premises": [
+    "s2"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "retailers.brennick"
+  },
+  {
+   "component": "k2",
+   "actor": "retailers.brennick"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k3",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k3",
+   "actor": "taxpayers",
+   "premises": [
+    "s3"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [],
+ "moves": [],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "s4"
+   ]
+  },
+  {
+   "component": "k2",
+   "premises": [
+    "s4"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q14_shoppers_take_extra_free_bags_in_the_ann"
+   ],
+   "component": "k1",
+   "actor": "shoppers.brennick",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "banned": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "component": "k1",
+   "exchange": "e_plastic"
+  }
+ ],
+ "expires": [],
+ "parts": [],
+ "dominance": [
+  {
+   "premises": [
+    "q9_the_ban_moves_retailers_to_reclassify_mo"
+   ],
+   "actor": "retailers.brennick",
+   "variable": "reclassification",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Most retailers comply, chains in particular.",
+   "p": 0.85,
+   "class": "enforcement"
+  },
+  "s2": {
+   "text": "The paper bag charge is kept by the retailer.",
+   "p": 0.97,
+   "class": "other"
+  },
+  "s3": {
+   "text": "The Office of Sustainability is funded from the general budget.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "s4": {
+   "text": "Shoppers and retailers expect the ordinance to take effect.",
+   "p": 0.95,
+   "class": "expectations"
+  },
+  "q5_thick_plastic_reusable_bags_can_be_sold_": {
+   "text": "Thick plastic \"reusable\" bags can be sold cheaply at the till, and shoppers buy them.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q6_some_small_stores_keep_handing_out_thin_": {
+   "text": "Some small stores keep handing out thin bags, or waive the fee, without being caught.",
+   "p": 0.6,
+   "class": "enforcement"
+  },
+  "q7_bag_makers_and_retailers_can_organize_at": {
+   "text": "Bag makers and retailers can organize at a cost below their stake.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q8_stores_near_the_line_adjust_staff_hours_": {
+   "text": "Stores near the line adjust staff hours and hiring to their sales.",
+   "p": 0.8,
+   "class": "alternative_uses"
+  },
+  "q9_the_ban_moves_retailers_to_reclassify_mo": {
+   "text": "The ban moves retailers to reclassify more than the fee moves them to reclassify less.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q10_many_households_reused_carryout_bags_as_": {
+   "text": "Many households reused carryout bags as liners and will buy liners instead.",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q11_shoppers_accept_reusable_and_paper_bags_": {
+   "text": "Shoppers accept reusable and paper bags as substitutes.",
+   "p": 0.95,
+   "class": "substitutability"
+  },
+  "q12_some_shoppers_near_route_9_are_close_to_": {
+   "text": "Some shoppers near Route 9 are close to indifferent between stores on either side of the line.",
+   "p": 0.55,
+   "class": "mobility"
+  },
+  "q13_a_shopper_who_changes_store_moves_the_wh": {
+   "text": "A shopper who changes store moves the whole basket, since the fee applies per trip.",
+   "p": 0.9,
+   "class": "mobility"
+  },
+  "q14_shoppers_take_extra_free_bags_in_the_ann": {
+   "text": "Shoppers take extra free bags in the announcement window.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "q15_brennick_s_demand_is_large_enough_to_mov": {
+   "text": "Brennick's demand is large enough to move the price of liners or reusable bags.",
+   "p": 0.1,
+   "class": "other"
+  }
+ }
+}
