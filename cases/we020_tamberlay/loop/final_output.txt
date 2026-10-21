@@ -1,0 +1,39 @@
+DONE in 3 rounds, 23 questions
+R agents.real_estate lobbying_effort  increase
+R agents.real_estate quantity_traded  increase
+R buyers.first_time compliance_cost  increase
+R buyers.first_time job_changes  decrease
+R buyers.first_time lobbying_effort  increase
+R buyers.first_time price_paid  decrease
+R buyers.first_time quantity_traded  increase
+- buyers.first_time quantity_traded after_expiry decrease
+R buyers.first_time quantity_traded announcement decrease
+R buyers.first_time resources_available_other_uses  increase
+- buyers.ineligible lobbying_effort  increase
+R buyers.ineligible price_paid  increase
+R buyers.ineligible quantity_traded  decrease
+R buyers.prior_owners informal_activity  increase
+R developers investment_target  increase
+R developers lobbying_effort  increase
+R developers return_on_capital  increase
+R developers.other_segments investment_target  decrease
+- investors.nominee informal_activity  increase
+R landlords.entry_level quantity_supplied  increase
+R landlords.entry_level quantity_traded  decrease
+R officials.enforcement enforcement_cost  increase
+R owners.entry_level_homes asset_value  increase
+R owners.entry_level_homes lobbying_effort  increase
+R owners.entry_level_homes resources_available_other_uses  increase
+R sellers.entry_level_homes lobbying_effort  increase
+R sellers.entry_level_homes net_price_received  increase
+R sellers.entry_level_homes quantity_traded  increase
+- sellers.entry_level_homes quantity_traded after_expiry decrease
+R sellers.entry_level_homes quantity_traded announcement decrease
+R sellers.homes_above_cap net_price_received  ambiguous
+R sellers.homes_above_cap quantity_traded  decrease
+R sellers.homes_above_cap side_payments  increase
+R sellers.lowen_suburb_homes net_price_received  ambiguous
+R sellers.lowen_suburb_homes quantity_traded  ambiguous
+R state_budget subsidy_outlay  increase
+R taxpayers resources_available_other_uses  decrease
+R workers.construction wage_rate  increase

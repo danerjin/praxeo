@@ -1,0 +1,518 @@
+{
+ "name": "WE-020 Tamberlay Home Start Grant (expand loop, blind)",
+ "exchanges": [
+  {
+   "id": "e_home",
+   "buyer": "buyers.first_time",
+   "seller": "sellers.entry_level_homes",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [],
+ "alternatives": [
+  {
+   "premises": [
+    "q6_many_kessford_area_buyers_can_choose_bet"
+   ],
+   "component": "k1",
+   "chooser": "buyers.first_time",
+   "actor": "sellers.lowen_suburb_homes",
+   "variables": [
+    "quantity_traded"
+   ]
+  },
+  {
+   "premises": [
+    "q7_while_supply_is_slow_owners_of_homes_und"
+   ],
+   "component": "k1",
+   "chooser": "buyers.first_time",
+   "actor": "sellers.homes_above_cap",
+   "variables": [
+    "quantity_traded"
+   ]
+  },
+  {
+   "premises": [
+    "q8_some_recipients_receive_job_offers_in_th"
+   ],
+   "component": "k1",
+   "chooser": "buyers.first_time",
+   "actor": "buyers.first_time",
+   "variables": [
+    "job_changes"
+   ]
+  },
+  {
+   "premises": [
+    "q6_many_kessford_area_buyers_can_choose_bet"
+   ],
+   "component": "k1",
+   "chooser": "buyers.ineligible",
+   "actor": "sellers.lowen_suburb_homes",
+   "variables": [
+    "quantity_traded"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q10_first_time_buyers_can_organize_to_lobby_"
+   ],
+   "component": "k1",
+   "actor": "buyers.first_time"
+  },
+  {
+   "premises": [
+    "q19_owners_builders_and_agents_can_organize_"
+   ],
+   "component": "k1",
+   "actor": "sellers.entry_level_homes"
+  },
+  {
+   "premises": [
+    "q19_owners_builders_and_agents_can_organize_"
+   ],
+   "component": "k1",
+   "actor": "agents.real_estate"
+  },
+  {
+   "premises": [
+    "q21_buyers_who_receive_no_grant_can_organize"
+   ],
+   "component": "k1",
+   "actor": "buyers.ineligible"
+  },
+  {
+   "premises": [
+    "q19_owners_builders_and_agents_can_organize_"
+   ],
+   "component": "k1",
+   "actor": "developers"
+  },
+  {
+   "premises": [
+    "q19_owners_builders_and_agents_can_organize_"
+   ],
+   "component": "k1",
+   "actor": "owners.entry_level_homes"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q5_some_renters_at_the_margin_buy_sooner_be"
+   ],
+   "source_actor": "buyers.first_time",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "landlords.entry_level",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q11_real_estate_agents_and_conveyancers_are_"
+   ],
+   "source_actor": "buyers.first_time",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "agents.real_estate",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q12_couples_can_arrange_title_or_partner_dec"
+   ],
+   "source_actor": "buyers.first_time",
+   "source_variable": "quantity_traded",
+   "relation": "same_act",
+   "actor": "buyers.prior_owners",
+   "variable": "informal_activity"
+  },
+  {
+   "premises": [
+    "q13_investors_use_nominee_buyers_on_a_meanin"
+   ],
+   "source_actor": "buyers.first_time",
+   "source_variable": "quantity_traded",
+   "relation": "same_act",
+   "actor": "investors.nominee",
+   "variable": "informal_activity"
+  },
+  {
+   "premises": [
+    "q15_some_landlords_of_entry_level_homes_sell"
+   ],
+   "source_actor": "sellers.entry_level_homes",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "landlords.entry_level",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q16_builders_can_obtain_approvals_for_entry_"
+   ],
+   "source_actor": "sellers.entry_level_homes",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "developers",
+   "variable": "investment_target"
+  },
+  {
+   "premises": [
+    "q17_buyers_of_entry_level_homes_who_receive_"
+   ],
+   "source_actor": "sellers.entry_level_homes",
+   "source_variable": "net_price_received",
+   "relation": "output",
+   "actor": "buyers.ineligible",
+   "variable": "price_paid"
+  },
+  {
+   "premises": [
+    "q20_some_buyers_who_receive_no_grant_are_at_"
+   ],
+   "source_actor": "buyers.ineligible",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "buyers.ineligible",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q22_construction_labor_and_builders_are_scar"
+   ],
+   "source_actor": "developers",
+   "source_variable": "investment_target",
+   "relation": "input",
+   "actor": "workers.construction",
+   "variable": "wage_rate"
+  },
+  {
+   "premises": [
+    "q23_owners_can_realize_the_gain_by_selling_o"
+   ],
+   "source_actor": "owners.entry_level_homes",
+   "source_variable": "asset_value",
+   "relation": "yield",
+   "actor": "owners.entry_level_homes",
+   "variable": "resources_available_other_uses"
+  },
+  {
+   "premises": [
+    "q24_owners_whose_homes_rise_in_value_use_par"
+   ],
+   "source_actor": "owners.entry_level_homes",
+   "source_variable": "asset_value",
+   "relation": "complement",
+   "actor": "sellers.homes_above_cap",
+   "variable": "net_price_received"
+  },
+  {
+   "premises": [
+    "q25_the_supply_of_homes_above_the_cap_respon"
+   ],
+   "source_actor": "sellers.homes_above_cap",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "sellers.homes_above_cap",
+   "variable": "net_price_received"
+  },
+  {
+   "premises": [
+    "q26_sellers_just_above_the_cap_can_move_valu"
+   ],
+   "source_actor": "sellers.homes_above_cap",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "sellers.homes_above_cap",
+   "variable": "side_payments"
+  },
+  {
+   "premises": [
+    "q27_the_supply_of_homes_in_lowen_s_suburbs_r"
+   ],
+   "source_actor": "sellers.lowen_suburb_homes",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "sellers.lowen_suburb_homes",
+   "variable": "net_price_received"
+  },
+  {
+   "premises": [
+    "q22_construction_labor_and_builders_are_scar"
+   ],
+   "source_actor": "workers.construction",
+   "source_variable": "wage_rate",
+   "relation": "cost",
+   "actor": "developers.other_segments",
+   "variable": "investment_target"
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "q18_buyers_sellers_and_builders_expect_the_g",
+    "a2"
+   ],
+   "exchange": "e_home",
+   "side": "seller",
+   "actor": "owners.entry_level_homes"
+  }
+ ],
+ "yields": [
+  {
+   "premises": [
+    "a2"
+   ],
+   "exchange": "e_home",
+   "side": "seller",
+   "actor": "developers"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k2",
+   "actor": "buyers.first_time"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k1",
+   "actor": "taxpayers",
+   "premises": []
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [],
+ "moves": [
+  {
+   "premises": [
+    "a2"
+   ],
+   "exchange": "e_home",
+   "side": "seller"
+  },
+  {
+   "premises": [
+    "a1"
+   ],
+   "exchange": "e_home",
+   "side": "buyer"
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a5"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "a5"
+   ],
+   "component": "k1",
+   "actor": "buyers.first_time",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q9_renewal_is_uncertain_at_the_deadline_and"
+   ],
+   "component": "k1",
+   "actor": "buyers.first_time",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q14_some_owners_delay_listing_to_sell_after_"
+   ],
+   "component": "k1",
+   "actor": "sellers.entry_level_homes",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [
+  {
+   "component": "k1",
+   "exchange": "e_home",
+   "recipient_side": "buyer",
+   "payer": "state_budget",
+   "outlay_variable": "subsidy_outlay"
+  }
+ ],
+ "capped": [],
+ "banned": [],
+ "expires": [
+  {
+   "component": "k1",
+   "premises": [
+    "a15"
+   ]
+  }
+ ],
+ "parts": [],
+ "dominance": [],
+ "assumptions": {
+  "a1": {
+   "text": "Prices under the cap rise by less than the grant, because many buyers in the segment get no grant and some supply responds.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "a2": {
+   "text": "The supply of homes under the cap responds slowly.",
+   "p": 0.85,
+   "class": "durability"
+  },
+  "a5": {
+   "text": "First-time buyers knew of the grant from March and could delay.",
+   "p": 0.85,
+   "class": "expectations"
+  },
+  "a15": {
+   "text": "The grant is not renewed after Year 4.",
+   "p": 0.4,
+   "class": "expectations"
+  },
+  "q5_some_renters_at_the_margin_buy_sooner_be": {
+   "text": "Some renters at the margin buy sooner because of the grant.",
+   "p": 0.85,
+   "class": "substitutability"
+  },
+  "q6_many_kessford_area_buyers_can_choose_bet": {
+   "text": "Many Kessford-area buyers can choose between Tamberlay and Lowen suburbs.",
+   "p": 0.7,
+   "class": "mobility"
+  },
+  "q7_while_supply_is_slow_owners_of_homes_und": {
+   "text": "While supply is slow, owners of homes under the cap have clearly fewer alternatives than first-time buyers, who can keep renting, wait, buy above the cap or buy in Lowen's suburbs.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q8_some_recipients_receive_job_offers_in_th": {
+   "text": "Some recipients receive job offers in the first 24 months that would require moving.",
+   "p": 0.7,
+   "class": "mobility"
+  },
+  "q9_renewal_is_uncertain_at_the_deadline_and": {
+   "text": "Renewal is uncertain at the deadline, and some buyers can sign a few months earlier.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "q10_first_time_buyers_can_organize_to_lobby_": {
+   "text": "First-time buyers can organize to lobby at a cost below their stake.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q11_real_estate_agents_and_conveyancers_are_": {
+   "text": "Real estate agents and conveyancers are paid mainly by commission or by the value of the sale.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q12_couples_can_arrange_title_or_partner_dec": {
+   "text": "Couples can arrange title or partner declarations so that a prior owner's household qualifies.",
+   "p": 0.6,
+   "class": "enforcement"
+  },
+  "q13_investors_use_nominee_buyers_on_a_meanin": {
+   "text": "Investors use nominee buyers on a meaningful scale.",
+   "p": 0.3,
+   "class": "enforcement"
+  },
+  "q14_some_owners_delay_listing_to_sell_after_": {
+   "text": "Some owners delay listing to sell after July.",
+   "p": 0.55,
+   "class": "expectations"
+  },
+  "q15_some_landlords_of_entry_level_homes_sell": {
+   "text": "Some landlords of entry-level homes sell to grant holders.",
+   "p": 0.7,
+   "class": "alternative_uses"
+  },
+  "q16_builders_can_obtain_approvals_for_entry_": {
+   "text": "Builders can obtain approvals for entry-level projects within a few years.",
+   "p": 0.65,
+   "class": "alternative_uses"
+  },
+  "q17_buyers_of_entry_level_homes_who_receive_": {
+   "text": "Buyers of entry-level homes who receive no grant buy in the same market as grant recipients.",
+   "p": 0.9,
+   "class": "substitutability"
+  },
+  "q18_buyers_sellers_and_builders_expect_the_g": {
+   "text": "Buyers, sellers and builders expect the grant to last at least through Year 4.",
+   "p": 0.75,
+   "class": "expectations"
+  },
+  "q19_owners_builders_and_agents_can_organize_": {
+   "text": "Owners, builders and agents can organize to lobby at a cost below their stake.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q20_some_buyers_who_receive_no_grant_are_at_": {
+   "text": "Some buyers who receive no grant are at the margin between buying and renting.",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q21_buyers_who_receive_no_grant_can_organize": {
+   "text": "Buyers who receive no grant can organize to lobby at a cost below their stake.",
+   "p": 0.3,
+   "class": "other"
+  },
+  "q22_construction_labor_and_builders_are_scar": {
+   "text": "Construction labor and builders are scarce and fully used elsewhere.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q23_owners_can_realize_the_gain_by_selling_o": {
+   "text": "Owners can realize the gain by selling or borrowing against the home, and it is not offset by an equal rise in the price of what they buy next (the grant does not apply above the cap).",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q24_owners_whose_homes_rise_in_value_use_par": {
+   "text": "Owners whose homes rise in value use part of the gain to bid for larger homes.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q25_the_supply_of_homes_above_the_cap_respon": {
+   "text": "The supply of homes above the cap responds slowly.",
+   "p": 0.85,
+   "class": "durability"
+  },
+  "q26_sellers_just_above_the_cap_can_move_valu": {
+   "text": "Sellers just above the cap can move value outside the contract price.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q27_the_supply_of_homes_in_lowen_s_suburbs_r": {
+   "text": "The supply of homes in Lowen's suburbs responds slowly.",
+   "p": 0.8,
+   "class": "durability"
+  }
+ }
+}

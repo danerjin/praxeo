@@ -1,0 +1,13 @@
+**Tamberlay Home Start Grant.** Tamberlay is a state of about 3 million people. About 60,000 homes are sold there in a normal year, roughly a third of them for $450,000 or less, and first-time buyers account for about 18,000 purchases. Builders complete about 12,000 new homes a year; zoning approval and permits take 12 to 24 months and construction another 9 to 15, so the stock of homes responds slowly to prices. Tamberlay's largest city, Kessford, sits on the border with the state of Lowen, whose suburbs are within a 30-minute commute and which has no comparable grant. Entry-level home prices in Tamberlay have been rising about 4% a year.
+
+The governor announced the grant in the budget speech on 10 March of Year 1. The legislature enacted it on 15 May. It applies to purchase contracts signed from 1 July of Year 1 to 30 June of Year 4, with a legislative review in Year 3. Renewal is possible but not promised.
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Grant | `purchase_rebate` | Purchase of a home in Tamberlay | First-time buyers who apply | $15,000, paid at settlement and usable toward the deposit. Contract price must be $450,000 or less (fixed in money terms). The home must be the buyer's principal residence for 24 months; otherwise the full grant is repaid. | — |
+| K2 Eligibility | Condition of K1 | Applicants | Applicants | Neither the applicant nor the applicant's spouse or declared partner has ever owned residential property, anywhere. Ownership in Tamberlay is checked against the land register; ownership elsewhere and partner status are by sworn declaration. One grant per household. | — |
+| K3 Funding | Funding of K1 and K4 | — | State budget | Annual appropriation from general revenue, about $300 million a year (20,000 grants). The law does not say what happens if applications exceed the appropriation. | — |
+| K4 Administration | Enforcement | K1 and K2 | State Revenue Office | Checks land register and declarations; checks occupancy against driver's license and electoral roll addresses; clawback and fines for false declarations. | — |
+
+Unclear provisions: whether the price cap will be indexed if prices rise (the text fixes it in dollars); whether the grant will be renewed after Year 4. Both are treated as expectations (A-3, A-15).
+
