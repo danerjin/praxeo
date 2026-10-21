@@ -39,3 +39,24 @@ Assumption ids a1..a14 are the example's A-1..A-14 (statement, type, p copied). 
 5. **The geographic boundary as such** (the floor applies to Velmora-origin milk, not to a place). It is held only through the out-of-state alternative; there is no "exemption" fact.
 6. **Time structure** (floor not indexed, 4-year review, forward prices $17-19, short-run versus medium-run supply). Not representable.
 7. **Compliance for k1 and the enforcer for k1/k2.** I attached compliance and enforcement to k4 only, to avoid duplicate effects from the same cost.
+
+## Revision r2 (branch core-pilot-we008-r2, from 9c112b8)
+
+Changed only situation.json. New facts:
+
+| Fact | Rests on |
+|---|---|
+| e3: plants.commodity sell cheddar and powder to the Board (officials.enforcement); price vars net_price_received / price_paid | Sec. 1 K2: the Board buys product from licensed Velmora plants at $2.05 / $1.40 |
+| held k2 above on e3 | K2 support prices set so a plant paying $21 breaks even, so above the market product price when milk is below $21 (a1) |
+| backstop k2 / e3, buyer the Board, outlay subsidy_outlay | K2: "buys any quantity offered" |
+| link plants.commodity quantity_supplied input farmers.velmora quantity_traded | K2: product must be made from Velmora milk paid at least the floor (no premise) |
+| link plants.commodity net_price_received yield plants.commodity investment_target (replaces the old link from the farmers' price) | a13 (support prices cover full cost incl. return on new capacity), a2 |
+| link Board inventory_held substitute buyers.food_programs quantity_traded | K3 donation to school meals and food banks; a9 (donations replace purchases), a12 (stocks are disposed of through K3 routes) |
+| announced k2; timing k2 plants.commodity inventory_held carry_over | Sec. 1: proposed in February Year 0, enacted June, effective 1 January Year 1; a2; a12 (cheddar and powder keep, so stocks can be carried into the period) |
+
+New engine output: the Board's purchases (quantity_demanded), inventory_held, subsidy_outlay and price_paid rise; plants.commodity net_price_received, quantity_supplied, investment_target and inventory_held (carry-over) rise; farmers.velmora milk quantity_traded rises; buyers.food_programs quantity_traded falls. No surplus or prevented trade appears on e3.
+
+Still not held:
+- K2 still does not cancel the burden I put on plants.commodity in e1 (price_paid up, quantity cut, out-of-state substitution, quantity_traded down). K2 says those plants break even at $21; the format has no way to net a backstop against the held price on another exchange. The K2 eligibility test also cannot be written.
+- K3 resale above 110% and export: no fact for them. a3 (out-of-state supply and the withdrawn product): the Board's purchase has no link relation to a rise in the market product price.
+- The timing fact is thin: the text gives the dates and a12 gives storability, but nothing says who holds stocks beyond what the engine draws. Specialty plants and farmers got no timing fact; milk is not storable.
