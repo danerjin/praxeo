@@ -1,0 +1,16 @@
+{
+ "Agents, schools and the inspectors' association can organize at a cost below their stake.": 0.85,
+ "Some buyers at the margin go without an inspection or use an unlicensed inspector when the fee rises.": 0.6,
+ "Some exempt engineers add home inspections, and some buyers accept them.": 0.6,
+ "For some part-time inspectors, insurance and the fee exceed their margin, so they stop.": 0.7,
+ "Some grandfathered inspectors would otherwise leave for a year or more and return.": 0.6,
+ "Engineers' supply cannot expand at unchanged cost in the period.": 0.65,
+ "In the long run, licensed inspectors leave at a lower rate from a smaller stock than inspectors would without the Act, so replacement entry is below the counterfactual flow.": 0.65,
+ "Inspectors who must train enroll in the first approved courses rather than wait for the 2027 deadline.": 0.7,
+ "Some grandfather applicants overstate their inspections, and the Board, checking on paper and acting otherwise only on complaint, misses it.": 0.45,
+ "Near-line inspectors win the extra jobs mainly by cutting fees.": 0.55,
+ "Total inspections in the window are set by home sales, not raised by the rush.": 0.75,
+ "Some unlicensed practice continues where complaint is least likely.": 0.7,
+ "Most Linmouth inspectors serving Aldenmoor do too few jobs there to cover the license's costs.": 0.65,
+ "Grandfathered inspectors stay in the occupation and their volume does not fall: rivals' exit takes away more inspections than buyers drop.": 0.65
+}

@@ -1,0 +1,55 @@
+{
+ "name": "WE-055 home inspector licensing (expand-loop blind run)",
+ "exchanges": [
+  {"id": "e_unlic", "buyer": "buyers.homebuyers", "seller": "inspectors.unlicensed",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_lic", "buyer": "buyers.homebuyers", "seller": "inspectors.licensed",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "banned": [
+  {"component": "k1", "exchange": "e_unlic", "premises": ["a1", "a3"]}
+ ],
+ "charges": [
+  {"component": "k1_fee", "exchange": "e_lic", "payer_side": "seller", "receiver": "officials.board",
+   "receipt_variable": "non_tax_receipts", "basis": "operating"},
+  {"component": "k1_training", "exchange": "e_lic", "payer_side": "seller", "receiver": "schools.training",
+   "receipt_variable": "enrollment", "basis": "operating", "branch_premises": ["a2"]},
+  {"component": "k1_insurance", "exchange": "e_lic", "payer_side": "seller", "receiver": "insurers.liability",
+   "receipt_variable": "quantity_traded", "basis": "operating", "branch_premises": ["a27"]}
+ ],
+ "moves": [
+  {"exchange": "e_lic", "side": "buyer", "premises": ["a8", "a33"]}
+ ],
+ "qualifies": [
+  {"component": "k2", "actor": "inspectors.nearline", "variable": "quantity_supplied", "premises": ["a12"]}
+ ],
+ "announced": [
+  {"component": "k1", "premises": ["s1"]},
+  {"component": "k2", "premises": ["s1"]},
+  {"component": "k1_training", "premises": ["s1"]}
+ ],
+ "expires": [
+  {"component": "k2", "premises": ["s2"]}
+ ],
+ "compliance": [
+  {"component": "k1", "actor": "inspectors.licensed"},
+  {"component": "k4", "actor": "agents.realestate"}
+ ],
+ "enforcers": [
+  {"component": "k3", "actor": "officials.board"}
+ ],
+ "funded": [
+  {"component": "k3", "actor": "inspectors.licensed", "premises": []}
+ ],
+ "assumptions": {
+  "a1": {"text": "The requirements cost some current and would-be inspectors more than they would otherwise spend.", "class": "binding", "p": 0.9},
+  "a2": {"text": "Some incumbents who cannot be grandfathered train and sit the exam to stay in practice.", "class": "other", "p": 0.75},
+  "a3": {"text": "Despite complaint-only enforcement, unlicensed practice is deterred for most inspections: agents' forms and lenders ask for the license number, and buyers and agents complain.", "class": "enforcement", "p": 0.7},
+  "a8": {"text": "Exempt engineers and unlicensed practice cannot replace the excluded supply at the old fee (the response is partial).", "class": "other", "p": 0.75},
+  "a12": {"text": "Some near-line inspectors would otherwise fall short of 250 inspections by their application date, and can find extra jobs.", "class": "other", "p": 0.7},
+  "a27": {"text": "Some inspectors carried no insurance before.", "class": "other", "p": 0.85},
+  "a33": {"text": "Inspectors' cost per inspection does not fall below its counterfactual level as the number of inspectors falls (constant or rising cost).", "class": "other", "p": 0.75},
+  "s1": {"text": "Inspectors and buyers know the Act's dates and expect the license to be required on them.", "class": "expectations", "p": 0.9},
+  "s2": {"text": "Incumbents expect the grandfathering window to close on 31 December 2027 and not be reopened.", "class": "expectations", "p": 0.85}
+ }
+}

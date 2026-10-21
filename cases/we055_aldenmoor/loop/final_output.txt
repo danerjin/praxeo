@@ -1,0 +1,31 @@
+DONE in 3 rounds, 14 questions
+R agents.realestate compliance_cost  increase
+R agents.realestate lobbying_effort  increase
+R agents.realestate resources_available_other_uses  decrease
+R buyers.homebuyers informal_activity  increase
+R buyers.homebuyers price_paid  increase
+R buyers.homebuyers quantity_traded  decrease
+R engineers.exempt net_price_received  increase
+R engineers.exempt quantity_traded  increase
+R inspectors.entrant entry_rate  decrease
+R inspectors.licensed compliance_cost  increase
+R inspectors.licensed employment  ambiguous
+R inspectors.licensed enrollment announcement ambiguous
+R inspectors.licensed lobbying_effort  increase
+R inspectors.licensed net_price_received  increase
+R inspectors.licensed number_of_sellers  decrease
+R inspectors.licensed quantity_traded  increase
+R inspectors.licensed resources_available_other_uses  decrease
+R inspectors.licensed return_on_capital  decrease
+R inspectors.linmouth quantity_traded  increase
+- inspectors.nearline legal_breach  increase
+R inspectors.nearline quantity_supplied announcement increase
+R inspectors.nearline resources_available_other_uses  decrease
+R inspectors.unlicensed informal_activity  increase
+R inspectors.unlicensed quantity_traded  decrease
+R insurers.liability quantity_traded  increase
+R officials.board enforcement_cost  increase
+R officials.board non_tax_receipts  increase
+R schools.training enrollment  increase
+R schools.training lobbying_effort  increase
+R workers.alternative_work employment  increase
