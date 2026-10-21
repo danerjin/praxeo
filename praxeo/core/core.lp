@@ -29,6 +29,12 @@
 %   discretion(C, A, P1, P2, P3).           CR-1 op 2 granted case by case: an option A may apply for, at no price
 %   means(C, A, Dir).                       CR-1 op 4: a transfer of means (Dir out or in) that no choice avoids
 %   link(..., V, ...) with V a comma list:  a group over those variables (CR-6 1.1: labour moves as a group)
+%   announced(C, P1, P2, P3).               CR-10a: C was known before it binds, and actors expect it (the premise)
+%   timing(C, A, V, Mode, P1, P2, P3).      an action A can move in time, measured by V: bring_forward (do it before
+%                                           the date) or carry_over (hold stock into the period)
+%   early_price(E, P1, P2, P3).             the burdened side can set the price of E before the line binds (renewals)
+%   backstop(C, E, B, P1, P2, P3).          CR-6: B buys at the line whatever the market does not take in E
+%   outlay_var(C, V).                       the vocabulary's name for B's outlay
 % Every rule is monotone in holds/1.
 
 { holds(A) } :- assumption(A).
@@ -58,7 +64,8 @@ effect(p_line(E, S), A, V, Dir, short, visible, "B") :- p_line(E, S), h(_, E, D)
 p_excess(E) :- h(_, E, _).
 fired(cr_6, p_excess(E), h(C, E, D)) :- p_excess(E), h(C, E, D).
 excess_var(buyer, "excess_demand"). excess_var(seller, "excess_supply").
-effect(p_excess(E), A, V, increase, short, invisible, "B") :- p_excess(E), h(_, E, D), long(D, S), excess_var(S, V), unsatisfied(E, S, A).
+effect(p_excess(E), A, V, increase, short, invisible, "B") :- p_excess(E), not has_backstop(E), h(_, E, D), long(D, S), excess_var(S, V), unsatisfied(E, S, A).
+has_backstop(E) :- backstop(_, E, _, _, _, _).
 
 % The pressure goes to the margins still open. The scarce side chooses by other criteria, at least one (a group), and a
 % criterion with its own premise is signed alone.
@@ -86,8 +93,8 @@ effect(p_outside(E, A, V), A, V, increase, short, invisible, "B") :- p_outside(E
 % Trades that would have taken place beyond the line do not: both the burdened side and the unsatisfied lose them.
 p_prevented(E) :- h(_, E, _).
 fired(cr_5, p_prevented(E), h(C, E, D)) :- p_prevented(E), h(C, E, D).
-effect(p_prevented(E), A, "quantity_traded", decrease, short, invisible, "B") :- p_prevented(E), burdened(E, S), party(E, S, A).
-effect(p_prevented(E), A, "quantity_traded", decrease, short, invisible, "B") :- p_prevented(E), h(_, E, D), long(D, S), unsatisfied(E, S, A).
+effect(p_prevented(E), A, "quantity_traded", decrease, short, invisible, "B") :- p_prevented(E), not has_backstop(E), burdened(E, S), party(E, S, A).
+effect(p_prevented(E), A, "quantity_traded", decrease, short, invisible, "B") :- p_prevented(E), not has_backstop(E), h(_, E, D), long(D, S), unsatisfied(E, S, A).
 
 % ---------------------------------------------------------------- CR-4: response at the margin
 % An actor whose option a component burdens (the burdened party, or those it leaves unsatisfied) uses its alternatives
@@ -165,7 +172,11 @@ rel_dir(same_act,   K,        D, D) :- opp(D, _), K = (price; quantity).
 rel_dir(cost,       price,    D, E) :- opp(D, E).
 rel_dir(own_price,  price,    D, E) :- opp(D, E).
 rel_dir(currency,   quantity, D, D) :- opp(D, _).
-moved(A, V, D) :- effect(_, A, V, D, _, _, _), opp(D, _).
+% Only changes outside a timing window propagate (an order brought forward is not a lasting change in trade). Timing
+% conclusions are named from facts alone, so the negation stays on facts.
+moved(A, V, D) :- effect(X, A, V, D, _, _, _), opp(D, _), not timing_concl(X).
+timing_concl(p_timing(C, A, V)) :- timing(C, A, V, _, _, _, _).
+timing_concl(p_early_price(C, E)) :- early_price(E, _, _, _), held(C, E, _, _, _, _).
 p_link(A0, V0, R, A, V) :- link(A0, V0, R, A, V, P1, P2, P3), moved(A0, V0, _), ok(P1), ok(P2), ok(P3).
 fired(cr_9, p_link(A0, V0, R, A, V), X) :- p_link(A0, V0, R, A, V), effect(X, A0, V0, D, _, _, _), opp(D, _).
 fired(cr_9, p_link(A0, V0, R, A, V), P) :- p_link(A0, V0, R, A, V), link(A0, V0, R, A, V, P1, P2, P3), P = (P1; P2; P3), P != none.
@@ -207,6 +218,38 @@ p_means(C, A) :- means(C, A, _).
 fired(cr_8, p_means(C, A), means(C, A, D)) :- p_means(C, A), means(C, A, D).
 means_dir(out, decrease). means_dir(in, increase).
 effect(p_means(C, A), A, "resources_available_other_uses", D, short, invisible, "A") :- p_means(C, A), means(C, A, M), means_dir(M, D).
+
+% ---------------------------------------------------------------- CR-6: a buyer (or seller) of last resort
+% Where B takes at the line whatever the market leaves (backstop), the long side's surplus does not build up: those on it sell
+% (or buy) all they offer at the line and offer more (CR-4), and B's purchases, stocks and outlay rise (CR-8b: paid by those
+% named under funded/5).
+p_backstop(C, E, B) :- backstop(C, E, B, P1, P2, P3), h(C, E, _), ok(P1), ok(P2), ok(P3).
+fired(cr_6, p_backstop(C, E, B), h(C, E, D)) :- p_backstop(C, E, B), h(C, E, D).
+fired(cr_6, p_backstop(C, E, B), P) :- p_backstop(C, E, B), backstop(C, E, B, P1, P2, P3), P = (P1; P2; P3), P != none.
+long_qty(seller, "quantity_supplied", "quantity_demanded"). long_qty(buyer, "quantity_demanded", "quantity_supplied").
+effect(p_backstop(C, E, B), A, V, increase, short, invisible, "B") :- p_backstop(C, E, B), h(C, E, D), long(D, S), party(E, S, A), long_qty(S, V, _).
+effect(p_backstop(C, E, B), B, V, increase, short, visible, "B") :- p_backstop(C, E, B), h(C, E, D), long(D, S), long_qty(S, _, V).
+effect(p_backstop(C, E, B), B, "inventory_held", increase, short, invisible, "B") :- p_backstop(C, E, B), h(C, E, above).
+effect(p_backstop(C, E, B), B, V, increase, short, invisible, "B") :- p_backstop(C, E, B), outlay_var(C, V).
+
+% ---------------------------------------------------------------- CR-10a: a change expected in the future alters choices now
+% Where a component is known before it binds (announced, with the premise that actors expect it), those whose option it
+% will make worse bring the action forward and carry less into the period; those whose option it will make better hold the
+% action back and carry more. Measured in the announcement window.
+p_timing(C, A, V) :- timing(C, A, V, _, P1, P2, P3), announced(C, Q1, Q2, Q3), chooser(C, A, _),
+                     ok(P1), ok(P2), ok(P3), ok(Q1), ok(Q2), ok(Q3).
+fired(cr_10, p_timing(C, A, V), P) :- p_timing(C, A, V), timing(C, A, V, _, P1, P2, P3), P = (P1; P2; P3), P != none.
+fired(cr_10, p_timing(C, A, V), P) :- p_timing(C, A, V), announced(C, P1, P2, P3), P = (P1; P2; P3), P != none.
+timing_dir(worse, bring_forward, increase). timing_dir(worse, carry_over, decrease).
+timing_dir(better, bring_forward, decrease). timing_dir(better, carry_over, increase).
+effect(p_timing(C, A, V), A, V, D, short, invisible, "B") :- p_timing(C, A, V), timing(C, A, V, M, _, _, _), chooser(C, A, W), timing_dir(W, M, D).
+window(p_timing(C, A, V), announcement) :- p_timing(C, A, V).
+% A line that is coming: the burdened side sets the price on the far side of it before it binds (early_price).
+p_early_price(C, E) :- h(C, E, _), early_price(E, P1, P2, P3), announced(C, Q1, Q2, Q3), ok(P1), ok(P2), ok(P3), ok(Q1), ok(Q2), ok(Q3).
+fired(cr_10, p_early_price(C, E), h(C, E, D)) :- p_early_price(C, E), h(C, E, D).
+fired(cr_10, p_early_price(C, E), P) :- p_early_price(C, E), early_price(E, P1, P2, P3), P = (P1; P2; P3), P != none.
+effect(p_early_price(C, E), A, V, D2, short, invisible, "B") :- p_early_price(C, E), h(C, E, D), line_dir(D, D1), opp(D1, D2), price_var(E, S, V), party(E, S, A).
+window(p_early_price(C, E), announcement) :- p_early_price(C, E).
 
 #show holds/1.
 #show fired/3.

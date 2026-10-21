@@ -360,6 +360,25 @@
    "text": "The rent board is a new appropriation that raises the general budget.",
    "class": "revenue_use",
    "p": 0.75
+  },
+  "a11": {
+   "text": "Enough leases renew during the announcement window, and landlords can raise rents at renewal.",
+   "class": "expectations",
+   "p": 0.7
   }
- }
+ },
+ "announced": [
+  {
+   "component": "k1",
+   "premises": []
+  }
+ ],
+ "early_price": [
+  {
+   "exchange": "e1",
+   "premises": [
+    "a11"
+   ]
+  }
+ ]
 }

@@ -321,6 +321,28 @@
    "text": "The budgets of customs and the exclusion office are raised to cover the new work.",
    "class": "revenue_use",
    "p": 0.65
+  },
+  "a4": {
+   "text": "Users and importers can store steel and order ahead.",
+   "class": "expectations",
+   "p": 0.8
   }
- }
+ },
+ "announced": [
+  {
+   "component": "k1",
+   "premises": []
+  }
+ ],
+ "timing": [
+  {
+   "component": "k1",
+   "actor": "steel_users",
+   "variable": "quantity_traded",
+   "mode": "bring_forward",
+   "premises": [
+    "a4"
+   ]
+  }
+ ]
 }

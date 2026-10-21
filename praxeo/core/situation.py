@@ -104,6 +104,20 @@ class Means(BaseModel):
     direction: Literal["out", "in"]
 
 
+class Timing(Premised):
+    component: str
+    actor: str
+    variable: str
+    mode: Literal["bring_forward", "carry_over"]
+
+
+class Backstop(Premised):
+    component: str
+    exchange: str
+    buyer: str
+    outlay_variable: Optional[str] = Field(default=None, description="e.g. subsidy_outlay")
+
+
 class Situation(BaseModel):
     name: str
     exchanges: list[Exchange]
@@ -123,6 +137,10 @@ class Situation(BaseModel):
     moves: list[Moves] = []
     discretion: list[Discretion] = []
     means: list[Means] = []
+    announced: list[dict] = Field(default=[], description="{'component', 'premises'}: CR-10a")
+    timing: list[Timing] = []
+    early_price: list[dict] = Field(default=[], description="{'exchange', 'premises'}")
+    backstops: list[Backstop] = []
     assumptions: dict[str, dict] = Field(description="id -> {'text', 'p', 'class'}")
 
 
@@ -179,6 +197,16 @@ def facts(s: Situation) -> str:
         out.append(f"discretion({d.component}, {_q(d.actor)}, {_p(d.premises)}).")
     for m in s.means:
         out.append(f"means({m.component}, {_q(m.actor)}, {m.direction}).")
+    for a in s.announced:
+        out.append(f"announced({a['component']}, {_p(a.get('premises', []))}).")
+    for t in s.timing:
+        out.append(f"timing({t.component}, {_q(t.actor)}, {_q(t.variable)}, {t.mode}, {_p(t.premises)}).")
+    for e in s.early_price:
+        out.append(f"early_price({e['exchange']}, {_p(e.get('premises', []))}).")
+    for b in s.backstops:
+        out.append(f"backstop({b.component}, {b.exchange}, {_q(b.buyer)}, {_p(b.premises)}).")
+        if b.outlay_variable:
+            out.append(f"outlay_var({b.component}, {_q(b.outlay_variable)}).")
     for t in s.assets:
         out.append(f"asset({t.exchange}, {t.side}, {_q(t.actor)}, {_p(t.premises)}).")
     for t in s.yields:

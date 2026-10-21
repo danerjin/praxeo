@@ -24,10 +24,10 @@ def _score(rows, keys):
 
 WE001_SHORT = {"landlords": "landlords.controlled", "tenants": "tenants.controlled"}
 WE001_NOT_PRODUCED = {
-    "C-17": "CR-10 (renewals brought into the announcement window) is not in the pilot",
-    "C-21": "CR-12: the first-months total of C-1 against C-17 needs the CR-10 chain and a declared comparison",
+    "C-21": "CR-12: the first-months total of C-1 against C-17 needs a declared comparison on the core output",
 }
 WE001_EXTRA = {
+    ("landlords.controlled", "net_price_received", "increase", "announcement"): "CR-10a: the landlords' side of C-17 (rents raised at renewal before the freeze)",
     ("landlords.controlled", "lobbying_effort", "increase", None): "C-11 names landlords (mapped); kept as a key the table has",
     ("tenants.prospective", "wait_time", "at_least_one_increase", None): "CR-6's group over the criteria; the table signs three members alone (C-3, C-4, C-7)",
     ("tenants.prospective", "search_cost", "at_least_one_increase", None): "member of the CR-6 group (see above)",
@@ -43,10 +43,10 @@ WE009_EXTRA = {
 
 
 def test_we001_from_the_core_rules_alone():
-    rows = _rows("WE-001_rent_freeze.md", WE001_SHORT, {}, {"converted buildings": ".converted"})
+    rows = _rows("WE-001_rent_freeze.md", WE001_SHORT, {"renewing before": "announcement"}, {"converted buildings": ".converted"})
     produced, extra = _score(rows, _keys("we001_riverton"))
     assert set(rows) - produced == set(WE001_NOT_PRODUCED)
-    assert len(produced) == 28 and len(rows) == 30
+    assert len(produced) == 29 and len(rows) == 30   # 28 before CR-10a
     assert set(extra) <= set(WE001_EXTRA)
 
 
@@ -84,7 +84,22 @@ def test_blind_situation_records():
 
 def test_we013_a_charge_from_the_core_rules_alone():
     """CR-1 operation 3 (a payment attached to trading): the steel tariff, with no held price."""
-    rows = _rows("WE-013_steel_tariff.md", {"owners of steel-using firms": "owners.steel_users"}, {}, {})
+    rows = _rows("WE-013_steel_tariff.md", {"owners of steel-using firms": "owners.steel_users"}, {"Jan–Mar": "announcement"}, {})
     produced, extra = _score(rows, _keys("we013_halvern"))
-    assert set(rows) - produced == {"C-8", "C-30"}   # C-8: CR-10 (orders brought forward); C-30: CR-7a on other producers
+    assert set(rows) - produced == {"C-30"}   # CR-7a on other producers; C-8 came with CR-10a
     assert extra == []
+
+
+def test_we002_and_we010_blind_charges():
+    rows = _rows("WE-002_drinks_excise.md", {"buyers.lakeport": "buyers.households", "distributors": "distributors.registered",
+                 "retailers": "retailers.lakeport", "retailers.neighbors": "retailers.neighboring", "town budget": "officials.town",
+                 "officials.enforcement": "officials.revenue_dept", "approved providers": "providers.approved",
+                 "families.preschool": "families.private_preschool"}, {}, {})
+    produced, _ = _score(rows, _keys("we002_lakeport"))
+    assert len(produced) == 9 and len(rows) == 26
+    rows = _rows("WE-010_cigarette_tax_border.md", {"smokers": "smokers.marren", "stamping_agents": "wholesalers.stamping",
+                 "border retailers": "retailers.border", "health groups": "health_groups",
+                 "intermediaries.bootleggers": "intermediaries.smuggling", "intermediaries.smuggling_networks": "intermediaries.smuggling",
+                 "retailers.neighbors": "sellers.neighboring", "factor_owners.specific": "factor_owners.border_sites"}, {}, {})
+    produced, _ = _score(rows, _keys("we010_marren"))
+    assert len(produced) == 16 and len(rows) == 33
