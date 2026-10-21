@@ -1,0 +1,867 @@
+{
+ "name": "WE-062 plastic packaging tax (loop, blind)",
+ "exchanges": [
+  {
+   "id": "e_dom",
+   "buyer": "packaging_users",
+   "seller": "converters.domestic",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_imp_empty",
+   "buyer": "importers.packaging",
+   "seller": "converters.foreign",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_imp_goods",
+   "buyer": "importers.goods",
+   "seller": "sellers.foreign.packaged_goods",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_export",
+   "buyer": "buyers.foreign",
+   "seller": "converters.domestic",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [],
+ "alternatives": [
+  {
+   "premises": [
+    "q6_some_plastic_components_can_be_redesigne"
+   ],
+   "component": "k1",
+   "chooser": "converters.domestic",
+   "actor": "converters.domestic",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q7_for_some_components_raising_recycled_con"
+   ],
+   "component": "k1",
+   "chooser": "converters.domestic",
+   "actor": "converters.domestic",
+   "variables": [
+    "product_attribute"
+   ]
+  },
+  {
+   "premises": [
+    "q8_some_components_can_be_made_lighter_at_a"
+   ],
+   "component": "k1",
+   "chooser": "converters.domestic",
+   "actor": "converters.domestic",
+   "variables": [
+    "specification_level"
+   ]
+  },
+  {
+   "premises": [
+    "q9_misdeclaring_recycled_content_or_weight_"
+   ],
+   "component": "k1",
+   "chooser": "converters.domestic",
+   "actor": "converters.domestic",
+   "variables": [
+    "legal_breach"
+   ]
+  },
+  {
+   "premises": [
+    "q10_some_exporters_can_replace_export_fillin"
+   ],
+   "component": "k1",
+   "chooser": "converters.domestic",
+   "actor": "converters.domestic",
+   "variables": [
+    "relocation_out_of_area"
+   ]
+  },
+  {
+   "premises": [
+    "q19_some_firms_that_would_handle_10_to_13_t_"
+   ],
+   "component": "k1",
+   "chooser": "importers.goods",
+   "actor": "importers.goods",
+   "variables": [
+    "transaction_size"
+   ]
+  },
+  {
+   "premises": [
+    "q20_moving_the_importer_of_record_to_unrelat"
+   ],
+   "component": "k1",
+   "chooser": "importers.goods",
+   "actor": "importers.goods",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q9_misdeclaring_recycled_content_or_weight_"
+   ],
+   "component": "k1",
+   "chooser": "importers.goods",
+   "actor": "importers.goods",
+   "variables": [
+    "legal_breach"
+   ]
+  },
+  {
+   "premises": [
+    "q19_some_firms_that_would_handle_10_to_13_t_"
+   ],
+   "component": "k1",
+   "chooser": "importers.packaging",
+   "actor": "importers.packaging",
+   "variables": [
+    "transaction_size"
+   ]
+  },
+  {
+   "premises": [
+    "q20_moving_the_importer_of_record_to_unrelat"
+   ],
+   "component": "k1",
+   "chooser": "importers.packaging",
+   "actor": "importers.packaging",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q9_misdeclaring_recycled_content_or_weight_"
+   ],
+   "component": "k1",
+   "chooser": "importers.packaging",
+   "actor": "importers.packaging",
+   "variables": [
+    "legal_breach"
+   ]
+  },
+  {
+   "premises": [
+    "q8_some_components_can_be_made_lighter_at_a"
+   ],
+   "component": "k1",
+   "chooser": "importers.packaging",
+   "actor": "importers.packaging",
+   "variables": [
+    "specification_level"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q11_converters_multi_product_users_and_recyc"
+   ],
+   "component": "k1",
+   "actor": "converters.domestic"
+  },
+  {
+   "premises": [
+    "q11_converters_multi_product_users_and_recyc"
+   ],
+   "component": "k1",
+   "actor": "packaging_users"
+  },
+  {
+   "premises": [
+    "q11_converters_multi_product_users_and_recyc"
+   ],
+   "component": "k1",
+   "actor": "recyclers.domestic"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "a12"
+   ],
+   "source_actor": "buyers.foreign",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "converters.foreign",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q12_converters_adjust_labor_to_output"
+   ],
+   "source_actor": "converters.domestic",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.converters",
+   "variable": "employment,hours_worked"
+  },
+  {
+   "premises": [],
+   "source_actor": "converters.domestic",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_demanded"
+  },
+  {
+   "premises": [
+    "q13_converting_plants_are_specific_to_plasti",
+    "q14_investors_expect_the_tax_and_its_exempti"
+   ],
+   "source_actor": "converters.domestic",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "owners.converters",
+   "variable": "asset_value"
+  },
+  {
+   "premises": [
+    "q14_investors_expect_the_tax_and_its_exempti"
+   ],
+   "source_actor": "converters.domestic",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "converters.domestic",
+   "variable": "investment_target"
+  },
+  {
+   "premises": [
+    "q15_converters_can_buy_equipment_that_lets_t"
+   ],
+   "source_actor": "converters.domestic",
+   "source_variable": "product_attribute",
+   "relation": "input",
+   "actor": "recyclers.domestic",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q16_recycled_resin_takes_the_place_of_virgin"
+   ],
+   "source_actor": "converters.domestic",
+   "source_variable": "product_attribute",
+   "relation": "substitute",
+   "actor": "input_suppliers",
+   "variable": "quantity_demanded"
+  },
+  {
+   "premises": [
+    "q17_recycled_resin_delivered_in_saldria_can_"
+   ],
+   "source_actor": "converters.domestic",
+   "source_variable": "product_attribute",
+   "relation": "complement",
+   "actor": "recyclers.domestic",
+   "variable": "price_complement"
+  },
+  {
+   "premises": [
+    "q18_paper_and_board_glass_and_metal_packagin"
+   ],
+   "source_actor": "converters.domestic",
+   "source_variable": "reclassification",
+   "relation": "same_act",
+   "actor": "sellers.substitute_packaging",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q22_packaging_is_a_material_part_of_the_cost"
+   ],
+   "source_actor": "importers.goods",
+   "source_variable": "price_paid",
+   "relation": "output",
+   "actor": "consumers.packaged_goods",
+   "variable": "price_paid"
+  },
+  {
+   "premises": [
+    "q23_goods_imported_by_small_importers_compet"
+   ],
+   "source_actor": "importers.goods",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "importers.small_goods",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q24_changes_in_imports_and_exports_are_not_o"
+   ],
+   "source_actor": "importers.goods",
+   "source_variable": "quantity_traded",
+   "relation": "currency",
+   "actor": "export_industries",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q25_some_users_under_10_t_can_import_their_o"
+   ],
+   "source_actor": "importers.packaging",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "importers.small_packaging",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q24_changes_in_imports_and_exports_are_not_o"
+   ],
+   "source_actor": "importers.packaging",
+   "source_variable": "quantity_traded",
+   "relation": "currency",
+   "actor": "export_industries",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q22_packaging_is_a_material_part_of_the_cost"
+   ],
+   "source_actor": "packaging_users",
+   "source_variable": "price_paid",
+   "relation": "output",
+   "actor": "consumers.packaged_goods",
+   "variable": "price_paid"
+  },
+  {
+   "premises": [
+    "q26_some_packaging_users_can_reduce_their_us"
+   ],
+   "source_actor": "packaging_users",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "packaging_users",
+   "variable": "quantity_demanded"
+  },
+  {
+   "premises": [
+    "a12",
+    "q22_packaging_is_a_material_part_of_the_cost"
+   ],
+   "source_actor": "packaging_users",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "exporters.packaged_goods",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q18_paper_and_board_glass_and_metal_packagin"
+   ],
+   "source_actor": "packaging_users",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "packaging_users",
+   "variable": "quantity_substitute"
+  },
+  {
+   "premises": [
+    "q18_paper_and_board_glass_and_metal_packagin"
+   ],
+   "source_actor": "packaging_users",
+   "source_variable": "quantity_substitute",
+   "relation": "same_act",
+   "actor": "sellers.substitute_packaging",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q27_board_and_glass_container_supply_cannot_"
+   ],
+   "source_actor": "packaging_users",
+   "source_variable": "quantity_substitute",
+   "relation": "same_act",
+   "actor": "sellers.substitute_packaging",
+   "variable": "net_price_received"
+  },
+  {
+   "premises": [],
+   "source_actor": "consumers.packaged_goods",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "consumers.packaged_goods",
+   "variable": "quantity_demanded"
+  },
+  {
+   "premises": [
+    "q28_loose_produce_and_tap_or_refill_water_se"
+   ],
+   "source_actor": "consumers.packaged_goods",
+   "source_variable": "quantity_demanded",
+   "relation": "substitute",
+   "actor": "consumers.packaged_goods",
+   "variable": "quantity_substitute"
+  },
+  {
+   "premises": [
+    "q29_export_industries_adjust_their_labor_to_"
+   ],
+   "source_actor": "export_industries",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.export_industries",
+   "variable": "employment,hours_worked"
+  },
+  {
+   "premises": [
+    "q30_exporters_of_packaged_goods_adjust_their"
+   ],
+   "source_actor": "exporters.packaged_goods",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.exporters",
+   "variable": "employment,hours_worked"
+  },
+  {
+   "premises": [
+    "q32_recyclers_and_substitute_makers_adjust_t"
+   ],
+   "source_actor": "recyclers.domestic",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.recyclers",
+   "variable": "employment,hours_worked"
+  },
+  {
+   "premises": [
+    "q33_municipalities_can_extend_collection_and"
+   ],
+   "source_actor": "recyclers.domestic",
+   "source_variable": "price_complement",
+   "relation": "yield",
+   "actor": "municipalities",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q34_some_components_above_30_recycled_on_the"
+   ],
+   "source_actor": "recyclers.domestic",
+   "source_variable": "price_complement",
+   "relation": "cost",
+   "actor": "converters.recycled_heavy",
+   "variable": "product_attribute"
+  },
+  {
+   "premises": [
+    "q14_investors_expect_the_tax_and_its_exempti"
+   ],
+   "source_actor": "recyclers.domestic",
+   "source_variable": "price_complement",
+   "relation": "yield",
+   "actor": "recyclers.domestic",
+   "variable": "investment_target"
+  },
+  {
+   "premises": [
+    "q32_recyclers_and_substitute_makers_adjust_t"
+   ],
+   "source_actor": "sellers.substitute_packaging",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.substitute_makers",
+   "variable": "employment,hours_worked"
+  },
+  {
+   "premises": [
+    "q14_investors_expect_the_tax_and_its_exempti"
+   ],
+   "source_actor": "sellers.substitute_packaging",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "sellers.substitute_packaging",
+   "variable": "investment_target"
+  },
+  {
+   "premises": [
+    "q15_converters_can_buy_equipment_that_lets_t"
+   ],
+   "source_actor": "converters.recycled_heavy",
+   "source_variable": "product_attribute",
+   "relation": "input",
+   "actor": "recyclers.domestic",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q16_recycled_resin_takes_the_place_of_virgin"
+   ],
+   "source_actor": "converters.recycled_heavy",
+   "source_variable": "product_attribute",
+   "relation": "substitute",
+   "actor": "input_suppliers",
+   "variable": "quantity_demanded"
+  }
+ ],
+ "assets": [],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "converters.domestic"
+  },
+  {
+   "component": "k1",
+   "actor": "importers.packaging"
+  },
+  {
+   "component": "k1",
+   "actor": "importers.goods"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k4",
+   "actor": "taxpayers",
+   "premises": [
+    "a24"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "k1",
+   "exchange": "e_dom",
+   "payer_side": "seller",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "tax_revenue",
+   "projection_variable": "tax_revenue_vs_static_projection"
+  },
+  {
+   "component": "k1",
+   "exchange": "e_imp_empty",
+   "payer_side": "buyer",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "tax_revenue",
+   "projection_variable": "tax_revenue_vs_static_projection"
+  },
+  {
+   "component": "k1",
+   "exchange": "e_imp_goods",
+   "payer_side": "buyer",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "tax_revenue",
+   "projection_variable": "tax_revenue_vs_static_projection"
+  },
+  {
+   "component": "k1",
+   "exchange": "e_export",
+   "payer_side": "seller",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "tax_revenue",
+   "projection_variable": "tax_revenue_vs_static_projection"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a2"
+   ],
+   "exchange": "e_dom",
+   "side": "buyer"
+  },
+  {
+   "premises": [
+    "a2"
+   ],
+   "exchange": "e_imp_empty",
+   "side": "buyer"
+  },
+  {
+   "premises": [
+    "s1"
+   ],
+   "exchange": "e_imp_goods",
+   "side": "buyer"
+  },
+  {
+   "premises": [
+    "a12"
+   ],
+   "exchange": "e_export",
+   "side": "seller"
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "s2"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q21_liable_firms_can_store_packaging_and_bri"
+   ],
+   "component": "k1",
+   "actor": "importers.goods",
+   "variable": "quantity_demanded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q21_liable_firms_can_store_packaging_and_bri"
+   ],
+   "component": "k1",
+   "actor": "importers.packaging",
+   "variable": "quantity_demanded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q21_liable_firms_can_store_packaging_and_bri"
+   ],
+   "component": "k1",
+   "actor": "importers.packaging",
+   "variable": "inventory_held",
+   "mode": "carry_over"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "parts": [
+  {
+   "part": "importers.small_goods",
+   "whole": "importers.goods",
+   "premises": []
+  },
+  {
+   "part": "importers.small_packaging",
+   "whole": "importers.packaging",
+   "premises": []
+  },
+  {
+   "part": "converters.recycled_heavy",
+   "whole": "converters.domestic",
+   "premises": []
+  }
+ ],
+ "dominance": [
+  {
+   "premises": [
+    "q31_the_shift_of_small_users_to_direct_impor"
+   ],
+   "actor": "importers.packaging",
+   "variable": "quantity_traded",
+   "window": null,
+   "direction": "decrease",
+   "kind": "empirical"
+  }
+ ],
+ "assumptions": {
+  "a2": {
+   "text": "Imported empty packaging is at the margin of supply for most kinds of packaging, and foreign converters, with many other markets, absorb little of the tax, so packaging users bear more of it than sellers do.",
+   "class": "substitutability",
+   "p": 0.75
+  },
+  "a12": {
+   "text": "Exporters of empty packaging and packaged goods sell at prices set abroad.",
+   "class": "substitutability",
+   "p": 0.8
+  },
+  "s1": {
+   "text": "Foreign sellers of packaged goods, with many other markets, absorb little of the tax on the packaging around their goods.",
+   "class": "substitutability",
+   "p": 0.7
+  },
+  "s2": {
+   "text": "Firms expect the tax to take effect on 1 January 2028 as enacted.",
+   "class": "expectations",
+   "p": 0.95
+  },
+  "a24": {
+   "text": "The plastics unit is funded by the 7 million T appropriation in the Act, from the general budget that receives the tax.",
+   "class": "revenue_use",
+   "p": 0.9
+  },
+  "q6_some_plastic_components_can_be_redesigne": {
+   "text": "Some plastic components can be redesigned so that another material (board, paper, metal) is the heaviest by weight, at a cost below the tax saved.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q7_for_some_components_raising_recycled_con": {
+   "text": "For some components, raising recycled content to 30% costs less than the tax.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q8_some_components_can_be_made_lighter_at_a": {
+   "text": "Some components can be made lighter at a cost below the tax saved.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q9_misdeclaring_recycled_content_or_weight_": {
+   "text": "Misdeclaring recycled content or weight costs some firms less than the tax, given audits and penalties.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q10_some_exporters_can_replace_export_fillin": {
+   "text": "Some exporters can replace export filling or converting lines abroad when they come up for replacement.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q11_converters_multi_product_users_and_recyc": {
+   "text": "Converters, multi-product users and recyclers can organize to lobby on U1 and the rules at a cost below their stake.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q12_converters_adjust_labor_to_output": {
+   "text": "Converters adjust labor to output.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q13_converting_plants_are_specific_to_plasti": {
+   "text": "Converting plants are specific to plastic converting and cannot move to other uses without large losses.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q14_investors_expect_the_tax_and_its_exempti": {
+   "text": "Investors expect the tax, and its exemption, to last at least several years.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q15_converters_can_buy_equipment_that_lets_t": {
+   "text": "Converters can buy equipment that lets them process recycled resin, and expect the exemption to last long enough to pay for it.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q16_recycled_resin_takes_the_place_of_virgin": {
+   "text": "Recycled resin takes the place of virgin resin in the components that use it.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q17_recycled_resin_delivered_in_saldria_can_": {
+   "text": "Recycled resin delivered in Saldria can expand only at a higher cost: collection and sorting are near capacity, added collection reaches more dispersed sources and dirtier bales, and regional resin costs more (C-30); the cost per tonne does not fall as supply expands within the medium run.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q18_paper_and_board_glass_and_metal_packagin": {
+   "text": "Paper and board, glass and metal packaging serve some of the same ends as plastic for some users.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q19_some_firms_that_would_handle_10_to_13_t_": {
+   "text": "Some firms that would handle 10 to 13 t can keep under 10 t at a cost below the notch (2,000 T of tax and 2,500 to 4,000 T of compliance a year).",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q20_moving_the_importer_of_record_to_unrelat": {
+   "text": "Moving the importer of record to unrelated parties (customers, foreign sellers who register) is cheap enough for some near-line firms.",
+   "p": 0.4,
+   "class": "other"
+  },
+  "q21_liable_firms_can_store_packaging_and_bri": {
+   "text": "Liable firms can store packaging and bring orders forward into late 2027.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q22_packaging_is_a_material_part_of_the_cost": {
+   "text": "Packaging is a material part of the cost of some packaged goods (6% to 10% for bottled water and pre-packed produce), and their sellers cannot switch fully at the old cost.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q23_goods_imported_by_small_importers_compet": {
+   "text": "Goods imported by small importers compete with goods packaged or imported by liable firms.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q24_changes_in_imports_and_exports_are_not_o": {
+   "text": "Changes in imports and exports are not offset by capital flows within the medium run.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q25_some_users_under_10_t_can_import_their_o": {
+   "text": "Some users under 10 t can import their own packaging at a cost below the tax they would pay on domestic packaging.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q26_some_packaging_users_can_reduce_their_us": {
+   "text": "Some packaging users can reduce their use of taxed plastic (lighter designs, recycled content, other materials) at a cost below 200 T a tonne.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q27_board_and_glass_container_supply_cannot_": {
+   "text": "Board and glass container supply cannot expand at an unchanged cost within the first year.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q28_loose_produce_and_tap_or_refill_water_se": {
+   "text": "Loose produce and tap or refill water serve the same ends as pre-packed produce and bottled water for some buyers.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q29_export_industries_adjust_their_labor_to_": {
+   "text": "Export industries adjust their labor to their output.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q30_exporters_of_packaged_goods_adjust_their": {
+   "text": "Exporters of packaged goods adjust their labor to their output.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q31_the_shift_of_small_users_to_direct_impor": {
+   "text": "The shift of small users to direct imports is smaller than the fall in liable firms' imports of empty packaging.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q32_recyclers_and_substitute_makers_adjust_t": {
+   "text": "Recyclers and substitute makers adjust their labor to their sales.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q33_municipalities_can_extend_collection_and": {
+   "text": "Municipalities can extend collection and sell more bales at the higher price.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q34_some_components_above_30_recycled_on_the": {
+   "text": "Some components above 30% recycled on the counterfactual path carry that content at a margin chosen on cost, so that a dearer recycled resin leads their makers to cut it toward 30%.",
+   "p": 0.6,
+   "class": "other"
+  }
+ }
+}

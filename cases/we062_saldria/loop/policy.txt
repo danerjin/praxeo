@@ -1,0 +1,40 @@
+## 1. Policy record
+
+**Saldria Plastic Packaging Tax Act.** Saldria is a country of about 9.4 million people with its own currency, the taler (T), and a floating exchange rate. It produces no virgin plastic resin; all of it is imported, at world prices (about 1,150 T a tonne for the common grades). Saldria buys about 0.4% of the world's packaging resins. The figures:
+
+| Item | Figure |
+|---|---|
+| Plastic packaging placed on the Saldrian market | about 610,000 tonnes a year |
+| Of which made by domestic converters from resin | about 330,000 t (about 210 converters, about 19,000 employees) |
+| Of which imported empty | about 120,000 t |
+| Of which arriving around imported goods | about 160,000 t |
+| Converters' exports of empty packaging | about 70,000 t a year, at prices set abroad |
+| Packaging leaving Saldria around exported goods | about 45,000 t a year |
+| Average recycled content of packaging placed on the market | about 11% |
+| Packaging already at 30% recycled or more | about 85,000 t (14%), mostly PET drink bottles and some non-food rigid containers; a few brand owners use 50% or more for marketing |
+| Food-contact flexible films | about 150,000 t, essentially 0% recycled; the Food Safety Authority approves recycled plastic for food contact only from approved PET processes |
+| Recycled resin | 7 domestic plants produce about 48,000 t a year from collected plastic; about 12,000 t imported. Food-grade recycled PET about 1,400 T a tonne (virgin PET 1,150); non-food recycled polyolefins about 950 T (virgin 1,100) but usable only in some designs. Saldria buys about 3% of the regional recycled-resin market. |
+| Collection | Municipalities collect about 140,000 t of plastic a year and sell it in bales by auction, at about 300 T a tonne; collection is near the capacity of current routes and sorting lines |
+| Substitutes | Two domestic paper and board mills (about 92% capacity use); paperboard also traded regionally at regional prices; one glass container plant (88% capacity use; a new furnace takes about two years); one can maker |
+| Firms | The Revenue Service estimates about 3,900 firms at or above 10 t a year (converters, importers of packaging, fillers who import, importers of packaged goods). About 21,000 firms import packaged goods; about 17,000 firms of all kinds handle under 10 t, together about 25,000 t (4%). About 520 firms handle between 7 and 10 t; about 380 between 10 and 13 t. |
+| Compliance | Revenue Service estimate: 2,500 to 4,000 T a year per registered firm for weighing, records and returns |
+| Packaging in the price of goods | 1% to 3% for most packaged goods; 6% to 10% for bottled water and pre-packed fresh produce |
+| Static revenue projection | Treasury: 98 million T a year (taxed tonnage at enactment times the rate) |
+
+The tax was announced in the budget statement of 2 March 2027, enacted on 28 June 2027 and takes effect on 1 January 2028. It has no expiry. The rate is fixed in talers and not indexed.
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Tax | `per_unit_tax` | Plastic packaging components (a component in which plastic is the heaviest material by weight) manufactured in or imported into Saldria, empty or around imported goods | The manufacturer (who performs the last substantial modification) or the importer of record | 200 T per tonne; quarterly returns; chargeable on manufacture or import. "The tax is chargeable whether or not the component is later exported, empty or filled." No export relief. | K2, K3 |
+| K2 Recycled-content exemption | Exemption | As K1 | — | s. 4(1): "A plastic packaging component containing 30 per cent or more recycled plastic is not chargeable." s. 4(2): "The proportion of recycled plastic is to be determined over the plastic packaging components a person manufactures or imports in the quarter." Recycled content must be shown by supplier declarations or mass-balance records; components without such evidence are treated as containing none. | — |
+| K3 Small-firm threshold | Exemption | Persons | — | s. 7: "A person who manufactured or imported less than 10 tonnes of plastic packaging components in the previous calendar year is not liable for the tax in the current year." The count includes exempt components. Companies under common control are counted together. A person over the line pays on all its chargeable tonnage. | — |
+| K4 Administration | Enforcement | K1 to K3 | Revenue Service (plastics unit) | Registration, records, audits; penalty of 30% of tax underpaid, more for false declarations of recycled content. The Act appropriates 7 million T a year from the general budget for the plastics unit. | — |
+
+Revenue use: general budget. What it funds is not stated; OC-1 is applied to the payers, and the recipients are not signed.
+
+Existing rules, unchanged on both paths: the Food Safety Authority's rule on recycled plastic in food contact, customs procedures, the general sales tax, and municipal collection contracts.
+
+A campaign by environmental groups for a ban on single-use plastic packaging has run since 2023; a ban bill failed in 2025; the converters' association opposed it.
+
+Unclear provisions:
+- **U1, how the 30% is measured.** Section 4(1) speaks of "a component containing 30 per cent or more"; section 4(2) says the proportion is "determined over the components a person manufactures or imports in the quarter". Reading U1-a (per component): 4(2) fixes only the period over which each kind of component's content is measured by mass balance; each kind of component must itself reach 30% to be exempt. Reading U1-b (averaged): the proportion is the average over all the person's components in the quarter; if it is 30% or more, every component the person made or imported that quarter is exempt, and if not, none is. The Revenue Service has consulted and has not decided; no court has ruled. Readings get no probability; where a sign depends on one, each reading's sign is reported.
