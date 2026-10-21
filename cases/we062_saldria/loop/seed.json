@@ -1,0 +1,36 @@
+{
+ "name": "WE-062 plastic packaging tax (loop, blind)",
+ "exchanges": [
+  {"id": "e_dom", "buyer": "packaging_users", "seller": "converters.domestic", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_imp_empty", "buyer": "importers.packaging", "seller": "converters.foreign", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_imp_goods", "buyer": "importers.goods", "seller": "sellers.foreign.packaged_goods", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_export", "buyer": "buyers.foreign", "seller": "converters.domestic", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "charges": [
+  {"component": "k1", "exchange": "e_dom", "payer_side": "seller", "receiver": "officials.enforcement", "receipt_variable": "tax_revenue", "projection_variable": "tax_revenue_vs_static_projection"},
+  {"component": "k1", "exchange": "e_imp_empty", "payer_side": "buyer", "receiver": "officials.enforcement", "receipt_variable": "tax_revenue", "projection_variable": "tax_revenue_vs_static_projection"},
+  {"component": "k1", "exchange": "e_imp_goods", "payer_side": "buyer", "receiver": "officials.enforcement", "receipt_variable": "tax_revenue", "projection_variable": "tax_revenue_vs_static_projection"},
+  {"component": "k1", "exchange": "e_export", "payer_side": "seller", "receiver": "officials.enforcement", "receipt_variable": "tax_revenue", "projection_variable": "tax_revenue_vs_static_projection"}
+ ],
+ "moves": [
+  {"exchange": "e_dom", "side": "buyer", "premises": ["a2"]},
+  {"exchange": "e_imp_empty", "side": "buyer", "premises": ["a2"]},
+  {"exchange": "e_imp_goods", "side": "buyer", "premises": ["s1"]},
+  {"exchange": "e_export", "side": "seller", "premises": ["a12"]}
+ ],
+ "announced": [{"component": "k1", "premises": ["s2"]}],
+ "compliance": [
+  {"component": "k1", "actor": "converters.domestic"},
+  {"component": "k1", "actor": "importers.packaging"},
+  {"component": "k1", "actor": "importers.goods"}
+ ],
+ "enforcers": [{"component": "k4", "actor": "officials.enforcement"}],
+ "funded": [{"component": "k4", "actor": "taxpayers", "premises": ["a24"]}],
+ "assumptions": {
+  "a2": {"text": "Imported empty packaging is at the margin of supply for most kinds of packaging, and foreign converters, with many other markets, absorb little of the tax, so packaging users bear more of it than sellers do.", "class": "substitutability", "p": 0.75},
+  "a12": {"text": "Exporters of empty packaging and packaged goods sell at prices set abroad.", "class": "substitutability", "p": 0.8},
+  "s1": {"text": "Foreign sellers of packaged goods, with many other markets, absorb little of the tax on the packaging around their goods.", "class": "substitutability", "p": 0.7},
+  "s2": {"text": "Firms expect the tax to take effect on 1 January 2028 as enacted.", "class": "expectations", "p": 0.95},
+  "a24": {"text": "The plastics unit is funded by the 7 million T appropriation in the Act, from the general budget that receives the tax.", "class": "revenue_use", "p": 0.9}
+ }
+}

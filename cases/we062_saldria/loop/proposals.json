@@ -1,0 +1,779 @@
+{
+ "converters.domestic": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "converters.domestic",
+    "actor": "converters.domestic",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Some plastic components can be redesigned so that another material (board, paper, metal) is the heaviest by weight, at a cost below the tax saved."
+   ],
+   "source": "Target: plastic packaging components (a component in which plastic is the heaviest material by weight)... 200 T per tonne"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "converters.domestic",
+    "actor": "converters.domestic",
+    "variables": [
+     "product_attribute"
+    ]
+   },
+   "premises": [
+    "For some components, raising recycled content to 30% costs less than the tax."
+   ],
+   "source": "s. 4(1): A plastic packaging component containing 30 per cent or more recycled plastic is not chargeable."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "converters.domestic",
+    "actor": "converters.domestic",
+    "variables": [
+     "specification_level"
+    ]
+   },
+   "premises": [
+    "Some components can be made lighter at a cost below the tax saved."
+   ],
+   "source": "200 T per tonne, by weight"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "converters.domestic",
+    "actor": "converters.domestic",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Misdeclaring recycled content or weight costs some firms less than the tax, given audits and penalties."
+   ],
+   "source": "Recycled content must be shown by supplier declarations or mass-balance records ... penalty of 30% of tax underpaid"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "converters.domestic",
+    "actor": "converters.domestic",
+    "variables": [
+     "relocation_out_of_area"
+    ]
+   },
+   "premises": [
+    "Some exporters can replace export filling or converting lines abroad when they come up for replacement."
+   ],
+   "source": "The tax is chargeable whether or not the component is later exported, empty or filled. No export relief."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "converters.domestic"
+   },
+   "premises": [
+    "Converters, multi-product users and recyclers can organize to lobby on U1 and the rules at a cost below their stake."
+   ],
+   "source": "The Revenue Service has consulted and has not decided (U1)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "converters.domestic",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "workers.converters",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Converters adjust labor to output."
+   ],
+   "source": "about 210 converters, about 19,000 employees"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "converters.domestic",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "input_suppliers",
+    "variable": "quantity_demanded"
+   },
+   "premises": [],
+   "source": "It produces no virgin plastic resin; all of it is imported"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "converters.domestic",
+    "source_variable": "net_price_received",
+    "relation": "yield",
+    "actor": "owners.converters",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Converting plants are specific to plastic converting and cannot move to other uses without large losses.",
+    "Investors expect the tax, and its exemption, to last at least several years."
+   ],
+   "source": "The tax has no expiry."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "converters.domestic",
+    "source_variable": "net_price_received",
+    "relation": "yield",
+    "actor": "converters.domestic",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Investors expect the tax, and its exemption, to last at least several years."
+   ],
+   "source": "It has no expiry. The rate is fixed in talers and not indexed."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "converters.domestic",
+    "source_variable": "product_attribute",
+    "relation": "input",
+    "actor": "recyclers.domestic",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Converters can buy equipment that lets them process recycled resin, and expect the exemption to last long enough to pay for it."
+   ],
+   "source": "7 domestic plants produce about 48,000 t a year from collected plastic"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "converters.domestic",
+    "source_variable": "product_attribute",
+    "relation": "substitute",
+    "actor": "input_suppliers",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Recycled resin takes the place of virgin resin in the components that use it."
+   ],
+   "source": "Recycled resin ... non-food recycled polyolefins about 950 T (virgin 1,100)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "converters.domestic",
+    "source_variable": "product_attribute",
+    "relation": "complement",
+    "actor": "recyclers.domestic",
+    "variable": "price_complement"
+   },
+   "premises": [
+    "Recycled resin delivered in Saldria can expand only at a higher cost: collection and sorting are near capacity, added collection reaches more dispersed sources and dirtier bales, and regional resin costs more (C-30); the cost per tonne does not fall as supply expands within the medium run."
+   ],
+   "source": "collection is near the capacity of current routes and sorting lines"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "converters.domestic",
+    "source_variable": "reclassification",
+    "relation": "same_act",
+    "actor": "sellers.substitute_packaging",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Paper and board, glass and metal packaging serve some of the same ends as plastic for some users."
+   ],
+   "source": "Two domestic paper and board mills (about 92% capacity use); one glass container plant"
+  }
+ ],
+ "buyers.foreign": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.foreign",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "converters.foreign",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Exporters of empty packaging and packaged goods sell at prices set abroad."
+   ],
+   "source": "Converters' exports of empty packaging: about 70,000 t a year, at prices set abroad"
+  }
+ ],
+ "converters.foreign": [],
+ "sellers.foreign.packaged_goods": [],
+ "officials.enforcement": [],
+ "taxpayers": [],
+ "importers.packaging": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "importers.packaging",
+    "actor": "importers.packaging",
+    "variables": [
+     "transaction_size"
+    ]
+   },
+   "premises": [
+    "Some firms that would handle 10 to 13 t can keep under 10 t at a cost below the notch (2,000 T of tax and 2,500 to 4,000 T of compliance a year)."
+   ],
+   "source": "s. 7: A person who manufactured or imported less than 10 tonnes ... in the previous calendar year is not liable"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "importers.packaging",
+    "actor": "importers.packaging",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Moving the importer of record to unrelated parties (customers, foreign sellers who register) is cheap enough for some near-line firms."
+   ],
+   "source": "The tax is chargeable ... on the importer of record"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "importers.packaging",
+    "actor": "importers.packaging",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Misdeclaring recycled content or weight costs some firms less than the tax, given audits and penalties."
+   ],
+   "source": "components without such evidence are treated as containing none"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "importers.packaging",
+    "actor": "importers.packaging",
+    "variables": [
+     "specification_level"
+    ]
+   },
+   "premises": [
+    "Some components can be made lighter at a cost below the tax saved."
+   ],
+   "source": "200 T per tonne"
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "importers.packaging",
+    "variable": "quantity_demanded",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Liable firms can store packaging and bring orders forward into late 2027."
+   ],
+   "source": "announced in the budget statement of 2 March 2027 ... takes effect on 1 January 2028"
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "importers.packaging",
+    "variable": "inventory_held",
+    "mode": "carry_over"
+   },
+   "premises": [
+    "Liable firms can store packaging and bring orders forward into late 2027."
+   ],
+   "source": "announced in the budget statement of 2 March 2027 ... takes effect on 1 January 2028"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "importers.packaging",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "importers.small_packaging",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Some users under 10 t can import their own packaging at a cost below the tax they would pay on domestic packaging."
+   ],
+   "source": "s. 7: A person who manufactured or imported less than 10 tonnes ... in the previous calendar year is not liable"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "importers.packaging",
+    "source_variable": "quantity_traded",
+    "relation": "currency",
+    "actor": "export_industries",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Changes in imports and exports are not offset by capital flows within the medium run."
+   ],
+   "source": "Saldria ... has its own currency, the taler (T), and a floating exchange rate."
+  }
+ ],
+ "importers.goods": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "importers.goods",
+    "actor": "importers.goods",
+    "variables": [
+     "transaction_size"
+    ]
+   },
+   "premises": [
+    "Some firms that would handle 10 to 13 t can keep under 10 t at a cost below the notch (2,000 T of tax and 2,500 to 4,000 T of compliance a year)."
+   ],
+   "source": "s. 7: A person who manufactured or imported less than 10 tonnes ... in the previous calendar year is not liable"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "importers.goods",
+    "actor": "importers.goods",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Moving the importer of record to unrelated parties (customers, foreign sellers who register) is cheap enough for some near-line firms."
+   ],
+   "source": "The tax is chargeable ... on the importer of record"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "importers.goods",
+    "actor": "importers.goods",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Misdeclaring recycled content or weight costs some firms less than the tax, given audits and penalties."
+   ],
+   "source": "penalty of 30% of tax underpaid"
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "importers.goods",
+    "variable": "quantity_demanded",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Liable firms can store packaging and bring orders forward into late 2027."
+   ],
+   "source": "announced in the budget statement of 2 March 2027 ... takes effect on 1 January 2028"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "importers.goods",
+    "source_variable": "price_paid",
+    "relation": "output",
+    "actor": "consumers.packaged_goods",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Packaging is a material part of the cost of some packaged goods (6% to 10% for bottled water and pre-packed produce), and their sellers cannot switch fully at the old cost."
+   ],
+   "source": "Packaging in the price of goods: 1% to 3% for most packaged goods; 6% to 10% for bottled water and pre-packed fresh produce"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "importers.goods",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "importers.small_goods",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Goods imported by small importers compete with goods packaged or imported by liable firms."
+   ],
+   "source": "About 21,000 firms import packaged goods; about 17,000 firms of all kinds handle under 10 t"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "importers.goods",
+    "source_variable": "quantity_traded",
+    "relation": "currency",
+    "actor": "export_industries",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Changes in imports and exports are not offset by capital flows within the medium run."
+   ],
+   "source": "Saldria ... has its own currency, the taler (T), and a floating exchange rate."
+  }
+ ],
+ "packaging_users": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "packaging_users"
+   },
+   "premises": [
+    "Converters, multi-product users and recyclers can organize to lobby on U1 and the rules at a cost below their stake."
+   ],
+   "source": "Converters, multi-product users and recyclers (U1)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "packaging_users",
+    "source_variable": "price_paid",
+    "relation": "output",
+    "actor": "consumers.packaged_goods",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Packaging is a material part of the cost of some packaged goods (6% to 10% for bottled water and pre-packed produce), and their sellers cannot switch fully at the old cost."
+   ],
+   "source": "Packaging in the price of goods 1% to 3% ... 6% to 10%"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "packaging_users",
+    "source_variable": "price_paid",
+    "relation": "own_price",
+    "actor": "packaging_users",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Some packaging users can reduce their use of taxed plastic (lighter designs, recycled content, other materials) at a cost below 200 T a tonne."
+   ],
+   "source": "200 T per tonne"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "packaging_users",
+    "source_variable": "price_paid",
+    "relation": "cost",
+    "actor": "exporters.packaged_goods",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Exporters of empty packaging and packaged goods sell at prices set abroad.",
+    "Packaging is a material part of the cost of some packaged goods (6% to 10% for bottled water and pre-packed produce), and their sellers cannot switch fully at the old cost."
+   ],
+   "source": "Packaging leaving Saldria around exported goods about 45,000 t; no export relief"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "packaging_users",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "packaging_users",
+    "variable": "quantity_substitute"
+   },
+   "premises": [
+    "Paper and board, glass and metal packaging serve some of the same ends as plastic for some users."
+   ],
+   "source": "Two domestic paper and board mills ... one glass container plant ... one can maker"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "packaging_users",
+    "source_variable": "quantity_substitute",
+    "relation": "same_act",
+    "actor": "sellers.substitute_packaging",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Paper and board, glass and metal packaging serve some of the same ends as plastic for some users."
+   ],
+   "source": "Two domestic paper and board mills ... one glass container plant ... one can maker"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "packaging_users",
+    "source_variable": "quantity_substitute",
+    "relation": "same_act",
+    "actor": "sellers.substitute_packaging",
+    "variable": "net_price_received"
+   },
+   "premises": [
+    "Board and glass container supply cannot expand at an unchanged cost within the first year."
+   ],
+   "source": "paper and board mills (about 92% capacity use); glass plant (88%; a new furnace takes about two years)"
+  }
+ ],
+ "consumers.packaged_goods": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "consumers.packaged_goods",
+    "source_variable": "price_paid",
+    "relation": "own_price",
+    "actor": "consumers.packaged_goods",
+    "variable": "quantity_demanded"
+   },
+   "premises": [],
+   "source": "Packaging in the price of goods: 1% to 3% for most packaged goods; 6% to 10% for bottled water and pre-packed fresh produce"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "consumers.packaged_goods",
+    "source_variable": "quantity_demanded",
+    "relation": "substitute",
+    "actor": "consumers.packaged_goods",
+    "variable": "quantity_substitute"
+   },
+   "premises": [
+    "Loose produce and tap or refill water serve the same ends as pre-packed produce and bottled water for some buyers."
+   ],
+   "source": "6% to 10% for bottled water and pre-packed fresh produce"
+  }
+ ],
+ "exporters.packaged_goods": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "exporters.packaged_goods",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.exporters",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Exporters of packaged goods adjust their labor to their output."
+   ],
+   "source": "Packaging leaving Saldria around exported goods about 45,000 t a year"
+  }
+ ],
+ "importers.small_goods": [
+  {
+   "part": "parts",
+   "fact": {
+    "part": "importers.small_goods",
+    "whole": "importers.goods"
+   },
+   "premises": [],
+   "source": "About 21,000 firms import packaged goods; about 17,000 firms of all kinds handle under 10 t"
+  }
+ ],
+ "importers.small_packaging": [
+  {
+   "part": "parts",
+   "fact": {
+    "part": "importers.small_packaging",
+    "whole": "importers.packaging"
+   },
+   "premises": [],
+   "source": "Of which imported empty: about 120,000 t"
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "importers.packaging",
+    "variable": "quantity_traded",
+    "window": null,
+    "direction": "decrease",
+    "kind": "empirical"
+   },
+   "premises": [
+    "The shift of small users to direct imports is smaller than the fall in liable firms' imports of empty packaging."
+   ],
+   "source": "A person who manufactured or imported less than 10 tonnes ... is not liable"
+  }
+ ],
+ "input_suppliers": [],
+ "owners.converters": [],
+ "workers.converters": [],
+ "recyclers.domestic": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "recyclers.domestic"
+   },
+   "premises": [
+    "Converters, multi-product users and recyclers can organize to lobby on U1 and the rules at a cost below their stake."
+   ],
+   "source": "A campaign by environmental groups ... the converters' association opposed it; 7 domestic plants"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "recyclers.domestic",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.recyclers",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Recyclers and substitute makers adjust their labor to their sales."
+   ],
+   "source": "7 domestic plants produce about 48,000 t a year from collected plastic"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "recyclers.domestic",
+    "source_variable": "price_complement",
+    "relation": "yield",
+    "actor": "municipalities",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Municipalities can extend collection and sell more bales at the higher price."
+   ],
+   "source": "Municipalities collect about 140,000 t of plastic a year and sell it in bales by auction, at about 300 T a tonne"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "recyclers.domestic",
+    "source_variable": "price_complement",
+    "relation": "cost",
+    "actor": "converters.recycled_heavy",
+    "variable": "product_attribute"
+   },
+   "premises": [
+    "Some components above 30% recycled on the counterfactual path carry that content at a margin chosen on cost, so that a dearer recycled resin leads their makers to cut it toward 30%."
+   ],
+   "source": "a few brand owners use 50% or more for marketing; Packaging already at 30% recycled or more: about 85,000 t"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "recyclers.domestic",
+    "source_variable": "price_complement",
+    "relation": "yield",
+    "actor": "recyclers.domestic",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Investors expect the tax, and its exemption, to last at least several years."
+   ],
+   "source": "7 domestic plants produce about 48,000 t a year; the tax has no expiry"
+  }
+ ],
+ "sellers.substitute_packaging": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.substitute_packaging",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.substitute_makers",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Recyclers and substitute makers adjust their labor to their sales."
+   ],
+   "source": "Two domestic paper and board mills (about 92% capacity use)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.substitute_packaging",
+    "source_variable": "net_price_received",
+    "relation": "yield",
+    "actor": "sellers.substitute_packaging",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Investors expect the tax, and its exemption, to last at least several years."
+   ],
+   "source": "one glass container plant (88% capacity use; a new furnace takes about two years)"
+  }
+ ],
+ "export_industries": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "export_industries",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.export_industries",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Export industries adjust their labor to their output."
+   ],
+   "source": "Converters' exports of empty packaging about 70,000 t a year; packaging leaving Saldria around exported goods about 45,000 t"
+  }
+ ],
+ "converters.recycled_heavy": [
+  {
+   "part": "parts",
+   "fact": {
+    "part": "converters.recycled_heavy",
+    "whole": "converters.domestic"
+   },
+   "premises": [],
+   "source": "Packaging already at 30% recycled or more: about 85,000 t (14%), mostly PET drink bottles and some non-food rigid containers; a few brand owners use 50% or more for marketing"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "converters.recycled_heavy",
+    "source_variable": "product_attribute",
+    "relation": "input",
+    "actor": "recyclers.domestic",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Converters can buy equipment that lets them process recycled resin, and expect the exemption to last long enough to pay for it."
+   ],
+   "source": "7 domestic plants produce about 48,000 t a year from collected plastic"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "converters.recycled_heavy",
+    "source_variable": "product_attribute",
+    "relation": "substitute",
+    "actor": "input_suppliers",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Recycled resin takes the place of virgin resin in the components that use it."
+   ],
+   "source": "Recycled resin ... virgin PET 1,150; non-food recycled polyolefins about 950 T (virgin 1,100)"
+  }
+ ],
+ "municipalities": [],
+ "workers.exporters": [],
+ "workers.recyclers": [],
+ "workers.substitute_makers": [],
+ "workers.export_industries": []
+}
