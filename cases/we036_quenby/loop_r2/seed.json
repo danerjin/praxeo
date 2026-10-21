@@ -1,0 +1,174 @@
+{
+ "name": "WE-036 employer health cover mandate (loop_r2 seed)",
+ "exchanges": [
+  {
+   "id": "e1",
+   "buyer": "employers.bound",
+   "seller": "workers.full_time",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate"
+  }
+ ],
+ "charges": [
+  {
+   "component": "k1_offer",
+   "exchange": "e1",
+   "payer_side": "buyer",
+   "receiver": "workers.full_time",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "a7"
+   ],
+   "branch_premises": [
+    "a1",
+    "a2"
+   ]
+  },
+  {
+   "component": "k1_pay",
+   "exchange": "e1",
+   "payer_side": "buyer",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "non_tax_receipts",
+   "branch_premises": [
+    "a1",
+    "a4"
+   ],
+   "capped_payers": [
+    "employers.capped"
+   ]
+  }
+ ],
+ "moves": [
+  {
+   "exchange": "e1",
+   "side": "seller",
+   "premises": [
+    "a6"
+   ]
+  },
+  {
+   "exchange": "e1",
+   "side": "buyer",
+   "premises": [
+    "a37"
+   ]
+  }
+ ],
+ "thresholds": [
+  {
+   "component": "k3",
+   "actor": "employers.near_threshold",
+   "variable": "employment",
+   "premises": [
+    "a14"
+   ]
+  },
+  {
+   "component": "k1_offer",
+   "actor": "workers.near_hours_line",
+   "variable": "hours_worked",
+   "premises": [
+    "a10"
+   ]
+  }
+ ],
+ "announced": [
+  {
+   "component": "k3",
+   "premises": [
+    "a15"
+   ]
+  },
+  {
+   "component": "k1_offer",
+   "premises": [
+    "a21"
+   ]
+  },
+  {
+   "component": "k1_pay",
+   "premises": [
+    "a21"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1_offer",
+   "actor": "employers.bound"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k5",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k5",
+   "actor": "taxpayers",
+   "premises": [
+    "a29"
+   ]
+  }
+ ],
+ "assumptions": {
+  "a37": {
+   "text": "Workers at bound firms cannot all move to unbound work at the old wage in the medium run (the response is partial).",
+   "class": "mobility",
+   "p": 0.9
+  },
+  "a1": {
+   "text": "About 135,000 full-timers at firms of 50+ FTE are offered nothing, and about 105,000 are offered less than K1 requires, so K1 binds for them.",
+   "class": "binding",
+   "p": 0.9
+  },
+  "a2": {
+   "text": "Some bound firms that offer nothing now choose to offer (mainly those with higher-paid staff who value cover, given the tax exclusion).",
+   "class": "other",
+   "p": 0.75
+  },
+  "a4": {
+   "text": "Some bound firms choose to pay the charge for at least some full-timers (all the capped firms, many mid-size low-wage firms).",
+   "class": "other",
+   "p": 0.9
+  },
+  "a6": {
+   "text": "Wages above the minimum can adjust over the medium horizon, as raises are set.",
+   "class": "other",
+   "p": 0.8
+  },
+  "a7": {
+   "text": "At players, for the marginal pair, cover at 30% is worth less to the worker than its cost to the employer: they could have agreed on it, with the tax exclusion, and did not.",
+   "class": "other",
+   "p": 0.6
+  },
+  "a10": {
+   "text": "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost.",
+   "class": "other",
+   "p": 0.75
+  },
+  "a14": {
+   "text": "Some firms near 50 FTE value staying below the line more than the extra work.",
+   "class": "other",
+   "p": 0.7
+  },
+  "a15": {
+   "text": "Owners of firms near 50 know from January 2027 that the 2027 average decides 2028 status.",
+   "class": "expectations",
+   "p": 0.75
+  },
+  "a21": {
+   "text": "Business values reflect expected earnings, and buyers expected the Act from its introduction.",
+   "class": "expectations",
+   "p": 0.7
+  },
+  "a29": {
+   "text": "The $4.1 million is new general-fund money.",
+   "class": "revenue_use",
+   "p": 0.9
+  }
+ }
+}
