@@ -60,3 +60,33 @@ Make the core layer the engine's main path, and grow it by core rule rather than
 3. **Bring the CR-12 combiner onto the core output.**
 4. **Have the parser write situation records,** with the actor-name list. Measure blind coverage on the 33 out-of-sample cases against the pattern engine's.
 5. **Keep the pattern files and their tests** until the core layer matches them family by family. Then turn the patterns into derivation checks.
+
+## Steps 1 and 2 (after the pilot)
+
+**Step 1.** CR-1 operation 3 (a payment attached to trading) and operation 4 (a transfer of means) were added to `core.lp`, along with an option granted at discretion and further CR-9 relations: cost, own price, currency, and links to a group. The wedge raises what buyers pay and lowers what sellers keep, whichever side the payment is levied on. The first rule had this wrong, and a blind record found it. **Step 2.** CR-10a was added: announcement windows, actions brought forward or carried over, and prices set before a line binds. So was the buyer of last resort of CR-6. Changes inside a timing window do not propagate along CR-9 links.
+
+| Case | Record | Core rules alone | Pattern engine |
+|---|---|---|---|
+| WE-001 rent freeze | in sample | 29 of 30 | 28 of 30 |
+| WE-009 minimum wage | in sample | 19 of 19 | 19 of 19 |
+| WE-013 steel tariff | in sample | 31 of 32 | 31 of 32 |
+| WE-005 gasoline cap | blind, revised by the same writer for CR-10a | 13 of 26 | 13 after its fixes |
+| WE-008 milk floor | blind, revised for the buyer of last resort | 11 of 28 | 10 after its fixes |
+| WE-002 drinks excise | blind | 9 of 26 | 5 at its first run |
+| WE-010 cigarette tax | blind | 16 of 33 | 12 after its fixes |
+
+On every blind record the core layer equals or passes the pattern engine. It has no instrument-specific rule.
+
+**Rows that still conflict with the examples:**
+- WE-005: two rows on crossing the border. They need a CR-12 comparison.
+- WE-008: two rows on commodity plants. The record cannot net the state's purchase of their product against the floor on their input. That would be a CR-12 comparison across exchanges.
+
+**What the blind writers still could not record:**
+- an expiry window;
+- netting across exchanges;
+- a closed margin;
+- legal against economic incidence;
+- subgroups such as border and interior smokers;
+- the earmark of a revenue;
+- an assumption that defeats a fact;
+- product markets made from a held good.
