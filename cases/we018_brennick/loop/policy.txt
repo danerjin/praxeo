@@ -1,0 +1,9 @@
+**Brennick Carryout Bag Ordinance.** Brennick is a city of about 400,000 people. Retailers there have given away thin plastic carryout bags at the checkout, at a cost to them of about 2 cents a bag, built into their prices. About 120 million such bags are handed out a year. Surveys suggest that about 60% of households reuse some of them as bin liners or for pet waste. The neighboring town of Fallow Creek has no bag rules; two large supermarkets there are within 1 km of the city line on Route 9, close to several Brennick neighborhoods. Brennick's other edges are mostly residential or rural. The ordinance was passed nine months before it took effect.
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Bag ban | `prohibition` | Single-use plastic carryout bags (plastic bags with handles, thinner than 4 mil (0.1 mm)) provided at the point of sale | All retailers in Brennick | From the effective date. | Bags without handles for produce, meat and bulk goods inside the store; pharmacy prescription bags; restaurant takeout bags |
+| K2 Paper bag charge | `price_floor` | Recycled-paper carryout bags | All retailers | May be provided only for a charge of at least 10 cents a bag, kept by the retailer and shown on the receipt. Reusable bags (designed for at least 125 uses; at least 4 mil if plastic) may be sold at any price. | Customers paying with food-assistance benefits receive paper bags free |
+| K3 Enforcement | Enforcement | K1, K2 | City Office of Sustainability | Complaint-driven. Written warning, then fines of $100, $250 and $500 per day of violation. Funded from the general budget. | None |
+
+Unclear provisions: how a bag's design for 125 uses is verified. The ordinance sets no test, so a maker's claim is assumed to be accepted.

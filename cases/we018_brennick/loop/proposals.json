@@ -1,0 +1,306 @@
+{
+ "officials.enforcement": [],
+ "taxpayers": [],
+ "retailers.brennick": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "retailers.brennick",
+    "actor": "retailers.brennick",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Thick plastic \"reusable\" bags can be sold cheaply at the till, and shoppers buy them."
+   ],
+   "premise_class": "other",
+   "source": "Reusable bags (designed for at least 125 uses; at least 4 mil if plastic) may be sold at any price. ... The ordinance sets no test, so a maker's claim is assumed to be accepted."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_plastic",
+    "kind": "outside",
+    "actor": "retailers.brennick",
+    "variables": [
+     "informal_activity"
+    ]
+   },
+   "premises": [
+    "Some small stores keep handing out thin bags, or waive the fee, without being caught."
+   ],
+   "premise_class": "enforcement",
+   "source": "Complaint-driven. Written warning, then fines of $100, $250 and $500 per day of violation."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_paper",
+    "kind": "outside",
+    "actor": "retailers.brennick",
+    "variables": [
+     "informal_activity"
+    ]
+   },
+   "premises": [
+    "Some small stores keep handing out thin bags, or waive the fee, without being caught."
+   ],
+   "premise_class": "enforcement",
+   "source": "May be provided only for a charge of at least 10 cents a bag ... Complaint-driven."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "retailers.brennick"
+   },
+   "premises": [
+    "Bag makers and retailers can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Retailers there have given away thin plastic carryout bags at the checkout, at a cost to them of about 2 cents a bag."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.brennick",
+    "source_variable": "quantity_traded",
+    "relation": "same_act",
+    "actor": "sellers.bag_makers",
+    "variable": "quantity_supplied"
+   },
+   "premises": [],
+   "source": "About 120 million such bags are handed out a year."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.brennick",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.retailers_brennick",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Stores near the line adjust staff hours and hiring to their sales."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "two large supermarkets there are within 1 km of the city line on Route 9, close to several Brennick neighborhoods."
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "retailers.brennick",
+    "variable": "reclassification",
+    "window": null,
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "The ban moves retailers to reclassify more than the fee moves them to reclassify less."
+   ],
+   "premise_class": "other",
+   "source": "Reusable bags (designed for at least 125 uses; at least 4 mil if plastic) may be sold at any price."
+  }
+ ],
+ "shoppers.brennick": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "shoppers.brennick",
+    "actor": "buyers.substitutes",
+    "variables": [
+     "quantity_substitute"
+    ]
+   },
+   "premises": [
+    "Many households reused carryout bags as liners and will buy liners instead."
+   ],
+   "premise_class": "substitutability",
+   "source": "Surveys suggest that about 60% of households reuse some of them as bin liners or for pet waste."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "shoppers.brennick",
+    "source_variable": "price_paid",
+    "relation": "substitute",
+    "actor": "buyers.substitutes",
+    "variable": "quantity_substitute"
+   },
+   "premises": [
+    "Shoppers accept reusable and paper bags as substitutes."
+   ],
+   "premise_class": "substitutability",
+   "source": "Reusable bags ... may be sold at any price."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "shoppers.brennick",
+    "actor": "shoppers.brennick",
+    "variables": [
+     "cross_border_purchases"
+    ]
+   },
+   "premises": [
+    "Some shoppers near Route 9 are close to indifferent between stores on either side of the line.",
+    "A shopper who changes store moves the whole basket, since the fee applies per trip."
+   ],
+   "premise_class": "mobility",
+   "source": "two large supermarkets there are within 1 km of the city line on Route 9, close to several Brennick neighborhoods."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "shoppers.brennick",
+    "actor": "shoppers.brennick",
+    "variables": [
+     "cross_border_purchases"
+    ]
+   },
+   "premises": [
+    "Some shoppers near Route 9 are close to indifferent between stores on either side of the line."
+   ],
+   "premise_class": "mobility",
+   "source": "The neighboring town of Fallow Creek has no bag rules; two large supermarkets there are within 1 km of the city line on Route 9."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "shoppers.brennick",
+    "source_variable": "cross_border_purchases",
+    "relation": "same_act",
+    "actor": "retailers.fallow_creek",
+    "variable": "quantity_supplied"
+   },
+   "premises": [],
+   "source": "The neighboring town of Fallow Creek has no bag rules; two large supermarkets there are within 1 km of the city line."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "shoppers.brennick",
+    "source_variable": "cross_border_purchases",
+    "relation": "substitute",
+    "actor": "retailers.brennick",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "A shopper who changes store moves the whole basket, since the fee applies per trip."
+   ],
+   "premise_class": "other",
+   "source": "close to several Brennick neighborhoods."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "shoppers.brennick",
+    "variable": "quantity_traded",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Shoppers take extra free bags in the announcement window."
+   ],
+   "premise_class": "expectations",
+   "source": "The ordinance was passed nine months before it took effect."
+  }
+ ],
+ "buyers.substitutes": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.substitutes",
+    "source_variable": "quantity_substitute",
+    "relation": "same_act",
+    "actor": "sellers.substitutes",
+    "variable": "quantity_supplied"
+   },
+   "premises": [],
+   "source": "Reusable bags ... may be sold at any price."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.substitutes",
+    "source_variable": "quantity_substitute",
+    "relation": "supply_price",
+    "actor": "buyers.substitutes",
+    "variable": "price_substitute"
+   },
+   "premises": [
+    "Brennick's demand is large enough to move the price of liners or reusable bags."
+   ],
+   "premise_class": "other",
+   "source": "Brennick is a city of about 400,000 people."
+  }
+ ],
+ "retailers.fallow_creek": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.fallow_creek",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.retailers_fallow_creek",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Stores near the line adjust staff hours and hiring to their sales."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "two large supermarkets there are within 1 km of the city line on Route 9."
+  }
+ ],
+ "sellers.bag_makers": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "sellers.bag_makers"
+   },
+   "premises": [
+    "Bag makers and retailers can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "About 120 million such bags are handed out a year."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.bag_makers",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.bag_makers",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [],
+   "source": "About 120 million such bags are handed out a year."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.bag_makers",
+    "source_variable": "quantity_supplied",
+    "relation": "substitute",
+    "actor": "sellers.substitutes",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Thick plastic \"reusable\" bags can be sold cheaply at the till, and shoppers buy them."
+   ],
+   "premise_class": "other",
+   "source": "Reusable bags (designed for at least 125 uses; at least 4 mil if plastic) may be sold at any price."
+  }
+ ],
+ "workers.retailers_brennick": [],
+ "sellers.substitutes": [],
+ "workers.bag_makers": [],
+ "workers.retailers_fallow_creek": []
+}
