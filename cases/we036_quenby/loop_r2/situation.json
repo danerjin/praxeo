@@ -1,0 +1,515 @@
+{
+ "name": "WE-036 employer health cover mandate (loop_r2 seed)",
+ "exchanges": [
+  {
+   "id": "e1",
+   "buyer": "employers.bound",
+   "seller": "workers.full_time",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q14_revenue_cannot_cheaply_verify_reported_o",
+    "q15_some_firms_report_offers_not_made"
+   ],
+   "exchange": "e1",
+   "kind": "outside",
+   "side": null,
+   "actor": "employers.bound",
+   "variables": [
+    "legal_breach"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "a10"
+   ],
+   "component": "k1_offer",
+   "chooser": "employers.bound",
+   "actor": "workers.part_time",
+   "variables": [
+    "employment"
+   ]
+  },
+  {
+   "premises": [
+    "q12_between_30_and_40_hours_extra_hours_from"
+   ],
+   "component": "k1_offer",
+   "chooser": "employers.bound",
+   "actor": "workers.full_time",
+   "variables": [
+    "hours_worked"
+   ]
+  },
+  {
+   "premises": [
+    "q13_some_mid_size_payers_can_obtain_agency_w"
+   ],
+   "component": "k1_pay",
+   "chooser": "employers.bound",
+   "actor": "employers.capped",
+   "variables": [
+    "quantity_supplied"
+   ]
+  },
+  {
+   "premises": [
+    "q20_contracting_out_and_franchising_are_open"
+   ],
+   "component": "k3",
+   "chooser": "employers.near_threshold",
+   "actor": "employers.near_threshold",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q22_workers_at_payers_have_some_alternative_"
+   ],
+   "component": "k1_offer",
+   "chooser": "workers.full_time",
+   "actor": "workers.part_time",
+   "variables": [
+    "employment"
+   ]
+  },
+  {
+   "premises": [
+    "q22_workers_at_payers_have_some_alternative_"
+   ],
+   "component": "k1_offer",
+   "chooser": "workers.full_time",
+   "actor": "employers.unbound",
+   "variables": [
+    "employment"
+   ]
+  },
+  {
+   "premises": [
+    "q23_workers_at_payers_can_take_jobs_in_tarnl"
+   ],
+   "component": "k1_offer",
+   "chooser": "workers.full_time",
+   "actor": "neighboring_jurisdictions",
+   "variables": [
+    "employment"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q19_insurers_unions_employer_associations_an"
+   ],
+   "component": "k1_offer",
+   "actor": "employers.bound"
+  },
+  {
+   "premises": [
+    "q19_insurers_unions_employer_associations_an"
+   ],
+   "component": "k1_pay",
+   "actor": "employers.capped"
+  },
+  {
+   "premises": [
+    "q19_insurers_unions_employer_associations_an"
+   ],
+   "component": "k3",
+   "actor": "employers.near_threshold"
+  },
+  {
+   "premises": [
+    "q19_insurers_unions_employer_associations_an"
+   ],
+   "component": "k1_offer",
+   "actor": "workers.full_time"
+  },
+  {
+   "premises": [
+    "q19_insurers_unions_employer_associations_an"
+   ],
+   "component": "k1_offer",
+   "actor": "insurers.health"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q16_firms_not_bound_small_compliant_capped_c"
+   ],
+   "source_actor": "employers.bound",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "employers.bound",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q17_most_competitors_of_mid_size_bound_firms"
+   ],
+   "source_actor": "employers.bound",
+   "source_variable": "price_paid",
+   "relation": "output",
+   "actor": "consumers",
+   "variable": "price_paid"
+  },
+  {
+   "premises": [
+    "q18_quenby_s_tradable_producers_compete_with"
+   ],
+   "source_actor": "employers.bound",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "producers.tradable",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [],
+   "source_actor": "workers.full_time",
+   "source_variable": "non_wage_compensation",
+   "relation": "same_act",
+   "actor": "insurers.health",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q24_some_newly_covered_workers_or_their_care"
+   ],
+   "source_actor": "workers.full_time",
+   "source_variable": "non_wage_compensation",
+   "relation": "substitute",
+   "actor": "patients.icp",
+   "variable": "quantity_demanded"
+  },
+  {
+   "premises": [
+    "q25_newly_covered_workers_use_more_care_bill"
+   ],
+   "source_actor": "insurers.health",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "providers.health",
+   "variable": "quantity_demanded"
+  },
+  {
+   "premises": [
+    "q26_the_icp_pays_per_claim_so_fewer_claims_f"
+   ],
+   "source_actor": "patients.icp",
+   "source_variable": "quantity_demanded",
+   "relation": "same_act",
+   "actor": "taxpayers",
+   "variable": "subsidy_outlay"
+  },
+  {
+   "premises": [
+    "q18_quenby_s_tradable_producers_compete_with"
+   ],
+   "source_actor": "producers.tradable",
+   "source_variable": "quantity_supplied",
+   "relation": "substitute",
+   "actor": "neighboring_jurisdictions",
+   "variable": "quantity_supplied"
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "a21"
+   ],
+   "exchange": "e1",
+   "side": "buyer",
+   "actor": "factor_owners.specific"
+  }
+ ],
+ "yields": [
+  {
+   "premises": [
+    "q16_firms_not_bound_small_compliant_capped_c"
+   ],
+   "exchange": "e1",
+   "side": "buyer",
+   "actor": "employers.bound"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1_offer",
+   "actor": "employers.bound"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k5",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k5",
+   "actor": "taxpayers",
+   "premises": [
+    "a29"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "k1_offer",
+   "exchange": "e1",
+   "payer_side": "buyer",
+   "receiver": "workers.full_time",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "a7"
+   ],
+   "projection_variable": null,
+   "branch_premises": [
+    "a1",
+    "a2"
+   ],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k1_pay",
+   "exchange": "e1",
+   "payer_side": "buyer",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [
+    "a1",
+    "a4"
+   ],
+   "capped_payers": [
+    "employers.capped"
+   ],
+   "basis": "unit"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a6"
+   ],
+   "exchange": "e1",
+   "side": "seller"
+  },
+  {
+   "premises": [
+    "a37"
+   ],
+   "exchange": "e1",
+   "side": "buyer"
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k3",
+   "premises": [
+    "a15"
+   ]
+  },
+  {
+   "component": "k1_offer",
+   "premises": [
+    "a21"
+   ]
+  },
+  {
+   "component": "k1_pay",
+   "premises": [
+    "a21"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q21_firms_near_50_fte_can_hold_their_2027_av"
+   ],
+   "component": "k3",
+   "actor": "employers.near_threshold",
+   "variable": "employment",
+   "mode": "carry_over"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "banned": [],
+ "thresholds": [
+  {
+   "premises": [
+    "a14"
+   ],
+   "component": "k3",
+   "actor": "employers.near_threshold",
+   "variable": "employment"
+  },
+  {
+   "premises": [
+    "a10"
+   ],
+   "component": "k1_offer",
+   "actor": "workers.near_hours_line",
+   "variable": "hours_worked"
+  }
+ ],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [],
+ "assumptions": {
+  "a37": {
+   "text": "Workers at bound firms cannot all move to unbound work at the old wage in the medium run (the response is partial).",
+   "class": "mobility",
+   "p": 0.9
+  },
+  "a1": {
+   "text": "About 135,000 full-timers at firms of 50+ FTE are offered nothing, and about 105,000 are offered less than K1 requires, so K1 binds for them.",
+   "class": "binding",
+   "p": 0.9
+  },
+  "a2": {
+   "text": "Some bound firms that offer nothing now choose to offer (mainly those with higher-paid staff who value cover, given the tax exclusion).",
+   "class": "other",
+   "p": 0.75
+  },
+  "a4": {
+   "text": "Some bound firms choose to pay the charge for at least some full-timers (all the capped firms, many mid-size low-wage firms).",
+   "class": "other",
+   "p": 0.9
+  },
+  "a6": {
+   "text": "Wages above the minimum can adjust over the medium horizon, as raises are set.",
+   "class": "other",
+   "p": 0.8
+  },
+  "a7": {
+   "text": "At players, for the marginal pair, cover at 30% is worth less to the worker than its cost to the employer: they could have agreed on it, with the tax exclusion, and did not.",
+   "class": "other",
+   "p": 0.6
+  },
+  "a10": {
+   "text": "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost.",
+   "class": "other",
+   "p": 0.75
+  },
+  "a14": {
+   "text": "Some firms near 50 FTE value staying below the line more than the extra work.",
+   "class": "other",
+   "p": 0.7
+  },
+  "a15": {
+   "text": "Owners of firms near 50 know from January 2027 that the 2027 average decides 2028 status.",
+   "class": "expectations",
+   "p": 0.75
+  },
+  "a21": {
+   "text": "Business values reflect expected earnings, and buyers expected the Act from its introduction.",
+   "class": "expectations",
+   "p": 0.7
+  },
+  "a29": {
+   "text": "The $4.1 million is new general-fund money.",
+   "class": "revenue_use",
+   "p": 0.9
+  },
+  "q12_between_30_and_40_hours_extra_hours_from": {
+   "text": "Between 30 and 40 hours, extra hours from existing full-timers substitute for extra full-time heads.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q13_some_mid_size_payers_can_obtain_agency_w": {
+   "text": "Some mid-size payers can obtain agency workers from capped staffing firms at a markup below the $3,000 charge.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q14_revenue_cannot_cheaply_verify_reported_o": {
+   "text": "Revenue cannot cheaply verify reported offers.",
+   "p": 0.55,
+   "class": "enforcement"
+  },
+  "q15_some_firms_report_offers_not_made": {
+   "text": "Some firms report offers not made.",
+   "p": 0.55,
+   "class": "enforcement"
+  },
+  "q16_firms_not_bound_small_compliant_capped_c": {
+   "text": "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets.",
+   "p": 0.65,
+   "class": "substitutability"
+  },
+  "q17_most_competitors_of_mid_size_bound_firms": {
+   "text": "Most competitors of mid-size bound firms in local services are bound at a material per-head cost.",
+   "p": 0.4,
+   "class": "other"
+  },
+  "q18_quenby_s_tradable_producers_compete_with": {
+   "text": "Quenby's tradable producers compete with Tarnley producers.",
+   "p": 0.65,
+   "class": "mobility"
+  },
+  "q19_insurers_unions_employer_associations_an": {
+   "text": "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q20_contracting_out_and_franchising_are_open": {
+   "text": "Contracting out and franchising are open to some firms near 50 at a cost below the term or the charge (splitting by ownership is closed by the common-control rule).",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q21_firms_near_50_fte_can_hold_their_2027_av": {
+   "text": "Firms near 50 FTE can hold their 2027 average FTE below 50.",
+   "p": 0.85,
+   "class": "expectations"
+  },
+  "q22_workers_at_payers_have_some_alternative_": {
+   "text": "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley).",
+   "p": 0.85,
+   "class": "mobility"
+  },
+  "q23_workers_at_payers_can_take_jobs_in_tarnl": {
+   "text": "Workers at payers can take jobs in Tarnley.",
+   "p": 0.7,
+   "class": "mobility"
+  },
+  "q24_some_newly_covered_workers_or_their_care": {
+   "text": "Some newly covered workers or their care were paid for by the ICP.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q25_newly_covered_workers_use_more_care_bill": {
+   "text": "Newly covered workers use more care billed to insurers than they used without cover.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q26_the_icp_pays_per_claim_so_fewer_claims_f": {
+   "text": "The ICP pays per claim, so fewer claims for newly covered workers lower its outlay rather than raising the payment per remaining claim.",
+   "p": 0.6,
+   "class": "revenue_use"
+  }
+ }
+}

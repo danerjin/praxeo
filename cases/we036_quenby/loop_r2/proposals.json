@@ -1,0 +1,371 @@
+{
+ "employers.bound": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_offer",
+    "chooser": "employers.bound",
+    "actor": "workers.part_time",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost."
+   ],
+   "premise_class": "other",
+   "source": "Employees averaging under 30 hours are exempt; the term and the charge bind 'each employee averaging 30 or more hours a week'."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_offer",
+    "chooser": "employers.bound",
+    "actor": "workers.full_time",
+    "variables": [
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Between 30 and 40 hours, extra hours from existing full-timers substitute for extra full-time heads."
+   ],
+   "premise_class": "other",
+   "source": "Either offer each such employee ... a plan ... or pay $250 a month ... for each such employee (per head, not per hour)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pay",
+    "chooser": "employers.bound",
+    "actor": "employers.capped",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Some mid-size payers can obtain agency workers from capped staffing firms at a markup below the $3,000 charge."
+   ],
+   "premise_class": "other",
+   "source": "Agency workers count for the agency. No firm pays more than $300,000 a year under K1."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e1",
+    "kind": "outside",
+    "actor": "employers.bound",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Revenue cannot cheaply verify reported offers.",
+    "Some firms report offers not made."
+   ],
+   "premise_class": "enforcement",
+   "source": "Employers report each employee's offer status on quarterly withholding returns ... Misreporting: twice the unpaid charge."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.bound",
+    "source_variable": "price_paid",
+    "relation": "cost",
+    "actor": "employers.bound",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets."
+   ],
+   "premise_class": "substitutability",
+   "source": "Either offer each such employee ... a plan ... or pay $250 a month ... for each such employee; only employers with 50 or more FTE are bound."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.bound",
+    "source_variable": "price_paid",
+    "relation": "output",
+    "actor": "consumers",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Most competitors of mid-size bound firms in local services are bound at a material per-head cost."
+   ],
+   "premise_class": "other",
+   "source": "Most competitors of mid-size bound firms in local services are bound (the cost is common to the local market)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.bound",
+    "source_variable": "price_paid",
+    "relation": "cost",
+    "actor": "producers.tradable",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Quenby's tradable producers compete with Tarnley producers."
+   ],
+   "premise_class": "mobility",
+   "source": "Tarnley, which has no such law, lies across the border from Marisport."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_offer",
+    "actor": "employers.bound"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "The bill was introduced ... with the governor's support (employers face the term and the charge)."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e1",
+    "side": "buyer",
+    "actor": "factor_owners.specific"
+   },
+   "premises": [
+    "Business values reflect expected earnings, and buyers expected the Act from its introduction."
+   ],
+   "premise_class": "expectations",
+   "source": "takes effect on 1 January 2028; bill introduced on 9 November 2026 (business values reflect the expected Act)."
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e1",
+    "side": "buyer",
+    "actor": "employers.bound"
+   },
+   "premises": [
+    "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets."
+   ],
+   "premise_class": "substitutability",
+   "source": "Firms ... compete in local product markets; only firms with 50 or more FTE are bound."
+  }
+ ],
+ "employers.capped": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_pay",
+    "actor": "employers.capped"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "No firm pays more than $300,000 a year under K1 (45 large firms, national retail and food chains, staffing, security)."
+  }
+ ],
+ "employers.near_threshold": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k3",
+    "chooser": "employers.near_threshold",
+    "actor": "employers.near_threshold",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Contracting out and franchising are open to some firms near 50 at a cost below the term or the charge (splitting by ownership is closed by the common-control rule)."
+   ],
+   "premise_class": "other",
+   "source": "Firms under common control are counted together. Agency workers count for the agency."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k3",
+    "actor": "employers.near_threshold",
+    "variable": "employment",
+    "mode": "carry_over"
+   },
+   "premises": [
+    "Firms near 50 FTE can hold their 2027 average FTE below 50."
+   ],
+   "premise_class": "expectations",
+   "source": "Status for 2028 is decided by the firm's average FTE over 2027."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k3",
+    "actor": "employers.near_threshold"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "About 1,300 firms have 40 to 49 FTE, and about 1,100 have 50 to 60."
+  }
+ ],
+ "officials.enforcement": [],
+ "taxpayers": [],
+ "workers.full_time": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_offer",
+    "chooser": "workers.full_time",
+    "actor": "workers.part_time",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley)."
+   ],
+   "premise_class": "mobility",
+   "source": "Employees averaging under 30 hours are exempt."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_offer",
+    "chooser": "workers.full_time",
+    "actor": "employers.unbound",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley)."
+   ],
+   "premise_class": "mobility",
+   "source": "Firms with 50 or more FTE are bound; firms under 50 are not."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_offer",
+    "chooser": "workers.full_time",
+    "actor": "neighboring_jurisdictions",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Workers at payers can take jobs in Tarnley."
+   ],
+   "premise_class": "mobility",
+   "source": "Marisport lies on the border with the State of Tarnley, which has no such law; about 35,000 people commute across the border each day."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.full_time",
+    "source_variable": "non_wage_compensation",
+    "relation": "same_act",
+    "actor": "insurers.health",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "offer each such employee ... a plan meeting K2 with an employer contribution of at least 70% of the employee-only premium."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.full_time",
+    "source_variable": "non_wage_compensation",
+    "relation": "substitute",
+    "actor": "patients.icp",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Some newly covered workers or their care were paid for by the ICP."
+   ],
+   "premise_class": "other",
+   "source": "R3 Indigent Care Program: payment to hospitals for care for uninsured residents below 200% of the poverty line."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_offer",
+    "actor": "workers.full_time"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Health cover for each employee averaging 30 or more hours a week."
+  }
+ ],
+ "workers.near_hours_line": [],
+ "employers.unbound": [],
+ "factor_owners.specific": [],
+ "neighboring_jurisdictions": [],
+ "workers.part_time": [],
+ "insurers.health": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_offer",
+    "actor": "insurers.health"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Hospital, physician, prescription and maternity care, deductible no higher than $2,500; list kept by the Department of Insurance (insurers' plans are what counts under K1)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "insurers.health",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "providers.health",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Newly covered workers use more care billed to insurers than they used without cover."
+   ],
+   "premise_class": "other",
+   "source": "Hospital, physician, prescription and maternity care (the benefit standard K2)."
+  }
+ ],
+ "patients.icp": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "patients.icp",
+    "source_variable": "quantity_demanded",
+    "relation": "same_act",
+    "actor": "taxpayers",
+    "variable": "subsidy_outlay"
+   },
+   "premises": [
+    "The ICP pays per claim, so fewer claims for newly covered workers lower its outlay rather than raising the payment per remaining claim."
+   ],
+   "premise_class": "revenue_use",
+   "source": "R3 Indigent Care Program: payment to hospitals ... about $310 million a year from the general fund."
+  }
+ ],
+ "producers.tradable": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "producers.tradable",
+    "source_variable": "quantity_supplied",
+    "relation": "substitute",
+    "actor": "neighboring_jurisdictions",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Quenby's tradable producers compete with Tarnley producers."
+   ],
+   "premise_class": "mobility",
+   "source": "Tarnley ... has no such law; Marisport lies on the border with Tarnley."
+  }
+ ],
+ "providers.health": []
+}
