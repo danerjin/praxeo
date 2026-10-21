@@ -6,7 +6,7 @@
    "buyer": "retailers.lakeport",
    "seller": "distributors.registered",
    "buyer_price_var": "price_paid",
-   "seller_price_var": "full_cost_per_unit"
+   "seller_price_var": "net_price_received"
   }
  ],
  "charges": [
@@ -22,8 +22,8 @@
  "moves": [
   {
    "exchange": "e_dist",
-   "side": "seller",
-   "premises": []
+   "side": "buyer",
+   "premises": ["a1"]
   }
  ],
  "alternatives": [
@@ -74,16 +74,6 @@
   }
  ],
  "links": [
-  {
-   "source_actor": "distributors.registered",
-   "source_variable": "full_cost_per_unit",
-   "relation": "output",
-   "actor": "retailers.lakeport",
-   "variable": "price_paid",
-   "premises": [
-    "a1"
-   ]
-  },
   {
    "source_actor": "retailers.lakeport",
    "source_variable": "price_paid",
