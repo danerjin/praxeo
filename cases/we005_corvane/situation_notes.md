@@ -35,3 +35,16 @@ Source: section 1 of WE-005 (policy text, K1 to K3, unclear provisions) and assu
 - Commodity-specific caps by grade (regular, midgrade, premium) are one held component here.
 - A repairer's (refinery owner's) option to speed repair is not an option the cap changes through any party of e1.
 - Tier of the information in section 1 that is not an assumption (the 10% pipeline capacity, 40% refinery share) has no place.
+
+## Revision r2 (format at 9c112b8)
+Added from section 1 (announcement on Day 3, effective Day 5) and a8 (drivers and stations know the effective date and can shift purchases by two days):
+- announced k1 (a8).
+- timing k1 drivers.current quantity_demanded bring_forward (a8): the favored buyers hold purchases back until the cap binds; the engine signs it decrease in the announcement window.
+- timing k1 stations.retail inventory_held carry_over (a8): the burdened stations carry less stock into the cap period; decrease in the announcement window.
+- early_price e1 (a8): stations can set the price before the line binds; price_paid for drivers.current and net_price_received for stations.retail increase in the announcement window.
+
+Not added:
+- Expiry on Day 95: the format has no expiry or end window (the cap lifting, stock held into the post-expiry days, the rush to buy before the end). a13 (suppliers expect the end on Day 95 and can hold product for a few days) and a14 (extension expected, p 0.35) therefore still rest unused except a13 on the asset fact. A supplier holding product past Day 95 is also not a party of e1 (timing needs a chooser who is a party).
+- Suppliers' (refiners') timing under a13 and a8: refiners are not a party of a held exchange.
+- Backstops: section 1 has no buyer or seller of last resort.
+- Stations bringing sales forward before Day 5: not supported by a8's wording ("shift purchases").

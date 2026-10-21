@@ -180,6 +180,16 @@
    "actor": "taxpayers"
   }
  ],
+ "announced": [
+  {"component": "k1", "premises": ["a8"]}
+ ],
+ "timing": [
+  {"component": "k1", "actor": "drivers.current", "variable": "quantity_demanded", "mode": "bring_forward", "premises": ["a8"]},
+  {"component": "k1", "actor": "stations.retail", "variable": "inventory_held", "mode": "carry_over", "premises": ["a8"]}
+ ],
+ "early_price": [
+  {"exchange": "e1", "premises": ["a8"]}
+ ],
  "assumptions": {
   "a1": {"text": "Without the cap, the retail price would stay above $4.20 for most of the 90 days.", "class": "binding", "p": 0.85},
   "a2": {"text": "Pump prices are enforced: few stations post or charge more than the cap.", "class": "enforcement", "p": 0.9},
