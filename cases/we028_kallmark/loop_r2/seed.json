@@ -1,0 +1,57 @@
+{
+ "name": "WE-028 Kallmark ridge cod catch cap with transferable quota shares (loop_r2 seed)",
+ "exchanges": [
+  {"id": "e_export", "buyer": "processors", "seller": "vessel_owners", "unsatisfied_seller": "vessel_owners.prospective_entrants",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_fresh", "buyer": "buyers.fresh_domestic", "seller": "vessel_owners", "unsatisfied_seller": "vessel_owners.prospective_entrants",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_shares", "buyer": "share_buyers", "seller": "share_recipients",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_shares_outside", "buyer": "investors.non_vessel_owners", "seller": "share_recipients",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_crew", "buyer": "vessel_owners", "seller": "crew", "seller_price_var": "wage_rate"}
+ ],
+ "capped": [
+  {"component": "k1", "exchange": "e_export", "holders": ["share_recipients"], "wider_price": true, "premises": ["a1", "a2"]},
+  {"component": "k1", "exchange": "e_fresh", "holders": ["share_recipients"], "wider_price": false, "premises": ["a1", "a2"]}
+ ],
+ "banned": [
+  {"component": "k2", "exchange": "e_shares_outside", "premises": ["s1"]}
+ ],
+ "charges": [
+  {"component": "k2", "exchange": "e_shares", "payer_side": "buyer", "receiver": "officials.enforcement", "receipt_variable": "non_tax_receipts"},
+  {"component": "k3", "exchange": "e_crew", "payer_side": "buyer", "receiver": "crew", "receipt_variable": "non_wage_compensation", "quantity_premises": ["s2"]},
+  {"component": "k4", "exchange": "e_export", "payer_side": "seller", "receiver": "monitors", "receipt_variable": "non_tax_receipts"},
+  {"component": "k4", "exchange": "e_fresh", "payer_side": "seller", "receiver": "monitors", "receipt_variable": "non_tax_receipts"}
+ ],
+ "thresholds": [
+  {"component": "k2", "actor": "vessel_owners.large", "variable": "quantity_supplied", "premises": ["a13"]}
+ ],
+ "qualifies": [
+  {"component": "k2", "actor": "vessel_owners", "variable": "quantity_supplied", "premises": ["a4"]}
+ ],
+ "means": [
+  {"component": "k2", "actor": "share_recipients", "direction": "in"}
+ ],
+ "announced": [
+  {"component": "k1", "premises": ["a4"]}
+ ],
+ "compliance": [
+  {"component": "k4", "actor": "vessel_owners"}
+ ],
+ "enforcers": [
+  {"component": "k4", "actor": "officials.enforcement"}
+ ],
+ "funded": [
+  {"component": "k4", "actor": "taxpayers", "premises": ["a22"]}
+ ],
+ "assumptions": {
+  "a1": {"text": "Without the Act, landings would stay well above 40,000 tonnes a year, so the cap binds from 2028.", "class": "binding", "p": 0.9},
+  "a2": {"text": "Landings are recorded and overages enforced at the designated sites.", "class": "enforcement", "p": 0.8},
+  "a4": {"text": "Owners know the formula from the introduction of the bill, expect passage, and have idle vessels or spare capacity to land more in 2026 and 2027.", "class": "expectations", "p": 0.8},
+  "a13": {"text": "The 8% limit binds for a few of the largest firms.", "class": "binding", "p": 0.55},
+  "a22": {"text": "The Directorate's budget is raised by the stated 18 million marks.", "class": "revenue_use", "p": 0.9},
+  "s1": {"text": "The register of transfers refuses holders who own no registered vessel.", "class": "enforcement", "p": 0.9},
+  "s2": {"text": "Owners cannot recover the crew's larger share through other terms of the crew agreement.", "class": "other", "p": 0.6}
+ }
+}

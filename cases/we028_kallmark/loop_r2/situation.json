@@ -1,0 +1,646 @@
+{
+ "name": "WE-028 Kallmark ridge cod catch cap with transferable quota shares (loop_r2 seed)",
+ "exchanges": [
+  {
+   "id": "e_export",
+   "buyer": "processors",
+   "seller": "vessel_owners",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": "vessel_owners.prospective_entrants",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_fresh",
+   "buyer": "buyers.fresh_domestic",
+   "seller": "vessel_owners",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": "vessel_owners.prospective_entrants",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_shares",
+   "buyer": "share_buyers",
+   "seller": "share_recipients",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_shares_outside",
+   "buyer": "investors.non_vessel_owners",
+   "seller": "share_recipients",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_crew",
+   "buyer": "vessel_owners",
+   "seller": "crew",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": null,
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q18_large_ridge_cod_sell_for_more_per_kilo_t",
+    "q19_with_observers_on_10_of_trawler_trips_an"
+   ],
+   "exchange": "e_export",
+   "kind": "outside",
+   "side": null,
+   "actor": "vessel_owners",
+   "variables": [
+    "discards"
+   ]
+  },
+  {
+   "premises": [
+    "q20_the_ten_small_harbors_are_monitored_only"
+   ],
+   "exchange": "e_export",
+   "kind": "outside",
+   "side": null,
+   "actor": "vessel_owners",
+   "variables": [
+    "informal_activity"
+   ]
+  },
+  {
+   "premises": [
+    "q26_ridge_cod_is_landed_as_saithe_or_ling_on"
+   ],
+   "exchange": "e_export",
+   "kind": "outside",
+   "side": null,
+   "actor": "vessel_owners.prospective_entrants",
+   "variables": [
+    "reclassification"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q8_fresh_fish_buyers_turn_to_saithe_and_lin",
+    "q9_fresh_local_ridge_cod_is_only_partly_sub"
+   ],
+   "component": "k1",
+   "chooser": "buyers.fresh_domestic",
+   "actor": "buyers.fresh_domestic",
+   "variables": [
+    "quantity_substitute"
+   ]
+  },
+  {
+   "premises": [
+    "q11_anyone_can_register_a_seaworthy_vessel_f"
+   ],
+   "component": "k2",
+   "chooser": "investors.non_vessel_owners",
+   "actor": "investors.non_vessel_owners",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q12_processors_value_secure_supply_enough_to"
+   ],
+   "component": "k1",
+   "chooser": "processors",
+   "actor": "processors",
+   "variables": [
+    "investment_target"
+   ]
+  },
+  {
+   "premises": [
+    "q23_large_holders_can_lease_tonnage_beyond_t"
+   ],
+   "component": "k2",
+   "chooser": "vessel_owners.large",
+   "actor": "vessel_owners.large",
+   "variables": [
+    "quantity_substitute"
+   ]
+  },
+  {
+   "premises": [
+    "q24_without_the_act_some_owners_not_now_fish",
+    "q25_vessels_and_crew_have_other_uses_the_ope"
+   ],
+   "component": "k1",
+   "chooser": "vessel_owners.prospective_entrants",
+   "actor": "vessel_owners.prospective_entrants",
+   "variables": [
+    "quantity_substitute"
+   ]
+  },
+  {
+   "premises": [
+    "q28_kallmark_s_ridge_cod_is_a_small_part_of_"
+   ],
+   "component": "k1",
+   "chooser": "buyers.foreign",
+   "actor": "buyers.foreign",
+   "variables": [
+    "quantity_substitute"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q10_recipients_processors_and_crew_can_organ"
+   ],
+   "component": "k3",
+   "actor": "crew"
+  },
+  {
+   "premises": [
+    "q10_recipients_processors_and_crew_can_organ"
+   ],
+   "component": "k1",
+   "actor": "processors"
+  },
+  {
+   "premises": [
+    "q10_recipients_processors_and_crew_can_organ"
+   ],
+   "component": "k1",
+   "actor": "share_recipients"
+  },
+  {
+   "premises": [
+    "q10_recipients_processors_and_crew_can_organ"
+   ],
+   "component": "k2",
+   "actor": "share_recipients"
+  },
+  {
+   "premises": [
+    "q10_recipients_processors_and_crew_can_organ"
+   ],
+   "component": "k3",
+   "actor": "vessel_owners"
+  }
+ ],
+ "links": [
+  {
+   "premises": [],
+   "source_actor": "buyers.fresh_domestic",
+   "source_variable": "quantity_substitute",
+   "relation": "same_act",
+   "actor": "sellers.substitutes",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q13_the_plants_cannot_fully_replace_ridge_co"
+   ],
+   "source_actor": "processors",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "processors",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q14_the_fall_in_kallmark_s_exports_about_a_s"
+   ],
+   "source_actor": "processors",
+   "source_variable": "quantity_supplied",
+   "relation": "supply",
+   "actor": "buyers.foreign",
+   "variable": "price_paid"
+  },
+  {
+   "premises": [
+    "q15_foreign_sellers_of_saithe_and_haddock_ca"
+   ],
+   "source_actor": "processors",
+   "source_variable": "quantity_supplied",
+   "relation": "substitute",
+   "actor": "sellers.foreign",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [],
+   "source_actor": "processors",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.processing",
+   "variable": "employment,hours_worked"
+  },
+  {
+   "premises": [
+    "q17_costs_per_tonne_differ_materially_among_"
+   ],
+   "source_actor": "share_recipients",
+   "source_variable": "right_lease_price",
+   "relation": "cost",
+   "actor": "vessel_owners",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [],
+   "source_actor": "vessel_owners",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "crew",
+   "variable": "employment,hours_worked"
+  },
+  {
+   "premises": [],
+   "source_actor": "vessel_owners",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_demanded"
+  },
+  {
+   "premises": [
+    "q27_the_surplus_vessels_are_not_absorbed_by_"
+   ],
+   "source_actor": "vessel_owners.prospective_entrants",
+   "source_variable": "quantity_substitute",
+   "relation": "supply",
+   "actor": "sellers.substitutes",
+   "variable": "net_price_received"
+  },
+  {
+   "premises": [],
+   "source_actor": "buyers.foreign",
+   "source_variable": "price_paid",
+   "relation": "same_act",
+   "actor": "sellers.foreign",
+   "variable": "net_price_received"
+  },
+  {
+   "premises": [],
+   "source_actor": "sellers.foreign",
+   "source_variable": "quantity_supplied",
+   "relation": "supply",
+   "actor": "buyers.foreign",
+   "variable": "price_paid"
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "q16_the_plants_are_specific_to_ridge_cod_and"
+   ],
+   "exchange": "e_export",
+   "side": "buyer",
+   "actor": "processors"
+  },
+  {
+   "premises": [
+    "q21_a_vessel_s_history_passes_to_its_buyer_a",
+    "q22_owners_expect_the_bill_to_pass_and_the_s"
+   ],
+   "exchange": "e_export",
+   "side": "seller",
+   "actor": "vessel_owners"
+  }
+ ],
+ "yields": [
+  {
+   "premises": [
+    "q16_the_plants_are_specific_to_ridge_cod_and"
+   ],
+   "exchange": "e_export",
+   "side": "buyer",
+   "actor": "processors"
+  },
+  {
+   "premises": [
+    "a1"
+   ],
+   "exchange": "e_export",
+   "side": "seller",
+   "actor": "share_recipients"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k4",
+   "actor": "vessel_owners"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k4",
+   "actor": "taxpayers",
+   "premises": [
+    "a22"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "k2",
+   "exchange": "e_shares",
+   "payer_side": "buyer",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k3",
+   "exchange": "e_crew",
+   "payer_side": "buyer",
+   "receiver": "crew",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "s2"
+   ],
+   "projection_variable": null,
+   "branch_premises": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k4",
+   "exchange": "e_export",
+   "payer_side": "seller",
+   "receiver": "monitors",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k4",
+   "exchange": "e_fresh",
+   "payer_side": "seller",
+   "receiver": "monitors",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "capped_payers": [],
+   "basis": "unit"
+  }
+ ],
+ "moves": [],
+ "discretion": [],
+ "means": [
+  {
+   "component": "k2",
+   "actor": "share_recipients",
+   "direction": "in"
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a4"
+   ]
+  }
+ ],
+ "timing": [],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "component": "k1",
+   "exchange": "e_export",
+   "holders": [
+    "share_recipients"
+   ],
+   "wider_price": true
+  },
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "component": "k1",
+   "exchange": "e_fresh",
+   "holders": [
+    "share_recipients"
+   ],
+   "wider_price": false
+  }
+ ],
+ "banned": [
+  {
+   "premises": [
+    "s1"
+   ],
+   "component": "k2",
+   "exchange": "e_shares_outside"
+  }
+ ],
+ "thresholds": [
+  {
+   "premises": [
+    "a13"
+   ],
+   "component": "k2",
+   "actor": "vessel_owners.large",
+   "variable": "quantity_supplied"
+  }
+ ],
+ "qualifies": [
+  {
+   "premises": [
+    "a4"
+   ],
+   "component": "k2",
+   "actor": "vessel_owners",
+   "variable": "quantity_supplied"
+  }
+ ],
+ "expires": [],
+ "parts": [
+  {
+   "part": "vessel_owners.large",
+   "whole": "vessel_owners",
+   "premises": []
+  }
+ ],
+ "dominance": [],
+ "assumptions": {
+  "a1": {
+   "text": "Without the Act, landings would stay well above 40,000 tonnes a year, so the cap binds from 2028.",
+   "class": "binding",
+   "p": 0.9
+  },
+  "a2": {
+   "text": "Landings are recorded and overages enforced at the designated sites.",
+   "class": "enforcement",
+   "p": 0.8
+  },
+  "a4": {
+   "text": "Owners know the formula from the introduction of the bill, expect passage, and have idle vessels or spare capacity to land more in 2026 and 2027.",
+   "class": "expectations",
+   "p": 0.8
+  },
+  "a13": {
+   "text": "The 8% limit binds for a few of the largest firms.",
+   "class": "binding",
+   "p": 0.55
+  },
+  "a22": {
+   "text": "The Directorate's budget is raised by the stated 18 million marks.",
+   "class": "revenue_use",
+   "p": 0.9
+  },
+  "s1": {
+   "text": "The register of transfers refuses holders who own no registered vessel.",
+   "class": "enforcement",
+   "p": 0.9
+  },
+  "s2": {
+   "text": "Owners cannot recover the crew's larger share through other terms of the crew agreement.",
+   "class": "other",
+   "p": 0.6
+  },
+  "q8_fresh_fish_buyers_turn_to_saithe_and_lin": {
+   "text": "Fresh-fish buyers turn to saithe and ling when ridge cod costs more.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q9_fresh_local_ridge_cod_is_only_partly_sub": {
+   "text": "Fresh local ridge cod is only partly substitutable with imported or frozen whitefish.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q10_recipients_processors_and_crew_can_organ": {
+   "text": "Recipients, processors and crew can organize at a cost below their stake.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q11_anyone_can_register_a_seaworthy_vessel_f": {
+   "text": "Anyone can register a seaworthy vessel for 600 marks a year, so non-owners can qualify to hold shares.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q12_processors_value_secure_supply_enough_to": {
+   "text": "Processors value secure supply enough to buy a vessel in order to hold shares.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q13_the_plants_cannot_fully_replace_ridge_co": {
+   "text": "The plants cannot fully replace ridge cod with other species.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q14_the_fall_in_kallmark_s_exports_about_a_s": {
+   "text": "The fall in Kallmark's exports (about a sixth of a 7% share) moves the North Basin whitefish price by more than a negligible amount.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q15_foreign_sellers_of_saithe_and_haddock_ca": {
+   "text": "Foreign sellers of saithe and haddock can sell more in the North Basin market when Kallmark sells less (from other markets, stocks or catch not yet taken).",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q16_the_plants_are_specific_to_ridge_cod_and": {
+   "text": "The plants are specific to ridge cod and compete for the fish landed, while their output is priced in the wider market.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q17_costs_per_tonne_differ_materially_among_": {
+   "text": "Costs per tonne differ materially among vessels, and transfers are not blocked for most owners by the 8% limit.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q18_large_ridge_cod_sell_for_more_per_kilo_t": {
+   "text": "Large ridge cod sell for more per kilo than small ones above 35 cm, and the gear catches mixed sizes.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q19_with_observers_on_10_of_trawler_trips_an": {
+   "text": "With observers on 10% of trawler trips and none on coastal boats, discarding is rarely detected.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q20_the_ten_small_harbors_are_monitored_only": {
+   "text": "The ten small harbors are monitored only at scheduled hours, so some landings go unrecorded.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q21_a_vessel_s_history_passes_to_its_buyer_a": {
+   "text": "A vessel's history passes to its buyer, and buyers price it in.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q22_owners_expect_the_bill_to_pass_and_the_s": {
+   "text": "Owners expect the bill to pass and the shares to keep their value past the 2033 review.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q23_large_holders_can_lease_tonnage_beyond_t": {
+   "text": "Large holders can lease tonnage beyond the shares they may hold.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q24_without_the_act_some_owners_not_now_fish": {
+   "text": "Without the Act, some owners not now fishing ridge cod would enter the open fishery from 2028.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q25_vessels_and_crew_have_other_uses_the_ope": {
+   "text": "Vessels and crew have other uses: the open saithe and ling fisheries, or sale abroad.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q26_ridge_cod_is_landed_as_saithe_or_ling_on": {
+   "text": "Ridge cod is landed as saithe or ling on a meaningful scale.",
+   "p": 0.35,
+   "class": "other"
+  },
+  "q27_the_surplus_vessels_are_not_absorbed_by_": {
+   "text": "The surplus vessels are not absorbed by other fisheries and buyers abroad at unchanged prices.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q28_kallmark_s_ridge_cod_is_a_small_part_of_": {
+   "text": "Kallmark's ridge cod is a small part of the North Basin market, with close substitutes.",
+   "p": 0.8,
+   "class": "other"
+  }
+ }
+}
