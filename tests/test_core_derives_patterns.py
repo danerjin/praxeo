@@ -8,7 +8,8 @@ P = {"text": "premise", "p": 0.9}
 
 def _run(**parts):
     sit = {"name": "check", "exchanges": [], **parts}
-    used = {p for v in parts.values() if isinstance(v, list) for x in v if isinstance(x, dict) for p in x.get("premises", [])}
+    used = {p for v in parts.values() if isinstance(v, list) for x in v if isinstance(x, dict)
+            for p in x.get("premises", []) + x.get("quantity_premises", [])}
     sit["assumptions"] = {k: P for k in used | {"a1"}}
     return {(c.actor_class, c.variable if not c.group else ",".join(c.group), c.sign, c.window)
             for c in S.run(S.Situation(**sit)) if c.reported}
@@ -156,3 +157,51 @@ def test_oc_4_prevented_exchanges_are_lost_to_both_sides():
 def test_rs_15_relief_granted_case_by_case_is_rationed_by_other_criteria():
     got = _run(**TAX, discretion=[{"component": "k", "actor": "buyers", "premises": ["a4"]}])
     assert ("buyers", "allocation_by_non_price_criteria", "increase", None) in got and ("buyers", "compliance_cost", "increase", None) in got
+
+
+GRANT = dict(exchanges=[{"id": "e", "buyer": "buyers", "seller": "producers", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}],
+             grants=[{"component": "k", "exchange": "e", "recipient_side": "seller", "payer": "agency"}],
+             moves=[{"exchange": "e", "side": "buyer", "premises": ["a2"]}, {"exchange": "e", "side": "seller", "premises": ["a3"]}])
+QUOTA = dict(exchanges=[{"id": "e", "buyer": "buyers", "seller": "sellers", "unsatisfied_seller": "sellers.excluded",
+                         "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}],
+             capped=[{"component": "k", "exchange": "e", "holders": ["licence_holders"], "premises": ["a1"]}])
+
+
+def test_sb_1_and_sb_2_a_grant_transfers_means_and_expands_the_market():
+    got = _run(**GRANT)
+    assert {("producers", "resources_available_other_uses", "increase", None), ("agency", "subsidy_outlay", "increase", None),
+            ("buyers", "quantity_traded", "increase", None), ("buyers", "price_paid", "decrease", None),
+            ("producers", "net_price_received", "increase", None)} <= got
+
+
+def test_sb_6_purchases_pulled_into_a_grant_fall_after_it_expires():
+    t = [{"component": "k", "actor": "producers", "variable": "investment", "mode": "bring_forward", "premises": ["a4"]}]
+    got = _run(**GRANT, timing=t, announced=[{"component": "k", "premises": []}], expires=[{"component": "k", "premises": ["a5"]}])
+    assert ("producers", "investment", "decrease", "after_expiry") in got
+
+
+def test_en_1_and_en_2_a_quantity_cap_raises_the_price_and_the_value_of_the_permission():
+    got = _run(**QUOTA)
+    assert {("buyers", "price_paid", "increase", None), ("buyers", "quantity_traded", "decrease", None),
+            ("licence_holders", "asset_value", "increase", None), ("sellers.excluded", "quantity_traded", "decrease", None)} <= got
+
+
+def test_en_6_a_cap_on_a_good_priced_in_a_wider_market_raises_the_permissions_price_not_the_goods():
+    q = {**QUOTA, "capped": [{**QUOTA["capped"][0], "wider_price": True}]}
+    got = _run(**q)
+    assert ("licence_holders", "right_lease_price", "increase", None) in got
+    assert ("buyers", "price_paid", "increase", None) not in got
+
+
+def test_en_7_a_ban_stops_the_legal_trade_for_both_sides():
+    got = _run(exchanges=QUOTA["exchanges"], banned=[{"component": "k", "exchange": "e", "premises": ["a1"]}])
+    assert ("buyers", "quantity_traded", "decrease", None) in got and ("sellers", "quantity_traded", "decrease", None) in got
+
+
+def test_pc_17_a_mandated_term_is_a_charge_paid_in_kind_to_the_counterparty():
+    x = [{"id": "e", "buyer": "employers", "seller": "workers", "buyer_price_var": "labor_cost", "seller_price_var": "wage_rate"}]
+    ch = [{"component": "k", "exchange": "e", "payer_side": "buyer", "receiver": "workers",
+           "receipt_variable": "non_wage_compensation", "quantity_premises": ["a2"]}]
+    got = _run(exchanges=x, charges=ch, moves=[{"exchange": "e", "side": "seller", "premises": ["a3"]}])
+    assert {("workers", "non_wage_compensation", "increase", None), ("workers", "wage_rate", "decrease", None),
+            ("employers", "quantity_traded", "decrease", None)} <= got

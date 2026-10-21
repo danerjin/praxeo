@@ -84,8 +84,29 @@ class Charge(BaseModel):
     exchange: str
     payer_side: Side
     receiver: str
-    receipt_variable: str = Field(description="tax_revenue for a tax, non_tax_receipts for a fee")
+    receipt_variable: str = Field(description="tax_revenue for a tax, non_tax_receipts for a fee, non_wage_compensation for a mandated term")
+    quantity_premises: list[str] = Field(default=[], max_length=3, description="Premises the fall in trades rests on, where the payment is worth something to its receiver (a mandated term)")
     projection_variable: Optional[str] = Field(default=None, description="tax_revenue_vs_static_projection for a tax")
+
+
+class Grant(BaseModel):
+    component: str
+    exchange: str
+    recipient_side: Side
+    payer: str = Field(description="Who pays it out (an agency or fund)")
+    outlay_variable: Optional[str] = Field(default="subsidy_outlay")
+
+
+class Capped(Premised):
+    component: str
+    exchange: str
+    holders: list[str] = Field(default=[], description="Those who hold the permission to sell (licences, quota rights)")
+    wider_price: bool = Field(default=False, description="The good's price is set in a wider market (CR-6 0.7)")
+
+
+class Banned(Premised):
+    component: str
+    exchange: str
 
 
 class Moves(Premised):
@@ -151,6 +172,10 @@ class Situation(BaseModel):
     timing: list[Timing] = []
     early_price: list[dict] = Field(default=[], description="{'exchange', 'premises'}")
     backstops: list[Backstop] = []
+    grants: list[Grant] = []
+    capped: list[Capped] = []
+    banned: list[Banned] = []
+    expires: list[dict] = Field(default=[], description="{'component', 'premises'}: the measure ends and is expected to")
     parts: list[dict] = Field(default=[], description="{'part', 'whole'}: CR-12, a class total over its parts")
     dominance: list[Dominance] = []
     assumptions: dict[str, dict] = Field(description="id -> {'text', 'p', 'class'}")
@@ -202,6 +227,8 @@ def facts(s: Situation) -> str:
     for ch in s.charges:
         out.append(f"charge({ch.component}, {ch.exchange}, {ch.payer_side}, {_q(ch.receiver)}).")
         out.append(f"receipt_var({ch.component}, {_q(ch.receipt_variable)}).")
+        if ch.quantity_premises:
+            out.append(f"qty_premise({ch.component}, {ch.exchange}, {_p(ch.quantity_premises)}).")
         if ch.projection_variable:
             out.append(f"projection_var({ch.component}, {_q(ch.projection_variable)}).")
     for m in s.moves:
@@ -220,6 +247,19 @@ def facts(s: Situation) -> str:
         out.append(f"backstop({b.component}, {b.exchange}, {_q(b.buyer)}, {_p(b.premises)}).")
         if b.outlay_variable:
             out.append(f"outlay_var({b.component}, {_q(b.outlay_variable)}).")
+    for g in s.grants:
+        out.append(f"grant({g.component}, {g.exchange}, {g.recipient_side}, {_q(g.payer)}).")
+        if g.outlay_variable:
+            out.append(f"outlay_var({g.component}, {_q(g.outlay_variable)}).")
+    for c in s.capped:
+        out.append(f"capped({c.component}, {c.exchange}, {_p(c.premises)}).")
+        out += [f"holder({c.component}, {c.exchange}, {_q(h)})." for h in c.holders]
+        if c.wider_price:
+            out.append(f"wider_price({c.exchange}).")
+    for b in s.banned:
+        out.append(f"banned({b.component}, {b.exchange}, {_p(b.premises)}).")
+    for e in s.expires:
+        out.append(f"expires({e['component']}, {_p(e.get('premises', []))}).")
     for pt in s.parts:
         out.append(f"part_of({_q(pt['part'])}, {_q(pt['whole'])}).")
     for t in s.assets:

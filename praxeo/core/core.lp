@@ -87,7 +87,11 @@ fired(cr_6, p_adjust_one(E, S, A, V), P) :- p_adjust_one(E, S, A, V), adjust_one
 effect(p_adjust_one(E, S, A, V), A, V, decrease, short, invisible, "B") :- p_adjust_one(E, S, A, V).
 
 % Trade outside the rule, where the expected gain exceeds the expected penalty (CR-6 with CR-4: comply against violate).
-p_outside(E, A, V) :- h(_, E, _), outside(E, A, V, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+p_outside(E, A, V) :- c_on(E), outside(E, A, V, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+c_on(E) :- h(_, E, _).
+c_on(E) :- c_capped(_, E).
+c_on(E) :- c_banned(_, E).
+c_on(E) :- c_charged(_, E).
 fired(cr_4, p_outside(E, A, V), P) :- p_outside(E, A, V), outside(E, A, V, P1, P2, P3), P = (P1; P2; P3), P != none.
 effect(p_outside(E, A, V), A, V, increase, short, invisible, "B") :- p_outside(E, A, V).
 
@@ -105,6 +109,11 @@ chooser(C, A, worse)  :- h(C, E, _), burdened(E, S), party(E, S, A).
 chooser(C, A, worse)  :- h(C, E, D), long(D, S), unsatisfied(E, S, A).
 chooser(C, A, better) :- h(C, E, _), favored(E, S), party(E, S, A).
 chooser(C, A, worse)  :- c_charged(C, E), charge(C, E, S, _), party(E, S, A).
+chooser(C, A, better) :- c_granted(C, E), grant(C, E, S, _), party(E, S, A).
+chooser(C, A, worse)  :- c_capped(C, E), party(E, buyer, A).
+chooser(C, A, worse)  :- c_capped(C, E), unsatisfied(E, seller, A).
+chooser(C, A, better) :- c_capped(C, E), holder(C, E, A).
+chooser(C, A, worse)  :- c_banned(C, E), party(E, _, A).
 % Anyone whose price moved is burdened or favored too, whether or not they trade in the policy's own exchange (CR-4: a buyer
 % whose price rose, a seller whose price or wage fell; found on the blind WE-062 loop: packaging users bear a tax by price).
 % buy_price(V), sell_price(V): which price variables a buyer and a seller receive (vocabulary facts from situation.py).
@@ -129,6 +138,9 @@ group_effect(p_alt(C, Ch, A, V), A, V, G, medium, invisible, "B")   :- p_alt(C, 
 p_stake(C, A) :- stake(C, A, P1, P2, P3), c_acts(C), ok(P1), ok(P2), ok(P3).
 c_acts(C) :- h(C, _, _).
 c_acts(C) :- c_charged(C, _).
+c_acts(C) :- c_granted(C, _).
+c_acts(C) :- c_capped(C, _).
+c_acts(C) :- c_banned(C, _).
 fired(cr_4, p_stake(C, A), P) :- p_stake(C, A), stake(C, A, P1, P2, P3), P = (P1; P2; P3), P != none.
 effect(p_stake(C, A), A, "lobbying_effort", increase, medium, invisible, "B") :- p_stake(C, A).
 
@@ -139,6 +151,10 @@ side_dir(E, S, decrease) :- burdened(E, S).
 side_dir(E, S, increase) :- favored(E, S).
 % A payment attached to trading burdens both sides: the wedge takes from what buyers pay and what sellers keep (CR-5c).
 side_dir(E, S, decrease) :- c_charged(_, E), side(S).
+side_dir(E, S, increase) :- c_granted(_, E), side(S).
+side_dir(E, buyer, decrease) :- c_capped(_, E).
+side_dir(E, seller, increase) :- c_capped(_, E).
+side_dir(E, S, decrease) :- c_banned(_, E), side(S).
 p_yield(E, A) :- yield(E, S, A, P1, P2, P3), side_dir(E, S, _), ok(P1), ok(P2), ok(P3).
 fired(cr_7, p_yield(E, A), P) :- p_yield(E, A), yield(E, _, A, P1, P2, P3), P = (P1; P2; P3), P != none.
 effect(p_yield(E, A), A, "return_on_capital", D, short, invisible, "B") :- p_yield(E, A), yield(E, S, A, _, _, _), side_dir(E, S, D).
@@ -211,7 +227,18 @@ group_effect(p_link(A0, V0, R, A, V), A, V, G, medium, invisible, "B") :- p_link
 % times the old base (CR-4 with CR-8b).
 c_charged(C, E) :- charge(C, E, _, _).
 fired(cr_1, c_charged(C, E), charge(C, E, S, R)) :- c_charged(C, E), charge(C, E, S, R).
-effect(c_charged(C, E), A, "quantity_traded", decrease, short, invisible, "B") :- c_charged(C, E), party(E, _, A).
+effect(c_qty(C, E), A, "quantity_traded", decrease, short, invisible, "B") :- c_qty(C, E), c_charged(C, E), party(E, _, A).
+% The fall (or rise) in trades rests on a premise where the record gives one: a payment that is worth something to the side
+% that receives it in kind (a mandated term) can be recovered through the other terms (CR-7, gross and net), so its effect
+% on the quantity is not a priori.
+has_qty_premise(C, E) :- qty_premise(C, E, _, _, _).
+c_qty(C, E) :- c_moved_trade(C, E), not has_qty_premise(C, E).
+c_qty(C, E) :- c_moved_trade(C, E), qty_premise(C, E, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+fired(cr_4, c_qty(C, E), c_charged(C, E)) :- c_qty(C, E), c_charged(C, E).
+fired(cr_4, c_qty(C, E), c_granted(C, E)) :- c_qty(C, E), c_granted(C, E).
+fired(cr_4, c_qty(C, E), P) :- c_qty(C, E), qty_premise(C, E, P1, P2, P3), P = (P1; P2; P3), P != none.
+c_moved_trade(C, E) :- c_charged(C, E).
+c_moved_trade(C, E) :- c_granted(C, E).
 p_moves(C, E, S) :- c_charged(C, E), moves(E, S, P1, P2, P3), ok(P1), ok(P2), ok(P3).
 fired(cr_6, p_moves(C, E, S), P) :- p_moves(C, E, S), moves(E, S, P1, P2, P3), P = (P1; P2; P3), P != none.
 fired(cr_5, p_moves(C, E, S), c_charged(C, E)) :- p_moves(C, E, S).
@@ -305,6 +332,52 @@ reach(A0, V0, A2, V2) :- reach(A0, V0, A, V), edge(A, V, A2, V2).
 % The cause is the step out of a variable the policy drives directly (an actor's alternative); the steps after it are responses.
 driven(A, V) :- alt(_, _, A, V, plain, _, _, _).
 response_concl(p_link(A0, V0, R, A, V)) :- link(A0, V0, R, A, V, _, _, _), reach(A, V, A0, V0), not driven(A0, V0).
+
+% ---------------------------------------------------------------- CR-1 op 3 in the other direction: a payment to trading
+% A payment made to one side for each trade (a subsidy per unit) is a wedge the other way (CR-5c): buyers pay less and
+% sellers receive more, with the same premise on which side's price takes it (moves/5); more trades take place (CR-4);
+% the recipients' means rise by what they receive, and the payer's outlay rises (CR-8b; who funds it: funded/5).
+c_granted(C, E) :- grant(C, E, _, _).
+fired(cr_1, c_granted(C, E), grant(C, E, S, P)) :- c_granted(C, E), grant(C, E, S, P).
+effect(c_qty(C, E), A, "quantity_traded", increase, short, invisible, "B") :- c_qty(C, E), c_granted(C, E), party(E, _, A).
+p_gmoves(C, E, S) :- c_granted(C, E), moves(E, S, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+fired(cr_6, p_gmoves(C, E, S), P) :- p_gmoves(C, E, S), moves(E, S, P1, P2, P3), P = (P1; P2; P3), P != none.
+fired(cr_5, p_gmoves(C, E, S), c_granted(C, E)) :- p_gmoves(C, E, S).
+g_wedge(buyer, decrease). g_wedge(seller, increase).
+effect(p_gmoves(C, E, S), A, V, D, short, invisible, "B") :- p_gmoves(C, E, S), price_var(E, S, V), party(E, S, A), g_wedge(S, D).
+g_paid(C, E) :- c_granted(C, E).
+fired(cr_8, g_paid(C, E), c_granted(C, E)) :- g_paid(C, E).
+effect(g_paid(C, E), A, "resources_available_other_uses", increase, short, invisible, "A") :- g_paid(C, E), grant(C, E, S, _), party(E, S, A).
+effect(g_paid(C, E), P, V, increase, short, visible, "A") :- g_paid(C, E), grant(C, E, _, P), outlay_var(C, V).
+
+% CR-10a at the end: where a measure that makes an option better ends (expires, with the premise that it is expected to end),
+% those who brought the action into its period take less of it after it ends.
+p_after(C, A, V) :- timing(C, A, V, bring_forward, P1, P2, P3), expires(C, Q1, Q2, Q3), chooser(C, A, better),
+                    ok(P1), ok(P2), ok(P3), ok(Q1), ok(Q2), ok(Q3).
+fired(cr_10, p_after(C, A, V), P) :- p_after(C, A, V), expires(C, P1, P2, P3), P = (P1; P2; P3), P != none.
+fired(cr_10, p_after(C, A, V), P) :- p_after(C, A, V), timing(C, A, V, _, P1, P2, P3), P = (P1; P2; P3), P != none.
+effect(p_after(C, A, V), A, V, decrease, short, invisible, "B") :- p_after(C, A, V).
+window(p_after(C, A, V), after_expiry) :- p_after(C, A, V).
+timing_concl(p_after(C, A, V)) :- timing(C, A, V, _, _, _, _), expires(C, _, _, _).
+
+% ---------------------------------------------------------------- CR-6: a rule that fixes the quantity
+% Where a component caps the quantity traded in E (capped, with its binding and enforcement premises) and leaves the price
+% free, the price rises to ration the capped quantity: buyers pay more and fewer trades take place; the gap between that
+% price and what sellers would accept goes to those who hold the permission to sell (holder/3: their asset's value rises,
+% CR-7c), and those shut out (the unsatisfied sellers) look to other margins. Where the good's price is set in a wider
+% market (wider_price/1), the price of the permission rations it instead (CR-6 0.7). A ban caps the quantity at zero
+% (banned): the legal trade stops for both sides, and only trade outside the rule remains.
+c_capped(C, E) :- capped(C, E, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+fired(cr_6, c_capped(C, E), P) :- c_capped(C, E), capped(C, E, P1, P2, P3), P = (P1; P2; P3), P != none.
+effect(c_capped(C, E), A, V, increase, short, invisible, "B") :- c_capped(C, E), not wider_price(E), price_var(E, buyer, V), party(E, buyer, A).
+effect(c_capped(C, E), A, V, increase, short, invisible, "B") :- c_capped(C, E), not wider_price(E), holder(C, E, A), price_var(E, seller, V).
+effect(c_capped(C, E), A, "quantity_traded", decrease, short, invisible, "B") :- c_capped(C, E), party(E, buyer, A).
+effect(c_capped(C, E), A, "asset_value", increase, short, invisible, "B") :- c_capped(C, E), holder(C, E, A).
+effect(c_capped(C, E), A, "right_lease_price", increase, short, invisible, "B") :- c_capped(C, E), wider_price(E), holder(C, E, A).
+effect(c_capped(C, E), A, "quantity_traded", decrease, short, invisible, "B") :- c_capped(C, E), unsatisfied(E, seller, A).
+c_banned(C, E) :- banned(C, E, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+fired(cr_1, c_banned(C, E), P) :- c_banned(C, E), banned(C, E, P1, P2, P3), P = (P1; P2; P3), P != none.
+effect(c_banned(C, E), A, "quantity_traded", decrease, short, visible, "B") :- c_banned(C, E), party(E, _, A).
 
 #show holds/1.
 #show fired/3.
