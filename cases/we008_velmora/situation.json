@@ -1,0 +1,122 @@
+{
+ "name": "WE-008 Velmora dairy price floor with state purchase (core-rule pilot)",
+ "exchanges": [
+  {
+   "id": "e1",
+   "buyer": "plants.commodity",
+   "seller": "farmers.velmora",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e2",
+   "buyer": "plants.specialty",
+   "seller": "farmers.velmora",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  }
+ ],
+ "held": [
+  {"component": "k1", "exchange": "e1", "direction": "above", "premises": ["a1"]},
+  {"component": "k1", "exchange": "e2", "direction": "above", "premises": ["a1"]}
+ ],
+ "margins": [
+  {
+   "exchange": "e1",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "plants.commodity",
+   "variables": ["quantity_demanded"],
+   "premises": ["a5"]
+  },
+  {
+   "exchange": "e1",
+   "kind": "outside",
+   "actor": "plants.commodity",
+   "variables": ["legal_breach"],
+   "premises": ["a6", "a5"]
+  }
+ ],
+ "alternatives": [
+  {
+   "component": "k1",
+   "chooser": "plants.commodity",
+   "actor": "plants.commodity",
+   "variables": ["quantity_substitute"],
+   "premises": ["a5"]
+  },
+  {
+   "component": "k1",
+   "chooser": "farmers.velmora",
+   "actor": "farmers.velmora",
+   "variables": ["quantity_substitute"],
+   "premises": ["a10"]
+  }
+ ],
+ "stakes": [
+  {"component": "k1", "actor": "farmers.velmora", "premises": ["a14"]},
+  {"component": "k1", "actor": "plants.commodity", "premises": ["a14"]}
+ ],
+ "links": [
+  {
+   "source_actor": "plants.commodity",
+   "source_variable": "quantity_substitute",
+   "relation": "same_act",
+   "actor": "farmers.neighboring",
+   "variable": "quantity_traded",
+   "premises": ["a5"]
+  },
+  {
+   "source_actor": "farmers.velmora",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "farmers.entrants",
+   "variable": "entry_rate",
+   "premises": ["a7", "a2"]
+  },
+  {
+   "source_actor": "farmers.velmora",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "plants.commodity",
+   "variable": "investment_target",
+   "premises": ["a13", "a2"]
+  }
+ ],
+ "yields": [
+  {"exchange": "e2", "side": "buyer", "actor": "plants.specialty", "premises": ["a4"]},
+  {"exchange": "e1", "side": "seller", "actor": "farmers.velmora", "premises": ["a1"]}
+ ],
+ "assets": [
+  {"exchange": "e1", "side": "seller", "actor": "factor_owners.specific", "premises": ["a8", "a2"]}
+ ],
+ "transfers": [
+  {"exchange": "e2", "premises": ["a4"]}
+ ],
+ "compliance": [
+  {"component": "k4", "actor": "plants.commodity"},
+  {"component": "k4", "actor": "plants.specialty"}
+ ],
+ "enforcers": [
+  {"component": "k4", "actor": "officials.enforcement"}
+ ],
+ "funded": [
+  {"component": "k2", "actor": "taxpayers"}
+ ],
+ "assumptions": {
+  "a1": {"text": "The regional raw milk price stays below $21 for most of the next three years.", "class": "binding", "p": 0.8},
+  "a2": {"text": "Farmers and plants expect the program to last several years.", "class": "expectations", "p": 0.65},
+  "a3": {"text": "Out-of-state supply does not replace all of the withdrawn product at the old price in the short run.", "class": "substitutability", "p": 0.75},
+  "a4": {"text": "Specialty plants need Velmora-origin milk to keep their label and price premium, and compete with cheesemakers who buy milk at market prices (RS-14: competitors not exposed).", "class": "other", "p": 0.7},
+  "a5": {"text": "Out-of-state raw milk reaches Velmora plants at little more than transport cost.", "class": "mobility", "p": 0.85},
+  "a6": {"text": "Some false certification of origin goes undetected.", "class": "enforcement", "p": 0.55},
+  "a7": {"text": "Moving a dairy operation, or registering one, into Velmora is feasible for some farmers near the border.", "class": "mobility", "p": 0.6},
+  "a8": {"text": "Dairy land and barns are in fixed supply in the medium run.", "class": "durability", "p": 0.85},
+  "a9": {"text": "Donated stocks replace dairy that food programs would otherwise have bought.", "class": "other", "p": 0.7},
+  "a10": {"text": "Velmora farmland and farm labor have other farm uses (crops, beef).", "class": "alternative_uses", "p": 0.8},
+  "a11": {"text": "The program is expected to be repealed within two years.", "class": "expectations", "p": 0.3},
+  "a12": {"text": "Cheddar keeps one to two years and powder two to three, and the Board disposes of stocks through K3's routes (donation, export, resale when allowed) rather than destroying them.", "class": "durability", "p": 0.8},
+  "a13": {"text": "K2's support prices cover commodity plants' full costs, including a normal return on new capacity, so plants expand Board-route capacity as Velmora milk supply grows.", "class": "other", "p": 0.6},
+  "a14": {"text": "Velmora dairy farmers and commodity plants can organize to lobby at a cost lower than their stake.", "class": "other", "p": 0.7}
+ }
+}
