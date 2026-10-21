@@ -35,6 +35,8 @@
 %   early_price(E, P1, P2, P3).             the burdened side can set the price of E before the line binds (renewals)
 %   backstop(C, E, B, P1, P2, P3).          CR-6: B buys at the line whatever the market does not take in E
 %   outlay_var(C, V).                       the vocabulary's name for B's outlay
+%   part_of(A, P).                          CR-12: class A is part of class P, whose total combines its parts' chains
+%   (dominance facts are applied after the run: praxeo/core/situation.py, CR-12e)
 % Every rule is monotone in holds/1.
 
 { holds(A) } :- assumption(A).
@@ -250,6 +252,27 @@ fired(cr_10, p_early_price(C, E), h(C, E, D)) :- p_early_price(C, E), h(C, E, D)
 fired(cr_10, p_early_price(C, E), P) :- p_early_price(C, E), early_price(E, P1, P2, P3), P = (P1; P2; P3), P != none.
 effect(p_early_price(C, E), A, V, D2, short, invisible, "B") :- p_early_price(C, E), h(C, E, D), line_dir(D, D1), opp(D1, D2), price_var(E, S, V), party(E, S, A).
 window(p_early_price(C, E), announcement) :- p_early_price(C, E).
+
+% ---------------------------------------------------------------- CR-12: composition
+% A class's total takes every chain that reaches its parts (a). Opposite directions make it ambiguous (b) unless a dominance
+% premise settles it (e, applied in situation.py). Groups are not chains (1.1), and changes inside a timing window are kept to
+% their window.
+p_total(P, V, X) :- part_of(A, P), effect(X, A, V, D, _, _, _), opp(D, _), not timing_concl(X).
+fired(cr_12, p_total(P, V, X), X) :- p_total(P, V, X).
+effect(p_total(P, V, X), P, V, D, H, Vis, T) :- p_total(P, V, X), part_of(A, P), effect(X, A, V, D, H, Vis, T).
+
+% CR-12h with CR-10b: a price set before a line binds stays in force into the first months after the effective date (it
+% changes only when the contract is next renewed), while the line pushes the other way: two chains in that window.
+p_first_carry(C, E) :- p_early_price(C, E).
+fired(cr_10, p_first_carry(C, E), p_early_price(C, E)) :- p_first_carry(C, E).
+effect(p_first_carry(C, E), A, V, D2, short, invisible, "B") :- p_first_carry(C, E), h(C, E, D), line_dir(D, D1), opp(D1, D2), price_var(E, S, V), party(E, S, A).
+window(p_first_carry(C, E), first_months) :- p_first_carry(C, E).
+p_first_line(C, E) :- p_early_price(C, E).
+fired(cr_6, p_first_line(C, E), h(C, E, D)) :- p_first_line(C, E), h(C, E, D).
+effect(p_first_line(C, E), A, V, D1, short, visible, "B") :- p_first_line(C, E), h(C, E, D), line_dir(D, D1), price_var(E, S, V), party(E, S, A).
+window(p_first_line(C, E), first_months) :- p_first_line(C, E).
+timing_concl(p_first_carry(C, E)) :- early_price(E, _, _, _), held(C, E, _, _, _, _).
+timing_concl(p_first_line(C, E)) :- early_price(E, _, _, _), held(C, E, _, _, _, _).
 
 #show holds/1.
 #show fired/3.

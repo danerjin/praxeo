@@ -23,11 +23,10 @@ def _score(rows, keys):
 
 
 WE001_SHORT = {"landlords": "landlords.controlled", "tenants": "tenants.controlled"}
-WE001_NOT_PRODUCED = {
-    "C-21": "CR-12: the first-months total of C-1 against C-17 needs a declared comparison on the core output",
-}
+WE001_NOT_PRODUCED: dict = {}   # C-21 came with CR-12h (the first months: the price set before the line against the line)
 WE001_EXTRA = {
     ("landlords.controlled", "net_price_received", "increase", "announcement"): "CR-10a: the landlords' side of C-17 (rents raised at renewal before the freeze)",
+    ("landlords.controlled", "net_price_received", "ambiguous", "first_months"): "CR-12h: the landlords' side of C-21",
     ("landlords.controlled", "lobbying_effort", "increase", None): "C-11 names landlords (mapped); kept as a key the table has",
     ("tenants.prospective", "wait_time", "at_least_one_increase", None): "CR-6's group over the criteria; the table signs three members alone (C-3, C-4, C-7)",
     ("tenants.prospective", "search_cost", "at_least_one_increase", None): "member of the CR-6 group (see above)",
@@ -43,10 +42,11 @@ WE009_EXTRA = {
 
 
 def test_we001_from_the_core_rules_alone():
-    rows = _rows("WE-001_rent_freeze.md", WE001_SHORT, {"renewing before": "announcement"}, {"converted buildings": ".converted"})
+    rows = _rows("WE-001_rent_freeze.md", WE001_SHORT, {"renewing before": "announcement", "first months": "first_months"},
+                 {"converted buildings": ".converted"})
     produced, extra = _score(rows, _keys("we001_riverton"))
     assert set(rows) - produced == set(WE001_NOT_PRODUCED)
-    assert len(produced) == 29 and len(rows) == 30   # 28 before CR-10a
+    assert len(produced) == 30 and len(rows) == 30   # 28 before CR-10a, 29 before CR-12h
     assert set(extra) <= set(WE001_EXTRA)
 
 
@@ -104,3 +104,21 @@ def test_we002_and_we010_blind_charges():
                  "retailers.neighbors": "sellers.neighboring", "factor_owners.specific": "factor_owners.border_sites"}, {}, {})
     produced, _ = _score(rows, _keys("we010_marren"))
     assert len(produced) == 16 and len(rows) == 33
+
+
+def test_cr12_parts_and_dominance():
+    """A class total combines its parts' chains (opposite: ambiguous); a dominance premise that holds settles the sign."""
+    base = {"name": "t", "exchanges": [{"id": "e1", "buyer": "buyers.served", "seller": "sellers.s", "unsatisfied_buyer": "buyers.unserved"}],
+            "held": [{"component": "k1", "exchange": "e1", "direction": "below", "premises": ["a1"]}],
+            "alternatives": [{"component": "k1", "chooser": c, "actor": c, "variables": ["cross_border_purchases"], "premises": ["a2"]}
+                             for c in ("buyers.served", "buyers.unserved")],
+            "parts": [{"part": "buyers.served", "whole": "buyers.border"}, {"part": "buyers.unserved", "whole": "buyers.border"}],
+            "assumptions": {"a1": {"text": "binds", "p": 0.9}, "a2": {"text": "can cross", "p": 0.8}, "a3": {"text": "the unserved dominate", "p": 0.7}}}
+    by = lambda s: {(c.actor_class, c.variable): c.sign for c in S.run(S.Situation(**s)) if c.reported}
+    got = by(base)
+    assert got[("buyers.served", "cross_border_purchases")] == "decrease" and got[("buyers.unserved", "cross_border_purchases")] == "increase"
+    assert got[("buyers.border", "cross_border_purchases")] == "ambiguous"
+    dom = [{"actor": "buyers.border", "variable": "cross_border_purchases", "direction": "increase", "kind": "empirical", "premises": ["a3"]}]
+    assert by({**base, "dominance": dom})[("buyers.border", "cross_border_purchases")] == "increase"
+    base["assumptions"]["a3"]["p"] = 0.3
+    assert ("buyers.border", "cross_border_purchases") not in by({**base, "dominance": dom})   # the settled sign rests on a3

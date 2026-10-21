@@ -118,6 +118,16 @@ class Backstop(Premised):
     outlay_variable: Optional[str] = Field(default=None, description="e.g. subsidy_outlay")
 
 
+class Dominance(Premised):
+    actor: str
+    variable: str
+    window: Optional[str] = None
+    direction: Literal["increase", "decrease"]
+    kind: Literal["empirical", "identity", "arithmetic", "response"] = Field(
+        description="CR-12e: what establishes it: an empirical premise, an accounting identity, arithmetic on the case's figures, "
+                    "or the argument that a response cannot reverse its cause")
+
+
 class Situation(BaseModel):
     name: str
     exchanges: list[Exchange]
@@ -141,6 +151,8 @@ class Situation(BaseModel):
     timing: list[Timing] = []
     early_price: list[dict] = Field(default=[], description="{'exchange', 'premises'}")
     backstops: list[Backstop] = []
+    parts: list[dict] = Field(default=[], description="{'part', 'whole'}: CR-12, a class total over its parts")
+    dominance: list[Dominance] = []
     assumptions: dict[str, dict] = Field(description="id -> {'text', 'p', 'class'}")
 
 
@@ -207,6 +219,8 @@ def facts(s: Situation) -> str:
         out.append(f"backstop({b.component}, {b.exchange}, {_q(b.buyer)}, {_p(b.premises)}).")
         if b.outlay_variable:
             out.append(f"outlay_var({b.component}, {_q(b.outlay_variable)}).")
+    for pt in s.parts:
+        out.append(f"part_of({_q(pt['part'])}, {_q(pt['whole'])}).")
     for t in s.assets:
         out.append(f"asset({t.exchange}, {t.side}, {_q(t.actor)}, {_p(t.premises)}).")
     for t in s.yields:
@@ -229,10 +243,26 @@ def assumptions(s: Situation) -> dict[str, Assumption]:
 
 
 def run(s: Situation):
-    """The consequences the core rules alone derive from the situation."""
+    """The consequences the core rules alone derive from the situation, with CR-12e applied."""
     empty = PolicyRecord(name=s.name, jurisdiction="-", rule_maker="-", enacted="-", effective="-", components=[])
+    a = assumptions(s)
     with engine.rule_set(CORE_RULES):
-        return engine.run(empty, assumptions(s), extra=facts(s))[0]
+        cons = engine.run(empty, a, extra=facts(s))[0]
+    return dominate(cons, s, a)
+
+
+def dominate(cons, s: Situation, a: dict[str, Assumption]):
+    """CR-12e: where opposite chains made a consequence ambiguous, a dominance premise that holds (p >= cut-off) settles its
+    sign; the consequence then rests on the chains' premises and the dominance premise. Not for signs per reading or groups."""
+    out = []
+    for c in cons:
+        d = next((d for d in s.dominance if (d.actor, d.variable, d.window) == (c.actor_class, c.variable, c.window)), None)
+        if d and c.sign == "ambiguous" and not c.sign_by_reading and not c.group:
+            used = sorted(set(c.assumptions) | set(d.premises))
+            c = c.model_copy(update=dict(sign=d.direction, assumptions=used, assumption_sets=[used],
+                                         reported=all(a[x].p >= engine.CUTOFF for x in used)))
+        out.append(c)
+    return out
 
 
 def load(path: Path) -> Situation:
