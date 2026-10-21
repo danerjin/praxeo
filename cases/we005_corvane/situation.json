@@ -1,0 +1,201 @@
+{
+ "name": "WE-005 retail gasoline price cap (core-rule pilot)",
+ "exchanges": [
+  {
+   "id": "e1",
+   "buyer": "drivers.current",
+   "seller": "stations.retail",
+   "unsatisfied_buyer": "drivers.unserved",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": "drivers.unserved",
+   "criteria": [
+    "wait_time",
+    "search_cost"
+   ]
+  },
+  {
+   "id": "e2",
+   "buyer": "stations.retail",
+   "seller": "refiners.corvane",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  }
+ ],
+ "held": [
+  {
+   "component": "k1",
+   "exchange": "e1",
+   "direction": "below",
+   "premises": ["a1", "a2"]
+  }
+ ],
+ "margins": [
+  {
+   "exchange": "e1",
+   "kind": "criterion",
+   "actor": "drivers.unserved",
+   "variables": ["wait_time"],
+   "premises": ["a3"]
+  },
+  {
+   "exchange": "e1",
+   "kind": "criterion",
+   "actor": "drivers.unserved",
+   "variables": ["search_cost"],
+   "premises": ["a3"]
+  },
+  {
+   "exchange": "e1",
+   "kind": "adjust",
+   "side": "seller",
+   "actor": "drivers.current",
+   "variables": ["quality_per_unit", "transaction_size"],
+   "premises": ["a4"]
+  },
+  {
+   "exchange": "e1",
+   "kind": "outside",
+   "actor": "drivers.current",
+   "variables": ["informal_activity"],
+   "premises": ["a5"]
+  }
+ ],
+ "alternatives": [
+  {
+   "component": "k1",
+   "chooser": "stations.retail",
+   "actor": "stations.retail",
+   "variables": ["reclassification"],
+   "premises": ["a15"]
+  },
+  {
+   "component": "k1",
+   "chooser": "drivers.unserved",
+   "actor": "drivers.unserved",
+   "variables": ["quantity_substitute"],
+   "premises": ["a10"]
+  },
+  {
+   "component": "k1",
+   "chooser": "drivers.unserved",
+   "actor": "drivers.unserved",
+   "variables": ["cross_border_purchases"],
+   "premises": ["a11"]
+  },
+  {
+   "component": "k1",
+   "chooser": "drivers.current",
+   "actor": "drivers.current",
+   "variables": ["cross_border_purchases"],
+   "premises": ["a11"]
+  }
+ ],
+ "stakes": [
+  {
+   "component": "k1",
+   "actor": "stations.retail",
+   "premises": ["a16"]
+  }
+ ],
+ "links": [
+  {
+   "source_actor": "stations.retail",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "refiners.corvane",
+   "variable": "quantity_traded",
+   "premises": ["a7"]
+  },
+  {
+   "source_actor": "refiners.corvane",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "buyers.brennick",
+   "variable": "quantity_traded",
+   "premises": ["a6"]
+  },
+  {
+   "source_actor": "drivers.unserved",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "stations.brennick",
+   "variable": "quantity_traded",
+   "premises": ["a11"]
+  },
+  {
+   "source_actor": "drivers.unserved",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "transit_operators",
+   "variable": "quantity_traded",
+   "premises": ["a10"]
+  },
+  {
+   "source_actor": "stations.retail",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "stations.retail",
+   "variable": "quantity_complement",
+   "premises": ["a12"]
+  }
+ ],
+ "yields": [
+  {
+   "exchange": "e1",
+   "side": "seller",
+   "actor": "stations.retail",
+   "premises": ["a1"]
+  }
+ ],
+ "assets": [
+  {
+   "exchange": "e1",
+   "side": "seller",
+   "actor": "stations.retail",
+   "premises": ["a13"]
+  }
+ ],
+ "transfers": [
+  {
+   "exchange": "e1",
+   "premises": ["a1"]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "stations.retail"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k1",
+   "actor": "taxpayers"
+  }
+ ],
+ "assumptions": {
+  "a1": {"text": "Without the cap, the retail price would stay above $4.20 for most of the 90 days.", "class": "binding", "p": 0.85},
+  "a2": {"text": "Pump prices are enforced: few stations post or charge more than the cap.", "class": "enforcement", "p": 0.9},
+  "a3": {"text": "Most drivers have no close substitute for the car for daily trips, so they queue and search rather than give up.", "class": "substitutability", "p": 0.8},
+  "a4": {"text": "In practice stations can change hours, service, payment terms and per-car limits without being treated as violating the order.", "class": "enforcement", "p": 0.8},
+  "a5": {"text": "Some resale of fuel in cans above the cap goes undetected.", "class": "enforcement", "p": 0.55},
+  "a6": {"text": "Cargoes of Corvane blend have other buyers, and the pipeline to Brennick has spare capacity.", "class": "alternative_uses", "p": 0.85},
+  "a7": {"text": "Most in-state refinery output has no outlet other than Corvane stations in the short run (the input has few uncapped outlets, PC-12).", "class": "alternative_uses", "p": 0.7},
+  "a8": {"text": "Drivers and stations know the effective date and can shift purchases by two days.", "class": "expectations", "p": 0.75},
+  "a9": {"text": "The repair can be speeded up by spending more (overtime, expedited parts).", "class": "other", "p": 0.6},
+  "a10": {"text": "Transit, car-sharing or dropping trips is feasible for some unserved drivers.", "class": "substitutability", "p": 0.65},
+  "a11": {"text": "Drivers in the eastern cities can reach Brennick stations easily.", "class": "mobility", "p": 0.7},
+  "a12": {"text": "Drivers buy in-store goods on fuel trips.", "class": "other", "p": 0.75},
+  "a13": {"text": "Suppliers expect the order to end on Day 95 and have terminal space to hold product for a few days.", "class": "expectations", "p": 0.6},
+  "a14": {"text": "Suppliers expect the order to be extended beyond Day 95.", "class": "expectations", "p": 0.35},
+  "a15": {"text": "Stations or buyers can reshape sales to fall under an exemption.", "class": "other", "p": 0.15},
+  "a16": {"text": "Station owners can organize and lobby at a cost below their stake (an existing retailers' association).", "class": "other", "p": 0.8}
+ }
+}
