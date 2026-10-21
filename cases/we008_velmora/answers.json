@@ -1,0 +1,72 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-008 (illustrative figures), A-1: the regional raw milk price stays below $21 for most of the next three years (forward prices $17 to $19).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "No matching assumption in WE-008; judged from the text: K4 requires plants to keep Velmora milk separate and document origin, with audits, fines and loss of eligibility for Board sales; the Board's purchases are conditional on paying the floor.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.cost_not_offset",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-008; judged from the text: plants must pay at least $21 against about $18; milk from outside Velmora is exempt and cannot be used for Velmora-certified product. Commodity plants recover the cost through the Board's prices, which is a sale price, not a cut in other terms. Set at the level of A-1, which the cost rise rests on.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-008 (illustrative figures), A-6: some false certification of origin goes undetected.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-008 (illustrative figures), A-14: Velmora dairy farmers and commodity plants can organize to lobby at a cost lower than their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.sellers_organize",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-008 (illustrative figures), A-14: Velmora dairy farmers and commodity plants can organize to lobby at a cost lower than their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.rivals_bound",
+  "value": "no",
+  "probability": 0.15,
+  "rationale": "No matching assumption in WE-008; judged from the text: cheese and powder are traded freely in a region of which Velmora is about 15%, and the neighbors have no floor, so most rival cheesemakers buy milk at market prices (section 5, on RS-14, and A-4).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-008 (illustrative figures), A-6: C-11 rests on it; out-of-state milk costs about $18 and Velmora milk $21, so passing the one off as the other costs less than the floor.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_ahead",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-008; judged from the text: the program was proposed in February of Year 0, enacted in June and takes effect on January 1 of Year 1; section 5 (C-18) has the program expected from February, and section 8 has plants planning capacity during the announcement period.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-008 (illustrative figures), A-2: farmers and plants expect the program to last several years.",
+  "evidence": []
+ }
+]
