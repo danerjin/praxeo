@@ -176,7 +176,7 @@ group_effect(p_link(A0, V0, R, A, V), A, V, G, medium, invisible, "B") :- p_link
 % ---------------------------------------------------------------- CR-1 op 3: a payment attached to trading
 % The payment is a wedge: the range both sides accept moves (CR-5c). Fewer trades take place (CR-4: the option is worse for
 % the payer; CR-5a for the other side). Which side's price takes the change needs a premise on the other side's response
-% (moves/5, CR-6 0.9); the payer's price rises, the other side's net price falls. The payment is the receiver's revenue and
+% (moves/5, CR-6 0.9); the buyers' price rises and the sellers' net price falls, whichever side pays. The payment is the receiver's revenue and
 % a sum the payers who keep trading cannot avoid (CR-8b, CR-3); with fewer trades, the revenue falls short of the payment
 % times the old base (CR-4 with CR-8b).
 c_charged(C, E) :- charge(C, E, _, _).
@@ -185,11 +185,10 @@ effect(c_charged(C, E), A, "quantity_traded", decrease, short, invisible, "B") :
 p_moves(C, E, S) :- c_charged(C, E), moves(E, S, P1, P2, P3), ok(P1), ok(P2), ok(P3).
 fired(cr_6, p_moves(C, E, S), P) :- p_moves(C, E, S), moves(E, S, P1, P2, P3), P = (P1; P2; P3), P != none.
 fired(cr_5, p_moves(C, E, S), c_charged(C, E)) :- p_moves(C, E, S).
-wedge_dir(S, increase) :- charge(_, _, S, _).
-wedge_dir(S, decrease) :- charge(_, _, T, _), side(S), side(T), S != T.
-effect(p_moves(C, E, S), A, V, D, short, invisible, "B") :- p_moves(C, E, S), price_var(E, S, V), party(E, S, A), charge(C, E, T, _), c_wedge(T, S, D).
-c_wedge(T, T, increase) :- side(T).
-c_wedge(T, S, decrease) :- side(T), side(S), S != T.
+% The wedge raises what buyers pay and lowers what sellers keep, whichever side the payment is levied on (CR-5c; found on
+% the blind WE-002 record, a payment levied on sellers).
+effect(p_moves(C, E, S), A, V, D, short, invisible, "B") :- p_moves(C, E, S), price_var(E, S, V), party(E, S, A), c_wedge(S, D).
+c_wedge(buyer, increase). c_wedge(seller, decrease).
 c_paid(C, E) :- c_charged(C, E).
 fired(cr_8, c_paid(C, E), c_charged(C, E)) :- c_paid(C, E).
 effect(c_paid(C, E), R, V, increase, short, visible, "A") :- c_paid(C, E), charge(C, E, _, R), receipt_var(C, V).
