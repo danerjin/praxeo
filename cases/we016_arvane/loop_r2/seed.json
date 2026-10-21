@@ -1,0 +1,43 @@
+{
+ "name": "WE-016 Arvane Interior Design Practice Act (loop_r2 seed)",
+ "exchanges": [
+  {"id": "e_home", "buyer": "clients.residential", "seller": "designers.arvane",
+   "unsatisfied_seller": "designers.unlicensed",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_comm", "buyer": "clients.commercial", "seller": "designers.arvane",
+   "unsatisfied_seller": "designers.unlicensed",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "capped": [
+  {"component": "k1", "exchange": "e_home", "holders": ["designers.grandfathered"], "wider_price": false, "premises": ["a1", "a2"]},
+  {"component": "k1", "exchange": "e_comm", "holders": ["designers.grandfathered", "architects.arvane"], "wider_price": false, "premises": ["a1", "a2"]},
+  {"component": "k3", "exchange": "e_comm", "holders": ["designers.grandfathered", "architects.arvane"], "wider_price": false, "premises": ["a5"]}
+ ],
+ "charges": [
+  {"component": "k1_fee", "exchange": "e_home", "payer_side": "seller", "receiver": "board.interior_design",
+   "receipt_variable": "non_tax_receipts", "basis": "operating"}
+ ],
+ "compliance": [
+  {"component": "k1", "actor": "designers.grandfathered"},
+  {"component": "k3", "actor": "clients.commercial"}
+ ],
+ "enforcers": [
+  {"component": "k4", "actor": "board.interior_design"}
+ ],
+ "funded": [
+  {"component": "k4", "actor": "taxpayers", "premises": ["s2"]},
+  {"component": "k4", "actor": "designers.grandfathered", "premises": ["s3"]}
+ ],
+ "announced": [
+  {"component": "k1", "premises": ["s1"]},
+  {"component": "k3", "premises": ["s1"]}
+ ],
+ "assumptions": {
+  "a1": {"text": "Many practitioners and would-be entrants lack the degree and would not otherwise get it, so the requirement binds.", "p": 0.9, "class": "binding"},
+  "a2": {"text": "The Board enforces often enough, with unenforceable contracts as a further deterrent, that many comply or stop.", "p": 0.7, "class": "enforcement"},
+  "a5": {"text": "Building departments reject commercial interior plans without a stamp.", "p": 0.85, "class": "enforcement"},
+  "s1": {"text": "Designers and clients expect the Act to take effect.", "p": 0.95, "class": "expectations"},
+  "s2": {"text": "The Board is funded in part from the general budget.", "p": 0.97, "class": "other"},
+  "s3": {"text": "The Board is funded in part from license fees.", "p": 0.97, "class": "other"}
+ }
+}

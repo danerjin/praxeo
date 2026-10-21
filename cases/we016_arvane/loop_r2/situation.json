@@ -1,0 +1,426 @@
+{
+ "name": "WE-016 Arvane Interior Design Practice Act (loop_r2 seed)",
+ "exchanges": [
+  {
+   "id": "e_home",
+   "buyer": "clients.residential",
+   "seller": "designers.arvane",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": "designers.unlicensed",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_comm",
+   "buyer": "clients.commercial",
+   "seller": "designers.arvane",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": "designers.unlicensed",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q15_some_unlicensed_practice_continues_undet"
+   ],
+   "exchange": "e_home",
+   "kind": "outside",
+   "side": null,
+   "actor": "designers.unlicensed",
+   "variables": [
+    "informal_activity"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q11_residential_clients_have_close_exempt_or"
+   ],
+   "component": "k1",
+   "chooser": "clients.residential",
+   "actor": "clients.residential",
+   "variables": [
+    "home_production"
+   ]
+  },
+  {
+   "premises": [
+    "q12_velmark_based_designers_serve_arvane_hom"
+   ],
+   "component": "k1",
+   "chooser": "clients.residential",
+   "actor": "clients.residential",
+   "variables": [
+    "cross_border_purchases"
+   ]
+  },
+  {
+   "premises": [
+    "q14_some_grandfathered_designers_would_other"
+   ],
+   "component": "k1",
+   "chooser": "designers.grandfathered",
+   "actor": "designers.grandfathered",
+   "variables": [
+    "turnover"
+   ]
+  },
+  {
+   "premises": [
+    "q13_the_retail_exemption_can_be_used_for_ful"
+   ],
+   "component": "k1",
+   "chooser": "designers.unlicensed",
+   "actor": "designers.unlicensed",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q16_supervision_is_costly_or_limited_per_sup"
+   ],
+   "component": "k1",
+   "chooser": "designers.unlicensed",
+   "actor": "designers.unlicensed",
+   "variables": [
+    "wait_time"
+   ]
+  },
+  {
+   "premises": [
+    "q17_some_would_be_entrants_earn_the_accredit"
+   ],
+   "component": "k1",
+   "chooser": "designers.unlicensed",
+   "actor": "schools.design",
+   "variables": [
+    "enrollment"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q7_license_holders_schools_retailers_and_ar"
+   ],
+   "component": "k1",
+   "actor": "architects.arvane"
+  },
+  {
+   "premises": [
+    "q7_license_holders_schools_retailers_and_ar"
+   ],
+   "component": "k1",
+   "actor": "designers.grandfathered"
+  },
+  {
+   "premises": [
+    "q7_license_holders_schools_retailers_and_ar"
+   ],
+   "component": "k1",
+   "actor": "retailers.furnishings"
+  },
+  {
+   "premises": [
+    "q7_license_holders_schools_retailers_and_ar"
+   ],
+   "component": "k1",
+   "actor": "schools.design"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q8_architects_capacity_for_interior_work_ca"
+   ],
+   "source_actor": "architects.arvane",
+   "source_variable": "quantity_supplied",
+   "relation": "supply_price",
+   "actor": "architects.arvane",
+   "variable": "net_price_received"
+  },
+  {
+   "premises": [
+    "q10_architects_take_on_more_commercial_inter"
+   ],
+   "source_actor": "clients.commercial",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "architects.arvane",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q11_residential_clients_have_close_exempt_or",
+    "q13_the_retail_exemption_can_be_used_for_ful"
+   ],
+   "source_actor": "clients.residential",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "retailers.furnishings",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q11_residential_clients_have_close_exempt_or"
+   ],
+   "source_actor": "clients.residential",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "sellers.online_design",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q18_the_next_best_work_of_recent_designers_w"
+   ],
+   "source_actor": "designers.unlicensed",
+   "source_variable": "quantity_traded",
+   "relation": "same_act",
+   "actor": "designers.unlicensed",
+   "variable": "earnings"
+  },
+  {
+   "premises": [
+    "q19_households_that_use_a_store_s_design_hel"
+   ],
+   "source_actor": "retailers.furnishings",
+   "source_variable": "quantity_supplied",
+   "relation": "complement",
+   "actor": "retailers.furnishings",
+   "variable": "quantity_traded"
+  }
+ ],
+ "assets": [],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "designers.grandfathered"
+  },
+  {
+   "component": "k3",
+   "actor": "clients.commercial"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k4",
+   "actor": "board.interior_design"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k4",
+   "actor": "taxpayers",
+   "premises": [
+    "s2"
+   ]
+  },
+  {
+   "component": "k4",
+   "actor": "designers.grandfathered",
+   "premises": [
+    "s3"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "k1_fee",
+   "exchange": "e_home",
+   "payer_side": "seller",
+   "receiver": "board.interior_design",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "capped_payers": [],
+   "basis": "operating"
+  }
+ ],
+ "moves": [],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "s1"
+   ]
+  },
+  {
+   "component": "k3",
+   "premises": [
+    "s1"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q9_commercial_clients_can_bring_projects_fo"
+   ],
+   "component": "k1",
+   "actor": "clients.commercial",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "component": "k1",
+   "exchange": "e_home",
+   "holders": [
+    "designers.grandfathered"
+   ],
+   "wider_price": false
+  },
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "component": "k1",
+   "exchange": "e_comm",
+   "holders": [
+    "designers.grandfathered",
+    "architects.arvane"
+   ],
+   "wider_price": false
+  },
+  {
+   "premises": [
+    "a5"
+   ],
+   "component": "k3",
+   "exchange": "e_comm",
+   "holders": [
+    "designers.grandfathered",
+    "architects.arvane"
+   ],
+   "wider_price": false
+  }
+ ],
+ "banned": [],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [],
+ "assumptions": {
+  "a1": {
+   "text": "Many practitioners and would-be entrants lack the degree and would not otherwise get it, so the requirement binds.",
+   "p": 0.9,
+   "class": "binding"
+  },
+  "a2": {
+   "text": "The Board enforces often enough, with unenforceable contracts as a further deterrent, that many comply or stop.",
+   "p": 0.7,
+   "class": "enforcement"
+  },
+  "a5": {
+   "text": "Building departments reject commercial interior plans without a stamp.",
+   "p": 0.85,
+   "class": "enforcement"
+  },
+  "s1": {
+   "text": "Designers and clients expect the Act to take effect.",
+   "p": 0.95,
+   "class": "expectations"
+  },
+  "s2": {
+   "text": "The Board is funded in part from the general budget.",
+   "p": 0.97,
+   "class": "other"
+  },
+  "s3": {
+   "text": "The Board is funded in part from license fees.",
+   "p": 0.97,
+   "class": "other"
+  },
+  "q7_license_holders_schools_retailers_and_ar": {
+   "text": "License holders, schools, retailers and architects can organize at a cost below their stake.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q8_architects_capacity_for_interior_work_ca": {
+   "text": "Architects' capacity for interior work cannot expand at unchanged fees in the medium run (they are licensed, and their own training pipeline is long).",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q9_commercial_clients_can_bring_projects_fo": {
+   "text": "Commercial clients can bring projects forward into the ten-month window.",
+   "p": 0.6,
+   "class": "expectations"
+  },
+  "q10_architects_take_on_more_commercial_inter": {
+   "text": "Architects take on more commercial interior work.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q11_residential_clients_have_close_exempt_or": {
+   "text": "Residential clients have close exempt or unlicensed substitutes: store design help, online services, doing it themselves.",
+   "p": 0.85,
+   "class": "substitutability"
+  },
+  "q12_velmark_based_designers_serve_arvane_hom": {
+   "text": "Velmark-based designers serve Arvane homes without an Arvane license on a meaningful scale.",
+   "p": 0.4,
+   "class": "mobility"
+  },
+  "q13_the_retail_exemption_can_be_used_for_ful": {
+   "text": "The retail exemption can be used for full-room design given with furniture sales.",
+   "p": 0.75,
+   "class": "substitutability"
+  },
+  "q14_some_grandfathered_designers_would_other": {
+   "text": "Some grandfathered designers would otherwise leave the trade for a time and return.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q15_some_unlicensed_practice_continues_undet": {
+   "text": "Some unlicensed practice continues undetected, mainly in homes.",
+   "p": 0.8,
+   "class": "enforcement"
+  },
+  "q16_supervision_is_costly_or_limited_per_sup": {
+   "text": "Supervision is costly or limited per supervisor, so supervised positions are scarce relative to graduates in the medium run (the assumption of EN-9).",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q17_some_would_be_entrants_earn_the_accredit": {
+   "text": "Some would-be entrants earn the accredited degree in order to qualify.",
+   "p": 0.7,
+   "class": "alternative_uses"
+  },
+  "q18_the_next_best_work_of_recent_designers_w": {
+   "text": "The next-best work of recent designers who leave (store design jobs, other occupations) pays less in money than their design practice.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q19_households_that_use_a_store_s_design_hel": {
+   "text": "Households that use a store's design help buy most furnishings from that store.",
+   "p": 0.75,
+   "class": "other"
+  }
+ }
+}
