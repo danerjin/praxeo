@@ -87,7 +87,8 @@ def expand(seed: S.Situation, proposer: Proposer, decider, policy: str = "", max
     sit = seed.model_copy(deep=True)
     record = record or PolicyRecord(name=seed.name, jurisdiction="-", rule_maker="-", enacted="-", effective="-", components=[])
     by_text = {v["text"]: k for k, v in sit.assumptions.items()}
-    seen: set[str] = set()
+    seen: dict[str, set] = {}        # actor -> the effects it was last proposed for (a node is revisited when new ones reach it)
+    added: set[str] = set()          # facts already in the situation, so a revisit does not add them twice
     run = Run(situation=sit)
     for depth in range(1, max_depth + 1):
         cons = [c for c in S.run(sit) if c.reported]
@@ -95,12 +96,12 @@ def expand(seed: S.Situation, proposer: Proposer, decider, policy: str = "", max
         for c in cons:
             for a in (c.actor_group or [c.actor_class]):
                 reached.setdefault(a, []).append((",".join(c.group) or c.variable, c.sign, c.window))
-        frontier = sorted(a for a in reached if a not in seen)
+        frontier = sorted(a for a in reached if not set(reached[a]) <= seen.get(a, set()))
         if not frontier:
             break
         run.rounds = depth
         for actor in frontier:
-            seen.add(actor)
+            seen[actor] = set(reached[actor])
             node = Node(actor=actor, depth=depth, effects=sorted(reached[actor], key=str))
             for prop in proposer.propose(node, sit, policy):
                 atoms = []
@@ -115,6 +116,10 @@ def expand(seed: S.Situation, proposer: Proposer, decider, policy: str = "", max
                                         "p": ans.probability, "rationale": ans.rationale, "decider": getattr(decider, "name", "")})
                     atoms.append(by_text[text])
                 fact = {**prop.fact, "premises": atoms}
+                sig = json.dumps([prop.part, fact], sort_keys=True)
+                if sig in added:
+                    continue
+                added.add(sig)
                 getattr(sit, prop.part).append(_coerce(prop.part, fact))
                 run.log.append({"depth": depth, "node": actor, "proposal": prop.model_dump(), "proposer": proposer.name})
     run.situation = sit

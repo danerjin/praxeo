@@ -68,7 +68,7 @@ class Stake(Premised):
 class Link(Premised):
     source_actor: str
     source_variable: str
-    relation: Literal["complement", "input", "substitute", "output", "yield", "same_act", "cost", "own_price", "currency"]
+    relation: Literal["complement", "input", "substitute", "output", "yield", "same_act", "cost", "own_price", "currency", "supply_price"]
     actor: str
     variable: str = Field(description="One variable, or several comma-separated for a group (labour as employment,hours_worked)")
 
@@ -167,6 +167,7 @@ def _p(prem: list[str]) -> str:
 
 def facts(s: Situation) -> str:
     out = [f"price_kind({_q(v)})." for v in PRICE_VARIABLES]
+    out += ['buy_price("price_paid").', 'sell_price("net_price_received").', 'sell_price("wage_rate").']
     for e in s.exchanges:
         out += [f"party({e.id}, buyer, {_q(e.buyer)}).", f"party({e.id}, seller, {_q(e.seller)})."]
         for side, a in (("buyer", e.unsatisfied_buyer), ("seller", e.unsatisfied_seller)):

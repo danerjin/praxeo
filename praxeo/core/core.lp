@@ -105,11 +105,22 @@ chooser(C, A, worse)  :- h(C, E, _), burdened(E, S), party(E, S, A).
 chooser(C, A, worse)  :- h(C, E, D), long(D, S), unsatisfied(E, S, A).
 chooser(C, A, better) :- h(C, E, _), favored(E, S), party(E, S, A).
 chooser(C, A, worse)  :- c_charged(C, E), charge(C, E, S, _), party(E, S, A).
+% Anyone whose price moved is burdened or favored too, whether or not they trade in the policy's own exchange (CR-4: a buyer
+% whose price rose, a seller whose price or wage fell; found on the blind WE-062 loop: packaging users bear a tax by price).
+% buy_price(V), sell_price(V): which price variables a buyer and a seller receive (vocabulary facts from situation.py).
+side_price(V) :- buy_price(V).
+side_price(V) :- sell_price(V).
+price_chooser(A, worse)  :- moved(A, V, increase), buy_price(V).
+price_chooser(A, better) :- moved(A, V, decrease), buy_price(V).
+price_chooser(A, worse)  :- moved(A, V, decrease), sell_price(V).
+price_chooser(A, better) :- moved(A, V, increase), sell_price(V).
+chooser(C, A, W) :- alt(C, A, _, _, _, _, _, _), price_chooser(A, W).
 alt_dir(worse, increase, at_least_one_increase). alt_dir(better, decrease, at_least_one_decrease).
 p_alt(C, Ch, A, V) :- alt(C, Ch, A, V, _, P1, P2, P3), chooser(C, Ch, _), ok(P1), ok(P2), ok(P3).
 fired(cr_4, p_alt(C, Ch, A, V), P) :- p_alt(C, Ch, A, V), alt(C, Ch, A, V, _, P1, P2, P3), P = (P1; P2; P3), P != none.
 fired(cr_4, p_alt(C, Ch, A, V), h(C, E, D)) :- p_alt(C, Ch, A, V), h(C, E, D).
 fired(cr_4, p_alt(C, Ch, A, V), c_charged(C, E)) :- p_alt(C, Ch, A, V), c_charged(C, E).
+fired(cr_4, p_alt(C, Ch, A, V), X) :- p_alt(C, Ch, A, V), price_chooser(Ch, _), effect(X, Ch, V2, _, _, _, _), side_price(V2), not timing_concl(X).
 effect(p_alt(C, Ch, A, V), A, V, Dir, medium, invisible, "B")       :- p_alt(C, Ch, A, V), alt(C, Ch, A, V, plain, _, _, _), chooser(C, Ch, W), alt_dir(W, Dir, _).
 group_effect(p_alt(C, Ch, A, V), A, V, G, medium, invisible, "B")   :- p_alt(C, Ch, A, V), alt(C, Ch, A, V, group, _, _, _), chooser(C, Ch, W), alt_dir(W, _, G).
 
@@ -125,6 +136,8 @@ effect(p_stake(C, A), A, "lobbying_effort", increase, medium, invisible, "B") :-
 % expected (c).
 side_dir(E, S, decrease) :- burdened(E, S).
 side_dir(E, S, increase) :- favored(E, S).
+% A payment attached to trading burdens both sides: the wedge takes from what buyers pay and what sellers keep (CR-5c).
+side_dir(E, S, decrease) :- c_charged(_, E), side(S).
 p_yield(E, A) :- yield(E, S, A, P1, P2, P3), side_dir(E, S, _), ok(P1), ok(P2), ok(P3).
 fired(cr_7, p_yield(E, A), P) :- p_yield(E, A), yield(E, _, A, P1, P2, P3), P = (P1; P2; P3), P != none.
 effect(p_yield(E, A), A, "return_on_capital", D, short, invisible, "B") :- p_yield(E, A), yield(E, S, A, _, _, _), side_dir(E, S, D).
@@ -174,6 +187,9 @@ rel_dir(same_act,   K,        D, D) :- opp(D, _), K = (price; quantity).
 rel_dir(cost,       price,    D, E) :- opp(D, E).
 rel_dir(own_price,  price,    D, E) :- opp(D, E).
 rel_dir(currency,   quantity, D, D) :- opp(D, _).
+% Supply response (CR-6 0.9): with the link's premise that supply is slow to respond in the period, more demand for a good
+% raises its price, less lowers it.
+rel_dir(supply_price, quantity, D, D) :- opp(D, _).
 % Only changes outside a timing window propagate (an order brought forward is not a lasting change in trade). Timing
 % conclusions are named from facts alone, so the negation stays on facts.
 moved(A, V, D) :- effect(X, A, V, D, _, _, _), opp(D, _), not timing_concl(X).
