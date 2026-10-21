@@ -1,0 +1,130 @@
+{
+ "name": "WE-016 Arvane Interior Design Practice Act (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_design",
+   "buyer": "clients.design",
+   "seller": "designers.licensed",
+   "unsatisfied_seller": "designers.unlicensed",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_plan",
+   "buyer": "applicants.permit",
+   "seller": "designers.licensed",
+   "unsatisfied_seller": "designers.unlicensed",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  }
+ ],
+ "margins": [
+  {
+   "exchange": "e_design",
+   "kind": "outside",
+   "actor": "designers.unlicensed",
+   "variables": [
+    "informal_activity"
+   ],
+   "premises": [
+    "a3"
+   ]
+  }
+ ],
+ "capped": [
+  {
+   "component": "k1",
+   "exchange": "e_design",
+   "holders": [
+    "designers.licensed",
+    "designers.grandfathered"
+   ],
+   "wider_price": false,
+   "premises": [
+    "a1",
+    "a2"
+   ]
+  },
+  {
+   "component": "k3",
+   "exchange": "e_plan",
+   "holders": [
+    "designers.licensed",
+    "designers.grandfathered",
+    "architects"
+   ],
+   "wider_price": false,
+   "premises": [
+    "a5"
+   ]
+  }
+ ],
+ "charges": [
+  {
+   "component": "k1_fee",
+   "exchange": "e_design",
+   "payer_side": "seller",
+   "receiver": "officials.board",
+   "receipt_variable": "non_tax_receipts"
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": []
+  },
+  {
+   "component": "k3",
+   "premises": []
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "designers.licensed"
+  },
+  {
+   "component": "k3",
+   "actor": "applicants.permit"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k1",
+   "actor": "officials.board"
+  },
+  {
+   "component": "k3",
+   "actor": "officials.board"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k1",
+   "actor": "taxpayers",
+   "premises": []
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Many practitioners and would-be entrants lack the degree and would not otherwise get it, so the requirement binds.",
+   "p": 0.9,
+   "class": "binding"
+  },
+  "a2": {
+   "text": "The Board enforces often enough, with unenforceable contracts as a further deterrent, that many comply or stop.",
+   "p": 0.7,
+   "class": "enforcement"
+  },
+  "a3": {
+   "text": "Some unlicensed practice continues undetected, mainly in homes.",
+   "p": 0.8,
+   "class": "enforcement"
+  },
+  "a5": {
+   "text": "Building departments reject commercial interior plans without a stamp.",
+   "p": 0.85,
+   "class": "enforcement"
+  }
+ }
+}

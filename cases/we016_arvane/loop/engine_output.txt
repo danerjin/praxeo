@@ -1,0 +1,37 @@
+DONE in 3 rounds, 12 questions
+R applicants.permit compliance_cost  increase
+R applicants.permit permit_applications announcement increase
+R applicants.permit price_paid  increase
+R applicants.permit quantity_traded  decrease
+R architects asset_value  increase
+R architects commercial_interior_work  increase
+R architects lobbying_effort  increase
+R architects net_price_received  increase
+R clients.design commercial_projects_started announcement increase
+R clients.design ['own_design_work', 'online_service_use']  at_least_one_increase
+R clients.design price_paid  increase
+R clients.design quantity_traded  decrease
+R designers.grandfathered asset_value  increase
+R designers.grandfathered lobbying_effort  increase
+R designers.grandfathered net_price_received  increase
+R designers.grandfathered temporary_exits_from_trade  decrease
+R designers.licensed asset_value  increase
+R designers.licensed compliance_cost  increase
+R designers.licensed lobbying_effort  increase
+R designers.licensed net_price_received  increase
+R designers.licensed quantity_traded  decrease
+R designers.licensed resources_available_other_uses  decrease
+R designers.unlicensed exits_from_trade  increase
+R designers.unlicensed informal_activity  increase
+R designers.unlicensed quantity_traded  decrease
+- designers.velmark arvane_clients_served  increase
+R officials.board enforcement_cost  increase
+R officials.board non_tax_receipts  increase
+R retailers.furnishings design_help_provided  increase
+R retailers.furnishings furnishings_sales  increase
+R retailers.furnishings lobbying_effort  increase
+R schools.design_programs enrolment  increase
+R schools.design_programs lobbying_effort  increase
+R students.interior_design degree_program_enrolment  increase
+R students.interior_design wait_for_supervised_position  increase
+R taxpayers resources_available_other_uses  decrease
