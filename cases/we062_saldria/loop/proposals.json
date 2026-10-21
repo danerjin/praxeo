@@ -118,21 +118,6 @@
     "source_actor": "converters.domestic",
     "source_variable": "net_price_received",
     "relation": "yield",
-    "actor": "owners.converters",
-    "variable": "asset_value"
-   },
-   "premises": [
-    "Converting plants are specific to plastic converting and cannot move to other uses without large losses.",
-    "Investors expect the tax, and its exemption, to last at least several years."
-   ],
-   "source": "The tax has no expiry."
-  },
-  {
-   "part": "links",
-   "fact": {
-    "source_actor": "converters.domestic",
-    "source_variable": "net_price_received",
-    "relation": "yield",
     "actor": "converters.domestic",
     "variable": "investment_target"
    },
@@ -173,20 +158,6 @@
    "part": "links",
    "fact": {
     "source_actor": "converters.domestic",
-    "source_variable": "product_attribute",
-    "relation": "complement",
-    "actor": "recyclers.domestic",
-    "variable": "price_complement"
-   },
-   "premises": [
-    "Recycled resin delivered in Saldria can expand only at a higher cost: collection and sorting are near capacity, added collection reaches more dispersed sources and dirtier bales, and regional resin costs more (C-30); the cost per tonne does not fall as supply expands within the medium run."
-   ],
-   "source": "collection is near the capacity of current routes and sorting lines"
-  },
-  {
-   "part": "links",
-   "fact": {
-    "source_actor": "converters.domestic",
     "source_variable": "reclassification",
     "relation": "same_act",
     "actor": "sellers.substitute_packaging",
@@ -196,6 +167,45 @@
     "Paper and board, glass and metal packaging serve some of the same ends as plastic for some users."
    ],
    "source": "Two domestic paper and board mills (about 92% capacity use); one glass container plant"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "converters.domestic",
+    "source_variable": "product_attribute",
+    "relation": "supply_price",
+    "actor": "recyclers.domestic",
+    "variable": "price_complement"
+   },
+   "premises": [
+    "Recycled resin delivered in Saldria can expand only at a higher cost: collection and sorting are near capacity, added collection reaches more dispersed sources and dirtier bales, and regional resin costs more (C-30); the cost per tonne does not fall as supply expands within the medium run."
+   ],
+   "source": "collection is near the capacity of current routes and sorting lines"
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_dom",
+    "side": "seller",
+    "actor": "owners.converters"
+   },
+   "premises": [
+    "Converting plants are specific to plastic converting and cannot move to other uses without large losses.",
+    "Investors expect the tax, and its exemption, to last at least several years."
+   ],
+   "source": "Of which made by domestic converters from resin: about 210 converters; the tax has no expiry"
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_dom",
+    "side": "seller",
+    "actor": "converters.domestic"
+   },
+   "premises": [
+    "Investors expect the tax, and its exemption, to last at least several years."
+   ],
+   "source": "The tax has no expiry. The rate is fixed in talers and not indexed."
   }
  ],
  "buyers.foreign": [
@@ -467,20 +477,6 @@
    "fact": {
     "source_actor": "packaging_users",
     "source_variable": "price_paid",
-    "relation": "own_price",
-    "actor": "packaging_users",
-    "variable": "quantity_demanded"
-   },
-   "premises": [
-    "Some packaging users can reduce their use of taxed plastic (lighter designs, recycled content, other materials) at a cost below 200 T a tonne."
-   ],
-   "source": "200 T per tonne"
-  },
-  {
-   "part": "links",
-   "fact": {
-    "source_actor": "packaging_users",
-    "source_variable": "price_paid",
     "relation": "cost",
     "actor": "exporters.packaged_goods",
     "variable": "quantity_supplied"
@@ -490,20 +486,6 @@
     "Packaging is a material part of the cost of some packaged goods (6% to 10% for bottled water and pre-packed produce), and their sellers cannot switch fully at the old cost."
    ],
    "source": "Packaging leaving Saldria around exported goods about 45,000 t; no export relief"
-  },
-  {
-   "part": "links",
-   "fact": {
-    "source_actor": "packaging_users",
-    "source_variable": "quantity_traded",
-    "relation": "substitute",
-    "actor": "packaging_users",
-    "variable": "quantity_substitute"
-   },
-   "premises": [
-    "Paper and board, glass and metal packaging serve some of the same ends as plastic for some users."
-   ],
-   "source": "Two domestic paper and board mills ... one glass container plant ... one can maker"
   },
   {
    "part": "links",
@@ -520,11 +502,71 @@
    "source": "Two domestic paper and board mills ... one glass container plant ... one can maker"
   },
   {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "packaging_users",
+    "actor": "packaging_users",
+    "variables": [
+     "specification_level"
+    ]
+   },
+   "premises": [
+    "Some components can be made lighter at a cost below the tax saved."
+   ],
+   "source": "200 T per tonne, by weight"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "packaging_users",
+    "actor": "packaging_users",
+    "variables": [
+     "product_attribute"
+    ]
+   },
+   "premises": [
+    "For some components, raising recycled content to 30% costs less than the tax."
+   ],
+   "source": "s. 4(1): ... 30 per cent or more recycled plastic is not chargeable"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "packaging_users",
+    "actor": "packaging_users",
+    "variables": [
+     "quantity_substitute"
+    ]
+   },
+   "premises": [
+    "Paper and board, glass and metal packaging serve some of the same ends as plastic for some users."
+   ],
+   "source": "Two domestic paper and board mills (about 92% capacity use) ... one glass container plant ... one can maker"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "packaging_users",
+    "actor": "packaging_users",
+    "variables": [
+     "transaction_size"
+    ]
+   },
+   "premises": [
+    "Some firms that would handle 10 to 13 t can keep under 10 t at a cost below the notch (2,000 T of tax and 2,500 to 4,000 T of compliance a year)."
+   ],
+   "source": "s. 7: less than 10 tonnes in the previous calendar year is not liable"
+  },
+  {
    "part": "links",
    "fact": {
     "source_actor": "packaging_users",
     "source_variable": "quantity_substitute",
-    "relation": "same_act",
+    "relation": "supply_price",
     "actor": "sellers.substitute_packaging",
     "variable": "net_price_received"
    },
