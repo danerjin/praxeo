@@ -14,9 +14,17 @@
    "seller": "farmers.velmora",
    "buyer_price_var": "price_paid",
    "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e3",
+   "buyer": "officials.enforcement",
+   "seller": "plants.commodity",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
   }
  ],
  "held": [
+  {"component": "k2", "exchange": "e3", "direction": "above", "premises": ["a1"]},
   {"component": "k1", "exchange": "e1", "direction": "above", "premises": ["a1"]},
   {"component": "k1", "exchange": "e2", "direction": "above", "premises": ["a1"]}
  ],
@@ -75,13 +83,37 @@
    "premises": ["a7", "a2"]
   },
   {
-   "source_actor": "farmers.velmora",
+   "source_actor": "plants.commodity",
    "source_variable": "net_price_received",
    "relation": "yield",
    "actor": "plants.commodity",
    "variable": "investment_target",
    "premises": ["a13", "a2"]
+  },
+  {
+   "source_actor": "plants.commodity",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "farmers.velmora",
+   "variable": "quantity_traded"
+  },
+  {
+   "source_actor": "officials.enforcement",
+   "source_variable": "inventory_held",
+   "relation": "substitute",
+   "actor": "buyers.food_programs",
+   "variable": "quantity_traded",
+   "premises": ["a9", "a12"]
   }
+ ],
+ "backstops": [
+  {"component": "k2", "exchange": "e3", "buyer": "officials.enforcement", "outlay_variable": "subsidy_outlay"}
+ ],
+ "announced": [
+  {"component": "k2", "premises": ["a2"]}
+ ],
+ "timing": [
+  {"component": "k2", "actor": "plants.commodity", "variable": "inventory_held", "mode": "carry_over", "premises": ["a12", "a2"]}
  ],
  "yields": [
   {"exchange": "e2", "side": "buyer", "actor": "plants.specialty", "premises": ["a4"]},
