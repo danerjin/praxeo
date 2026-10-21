@@ -48,3 +48,9 @@ Not added:
 - Suppliers' (refiners') timing under a13 and a8: refiners are not a party of a held exchange.
 - Backstops: section 1 has no buyer or seller of last resort.
 - Stations bringing sales forward before Day 5: not supported by a8's wording ("shift purchases").
+
+## Revision r3 (format at 73b9bc2)
+No change to situation.json. Reasons:
+- parts: the only candidate whole is "drivers" (drivers.current and drivers.unserved). Neither section 1 nor any assumption names a total for drivers, stations or any other class; a3, a10 and a11 speak of drivers, unserved drivers and eastern drivers, but name no variable whose total is at issue. Adding a whole would only match an imagined answer, so none is added.
+- dominance: no assumption states that one direction dominates a chain that clashes with another. a8 (shifting purchases by two days) and a13/a14 (end of the order expected or not) give expectations, not dominance; section 1 gives no figures that settle a sign by arithmetic. None added.
+- Effect of the new engine: the first_months window is now combined automatically (early_price from r2 against the cap): drivers.current price_paid and stations.retail net_price_received come out ambiguous (reported) in first_months, with no dominance premise to settle them.
