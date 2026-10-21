@@ -205,3 +205,20 @@ def test_pc_17_a_mandated_term_is_a_charge_paid_in_kind_to_the_counterparty():
     got = _run(exchanges=x, charges=ch, moves=[{"exchange": "e", "side": "seller", "premises": ["a3"]}])
     assert {("workers", "non_wage_compensation", "increase", None), ("workers", "wage_rate", "decrease", None),
             ("employers", "quantity_traded", "decrease", None)} <= got
+
+
+def test_en_3_a_fee_fixed_per_seller_bears_on_entry_not_on_each_trade():
+    ch = [{**TAX["charges"][0], "basis": "operating", "receipt_variable": "non_tax_receipts", "projection_variable": None}]
+    got = _run(exchanges=TAX["exchanges"], charges=ch)
+    assert ("sellers", "number_of_sellers", "decrease", None) in got
+    assert ("buyers", "quantity_traded", "decrease", None) not in got
+
+
+def test_sb_3_more_offered_lowers_the_price_against_a_grants_rise():
+    link = [{"source_actor": "producers", "source_variable": "quantity_traded", "relation": "supply", "actor": "producers",
+             "variable": "net_price_received", "premises": ["a4"]}]
+    assert ("producers", "net_price_received", "ambiguous", None) in _run(**GRANT, links=link)
+
+
+def test_oc_1_complying_uses_up_means():
+    assert ("buyers", "resources_available_other_uses", "decrease", None) in _run(**TAX, compliance=[{"component": "k", "actor": "buyers"}])

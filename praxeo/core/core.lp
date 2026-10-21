@@ -20,6 +20,7 @@
 %   link(A0, V0, Rel, A, V, P1, P2, P3).    CR-9: a change in A0's V0 reaches A's V through relation Rel
 %   asset(E, Side, Owner, P1, P2, P3). yield(E, Side, A, P1, P2, P3).   CR-7c, CR-7b: assets and returns tied to a side
 %   transfer(E, P1, P2, P3).                CR-8b: the held price is a transfer between those who still trade
+%   operating(C): a charge fixed per seller, not per unit (CR-4 0.8).
 %   compliance(C, A). enforcer(C, A). funded(C, A, P1, P2, P3). fixed_budget(C, A, P1, P2, P3).   CR-8c
 %   charge(C, E, Side, Receiver).           CR-1 op 3: C attaches a payment to trading in E, paid by Side, to Receiver
 %   receipt_var(C, V). projection_var(C, V). the vocabulary's names for the receipt and its shortfall against a static
@@ -172,6 +173,8 @@ effect(p_transfer(E), A, "resources_available_other_uses", D, medium, invisible,
 p_comply(C, A) :- compliance(C, A).
 fired(cr_8, p_comply(C, A), compliance(C, A)) :- p_comply(C, A).
 effect(p_comply(C, A), A, "compliance_cost", increase, short, invisible, "A") :- p_comply(C, A).
+% CR-8c: what is spent on complying is used up, so it is withdrawn from the complier's other uses.
+effect(p_comply(C, A), A, "resources_available_other_uses", decrease, short, invisible, "A") :- p_comply(C, A).
 p_enforce(C, A) :- enforcer(C, A).
 fired(cr_8, p_enforce(C, A), enforcer(C, A)) :- p_enforce(C, A).
 effect(p_enforce(C, A), A, "enforcement_cost", increase, short, invisible, "A") :- p_enforce(C, A).
@@ -207,6 +210,8 @@ rel_dir(currency,   quantity, D, D) :- opp(D, _).
 % Supply response (CR-6 0.9): with the link's premise that supply is slow to respond in the period, more demand for a good
 % raises its price, less lowers it.
 rel_dir(supply_price, quantity, D, D) :- opp(D, _).
+% Supply (CR-6): more of a good offered, at given demand, lowers the price that clears it; less raises it.
+rel_dir(supply, quantity, D, E) :- opp(D, E).
 % Only changes outside a timing window propagate (an order brought forward is not a lasting change in trade). Timing
 % conclusions are named from facts alone, so the negation stays on facts.
 moved(A, V, D) :- effect(X, A, V, D, _, _, _), opp(D, _), not timing_concl(X), not response_concl(X).
@@ -237,7 +242,13 @@ c_qty(C, E) :- c_moved_trade(C, E), qty_premise(C, E, P1, P2, P3), ok(P1), ok(P2
 fired(cr_4, c_qty(C, E), c_charged(C, E)) :- c_qty(C, E), c_charged(C, E).
 fired(cr_4, c_qty(C, E), c_granted(C, E)) :- c_qty(C, E), c_granted(C, E).
 fired(cr_4, c_qty(C, E), P) :- c_qty(C, E), qty_premise(C, E, P1, P2, P3), P = (P1; P2; P3), P != none.
-c_moved_trade(C, E) :- c_charged(C, E).
+c_moved_trade(C, E) :- c_charged(C, E), not operating(C).
+% A payment fixed per seller (a licence fee, a registration) rather than per unit bears on whether the seller operates, not
+% on each trade (CR-4 0.8): those whose ranking of operating over leaving it reverses leave, so the number of payers falls;
+% the unit price moves only with the premise on the other side's response (moves/5).
+c_operating(C, E) :- c_charged(C, E), operating(C).
+fired(cr_4, c_operating(C, E), c_charged(C, E)) :- c_operating(C, E).
+effect(c_operating(C, E), A, "number_of_sellers", decrease, medium, invisible, "B") :- c_operating(C, E), charge(C, E, S, _), party(E, S, A).
 c_moved_trade(C, E) :- c_granted(C, E).
 p_moves(C, E, S) :- c_charged(C, E), moves(E, S, P1, P2, P3), ok(P1), ok(P2), ok(P3).
 fired(cr_6, p_moves(C, E, S), P) :- p_moves(C, E, S), moves(E, S, P1, P2, P3), P = (P1; P2; P3), P != none.

@@ -68,7 +68,7 @@ class Stake(Premised):
 class Link(Premised):
     source_actor: str
     source_variable: str
-    relation: Literal["complement", "input", "substitute", "output", "yield", "same_act", "cost", "own_price", "currency", "supply_price"]
+    relation: Literal["complement", "input", "substitute", "output", "yield", "same_act", "cost", "own_price", "currency", "supply_price", "supply"]
     actor: str
     variable: str = Field(description="One variable, or several comma-separated for a group (labour as employment,hours_worked)")
 
@@ -87,6 +87,7 @@ class Charge(BaseModel):
     receipt_variable: str = Field(description="tax_revenue for a tax, non_tax_receipts for a fee, non_wage_compensation for a mandated term")
     quantity_premises: list[str] = Field(default=[], max_length=3, description="Premises the fall in trades rests on, where the payment is worth something to its receiver (a mandated term)")
     projection_variable: Optional[str] = Field(default=None, description="tax_revenue_vs_static_projection for a tax")
+    basis: Literal["unit", "operating"] = Field(default="unit", description="operating: a sum fixed per seller (a licence fee), not per unit sold (CR-4 0.8)")
 
 
 class Grant(BaseModel):
@@ -231,6 +232,8 @@ def facts(s: Situation) -> str:
             out.append(f"qty_premise({ch.component}, {ch.exchange}, {_p(ch.quantity_premises)}).")
         if ch.projection_variable:
             out.append(f"projection_var({ch.component}, {_q(ch.projection_variable)}).")
+        if ch.basis == "operating":
+            out.append(f"operating({ch.component}).")
     for m in s.moves:
         out.append(f"moves({m.exchange}, {m.side}, {_p(m.premises)}).")
     for d in s.discretion:

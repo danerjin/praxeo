@@ -165,7 +165,7 @@ engine has already derived for it. Propose only what this node needs for the rea
 - alternatives (CR-4): what this actor can do instead of an option the policy makes worse or better; `fact`: {component,
   chooser: this actor, actor: whose variable measures the alternative's use, variables: [one, or several for a group]}.
 - links (CR-9): markets reached through this actor's changed variables; `fact`: {source_actor: this actor, source_variable,
-  relation: complement | input | substitute | output | yield | same_act | cost | own_price | currency, actor, variable}.
+  relation: complement | input | substitute | output | yield | same_act | cost | own_price | currency | supply_price (more demand raises the price where supply is slow) | supply (more offered lowers the price), actor, variable}.
 - margins (CR-6): terms or quantities this actor controls under a held price, criteria it is chosen by, trade outside the rule.
 - stakes (lobbying), assets and yields tied to an exchange side, timing (bring_forward or carry_over), parts (a class total),
   dominance (only where a premise states that one direction outweighs another).

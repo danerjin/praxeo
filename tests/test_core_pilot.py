@@ -38,6 +38,7 @@ WE009_SHORT = {"unions": "workers.adult_low_wage"}
 WE009_EXTRA = {
     ("employers.low_wage", "quantity_traded", "decrease", None): "CR-5a on the burdened side: hires prevented at the floor; the table records them in the group C-3",
     ("workers.prospective", "quantity_traded", "decrease", None): "CR-5a on the unsatisfied side; the table records it as excess supply (C-5)",
+    ("employers.low_wage", "resources_available_other_uses", "decrease", None): "CR-8c: what employers spend on complying (records, the youth-rate checks) is used up; the table records the compliance cost",
 }
 
 
