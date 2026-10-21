@@ -1,0 +1,482 @@
+{
+ "buyers.fresh_fish": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.fresh_fish",
+    "actor": "buyers.fresh_fish",
+    "variables": [
+     "quantity_substitute"
+    ]
+   },
+   "premises": [
+    "Fresh-fish buyers turn to saithe and ling when ridge cod costs more."
+   ],
+   "premise_class": "substitutability",
+   "source": "About 30% is sold fresh in Kallmark to fish shops and restaurants. Nearby fisheries for saithe and ling are open as well and are not covered by the Act."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.fresh_fish",
+    "source_variable": "price_paid",
+    "relation": "substitute",
+    "actor": "sellers.substitutes",
+    "variable": "net_price_received"
+   },
+   "premises": [
+    "Fresh-fish buyers turn to saithe and ling when ridge cod costs more.",
+    "Fresh local ridge cod is only partly substitutable with imported or frozen whitefish."
+   ],
+   "premise_class": "substitutability",
+   "source": "Nearby fisheries for saithe and ling are open as well and are not covered by the Act."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.fresh_fish",
+    "source_variable": "price_paid",
+    "relation": "substitute",
+    "actor": "sellers.substitutes",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Fresh-fish buyers turn to saithe and ling when ridge cod costs more."
+   ],
+   "premise_class": "substitutability",
+   "source": "Nearby fisheries for saithe and ling are open as well and are not covered by the Act."
+  }
+ ],
+ "crew.ridge_cod": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k3",
+    "actor": "crew.ridge_cod"
+   },
+   "premises": [
+    "Recipients, processors and crew can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "The cost of acquiring quota shall not be deducted as a trip expense in crew settlements."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "crew.ridge_cod",
+    "actor": "crew.ridge_cod",
+    "variables": [
+     "job_changes"
+    ]
+   },
+   "premises": [
+    "Vessels and crew have other uses: the open saithe and ling fisheries, or sale abroad."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "Nearby fisheries for saithe and ling are open as well and are not covered by the Act."
+  }
+ ],
+ "officials.enforcement": [],
+ "processors.ridge_cod": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "processors.ridge_cod",
+    "actor": "sellers.substitutes",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "The plants can replace some ridge cod with other species."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "About 70% is frozen or filleted by four processing plants ... alongside close substitutes such as saithe and haddock from other countries."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "processors.ridge_cod",
+    "actor": "vessel_owners.acquiring",
+    "variables": [
+     "quantity_demanded"
+    ]
+   },
+   "premises": [
+    "Processors value secure supply enough to buy a vessel in order to hold shares."
+   ],
+   "premise_class": "other",
+   "source": "Only owners of at least one registered vessel may hold shares."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "processors.ridge_cod",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "workers.processing",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "About 70% is frozen or filleted by four processing plants"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "processors.ridge_cod",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "sellers.foreign",
+    "variable": "net_price_received"
+   },
+   "premises": [
+    "The fall in Kallmark's exports (about a sixth of a 7% share) moves the North Basin whitefish price by more than a negligible amount."
+   ],
+   "premise_class": "other",
+   "source": "exported to the North Basin whitefish market, of which Kallmark's ridge cod is about 7%, alongside close substitutes such as saithe and haddock from other countries"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "processors.ridge_cod",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "sellers.foreign",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Foreign sellers of saithe and haddock can sell more in the North Basin market when Kallmark sells less (from other markets, stocks or catch not yet taken)."
+   ],
+   "premise_class": "substitutability",
+   "source": "alongside close substitutes such as saithe and haddock from other countries"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "processors.ridge_cod",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "buyers.north_basin",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "The fall in Kallmark's exports (about a sixth of a 7% share) moves the North Basin whitefish price by more than a negligible amount."
+   ],
+   "premise_class": "other",
+   "source": "exported to the North Basin whitefish market, of which Kallmark's ridge cod is about 7%"
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_proc",
+    "side": "buyer",
+    "actor": "processors.ridge_cod"
+   },
+   "premises": [
+    "The plants are specific to ridge cod and compete for the fish landed, while their output is priced in the wider market."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "four processing plants (two at Brennhavn, one at Haldrun, one at Tornhavn)"
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_proc",
+    "side": "buyer",
+    "actor": "processors.ridge_cod"
+   },
+   "premises": [
+    "The plants are specific to ridge cod and compete for the fish landed, while their output is priced in the wider market.",
+    "The plants cannot fully replace ridge cod with other species."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "four processing plants"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "processors.ridge_cod"
+   },
+   "premises": [
+    "Recipients, processors and crew can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Total allowable catch of 40,000 tonnes a year for 2028 to 2032."
+  }
+ ],
+ "taxpayers": [],
+ "vessel_owners": [
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_proc",
+    "kind": "outside",
+    "actor": "vessel_owners",
+    "variables": [
+     "discards"
+    ]
+   },
+   "premises": [
+    "Large ridge cod sell for more per kilo than small ones above 35 cm, and the gear catches mixed sizes.",
+    "With observers on 10% of trawler trips and none on coastal boats, discarding is rarely detected."
+   ],
+   "premise_class": "enforcement",
+   "source": "Discarding ridge cod above the minimum landing size is prohibited. Observers on 10% of trips by vessels over 24 m; none on coastal boats."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_proc",
+    "kind": "outside",
+    "actor": "vessel_owners",
+    "variables": [
+     "informal_activity"
+    ]
+   },
+   "premises": [
+    "The ten small harbors are monitored only at scheduled hours, so some landings go unrecorded."
+   ],
+   "premise_class": "enforcement",
+   "source": "Ridge cod may be landed only at 13 designated sites (the three processing ports and ten small harbors)"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_proc",
+    "kind": "outside",
+    "actor": "vessel_owners",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Ridge cod is landed as saithe or ling on a meaningful scale."
+   ],
+   "premise_class": "enforcement",
+   "source": "Nearby fisheries for saithe and ling are open as well and are not covered by the Act."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "vessel_owners",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "crew.ridge_cod",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "About 1,700 crew are paid by lay"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "vessel_owners",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "input_suppliers",
+    "variable": "quantity_demanded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "trip expenses (fuel, ice, bait, landing fees)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "vessel_owners",
+    "source_variable": "net_price_received",
+    "relation": "yield",
+    "actor": "crew.ridge_cod",
+    "variable": "wage_rate"
+   },
+   "premises": [
+    "Crew on most vessels are paid by the lay, a fixed share of each trip's revenue after trip expenses."
+   ],
+   "premise_class": "other",
+   "source": "the crew together receive 45% of each trip's revenue after trip expenses"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "vessel_owners",
+    "source_variable": "right_lease_price",
+    "relation": "cost",
+    "actor": "vessel_owners.acquiring",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Costs per tonne differ materially among vessels, and transfers are not blocked for most owners by the 8% limit."
+   ],
+   "premise_class": "other",
+   "source": "each year's tonnage may be leased. A vessel that lands more than its owner's tonnage must lease the difference within 30 days"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "vessel_owners",
+    "source_variable": "asset_value",
+    "relation": "yield",
+    "actor": "vessel_owners.selling",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Some recipients sell shares, realizing their value."
+   ],
+   "premise_class": "other",
+   "source": "Shares are permanent and may be sold"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "vessel_owners"
+   },
+   "premises": [
+    "Recipients, processors and crew can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "shares are given free to the registered owner of each vessel"
+  }
+ ],
+ "vessel_owners.acquiring": [],
+ "vessel_owners.selling": [],
+ "vessel_owners.shut_out": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "vessel_owners.shut_out",
+    "actor": "sellers.substitutes",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Vessels and crew have other uses: the open saithe and ling fisheries, or sale abroad."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "Nearby fisheries for saithe and ling are open as well and are not covered by the Act."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_proc",
+    "kind": "outside",
+    "actor": "vessel_owners.shut_out",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Ridge cod is landed as saithe or ling on a meaningful scale."
+   ],
+   "premise_class": "enforcement",
+   "source": "Nearby fisheries for saithe and ling are open as well and are not covered by the Act."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_proc",
+    "kind": "outside",
+    "actor": "vessel_owners.shut_out",
+    "variables": [
+     "informal_activity"
+    ]
+   },
+   "premises": [
+    "The ten small harbors are monitored only at scheduled hours, so some landings go unrecorded."
+   ],
+   "premise_class": "enforcement",
+   "source": "Ridge cod may be landed only at 13 designated sites"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "vessel_owners.shut_out",
+    "source_variable": "quantity_traded",
+    "relation": "yield",
+    "actor": "vessel_owners.shut_out",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "The surplus vessels are not absorbed by other fisheries and buyers abroad at unchanged prices."
+   ],
+   "premise_class": "other",
+   "source": "290 vessels did so in 2024"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "vessel_owners.shut_out",
+    "source_variable": "quantity_traded",
+    "relation": "yield",
+    "actor": "vessel_owners.shut_out",
+    "variable": "capital_stock_target"
+   },
+   "premises": [
+    "The surplus vessels are not absorbed by other fisheries and buyers abroad at unchanged prices."
+   ],
+   "premise_class": "other",
+   "source": "290 vessels did so in 2024 (38 trawlers over 24 m ... and 252 coastal boats)"
+  }
+ ],
+ "buyers.north_basin": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.north_basin",
+    "actor": "buyers.north_basin",
+    "variables": [
+     "quantity_substitute"
+    ]
+   },
+   "premises": [
+    "Kallmark's ridge cod is a small part of the North Basin market, with close substitutes."
+   ],
+   "premise_class": "substitutability",
+   "source": "of which Kallmark's ridge cod is about 7%, alongside close substitutes such as saithe and haddock from other countries"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.north_basin",
+    "source_variable": "price_paid",
+    "relation": "own_price",
+    "actor": "buyers.north_basin",
+    "variable": "quantity_demanded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "exported to the North Basin whitefish market"
+  }
+ ],
+ "input_suppliers": [],
+ "sellers.foreign": [],
+ "sellers.substitutes": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.substitutes",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "crew.other_fisheries",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Vessels and crew have other uses: the open saithe and ling fisheries, or sale abroad."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "Nearby fisheries for saithe and ling are open as well and are not covered by the Act."
+  }
+ ],
+ "workers.processing": [],
+ "crew.other_fisheries": []
+}
