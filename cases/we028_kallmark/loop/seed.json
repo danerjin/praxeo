@@ -1,0 +1,42 @@
+{
+ "name": "WE-028 ridge cod catch cap with transferable quota shares (expand-loop blind run)",
+ "exchanges": [
+  {"id": "e_proc", "buyer": "processors.ridge_cod", "seller": "vessel_owners", "unsatisfied_seller": "vessel_owners.shut_out",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_fresh", "buyer": "buyers.fresh_fish", "seller": "vessel_owners", "unsatisfied_seller": "vessel_owners.shut_out",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_shares", "buyer": "vessel_owners.acquiring", "seller": "vessel_owners.selling",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_crew", "buyer": "vessel_owners", "seller": "crew.ridge_cod", "seller_price_var": "wage_rate"}
+ ],
+ "capped": [
+  {"component": "k1", "exchange": "e_proc", "holders": ["vessel_owners"], "wider_price": true, "premises": ["a1", "a2"]},
+  {"component": "k1", "exchange": "e_fresh", "holders": ["vessel_owners"], "wider_price": false, "premises": ["a1", "a2"]}
+ ],
+ "means": [
+  {"component": "k2", "actor": "vessel_owners", "direction": "in"}
+ ],
+ "charges": [
+  {"component": "k2", "exchange": "e_shares", "payer_side": "buyer", "receiver": "officials.enforcement",
+   "receipt_variable": "non_tax_receipts"},
+  {"component": "k4", "exchange": "e_proc", "payer_side": "seller", "receiver": "officials.enforcement",
+   "receipt_variable": "non_tax_receipts"},
+  {"component": "k4", "exchange": "e_fresh", "payer_side": "seller", "receiver": "officials.enforcement",
+   "receipt_variable": "non_tax_receipts"},
+  {"component": "k3", "exchange": "e_crew", "payer_side": "buyer", "receiver": "crew.ridge_cod",
+   "receipt_variable": "non_wage_compensation", "quantity_premises": ["a_k3"]}
+ ],
+ "announced": [{"component": "k1", "premises": ["a4"]}],
+ "compliance": [
+  {"component": "k4", "actor": "vessel_owners"}
+ ],
+ "enforcers": [{"component": "k4", "actor": "officials.enforcement"}],
+ "funded": [{"component": "k4", "actor": "taxpayers", "premises": ["a22"]}],
+ "assumptions": {
+  "a1": {"text": "Without the Act, landings would stay well above 40,000 tonnes a year, so the cap binds from 2028.", "class": "binding", "p": 0.9},
+  "a2": {"text": "Landings are recorded and overages enforced at the designated sites.", "class": "enforcement", "p": 0.8},
+  "a4": {"text": "Owners know the formula from the introduction of the bill, expect passage, and have idle vessels or spare capacity to land more in 2026 and 2027.", "class": "expectations", "p": 0.8},
+  "a22": {"text": "The Directorate's budget is raised by the stated 18 million marks.", "class": "revenue_use", "p": 0.9},
+  "a_k3": {"text": "Vessel owners cannot recover the crew's share of quota costs through the other terms of the crew contract.", "class": "other", "p": 0.7}
+ }
+}
