@@ -106,3 +106,30 @@ Three CR-12 pieces were added to `core.lp`. Opposing chains on one key were alre
   - Two rows still conflict for WE-008: the plants' quantity demanded falls and their out-of-state purchases rise. The plants' position is netted across exchanges only on the variable a link reaches. Netting their CR-4 choice as a whole (burdened on the input, made whole on the output) is not in the layer.
 
 Blind scores after step 3: WE-005 13 of 26, WE-008 11 of 28, WE-002 9 of 26, WE-010 16 of 33. They are unchanged by step 3 itself, and each is equal to or above the pattern engine.
+
+## Step 4: expand as you go (`praxeo/core/expand.py`)
+
+**How the loop works.** The policy's own facts seed the run. Each round, the core rules derive effects. For every newly reached actor, a proposer proposes the facts that node needs, each with the questions its premises ask, and a decider answers them. The facts are added and the rules run again, to depth 3.
+- The proposer does open-ended work, so it is an LLM.
+- The decider makes bounded, typed judgments with a probability: an LLM now, Jev once its calibration is checked.
+- Given the same facts, the loop reproduces the one-shot results on WE-001, WE-009 and WE-013, asking 11 to 14 questions.
+
+**Blind runs.** A stand-in for the proposer and decider wrote the seed and answered the loop node by node, from the policy section and the assumption statements only.
+
+| Case | Rounds, nodes, questions | Core loop | Pattern engine |
+|---|---|---|---|
+| WE-006 price-gouging law | 3, 12, 16 | 17 of 26 | 15 after its fixes |
+| WE-062 plastic packaging tax | 3, 25, 29 | 23 of 68 | 12 after its fixes |
+
+**Rows that conflict with the examples:**
+- WE-006: one. The engine signs local sellers' inventory up outside the windows, against C-20 (less stock held before each season).
+- WE-062: one opposite sign. Converters' investment falls, where the table has a rise in recycling equipment and an ambiguous total.
+- WE-062 also has five rows signed ambiguous where the table signs an increase: recyclers' output, investment and workers, municipalities' collection, and recycled content. They all trace to one gap: the format has no fact for the 30% recycled-content exemption, so the push toward recycled resin cannot be recorded.
+
+**What the loop and the layer still lack**, from the writers' notes:
+1. **Revisits.** Each node is visited once, so effects that reach a visited actor later get no new proposals.
+2. **CR-4 for anyone whose price moved.** Alternatives fire only for the parties of a held or charged exchange. An actor who bears a tax through a price, such as packaging users, must be reached by links.
+3. **CR-7 for anyone whose yield moved.** Assets and yields are tied to a held exchange's side, not to any change in an actor's yield.
+4. **Exemptions and lines as CR-1 facts.** RS-5 and RS-17 need them: the 30% line, the 10 t notch.
+5. **Supply response.** No relation takes a change in demand to a price through the response of supply (CR-6 0.9).
+6. **Premises with no fact to rest on.** There is no premise-only fact, and no time-trend fact.

@@ -34,3 +34,32 @@ def test_a_file_driven_run_lists_what_it_needs(tmp_path):
     X.expand(seed, prop, dec)
     assert {n.actor for n in prop.missing} >= {"employers.low_wage", "workers.adult_low_wage"}   # the first round's nodes
     assert all(n.depth == 1 for n in prop.missing)   # nothing deeper is reached without their facts
+
+
+def _loop_score(case, example, short):
+    from test_out_of_sample import _rows
+    cons = S.run(S.load(ROOT / "cases" / case / "loop" / "situation.json"))
+    keys = {(a, v, c.sign, c.window) for c in cons if c.reported for a in (c.actor_group or [c.actor_class]) for v in (c.group or [c.variable])}
+    rows = _rows(example, short, {}, {})
+    return {r for r, ks in rows.items() if ks & keys}, len(rows)
+
+
+def test_blind_loop_runs():
+    """Blind: a stand-in for the LLM proposer and the decider wrote the seed and answered the loop node by node from the
+    policy section and the assumption statements only (cases/<case>/loop/notes.md). Names mapped only where the class is
+    the same."""
+    produced, n = _loop_score("we006_coralia", "WE-006_price_gouging_law.md",
+                              {"buyers.served": "buyers.local", "residents.declared": ["buyers.unserved", "guests.unserved"],
+                               "hotels.declared": "sellers.lodging", "evacuees.in_rooms": "guests.local",
+                               "repair_contractors.outside": "sellers.repair_outside"})
+    assert (len(produced), n) == (17, 26)          # pattern engine: 15 after its fixes
+    produced, n = _loop_score("we062_saldria", "WE-062_plastic_packaging_tax.md",
+                              {"state budget": "officials.enforcement", "converters": "converters.domestic",
+                               "sellers.foreign": ["converters.foreign", "sellers.foreign.packaged_goods"],
+                               "recyclers": "recyclers.domestic", "buyers.packaged_goods": "consumers.packaged_goods",
+                               "exporters": "exporters.packaged_goods", "converter_workers": "workers.converters",
+                               "recycler_workers": "workers.recyclers", "workers of sellers.substitutes": "workers.substitute_makers",
+                               "sellers.substitutes": "sellers.substitute_packaging", "converters.owners": "owners.converters",
+                               "importers.packaged_goods": "importers.goods",
+                               "small_importers": ["importers.small_goods", "importers.small_packaging"], "taxpayers.other": "taxpayers"})
+    assert (len(produced), n) == (23, 68)          # pattern engine: 12 after its fixes
