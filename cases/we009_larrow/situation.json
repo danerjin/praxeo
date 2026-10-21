@@ -1,0 +1,300 @@
+{
+ "name": "WE-009 minimum wage with a youth rate (core-rule pilot)",
+ "exchanges": [
+  {
+   "id": "e1",
+   "buyer": "employers.low_wage",
+   "seller": "workers.adult_low_wage",
+   "unsatisfied_seller": "workers.prospective",
+   "seller_price_var": "wage_rate",
+   "criteria_for": "workers.prospective",
+   "criteria": [
+    "allocation_by_non_price_criteria",
+    "search_cost",
+    "wait_time"
+   ]
+  },
+  {
+   "id": "e2",
+   "buyer": "employers.low_wage",
+   "seller": "workers.youth",
+   "seller_price_var": "wage_rate"
+  }
+ ],
+ "held": [
+  {
+   "component": "k1",
+   "exchange": "e1",
+   "direction": "above",
+   "premises": [
+    "a1",
+    "a3"
+   ]
+  },
+  {
+   "component": "k2",
+   "exchange": "e2",
+   "direction": "above",
+   "premises": [
+    "a2",
+    "a3"
+   ]
+  }
+ ],
+ "margins": [
+  {
+   "exchange": "e1",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.adult_low_wage",
+   "variables": [
+    "employment",
+    "hours_worked",
+    "non_wage_compensation"
+   ],
+   "premises": [
+    "a4",
+    "a14"
+   ]
+  },
+  {
+   "exchange": "e2",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.youth",
+   "variables": [
+    "employment",
+    "hours_worked",
+    "non_wage_compensation"
+   ],
+   "premises": [
+    "a4",
+    "a14"
+   ]
+  },
+  {
+   "exchange": "e1",
+   "kind": "outside",
+   "actor": "employers.low_wage",
+   "variables": [
+    "informal_activity"
+   ],
+   "premises": [
+    "a6"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "component": "k1",
+   "chooser": "employers.low_wage",
+   "actor": "employers.low_wage",
+   "variables": [
+    "reclassification"
+   ],
+   "premises": [
+    "a5"
+   ]
+  },
+  {
+   "component": "k1",
+   "chooser": "employers.low_wage",
+   "actor": "employers.low_wage",
+   "variables": [
+    "quantity_substitute"
+   ],
+   "premises": [
+    "a7"
+   ]
+  },
+  {
+   "component": "k1",
+   "chooser": "employers.low_wage",
+   "actor": "workers.youth",
+   "variables": [
+    "employment",
+    "hours_worked",
+    "non_wage_compensation"
+   ],
+   "premises": [
+    "a12",
+    "a13"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "component": "k1",
+   "actor": "employers.low_wage",
+   "premises": [
+    "a15"
+   ]
+  },
+  {
+   "component": "k1",
+   "actor": "workers.adult_low_wage",
+   "premises": [
+    "a15"
+   ]
+  }
+ ],
+ "links": [
+  {
+   "source_actor": "employers.low_wage",
+   "source_variable": "quantity_substitute",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_traded"
+  },
+  {
+   "source_actor": "workers.adult_low_wage",
+   "source_variable": "wage_rate",
+   "relation": "output",
+   "actor": "consumers",
+   "variable": "price_paid",
+   "premises": [
+    "a10",
+    "a14"
+   ]
+  },
+  {
+   "source_actor": "consumers",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "consumers.border",
+   "variable": "cross_border_purchases",
+   "premises": [
+    "a11"
+   ]
+  },
+  {
+   "source_actor": "employers.low_wage",
+   "source_variable": "return_on_capital",
+   "relation": "yield",
+   "actor": "employers.low_wage",
+   "variable": "investment_target",
+   "premises": [
+    "a8"
+   ]
+  }
+ ],
+ "yields": [
+  {
+   "exchange": "e1",
+   "side": "buyer",
+   "actor": "employers.low_wage",
+   "premises": [
+    "a14"
+   ]
+  }
+ ],
+ "assets": [
+  {
+   "exchange": "e1",
+   "side": "buyer",
+   "actor": "factor_owners.specific",
+   "premises": [
+    "a8",
+    "a14"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k2",
+   "actor": "employers.low_wage"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "fixed_budget": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement",
+   "premises": [
+    "a16"
+   ]
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "For an identifiable group of adults, employers value their labor below the new floor.",
+   "class": "binding",
+   "p": 0.9
+  },
+  "a2": {
+   "text": "Some workers under 20 would earn less than the youth rate.",
+   "class": "binding",
+   "p": 0.8
+  },
+  "a3": {
+   "text": "Most employers comply with the floor.",
+   "class": "enforcement",
+   "p": 0.75
+  },
+  "a4": {
+   "text": "Employers can adjust at least one margin: hiring, hours, schedules, breaks, training or benefits.",
+   "class": "other",
+   "p": 0.9
+  },
+  "a5": {
+   "text": "Recasting some workers as independent contractors is feasible.",
+   "class": "other",
+   "p": 0.55
+  },
+  "a6": {
+   "text": "Some cash payment below the floor goes undetected.",
+   "class": "enforcement",
+   "p": 0.65
+  },
+  "a7": {
+   "text": "Labor-saving equipment exists for some low-wage tasks.",
+   "class": "alternative_uses",
+   "p": 0.75
+  },
+  "a8": {
+   "text": "Employers planning outlets expected both steps to take effect.",
+   "class": "expectations",
+   "p": 0.85
+  },
+  "a10": {
+   "text": "Most sellers of low-wage-intensive services compete mainly with Larrow sellers who face the same floor.",
+   "class": "other",
+   "p": 0.8
+  },
+  "a11": {
+   "text": "Larrow Falls residents can easily shop and eat in Port Dorran.",
+   "class": "mobility",
+   "p": 0.7
+  },
+  "a12": {
+   "text": "A meaningful number of employers use the youth rate.",
+   "class": "other",
+   "p": 0.8
+  },
+  "a13": {
+   "text": "Workers under 20 and adults are substitutes in many low-wage jobs.",
+   "class": "substitutability",
+   "p": 0.8
+  },
+  "a14": {
+   "text": "The floor raises employers' labor cost per hour for the bound group; it is not fully offset.",
+   "class": "substitutability",
+   "p": 0.8
+  },
+  "a15": {
+   "text": "Employers' associations and unions can organize to lobby at a cost lower than their stake.",
+   "class": "other",
+   "p": 0.65
+  },
+  "a16": {
+   "text": "The Labor Department's investigator staff and budget are not increased for the Act.",
+   "class": "revenue_use",
+   "p": 0.6
+  }
+ }
+}

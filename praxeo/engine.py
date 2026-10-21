@@ -23,6 +23,7 @@ out of the labels.
 """
 from __future__ import annotations
 
+import contextlib
 import itertools
 import math
 from pathlib import Path
@@ -33,6 +34,18 @@ import clingo.ast
 from .schema import Assumption, Consequence, HORIZON_ORDER, PolicyRecord, Step
 
 RULES = sorted((Path(__file__).parent / "rules").glob("*.lp"))  # every rule file is loaded
+_rule_files: list[Path] | None = None  # set by rule_set() to run another rule base (the core-rule pilot)
+
+
+@contextlib.contextmanager
+def rule_set(paths: list[Path]):
+    """Run the engine on these rule files instead of rules/*.lp (praxeo/core: the core rules alone)."""
+    global _rule_files
+    old, _rule_files = _rule_files, list(paths)
+    try:
+        yield
+    finally:
+        _rule_files = old
 CUTOFF = 0.5  # workflow: report a consequence only if each assumption has p >= 0.5
 
 
@@ -298,7 +311,7 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
 
 def _solve(program: str, args: list[str], extra: str = "") -> list[list[clingo.Symbol]]:
     ctl = clingo.Control(["0", "--warn=none", *args])
-    for rules in RULES:
+    for rules in (_rule_files if _rule_files is not None else RULES):
         ctl.load(str(rules))
     ctl.add("base", [], program + extra)
     ctl.ground([("base", [])], context=_Context())

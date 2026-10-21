@@ -1,0 +1,365 @@
+{
+ "name": "WE-001 rent freeze (core-rule pilot)",
+ "exchanges": [
+  {
+   "id": "e1",
+   "buyer": "tenants.controlled",
+   "seller": "landlords.controlled",
+   "unsatisfied_buyer": "tenants.prospective",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": "tenants.prospective",
+   "criteria": [
+    "wait_time",
+    "search_cost",
+    "side_payments",
+    "allocation_by_non_price_criteria"
+   ]
+  }
+ ],
+ "held": [
+  {
+   "component": "k1",
+   "exchange": "e1",
+   "direction": "below",
+   "premises": [
+    "a1",
+    "a2"
+   ]
+  }
+ ],
+ "margins": [
+  {
+   "exchange": "e1",
+   "kind": "criterion",
+   "actor": "tenants.prospective",
+   "variables": [
+    "search_cost"
+   ],
+   "premises": [
+    "a15"
+   ]
+  },
+  {
+   "exchange": "e1",
+   "kind": "criterion",
+   "actor": "tenants.prospective",
+   "variables": [
+    "allocation_by_non_price_criteria"
+   ],
+   "premises": [
+    "a16"
+   ]
+  },
+  {
+   "exchange": "e1",
+   "kind": "criterion",
+   "actor": "tenants.prospective",
+   "variables": [
+    "side_payments"
+   ],
+   "premises": [
+    "a3"
+   ]
+  },
+  {
+   "exchange": "e1",
+   "kind": "adjust",
+   "side": "seller",
+   "actor": "tenants.controlled",
+   "variables": [
+    "quality_per_unit"
+   ],
+   "premises": [
+    "a4"
+   ]
+  },
+  {
+   "exchange": "e1",
+   "kind": "adjust",
+   "side": "seller",
+   "actor": "landlords.controlled",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "premises": [
+    "a5",
+    "a10"
+   ]
+  },
+  {
+   "exchange": "e1",
+   "kind": "outside",
+   "actor": "tenants.controlled",
+   "variables": [
+    "informal_activity"
+   ],
+   "premises": [
+    "a3",
+    "a6"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "component": "k1",
+   "chooser": "landlords.controlled",
+   "actor": "landlords.controlled",
+   "variables": [
+    "reclassification"
+   ],
+   "premises": [
+    "a5"
+   ]
+  },
+  {
+   "component": "k1",
+   "chooser": "landlords.controlled",
+   "actor": "landlords.controlled",
+   "variables": [
+    "units_held_vacant"
+   ],
+   "premises": [
+    "a5"
+   ]
+  },
+  {
+   "component": "k1",
+   "chooser": "tenants.controlled",
+   "actor": "tenants.controlled",
+   "variables": [
+    "turnover"
+   ],
+   "premises": [
+    "a6"
+   ]
+  },
+  {
+   "component": "k1",
+   "chooser": "tenants.controlled",
+   "actor": "tenants.controlled",
+   "variables": [
+    "job_changes"
+   ],
+   "premises": [
+    "a6",
+    "a12"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "component": "k1",
+   "actor": "landlords.controlled",
+   "premises": [
+    "a18"
+   ]
+  },
+  {
+   "component": "k1",
+   "actor": "tenants.controlled",
+   "premises": [
+    "a18"
+   ]
+  },
+  {
+   "component": "k1",
+   "actor": "developers",
+   "premises": [
+    "a18"
+   ]
+  }
+ ],
+ "links": [
+  {
+   "source_actor": "tenants.prospective",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "tenants.prospective",
+   "variable": "price_substitute",
+   "premises": [
+    "a7",
+    "a17"
+   ]
+  },
+  {
+   "source_actor": "tenants.prospective",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "renters.neighbors",
+   "variable": "price_paid",
+   "premises": [
+    "a8"
+   ]
+  },
+  {
+   "source_actor": "tenants.prospective",
+   "source_variable": "price_substitute",
+   "relation": "yield",
+   "actor": "developers",
+   "variable": "investment_target",
+   "premises": [
+    "a9"
+   ]
+  },
+  {
+   "source_actor": "landlords.controlled",
+   "source_variable": "reclassification",
+   "relation": "same_act",
+   "actor": "homebuyers",
+   "variable": "quantity_substitute"
+  },
+  {
+   "source_actor": "landlords.controlled",
+   "source_variable": "reclassification",
+   "relation": "same_act",
+   "actor": "tenants.controlled.converted",
+   "variable": "turnover"
+  },
+  {
+   "source_actor": "landlords.controlled",
+   "source_variable": "reclassification",
+   "relation": "same_act",
+   "actor": "tenants.controlled.converted",
+   "variable": "resources_available_other_uses"
+  },
+  {
+   "source_actor": "tenants.controlled",
+   "source_variable": "informal_activity",
+   "relation": "same_act",
+   "actor": "tenants.prospective",
+   "variable": "disputes_settled_outside_courts"
+  }
+ ],
+ "assets": [
+  {
+   "exchange": "e1",
+   "side": "seller",
+   "actor": "landlords.controlled",
+   "premises": [
+    "a13"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "exchange": "e1",
+   "premises": [
+    "a14"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "landlords.controlled"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k1",
+   "actor": "taxpayers",
+   "premises": [
+    "a19"
+   ]
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Market rents keep rising above 2% a year, so the cap binds within the first year.",
+   "class": "binding",
+   "p": 0.9
+  },
+  "a2": {
+   "text": "The rent board enforces the cap against most landlords.",
+   "class": "enforcement",
+   "p": 0.8
+  },
+  "a3": {
+   "text": "Some landlords and tenants evade (key money, illegal sublets) without being caught.",
+   "class": "enforcement",
+   "p": 0.8
+  },
+  "a4": {
+   "text": "Housing codes leave landlords room to reduce maintenance above the legal minimum.",
+   "class": "other",
+   "p": 0.85
+  },
+  "a5": {
+   "text": "The conversion route is usable for a meaningful number of buildings.",
+   "class": "alternative_uses",
+   "p": 0.7
+  },
+  "a6": {
+   "text": "Sitting tenants cannot transfer their tenancy.",
+   "class": "other",
+   "p": 0.95
+  },
+  "a7": {
+   "text": "Covered and exempt units are close substitutes.",
+   "class": "substitutability",
+   "p": 0.85
+  },
+  "a8": {
+   "text": "Commuting from neighboring cities is practical for many seekers.",
+   "class": "mobility",
+   "p": 0.7
+  },
+  "a9": {
+   "text": "Developers expect the new-construction exemption to last.",
+   "class": "expectations",
+   "p": 0.6
+  },
+  "a10": {
+   "text": "Rental buildings last several decades, so supply adjusts slowly.",
+   "class": "durability",
+   "p": 0.95
+  },
+  "a12": {
+   "text": "Some job opportunities for sitting tenants would require moving or a much longer commute.",
+   "class": "mobility",
+   "p": 0.75
+  },
+  "a13": {
+   "text": "Buyers of buildings expect the ordinance to last for many years.",
+   "class": "expectations",
+   "p": 0.75
+  },
+  "a14": {
+   "text": "Without the ordinance, sitting tenants' rents would follow the market path within one or two lease cycles.",
+   "class": "other",
+   "p": 0.7
+  },
+  "a15": {
+   "text": "There is no public waiting list for covered units, so seekers find vacancies by their own search.",
+   "class": "other",
+   "p": 0.9
+  },
+  "a16": {
+   "text": "Landlords may choose among applicants, and fair-housing law leaves room to screen.",
+   "class": "other",
+   "p": 0.85
+  },
+  "a17": {
+   "text": "Some sitting tenants would, at market rents, have moved to smaller units or taken in roommates.",
+   "class": "substitutability",
+   "p": 0.8
+  },
+  "a18": {
+   "text": "Landlords, tenant groups and developers can organize and spend at a cost below their stakes.",
+   "class": "other",
+   "p": 0.8
+  },
+  "a19": {
+   "text": "The rent board is a new appropriation that raises the general budget.",
+   "class": "revenue_use",
+   "p": 0.75
+  }
+ }
+}
