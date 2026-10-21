@@ -1,0 +1,326 @@
+{
+ "name": "WE-013 steel tariff (core-rule pilot)",
+ "exchanges": [
+  {
+   "id": "e_imp",
+   "buyer": "steel_users",
+   "seller": "sellers.foreign",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  }
+ ],
+ "charges": [
+  {
+   "component": "k1",
+   "exchange": "e_imp",
+   "payer_side": "buyer",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "tax_revenue",
+   "projection_variable": "tax_revenue_vs_static_projection"
+  }
+ ],
+ "moves": [
+  {
+   "exchange": "e_imp",
+   "side": "buyer",
+   "premises": [
+    "a1"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "component": "k1",
+   "chooser": "steel_users",
+   "actor": "steel_users",
+   "variables": [
+    "reclassification"
+   ],
+   "premises": [
+    "a3"
+   ]
+  },
+  {
+   "component": "k1",
+   "chooser": "steel_users",
+   "actor": "importers",
+   "variables": [
+    "reclassification"
+   ],
+   "premises": [
+    "a3"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "component": "k1",
+   "actor": "steelmakers.domestic",
+   "premises": [
+    "a6"
+   ]
+  },
+  {
+   "component": "k1",
+   "actor": "steel_users",
+   "premises": [
+    "a6"
+   ]
+  }
+ ],
+ "discretion": [
+  {
+   "component": "k2",
+   "actor": "steel_users",
+   "premises": [
+    "a5"
+   ]
+  }
+ ],
+ "links": [
+  {
+   "source_actor": "steel_users",
+   "source_variable": "quantity_traded",
+   "relation": "same_act",
+   "actor": "importers",
+   "variable": "quantity_traded",
+   "premises": [
+    "a1"
+   ]
+  },
+  {
+   "source_actor": "steel_users",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "steelmakers.domestic",
+   "variable": "net_price_received",
+   "premises": [
+    "a2"
+   ]
+  },
+  {
+   "source_actor": "steel_users",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "steelmakers.domestic",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a2"
+   ]
+  },
+  {
+   "source_actor": "steelmakers.domestic",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "steelworkers",
+   "variable": "employment,hours_worked",
+   "premises": []
+  },
+  {
+   "source_actor": "steelmakers.domestic",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_demanded",
+   "premises": []
+  },
+  {
+   "source_actor": "steelmakers.domestic",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "steelmakers.domestic",
+   "variable": "investment_target",
+   "premises": [
+    "a10"
+   ]
+  },
+  {
+   "source_actor": "steelmakers.domestic",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "steelmakers.owners",
+   "variable": "asset_value",
+   "premises": [
+    "a11"
+   ]
+  },
+  {
+   "source_actor": "steel_users",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "steel_users",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a7"
+   ]
+  },
+  {
+   "source_actor": "steel_users",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "steel_users.exporters",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a15"
+   ]
+  },
+  {
+   "source_actor": "steel_users",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "owners.steel_users",
+   "variable": "asset_value",
+   "premises": [
+    "a7",
+    "a11"
+   ]
+  },
+  {
+   "source_actor": "steel_users",
+   "source_variable": "price_paid",
+   "relation": "output",
+   "actor": "buyers.construction",
+   "variable": "price_paid",
+   "premises": [
+    "a14"
+   ]
+  },
+  {
+   "source_actor": "buyers.construction",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "buyers.construction",
+   "variable": "quantity_demanded",
+   "premises": []
+  },
+  {
+   "source_actor": "steel_users",
+   "source_variable": "quantity_supplied",
+   "relation": "substitute",
+   "actor": "buyers.steel_goods",
+   "variable": "quantity_substitute",
+   "premises": [
+    "a7"
+   ]
+  },
+  {
+   "source_actor": "steel_users",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.steel_users",
+   "variable": "employment,hours_worked",
+   "premises": []
+  },
+  {
+   "source_actor": "steel_users",
+   "source_variable": "quantity_supplied",
+   "relation": "yield",
+   "actor": "steel_users",
+   "variable": "capital_stock_target",
+   "premises": [
+    "a9"
+   ]
+  },
+  {
+   "source_actor": "importers",
+   "source_variable": "quantity_traded",
+   "relation": "currency",
+   "actor": "export_industries",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a8"
+   ]
+  },
+  {
+   "source_actor": "export_industries",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.export_industries",
+   "variable": "employment,hours_worked",
+   "premises": []
+  }
+ ],
+ "compliance": [],
+ "enforcers": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k1",
+   "actor": "taxpayers",
+   "premises": [
+    "a16"
+   ]
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Imports remain a meaningful share of supply, and foreign sellers do not absorb most of the tariff.",
+   "class": "binding",
+   "p": 0.85
+  },
+  "a2": {
+   "text": "Domestic mills can raise output from spare or idle capacity and produce close substitutes for most imports.",
+   "class": "substitutability",
+   "p": 0.75
+  },
+  "a3": {
+   "text": "Some imports can be reshaped to fall outside the tariff's definitions at a cost below 25%.",
+   "class": "other",
+   "p": 0.7
+  },
+  "a5": {
+   "text": "Exclusions are decided case by case, with weight given to objections from the mills.",
+   "class": "other",
+   "p": 0.7
+  },
+  "a6": {
+   "text": "Steelmakers and users organize to influence renewal and exclusions.",
+   "class": "other",
+   "p": 0.85
+  },
+  "a7": {
+   "text": "Many steel users compete with imported finished goods that are not taxed.",
+   "class": "substitutability",
+   "p": 0.8
+  },
+  "a8": {
+   "text": "The fall in steel imports is not offset by capital flows or other adjustments within the medium horizon.",
+   "class": "other",
+   "p": 0.6
+  },
+  "a9": {
+   "text": "Some steel-using firms have the option of producing abroad when plants are replaced.",
+   "class": "mobility",
+   "p": 0.6
+  },
+  "a10": {
+   "text": "Steelmakers expect the tariff to be renewed at the year-three review.",
+   "class": "expectations",
+   "p": 0.55
+  },
+  "a11": {
+   "text": "Investors expect the tariff to stay in force for at least its three-year term.",
+   "class": "expectations",
+   "p": 0.8
+  },
+  "a14": {
+   "text": "Steel is a material part of construction costs and builders cannot replace it at the old cost in the medium run.",
+   "class": "substitutability",
+   "p": 0.8
+  },
+  "a15": {
+   "text": "Halvern's machinery exporters sell at prices set in world markets.",
+   "class": "substitutability",
+   "p": 0.8
+  },
+  "a16": {
+   "text": "The budgets of customs and the exclusion office are raised to cover the new work.",
+   "class": "revenue_use",
+   "p": 0.65
+  }
+ }
+}

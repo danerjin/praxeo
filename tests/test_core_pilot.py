@@ -80,3 +80,11 @@ def test_blind_situation_records():
     rows = _rows("WE-008_milk_price_floor.md", WE008_BLIND_SHORT, {}, {})
     produced, _ = _score(rows, _keys("we008_velmora"))
     assert produced == {"C-1", "C-6", "C-9", "C-10", "C-12", "C-13", "C-18", "C-22", "C-23"}
+
+
+def test_we013_a_charge_from_the_core_rules_alone():
+    """CR-1 operation 3 (a payment attached to trading): the steel tariff, with no held price."""
+    rows = _rows("WE-013_steel_tariff.md", {"owners of steel-using firms": "owners.steel_users"}, {}, {})
+    produced, extra = _score(rows, _keys("we013_halvern"))
+    assert set(rows) - produced == {"C-8", "C-30"}   # C-8: CR-10 (orders brought forward); C-30: CR-7a on other producers
+    assert extra == []

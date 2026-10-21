@@ -68,15 +68,40 @@ class Stake(Premised):
 class Link(Premised):
     source_actor: str
     source_variable: str
-    relation: Literal["complement", "input", "substitute", "output", "yield", "same_act"]
+    relation: Literal["complement", "input", "substitute", "output", "yield", "same_act", "cost", "own_price", "currency"]
     actor: str
-    variable: str
+    variable: str = Field(description="One variable, or several comma-separated for a group (labour as employment,hours_worked)")
 
 
 class Tied(Premised):
     exchange: str
     side: Side
     actor: str
+
+
+class Charge(BaseModel):
+    component: str
+    exchange: str
+    payer_side: Side
+    receiver: str
+    receipt_variable: str = Field(description="tax_revenue for a tax, non_tax_receipts for a fee")
+    projection_variable: Optional[str] = Field(default=None, description="tax_revenue_vs_static_projection for a tax")
+
+
+class Moves(Premised):
+    exchange: str
+    side: Side
+
+
+class Discretion(Premised):
+    component: str
+    actor: str
+
+
+class Means(BaseModel):
+    component: str
+    actor: str
+    direction: Literal["out", "in"]
 
 
 class Situation(BaseModel):
@@ -94,6 +119,10 @@ class Situation(BaseModel):
     enforcers: list[dict] = Field(default=[], description="{'component', 'actor'}")
     funded: list[dict] = Field(default=[], description="{'component', 'actor', 'premises'}: who pays the enforcer")
     fixed_budget: list[dict] = Field(default=[], description="{'component', 'actor', 'premises'}: the enforcer's other work gives way")
+    charges: list[Charge] = []
+    moves: list[Moves] = []
+    discretion: list[Discretion] = []
+    means: list[Means] = []
     assumptions: dict[str, dict] = Field(description="id -> {'text', 'p', 'class'}")
 
 
@@ -136,6 +165,20 @@ def facts(s: Situation) -> str:
         out.append(f"stake({st.component}, {_q(st.actor)}, {_p(st.premises)}).")
     for l in s.links:
         out.append(f"link({_q(l.source_actor)}, {_q(l.source_variable)}, {l.relation}, {_q(l.actor)}, {_q(l.variable)}, {_p(l.premises)}).")
+    for l in s.links:
+        if "," in l.variable:
+            out.append(f"link_group({_q(l.variable)}).")
+    for ch in s.charges:
+        out.append(f"charge({ch.component}, {ch.exchange}, {ch.payer_side}, {_q(ch.receiver)}).")
+        out.append(f"receipt_var({ch.component}, {_q(ch.receipt_variable)}).")
+        if ch.projection_variable:
+            out.append(f"projection_var({ch.component}, {_q(ch.projection_variable)}).")
+    for m in s.moves:
+        out.append(f"moves({m.exchange}, {m.side}, {_p(m.premises)}).")
+    for d in s.discretion:
+        out.append(f"discretion({d.component}, {_q(d.actor)}, {_p(d.premises)}).")
+    for m in s.means:
+        out.append(f"means({m.component}, {_q(m.actor)}, {m.direction}).")
     for t in s.assets:
         out.append(f"asset({t.exchange}, {t.side}, {_q(t.actor)}, {_p(t.premises)}).")
     for t in s.yields:
