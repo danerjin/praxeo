@@ -1,0 +1,42 @@
+{
+ "name": "Velmora Dairy Stabilization Act",
+ "jurisdiction": "Velmora (fictional)",
+ "rule_maker": "the Velmora legislature",
+ "enacted": "June of Year 0",
+ "effective": "January 1, Year 1",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "price_floor",
+   "good": "raw_milk",
+   "market": "velmora",
+   "bound_actor": "plants.commodity",
+   "seller_actor": "farmers.velmora",
+   "output_buyer_actor": "consumers",
+   "asset_owner_actor": "factor_owners.specific",
+   "definition_line": true,
+   "announcement_window": true,
+   "general_budget": true,
+   "state_buys_surplus": true,
+   "contract_kind": "sale",
+   "enforcer_actor": "officials.enforcement",
+   "outlay_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "future_taxpayer_actor": null,
+   "source_sentences": [
+    "Raw milk produced on farms registered in Velmora must be bought at a price of at least $21.00 per cwt by any plant located in Velmora that buys it.",
+    "Milk produced outside Velmora, even when processed in Velmora, is exempt.",
+    "The Velmora Dairy Board buys any quantity of block cheddar and nonfat dry milk offered by licensed Velmora plants, at $2.05 a pound for cheddar and $1.40 for powder (prices set so that a plant paying $21 for milk breaks even), provided the product is certified as made from Velmora milk paid at least the floor.",
+    "The Velmora Dairy Board enforces K1 and K2.",
+    "It is funded by an open-ended (\"sum sufficient\") appropriation from the general fund.",
+    "The governor proposed the program in February of Year 0."
+   ]
+  }
+ ],
+ "unclear": [],
+ "context": [
+  "Raw milk prices in the region have averaged $18 per hundredweight (cwt) over five years, varying between $15 and $22; forward prices for the next three years are $17 to $19.",
+  "The neighboring states of Ostrand and Quillon, whose dairy areas lie 30 to 90 miles from Velmora's, have no floor."
+ ]
+}

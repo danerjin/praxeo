@@ -1,0 +1,15 @@
+Velmora Dairy Stabilization Act (fictional; summary of the policy record of handbook worked example WE-008).
+
+Velmora is a dairy state with about 3,000 dairy farms. It produces about 15% of the milk in a regional market within which raw milk moves freely by tanker and cheese, butter and powder are traded freely. The neighboring states of Ostrand and Quillon, whose dairy areas lie 30 to 90 miles from Velmora's, have no floor. Raw milk prices in the region have averaged $18 per hundredweight (cwt) over five years, varying between $15 and $22; forward prices for the next three years are $17 to $19.
+
+The governor proposed the program in February of Year 0. It was enacted in June and takes effect on January 1 of Year 1. It has no expiry date; the legislature reviews it every four years. It is funded by an open-ended ("sum sufficient") appropriation from the general fund.
+
+K1 Minimum milk price. Raw milk produced on farms registered in Velmora must be bought at a price of at least $21.00 per cwt by any plant located in Velmora that buys it. The floor is not indexed. Milk produced outside Velmora, even when processed in Velmora, is exempt.
+
+K2 State purchase. The Velmora Dairy Board buys any quantity of block cheddar and nonfat dry milk offered by licensed Velmora plants, at $2.05 a pound for cheddar and $1.40 for powder (prices set so that a plant paying $21 for milk breaks even), provided the product is certified as made from Velmora milk paid at least the floor. Stocks are held in leased warehouses. K2 is treated as a per_unit_subsidy to K1.
+
+K3 Disposal of stocks. The Board may sell stocks back into the market when market prices exceed 110% of its purchase price, donate them to school meals and food banks in Velmora, or sell them for export.
+
+K4 Certification and enforcement. Plants must keep Velmora milk separate and document its origin; audits; penalties are fines and loss of eligibility for Board sales. The Velmora Dairy Board enforces K1 and K2.
+
+Unclear provisions: whether a farm that moves into Velmora after enactment qualifies at once. Assumed yes, after a three-month registration.
