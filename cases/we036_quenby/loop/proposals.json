@@ -1,0 +1,497 @@
+{
+ "employers.bound": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_charge",
+    "chooser": "employers.bound",
+    "actor": "workers.part_time",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost."
+   ],
+   "premise_class": "other",
+   "source": "Exemption: employees averaging under 30 hours; K1 targets those averaging 30 or more hours (130 hours in a month)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_charge",
+    "chooser": "employers.bound",
+    "actor": "workers.full_time_bound",
+    "variables": [
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Between 30 and 40 hours, extra hours from existing full-timers substitute for extra full-time heads."
+   ],
+   "premise_class": "other",
+   "source": "K1 is owed per employee averaging 30 or more hours; extra hours from existing staff owe no further charge."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_charge",
+    "chooser": "employers.bound",
+    "actor": "workers.full_time_bound",
+    "variables": [
+     "non_wage_compensation"
+    ]
+   },
+   "premises": [
+    "Some bound firms that offer nothing now choose to offer (mainly those with higher-paid staff who value cover, given the tax exclusion)."
+   ],
+   "premise_class": "other",
+   "source": "Either offer each such employee a plan meeting K2 ... or pay $250 a month."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_charge",
+    "chooser": "employers.bound",
+    "actor": "workers.full_time_bound",
+    "variables": [
+     "non_wage_compensation"
+    ]
+   },
+   "premises": [
+    "Some firms with plans short of K1 upgrade them rather than pay."
+   ],
+   "premise_class": "other",
+   "source": "about 9% (105,000) are offered a plan that falls short on benefits or on the employer's share"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_charge",
+    "chooser": "employers.bound",
+    "actor": "workers.agency",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Some mid-size payers can obtain agency workers from capped staffing firms at a markup below the $3,000 charge."
+   ],
+   "premise_class": "other",
+   "source": "Agency workers count for the agency. No firm pays more than $300,000 a year under K1."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_charge",
+    "chooser": "employers.bound",
+    "actor": "employers.bound",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Contracting out and franchising are open to some firms near 50 at a cost below the term or the charge (splitting by ownership is closed by the common-control rule)."
+   ],
+   "premise_class": "other",
+   "source": "Firms under common control are counted together."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e1",
+    "kind": "outside",
+    "actor": "employers.bound",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Revenue cannot cheaply verify reported offers, and some firms report offers not made."
+   ],
+   "premise_class": "enforcement",
+   "source": "Employers report each employee's offer status on quarterly withholding returns. Misreporting: twice the unpaid charge."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_cover",
+    "actor": "employers.bound"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "The bill was introduced on 9 November 2026 with the governor's support."
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e1",
+    "side": "buyer",
+    "actor": "employers.bound"
+   },
+   "premises": [
+    "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley), so the wage does not fall by the whole charge."
+   ],
+   "premise_class": "mobility",
+   "source": "K1 ... $250 a month for each such employee not so offered."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e1",
+    "side": "buyer",
+    "actor": "factor_owners.bound_firms"
+   },
+   "premises": [
+    "Business values reflect expected earnings, and buyers expected the Act from its introduction."
+   ],
+   "premise_class": "expectations",
+   "source": "The bill was introduced on 9 November 2026 ... takes effect on 1 January 2028. It has no expiry."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.bound",
+    "source_variable": "full_cost_per_unit",
+    "relation": "output",
+    "actor": "consumers.local_services",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Most competitors of mid-size bound firms in local services are bound at a material per-head cost."
+   ],
+   "premise_class": "other",
+   "source": "Firms with 50 or more FTE employ about 1.45 million people."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.bound",
+    "source_variable": "full_cost_per_unit",
+    "relation": "substitute",
+    "actor": "employers.unbound",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets."
+   ],
+   "premise_class": "other",
+   "source": "Employers with 50 or more FTE (K3); exemption below 50 FTE."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.bound",
+    "source_variable": "full_cost_per_unit",
+    "relation": "substitute",
+    "actor": "sellers.foreign",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Quenby's tradable producers compete with Tarnley producers."
+   ],
+   "premise_class": "mobility",
+   "source": "Marisport lies on the border with the State of Tarnley, which has no such law."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1_charge",
+    "actor": "employers.bound",
+    "variable": "employment",
+    "mode": "carry_over"
+   },
+   "premises": [
+    "Some firms near 50 FTE value staying below the line more than the extra work.",
+    "Owners of firms near 50 know from January 2027 that the 2027 average decides 2028 status."
+   ],
+   "premise_class": "other",
+   "source": "Status for 2028 is decided by the firm's average FTE over 2027."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.bound",
+    "source_variable": "legal_breach",
+    "relation": "substitute",
+    "actor": "officials.enforcement",
+    "variable": "non_tax_receipts"
+   },
+   "premises": [
+    "Revenue cannot cheaply verify reported offers, and some firms report offers not made."
+   ],
+   "premise_class": "enforcement",
+   "source": "Misreporting: twice the unpaid charge; the charge is assessed with the quarterly returns."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.bound",
+    "source_variable": "return_on_capital",
+    "relation": "yield",
+    "actor": "employers.bound",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Business values reflect expected earnings, and buyers expected the Act from its introduction."
+   ],
+   "premise_class": "expectations",
+   "source": "It has no expiry."
+  }
+ ],
+ "workers.full_time_bound": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_cover",
+    "chooser": "workers.full_time_bound",
+    "actor": "workers.unbound",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley), so the wage does not fall by the whole charge."
+   ],
+   "premise_class": "mobility",
+   "source": "Marisport lies on the border with the State of Tarnley ... about 35,000 people commute across the border each day."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_cover",
+    "actor": "workers.full_time_bound"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Insurers, unions, employer associations and the large chains can organize."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.full_time_bound",
+    "source_variable": "non_wage_compensation",
+    "relation": "same_act",
+    "actor": "insurers.health",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Some bound firms that offer nothing now choose to offer (mainly those with higher-paid staff who value cover, given the tax exclusion)."
+   ],
+   "premise_class": "other",
+   "source": "offer each such employee ... a plan meeting K2"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.full_time_bound",
+    "source_variable": "non_wage_compensation",
+    "relation": "substitute",
+    "actor": "insurers.individual_market",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Some workers newly offered employer cover held individual plans."
+   ],
+   "premise_class": "other",
+   "source": "average premium for an employee-only plan"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.full_time_bound",
+    "source_variable": "non_wage_compensation",
+    "relation": "complement",
+    "actor": "hospitals.providers",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Newly covered workers use more care billed to insurers than they used without cover."
+   ],
+   "premise_class": "other",
+   "source": "Hospital, physician, prescription and maternity care"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.full_time_bound",
+    "source_variable": "non_wage_compensation",
+    "relation": "substitute",
+    "actor": "officials.indigent_care",
+    "variable": "subsidy_outlay"
+   },
+   "premises": [
+    "Some newly covered workers or their care were paid for by the ICP.",
+    "The ICP pays per claim, so fewer claims for newly covered workers lower its outlay rather than raising the payment per remaining claim."
+   ],
+   "premise_class": "revenue_use",
+   "source": "R3 Indigent Care Program: payment to hospitals ... care for uninsured residents below 200% of the poverty line."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.full_time_bound",
+    "source_variable": "wage_rate",
+    "relation": "same_act",
+    "actor": "officials.enforcement",
+    "variable": "tax_revenue"
+   },
+   "premises": [
+    "Wages are subject to Quenby's 4.5% income tax.",
+    "Employer contributions to health premiums are excluded from the employee's income for Quenby's income tax."
+   ],
+   "premise_class": "other",
+   "source": "R2 Tax exclusion: excluded from the employee's income for Quenby's 4.5% income tax; wages are taxed."
+  }
+ ],
+ "workers.minimum_wage_bound": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_cover",
+    "actor": "workers.minimum_wage_bound"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Insurers, unions, employer associations and the large chains can organize."
+  }
+ ],
+ "insurers.health": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_cover",
+    "actor": "insurers.health"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "K2 Benefit standard ... list kept by the Department of Insurance."
+  }
+ ],
+ "officials.enforcement": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.enforcement",
+    "source_variable": "non_tax_receipts",
+    "relation": "substitute",
+    "actor": "taxpayers",
+    "variable": "resources_available_other_uses"
+   },
+   "premises": [
+    "Charges under the Act are paid into the general fund."
+   ],
+   "premise_class": "revenue_use",
+   "source": "Charges are paid into the general fund."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.enforcement",
+    "source_variable": "tax_revenue",
+    "relation": "same_act",
+    "actor": "taxpayers",
+    "variable": "resources_available_other_uses"
+   },
+   "premises": [
+    "Income tax revenue lost to the general fund is made up by other taxpayers."
+   ],
+   "premise_class": "revenue_use",
+   "source": "R2 Tax exclusion: excluded from the employee's income for Quenby's 4.5% income tax; wages are taxed."
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "officials.enforcement",
+    "variable": "non_tax_receipts",
+    "direction": "increase",
+    "kind": "arithmetic"
+   },
+   "premises": [
+    "Charges collected in 2028 are not cut by misreporting below $13.5 million less the short-run income tax lost, and that tax lost is smaller than the $9.4 million by which the capped firms' charges exceed the appropriation."
+   ],
+   "premise_class": "other",
+   "source": "A new appropriation of $4.1 million a year ... pays for 32 staff. Charges are paid into the general fund. No firm pays more than $300,000 a year (reached at 100 uncovered employees)."
+  }
+ ],
+ "taxpayers": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "taxpayers",
+    "variable": "resources_available_other_uses",
+    "direction": "increase",
+    "kind": "arithmetic"
+   },
+   "premises": [
+    "Charges collected in 2028 are not cut by misreporting below $13.5 million less the short-run income tax lost, and that tax lost is smaller than the $9.4 million by which the capped firms' charges exceed the appropriation."
+   ],
+   "premise_class": "other",
+   "source": "A new appropriation of $4.1 million a year from the general fund pays for 32 staff. Charges are paid into the general fund."
+  }
+ ],
+ "employers.unbound": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.unbound",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "workers.unbound",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "K3 Size threshold: exemption below 50 FTE."
+  }
+ ],
+ "officials.indigent_care": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.indigent_care",
+    "source_variable": "subsidy_outlay",
+    "relation": "substitute",
+    "actor": "taxpayers",
+    "variable": "resources_available_other_uses"
+   },
+   "premises": [
+    "The Indigent Care Program is paid from the general fund."
+   ],
+   "premise_class": "revenue_use",
+   "source": "R3 Indigent Care Program: about $310 million a year from the general fund."
+  }
+ ],
+ "workers.agency": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.agency",
+    "source_variable": "employment",
+    "relation": "same_act",
+    "actor": "employers.staffing",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Some mid-size payers can obtain agency workers from capped staffing firms at a markup below the $3,000 charge."
+   ],
+   "premise_class": "other",
+   "source": "Agency workers count for the agency."
+  }
+ ],
+ "factor_owners.bound_firms": [],
+ "hospitals.providers": [],
+ "insurers.individual_market": [],
+ "sellers.foreign": [],
+ "workers.part_time": [],
+ "workers.unbound": [],
+ "employers.staffing": []
+}

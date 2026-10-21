@@ -1,0 +1,162 @@
+{
+ "name": "WE-036 Quenby Fair Share Health Cover Act (loop seed)",
+ "exchanges": [
+  {
+   "id": "e1",
+   "buyer": "employers.bound",
+   "seller": "workers.full_time_bound",
+   "buyer_price_var": "full_cost_per_unit",
+   "seller_price_var": "wage_rate"
+  },
+  {
+   "id": "e2",
+   "buyer": "employers.bound",
+   "seller": "workers.minimum_wage_bound",
+   "buyer_price_var": "full_cost_per_unit",
+   "seller_price_var": "wage_rate"
+  }
+ ],
+ "charges": [
+  {
+   "component": "k1_cover",
+   "exchange": "e1",
+   "payer_side": "buyer",
+   "receiver": "workers.full_time_bound",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "a1",
+    "a7"
+   ]
+  },
+  {
+   "component": "k1_charge",
+   "exchange": "e1",
+   "payer_side": "buyer",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [
+    "a1"
+   ]
+  },
+  {
+   "component": "k1_cover",
+   "exchange": "e2",
+   "payer_side": "buyer",
+   "receiver": "workers.minimum_wage_bound",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "a1",
+    "a7"
+   ]
+  },
+  {
+   "component": "k1_charge",
+   "exchange": "e2",
+   "payer_side": "buyer",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [
+    "a1"
+   ]
+  }
+ ],
+ "moves": [
+  {
+   "exchange": "e1",
+   "side": "buyer",
+   "premises": [
+    "a3"
+   ]
+  },
+  {
+   "exchange": "e1",
+   "side": "seller",
+   "premises": [
+    "a6"
+   ]
+  },
+  {
+   "exchange": "e2",
+   "side": "buyer",
+   "premises": [
+    "a9"
+   ]
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1_cover",
+   "premises": [
+    "a_ann"
+   ]
+  },
+  {
+   "component": "k1_charge",
+   "premises": [
+    "a_ann"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1_cover",
+   "actor": "employers.bound"
+  },
+  {
+   "component": "k2",
+   "actor": "insurers.health"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k5",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k5",
+   "actor": "taxpayers",
+   "premises": [
+    "a29"
+   ]
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "About 135,000 full-timers at firms of 50+ FTE are offered nothing, and about 105,000 are offered less than K1 requires, so K1 binds for them.",
+   "class": "binding",
+   "p": 0.9
+  },
+  "a3": {
+   "text": "Money wages are fixed in the short run by pay scales and yearly raises in at-will employment (CR-6, 0.8: stickiness as a premise).",
+   "class": "other",
+   "p": 0.75
+  },
+  "a6": {
+   "text": "Wages above the minimum can adjust over the medium horizon, as raises are set.",
+   "class": "other",
+   "p": 0.8
+  },
+  "a7": {
+   "text": "At players, for the marginal pair, cover at 30% is worth less to the worker than its cost to the employer: they could have agreed on it, with the tax exclusion, and did not.",
+   "class": "other",
+   "p": 0.6
+  },
+  "a29": {
+   "text": "The $4.1 million is new general-fund money.",
+   "class": "revenue_use",
+   "p": 0.9
+  },
+  "a_ann": {
+   "text": "Employers expected the Act to take effect on 1 January 2028.",
+   "class": "expectations",
+   "p": 0.85
+  },
+  "a9": {
+   "text": "The minimum wage binds for some workers at bound firms.",
+   "class": "binding",
+   "p": 0.85
+  }
+ }
+}
