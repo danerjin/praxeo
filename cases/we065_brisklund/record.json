@@ -1,0 +1,63 @@
+{
+ "name": "Brisklund Wheat Price Assurance Act",
+ "jurisdiction": "Brisklund (fictional)",
+ "rule_maker": "the Parliament of Brisklund",
+ "enacted": "30 June 2027",
+ "effective": "crop year 2028",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "per_unit_subsidy",
+   "good": "wheat",
+   "market": "brisklund",
+   "bound_actor": "wheat_growers",
+   "seller_actor": null,
+   "asset_owner_actor": "owners.wheat_land",
+   "enforcer_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "temporary": true,
+   "renewable": true,
+   "announcement_window": true,
+   "source_sentences": [
+    "A deficiency payment is paid to the holder (the person registered as farming the land) of each registered farm.",
+    "The payment rate is Th 220 less the national average farm-gate price for the marketing year, when that price is below Th 220; otherwise zero.",
+    "It is paid in December after the marketing year.",
+    "The payments are funded as follows: \"Such sums as are needed for payments under this Act shall be paid out of the Consolidated Fund.\"",
+    "The Ministry of Agriculture's payments office administers the claims on the Farm Register, at a cost of about Th 4 million a year from its general appropriation.",
+    "Harvest declarations are checked by sampling (about 3% of farms a year); false declarations are subject to repayment and a fine of up to twice the payment.",
+    "The bill was introduced with the government's majority on 10 February 2027 and enacted on 30 June 2027.",
+    "It covers the crop years 2028 to 2032 (the harvests of those years; winter wheat for 2028 is sown in autumn 2027).",
+    "Parliament must review the target price before 2032."
+   ],
+   "claim_penalties": true,
+   "outlay_actor": "treasury"
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether the payment is made on each farm's actual output (the harvest declared for the crop year) or on a fixed historical base (its established production).",
+   "readings": [
+    "U1-a: the payment is on the harvest declared for the crop year (actual output)",
+    "U1-b: the payment is on the farm's established production, the crop year fixing only the year whose price sets the rate"
+   ],
+   "reading_fields": {
+    "U1-b": {
+     "k1": {
+      "instrument": "lump_sum_subsidy"
+     }
+    }
+   }
+  }
+ ],
+ "context": [
+  "About 18,000 farms grow wheat on about 570,000 hectares; at about 7.0 tonnes a hectare they produce about 4.0 million tonnes a year.",
+  "About 2.5 million tonnes are used at home (1.4 by millers, 1.1 as animal feed) and about 1.5 million tonnes are exported.",
+  "World wheat production is about 800 million tonnes and world trade about 200 million; Brisklund's exports are under 1% of world trade.",
+  "The farm-gate price follows the export price less freight.",
+  "Over the past ten marketing years the national average farm-gate price ranged from Th 175 to Th 285 a tonne, averaged about Th 232, and was below Th 220 in four of the ten years, by about Th 20 on average in those years.",
+  "About 40% of wheat land is rented, on leases of three to five years; wheat land sells for about Th 12,000 a hectare and rents for about Th 300 a hectare a year.",
+  "Futures for the 2028 harvest trade at about Th 228."
+ ]
+}

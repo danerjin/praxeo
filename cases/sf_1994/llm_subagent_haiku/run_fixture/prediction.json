@@ -1,0 +1,812 @@
+{
+ "assumptions": {
+  "alternative_uses(c1)": {
+   "assumption_class": "alternative_uses",
+   "id": "alternative_uses(c1)",
+   "p": 0.7,
+   "text": "Owners can move covered units to uses the ceiling does not reach."
+  },
+  "binding(c1)": {
+   "assumption_class": "binding",
+   "id": "binding(c1)",
+   "p": 0.75,
+   "text": "The ceiling binds: it is below the price the market would otherwise reach."
+  },
+  "buyouts_limited(c1)": {
+   "assumption_class": "other",
+   "id": "buyouts_limited(c1)",
+   "p": 0.7,
+   "text": "Buyouts move fewer tenants than the cap keeps in place."
+  },
+  "enforced(c1)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(c1)",
+   "p": 0.85,
+   "text": "The ceiling is enforced against most bound sellers."
+  },
+  "keepers_dominate(c1)": {
+   "assumption_class": "other",
+   "id": "keepers_dominate(c1)",
+   "p": 0.6,
+   "text": "Among all protected tenants, the fall in moves out of the area among keepers outweighs the rise among the displaced."
+  },
+  "lockin_dominates(c1)": {
+   "assumption_class": "other",
+   "id": "lockin_dominates(c1)",
+   "p": 0.65,
+   "text": "The lock-in outweighs moves diverted out of the area by higher free rents."
+  },
+  "nontransferable(c1)": {
+   "assumption_class": "other",
+   "id": "nontransferable(c1)",
+   "p": 0.95,
+   "text": "The protected buyers' right is tied to holding the tenancy and cannot be sold."
+  },
+  "substitutes(c1)": {
+   "assumption_class": "substitutability",
+   "id": "substitutes(c1)",
+   "p": 0.8,
+   "text": "Uncovered units in the same market are close substitutes for covered ones."
+  },
+  "would_leave(c1)": {
+   "assumption_class": "mobility",
+   "id": "would_leave(c1)",
+   "p": 0.85,
+   "text": "Without the rule some protected buyers would have left the area, and the benefit does not follow them."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "landlords.controlled",
+   "assumption_sets": [
+    [
+     "alternative_uses(c1)",
+     "binding(c1)",
+     "enforced(c1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(c1)",
+    "binding(c1)",
+    "enforced(c1)"
+   ],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "binding_cap(c1)",
+     "premises": [
+      "binding(c1)",
+      "enforced(c1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "supply_falls(c1)",
+     "premises": [
+      "alternative_uses(c1)",
+      "binding_cap(c1)"
+     ],
+     "rule": "PC-5"
+    }
+   ],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-1",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible"
+  },
+  {
+   "actor_class": "landlords.controlled",
+   "assumption_sets": [
+    [
+     "alternative_uses(c1)",
+     "binding(c1)",
+     "enforced(c1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(c1)",
+    "binding(c1)",
+    "enforced(c1)"
+   ],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "binding_cap(c1)",
+     "premises": [
+      "binding(c1)",
+      "enforced(c1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(c1)",
+     "premises": [
+      "alternative_uses(c1)",
+      "binding_cap(c1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-2",
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible"
+  },
+  {
+   "actor_class": "tenants.controlled",
+   "assumption_sets": [
+    [
+     "binding(c1)",
+     "enforced(c1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(c1)",
+    "enforced(c1)"
+   ],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "binding_cap(c1)",
+     "premises": [
+      "binding(c1)",
+      "enforced(c1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(c1)",
+     "premises": [
+      "binding_cap(c1)"
+     ],
+     "rule": "PC-3"
+    }
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "visible"
+  },
+  {
+   "actor_class": "tenants.controlled",
+   "assumption_sets": [
+    [
+     "binding(c1)",
+     "buyouts_limited(c1)",
+     "enforced(c1)",
+     "nontransferable(c1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(c1)",
+    "buyouts_limited(c1)",
+    "enforced(c1)",
+    "nontransferable(c1)"
+   ],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "binding_cap(c1)",
+     "premises": [
+      "binding(c1)",
+      "enforced(c1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "turnover_falls(c1)",
+     "premises": [
+      "binding_cap(c1)",
+      "buyouts_limited(c1)",
+      "nontransferable(c1)"
+     ],
+     "rule": "PC-7"
+    }
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "turnover",
+   "visibility": "invisible"
+  },
+  {
+   "actor_class": "tenants.controlled.displaced",
+   "assumption_sets": [
+    [
+     "alternative_uses(c1)",
+     "binding(c1)",
+     "enforced(c1)",
+     "would_leave(c1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(c1)",
+    "binding(c1)",
+    "enforced(c1)",
+    "would_leave(c1)"
+   ],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "binding_cap(c1)",
+     "premises": [
+      "binding(c1)",
+      "enforced(c1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(c1)",
+     "premises": [
+      "alternative_uses(c1)",
+      "binding_cap(c1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "displaced_leave(c1)",
+     "premises": [
+      "would_leave(c1)"
+     ],
+     "rule": "PC-21"
+    },
+    {
+     "conclusion": "displaced_leave(c1)",
+     "premises": [
+      "reclassify(c1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-5",
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "relocation_out_of_area",
+   "visibility": "invisible"
+  },
+  {
+   "actor_class": "tenants.controlled.keepers",
+   "assumption_sets": [
+    [
+     "binding(c1)",
+     "buyouts_limited(c1)",
+     "enforced(c1)",
+     "lockin_dominates(c1)",
+     "nontransferable(c1)",
+     "would_leave(c1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(c1)",
+    "buyouts_limited(c1)",
+    "enforced(c1)",
+    "lockin_dominates(c1)",
+    "nontransferable(c1)",
+    "would_leave(c1)"
+   ],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "binding_cap(c1)",
+     "premises": [
+      "binding(c1)",
+      "enforced(c1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "turnover_falls(c1)",
+     "premises": [
+      "binding_cap(c1)",
+      "buyouts_limited(c1)",
+      "nontransferable(c1)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "stay_in_area(c1)",
+     "premises": [
+      "lockin_dominates(c1)",
+      "turnover_falls(c1)",
+      "would_leave(c1)"
+     ],
+     "rule": "PC-21"
+    }
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "relocation_out_of_area",
+   "visibility": "invisible"
+  },
+  {
+   "actor_class": "tenants.prospective",
+   "assumption_sets": [
+    [
+     "binding(c1)",
+     "buyouts_limited(c1)",
+     "enforced(c1)",
+     "nontransferable(c1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(c1)",
+    "buyouts_limited(c1)",
+    "enforced(c1)",
+    "nontransferable(c1)"
+   ],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "binding_cap(c1)",
+     "premises": [
+      "binding(c1)",
+      "enforced(c1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "turnover_falls(c1)",
+     "premises": [
+      "binding_cap(c1)",
+      "buyouts_limited(c1)",
+      "nontransferable(c1)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "initial_price(c1)",
+     "premises": [
+      "turnover_falls(c1)"
+     ],
+     "rule": "PC-1"
+    }
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible"
+  },
+  {
+   "actor_class": "tenants.prospective",
+   "assumption_sets": [
+    [
+     "binding(c1)",
+     "enforced(c1)",
+     "substitutes(c1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(c1)",
+    "enforced(c1)",
+    "substitutes(c1)"
+   ],
+   "combines": [],
+   "derivation": [
+    {
+     "conclusion": "binding_cap(c1)",
+     "premises": [
+      "binding(c1)",
+      "enforced(c1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "outsider_price(c1)",
+     "premises": [
+      "binding_cap(c1)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "outsider_price(c1)",
+     "premises": [
+      "substitutes(c1)"
+     ],
+     "rule": "RS-4"
+    }
+   ],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-8",
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_substitute",
+   "visibility": "invisible"
+  },
+  {
+   "actor_class": "tenants.controlled",
+   "assumption_sets": [
+    [
+     "alternative_uses(c1)",
+     "binding(c1)",
+     "buyouts_limited(c1)",
+     "enforced(c1)",
+     "keepers_dominate(c1)",
+     "lockin_dominates(c1)",
+     "nontransferable(c1)",
+     "would_leave(c1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(c1)",
+    "binding(c1)",
+    "buyouts_limited(c1)",
+    "enforced(c1)",
+    "keepers_dominate(c1)",
+    "lockin_dominates(c1)",
+    "nontransferable(c1)",
+    "would_leave(c1)"
+   ],
+   "combines": [
+    "C-6",
+    "C-5"
+   ],
+   "derivation": [
+    {
+     "conclusion": "binding_cap(c1)",
+     "premises": [
+      "binding(c1)",
+      "enforced(c1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "turnover_falls(c1)",
+     "premises": [
+      "binding_cap(c1)",
+      "buyouts_limited(c1)",
+      "nontransferable(c1)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "stay_in_area(c1)",
+     "premises": [
+      "lockin_dominates(c1)",
+      "turnover_falls(c1)",
+      "would_leave(c1)"
+     ],
+     "rule": "PC-21"
+    },
+    {
+     "conclusion": "binding_cap(c1)",
+     "premises": [
+      "binding(c1)",
+      "enforced(c1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(c1)",
+     "premises": [
+      "alternative_uses(c1)",
+      "binding_cap(c1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "displaced_leave(c1)",
+     "premises": [
+      "would_leave(c1)"
+     ],
+     "rule": "PC-21"
+    },
+    {
+     "conclusion": "displaced_leave(c1)",
+     "premises": [
+      "reclassify(c1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "relocation_out_of_area",
+   "visibility": "invisible"
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "ceiling(c1).\ndecontrol(c1).\nbound(c1, \"landlords.controlled\").\nprotected(c1, \"tenants.controlled\").\nexcluded(c1, \"tenants.prospective\").\nassumption(binding(c1)).\nassumption(enforced(c1)).\nassumption(alternative_uses(c1)).\nassumption(nontransferable(c1)).\nassumption(buyouts_limited(c1)).\nassumption(would_leave(c1)).\nassumption(lockin_dominates(c1)).\nassumption(keepers_dominate(c1)).\nassumption(substitutes(c1)).\n",
+ "explanations": [
+  "C-1. Compared with no San Francisco Proposition I (1994), quantity supplied for landlords.controlled falls in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.70); The ceiling binds: it is below the price the market would otherwise reach (p = 0.75); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
+  "C-2. Compared with no San Francisco Proposition I (1994), reclassification for landlords.controlled rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.70); The ceiling binds: it is below the price the market would otherwise reach (p = 0.75); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
+  "C-3. Compared with no San Francisco Proposition I (1994), price paid for tenants.controlled falls from the medium run onward (tier B, visible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.75); The ceiling is enforced against most bound sellers (p = 0.85). Reported.",
+  "C-4. Compared with no San Francisco Proposition I (1994), turnover for tenants.controlled falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.75); Buyouts move fewer tenants than the cap keeps in place (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.85); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.95). Reported.",
+  "C-5. Compared with no San Francisco Proposition I (1994), relocation out of area for tenants.controlled.displaced rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-21: leaving the area forfeits the benefit, and fewer holders are priced out, so they leave the area less. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.70); The ceiling binds: it is below the price the market would otherwise reach (p = 0.75); The ceiling is enforced against most bound sellers (p = 0.85); Without the rule some protected buyers would have left the area, and the benefit does not follow them (p = 0.85). Reported.",
+  "C-6. Compared with no San Francisco Proposition I (1994), relocation out of area for tenants.controlled.keepers falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less; PC-21: leaving the area forfeits the benefit, and fewer holders are priced out, so they leave the area less. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.75); Buyouts move fewer tenants than the cap keeps in place (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.85); The lock-in outweighs moves diverted out of the area by higher free rents (p = 0.65); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.95); Without the rule some protected buyers would have left the area, and the benefit does not follow them (p = 0.85). Reported.",
+  "C-7. Compared with no San Francisco Proposition I (1994), price paid for tenants.prospective rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.75); Buyouts move fewer tenants than the cap keeps in place (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.85); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.95). Reported.",
+  "C-8. Compared with no San Francisco Proposition I (1994), price substitute for tenants.prospective rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.75); The ceiling is enforced against most bound sellers (p = 0.85); Uncovered units in the same market are close substitutes for covered ones (p = 0.80). Reported.",
+  "C-9. Compared with no San Francisco Proposition I (1994), relocation out of area for tenants.controlled falls from the medium run onward (tier B, invisible). Why: CR-12 total of C-6, C-5 (a dominance premise decides the sign). This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.70); The ceiling binds: it is below the price the market would otherwise reach (p = 0.75); Buyouts move fewer tenants than the cap keeps in place (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.85); Among all protected tenants, the fall in moves out of the area among keepers outweighs the rise among the displaced (p = 0.60); The lock-in outweighs moves diverted out of the area by higher free rents (p = 0.65); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.95); Without the rule some protected buyers would have left the area, and the benefit does not follow them (p = 0.85). Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [
+     "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index."
+    ],
+    "probability": 0.75,
+    "question_id": "c1.binding",
+    "rationale": "The cap is 60 percent of CPI per year for sitting tenants. Over several years any real rise in market rents makes it bind for long tenancies; at enactment, after the early-1990s slowdown, how soon it binds is less certain.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "c1.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "At the dates the rule takes effect and over the following years, is the maximum price below the price the market would otherwise reach for the covered units?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [
+     "The Rent Board, operating since 1979, hears petitions and orders refunds (policy text)."
+    ],
+    "probability": 0.85,
+    "question_id": "c1.enforced",
+    "rationale": "An existing Rent Board with refund powers and just-cause eviction rules; tenants have a strong incentive to petition.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "c1.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the ceiling be enforced against most of the bound sellers (a body that hears complaints, penalties larger than the gain from breaking it)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "c1.alternative_uses",
+    "rationale": "Small buildings can be sold to owner-occupiers, converted to shared ownership or redeveloped; the record does not say how hard conversion is.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "alternative_uses",
+    "assumption_class": "alternative_uses",
+    "id": "c1.alternative_uses",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound sellers move the covered resources to uses the ceiling does not reach (sale to owner-occupiers, conversion, redevelopment, keeping units off the market)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [
+     "When a tenant leaves voluntarily, the landlord may set the rent for the next tenant freely, after which the limit applies again."
+    ],
+    "probability": 0.95,
+    "question_id": "c1.nontransferable",
+    "rationale": "The limit protects the sitting tenant; on a voluntary move the rent resets, so the benefit is lost on leaving and cannot be sold.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "nontransferable",
+    "assumption_class": "other",
+    "id": "c1.nontransferable",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the right to buy at the controlled price tied to keeping the good (a sitting tenancy), so that the holder cannot sell or assign it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "c1.buyouts_limited",
+    "rationale": "Buyouts are not barred; their scale against the lock-in is uncertain at enactment.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyouts_limited",
+    "assumption_class": "other",
+    "id": "c1.buyouts_limited",
+    "kind": "noul",
+    "options": [],
+    "text": "Will payments from landlords to sitting tenants for giving up the tenancy (buyouts) move fewer tenants than the cap keeps in place?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "c1.would_leave",
+    "rationale": "Rents for sitting tenants are held below market and reset on leaving; in a city with rising rents some tenants would otherwise be priced out or leave.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "would_leave",
+    "assumption_class": "mobility",
+    "id": "c1.would_leave",
+    "kind": "noul",
+    "options": [],
+    "text": "Without the rule, would some of the protected buyers have moved out of the area, priced out by market rents or for opportunities elsewhere, and does the benefit end if they do?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.65,
+    "question_id": "c1.lockin_dominates",
+    "rationale": "Rising free rents in the city push some movers out; the lock-in on keepers is likely larger.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "lockin_dominates",
+    "assumption_class": "other",
+    "id": "c1.lockin_dominates",
+    "kind": "noul",
+    "options": [],
+    "text": "For tenants who keep a covered unit, does the lock-in outweigh moves out of the area by tenants who still move and face higher free rents in the city?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "c1.keepers_dominate",
+    "rationale": "Conversions of small buildings are lumpy and limited by conversion rules; most covered tenants keep their units. Uncertain at enactment.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "keepers_dominate",
+    "assumption_class": "other",
+    "id": "c1.keepers_dominate",
+    "kind": "noul",
+    "options": [],
+    "text": "Taking all protected tenants together, will the fall in moves out of the area among those who keep their units be larger than the rise among those displaced by conversion or withdrawal?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "c1.substitutes",
+    "rationale": "Uncovered units (newer buildings, vacated units at reset rents) are in the same city and serve the same tenant pool.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "substitutes",
+    "assumption_class": "substitutability",
+    "id": "c1.substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Do buyers who cannot obtain a covered unit turn to uncovered units in the same market, which are close substitutes?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "bound_actor": "landlords.controlled",
+    "buyer_actor": "buyers.current",
+    "cap": 0.6,
+    "cap_unit": "share of regional CPI rise, per year, for sitting tenants",
+    "domestic_seller_actor": "sellers.substitutes",
+    "downstream": [],
+    "excluded_actor": "tenants.prospective",
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "good": "rental_housing_small_multiunit_pre1979",
+    "id": "c1",
+    "importer_actor": null,
+    "instrument": "price_ceiling",
+    "market": "san_francisco",
+    "protected_actor": "tenants.controlled",
+    "revenue_actor": "officials.enforcement",
+    "seller_actor": "sellers.current",
+    "source_sentences": [
+     "Rental units in owner-occupied buildings of two to four units built before June 1979 become subject to the Rent Ordinance.",
+     "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index.",
+     "When a tenant leaves voluntarily, the landlord may set the rent for the next tenant freely, after which the limit applies again."
+    ],
+    "vacancy_decontrol": true
+   }
+  ],
+  "context": [
+   "Vacancy decontrol: the rent resets freely when a tenant leaves voluntarily (policy text).",
+   "Just-cause eviction applies to covered units (policy text).",
+   "The Rent Board, operating since 1979, hears petitions and orders refunds (policy text)."
+  ],
+  "effective": "1994-12 (certification of the election)",
+  "enacted": "1994-11-08",
+  "jurisdiction": "City and County of San Francisco",
+  "name": "San Francisco Proposition I (1994)",
+  "rule_maker": "voters of San Francisco (ballot measure)",
+  "stated_aim": "protect tenants of small multi-unit buildings from large rent increases and evictions",
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "readings": [
+     "U1-a: the base rent is the rent on the effective date",
+     "U1-b: the base rent is rolled back to an earlier date, cancelling increases made in the announcement window"
+    ],
+    "text": "The summary does not say whether the rent on the effective date is rolled back to an earlier base date."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.5 (handbook catalog 1.4: PC-1, PC-3, PC-5, PC-7, PC-21, RS-4, RS-5, TX-1, TX-2, TX-7, TX-8, RS-14; CR-12 totals)",
+ "run_at": "2026-10-17T20:18:54+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "readings": [
+    "U1-a: the base rent is the rent on the effective date",
+    "U1-b: the base rent is rolled back to an earlier date, cancelling increases made in the announcement window"
+   ],
+   "text": "The summary does not say whether the rent on the effective date is rolled back to an earlier base date."
+  }
+ ],
+ "verifier_problems": []
+}

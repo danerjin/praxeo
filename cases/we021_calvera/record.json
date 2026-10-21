@@ -1,0 +1,93 @@
+{
+ "name": "Calvera Rooftop Solar Incentive",
+ "jurisdiction": "Calvera (fictional)",
+ "rule_maker": "the Calvera legislature (governor's bill)",
+ "enacted": "1 November of Year 0",
+ "effective": "1 January of Year 1",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "per_unit_subsidy",
+   "good": "rooftop_solar_systems",
+   "market": "calvera",
+   "bound_actor": "buyers.adopters",
+   "seller_actor": "installers",
+   "other_buyer_actor": "buyers.commercial_solar",
+   "claim_handler_actor": "installers",
+   "enforcer_actor": "officials.enforcement",
+   "taxpayer_actor": "customers.electricity",
+   "own_revenue_funded": true,
+   "eligibility_criteria": true,
+   "temporary": true,
+   "budget_capped": true,
+   "announcement_window": true,
+   "source_sentences": [
+    "The governor's bill was introduced on 1 September of Year 0 with enough support to be expected to pass.",
+    "It ends when 900 MW has been funded, or on 31 December of Year 5, whichever comes first.",
+    "The subsidy applies to rooftop solar systems on residential buildings in Calvera, installed by building owners through a certified installer.",
+    "It pays $0.50 per watt of panel nameplate capacity for the first 300 MW funded statewide, $0.35 for the next 300 MW, $0.20 for the next 300 MW, and then nothing.",
+    "At most 10 kW per building is paid for.",
+    "The subsidy is paid to the installer after the utility approves the connection, and is deducted on the customer's invoice.",
+    "Commercial and ground-mounted systems are excluded.",
+    "Installers who claim the subsidy must be certified: a licensed electrician on staff, a three-day course and a $500 fee.",
+    "The State Energy Office administers the program, funded from 5% of the Solar Fund."
+   ],
+   "tax_named": true,
+   "qualifier_actor": "installers",
+   "related": [
+    {
+     "kind": "input",
+     "good": "electrical_labour",
+     "seller_actor": "electricians",
+     "price_variable": "wage_rate"
+    },
+    {
+     "kind": "input",
+     "good": "solar_panels",
+     "seller_actor": "panel_suppliers"
+    }
+   ],
+   "claim_penalties": true
+  },
+  {
+   "id": "k2",
+   "instrument": "per_unit_tax",
+   "good": "retail_electricity",
+   "market": "calvera",
+   "bound_actor": "utilities",
+   "buyer_actor": "customers.electricity",
+   "seller_actor": "utilities",
+   "revenue_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "enforcer_actor": "officials.enforcement",
+   "own_revenue_funded": true,
+   "announcement_window": true,
+   "cap": 0.12,
+   "cap_unit": "cents per kWh",
+   "source_sentences": [
+    "A surcharge of 0.12 cents per kWh is levied on retail electricity sales to all utility customers (households, businesses, public bodies), collected by the utilities.",
+    "It raises about $60 million a year (about $10 a year for a typical household) and is paid into a state Solar Fund.",
+    "The Utility Commission resets it each year to match projected payments.",
+    "The State Energy Office administers the program, funded from 5% of the Solar Fund."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "What happens to money left in the fund when the program ends, and whether the surcharge stops at once.",
+   "readings": [
+    "U1-a: the surcharge stops at once and any balance is credited back on bills",
+    "U1-b: the surcharge continues until the balance is spent"
+   ]
+  }
+ ],
+ "context": [
+  "Electricity is sold by three utilities whose rates are set by the state Utility Commission to recover their costs, almost entirely through per-kWh charges; the fixed monthly charge is small.",
+  "Retail electricity costs about 20 cents per kWh.",
+  "Existing law already credits rooftop solar owners for power they export at the full retail rate (net metering); this policy does not change that.",
+  "Panels and inverters are imported; Calvera buys well under 1% of world output.",
+  "Before the policy, about 900 installers put up about 15,000 systems a year (about 105 MW) at about $2.80 per watt, of which hardware is about $1.00 and labor, permits, sales and margin about $1.80."
+ ]
+}

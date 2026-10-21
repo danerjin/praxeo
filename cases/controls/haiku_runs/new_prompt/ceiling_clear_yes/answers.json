@@ -1,0 +1,30 @@
+[
+ {
+  "question_id": "r4.binding",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "A 1 percent cap on yearly increases, against market rents rising about 8 percent a year, holds the price well below the market, and the cap also applies to new tenants.",
+  "evidence": [
+   "Yearly rent increases for sitting tenants are capped at 1 percent, and the rent stays capped when a new tenant moves in.",
+   "Market rents in Dunmore have risen about 8 percent a year for a decade, and the vacancy rate is 1 percent."
+  ]
+ },
+ {
+  "question_id": "r4.enforced",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "The Rent Board audits every registered unit each year and orders refunds plus fines of three times any overcharge, so detection is near-certain and the penalty is large.",
+  "evidence": [
+   "A Rent Board with 120 inspectors audits every registered unit each year and orders refunds plus fines of three times any overcharge."
+  ]
+ },
+ {
+  "question_id": "r4.nontransferable",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "The record says tenancies cannot be assigned or sublet, so the controlled-rent right cannot be sold on.",
+  "evidence": [
+   "Tenancies cannot be assigned or sublet."
+  ]
+ }
+]

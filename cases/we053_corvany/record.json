@@ -1,0 +1,70 @@
+{
+ "name": "Corvany Personal Data Residency Act",
+ "jurisdiction": "Corvany (fictional)",
+ "rule_maker": "the Corvany legislature",
+ "enacted": "1 July 2027",
+ "effective": "1 January 2029",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "prohibition",
+   "good": "cloud_hosting_abroad",
+   "market": "corvany",
+   "bound_actor": "sellers.foreign",
+   "buyer_actor": "firms.covered",
+   "informal_buyer_actor": "sellers.foreign.online",
+   "substitute_seller_actor": "firms.near_threshold",
+   "definition_line": true,
+   "announcement_window": true,
+   "general_budget": true,
+   "enforcer_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "source_sentences": [
+    "Residency (K1): storing or processing personal data of Corvany residents outside Corvany is prohibited for each data controller that held such data on more than 50,000 residents on any day of the preceding calendar year.",
+    "A foreign provider may comply by operating servers in Corvany.",
+    "The count is per controller; a group's companies count separately.",
+    "Controllers at or below 50,000 are exempt.",
+    "The bill was introduced on 14 October 2026 and enacted on 1 July 2027.",
+    "The requirement applies from 1 January 2029, 18 months after enactment.",
+    "Enforcement (K4): the Data Protection Office enforces the Act.",
+    "The Office receives a supplementary appropriation of 6 million crowns a year from the general budget.",
+    "Fees go to the general budget."
+   ],
+   "practice_ban": true,
+   "fees_to_budget": true
+  },
+  {
+   "id": "k3",
+   "instrument": "licensing_requirement",
+   "good": "data_center_hosting",
+   "market": "corvany",
+   "bound_actor": "sellers.substitutes",
+   "buyer_actor": "firms.covered",
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": true,
+   "announcement_window": true,
+   "source_sentences": [
+    "Facility certificate (K3): data centers in Corvany that host covered data need a license (a certificate) for the facility, which the facility operators must hold.",
+    "It requires an annual audit of physical security and access logs and a fee of 40,000 crowns per facility a year.",
+    "Fees go to the general budget."
+   ],
+   "fees_to_budget": true
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Encrypted backups abroad: Section 4(2) says \"A copy made solely for security may be kept outside Corvany where the Office so allows by regulation.\"",
+   "readings": [
+    "U1-a: encrypted backup copies may be kept abroad (the provision is read as permitting security copies, with the regulation setting only conditions)",
+    "U1-b: until the Office allows it by regulation, every copy, including backups, must be in Corvany"
+   ]
+  }
+ ],
+ "context": [
+  "About 2,150 of them (70%) store and process this data mainly abroad, almost all in the three providers' Esterland regions.",
+  "The cost of local hosting per unit of computing is estimated at 25% to 40% above the Esterland regions (smaller scale, dearer electricity).",
+  "Providers N and S announced regions in August 2027; provider T has not decided; dozens of smaller foreign providers have none."
+ ]
+}

@@ -1,0 +1,2045 @@
+{
+ "assumptions": {
+  "beneficiaries_organize(k1)": {
+   "assumption_class": "other",
+   "id": "beneficiaries_organize(k1)",
+   "p": 0.85,
+   "text": "The sellers who gain can organize to lobby for renewal at a cost below their stake."
+  },
+  "can_delay(k1)": {
+   "assumption_class": "expectations",
+   "id": "can_delay(k1)",
+   "p": 0.85,
+   "text": "Eligible buyers knew of the payment before it started and could delay purchases."
+  },
+  "claims_recovered(k1)": {
+   "assumption_class": "enforcement",
+   "id": "claims_recovered(k1)",
+   "p": 0.6,
+   "text": "Some false claims are found, and repayments or fines are collected."
+  },
+  "ends_as_scheduled(k1)": {
+   "assumption_class": "expectations",
+   "id": "ends_as_scheduled(k1)",
+   "p": 0.65,
+   "text": "The payment ends as scheduled: it is not renewed, extended or repeated soon after."
+  },
+  "false_claims(k1)": {
+   "assumption_class": "enforcement",
+   "id": "false_claims(k1)",
+   "p": 0.25,
+   "text": "Some claims are false or overstated."
+  },
+  "not_fully_captured(k1)": {
+   "assumption_class": "other",
+   "id": "not_fully_captured(k1)",
+   "p": 0.85,
+   "text": "Sellers do not capture the whole payment: the recipients' net price falls."
+  },
+  "oversubscribed(k1)": {
+   "assumption_class": "other",
+   "id": "oversubscribed(k1)",
+   "p": 0.6,
+   "text": "Demand for the payment exceeds its budget or number at some point."
+  },
+  "pulled_forward(k1)": {
+   "assumption_class": "expectations",
+   "id": "pulled_forward(k1)",
+   "p": 0.85,
+   "text": "Many window buyers would have bought within the next few years anyway."
+  },
+  "qualifying_pays(k1)": {
+   "assumption_class": "other",
+   "id": "qualifying_pays(k1)",
+   "p": 0.6,
+   "text": "Some can meet the criteria at a cost below the payment's worth to them."
+  },
+  "quantity_expands(k1)": {
+   "assumption_class": "alternative_uses",
+   "id": "quantity_expands(k1)",
+   "p": 0.9,
+   "text": "At least one side can expand its quantity: more of the subsidized good is traded."
+  },
+  "seller_supply_slow(k1)": {
+   "assumption_class": "durability",
+   "id": "seller_supply_slow(k1)",
+   "p": 0.7,
+   "text": "The sellers' supply of the subsidized good cannot grow at once."
+  },
+  "sellers_fewer_alternatives(k1)": {
+   "assumption_class": "substitutability",
+   "id": "sellers_fewer_alternatives(k1)",
+   "p": 0.65,
+   "text": "While supply is fixed, the sellers have clearly fewer alternatives than the recipients."
+  },
+  "substitutes_given_up(k1)": {
+   "assumption_class": "substitutability",
+   "id": "substitutes_given_up(k1)",
+   "p": 0.7,
+   "text": "Some recipients would otherwise have bought an unsubsidized good."
+  },
+  "supply_slow_at_expiry(k1)": {
+   "assumption_class": "durability",
+   "id": "supply_slow_at_expiry(k1)",
+   "p": 0.6,
+   "text": "When the payment ends, the sellers cannot cut their supply at once."
+  },
+  "takeup(k1)": {
+   "assumption_class": "other",
+   "id": "takeup(k1)",
+   "p": 0.9,
+   "text": "Many eligible recipients value the payment above the cost of qualifying, and claim it."
+  },
+  "used_supply_slow(k1)": {
+   "assumption_class": "mobility",
+   "id": "used_supply_slow(k1)",
+   "p": 0.75,
+   "text": "Other supply cannot quickly replace the scrapped used goods."
+  },
+  "would_stay_in_use(k1)": {
+   "assumption_class": "durability",
+   "id": "would_stay_in_use(k1)",
+   "p": 0.85,
+   "text": "The scrapped goods would otherwise have stayed in use for some years."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "buyers.new_cars.other",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "seller_supply_slow(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "seller_supply_slow(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_sellers_capture(k1)",
+     "premises": [
+      "seller_supply_slow(k1)"
+     ],
+     "rule": "DM-1"
+    },
+    {
+     "conclusion": "sb_sellers_capture(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.new_cars.other",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "seller_supply_slow(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "seller_supply_slow(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_sellers_capture(k1)",
+     "premises": [
+      "seller_supply_slow(k1)"
+     ],
+     "rule": "DM-1"
+    },
+    {
+     "conclusion": "sb_sellers_capture(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_others_cut_back(k1)",
+     "premises": [
+      "sb_sellers_capture(k1)"
+     ],
+     "rule": "CR-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.new_cars.other",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "seller_supply_slow(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "seller_supply_slow(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_sellers_capture(k1)",
+     "premises": [
+      "seller_supply_slow(k1)"
+     ],
+     "rule": "DM-1"
+    },
+    {
+     "conclusion": "sb_sellers_capture(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.new_cars.scrapping",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "false_claims(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "false_claims(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_outlay(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-1"
+    },
+    {
+     "conclusion": "sb_false_claims(k1)",
+     "premises": [
+      "false_claims(k1)",
+      "sb_outlay(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "legal_breach",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.new_cars.scrapping",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "not_fully_captured(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "not_fully_captured(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_recipients_gain(k1)",
+     "premises": [
+      "not_fully_captured(k1)",
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.new_cars.scrapping",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "quantity_expands(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "quantity_expands(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_expands(k1)",
+     "premises": [
+      "quantity_expands(k1)",
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.new_cars.scrapping",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "can_delay(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "can_delay(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_delayed(k1)",
+     "premises": [
+      "announced(k1)",
+      "can_delay(k1)",
+      "sb_takeup(k1)"
+     ],
+     "rule": "RS-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": "announcement"
+  },
+  {
+   "actor_class": "buyers.new_cars.scrapping",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "qualifying_pays(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "qualifying_pays(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_reshaped(k1)",
+     "premises": [
+      "qualifying_pays(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "sb_reshaped(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.new_cars.scrapping",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "not_fully_captured(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "not_fully_captured(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_recipients_gain(k1)",
+     "premises": [
+      "not_fully_captured(k1)",
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_recipients_keep(k1)",
+     "premises": [
+      "sb_recipients_gain(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.new_cars.scrapping",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "oversubscribed(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "oversubscribed(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_rationed(k1)",
+     "premises": [
+      "budget_capped(k1)"
+     ],
+     "rule": "LW-6"
+    },
+    {
+     "conclusion": "sb_rationed(k1)",
+     "premises": [
+      "oversubscribed(k1)"
+     ],
+     "rule": "PC-2"
+    }
+   ],
+   "group": [
+    "wait_time",
+    "allocation_by_non_price_criteria"
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "wait_time",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.used_cars",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "takeup(k1)",
+     "used_supply_slow(k1)",
+     "would_stay_in_use(k1)"
+    ]
+   ],
+   "assumptions": [
+    "takeup(k1)",
+    "used_supply_slow(k1)",
+    "would_stay_in_use(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_scrapped(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-6"
+    },
+    {
+     "conclusion": "sb_stock_falls(k1)",
+     "premises": [
+      "sb_scrapped(k1)",
+      "would_stay_in_use(k1)"
+     ],
+     "rule": "SB-6"
+    },
+    {
+     "conclusion": "sb_used_dearer(k1)",
+     "premises": [
+      "sb_stock_falls(k1)",
+      "used_supply_slow(k1)"
+     ],
+     "rule": "SB-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_substitute",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.used_cars",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "takeup(k1)",
+     "would_stay_in_use(k1)"
+    ]
+   ],
+   "assumptions": [
+    "takeup(k1)",
+    "would_stay_in_use(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_scrapped(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-6"
+    },
+    {
+     "conclusion": "sb_stock_falls(k1)",
+     "premises": [
+      "sb_scrapped(k1)",
+      "would_stay_in_use(k1)"
+     ],
+     "rule": "SB-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_substitute",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.used_cars",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "takeup(k1)",
+     "would_stay_in_use(k1)"
+    ]
+   ],
+   "assumptions": [
+    "takeup(k1)",
+    "would_stay_in_use(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_scrapped(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-6"
+    },
+    {
+     "conclusion": "sb_stock_falls(k1)",
+     "premises": [
+      "sb_scrapped(k1)",
+      "would_stay_in_use(k1)"
+     ],
+     "rule": "SB-6"
+    },
+    {
+     "conclusion": "sb_resales_lost(k1)",
+     "premises": [
+      "sb_stock_falls(k1)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "dismantlers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_scrapped(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_administered(k1)",
+     "premises": [
+      "subsidy(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "claims_recovered(k1)",
+     "false_claims(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "claims_recovered(k1)",
+    "false_claims(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_outlay(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-1"
+    },
+    {
+     "conclusion": "sb_false_claims(k1)",
+     "premises": [
+      "false_claims(k1)",
+      "sb_outlay(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "sb_recovered(k1)",
+     "premises": [
+      "claims_recovered(k1)",
+      "sb_false_claims(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "non_tax_receipts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_outlay(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "subsidy_outlay",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.old_cars.keeping",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "takeup(k1)",
+     "used_supply_slow(k1)",
+     "would_stay_in_use(k1)"
+    ]
+   ],
+   "assumptions": [
+    "takeup(k1)",
+    "used_supply_slow(k1)",
+    "would_stay_in_use(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_scrapped(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-6"
+    },
+    {
+     "conclusion": "sb_stock_falls(k1)",
+     "premises": [
+      "sb_scrapped(k1)",
+      "would_stay_in_use(k1)"
+     ],
+     "rule": "SB-6"
+    },
+    {
+     "conclusion": "sb_used_dearer(k1)",
+     "premises": [
+      "sb_stock_falls(k1)",
+      "used_supply_slow(k1)"
+     ],
+     "rule": "SB-6"
+    },
+    {
+     "conclusion": "sb_used_revalued(k1)",
+     "premises": [
+      "sb_used_dearer(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-18",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.new_cars",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_claims(k1)",
+     "premises": [
+      "subsidy(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-19",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.new_cars",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "beneficiaries_organize(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "beneficiaries_organize(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_lobbies(k1)",
+     "premises": [
+      "beneficiaries_organize(k1)",
+      "sb_takeup(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-20",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.new_cars",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "seller_supply_slow(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "seller_supply_slow(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_sellers_capture(k1)",
+     "premises": [
+      "seller_supply_slow(k1)"
+     ],
+     "rule": "DM-1"
+    },
+    {
+     "conclusion": "sb_sellers_capture(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-21",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.new_cars",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "ends_as_scheduled(k1)",
+     "pulled_forward(k1)",
+     "quantity_expands(k1)",
+     "supply_slow_at_expiry(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "ends_as_scheduled(k1)",
+    "pulled_forward(k1)",
+    "quantity_expands(k1)",
+    "supply_slow_at_expiry(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_expands(k1)",
+     "premises": [
+      "quantity_expands(k1)",
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_dip(k1)",
+     "premises": [
+      "ends_as_scheduled(k1)",
+      "pulled_forward(k1)",
+      "sb_expands(k1)"
+     ],
+     "rule": "SB-6"
+    },
+    {
+     "conclusion": "sb_dip_price(k1)",
+     "premises": [
+      "supply_slow_at_expiry(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "sb_dip_price(k1)",
+     "premises": [
+      "sb_dip(k1)"
+     ],
+     "rule": "SB-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-22",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": "after_expiry"
+  },
+  {
+   "actor_class": "sellers.new_cars",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "quantity_expands(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "quantity_expands(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_expands(k1)",
+     "premises": [
+      "quantity_expands(k1)",
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-23",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.new_cars",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "quantity_expands(k1)",
+     "substitutes_given_up(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "quantity_expands(k1)",
+    "substitutes_given_up(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_expands(k1)",
+     "premises": [
+      "quantity_expands(k1)",
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_drawn(k1)",
+     "premises": [
+      "substitutes_given_up(k1)"
+     ],
+     "rule": "RS-1"
+    },
+    {
+     "conclusion": "sb_drawn(k1)",
+     "premises": [
+      "sb_expands(k1)"
+     ],
+     "rule": "SB-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-24",
+   "item": "unsubsidized_goods",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.new_cars",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "ends_as_scheduled(k1)",
+     "pulled_forward(k1)",
+     "quantity_expands(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "ends_as_scheduled(k1)",
+    "pulled_forward(k1)",
+    "quantity_expands(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_expands(k1)",
+     "premises": [
+      "quantity_expands(k1)",
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_dip(k1)",
+     "premises": [
+      "ends_as_scheduled(k1)",
+      "pulled_forward(k1)",
+      "sb_expands(k1)"
+     ],
+     "rule": "SB-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-25",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": "after_expiry"
+  },
+  {
+   "actor_class": "sellers.new_cars",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "seller_supply_slow(k1)",
+     "sellers_fewer_alternatives(k1)",
+     "takeup(k1)"
+    ]
+   ],
+   "assumptions": [
+    "seller_supply_slow(k1)",
+    "sellers_fewer_alternatives(k1)",
+    "takeup(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_takeup(k1)",
+     "premises": [
+      "per_unit_sub(k1)",
+      "takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_sellers_capture(k1)",
+     "premises": [
+      "seller_supply_slow(k1)"
+     ],
+     "rule": "DM-1"
+    },
+    {
+     "conclusion": "sb_sellers_capture(k1)",
+     "premises": [
+      "sb_takeup(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "sb_sellers_share(k1)",
+     "premises": [
+      "sb_sellers_capture(k1)",
+      "sellers_fewer_alternatives(k1)"
+     ],
+     "rule": "DM-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-26",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "subsidy_share_received",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "taxpayers",
+   "actor_group": [
+    "taxpayers",
+    "recipients.other_spending",
+    "taxpayers.future"
+   ],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "sb_paid(k1)",
+     "premises": [
+      "subsidy(k1)"
+     ],
+     "rule": "SB-1"
+    },
+    {
+     "conclusion": "sb_tax_funded(k1)",
+     "premises": [
+      "sb_paid(k1)"
+     ],
+     "rule": "OC-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-27",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"buyers.new_cars.scrapping\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nsubsidy(k1).\nsb_recipient(k1, \"buyers.new_cars.scrapping\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nsb_claim_handler(k1, \"sellers.new_cars\").\nper_unit_sub(k1).\nsb_seller(k1, \"sellers.new_cars\").\nsb_qualifier(k1, \"buyers.new_cars.scrapping\").\nsb_payer_body(k1, \"officials.enforcement\").\nclaim_penalties(k1).\nsb_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nsb_other_buyer(k1, \"buyers.new_cars.other\").\nsb_substitute_seller(k1, \"sellers.new_cars\").\nsb_used_buyer(k1, \"buyers.used_cars\").\nsb_used_owner(k1, \"owners.old_cars.keeping\").\nsb_scrapper(k1, \"dismantlers\").\ndebt_funded(k1).\ncriteria(k1).\nrenewable(k1).\nbudget_capped(k1).\ntemporary(k1).\nscrappage(k1).\nassumption(takeup(k1)).\nassumption(not_fully_captured(k1)).\nassumption(quantity_expands(k1)).\nassumption(seller_supply_slow(k1)).\nassumption(sellers_fewer_alternatives(k1)).\nassumption(false_claims(k1)).\nassumption(claims_recovered(k1)).\nassumption(substitutes_given_up(k1)).\nassumption(qualifying_pays(k1)).\nassumption(beneficiaries_organize(k1)).\nassumption(oversubscribed(k1)).\nassumption(can_delay(k1)).\nassumption(pulled_forward(k1)).\nassumption(ends_as_scheduled(k1)).\nassumption(supply_slow_at_expiry(k1)).\nassumption(would_stay_in_use(k1)).\nassumption(used_supply_slow(k1)).\n",
+ "explanations": [
+  "C-1. Compared with no Vestria Fleet Renewal Rebate, price paid for buyers.new_cars.other rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-2. Compared with no Vestria Fleet Renewal Rebate, quantity traded for buyers.new_cars.other falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment; CR-4: buyers who face a higher price take fewer units. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-3. Compared with no Vestria Fleet Renewal Rebate, resources available other uses for buyers.new_cars.other falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-4. Compared with no Vestria Fleet Renewal Rebate, legal breach for buyers.new_cars.scrapping rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; RS-3: RS-3. This holds if: Some claims are false or overstated (p = 0.25); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-5. Compared with no Vestria Fleet Renewal Rebate, price paid for buyers.new_cars.scrapping falls from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: Sellers do not capture the whole payment: the recipients' net price falls (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-6. Compared with no Vestria Fleet Renewal Rebate, quantity traded for buyers.new_cars.scrapping rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-7. Compared with no Vestria Fleet Renewal Rebate, quantity traded for buyers.new_cars.scrapping falls in the announcement window (before the effective date), in the short run (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Eligible buyers knew of the payment before it started and could delay purchases (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-8. Compared with no Vestria Fleet Renewal Rebate, reclassification for buyers.new_cars.scrapping rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-5: owners move units out of the rule's reach; SB-5: a payment conditional on criteria draws effort to meet them. This holds if: Some can meet the criteria at a cost below the payment's worth to them (p = 0.60); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-9. Compared with no Vestria Fleet Renewal Rebate, resources available other uses for buyers.new_cars.scrapping rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: Sellers do not capture the whole payment: the recipients' net price falls (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-10. Compared with no Vestria Fleet Renewal Rebate, wait time or allocation by non price criteria for buyers.new_cars.scrapping rises for at least one of them from the short run onward (tier B, invisible). Why: LW-6: a good handed out at a fixed price in a fixed number is rationed by other means when more want it; PC-2: rationing by other means than price shows up as waiting or allocation by connections. This holds if: Demand for the payment exceeds its budget or number at some point (p = 0.60); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-11. Compared with no Vestria Fleet Renewal Rebate, price substitute for buyers.used_cars rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90); Other supply cannot quickly replace the scrapped used goods (p = 0.75); The scrapped goods would otherwise have stayed in use for some years (p = 0.85). Reported.",
+  "C-12. Compared with no Vestria Fleet Renewal Rebate, quantity substitute for buyers.used_cars falls from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90); The scrapped goods would otherwise have stayed in use for some years (p = 0.85). Reported.",
+  "C-13. Compared with no Vestria Fleet Renewal Rebate, quantity traded for buyers.used_cars falls from the medium run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock; OC-4: exchanges that no longer happen are lost to both sides. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90); The scrapped goods would otherwise have stayed in use for some years (p = 0.85). Reported.",
+  "C-14. Compared with no Vestria Fleet Renewal Rebate, quantity traded for dismantlers rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-15. Compared with no Vestria Fleet Renewal Rebate, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-16. Compared with no Vestria Fleet Renewal Rebate, non tax receipts for officials.enforcement rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; RS-3: RS-3; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: Some false claims are found, and repayments or fines are collected (p = 0.60); Some claims are false or overstated (p = 0.25); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-17. Compared with no Vestria Fleet Renewal Rebate, subsidy outlay for officials.enforcement rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-18. Compared with no Vestria Fleet Renewal Rebate, asset value for owners.old_cars.keeping rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90); Other supply cannot quickly replace the scrapped used goods (p = 0.75); The scrapped goods would otherwise have stayed in use for some years (p = 0.85). Reported.",
+  "C-19. Compared with no Vestria Fleet Renewal Rebate, compliance cost for sellers.new_cars rises from the short run onward (tier A, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported.",
+  "C-20. Compared with no Vestria Fleet Renewal Rebate, lobbying effort for sellers.new_cars rises from the medium run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The sellers who gain can organize to lobby for renewal at a cost below their stake (p = 0.85); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-21. Compared with no Vestria Fleet Renewal Rebate, net price received for sellers.new_cars rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-22. Compared with no Vestria Fleet Renewal Rebate, net price received for sellers.new_cars falls after the temporary measure expires, from the medium run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The payment ends as scheduled: it is not renewed, extended or repeated soon after (p = 0.65); Many window buyers would have bought within the next few years anyway (p = 0.85); At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); When the payment ends, the sellers cannot cut their supply at once (p = 0.60); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-23. Compared with no Vestria Fleet Renewal Rebate, quantity traded for sellers.new_cars rises from the short run onward (tier B, visible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-24. Compared with no Vestria Fleet Renewal Rebate, quantity traded (unsubsidized goods) for sellers.new_cars falls from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; RS-1: when a good becomes dearer, buyers turn to substitutes; SB-3: resources move into the subsidized activity from the uses that would otherwise have had them. This holds if: At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Some recipients would otherwise have bought an unsubsidized good (p = 0.70); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-25. Compared with no Vestria Fleet Renewal Rebate, quantity traded for sellers.new_cars falls after the temporary measure expires, from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-6: a temporary purchase subsidy moves purchases into its window, and a scrappage condition takes used goods out of the stock. This holds if: The payment ends as scheduled: it is not renewed, extended or repeated soon after (p = 0.65); Many window buyers would have bought within the next few years anyway (p = 0.85); At least one side can expand its quantity: more of the subsidized good is traded (p = 0.90); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-26. Compared with no Vestria Fleet Renewal Rebate, subsidy share received for sellers.new_cars rises from the short run onward (tier B, invisible). Why: SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; DM-1: where sellers' supply cannot grow at once, the added demand raises their price, and the side with fewer alternatives receives more of the payment. This holds if: The sellers' supply of the subsidized good cannot grow at once (p = 0.70); While supply is fixed, the sellers have clearly fewer alternatives than the recipients (p = 0.65); Many eligible recipients value the payment above the cost of qualifying, and claim it (p = 0.90). Reported.",
+  "C-27. Compared with no Vestria Fleet Renewal Rebate, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the medium run onward (tier A, invisible). Why: SB-1: a subsidy is paid by someone: taxes now, or borrowing repaid from taxes later; OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.takeup",
+    "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-2: many owners of eligible cars value the rebate above their car and the cost of buying sooner (1.1 million eligible cars against V$4,000).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "takeup",
+    "assumption_class": "other",
+    "id": "k1.takeup",
+    "kind": "noul",
+    "options": [],
+    "text": "Will many of those eligible claim the payment, because it is worth more to them than what they must do or give up to qualify?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.not_fully_captured",
+    "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-1: sellers do not capture the whole rebate; some 30 competing brands; the rebate is shown on the invoice.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "not_fully_captured",
+    "assumption_class": "other",
+    "id": "k1.not_fully_captured",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the recipients keep part of the payment, rather than sellers raising their prices by the whole of it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.quantity_expands",
+    "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-2 with SB-2's premise: buyers who take the rebate buy a new car they would not have bought in the window.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "quantity_expands",
+    "assumption_class": "alternative_uses",
+    "id": "k1.quantity_expands",
+    "kind": "noul",
+    "options": [],
+    "text": "Will more of the subsidized good change hands than without the payment (because buyers buy more, or sellers can supply more)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.seller_supply_slow",
+    "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-7: the supply of eligible models cannot grow much within six months (shipping lead times of three to five months).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "seller_supply_slow",
+    "assumption_class": "durability",
+    "id": "k1.seller_supply_slow",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the sellers' supply of the subsidized good fixed for a while (stock ordered or built before the payment, long lead times), so that it cannot grow at once to meet the added demand?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.65,
+    "question_id": "k1.sellers_fewer_alternatives",
+    "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-16: while their stock is fixed by earlier import orders, sellers have clearly fewer alternatives than rebate buyers, who can wait or keep their car.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "sellers_fewer_alternatives",
+    "assumption_class": "substitutability",
+    "id": "k1.sellers_fewer_alternatives",
+    "kind": "noul",
+    "options": [],
+    "text": "While their supply is fixed, do the sellers have clearly fewer alternatives than the recipients (who can wait, buy something else or not buy at all)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.25,
+    "question_id": "k1.false_claims",
+    "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-11: dismantlers fake scrapping on a meaningful scale (registry deregistration checks; audits; penalties).",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "false_claims",
+    "assumption_class": "enforcement",
+    "id": "k1.false_claims",
+    "kind": "noul",
+    "options": [],
+    "text": "Given how claims are checked, will some claims for the payment be false or overstated?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.claims_recovered",
+    "rationale": "No matching assumption in WE-019; judged from the text: the registry checks registration history and deregistration and audits dismantlers, so some false claims would be found.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "claims_recovered",
+    "assumption_class": "enforcement",
+    "id": "k1.claims_recovered",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the checks find some false claims, so that repayments or fines are collected?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.substitutes_given_up",
+    "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-12: some rebate buyers would otherwise have bought a non-eligible new model.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "substitutes_given_up",
+    "assumption_class": "substitutability",
+    "id": "k1.substitutes_given_up",
+    "kind": "noul",
+    "options": [],
+    "text": "Would some recipients otherwise have bought one of the goods the payment does not cover (a non-eligible model, another form of the good)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.qualifying_pays",
+    "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-8: some owners of failing cars can get a roadworthiness certificate for less than the rebate is worth to them.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "qualifying_pays",
+    "assumption_class": "other",
+    "id": "k1.qualifying_pays",
+    "kind": "noul",
+    "options": [],
+    "text": "For some who do not now meet the criteria, will changing what they do or own so as to meet them cost less than the payment is worth to them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.beneficiaries_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-9: importers and dealers have an existing association.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "beneficiaries_organize",
+    "assumption_class": "other",
+    "id": "k1.beneficiaries_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the sellers who gain from the payment organize to lobby for its extension or renewal at a cost below their stake (an existing trade association, a few large firms)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.oversubscribed",
+    "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-6: demand for rebates exceeds 120,000 at some point in the window (1.1 million eligible cars).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "oversubscribed",
+    "assumption_class": "other",
+    "id": "k1.oversubscribed",
+    "kind": "noul",
+    "options": [],
+    "text": "Will more people want the payment than its budget or number allows at some point while it is offered?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.can_delay",
+    "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-5: buyers knew of the scheme from March and could delay purchases.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_delay",
+    "assumption_class": "expectations",
+    "id": "k1.can_delay",
+    "kind": "noul",
+    "options": [],
+    "text": "Could those who will be eligible put off a purchase they would otherwise make before the payment starts, until it does (the payment was announced in advance)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.pulled_forward",
+    "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-3: many window buyers would have bought a new car within the next few years anyway.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "pulled_forward",
+    "assumption_class": "expectations",
+    "id": "k1.pulled_forward",
+    "kind": "noul",
+    "options": [],
+    "text": "Would many of those who buy during the payment's window have bought the same good within the following few years anyway?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.65,
+    "question_id": "k1.ends_as_scheduled",
+    "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-20: buyers do not expect a repeat scheme (the opposite of A-15, p = 0.35); ministers have said there is no plan to repeat it.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "ends_as_scheduled",
+    "assumption_class": "expectations",
+    "id": "k1.ends_as_scheduled",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the payment end when its window closes, rather than being renewed, extended or repeated soon after?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.supply_slow_at_expiry",
+    "rationale": "No matching assumption in WE-019; judged from the text: new cars are imported against volumes ordered months ahead (shipping lead times), so at the end of the window import volumes set for the boom cannot be cut at once; WE-019 signs the post-window price fall (C-25) and calls it weak.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "supply_slow_at_expiry",
+    "assumption_class": "durability",
+    "id": "k1.supply_slow_at_expiry",
+    "kind": "noul",
+    "options": [],
+    "text": "When the payment ends, will the sellers still be unable to cut their supply at once (stock already ordered, capacity built for the window)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.would_stay_in_use",
+    "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-4: the scrapped cars would otherwise have stayed in use (roadworthiness required; retirement at about 18 years).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "would_stay_in_use",
+    "assumption_class": "durability",
+    "id": "k1.would_stay_in_use",
+    "kind": "noul",
+    "options": [],
+    "text": "Would the goods scrapped to obtain the payment otherwise have stayed in use for some years?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.used_supply_slow",
+    "rationale": "Probability taken from the assumption table of handbook WE-019 (illustrative figures), A-13: used-car imports cannot quickly replace the scrapped cars (25% duty and inspection).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "used_supply_slow",
+    "assumption_class": "mobility",
+    "id": "k1.used_supply_slow",
+    "kind": "noul",
+    "options": [],
+    "text": "Is other supply of used goods of this kind (imports, goods kept in use longer) unable to replace the scrapped ones quickly?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "bound_actor": "buyers.new_cars.scrapping",
+    "budget_capped": true,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": "sellers.new_cars",
+    "claim_penalties": true,
+    "debt_funded": true,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": true,
+    "enforcer_actor": "officials.enforcement",
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "new_fuel_efficient_cars",
+    "id": "k1",
+    "importer_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "purchase_rebate",
+    "market": "vestria",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": "buyers.new_cars.other",
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "own_revenue_funded": false,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": true,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "scrappage": true,
+    "scrapper_actor": "dismantlers",
+    "seller_actor": "sellers.new_cars",
+    "source_sentences": [
+     "A private buyer who scraps an eligible old car receives a rebate of V$4,000 on a new car certified at 5.0 L/100 km or less, bought from a registered Vestrian dealer.",
+     "The rebate is paid by the Transport Ministry to the dealer and deducted on the invoice; one per buyer.",
+     "The old car must be 12 or more years old, registered to the buyer continuously since before 15 March, and hold a current roadworthiness certificate.",
+     "The budget is capped at V$480 million (120,000 rebates), first come, first served; the scheme closes early if the budget runs out.",
+     "It applies to purchase contracts signed from 1 July to 31 December of the same year and then expires.",
+     "Ministers have said there is no plan to repeat it, but have not ruled it out.",
+     "The government announced the rebate in its budget statement on 15 March.",
+     "The old car is delivered to a licensed dismantler, deregistered, and crushed within 30 days.",
+     "The rebate, the fees and the administration are funded by additional government bonds issued in the year, serviced and repaid from general revenue over 10 years."
+    ],
+    "substitute_seller_actor": "sellers.new_cars",
+    "tax_named": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": true,
+    "third_party_payer_actor": null,
+    "used_buyer_actor": "buyers.used_cars",
+    "used_owner_actor": "owners.old_cars.keeping",
+    "vacancy_decontrol": false
+   }
+  ],
+  "context": [
+   "About 200,000 new cars are sold in a normal year, roughly 40% of them models that use 5.0 liters of fuel per 100 km or less.",
+   "Of 4.5 million registered cars, about 1.1 million are 12 or more years old; a drivable car of that age typically sells for V$1,500 to V$5,000.",
+   "Used cars can be imported, but they pay a 25% duty and a registration inspection, so the used-car market runs mostly on the domestic fleet."
+  ],
+  "effective": "1 July",
+  "enacted": "20 May",
+  "jurisdiction": "Vestria (fictional)",
+  "name": "Vestria Fleet Renewal Rebate",
+  "rule_maker": "the Parliament of Vestria",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U1-a: not reopened",
+     "U1-b: reopened"
+    ],
+    "text": "Whether the scheme would be reopened if the budget ran out early."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-18T20:45:44+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U1-a: not reopened",
+    "U1-b: reopened"
+   ],
+   "text": "Whether the scheme would be reopened if the budget ran out early."
+  }
+ ],
+ "verifier_problems": []
+}

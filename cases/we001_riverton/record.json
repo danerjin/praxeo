@@ -1,0 +1,35 @@
+{
+ "name": "Riverton Rent Stabilization Ordinance",
+ "jurisdiction": "Riverton (fictional)",
+ "rule_maker": "voters of Riverton (ballot measure)",
+ "enacted": "year 0",
+ "effective": "year 0 + 8 months",
+ "stated_aim": "protect sitting tenants from rising rents",
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "price_ceiling",
+   "good": "rental_housing_existing",
+   "market": "riverton",
+   "bound_actor": "landlords.controlled",
+   "protected_actor": "tenants.controlled",
+   "excluded_actor": "tenants.prospective",
+   "neighbor_actor": "renters.neighbors",
+   "cap": 0.02,
+   "cap_unit": "yearly increase after a 3-year freeze",
+   "announcement_window": true,
+   "general_budget": true,
+   "source_sentences": [
+    "Rent on residential rental units existing on the effective date is frozen at its level on the effective date for 3 years; increases are capped at 2% a year after that.",
+    "Tenancies cannot be assigned or sold."
+   ]
+  }
+ ],
+ "unclear": [
+  {"id": "U1", "text": "Whether major renovations allow a rent increase.", "readings": ["U1-a: no", "U1-b: yes, by board approval"]}
+ ],
+ "context": [
+    "Market rents have risen about 5% a year for several years (WE-001 record).",
+    "Eastfield and Northgate are 15 to 25 minutes away by car or train and have no rent regulation (WE-001 record)."
+  ]
+}

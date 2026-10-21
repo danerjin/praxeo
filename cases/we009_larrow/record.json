@@ -1,0 +1,55 @@
+{
+ "name": "Larrow Fair Wage Act",
+ "jurisdiction": "Larrow (fictional)",
+ "rule_maker": "the Larrow legislature",
+ "enacted": "March of Year 1",
+ "effective": "January 1, Year 2",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "price_floor",
+   "good": "adult_low_wage_labor",
+   "seller_actor": "workers.adult_low_wage",
+   "excluded_actor": "workers.prospective",
+   "lower_tier_seller_actor": "workers.youth",
+   "output_buyer_actor": "consumers",
+   "mobile_buyer_actor": "consumers.border",
+   "substitute_seller_actor": "input_suppliers",
+   "asset_owner_actor": "factor_owners.specific",
+   "definition_line": true,
+   "announcement_window": true,
+   "source_sentences": [
+    "The adult minimum wage for employees aged 20 and over, paid by all employers in Larrow, is $12 an hour from January 1, Year 2 and $14 an hour from January 1, Year 3.",
+    "The bill was introduced in December of Year 0 and passed in March of Year 1.",
+    "The State Labor Department enforces the Act through complaint-driven investigations, with about 40 investigators; remedies are back pay plus an equal amount in damages, and workers may sue."
+   ],
+   "market": "larrow",
+   "bound_actor": "employers.low_wage",
+   "enforcer_actor": "officials.enforcement",
+   "fixed_budget": true,
+   "general_budget": true,
+   "contract_kind": "employment"
+  },
+  {
+   "id": "k2",
+   "instrument": "price_floor",
+   "good": "youth_labor",
+   "seller_actor": "workers.youth",
+   "source_sentences": [
+    "Employers may pay employees under 20 at least 85% of the adult minimum: $10.20 in Year 2 and $11.90 in Year 3."
+   ],
+   "market": "larrow",
+   "bound_actor": "employers.low_wage",
+   "enforcer_actor": "officials.enforcement",
+   "fixed_budget": true,
+   "general_budget": true,
+   "contract_kind": "employment"
+  }
+ ],
+ "unclear": [],
+ "context": [
+  "About 15% of Larrow workers earn under $12 and about 22% under $14.",
+  "The neighboring state of Dorran keeps a $10 minimum."
+ ]
+}

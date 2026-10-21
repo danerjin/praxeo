@@ -1,0 +1,3052 @@
+{
+ "assumptions": {
+  "binding(k3)": {
+   "assumption_class": "binding",
+   "id": "binding(k3)",
+   "p": 0.6,
+   "text": "The requirement goes beyond what some current or would-be sellers already meet."
+  },
+  "buyer_substitutes(k1)": {
+   "assumption_class": "substitutability",
+   "id": "buyer_substitutes(k1)",
+   "p": 0.8,
+   "text": "Legal substitutes are acceptable to some buyers."
+  },
+  "buyer_substitutes(k3)": {
+   "assumption_class": "substitutability",
+   "id": "buyer_substitutes(k3)",
+   "p": 0.8,
+   "text": "Some buyers have a feasible substitute for the licensed service."
+  },
+  "buyers_organize(k1)": {
+   "assumption_class": "other",
+   "id": "buyers_organize(k1)",
+   "p": 0.15,
+   "text": "The buyers have a concentrated stake and can organize for repeal."
+  },
+  "buyers_unaware(k2)": {
+   "assumption_class": "other",
+   "id": "buyers_unaware(k2)",
+   "p": 0.3,
+   "text": "Some buyers did not already know the disclosed fact and care about it."
+  },
+  "can_organize(k1)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1)",
+   "p": 0.85,
+   "text": "The former legal sellers can organize to seek repeal."
+  },
+  "can_organize(k2)": {
+   "assumption_class": "other",
+   "id": "can_organize(k2)",
+   "p": 0.85,
+   "text": "The covered sellers can organize to lobby."
+  },
+  "can_organize(k3)": {
+   "assumption_class": "other",
+   "id": "can_organize(k3)",
+   "p": 0.85,
+   "text": "The license holders can organize to lobby at a cost below their stake."
+  },
+  "cross_border_feasible(k1)": {
+   "assumption_class": "mobility",
+   "id": "cross_border_feasible(k1)",
+   "p": 0.7,
+   "text": "Enough buyers can easily buy across the boundary, where the tax does not apply."
+  },
+  "crossing_extra_trip(k1)": {
+   "assumption_class": "mobility",
+   "id": "crossing_extra_trip(k1)",
+   "p": 0.6,
+   "text": "Buying across the boundary takes trips the buyers would not otherwise make."
+  },
+  "demand_persists(k1)": {
+   "assumption_class": "other",
+   "id": "demand_persists(k1)",
+   "p": 0.7,
+   "text": "A meaningful share of buyers keep wanting the good after the ban."
+  },
+  "disclosed_attracts(k2)": {
+   "assumption_class": "other",
+   "id": "disclosed_attracts(k2)",
+   "p": 0.2,
+   "text": "Some buyers who learn the fact buy more."
+  },
+  "disclosed_deters(k2)": {
+   "assumption_class": "other",
+   "id": "disclosed_deters(k2)",
+   "p": 0.2,
+   "text": "Some buyers who learn the fact buy less."
+  },
+  "enforced(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k1)",
+   "p": 0.85,
+   "text": "The legal sellers comply with the ban."
+  },
+  "enforced(k2)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k2)",
+   "p": 0.85,
+   "text": "Most covered sellers disclose."
+  },
+  "enforced(k3)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k3)",
+   "p": 0.85,
+   "text": "The requirement is enforced often enough that many sellers comply or stop."
+  },
+  "enforcement_budget_raised(k3)": {
+   "assumption_class": "revenue_use",
+   "id": "enforcement_budget_raised(k3)",
+   "p": 0.9,
+   "text": "The administering agency's budget is raised to cover the new work, so taxpayers fund it."
+  },
+  "enforcement_risk(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforcement_risk(k1)",
+   "p": 0.8,
+   "text": "Informal sellers face a real risk of punishment."
+  },
+  "evasion(k1)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k1)",
+   "p": 0.75,
+   "text": "Enforcement is imperfect: many informal sales go undetected."
+  },
+  "evasion(k3)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k3)",
+   "p": 0.6,
+   "text": "Some sellers keep selling without a license and are not caught."
+  },
+  "no_other_use(k1)": {
+   "assumption_class": "alternative_uses",
+   "id": "no_other_use(k1)",
+   "p": 0.15,
+   "text": "The legal sellers cannot replace the banned good with other products for most of their business."
+  },
+  "reshaping_pays(k1)": {
+   "assumption_class": "other",
+   "id": "reshaping_pays(k1)",
+   "p": 0.6,
+   "text": "Reshaping goods to fall outside the definitions costs some actors less than the burden."
+  },
+  "some_qualify(k3)": {
+   "assumption_class": "alternative_uses",
+   "id": "some_qualify(k3)",
+   "p": 0.9,
+   "text": "Some current sellers or new entrants obtain the license."
+  },
+  "stockpile_ahead(k1)": {
+   "assumption_class": "expectations",
+   "id": "stockpile_ahead(k1)",
+   "p": 0.7,
+   "text": "Buyers and importers can store the good and order ahead of the effective date."
+  },
+  "tests_valued_quality(k3)": {
+   "assumption_class": "other",
+   "id": "tests_valued_quality(k3)",
+   "p": 0.15,
+   "text": "The license tests something buyers value but cannot easily judge."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "guests.off_platform",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "guests.off_platform",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_information",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "guests.off_platform",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_variability",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "guests.off_platform",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "guests.whole_unit",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "cross_border_feasible(k1)"
+    ]
+   ],
+   "assumptions": [
+    "cross_border_feasible(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_cross(k1)",
+     "premises": [
+      "cross_border_feasible(k1)"
+     ],
+     "rule": "RS-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "cross_border_purchases",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "guests.whole_unit",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "evasion(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "evasion(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "en_informal(k3)",
+     "premises": [
+      "evasion(k3)",
+      "lic_binds(k3)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "guests.whole_unit",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "buyers_organize(k1)"
+    ]
+   ],
+   "assumptions": [
+    "buyers_organize(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_buyers_lobby(k1)",
+     "premises": [
+      "buyers_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "guests.whole_unit",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "enforced(k1)",
+     "enforcement_risk(k1)",
+     "evasion(k1)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "enforcement_risk(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "pr_underground(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "guests.whole_unit",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "evasion(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "evasion(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "en_informal(k3)",
+     "premises": [
+      "evasion(k3)",
+      "lic_binds(k3)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_information",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "guests.whole_unit",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "enforced(k1)",
+     "enforcement_risk(k1)",
+     "evasion(k1)"
+    ],
+    [
+     "buyers_unaware(k2)",
+     "disclosed_deters(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "enforced(k1)",
+    "enforcement_risk(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "enforcement_risk(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "pr_risk_price(k1)",
+     "premises": [
+      "pr_underground(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "ds_less(k2)",
+     "premises": [
+      "disclosed_deters(k2)"
+     ],
+     "rule": "EN-15"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "guests.whole_unit",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "stockpile_ahead(k1)"
+    ]
+   ],
+   "assumptions": [
+    "stockpile_ahead(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_stock_up(k1)",
+     "premises": [
+      "announced(k1)",
+      "stockpile_ahead(k1)"
+     ],
+     "rule": "RS-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": "announcement"
+  },
+  {
+   "actor_class": "guests.whole_unit",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "buyer_substitutes(k1)"
+    ],
+    [
+     "binding(k3)",
+     "buyer_substitutes(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "buyer_substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_substitute(k1)",
+     "premises": [
+      "buyer_substitutes(k1)"
+     ],
+     "rule": "RS-1"
+    },
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_substitute(k3)",
+     "premises": [
+      "buyer_substitutes(k3)",
+      "lic_binds(k3)"
+     ],
+     "rule": "RS-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_substitute",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "guests.whole_unit",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_prevented(k3)",
+     "premises": [
+      "lic_binds(k3)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "guests.whole_unit",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "guests.whole_unit",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "cross_border_feasible(k1)",
+     "crossing_extra_trip(k1)"
+    ],
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "evasion(k3)"
+    ]
+   ],
+   "assumptions": [
+    "cross_border_feasible(k1)",
+    "crossing_extra_trip(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_cross_trip(k1)",
+     "premises": [
+      "crossing_extra_trip(k1)"
+     ],
+     "rule": "OC-2"
+    },
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "en_informal(k3)",
+     "premises": [
+      "evasion(k3)",
+      "lic_binds(k3)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.in_breach",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.in_breach",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "demand_persists(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "demand_persists(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "demand_persists(k1)",
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_underground(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.in_breach",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "reshaping_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_reshaped(k1)",
+     "premises": [
+      "reshaping_pays(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-18",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.mid_term",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "reshaping_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_reshaped(k1)",
+     "premises": [
+      "reshaping_pays(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-19",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.non_primary",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)",
+     "no_other_use(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)",
+    "no_other_use(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "CR-1"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "no_other_use(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-20",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.non_primary",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)",
+     "no_other_use(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)",
+    "no_other_use(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "CR-1"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "no_other_use(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-21",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.non_primary",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "can_organize(k1)"
+    ]
+   ],
+   "assumptions": [
+    "can_organize(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_lobby(k1)",
+     "premises": [
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-22",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.non_primary",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)",
+     "no_other_use(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)",
+    "no_other_use(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "CR-1"
+    },
+    {
+     "conclusion": "pr_specific(k1)",
+     "premises": [
+      "no_other_use(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-23",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "number_of_sellers",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.non_primary",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-24",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.primary",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "some_qualify(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "some_qualify(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_qualify(k3)",
+     "premises": [
+      "some_qualify(k3)"
+     ],
+     "rule": "CR-8"
+    },
+    {
+     "conclusion": "lic_qualify(k3)",
+     "premises": [
+      "lic_binds(k3)"
+     ],
+     "rule": "EN-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-25",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.primary",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_excluded(k3)",
+     "premises": [
+      "lic_binds(k3)"
+     ],
+     "rule": "EN-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-26",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.primary",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-27",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "entry_rate",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.primary",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "evasion(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "evasion(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "en_informal(k3)",
+     "premises": [
+      "evasion(k3)",
+      "lic_binds(k3)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-28",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.primary",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "can_organize(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "can_organize(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_holders_gain(k3)",
+     "premises": [
+      "lic_binds(k3)"
+     ],
+     "rule": "EN-2"
+    },
+    {
+     "conclusion": "en_lobby(k3)",
+     "premises": [
+      "lic_holders_gain(k3)"
+     ],
+     "rule": "EN-5"
+    },
+    {
+     "conclusion": "en_lobby(k3)",
+     "premises": [
+      "can_organize(k3)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-29",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.primary",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_holders_gain(k3)",
+     "premises": [
+      "lic_binds(k3)"
+     ],
+     "rule": "EN-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-30",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.primary",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-31",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "number_of_sellers",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.primary",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_prevented(k3)",
+     "premises": [
+      "lic_binds(k3)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-32",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "hosts.primary",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-33",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "share_of_sellers_licensed",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "neighboring_jurisdictions",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "cross_border_feasible(k1)"
+    ]
+   ],
+   "assumptions": [
+    "cross_border_feasible(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_cross(k1)",
+     "premises": [
+      "cross_border_feasible(k1)"
+     ],
+     "rule": "RS-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-34",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_administered(k1)",
+     "premises": [
+      "prohibition(k1)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "mc_administered(k2)",
+     "premises": [
+      "disclosure(k2)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "en_administered(k3)",
+     "premises": [
+      "lic_binds(k3)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-35",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.revenue",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_legal_stops(k1)",
+     "premises": [
+      "enforced(k1)"
+     ],
+     "rule": "EN-7"
+    },
+    {
+     "conclusion": "pr_revenue(k1)",
+     "premises": [
+      "pr_legal_stops(k1)"
+     ],
+     "rule": "TX-10"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-36",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "tax_revenue",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "platforms",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "ds_binds(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "EN-15"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-37",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "platforms",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "can_organize(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "can_organize(k2)",
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_rule_binds(k2)",
+     "premises": [
+      "enforced(k2)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "mc_lobby(k2)",
+     "premises": [
+      "can_organize(k2)",
+      "mc_rule_binds(k2)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-38",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "taxpayers",
+   "actor_group": [
+    "taxpayers",
+    "recipients.other_spending",
+    "taxpayers.future"
+   ],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "pr_funded(k1)",
+     "premises": [
+      "general_budget(k1)"
+     ],
+     "rule": "OC-1"
+    },
+    {
+     "conclusion": "lic_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "en_administered(k3)",
+     "premises": [
+      "lic_binds(k3)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "en_funded(k3)",
+     "premises": [
+      "enforcement_budget_raised(k3)"
+     ],
+     "rule": "OC-1"
+    },
+    {
+     "conclusion": "en_funded(k3)",
+     "premises": [
+      "en_administered(k3)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-39",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"hosts.non_primary\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nprohibition(k1).\npr_buyer(k1, \"guests.whole_unit\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nrevenue(k1, \"officials.revenue\").\npr_informal_buyer(k1, \"guests.off_platform\").\npr_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\npr_informal_seller(k1, \"hosts.in_breach\").\nmobile_buyer(k1, \"guests.whole_unit\").\nneighbor_seller(k1, \"neighboring_jurisdictions\").\npr_substitute_seller(k1, \"hosts.mid_term\").\ndefinition_line(k1).\ntaxed_before(k1).\ngeneral_budget(k1).\nbound(k2, \"platforms\").\nexcluded(k2, \"buyers.prospective\").\ndisclosure(k2).\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nmc_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nst_buyer(k2, \"guests.whole_unit\").\nbound(k3, \"hosts.primary\").\nexcluded(k3, \"buyers.prospective\").\nlicensing(k3).\nen_buyer(k3, \"guests.whole_unit\").\nen_holder(k3, \"hosts.primary\").\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nen_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_informal_buyer(k3, \"guests.whole_unit\").\nen_revenue(k3, \"officials.enforcement\").\ngeneral_budget(k3).\nassumption(enforced(k1)).\nassumption(demand_persists(k1)).\nassumption(evasion(k1)).\nassumption(enforcement_risk(k1)).\nassumption(no_other_use(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(can_organize(k1)).\nassumption(buyers_organize(k1)).\nassumption(cross_border_feasible(k1)).\nassumption(crossing_extra_trip(k1)).\nassumption(reshaping_pays(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(enforced(k2)).\nassumption(buyers_unaware(k2)).\nassumption(disclosed_deters(k2)).\nassumption(disclosed_attracts(k2)).\nassumption(can_organize(k2)).\nassumption(binding(k3)).\nassumption(enforced(k3)).\nassumption(some_qualify(k3)).\nassumption(evasion(k3)).\nassumption(buyer_substitutes(k3)).\nassumption(tests_valued_quality(k3)).\nassumption(can_organize(k3)).\nassumption(enforcement_budget_raised(k3)).\n",
+ "explanations": [
+  "C-1. Compared with no Saltmere Housing Preservation Ordinance, disputes settled outside courts for guests.off_platform rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); The legal sellers comply with the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.75). Reported.",
+  "C-2. Compared with no Saltmere Housing Preservation Ordinance, quality information for guests.off_platform falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); The legal sellers comply with the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.75). Reported.",
+  "C-3. Compared with no Saltmere Housing Preservation Ordinance, quality variability for guests.off_platform rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); The legal sellers comply with the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.75). Reported.",
+  "C-4. Compared with no Saltmere Housing Preservation Ordinance, search cost for guests.off_platform rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); The legal sellers comply with the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.75). Reported.",
+  "C-5. Compared with no Saltmere Housing Preservation Ordinance, cross border purchases for guests.whole_unit rises from the short run onward (tier B, invisible). Why: RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.70). Reported.",
+  "C-6. Compared with no Saltmere Housing Preservation Ordinance, disputes settled outside courts for guests.whole_unit rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85); Some sellers keep selling without a license and are not caught (p = 0.60). Reported.",
+  "C-7. Compared with no Saltmere Housing Preservation Ordinance, lobbying effort for guests.whole_unit rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The buyers have a concentrated stake and can organize for repeal (p = 0.15). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-8. Compared with no Saltmere Housing Preservation Ordinance, price paid for guests.whole_unit rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; CR-7: CR-7; EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-9. Compared with no Saltmere Housing Preservation Ordinance, quality information for guests.whole_unit falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85); Some sellers keep selling without a license and are not caught (p = 0.60). Reported.",
+  "C-10. Compared with no Saltmere Housing Preservation Ordinance, quantity demanded for guests.whole_unit falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3; CR-7: CR-7; EN-15: EN-15. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); The legal sellers comply with the ban (p = 0.85); Informal sellers face a real risk of punishment (p = 0.80); Enforcement is imperfect: many informal sales go undetected (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-11. Compared with no Saltmere Housing Preservation Ordinance, quantity demanded for guests.whole_unit rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.70). Reported.",
+  "C-12. Compared with no Saltmere Housing Preservation Ordinance, quantity substitute for guests.whole_unit rises from the short run onward (tier B, invisible). Why: RS-1: when a good becomes dearer, buyers turn to substitutes; EN-1: EN-1. This holds if: Legal substitutes are acceptable to some buyers (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-13. Compared with no Saltmere Housing Preservation Ordinance, quantity traded for guests.whole_unit falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; EN-1: EN-1; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The legal sellers comply with the ban (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-14. Compared with no Saltmere Housing Preservation Ordinance, resources available other uses for guests.whole_unit falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
+  "C-15. Compared with no Saltmere Housing Preservation Ordinance, search cost for guests.whole_unit rises from the short run onward (tier B, invisible). Why: OC-2: OC-2; EN-1: EN-1; RS-3: RS-3. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.70); Buying across the boundary takes trips the buyers would not otherwise make (p = 0.60). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-16. Compared with no Saltmere Housing Preservation Ordinance, disputes settled outside courts for hosts.in_breach rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); The legal sellers comply with the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.75). Reported.",
+  "C-17. Compared with no Saltmere Housing Preservation Ordinance, informal activity for hosts.in_breach rises from the short run onward (tier B, invisible). Why: EN-7: EN-7; RS-3: RS-3. This holds if: A meaningful share of buyers keep wanting the good after the ban (p = 0.70); The legal sellers comply with the ban (p = 0.85); Enforcement is imperfect: many informal sales go undetected (p = 0.75). Reported.",
+  "C-18. Compared with no Saltmere Housing Preservation Ordinance, reclassification for hosts.in_breach rises from the short run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.60). Reported.",
+  "C-19. Compared with no Saltmere Housing Preservation Ordinance, reclassification for hosts.mid_term rises from the short run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.60). Reported.",
+  "C-20. Compared with no Saltmere Housing Preservation Ordinance, asset value for hosts.non_primary falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.85); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.15). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-21. Compared with no Saltmere Housing Preservation Ordinance, employment for hosts.non_primary falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.85); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.15). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-22. Compared with no Saltmere Housing Preservation Ordinance, lobbying effort for hosts.non_primary rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The former legal sellers can organize to seek repeal (p = 0.85). Reported.",
+  "C-23. Compared with no Saltmere Housing Preservation Ordinance, number of sellers for hosts.non_primary falls from the short run onward (tier B, visible). Why: EN-7: EN-7; CR-1: CR-1; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The legal sellers comply with the ban (p = 0.85); The legal sellers cannot replace the banned good with other products for most of their business (p = 0.15). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-24. Compared with no Saltmere Housing Preservation Ordinance, quantity traded for hosts.non_primary falls from the short run onward (tier B, visible). Why: EN-7: EN-7. This holds if: The legal sellers comply with the ban (p = 0.85). Reported.",
+  "C-25. Compared with no Saltmere Housing Preservation Ordinance, compliance cost for hosts.primary rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85); Some current sellers or new entrants obtain the license (p = 0.90). Reported.",
+  "C-26. Compared with no Saltmere Housing Preservation Ordinance, employment for hosts.primary falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; EN-3: EN-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
+  "C-27. Compared with no Saltmere Housing Preservation Ordinance, entry rate for hosts.primary falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
+  "C-28. Compared with no Saltmere Housing Preservation Ordinance, informal activity for hosts.primary rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85); Some sellers keep selling without a license and are not caught (p = 0.60). Reported.",
+  "C-29. Compared with no Saltmere Housing Preservation Ordinance, lobbying effort for hosts.primary rises from the medium run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2; EN-5: EN-5; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The license holders can organize to lobby at a cost below their stake (p = 0.85); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
+  "C-30. Compared with no Saltmere Housing Preservation Ordinance, net price received for hosts.primary rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
+  "C-31. Compared with no Saltmere Housing Preservation Ordinance, number of sellers for hosts.primary falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
+  "C-32. Compared with no Saltmere Housing Preservation Ordinance, quantity traded for hosts.primary falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
+  "C-33. Compared with no Saltmere Housing Preservation Ordinance, share of sellers licensed for hosts.primary rises from the short run onward (tier B, visible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.60); The requirement is enforced often enough that many sellers comply or stop (p = 0.85). Reported.",
+  "C-34. Compared with no Saltmere Housing Preservation Ordinance, quantity traded for neighboring_jurisdictions rises from the short run onward (tier B, invisible). Why: RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: Enough buyers can easily buy across the boundary, where the tax does not apply (p = 0.70). Reported.",
+  "C-35. Compared with no Saltmere Housing Preservation Ordinance, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; EN-1: EN-1. This holds if: no assumption. Reported.",
+  "C-36. Compared with no Saltmere Housing Preservation Ordinance, tax revenue for officials.revenue falls from the short run onward (tier B, invisible). Why: EN-7: EN-7; TX-10: TX-10. This holds if: The legal sellers comply with the ban (p = 0.85). Reported.",
+  "C-37. Compared with no Saltmere Housing Preservation Ordinance, compliance cost for platforms rises from the short run onward (tier B, invisible). Why: EN-15: EN-15. This holds if: Most covered sellers disclose (p = 0.85). Reported.",
+  "C-38. Compared with no Saltmere Housing Preservation Ordinance, lobbying effort for platforms rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The covered sellers can organize to lobby (p = 0.85); Most covered sellers disclose (p = 0.85). Reported.",
+  "C-39. Compared with no Saltmere Housing Preservation Ordinance, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier B, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought; EN-1: EN-1; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-2: platforms comply with the registry rule (display numbers, remove listings on notice), so open on-platform lets stop.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k1.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the legal sellers comply with the ban (stop selling openly)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.demand_persists",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-4: some guests keep wanting whole units in Saltmere enough to book them directly.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "demand_persists",
+    "assumption_class": "other",
+    "id": "k1.demand_persists",
+    "kind": "noul",
+    "options": [],
+    "text": "Will a meaningful share of buyers keep wanting the good after the ban?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.evasion",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-3: for some units complaints are unlikely, so the expected fine is below the gain from breach (enforcement is on complaint only).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k1.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will many informal sales go undetected?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.enforcement_risk",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-19: neighbors file complaints about unlawful lets in meaningful numbers and some lead to fines.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforcement_risk",
+    "assumption_class": "enforcement",
+    "id": "k1.enforcement_risk",
+    "kind": "noul",
+    "options": [],
+    "text": "Will enforcement be active enough that informal sellers face a real risk of punishment?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.15,
+    "question_id": "k1.no_other_use",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-5, inverted: A-5 puts at 0.85 that most non-primary units can be let on 12-month leases, so the statement that the hosts cannot replace short lets with other uses for most of their business is 0.15.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "no_other_use",
+    "assumption_class": "alternative_uses",
+    "id": "k1.no_other_use",
+    "kind": "noul",
+    "options": [],
+    "text": "Are the legal sellers unable to replace the banned good with other products for most of their business?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.buyer_substitutes",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-8: hotels are a substitute for whole units for some guests.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyer_substitutes",
+    "assumption_class": "substitutability",
+    "id": "k1.buyer_substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Are some legal substitutes acceptable to some buyers?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-14: hosts, platforms, hotels and neighborhood associations can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the former legal sellers organize to seek repeal at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.15,
+    "question_id": "k1.buyers_organize",
+    "rationale": "No matching assumption in WE-044; judged from the text: A-14 names hosts, platforms, hotels and neighborhood associations; visiting guests have no organization.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "buyers_organize",
+    "assumption_class": "other",
+    "id": "k1.buyers_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the buyers have a stake in the banned good large enough to organize for repeal at a cost below it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.cross_border_feasible",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-10: Elsdon is near enough (12 km from Harbor) for some guests.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "cross_border_feasible",
+    "assumption_class": "mobility",
+    "id": "k1.cross_border_feasible",
+    "kind": "noul",
+    "options": [],
+    "text": "Can enough of the buyers easily buy the taxed good on the other side of the boundary, in a place without the tax, for crossing to be worth its cost to them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.crossing_extra_trip",
+    "rationale": "No matching assumption in WE-044; judged from the text: staying outside the city means extra travel into it for most visitors.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "crossing_extra_trip",
+    "assumption_class": "mobility",
+    "id": "k1.crossing_extra_trip",
+    "kind": "noul",
+    "options": [],
+    "text": "Would buying across the boundary take trips the buyers would not otherwise make?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.reshaping_pays",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-38: some owners reshape short stays into nominal 30-night contracts, or claim primary residence on documents they can change at low cost.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "reshaping_pays",
+    "assumption_class": "other",
+    "id": "k1.reshaping_pays",
+    "kind": "noul",
+    "options": [],
+    "text": "For some of the actors bound by the measure, will reshaping goods so that they fall outside the measure's definitions cost less than the measure would cost them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.stockpile_ahead",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-15: guests can book summer stays earlier than they otherwise would.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "stockpile_ahead",
+    "assumption_class": "expectations",
+    "id": "k1.stockpile_ahead",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the buyers or importers buy ahead of the effective date, by storing the good or placing orders early?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-2: platforms comply with K2: they display numbers, remove listings on notice and report nights.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k2.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most covered sellers make the required disclosure?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k2.buyers_unaware",
+    "rationale": "No matching assumption in WE-044; judged from the text: the registration number tells guests little they care about; K2 works by removing listings, not by informing guests.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "buyers_unaware",
+    "assumption_class": "other",
+    "id": "k2.buyers_unaware",
+    "kind": "noul",
+    "options": [],
+    "text": "Did some buyers not already know the disclosed fact, while caring about it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.2,
+    "question_id": "k2.disclosed_deters",
+    "rationale": "No matching assumption in WE-044; judged from the text: guests are not expected to shun listings because a number is displayed.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "disclosed_deters",
+    "assumption_class": "other",
+    "id": "k2.disclosed_deters",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some buyers who learn the disclosed fact buy less of the covered good?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.2,
+    "question_id": "k2.disclosed_attracts",
+    "rationale": "No matching assumption in WE-044; judged from the text: nor to seek them out.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "disclosed_attracts",
+    "assumption_class": "other",
+    "id": "k2.disclosed_attracts",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some buyers who learn the disclosed fact buy more of the covered good?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-14: hosts, platforms, hotels and neighborhood associations can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k2.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the covered sellers organize to lobby over the disclosure rule at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k3.binding",
+    "rationale": "No matching assumption in WE-044; judged from the text: the $250 fee (against $150 under the old registration) and proof of residence are a fixed cost per host that goes beyond what some hosts who let only a few nights already meet.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k3.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the license's conditions (training, exams, fees, waiting periods) go beyond what some current or would-be sellers already meet?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k3.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-2: platforms display registration numbers and remove listings on notice, so lets without a number largely stop.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k3.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the requirement be enforced often enough that many sellers comply with it or stop selling?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k3.some_qualify",
+    "rationale": "No matching assumption in WE-044; judged from the text: about 550 primary-residence units are let, about 65% of hosts already register under the old rule, and registration is the only way to keep letting short.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "some_qualify",
+    "assumption_class": "alternative_uses",
+    "id": "k3.some_qualify",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some current sellers or new entrants choose to obtain the license?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k3.evasion",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-22: hosts listing on more than one platform can exceed 90 nights without the per-platform reports revealing it (and list under another unit's number).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k3.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some sellers keep selling without a license and not be caught?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k3.buyer_substitutes",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-8: hotels are a substitute for whole units for some guests.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyer_substitutes",
+    "assumption_class": "substitutability",
+    "id": "k3.buyer_substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Can some buyers turn to a substitute for the licensed service (doing it themselves, family or friends, another service)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.15,
+    "question_id": "k3.tests_valued_quality",
+    "rationale": "No matching assumption in WE-044; judged from the text: registration requires only proof of residence and a fee; it tests nothing about the stay that guests value and cannot judge.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "tests_valued_quality",
+    "assumption_class": "other",
+    "id": "k3.tests_valued_quality",
+    "kind": "noul",
+    "options": [],
+    "text": "Does the license test something buyers care about but cannot easily judge for themselves (competence, safety, honesty)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k3.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-14: hosts, platforms, hotels and neighborhood associations can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k3.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the license holders (or those who train them) organize to lobby for the requirement at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k3.enforcement_budget_raised",
+    "rationale": "Probability taken from the assumption table of handbook WE-044 (illustrative figures), A-20: the $520,000 for the Registry Unit is new general-fund money.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforcement_budget_raised",
+    "assumption_class": "revenue_use",
+    "id": "k3.enforcement_budget_raised",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the budget of the agency that administers the measure be raised to cover the new work, rather than the work being absorbed within its existing budget?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": true,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "hosts.non_primary",
+    "budget_capped": false,
+    "buyer_actor": "guests.whole_unit",
+    "cap": null,
+    "cap_unit": null,
+    "charge_capped_actor": null,
+    "charge_payer_actor": null,
+    "charge_payer_worker_actor": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "contract_kind": "employment",
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": true,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": false,
+    "fixed_cost_per_item": false,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": true,
+    "good": "whole_unit_short_term_rentals",
+    "holder_cap": false,
+    "id": "k1",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": "guests.off_platform",
+    "informal_seller_actor": "hosts.in_breach",
+    "input_supplier_actor": null,
+    "instrument": "prohibition",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "saltmere",
+    "mobile_buyer_actor": "guests.whole_unit",
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": "neighboring_jurisdictions",
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "player_recipient_actor": null,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": null,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.revenue",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "From 1 July 2027, no whole unit may be let for under 30 nights unless it is the owner's primary residence, registered under the registry, and then for no more than 90 nights in a calendar year (45 nights for July to December 2027).",
+     "Stays booked and confirmed before 1 July 2027 may be completed if they end by 30 September 2027; all other bookings for later dates must be cancelled and refunded in full.",
+     "Rooms in a home that is the owner's primary residence, while the owner is present, and lets of 30 nights or more are exempt.",
+     "It was introduced on 3 November 2026 by six of nine council members, enacted on 8 December 2026, and takes effect on 1 July 2027, eight months after introduction, with a transition for booked stays to 30 September 2027.",
+     "Outside the city, the town of Elsdon, 12 km from the Harbor district, has about 420 STR listings and no rules beyond county registration.",
+     "Code Enforcement enforces the ban against hosts on complaint only, with no proactive inspection and no new appropriation.",
+     "The fine is $2,500 for a first violation and $5,000 for each later one, within existing appropriations, and fines go to the general fund.",
+     "A transient occupancy tax of 12% applies to stays under 30 nights, hotels and STRs alike, and platforms collect it for STRs (about $18.7 million a year from whole-unit STRs and about $46 million from hotels)."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": "hosts.mid_term",
+    "tax_named": false,
+    "taxed_before": true,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": false,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "platforms",
+    "budget_capped": false,
+    "buyer_actor": "guests.whole_unit",
+    "cap": null,
+    "cap_unit": null,
+    "charge_capped_actor": null,
+    "charge_payer_actor": null,
+    "charge_payer_worker_actor": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "contract_kind": "employment",
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": false,
+    "fixed_cost_per_item": false,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "whole_unit_short_term_rentals",
+    "holder_cap": false,
+    "id": "k2",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "disclosure_mandate",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "saltmere",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "player_recipient_actor": null,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": null,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "From 1 July 2027, booking platforms must display a valid registration number on every whole-unit listing, remove a listing within 10 days of a city notice that it is non-compliant, and report nights booked per registration number each quarter.",
+     "The fine is $1,000 per listing per day after the 10 days."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": false,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "hosts.primary",
+    "budget_capped": false,
+    "buyer_actor": "guests.whole_unit",
+    "cap": null,
+    "cap_unit": null,
+    "charge_capped_actor": null,
+    "charge_payer_actor": null,
+    "charge_payer_worker_actor": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "contract_kind": "employment",
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": false,
+    "fixed_cost_per_item": false,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": true,
+    "good": "primary_residence_short_term_lets",
+    "holder_cap": false,
+    "id": "k3",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "licensing_requirement",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "saltmere",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "player_recipient_actor": null,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": null,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "Owners who let their primary residence must register for $250 a year, with proof of residence (driver's license, voter registration, homestead tax exemption).",
+     "The registry is run by a new Registry Unit of five staff at $520,000 a year, a new appropriation from the general fund.",
+     "It replaces the existing STR registration for whole units."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   }
+  ],
+  "context": [
+   "Saltmere is a coastal city of about 310,000 people with about 128,000 dwellings, of which about 60,000 are rented long-term (median rent $1,850 a month, vacancy about 3%).",
+   "Hotels have about 7,400 rooms, average occupancy 79% (94% in July and August) and an average daily rate of $180; hotel construction takes three to five years from site to opening.",
+   "STR registration costs $150 a year, and about 65% of hosts are registered; platforms are not obliged to check."
+  ],
+  "effective": "1 July 2027",
+  "enacted": "8 December 2026 (introduced 3 November 2026)",
+  "jurisdiction": "City of Saltmere (fictional)",
+  "name": "Saltmere Housing Preservation Ordinance",
+  "rule_maker": "the Saltmere city council",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U1-a: the dwelling is the building, so the second unit is part of the primary residence and may be let up to 90 nights a year",
+     "U1-b: the dwelling is the unit, so the second unit may not be let for under 30 nights at all"
+    ],
+    "text": "Whether the primary-residence exception covers the second unit of a two-unit building whose owner lives in the other unit."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-19T21:37:51+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U1-a: the dwelling is the building, so the second unit is part of the primary residence and may be let up to 90 nights a year",
+    "U1-b: the dwelling is the unit, so the second unit may not be let for under 30 nights at all"
+   ],
+   "text": "Whether the primary-residence exception covers the second unit of a two-unit building whose owner lives in the other unit."
+  }
+ ],
+ "verifier_problems": []
+}

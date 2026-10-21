@@ -1,0 +1,12 @@
+[
+  {
+    "question_id": "t1.binding",
+    "value": "no",
+    "probability": 0.04,
+    "rationale": "Esker exports about half its harvest and sets its domestic price at the world export price, while imports are only 0.1 percent of use, so the tariff has almost no effect on the domestic price.",
+    "evidence": [
+      "Esker grows far more wheat than it uses and exports about half its harvest; imports were 0.1 percent of use last year, almost all of it a single specialty variety that domestic farms also grow.",
+      "The domestic wheat price is set by the world price at which Esker exports."
+    ]
+  }
+]

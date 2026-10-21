@@ -1,0 +1,12 @@
+[
+ {
+  "question_id": "x1.quantity_responds",
+  "value": "no",
+  "probability": 0.12,
+  "rationale": "Land area is fixed and the tax covers all land regardless of use, including idle land, so buyers have no untaxed substitute and sellers cannot shift land to an untaxed use; the quantity traded should not fall much.",
+  "evidence": [
+   "The total area of land in Garrow is fixed by its borders, and every hectare is owned by someone.",
+   "Every owner pays a yearly tax of 40 Garrow dollars per hectare of land they own, whatever the land is used for, including land left idle."
+  ]
+ }
+]

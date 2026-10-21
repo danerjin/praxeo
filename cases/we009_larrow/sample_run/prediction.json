@@ -1,0 +1,2072 @@
+{
+ "assumptions": {
+  "binding(k1)": {
+   "assumption_class": "binding",
+   "id": "binding(k1)",
+   "p": 0.9,
+   "text": "The floor binds for an identifiable group of sellers."
+  },
+  "binding(k2)": {
+   "assumption_class": "binding",
+   "id": "binding(k2)",
+   "p": 0.8,
+   "text": "The floor binds for an identifiable group of sellers."
+  },
+  "budget_fixed(k1)": {
+   "assumption_class": "revenue_use",
+   "id": "budget_fixed(k1)",
+   "p": 0.6,
+   "text": "The agency's budget is not increased for the measure."
+  },
+  "budget_fixed(k2)": {
+   "assumption_class": "revenue_use",
+   "id": "budget_fixed(k2)",
+   "p": 0.6,
+   "text": "The agency's budget is not increased for the measure."
+  },
+  "can_organize(k1)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1)",
+   "p": 0.65,
+   "text": "The bound buyers can organize to lobby."
+  },
+  "can_organize(k2)": {
+   "assumption_class": "other",
+   "id": "can_organize(k2)",
+   "p": 0.65,
+   "text": "The bound buyers can organize to lobby."
+  },
+  "cost_not_offset(k1)": {
+   "assumption_class": "substitutability",
+   "id": "cost_not_offset(k1)",
+   "p": 0.8,
+   "text": "The floor raises buyers' cost per unit; it is not fully offset."
+  },
+  "cost_not_offset(k2)": {
+   "assumption_class": "substitutability",
+   "id": "cost_not_offset(k2)",
+   "p": 0.8,
+   "text": "The floor raises buyers' cost per unit; it is not fully offset."
+  },
+  "cross_border_feasible(k1)": {
+   "assumption_class": "mobility",
+   "id": "cross_border_feasible(k1)",
+   "p": 0.7,
+   "text": "Some buyers of the output can easily buy across the boundary."
+  },
+  "enforced(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k1)",
+   "p": 0.75,
+   "text": "Most bound buyers comply with the floor."
+  },
+  "enforced(k2)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k2)",
+   "p": 0.75,
+   "text": "Most bound buyers comply with the floor."
+  },
+  "evasion(k1)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k1)",
+   "p": 0.65,
+   "text": "Some trade below the floor goes undetected."
+  },
+  "evasion(k2)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k2)",
+   "p": 0.65,
+   "text": "Some trade below the floor goes undetected."
+  },
+  "expected_ahead(k1)": {
+   "assumption_class": "expectations",
+   "id": "expected_ahead(k1)",
+   "p": 0.85,
+   "text": "Investors expected the floor before it took effect."
+  },
+  "expected_to_last(k1)": {
+   "assumption_class": "expectations",
+   "id": "expected_to_last(k1)",
+   "p": 0.85,
+   "text": "Investors expect the measure to stay in force for at least its stated term."
+  },
+  "lower_tier_used(k1)": {
+   "assumption_class": "other",
+   "id": "lower_tier_used(k1)",
+   "p": 0.8,
+   "text": "A meaningful number of buyers use the lower floor."
+  },
+  "margins(k1)": {
+   "assumption_class": "other",
+   "id": "margins(k1)",
+   "p": 0.9,
+   "text": "Buyers can adjust at least one margin."
+  },
+  "margins(k2)": {
+   "assumption_class": "other",
+   "id": "margins(k2)",
+   "p": 0.9,
+   "text": "Buyers can adjust at least one margin."
+  },
+  "reshaping_pays(k1)": {
+   "assumption_class": "other",
+   "id": "reshaping_pays(k1)",
+   "p": 0.55,
+   "text": "Reshaping goods to fall outside the definitions costs some actors less than the burden."
+  },
+  "rivals_bound(k1)": {
+   "assumption_class": "other",
+   "id": "rivals_bound(k1)",
+   "p": 0.8,
+   "text": "Most of the bound buyers' rivals face the same floor."
+  },
+  "sellers_organize(k1)": {
+   "assumption_class": "other",
+   "id": "sellers_organize(k1)",
+   "p": 0.65,
+   "text": "The sellers the floor raises can organize to lobby."
+  },
+  "sellers_organize(k2)": {
+   "assumption_class": "other",
+   "id": "sellers_organize(k2)",
+   "p": 0.65,
+   "text": "The sellers the floor raises can organize to lobby."
+  },
+  "substitute_exists(k1)": {
+   "assumption_class": "alternative_uses",
+   "id": "substitute_exists(k1)",
+   "p": 0.75,
+   "text": "A substitute exists for what the floor makes dearer."
+  },
+  "tiers_substitute(k1)": {
+   "assumption_class": "substitutability",
+   "id": "tiers_substitute(k1)",
+   "p": 0.8,
+   "text": "The two groups of sellers are substitutes."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "consumers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "cost_not_offset(k1)",
+     "enforced(k1)",
+     "rivals_bound(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "cost_not_offset(k1)",
+    "enforced(k1)",
+    "rivals_bound(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-9"
+    },
+    {
+     "conclusion": "fl_cost(k1)",
+     "premises": [
+      "cost_not_offset(k1)",
+      "fl_binds(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "fl_pass(k1)",
+     "premises": [
+      "fl_cost(k1)",
+      "rivals_bound(k1)"
+     ],
+     "rule": "RS-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "consumers.border",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "cost_not_offset(k1)",
+     "cross_border_feasible(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "cost_not_offset(k1)",
+    "cross_border_feasible(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-9"
+    },
+    {
+     "conclusion": "fl_cost(k1)",
+     "premises": [
+      "cost_not_offset(k1)",
+      "fl_binds(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "fl_cross(k1)",
+     "premises": [
+      "cross_border_feasible(k1)",
+      "fl_cost(k1)"
+     ],
+     "rule": "RS-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "cross_border_purchases",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.low_wage",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_compliance(k1)",
+     "premises": [
+      "floor(k1)"
+     ],
+     "rule": "OC-2"
+    },
+    {
+     "conclusion": "fl_compliance(k2)",
+     "premises": [
+      "floor(k2)"
+     ],
+     "rule": "OC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.low_wage",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "evasion(k1)"
+    ],
+    [
+     "binding(k2)",
+     "evasion(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_evaded(k1)",
+     "premises": [
+      "binding(k1)",
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "fl_evaded(k2)",
+     "premises": [
+      "binding(k2)",
+      "evasion(k2)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.low_wage",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "cost_not_offset(k1)",
+     "enforced(k1)",
+     "expected_ahead(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "cost_not_offset(k1)",
+    "enforced(k1)",
+    "expected_ahead(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_invest(k1)",
+     "premises": [
+      "announced(k1)",
+      "expected_ahead(k1)"
+     ],
+     "rule": "TS-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "investment_target",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.low_wage",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "can_organize(k1)"
+    ],
+    [
+     "binding(k2)",
+     "can_organize(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "can_organize(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_lobby(k1)",
+     "premises": [
+      "binding(k1)",
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "fl_lobby(k2)",
+     "premises": [
+      "binding(k2)",
+      "can_organize(k2)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.low_wage",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "cost_not_offset(k1)",
+     "enforced(k1)",
+     "substitute_exists(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "cost_not_offset(k1)",
+    "enforced(k1)",
+    "substitute_exists(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-9"
+    },
+    {
+     "conclusion": "fl_cost(k1)",
+     "premises": [
+      "cost_not_offset(k1)",
+      "fl_binds(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "fl_substitute(k1)",
+     "premises": [
+      "fl_cost(k1)",
+      "substitute_exists(k1)"
+     ],
+     "rule": "RS-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_substitute",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.low_wage",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "reshaping_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_reshaped(k1)",
+     "premises": [
+      "definition_line(k1)",
+      "reshaping_pays(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.low_wage",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "cost_not_offset(k2)",
+     "enforced(k2)"
+    ],
+    [
+     "binding(k1)",
+     "cost_not_offset(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "cost_not_offset(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-9"
+    },
+    {
+     "conclusion": "fl_cost(k1)",
+     "premises": [
+      "cost_not_offset(k1)",
+      "fl_binds(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "fl_returns(k1)",
+     "premises": [
+      "fl_cost(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "fl_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-9"
+    },
+    {
+     "conclusion": "fl_cost(k2)",
+     "premises": [
+      "cost_not_offset(k2)",
+      "fl_binds(k2)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "fl_returns(k2)",
+     "premises": [
+      "fl_cost(k2)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "return_on_capital",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "factor_owners.specific",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "cost_not_offset(k1)",
+     "enforced(k1)",
+     "expected_to_last(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "cost_not_offset(k1)",
+    "enforced(k1)",
+    "expected_to_last(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-9"
+    },
+    {
+     "conclusion": "fl_cost(k1)",
+     "premises": [
+      "cost_not_offset(k1)",
+      "fl_binds(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "fl_capitalized(k1)",
+     "premises": [
+      "expected_to_last(k1)",
+      "fl_cost(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "input_suppliers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "cost_not_offset(k1)",
+     "enforced(k1)",
+     "substitute_exists(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "cost_not_offset(k1)",
+    "enforced(k1)",
+    "substitute_exists(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-9"
+    },
+    {
+     "conclusion": "fl_cost(k1)",
+     "premises": [
+      "cost_not_offset(k1)",
+      "fl_binds(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "fl_substitute(k1)",
+     "premises": [
+      "fl_cost(k1)",
+      "substitute_exists(k1)"
+     ],
+     "rule": "RS-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_administered(k1)",
+     "premises": [
+      "floor(k1)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "fl_administered(k2)",
+     "premises": [
+      "floor(k2)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "budget_fixed(k1)"
+    ],
+    [
+     "budget_fixed(k2)"
+    ]
+   ],
+   "assumptions": [
+    "budget_fixed(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_crowded(k1)",
+     "premises": [
+      "budget_fixed(k1)",
+      "fixed_budget(k1)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "fl_crowded(k2)",
+     "premises": [
+      "budget_fixed(k2)",
+      "fixed_budget(k2)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": "other_work",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.adult_low_wage",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "cost_not_offset(k1)",
+     "enforced(k1)",
+     "margins(k1)"
+    ],
+    [
+     "binding(k1)",
+     "cost_not_offset(k1)",
+     "enforced(k1)",
+     "lower_tier_used(k1)",
+     "tiers_substitute(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "cost_not_offset(k1)",
+    "enforced(k1)",
+    "margins(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-9"
+    },
+    {
+     "conclusion": "fl_cost(k1)",
+     "premises": [
+      "cost_not_offset(k1)",
+      "fl_binds(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "fl_tiers(k1)",
+     "premises": [
+      "fl_cost(k1)",
+      "lower_tier_used(k1)",
+      "tiers_substitute(k1)"
+     ],
+     "rule": "RS-1"
+    },
+    {
+     "conclusion": "fl_margins(k1)",
+     "premises": [
+      "fl_cost(k1)",
+      "margins(k1)"
+     ],
+     "rule": "PC-10"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked",
+    "non_wage_compensation"
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.adult_low_wage",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "sellers_organize(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "sellers_organize(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_sellers_lobby(k1)",
+     "premises": [
+      "binding(k1)",
+      "sellers_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.adult_low_wage",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-9"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "wage_rate",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.prospective",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "cost_not_offset(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "cost_not_offset(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-9"
+    },
+    {
+     "conclusion": "fl_cost(k1)",
+     "premises": [
+      "cost_not_offset(k1)",
+      "fl_binds(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "fl_surplus(k1)",
+     "premises": [
+      "fl_cost(k1)"
+     ],
+     "rule": "PC-11"
+    },
+    {
+     "conclusion": "fl_surplus(k1)",
+     "premises": [
+      "fl_cost(k1)"
+     ],
+     "rule": "PC-9"
+    }
+   ],
+   "group": [
+    "allocation_by_non_price_criteria",
+    "search_cost",
+    "wait_time"
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "allocation_by_non_price_criteria",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.prospective",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "cost_not_offset(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "cost_not_offset(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-9"
+    },
+    {
+     "conclusion": "fl_cost(k1)",
+     "premises": [
+      "cost_not_offset(k1)",
+      "fl_binds(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "fl_surplus(k1)",
+     "premises": [
+      "fl_cost(k1)"
+     ],
+     "rule": "PC-11"
+    },
+    {
+     "conclusion": "fl_surplus(k1)",
+     "premises": [
+      "fl_cost(k1)"
+     ],
+     "rule": "PC-9"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-18",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "excess_supply",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.youth",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "cost_not_offset(k1)",
+     "enforced(k1)",
+     "lower_tier_used(k1)",
+     "tiers_substitute(k1)"
+    ],
+    [
+     "binding(k2)",
+     "cost_not_offset(k2)",
+     "enforced(k2)",
+     "margins(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "cost_not_offset(k2)",
+    "enforced(k2)",
+    "margins(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-9"
+    },
+    {
+     "conclusion": "fl_cost(k1)",
+     "premises": [
+      "cost_not_offset(k1)",
+      "fl_binds(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "fl_tiers(k1)",
+     "premises": [
+      "fl_cost(k1)",
+      "lower_tier_used(k1)",
+      "tiers_substitute(k1)"
+     ],
+     "rule": "RS-1"
+    },
+    {
+     "conclusion": "fl_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-9"
+    },
+    {
+     "conclusion": "fl_cost(k2)",
+     "premises": [
+      "cost_not_offset(k2)",
+      "fl_binds(k2)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "fl_margins(k2)",
+     "premises": [
+      "fl_cost(k2)",
+      "margins(k2)"
+     ],
+     "rule": "PC-10"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked",
+    "non_wage_compensation"
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-19",
+   "item": null,
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.youth",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "sellers_organize(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "sellers_organize(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_sellers_lobby(k2)",
+     "premises": [
+      "binding(k2)",
+      "sellers_organize(k2)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-20",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.youth",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "PC-9"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-21",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "wage_rate",
+   "visibility": "visible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"employers.low_wage\").\nexcluded(k1, \"workers.prospective\").\nannounced(k1).\nfloor(k1).\nfl_seller(k1, \"workers.adult_low_wage\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nfl_outlay(k1, \"officials.enforcement\").\nfl_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nemployment(k1).\nfl_complier(k1, \"employers.low_wage\").\nfl_excluded(k1, \"workers.prospective\").\nfl_lower_tier(k1, \"workers.youth\").\nmc_output_buyer(k1, \"consumers\").\nmobile_buyer(k1, \"consumers.border\").\nfl_substitute_seller(k1, \"input_suppliers\").\nfl_asset_owner(k1, \"factor_owners.specific\").\ndefinition_line(k1).\ngeneral_budget(k1).\nfixed_budget(k1).\nbound(k2, \"employers.low_wage\").\nexcluded(k2, \"buyers.prospective\").\nfloor(k2).\nfl_seller(k2, \"workers.youth\").\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nfl_outlay(k2, \"officials.enforcement\").\nfl_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nemployment(k2).\nfl_complier(k2, \"employers.low_wage\").\ngeneral_budget(k2).\nfixed_budget(k2).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(cost_not_offset(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(sellers_organize(k1)).\nassumption(margins(k1)).\nassumption(rivals_bound(k1)).\nassumption(cross_border_feasible(k1)).\nassumption(substitute_exists(k1)).\nassumption(reshaping_pays(k1)).\nassumption(expected_ahead(k1)).\nassumption(expected_to_last(k1)).\nassumption(lower_tier_used(k1)).\nassumption(tiers_substitute(k1)).\nassumption(budget_fixed(k1)).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(cost_not_offset(k2)).\nassumption(evasion(k2)).\nassumption(can_organize(k2)).\nassumption(sellers_organize(k2)).\nassumption(margins(k2)).\nassumption(budget_fixed(k2)).\n",
+ "explanations": [
+  "C-1. Compared with no Larrow Fair Wage Act, price paid for consumers rises from the short run onward (tier B, invisible). Why: PC-9: PC-9; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.75); Most of the bound buyers' rivals face the same floor (p = 0.80). Reported.",
+  "C-2. Compared with no Larrow Fair Wage Act, cross border purchases for consumers.border rises from the short run onward (tier B, invisible). Why: PC-9: PC-9; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Some buyers of the output can easily buy across the boundary (p = 0.70); Most bound buyers comply with the floor (p = 0.75). Reported.",
+  "C-3. Compared with no Larrow Fair Wage Act, compliance cost for employers.low_wage rises from the short run onward (tier A, invisible). Why: OC-2: OC-2. This holds if: no assumption. Reported.",
+  "C-4. Compared with no Larrow Fair Wage Act, informal activity for employers.low_wage rises from the short run onward (tier B, invisible). Why: RS-3: RS-3. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); Some trade below the floor goes undetected (p = 0.65). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-5. Compared with no Larrow Fair Wage Act, investment target for employers.low_wage falls from the short run onward (tier B, invisible). Why: TS-2: TS-2. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.75); Investors expected the floor before it took effect (p = 0.85). Reported.",
+  "C-6. Compared with no Larrow Fair Wage Act, lobbying effort for employers.low_wage rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); The bound buyers can organize to lobby (p = 0.65). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-7. Compared with no Larrow Fair Wage Act, quantity substitute for employers.low_wage rises from the medium run onward (tier B, invisible). Why: PC-9: PC-9; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-1: when a good becomes dearer, buyers turn to substitutes. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.75); A substitute exists for what the floor makes dearer (p = 0.75). Reported.",
+  "C-8. Compared with no Larrow Fair Wage Act, reclassification for employers.low_wage rises from the short run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); Most bound buyers comply with the floor (p = 0.75); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.55). Reported.",
+  "C-9. Compared with no Larrow Fair Wage Act, return on capital for employers.low_wage falls from the short run onward (tier B, invisible). Why: PC-9: PC-9; CR-6: sellers facing fewer buyers than they planned for cut their price; CR-7: CR-7. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-10. Compared with no Larrow Fair Wage Act, asset value for factor_owners.specific falls from the short run onward (tier B, invisible). Why: PC-9: PC-9; CR-6: sellers facing fewer buyers than they planned for cut their price; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.75); Investors expect the measure to stay in force for at least its stated term (p = 0.85). Reported.",
+  "C-11. Compared with no Larrow Fair Wage Act, quantity traded for input_suppliers rises from the medium run onward (tier B, invisible). Why: PC-9: PC-9; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-1: when a good becomes dearer, buyers turn to substitutes. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.75); A substitute exists for what the floor makes dearer (p = 0.75). Reported.",
+  "C-12. Compared with no Larrow Fair Wage Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-13. Compared with no Larrow Fair Wage Act, enforcement cost (other work) for officials.enforcement falls from the short run onward (tier B, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The agency's budget is not increased for the measure (p = 0.60). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-14. Compared with no Larrow Fair Wage Act, employment or hours worked or non wage compensation for workers.adult_low_wage falls for at least one of them from the short run onward (tier B, invisible). Why: PC-9: PC-9; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-1: when a good becomes dearer, buyers turn to substitutes; PC-10: PC-10. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.75); Buyers can adjust at least one margin (p = 0.90). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-15. Compared with no Larrow Fair Wage Act, lobbying effort for workers.adult_low_wage rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); The sellers the floor raises can organize to lobby (p = 0.65). Reported.",
+  "C-16. Compared with no Larrow Fair Wage Act, wage rate for workers.adult_low_wage rises from the short run onward (tier B, visible). Why: PC-9: PC-9. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); Most bound buyers comply with the floor (p = 0.75). Reported.",
+  "C-17. Compared with no Larrow Fair Wage Act, allocation by non price criteria or search cost or wait time for workers.prospective rises for at least one of them from the short run onward (tier B, invisible). Why: PC-9: PC-9; CR-6: sellers facing fewer buyers than they planned for cut their price; PC-11: PC-11. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.75). Reported.",
+  "C-18. Compared with no Larrow Fair Wage Act, excess supply for workers.prospective rises from the short run onward (tier B, invisible). Why: PC-9: PC-9; CR-6: sellers facing fewer buyers than they planned for cut their price; PC-11: PC-11. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.75). Reported.",
+  "C-19. Compared with no Larrow Fair Wage Act, employment or hours worked or non wage compensation for workers.youth may move either way from the short run onward (tier B, invisible). Why: PC-9: PC-9; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-1: when a good becomes dearer, buyers turn to substitutes; PC-10: PC-10. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.75); Buyers can adjust at least one margin (p = 0.90). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-20. Compared with no Larrow Fair Wage Act, lobbying effort for workers.youth rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); The sellers the floor raises can organize to lobby (p = 0.65). Reported.",
+  "C-21. Compared with no Larrow Fair Wage Act, wage rate for workers.youth rises from the short run onward (tier B, visible). Why: PC-9: PC-9. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); Most bound buyers comply with the floor (p = 0.75). Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-1: for an identifiable group of adults, employers value their labor below the new floor.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k1.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the floor above the price (or wage) that some of the covered sellers could otherwise command?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-3: most employers comply with the floor.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k1.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most bound buyers comply with the floor?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.cost_not_offset",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-14: the floor raises employers' labor cost per hour for the bound group; it is not fully offset.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "cost_not_offset",
+    "assumption_class": "substitutability",
+    "id": "k1.cost_not_offset",
+    "kind": "noul",
+    "options": [],
+    "text": "Does the floor raise buyers' cost per unit, because they cannot fully offset it by cutting other terms or replacing what they buy at the old cost?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.65,
+    "question_id": "k1.evasion",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-6: some cash payment below the floor goes undetected.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k1.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some trade below the floor go undetected?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.65,
+    "question_id": "k1.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-15: employers' associations in low-wage industries can organize to lobby.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound buyers organize to lobby over the floor at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.65,
+    "question_id": "k1.sellers_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-15: unions can organize to lobby.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "sellers_organize",
+    "assumption_class": "other",
+    "id": "k1.sellers_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the sellers the floor raises organize to lobby over it at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.margins",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-4: employers can adjust at least one margin.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "margins",
+    "assumption_class": "other",
+    "id": "k1.margins",
+    "kind": "noul",
+    "options": [],
+    "text": "Can buyers adjust at least one margin (hiring, hours, schedules, breaks, training or benefits)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.rivals_bound",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-10: most sellers of low-wage-intensive services compete with Larrow sellers who face the same floor.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "rivals_bound",
+    "assumption_class": "other",
+    "id": "k1.rivals_bound",
+    "kind": "noul",
+    "options": [],
+    "text": "Do most of the bound buyers' rivals in their own output market face the same floor?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.cross_border_feasible",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-11: Larrow Falls residents can easily shop and eat in Port Dorran.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "cross_border_feasible",
+    "assumption_class": "mobility",
+    "id": "k1.cross_border_feasible",
+    "kind": "noul",
+    "options": [],
+    "text": "Can some buyers of the bound buyers' output easily buy it across a boundary where the floor does not apply?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.substitute_exists",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-7: labor-saving equipment exists for some low-wage tasks.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "substitute_exists",
+    "assumption_class": "alternative_uses",
+    "id": "k1.substitute_exists",
+    "kind": "noul",
+    "options": [],
+    "text": "Is there a substitute (equipment, another input) for what the floor makes dearer?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.55,
+    "question_id": "k1.reshaping_pays",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-5: recasting some workers as independent contractors is feasible.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "reshaping_pays",
+    "assumption_class": "other",
+    "id": "k1.reshaping_pays",
+    "kind": "noul",
+    "options": [],
+    "text": "For some of the actors bound by the measure, will reshaping goods so that they fall outside the measure's definitions cost less than the measure would cost them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.expected_ahead",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-8: employers planning outlets expected both steps to take effect.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "expected_ahead",
+    "assumption_class": "expectations",
+    "id": "k1.expected_ahead",
+    "kind": "noul",
+    "options": [],
+    "text": "Did those planning investment expect the floor before it took effect?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.expected_to_last",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-8: employers expected both steps to take effect.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "expected_to_last",
+    "assumption_class": "expectations",
+    "id": "k1.expected_to_last",
+    "kind": "noul",
+    "options": [],
+    "text": "Do investors expect the measure to stay in force for at least its stated term?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.lower_tier_used",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-12: a meaningful number of employers use the youth rate.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "lower_tier_used",
+    "assumption_class": "other",
+    "id": "k1.lower_tier_used",
+    "kind": "noul",
+    "options": [],
+    "text": "Will a meaningful number of buyers use the lower floor?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.tiers_substitute",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-13: workers under 20 and adults are substitutes in many low-wage jobs.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "tiers_substitute",
+    "assumption_class": "substitutability",
+    "id": "k1.tiers_substitute",
+    "kind": "noul",
+    "options": [],
+    "text": "Are the sellers under the lower floor substitutes for those under the higher one?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.budget_fixed",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-16: the Labor Department's investigator staff and budget are not increased for the Act.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "budget_fixed",
+    "assumption_class": "revenue_use",
+    "id": "k1.budget_fixed",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the enforcing agency's staff and budget left as it was, without an increase for this measure?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-2: some workers under 20 would earn less than $10.20 in Year 2 or $11.90 in Year 3.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k2.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the floor above the price (or wage) that some of the covered sellers could otherwise command?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k2.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-3: most employers comply with the floor.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k2.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most bound buyers comply with the floor?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2.cost_not_offset",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-14: the floor raises employers' labor cost per hour for the bound group; it is not fully offset.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "cost_not_offset",
+    "assumption_class": "substitutability",
+    "id": "k2.cost_not_offset",
+    "kind": "noul",
+    "options": [],
+    "text": "Does the floor raise buyers' cost per unit, because they cannot fully offset it by cutting other terms or replacing what they buy at the old cost?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.65,
+    "question_id": "k2.evasion",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-6: some cash payment below the floor goes undetected.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k2.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some trade below the floor go undetected?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.65,
+    "question_id": "k2.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-15: employers' associations in low-wage industries can organize to lobby.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k2.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound buyers organize to lobby over the floor at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.65,
+    "question_id": "k2.sellers_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-15: unions can organize to lobby.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "sellers_organize",
+    "assumption_class": "other",
+    "id": "k2.sellers_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the sellers the floor raises organize to lobby over it at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k2.margins",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-4: employers can adjust at least one margin.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "margins",
+    "assumption_class": "other",
+    "id": "k2.margins",
+    "kind": "noul",
+    "options": [],
+    "text": "Can buyers adjust at least one margin (hiring, hours, schedules, breaks, training or benefits)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k2.budget_fixed",
+    "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-16: the Labor Department's investigator staff and budget are not increased for the Act.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "budget_fixed",
+    "assumption_class": "revenue_use",
+    "id": "k2.budget_fixed",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the enforcing agency's staff and budget left as it was, without an increase for this measure?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": true,
+    "applicant_actor": null,
+    "asset_owner_actor": "factor_owners.specific",
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "employers.low_wage",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "charge_capped_actor": null,
+    "charge_payer_actor": null,
+    "charge_payer_worker_actor": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "complier_actor": null,
+    "contract_kind": "employment",
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": true,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": "workers.prospective",
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": false,
+    "fixed_budget": true,
+    "fixed_cost_per_item": false,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": true,
+    "good": "adult_low_wage_labor",
+    "holder_cap": false,
+    "id": "k1",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "price_floor",
+    "lower_tier_seller_actor": "workers.youth",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "larrow",
+    "mobile_buyer_actor": "consumers.border",
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "open_breach": false,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": "consumers",
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "player_recipient_actor": null,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": null,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "workers.adult_low_wage",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "The adult minimum wage for employees aged 20 and over, paid by all employers in Larrow, is $12 an hour from January 1, Year 2 and $14 an hour from January 1, Year 3.",
+     "The bill was introduced in December of Year 0 and passed in March of Year 1.",
+     "The State Labor Department enforces the Act through complaint-driven investigations, with about 40 investigators; remedies are back pay plus an equal amount in damages, and workers may sue."
+    ],
+    "state_buys_surplus": false,
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": "input_suppliers",
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": false,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "employers.low_wage",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "charge_capped_actor": null,
+    "charge_payer_actor": null,
+    "charge_payer_worker_actor": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "complier_actor": null,
+    "contract_kind": "employment",
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": false,
+    "fixed_budget": true,
+    "fixed_cost_per_item": false,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": true,
+    "good": "youth_labor",
+    "holder_cap": false,
+    "id": "k2",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "price_floor",
+    "lower_tier_seller_actor": null,
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "larrow",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "open_breach": false,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "player_recipient_actor": null,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": null,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "workers.youth",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "Employers may pay employees under 20 at least 85% of the adult minimum: $10.20 in Year 2 and $11.90 in Year 3."
+    ],
+    "state_buys_surplus": false,
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   }
+  ],
+  "context": [
+   "About 15% of Larrow workers earn under $12 and about 22% under $14.",
+   "The neighboring state of Dorran keeps a $10 minimum."
+  ],
+  "effective": "January 1, Year 2",
+  "enacted": "March of Year 1",
+  "jurisdiction": "Larrow (fictional)",
+  "name": "Larrow Fair Wage Act",
+  "rule_maker": "the Larrow legislature",
+  "stated_aim": null,
+  "unclear": []
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-21T17:26:53+00:00",
+ "sources_held_back": [],
+ "unclear": [],
+ "verifier_problems": []
+}

@@ -1,0 +1,13 @@
+Calderford Central Zone Charging Ordinance (FICTIONAL: Calderford, Merrowdale and the ordinance are invented for handbook worked example WE-046 and resemble, but are not, any real congestion charge).
+
+Calderford is a city of about 900,000. Its central zone, the area inside the Inner Ring Road, covers about 7 km² and has about 58,000 residents, 260,000 jobs and about 4,200 shops, cafés and restaurants. Just outside the Inner Ring lies Ringside, a band of about 1,100 shops and offices with three large parking garages, five to ten minutes' walk from the zone's edge. Beyond Ringside are the city's outer districts and, beyond the city line, the suburban town of Merrowdale with a regional shopping centre.
+
+On an average weekday, about 118,000 vehicles are driven or parked in the zone between 7:00 and 19:00: about 92,000 cars, 19,000 goods vehicles, 4,000 taxis and ride-hail cars, and 3,000 buses and coaches. Average speed in the zone in charging hours is about 12 km/h. Calderford Transit runs about 850 buses and two tram lines; peak load on routes into the zone is about 85% of capacity, and new buses take 14 to 18 months from order to service.
+
+The ordinance was adopted and published on 4 January 2027; charging starts on 1 November 2027 (ten months later). No expiry; the council must review the charge level every three years.
+
+The registered keeper of each vehicle driven or parked in the zone on a weekday between 7:00 and 19:00 must pay $15 per vehicle per day, payable by midnight the next day. One charge covers any number of entries that day. Scheduled buses and emergency vehicles are exempt. Registered keepers whose registered address is in the zone receive a 90% discount, which makes the charge $1.50 a day.
+
+"The net revenue of the charge, after the costs of the City Charging Office, shall be applied to bus services." There is no clause on the level of general-fund support for buses. The City Charging Office runs cameras reading number plates at all 74 entry points and at 40 points inside the zone; an unpaid charge brings a penalty notice of $130. It costs about $45 million a year to run and is funded from the gross revenue of the charge. Appeals go to the existing Parking Adjudication Office, whose budget the ordinance does not change.
+
+The ordinance says that a goods vehicle which enters and leaves the zone within thirty minutes in the course of a delivery shall be recorded as a short visit, but the schedule of charges sets a single daily rate and nowhere refers to short visits. One reading is that a short visit pays the daily charge like any other day in the zone; the other is that a short visit is not a chargeable day.

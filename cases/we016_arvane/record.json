@@ -1,0 +1,49 @@
+{
+ "name": "Arvane Interior Design Practice Act",
+ "jurisdiction": "Arvane (fictional)",
+ "rule_maker": "the Arvane legislature",
+ "enacted": "ten months before the effective date",
+ "effective": "ten months after enactment",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "licensing_requirement",
+   "good": "interior_design",
+   "market": "arvane",
+   "bound_actor": "designers",
+   "buyer_actor": "clients",
+   "right_holder_actor": "designers.grandfathered",
+   "trainer_actor": "schools.design",
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": true,
+   "announcement_window": true,
+   "source_sentences": [
+    "Anyone who offers interior design for pay in Arvane, and any firm that employs them, must hold a license.",
+    "A license requires a four-year accredited degree in interior design, 3,500 hours of work supervised by a licensed designer or architect, and a state exam ($1,200).",
+    "Anyone who documents three years of paid practice in Arvane before the effective date and registers within 18 months receives a license without the degree, hours or exam.",
+    "The State Board of Interior Design enforces these rules.",
+    "Enforcement is complaint-driven, with fines up to $2,500 per violation, and contracts for unlicensed practice cannot be enforced in court.",
+    "The Board is funded by license fees and the general budget."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether choosing furnishings, finishes and colors without any space planning (\"styling\") is covered.",
+   "readings": [
+    "U1-a: covered (the definition lists \"selection of interior finishes and furnishings\")",
+    "U1-b: not covered (only space planning, or styling done with it, is covered)"
+   ]
+  }
+ ],
+ "context": [
+  "Interior design was previously unregulated in the State of Arvane: anyone could offer it for pay.",
+  "About 6,000 people do, roughly 40% of whom hold a degree in interior design.",
+  "About half the trade's revenue comes from commercial work (offices, shops, restaurants), half from homes.",
+  "Two accredited degree programs in Arvane graduate about 300 students a year.",
+  "Arvane's largest city, Corvan, is 20 km from the border with Velmark, which does not license interior designers.",
+  "The Act was passed ten months before it took effect."
+ ]
+}

@@ -1,0 +1,1366 @@
+{
+ "assumptions": {
+  "binding(k1)": {
+   "assumption_class": "binding",
+   "id": "binding(k1)",
+   "p": 0.9,
+   "text": "The requirement goes beyond what some current or would-be sellers already meet."
+  },
+  "buyer_substitutes(k1)": {
+   "assumption_class": "substitutability",
+   "id": "buyer_substitutes(k1)",
+   "p": 0.85,
+   "text": "Some buyers have a feasible substitute for the licensed service."
+  },
+  "can_organize(k1)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1)",
+   "p": 0.8,
+   "text": "The license holders can organize to lobby at a cost below their stake."
+  },
+  "enforced(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k1)",
+   "p": 0.7,
+   "text": "The requirement is enforced often enough that many sellers comply or stop."
+  },
+  "enforcement_budget_raised(k1)": {
+   "assumption_class": "revenue_use",
+   "id": "enforcement_budget_raised(k1)",
+   "p": 0.85,
+   "text": "The administering agency's budget is raised to cover the new work, so taxpayers fund it."
+  },
+  "evasion(k1)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k1)",
+   "p": 0.8,
+   "text": "Some sellers keep selling without a license and are not caught."
+  },
+  "some_qualify(k1)": {
+   "assumption_class": "alternative_uses",
+   "id": "some_qualify(k1)",
+   "p": 0.85,
+   "text": "Some current sellers or new entrants obtain the license."
+  },
+  "tests_valued_quality(k1)": {
+   "assumption_class": "other",
+   "id": "tests_valued_quality(k1)",
+   "p": 0.75,
+   "text": "The license tests something buyers value but cannot easily judge."
+  },
+  "training_common(k1)": {
+   "assumption_class": "other",
+   "id": "training_common(k1)",
+   "p": 0.75,
+   "text": "The required training was already commonly taken before the requirement."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "clients",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "lic_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "clients",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "clients",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ],
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "tests_valued_quality(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_signal(k1)",
+     "premises": [
+      "lic_binds(k1)",
+      "tests_valued_quality(k1)"
+     ],
+     "rule": "EN-11"
+    },
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "lic_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_information",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "clients",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "buyer_substitutes(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "buyer_substitutes(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_substitute(k1)",
+     "premises": [
+      "buyer_substitutes(k1)",
+      "lic_binds(k1)"
+     ],
+     "rule": "RS-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_substitute",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "clients",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_prevented(k1)",
+     "premises": [
+      "lic_binds(k1)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "clients",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "clients",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "lic_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "designers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "some_qualify(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "some_qualify(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_qualify(k1)",
+     "premises": [
+      "some_qualify(k1)"
+     ],
+     "rule": "CR-8"
+    },
+    {
+     "conclusion": "lic_qualify(k1)",
+     "premises": [
+      "lic_binds(k1)"
+     ],
+     "rule": "EN-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "designers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_excluded(k1)",
+     "premises": [
+      "lic_binds(k1)"
+     ],
+     "rule": "EN-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "designers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "entry_rate",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "designers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "en_informal(k1)",
+     "premises": [
+      "evasion(k1)",
+      "lic_binds(k1)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "designers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "number_of_sellers",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "designers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_prevented(k1)",
+     "premises": [
+      "lic_binds(k1)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "designers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "share_of_sellers_licensed",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "designers.grandfathered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "can_organize(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "can_organize(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_holders_gain(k1)",
+     "premises": [
+      "lic_binds(k1)"
+     ],
+     "rule": "EN-2"
+    },
+    {
+     "conclusion": "en_lobby(k1)",
+     "premises": [
+      "lic_holders_gain(k1)"
+     ],
+     "rule": "EN-5"
+    },
+    {
+     "conclusion": "en_lobby(k1)",
+     "premises": [
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "designers.grandfathered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_holders_gain(k1)",
+     "premises": [
+      "lic_binds(k1)"
+     ],
+     "rule": "EN-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "en_administered(k1)",
+     "premises": [
+      "lic_binds(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "schools.design",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "some_qualify(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "some_qualify(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_qualify(k1)",
+     "premises": [
+      "some_qualify(k1)"
+     ],
+     "rule": "CR-8"
+    },
+    {
+     "conclusion": "lic_qualify(k1)",
+     "premises": [
+      "lic_binds(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_training_deterred(k1)",
+     "premises": [
+      "lic_qualify(k1)",
+      "training_common(k1)"
+     ],
+     "rule": "CR-4"
+    },
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "lic_qualify(k1)",
+     "premises": [
+      "some_qualify(k1)"
+     ],
+     "rule": "CR-8"
+    },
+    {
+     "conclusion": "lic_qualify(k1)",
+     "premises": [
+      "lic_binds(k1)"
+     ],
+     "rule": "EN-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-18",
+   "item": null,
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "taxpayers",
+   "actor_group": [
+    "taxpayers",
+    "recipients.other_spending",
+    "taxpayers.future"
+   ],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "enforcement_budget_raised(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "enforcement_budget_raised(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "lic_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "EN-1"
+    },
+    {
+     "conclusion": "en_administered(k1)",
+     "premises": [
+      "lic_binds(k1)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "en_funded(k1)",
+     "premises": [
+      "enforcement_budget_raised(k1)"
+     ],
+     "rule": "OC-1"
+    },
+    {
+     "conclusion": "en_funded(k1)",
+     "premises": [
+      "en_administered(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-19",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"designers\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nlicensing(k1).\nen_buyer(k1, \"clients\").\nen_holder(k1, \"designers.grandfathered\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nen_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_trainer(k1, \"schools.design\").\nen_informal_buyer(k1, \"clients\").\ngeneral_budget(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(some_qualify(k1)).\nassumption(evasion(k1)).\nassumption(buyer_substitutes(k1)).\nassumption(tests_valued_quality(k1)).\nassumption(can_organize(k1)).\nassumption(training_common(k1)).\nassumption(enforcement_budget_raised(k1)).\n",
+ "explanations": [
+  "C-1. Compared with no Arvane Interior Design Practice Act, disputes settled outside courts for clients rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some sellers keep selling without a license and are not caught (p = 0.80). Reported.",
+  "C-2. Compared with no Arvane Interior Design Practice Act, price paid for clients rises from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-3. Compared with no Arvane Interior Design Practice Act, quality information for clients may move either way from the short run onward (tier B, visible). Why: EN-1: EN-1; EN-11: EN-11; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some sellers keep selling without a license and are not caught (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-4. Compared with no Arvane Interior Design Practice Act, quantity substitute for clients rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-1: when a good becomes dearer, buyers turn to substitutes. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); Some buyers have a feasible substitute for the licensed service (p = 0.85); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-5. Compared with no Arvane Interior Design Practice Act, quantity traded for clients falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-6. Compared with no Arvane Interior Design Practice Act, resources available other uses for clients falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-7. Compared with no Arvane Interior Design Practice Act, search cost for clients rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some sellers keep selling without a license and are not caught (p = 0.80). Reported.",
+  "C-8. Compared with no Arvane Interior Design Practice Act, compliance cost for designers rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some current sellers or new entrants obtain the license (p = 0.85). Reported.",
+  "C-9. Compared with no Arvane Interior Design Practice Act, employment for designers falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; EN-3: EN-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-10. Compared with no Arvane Interior Design Practice Act, entry rate for designers falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-11. Compared with no Arvane Interior Design Practice Act, informal activity for designers rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; RS-3: RS-3. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some sellers keep selling without a license and are not caught (p = 0.80). Reported.",
+  "C-12. Compared with no Arvane Interior Design Practice Act, number of sellers for designers falls from the short run onward (tier B, invisible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-13. Compared with no Arvane Interior Design Practice Act, quantity traded for designers falls from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-14. Compared with no Arvane Interior Design Practice Act, share of sellers licensed for designers rises from the short run onward (tier B, visible). Why: EN-1: EN-1. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-15. Compared with no Arvane Interior Design Practice Act, lobbying effort for designers.grandfathered rises from the medium run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2; EN-5: EN-5; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The license holders can organize to lobby at a cost below their stake (p = 0.80); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-16. Compared with no Arvane Interior Design Practice Act, net price received for designers.grandfathered rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; EN-2: EN-2. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-17. Compared with no Arvane Interior Design Practice Act, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70). Reported.",
+  "C-18. Compared with no Arvane Interior Design Practice Act, quantity demanded for schools.design may move either way from the short run onward (tier B, invisible). Why: EN-1: EN-1; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses; CR-4: buyers who face a higher price take fewer units. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); Some current sellers or new entrants obtain the license (p = 0.85). Reported.",
+  "C-19. Compared with no Arvane Interior Design Practice Act, resources available other uses for taxpayers or recipients.other_spending or taxpayers.future falls for at least one of them from the short run onward (tier B, invisible). Why: EN-1: EN-1; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; OC-1: what the payers give up is what they would otherwise have bought. This holds if: The requirement goes beyond what some current or would-be sellers already meet (p = 0.90); The requirement is enforced often enough that many sellers comply or stop (p = 0.70); The administering agency's budget is raised to cover the new work, so taxpayers fund it (p = 0.85). Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-016 (illustrative figures), A-1: many practitioners and would-be entrants lack the degree and would not otherwise get it, so the requirement binds.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k1.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the license's conditions (training, exams, fees, waiting periods) go beyond what some current or would-be sellers already meet?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-016 (illustrative figures), A-2: the Board enforces often enough, with unenforceable contracts as a further deterrent, that many comply or stop.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k1.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the requirement be enforced often enough that many sellers comply with it or stop selling?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.some_qualify",
+    "rationale": "No matching assumption in WE-016; judged from the text: the grandfathering clause licenses existing practitioners without the degree, and two degree programs graduate about 300 students a year, so some will hold the license.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "some_qualify",
+    "assumption_class": "alternative_uses",
+    "id": "k1.some_qualify",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some current sellers or new entrants choose to obtain the license?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.evasion",
+    "rationale": "Probability taken from the assumption table of handbook WE-016 (illustrative figures), A-3: some unlicensed practice continues undetected, mainly in homes (enforcement is complaint-driven).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k1.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some sellers keep selling without a license and not be caught?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.buyer_substitutes",
+    "rationale": "Probability taken from the assumption table of handbook WE-016 (illustrative figures), A-10: residential clients have close exempt or unlicensed substitutes (store design help, online services, doing it themselves).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyer_substitutes",
+    "assumption_class": "substitutability",
+    "id": "k1.buyer_substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Can some buyers turn to a substitute for the licensed service (doing it themselves, family or friends, another service)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.tests_valued_quality",
+    "rationale": "Probability taken from the assumption table of handbook WE-016 (illustrative figures), A-13: the degree and exam cover code, egress, accessibility and plan preparation, which commercial clients need to get permits approved (for homes A-14 puts the training as largely unrelated at p = 0.45, i.e. 0.55 that it is related).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "tests_valued_quality",
+    "assumption_class": "other",
+    "id": "k1.tests_valued_quality",
+    "kind": "noul",
+    "options": [],
+    "text": "Does the license test something buyers care about but cannot easily judge for themselves (competence, safety, honesty)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-016 (illustrative figures), A-9: license holders, schools, retailers and architects can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the license holders (or those who train them) organize to lobby for the requirement at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.training_common",
+    "rationale": "No matching assumption in WE-016; judged from the text: roughly 40% of the 6,000 people who offer interior design already hold a degree in it.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "training_common",
+    "assumption_class": "other",
+    "id": "k1.training_common",
+    "kind": "noul",
+    "options": [],
+    "text": "Before the requirement, did many people already take the training it requires (a degree many would-be sellers already pursued)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.enforcement_budget_raised",
+    "rationale": "No matching assumption in WE-016; judged from the text: the Board is funded by license fees and the general budget, and the Act gives it a new task, so the general-budget share is paid from a budget that rises with it (the handbook treats this as certain, C-27 with no assumption).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforcement_budget_raised",
+    "assumption_class": "revenue_use",
+    "id": "k1.enforcement_budget_raised",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the budget of the agency that administers the measure be raised to cover the new work, rather than the work being absorbed within its existing budget?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "bound_actor": "designers",
+    "budget_capped": false,
+    "buyer_actor": "clients",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": true,
+    "good": "interior_design",
+    "id": "k1",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "licensing_requirement",
+    "market": "arvane",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "own_revenue_funded": false,
+    "price_fixed": false,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": "designers.grandfathered",
+    "scrappage": false,
+    "scrapper_actor": null,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "source_sentences": [
+     "Anyone who offers interior design for pay in Arvane, and any firm that employs them, must hold a license.",
+     "A license requires a four-year accredited degree in interior design, 3,500 hours of work supervised by a licensed designer or architect, and a state exam ($1,200).",
+     "Anyone who documents three years of paid practice in Arvane before the effective date and registers within 18 months receives a license without the degree, hours or exam.",
+     "The State Board of Interior Design enforces these rules.",
+     "Enforcement is complaint-driven, with fines up to $2,500 per violation, and contracts for unlicensed practice cannot be enforced in court.",
+     "The Board is funded by license fees and the general budget."
+    ],
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "trainer_actor": "schools.design",
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "wider_market": false
+   }
+  ],
+  "context": [
+   "Interior design was previously unregulated in the State of Arvane: anyone could offer it for pay.",
+   "About 6,000 people do, roughly 40% of whom hold a degree in interior design.",
+   "About half the trade's revenue comes from commercial work (offices, shops, restaurants), half from homes.",
+   "Two accredited degree programs in Arvane graduate about 300 students a year.",
+   "Arvane's largest city, Corvan, is 20 km from the border with Velmark, which does not license interior designers.",
+   "The Act was passed ten months before it took effect."
+  ],
+  "effective": "ten months after enactment",
+  "enacted": "ten months before the effective date",
+  "jurisdiction": "Arvane (fictional)",
+  "name": "Arvane Interior Design Practice Act",
+  "rule_maker": "the Arvane legislature",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U1-a: covered (the definition lists \"selection of interior finishes and furnishings\")",
+     "U1-b: not covered (only space planning, or styling done with it, is covered)"
+    ],
+    "text": "Whether choosing furnishings, finishes and colors without any space planning (\"styling\") is covered."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-18T21:12:06+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U1-a: covered (the definition lists \"selection of interior finishes and furnishings\")",
+    "U1-b: not covered (only space planning, or styling done with it, is covered)"
+   ],
+   "text": "Whether choosing furnishings, finishes and colors without any space planning (\"styling\") is covered."
+  }
+ ],
+ "verifier_problems": []
+}

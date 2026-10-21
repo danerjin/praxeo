@@ -1,0 +1,12 @@
+[
+  {
+    "question_id": "h3.nontransferable",
+    "value": "no",
+    "probability": 0.15,
+    "rationale": "The tenancy passes at the capped rent to any successor the tenant names, and outgoing tenants commonly receive payment from that successor, so the right to the controlled price is in practice transferable and not tied to occupancy alone.",
+    "evidence": [
+      "A tenancy passes, at the capped rent, to any person the tenant names in writing as successor, who takes over the tenancy on the same terms.",
+      "In Jessop, outgoing tenants commonly receive a payment from the person they name."
+    ]
+  }
+]

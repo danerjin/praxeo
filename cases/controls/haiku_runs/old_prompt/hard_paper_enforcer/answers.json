@@ -1,0 +1,12 @@
+[
+  {
+    "question_id": "h2.enforced",
+    "value": "no",
+    "probability": 0.08,
+    "rationale": "The Housing Department has no budget, no staff and only a postal address for complaints, while market rents rise about 9 percent a year, so landlords have strong reason to exceed the freeze with little risk of detection or penalty.",
+    "evidence": [
+      "The Housing Department's budget for the year is zero, it has no staff, and complaints are to be sent to its postal address.",
+      "Market rents in Irwell have risen about 9 percent a year for five years."
+    ]
+  }
+]

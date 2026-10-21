@@ -1,0 +1,92 @@
+{
+ "name": "Varrow Healthy Workplaces Act",
+ "jurisdiction": "Varrow (fictional)",
+ "rule_maker": "the Varrow legislature",
+ "enacted": "15 May 2026",
+ "effective": "1 January 2027",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "mandated_contract_term",
+   "good": "paid_sick_time",
+   "market": "varrow_labor",
+   "bound_actor": "employers.uncovered",
+   "recipient_actor": "workers.uncovered",
+   "floor_bound_actor": "workers.min_wage",
+   "applicant_actor": "workers.prospective",
+   "already_provider_actor": "employers.compliant",
+   "already_recipient_actor": "workers.pto_noncompliant",
+   "per_head_cap": true,
+   "below_cap_actor": "workers.part_time",
+   "above_cap_actor": "workers.full_time",
+   "paid_absence": true,
+   "cover_seller_actor": "staffing_agencies",
+   "output_buyer_actor": "buyers.local_services",
+   "tradable_actor": "employers.tradable",
+   "neighbor_seller_actor": "neighboring_jurisdictions",
+   "rival_actors": [
+    "employers.compliant",
+    "employers.small"
+   ],
+   "definition_line": true,
+   "outside_actor": "contractors",
+   "forfeit_on_leaving": true,
+   "complaint_only": true,
+   "complainant_actor": "workers.complainants",
+   "violator_actor": "employers.violating",
+   "size_threshold": true,
+   "near_threshold_actor": "employers.near_threshold",
+   "below_threshold_actor": "employers.small",
+   "threshold_staff_split": true,
+   "margin_recipient_actor": "workers.size_ambiguous",
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": true,
+   "future_taxpayer_actor": null,
+   "source_sentences": [
+    "Every employee accrues one hour of paid sick time for every 30 hours worked, from the first hour of work or from 1 January 2027 for existing employees, up to 40 hours accrued in a calendar year.",
+    "Paid sick time is paid at the employee's regular hourly rate.",
+    "Independent contractors, as defined by the state's existing classification test, and public employers are not covered.",
+    "Unused hours are not paid out at separation; an employee rehired within six months gets the balance back.",
+    "An employer whose policy provides at least 40 hours a year of paid time usable for the same purposes on the same conditions is deemed compliant.",
+    "Employers with fewer than six employees are exempt.",
+    "The Department of Labor Standards enforces the Act on complaint only, within two years of the violation; there are no routine audits.",
+    "A new appropriation of $3.4 million a year from the general fund pays for 25 investigators."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "The carry-over rule is enforced from 1 January 2028.",
+   "readings": [
+    "U1-a: hours accrued in 2027 and unused on 31 December 2027 must carry into 2028; only enforcement waits",
+    "U1-b: the carry-over rule applies only to hours accrued from 2028, so 2027 hours may lapse"
+   ]
+  },
+  {
+   "id": "U2",
+   "text": "Size is the \"average number of employees during the previous calendar year\".",
+   "readings": [
+    "U2-a: every person on the payroll counts as one",
+    "U2-b: only employees who average 20 hours a week or more count"
+   ],
+   "reading_fields": {
+    "U2-a": {
+     "k1": {
+      "margin_covered": true
+     }
+    },
+    "U2-b": {
+     "k1": {
+      "threshold_partial_count": true
+     }
+    }
+   }
+  }
+ ],
+ "context": [
+  "A survey by the state labor department found that about 62% of private employees already receive paid sick leave, or paid time off (PTO) that can be used for illness, and about 38% (about 1.0 million) do not.",
+  "Varrow's minimum wage is $13.50 an hour, indexed each year to consumer prices; about 9% of private employees earn at or near it."
+ ]
+}

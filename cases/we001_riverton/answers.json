@@ -1,0 +1,167 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "WE-001 A-1.",
+  "evidence": [
+   "Market rents have risen about 5% a year for several years (WE-001 record)."
+  ]
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "WE-001 A-2.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.alternative_uses",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "WE-001 A-5.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.nontransferable",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "WE-001 A-6.",
+  "evidence": [
+   "Tenancies cannot be assigned or sold."
+  ]
+ },
+ {
+  "question_id": "k1.would_leave",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-001 A-12 (mobility): some opportunities would require moving; the cap ends on leaving.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.substitutes",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "WE-001 A-7.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyouts_limited",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Not addressed in WE-001; premise added for 1.4.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.lockin_dominates",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Not addressed in WE-001; premise added for 1.4.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.keepers_dominate",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Not addressed in WE-001; premise added for the CR-12 total (catalog 1.4).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.search_open",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "WE-001 A-15 (no waiting list or allocation rule).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.selection_open",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "WE-001 A-16.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.quality_adjustable",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "WE-001 A-4 (housing codes leave room above the legal minimum).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "WE-001 A-3.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.opportunities_need_move",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-001 A-12.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "WE-001 A-18.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.durable_assets",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "WE-001 A-10.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-001 A-13.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.commutable",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "WE-001 A-8.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.relet_obstructs",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Not a separate assumption in WE-001; added for the units-held-vacant rule. C-24 rests on A-5 (0.7) and A-2 (0.8); K2's eviction-for-cause rule and K3's relocation payments are what make re-letting obstruct conversion.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.exit_process",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Not in WE-001's assumption table; K3 states a 12-month permit process for conversion, so the premise is close to given by the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.window_repricing",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-001 (illustrative figures), A-11 (expectations): enough leases renew during the announcement window, and landlords can raise rents at renewal. The ordinance was on the ballot eight months before it took effect.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.counterfactual_catches_up",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-001 (illustrative figures), A-14: without the ordinance, sitting tenants' rents would follow the market path within one or two lease cycles, so the counterfactual rent passes any raise made in the announcement window (a raise is bounded by the market rent on the effective date, CR-5c).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforcement_budget_raised",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-001 (illustrative figures), A-19 (revenue_use): the rent board is a new appropriation that raises the general budget, rather than being taken from other enforcement within a fixed budget.",
+  "evidence": []
+ }
+]

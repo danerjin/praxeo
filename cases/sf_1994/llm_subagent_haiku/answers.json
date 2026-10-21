@@ -1,0 +1,87 @@
+[
+ {
+  "question_id": "c1.binding",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "The cap limits sitting-tenant increases to 60 percent of the regional CPI rise, so for long-tenured tenants the ceiling should sit below the rent the market would otherwise reach. Vacancy decontrol resets the rent only on voluntary turnover, so the cap is what governs most covered units.",
+  "evidence": [
+    "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index.",
+    "When a tenant leaves voluntarily, the landlord may set the rent for the next tenant freely, after which the limit applies again."
+  ]
+},
+ {
+  "question_id": "c1.enforced",
+  "value": "no",
+  "probability": 0.4,
+  "rationale": "The Rent Board hears petitions and can order reductions and refunds, but the record shows no penalties larger than the gain from breaking the ceiling and enforcement depends on tenant complaints. Enforcement against most bound landlords is therefore doubtful.",
+  "evidence": [
+    "The Rent Board hears tenant petitions and landlord applications and may order rent reductions and refunds.",
+    "The Rent Board, operating since 1979, hears petitions and orders refunds (policy text)."
+  ]
+},
+ {
+  "question_id": "c1.alternative_uses",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "The ceiling governs rents for sitting tenants only and does not restrict sale of the building or the rent on vacancy, so owners have room to shift value into sales or uses outside the cap. Just-cause rules limit displacement, which constrains but does not fully block such moves.",
+  "evidence": [
+    "When a tenant leaves voluntarily, the landlord may set the rent for the next tenant freely, after which the limit applies again.",
+    "Just-cause eviction applies to covered units (policy text)."
+  ]
+},
+ {
+  "question_id": "c1.nontransferable",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "The controlled increase is stated as a right of a sitting tenant, tied to the tenancy and the unit, and the record gives no provision for assigning it. Tenancy-based rights of this kind are usually personal rather than saleable.",
+  "evidence": [
+    "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index.",
+    "Tenants of covered units may be evicted only for one of the just causes listed in the Rent Ordinance."
+  ]
+},
+ {
+  "question_id": "c1.buyouts_limited",
+  "value": "no",
+  "probability": 0.45,
+  "rationale": "The record says nothing about buyout payments. Where the gap between the capped rent and market rent is large, buyouts can move many tenants, so it is close to even whether they move fewer than the cap keeps in place.",
+  "evidence": []
+},
+ {
+  "question_id": "c1.would_leave",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "The record does not address tenant mobility directly. Without the rule, market rents would be unrestricted for protected tenants, so some with weaker local ties would plausibly have moved out, and the benefit would end for them.",
+  "evidence": [
+    "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index."
+  ]
+},
+ {
+  "question_id": "c1.lockin_dominates",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Tenants who keep a covered unit pay rent well below market under the capped increase, and movers face free rents only on the new unit. The record suggests a large lock-in gain, though it is not quantified.",
+  "evidence": [
+    "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index.",
+    "When a tenant leaves voluntarily, the landlord may set the rent for the next tenant freely, after which the limit applies again."
+  ]
+},
+ {
+  "question_id": "c1.keepers_dominate",
+  "value": "no",
+  "probability": 0.4,
+  "rationale": "The record gives no information on conversion or withdrawal. Just-cause limits on eviction make displacement by conversion harder, so the rise in displaced tenants is likely small, but the comparison with the fall in moves among keepers is not established by the record.",
+  "evidence": [
+    "Just-cause eviction applies to covered units (policy text)."
+  ]
+},
+ {
+  "question_id": "c1.substitutes",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "The measure covers only owner-occupied buildings of two to four units built before June 1979, and the record notes that other units were already outside the rent ordinance. Buyers shut out of covered units therefore have uncovered units in the same city to turn to.",
+  "evidence": [
+    "Buildings of four units or fewer in which the owner lives were exempt.",
+    "Rental units in owner-occupied buildings of two to four units built before June 1979 become subject to the Rent Ordinance."
+  ]
+}
+]

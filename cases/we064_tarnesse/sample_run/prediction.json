@@ -1,0 +1,1432 @@
+{
+ "assumptions": {
+  "binding(k2)": {
+   "assumption_class": "binding",
+   "id": "binding(k2)",
+   "p": 0.8,
+   "text": "The term was absent from some contracts, so the mandate binds for them."
+  },
+  "binding(k3)": {
+   "assumption_class": "binding",
+   "id": "binding(k3)",
+   "p": 0.6,
+   "text": "The cap holds the quantity below what would otherwise be traded."
+  },
+  "can_organize(k2)": {
+   "assumption_class": "other",
+   "id": "can_organize(k2)",
+   "p": 0.85,
+   "text": "The bound providers can organize to lobby."
+  },
+  "can_organize(k3)": {
+   "assumption_class": "other",
+   "id": "can_organize(k3)",
+   "p": 0.85,
+   "text": "The holders of the rights can organize to lobby at a cost below their stake."
+  },
+  "enforced(k2)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k2)",
+   "p": 0.75,
+   "text": "Most bound providers comply."
+  },
+  "enforced(k3)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k3)",
+   "p": 0.85,
+   "text": "The cap is enforced."
+  },
+  "enforcement_budget_raised(k3)": {
+   "assumption_class": "revenue_use",
+   "id": "enforcement_budget_raised(k3)",
+   "p": 0.9,
+   "text": "The administering agency's budget is raised to cover the new work, so taxpayers fund it."
+  },
+  "evasion(k3)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k3)",
+   "p": 0.55,
+   "text": "Some trade takes place beyond the cap without being caught."
+  },
+  "expected_to_last(k3)": {
+   "assumption_class": "expectations",
+   "id": "expected_to_last(k3)",
+   "p": 0.7,
+   "text": "Holders and buyers of the rights expect the restriction to last."
+  },
+  "trade_cheap(k3)": {
+   "assumption_class": "mobility",
+   "id": "trade_cheap(k3)",
+   "p": 0.4,
+   "text": "Rights can be sold or leased at low cost."
+  },
+  "value_above_price(k3)": {
+   "assumption_class": "other",
+   "id": "value_above_price(k3)",
+   "p": 0.6,
+   "text": "Some buyers win the rights below their own value for them."
+  },
+  "values_differ(k3)": {
+   "assumption_class": "other",
+   "id": "values_differ(k3)",
+   "p": 0.6,
+   "text": "Holders' costs or values differ."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "bidders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "trade_cheap(k3)",
+     "values_differ(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "trade_cheap(k3)",
+    "values_differ(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_consolidate(k3)",
+     "premises": [
+      "quota_binds(k3)",
+      "trade_cheap(k3)",
+      "values_differ(k3)"
+     ],
+     "rule": "EN-13"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": false,
+   "sign": "ambiguous",
+   "sign_by_reading": {
+    "U1-a": "decrease",
+    "U1-b": "none"
+   },
+   "tier": "B",
+   "variable": "capital_stock_target",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "bidders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "evasion(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "evasion(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k3)",
+     "premises": [
+      "evasion(k3)",
+      "quota_binds(k3)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "bidders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "evasion(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "evasion(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k3)",
+     "premises": [
+      "evasion(k3)",
+      "quota_binds(k3)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "bidders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "trade_cheap(k3)",
+     "values_differ(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "trade_cheap(k3)",
+    "values_differ(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_consolidate(k3)",
+     "premises": [
+      "quota_binds(k3)",
+      "trade_cheap(k3)",
+      "values_differ(k3)"
+     ],
+     "rule": "EN-13"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": false,
+   "sign": "ambiguous",
+   "sign_by_reading": {
+    "U1-a": "decrease",
+    "U1-b": "none"
+   },
+   "tier": "B",
+   "variable": "number_of_sellers",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "bidders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "evasion(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "evasion(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k3)",
+     "premises": [
+      "evasion(k3)",
+      "quota_binds(k3)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_information",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "bidders",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "evasion(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "evasion(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k3)",
+     "premises": [
+      "evasion(k3)",
+      "quota_binds(k3)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "licensees",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "expected_to_last(k3)"
+    ],
+    [
+     "value_above_price(k3)"
+    ]
+   ],
+   "assumptions": [
+    "value_above_price(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "en_sale(k3)",
+     "premises": [
+      "rights_sold(k3)"
+     ],
+     "rule": "CR-8"
+    },
+    {
+     "conclusion": "en_sale_gain(k3)",
+     "premises": [
+      "value_above_price(k3)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "en_sale_gain(k3)",
+     "premises": [
+      "en_sale(k3)"
+     ],
+     "rule": "SB-4"
+    },
+    {
+     "conclusion": "quota_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_capitalized(k3)",
+     "premises": [
+      "expected_to_last(k3)",
+      "quota_binds(k3)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "licensees",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_compliance(k2)",
+     "premises": [
+      "mandate(k2)"
+     ],
+     "rule": "OC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "licensees",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "can_organize(k2)"
+    ],
+    [
+     "binding(k3)",
+     "can_organize(k3)",
+     "enforced(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "can_organize(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_lobby(k2)",
+     "premises": [
+      "binding(k2)",
+      "can_organize(k2)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "quota_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_lobby(k3)",
+     "premises": [
+      "can_organize(k3)",
+      "quota_binds(k3)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "licensees",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "trade_cheap(k3)",
+     "values_differ(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "trade_cheap(k3)",
+    "values_differ(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_consolidate(k3)",
+     "premises": [
+      "quota_binds(k3)",
+      "trade_cheap(k3)",
+      "values_differ(k3)"
+     ],
+     "rule": "EN-13"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": false,
+   "sign": "ambiguous",
+   "sign_by_reading": {
+    "U1-a": "increase",
+    "U1-b": "none"
+   },
+   "tier": "B",
+   "variable": "right_lease_price",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_administered(k2)",
+     "premises": [
+      "mandate(k2)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "quota_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_administered(k3)",
+     "premises": [
+      "quota_binds(k3)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "tower_owners",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k3)",
+     "enforced(k3)",
+     "trade_cheap(k3)",
+     "values_differ(k3)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k3)",
+    "enforced(k3)",
+    "trade_cheap(k3)",
+    "values_differ(k3)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k3)",
+     "premises": [
+      "binding(k3)",
+      "enforced(k3)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_consolidate(k3)",
+     "premises": [
+      "quota_binds(k3)",
+      "trade_cheap(k3)",
+      "values_differ(k3)"
+     ],
+     "rule": "EN-13"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": false,
+   "sign": "ambiguous",
+   "sign_by_reading": {
+    "U1-a": "decrease",
+    "U1-b": "none"
+   },
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "treasury",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "en_sale(k3)",
+     "premises": [
+      "rights_sold(k3)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "non_tax_receipts",
+   "visibility": "visible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"bidders\").\nprotected(k1, \"licensees\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nbound(k2, \"licensees\").\nprotected(k2, \"customers.towns\").\nexcluded(k2, \"buyers.prospective\").\nmandate(k2).\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nemployment(k2).\nmc_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nbound(k3, \"bidders\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nquota(k3).\nen_buyer(k3, \"bidders\").\nen_holder(k3, \"licensees\").\nenforcer(k3, \"officials.enforcement\").\ntaxpayer(k3, \"taxpayers\").\nen_payer_group(k3, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_informal_buyer(k3, \"bidders\").\nen_revenue(k3, \"treasury\").\nen_entrant(k3, \"entrants\").\nen_supplier(k3, \"tower_owners\").\ntransferable(k3).\nholder_cap(k3).\nrights_sold(k3).\ngeneral_budget(k3).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(can_organize(k2)).\nassumption(binding(k3)).\nassumption(enforced(k3)).\nassumption(evasion(k3)).\nassumption(can_organize(k3)).\nassumption(expected_to_last(k3)).\nassumption(values_differ(k3)).\nassumption(trade_cheap(k3)).\nassumption(value_above_price(k3)).\nassumption(enforcement_budget_raised(k3)).\n",
+ "explanations": [
+  "C-1. Compared with no Tarnesse 2.9 GHz Award Regulations, capital stock target for bidders may move either way in the long run (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.60); The cap is enforced (p = 0.85); Rights can be sold or leased at low cost (p = 0.40); Holders' costs or values differ (p = 0.60). Sign per reading: U1-a: decrease; U1-b: none. Not reported: an assumption is below the 0.5 cut-off.",
+  "C-2. Compared with no Tarnesse 2.9 GHz Award Regulations, disputes settled outside courts for bidders rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.60); The cap is enforced (p = 0.85); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
+  "C-3. Compared with no Tarnesse 2.9 GHz Award Regulations, informal activity for bidders rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.60); The cap is enforced (p = 0.85); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
+  "C-4. Compared with no Tarnesse 2.9 GHz Award Regulations, number of sellers for bidders may move either way from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.60); The cap is enforced (p = 0.85); Rights can be sold or leased at low cost (p = 0.40); Holders' costs or values differ (p = 0.60). Sign per reading: U1-a: decrease; U1-b: none. Not reported: an assumption is below the 0.5 cut-off.",
+  "C-5. Compared with no Tarnesse 2.9 GHz Award Regulations, quality information for bidders falls from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.60); The cap is enforced (p = 0.85); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
+  "C-6. Compared with no Tarnesse 2.9 GHz Award Regulations, search cost for bidders rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.60); The cap is enforced (p = 0.85); Some trade takes place beyond the cap without being caught (p = 0.55). Reported.",
+  "C-7. Compared with no Tarnesse 2.9 GHz Award Regulations, asset value for licensees rises from the short run onward (tier B, invisible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses; CR-7: CR-7; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value; EN-6: EN-6. This holds if: Some buyers win the rights below their own value for them (p = 0.60). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-8. Compared with no Tarnesse 2.9 GHz Award Regulations, compliance cost for licensees rises from the short run onward (tier A, invisible). Why: OC-2: OC-2. This holds if: no assumption. Reported.",
+  "C-9. Compared with no Tarnesse 2.9 GHz Award Regulations, lobbying effort for licensees rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it; EN-6: EN-6. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.80); The bound providers can organize to lobby (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-10. Compared with no Tarnesse 2.9 GHz Award Regulations, right lease price for licensees may move either way from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.60); The cap is enforced (p = 0.85); Rights can be sold or leased at low cost (p = 0.40); Holders' costs or values differ (p = 0.60). Sign per reading: U1-a: increase; U1-b: none. Not reported: an assumption is below the 0.5 cut-off.",
+  "C-11. Compared with no Tarnesse 2.9 GHz Award Regulations, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; EN-6: EN-6. This holds if: no assumption. Reported.",
+  "C-12. Compared with no Tarnesse 2.9 GHz Award Regulations, quantity traded for tower_owners may move either way from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.60); The cap is enforced (p = 0.85); Rights can be sold or leased at low cost (p = 0.40); Holders' costs or values differ (p = 0.60). Sign per reading: U1-a: decrease; U1-b: none. Not reported: an assumption is below the 0.5 cut-off.",
+  "C-13. Compared with no Tarnesse 2.9 GHz Award Regulations, non tax receipts for treasury rises from the short run onward (tier B, visible). Why: CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: no assumption. Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-064 (illustrative figures), A-8: licensees would not, on their own, cover 90% of the population with the band by 2032.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k2.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the mandated term absent from some contracts that would otherwise be made?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k2.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-064 (illustrative figures), A-3: the obligation is enforced; revocation is credible.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k2.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most bound providers comply with the mandate in practice?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-064 (illustrative figures), A-13: licensees, entrants and town councils can organize to lobby at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k2.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound providers organize to lobby over the mandate at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k3.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-064 (illustrative figures), A-17: some operators win blocks at prices below their own value for them, with the cap holding the clearing price at the third-highest bidder's value, so the cap of two blocks keeps the operators from holding a third block they would value above its price.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k3.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the cap below the quantity that would otherwise be traded, now or within the period considered (for a cap on the number of sellers: does it hold the quantity down)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k3.enforced",
+    "rationale": "No matching assumption in WE-064; judged from the text: the TCA awards the blocks itself and consents to every transfer (reg. 14), so awards above two blocks to one person and its affiliates can be refused.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k3.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the cap be enforced, so that little trade takes place beyond it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.55,
+    "question_id": "k3.evasion",
+    "rationale": "Probability taken from the assumption table of handbook WE-064 (illustrative figures), A-5: some bidders or holders use stakes or joint ventures below the affiliate line (control of more than 50%), so some holdings above two blocks go uncounted.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k3.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some trade take place beyond the cap without being caught?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k3.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-064 (illustrative figures), A-13: licensees, entrants and town councils can organize to lobby at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k3.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the holders of the quota rights organize to lobby for keeping or tightening the cap at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k3.expected_to_last",
+    "rationale": "No matching assumption in WE-064; judged from the text: licenses run 15 years to 31 December 2042 with the cap binding every later holder, so holders of blocks expect the cap to stay for the term; renewal is open (re-auction or renewal at market value).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "expected_to_last",
+    "assumption_class": "expectations",
+    "id": "k3.expected_to_last",
+    "kind": "noul",
+    "options": [],
+    "text": "Do holders and buyers of the licenses or quota rights expect the restriction to last for many years?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k3.values_differ",
+    "rationale": "Probability taken from the assumption table of handbook WE-064 (illustrative figures), A-10: after the auction some licensees value their licenses less than others would (an entrant cannot finance the build-out, or values change).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "values_differ",
+    "assumption_class": "other",
+    "id": "k3.values_differ",
+    "kind": "noul",
+    "options": [],
+    "text": "Do holders of the rights differ in their costs, or in the value they get from the right?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.4,
+    "question_id": "k3.trade_cheap",
+    "rationale": "No matching assumption in WE-064; judged from the text: transfer needs the Authority's consent (reg. 14) and may be barred before 2032 under U1-b, so rights are not freely tradable, though a transfer is possible; the text says nothing on the cost of a transfer.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "trade_cheap",
+    "assumption_class": "mobility",
+    "id": "k3.trade_cheap",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the rights be sold or leased at low cost (a register, few restrictions on who may hold them)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k3.value_above_price",
+    "rationale": "Probability taken from the assumption table of handbook WE-064 (illustrative figures), A-17: some operators win blocks at prices below their own value for them (the cap holds the clearing price at the third-highest bidder's value).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "value_above_price",
+    "assumption_class": "other",
+    "id": "k3.value_above_price",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some buyers of the rights win them at a price below their own value for them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k3.enforcement_budget_raised",
+    "rationale": "No matching assumption in WE-064; judged from the text: the TCA's added costs (M9 million for the auction, M2 million a year for monitoring) are funded by an increase in its annual appropriation from the general budget.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforcement_budget_raised",
+    "assumption_class": "revenue_use",
+    "id": "k3.enforcement_budget_raised",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the budget of the agency that administers the measure be raised to cover the new work, rather than the work being absorbed within its existing budget?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": true,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "bidders",
+    "budget_capped": false,
+    "buyer_actor": "bidders",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "contract_kind": "employment",
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": "entrants",
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": false,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "spectrum_licenses_2_9ghz",
+    "holder_cap": false,
+    "id": "k1",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "rights_allocation",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "tarnesse",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": "licensees",
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": null,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": "licensees",
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "The Regulations create six national licenses of 20 MHz in the 2.9 GHz band, sold to bidders who qualify by deposit.",
+     "It is an ascending clock auction with a reserve of M40 million a block.",
+     "The term is 15 years, with no right of renewal (\"the Authority may re-auction or renew at market value\").",
+     "The Regulations were announced and made on 1 March 2027, the auction ran in September and October 2027, licenses take effect on 1 January 2028, the coverage deadline is 31 December 2032 and licenses expire on 31 December 2042.",
+     "\"Payments under these Regulations shall be paid into the Consolidated Fund.\" The Treasury receives the auction payments."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": true,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": false,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "licensees",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "contract_kind": "employment",
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": false,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "spectrum_licenses_2_9ghz",
+    "holder_cap": false,
+    "id": "k2",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": "tower_owners",
+    "instrument": "mandated_contract_term",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "tarnesse",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": "customers.towns",
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": null,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "Each licensee must provide service in the band to areas containing 90% of the population by 31 December 2032, or the license is revoked without refund.",
+     "The TCA enforces: coverage is verified by drive tests and operators' coverage maps; a licensee that has not met the coverage obligation by the deadline has its license revoked, without refund.",
+     "Covering 90% of the population with this band takes about 6,500 sites per network; covering the cities and large towns (about 65% of the population), which operators said in consultation they would cover commercially within five years, takes about 3,000."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "above_cap_actor": null,
+    "allocation_by_history": false,
+    "already_provider_actor": null,
+    "already_recipient_actor": null,
+    "announcement_window": true,
+    "applicant_actor": null,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": null,
+    "below_threshold_actor": null,
+    "bound_actor": "bidders",
+    "budget_capped": false,
+    "buyer_actor": "bidders",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": null,
+    "complaint_only": false,
+    "contract_kind": "employment",
+    "convicted_actor": null,
+    "cover_seller_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": "entrants",
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": false,
+    "floor_bound_actor": null,
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": false,
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": true,
+    "good": "spectrum_blocks_2_9ghz",
+    "holder_cap": true,
+    "id": "k3",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": "tower_owners",
+    "instrument": "quota",
+    "margin_covered": false,
+    "margin_recipient_actor": null,
+    "market": "tarnesse",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": null,
+    "outside_actor": null,
+    "own_revenue_funded": false,
+    "paid_absence": false,
+    "per_head_cap": false,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": null,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "treasury",
+    "right_holder_actor": "licensees",
+    "rights_sold": true,
+    "rival_actors": [],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": false,
+    "source_sentences": [
+     "No more than two blocks may be awarded to, or held by, one person and its affiliates.",
+     "Affiliates are those where one controls more than 50%, or has the right to appoint a majority of the board.",
+     "The cap binds each bidder and later holder.",
+     "The TCA runs the auction and monitors coverage; its added costs are M9 million for the auction and M2 million a year for monitoring, funded by an increase in its annual appropriation from the general budget."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": false,
+    "tradable_actor": null,
+    "trainer_actor": null,
+    "transferable": true,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": null,
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   }
+  ],
+  "context": [
+   "Tarnesse is a country of about 12 million people with its own currency, the mark (M).",
+   "Three mobile network operators serve it: Ardel Mobile (about 42% of subscriptions), Nevra Telecom (36%) and Kostel (22%).",
+   "Mobile data traffic grows about 30% a year, and busy-hour capacity in the cities is tight; without new spectrum, operators add capacity by adding cell sites in their existing bands (\"densification\").",
+   "Fixed broadband: Linmark Fibre passes about 25% of homes with fibre; Pellow Networks' copper (DSL) lines serve about 1.6 million households, including about 700,000 outside fibre and cable areas.",
+   "There are about 11,000 tower and rooftop sites, most owned by two tower companies (Selwyn Towers and Haldmoor Sites); new towers need municipal permits that take 4 to 9 months.",
+   "About 1,400 certified tower riggers do about 3,000 site installations a year.",
+   "All radio equipment is imported; Tarnesse buys about 0.4% of the world's mobile radio equipment.",
+   "Under the Radio Act, no one may transmit on spectrum without a license.",
+   "Five bidders qualified: the three operators, Linmark Fibre (which plans fixed wireless access outside its fibre footprint) and Ombra Group (a foreign operator seeking entry)."
+  ],
+  "effective": "1 January 2028",
+  "enacted": "1 March 2027",
+  "jurisdiction": "Tarnesse (fictional)",
+  "name": "Tarnesse 2.9 GHz Award Regulations",
+  "rule_maker": "the Tarnesse Communications Authority and the government",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {
+     "U1-a": {
+      "k1": {
+       "transferable": true
+      },
+      "k3": {
+       "transferable": true
+      }
+     },
+     "U1-b": {
+      "k1": {
+       "transferable": false
+      },
+      "k3": {
+       "transferable": false
+      }
+     }
+    },
+    "readings": [
+     "U1-a: transfers are allowed at any time with consent (reg. 14), and reg. 9(3) only states the purpose of the obligation",
+     "U1-b: reg. 9(3) bars any transfer until the obligation is met or the deadline passes"
+    ],
+    "text": "Whether a license may be resold before the coverage deadline."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-19T20:21:10+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {
+    "U1-a": {
+     "k1": {
+      "transferable": true
+     },
+     "k3": {
+      "transferable": true
+     }
+    },
+    "U1-b": {
+     "k1": {
+      "transferable": false
+     },
+     "k3": {
+      "transferable": false
+     }
+    }
+   },
+   "readings": [
+    "U1-a: transfers are allowed at any time with consent (reg. 14), and reg. 9(3) only states the purpose of the obligation",
+    "U1-b: reg. 9(3) bars any transfer until the obligation is met or the deadline passes"
+   ],
+   "text": "Whether a license may be resold before the coverage deadline."
+  }
+ ],
+ "verifier_problems": []
+}

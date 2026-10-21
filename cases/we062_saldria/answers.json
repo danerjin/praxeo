@@ -1,0 +1,55 @@
+[
+ {
+  "question_id": "k1.quantity_responds",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-3 (substitutability): some packaging users can reduce their use of taxed plastic at a cost below 200 T a tonne.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyers_bear",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-2 (substitutability): imported empty packaging is at the margin of supply and foreign converters absorb little, so packaging users bear more of the tax than sellers do.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.sellers_bear",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-2 (substitutability), the premise of C-56 and C-64: part of the tax stays with sellers: converters' after-tax price falls (C-56, with A-20) and foreign converters' price before tax falls (C-64).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.untaxed_substitutes",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-6 (substitutability): paper and board, glass and metal packaging serve some of the same ends as plastic for some users.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.input_not_replaceable",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-11 (substitutability): packaging is a material part of the cost of some packaged goods (6% to 10% for bottled water and pre-packed produce) and their sellers cannot switch fully at the old cost.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.stockpile_ahead",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-16 (expectations): liable firms can store packaging and bring orders forward into late 2027.",
+  "evidence": [
+   "The tax was announced in the budget statement of 2 March 2027, enacted on 28 June 2027 and takes effect on 1 January 2028."
+  ]
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-32 (substitutability): some plastic components can be redesigned so that another material is the heaviest by weight, at a cost below the tax saved (A-4: raising recycled content to 30% costs less than the tax for some components, p 0.85, is the second route out of the definition); I take the lower row, since C-5 cites both.",
+  "evidence": [
+   "\"A plastic packaging component containing 30 per cent or more recycled plastic is not chargeable.\""
+  ]
+ }
+]

@@ -1,0 +1,2155 @@
+{
+ "assumptions": {
+  "asset_supply_slow(k1)": {
+   "assumption_class": "durability",
+   "id": "asset_supply_slow(k1)",
+   "p": 0.8,
+   "text": "The supply of the affected firms' assets is fixed or slowly expandable."
+  },
+  "beneficiaries_organize(k1)": {
+   "assumption_class": "other",
+   "id": "beneficiaries_organize(k1)",
+   "p": 0.85,
+   "text": "The protected producers can organize to influence renewal at a cost below their stake."
+  },
+  "binding(k1)": {
+   "assumption_class": "binding",
+   "id": "binding(k1)",
+   "p": 0.9,
+   "text": "The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it."
+  },
+  "can_relocate_capital(k1)": {
+   "assumption_class": "mobility",
+   "id": "can_relocate_capital(k1)",
+   "p": 0.55,
+   "text": "Some downstream users can move production abroad when they replace plant."
+  },
+  "competitors_exempt(k1)": {
+   "assumption_class": "other",
+   "id": "competitors_exempt(k1)",
+   "p": 0.75,
+   "text": "Many downstream users compete with sellers who do not face the higher input cost."
+  },
+  "domestic_substitutes(k1)": {
+   "assumption_class": "substitutability",
+   "id": "domestic_substitutes(k1)",
+   "p": 0.75,
+   "text": "Domestic producers make close substitutes for the covered imports."
+  },
+  "enforcement_budget_raised(k1)": {
+   "assumption_class": "revenue_use",
+   "id": "enforcement_budget_raised(k1)",
+   "p": 0.2,
+   "text": "The administering agency's budget is raised to cover the new work, so taxpayers fund it."
+  },
+  "expected_to_last(k1)": {
+   "assumption_class": "expectations",
+   "id": "expected_to_last(k1)",
+   "p": 0.75,
+   "text": "Investors expect the measure to stay in force for at least its stated term."
+  },
+  "expects_extension(k1)": {
+   "assumption_class": "expectations",
+   "id": "expects_extension(k1)",
+   "p": 0.35,
+   "text": "The protected producers expect the measure to be renewed or extended."
+  },
+  "harmed_organize(k1)": {
+   "assumption_class": "other",
+   "id": "harmed_organize(k1)",
+   "p": 0.85,
+   "text": "The harmed users can organize to seek repeal or exemption at a cost below their stake."
+  },
+  "input_not_replaceable(k1)": {
+   "assumption_class": "substitutability",
+   "id": "input_not_replaceable(k1)",
+   "p": 0.95,
+   "text": "The taxed good is a material part of downstream costs and cannot be replaced at the old cost."
+  },
+  "no_offset(k1)": {
+   "assumption_class": "other",
+   "id": "no_offset(k1)",
+   "p": 0.6,
+   "text": "Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it."
+  },
+  "reshaping_pays(k1)": {
+   "assumption_class": "other",
+   "id": "reshaping_pays(k1)",
+   "p": 0.7,
+   "text": "Reshaping goods to fall outside the definitions costs some actors less than the burden."
+  },
+  "stockpile_ahead(k1)": {
+   "assumption_class": "expectations",
+   "id": "stockpile_ahead(k1)",
+   "p": 0.8,
+   "text": "Buyers and importers can store the good and order ahead of the effective date."
+  },
+  "substitute_supply_expands(k1)": {
+   "assumption_class": "substitutability",
+   "id": "substitute_supply_expands(k1)",
+   "p": 0.75,
+   "text": "Sellers of the uncovered substitutes can expand their supply."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "buyers.aluminum_goods",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "competitors_exempt(k1)",
+     "input_not_replaceable(k1)",
+     "substitute_supply_expands(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "competitors_exempt(k1)",
+    "input_not_replaceable(k1)",
+    "substitute_supply_expands(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k1)",
+     "premises": [
+      "competitors_exempt(k1)",
+      "passes_down(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_turn_to_substitutes(k1)",
+     "premises": [
+      "exempt_squeeze(k1)",
+      "substitute_supply_expands(k1)"
+     ],
+     "rule": "RS-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_substitute",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "export_industries.other",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "no_offset(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "no_offset(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "imports_fall(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "exports_fall(k1)",
+     "premises": [
+      "imports_fall(k1)",
+      "no_offset(k1)"
+     ],
+     "rule": "TX-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tariff(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "tx_files(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "TX-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "imports_fall(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "reshaping_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_reshaped(k1)",
+     "premises": [
+      "definition_line(k1)",
+      "tx_burden(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "tx_reshaped(k1)",
+     "premises": [
+      "reshaping_pays(k1)"
+     ],
+     "rule": "TX-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tariff(k1)"
+     ],
+     "rule": "TX-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "input_suppliers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "domestic_substitutes(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "domestic_substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k1)",
+     "premises": [
+      "domestic_substitutes(k1)",
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_inputs_demanded(k1)",
+     "premises": [
+      "protected_sellers(k1)"
+     ],
+     "rule": "CR-9"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tariff(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "tx_administered(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tariff(k1)"
+     ],
+     "rule": "TX-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "tax_revenue",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_short_of_static(k1)",
+     "premises": [
+      "tx_burden(k1)"
+     ],
+     "rule": "TX-9"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "tax_revenue_vs_static_projection",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.users_home_finished",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "asset_supply_slow(k1)",
+     "binding(k1)",
+     "competitors_exempt(k1)",
+     "expected_to_last(k1)",
+     "input_not_replaceable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "asset_supply_slow(k1)",
+    "binding(k1)",
+    "competitors_exempt(k1)",
+    "expected_to_last(k1)",
+    "input_not_replaceable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k1)",
+     "premises": [
+      "competitors_exempt(k1)",
+      "passes_down(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_capitalized_loss(k1)",
+     "premises": [
+      "asset_supply_slow(k1)",
+      "exempt_squeeze(k1)",
+      "expected_to_last(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.foreign",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_prevented(k1)",
+     "premises": [
+      "tx_burden(k1)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "smelter_workers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "domestic_substitutes(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "domestic_substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k1)",
+     "premises": [
+      "domestic_substitutes(k1)",
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked"
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "smelters",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "domestic_substitutes(k1)",
+     "expects_extension(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "domestic_substitutes(k1)",
+    "expects_extension(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k1)",
+     "premises": [
+      "domestic_substitutes(k1)",
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_invests(k1)",
+     "premises": [
+      "expects_extension(k1)",
+      "protected_sellers(k1)"
+     ],
+     "rule": "TS-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "investment_target",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "smelters",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "beneficiaries_organize(k1)",
+     "binding(k1)",
+     "domestic_substitutes(k1)"
+    ]
+   ],
+   "assumptions": [
+    "beneficiaries_organize(k1)",
+    "binding(k1)",
+    "domestic_substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k1)",
+     "premises": [
+      "domestic_substitutes(k1)",
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_lobbies_sellers(k1)",
+     "premises": [
+      "beneficiaries_organize(k1)",
+      "protected_sellers(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "smelters",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "domestic_substitutes(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "domestic_substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k1)",
+     "premises": [
+      "domestic_substitutes(k1)",
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "smelters",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "domestic_substitutes(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "domestic_substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k1)",
+     "premises": [
+      "domestic_substitutes(k1)",
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "smelters.owners",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "asset_supply_slow(k1)",
+     "binding(k1)",
+     "domestic_substitutes(k1)",
+     "expected_to_last(k1)"
+    ]
+   ],
+   "assumptions": [
+    "asset_supply_slow(k1)",
+    "binding(k1)",
+    "domestic_substitutes(k1)",
+    "expected_to_last(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k1)",
+     "premises": [
+      "domestic_substitutes(k1)",
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_capitalized_gain(k1)",
+     "premises": [
+      "asset_supply_slow(k1)",
+      "expected_to_last(k1)",
+      "protected_sellers(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-18",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "taxpayers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforcement_budget_raised(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforcement_budget_raised(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tariff(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "tx_administered(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "tx_budget_funded(k1)",
+     "premises": [
+      "tx_administered(k1)"
+     ],
+     "rule": "OC-1"
+    },
+    {
+     "conclusion": "tx_budget_funded(k1)",
+     "premises": [
+      "enforcement_budget_raised(k1)",
+      "tx_administered(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-19",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.home",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-20",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.home",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_prevented(k1)",
+     "premises": [
+      "tx_burden(k1)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-21",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.home",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "stockpile_ahead(k1)"
+    ]
+   ],
+   "assumptions": [
+    "stockpile_ahead(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "bring_forward(k1)",
+     "premises": [
+      "announced(k1)",
+      "stockpile_ahead(k1)"
+     ],
+     "rule": "RS-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short"
+   ],
+   "id": "C-22",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": "announcement"
+  },
+  {
+   "actor_class": "users.home",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "reshaping_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_reshaped(k1)",
+     "premises": [
+      "definition_line(k1)",
+      "tx_burden(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "tx_reshaped(k1)",
+     "premises": [
+      "reshaping_pays(k1)"
+     ],
+     "rule": "TX-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-23",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.home",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tariff(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "bears_buyer(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "bears_buyer(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-24",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.home.finished",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "can_relocate_capital(k1)",
+     "competitors_exempt(k1)",
+     "input_not_replaceable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "can_relocate_capital(k1)",
+    "competitors_exempt(k1)",
+    "input_not_replaceable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k1)",
+     "premises": [
+      "competitors_exempt(k1)",
+      "passes_down(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_capital_moves(k1)",
+     "premises": [
+      "can_relocate_capital(k1)"
+     ],
+     "rule": "RS-4"
+    },
+    {
+     "conclusion": "tx_capital_moves(k1)",
+     "premises": [
+      "exempt_squeeze(k1)"
+     ],
+     "rule": "RS-6"
+    },
+    {
+     "conclusion": "tx_capital_moves(k1)",
+     "premises": [
+      "exempt_squeeze(k1)"
+     ],
+     "rule": "TS-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-25",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "capital_stock_target",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.home.finished",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "competitors_exempt(k1)",
+     "harmed_organize(k1)",
+     "input_not_replaceable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "competitors_exempt(k1)",
+    "harmed_organize(k1)",
+    "input_not_replaceable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k1)",
+     "premises": [
+      "competitors_exempt(k1)",
+      "passes_down(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_lobbies_users(k1)",
+     "premises": [
+      "exempt_squeeze(k1)",
+      "harmed_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-26",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "users.home.finished",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "competitors_exempt(k1)",
+     "input_not_replaceable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "competitors_exempt(k1)",
+    "input_not_replaceable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k1)",
+     "premises": [
+      "competitors_exempt(k1)",
+      "passes_down(k1)"
+     ],
+     "rule": "RS-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-27",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.export_industries.other",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "no_offset(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "no_offset(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "imports_fall(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "exports_fall(k1)",
+     "premises": [
+      "imports_fall(k1)",
+      "no_offset(k1)"
+     ],
+     "rule": "TX-8"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked"
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-28",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.users_home_finished",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "competitors_exempt(k1)",
+     "input_not_replaceable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "competitors_exempt(k1)",
+    "input_not_replaceable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k1)",
+     "premises": [
+      "competitors_exempt(k1)",
+      "passes_down(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_workers_cut(k1)",
+     "premises": [
+      "exempt_squeeze(k1)"
+     ],
+     "rule": "RS-6"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked"
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-29",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"importers\").\nprotected(k1, \"smelters\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\ntariff(k1).\nbuyer(k1, \"users.home\").\ndomestic_seller(k1, \"smelters\").\nimporter(k1, \"importers\").\nrevenue(k1, \"officials.enforcement\").\nexporter(k1, \"export_industries.other\").\nexporter_worker(k1, \"workers.export_industries.other\").\nseller(k1, \"sellers.current\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\ndomestic_seller_worker(k1, \"smelter_workers\").\nforeign_seller(k1, \"sellers.foreign\").\ninput_supplier(k1, \"input_suppliers\").\nseller_owner(k1, \"smelters.owners\").\nrenewable(k1).\ndefinition_line(k1).\ndownstream(k1, \"users.home.finished\", \"buyers.aluminum_goods\", exempt).\ndownstream_owner(k1, \"users.home.finished\", \"owners.users_home_finished\").\ndownstream_worker(k1, \"users.home.finished\", \"workers.users_home_finished\").\nassumption(binding(k1)).\nassumption(domestic_substitutes(k1)).\nassumption(no_offset(k1)).\nassumption(input_not_replaceable(k1)).\nassumption(competitors_exempt(k1)).\nassumption(enforcement_budget_raised(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(reshaping_pays(k1)).\nassumption(beneficiaries_organize(k1)).\nassumption(harmed_organize(k1)).\nassumption(expects_extension(k1)).\nassumption(expected_to_last(k1)).\nassumption(asset_supply_slow(k1)).\nassumption(can_relocate_capital(k1)).\nassumption(substitute_supply_expands(k1)).\n",
+ "explanations": [
+  "C-1. Compared with no Vessland Aluminum Safeguard and Drawback Act, quantity substitute for buyers.aluminum_goods rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-1: when a good becomes dearer, buyers turn to substitutes. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Many downstream users compete with sellers who do not face the higher input cost (p = 0.75); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.95); Sellers of the uncovered substitutes can expand their supply (p = 0.75). Reported.",
+  "C-2. Compared with no Vessland Aluminum Safeguard and Drawback Act, quantity supplied for export_industries.other falls from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; TX-8: foreigners who sell less to the country earn less of its currency and so buy fewer of its exports. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it (p = 0.60). Reported.",
+  "C-3. Compared with no Vessland Aluminum Safeguard and Drawback Act, compliance cost for importers rises from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-5: whoever must record, file or collect a tax bears the cost of doing so. This holds if: no assumption. Reported.",
+  "C-4. Compared with no Vessland Aluminum Safeguard and Drawback Act, quantity traded for importers falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90). Reported.",
+  "C-5. Compared with no Vessland Aluminum Safeguard and Drawback Act, reclassification for importers rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-5: owners move units out of the rule's reach; TX-4: where an untaxed place is within reach, buyers who can cross the boundary buy there and the sellers across it gain their custom. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.70). Reported.",
+  "C-6. Compared with no Vessland Aluminum Safeguard and Drawback Act, resources available other uses for importers falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue. This holds if: no assumption. Reported.",
+  "C-7. Compared with no Vessland Aluminum Safeguard and Drawback Act, quantity demanded for input_suppliers rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Domestic producers make close substitutes for the covered imports (p = 0.75). Reported.",
+  "C-8. Compared with no Vessland Aluminum Safeguard and Drawback Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-9. Compared with no Vessland Aluminum Safeguard and Drawback Act, tax revenue for officials.enforcement rises from the short run onward (tier A, visible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue. This holds if: no assumption. Reported.",
+  "C-10. Compared with no Vessland Aluminum Safeguard and Drawback Act, tax revenue vs static projection for officials.enforcement falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-9: TX-9. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90). Reported.",
+  "C-11. Compared with no Vessland Aluminum Safeguard and Drawback Act, asset value for owners.users_home_finished falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The supply of the affected firms' assets is fixed or slowly expandable (p = 0.80); The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Many downstream users compete with sellers who do not face the higher input cost (p = 0.75); Investors expect the measure to stay in force for at least its stated term (p = 0.75); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.95). Reported.",
+  "C-12. Compared with no Vessland Aluminum Safeguard and Drawback Act, quantity traded for sellers.foreign falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90). Reported.",
+  "C-13. Compared with no Vessland Aluminum Safeguard and Drawback Act, employment or hours worked for smelter_workers rises for at least one of them from the short run onward (tier B, visible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Domestic producers make close substitutes for the covered imports (p = 0.75). Reported.",
+  "C-14. Compared with no Vessland Aluminum Safeguard and Drawback Act, investment target for smelters rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TS-2: TS-2. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Domestic producers make close substitutes for the covered imports (p = 0.75); The protected producers expect the measure to be renewed or extended (p = 0.35). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-15. Compared with no Vessland Aluminum Safeguard and Drawback Act, lobbying effort for smelters rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The protected producers can organize to influence renewal at a cost below their stake (p = 0.85); The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Domestic producers make close substitutes for the covered imports (p = 0.75). Reported.",
+  "C-16. Compared with no Vessland Aluminum Safeguard and Drawback Act, net price received for smelters rises from the short run onward (tier B, visible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Domestic producers make close substitutes for the covered imports (p = 0.75). Reported.",
+  "C-17. Compared with no Vessland Aluminum Safeguard and Drawback Act, quantity supplied for smelters rises from the short run onward (tier B, visible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Domestic producers make close substitutes for the covered imports (p = 0.75). Reported.",
+  "C-18. Compared with no Vessland Aluminum Safeguard and Drawback Act, asset value for smelters.owners rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The supply of the affected firms' assets is fixed or slowly expandable (p = 0.80); The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Domestic producers make close substitutes for the covered imports (p = 0.75); Investors expect the measure to stay in force for at least its stated term (p = 0.75). Reported.",
+  "C-19. Compared with no Vessland Aluminum Safeguard and Drawback Act, resources available other uses for taxpayers falls from the short run onward (tier B, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; OC-1: what the payers give up is what they would otherwise have bought. This holds if: The administering agency's budget is raised to cover the new work, so taxpayers fund it (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-20. Compared with no Vessland Aluminum Safeguard and Drawback Act, price paid for users.home rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90). Reported.",
+  "C-21. Compared with no Vessland Aluminum Safeguard and Drawback Act, quantity traded for users.home falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90). Reported.",
+  "C-22. Compared with no Vessland Aluminum Safeguard and Drawback Act, quantity traded for users.home rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.80). Reported.",
+  "C-23. Compared with no Vessland Aluminum Safeguard and Drawback Act, reclassification for users.home rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-5: owners move units out of the rule's reach; TX-4: where an untaxed place is within reach, buyers who can cross the boundary buy there and the sellers across it gain their custom. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.70). Reported.",
+  "C-24. Compared with no Vessland Aluminum Safeguard and Drawback Act, resources available other uses for users.home falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90). Reported.",
+  "C-25. Compared with no Vessland Aluminum Safeguard and Drawback Act, capital stock target for users.home.finished falls in the long run (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-4: shut-out buyers turn to uncovered units, which are close substitutes; RS-6: sellers whose return falls sell less, and may cut staff or hours; TS-1: TS-1. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Some downstream users can move production abroad when they replace plant (p = 0.55); Many downstream users compete with sellers who do not face the higher input cost (p = 0.75); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.95). Reported.",
+  "C-26. Compared with no Vessland Aluminum Safeguard and Drawback Act, lobbying effort for users.home.finished rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Many downstream users compete with sellers who do not face the higher input cost (p = 0.75); The harmed users can organize to seek repeal or exemption at a cost below their stake (p = 0.85); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.95). Reported.",
+  "C-27. Compared with no Vessland Aluminum Safeguard and Drawback Act, quantity supplied for users.home.finished falls from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Many downstream users compete with sellers who do not face the higher input cost (p = 0.75); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.95). Reported.",
+  "C-28. Compared with no Vessland Aluminum Safeguard and Drawback Act, employment or hours worked for workers.export_industries.other falls for at least one of them from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; TX-8: foreigners who sell less to the country earn less of its currency and so buy fewer of its exports. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it (p = 0.60). Reported.",
+  "C-29. Compared with no Vessland Aluminum Safeguard and Drawback Act, employment or hours worked for workers.users_home_finished falls for at least one of them from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-6: sellers whose return falls sell less, and may cut staff or hours. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Many downstream users compete with sellers who do not face the higher input cost (p = 0.75); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.95). Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-1 (binding): imports remain a material share of supply, so the domestic price is set at import parity.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k1.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the price domestic buyers pay for the covered goods rise by a substantial part of the tariff, rather than foreign sellers absorbing most of it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.domestic_substitutes",
+    "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-4 (durability): the smelters can bring their idle 70,000 t into use within months. A-5 (secondary aluminum substitutes, 0.8) also bears; I take the lower of the two rows used for C-5 and C-6.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "domestic_substitutes",
+    "assumption_class": "substitutability",
+    "id": "k1.domestic_substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Do domestic producers make goods that buyers can use in place of the covered imports, so that dearer imports send buyers to them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.no_offset",
+    "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-13 (other): trade flows are not offset by capital flows in the period considered.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "no_offset",
+    "assumption_class": "other",
+    "id": "k1.no_offset",
+    "kind": "noul",
+    "options": [],
+    "text": "When the country buys fewer imports, foreigners earn less of its currency. Through the exchange rate (the currency rises against what it would otherwise be) this makes the country's exports dearer abroad, so export industries sell less: that is the mechanism, not an offset to it. Over the medium run, will this chain operate, rather than being cancelled by foreigners investing or lending more in the country?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.95,
+    "question_id": "k1.input_not_replaceable",
+    "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-22 (other): some home users keep buying covered aluminum at the higher price (few substitutes for many uses).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "input_not_replaceable",
+    "assumption_class": "substitutability",
+    "id": "k1.input_not_replaceable",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the downstream users' costs rise materially because of the higher price of the taxed good (given how much of it they use and whether they can switch to other materials or designs in the medium run)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [
+     "Finished goods and parts containing aluminum (vehicles and their parts, appliances, windows and doors, fabricated structures, cable assemblies, cans and containers) are not covered."
+    ],
+    "probability": 0.75,
+    "question_id": "k1.competitors_exempt",
+    "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-15 (substitutability): buyers of uncovered finished goods can buy tariff-free imports, and home fabricators' capital is specific.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "competitors_exempt",
+    "assumption_class": "other",
+    "id": "k1.competitors_exempt",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the downstream users compete with sellers who do not face the higher cost (imported finished goods, untaxed products)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [
+     "Customs administers the drawback and the re-import rule \"within its existing appropriation\"."
+    ],
+    "probability": 0.2,
+    "question_id": "k1.enforcement_budget_raised",
+    "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-17 (revenue_use), complemented: Customs' appropriation does not rise with the new work (p 0.8), so the probability that the budget is raised is 0.2.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "enforcement_budget_raised",
+    "assumption_class": "revenue_use",
+    "id": "k1.enforcement_budget_raised",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the budget of the agency that administers the measure be raised to cover the new work, rather than the work being absorbed within its existing budget?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [
+     "The trade minister announced the measure on 3 February 2027."
+    ],
+    "probability": 0.8,
+    "question_id": "k1.stockpile_ahead",
+    "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-21 (expectations): users expect the tariff and can import and store metal ahead of 1 September at a cost below $500 a tonne.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "stockpile_ahead",
+    "assumption_class": "expectations",
+    "id": "k1.stockpile_ahead",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the buyers or importers buy ahead of the effective date, by storing the good or placing orders early?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.reshaping_pays",
+    "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-7 (other): some imports can be reshaped into uncovered fabricated forms for less than $500 a tonne.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "reshaping_pays",
+    "assumption_class": "other",
+    "id": "k1.reshaping_pays",
+    "kind": "noul",
+    "options": [],
+    "text": "For some of the actors bound by the measure, will reshaping goods so that they fall outside the measure's definitions cost less than the measure would cost them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.beneficiaries_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-11 (other): smelters, users and exporters can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "beneficiaries_organize",
+    "assumption_class": "other",
+    "id": "k1.beneficiaries_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the protected domestic producers organize to influence the renewal or extension decision at a cost lower than what they stand to gain?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.harmed_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-11 (other): smelters, users and exporters can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "harmed_organize",
+    "assumption_class": "other",
+    "id": "k1.harmed_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the downstream users who cannot pass the higher cost on organize to seek repeal, exemption or non-renewal at a cost lower than what they stand to lose?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [
+     "The tariff expires on 31 August 2031 unless Parliament extends it after a review in 2030."
+    ],
+    "probability": 0.35,
+    "question_id": "k1.expects_extension",
+    "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-19 (expectations): smelters build or restart capacity beyond 470,000 t within the tariff's term, expecting renewal; the closest row to an expectation of extension.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "expects_extension",
+    "assumption_class": "expectations",
+    "id": "k1.expects_extension",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the protected domestic producers expect the measure to be renewed or extended when it comes up for review?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.expected_to_last",
+    "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-12 (expectations): firms are valued on expected earnings, and buyers expect the tariff to last at least its four years.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "expected_to_last",
+    "assumption_class": "expectations",
+    "id": "k1.expected_to_last",
+    "kind": "noul",
+    "options": [],
+    "text": "Do investors expect the measure to stay in force for at least its stated term?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.asset_supply_slow",
+    "rationale": "No row in WE-042's assumption table; my estimate from the record. C-31 and C-32 rest on A-12 and A-15 but no row states slow asset supply. The record shows specific durable plant (potlines, electricity at 35% of cost, a smelter takes years to build) and A-15 says home fabricators' capital is specific.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "asset_supply_slow",
+    "assumption_class": "durability",
+    "id": "k1.asset_supply_slow",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the supply of the affected firms' productive assets (plants, equipment, the shares that claim their returns) slow to expand or to replace?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.55,
+    "question_id": "k1.can_relocate_capital",
+    "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-23 (mobility): some fabrication for the Vessland market can move to plants in Ostrel within the tariff's term.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_relocate_capital",
+    "assumption_class": "mobility",
+    "id": "k1.can_relocate_capital",
+    "kind": "noul",
+    "options": [],
+    "text": "Do some downstream users have the option of producing abroad when they next replace their plants?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.substitute_supply_expands",
+    "rationale": "Probability taken from the assumption table of handbook WE-042 (illustrative figures), A-15 (substitutability): buyers of uncovered finished goods can buy tariff-free imports; foreign makers of finished goods supply more (C-25).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "substitute_supply_expands",
+    "assumption_class": "substitutability",
+    "id": "k1.substitute_supply_expands",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the sellers of the uncovered substitutes (imported finished goods) supply more at roughly their present prices?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "bound_actor": "importers",
+    "budget_capped": false,
+    "buyer_actor": "users.home",
+    "cap": 0.2,
+    "cap_unit": "ad valorem, share of customs value",
+    "claim_handler_actor": null,
+    "debt_funded": false,
+    "definition_line": true,
+    "domestic_seller_actor": "smelters",
+    "domestic_seller_owner_actor": "smelters.owners",
+    "domestic_seller_worker_actor": "smelter_workers",
+    "downstream": [
+     {
+      "actor": "users.home.finished",
+      "buyer_actor": "buyers.aluminum_goods",
+      "competitors": "exempt",
+      "exporter_actor": null,
+      "owner_actor": "owners.users_home_finished",
+      "worker_actor": "workers.users_home_finished"
+     }
+    ],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries.other",
+    "exporter_worker_actor": "workers.export_industries.other",
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "primary_and_semi_finished_aluminum",
+    "id": "k1",
+    "importer_actor": "importers",
+    "input_supplier_actor": "input_suppliers",
+    "instrument": "tariff",
+    "market": "vessland",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "own_revenue_funded": false,
+    "protected_actor": "smelters",
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": true,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "scrappage": false,
+    "scrapper_actor": null,
+    "seller_actor": "sellers.current",
+    "source_sentences": [
+     "Importers of record must pay a tariff of 20% of customs value on imports of unwrought aluminum and semi-finished products (ingot, billet, slab, plate, sheet, foil over 0.2 mm, rod, wire, profiles): about $500 a tonne at $2,500.",
+     "Finished goods and parts containing aluminum (vehicles and their parts, appliances, windows and doors, fabricated structures, cable assemblies, cans and containers) are not covered.",
+     "The trade minister announced the measure on 3 February 2027.",
+     "The tariff expires on 31 August 2031 unless Parliament extends it after a review in 2030."
+    ],
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false
+   }
+  ],
+  "context": [
+   "Two domestic smelters produce about 400,000 t against 470,000 t of capacity; the other 600,000 t used is imported (WE-042 record).",
+   "Vessland buys about 1.5% of the aluminum traded in the world and has a floating exchange rate (WE-042 record)."
+  ],
+  "effective": "2027-09-01",
+  "enacted": "2027-05-20",
+  "jurisdiction": "Vessland (fictional)",
+  "name": "Vessland Aluminum Safeguard and Drawback Act",
+  "rule_maker": "Parliament of Vessland",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U1-a: direct identification (traced imported metal only)",
+     "U1-b: substitution (same-grade metal of any origin)"
+    ],
+    "text": "Whether the drawback is available only on traced imported metal or also against same-grade metal of any origin."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-18T20:31:37+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U1-a: direct identification (traced imported metal only)",
+    "U1-b: substitution (same-grade metal of any origin)"
+   ],
+   "text": "Whether the drawback is available only on traced imported metal or also against same-grade metal of any origin."
+  }
+ ],
+ "verifier_problems": []
+}

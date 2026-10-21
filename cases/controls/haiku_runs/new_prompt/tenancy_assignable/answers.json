@@ -1,0 +1,21 @@
+[
+ {
+  "question_id": "r3.enforced",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Fines are larger than any likely gain, so deterrence is strong, though the 1 percent cap against about 6 percent market growth, with assignment allowed at any price, gives side-payment incentives.",
+  "evidence": [
+   "The Rent Board enforces the cap with fines larger than any likely gain.",
+   "Market rents in Carrow rise about 6 percent a year."
+  ]
+ },
+ {
+  "question_id": "r3.nontransferable",
+  "value": "no",
+  "probability": 0.03,
+  "rationale": "The record says a sitting tenant may assign or sell the tenancy at the capped rent to any person and at any price, so the right is transferable.",
+  "evidence": [
+   "A sitting tenant may assign or sell the tenancy, at the capped rent, to any person and at any price the parties agree."
+  ]
+ }
+]

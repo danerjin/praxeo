@@ -1,0 +1,21 @@
+[
+ {
+  "question_id": "r2.binding",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "The 2 percent guideline sits well below the roughly 7 percent yearly market rise, so the stated level is below the market price path, although its voluntary nature limits practical bite.",
+  "evidence": [
+   "Landlords are asked to keep yearly rent increases for sitting tenants below 2 percent.",
+   "Market rents in Brell have risen about 7 percent a year for five years."
+  ]
+ },
+ {
+  "question_id": "r2.enforced",
+  "value": "no",
+  "probability": 0.12,
+  "rationale": "The guideline is voluntary, with no monitoring, no petition right and no penalties, so there is little reason for most landlords facing 7 percent market growth to comply.",
+  "evidence": [
+   "The guideline is voluntary: no public body monitors rents, tenants have no right to petition, and there are no penalties or refunds for exceeding it."
+  ]
+ }
+]

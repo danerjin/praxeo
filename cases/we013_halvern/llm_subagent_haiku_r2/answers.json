@@ -1,0 +1,49 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Halvern is a small buyer of world steel, so foreign sellers have little reason to cut prices much; the tariff is therefore mostly passed to domestic buyers. The record does not give a pass-through figure, so this rests on the small-country fact.",
+  "evidence": [
+   "Halvern buys a small share of the world's steel and has a floating exchange rate (WE-013 record).",
+   "Importers of record must pay a tariff of 25% of the customs value on imports of flat-rolled and long steel products, for three years."
+  ]
+ },
+ {
+  "question_id": "k1.domestic_substitutes",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Domestic steelmakers already supply about 60% of the steel used, for the same flat-rolled and long products, so dearer imports can shift demand to them.",
+  "evidence": [
+   "Three domestic steel firms supply about 60% of the steel used in Halvern; the rest is imported (WE-013 record)."
+  ]
+ },
+ {
+  "question_id": "k1.no_offset",
+  "value": "yes",
+  "probability": 0.68,
+  "rationale": "Halvern has a floating exchange rate and is a small economy, so the currency appreciation channel should operate over the medium run; the record is silent on capital flows that could cancel it, so this is a moderate rather than firm yes.",
+  "evidence": [
+   "Halvern buys a small share of the world's steel and has a floating exchange rate (WE-013 record)."
+  ]
+ },
+ {
+  "question_id": "k1.input_not_replaceable",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Steel is a main input for about 4,000 manufacturers, so a 25% rise in its price raises their costs materially; the medium-run ability to switch materials or designs limits but does not remove this.",
+  "evidence": [
+   "About 4,000 domestic manufacturers use steel as a main input; machinery makers export about 35% of their output (WE-013 record).",
+   "Importers of record must pay a tariff of 25% of the customs value on imports of flat-rolled and long steel products, for three years."
+  ]
+ },
+ {
+  "question_id": "k1.competitors_exempt",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Imported finished goods containing steel are exempt, so downstream steel users (machinery, appliances, vehicle parts) compete with imports that do not carry the steel cost increase.",
+  "evidence": [
+   "Imported fabricated steel products and finished goods containing steel (machinery, vehicles, appliances, fabricated structural sections, fasteners) are not covered."
+  ]
+ }
+]

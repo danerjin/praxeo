@@ -1,0 +1,177 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-005 (illustrative figures), A-1 (binding): without the cap the retail price would stay above $4.20 for most of the 90 days.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "WE-005 A-2 (enforcement): pump prices are enforced; few stations post or charge more than the cap.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.alternative_uses",
+  "value": "no",
+  "probability": 0.15,
+  "rationale": "Closest row: WE-005 A-15 (p 0.15): stations or buyers cannot reshape sales to fall under an exemption; the exemptions are closed. WE-005 A-6 (0.85) is about cargo traders and refiners, who are not the bound role (retail stations), so it is not used for this question.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.nontransferable",
+  "value": "no",
+  "probability": 0.03,
+  "rationale": "No row. The cap is a posted pump price open to every driver; WE-005 section 6 says the right to buy at the cap is not tied to holding anything (RS-11 does not apply). Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyouts_limited",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No row; not applicable, there is no tenancy-like right to buy out. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.would_leave",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "No row; drivers do not move out of the area because of a 90-day cap. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.lockin_dominates",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "No row; not applicable (no lock-in). Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.keepers_dominate",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "No row; not applicable. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.substitutes",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No exact row. WE-005 A-10 (0.65) is about transit, car-sharing and skipped trips, which are other markets; this question asks about uncovered goods in the same market, and the record has none (diesel does not run gasoline engines). Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.search_open",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "WE-005 A-3 (substitutability): most drivers have no close substitute for the car, so they queue and search; the premise of C-5 and C-6.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.selection_open",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "WE-005 A-4 (enforcement): in practice stations can change hours, service, payment terms and per-car limits; the premise of C-7.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.quality_adjustable",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "WE-005 A-4 (0.8): stations can change hours, service and payment terms without being treated as violating the order; the premise of C-8.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "WE-005 A-5 (enforcement): some resale of fuel in cans above the cap goes undetected.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.opportunities_need_move",
+  "value": "no",
+  "probability": 0.03,
+  "rationale": "No row. WE-005 section 6: RS-11 was checked and does not apply. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "WE-005 A-16: station owners can organize and lobby at a cost below their stake (an existing retailers' association).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.durable_assets",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No row. WE-005 section 8: no durable capital changes in 90 days; TS-1 and TS-3 play no role. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "No row. The order expires on Day 95 (A-14, extension expected, is 0.35, below the cut-off). Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.commutable",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "WE-005 A-11 (mobility): drivers in the eastern cities can reach Brennick stations easily (20 to 45 minutes).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.relet_obstructs",
+  "value": "no",
+  "probability": 0.02,
+  "rationale": "No row; not applicable to fuel sales. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.exit_process",
+  "value": "no",
+  "probability": 0.02,
+  "rationale": "No row; not applicable, no permit process stands between stations and an alternative use in 90 days. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.window_repricing",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No row. The cap is an absolute level ($4.20), not a freeze at the price on the announcement day, and the pump price already stood at the market price on Day 3, so repricing in Days 3 to 5 does not lift any base. WE-005 A-8 (0.75) is about drivers and stations shifting purchases, a different question. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.counterfactual_catches_up",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "No row. Not applicable in the same way (the cap is absolute); estimate from the record: the uncapped price would have fallen only as cargoes arrived in weeks 3 to 6.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforcement_budget_raised",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "No numbered assumption (C-21 is Tier A, 'none'); WE-005 section 2 states the first funding case of OC-3: an emergency appropriation from the general fund, a budget that rises with the new task. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.input_few_outlets",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "WE-005 A-7 (alternative_uses): most in-state refinery output has no outlet other than Corvane stations in the short run (the pipeline carries about a tenth of consumption); the price branch of PC-12.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.input_other_outlets",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "WE-005 A-6 (alternative_uses): cargoes of Corvane blend have other buyers, and the pipeline to Brennick has spare capacity; the quantity branch of PC-12.",
+  "evidence": []
+ }
+]

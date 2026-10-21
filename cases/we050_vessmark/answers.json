@@ -1,0 +1,135 @@
+[
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "Probability taken from the assumption table of handbook WE-050 (illustrative figures), A-2: the Registry refuses first registration of new combustion cars.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.demand_persists",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-050 (illustrative figures), A-4: some would-be buyers of new combustion cars rank a used car or keeping their present car above a new BEV or PHEV.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "Probability taken from the assumption table of handbook WE-050 (illustrative figures), A-14: residents evade the ban by keeping combustion cars registered in Drevland (the nearest row; below the cut-off).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforcement_risk",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No matching assumption in WE-050; judged from the text: registration is refused, selling an unregistrable new car as new is an offence with a $5,000 fine, and registration is required to drive legally.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.no_other_use",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-050; judged from the text: the 12 importers and 600 dealers can sell BEVs, PHEVs and used cars; the Act bans only one engine type in new cars.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyer_substitutes",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-050 (illustrative figures), A-25: some would-be buyers of combustion cars buy PHEVs in 2035 to 2037 (BEVs are a substitute too).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-050 (illustrative figures), A-15: dealers, fuel retailers and motoring clubs, and BEV importers and charging firms, can each organize at a cost below their stake in the review.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.stockpile_ahead",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-050 (illustrative figures), A-7: buyers know the date, and some can bring the purchase of a new combustion car forward into 2033 to 2034.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-050 (illustrative figures), A-21: under U1-b, registering a new combustion car briefly in Drevland and importing it costs less than the premium it earns in Vessmark for some importers.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.enforced",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "No matching assumption in WE-050; judged from the text: the same Registry refuses first registration; the text gives no reason to expect less compliance for PHEVs after 2038 (compare A-2 for K1, 0.95).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.demand_persists",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "No matching assumption in WE-050; judged from the text: PHEVs are the closest to combustion cars in range and refueling, so some buyers will still want one after 2038; BEVs will be cheaper by then.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.evasion",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "No matching assumption in WE-050; judged from the text: the same registration route as K1; the text gives no sign of undetected sales (compare A-14, 0.3).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.enforcement_risk",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No matching assumption in WE-050; judged from the text: same enforcement as K1: refused registration and a $5,000 fine.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.no_other_use",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-050; judged from the text: importers and dealers keep selling BEVs and used cars.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.buyer_substitutes",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "No matching assumption in WE-050; judged from the text: BEVs, used cars and keeping the present car are open to buyers of new PHEVs.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "No matching assumption in WE-050; judged from the text: the same dealers and importers who can organize on K1 (A-15, 0.85) have a stake in the PHEV date.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.stockpile_ahead",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No matching assumption in WE-050; judged from the text: buyers know the 2038 date; the text gives no PHEV-specific rush, but replacement cycles of 6 to 10 years (A-7 for combustion cars, 0.85) make buying ahead feasible.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyers_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-050 (illustrative figures), A-15: dealers, fuel retailers and motoring clubs can each organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.buyers_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-050 (illustrative figures), A-15: motoring clubs can organize at a cost below their stake.",
+  "evidence": []
+ }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "question_id": "r1.binding",
+    "value": "no",
+    "probability": 0.03,
+    "rationale": "The cap is 200 percent of median rent, and no unit rents above 140 percent of the median while market rents are falling, so the ceiling sits above the market price and does not bind.",
+    "evidence": [
+      "The ordinance caps the rent of every rental unit at 200 percent of the city's median rent on 1 January 2030.",
+      "Market rents in Ashby have fallen for three years in a row and the vacancy rate is 9 percent.",
+      "No unit in the city currently rents for more than 140 percent of the median."
+    ]
+  },
+  {
+    "question_id": "r1.enforced",
+    "value": "yes",
+    "probability": 0.9,
+    "rationale": "Because almost no rent is near the cap, sellers have little reason to breach it, and the Rent Board can fine landlords who exceed it.",
+    "evidence": [
+      "No unit in the city currently rents for more than 140 percent of the median.",
+      "The Rent Board enforces the cap and may fine landlords who exceed it."
+    ]
+  }
+]

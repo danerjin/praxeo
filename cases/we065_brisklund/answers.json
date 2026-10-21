@@ -1,0 +1,100 @@
+[
+ {
+  "question_id": "k1.takeup",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-1: the Act is in force for 2028 to 2032 and payments are made as it provides (open-ended appropriation, payments office set up); growers of registered farms claim a payment paid on the Register.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.not_fully_captured",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-18: the effect of Brisklund's added output on the world price is far smaller than the expected payment per tonne, so the growers keep nearly all of the payment.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.quantity_expands",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-3: some growers at the margin sow more wheat, or grow it more intensively, when the expected price including the payment rises (given the payment is on actual output, U1-a).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.seller_supply_slow",
+  "value": "no",
+  "probability": 0.25,
+  "rationale": "No matching assumption in WE-065; judged from the text: growers can move land between wheat and barley from year to year and the winter wheat for 2028 is sown after enactment (autumn 2027), so supply is not fixed for the first crop years; the contrary row, A-12, concerns the land with wheat history and is used for the asset question.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.sellers_fewer_alternatives",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "No matching assumption in WE-065; judged from the text: the payment goes to the growers, who are the sellers, and there is no group of sellers apart from the recipients; the question presupposes buyers receiving the payment, so it has little meaning for a payment to producers.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.asset_supply_slow",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-12: wheat land with history is in fixed supply in the short run, and converting other land to wheat does not get cheaper per hectare as more is converted.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-11: land buyers expected the Act from February 2027 and expect it to run its term, with some chance of renewal.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.beneficiaries_organize",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-8: farm unions, millers and holders of established production can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_delay",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-065; judged from the text: the payment is on the wheat of the crop years 2028 to 2032 and nothing is bought by a recipient, so there is no purchase that growers could put off until the Act starts; the first crop is sown after enactment.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.pulled_forward",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-065; judged from the text: the payment goes with each year's output over five crop years and does not reward a one-off purchase, so there is nothing for growers to bring forward into the window.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.ends_as_scheduled",
+  "value": "no",
+  "probability": 0.45,
+  "rationale": "No matching assumption in WE-065; judged from the text: the scheme covers the crop years 2028 to 2032 and Parliament must review the target price, so renewal is open.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.supply_slow_at_expiry",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No matching assumption in WE-065; judged from the text: wheat is sown months ahead, so growers cannot cut the area of a crop already in the ground when the scheme ends.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.false_claims",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-6: declarations are checked only by sampling, so some growers overstate or declare bought grain as their own.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.claims_recovered",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-065 (illustrative figures), A-21: the payments office's sampling finds some false declarations, and repayments and fines are collected.",
+  "evidence": []
+ }
+]

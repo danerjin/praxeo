@@ -1,0 +1,176 @@
+[
+ {
+  "question_id": "c1.binding",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "The cap is 60 percent of CPI per year for sitting tenants. Over several years any real rise in market rents makes it bind for long tenancies; at enactment, after the early-1990s slowdown, how soon it binds is less certain.",
+  "evidence": [
+   "For a covered unit, the landlord may raise the rent of a sitting tenant once a year by no more than the allowable increase, which is 60 percent of the rise in the regional consumer price index."
+  ]
+ },
+ {
+  "question_id": "c1.enforced",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "An existing Rent Board with refund powers and just-cause eviction rules; tenants have a strong incentive to petition.",
+  "evidence": [
+   "The Rent Board, operating since 1979, hears petitions and orders refunds (policy text)."
+  ]
+ },
+ {
+  "question_id": "c1.alternative_uses",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Small buildings can be sold to owner-occupiers, converted to shared ownership or redeveloped; the record does not say how hard conversion is.",
+  "evidence": []
+ },
+ {
+  "question_id": "c1.nontransferable",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "The limit protects the sitting tenant; on a voluntary move the rent resets, so the benefit is lost on leaving and cannot be sold.",
+  "evidence": [
+   "When a tenant leaves voluntarily, the landlord may set the rent for the next tenant freely, after which the limit applies again."
+  ]
+ },
+ {
+  "question_id": "c1.would_leave",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Rents for sitting tenants are held below market and reset on leaving; in a city with rising rents some tenants would otherwise be priced out or leave.",
+  "evidence": []
+ },
+ {
+  "question_id": "c1.substitutes",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Uncovered units (newer buildings, vacated units at reset rents) are in the same city and serve the same tenant pool.",
+  "evidence": []
+ },
+ {
+  "question_id": "c1.buyouts_limited",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Buyouts are not barred; their scale against the lock-in is uncertain at enactment.",
+  "evidence": []
+ },
+ {
+  "question_id": "c1.lockin_dominates",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Rising free rents in the city push some movers out; the lock-in on keepers is likely larger.",
+  "evidence": []
+ },
+ {
+  "question_id": "c1.keepers_dominate",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Conversions of small buildings are lumpy and limited by conversion rules; most covered tenants keep their units. Uncertain at enactment.",
+  "evidence": []
+ },
+ {
+  "question_id": "c1.search_open",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "The summary states no list or allocation rule for covered units; seekers search for themselves in a market where rents had risen.",
+  "evidence": []
+ },
+ {
+  "question_id": "c1.selection_open",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "The summary has no first-come or lottery rule; landlords choose among applicants, though fair-housing law limits some criteria.",
+  "evidence": []
+ },
+ {
+  "question_id": "c1.quality_adjustable",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Landlords control upkeep and services; the Rent Board may order rent reductions, which limits room to cut services in practice, so the room is real but narrower.",
+  "evidence": [
+   "The Rent Board hears tenant petitions and landlord applications and may order rent reductions and refunds."
+  ]
+ },
+ {
+  "question_id": "c1.evasion",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "A complaint-driven board and refunds deter evasion, and rents on new tenancies are free, so key money has little to buy; sublets at market rent and informal payments to move a sitting tenant remain possible. Close to even.",
+  "evidence": [
+   "When a tenant leaves voluntarily, the landlord may set the rent for the next tenant freely, after which the limit applies again."
+  ]
+ },
+ {
+  "question_id": "c1.opportunities_need_move",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "The Bay Area labor market is wide; some tenants would take jobs or homes elsewhere in the region that mean giving up the covered unit.",
+  "evidence": []
+ },
+ {
+  "question_id": "c1.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "The measure came by ballot and the ordinance has operated since 1979, so landlord and tenant groups already exist and have organized for votes.",
+  "evidence": [
+   "The Rent Board, operating since 1979, hears petitions and orders refunds (policy text)."
+  ]
+ },
+ {
+  "question_id": "c1.durable_assets",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "Covered units are in buildings built before June 1979: long-lived structures whose supply expands slowly.",
+  "evidence": [
+   "Rental units in owner-occupied buildings of two to four units built before June 1979 become subject to the Rent Ordinance."
+  ]
+ },
+ {
+  "question_id": "c1.expected_to_last",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "The ordinance has stood since 1979 for larger buildings and the extension was approved by voters; buyers would expect it to last, with some risk of a later change.",
+  "evidence": []
+ },
+ {
+  "question_id": "c1.commutable",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Other Bay Area counties are within commuting range of the city. The record names no neighbouring actor, so no rule uses this answer.",
+  "evidence": []
+ },
+ {
+  "question_id": "c1.relet_obstructs",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Just-cause eviction applies to covered units, so a unit let to a new tenant can be emptied later only for a listed cause.",
+  "evidence": [
+   "Tenants of covered units may be evicted only for one of the just causes listed in the Rent Ordinance."
+  ]
+ },
+ {
+  "question_id": "c1.exit_process",
+  "value": "no",
+  "probability": 0.45,
+  "rationale": "The record is silent on any permit or board process for conversion or withdrawal, and silence is not evidence for it; set just below the cut-off so the consequence is not reported.",
+  "evidence": []
+ },
+ {
+  "question_id": "c1.window_repricing",
+  "value": "no",
+  "probability": 0.4,
+  "rationale": "Estimate as of November 1994, from the record only. The measure was approved on 8 November and takes effect from certification in December, a window of about four weeks. The summary gives no lease terms, so the share of tenancies that can be repriced in that time is unknown: an annual lease comes up for renewal in only about one month in twelve, and a landlord who owns and lives in a two to four unit building has to act within weeks. Below the cut-off because the window is short, not because landlords lack the incentive. Reading U1-b (rolled back to an earlier base date) would cancel any raise made in the window.",
+  "evidence": [
+   "The measure was approved by the voters on November 8, 1994, and takes effect for covered units from the date of its certification."
+  ]
+ },
+ {
+  "question_id": "c1.counterfactual_catches_up",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Estimate as of November 1994, from the record only. Before the measure these units are outside the Rent Ordinance, so their rents are set freely and follow the market at each renewal or new tenancy; any raise made in the window is bounded by the market rent on the effective date (CR-5c), which the no-measure rent path passes within a lease cycle or two.",
+  "evidence": [
+   "Buildings of four units or fewer in which the owner lives were exempt."
+  ]
+ }
+]

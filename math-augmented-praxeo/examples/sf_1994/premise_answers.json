@@ -1,0 +1,8 @@
+[
+ {"question_id": "annex_premise.keepers_dominate(c1)", "value": "yes", "probability": 0.8,
+  "rationale": "The annex's sizes (illustrative ranges) put the deterred exits above the displaced exits everywhere; the ranges are not yet sourced, so the premise is raised only part of the way toward the proposal.",
+  "evidence": []},
+ {"question_id": "annex_premise.lockin_dominates(c1)", "value": "yes", "probability": 0.75,
+  "rationale": "Same reasoning: raised part of the way, pending sourced ranges.",
+  "evidence": []}
+]

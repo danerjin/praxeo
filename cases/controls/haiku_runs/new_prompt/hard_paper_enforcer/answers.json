@@ -1,0 +1,12 @@
+[
+  {
+    "question_id": "h2.enforced",
+    "value": "no",
+    "probability": 0.08,
+    "rationale": "The freeze is assigned to a Housing Department with no budget, no staff and only a postal address for complaints, and market rents rising about 9 percent a year give landlords strong reason to charge above the freeze where nobody checks.",
+    "evidence": [
+      "The Housing Department's budget for the year is zero, it has no staff, and complaints are to be sent to its postal address.",
+      "Market rents in Irwell have risen about 9 percent a year for five years."
+    ]
+  }
+]

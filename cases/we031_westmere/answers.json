@@ -1,0 +1,44 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-031 (illustrative figures), A-4: the Year 1 standard binds on some designs (a few percent of homes), since the maximum is the 90th percentile of a sample of homes permitted in Year -2 and the median DEI has fallen since.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-031 (illustrative figures), A-2: building departments do not issue permits without a DEI report, nor certificates of occupancy without a rater's certificate.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-031 (illustrative figures), A-17: builders' associations can organize to lobby at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.stock_competes",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-031 (illustrative figures), A-7: buyers have substitutes for new site-built homes in the state, among them existing homes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyers_value_standard",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "No row of the assumption table of handbook WE-031 matches; judged from the text. The policy text says buyers asked for efficient homes and the median DEI has fallen for ten years, but also that the standard removes designs buyers would have chosen (CR-2: buyers who would have chosen a less efficient design ranked it higher); nothing in the record says buyers prefer covered homes to the existing stock.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.related_slow_r1",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-031 (illustrative figures), A-14: rater capacity cannot grow much within the first two years (six-month certification; about 70 active raters for new homes).",
+  "evidence": []
+ }
+]

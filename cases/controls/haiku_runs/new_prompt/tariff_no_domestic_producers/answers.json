@@ -1,0 +1,22 @@
+[
+ {
+  "question_id": "t2.binding",
+  "value": "yes",
+  "probability": 0.92,
+  "rationale": "Fennick buys a tiny share of world exports, so foreign sellers cannot absorb much of the tariff, and no domestic fruit substitutes, so the domestic price should rise by most of the 20 percent tariff.",
+  "evidence": [
+   "Fennick has a cold climate and no banana farms; every banana sold there is imported, and Fennick buys a tiny share of world banana exports.",
+   "A tariff of 20 percent of customs value applies to imported bananas."
+  ]
+ },
+ {
+  "question_id": "t2.domestic_substitutes",
+  "value": "no",
+  "probability": 0.06,
+  "rationale": "The record says there are no banana farms and no domestically grown fruit is a close substitute, so dearer imports cannot send buyers to domestic producers.",
+  "evidence": [
+   "Fennick has a cold climate and no banana farms; every banana sold there is imported, and Fennick buys a tiny share of world banana exports.",
+   "No domestically grown fruit is a close substitute for bananas in Fennick's shops."
+  ]
+ }
+]

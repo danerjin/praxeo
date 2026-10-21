@@ -1,0 +1,29 @@
+{
+ "name": "Dunmore Rent Cap",
+ "jurisdiction": "fictional",
+ "rule_maker": "city council",
+ "enacted": "2030-01-01",
+ "effective": "2030-07-01",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "r4",
+   "instrument": "price_ceiling",
+   "good": "rental_housing",
+   "market": "city",
+   "bound_actor": "landlords.controlled",
+   "protected_actor": "tenants.controlled",
+   "excluded_actor": "tenants.prospective",
+   "vacancy_decontrol": false,
+   "source_sentences": [
+    "Yearly rent increases for sitting tenants are capped at 1 percent, and the rent stays capped when a new tenant moves in.",
+    "Tenancies cannot be assigned or sublet."
+   ]
+  }
+ ],
+ "unclear": [],
+ "context": [
+  "A Rent Board with 120 inspectors audits every registered unit each year and orders refunds plus fines of three times any overcharge.",
+  "Market rents in Dunmore have risen about 8 percent a year for a decade, and the vacancy rate is 1 percent."
+ ]
+}

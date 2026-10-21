@@ -1,0 +1,93 @@
+[
+ {
+  "question_id": "k3.takeup",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "No matching assumption in WE-056; judged from the text: an uninsured resident who buys analog insulin at about $320 pays $35 instead, and attests at the counter; many of the 4,500 cash buyers will claim.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.not_fully_captured",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "No matching assumption in WE-056; judged from the text: section 3 fixes what the pharmacy may collect from the covered resident at $35, so the resident's net price falls whatever the pharmacy's posted price.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.quantity_expands",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-3: some covered residents used less insulin than prescribed at the old price (2026 survey), so more insulin is dispensed at $35.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.seller_supply_slow",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-056; judged from the text: every pharmacy stocks insulin and no fixed stock or long lead time is mentioned, so supply is not fixed.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.sellers_fewer_alternatives",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No matching assumption in WE-056; judged from the text: pharmacies can sell the same insulin to cash buyers who are not covered residents; no fixed stock is mentioned.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.substitutes_given_up",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-8: some over-the-counter human insulin buyers obtain a prescription to buy an analog at $35 (the gap of $50 against $35).",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.qualifying_pays",
+  "value": "no",
+  "probability": 0.4,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-25: some individual-market insulin users drop coverage because insulin now costs $35 without it (below the cut-off).",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.can_delay",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-11: some covered residents can defer storable insulin purchases from late 2027 to January 2028.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.payer_complies",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-1: bound pharmacies comply with the $35 cap for most fills and are paid the rest (contract rate, or the Fund's payment).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.share_demand_responds",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-3: some covered residents used less insulin than prescribed at the old price.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "No separate assumption in WE-056; judged from the record: plans did not pay the balance above $35 before the Act, so the term binds (A-1 covers the cap itself, 0.9).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.enforced",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-1: bound pharmacies comply and receive the plan's payment.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-056 (illustrative figures), A-17: pharmacies, PBMs, insurers and patient groups can organize at a cost below their stakes.",
+  "evidence": []
+ }
+]

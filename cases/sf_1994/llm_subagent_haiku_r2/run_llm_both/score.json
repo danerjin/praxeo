@@ -1,0 +1,108 @@
+{
+ "headline": {
+  "predictions": 9,
+  "ambiguous": 0,
+  "verifiable": 5,
+  "unverifiable": 4,
+  "unverifiable_rate": 0.4444444444444444,
+  "matched": [
+   "C-1",
+   "C-2",
+   "C-4",
+   "C-7",
+   "C-9"
+  ],
+  "false_positives": [],
+  "unverifiable_ids": [
+   "C-3",
+   "C-5",
+   "C-6",
+   "C-8"
+  ],
+  "recalled_findings": [
+   "F-1",
+   "F-2",
+   "F-3",
+   "F-4",
+   "F-5"
+  ],
+  "missed_findings": [],
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0
+ },
+ "logic": {
+  "predictions": 4,
+  "ambiguous": 0,
+  "verifiable": 2,
+  "unverifiable": 2,
+  "unverifiable_rate": 0.5,
+  "matched": [
+   "C-1",
+   "C-2"
+  ],
+  "false_positives": [],
+  "unverifiable_ids": [
+   "C-3",
+   "C-5"
+  ],
+  "recalled_findings": [
+   "F-3",
+   "F-4"
+  ],
+  "missed_findings": [
+   "F-1",
+   "F-2",
+   "F-5"
+  ],
+  "precision": 1.0,
+  "recall": 0.4,
+  "f1": 0.5714285714285715
+ },
+ "brier": {
+  "items": [
+   {
+    "assumption": "binding(c1)",
+    "p": 0.7,
+    "held": true,
+    "score": 0.09000000000000002
+   },
+   {
+    "assumption": "enforced(c1)",
+    "p": 0.6,
+    "held": true,
+    "score": 0.16000000000000003
+   },
+   {
+    "assumption": "alternative_uses(c1)",
+    "p": 0.65,
+    "held": true,
+    "score": 0.12249999999999998
+   },
+   {
+    "assumption": "nontransferable(c1)",
+    "p": 0.85,
+    "held": true,
+    "score": 0.022500000000000006
+   },
+   {
+    "assumption": "would_leave(c1)",
+    "p": 0.85,
+    "held": true,
+    "score": 0.022500000000000006
+   },
+   {
+    "assumption": "keepers_dominate(c1)",
+    "p": 0.63,
+    "held": true,
+    "score": 0.1369
+   }
+  ],
+  "mean": 0.0924
+ },
+ "low_confidence_findings": [
+  "F-5"
+ ],
+ "card_vocabulary_problems": [],
+ "prediction_sha256": "a093d8937afca7733956fab9f5374de2c452ee3af4e542024832cae8761d4af7"
+}

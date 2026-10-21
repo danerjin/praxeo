@@ -1,0 +1,3099 @@
+{
+ "assumptions": {
+  "absence_used(k1)": {
+   "assumption_class": "other",
+   "id": "absence_used(k1)",
+   "p": 0.9,
+   "text": "Some recipients take paid time off they would otherwise have worked."
+  },
+  "absences_covered(k1)": {
+   "assumption_class": "other",
+   "id": "absences_covered(k1)",
+   "p": 0.65,
+   "text": "Providers buy cover for absent shifts."
+  },
+  "alternatives_worse(k1)": {
+   "assumption_class": "mobility",
+   "id": "alternatives_worse(k1)",
+   "p": 0.6,
+   "text": "The recipients' alternatives are worse than the providers'."
+  },
+  "binding(k1)": {
+   "assumption_class": "binding",
+   "id": "binding(k1)",
+   "p": 0.9,
+   "text": "The term was absent from some contracts, so the mandate binds for them."
+  },
+  "can_organize(k1)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1)",
+   "p": 0.85,
+   "text": "The bound providers can organize to lobby."
+  },
+  "can_screen(k1)": {
+   "assumption_class": "other",
+   "id": "can_screen(k1)",
+   "p": 0.55,
+   "text": "Providers can tell which applicants will cost more under the term."
+  },
+  "compete_with_bound(k1)": {
+   "assumption_class": "substitutability",
+   "id": "compete_with_bound(k1)",
+   "p": 0.6,
+   "text": "The unbound firms compete with the bound providers."
+  },
+  "complaint_unlikely(k1)": {
+   "assumption_class": "enforcement",
+   "id": "complaint_unlikely(k1)",
+   "p": 0.8,
+   "text": "Complaints are unlikely from some recipients."
+  },
+  "complaints_filed(k1)": {
+   "assumption_class": "enforcement",
+   "id": "complaints_filed(k1)",
+   "p": 0.85,
+   "text": "Complaints are filed in meaningful numbers."
+  },
+  "conditions_differ(k1)": {
+   "assumption_class": "other",
+   "id": "conditions_differ(k1)",
+   "p": 0.8,
+   "text": "Some existing policies offer the term on conditions the mandate forbids."
+  },
+  "enforced(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k1)",
+   "p": 0.7,
+   "text": "Most bound providers comply."
+  },
+  "floor_binds(k1)": {
+   "assumption_class": "binding",
+   "id": "floor_binds(k1)",
+   "p": 0.85,
+   "text": "A floor holds some recipients' wage."
+  },
+  "hours_shift(k1)": {
+   "assumption_class": "substitutability",
+   "id": "hours_shift(k1)",
+   "p": 0.7,
+   "text": "Providers can move hours between recipients below and above the cap."
+  },
+  "move_marginal(k1)": {
+   "assumption_class": "mobility",
+   "id": "move_marginal(k1)",
+   "p": 0.55,
+   "text": "Some job changes are marginal enough to be decided by the loss on leaving."
+  },
+  "recipients_organize(k1)": {
+   "assumption_class": "other",
+   "id": "recipients_organize(k1)",
+   "p": 0.85,
+   "text": "The recipients can organize to lobby."
+  },
+  "reshaping_pays(k1)": {
+   "assumption_class": "other",
+   "id": "reshaping_pays(k1)",
+   "p": 0.55,
+   "text": "Reshaping goods to fall outside the definitions costs some actors less than the burden."
+  },
+  "rivals_bound(k1)": {
+   "assumption_class": "other",
+   "id": "rivals_bound(k1)",
+   "p": 0.7,
+   "text": "Most of the providers' rivals are bound too."
+  },
+  "rivals_unbound(k1)": {
+   "assumption_class": "mobility",
+   "id": "rivals_unbound(k1)",
+   "p": 0.65,
+   "text": "Some providers compete with unbound rivals across a boundary."
+  },
+  "staying_small_pays(k1)": {
+   "assumption_class": "other",
+   "id": "staying_small_pays(k1)",
+   "p": 0.6,
+   "text": "Some firms near the threshold value staying below it more than an extra hire."
+  },
+  "unpaid_absence_before(k1)": {
+   "assumption_class": "other",
+   "id": "unpaid_absence_before(k1)",
+   "p": 0.95,
+   "text": "Some recipients would have taken unpaid time off without the mandate."
+  },
+  "valued_on_earnings(k1)": {
+   "assumption_class": "expectations",
+   "id": "valued_on_earnings(k1)",
+   "p": 0.7,
+   "text": "The providers' businesses are valued on expected earnings."
+  },
+  "wages_adjust(k1)": {
+   "assumption_class": "other",
+   "id": "wages_adjust(k1)",
+   "p": 0.8,
+   "text": "The wage can adjust over the medium run."
+  },
+  "wages_sticky(k1)": {
+   "assumption_class": "other",
+   "id": "wages_sticky(k1)",
+   "p": 0.8,
+   "text": "The other money terms are fixed in the short run."
+  },
+  "worth_less(k1)": {
+   "assumption_class": "other",
+   "id": "worth_less(k1)",
+   "p": 0.6,
+   "text": "The term is worth less to the marginal recipient than it costs the provider."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "buyers.local_services",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "rivals_bound(k1)",
+     "wages_sticky(k1)"
+    ],
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "rivals_bound(k1)",
+     "worth_less(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "rivals_bound(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1)",
+     "premises": [
+      "worth_less(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_pass(k1)",
+     "premises": [
+      "mc_cost_stays(k1)",
+      "rivals_bound(k1)"
+     ],
+     "rule": "RS-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.local_services",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "rivals_bound(k1)",
+     "wages_sticky(k1)"
+    ],
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "rivals_bound(k1)",
+     "worth_less(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "rivals_bound(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1)",
+     "premises": [
+      "worth_less(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_pass(k1)",
+     "premises": [
+      "mc_cost_stays(k1)",
+      "rivals_bound(k1)"
+     ],
+     "rule": "RS-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "contractors",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "reshaping_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_reshaped(k1)",
+     "premises": [
+      "definition_line(k1)",
+      "reshaping_pays(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.compliant",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "compete_with_bound(k1)",
+     "enforced(k1)",
+     "valued_on_earnings(k1)",
+     "wages_sticky(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "compete_with_bound(k1)",
+    "enforced(k1)",
+    "valued_on_earnings(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "mc_capitalized(k1)",
+     "premises": [
+      "mc_returns(k1)",
+      "valued_on_earnings(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "mc_rivals_value(k1)",
+     "premises": [
+      "compete_with_bound(k1)",
+      "mc_capitalized(k1)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.compliant",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "conditions_differ(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "conditions_differ(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_rewrite(k1)",
+     "premises": [
+      "conditions_differ(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.compliant",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "compete_with_bound(k1)",
+     "enforced(k1)",
+     "worth_less(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "compete_with_bound(k1)",
+    "enforced(k1)",
+    "worth_less(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_after(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_after(k1)",
+     "premises": [
+      "worth_less(k1)"
+     ],
+     "rule": "CR-2"
+    },
+    {
+     "conclusion": "mc_rivals(k1)",
+     "premises": [
+      "compete_with_bound(k1)",
+      "mc_cost_after(k1)"
+     ],
+     "rule": "CR-9"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.near_threshold",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "staying_small_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "staying_small_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_threshold(k1)",
+     "premises": [
+      "binding(k1)",
+      "size_threshold(k1)",
+      "staying_small_pays(k1)"
+     ],
+     "rule": "RS-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": "counted_staff",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.near_threshold",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "staying_small_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "staying_small_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_threshold(k1)",
+     "premises": [
+      "binding(k1)",
+      "size_threshold(k1)",
+      "staying_small_pays(k1)"
+     ],
+     "rule": "RS-17"
+    },
+    {
+     "conclusion": "mc_threshold_other(k1)",
+     "premises": [
+      "mc_threshold(k1)"
+     ],
+     "rule": "RS-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": "other_staff",
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {
+    "U2-a": "decrease",
+    "U2-b": "increase"
+   },
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.small",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "compete_with_bound(k1)",
+     "enforced(k1)",
+     "valued_on_earnings(k1)",
+     "wages_sticky(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "compete_with_bound(k1)",
+    "enforced(k1)",
+    "valued_on_earnings(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "mc_capitalized(k1)",
+     "premises": [
+      "mc_returns(k1)",
+      "valued_on_earnings(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "mc_rivals_value(k1)",
+     "premises": [
+      "compete_with_bound(k1)",
+      "mc_capitalized(k1)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.small",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "staying_small_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "staying_small_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_threshold(k1)",
+     "premises": [
+      "binding(k1)",
+      "size_threshold(k1)",
+      "staying_small_pays(k1)"
+     ],
+     "rule": "RS-17"
+    },
+    {
+     "conclusion": "mc_stay_small(k1)",
+     "premises": [
+      "mc_threshold(k1)"
+     ],
+     "rule": "RS-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "number_of_sellers",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.small",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "compete_with_bound(k1)",
+     "enforced(k1)",
+     "worth_less(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "compete_with_bound(k1)",
+    "enforced(k1)",
+    "worth_less(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_after(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_after(k1)",
+     "premises": [
+      "worth_less(k1)"
+     ],
+     "rule": "CR-2"
+    },
+    {
+     "conclusion": "mc_rivals(k1)",
+     "premises": [
+      "compete_with_bound(k1)",
+      "mc_cost_after(k1)"
+     ],
+     "rule": "CR-9"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.tradable",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "rivals_unbound(k1)",
+     "worth_less(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "rivals_unbound(k1)",
+    "worth_less(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_after(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_after(k1)",
+     "premises": [
+      "worth_less(k1)"
+     ],
+     "rule": "CR-2"
+    },
+    {
+     "conclusion": "mc_relocate(k1)",
+     "premises": [
+      "mc_cost_after(k1)",
+      "rivals_unbound(k1)"
+     ],
+     "rule": "RS-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "valued_on_earnings(k1)",
+     "wages_sticky(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "valued_on_earnings(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-7"
+    },
+    {
+     "conclusion": "mc_capitalized(k1)",
+     "premises": [
+      "mc_returns(k1)",
+      "valued_on_earnings(k1)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_compliance(k1)",
+     "premises": [
+      "mandate(k1)"
+     ],
+     "rule": "OC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "complaint_unlikely(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "complaint_unlikely(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_breach(k1)",
+     "premises": [
+      "binding(k1)",
+      "complaint_only(k1)",
+      "complaint_unlikely(k1)"
+     ],
+     "rule": "RS-20"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "legal_breach",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "can_organize(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "can_organize(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_lobby(k1)",
+     "premises": [
+      "binding(k1)",
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "wages_sticky(k1)"
+    ],
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "worth_less(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1)",
+     "premises": [
+      "worth_less(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_stays(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "reshaping_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_reshaped(k1)",
+     "premises": [
+      "definition_line(k1)",
+      "reshaping_pays(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-18",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "wages_sticky(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-19",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "wages_sticky(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_returns(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-20",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "return_on_capital",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "employers.violating",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "complaint_unlikely(k1)",
+     "complaints_filed(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "complaint_unlikely(k1)",
+    "complaints_filed(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_breach(k1)",
+     "premises": [
+      "binding(k1)",
+      "complaint_only(k1)",
+      "complaint_unlikely(k1)"
+     ],
+     "rule": "RS-20"
+    },
+    {
+     "conclusion": "mc_complaints(k1)",
+     "premises": [
+      "complaint_only(k1)",
+      "complaints_filed(k1)"
+     ],
+     "rule": "OC-2"
+    },
+    {
+     "conclusion": "mc_awards(k1)",
+     "premises": [
+      "mc_breach(k1)",
+      "mc_complaints(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-21",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "neighboring_jurisdictions",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "rivals_unbound(k1)",
+     "worth_less(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "rivals_unbound(k1)",
+    "worth_less(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_after(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_after(k1)",
+     "premises": [
+      "worth_less(k1)"
+     ],
+     "rule": "CR-2"
+    },
+    {
+     "conclusion": "mc_relocate(k1)",
+     "premises": [
+      "mc_cost_after(k1)",
+      "rivals_unbound(k1)"
+     ],
+     "rule": "RS-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-22",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_administered(k1)",
+     "premises": [
+      "mandate(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-23",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "staffing_agencies",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "absence_used(k1)",
+     "absences_covered(k1)",
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "absence_used(k1)",
+    "absences_covered(k1)",
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_absence(k1)",
+     "premises": [
+      "absence_used(k1)",
+      "mc_binds(k1)"
+     ],
+     "rule": "CR-4"
+    },
+    {
+     "conclusion": "mc_cover(k1)",
+     "premises": [
+      "absences_covered(k1)",
+      "mc_absence(k1)"
+     ],
+     "rule": "CR-9"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-24",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "taxpayers",
+   "actor_group": [
+    "taxpayers",
+    "recipients.other_spending"
+   ],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_funded(k1)",
+     "premises": [
+      "general_budget(k1)"
+     ],
+     "rule": "OC-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-25",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.complainants",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "complaint_unlikely(k1)",
+     "complaints_filed(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "complaint_unlikely(k1)",
+    "complaints_filed(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_breach(k1)",
+     "premises": [
+      "binding(k1)",
+      "complaint_only(k1)",
+      "complaint_unlikely(k1)"
+     ],
+     "rule": "RS-20"
+    },
+    {
+     "conclusion": "mc_complaints(k1)",
+     "premises": [
+      "complaint_only(k1)",
+      "complaints_filed(k1)"
+     ],
+     "rule": "OC-2"
+    },
+    {
+     "conclusion": "mc_awards(k1)",
+     "premises": [
+      "mc_breach(k1)",
+      "mc_complaints(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-26",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.full_time",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "absence_used(k1)",
+     "absences_covered(k1)",
+     "binding(k1)",
+     "enforced(k1)"
+    ],
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "worth_less(k1)"
+    ],
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "hours_shift(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "hours_shift(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_cost_after(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_cost_after(k1)",
+     "premises": [
+      "worth_less(k1)"
+     ],
+     "rule": "CR-2"
+    },
+    {
+     "conclusion": "mc_cap_cost(k1)",
+     "premises": [
+      "mc_cost_after(k1)"
+     ],
+     "rule": "CR-4"
+    },
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_absence(k1)",
+     "premises": [
+      "absence_used(k1)",
+      "mc_binds(k1)"
+     ],
+     "rule": "CR-4"
+    },
+    {
+     "conclusion": "mc_cover(k1)",
+     "premises": [
+      "absences_covered(k1)",
+      "mc_absence(k1)"
+     ],
+     "rule": "CR-9"
+    },
+    {
+     "conclusion": "mc_cap_cover(k1)",
+     "premises": [
+      "mc_cover(k1)"
+     ],
+     "rule": "RS-18"
+    },
+    {
+     "conclusion": "mc_cap_shift(k1)",
+     "premises": [
+      "hours_shift(k1)",
+      "per_head_cap(k1)"
+     ],
+     "rule": "RS-18"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-27",
+   "item": null,
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "hours_worked",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.min_wage",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "floor_binds(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "floor_binds(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_floor(k1)",
+     "premises": [
+      "floor_binds(k1)",
+      "mc_binds(k1)"
+     ],
+     "rule": "PC-10"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked",
+    "non_wage_compensation"
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-28",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.part_time",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "hours_shift(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "hours_shift(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_cap_shift(k1)",
+     "premises": [
+      "hours_shift(k1)",
+      "per_head_cap(k1)"
+     ],
+     "rule": "RS-18"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked"
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-29",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.prospective",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "can_screen(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "can_screen(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_screen(k1)",
+     "premises": [
+      "can_screen(k1)",
+      "mc_binds(k1)"
+     ],
+     "rule": "RS-23"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-30",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "allocation_by_non_price_criteria",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.pto_noncompliant",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "conditions_differ(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "conditions_differ(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_rewrite(k1)",
+     "premises": [
+      "conditions_differ(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-31",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "non_wage_compensation",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.size_ambiguous",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_margin(k1)",
+     "premises": [
+      "margin_covered(k1)"
+     ],
+     "rule": "CR-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-32",
+   "item": null,
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {
+    "U2-a": "increase",
+    "U2-b": "none"
+   },
+   "tier": "B",
+   "variable": "non_wage_compensation",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "complaints_filed(k1)"
+    ]
+   ],
+   "assumptions": [
+    "complaints_filed(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_complaints(k1)",
+     "premises": [
+      "complaint_only(k1)",
+      "complaints_filed(k1)"
+     ],
+     "rule": "OC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-33",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "wages_adjust(k1)"
+    ],
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "unpaid_absence_before(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "unpaid_absence_before(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_wage(k1)",
+     "premises": [
+      "wages_adjust(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_wage(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_earn_down(k1)",
+     "premises": [
+      "mc_wage(k1)"
+     ],
+     "rule": "CR-12"
+    },
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_earn_up(k1)",
+     "premises": [
+      "mc_binds(k1)",
+      "unpaid_absence_before(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-34",
+   "item": null,
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "earnings",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "wages_sticky(k1)"
+    ],
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "worth_less(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "wages_sticky(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_others_medium(k1)",
+     "premises": [
+      "worth_less(k1)"
+     ],
+     "rule": "CR-2"
+    },
+    {
+     "conclusion": "mc_others_medium(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_others_short(k1)",
+     "premises": [
+      "wages_sticky(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_others_short(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked",
+    "non_wage_compensation"
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-35",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "absence_used(k1)",
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "absence_used(k1)",
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_absence(k1)",
+     "premises": [
+      "absence_used(k1)",
+      "mc_binds(k1)"
+     ],
+     "rule": "CR-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-36",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "hours_worked",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "move_marginal(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "move_marginal(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_lockin(k1)",
+     "premises": [
+      "forfeit_on_leaving(k1)",
+      "move_marginal(k1)"
+     ],
+     "rule": "RS-11"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-37",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "job_changes",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "recipients_organize(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "recipients_organize(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_recipients_lobby(k1)",
+     "premises": [
+      "binding(k1)",
+      "recipients_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-38",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-39",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "non_wage_compensation",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternatives_worse(k1)",
+     "binding(k1)",
+     "enforced(k1)",
+     "wages_adjust(k1)"
+    ]
+   ],
+   "assumptions": [
+    "alternatives_worse(k1)",
+    "binding(k1)",
+    "enforced(k1)",
+    "wages_adjust(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_wage(k1)",
+     "premises": [
+      "wages_adjust(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_wage(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_incidence(k1)",
+     "premises": [
+      "alternatives_worse(k1)",
+      "mc_wage(k1)"
+     ],
+     "rule": "CR-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-40",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "tax_share_borne",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.uncovered",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "wages_adjust(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "wages_adjust(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "mc_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-17"
+    },
+    {
+     "conclusion": "mc_wage(k1)",
+     "premises": [
+      "wages_adjust(k1)"
+     ],
+     "rule": "CR-6"
+    },
+    {
+     "conclusion": "mc_wage(k1)",
+     "premises": [
+      "mc_binds(k1)"
+     ],
+     "rule": "PC-17"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-41",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "wage_rate",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"employers.uncovered\").\nexcluded(k1, \"buyers.prospective\").\nmandate(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nemployment(k1).\nmc_payer_group(k1, \"taxpayers,recipients.other_spending\").\nmc_recipient(k1, \"workers.uncovered\").\nmc_floor_recipient(k1, \"workers.min_wage\").\nmc_applicant(k1, \"workers.prospective\").\nmc_already(k1, \"employers.compliant\").\nmc_already_recipient(k1, \"workers.pto_noncompliant\").\nmc_below_cap(k1, \"workers.part_time\").\nmc_above_cap(k1, \"workers.full_time\").\nmc_cover_seller(k1, \"staffing_agencies\").\nmc_output_buyer(k1, \"buyers.local_services\").\nmc_tradable(k1, \"employers.tradable\").\nneighbor_seller(k1, \"neighboring_jurisdictions\").\nmc_outside(k1, \"contractors\").\nmc_complainant(k1, \"workers.complainants\").\nmc_violator(k1, \"employers.violating\").\nmc_near_threshold(k1, \"employers.near_threshold\").\nmc_below_threshold(k1, \"employers.small\").\nmc_margin_recipient(k1, \"workers.size_ambiguous\").\nmc_rival(k1, \"employers.compliant\").\nmc_rival(k1, \"employers.small\").\nper_head_cap(k1).\npaid_absence(k1).\nforfeit_on_leaving(k1).\ncomplaint_only(k1).\nsize_threshold(k1).\nthreshold_staff_split(k1).\ndefinition_line(k1).\ngeneral_budget(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(wages_sticky(k1)).\nassumption(wages_adjust(k1)).\nassumption(worth_less(k1)).\nassumption(alternatives_worse(k1)).\nassumption(valued_on_earnings(k1)).\nassumption(can_organize(k1)).\nassumption(recipients_organize(k1)).\nassumption(floor_binds(k1)).\nassumption(can_screen(k1)).\nassumption(conditions_differ(k1)).\nassumption(hours_shift(k1)).\nassumption(absence_used(k1)).\nassumption(unpaid_absence_before(k1)).\nassumption(absences_covered(k1)).\nassumption(rivals_bound(k1)).\nassumption(rivals_unbound(k1)).\nassumption(compete_with_bound(k1)).\nassumption(reshaping_pays(k1)).\nassumption(move_marginal(k1)).\nassumption(complaint_unlikely(k1)).\nassumption(complaints_filed(k1)).\nassumption(staying_small_pays(k1)).\n",
+ "explanations": [
+  "C-1. Compared with no Varrow Healthy Workplaces Act, price paid for buyers.local_services rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Most of the providers' rivals are bound too (p = 0.70); The other money terms are fixed in the short run (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-2. Compared with no Varrow Healthy Workplaces Act, quantity traded for buyers.local_services falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Most of the providers' rivals are bound too (p = 0.70); The other money terms are fixed in the short run (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-3. Compared with no Varrow Healthy Workplaces Act, reclassification for contractors rises from the medium run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.55). Reported.",
+  "C-4. Compared with no Varrow Healthy Workplaces Act, asset value for employers.compliant rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.60); Most bound providers comply (p = 0.70); The providers' businesses are valued on expected earnings (p = 0.70); The other money terms are fixed in the short run (p = 0.80). Reported.",
+  "C-5. Compared with no Varrow Healthy Workplaces Act, compliance cost for employers.compliant rises from the short run onward (tier B, invisible). Why: PC-17: PC-17. This holds if: Some existing policies offer the term on conditions the mandate forbids (p = 0.80); Most bound providers comply (p = 0.70). Reported.",
+  "C-6. Compared with no Varrow Healthy Workplaces Act, quantity supplied for employers.compliant rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.60); Most bound providers comply (p = 0.70); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
+  "C-7. Compared with no Varrow Healthy Workplaces Act, employment (counted staff) for employers.near_threshold falls from the short run onward (tier B, invisible). Why: RS-17: RS-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Some firms near the threshold value staying below it more than an extra hire (p = 0.60). Reported.",
+  "C-8. Compared with no Varrow Healthy Workplaces Act, employment (other staff) for employers.near_threshold may move either way from the medium run onward (tier B, invisible). Why: RS-17: RS-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Some firms near the threshold value staying below it more than an extra hire (p = 0.60). Sign per reading: U2-a: decrease; U2-b: increase. Reported.",
+  "C-9. Compared with no Varrow Healthy Workplaces Act, asset value for employers.small rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.60); Most bound providers comply (p = 0.70); The providers' businesses are valued on expected earnings (p = 0.70); The other money terms are fixed in the short run (p = 0.80). Reported.",
+  "C-10. Compared with no Varrow Healthy Workplaces Act, number of sellers for employers.small rises from the medium run onward (tier B, invisible). Why: RS-17: RS-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Some firms near the threshold value staying below it more than an extra hire (p = 0.60). Reported.",
+  "C-11. Compared with no Varrow Healthy Workplaces Act, quantity supplied for employers.small rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The unbound firms compete with the bound providers (p = 0.60); Most bound providers comply (p = 0.70); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
+  "C-12. Compared with no Varrow Healthy Workplaces Act, quantity supplied for employers.tradable falls in the long run (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Some providers compete with unbound rivals across a boundary (p = 0.65); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
+  "C-13. Compared with no Varrow Healthy Workplaces Act, asset value for employers.uncovered falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The providers' businesses are valued on expected earnings (p = 0.70); The other money terms are fixed in the short run (p = 0.80). Reported.",
+  "C-14. Compared with no Varrow Healthy Workplaces Act, compliance cost for employers.uncovered rises from the short run onward (tier A, invisible). Why: OC-2: OC-2. This holds if: no assumption. Reported.",
+  "C-15. Compared with no Varrow Healthy Workplaces Act, legal breach for employers.uncovered rises from the short run onward (tier B, invisible). Why: RS-20: RS-20. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Complaints are unlikely from some recipients (p = 0.80). Reported.",
+  "C-16. Compared with no Varrow Healthy Workplaces Act, lobbying effort for employers.uncovered rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The bound providers can organize to lobby (p = 0.85). Reported.",
+  "C-17. Compared with no Varrow Healthy Workplaces Act, price paid for employers.uncovered rises from the short run onward (tier B, visible). Why: PC-17: PC-17; CR-12: CR-12; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-18. Compared with no Varrow Healthy Workplaces Act, reclassification for employers.uncovered rises from the medium run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.55). Reported.",
+  "C-19. Compared with no Varrow Healthy Workplaces Act, resources available other uses for employers.uncovered falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). Reported.",
+  "C-20. Compared with no Varrow Healthy Workplaces Act, return on capital for employers.uncovered falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). Reported.",
+  "C-21. Compared with no Varrow Healthy Workplaces Act, resources available other uses for employers.violating falls from the short run onward (tier B, invisible). Why: RS-20: RS-20; OC-2: OC-2; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Complaints are unlikely from some recipients (p = 0.80); Complaints are filed in meaningful numbers (p = 0.85). Reported.",
+  "C-22. Compared with no Varrow Healthy Workplaces Act, quantity supplied for neighboring_jurisdictions rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Some providers compete with unbound rivals across a boundary (p = 0.65); The term is worth less to the marginal recipient than it costs the provider (p = 0.60). Reported.",
+  "C-23. Compared with no Varrow Healthy Workplaces Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-24. Compared with no Varrow Healthy Workplaces Act, quantity traded for staffing_agencies rises from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-4: buyers who face a higher price take fewer units; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: Some recipients take paid time off they would otherwise have worked (p = 0.90); Providers buy cover for absent shifts (p = 0.65); The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70). Reported.",
+  "C-25. Compared with no Varrow Healthy Workplaces Act, resources available other uses for taxpayers or recipients.other_spending falls for at least one of them from the short run onward (tier A, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought. This holds if: no assumption. Reported.",
+  "C-26. Compared with no Varrow Healthy Workplaces Act, resources available other uses for workers.complainants rises from the short run onward (tier B, invisible). Why: RS-20: RS-20; OC-2: OC-2; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Complaints are unlikely from some recipients (p = 0.80); Complaints are filed in meaningful numbers (p = 0.85). Reported.",
+  "C-27. Compared with no Varrow Healthy Workplaces Act, hours worked for workers.full_time may move either way from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-12: CR-12; CR-2: CR-2; CR-4: buyers who face a higher price take fewer units; CR-9: an owner who leaves the rental market ends the leases of those who live in the building; RS-18: RS-18. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Providers can move hours between recipients below and above the cap (p = 0.70). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-28. Compared with no Varrow Healthy Workplaces Act, employment or hours worked or non wage compensation for workers.min_wage falls for at least one of them from the short run onward (tier B, invisible). Why: PC-17: PC-17; PC-10: PC-10. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); A floor holds some recipients' wage (p = 0.85). Reported.",
+  "C-29. Compared with no Varrow Healthy Workplaces Act, employment or hours worked for workers.part_time falls for at least one of them from the medium run onward (tier B, invisible). Why: RS-18: RS-18. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Providers can move hours between recipients below and above the cap (p = 0.70). Reported.",
+  "C-30. Compared with no Varrow Healthy Workplaces Act, allocation by non price criteria for workers.prospective rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; RS-23: RS-23. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Providers can tell which applicants will cost more under the term (p = 0.55); Most bound providers comply (p = 0.70). Reported.",
+  "C-31. Compared with no Varrow Healthy Workplaces Act, non wage compensation for workers.pto_noncompliant rises from the short run onward (tier B, invisible). Why: PC-17: PC-17. This holds if: Some existing policies offer the term on conditions the mandate forbids (p = 0.80); Most bound providers comply (p = 0.70). Reported.",
+  "C-32. Compared with no Varrow Healthy Workplaces Act, non wage compensation for workers.size_ambiguous may move either way from the short run onward (tier B, invisible). Why: CR-1: CR-1. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70). Sign per reading: U2-a: increase; U2-b: none. Reported.",
+  "C-33. Compared with no Varrow Healthy Workplaces Act, compliance cost for workers.uncovered rises from the short run onward (tier B, invisible). Why: OC-2: OC-2. This holds if: Complaints are filed in meaningful numbers (p = 0.85). Reported.",
+  "C-34. Compared with no Varrow Healthy Workplaces Act, earnings for workers.uncovered may move either way from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price; CR-12: CR-12; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Some recipients would have taken unpaid time off without the mandate (p = 0.95). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-35. Compared with no Varrow Healthy Workplaces Act, employment or hours worked or non wage compensation for workers.uncovered falls for at least one of them from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-2: CR-2; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The other money terms are fixed in the short run (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-36. Compared with no Varrow Healthy Workplaces Act, hours worked for workers.uncovered falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-4: buyers who face a higher price take fewer units. This holds if: Some recipients take paid time off they would otherwise have worked (p = 0.90); The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70). Reported.",
+  "C-37. Compared with no Varrow Healthy Workplaces Act, job changes for workers.uncovered falls from the medium run onward (tier B, invisible). Why: RS-11: a benefit lost on moving ties the holder to staying put. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); Some job changes are marginal enough to be decided by the loss on leaving (p = 0.55). Reported.",
+  "C-38. Compared with no Varrow Healthy Workplaces Act, lobbying effort for workers.uncovered rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); The recipients can organize to lobby (p = 0.85). Reported.",
+  "C-39. Compared with no Varrow Healthy Workplaces Act, non wage compensation for workers.uncovered rises from the short run onward (tier B, visible). Why: PC-17: PC-17. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70). Reported.",
+  "C-40. Compared with no Varrow Healthy Workplaces Act, tax share borne for workers.uncovered rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price; CR-7: CR-7. This holds if: The recipients' alternatives are worse than the providers' (p = 0.60); The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The wage can adjust over the medium run (p = 0.80). Reported.",
+  "C-41. Compared with no Varrow Healthy Workplaces Act, wage rate for workers.uncovered falls from the medium run onward (tier B, invisible). Why: PC-17: PC-17; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.90); Most bound providers comply (p = 0.70); The wage can adjust over the medium run (p = 0.80). Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-1: about 38% of private employees lack paid leave usable for illness, so the term binds for them.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k1.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the mandated term absent from some contracts that would otherwise be made?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-2: most bound employers comply: payroll vendors build in accrual, and some workers complain.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k1.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most bound providers comply with the mandate in practice?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.wages_sticky",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-3: money wages are fixed in the short run by pay scales, annual raises and collective agreements.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "wages_sticky",
+    "assumption_class": "other",
+    "id": "k1.wages_sticky",
+    "kind": "noul",
+    "options": [],
+    "text": "In the short run, are the other money terms of these contracts (wages, prices) fixed by pay scales, contracts or raise cycles?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.wages_adjust",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-5: wages above the minimum can adjust over the medium horizon, as raises are set.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "wages_adjust",
+    "assumption_class": "other",
+    "id": "k1.wages_adjust",
+    "kind": "noul",
+    "options": [],
+    "text": "Over the medium run, can the wage (or price) of these contracts adjust downward, for instance through smaller raises?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.worth_less",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-6: for the marginal worker and employer, the term is worth less to the worker than it costs the employer.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "worth_less",
+    "assumption_class": "other",
+    "id": "k1.worth_less",
+    "kind": "noul",
+    "options": [],
+    "text": "For the marginal contract, is the term worth less to the recipient than it costs the provider?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.alternatives_worse",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-22: workers' alternatives to bound employment are clearly worse than employers' alternatives.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "alternatives_worse",
+    "assumption_class": "mobility",
+    "id": "k1.alternatives_worse",
+    "kind": "noul",
+    "options": [],
+    "text": "Over the medium to long run, are the recipients' alternatives to bound contracts clearly worse than the providers' alternatives?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.valued_on_earnings",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-24: labor-intensive businesses are valued on expected earnings.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "valued_on_earnings",
+    "assumption_class": "expectations",
+    "id": "k1.valued_on_earnings",
+    "kind": "noul",
+    "options": [],
+    "text": "Are the providers' businesses valued on expected earnings, so that a lower expected return lowers their sale value?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-14: small-business and restaurant associations can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound providers organize to lobby over the mandate at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.recipients_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-14: unions can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "recipients_organize",
+    "assumption_class": "other",
+    "id": "k1.recipients_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the recipients of the term organize to lobby to widen it at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.floor_binds",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-7: the minimum wage binds for some uncovered workers.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "floor_binds",
+    "assumption_class": "binding",
+    "id": "k1.floor_binds",
+    "kind": "noul",
+    "options": [],
+    "text": "Does a price floor (a minimum wage, existing or set by the same measure) hold the wage of some recipients, so that it cannot fall?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.55,
+    "question_id": "k1.can_screen",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-9: employers can infer expected use of sick time from what they see of applicants.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_screen",
+    "assumption_class": "other",
+    "id": "k1.can_screen",
+    "kind": "noul",
+    "options": [],
+    "text": "Can providers tell in advance which applicants will cost them more under the term?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.conditions_differ",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-12: some existing PTO policies do not meet the conditions of use.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "conditions_differ",
+    "assumption_class": "other",
+    "id": "k1.conditions_differ",
+    "kind": "noul",
+    "options": [],
+    "text": "Do some existing policies that already offer the term do so on conditions the mandate forbids?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.hours_shift",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-8: employers can move hours between part-time and full-time staff.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "hours_shift",
+    "assumption_class": "substitutability",
+    "id": "k1.hours_shift",
+    "kind": "noul",
+    "options": [],
+    "text": "Can providers move hours between recipients below the cap and recipients above it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.absence_used",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-4: some uncovered workers would have worked while ill, or will use paid hours for other ends.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "absence_used",
+    "assumption_class": "other",
+    "id": "k1.absence_used",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some recipients take paid time off they would otherwise have spent at work?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.95,
+    "question_id": "k1.unpaid_absence_before",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-26: some uncovered workers would have taken unpaid absences for illness without the Act.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "unpaid_absence_before",
+    "assumption_class": "other",
+    "id": "k1.unpaid_absence_before",
+    "kind": "noul",
+    "options": [],
+    "text": "Without the mandate, would some recipients have taken unpaid time off for the same reasons?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.65,
+    "question_id": "k1.absences_covered",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-19: shift-based employers cover absent shifts, partly through agencies and on-call staff.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "absences_covered",
+    "assumption_class": "other",
+    "id": "k1.absences_covered",
+    "kind": "noul",
+    "options": [],
+    "text": "Do providers cover absent shifts by buying cover from outside sellers (agencies, on-call staff)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.rivals_bound",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-17: most competitors of local service sellers are bound too.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "rivals_bound",
+    "assumption_class": "other",
+    "id": "k1.rivals_bound",
+    "kind": "noul",
+    "options": [],
+    "text": "Are most of the providers' rivals in their output market bound by the mandate too?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.65,
+    "question_id": "k1.rivals_unbound",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-18: Varrow's tradable producers compete with Pellam producers, who are not bound.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "rivals_unbound",
+    "assumption_class": "mobility",
+    "id": "k1.rivals_unbound",
+    "kind": "noul",
+    "options": [],
+    "text": "Do some providers sell against rivals across a boundary who are not bound?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.compete_with_bound",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-13: compliant and small firms compete in product markets with uncovered firms.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "compete_with_bound",
+    "assumption_class": "substitutability",
+    "id": "k1.compete_with_bound",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the exempt or already-compliant firms compete in the same output markets as the bound providers?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.55,
+    "question_id": "k1.reshaping_pays",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-11: the classification test is weakly enforced in some occupations, so contractor arrangements are open to some employers.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "reshaping_pays",
+    "assumption_class": "other",
+    "id": "k1.reshaping_pays",
+    "kind": "noul",
+    "options": [],
+    "text": "For some of the actors bound by the measure, will reshaping goods so that they fall outside the measure's definitions cost less than the measure would cost them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.55,
+    "question_id": "k1.move_marginal",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-15: some job changes are marginal enough that losing a balance and waiting 90 days decides them.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "move_marginal",
+    "assumption_class": "mobility",
+    "id": "k1.move_marginal",
+    "kind": "noul",
+    "options": [],
+    "text": "Are some job changes marginal enough that losing what the term gives on leaving would decide them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.complaint_unlikely",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-16: complaints are unlikely for some workers.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "complaint_unlikely",
+    "assumption_class": "enforcement",
+    "id": "k1.complaint_unlikely",
+    "kind": "noul",
+    "options": [],
+    "text": "Are complaints unlikely from some recipients (short tenure, unaware of the law, fear of retaliation, small sums)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.complaints_filed",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-21: complaints are filed in meaningful numbers.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "complaints_filed",
+    "assumption_class": "enforcement",
+    "id": "k1.complaints_filed",
+    "kind": "noul",
+    "options": [],
+    "text": "Will complaints be filed in meaningful numbers?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.staying_small_pays",
+    "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-10: some firms near six employees value staying exempt more than an extra hire.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "staying_small_pays",
+    "assumption_class": "other",
+    "id": "k1.staying_small_pays",
+    "kind": "noul",
+    "options": [],
+    "text": "Do some firms near the size threshold value staying below it more than an extra hire?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "above_cap_actor": "workers.full_time",
+    "allocation_by_history": false,
+    "already_provider_actor": "employers.compliant",
+    "already_recipient_actor": "workers.pto_noncompliant",
+    "announcement_window": false,
+    "applicant_actor": "workers.prospective",
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "below_cap_actor": "workers.part_time",
+    "below_threshold_actor": "employers.small",
+    "bound_actor": "employers.uncovered",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "complainant_actor": "workers.complainants",
+    "complaint_only": true,
+    "contract_kind": "employment",
+    "convicted_actor": null,
+    "cover_seller_actor": "staffing_agencies",
+    "debt_funded": false,
+    "definition_line": true,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "fees_to_budget": false,
+    "field_contested": false,
+    "floor_bound_actor": "workers.min_wage",
+    "foreign_seller_actor": "sellers.foreign",
+    "forfeit_on_leaving": true,
+    "future_taxpayer_actor": null,
+    "general_budget": true,
+    "good": "paid_sick_time",
+    "holder_cap": false,
+    "id": "k1",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "informal_seller_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "mandated_contract_term",
+    "margin_covered": false,
+    "margin_recipient_actor": "workers.size_ambiguous",
+    "market": "varrow_labor",
+    "mobile_buyer_actor": null,
+    "near_threshold_actor": "employers.near_threshold",
+    "neighbor_actor": null,
+    "neighbor_seller_actor": "neighboring_jurisdictions",
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "output_buyer_actor": "buyers.local_services",
+    "outside_actor": "contractors",
+    "own_revenue_funded": false,
+    "paid_absence": true,
+    "per_head_cap": true,
+    "practice_ban": false,
+    "price_fixed": false,
+    "prospective_buyer_actor": null,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "recipient_actor": "workers.uncovered",
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "restrains_mobility": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "rival_actors": [
+     "employers.compliant",
+     "employers.small"
+    ],
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "size_threshold": true,
+    "source_sentences": [
+     "Every employee accrues one hour of paid sick time for every 30 hours worked, from the first hour of work or from 1 January 2027 for existing employees, up to 40 hours accrued in a calendar year.",
+     "Paid sick time is paid at the employee's regular hourly rate.",
+     "Independent contractors, as defined by the state's existing classification test, and public employers are not covered.",
+     "Unused hours are not paid out at separation; an employee rehired within six months gets the balance back.",
+     "An employer whose policy provides at least 40 hours a year of paid time usable for the same purposes on the same conditions is deemed compliant.",
+     "Employers with fewer than six employees are exempt.",
+     "The Department of Labor Standards enforces the Act on complaint only, within two years of the violation; there are no routine audits.",
+     "A new appropriation of $3.4 million a year from the general fund pays for 25 investigators."
+    ],
+    "stock_exempt": false,
+    "stock_owner_actor": null,
+    "stocks_destroyed": false,
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxed_before": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "threshold_partial_count": false,
+    "threshold_staff_split": true,
+    "tradable_actor": "employers.tradable",
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "violator_actor": "employers.violating",
+    "voids_existing": false,
+    "volume_penalties": false,
+    "wider_market": false,
+    "worker_actor": null
+   }
+  ],
+  "context": [
+   "A survey by the state labor department found that about 62% of private employees already receive paid sick leave, or paid time off (PTO) that can be used for illness, and about 38% (about 1.0 million) do not.",
+   "Varrow's minimum wage is $13.50 an hour, indexed each year to consumer prices; about 9% of private employees earn at or near it."
+  ],
+  "effective": "1 January 2027",
+  "enacted": "15 May 2026",
+  "jurisdiction": "Varrow (fictional)",
+  "name": "Varrow Healthy Workplaces Act",
+  "rule_maker": "the Varrow legislature",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U1-a: hours accrued in 2027 and unused on 31 December 2027 must carry into 2028; only enforcement waits",
+     "U1-b: the carry-over rule applies only to hours accrued from 2028, so 2027 hours may lapse"
+    ],
+    "text": "The carry-over rule is enforced from 1 January 2028."
+   },
+   {
+    "id": "U2",
+    "reading_facts": {},
+    "reading_fields": {
+     "U2-a": {
+      "k1": {
+       "margin_covered": true
+      }
+     },
+     "U2-b": {
+      "k1": {
+       "threshold_partial_count": true
+      }
+     }
+    },
+    "readings": [
+     "U2-a: every person on the payroll counts as one",
+     "U2-b: only employees who average 20 hours a week or more count"
+    ],
+    "text": "Size is the \"average number of employees during the previous calendar year\"."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-19T20:21:00+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U1-a: hours accrued in 2027 and unused on 31 December 2027 must carry into 2028; only enforcement waits",
+    "U1-b: the carry-over rule applies only to hours accrued from 2028, so 2027 hours may lapse"
+   ],
+   "text": "The carry-over rule is enforced from 1 January 2028."
+  },
+  {
+   "id": "U2",
+   "reading_facts": {},
+   "reading_fields": {
+    "U2-a": {
+     "k1": {
+      "margin_covered": true
+     }
+    },
+    "U2-b": {
+     "k1": {
+      "threshold_partial_count": true
+     }
+    }
+   },
+   "readings": [
+    "U2-a: every person on the payroll counts as one",
+    "U2-b: only employees who average 20 hours a week or more count"
+   ],
+   "text": "Size is the \"average number of employees during the previous calendar year\"."
+  }
+ ],
+ "verifier_problems": []
+}

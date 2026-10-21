@@ -1,0 +1,19 @@
+Kallmark Ridge Cod Fishery Act (fictional; summary of the policy record of handbook worked example WE-028).
+
+Kallmark is a coastal country of about 3 million people. Its boats land about 48,000 tonnes of ridge cod a year (average of 2022 to 2024). About 70% is frozen or filleted by four processing plants (two at Brennhavn, one at Haldrun, one at Tornhavn) and exported to the North Basin whitefish market, of which Kallmark's ridge cod is about 7%, alongside close substitutes such as saithe and haddock from other countries. About 30% is sold fresh in Kallmark to fish shops and restaurants. The fishery is open: any owner of a registered vessel may fish ridge cod, and 290 vessels did so in 2024 (38 trawlers over 24 m, which land about 60% of the catch, and 252 coastal boats). Nearby fisheries for saithe and ling are open as well and are not covered by the Act. About 1,700 crew are paid by "lay": under the Fishermen's Share Agreement, a standard private contract used on about 80% of vessels, the crew together receive 45% of each trip's revenue after trip expenses (fuel, ice, bait, landing fees).
+
+The bill was introduced by the government on 3 February 2026, with its allocation formula published, and passage was widely expected. It was passed on 14 October 2026 and takes effect on 1 January 2028.
+
+Catch cap (K1). The Act sets a total allowable catch of ridge cod of 40,000 tonnes a year for 2028 to 2032, binding vessel owners. From 2033 the total is set each year by the Ministry of Fisheries "having regard to scientific advice". Recreational fishing up to 10 fish a person a day, which may not be sold, is exempt.
+
+Quota shares (K2), part of K1. The catch is divided into one million shares. On 1 January 2028, shares are given free to the registered owner of each vessel on 31 December 2027, in proportion to that vessel's recorded ridge cod landings in 2025, 2026 and 2027 together. Shares are permanent and may be sold; each year's tonnage may be leased. Transfers are registered with the Fisheries Directorate, with a fee of 1% of the price. Only owners of at least one registered vessel may hold shares. No owner, with affiliates, may hold more than 8% of all shares. A vessel that lands more than its owner's tonnage must lease the difference within 30 days, or the excess is forfeited and fined.
+
+Crew settlements (K3). The Act says: "The cost of acquiring quota shall not be deducted as a trip expense in crew settlements." This is a rule on the deductions from trip revenue before the crew share in the private crew share agreement, binding vessel owners.
+
+Monitoring and enforcement (K4). Ridge cod may be landed only at 13 designated sites (the three processing ports and ten small harbors), where it is weighed by dockside monitors whose fee (15 marks a tonne) the vessel owner pays. Observers are placed on 10% of trips by vessels over 24 m; none on coastal boats. Discarding ridge cod above the minimum landing size is prohibited. Penalties: forfeiture of the catch, a fine of three times its value, and suspension of shares after a third offense. The Directorate's budget is raised by 18 million marks a year from the general budget.
+
+Existing rules, in force in the counterfactual too. Vessel registration is open to all: any seaworthy vessel is registered for 600 marks a year. Ridge cod under 35 cm must be returned to the sea.
+
+Unclear provision: whether "the cost of acquiring quota" in K3 covers leasing a year's tonnage, or only buying shares. Reading U1-a: only purchases are covered, so lease payments may be deducted before the crew share. Reading U1-b: leases are covered too, so the owner pays them from the owner's side. The Directorate has not ruled, and the Act gives no example.
+
+The counterfactual is Kallmark with an open fishery, no catch cap and the same existing rules.

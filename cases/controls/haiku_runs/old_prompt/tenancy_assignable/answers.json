@@ -1,0 +1,22 @@
+[
+  {
+    "question_id": "r3.enforced",
+    "value": "yes",
+    "probability": 0.6,
+    "rationale": "Fines are larger than any likely gain, which deters breach of the 1 percent cap, but market rents rise about 6 percent a year and the free right to assign at any price gives landlords a side-payment route around the cap, so compliance is less certain.",
+    "evidence": [
+      "The Rent Board enforces the cap with fines larger than any likely gain.",
+      "Market rents in Carrow rise about 6 percent a year.",
+      "A sitting tenant may assign or sell the tenancy, at the capped rent, to any person and at any price the parties agree."
+    ]
+  },
+  {
+    "question_id": "r3.nontransferable",
+    "value": "no",
+    "probability": 0.03,
+    "rationale": "The record expressly allows a sitting tenant to assign or sell the tenancy at the capped rent to any person and at any agreed price, so the right is transferable.",
+    "evidence": [
+      "A sitting tenant may assign or sell the tenancy, at the capped rent, to any person and at any price the parties agree."
+    ]
+  }
+]

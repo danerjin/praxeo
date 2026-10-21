@@ -1,0 +1,134 @@
+{
+ "headline": {
+  "predictions": 27,
+  "ambiguous": 1,
+  "verifiable": 5,
+  "unverifiable": 21,
+  "unverifiable_rate": 0.8076923076923077,
+  "matched": [
+   "C-7",
+   "C-9",
+   "C-21",
+   "C-26",
+   "C-29"
+  ],
+  "false_positives": [],
+  "unresolved_group_ids": [],
+  "unverifiable_ids": [
+   "C-1",
+   "C-3",
+   "C-4",
+   "C-5",
+   "C-8",
+   "C-12",
+   "C-13",
+   "C-14",
+   "C-15",
+   "C-16",
+   "C-17",
+   "C-19",
+   "C-20",
+   "C-22",
+   "C-23",
+   "C-24",
+   "C-25",
+   "C-27",
+   "C-28",
+   "C-31",
+   "C-32"
+  ],
+  "recalled_findings": [
+   "F-1",
+   "F-2",
+   "F-3",
+   "F-4",
+   "F-5"
+  ],
+  "missed_findings": [],
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0
+ },
+ "logic": {
+  "predictions": 11,
+  "ambiguous": 0,
+  "verifiable": 2,
+  "unverifiable": 9,
+  "unverifiable_rate": 0.8181818181818182,
+  "matched": [
+   "C-7",
+   "C-9"
+  ],
+  "false_positives": [],
+  "unresolved_group_ids": [],
+  "unverifiable_ids": [
+   "C-5",
+   "C-8",
+   "C-13",
+   "C-17",
+   "C-20",
+   "C-22",
+   "C-23",
+   "C-28",
+   "C-32"
+  ],
+  "recalled_findings": [
+   "F-3",
+   "F-4"
+  ],
+  "missed_findings": [
+   "F-1",
+   "F-2",
+   "F-5"
+  ],
+  "precision": 1.0,
+  "recall": 0.4,
+  "f1": 0.5714285714285715
+ },
+ "brier": {
+  "items": [
+   {
+    "assumption": "binding(c1)",
+    "p": 0.75,
+    "held": true,
+    "score": 0.0625
+   },
+   {
+    "assumption": "enforced(c1)",
+    "p": 0.85,
+    "held": true,
+    "score": 0.022500000000000006
+   },
+   {
+    "assumption": "alternative_uses(c1)",
+    "p": 0.7,
+    "held": true,
+    "score": 0.09000000000000002
+   },
+   {
+    "assumption": "nontransferable(c1)",
+    "p": 0.95,
+    "held": true,
+    "score": 0.0025000000000000044
+   },
+   {
+    "assumption": "would_leave(c1)",
+    "p": 0.85,
+    "held": true,
+    "score": 0.022500000000000006
+   },
+   {
+    "assumption": "keepers_dominate(c1)",
+    "p": 0.6,
+    "held": true,
+    "score": 0.16000000000000003
+   }
+  ],
+  "mean": 0.06000000000000002
+ },
+ "low_confidence_findings": [
+  "F-5"
+ ],
+ "card_vocabulary_problems": [],
+ "prediction_sha256": "a8883573236774c7cb064a3faec7ab514a7459a2de360aff4f7126b7d6760381"
+}

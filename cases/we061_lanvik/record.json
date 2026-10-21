@@ -1,0 +1,84 @@
+{
+ "name": "Lanvik App-Based Work Act 2027",
+ "jurisdiction": "Lanvik (fictional)",
+ "rule_maker": "the Lanvik legislature",
+ "enacted": "15 March 2027",
+ "effective": "1 October 2027",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "mandated_contract_term",
+   "good": "app_based_work",
+   "market": "lanvik_app_work",
+   "bound_actor": "platforms",
+   "recipient_actor": "drivers.employee",
+   "floor_bound_actor": "drivers.employee",
+   "applicant_actor": "drivers.employee",
+   "output_buyer_actor": "riders",
+   "rival_actors": [
+    "sellers.small_platform",
+    "sellers.substitutes"
+   ],
+   "definition_line": true,
+   "outside_actor": "drivers.contractor",
+   "size_threshold": true,
+   "below_threshold_actor": "sellers.small_platform",
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": true,
+   "source_sentences": [
+    "An app-based worker is an employee of the network company unless the company proves that (a) the worker is free from its control and direction in performing the work, (b) the work is outside the usual course of its business, and (c) the worker is customarily engaged in an independently established trade.",
+    "Section 3 applies to natural persons who perform rides or deliveries through a network company with 100 or more app-based workers in Lanvik.",
+    "The Department of Labor enforces the Act by audit; workers have a private right of action for double damages; the penalty for misclassification is 5,000 per worker.",
+    "The Department's budget is raised by 4 million a year from the general fund."
+   ]
+  },
+  {
+   "id": "k2",
+   "instrument": "price_floor",
+   "good": "engaged_time",
+   "market": "lanvik_app_work",
+   "bound_actor": "platforms",
+   "protected_actor": "drivers.employee",
+   "enforcer_actor": "officials.enforcement",
+   "source_sentences": [
+    "An employee shall be paid at least the state minimum wage for all engaged time."
+   ],
+   "seller_actor": "drivers.employee",
+   "excluded_actor": "drivers.employee",
+   "contract_kind": "employment",
+   "output_buyer_actor": "riders",
+   "asset_owner_actor": "owners.platforms",
+   "open_breach": true
+  },
+  {
+   "id": "k5",
+   "instrument": "mandate_with_charge",
+   "good": "app_based_work",
+   "market": "lanvik_app_work",
+   "bound_actor": "platforms",
+   "protected_actor": "drivers.contractor",
+   "enforcer_actor": "officials.enforcement",
+   "source_sentences": [
+    "A network company may elect to offer its app-based workers in Lanvik a contractor agreement; an election applies to all its Lanvik workers.",
+    "A worker who signs one is not an employee for the purposes of sections 5 to 7 for the following twelve months, and may revoke it at each anniversary.",
+    "Employee status must be offered as the default, on a separate screen, and the choice must be freely made."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Is time logged in and waiting time \"during which the worker is required by the network company to remain available\"?",
+   "readings": [
+    "U1-a: no. A worker may log off at will, so only time on a trip, and any shift a company schedules, is engaged time",
+    "U1-b: yes. The apps reduce the priority of workers who decline requests, so all logged-in time is engaged time"
+   ]
+  }
+ ],
+ "context": [
+  "Today no app-based worker is an employee; the counterfactual law is contractor status under the old common-law test, under which the platforms prevailed in the courts, and the existing minimum wage, overtime and insurance laws do not reach them.",
+  "Platforms set and change workers' fare shares and bonuses unilaterally, usually several times a year, with 30 days' notice.",
+  "About 20% of hours on a trip pay less than 16 per hour on a trip (bicycle couriers on short orders, long low-fare rides)."
+ ]
+}

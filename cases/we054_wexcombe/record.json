@@ -1,0 +1,106 @@
+{
+ "name": "Wexcombe Airport Night Curfew and Slot Order",
+ "jurisdiction": "Wexcombe International Airport (fictional)",
+ "rule_maker": "the Wexcombe Airport Authority board",
+ "enacted": "15 September 2026",
+ "effective": "31 October 2027",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "prohibition",
+   "good": "night_movements",
+   "market": "wxi",
+   "bound_actor": "operators.night",
+   "protected_actor": "neighbors.wxi",
+   "enforcer_actor": "officials.enforcement",
+   "announcement_window": true,
+   "renewable": true,
+   "field_contested": true,
+   "source_sentences": [
+    "Curfew (K1), a prohibition of takeoffs and landings from 23:00 to 06:00.",
+    "It binds all operators at WXI, with no movements permitted, subject to U1.",
+    "Emergencies, medical and state flights are exempt.",
+    "Enforcement is by the WAA, from air traffic control's movement log.",
+    "The penalties are $50,000 per movement in the curfew without a dispensation and $10,000 per daytime movement without a slot; slots of a holder fined three times in a season may be withdrawn."
+   ]
+  },
+  {
+   "id": "k2",
+   "instrument": "quota",
+   "good": "daytime_movements",
+   "market": "wxi",
+   "bound_actor": "airlines.history",
+   "buyer_actor": "travelers.wxi",
+   "right_holder_actor": "airlines.history",
+   "transferable": true,
+   "wider_market": false,
+   "allocation_by_history": true,
+   "base_period_after_announcement": true,
+   "entrant_actor": "airlines.prospective",
+   "worker_actor": "workers.wxi",
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": false,
+   "announcement_window": true,
+   "renewable": true,
+   "field_contested": true,
+   "source_sentences": [
+    "Movements from 06:00 to 23:00 are capped at 380 a day (the summer 2025 scheduled number), binding all operators at WXI; the existing hourly limit of 34 stays.",
+    "Slots may be sold or leased, and retimed to another daytime hour where the hourly limit leaves room.",
+    "The 380 daily slots are issued free to airlines in proportion to the daytime movements each operated in the summer 2026 and winter 2026/27 seasons, each slot in the hour of the movement that earned it.",
+    "The WAA board published the draft order, including the base seasons, on 2 March 2026, after a residents' campaign for a curfew that had run since 2023.",
+    "Slots are issued on 1 September 2027; the curfew and the cap take effect with the winter season on 31 October 2027. No expiry; the WAA will review the cap in 2032.",
+    "Enforcement is by the WAA, from air traffic control's movement log.",
+    "The penalties are $50,000 per movement in the curfew without a dispensation and $10,000 per daytime movement without a slot; slots of a holder fined three times in a season may be withdrawn.",
+    "Fourteen airlines operate in the daytime; the three largest operate about 60% of daytime movements."
+   ]
+  },
+  {
+   "id": "k3",
+   "instrument": "rights_allocation",
+   "good": "daytime_slots",
+   "market": "wxi",
+   "bound_actor": "officials.enforcement",
+   "protected_actor": "airlines.history",
+   "enforcer_actor": "officials.enforcement",
+   "transferable": true,
+   "announcement_window": true,
+   "source_sentences": [
+    "Allocation by history (K3), a rights allocation.",
+    "The 380 daily slots are issued free to airlines in proportion to the daytime movements each operated in the summer 2026 and winter 2026/27 seasons, each slot in the hour of the movement that earned it.",
+    "The WAA issues them."
+   ]
+  },
+  {
+   "id": "k5",
+   "instrument": "rights_allocation",
+   "good": "freed_slots",
+   "market": "wxi",
+   "bound_actor": "officials.enforcement",
+   "protected_actor": "operators.night",
+   "excluded_actor": "airlines.prospective",
+   "enforcer_actor": "officials.enforcement",
+   "source_sentences": [
+    "Slots of a holder that ceases to operate at WXI, or that uses a slot on fewer than 80% of a season's days, return to the WAA and are reissued free, first to night operators (those with night movements in winter 2026/27) in proportion to their night movements, then to new entrants."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Late-running flights: whether a flight scheduled before 23:00 and delayed may operate until 00:00 as of right, or has no dispensation for ordinary delays.",
+   "readings": [
+    "U1-a: a flight scheduled before 23:00 and delayed may land or take off until 00:00, as of right",
+    "U1-b: there is no dispensation for ordinary delays; after 23:00 only emergencies operate, and a late flight diverts (in practice to Pellham) or is cancelled"
+   ]
+  }
+ ],
+ "context": [
+  "In the summer 2025 season WXI handled about 420 movements (a takeoff or a landing) a day: about 380 between 06:00 and 23:00, and about 40 between 23:00 and 06:00.",
+  "The runway's declared capacity is 34 movements an hour (an existing rule, set by the WAA from air traffic control's assessment)",
+  "Daytime movements have grown about 3% a year and night cargo about 5%.",
+  "Pellham Regional Airport, 70 km away by motorway (about 55 minutes), is run by a separate authority, has no curfew, and uses about 45% of its runway capacity.",
+  "Overnight parcel delivery is sold in a national market; Wexcombe's region is about 4% of it.",
+  "The WAA's charges (about $2,000 per movement on average, about $13 per seat) are set each year to recover its costs, which are mostly fixed."
+ ]
+}

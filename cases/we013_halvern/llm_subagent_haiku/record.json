@@ -1,0 +1,66 @@
+{
+  "name": "Halvern Steel Safeguard Order",
+  "jurisdiction": "Halvern",
+  "rule_maker": "Trade Ministry (issuing authority of the order not explicitly stated)",
+  "enacted": "not stated",
+  "effective": "1 April (year not stated)",
+  "stated_aim": null,
+  "components": [
+    {
+      "id": "C1",
+      "instrument": "tariff",
+      "good": "flat_rolled_and_long_steel_products",
+      "market": "halvern",
+      "bound_actor": "importers.current",
+      "protected_actor": null,
+      "excluded_actor": null,
+      "cap": 25,
+      "cap_unit": "percent of customs value",
+      "source_sentences": [
+        "Importers of record must pay a tariff of 25% of the customs value on imports of flat-rolled and long steel products, for three years.",
+        "A review in the third year may extend it.",
+        "Imported fabricated steel products and finished goods containing steel (machinery, vehicles, appliances, fabricated structural sections, fasteners) are not covered.",
+        "The Customs Service checks classification at ports and penalizes misdeclaration.",
+        "The revenue goes to the general budget."
+      ]
+    },
+    {
+      "id": "C2",
+      "instrument": "tariff",
+      "good": "flat_rolled_and_long_steel_products",
+      "market": "halvern",
+      "bound_actor": "importers.current",
+      "protected_actor": "steel_users",
+      "source_sentences": [
+        "Steel users may apply to exclude a product \"not produced domestically in sufficient quantity or quality\".",
+        "Domestic steelmakers may object.",
+        "Decisions are due within 90 days; exclusions last one year and must be renewed."
+      ]
+    }
+  ],
+  "unclear": [
+    {
+      "id": "U1",
+      "text": "A review in the third year may extend it.",
+      "readings": [
+        "U1-a: 'it' is the tariff; the review may extend the 25% tariff beyond its three-year term, and no limit on the extension is stated.",
+        "U1-b: 'it' is the three-year term; the review may lengthen the term, and the tariff continues during any extension."
+      ]
+    },
+    {
+      "id": "U2",
+      "text": "Steel users may apply to exclude a product \"not produced domestically in sufficient quantity or quality\". The standard for \"sufficient quantity or quality\" is not defined.",
+      "readings": [
+        "U2-a: a product qualifies for exclusion when domestic production is insufficient in quantity or insufficient in quality (either shortfall is enough).",
+        "U2-b: a product qualifies for exclusion only when domestic production is insufficient in both quantity and quality."
+      ]
+    }
+  ],
+  "context": [
+    "Halvern is a mid-sized trading country with its own currency and a floating exchange rate.",
+    "Three domestic steel firms supply about 60% of the steel used in Halvern; the rest is imported.",
+    "About 4,000 domestic manufacturers use steel as a main input (machinery, vehicle parts, household appliances, cans, construction products); machinery makers export about 35% of their output.",
+    "Halvern's other large export industries are grain and tourism.",
+    "Halvern buys a small share of the world's steel."
+  ]
+}

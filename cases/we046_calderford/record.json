@@ -1,0 +1,53 @@
+{
+ "name": "Calderford Central Zone Charging Ordinance",
+ "jurisdiction": "Calderford (fictional)",
+ "rule_maker": "Calderford city council",
+ "enacted": "2027-01-04",
+ "effective": "2027-11-01",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "per_unit_tax",
+   "good": "weekday_vehicle_day_in_zone",
+   "market": "calderford_central_zone",
+   "bound_actor": "drivers.nonresident",
+   "buyer_actor": "drivers.nonresident",
+   "seller_actor": null,
+   "revenue_actor": "officials.enforcement",
+   "taxpayer_actor": "taxpayers",
+   "own_revenue_funded": true,
+   "downstream": [
+    {
+     "actor": "goods_vehicle_operators",
+     "buyer_actor": "businesses.zone",
+     "competitors": "same"
+    }
+   ],
+   "announcement_window": true,
+   "definition_line": true,
+   "cap": 15.0,
+   "cap_unit": "dollars per vehicle per day (residents $1.50)",
+   "source_sentences": [
+    "The registered keeper of each vehicle driven or parked in the zone on a weekday between 7:00 and 19:00 must pay $15 per vehicle per day, payable by midnight the next day.",
+    "Registered keepers whose registered address is in the zone receive a 90% discount, which makes the charge $1.50 a day.",
+    "The ordinance was adopted and published on 4 January 2027; charging starts on 1 November 2027 (ten months later).",
+    "It costs about $45 million a year to run and is funded from the gross revenue of the charge."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether a short delivery visit under thirty minutes is a chargeable day.",
+   "readings": [
+    "U1-a: a short visit pays the daily charge",
+    "U1-b: a short visit is not a chargeable day"
+   ]
+  }
+ ],
+ "context": [
+  "Just outside the zone lies Ringside, a band of about 1,100 shops and offices with three large parking garages, five to ten minutes' walk from the zone's edge (WE-046 record).",
+  "Peak load on bus routes into the zone is about 85% of capacity; new buses take 14 to 18 months from order to service (WE-046 record)."
+ ]
+}

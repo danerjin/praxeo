@@ -1,0 +1,1142 @@
+{
+ "assumptions": {
+  "buyers_bear(k1)": {
+   "assumption_class": "other",
+   "id": "buyers_bear(k1)",
+   "p": 0.75,
+   "text": "Part of the tax is passed on to buyers: the price they pay rises."
+  },
+  "input_not_replaceable(k1)": {
+   "assumption_class": "substitutability",
+   "id": "input_not_replaceable(k1)",
+   "p": 0.75,
+   "text": "The taxed good is a material part of downstream costs and cannot be replaced at the old cost."
+  },
+  "quantity_responds(k1)": {
+   "assumption_class": "substitutability",
+   "id": "quantity_responds(k1)",
+   "p": 0.85,
+   "text": "At least one side can reduce the quantity it trades in response to the tax."
+  },
+  "reshaping_pays(k1)": {
+   "assumption_class": "other",
+   "id": "reshaping_pays(k1)",
+   "p": 0.65,
+   "text": "Reshaping goods to fall outside the definitions costs some actors less than the burden."
+  },
+  "sellers_bear(k1)": {
+   "assumption_class": "other",
+   "id": "sellers_bear(k1)",
+   "p": 0.75,
+   "text": "Part of the tax stays with sellers: the price they keep after tax falls."
+  },
+  "stockpile_ahead(k1)": {
+   "assumption_class": "expectations",
+   "id": "stockpile_ahead(k1)",
+   "p": 0.75,
+   "text": "Buyers and importers can store the good and order ahead of the effective date."
+  },
+  "untaxed_substitutes(k1)": {
+   "assumption_class": "substitutability",
+   "id": "untaxed_substitutes(k1)",
+   "p": 0.8,
+   "text": "Buyers have acceptable untaxed substitutes they can turn to."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "buyers.packaged_goods",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "buyers_bear(k1)",
+     "input_not_replaceable(k1)",
+     "quantity_responds(k1)"
+    ]
+   ],
+   "assumptions": [
+    "buyers_bear(k1)",
+    "input_not_replaceable(k1)",
+    "quantity_responds(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "buyers_pay(k1)",
+     "premises": [
+      "buyers_bear(k1)",
+      "wedge(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "buyers_pay(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.packaged_goods",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "buyers_bear(k1)",
+     "input_not_replaceable(k1)",
+     "quantity_responds(k1)"
+    ]
+   ],
+   "assumptions": [
+    "buyers_bear(k1)",
+    "input_not_replaceable(k1)",
+    "quantity_responds(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "buyers_pay(k1)",
+     "premises": [
+      "buyers_bear(k1)",
+      "wedge(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "buyers_pay(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_buyers_cut_back(k1)",
+     "premises": [
+      "passes_down(k1)"
+     ],
+     "rule": "CR-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "converters",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tax(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "tx_files(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "TX-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "converters",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "quantity_responds(k1)",
+     "sellers_bear(k1)"
+    ]
+   ],
+   "assumptions": [
+    "quantity_responds(k1)",
+    "sellers_bear(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "sellers_lose(k1)",
+     "premises": [
+      "sellers_bear(k1)",
+      "wedge(k1)"
+     ],
+     "rule": "TX-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "converters",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "quantity_responds(k1)"
+    ]
+   ],
+   "assumptions": [
+    "quantity_responds(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "converters",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "quantity_responds(k1)",
+     "reshaping_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "quantity_responds(k1)",
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "wedge(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "tx_reshaped(k1)",
+     "premises": [
+      "definition_line(k1)",
+      "tx_burden(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "tx_reshaped(k1)",
+     "premises": [
+      "reshaping_pays(k1)"
+     ],
+     "rule": "TX-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "converters",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "sellers_bear(k1)"
+    ]
+   ],
+   "assumptions": [
+    "sellers_bear(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tax(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "bears_seller(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "bears_seller(k1)",
+     "premises": [
+      "sellers_bear(k1)"
+     ],
+     "rule": "TX-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tax(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "tx_administered(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "packaging_users",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "buyers_bear(k1)",
+     "quantity_responds(k1)"
+    ]
+   ],
+   "assumptions": [
+    "buyers_bear(k1)",
+    "quantity_responds(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "buyers_pay(k1)",
+     "premises": [
+      "buyers_bear(k1)",
+      "wedge(k1)"
+     ],
+     "rule": "TX-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "packaging_users",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "quantity_responds(k1)",
+     "untaxed_substitutes(k1)"
+    ]
+   ],
+   "assumptions": [
+    "quantity_responds(k1)",
+    "untaxed_substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "wedge(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "tx_substitution(k1)",
+     "premises": [
+      "untaxed_substitutes(k1)"
+     ],
+     "rule": "RS-1"
+    },
+    {
+     "conclusion": "tx_substitution(k1)",
+     "premises": [
+      "tx_burden(k1)"
+     ],
+     "rule": "TX-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_substitute",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "packaging_users",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "quantity_responds(k1)"
+    ]
+   ],
+   "assumptions": [
+    "quantity_responds(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "wedge(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "tx_prevented(k1)",
+     "premises": [
+      "tx_burden(k1)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "packaging_users",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "stockpile_ahead(k1)"
+    ]
+   ],
+   "assumptions": [
+    "stockpile_ahead(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "bring_forward(k1)",
+     "premises": [
+      "announced(k1)",
+      "stockpile_ahead(k1)"
+     ],
+     "rule": "RS-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": "announcement"
+  },
+  {
+   "actor_class": "packaging_users",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "quantity_responds(k1)",
+     "reshaping_pays(k1)"
+    ]
+   ],
+   "assumptions": [
+    "quantity_responds(k1)",
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "wedge(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "tx_reshaped(k1)",
+     "premises": [
+      "definition_line(k1)",
+      "tx_burden(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "tx_reshaped(k1)",
+     "premises": [
+      "reshaping_pays(k1)"
+     ],
+     "rule": "TX-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "packaging_users",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "buyers_bear(k1)"
+    ]
+   ],
+   "assumptions": [
+    "buyers_bear(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tax(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "bears_buyer(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "bears_buyer(k1)",
+     "premises": [
+      "buyers_bear(k1)"
+     ],
+     "rule": "TX-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "state budget",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tax(k1)"
+     ],
+     "rule": "TX-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "tax_revenue",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "state budget",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "quantity_responds(k1)"
+    ]
+   ],
+   "assumptions": [
+    "quantity_responds(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "wedge(k1)",
+     "premises": [
+      "quantity_responds(k1)",
+      "tax(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "wedge(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "tx_short_of_static(k1)",
+     "premises": [
+      "tx_burden(k1)"
+     ],
+     "rule": "TX-9"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "tax_revenue_vs_static_projection",
+   "visibility": "invisible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"converters\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\ntax(k1).\nbuyer(k1, \"packaging_users\").\ndomestic_seller(k1, \"sellers.substitutes\").\nimporter(k1, \"importers.packaging\").\nrevenue(k1, \"state budget\").\nexporter(k1, \"export_industries\").\nexporter_worker(k1, \"workers.export_industries\").\nseller(k1, \"converters\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nforeign_seller(k1, \"sellers.foreign\").\ndefinition_line(k1).\nown_revenue(k1).\ndownstream(k1, \"packaging_users\", \"buyers.packaged_goods\", same).\nassumption(quantity_responds(k1)).\nassumption(buyers_bear(k1)).\nassumption(sellers_bear(k1)).\nassumption(untaxed_substitutes(k1)).\nassumption(input_not_replaceable(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(reshaping_pays(k1)).\n",
+ "explanations": [
+  "C-1. Compared with no Saldria Plastic Packaging Tax Act, price paid for buyers.packaged_goods rises from the medium run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.75); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.75); At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
+  "C-2. Compared with no Saldria Plastic Packaging Tax Act, quantity demanded for buyers.packaged_goods falls from the medium run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; CR-4: buyers who face a higher price take fewer units. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.75); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.75); At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
+  "C-3. Compared with no Saldria Plastic Packaging Tax Act, compliance cost for converters rises from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-5: whoever must record, file or collect a tax bears the cost of doing so. This holds if: no assumption. Reported.",
+  "C-4. Compared with no Saldria Plastic Packaging Tax Act, net price received for converters falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85); Part of the tax stays with sellers: the price they keep after tax falls (p = 0.75). Reported.",
+  "C-5. Compared with no Saldria Plastic Packaging Tax Act, quantity traded for converters falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
+  "C-6. Compared with no Saldria Plastic Packaging Tax Act, reclassification for converters rises from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-5: owners move units out of the rule's reach; TX-4: where an untaxed place is within reach, buyers who can cross the boundary buy there and the sellers across it gain their custom. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.65). Reported.",
+  "C-7. Compared with no Saldria Plastic Packaging Tax Act, resources available other uses for converters falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax stays with sellers: the price they keep after tax falls (p = 0.75). Reported.",
+  "C-8. Compared with no Saldria Plastic Packaging Tax Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-9. Compared with no Saldria Plastic Packaging Tax Act, price paid for packaging_users rises from the short run onward (tier B, visible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.75); At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
+  "C-10. Compared with no Saldria Plastic Packaging Tax Act, quantity substitute for packaging_users rises from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-1: when a good becomes dearer, buyers turn to substitutes; TX-3: buyers of a taxed good turn to the untaxed alternatives they have. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85); Buyers have acceptable untaxed substitutes they can turn to (p = 0.80). Reported.",
+  "C-11. Compared with no Saldria Plastic Packaging Tax Act, quantity traded for packaging_users falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; OC-4: exchanges that no longer happen are lost to both sides. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported.",
+  "C-12. Compared with no Saldria Plastic Packaging Tax Act, quantity traded for packaging_users rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.75). Reported.",
+  "C-13. Compared with no Saldria Plastic Packaging Tax Act, reclassification for packaging_users rises from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; RS-5: owners move units out of the rule's reach; TX-4: where an untaxed place is within reach, buyers who can cross the boundary buy there and the sellers across it gain their custom. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.65). Reported.",
+  "C-14. Compared with no Saldria Plastic Packaging Tax Act, resources available other uses for packaging_users falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks. This holds if: Part of the tax is passed on to buyers: the price they pay rises (p = 0.75). Reported.",
+  "C-15. Compared with no Saldria Plastic Packaging Tax Act, tax revenue for state budget rises from the short run onward (tier A, visible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue. This holds if: no assumption. Reported.",
+  "C-16. Compared with no Saldria Plastic Packaging Tax Act, tax revenue vs static projection for state budget falls from the short run onward (tier B, invisible). Why: TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; TX-9: TX-9. This holds if: At least one side can reduce the quantity it trades in response to the tax (p = 0.85). Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.quantity_responds",
+    "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-3 (substitutability): some packaging users can reduce their use of taxed plastic at a cost below 200 T a tonne.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "quantity_responds",
+    "assumption_class": "substitutability",
+    "id": "k1.quantity_responds",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the quantity traded fall once the tax is in place (because buyers cut back or switch, or sellers move resources to untaxed uses)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.buyers_bear",
+    "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-2 (substitutability): imported empty packaging is at the margin of supply and foreign converters absorb little, so packaging users bear more of the tax than sellers do.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "buyers_bear",
+    "assumption_class": "other",
+    "id": "k1.buyers_bear",
+    "kind": "noul",
+    "options": [],
+    "text": "Will part of the tax be passed on to buyers, so that the price they pay rises?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.sellers_bear",
+    "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-2 (substitutability), the premise of C-56 and C-64: part of the tax stays with sellers: converters' after-tax price falls (C-56, with A-20) and foreign converters' price before tax falls (C-64).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "sellers_bear",
+    "assumption_class": "other",
+    "id": "k1.sellers_bear",
+    "kind": "noul",
+    "options": [],
+    "text": "Will part of the tax stay with sellers, so that the price they keep after tax falls?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.untaxed_substitutes",
+    "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-6 (substitutability): paper and board, glass and metal packaging serve some of the same ends as plastic for some users.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "untaxed_substitutes",
+    "assumption_class": "substitutability",
+    "id": "k1.untaxed_substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Do buyers of the taxed good have acceptable untaxed substitutes (other goods, or other forms of the same good) that they can turn to?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.input_not_replaceable",
+    "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-11 (substitutability): packaging is a material part of the cost of some packaged goods (6% to 10% for bottled water and pre-packed produce) and their sellers cannot switch fully at the old cost.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "input_not_replaceable",
+    "assumption_class": "substitutability",
+    "id": "k1.input_not_replaceable",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the downstream users' costs rise materially because of the higher price of the taxed good (given how much of it they use and whether they can switch to other materials or designs in the medium run)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [
+     "The tax was announced in the budget statement of 2 March 2027, enacted on 28 June 2027 and takes effect on 1 January 2028."
+    ],
+    "probability": 0.75,
+    "question_id": "k1.stockpile_ahead",
+    "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-16 (expectations): liable firms can store packaging and bring orders forward into late 2027.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "stockpile_ahead",
+    "assumption_class": "expectations",
+    "id": "k1.stockpile_ahead",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the buyers or importers buy ahead of the effective date, by storing the good or placing orders early?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [
+     "\"A plastic packaging component containing 30 per cent or more recycled plastic is not chargeable.\""
+    ],
+    "probability": 0.65,
+    "question_id": "k1.reshaping_pays",
+    "rationale": "Probability taken from the assumption table of handbook WE-062 (illustrative figures), A-32 (substitutability): some plastic components can be redesigned so that another material is the heaviest by weight, at a cost below the tax saved (A-4: raising recycled content to 30% costs less than the tax for some components, p 0.85, is the second route out of the definition); I take the lower row, since C-5 cites both.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "reshaping_pays",
+    "assumption_class": "other",
+    "id": "k1.reshaping_pays",
+    "kind": "noul",
+    "options": [],
+    "text": "For some of the actors bound by the measure, will reshaping goods so that they fall outside the measure's definitions cost less than the measure would cost them?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "bound_actor": "converters",
+    "budget_capped": false,
+    "buyer_actor": "packaging_users",
+    "cap": 200.0,
+    "cap_unit": "talers per tonne",
+    "claim_handler_actor": null,
+    "debt_funded": false,
+    "definition_line": true,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [
+     {
+      "actor": "packaging_users",
+      "buyer_actor": "buyers.packaged_goods",
+      "competitors": "same",
+      "exporter_actor": null,
+      "owner_actor": null,
+      "worker_actor": null
+     }
+    ],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "plastic_packaging_components",
+    "id": "k1",
+    "importer_actor": "importers.packaging",
+    "input_supplier_actor": null,
+    "instrument": "per_unit_tax",
+    "market": "saldria",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "own_revenue_funded": true,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "revenue_actor": "state budget",
+    "scrappage": false,
+    "scrapper_actor": null,
+    "seller_actor": "converters",
+    "source_sentences": [
+     "A tax of 200 T per tonne is charged on plastic packaging components (a component in which plastic is the heaviest material by weight) manufactured in or imported into Saldria, empty or around imported goods, on the manufacturer or the importer of record, with quarterly returns.",
+     "\"A plastic packaging component containing 30 per cent or more recycled plastic is not chargeable.\"",
+     "\"A person who manufactured or imported less than 10 tonnes of plastic packaging components in the previous calendar year is not liable for the tax in the current year.\"",
+     "The tax was announced in the budget statement of 2 March 2027, enacted on 28 June 2027 and takes effect on 1 January 2028.",
+     "The Act appropriates 7 million T a year from the general budget for the plastics unit."
+    ],
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false
+   }
+  ],
+  "context": [
+   "Saldria produces no virgin plastic resin; all of it is imported, at world prices, and Saldria buys about 0.4% of the world's packaging resins (WE-062 record).",
+   "Converters export about 70,000 t of empty packaging a year, at prices set abroad (WE-062 record)."
+  ],
+  "effective": "2028-01-01",
+  "enacted": "2027-06-28",
+  "jurisdiction": "Saldria (fictional)",
+  "name": "Saldria Plastic Packaging Tax Act",
+  "rule_maker": "Parliament of Saldria",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U1-a: per component",
+     "U1-b: averaged over the person's components in the quarter"
+    ],
+    "text": "How the 30% recycled content is measured."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-18T20:31:38+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U1-a: per component",
+    "U1-b: averaged over the person's components in the quarter"
+   ],
+   "text": "How the 30% recycled content is measured."
+  }
+ ],
+ "verifier_problems": []
+}

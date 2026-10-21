@@ -1,0 +1,170 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-1: about 38% of private employees lack paid leave usable for illness, so the term binds for them.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-2: most bound employers comply: payroll vendors build in accrual, and some workers complain.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.wages_sticky",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-3: money wages are fixed in the short run by pay scales, annual raises and collective agreements.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.wages_adjust",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-5: wages above the minimum can adjust over the medium horizon, as raises are set.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.worth_less",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-6: for the marginal worker and employer, the term is worth less to the worker than it costs the employer.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.alternatives_worse",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-22: workers' alternatives to bound employment are clearly worse than employers' alternatives.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.valued_on_earnings",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-24: labor-intensive businesses are valued on expected earnings.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-14: small-business and restaurant associations can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.recipients_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-14: unions can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.floor_binds",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-7: the minimum wage binds for some uncovered workers.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_screen",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-9: employers can infer expected use of sick time from what they see of applicants.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.conditions_differ",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-12: some existing PTO policies do not meet the conditions of use.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.hours_shift",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-8: employers can move hours between part-time and full-time staff.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.absence_used",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-4: some uncovered workers would have worked while ill, or will use paid hours for other ends.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.unpaid_absence_before",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-26: some uncovered workers would have taken unpaid absences for illness without the Act.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.absences_covered",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-19: shift-based employers cover absent shifts, partly through agencies and on-call staff.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.rivals_bound",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-17: most competitors of local service sellers are bound too.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.rivals_unbound",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-18: Varrow's tradable producers compete with Pellam producers, who are not bound.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.compete_with_bound",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-13: compliant and small firms compete in product markets with uncovered firms.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-11: the classification test is weakly enforced in some occupations, so contractor arrangements are open to some employers.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.move_marginal",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-15: some job changes are marginal enough that losing a balance and waiting 90 days decides them.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.complaint_unlikely",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-16: complaints are unlikely for some workers.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.complaints_filed",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-21: complaints are filed in meaningful numbers.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.staying_small_pays",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-029 (illustrative figures), A-10: some firms near six employees value staying exempt more than an extra hire.",
+  "evidence": []
+ }
+]

@@ -1,0 +1,59 @@
+[
+ {
+  "evidence": {
+   "premise": "keepers_dominate(c1)",
+   "current_p": 0.6,
+   "proposed_p": 0.9,
+   "rung": "M1",
+   "basis": "annex M1: favoured size [150, 720] exceeds opposed size [18, 144] everywhere",
+   "inputs_used": [
+    "covered_units",
+    "exit_rate",
+    "share_deterred",
+    "covered_units",
+    "conversion_rate",
+    "share_displaced_leaving"
+   ],
+   "accepted": true
+  },
+  "question": {
+   "id": "annex_premise.keepers_dominate(c1)",
+   "kind": "noul",
+   "text": "Premise `keepers_dominate(c1)`: \"Among all protected tenants, the fall in moves out of the area among keepers outweighs the rise among the displaced.\" Its current probability is 0.60. Evidence from the mathematical annex (M1, not praxeological): annex M1: favoured size [150, 720] exceeds opposed size [18, 144] everywhere. The annex proposes p = 0.90. Taking this evidence into account with everything else you know about the case as it stood at enactment, what is your probability that the premise holds?",
+   "options": [],
+   "assumption": "keepers_dominate(c1)",
+   "assumption_class": "other"
+  },
+  "answer": {
+   "question_id": "annex_premise.keepers_dominate(c1)",
+   "value": "yes",
+   "probability": 0.8,
+   "rationale": "The annex's sizes (illustrative ranges) put the deterred exits above the displaced exits everywhere; the ranges are not yet sourced, so the premise is raised only part of the way toward the proposal.",
+   "evidence": [],
+   "decider": "fixture:premise_answers.json",
+   "confidence": null
+  },
+  "new_p": 0.8
+ },
+ {
+  "evidence": {
+   "premise": "lockin_dominates(c1)",
+   "current_p": 0.65,
+   "proposed_p": 0.65,
+   "rung": "M1",
+   "basis": "annex M1: ranges overlap ([150, 720] against [32, 180]); no change proposed",
+   "inputs_used": [
+    "covered_units",
+    "exit_rate",
+    "share_deterred",
+    "covered_units",
+    "move_rate",
+    "share_diverted_out"
+   ],
+   "accepted": false
+  },
+  "question": {},
+  "answer": null,
+  "new_p": 0.65
+ }
+]

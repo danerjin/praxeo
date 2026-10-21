@@ -1,0 +1,86 @@
+{
+ "name": "Saltmere Housing Preservation Ordinance",
+ "jurisdiction": "City of Saltmere (fictional)",
+ "rule_maker": "the Saltmere city council",
+ "enacted": "8 December 2026 (introduced 3 November 2026)",
+ "effective": "1 July 2027",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "prohibition",
+   "good": "whole_unit_short_term_rentals",
+   "market": "saltmere",
+   "bound_actor": "hosts.non_primary",
+   "buyer_actor": "guests.whole_unit",
+   "informal_seller_actor": "hosts.in_breach",
+   "informal_buyer_actor": "guests.off_platform",
+   "mobile_buyer_actor": "guests.whole_unit",
+   "neighbor_seller_actor": "neighboring_jurisdictions",
+   "substitute_seller_actor": "hosts.mid_term",
+   "definition_line": true,
+   "volume_penalties": false,
+   "stocks_destroyed": false,
+   "taxed_before": true,
+   "revenue_actor": "officials.revenue",
+   "announcement_window": true,
+   "general_budget": true,
+   "enforcer_actor": "officials.enforcement",
+   "source_sentences": [
+    "From 1 July 2027, no whole unit may be let for under 30 nights unless it is the owner's primary residence, registered under the registry, and then for no more than 90 nights in a calendar year (45 nights for July to December 2027).",
+    "Stays booked and confirmed before 1 July 2027 may be completed if they end by 30 September 2027; all other bookings for later dates must be cancelled and refunded in full.",
+    "Rooms in a home that is the owner's primary residence, while the owner is present, and lets of 30 nights or more are exempt.",
+    "It was introduced on 3 November 2026 by six of nine council members, enacted on 8 December 2026, and takes effect on 1 July 2027, eight months after introduction, with a transition for booked stays to 30 September 2027.",
+    "Outside the city, the town of Elsdon, 12 km from the Harbor district, has about 420 STR listings and no rules beyond county registration.",
+    "Code Enforcement enforces the ban against hosts on complaint only, with no proactive inspection and no new appropriation.",
+    "The fine is $2,500 for a first violation and $5,000 for each later one, within existing appropriations, and fines go to the general fund.",
+    "A transient occupancy tax of 12% applies to stays under 30 nights, hotels and STRs alike, and platforms collect it for STRs (about $18.7 million a year from whole-unit STRs and about $46 million from hotels)."
+   ]
+  },
+  {
+   "id": "k2",
+   "instrument": "disclosure_mandate",
+   "good": "whole_unit_short_term_rentals",
+   "market": "saltmere",
+   "bound_actor": "platforms",
+   "buyer_actor": "guests.whole_unit",
+   "enforcer_actor": "officials.enforcement",
+   "source_sentences": [
+    "From 1 July 2027, booking platforms must display a valid registration number on every whole-unit listing, remove a listing within 10 days of a city notice that it is non-compliant, and report nights booked per registration number each quarter.",
+    "The fine is $1,000 per listing per day after the 10 days."
+   ]
+  },
+  {
+   "id": "k3",
+   "instrument": "licensing_requirement",
+   "good": "primary_residence_short_term_lets",
+   "market": "saltmere",
+   "bound_actor": "hosts.primary",
+   "buyer_actor": "guests.whole_unit",
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": true,
+   "source_sentences": [
+    "Owners who let their primary residence must register for $250 a year, with proof of residence (driver's license, voter registration, homestead tax exemption).",
+    "The registry is run by a new Registry Unit of five staff at $520,000 a year, a new appropriation from the general fund.",
+    "It replaces the existing STR registration for whole units."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether the primary-residence exception covers the second unit of a two-unit building whose owner lives in the other unit.",
+   "readings": [
+    "U1-a: the dwelling is the building, so the second unit is part of the primary residence and may be let up to 90 nights a year",
+    "U1-b: the dwelling is the unit, so the second unit may not be let for under 30 nights at all"
+   ],
+   "reading_facts": {},
+   "reading_fields": {}
+  }
+ ],
+ "context": [
+  "Saltmere is a coastal city of about 310,000 people with about 128,000 dwellings, of which about 60,000 are rented long-term (median rent $1,850 a month, vacancy about 3%).",
+  "Hotels have about 7,400 rooms, average occupancy 79% (94% in July and August) and an average daily rate of $180; hotel construction takes three to five years from site to opening.",
+  "STR registration costs $150 a year, and about 65% of hosts are registered; platforms are not obliged to check."
+ ]
+}

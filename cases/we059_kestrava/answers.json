@@ -1,0 +1,303 @@
+[
+ {
+  "question_id": "k1a.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-2: before the Act makers did not offer independents and owners genuine parts, tools and software on the terms they gave authorized repairers.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1a.enforced",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-1: most makers comply with K1 in most cases (penalty up to $10,000 per violation, reputational cost, organized complainants).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1a.worth_less",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "No matching assumption in WE-059; judged from the text: the owner's gain is the lower repair cost (A-22: buyers value the term, 0.7) but the maker also bears support, portal and compliance costs beyond the transferred margin (C-40), and A-25 (0.7) has the costs outweighing the gain from buyers' valuation; section 6 does not rank them for new sales (C-30), so only a modest probability.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1a.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: makers, dealers, farm groups and repair associations can organize at a cost below their stakes (campaigns on the 2023 and 2025 bills).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1a.recipients_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: farm groups and repair associations can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1a.reshaping_pays",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-9: some compact tractors can be designed and marketed for grounds care at a cost below the burden of coverage.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1a.complaint_unlikely",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "No matching assumption in WE-059; judged from the text: section 5 (C-20) has complaints from farmers and organized independents more than from phone owners, but small farms may not know the law or may not complain over small sums; the nearest row, A-10, is 0.7 and covers the offers that fall short.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1a.complaints_filed",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-10: the Attorney General acts only on complaint and some makers' offers fall short; section 5 (C-44) has owners and independents who receive short offers complain.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1a.contested_otherwise",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-059; judged from the text: similar bills failed in 2023 and 2025 after campaigns on both sides and section 5 says the question 'would likely have returned' without the Act (C-22).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1p.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-2: before the Act makers did not offer independents and owners genuine parts, tools and software on the terms they gave authorized repairers, except one phone maker's national program.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1p.enforced",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-1: most makers comply with K1 in most cases (penalty up to $10,000 per violation, reputational cost, organized complainants).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1p.worth_less",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "No matching assumption in WE-059; judged from the text: the owner's gain is the lower repair cost (A-22: buyers value the term, 0.7) but the maker also bears support, portal and compliance costs beyond the transferred margin (C-40), and A-25 (0.7) has the costs outweighing the gain from buyers' valuation; section 6 does not rank them for new sales (C-30), so only a modest probability.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1p.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: makers, dealers, farm groups and repair associations can organize at a cost below their stakes (campaigns on the 2023 and 2025 bills).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1p.recipients_organize",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "No matching assumption in WE-059; judged from the text: phone owners are some 5.4 million diffuse buyers; section 5 (RS-20 paragraph) has farmers and organized independents acting more than phone owners; the organized side is the independents' association, not the owner class recorded as recipient.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1p.conditions_differ",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No matching assumption in WE-059; judged from the text: the one national phone program already matches K1 on price (A-2, 'Figures'); its server pairing is K3's question, not a condition K1 forbids.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1p.compete_with_bound",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "No matching assumption in WE-059; judged from the text: three makers sell about 90% of phones, so the maker already offering the term sells in the same market as the bound makers.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1p.complaint_unlikely",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-10: the Attorney General acts only on complaint and some makers' offers fall short; section 5 (RS-20 paragraph) has phone owners complaining less than farmers.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1p.complaints_filed",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-10: the Attorney General acts only on complaint and some makers' offers fall short; section 5 (C-44) has owners and independents who receive short offers complain.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1p.contested_otherwise",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-059; judged from the text: similar bills failed in 2023 and 2025 after campaigns on both sides and section 5 says the question 'would likely have returned' without the Act (C-22).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2a.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-2: anti-repair terms were in use before the Act (K2 binds makers of farm equipment).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2a.substitute_terms",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-059; judged from the text: section 5 (C-10) names lawful substitutes: warranty exclusions for damage caused by the repair itself (section 4(b)), service bundles, expiring software subscriptions.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2a.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: makers, dealers, farm groups and repair associations can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2a.contested_otherwise",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-059; judged from the text: similar bills failed in 2023 and 2025 after campaigns on both sides and section 5 says the question would likely have returned without the Act (C-22).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2d.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-2: anti-repair terms were in use before the Act (K2 binds dealers).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2d.substitute_terms",
+  "value": "no",
+  "probability": 0.4,
+  "rationale": "No matching assumption in WE-059; judged from the text: section 5 (C-10) lists the substitute terms for makers; the text gives dealers none of their own beyond the warranty exclusion in section 4(b), which is the maker's warranty.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2d.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: makers, dealers, farm groups and repair associations can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2d.contested_otherwise",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-059; judged from the text: similar bills failed in 2023 and 2025 after campaigns on both sides and section 5 says the question would likely have returned without the Act (C-22).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2p.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-2: anti-repair terms were in use before the Act (K2 binds makers of phones).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2p.substitute_terms",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-059; judged from the text: section 5 (C-10) names lawful substitutes: warranty exclusions for damage caused by the repair itself (section 4(b)), service bundles, expiring software subscriptions.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2p.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: makers, dealers, farm groups and repair associations can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2p.contested_otherwise",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-059; judged from the text: similar bills failed in 2023 and 2025 after campaigns on both sides and section 5 says the question would likely have returned without the Act (C-22).",
+  "evidence": []
+ },
+ {
+  "question_id": "k3a.binding",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-059; judged from the text: makers pair screens, batteries and cameras to the device (phones) and electronic parts on farm equipment need the maker's software to be calibrated or paired, so section 5(c) rules out some designs under either reading of U1; K3 binds under U1-a for every maker that pairs and under U1-b except for the one maker whose server pairing already meets it.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3a.enforced",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No matching assumption in WE-059; judged from the text: same enforcement setting as K1 (penalty up to $10,000 per violation, organized complainants); the nearest row, A-1, is about K1 and is 0.7.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3a.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: makers, dealers, farm groups and repair associations can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3a.stock_competes",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No matching assumption in WE-059; judged from the text: section 6 (C-28) records covered and exempt tractors as substitutes; no assumption row states it.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3a.buyers_value_standard",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-22: buyers of new covered equipment value access to repair inputs.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3a.contested_otherwise",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-059; judged from the text: similar bills failed in 2023 and 2025 after campaigns on both sides and section 5 says the question would likely have returned without the Act (C-22).",
+  "evidence": []
+ },
+ {
+  "question_id": "k3p.binding",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-059; judged from the text: makers pair screens, batteries and cameras to the device (phones) and electronic parts on farm equipment need the maker's software to be calibrated or paired, so section 5(c) rules out some designs under either reading of U1; K3 binds under U1-a for every maker that pairs and under U1-b except for the one maker whose server pairing already meets it.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3p.enforced",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No matching assumption in WE-059; judged from the text: same enforcement setting as K1 (penalty up to $10,000 per violation, organized complainants); the nearest row, A-1, is about K1 and is 0.7.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3p.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-23: makers, dealers, farm groups and repair associations can organize at a cost below their stakes.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3p.stock_competes",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "No matching assumption in WE-059; judged from the text: phones sold before 2023 and newer phones are bought by the same buyers, though phones in use are replaced about every three years so the old stock shrinks fast.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3p.buyers_value_standard",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-059 (illustrative figures), A-22: buyers of new covered equipment value access to repair inputs.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3p.contested_otherwise",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-059; judged from the text: similar bills failed in 2023 and 2025 after campaigns on both sides and section 5 says the question would likely have returned without the Act (C-22).",
+  "evidence": []
+ }
+]

@@ -1,0 +1,71 @@
+{
+ "name": "Westmere Residential Energy Performance Act",
+ "jurisdiction": "Westmere (fictional)",
+ "rule_maker": "the Westmere legislature",
+ "enacted": "15 June of Year 0",
+ "effective": "1 January of Year 1",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "product_standard",
+   "good": "new_homes",
+   "market": "westmere_housing",
+   "bound_actor": "builders",
+   "buyer_actor": "buyers.new_homes",
+   "stock_exempt": true,
+   "stock_owner_actor": "owners.existing_homes",
+   "definition_line": true,
+   "outside_actor": "homeowners.renovating",
+   "announcement_window": true,
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": true,
+   "taxpayer_actor": "taxpayers.current",
+   "future_taxpayer_actor": "taxpayers.future",
+   "source_sentences": [
+    "K1, the performance standard: new homes whose DEI exceeds a maximum may not be built.",
+    "The standard covers new residential buildings of three stories or fewer above grade, including homes rebuilt after demolition, and it binds builders and owners who apply for a building permit.",
+    "The existing homes of the state are not covered by it.",
+    "On 1 January of each later year the maximum falls by 4% of the Year 1 value.",
+    "Renovations and alterations of existing homes are exempt.",
+    "Manufactured homes built to the national standard are exempt.",
+    "A certificate of occupancy requires a rater's certificate.",
+    "The Energy Office audits 2% of certificates.",
+    "The Energy Office's audit unit is funded by a new general-fund appropriation."
+   ],
+   "related": [
+    {
+     "kind": "required",
+     "good": "energy_ratings",
+     "seller_actor": "raters",
+     "price_variable": "net_price_received",
+     "other_user_actor": "buyers.home_energy_audits",
+     "source_id": null,
+     "quote": "A certificate of occupancy requires a rater's certificate."
+    }
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "The Act requires the Energy Office to adjust the index for dwelling size, but it does not say what the adjustment is.",
+   "readings": [
+    "U1-a: no adjustment beyond the per-square-foot measure",
+    "U1-b: homes above 2,500 square feet are held to the maximum as if they were 2,500 square feet"
+   ]
+  },
+  {
+   "id": "U2",
+   "text": "The Act does not say which code the rebate's \"applicable state energy code\" means for a home vested under K2.",
+   "readings": [
+    "U2-a: the code in force on the filing date",
+    "U2-b: the code in force when the rebate is claimed at completion"
+   ]
+  }
+ ],
+ "context": [
+  "The State Energy Office's records show that the median DEI of new homes has fallen by about 1.5% a year for ten years without any state code, as heat pumps became cheaper, buyers asked for efficient homes, and the utilities' rebate program paid for homes that beat its baseline.",
+  "The Halden metropolitan area, with about a quarter of the state's new building, straddles the state line with the neighboring state of Brennick, which has no comparable code."
+ ]
+}

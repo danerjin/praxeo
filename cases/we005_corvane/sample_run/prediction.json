@@ -1,0 +1,2999 @@
+{
+ "assumptions": {
+  "alternative_uses(k1)": {
+   "assumption_class": "alternative_uses",
+   "id": "alternative_uses(k1)",
+   "p": 0.15,
+   "text": "Owners can move covered units to uses the ceiling does not reach."
+  },
+  "binding(k1)": {
+   "assumption_class": "binding",
+   "id": "binding(k1)",
+   "p": 0.85,
+   "text": "The ceiling binds: it is below the price the market would otherwise reach."
+  },
+  "buyouts_limited(k1)": {
+   "assumption_class": "other",
+   "id": "buyouts_limited(k1)",
+   "p": 0.1,
+   "text": "Buyouts move fewer tenants than the cap keeps in place."
+  },
+  "can_organize(k1)": {
+   "assumption_class": "other",
+   "id": "can_organize(k1)",
+   "p": 0.8,
+   "text": "The groups with a concentrated stake can organize and spend to keep or change the rule."
+  },
+  "commutable(k1)": {
+   "assumption_class": "mobility",
+   "id": "commutable(k1)",
+   "p": 0.7,
+   "text": "Shut-out buyers can buy in a neighbouring market outside the rule's reach at a bearable cost."
+  },
+  "counterfactual_catches_up(k1)": {
+   "assumption_class": "counterfactual_trend",
+   "id": "counterfactual_catches_up(k1)",
+   "p": 0.3,
+   "text": "Without the rule, the market price soon passes any raise made in the announcement window."
+  },
+  "durable_assets(k1)": {
+   "assumption_class": "durability",
+   "id": "durable_assets(k1)",
+   "p": 0.1,
+   "text": "The covered assets are durable and their supply expands slowly."
+  },
+  "enforced(k1)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k1)",
+   "p": 0.9,
+   "text": "The ceiling is enforced against most bound sellers."
+  },
+  "enforcement_budget_raised(k1)": {
+   "assumption_class": "revenue_use",
+   "id": "enforcement_budget_raised(k1)",
+   "p": 0.9,
+   "text": "The administering agency's budget is raised to cover the new work, so taxpayers fund it."
+  },
+  "evasion(k1)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k1)",
+   "p": 0.55,
+   "text": "Some exchanges take place above the ceiling without being caught."
+  },
+  "exit_process(k1)": {
+   "assumption_class": "other",
+   "id": "exit_process(k1)",
+   "p": 0.02,
+   "text": "Moving covered units to an alternative use requires a permit or board process."
+  },
+  "expected_to_last(k1)": {
+   "assumption_class": "expectations",
+   "id": "expected_to_last(k1)",
+   "p": 0.05,
+   "text": "Buyers of the covered assets expect the rule to last for many years."
+  },
+  "input_few_outlets(k1)": {
+   "assumption_class": "alternative_uses",
+   "id": "input_few_outlets(k1)",
+   "p": 0.7,
+   "text": "The input's suppliers have few uncapped outlets: they receive less for what they sell to the capped sellers."
+  },
+  "input_other_outlets(k1)": {
+   "assumption_class": "alternative_uses",
+   "id": "input_other_outlets(k1)",
+   "p": 0.85,
+   "text": "The input's suppliers have other buyers: they send less to the capped sellers."
+  },
+  "keepers_dominate(k1)": {
+   "assumption_class": "other",
+   "id": "keepers_dominate(k1)",
+   "p": 0.05,
+   "text": "Among all protected tenants, the fall in moves out of the area among keepers outweighs the rise among the displaced."
+  },
+  "lockin_dominates(k1)": {
+   "assumption_class": "other",
+   "id": "lockin_dominates(k1)",
+   "p": 0.05,
+   "text": "The lock-in outweighs moves diverted out of the area by higher free rents."
+  },
+  "nontransferable(k1)": {
+   "assumption_class": "other",
+   "id": "nontransferable(k1)",
+   "p": 0.03,
+   "text": "The protected buyers' right is tied to holding the tenancy and cannot be sold."
+  },
+  "opportunities_need_move(k1)": {
+   "assumption_class": "mobility",
+   "id": "opportunities_need_move(k1)",
+   "p": 0.03,
+   "text": "Some valued opportunities for the protected buyers would require giving up the covered unit."
+  },
+  "quality_adjustable(k1)": {
+   "assumption_class": "other",
+   "id": "quality_adjustable(k1)",
+   "p": 0.8,
+   "text": "Sellers have room to cut quality or maintenance above any enforced minimum."
+  },
+  "relet_obstructs(k1)": {
+   "assumption_class": "other",
+   "id": "relet_obstructs(k1)",
+   "p": 0.02,
+   "text": "Re-letting a vacated unit obstructs the owner's later move to an alternative use."
+  },
+  "search_open(k1)": {
+   "assumption_class": "other",
+   "id": "search_open(k1)",
+   "p": 0.8,
+   "text": "Seekers find covered units by their own search: no public list or allocation rule assigns them."
+  },
+  "selection_open(k1)": {
+   "assumption_class": "other",
+   "id": "selection_open(k1)",
+   "p": 0.8,
+   "text": "Sellers may choose among applicants by criteria of their own."
+  },
+  "substitutes(k1)": {
+   "assumption_class": "substitutability",
+   "id": "substitutes(k1)",
+   "p": 0.2,
+   "text": "Uncovered units in the same market are close substitutes for covered ones."
+  },
+  "window_repricing(k1)": {
+   "assumption_class": "expectations",
+   "id": "window_repricing(k1)",
+   "p": 0.1,
+   "text": "Enough contracts come up for repricing in the announcement window, and sellers can raise the price on them."
+  },
+  "would_leave(k1)": {
+   "assumption_class": "mobility",
+   "id": "would_leave(k1)",
+   "p": 0.05,
+   "text": "Without the rule some protected buyers would have left the area."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "drivers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "selection_open(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "selection_open(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "selection_rationing(k1)",
+     "premises": [
+      "excess_demand(k1)",
+      "selection_open(k1)"
+     ],
+     "rule": "PC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "allocation_by_non_price_criteria",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "no_recourse(k1)",
+     "premises": [
+      "informal(k1)"
+     ],
+     "rule": "RS-10"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "excess_demand",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "informal_buyers(k1)",
+     "premises": [
+      "informal(k1)"
+     ],
+     "rule": "PC-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "substitutes(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "outsider_price(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "outsider_price(k1)",
+     "premises": [
+      "substitutes(k1)"
+     ],
+     "rule": "RS-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_substitute",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "demand_rises(k1)",
+     "premises": [
+      "excess_demand(k1)"
+     ],
+     "rule": "LW-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternative_uses(k1)",
+     "binding(k1)",
+     "enforced(k1)"
+    ],
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "input_other_outlets(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "input_other_outlets(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "supply_falls(k1)",
+     "premises": [
+      "alternative_uses(k1)",
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-5"
+    },
+    {
+     "conclusion": "prevented(k1)",
+     "premises": [
+      "supply_falls(k1)"
+     ],
+     "rule": "OC-4"
+    },
+    {
+     "conclusion": "input_quantity(k1)",
+     "premises": [
+      "binding_cap(k1)",
+      "input_other_outlets(k1)"
+     ],
+     "rule": "PC-12"
+    },
+    {
+     "conclusion": "input_prevented(k1)",
+     "premises": [
+      "input_quantity(k1)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "search_open(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "search_open(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "search_rationing(k1)",
+     "premises": [
+      "excess_demand(k1)",
+      "search_open(k1)"
+     ],
+     "rule": "PC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "seeker_side_payments(k1)",
+     "premises": [
+      "informal(k1)"
+     ],
+     "rule": "PC-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "side_payments",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "excess_demand(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "rationing(k1)",
+     "premises": [
+      "excess_demand(k1)"
+     ],
+     "rule": "PC-2"
+    }
+   ],
+   "group": [
+    "wait_time",
+    "search_cost",
+    "side_payments",
+    "allocation_by_non_price_criteria"
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "wait_time",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.brennick",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "commutable(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "commutable(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "cross_boundary(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "cross_boundary(k1)",
+     "premises": [
+      "commutable(k1)"
+     ],
+     "rule": "RS-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.served",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "evasion(k1)",
+     "nontransferable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "evasion(k1)",
+    "nontransferable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-6"
+    },
+    {
+     "conclusion": "informal(k1)",
+     "premises": [
+      "evasion(k1)"
+     ],
+     "rule": "RS-3"
+    },
+    {
+     "conclusion": "sublet(k1)",
+     "premises": [
+      "informal(k1)",
+      "nontransferable(k1)"
+     ],
+     "rule": "PC-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.served",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "buyouts_limited(k1)",
+     "enforced(k1)",
+     "nontransferable(k1)",
+     "opportunities_need_move(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "buyouts_limited(k1)",
+    "enforced(k1)",
+    "nontransferable(k1)",
+    "opportunities_need_move(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "turnover_falls(k1)",
+     "premises": [
+      "binding_cap(k1)",
+      "buyouts_limited(k1)",
+      "nontransferable(k1)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "job_lock(k1)",
+     "premises": [
+      "opportunities_need_move(k1)",
+      "turnover_falls(k1)"
+     ],
+     "rule": "RS-11"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "job_changes",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.served",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.served",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "window_repricing(k1)"
+    ]
+   ],
+   "assumptions": [
+    "window_repricing(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "rush(k1)",
+     "premises": [
+      "announced(k1)",
+      "window_repricing(k1)"
+     ],
+     "rule": "RS-8"
+    },
+    {
+     "conclusion": "rush_pays(k1)",
+     "premises": [
+      "rush(k1)"
+     ],
+     "rule": "RS-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": "announcement"
+  },
+  {
+   "actor_class": "drivers.served",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "quality_adjustable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "quality_adjustable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "quality_falls(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-4"
+    },
+    {
+     "conclusion": "quality_falls(k1)",
+     "premises": [
+      "quality_adjustable(k1)"
+     ],
+     "rule": "RS-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_per_unit",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.served",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "rent_kept(k1)",
+     "premises": [
+      "insider_gain(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.served",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "buyouts_limited(k1)",
+     "enforced(k1)",
+     "nontransferable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "buyouts_limited(k1)",
+    "enforced(k1)",
+    "nontransferable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "turnover_falls(k1)",
+     "premises": [
+      "binding_cap(k1)",
+      "buyouts_limited(k1)",
+      "nontransferable(k1)"
+     ],
+     "rule": "PC-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-18",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "turnover",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.served.displaced",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternative_uses(k1)",
+     "binding(k1)",
+     "enforced(k1)",
+     "nontransferable(k1)",
+     "would_leave(k1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k1)",
+    "binding(k1)",
+    "enforced(k1)",
+    "nontransferable(k1)",
+    "would_leave(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k1)",
+     "premises": [
+      "alternative_uses(k1)",
+      "binding_cap(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "displaced_leave(k1)",
+     "premises": [
+      "would_leave(k1)"
+     ],
+     "rule": "PC-21"
+    },
+    {
+     "conclusion": "displaced_leave(k1)",
+     "premises": [
+      "nontransferable(k1)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "displaced_leave(k1)",
+     "premises": [
+      "reclassify(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-19",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "relocation_out_of_area",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.served.displaced",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternative_uses(k1)",
+     "binding(k1)",
+     "enforced(k1)",
+     "nontransferable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k1)",
+    "binding(k1)",
+    "enforced(k1)",
+    "nontransferable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k1)",
+     "premises": [
+      "alternative_uses(k1)",
+      "binding_cap(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "displaced_move(k1)",
+     "premises": [
+      "nontransferable(k1)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "displaced_move(k1)",
+     "premises": [
+      "reclassify(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-20",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "turnover",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.served.keepers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "buyouts_limited(k1)",
+     "enforced(k1)",
+     "lockin_dominates(k1)",
+     "nontransferable(k1)",
+     "would_leave(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "buyouts_limited(k1)",
+    "enforced(k1)",
+    "lockin_dominates(k1)",
+    "nontransferable(k1)",
+    "would_leave(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "turnover_falls(k1)",
+     "premises": [
+      "binding_cap(k1)",
+      "buyouts_limited(k1)",
+      "nontransferable(k1)"
+     ],
+     "rule": "PC-7"
+    },
+    {
+     "conclusion": "stay_in_area(k1)",
+     "premises": [
+      "lockin_dominates(k1)",
+      "turnover_falls(k1)",
+      "would_leave(k1)"
+     ],
+     "rule": "PC-21"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-21",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "relocation_out_of_area",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "administered(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-22",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "stations",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "durable_assets(k1)",
+     "enforced(k1)",
+     "expected_to_last(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "durable_assets(k1)",
+    "enforced(k1)",
+    "expected_to_last(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "capitalized(k1)",
+     "premises": [
+      "binding_cap(k1)",
+      "durable_assets(k1)",
+      "expected_to_last(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-23",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "stations",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternative_uses(k1)",
+     "binding(k1)",
+     "enforced(k1)",
+     "exit_process(k1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k1)",
+    "binding(k1)",
+    "enforced(k1)",
+    "exit_process(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k1)",
+     "premises": [
+      "alternative_uses(k1)",
+      "binding_cap(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "process_cost(k1)",
+     "premises": [
+      "exit_process(k1)",
+      "reclassify(k1)"
+     ],
+     "rule": "OC-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-24",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "stations",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "can_organize(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "can_organize(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "lobbying(k1)",
+     "premises": [
+      "binding_cap(k1)",
+      "can_organize(k1)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-25",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "stations",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "quality_adjustable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "quality_adjustable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "quality_falls(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-4"
+    },
+    {
+     "conclusion": "quality_falls(k1)",
+     "premises": [
+      "quality_adjustable(k1)"
+     ],
+     "rule": "RS-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-26",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "maintenance_spending",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "stations",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "transfer(k1)",
+     "premises": [
+      "insider_gain(k1)"
+     ],
+     "rule": "PC-16"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-27",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "stations",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "window_repricing(k1)"
+    ]
+   ],
+   "assumptions": [
+    "window_repricing(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "rush(k1)",
+     "premises": [
+      "announced(k1)",
+      "window_repricing(k1)"
+     ],
+     "rule": "RS-8"
+    },
+    {
+     "conclusion": "rush_pays(k1)",
+     "premises": [
+      "rush(k1)"
+     ],
+     "rule": "RS-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short"
+   ],
+   "id": "C-28",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": "announcement"
+  },
+  {
+   "actor_class": "stations",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternative_uses(k1)",
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k1)",
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "supply_falls(k1)",
+     "premises": [
+      "alternative_uses(k1)",
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-29",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "stations",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternative_uses(k1)",
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k1)",
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "supply_falls(k1)",
+     "premises": [
+      "alternative_uses(k1)",
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-5"
+    },
+    {
+     "conclusion": "prevented(k1)",
+     "premises": [
+      "supply_falls(k1)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-30",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "stations",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternative_uses(k1)",
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k1)",
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k1)",
+     "premises": [
+      "alternative_uses(k1)",
+      "binding_cap(k1)"
+     ],
+     "rule": "RS-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-31",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "stations",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "transfer(k1)",
+     "premises": [
+      "insider_gain(k1)"
+     ],
+     "rule": "PC-16"
+    },
+    {
+     "conclusion": "rent_forgone(k1)",
+     "premises": [
+      "transfer(k1)"
+     ],
+     "rule": "CR-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-32",
+   "item": "rent_forgone",
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "stations",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "alternative_uses(k1)",
+     "binding(k1)",
+     "enforced(k1)",
+     "relet_obstructs(k1)"
+    ]
+   ],
+   "assumptions": [
+    "alternative_uses(k1)",
+    "binding(k1)",
+    "enforced(k1)",
+    "relet_obstructs(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "reclassify(k1)",
+     "premises": [
+      "alternative_uses(k1)",
+      "binding_cap(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "held_vacant(k1)",
+     "premises": [
+      "reclassify(k1)",
+      "relet_obstructs(k1)"
+     ],
+     "rule": "PC-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-33",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "units_held_vacant",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "suppliers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "input_few_outlets(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "input_few_outlets(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "input_price(k1)",
+     "premises": [
+      "binding_cap(k1)",
+      "input_few_outlets(k1)"
+     ],
+     "rule": "PC-12"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-34",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "suppliers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "input_other_outlets(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "input_other_outlets(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "input_quantity(k1)",
+     "premises": [
+      "binding_cap(k1)",
+      "input_other_outlets(k1)"
+     ],
+     "rule": "PC-12"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-35",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "suppliers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "input_other_outlets(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "input_other_outlets(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "input_quantity(k1)",
+     "premises": [
+      "binding_cap(k1)",
+      "input_other_outlets(k1)"
+     ],
+     "rule": "PC-12"
+    },
+    {
+     "conclusion": "input_prevented(k1)",
+     "premises": [
+      "input_quantity(k1)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-36",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "taxpayers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "enforcement_budget_raised(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "enforcement_budget_raised(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "administered(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "ceiling_funded(k1)",
+     "premises": [
+      "administered(k1)"
+     ],
+     "rule": "OC-1"
+    },
+    {
+     "conclusion": "ceiling_funded(k1)",
+     "premises": [
+      "administered(k1)",
+      "enforcement_budget_raised(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-37",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.served",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "quality_adjustable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "quality_adjustable(k1)"
+   ],
+   "combines": [
+    "C-14",
+    "C-16"
+   ],
+   "comparison": "quality_adjusted_price",
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    },
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "quality_falls(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-4"
+    },
+    {
+     "conclusion": "quality_falls(k1)",
+     "premises": [
+      "quality_adjustable(k1)"
+     ],
+     "rule": "RS-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-38",
+   "item": null,
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_adjusted_price",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "drivers.served",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [
+    "C-14"
+   ],
+   "comparison": "first_months_price",
+   "derivation": [
+    {
+     "conclusion": "binding_cap(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-1"
+    },
+    {
+     "conclusion": "insider_gain(k1)",
+     "premises": [
+      "binding_cap(k1)"
+     ],
+     "rule": "PC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short"
+   ],
+   "id": "C-39",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": "first_months"
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "ceiling(k1).\nresale_evasion(k1).\nbound(k1, \"stations\").\nprotected(k1, \"drivers.served\").\nexcluded(k1, \"drivers\").\nannounced(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nneighbor(k1, \"drivers.brennick\").\ninput_supplier(k1, \"suppliers\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(alternative_uses(k1)).\nassumption(nontransferable(k1)).\nassumption(buyouts_limited(k1)).\nassumption(would_leave(k1)).\nassumption(lockin_dominates(k1)).\nassumption(keepers_dominate(k1)).\nassumption(substitutes(k1)).\nassumption(search_open(k1)).\nassumption(selection_open(k1)).\nassumption(quality_adjustable(k1)).\nassumption(evasion(k1)).\nassumption(opportunities_need_move(k1)).\nassumption(can_organize(k1)).\nassumption(durable_assets(k1)).\nassumption(expected_to_last(k1)).\nassumption(commutable(k1)).\nassumption(relet_obstructs(k1)).\nassumption(exit_process(k1)).\nassumption(window_repricing(k1)).\nassumption(counterfactual_catches_up(k1)).\nassumption(enforcement_budget_raised(k1)).\nassumption(input_few_outlets(k1)).\nassumption(input_other_outlets(k1)).\n",
+ "explanations": [
+  "C-1. Compared with no Corvane Emergency Fuel Price Order, allocation by non price criteria for drivers rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-2: rationing by other means than price shows up as waiting or allocation by connections. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); Sellers may choose among applicants by criteria of their own (p = 0.80). Reported.",
+  "C-2. Compared with no Corvane Emergency Fuel Price Order, disputes settled outside courts for drivers rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3; RS-10: RS-10. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); Some exchanges take place above the ceiling without being caught (p = 0.55). Reported.",
+  "C-3. Compared with no Corvane Emergency Fuel Price Order, excess demand for drivers rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90). Reported.",
+  "C-4. Compared with no Corvane Emergency Fuel Price Order, informal activity for drivers rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); Some exchanges take place above the ceiling without being caught (p = 0.55). Reported.",
+  "C-5. Compared with no Corvane Emergency Fuel Price Order, price substitute for drivers rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); Uncovered units in the same market are close substitutes for covered ones (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-6. Compared with no Corvane Emergency Fuel Price Order, quantity demanded for drivers rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; LW-3: LW-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90). Reported.",
+  "C-7. Compared with no Corvane Emergency Fuel Price Order, quantity traded for drivers falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap; OC-4: exchanges that no longer happen are lost to both sides; PC-12: PC-12. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); The input's suppliers have other buyers: they send less to the capped sellers (p = 0.85). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-8. Compared with no Corvane Emergency Fuel Price Order, search cost for drivers rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-2: rationing by other means than price shows up as waiting or allocation by connections. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); Seekers find covered units by their own search: no public list or allocation rule assigns them (p = 0.80). Reported.",
+  "C-9. Compared with no Corvane Emergency Fuel Price Order, side payments for drivers rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); Some exchanges take place above the ceiling without being caught (p = 0.55). Reported.",
+  "C-10. Compared with no Corvane Emergency Fuel Price Order, wait time or search cost or side payments or allocation by non price criteria for drivers rises for at least one of them from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-2: rationing by other means than price shows up as waiting or allocation by connections. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90). Reported.",
+  "C-11. Compared with no Corvane Emergency Fuel Price Order, price paid for drivers.brennick rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); Shut-out buyers can buy in a neighbouring market outside the rule's reach at a bearable cost (p = 0.70); The ceiling is enforced against most bound sellers (p = 0.90). Reported.",
+  "C-12. Compared with no Corvane Emergency Fuel Price Order, informal activity for drivers.served rises from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-6: PC-6; RS-3: RS-3. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); Some exchanges take place above the ceiling without being caught (p = 0.55); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.03). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-13. Compared with no Corvane Emergency Fuel Price Order, job changes for drivers.served falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less; RS-11: a benefit lost on moving ties the holder to staying put. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); Buyouts move fewer tenants than the cap keeps in place (p = 0.10); The ceiling is enforced against most bound sellers (p = 0.90); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.03); Some valued opportunities for the protected buyers would require giving up the covered unit (p = 0.03). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-14. Compared with no Corvane Emergency Fuel Price Order, price paid for drivers.served falls from the medium run onward (tier B, visible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90). Reported.",
+  "C-15. Compared with no Corvane Emergency Fuel Price Order, price paid for drivers.served rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Enough contracts come up for repricing in the announcement window, and sellers can raise the price on them (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-16. Compared with no Corvane Emergency Fuel Price Order, quality per unit for drivers.served falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-4: PC-4; RS-2: RS-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.80). Reported.",
+  "C-17. Compared with no Corvane Emergency Fuel Price Order, resources available other uses for drivers.served rises from the medium run onward (tier B, visible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90). Reported.",
+  "C-18. Compared with no Corvane Emergency Fuel Price Order, turnover for drivers.served falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); Buyouts move fewer tenants than the cap keeps in place (p = 0.10); The ceiling is enforced against most bound sellers (p = 0.90); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.03). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-19. Compared with no Corvane Emergency Fuel Price Order, relocation out of area for drivers.served.displaced rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-21: leaving the area forfeits the benefit, and fewer holders are priced out, so they leave the area less; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.15); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.03); Without the rule some protected buyers would have left the area (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-20. Compared with no Corvane Emergency Fuel Price Order, turnover for drivers.served.displaced rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.15); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.03). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-21. Compared with no Corvane Emergency Fuel Price Order, relocation out of area for drivers.served.keepers falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-7: the benefit is tied to staying put and cannot be sold, so holders move less; PC-21: leaving the area forfeits the benefit, and fewer holders are priced out, so they leave the area less. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); Buyouts move fewer tenants than the cap keeps in place (p = 0.10); The ceiling is enforced against most bound sellers (p = 0.90); The lock-in outweighs moves diverted out of the area by higher free rents (p = 0.05); The protected buyers' right is tied to holding the tenancy and cannot be sold (p = 0.03); Without the rule some protected buyers would have left the area (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-22. Compared with no Corvane Emergency Fuel Price Order, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90). Reported.",
+  "C-23. Compared with no Corvane Emergency Fuel Price Order, asset value for stations falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The covered assets are durable and their supply expands slowly (p = 0.10); The ceiling is enforced against most bound sellers (p = 0.90); Buyers of the covered assets expect the rule to last for many years (p = 0.05). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-24. Compared with no Corvane Emergency Fuel Price Order, compliance cost for stations rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; OC-2: OC-2. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.15); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); Moving covered units to an alternative use requires a permit or board process (p = 0.02). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-25. Compared with no Corvane Emergency Fuel Price Order, lobbying effort for stations rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The groups with a concentrated stake can organize and spend to keep or change the rule (p = 0.80); The ceiling is enforced against most bound sellers (p = 0.90). Reported.",
+  "C-26. Compared with no Corvane Emergency Fuel Price Order, maintenance spending for stations falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-4: PC-4; RS-2: RS-2. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.80). Reported.",
+  "C-27. Compared with no Corvane Emergency Fuel Price Order, net price received for stations falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; PC-16: PC-16. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90). Reported.",
+  "C-28. Compared with no Corvane Emergency Fuel Price Order, net price received for stations rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Enough contracts come up for repricing in the announcement window, and sellers can raise the price on them (p = 0.10). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-29. Compared with no Corvane Emergency Fuel Price Order, quantity supplied for stations falls in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.15); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-30. Compared with no Corvane Emergency Fuel Price Order, quantity traded for stations falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-5: owners move resources to uses whose yield the ceiling does not cap; OC-4: exchanges that no longer happen are lost to both sides. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.15); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-31. Compared with no Corvane Emergency Fuel Price Order, reclassification for stations rises in the long run (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.15); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-32. Compared with no Corvane Emergency Fuel Price Order, resources available other uses (rent forgone) for stations falls from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-3: those who hold a covered unit pay the controlled price, while those shut out look elsewhere; PC-16: PC-16; CR-8: every payment is a receipt: what one side no longer pays or receives is what the other keeps or loses. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90). Reported.",
+  "C-33. Compared with no Corvane Emergency Fuel Price Order, units held vacant for stations rises from the medium run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; RS-5: owners move units out of the rule's reach; PC-5: owners move resources to uses whose yield the ceiling does not cap. This holds if: Owners can move covered units to uses the ceiling does not reach (p = 0.15); The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); Re-letting a vacated unit obstructs the owner's later move to an alternative use (p = 0.02). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-34. Compared with no Corvane Emergency Fuel Price Order, net price received for suppliers falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-12: PC-12. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); The input's suppliers have few uncapped outlets: they receive less for what they sell to the capped sellers (p = 0.70). Reported.",
+  "C-35. Compared with no Corvane Emergency Fuel Price Order, quantity supplied for suppliers falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-12: PC-12. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); The input's suppliers have other buyers: they send less to the capped sellers (p = 0.85). Reported.",
+  "C-36. Compared with no Corvane Emergency Fuel Price Order, quantity traded for suppliers falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; PC-12: PC-12; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); The input's suppliers have other buyers: they send less to the capped sellers (p = 0.85). Reported.",
+  "C-37. Compared with no Corvane Emergency Fuel Price Order, resources available other uses for taxpayers falls from the short run onward (tier B, invisible). Why: PC-1: a ceiling held below the price the market would reach binds sellers; where new contracts are priced freely, fewer vacancies raise their initial price instead of leaving a shortage; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; OC-1: what the payers give up is what they would otherwise have bought. This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); The administering agency's budget is raised to cover the new work, so taxpayers fund it (p = 0.90). Reported.",
+  "C-38. Compared with no Corvane Emergency Fuel Price Order, quality adjusted price for drivers.served may move either way from the medium run onward (tier B, invisible). Why: CR-12 total of C-14, C-16 (no premise decides which chain is larger). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90); Sellers have room to cut quality or maintenance above any enforced minimum (p = 0.80). Reported.",
+  "C-39. Compared with no Corvane Emergency Fuel Price Order, price paid for drivers.served falls in the first months after the effective date, in the short run (tier B, invisible). Why: CR-12 total of C-14 (only one subclass's chain is reported). This holds if: The ceiling binds: it is below the price the market would otherwise reach (p = 0.85); The ceiling is enforced against most bound sellers (p = 0.90). Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-005 (illustrative figures), A-1 (binding): without the cap the retail price would stay above $4.20 for most of the 90 days.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k1.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "At the dates the rule takes effect and over the following years, is the maximum price below the price the market would otherwise reach for the covered units?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.enforced",
+    "rationale": "WE-005 A-2 (enforcement): pump prices are enforced; few stations post or charge more than the cap.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k1.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will most of the bound sellers comply with the ceiling in practice (given whatever body enforces it, its powers, and how violations come to light)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.15,
+    "question_id": "k1.alternative_uses",
+    "rationale": "Closest row: WE-005 A-15 (p 0.15): stations or buyers cannot reshape sales to fall under an exemption; the exemptions are closed. WE-005 A-6 (0.85) is about cargo traders and refiners, who are not the bound role (retail stations), so it is not used for this question.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "alternative_uses",
+    "assumption_class": "alternative_uses",
+    "id": "k1.alternative_uses",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound sellers move the covered resources to uses the ceiling does not reach (sale to owner-occupiers, conversion, redevelopment, keeping units off the market)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.03,
+    "question_id": "k1.nontransferable",
+    "rationale": "No row. The cap is a posted pump price open to every driver; WE-005 section 6 says the right to buy at the cap is not tied to holding anything (RS-11 does not apply). Estimate from the record.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "nontransferable",
+    "assumption_class": "other",
+    "id": "k1.nontransferable",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the right to buy at the controlled price tied to keeping the good (a sitting tenancy), so that the holder cannot sell or assign it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k1.buyouts_limited",
+    "rationale": "No row; not applicable, there is no tenancy-like right to buy out. Estimate from the record.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "buyouts_limited",
+    "assumption_class": "other",
+    "id": "k1.buyouts_limited",
+    "kind": "noul",
+    "options": [],
+    "text": "Will payments from landlords to sitting tenants for giving up the tenancy (buyouts) move fewer tenants than the cap keeps in place?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.05,
+    "question_id": "k1.would_leave",
+    "rationale": "No row; drivers do not move out of the area because of a 90-day cap. Estimate from the record.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "would_leave",
+    "assumption_class": "mobility",
+    "id": "k1.would_leave",
+    "kind": "noul",
+    "options": [],
+    "text": "Without the rule, would some of the protected buyers have moved out of the area (priced out by market rents, or for opportunities elsewhere)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.05,
+    "question_id": "k1.lockin_dominates",
+    "rationale": "No row; not applicable (no lock-in). Estimate from the record.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "lockin_dominates",
+    "assumption_class": "other",
+    "id": "k1.lockin_dominates",
+    "kind": "noul",
+    "options": [],
+    "text": "For tenants who keep a covered unit, does the lock-in outweigh moves out of the area by tenants who still move and face higher free rents in the city?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.05,
+    "question_id": "k1.keepers_dominate",
+    "rationale": "No row; not applicable. Estimate from the record.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "keepers_dominate",
+    "assumption_class": "other",
+    "id": "k1.keepers_dominate",
+    "kind": "noul",
+    "options": [],
+    "text": "Taking all protected tenants together, will the fall in moves out of the area among those who keep their units be larger than the rise among those displaced by conversion or withdrawal?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.2,
+    "question_id": "k1.substitutes",
+    "rationale": "No exact row. WE-005 A-10 (0.65) is about transit, car-sharing and skipped trips, which are other markets; this question asks about uncovered goods in the same market, and the record has none (diesel does not run gasoline engines). Estimate from the record.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "substitutes",
+    "assumption_class": "substitutability",
+    "id": "k1.substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Are uncovered units in the same market close substitutes for covered units, for buyers who cannot obtain a covered one?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.search_open",
+    "rationale": "WE-005 A-3 (substitutability): most drivers have no close substitute for the car, so they queue and search; the premise of C-5 and C-6.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "search_open",
+    "assumption_class": "other",
+    "id": "k1.search_open",
+    "kind": "noul",
+    "options": [],
+    "text": "Is there no public list or allocation rule that assigns the covered good to buyers, so that buyers have to find sellers by their own search?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.selection_open",
+    "rationale": "WE-005 A-4 (enforcement): in practice stations can change hours, service, payment terms and per-car limits; the premise of C-7.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "selection_open",
+    "assumption_class": "other",
+    "id": "k1.selection_open",
+    "kind": "noul",
+    "options": [],
+    "text": "Are sellers free to choose among applicants for the covered good by criteria of their own (income, credit, references, connections)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.quality_adjustable",
+    "rationale": "WE-005 A-4 (0.8): stations can change hours, service and payment terms without being treated as violating the order; the premise of C-8.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "quality_adjustable",
+    "assumption_class": "other",
+    "id": "k1.quality_adjustable",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound sellers cut quality or maintenance below what they now supply without breaking a rule that is enforced (a code, a contract term)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.55,
+    "question_id": "k1.evasion",
+    "rationale": "WE-005 A-5 (enforcement): some resale of fuel in cans above the cap goes undetected.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k1.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some exchanges of the covered good take place above the ceiling, disguised or illegal (key money, tie-in sales, sublets at market rent), without being caught?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.03,
+    "question_id": "k1.opportunities_need_move",
+    "rationale": "No row. WE-005 section 6: RS-11 was checked and does not apply. Estimate from the record.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "opportunities_need_move",
+    "assumption_class": "mobility",
+    "id": "k1.opportunities_need_move",
+    "kind": "noul",
+    "options": [],
+    "text": "Would some valued opportunities for the protected buyers (a job, a better home) require them to give up the covered unit?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.can_organize",
+    "rationale": "WE-005 A-16: station owners can organize and lobby at a cost below their stake (an existing retailers' association).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k1.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the groups with a concentrated stake in the rule (those it helps, those it burdens) organize and spend to keep or change it at a cost below their stakes?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k1.durable_assets",
+    "rationale": "No row. WE-005 section 8: no durable capital changes in 90 days; TS-1 and TS-3 play no role. Estimate from the record.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "durable_assets",
+    "assumption_class": "durability",
+    "id": "k1.durable_assets",
+    "kind": "noul",
+    "options": [],
+    "text": "Are the assets the bound sellers use to supply the covered good durable, so that the supply of them expands only slowly?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.05,
+    "question_id": "k1.expected_to_last",
+    "rationale": "No row. The order expires on Day 95 (A-14, extension expected, is 0.35, below the cut-off). Estimate from the record.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "expected_to_last",
+    "assumption_class": "expectations",
+    "id": "k1.expected_to_last",
+    "kind": "noul",
+    "options": [],
+    "text": "Do buyers of the covered assets expect the rule to stay in force for many years?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.commutable",
+    "rationale": "WE-005 A-11 (mobility): drivers in the eastern cities can reach Brennick stations easily (20 to 45 minutes).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "commutable",
+    "assumption_class": "mobility",
+    "id": "k1.commutable",
+    "kind": "noul",
+    "options": [],
+    "text": "Can buyers who cannot obtain a covered unit buy in a neighbouring market outside the rule's reach at a cost (travel, time) they are willing to bear?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.02,
+    "question_id": "k1.relet_obstructs",
+    "rationale": "No row; not applicable to fuel sales. Estimate from the record.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "relet_obstructs",
+    "assumption_class": "other",
+    "id": "k1.relet_obstructs",
+    "kind": "noul",
+    "options": [],
+    "text": "Does letting a vacated covered unit to a new tenant make it harder for the owner to move the unit to an alternative use later (eviction only for cause, relocation payments)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.02,
+    "question_id": "k1.exit_process",
+    "rationale": "No row; not applicable, no permit process stands between stations and an alternative use in 90 days. Estimate from the record.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "exit_process",
+    "assumption_class": "other",
+    "id": "k1.exit_process",
+    "kind": "noul",
+    "options": [],
+    "text": "Does moving covered units to an alternative use require passing a permit or board process?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.1,
+    "question_id": "k1.window_repricing",
+    "rationale": "No row. The cap is an absolute level ($4.20), not a freeze at the price on the announcement day, and the pump price already stood at the market price on Day 3, so repricing in Days 3 to 5 does not lift any base. WE-005 A-8 (0.75) is about drivers and stations shifting purchases, a different question. Estimate from the record.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "window_repricing",
+    "assumption_class": "expectations",
+    "id": "k1.window_repricing",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the bound sellers reprice a meaningful share of their contracts in the announcement window, before the rule takes effect?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k1.counterfactual_catches_up",
+    "rationale": "No row. Not applicable in the same way (the cap is absolute); estimate from the record: the uncapped price would have fallen only as cargoes arrived in weeks 3 to 6.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "counterfactual_catches_up",
+    "assumption_class": "counterfactual_trend",
+    "id": "k1.counterfactual_catches_up",
+    "kind": "noul",
+    "options": [],
+    "text": "Without the rule, would prices on renewed contracts follow the market path within a year or two, so that the market price soon passes any raise made in the announcement window?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.enforcement_budget_raised",
+    "rationale": "No numbered assumption (C-21 is Tier A, 'none'); WE-005 section 2 states the first funding case of OC-3: an emergency appropriation from the general fund, a budget that rises with the new task. Estimate from the record.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforcement_budget_raised",
+    "assumption_class": "revenue_use",
+    "id": "k1.enforcement_budget_raised",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the budget of the agency that administers the measure be raised to cover the new work, rather than the work being absorbed within its existing budget?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.7,
+    "question_id": "k1.input_few_outlets",
+    "rationale": "WE-005 A-7 (alternative_uses): most in-state refinery output has no outlet other than Corvane stations in the short run (the pipeline carries about a tenth of consumption); the price branch of PC-12.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "input_few_outlets",
+    "assumption_class": "alternative_uses",
+    "id": "k1.input_few_outlets",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the suppliers of the input have few outlets, in the period considered, other than the capped sellers (so that they cannot send their output elsewhere at an uncapped price)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.input_other_outlets",
+    "rationale": "WE-005 A-6 (alternative_uses): cargoes of Corvane blend have other buyers, and the pipeline to Brennick has spare capacity; the quantity branch of PC-12.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "input_other_outlets",
+    "assumption_class": "alternative_uses",
+    "id": "k1.input_other_outlets",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the suppliers of the input have other buyers, in the period considered, to whom they can send their output at an uncapped price?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "bound_actor": "stations",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": 4.2,
+    "cap_unit": "dollars a gallon, regular grade, Day 5 to Day 95",
+    "claim_handler_actor": null,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "evasion_by_resellers": true,
+    "excluded_actor": "drivers",
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": true,
+    "good": "retail_gasoline",
+    "id": "k1",
+    "importer_actor": null,
+    "input_supplier_actor": "suppliers",
+    "instrument": "price_ceiling",
+    "market": "corvane",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": "drivers.brennick",
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "own_revenue_funded": false,
+    "protected_actor": "drivers.served",
+    "protected_concentrated": false,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "scrappage": false,
+    "scrapper_actor": null,
+    "seller_actor": "sellers.current",
+    "source_sentences": [
+     "Regular gasoline sold at retail in Corvane is capped at $4.20 a gallon including taxes, midgrade at $4.50 and premium at $4.80, from Day 5 to Day 95.",
+     "On Day 3 the governor announced that a cap would take effect on Day 5.",
+     "Enforcement is funded by an emergency appropriation from the general fund.",
+     "No fees, surcharges or required purchases may be tied to a fuel sale; the posted price must be the pump price."
+    ],
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false
+   }
+  ],
+  "context": [
+   "Before the outage, regular gasoline averaged $3.90 a gallon in Corvane. By Day 3 it was $5.10. In Brennick it was about $4.00.",
+   "The eastern Corvane cities are 20 to 45 minutes' drive from the Brennick line."
+  ],
+  "effective": "Day 5",
+  "enacted": "Day 3",
+  "jurisdiction": "Corvane (fictional)",
+  "name": "Corvane Emergency Fuel Price Order",
+  "rule_maker": "the governor of Corvane (emergency order)",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {},
+    "readings": [
+     "U1-a: allowed (the order is silent)",
+     "U1-b: treated as violations"
+    ],
+    "text": "Whether stations may limit the quantity sold per customer, shorten their opening hours or refuse card payments."
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-18T20:31:31+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {},
+   "readings": [
+    "U1-a: allowed (the order is silent)",
+    "U1-b: treated as violations"
+   ],
+   "text": "Whether stations may limit the quantity sold per customer, shorten their opening hours or refuse card payments."
+  }
+ ],
+ "verifier_problems": []
+}

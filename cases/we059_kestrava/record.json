@@ -1,0 +1,180 @@
+{
+ "name": "Kestrava Fair Repair Act",
+ "jurisdiction": "Kestrava (fictional)",
+ "rule_maker": "the Kestrava legislature",
+ "enacted": "1 March 2027",
+ "effective": "1 September 2028",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1a",
+   "instrument": "mandated_contract_term",
+   "good": "farm_equipment_repair_inputs",
+   "market": "kestrava_farm_equipment",
+   "bound_actor": "makers.ag",
+   "recipient_actor": "owners.ag",
+   "output_buyer_actor": "buyers.prospective",
+   "definition_line": true,
+   "complaint_only": true,
+   "announcement_window": true,
+   "field_contested": true,
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": false,
+   "future_taxpayer_actor": null,
+   "source_sentences": [
+    "K1, duty to supply (a mandated term of every sale of covered equipment, owed to the owner and to any independent repair provider).",
+    "The term covers parts, tools, documentation and diagnostic software, including the means to reset, calibrate and pair parts.",
+    "It binds makers of covered equipment.",
+    "Independents can buy many mechanical parts at list from dealers but cannot buy the software, without which many electronic parts cannot be calibrated or paired.",
+    "The Attorney General enforces the Act under the Unfair Trade Practices Act, on complaint; civil penalty up to $10,000 per violation; no private right of action."
+   ],
+   "contract_kind": "sale"
+  },
+  {
+   "id": "k1p",
+   "instrument": "mandated_contract_term",
+   "good": "phone_repair_inputs",
+   "market": "kestrava_phones",
+   "bound_actor": "makers.phone",
+   "recipient_actor": "owners.phone",
+   "already_provider_actor": "makers.phone.matching",
+   "output_buyer_actor": "buyers.prospective",
+   "rival_actors": [
+    "makers.phone.matching"
+   ],
+   "complaint_only": true,
+   "announcement_window": true,
+   "field_contested": true,
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": false,
+   "future_taxpayer_actor": null,
+   "source_sentences": [
+    "K1, duty to supply (a mandated term of every sale of covered equipment, owed to the owner and to any independent repair provider).",
+    "It binds makers of covered equipment.",
+    "One maker already sells genuine parts and rents tools to owners in all states at the prices its authorized providers pay, and pairs the part through its server after the repair.",
+    "The maker's existing national phone program already matches K1 on price and meets U1-b's pairing condition.",
+    "The Attorney General enforces the Act under the Unfair Trade Practices Act, on complaint; civil penalty up to $10,000 per violation; no private right of action."
+   ],
+   "contract_kind": "sale"
+  },
+  {
+   "id": "k2a",
+   "instrument": "term_prohibition",
+   "good": "farm_equipment_sale_terms",
+   "market": "kestrava_farm_equipment",
+   "bound_actor": "makers.ag",
+   "recipient_actor": "owners.ag",
+   "voids_existing": true,
+   "announcement_window": true,
+   "field_contested": true,
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": false,
+   "future_taxpayer_actor": null,
+   "source_sentences": [
+    "K2, void terms.",
+    "Terms in contracts for the sale, lease or license of covered equipment (including software licenses) that prohibit or restrict repair by the owner or a person of the owner's choice, or that void a warranty because of such repair, are void: \"Any such term is void.\"",
+    "It binds makers, dealers and lessors, in existing and new contracts, from 1 September 2028.",
+    "A warranty may still exclude damage caused by the repair itself (§4(b))."
+   ],
+   "contract_kind": "sale"
+  },
+  {
+   "id": "k2d",
+   "instrument": "term_prohibition",
+   "good": "farm_equipment_sale_terms",
+   "market": "kestrava_farm_equipment",
+   "bound_actor": "dealers.ag",
+   "recipient_actor": "owners.ag",
+   "voids_existing": true,
+   "announcement_window": true,
+   "field_contested": true,
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": false,
+   "future_taxpayer_actor": null,
+   "source_sentences": [
+    "K2, void terms.",
+    "Terms in contracts for the sale, lease or license of covered equipment (including software licenses) that prohibit or restrict repair by the owner or a person of the owner's choice, or that void a warranty because of such repair, are void: \"Any such term is void.\"",
+    "It binds makers, dealers and lessors, in existing and new contracts, from 1 September 2028.",
+    "Four makers sell through 140 authorized dealer locations, which are independent businesses under dealer agreements; about 260 independent shops repair farm equipment."
+   ],
+   "contract_kind": "sale"
+  },
+  {
+   "id": "k2p",
+   "instrument": "term_prohibition",
+   "good": "phone_sale_terms",
+   "market": "kestrava_phones",
+   "bound_actor": "makers.phone",
+   "recipient_actor": "owners.phone",
+   "voids_existing": true,
+   "announcement_window": true,
+   "field_contested": true,
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": false,
+   "future_taxpayer_actor": null,
+   "source_sentences": [
+    "K2, void terms.",
+    "Terms in contracts for the sale, lease or license of covered equipment (including software licenses) that prohibit or restrict repair by the owner or a person of the owner's choice, or that void a warranty because of such repair, are void: \"Any such term is void.\"",
+    "It binds makers, dealers and lessors, in existing and new contracts, from 1 September 2028.",
+    "A warranty may still exclude damage caused by the repair itself (§4(b))."
+   ],
+   "contract_kind": "sale"
+  },
+  {
+   "id": "k3a",
+   "instrument": "product_standard",
+   "good": "farm_equipment_software",
+   "market": "kestrava_farm_equipment",
+   "bound_actor": "makers.ag",
+   "buyer_actor": "buyers.prospective",
+   "stock_exempt": true,
+   "stock_owner_actor": "owners.ag.exempt",
+   "announcement_window": true,
+   "field_contested": true,
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": false,
+   "future_taxpayer_actor": null,
+   "source_sentences": [
+    "K3, software locks (a rule on the software of covered equipment, binding makers).",
+    "§5(c): \"A manufacturer shall not use a software lock to prevent the functioning of a part supplied, repaired or replaced in accordance with this Act.\"",
+    "Equipment sold before that date is not covered.",
+    "About 70% of tractors in use were sold before 2023 and are not covered, and tractors last 15 to 25 years."
+   ]
+  },
+  {
+   "id": "k3p",
+   "instrument": "product_standard",
+   "good": "phone_software",
+   "market": "kestrava_phones",
+   "bound_actor": "makers.phone",
+   "buyer_actor": "buyers.prospective",
+   "stock_exempt": true,
+   "stock_owner_actor": "owners.phone.exempt",
+   "announcement_window": true,
+   "field_contested": true,
+   "enforcer_actor": "officials.enforcement",
+   "general_budget": false,
+   "future_taxpayer_actor": null,
+   "source_sentences": [
+    "K3, software locks (a rule on the software of covered equipment, binding makers).",
+    "§5(c): \"A manufacturer shall not use a software lock to prevent the functioning of a part supplied, repaired or replaced in accordance with this Act.\"",
+    "Equipment sold before that date is not covered.",
+    "Phones in use are replaced about every three years, so by 2030 nearly all phones in use will be covered;"
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "§5(c) forbids \"a software lock to prevent the functioning of a part supplied, repaired or replaced in accordance with this Act\". §2(f): \"'Software lock' means any technical measure that restricts the functioning of a part unless the manufacturer authorizes it.\"",
+   "readings": [
+    "U1-a: pairing that needs the maker's authorization is itself the lock §5(c) forbids; any part installed, genuine, salvaged or non-genuine, must work fully without contacting the maker, and makers must remove pairing from covered devices and leave it out of new ones",
+    "U1-b: §3(a)(iv) presupposes that pairing continues; a lock is lawful if the owner (or a repairer acting for the owner) can pair a genuine part using a tool the maker supplies on fair and reasonable terms"
+   ]
+  }
+ ],
+ "context": [
+  "Similar bills were introduced in Kestrava in 2023 and 2025 and failed after campaigns on both sides.",
+  "The counterfactual law is that a maker may refuse to sell parts, tools and software to anyone but its authorized repairers; contract and license terms restricting repair are enforceable; parts pairing is lawful."
+ ]
+}

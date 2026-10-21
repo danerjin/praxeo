@@ -1,0 +1,170 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-1: for an identifiable group of adults, employers value their labor below the new floor.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-3: most employers comply with the floor.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.cost_not_offset",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-14: the floor raises employers' labor cost per hour for the bound group; it is not fully offset.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-6: some cash payment below the floor goes undetected.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-15: employers' associations in low-wage industries can organize to lobby.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.sellers_organize",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-15: unions can organize to lobby.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.margins",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-4: employers can adjust at least one margin.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.rivals_bound",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-10: most sellers of low-wage-intensive services compete with Larrow sellers who face the same floor.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.cross_border_feasible",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-11: Larrow Falls residents can easily shop and eat in Port Dorran.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.substitute_exists",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-7: labor-saving equipment exists for some low-wage tasks.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.reshaping_pays",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-5: recasting some workers as independent contractors is feasible.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_ahead",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-8: employers planning outlets expected both steps to take effect.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-8: employers expected both steps to take effect.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.lower_tier_used",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-12: a meaningful number of employers use the youth rate.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.tiers_substitute",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-13: workers under 20 and adults are substitutes in many low-wage jobs.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.budget_fixed",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-16: the Labor Department's investigator staff and budget are not increased for the Act.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.binding",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-2: some workers under 20 would earn less than $10.20 in Year 2 or $11.90 in Year 3.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.enforced",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-3: most employers comply with the floor.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.cost_not_offset",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-14: the floor raises employers' labor cost per hour for the bound group; it is not fully offset.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.evasion",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-6: some cash payment below the floor goes undetected.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.can_organize",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-15: employers' associations in low-wage industries can organize to lobby.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.sellers_organize",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-15: unions can organize to lobby.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.margins",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-4: employers can adjust at least one margin.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.budget_fixed",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-009 (illustrative figures), A-16: the Labor Department's investigator staff and budget are not increased for the Act.",
+  "evidence": []
+ }
+]

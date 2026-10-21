@@ -1,0 +1,24 @@
+{
+ "_note": "Ranges for the annex pass and premise step on the San Francisco 1994 thin-slice run. All but gap_year are ILLUSTRATIVE and must be sourced from material dated before enactment before this annex means anything.",
+ "_actors": {},
+ "_dominance": {
+  "keepers_dominate": {"favoured": ["covered_units", "exit_rate", "share_deterred"],
+                       "opposed": ["covered_units", "conversion_rate", "share_displaced_leaving"], "rung": "M1"},
+  "lockin_dominates": {"favoured": ["covered_units", "exit_rate", "share_deterred"],
+                       "opposed": ["covered_units", "move_rate", "share_diverted_out"], "rung": "M1"}
+ },
+ "market_growth": {"value": [0.03, 0.10], "source": "illustrative; to be sourced from pre-1994 San Francisco rent series"},
+ "cap_growth": {"value": [0.012, 0.021], "source": "60% of regional CPI (case text) times a CPI range of 2% to 3.5% (illustrative)"},
+ "gap_year": {"value": 5, "source": "horizon chosen for the annex (medium run)", "from_case": true},
+ "supply_elasticity": {"value": [0.3, 1.0], "source": "illustrative long-run elasticity of rental supply from the covered stock"},
+ "diverted_demand": {"value": [0.005, 0.03], "source": "illustrative: demand moved to uncovered units, as a share of their market"},
+ "substitute_demand_elasticity": {"value": [-0.6, -0.2], "source": "illustrative"},
+ "substitute_supply_elasticity": {"value": [0.1, 0.5], "source": "illustrative"},
+ "covered_units": {"value": [20000, 30000], "source": "illustrative count of rental units newly covered"},
+ "exit_rate": {"value": [0.05, 0.08], "source": "illustrative: share of covered tenants who would leave the city each year without the measure"},
+ "share_deterred": {"value": [0.15, 0.30], "source": "illustrative: share of those exits the lock-in prevents"},
+ "conversion_rate": {"value": [0.003, 0.008], "source": "illustrative: share of covered units converted or withdrawn each year"},
+ "share_displaced_leaving": {"value": [0.3, 0.6], "source": "illustrative: share of displaced households whose next home is outside the city"},
+ "move_rate": {"value": [0.08, 0.12], "source": "illustrative: share of covered tenants who still move each year"},
+ "share_diverted_out": {"value": [0.02, 0.05], "source": "illustrative: share of those movers diverted out of the city by higher free rents"}
+}

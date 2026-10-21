@@ -1,0 +1,5093 @@
+{
+ "assumptions": {
+  "asset_supply_slow(k1)": {
+   "assumption_class": "durability",
+   "id": "asset_supply_slow(k1)",
+   "p": 0.8,
+   "text": "The supply of the affected firms' assets is fixed or slowly expandable."
+  },
+  "asset_supply_slow(k2)": {
+   "assumption_class": "durability",
+   "id": "asset_supply_slow(k2)",
+   "p": 0.8,
+   "text": "The supply of the affected firms' assets is fixed or slowly expandable."
+  },
+  "beneficiaries_organize(k1)": {
+   "assumption_class": "other",
+   "id": "beneficiaries_organize(k1)",
+   "p": 0.85,
+   "text": "The protected producers can organize to influence renewal at a cost below their stake."
+  },
+  "beneficiaries_organize(k2)": {
+   "assumption_class": "other",
+   "id": "beneficiaries_organize(k2)",
+   "p": 0.85,
+   "text": "The protected producers can organize to influence renewal at a cost below their stake."
+  },
+  "binding(k1)": {
+   "assumption_class": "binding",
+   "id": "binding(k1)",
+   "p": 0.9,
+   "text": "The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it."
+  },
+  "binding(k2)": {
+   "assumption_class": "binding",
+   "id": "binding(k2)",
+   "p": 0.9,
+   "text": "The cap holds the quantity below what would otherwise be traded."
+  },
+  "can_organize(k2)": {
+   "assumption_class": "other",
+   "id": "can_organize(k2)",
+   "p": 0.85,
+   "text": "The holders of the rights can organize to lobby at a cost below their stake."
+  },
+  "can_relocate_capital(k1)": {
+   "assumption_class": "mobility",
+   "id": "can_relocate_capital(k1)",
+   "p": 0.3,
+   "text": "Some downstream users can move production abroad when they replace plant."
+  },
+  "can_relocate_capital(k2)": {
+   "assumption_class": "mobility",
+   "id": "can_relocate_capital(k2)",
+   "p": 0.3,
+   "text": "Some downstream users can move production abroad when they replace plant."
+  },
+  "competitors_exempt(k1)": {
+   "assumption_class": "other",
+   "id": "competitors_exempt(k1)",
+   "p": 0.8,
+   "text": "Many downstream users compete with sellers who do not face the higher input cost."
+  },
+  "competitors_exempt(k2)": {
+   "assumption_class": "other",
+   "id": "competitors_exempt(k2)",
+   "p": 0.8,
+   "text": "Many downstream users compete with sellers who do not face the higher input cost."
+  },
+  "domestic_substitutes(k1)": {
+   "assumption_class": "substitutability",
+   "id": "domestic_substitutes(k1)",
+   "p": 0.95,
+   "text": "Domestic producers make close substitutes for the covered imports."
+  },
+  "domestic_substitutes(k2)": {
+   "assumption_class": "substitutability",
+   "id": "domestic_substitutes(k2)",
+   "p": 0.95,
+   "text": "Domestic producers make close substitutes for the covered imports."
+  },
+  "enforced(k2)": {
+   "assumption_class": "enforcement",
+   "id": "enforced(k2)",
+   "p": 0.85,
+   "text": "The cap is enforced."
+  },
+  "enforcement_budget_raised(k1)": {
+   "assumption_class": "revenue_use",
+   "id": "enforcement_budget_raised(k1)",
+   "p": 0.6,
+   "text": "The administering agency's budget is raised to cover the new work, so taxpayers fund it."
+  },
+  "evasion(k2)": {
+   "assumption_class": "enforcement",
+   "id": "evasion(k2)",
+   "p": 0.2,
+   "text": "Some trade takes place beyond the cap without being caught."
+  },
+  "expected_to_last(k1)": {
+   "assumption_class": "expectations",
+   "id": "expected_to_last(k1)",
+   "p": 0.75,
+   "text": "Investors expect the measure to stay in force for at least its stated term."
+  },
+  "expected_to_last(k2)": {
+   "assumption_class": "expectations",
+   "id": "expected_to_last(k2)",
+   "p": 0.75,
+   "text": "Holders and buyers of the rights expect the restriction to last."
+  },
+  "expects_extension(k1)": {
+   "assumption_class": "expectations",
+   "id": "expects_extension(k1)",
+   "p": 0.75,
+   "text": "The protected producers expect the measure to be renewed or extended."
+  },
+  "expects_extension(k2)": {
+   "assumption_class": "expectations",
+   "id": "expects_extension(k2)",
+   "p": 0.75,
+   "text": "The protected producers expect the measure to be renewed or extended."
+  },
+  "exporters_price_takers(k1)": {
+   "assumption_class": "substitutability",
+   "id": "exporters_price_takers(k1)",
+   "p": 0.75,
+   "text": "The exporting users sell at world prices and cannot pass the higher cost on."
+  },
+  "exporters_price_takers(k2)": {
+   "assumption_class": "substitutability",
+   "id": "exporters_price_takers(k2)",
+   "p": 0.75,
+   "text": "The exporting users sell at world prices and cannot pass the higher cost on."
+  },
+  "harmed_organize(k1)": {
+   "assumption_class": "other",
+   "id": "harmed_organize(k1)",
+   "p": 0.85,
+   "text": "The harmed users can organize to seek repeal or exemption at a cost below their stake."
+  },
+  "harmed_organize(k2)": {
+   "assumption_class": "other",
+   "id": "harmed_organize(k2)",
+   "p": 0.85,
+   "text": "The harmed users can organize to seek repeal or exemption at a cost below their stake."
+  },
+  "input_not_replaceable(k1)": {
+   "assumption_class": "substitutability",
+   "id": "input_not_replaceable(k1)",
+   "p": 0.75,
+   "text": "The taxed good is a material part of downstream costs and cannot be replaced at the old cost."
+  },
+  "input_not_replaceable(k2)": {
+   "assumption_class": "substitutability",
+   "id": "input_not_replaceable(k2)",
+   "p": 0.75,
+   "text": "The taxed good is a material part of downstream costs and cannot be replaced at the old cost."
+  },
+  "no_offset(k1)": {
+   "assumption_class": "other",
+   "id": "no_offset(k1)",
+   "p": 0.6,
+   "text": "Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it."
+  },
+  "no_offset(k2)": {
+   "assumption_class": "other",
+   "id": "no_offset(k2)",
+   "p": 0.6,
+   "text": "Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it."
+  },
+  "related_slow_r1(k1)": {
+   "assumption_class": "durability",
+   "id": "related_slow_r1(k1)",
+   "p": 0.8,
+   "text": "The supply of sugar beet is slow to adjust."
+  },
+  "relief_discretionary(k2)": {
+   "assumption_class": "other",
+   "id": "relief_discretionary(k2)",
+   "p": 0.65,
+   "text": "Relief is granted case by case at officials' discretion."
+  },
+  "relief_valuable(k2)": {
+   "assumption_class": "other",
+   "id": "relief_valuable(k2)",
+   "p": 0.9,
+   "text": "Relief is worth more to applicants than its fee."
+  },
+  "reshaping_pays(k1)": {
+   "assumption_class": "other",
+   "id": "reshaping_pays(k1)",
+   "p": 0.6,
+   "text": "Reshaping goods to fall outside the definitions costs some actors less than the burden."
+  },
+  "reshaping_pays(k2)": {
+   "assumption_class": "other",
+   "id": "reshaping_pays(k2)",
+   "p": 0.6,
+   "text": "Reshaping goods to fall outside the definitions costs some actors less than the burden."
+  },
+  "revenue_base_holds(k1)": {
+   "assumption_class": "substitutability",
+   "id": "revenue_base_holds(k1)",
+   "p": 0.15,
+   "text": "The taxed base falls by less than enough to offset the rise in the rate."
+  },
+  "stockpile_ahead(k1)": {
+   "assumption_class": "expectations",
+   "id": "stockpile_ahead(k1)",
+   "p": 0.85,
+   "text": "Buyers and importers can store the good and order ahead of the effective date."
+  },
+  "stockpile_ahead(k2)": {
+   "assumption_class": "expectations",
+   "id": "stockpile_ahead(k2)",
+   "p": 0.85,
+   "text": "Buyers and importers can store the good and order ahead of the effective date."
+  },
+  "substitute_supply_expands(k1)": {
+   "assumption_class": "substitutability",
+   "id": "substitute_supply_expands(k1)",
+   "p": 0.8,
+   "text": "Sellers of the uncovered substitutes can expand their supply."
+  },
+  "substitute_supply_expands(k2)": {
+   "assumption_class": "substitutability",
+   "id": "substitute_supply_expands(k2)",
+   "p": 0.8,
+   "text": "Sellers of the uncovered substitutes can expand their supply."
+  },
+  "trade_cheap(k2)": {
+   "assumption_class": "mobility",
+   "id": "trade_cheap(k2)",
+   "p": 0.8,
+   "text": "Rights can be sold or leased at low cost."
+  },
+  "values_differ(k2)": {
+   "assumption_class": "other",
+   "id": "values_differ(k2)",
+   "p": 0.8,
+   "text": "Holders' costs or values differ."
+  }
+ },
+ "citation_problems": [],
+ "consequences": [
+  {
+   "actor_class": "buyers.household",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "evasion(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)",
+    "evasion(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k2)",
+     "premises": [
+      "evasion(k2)",
+      "quota_binds(k2)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-1",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "disputes_settled_outside_courts",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.household",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-2",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "price_paid",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.household",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "evasion(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)",
+    "evasion(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k2)",
+     "premises": [
+      "evasion(k2)",
+      "quota_binds(k2)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quality_information",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.household",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_prevented(k1)",
+     "premises": [
+      "tx_burden(k1)"
+     ],
+     "rule": "OC-4"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tx_prevented(k2)",
+     "premises": [
+      "tx_burden(k2)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-4",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.household",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "stockpile_ahead(k1)"
+    ]
+   ],
+   "assumptions": [
+    "stockpile_ahead(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "bring_forward(k1)",
+     "premises": [
+      "announced(k1)",
+      "stockpile_ahead(k1)"
+     ],
+     "rule": "RS-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short"
+   ],
+   "id": "C-5",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": "announcement"
+  },
+  {
+   "actor_class": "buyers.household",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "reshaping_pays(k1)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "reshaping_pays(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_reshaped(k1)",
+     "premises": [
+      "definition_line(k1)",
+      "tx_burden(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "tx_reshaped(k1)",
+     "premises": [
+      "reshaping_pays(k1)"
+     ],
+     "rule": "TX-4"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tx_reshaped(k2)",
+     "premises": [
+      "definition_line(k2)",
+      "tx_burden(k2)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "tx_reshaped(k2)",
+     "premises": [
+      "reshaping_pays(k2)"
+     ],
+     "rule": "TX-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.household",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tariff(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "bears_buyer(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "bears_buyer(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.household",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "evasion(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)",
+    "evasion(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k2)",
+     "premises": [
+      "evasion(k2)",
+      "quota_binds(k2)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-8",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "search_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.industrial",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "can_relocate_capital(k1)",
+     "competitors_exempt(k1)",
+     "input_not_replaceable(k1)"
+    ],
+    [
+     "binding(k2)",
+     "can_relocate_capital(k2)",
+     "competitors_exempt(k2)",
+     "enforced(k2)",
+     "input_not_replaceable(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "can_relocate_capital(k1)",
+    "competitors_exempt(k1)",
+    "input_not_replaceable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k1)",
+     "premises": [
+      "competitors_exempt(k1)",
+      "passes_down(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_capital_moves(k1)",
+     "premises": [
+      "can_relocate_capital(k1)"
+     ],
+     "rule": "RS-4"
+    },
+    {
+     "conclusion": "tx_capital_moves(k1)",
+     "premises": [
+      "exempt_squeeze(k1)"
+     ],
+     "rule": "RS-6"
+    },
+    {
+     "conclusion": "tx_capital_moves(k1)",
+     "premises": [
+      "exempt_squeeze(k1)"
+     ],
+     "rule": "TS-1"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "passes_down(k2)",
+     "premises": [
+      "input_cost_up(k2)",
+      "input_not_replaceable(k2)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k2)",
+     "premises": [
+      "competitors_exempt(k2)",
+      "passes_down(k2)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_capital_moves(k2)",
+     "premises": [
+      "can_relocate_capital(k2)"
+     ],
+     "rule": "RS-4"
+    },
+    {
+     "conclusion": "tx_capital_moves(k2)",
+     "premises": [
+      "exempt_squeeze(k2)"
+     ],
+     "rule": "RS-6"
+    },
+    {
+     "conclusion": "tx_capital_moves(k2)",
+     "premises": [
+      "exempt_squeeze(k2)"
+     ],
+     "rule": "TS-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-9",
+   "item": null,
+   "reported": false,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "capital_stock_target",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.industrial",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "competitors_exempt(k1)",
+     "harmed_organize(k1)",
+     "input_not_replaceable(k1)"
+    ],
+    [
+     "binding(k2)",
+     "competitors_exempt(k2)",
+     "enforced(k2)",
+     "harmed_organize(k2)",
+     "input_not_replaceable(k2)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "relief_discretionary(k2)",
+     "relief_valuable(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "competitors_exempt(k1)",
+    "harmed_organize(k1)",
+    "input_not_replaceable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k1)",
+     "premises": [
+      "competitors_exempt(k1)",
+      "passes_down(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_lobbies_users(k1)",
+     "premises": [
+      "exempt_squeeze(k1)",
+      "harmed_organize(k1)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tx_rationed(k2)",
+     "premises": [
+      "relief_discretionary(k2)"
+     ],
+     "rule": "OC-2"
+    },
+    {
+     "conclusion": "tx_rationed(k2)",
+     "premises": [
+      "relief_discretionary(k2)",
+      "relief_valuable(k2)",
+      "tx_burden(k2)"
+     ],
+     "rule": "RS-15"
+    },
+    {
+     "conclusion": "input_cost_up(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "passes_down(k2)",
+     "premises": [
+      "input_cost_up(k2)",
+      "input_not_replaceable(k2)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k2)",
+     "premises": [
+      "competitors_exempt(k2)",
+      "passes_down(k2)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_lobbies_users(k2)",
+     "premises": [
+      "tx_rationed(k2)"
+     ],
+     "rule": "RS-15"
+    },
+    {
+     "conclusion": "tx_lobbies_users(k2)",
+     "premises": [
+      "exempt_squeeze(k2)",
+      "harmed_organize(k2)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-10",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.industrial",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "competitors_exempt(k1)",
+     "input_not_replaceable(k1)"
+    ],
+    [
+     "binding(k2)",
+     "competitors_exempt(k2)",
+     "enforced(k2)",
+     "input_not_replaceable(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "competitors_exempt(k1)",
+    "input_not_replaceable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k1)",
+     "premises": [
+      "competitors_exempt(k1)",
+      "passes_down(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "passes_down(k2)",
+     "premises": [
+      "input_cost_up(k2)",
+      "input_not_replaceable(k2)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k2)",
+     "premises": [
+      "competitors_exempt(k2)",
+      "passes_down(k2)"
+     ],
+     "rule": "RS-14"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-11",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "buyers.sugar_goods",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "competitors_exempt(k1)",
+     "input_not_replaceable(k1)",
+     "substitute_supply_expands(k1)"
+    ],
+    [
+     "binding(k2)",
+     "competitors_exempt(k2)",
+     "enforced(k2)",
+     "input_not_replaceable(k2)",
+     "substitute_supply_expands(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "competitors_exempt(k1)",
+    "input_not_replaceable(k1)",
+    "substitute_supply_expands(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k1)",
+     "premises": [
+      "competitors_exempt(k1)",
+      "passes_down(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_turn_to_substitutes(k1)",
+     "premises": [
+      "exempt_squeeze(k1)",
+      "substitute_supply_expands(k1)"
+     ],
+     "rule": "RS-1"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "passes_down(k2)",
+     "premises": [
+      "input_cost_up(k2)",
+      "input_not_replaceable(k2)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k2)",
+     "premises": [
+      "competitors_exempt(k2)",
+      "passes_down(k2)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_turn_to_substitutes(k2)",
+     "premises": [
+      "exempt_squeeze(k2)",
+      "substitute_supply_expands(k2)"
+     ],
+     "rule": "RS-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-12",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_substitute",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "export_industries",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "no_offset(k2)"
+    ],
+    [
+     "binding(k1)",
+     "no_offset(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "no_offset(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "imports_fall(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "exports_fall(k1)",
+     "premises": [
+      "imports_fall(k1)",
+      "no_offset(k1)"
+     ],
+     "rule": "TX-8"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "imports_fall(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "exports_fall(k2)",
+     "premises": [
+      "imports_fall(k2)",
+      "no_offset(k2)"
+     ],
+     "rule": "TX-8"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-13",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "food_manufacturers.exporters",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "exporters_price_takers(k1)",
+     "input_not_replaceable(k1)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "exporters_price_takers(k2)",
+     "input_not_replaceable(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "exporters_price_takers(k1)",
+    "input_not_replaceable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_exporters_squeezed(k1)",
+     "premises": [
+      "exporters_price_takers(k1)",
+      "passes_down(k1)"
+     ],
+     "rule": "RS-6"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "passes_down(k2)",
+     "premises": [
+      "input_cost_up(k2)",
+      "input_not_replaceable(k2)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_exporters_squeezed(k2)",
+     "premises": [
+      "exporters_price_takers(k2)",
+      "passes_down(k2)"
+     ],
+     "rule": "RS-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-14",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers.history",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_capitalized(k2)",
+     "premises": [
+      "expected_to_last(k2)",
+      "quota_binds(k2)"
+     ],
+     "rule": "SB-4"
+    },
+    {
+     "conclusion": "en_windfall(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-12"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-15",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers.history",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "trade_cheap(k2)",
+     "values_differ(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)",
+    "trade_cheap(k2)",
+    "values_differ(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_consolidate(k2)",
+     "premises": [
+      "quota_binds(k2)",
+      "trade_cheap(k2)",
+      "values_differ(k2)"
+     ],
+     "rule": "EN-13"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "long"
+   ],
+   "id": "C-16",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "capital_stock_target",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers.history",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tariff(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "tx_files(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "TX-5"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-17",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers.history",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "evasion(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)",
+    "evasion(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_informal(k2)",
+     "premises": [
+      "evasion(k2)",
+      "quota_binds(k2)"
+     ],
+     "rule": "RS-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-18",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "informal_activity",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers.history",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "can_organize(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "can_organize(k2)",
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_lobby(k2)",
+     "premises": [
+      "can_organize(k2)",
+      "quota_binds(k2)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-19",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers.history",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-20",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers.history",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "trade_cheap(k2)",
+     "values_differ(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)",
+    "trade_cheap(k2)",
+    "values_differ(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_consolidate(k2)",
+     "premises": [
+      "quota_binds(k2)",
+      "trade_cheap(k2)",
+      "values_differ(k2)"
+     ],
+     "rule": "EN-13"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-21",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "number_of_sellers",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers.history",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "imports_fall(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "imports_fall(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "TX-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-22",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers.history",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "reshaping_pays(k1)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "reshaping_pays(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "reshaping_pays(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tx_reshaped(k2)",
+     "premises": [
+      "definition_line(k2)",
+      "tx_burden(k2)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "tx_reshaped(k2)",
+     "premises": [
+      "reshaping_pays(k2)"
+     ],
+     "rule": "TX-4"
+    },
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_reshaped(k1)",
+     "premises": [
+      "definition_line(k1)",
+      "tx_burden(k1)"
+     ],
+     "rule": "RS-5"
+    },
+    {
+     "conclusion": "tx_reshaped(k1)",
+     "premises": [
+      "reshaping_pays(k1)"
+     ],
+     "rule": "TX-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-23",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "reclassification",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers.history",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tariff(k1)"
+     ],
+     "rule": "TX-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-24",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "A",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers.history",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "trade_cheap(k2)",
+     "values_differ(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)",
+    "trade_cheap(k2)",
+    "values_differ(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_consolidate(k2)",
+     "premises": [
+      "quota_binds(k2)",
+      "trade_cheap(k2)",
+      "values_differ(k2)"
+     ],
+     "rule": "EN-13"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-25",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "right_lease_price",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers.new",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "relief_discretionary(k2)",
+     "relief_valuable(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)",
+    "relief_discretionary(k2)",
+    "relief_valuable(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tx_rationed(k2)",
+     "premises": [
+      "relief_discretionary(k2)"
+     ],
+     "rule": "OC-2"
+    },
+    {
+     "conclusion": "tx_rationed(k2)",
+     "premises": [
+      "relief_discretionary(k2)",
+      "relief_valuable(k2)",
+      "tx_burden(k2)"
+     ],
+     "rule": "RS-15"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-26",
+   "item": null,
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {
+    "U1-a": "increase",
+    "U1-b": "none"
+   },
+   "tier": "B",
+   "variable": "allocation_by_non_price_criteria",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers.new",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "relief_discretionary(k2)",
+     "relief_valuable(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)",
+    "relief_discretionary(k2)",
+    "relief_valuable(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tx_rationed(k2)",
+     "premises": [
+      "relief_discretionary(k2)"
+     ],
+     "rule": "OC-2"
+    },
+    {
+     "conclusion": "tx_rationed(k2)",
+     "premises": [
+      "relief_discretionary(k2)",
+      "relief_valuable(k2)",
+      "tx_burden(k2)"
+     ],
+     "rule": "RS-15"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-27",
+   "item": null,
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {
+    "U1-a": "increase",
+    "U1-b": "none"
+   },
+   "tier": "B",
+   "variable": "compliance_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "importers.new",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "competitors_exempt(k2)",
+     "enforced(k2)",
+     "harmed_organize(k2)",
+     "input_not_replaceable(k2)"
+    ],
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "relief_discretionary(k2)",
+     "relief_valuable(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k2)",
+    "enforced(k2)",
+    "relief_discretionary(k2)",
+    "relief_valuable(k2)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tx_rationed(k2)",
+     "premises": [
+      "relief_discretionary(k2)"
+     ],
+     "rule": "OC-2"
+    },
+    {
+     "conclusion": "tx_rationed(k2)",
+     "premises": [
+      "relief_discretionary(k2)",
+      "relief_valuable(k2)",
+      "tx_burden(k2)"
+     ],
+     "rule": "RS-15"
+    },
+    {
+     "conclusion": "input_cost_up(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "passes_down(k2)",
+     "premises": [
+      "input_cost_up(k2)",
+      "input_not_replaceable(k2)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k2)",
+     "premises": [
+      "competitors_exempt(k2)",
+      "passes_down(k2)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_lobbies_users(k2)",
+     "premises": [
+      "tx_rationed(k2)"
+     ],
+     "rule": "RS-15"
+    },
+    {
+     "conclusion": "tx_lobbies_users(k2)",
+     "premises": [
+      "exempt_squeeze(k2)",
+      "harmed_organize(k2)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-28",
+   "item": null,
+   "reported": true,
+   "sign": "ambiguous",
+   "sign_by_reading": {
+    "U1-a": "increase",
+    "U1-b": "none"
+   },
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "input_suppliers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "domestic_substitutes(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "domestic_substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k1)",
+     "premises": [
+      "domestic_substitutes(k1)",
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_inputs_demanded(k1)",
+     "premises": [
+      "protected_sellers(k1)"
+     ],
+     "rule": "CR-9"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-29",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_demanded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "mills.domestic",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "domestic_substitutes(k1)",
+     "expects_extension(k1)"
+    ],
+    [
+     "binding(k2)",
+     "domestic_substitutes(k2)",
+     "enforced(k2)",
+     "expects_extension(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "domestic_substitutes(k1)",
+    "expects_extension(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k1)",
+     "premises": [
+      "domestic_substitutes(k1)",
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_invests(k1)",
+     "premises": [
+      "expects_extension(k1)",
+      "protected_sellers(k1)"
+     ],
+     "rule": "TS-2"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k2)",
+     "premises": [
+      "domestic_substitutes(k2)",
+      "tariff_bites(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_invests(k2)",
+     "premises": [
+      "expects_extension(k2)",
+      "protected_sellers(k2)"
+     ],
+     "rule": "TS-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-30",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "investment_target",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "mills.domestic",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "beneficiaries_organize(k1)",
+     "binding(k1)",
+     "domestic_substitutes(k1)"
+    ],
+    [
+     "binding(k2)",
+     "domestic_substitutes(k2)",
+     "enforced(k2)",
+     "relief_discretionary(k2)",
+     "relief_valuable(k2)"
+    ],
+    [
+     "beneficiaries_organize(k2)",
+     "binding(k2)",
+     "domestic_substitutes(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "beneficiaries_organize(k1)",
+    "binding(k1)",
+    "domestic_substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k1)",
+     "premises": [
+      "domestic_substitutes(k1)",
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_lobbies_sellers(k1)",
+     "premises": [
+      "beneficiaries_organize(k1)",
+      "protected_sellers(k1)"
+     ],
+     "rule": "RS-7"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tx_rationed(k2)",
+     "premises": [
+      "relief_discretionary(k2)"
+     ],
+     "rule": "OC-2"
+    },
+    {
+     "conclusion": "tx_rationed(k2)",
+     "premises": [
+      "relief_discretionary(k2)",
+      "relief_valuable(k2)",
+      "tx_burden(k2)"
+     ],
+     "rule": "RS-15"
+    },
+    {
+     "conclusion": "protected_sellers(k2)",
+     "premises": [
+      "domestic_substitutes(k2)",
+      "tariff_bites(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_lobbies_sellers(k2)",
+     "premises": [
+      "tx_rationed(k2)"
+     ],
+     "rule": "RS-15"
+    },
+    {
+     "conclusion": "tx_lobbies_sellers(k2)",
+     "premises": [
+      "beneficiaries_organize(k2)",
+      "protected_sellers(k2)"
+     ],
+     "rule": "RS-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-31",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "lobbying_effort",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "mills.domestic",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "domestic_substitutes(k1)"
+    ],
+    [
+     "binding(k2)",
+     "domestic_substitutes(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "domestic_substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k1)",
+     "premises": [
+      "domestic_substitutes(k1)",
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k2)",
+     "premises": [
+      "domestic_substitutes(k2)",
+      "tariff_bites(k2)"
+     ],
+     "rule": "TX-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-32",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "net_price_received",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "mills.domestic",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "domestic_substitutes(k1)"
+    ],
+    [
+     "binding(k2)",
+     "domestic_substitutes(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "domestic_substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k1)",
+     "premises": [
+      "domestic_substitutes(k1)",
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k2)",
+     "premises": [
+      "domestic_substitutes(k2)",
+      "tariff_bites(k2)"
+     ],
+     "rule": "TX-7"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-33",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    []
+   ],
+   "assumptions": [],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tariff(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "tx_administered(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "en_administered(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-34",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "enforcement_cost",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "revenue_base_holds(k1)"
+    ]
+   ],
+   "assumptions": [
+    "revenue_base_holds(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tariff(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "revenue_rises(k1)",
+     "premises": [
+      "collected(k1)",
+      "revenue_base_holds(k1)"
+     ],
+     "rule": "TX-1"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-35",
+   "item": null,
+   "reported": false,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "tax_revenue",
+   "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "officials.enforcement",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_short_of_static(k1)",
+     "premises": [
+      "tx_burden(k1)"
+     ],
+     "rule": "TX-9"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-36",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "tax_revenue_vs_static_projection",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.food_manufacturers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "asset_supply_slow(k2)",
+     "binding(k2)",
+     "competitors_exempt(k2)",
+     "enforced(k2)",
+     "expected_to_last(k2)",
+     "input_not_replaceable(k2)"
+    ],
+    [
+     "asset_supply_slow(k1)",
+     "binding(k1)",
+     "competitors_exempt(k1)",
+     "expected_to_last(k1)",
+     "input_not_replaceable(k1)"
+    ]
+   ],
+   "assumptions": [
+    "asset_supply_slow(k1)",
+    "binding(k1)",
+    "competitors_exempt(k1)",
+    "expected_to_last(k1)",
+    "input_not_replaceable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k1)",
+     "premises": [
+      "competitors_exempt(k1)",
+      "passes_down(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_capitalized_loss(k1)",
+     "premises": [
+      "asset_supply_slow(k1)",
+      "exempt_squeeze(k1)",
+      "expected_to_last(k1)"
+     ],
+     "rule": "SB-4"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "passes_down(k2)",
+     "premises": [
+      "input_cost_up(k2)",
+      "input_not_replaceable(k2)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k2)",
+     "premises": [
+      "competitors_exempt(k2)",
+      "passes_down(k2)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_capitalized_loss(k2)",
+     "premises": [
+      "asset_supply_slow(k2)",
+      "exempt_squeeze(k2)",
+      "expected_to_last(k2)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-37",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "owners.mills",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "asset_supply_slow(k1)",
+     "binding(k1)",
+     "domestic_substitutes(k1)",
+     "expected_to_last(k1)"
+    ],
+    [
+     "asset_supply_slow(k2)",
+     "binding(k2)",
+     "domestic_substitutes(k2)",
+     "enforced(k2)",
+     "expected_to_last(k2)"
+    ]
+   ],
+   "assumptions": [
+    "asset_supply_slow(k1)",
+    "binding(k1)",
+    "domestic_substitutes(k1)",
+    "expected_to_last(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k1)",
+     "premises": [
+      "domestic_substitutes(k1)",
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_capitalized_gain(k1)",
+     "premises": [
+      "asset_supply_slow(k1)",
+      "expected_to_last(k1)",
+      "protected_sellers(k1)"
+     ],
+     "rule": "SB-4"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k2)",
+     "premises": [
+      "domestic_substitutes(k2)",
+      "tariff_bites(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_capitalized_gain(k2)",
+     "premises": [
+      "asset_supply_slow(k2)",
+      "expected_to_last(k2)",
+      "protected_sellers(k2)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-38",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "sellers.foreign",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_burden(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "tx_prevented(k1)",
+     "premises": [
+      "tx_burden(k1)"
+     ],
+     "rule": "OC-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-39",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_traded",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "taxpayers",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "enforcement_budget_raised(k1)"
+    ]
+   ],
+   "assumptions": [
+    "enforcement_budget_raised(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "collected(k1)",
+     "premises": [
+      "tariff(k1)"
+     ],
+     "rule": "TX-1"
+    },
+    {
+     "conclusion": "tx_administered(k1)",
+     "premises": [
+      "collected(k1)"
+     ],
+     "rule": "OC-3"
+    },
+    {
+     "conclusion": "tx_budget_funded(k1)",
+     "premises": [
+      "tx_administered(k1)"
+     ],
+     "rule": "OC-1"
+    },
+    {
+     "conclusion": "tx_budget_funded(k1)",
+     "premises": [
+      "enforcement_budget_raised(k1)",
+      "tx_administered(k1)"
+     ],
+     "rule": "OC-3"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-40",
+   "item": null,
+   "reported": true,
+   "sign": "decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "resources_available_other_uses",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.export_industries",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k2)",
+     "enforced(k2)",
+     "no_offset(k2)"
+    ],
+    [
+     "binding(k1)",
+     "no_offset(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "no_offset(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "imports_fall(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "exports_fall(k1)",
+     "premises": [
+      "imports_fall(k1)",
+      "no_offset(k1)"
+     ],
+     "rule": "TX-8"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "imports_fall(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "TX-2"
+    },
+    {
+     "conclusion": "exports_fall(k2)",
+     "premises": [
+      "imports_fall(k2)",
+      "no_offset(k2)"
+     ],
+     "rule": "TX-8"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked"
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-41",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.food",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "competitors_exempt(k1)",
+     "input_not_replaceable(k1)"
+    ],
+    [
+     "binding(k2)",
+     "competitors_exempt(k2)",
+     "enforced(k2)",
+     "input_not_replaceable(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "competitors_exempt(k1)",
+    "input_not_replaceable(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k1)",
+     "premises": [
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "passes_down(k1)",
+     "premises": [
+      "input_cost_up(k1)",
+      "input_not_replaceable(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k1)",
+     "premises": [
+      "competitors_exempt(k1)",
+      "passes_down(k1)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_workers_cut(k1)",
+     "premises": [
+      "exempt_squeeze(k1)"
+     ],
+     "rule": "RS-6"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "input_cost_up(k2)",
+     "premises": [
+      "tariff_bites(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "passes_down(k2)",
+     "premises": [
+      "input_cost_up(k2)",
+      "input_not_replaceable(k2)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "exempt_squeeze(k2)",
+     "premises": [
+      "competitors_exempt(k2)",
+      "passes_down(k2)"
+     ],
+     "rule": "RS-14"
+    },
+    {
+     "conclusion": "tx_workers_cut(k2)",
+     "premises": [
+      "exempt_squeeze(k2)"
+     ],
+     "rule": "RS-6"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked"
+   ],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-42",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_decrease",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "workers.mills",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "domestic_substitutes(k1)"
+    ],
+    [
+     "binding(k2)",
+     "domestic_substitutes(k2)",
+     "enforced(k2)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "domestic_substitutes(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "tariff_bites(k1)",
+     "premises": [
+      "binding(k1)",
+      "tariff(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k1)",
+     "premises": [
+      "domestic_substitutes(k1)",
+      "tariff_bites(k1)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "quota_binds(k2)",
+     "premises": [
+      "binding(k2)",
+      "enforced(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "quota_price(k2)",
+     "premises": [
+      "quota_binds(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "quota_price(k2)"
+     ],
+     "rule": "EN-6"
+    },
+    {
+     "conclusion": "tariff_bites(k2)",
+     "premises": [
+      "binding(k2)",
+      "tariff(k2)"
+     ],
+     "rule": "TX-7"
+    },
+    {
+     "conclusion": "protected_sellers(k2)",
+     "premises": [
+      "domestic_substitutes(k2)",
+      "tariff_bites(k2)"
+     ],
+     "rule": "TX-7"
+    }
+   ],
+   "group": [
+    "employment",
+    "hours_worked"
+   ],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-43",
+   "item": null,
+   "reported": true,
+   "sign": "at_least_one_increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "employment",
+   "visibility": "visible",
+   "window": null
+  }
+ ],
+ "decider": "fixture:answers.json",
+ "engine_facts": "bound(k1, \"importers.history\").\nprotected(k1, \"mills.domestic\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nrelated(k1, r1, input, \"growers.beet\", \"net_price_received\", \"\").\nrel_premise(k1, r1, slow, related_slow_r1(k1)).\ntariff(k1).\nbuyer(k1, \"buyers.household\").\ndomestic_seller(k1, \"mills.domestic\").\nimporter(k1, \"importers.history\").\nrevenue(k1, \"officials.enforcement\").\nexporter(k1, \"export_industries\").\nexporter_worker(k1, \"workers.export_industries\").\nseller(k1, \"sellers.current\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\ndomestic_seller_worker(k1, \"workers.mills\").\nforeign_seller(k1, \"sellers.foreign\").\ninput_supplier(k1, \"input_suppliers\").\nseller_owner(k1, \"owners.mills\").\nrenewable(k1).\ndefinition_line(k1).\nrate_rise(k1).\ndownstream(k1, \"buyers.industrial\", \"buyers.sugar_goods\", exempt).\ndownstream_owner(k1, \"buyers.industrial\", \"owners.food_manufacturers\").\ndownstream_exporter(k1, \"buyers.industrial\", \"food_manufacturers.exporters\").\ndownstream_worker(k1, \"buyers.industrial\", \"workers.food\").\nbound(k2, \"importers.history\").\nexcluded(k2, \"buyers.prospective\").\nannounced(k2).\nquota(k2).\nen_buyer(k2, \"buyers.household\").\nen_holder(k2, \"importers.history\").\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nen_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nen_informal_buyer(k2, \"buyers.household\").\nen_revenue(k2, \"officials.enforcement\").\nen_entrant(k2, \"importers.new\").\nbuyer(k2, \"buyers.household\").\ndomestic_seller(k2, \"mills.domestic\").\nimporter(k2, \"importers.history\").\nexporter(k2, \"export_industries\").\nexporter_worker(k2, \"workers.export_industries\").\nseller(k2, \"sellers.current\").\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\ndomestic_seller_worker(k2, \"workers.mills\").\nforeign_seller(k2, \"sellers.foreign\").\nseller_owner(k2, \"owners.mills\").\nrenewable(k2).\ndefinition_line(k2).\ndownstream(k2, \"buyers.industrial\", \"buyers.sugar_goods\", exempt).\ndownstream_owner(k2, \"buyers.industrial\", \"owners.food_manufacturers\").\ndownstream_exporter(k2, \"buyers.industrial\", \"food_manufacturers.exporters\").\ndownstream_worker(k2, \"buyers.industrial\", \"workers.food\").\ntransferable(k2).\nimport_quota(k2).\nallocation_by_history(k2).\nbound(k3, \"officials.enforcement\").\nprotected(k3, \"importers.history\").\nexcluded(k3, \"buyers.prospective\").\nannounced(k3).\nassumption(binding(k1)).\nassumption(domestic_substitutes(k1)).\nassumption(no_offset(k1)).\nassumption(revenue_base_holds(k1)).\nassumption(input_not_replaceable(k1)).\nassumption(competitors_exempt(k1)).\nassumption(enforcement_budget_raised(k1)).\nassumption(stockpile_ahead(k1)).\nassumption(reshaping_pays(k1)).\nassumption(beneficiaries_organize(k1)).\nassumption(harmed_organize(k1)).\nassumption(expects_extension(k1)).\nassumption(expected_to_last(k1)).\nassumption(asset_supply_slow(k1)).\nassumption(can_relocate_capital(k1)).\nassumption(substitute_supply_expands(k1)).\nassumption(exporters_price_takers(k1)).\nassumption(related_slow_r1(k1)).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(evasion(k2)).\nassumption(can_organize(k2)).\nassumption(expected_to_last(k2)).\nassumption(values_differ(k2)).\nassumption(trade_cheap(k2)).\nassumption(domestic_substitutes(k2)).\nassumption(no_offset(k2)).\nassumption(input_not_replaceable(k2)).\nassumption(competitors_exempt(k2)).\nassumption(stockpile_ahead(k2)).\nassumption(reshaping_pays(k2)).\nassumption(relief_discretionary(k2)).\nassumption(relief_valuable(k2)).\nassumption(beneficiaries_organize(k2)).\nassumption(harmed_organize(k2)).\nassumption(expects_extension(k2)).\nassumption(asset_supply_slow(k2)).\nassumption(can_relocate_capital(k2)).\nassumption(substitute_supply_expands(k2)).\nassumption(exporters_price_takers(k2)).\n",
+ "explanations": [
+  "C-1. Compared with no Kestrany Sugar Import Regime Act, disputes settled outside courts for buyers.household rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.85); Some trade takes place beyond the cap without being caught (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-2. Compared with no Kestrany Sugar Import Regime Act, price paid for buyers.household rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; EN-6: EN-6. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-3. Compared with no Kestrany Sugar Import Regime Act, quality information for buyers.household falls from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.85); Some trade takes place beyond the cap without being caught (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-4. Compared with no Kestrany Sugar Import Regime Act, quantity traded for buyers.household falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-4: exchanges that no longer happen are lost to both sides; EN-6: EN-6. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-5. Compared with no Kestrany Sugar Import Regime Act, quantity traded for buyers.household rises in the announcement window (before the effective date), in the short run (tier B, invisible). Why: RS-8: a measure announced before it takes effect treats the same action differently by date, so actors move it toward the favourable window. This holds if: Buyers and importers can store the good and order ahead of the effective date (p = 0.85). Reported.",
+  "C-6. Compared with no Kestrany Sugar Import Regime Act, reclassification for buyers.household rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-5: owners move units out of the rule's reach; TX-4: where an untaxed place is within reach, buyers who can cross the boundary buy there and the sellers across it gain their custom; EN-6: EN-6. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.60). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-7. Compared with no Kestrany Sugar Import Regime Act, resources available other uses for buyers.household falls from the short run onward (tier B, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; EN-6: EN-6. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-8. Compared with no Kestrany Sugar Import Regime Act, search cost for buyers.household rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.85); Some trade takes place beyond the cap without being caught (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-9. Compared with no Kestrany Sugar Import Regime Act, capital stock target for buyers.industrial falls in the long run (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-4: shut-out buyers turn to uncovered units, which are close substitutes; RS-6: sellers whose return falls sell less, and may cut staff or hours; TS-1: TS-1; EN-6: EN-6. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Some downstream users can move production abroad when they replace plant (p = 0.30); Many downstream users compete with sellers who do not face the higher input cost (p = 0.80); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.75). It also follows under 1 other minimal assumption set(s). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-10. Compared with no Kestrany Sugar Import Regime Act, lobbying effort for buyers.industrial rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it; EN-6: EN-6; OC-2: OC-2; RS-15: RS-15. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Many downstream users compete with sellers who do not face the higher input cost (p = 0.80); The harmed users can organize to seek repeal or exemption at a cost below their stake (p = 0.85); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.75). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-11. Compared with no Kestrany Sugar Import Regime Act, quantity supplied for buyers.industrial falls from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; EN-6: EN-6. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Many downstream users compete with sellers who do not face the higher input cost (p = 0.80); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-12. Compared with no Kestrany Sugar Import Regime Act, quantity substitute for buyers.sugar_goods rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-1: when a good becomes dearer, buyers turn to substitutes; EN-6: EN-6. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Many downstream users compete with sellers who do not face the higher input cost (p = 0.80); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.75); Sellers of the uncovered substitutes can expand their supply (p = 0.80). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-13. Compared with no Kestrany Sugar Import Regime Act, quantity supplied for export_industries falls from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; TX-8: foreigners who sell less to the country earn less of its currency and so buy fewer of its exports; EN-6: EN-6. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it (p = 0.60). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-14. Compared with no Kestrany Sugar Import Regime Act, quantity supplied for food_manufacturers.exporters falls from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-6: sellers whose return falls sell less, and may cut staff or hours; EN-6: EN-6. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); The exporting users sell at world prices and cannot pass the higher cost on (p = 0.75); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-15. Compared with no Kestrany Sugar Import Regime Act, asset value for importers.history rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value; EN-12: EN-12. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.85). Reported.",
+  "C-16. Compared with no Kestrany Sugar Import Regime Act, capital stock target for importers.history falls in the long run (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.85); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.80). Reported.",
+  "C-17. Compared with no Kestrany Sugar Import Regime Act, compliance cost for importers.history rises from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; TX-5: whoever must record, file or collect a tax bears the cost of doing so. This holds if: no assumption. Reported.",
+  "C-18. Compared with no Kestrany Sugar Import Regime Act, informal activity for importers.history rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; RS-3: RS-3. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.85); Some trade takes place beyond the cap without being caught (p = 0.20). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-19. Compared with no Kestrany Sugar Import Regime Act, lobbying effort for importers.history rises from the medium run onward (tier B, invisible). Why: EN-6: EN-6; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The holders of the rights can organize to lobby at a cost below their stake (p = 0.85); The cap is enforced (p = 0.85). Reported.",
+  "C-20. Compared with no Kestrany Sugar Import Regime Act, net price received for importers.history rises from the short run onward (tier B, invisible). Why: EN-6: EN-6. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.85). Reported.",
+  "C-21. Compared with no Kestrany Sugar Import Regime Act, number of sellers for importers.history falls from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.85); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.80). Reported.",
+  "C-22. Compared with no Kestrany Sugar Import Regime Act, quantity traded for importers.history falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; EN-6: EN-6. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-23. Compared with no Kestrany Sugar Import Regime Act, reclassification for importers.history rises from the short run onward (tier B, invisible). Why: EN-6: EN-6; TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-5: owners move units out of the rule's reach; TX-4: where an untaxed place is within reach, buyers who can cross the boundary buy there and the sellers across it gain their custom. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.60). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-24. Compared with no Kestrany Sugar Import Regime Act, resources available other uses for importers.history falls from the short run onward (tier A, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue. This holds if: no assumption. Reported.",
+  "C-25. Compared with no Kestrany Sugar Import Regime Act, right lease price for importers.history rises from the medium run onward (tier B, invisible). Why: EN-6: EN-6; EN-13: EN-13. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.85); Rights can be sold or leased at low cost (p = 0.80); Holders' costs or values differ (p = 0.80). Reported.",
+  "C-26. Compared with no Kestrany Sugar Import Regime Act, allocation by non price criteria for importers.new may move either way from the short run onward (tier B, invisible). Why: EN-6: EN-6; TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-2: OC-2; RS-15: RS-15. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.85); Relief is granted case by case at officials' discretion (p = 0.65); Relief is worth more to applicants than its fee (p = 0.90). Sign per reading: U1-a: increase; U1-b: none. Reported.",
+  "C-27. Compared with no Kestrany Sugar Import Regime Act, compliance cost for importers.new may move either way from the short run onward (tier B, invisible). Why: EN-6: EN-6; TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-2: OC-2; RS-15: RS-15. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.85); Relief is granted case by case at officials' discretion (p = 0.65); Relief is worth more to applicants than its fee (p = 0.90). Sign per reading: U1-a: increase; U1-b: none. Reported.",
+  "C-28. Compared with no Kestrany Sugar Import Regime Act, lobbying effort for importers.new may move either way from the medium run onward (tier B, invisible). Why: EN-6: EN-6; TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-2: OC-2; RS-15: RS-15; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The cap holds the quantity below what would otherwise be traded (p = 0.90); The cap is enforced (p = 0.85); Relief is granted case by case at officials' discretion (p = 0.65); Relief is worth more to applicants than its fee (p = 0.90). It also follows under 1 other minimal assumption set(s). Sign per reading: U1-a: increase; U1-b: none. Reported.",
+  "C-29. Compared with no Kestrany Sugar Import Regime Act, quantity demanded for input_suppliers rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; CR-9: an owner who leaves the rental market ends the leases of those who live in the building. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Domestic producers make close substitutes for the covered imports (p = 0.95). Reported.",
+  "C-30. Compared with no Kestrany Sugar Import Regime Act, investment target for mills.domestic rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TS-2: TS-2; EN-6: EN-6. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Domestic producers make close substitutes for the covered imports (p = 0.95); The protected producers expect the measure to be renewed or extended (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-31. Compared with no Kestrany Sugar Import Regime Act, lobbying effort for mills.domestic rises from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it; EN-6: EN-6; OC-2: OC-2; RS-15: RS-15. This holds if: The protected producers can organize to influence renewal at a cost below their stake (p = 0.85); The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Domestic producers make close substitutes for the covered imports (p = 0.95). It also follows under 2 other minimal assumption set(s). Reported.",
+  "C-32. Compared with no Kestrany Sugar Import Regime Act, net price received for mills.domestic rises from the short run onward (tier B, visible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; EN-6: EN-6. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Domestic producers make close substitutes for the covered imports (p = 0.95). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-33. Compared with no Kestrany Sugar Import Regime Act, quantity supplied for mills.domestic rises from the short run onward (tier B, visible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; EN-6: EN-6. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Domestic producers make close substitutes for the covered imports (p = 0.95). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-34. Compared with no Kestrany Sugar Import Regime Act, enforcement cost for officials.enforcement rises from the short run onward (tier B, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; EN-6: EN-6. This holds if: no assumption. Reported.",
+  "C-35. Compared with no Kestrany Sugar Import Regime Act, tax revenue for officials.enforcement rises from the short run onward (tier B, visible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue. This holds if: The taxed base falls by less than enough to offset the rise in the rate (p = 0.15). Not reported: an assumption is below the 0.5 cut-off.",
+  "C-36. Compared with no Kestrany Sugar Import Regime Act, tax revenue vs static projection for officials.enforcement falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-9: TX-9. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90). Reported.",
+  "C-37. Compared with no Kestrany Sugar Import Regime Act, asset value for owners.food_manufacturers falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value; EN-6: EN-6. This holds if: The supply of the affected firms' assets is fixed or slowly expandable (p = 0.80); The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Many downstream users compete with sellers who do not face the higher input cost (p = 0.80); Investors expect the measure to stay in force for at least its stated term (p = 0.75); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-38. Compared with no Kestrany Sugar Import Regime Act, asset value for owners.mills rises from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value; EN-6: EN-6. This holds if: The supply of the affected firms' assets is fixed or slowly expandable (p = 0.80); The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Domestic producers make close substitutes for the covered imports (p = 0.95); Investors expect the measure to stay in force for at least its stated term (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-39. Compared with no Kestrany Sugar Import Regime Act, quantity traded for sellers.foreign falls from the short run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; OC-4: exchanges that no longer happen are lost to both sides. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90). Reported.",
+  "C-40. Compared with no Kestrany Sugar Import Regime Act, resources available other uses for taxpayers falls from the short run onward (tier B, invisible). Why: TX-1: a tax that is collected takes resources from those who bear it and yields revenue; OC-3: the measure must be administered, and a raised budget is paid for by taxpayers; OC-1: what the payers give up is what they would otherwise have bought. This holds if: The administering agency's budget is raised to cover the new work, so taxpayers fund it (p = 0.60). Reported.",
+  "C-41. Compared with no Kestrany Sugar Import Regime Act, employment or hours worked for workers.export_industries falls for at least one of them from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; TX-2: a tax on each unit opens a wedge between what buyers pay and what sellers keep, and the market shrinks; TX-8: foreigners who sell less to the country earn less of its currency and so buy fewer of its exports; EN-6: EN-6. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Lower imports reduce foreigners' purchases of the country's exports in the medium run; capital flows do not cancel it (p = 0.60). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-42. Compared with no Kestrany Sugar Import Regime Act, employment or hours worked for workers.food falls for at least one of them from the medium run onward (tier B, invisible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt; RS-6: sellers whose return falls sell less, and may cut staff or hours; EN-6: EN-6. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Many downstream users compete with sellers who do not face the higher input cost (p = 0.80); The taxed good is a material part of downstream costs and cannot be replaced at the old cost (p = 0.75). It also follows under 1 other minimal assumption set(s). Reported.",
+  "C-43. Compared with no Kestrany Sugar Import Regime Act, employment or hours worked for workers.mills rises for at least one of them from the short run onward (tier B, visible). Why: TX-7: a tariff the foreign sellers do not absorb raises what domestic buyers pay and lets protected domestic producers charge and sell more; EN-6: EN-6. This holds if: The domestic price rises by a substantial part of the tariff; foreign sellers do not absorb most of it (p = 0.90); Domestic producers make close substitutes for the covered imports (p = 0.95). It also follows under 1 other minimal assumption set(s). Reported."
+ ],
+ "questions": [
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k1.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-1: at the old landed price import demand (about 650,000 t) exceeds the 400,000 t of licences, so the marginal tonne pays the 60% rate and the quota binds; foreign supply is from many exporters (A-4, p = 0.85), so the sellers abroad do not absorb the rate.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k1.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the price domestic buyers pay for the covered goods rise by a substantial part of the tariff, rather than foreign sellers absorbing most of it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.95,
+    "question_id": "k1.domestic_substitutes",
+    "rationale": "No matching assumption in WE-047; judged from the text: domestic beet sugar supplies about 1,100,000 t of the 1,750,000 t consumed and is the same good as imported white sugar, which sets its price.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "domestic_substitutes",
+    "assumption_class": "substitutability",
+    "id": "k1.domestic_substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Do domestic producers make goods that buyers can use in place of the covered imports, so that dearer imports send buyers to them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.no_offset",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-21: the change in imports is not offset by capital flows within the medium term.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "no_offset",
+    "assumption_class": "other",
+    "id": "k1.no_offset",
+    "kind": "noul",
+    "options": [],
+    "text": "When the country buys fewer imports, foreigners earn less of its currency. Through the exchange rate (the currency rises against what it would otherwise be) this makes the country's exports dearer abroad, so export industries sell less: that is the mechanism, not an offset to it. Over the medium run, will this chain operate, rather than being cancelled by foreigners investing or lending more in the country?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.15,
+    "question_id": "k1.revenue_base_holds",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-25: out-of-quota imports stay below 200,000 t a year (p = 0.85), so the base taxed at the higher rate falls far below the 650,000 t now taxed at 25% and revenue falls; the base does not hold.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "revenue_base_holds",
+    "assumption_class": "substitutability",
+    "id": "k1.revenue_base_holds",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the taxed base fall by less than enough to offset the rise in the rate, so that the revenue rises?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.input_not_replaceable",
+    "rationale": "No matching assumption in WE-047; judged from the text: sugar is the main sweetener of food and drink makers (60% of consumption); glucose syrup substitutes only in some uses and its two wet mills would have to expand, so most sugar is not replaceable at the old cost.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "input_not_replaceable",
+    "assumption_class": "substitutability",
+    "id": "k1.input_not_replaceable",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the downstream users' costs rise materially because of the higher price of the taxed good (given how much of it they use and whether they can switch to other materials or designs in the medium run)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.competitors_exempt",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-8: domestic food manufacturers compete at home with imported sugar-containing goods that the act does not cover (about a quarter of the home market).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "competitors_exempt",
+    "assumption_class": "other",
+    "id": "k1.competitors_exempt",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the downstream users compete with sellers who do not face the higher cost (imported finished goods, untaxed products)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.enforcement_budget_raised",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-27: the licence office's budget is raised with its task.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforcement_budget_raised",
+    "assumption_class": "revenue_use",
+    "id": "k1.enforcement_budget_raised",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the budget of the agency that administers the measure be raised to cover the new work, rather than the work being absorbed within its existing budget?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.stockpile_ahead",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-10: sugar can be imported ahead in 2026 at 25% and stored into 2027, to sell higher after January.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "stockpile_ahead",
+    "assumption_class": "expectations",
+    "id": "k1.stockpile_ahead",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the buyers or importers buy ahead of the effective date, by storing the good or placing orders early?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k1.reshaping_pays",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-14: some sugar can be imported as mixtures classified outside the sugar heading at a lower duty.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "reshaping_pays",
+    "assumption_class": "other",
+    "id": "k1.reshaping_pays",
+    "kind": "noul",
+    "options": [],
+    "text": "For some of the actors bound by the measure, will reshaping goods so that they fall outside the measure's definitions cost less than the measure would cost them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.beneficiaries_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-17: licence holders, growers, manufacturers and would-be importers can organize at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "beneficiaries_organize",
+    "assumption_class": "other",
+    "id": "k1.beneficiaries_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the protected domestic producers organize to influence the renewal or extension decision at a cost lower than what they stand to gain?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k1.harmed_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-17: manufacturers and would-be importers can organize at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "harmed_organize",
+    "assumption_class": "other",
+    "id": "k1.harmed_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the downstream users who cannot pass the higher cost on organize to seek repeal, exemption or non-renewal at a cost lower than what they stand to lose?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.expects_extension",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-11: investors expect the act to last at least until the 2031 review (it has no expiry).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "expects_extension",
+    "assumption_class": "expectations",
+    "id": "k1.expects_extension",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the protected domestic producers expect the measure to be renewed or extended when it comes up for review?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.expected_to_last",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-11: investors expect the act to last at least until the 2031 review.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "expected_to_last",
+    "assumption_class": "expectations",
+    "id": "k1.expected_to_last",
+    "kind": "noul",
+    "options": [],
+    "text": "Do investors expect the measure to stay in force for at least its stated term?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.asset_supply_slow",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-3: domestic supply cannot expand at the old cost enough within five years (beet rotations, mills at 90% of capacity, haul radius), so the assets of mills and land are slow to expand.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "asset_supply_slow",
+    "assumption_class": "durability",
+    "id": "k1.asset_supply_slow",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the supply of the affected firms' productive assets (plants, equipment, the shares that claim their returns) slow to expand or to replace?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k1.can_relocate_capital",
+    "rationale": "No matching assumption in WE-047; judged from the text: the text names no downstream plant that could move abroad; the manufacturers sell at home and export a fifth of their output, and relocation is possible but not shown.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "can_relocate_capital",
+    "assumption_class": "mobility",
+    "id": "k1.can_relocate_capital",
+    "kind": "noul",
+    "options": [],
+    "text": "Do some downstream users have the option of producing abroad when they next replace their plants?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.substitute_supply_expands",
+    "rationale": "No matching assumption in WE-047; judged from the text: foreign makers of sugar-containing goods already hold about a quarter of the home market and are not covered by the act, so they can sell more at home.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "substitute_supply_expands",
+    "assumption_class": "substitutability",
+    "id": "k1.substitute_supply_expands",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the sellers of the uncovered substitutes (imported finished goods) supply more at roughly their present prices?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k1.exporters_price_takers",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-9: food exporters sell at prices set in world markets.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "exporters_price_takers",
+    "assumption_class": "substitutability",
+    "id": "k1.exporters_price_takers",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the downstream users who export sell at prices set in world markets, so that they cannot pass a higher input cost on to foreign buyers?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k1.related_slow_r1",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-3: beet is grown in rotation (one year in four) within the mills' haul radius, so beet supply is slow to expand.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "related_slow_r1",
+    "assumption_class": "durability",
+    "id": "k1.related_slow_r1",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the supply of sugar beet slow to expand or contract in the period considered (training, licensing, capacity)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k2.binding",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-1: at the old landed price import demand (about 650,000 t) exceeds the 400,000 t of licences, so the marginal tonne pays the 60% rate and the quota binds; foreign supply is from many exporters (A-4, p = 0.85), so the sellers abroad do not absorb the rate.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "binding",
+    "assumption_class": "binding",
+    "id": "k2.binding",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the cap below the quantity that would otherwise be traded, now or within the period considered (for a cap on the number of sellers: does it hold the quantity down)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2.enforced",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-2: customs enforce the out-of-quota rate and the licence limits, with the licence office keeping the register.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "enforced",
+    "assumption_class": "enforcement",
+    "id": "k2.enforced",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the cap be enforced, so that little trade takes place beyond it?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.2,
+    "question_id": "k2.evasion",
+    "rationale": "No matching assumption in WE-047; judged from the text: customs apply the rates and misdeclaration is penalized as under existing customs law; the text names no smuggling route, so uncaught trade beyond the cap is not expected on a meaningful scale.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "evasion",
+    "assumption_class": "enforcement",
+    "id": "k2.evasion",
+    "kind": "noul",
+    "options": [],
+    "text": "Will some trade take place beyond the cap without being caught?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2.can_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-17: licence holders can organize at a cost below their stake.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "can_organize",
+    "assumption_class": "other",
+    "id": "k2.can_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the holders of the quota rights organize to lobby for keeping or tightening the cap at a cost below their stake?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k2.expected_to_last",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-11: investors expect the act to last at least until the 2031 review.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "expected_to_last",
+    "assumption_class": "expectations",
+    "id": "k2.expected_to_last",
+    "kind": "noul",
+    "options": [],
+    "text": "Do holders and buyers of the licenses or quota rights expect the restriction to last for many years?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2.values_differ",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-7: holders value licences differently (refiners with spare capacity against trading houses).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "values_differ",
+    "assumption_class": "other",
+    "id": "k2.values_differ",
+    "kind": "noul",
+    "options": [],
+    "text": "Do holders of the rights differ in their costs, or in the value they get from the right?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2.trade_cheap",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-6: licences and shares trade and lease at low cost ($200 transfer fee, a register).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "trade_cheap",
+    "assumption_class": "mobility",
+    "id": "k2.trade_cheap",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the rights be sold or leased at low cost (a register, few restrictions on who may hold them)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.95,
+    "question_id": "k2.domestic_substitutes",
+    "rationale": "No matching assumption in WE-047; judged from the text: domestic beet sugar supplies about 1,100,000 t of the 1,750,000 t consumed and is the same good as imported white sugar, which sets its price.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "domestic_substitutes",
+    "assumption_class": "substitutability",
+    "id": "k2.domestic_substitutes",
+    "kind": "noul",
+    "options": [],
+    "text": "Do domestic producers make goods that buyers can use in place of the covered imports, so that dearer imports send buyers to them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k2.no_offset",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-21: the change in imports is not offset by capital flows within the medium term.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "no_offset",
+    "assumption_class": "other",
+    "id": "k2.no_offset",
+    "kind": "noul",
+    "options": [],
+    "text": "When the country buys fewer imports, foreigners earn less of its currency. Through the exchange rate (the currency rises against what it would otherwise be) this makes the country's exports dearer abroad, so export industries sell less: that is the mechanism, not an offset to it. Over the medium run, will this chain operate, rather than being cancelled by foreigners investing or lending more in the country?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k2.input_not_replaceable",
+    "rationale": "No matching assumption in WE-047; judged from the text: sugar is the main sweetener of food and drink makers (60% of consumption); glucose syrup substitutes only in some uses and its two wet mills would have to expand, so most sugar is not replaceable at the old cost.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "input_not_replaceable",
+    "assumption_class": "substitutability",
+    "id": "k2.input_not_replaceable",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the downstream users' costs rise materially because of the higher price of the taxed good (given how much of it they use and whether they can switch to other materials or designs in the medium run)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2.competitors_exempt",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-8: domestic food manufacturers compete at home with imported sugar-containing goods that the act does not cover (about a quarter of the home market).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "competitors_exempt",
+    "assumption_class": "other",
+    "id": "k2.competitors_exempt",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the downstream users compete with sellers who do not face the higher cost (imported finished goods, untaxed products)?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2.stockpile_ahead",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-10: sugar can be imported ahead in 2026 at 25% and stored into 2027, to sell higher after January.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "stockpile_ahead",
+    "assumption_class": "expectations",
+    "id": "k2.stockpile_ahead",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the buyers or importers buy ahead of the effective date, by storing the good or placing orders early?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.6,
+    "question_id": "k2.reshaping_pays",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-14: some sugar can be imported as mixtures classified outside the sugar heading at a lower duty.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "reshaping_pays",
+    "assumption_class": "other",
+    "id": "k2.reshaping_pays",
+    "kind": "noul",
+    "options": [],
+    "text": "For some of the actors bound by the measure, will reshaping goods so that they fall outside the measure's definitions cost less than the measure would cost them?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.65,
+    "question_id": "k2.relief_discretionary",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-20: under U1-a the Minister's rules allocate the surrendered quantities otherwise than by price, on application.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "relief_discretionary",
+    "assumption_class": "other",
+    "id": "k2.relief_discretionary",
+    "kind": "noul",
+    "options": [],
+    "text": "Will the officials who grant exclusions, waivers or exemptions decide case by case, with room to weigh who the applicant is or what others say against it, rather than by a fixed published test?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.9,
+    "question_id": "k2.relief_valuable",
+    "rationale": "No matching assumption in WE-047; judged from the text: a surrendered tonne carries the gap between the domestic price and the in-quota landed cost (over $100 a tonne), against registration of $500.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "relief_valuable",
+    "assumption_class": "other",
+    "id": "k2.relief_valuable",
+    "kind": "noul",
+    "options": [],
+    "text": "Is an exclusion, waiver or exemption worth more to those who apply than the fee for applying?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2.beneficiaries_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-17: licence holders, growers, manufacturers and would-be importers can organize at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "beneficiaries_organize",
+    "assumption_class": "other",
+    "id": "k2.beneficiaries_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the protected domestic producers organize to influence the renewal or extension decision at a cost lower than what they stand to gain?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.85,
+    "question_id": "k2.harmed_organize",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-17: manufacturers and would-be importers can organize at a cost below their stakes.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "harmed_organize",
+    "assumption_class": "other",
+    "id": "k2.harmed_organize",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the downstream users who cannot pass the higher cost on organize to seek repeal, exemption or non-renewal at a cost lower than what they stand to lose?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k2.expects_extension",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-11: investors expect the act to last at least until the 2031 review (it has no expiry).",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "expects_extension",
+    "assumption_class": "expectations",
+    "id": "k2.expects_extension",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the protected domestic producers expect the measure to be renewed or extended when it comes up for review?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2.asset_supply_slow",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-3: domestic supply cannot expand at the old cost enough within five years (beet rotations, mills at 90% of capacity, haul radius), so the assets of mills and land are slow to expand.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "asset_supply_slow",
+    "assumption_class": "durability",
+    "id": "k2.asset_supply_slow",
+    "kind": "noul",
+    "options": [],
+    "text": "Is the supply of the affected firms' productive assets (plants, equipment, the shares that claim their returns) slow to expand or to replace?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.3,
+    "question_id": "k2.can_relocate_capital",
+    "rationale": "No matching assumption in WE-047; judged from the text: the text names no downstream plant that could move abroad; the manufacturers sell at home and export a fifth of their output, and relocation is possible but not shown.",
+    "value": "no"
+   },
+   "question": {
+    "assumption": "can_relocate_capital",
+    "assumption_class": "mobility",
+    "id": "k2.can_relocate_capital",
+    "kind": "noul",
+    "options": [],
+    "text": "Do some downstream users have the option of producing abroad when they next replace their plants?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.8,
+    "question_id": "k2.substitute_supply_expands",
+    "rationale": "No matching assumption in WE-047; judged from the text: foreign makers of sugar-containing goods already hold about a quarter of the home market and are not covered by the act, so they can sell more at home.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "substitute_supply_expands",
+    "assumption_class": "substitutability",
+    "id": "k2.substitute_supply_expands",
+    "kind": "noul",
+    "options": [],
+    "text": "Can the sellers of the uncovered substitutes (imported finished goods) supply more at roughly their present prices?"
+   }
+  },
+  {
+   "answer": {
+    "decider": "fixture:answers.json",
+    "evidence": [],
+    "probability": 0.75,
+    "question_id": "k2.exporters_price_takers",
+    "rationale": "Probability taken from the assumption table of handbook WE-047 (illustrative figures), A-9: food exporters sell at prices set in world markets.",
+    "value": "yes"
+   },
+   "question": {
+    "assumption": "exporters_price_takers",
+    "assumption_class": "substitutability",
+    "id": "k2.exporters_price_takers",
+    "kind": "noul",
+    "options": [],
+    "text": "Do the downstream users who export sell at prices set in world markets, so that they cannot pass a higher input cost on to foreign buyers?"
+   }
+  }
+ ],
+ "record": {
+  "components": [
+   {
+    "allocation_by_history": false,
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "bound_actor": "importers.history",
+    "budget_capped": false,
+    "buyer_actor": "buyers.household",
+    "cap": 0.6,
+    "cap_unit": "ad valorem, out-of-quota rate",
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "debt_funded": false,
+    "definition_line": true,
+    "domestic_seller_actor": "mills.domestic",
+    "domestic_seller_owner_actor": "owners.mills",
+    "domestic_seller_worker_actor": "workers.mills",
+    "downstream": [
+     {
+      "actor": "buyers.industrial",
+      "buyer_actor": "buyers.sugar_goods",
+      "competitors": "exempt",
+      "exporter_actor": "food_manufacturers.exporters",
+      "owner_actor": "owners.food_manufacturers",
+      "worker_actor": "workers.food"
+     }
+    ],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "sugar",
+    "holder_cap": false,
+    "id": "k1",
+    "import_quota": false,
+    "importer_actor": "importers.history",
+    "informal_buyer_actor": null,
+    "input_supplier_actor": "input_suppliers",
+    "instrument": "tariff",
+    "market": "kestrany",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "own_revenue_funded": false,
+    "price_fixed": false,
+    "protected_actor": "mills.domestic",
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": true,
+    "related": [
+     {
+      "good": "sugar_beet",
+      "kind": "input",
+      "other_user_actor": null,
+      "price_variable": "net_price_received",
+      "quote": "Domestic beet sugar supplies about 1,100,000 t, from about 4,000 growers on about 120,000 ha and two processors (Ardmouth Sugar and the Pellmont Beet Co-operative) with six mills running at about 90% of capacity.",
+      "seller_actor": "growers.beet",
+      "source_id": null
+     }
+    ],
+    "relief_applicant_actor": null,
+    "renewable": true,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "source_sentences": [
+     "Importers of record pay a tariff of 2% ad valorem on imports of raw and white sugar covered by a licence, up to 400,000 t a year in total, and 60% ad valorem on all other sugar imports.",
+     "Sugar-containing goods are not covered (as now).",
+     "The bill, including the base period, was published on 2 March 2026, passed on 10 June 2026, and takes effect for the quota year beginning 1 January 2027 (ten months after it was proposed).",
+     "No expiry; the quota volume is reviewed in 2031.",
+     "Customs applies the rates; the Ministry of Trade's licence office keeps the register of quota shares and licences.",
+     "Imports above a firm's licence pay the out-of-quota rate; misdeclaration is penalized as under existing customs law."
+    ],
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "trainer_actor": null,
+    "transferable": false,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "allocation_by_history": true,
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "bound_actor": "importers.history",
+    "budget_capped": false,
+    "buyer_actor": "buyers.household",
+    "cap": 400000.0,
+    "cap_unit": "tonnes a year",
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "debt_funded": false,
+    "definition_line": true,
+    "domestic_seller_actor": "mills.domestic",
+    "domestic_seller_owner_actor": "owners.mills",
+    "domestic_seller_worker_actor": "workers.mills",
+    "downstream": [
+     {
+      "actor": "buyers.industrial",
+      "buyer_actor": "buyers.sugar_goods",
+      "competitors": "exempt",
+      "exporter_actor": "food_manufacturers.exporters",
+      "owner_actor": "owners.food_manufacturers",
+      "worker_actor": "workers.food"
+     }
+    ],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": "importers.new",
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "sugar",
+    "holder_cap": false,
+    "id": "k2",
+    "import_quota": true,
+    "importer_actor": "importers.history",
+    "informal_buyer_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "quota",
+    "market": "kestrany",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "own_revenue_funded": false,
+    "price_fixed": false,
+    "protected_actor": null,
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": true,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": "importers.history",
+    "rights_sold": false,
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "source_sentences": [
+     "Importers of record pay a tariff of 2% ad valorem on imports of raw and white sugar covered by a licence, up to 400,000 t a year in total, and 60% ad valorem on all other sugar imports.",
+     "A licence covers raw or white sugar tonne for tonne.",
+     "Shares and licences may be sold or leased to any registered importer; transfers are registered with the licence office for a $200 fee.",
+     "Registration as an importer is open to any firm for $500.",
+     "Section 9: \"A licence not used by 30 September of the quota year is surrendered.\"",
+     "Imports above a firm's licence pay the out-of-quota rate; misdeclaration is penalized as under existing customs law.",
+     "No expiry; the quota volume is reviewed in 2031.",
+     "The bill, including the base period, was published on 2 March 2026, passed on 10 June 2026, and takes effect for the quota year beginning 1 January 2027 (ten months after it was proposed)."
+    ],
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "trainer_actor": null,
+    "transferable": true,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "wider_market": false,
+    "worker_actor": null
+   },
+   {
+    "allocation_by_history": false,
+    "announcement_window": true,
+    "asset_owner_actor": null,
+    "base_period_after_announcement": false,
+    "bound_actor": "officials.enforcement",
+    "budget_capped": false,
+    "buyer_actor": "buyers.current",
+    "cap": null,
+    "cap_unit": null,
+    "claim_handler_actor": null,
+    "claim_penalties": false,
+    "debt_funded": false,
+    "definition_line": false,
+    "domestic_seller_actor": "sellers.substitutes",
+    "domestic_seller_owner_actor": null,
+    "domestic_seller_worker_actor": null,
+    "downstream": [],
+    "eligibility_criteria": false,
+    "enforcer_actor": "officials.enforcement",
+    "entrant_actor": null,
+    "evasion_by_resellers": false,
+    "excluded_actor": null,
+    "exporter_actor": "export_industries",
+    "exporter_worker_actor": null,
+    "field_contested": false,
+    "foreign_seller_actor": "sellers.foreign",
+    "future_taxpayer_actor": "taxpayers.future",
+    "general_budget": false,
+    "good": "sugar_import_quota_shares",
+    "holder_cap": false,
+    "id": "k3",
+    "import_quota": false,
+    "importer_actor": null,
+    "informal_buyer_actor": null,
+    "input_supplier_actor": null,
+    "instrument": "rights_allocation",
+    "market": "kestrany",
+    "mobile_buyer_actor": null,
+    "neighbor_actor": null,
+    "neighbor_seller_actor": null,
+    "other_buyer_actor": null,
+    "other_spending_actor": "recipients.other_spending",
+    "outlay_actor": null,
+    "own_revenue_funded": false,
+    "price_fixed": false,
+    "protected_actor": "importers.history",
+    "protected_concentrated": true,
+    "qualifier_actor": null,
+    "rate_rise": false,
+    "related": [],
+    "relief_applicant_actor": null,
+    "renewable": false,
+    "repay_on_move": false,
+    "revenue_actor": "officials.enforcement",
+    "right_holder_actor": null,
+    "rights_sold": false,
+    "scrappage": false,
+    "scrapper_actor": null,
+    "self_supply": false,
+    "seller_actor": "sellers.current",
+    "seller_cap": false,
+    "source_sentences": [
+     "Each firm that imported sugar in 2023 to 2025 receives a permanent share of the 400,000 t equal to its share of total imports in those years.",
+     "Each December, licences for the next year are issued to share holders pro rata."
+    ],
+    "substitute_seller_actor": null,
+    "tax_named": false,
+    "taxpayer_actor": "taxpayers",
+    "temporary": false,
+    "third_party_payer_actor": null,
+    "trainer_actor": null,
+    "transferable": true,
+    "used_buyer_actor": null,
+    "used_owner_actor": null,
+    "vacancy_decontrol": false,
+    "wider_market": false,
+    "worker_actor": null
+   }
+  ],
+  "context": [
+   "Kestrany consumes about 1,750,000 tonnes (t) of sugar a year, about 60% by food and drink manufacturers and 40% by households.",
+   "Imports averaged about 650,000 t a year in 2023 to 2025: about 450,000 t of raw cane sugar refined at two port refineries in Vellport, and about 200,000 t of white sugar.",
+   "Kestrany takes about 1.2% of world sugar trade, bought from many exporters.",
+   "Under the existing flat 25% ad valorem tariff, white sugar lands at about $550 a tonne, which sets the domestic white price; tariff revenue is about $62.5 million a year.",
+   "Nine firms imported in 2023 to 2025: the two Vellport refiners (66% of imports), four trading houses (25%), and three manufacturers that import directly (a soft-drink bottler and two confectioners, 9%).",
+   "Kestrany's food manufacturers export about a fifth of their output, and imported confectionery, biscuits and soft-drink concentrates (not covered by the sugar tariff) hold about a quarter of the home market.",
+   "Two wet mills make glucose syrup from domestic maize.",
+   "The licence office's funding is not stated.",
+   "Existing rules that stay in the counterfactual: the flat 25% tariff on raw and white sugar; customs classification of sugar mixtures; the general budget, which receives the tariff."
+  ],
+  "effective": "1 January 2027",
+  "enacted": "10 June 2026",
+  "jurisdiction": "Kestrany's customs territory (fictional)",
+  "name": "Kestrany Sugar Import Regime Act",
+  "rule_maker": "the Kestrany legislature",
+  "stated_aim": null,
+  "unclear": [
+   {
+    "id": "U1",
+    "reading_facts": {},
+    "reading_fields": {
+     "U1-a": {
+      "k2": {
+       "relief_applicant_actor": "importers.new"
+      }
+     }
+    },
+    "readings": [
+     "U1-a: surrendered quantities return to the quota and must be allocated again in the same year (section 4(2)), to registered importers on application under section 12",
+     "U1-b: surrender cancels the licence; section 4(2) refers to the December issue, and the surrendered quantity lapses for that year"
+    ],
+    "text": "Surrendered licences. Section 9 surrenders licences not used by 30 September. Section 4(2): \"The tariff quota shall be allocated in full in each quota year.\" Section 12: \"The Minister may make rules for the allocation of quantities among registered importers on application.\""
+   }
+  ]
+ },
+ "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
+ "run_at": "2026-10-19T06:08:25+00:00",
+ "sources_held_back": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "reading_facts": {},
+   "reading_fields": {
+    "U1-a": {
+     "k2": {
+      "relief_applicant_actor": "importers.new"
+     }
+    }
+   },
+   "readings": [
+    "U1-a: surrendered quantities return to the quota and must be allocated again in the same year (section 4(2)), to registered importers on application under section 12",
+    "U1-b: surrender cancels the licence; section 4(2) refers to the December issue, and the surrendered quantity lapses for that year"
+   ],
+   "text": "Surrendered licences. Section 9 surrenders licences not used by 30 September. Section 4(2): \"The tariff quota shall be allocated in full in each quota year.\" Section 12: \"The Minister may make rules for the allocation of quantities among registered importers on application.\""
+  }
+ ],
+ "verifier_problems": []
+}

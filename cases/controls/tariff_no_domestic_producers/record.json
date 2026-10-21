@@ -1,0 +1,29 @@
+{
+ "name": "Fennick Banana Tariff",
+ "jurisdiction": "fictional",
+ "rule_maker": "trade ministry",
+ "enacted": "2030-01-01",
+ "effective": "2030-04-01",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "t2",
+   "instrument": "tariff",
+   "good": "the_good",
+   "market": "country",
+   "bound_actor": "importers",
+   "protected_actor": "sellers.domestic",
+   "importer_actor": "importers",
+   "buyer_actor": "buyers.current",
+   "domestic_seller_actor": "sellers.domestic",
+   "source_sentences": [
+    "A tariff of 20 percent of customs value applies to imported bananas."
+   ]
+  }
+ ],
+ "unclear": [],
+ "context": [
+  "Fennick has a cold climate and no banana farms; every banana sold there is imported, and Fennick buys a tiny share of world banana exports.",
+  "No domestically grown fruit is a close substitute for bananas in Fennick's shops."
+ ]
+}

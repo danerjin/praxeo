@@ -1,0 +1,65 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-055 (illustrative figures), A-1: the requirements cost some current and would-be inspectors more than they would otherwise spend (55% hold no certification, 40% carry no insurance, 34% cannot be grandfathered).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-055 (illustrative figures), A-3: despite complaint-only enforcement, unlicensed practice is deterred for most inspections (agents' forms and lenders ask for the license number; buyers and agents complain).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.some_qualify",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-055 (illustrative figures), A-2: some incumbents who cannot be grandfathered train and sit the exam to stay in practice.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-055 (illustrative figures), A-16: some unlicensed practice continues where complaint is least likely (pre-listing and builders' inspections, Linmouth inspectors in the border metro).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyer_substitutes",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-055 (illustrative figures), A-9: some buyers at the margin go without an inspection or use an unlicensed inspector when the fee rises (cash investors, buyers of new homes with builders' warranties).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.tests_valued_quality",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-055 (illustrative figures), A-4: the training and exam bear on competence that buyers value and cannot easily judge.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-055 (illustrative figures), A-17: agents, schools and the inspectors' association can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.contested_otherwise",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-055 (illustrative figures), A-18: without the Act the inspectors' association would have kept lobbying for licensing (campaign since 2022). A-31 (p 0.6) says agents and schools would not have lobbied; the question asks about the contest the policy text records, which is the association's campaign.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.training_common",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No matching assumption in WE-055; judged from the text: the 120-hour approved training is new (courses are approved from 1 January 2027), so it was not commonly taken before.",
+  "evidence": []
+ }
+]

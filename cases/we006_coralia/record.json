@@ -1,0 +1,90 @@
+{
+ "name": "Coralia Emergency Pricing Act",
+ "jurisdiction": "Coralia (fictional)",
+ "rule_maker": "the legislature of Coralia (standing law, applied on a governor's declaration)",
+ "enacted": "two years before the hurricane season",
+ "effective": "on the governor's declaration, two days before landfall",
+ "stated_aim": null,
+ "components": [
+  {
+   "instrument": "price_ceiling",
+   "cap": 1.1,
+   "cap_unit": "multiple of the seller's average price in the 30 days before the declaration, plus documented cost increases",
+   "excluded_actor": "residents.declared",
+   "enforcer_actor": "officials.enforcement",
+   "announcement_window": false,
+   "general_budget": false,
+   "protected_concentrated": false,
+   "id": "k1",
+   "good": "emergency_goods",
+   "market": "declared_counties",
+   "bound_actor": "sellers.local",
+   "protected_actor": "buyers.served",
+   "neighbor_actor": "buyers.inland",
+   "source_sentences": [
+    "The price of generators and fuel cans, bottled water, plywood, tarps and other building materials, and hotel, motel and short-term rental rooms sold or rented in the declared counties may not exceed 110% of the seller's own average price in the 30 days before the declaration.",
+    "Enforcement is funded from the Attorney General's budget."
+   ]
+  },
+  {
+   "instrument": "price_ceiling",
+   "cap": 1.1,
+   "cap_unit": "multiple of the seller's average price in the 30 days before the declaration, plus documented cost increases",
+   "excluded_actor": "residents.declared",
+   "enforcer_actor": "officials.enforcement",
+   "announcement_window": false,
+   "general_budget": false,
+   "protected_concentrated": false,
+   "id": "k2",
+   "good": "emergency_goods_brought_in",
+   "market": "declared_counties",
+   "bound_actor": "sellers.outside",
+   "protected_actor": "buyers.served",
+   "source_sentences": [
+    "The rule binds every seller of these goods in the declared counties, including sellers from outside the area selling there and online sellers delivering there, for the whole declared emergency.",
+    "Enforcement is funded from the Attorney General's budget."
+   ]
+  },
+  {
+   "instrument": "price_ceiling",
+   "cap": 1.1,
+   "cap_unit": "multiple of the seller's average price in the 30 days before the declaration, plus documented cost increases",
+   "excluded_actor": "residents.declared",
+   "enforcer_actor": "officials.enforcement",
+   "announcement_window": false,
+   "general_budget": false,
+   "protected_concentrated": false,
+   "id": "k3",
+   "good": "emergency_rooms",
+   "market": "declared_counties",
+   "bound_actor": "hotels.declared",
+   "protected_actor": "evacuees.in_rooms",
+   "source_sentences": [
+    "The price of generators and fuel cans, bottled water, plywood, tarps and other building materials, and hotel, motel and short-term rental rooms sold or rented in the declared counties may not exceed 110% of the seller's own average price in the 30 days before the declaration.",
+    "Enforcement is funded from the Attorney General's budget."
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether repair and tree-removal services are covered.",
+   "readings": [
+    "U1-a: not covered (the list names goods and lodging only)",
+    "U1-b: covered"
+   ]
+  },
+  {
+   "id": "U2",
+   "text": "Whether minimum-stay rules and deposits count as part of a room's price.",
+   "readings": [
+    "U2-a: not part of the price (fees are counted, conditions are not)",
+    "U2-b: part of the price"
+   ]
+  }
+ ],
+ "context": [
+  "The inland counties of Coralia, 60 to 150 miles from the coast, are not declared.",
+  "For the first two or three days after landfall, roads into the coast are partly blocked."
+ ]
+}

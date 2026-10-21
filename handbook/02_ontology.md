@@ -1,0 +1,260 @@
+# 2. Ontology
+
+The vocabulary every analysis uses. The plan (Section 4.2) defines the concepts; this file fixes their fields and the controlled lists for version 1. The outcome cards in Phase 4 use the same lists, which is what makes predictions and observations comparable.
+
+## 2.1 Policy record
+
+The structured statement of what the policy does (workflow step 1).
+
+| Field | Content |
+|---|---|
+| `policy_id` | Short identifier. |
+| `jurisdiction` | Where it applies. Note the nearest places where it does not apply. |
+| `announced`, `enacted`, `effective`, `expires` | Dates. `announced` is when the policy became publicly expected (a bill's introduction, a credible campaign promise); it drives announcement effects (RS-8). `expires` may be none. |
+| `components` | One entry per distinct instrument (a policy with a cap and an exemption has two components). |
+| `component.instrument` | One of the instrument types in 2.3. |
+| `component.target` | The good, service, activity or factor affected. |
+| `component.bound` | Who must comply. |
+| `component.parameters` | The cap, rate, requirement or quantity, as stated. |
+| `component.exemptions` | Who or what is excluded, and the conditions. |
+| `component.enforcement` | Who enforces, with what penalties and powers. |
+| `component.revenue_use` | For taxes: where the money goes, if the policy says. |
+| `component.funding` | For subsidies and spending: where the money comes from. |
+| `rule_maker` | Who makes and enforces the rule: `state` (a legislature, agency or council), or `private` (an owner, school, employer, landlord, owners' association, club or platform acting over its own premises, services or members). For a private rule-maker, also record how the bound parties are bound (contract, membership, lease, terms of service), whether the rule-maker may change the rules during the relationship, and what it costs a member to leave. |
+| `stated_aim` | The aim the policy states, quoted, and whether it is in scope (`yes`, `partly`, `no`). An aim out of scope (safety, health, environment in version 1) is not analyzed, but the report must say so first (`03_workflow.md`, step 11). |
+| `existing_rules` | Rules already in force that the policy interacts with or makes binding (a council-set meter rate that a license cap makes bind). Same sub-fields as a component. They stay in place in the counterfactual. |
+| `source_text` | For each field, the sentence of the policy it comes from. Fields that the text leaves unclear are marked `unclear`, never guessed. |
+
+## 2.2 Actor class
+
+A group defined by its role in the situation, not by identity. Name actor classes by role plus market, for example `tenants.controlled_units`, `landlords.controlled_units`, `prospective_tenants`, `braiders.unlicensed`. Always consider these generic classes, even when the policy does not mention them:
+
+| Class | Who |
+|---|---|
+| `buyers.current` | People who buy the target good now. |
+| `buyers.prospective` | People who would buy it in future, or who would enter the market. |
+| `sellers.current` | People and firms who supply the target good now. |
+| `sellers.prospective` | Would-be entrants. |
+| `factor_owners.specific` | Owners of resources that are hard to move to other uses (land, licenses, specialized equipment, specialized skills). |
+| `buyers.substitutes`, `sellers.substitutes` | Participants in markets for substitutes. |
+| `sellers.complements` | Suppliers of goods used together with the target good. |
+| `input_suppliers` | Suppliers of inputs to the target good. |
+| `taxpayers` | Those who fund the policy, directly or through the budget. |
+| `officials.enforcement` | The agency that administers and enforces the policy. |
+| `intermediaries` | Brokers, agents, black-market sellers, compliance consultants. |
+| `neighboring_jurisdictions` | Buyers and sellers just across the boundary. |
+| `neighbors` | Those whose situation is changed through proximity, not exchange (CR-9). |
+| `buyers.foreign`, `sellers.foreign` | Foreign participants in a market. |
+| `residual_claimant` | Whoever keeps what a fund collects and does not pay out. |
+| `rule_maker.private` | A private body that makes and enforces a rule over its own premises, services or members (a school, an employer, a landlord, an owners' association, a platform). It is an actor like any other (CR-2, 1.2). |
+| `members.current`, `members.prospective` | Those bound by a private rule through their relationship with the rule-maker (students and their families, tenants, employees, users), and those who would join. |
+| `rival_providers` | Other providers of the bundle the private rule-maker sells (other schools, other landlords, other platforms): members' alternatives (CR-5, 1.2). |
+
+## 2.3 Intervention instrument types (version 1)
+
+| Instrument | Rothbard type | Rule family |
+|---|---|---|
+| `price_ceiling` | triangular | PC |
+| `price_floor` (including minimum wage) | triangular | PC |
+| `per_unit_tax`, `ad_valorem_tax` | binary | TX |
+| `lump_sum_tax` (a fixed sum per household or person) | binary | TX: TX-1 and OC-1 apply; TX-2, TX-9 and DM-1 do not, because no one can reduce it by changing behavior |
+| `income_tax`, `profit_tax`, `capital_tax` | binary | TX |
+| `tariff` | binary (tax) and triangular (privilege) | TX |
+| `per_unit_subsidy`, `lump_sum_subsidy`, `purchase_rebate` | binary | SB |
+| `licensing_requirement` | triangular | EN |
+| `quota` | triangular | EN |
+| `prohibition` (of a good or service) | triangular | EN |
+| `own_production_ban` (banning production for one's own use) | autistic | CR-1, CR-4 directly; candidate pattern |
+| `product_standard` (a minimum specification for goods sold) | triangular | EN-14, TS-3 |
+| `mandated_contract_term` | triangular | PC-17 |
+| `term_prohibition` (a contract term made unenforceable) | triangular | PC-18 |
+| `disclosure_mandate` | triangular | CR-11c, EN-15 |
+| `deposit_refund` (a charge refunded on a later action) | binary | CR-1, CR-8; candidate pattern |
+| `export_subsidy` | binary | SB-10 |
+| `public_supply` (a good supplied by the state at a set price, quantity set by a budget) | binary | PC-19 |
+| `government_borrowing` | binary | OC-8 |
+| `rights_allocation` (how a created right is first assigned: by history, auction or lottery) | binary | SB-4, CR-7c, EN-12 |
+| `private_rule` (a rule made by a private body over its own premises, services or members, binding through a contract, membership, lease or terms of service) | none: not an intervention in Rothbard's sense (`01_foundations.md`, private rules); record what it does by CR-1 operation | CR-1 to CR-12 directly; PC-17, PC-18 for its terms; RS family for responses |
+| `mandate_with_charge` (a required term or action that may be bought out by paying a charge, "play or pay") | triangular / binary | PC-17, TX-2 |
+
+## 2.4 Variables (controlled list, version 1)
+
+Every consequence names one variable from this list. Add a variable only by editing this file, so that predictions and outcome cards stay comparable.
+
+**Prices and quantities**
+
+| Variable | Meaning |
+|---|---|
+| `price_paid` | Money price paid by buyers, including taxes. |
+| `net_price_received` | Money price received by sellers, after taxes and including subsidies. |
+| `quality_adjusted_price` | Price per unit of quality, where quality is variable. |
+| `quantity_demanded` | Amount buyers wish to buy at the prevailing price. |
+| `quantity_supplied` | Amount sellers offer at the prevailing price. |
+| `quantity_traded` | Amount actually exchanged in the legal market. |
+| `excess_demand` | Shortage: quantity demanded minus quantity supplied, at a controlled price. |
+| `excess_supply` | Surplus: quantity supplied minus quantity demanded, at a controlled price. |
+| `price_substitute`, `quantity_substitute` | Price and quantity in the market for a named substitute. |
+| `price_complement`, `quantity_complement` | Same, for a named complement. |
+| `asset_value` | Market value of a durable asset tied to the target (land, building, license, quota right, shares in a firm). |
+| `full_cost_per_unit` | Money price plus the value the buyer places on the wait, search and side payments needed to obtain a unit. Usually `ambiguous` under a ceiling. |
+| `inventory_held` | Stocks of a good held by an actor class at a named time (sellers' stocks before a season; an agency's surplus stocks). |
+| `transaction_size` | Typical amount per exchange (loan size, order size). |
+| `specification_level` | A product's measured specification under a standard, with no presumption that buyers value it (unlike `quality_per_unit`). |
+| `product_attribute` | A named attribute or composition of a product (calories, recycled content). |
+| `discards` | Output caught or produced and then thrown away. |
+| `unit_size` | Physical size of each unit of a durable good (floor area per dwelling, capacity per vehicle). |
+
+**Allocation, quality and non-price terms**
+
+| Variable | Meaning |
+|---|---|
+| `wait_time` | Time spent queuing or on waiting lists. |
+| `travel_time` | Time spent traveling to obtain a good or reach work. |
+| `search_cost` | Time and money spent finding a seller or buyer. |
+| `side_payments` | Payments outside the controlled price (key money, bribes, tie-in purchases). |
+| `quality_per_unit` | Quality of each unit sold (including maintenance and service). |
+| `quality_variability` | Spread of quality between units bought in a market (for a drug, potency and purity). |
+| `quality_information` | How easily buyers can judge a seller's quality before buying: reviews, brands, certification, legal recourse. |
+| `share_concentrated_forms` | Share of sales in concentrated, high-potency forms of a good. |
+| `allocation_by_non_price_criteria` | Use of connections, discrimination or favoritism in deciding who gets the good. |
+| `turnover` | Rate at which holders of the good change (tenant moves, job changes). |
+| `variety` | Number of distinct versions of the good offered. |
+| `share_of_sellers_licensed` | Share of active legal sellers who hold the required license or permit. |
+| `term_prevalence` | Share of contracts in a market that contain a named term. |
+| `home_production` | Goods or services produced by a household for its own use or to give away. |
+| `consumption` | Spending by a household on present goods (as distinct from `saving`). |
+| `job_changes` | Rate at which members of an actor class change jobs, including moves that require changing home. |
+| `relocation_out_of_area` | Rate at which members of an actor class move their home out of the area (city, region) the policy covers (1.3). |
+
+**Production, capital and entry**
+
+| Variable | Meaning |
+|---|---|
+| `investment_target` | New investment in producing the target good. |
+| `maintenance_spending` | Spending on keeping existing capital in use. |
+| `capital_stock_target` | Existing productive capacity for the target good. |
+| `capital_stock_economy` | Capital across the economy, not only in the target activity. |
+| `saving` | Income not consumed, by actor class. |
+| `interest_rate` | The rate at which a named class of borrowers can borrow. |
+| `right_lease_price` | The price for using a tradable right (a quota, a license) for one period. |
+| `return_on_capital` | Net money return per unit of capital invested, for a named actor class. |
+| `units_held_vacant` | Units of a durable good kept out of use by their owners: neither occupied, rented nor offered. |
+| `number_of_sellers` | Count of active sellers. |
+| `entry_rate` | Rate at which new sellers enter. |
+| `employment` | Number of people employed in the named activity. |
+| `hours_worked` | Hours per worker. |
+| `non_wage_compensation` | Benefits, training, flexibility and other non-money terms of employment. |
+| `wage_rate` | Money wage per hour. |
+| `earnings` | Total money earnings of a group (wage times hours times employment). |
+
+**Avoidance and the state**
+
+| Variable | Meaning |
+|---|---|
+| `informal_activity` | Trade in the target outside the legal market (black or grey market). |
+| `cross_border_purchases` | Purchases made just outside the jurisdiction. |
+| `reclassification` | Reshaping of goods or contracts to fall outside the policy's definitions. |
+| `compliance_cost` | Resources spent by those bound to comply. |
+| `enforcement_cost` | Resources spent by the state to enforce. |
+| `tax_revenue` | Revenue collected. |
+| `non_tax_receipts` | Fines, fees and unredeemed deposits received by the state or a fund. |
+| `fund_balance` | Balance of a fund that collects and pays out under a policy. |
+| `subsidy_outlay` | Total paid out under a subsidy. |
+| `exchange_rate` | Price of foreign currency in domestic currency. |
+| `legal_breach` | Breach of a rule within the legal market (unpaid mandated leave, unlabeled items), as distinct from `informal_activity`. |
+| `tax_revenue_vs_static_projection` | Revenue collected compared with a projection that multiplies the rate by the pre-tax base (ignoring responses). |
+| `subsidy_share_received` | Share of a subsidy's benefit received by a subgroup, signed relative to the nominal recipients (sellers or asset owners who capture part of it: increase). |
+| `disputes_settled_outside_courts` | Share of disputes in a market settled without legal recourse. Any violence used in such settlement is a safety effect and out of scope for version 1. |
+| `tax_share_borne` | Share of a tax's (or a mandate's) burden borne by a subgroup, signed relative to the other subgroups in the same market (increase means it bears more than they do). |
+| `lobbying_effort` | Resources spent seeking to change, extend or keep the policy. |
+| `resources_available_other_uses` | Resources available to actors for uses outside the target (the "unseen" bucket). |
+| `resource_stock` | The state of a shared natural stock (an aquifer's level, a fish stock). Chains through it are Tier C (CR-9, 0.7). |
+| `enrollment` | Number enrolled in a course of training or study. |
+| `membership` | Number of members of an organization or customers of a provider bound by its rules (students enrolled, tenants, users). |
+| `trips` | Number of trips, by mode and place, given as a qualifier ("trips by car to the school gate"). Used among other things to record exposure where the policy's stated aim is out of scope (step 11). |
+| `stock_age` | Average age, or age mix, of a durable stock (a car fleet, a housing stock). |
+| `applications` | Number of applications for a permit, license, lottery or program. |
+
+**Out of scope for version 1.** Health, safety, environmental quality and nutrient intake have no variables. Reports say explicitly that these are not analyzed, rather than leaving them out silently.
+
+## 2.5 Consequence (normal form)
+
+```
+consequence:
+  id:            C-<n>
+  actor_class:   from 2.2
+  variable:      from 2.4 (with a named market where needed)
+  sign:          increase | decrease | ambiguous
+  horizon:       short | medium | long
+  visibility:    visible | invisible
+  tier:          A | B | J | C
+  derivation:    [rule IDs in order]
+  assumptions:   [assumption IDs]
+  reversal:      what would make the sign flip or the effect vanish
+  chains:        for ambiguous consequences, the opposing derivations
+  components:    for multi-component policies, which components the chain runs through
+  reading:       optional; where a sign depends on how an unclear provision is read,
+                 one entry per reading, such as "U1-a: increase; U1-b: ambiguous"
+  persistence:   for repeals only: none | partial | full, compared with the path on
+                 which the original policy was never imposed (TS-6); may be given per
+                 horizon, such as "partial (medium); none (long)"; `n/a` for effects that
+                 exist only during the transition
+```
+
+**No change.** Where a chain gives no change for a class, or a provision has no effect under one reading, the sign is `no_change` (for example "U1-a: increase; U1-b: no_change"). Use it only where the derivation establishes no change; where it establishes nothing, record nothing.
+
+**Mixed groups.** Where a rule licenses only that at least one of several variables moves, and the variables move in different directions (quality down or waiting up; price up or quantity down), list each variable with its direction, such as "employment (−), hours_worked (−), term_prevalence (+)", and give the sign `at_least_one_as_stated`. A group over actor classes ("taxpayers or recipients of other spending") is recorded the same way in the actor-class column.
+
+**Group consequences.** Some rules conclude that at least one of several variables moves, without saying which (PC-10's weaker form: employment, hours or non-wage compensation; EN-3; RS-2). Record these as one consequence with the variables listed together and the sign `at_least_one_decrease` or `at_least_one_increase`. It is scored as correct if at least one member moves as predicted and none moves the other way. Writing each variable as its own "decrease" would overclaim.
+
+**Timing shifts.** A response that moves an action in time (RS-8, SB-6) is written as signed consequences per time window, each against the counterfactual. This applies whenever the action also takes place without the policy, at another time: interest credited before a tax starts, bonuses paid before a contribution rises, purchases brought forward into a subsidy window. Each window gets its own sign ("purchases in the window: increase; in the year after: decrease"). Where there is no counterfactual comparison to make, because without the policy the action would not happen at all, the shift is a note on the path in section 8, not a consequence.
+
+**Readings or assumptions.** A provision is a reading only if its meaning is genuinely undecided by the text and the record. Where the record supplies evidence about how it will be applied (an agency's practice, a court's earlier decisions), treat it as an assumption with a probability instead.
+
+**Readings.** Readings of an unclear provision are not given probabilities (workflow step 10); each reading's sign is reported, and the policy text, not the analyst, decides between them.
+
+Every consequence, including an opportunity cost, is a signed change in a variable from 2.4. There is no separate "loss" entry: a forgone purchase is `resources_available_other_uses` decrease, prevented exchanges are `quantity_traded` decrease, time spent queuing is `wait_time` increase. This keeps every consequence scorable in the same way.
+
+The sign is always relative to the counterfactual (the same place and time without the policy), not to the situation before the policy. "Rents rise more slowly than they would have" is a decrease in `price_paid`, even if rents still rise.
+
+## 2.6 Assumption
+
+```
+assumption:
+  id:        A-<n>
+  text:      plain statement, such as "the cap is enforced against most landlords"
+  type:      enforcement | binding | substitutability | mobility | alternative_uses
+             | durability | expectations | revenue_use | reversal_cost | counterfactual_trend
+             | other
+  p:         probability it holds in this case, 0 to 1, stated before any outcome is known
+  evidence:  what the estimate rests on
+  if_false:  which consequences fail or reverse
+```
+
+## 2.7 Visibility
+
+A consequence is **visible** if it is intended, immediate and concentrated on an identifiable group, so that it is the kind of thing a supporter of the policy would point to. It is **invisible** if it is indirect, delayed, spread thinly over many people, or a forgone alternative. When unsure, ask: would the consequence appear in a news story about the policy's passage? If so, it is visible.
+
+## 2.8 Market relations
+
+Second-order effects travel only along recorded relations between markets.
+
+```
+relation:
+  from:      good or market
+  to:        good or market
+  type:      substitute | complement | input_to | same_market_other_segment | across_border
+             | contract | currency | shared_facility | proximity | gift
+  strength:  close | partial | weak
+  source:    evidence for the relation
+```
+
+Two relation types need care:
+- **Trip complements.** Goods bought on the same shopping trip are complements in where they are bought, even if they are unrelated in use. Record them as `complement` with a note `trip`. RS-9 uses them.
+- **Secondary use.** A good that came free with something else and was reused for another end (carryout bags reused as bin liners) is tied to the goods it substituted for in that end. Record as `substitute` with a note `secondary_use`, so that RS-1 applies and the reason is visible.
+- **Contracts.** Parties bound by a continuing contract (a lease, an insurance policy, an employment contract) are linked even when no new exchange takes place: a policy that changes one party's obligations changes the other's situation. Record as type `contract`, naming the contract.
+- **Shared facilities, proximity and gifts.** `shared_facility`: users of a road, a vehicle or a common resource, whose use changes what is available to the others. `proximity`: neighbors, whose situation is changed by activity next door. `gift`: a giver and a recipient. Chains through the first two are Tier C pending Q20 (CR-9).
+- **Currency.** Payments for imports are the means with which foreigners buy the country's exports or assets; a change in one changes the means available for the other. Record as type `currency`. TX-8 uses it.
+- **Location ties to other markets.** Holding a good tied to a place (a controlled tenancy) links the holder's housing market to their labor market. Record as `complement` with a note `location`. RS-11 uses them.
+
+Example: `controlled_rental_units` and `uncontrolled_rental_units` are `same_market_other_segment`, `close`. `sweetened_drinks_in_city` and `sweetened_drinks_outside_city` are `across_border`, with strength depending on distance.

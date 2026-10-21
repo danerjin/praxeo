@@ -1,0 +1,422 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-006 (illustrative figures), A-1 (binding).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-006 A-3 (enforcement): the Attorney General enforces actively in the declared area, including against outside sellers.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.alternative_uses",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "WE-006 A-6 (expectations, 0.55): local sellers can store durable goods and are not required to sell, so they can keep stock off the market until the cap lapses. WE-006 A-4 (0.9, goods can be sold elsewhere at normal prices) is about outside sellers, who are not the bound role named in this record (sellers.local), so A-6 is the row used.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.nontransferable",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No row. Estimate from the record: the goods sold to buyers.served (generators, water, plywood) carry no right tied to holding; WE-006 A-8 (0.85) concerns rooms and is used for k3.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.buyouts_limited",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No row. Estimate from the record: a hotel is not likely to pay guests to leave a capped room, so buyouts move fewer guests than the cap keeps in place.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.would_leave",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No row. Estimate from the record: a 30-day emergency; protected buyers do not leave the area because of the cap.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.lockin_dominates",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No row; estimate from the record (not applicable to a 30-day emergency).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.keepers_dominate",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No row; estimate from the record (not applicable).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.substitutes",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "WE-006 A-13 (substitutability): some unserved buyers have substitutes (ice, relatives' homes).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.search_open",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-006 A-19: when local stores sell out, some residents drive between stores and look for informal sellers; the premise of C-16.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.selection_open",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "WE-006 A-18: stores in the declared counties ration scarce goods by per-customer limits and by serving regular or early customers; the premise of C-5.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.quality_adjustable",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-006 A-7: hotels may change services and stay conditions (the Act caps the charge only).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "WE-006 A-10: some informal sales above the cap go undetected.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.opportunities_need_move",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No row. WE-006 section 6: RS-11 was checked; the linked choice (taking jobs elsewhere) is not at stake in a 30-day emergency. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "WE-006 A-20: bound sellers can organize to lobby at a cost lower than their stake (hotel and retail associations exist).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.durable_assets",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No row. WE-006 section 8: no durable capital is involved apart from the stocks themselves; TS-1 and TS-3 do not apply. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-006 A-14 (expectations, 0.75): sellers expect the cap to bind in future storms (the law is standing).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.commutable",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "WE-006 A-12 (mobility): inland stores can be reached within days of landfall.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.relet_obstructs",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "No row; not applicable. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.exit_process",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "No row; not applicable. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.binding",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-006 (illustrative figures), A-1 (binding). (Same answer as for k1; the component is k2.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.enforced",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-006 A-3 (enforcement): the Attorney General enforces actively in the declared area, including against outside sellers. (Same answer as for k1; the component is k2.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.alternative_uses",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "WE-006 A-4 (alternative_uses): goods that could be brought in can be sold elsewhere at normal prices. The bound role of this component is sellers.outside.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.nontransferable",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No row. Estimate from the record: no right tied to holding for goods bought from outside sellers.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.buyouts_limited",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No row. Estimate from the record: a hotel is not likely to pay guests to leave a capped room, so buyouts move fewer guests than the cap keeps in place. (Same answer as for k1; the component is k2.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.would_leave",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No row. Estimate from the record: a 30-day emergency; protected buyers do not leave the area because of the cap. (Same answer as for k1; the component is k2.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.lockin_dominates",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No row; estimate from the record (not applicable to a 30-day emergency). (Same answer as for k1; the component is k2.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.keepers_dominate",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No row; estimate from the record (not applicable). (Same answer as for k1; the component is k2.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.substitutes",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "WE-006 A-13 (substitutability): some unserved buyers have substitutes (ice, relatives' homes). (Same answer as for k1; the component is k2.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.search_open",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-006 A-19: when local stores sell out, some residents drive between stores and look for informal sellers; the premise of C-16. (Same answer as for k1; the component is k2.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.selection_open",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "WE-006 A-18: stores in the declared counties ration scarce goods by per-customer limits and by serving regular or early customers; the premise of C-5. (Same answer as for k1; the component is k2.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.quality_adjustable",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-006 A-7: hotels may change services and stay conditions (the Act caps the charge only). (Same answer as for k1; the component is k2.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.evasion",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "WE-006 A-10: some informal sales above the cap go undetected. (Same answer as for k1; the component is k2.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.opportunities_need_move",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No row. WE-006 section 6: RS-11 was checked; the linked choice (taking jobs elsewhere) is not at stake in a 30-day emergency. Estimate from the record. (Same answer as for k1; the component is k2.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.can_organize",
+  "value": "no",
+  "probability": 0.3,
+  "rationale": "No row for outside sellers. WE-006 A-20 (0.6) is about bound sellers who are local and hotels, with existing associations; individuals trucking goods in are unlikely to organize. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.durable_assets",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No row. WE-006 section 8: no durable capital is involved apart from the stocks themselves; TS-1 and TS-3 do not apply. Estimate from the record. (Same answer as for k1; the component is k2.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.expected_to_last",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-006 A-14 (expectations, 0.75): sellers expect the cap to bind in future storms (the law is standing). (Same answer as for k1; the component is k2.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.commutable",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "WE-006 A-12 (mobility): inland stores can be reached within days of landfall (this component names no neighbouring market, so the answer is not used).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.relet_obstructs",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "No row; not applicable. Estimate from the record. (Same answer as for k1; the component is k2.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.exit_process",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "No row; not applicable. Estimate from the record. (Same answer as for k1; the component is k2.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.binding",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-006 (illustrative figures), A-1 (binding). (Same answer as for k1; the component is k3.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.enforced",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-006 A-3 (enforcement): the Attorney General enforces actively in the declared area, including against outside sellers. (Same answer as for k1; the component is k3.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.alternative_uses",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No row. Rooms are fixed in number (WE-006 section 9) and cannot be moved to another use within a 30-day emergency. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.nontransferable",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "WE-006 A-8 (0.85): a guest who checks out loses the capped room and cannot pass it on. The row covers rooms only; the record has one component for goods and rooms. (Same answer as for k1; the component is k3.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.buyouts_limited",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No row. Estimate from the record: a hotel is not likely to pay guests to leave a capped room, so buyouts move fewer guests than the cap keeps in place. (Same answer as for k1; the component is k3.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.would_leave",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No row. Estimate from the record: a 30-day emergency; protected buyers do not leave the area because of the cap. (Same answer as for k1; the component is k3.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.lockin_dominates",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No row; estimate from the record (not applicable to a 30-day emergency). (Same answer as for k1; the component is k3.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.keepers_dominate",
+  "value": "no",
+  "probability": 0.2,
+  "rationale": "No row; estimate from the record (not applicable). (Same answer as for k1; the component is k3.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.substitutes",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "WE-006 A-13 (substitutability): some unserved buyers have substitutes (relatives' homes).",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.search_open",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "No row for rooms. WE-006 A-19 is about stores; evacuees seeking rooms search among hotels. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.selection_open",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "No row for rooms. WE-006 A-18 is about stores; hotels give rooms to the first arrivals. Estimate from the record.",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.quality_adjustable",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-006 A-7: hotels may change services and stay conditions (the Act caps the charge only). (Same answer as for k1; the component is k3.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.evasion",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "WE-006 A-10: some informal sales above the cap go undetected. (Same answer as for k1; the component is k3.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.opportunities_need_move",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No row. WE-006 section 6: RS-11 was checked; the linked choice (taking jobs elsewhere) is not at stake in a 30-day emergency. Estimate from the record. (Same answer as for k1; the component is k3.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.can_organize",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "WE-006 A-20: bound sellers can organize to lobby at a cost lower than their stake (hotel and retail associations exist). (Same answer as for k1; the component is k3.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.durable_assets",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No row. WE-006 section 8: no durable capital is involved apart from the stocks themselves; TS-1 and TS-3 do not apply. Estimate from the record. (Same answer as for k1; the component is k3.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.expected_to_last",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "WE-006 A-14 (expectations, 0.75): sellers expect the cap to bind in future storms (the law is standing). (Same answer as for k1; the component is k3.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.commutable",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "WE-006 A-12 (mobility); not used (no neighbouring market named for rooms).",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.relet_obstructs",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "No row; not applicable. Estimate from the record. (Same answer as for k1; the component is k3.)",
+  "evidence": []
+ },
+ {
+  "question_id": "k3.exit_process",
+  "value": "no",
+  "probability": 0.05,
+  "rationale": "No row; not applicable. Estimate from the record. (Same answer as for k1; the component is k3.)",
+  "evidence": []
+ }
+]

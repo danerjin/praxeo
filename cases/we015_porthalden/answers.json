@@ -1,0 +1,58 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-015 (illustrative figures), A-1: demand keeps growing about 3% a year, so at the meter rate the fixed fleet falls short of demand within about two years.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforced",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No matching assumption in WE-015; judged from the text: licensed cabs on streets and ranks are visible and the Office fines and impounds, so little taxi service takes place beyond the cap; A-7 puts evasion separately.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.evasion",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-015 (illustrative figures), A-7: unlicensed service and off-meter deals often go undetected (12 inspectors, a large city, pick-up bans on suburban taxis hard to police).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-015 (illustrative figures), A-9: medallion holders can organize at a cost below their stake (existing drivers' association, concentrated and identifiable gain).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.expected_to_last",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-015 (illustrative figures), A-3: medallion holders and buyers expect the cap to last.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.enforcement_budget_raised",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-015 (illustrative figures), A-16: the Office's budget rises with the added enforcement work, rather than the 12 inspectors being moved from other duties.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.values_differ",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "No matching assumption in WE-015; judged from the text: holders range from owner-drivers to fleet operators, whose costs differ.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.trade_cheap",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "No matching assumption in WE-015; judged from the text: medallions may be sold or leased, with transfers registered and a 2% transfer fee.",
+  "evidence": []
+ }
+]

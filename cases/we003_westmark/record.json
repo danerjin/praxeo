@@ -1,0 +1,32 @@
+{
+ "name": "Westmark State Cosmetology Act, amendment 7",
+ "jurisdiction": "Westmark (fictional)",
+ "rule_maker": "the Westmark legislature",
+ "enacted": "amendment 7",
+ "effective": "amendment 7",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "k1",
+   "instrument": "licensing_requirement",
+   "good": "hair_braiding",
+   "market": "westmark",
+   "bound_actor": "braiders",
+   "buyer_actor": "customers.braiding",
+   "right_holder_actor": "braiders.licensed",
+   "trainer_actor": "schools.cosmetology",
+   "enforcer_actor": "officials.enforcement",
+   "source_sentences": [
+    "Anyone who braids hair for pay, and any business that employs them, must hold a full cosmetology license: 1,500 hours at a licensed cosmetology school (typical tuition $12,000 to $18,000) and a state exam.",
+    "The curriculum covers cutting, coloring and chemical treatments; braiding is a small part or absent.",
+    "The State Board of Cosmetology enforces the requirement.",
+    "Inspections are complaint-driven."
+   ]
+  }
+ ],
+ "unclear": [],
+ "context": [
+  "About 2,000 people braid for pay, mostly self-employed, many working from home or in small shops.",
+  "Two neighboring states do not license braiding; their borders are a long drive from the main cities."
+ ]
+}

@@ -1,0 +1,72 @@
+[
+ {
+  "question_id": "k1.binding",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-1: non-competes deter some bound workers from moves they would otherwise make; about 17% of workers had signed one and employers filed about 400 enforcement suits a year.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.term_valued",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-5: in a material share of trainee jobs the non-compete protected the employer's recovery of the cost of general training (A-15 gives the same 0.7 for the firms' expected yield).",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.substitute_terms",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-4: reshaping restraints into the forms the Act preserves (confidentiality, non-solicitation for up to 12 months, unvested deferred pay) costs many employers less than the protection it restores. The text itself names these preserved terms.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.can_organize",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-13: employers' associations, worker groups and start-up associations can organize at a cost below their stake.",
+  "evidence": []
+ },
+ {
+  "question_id": "k1.paid_below_rivals",
+  "value": "yes",
+  "probability": 0.75,
+  "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-7: some bound workers are paid less than a rival would pay them.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.enforced",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-2: employers stop enforcing, and workers learn that the clause is void (K4 notices).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.buyers_unaware",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-2: workers learn from the K4 notices that the clause is void, which they did not know.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.disclosed_deters",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-034; judged from the text: the notice is not about a good anyone buys; workers act on it by moving (C-1), not by buying less.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.disclosed_attracts",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-034; judged from the text: as for disclosed_deters, the notice changes no purchase.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.can_organize",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-034 (illustrative figures), A-13: employers' associations can organize at a cost below their stake.",
+  "evidence": []
+ }
+]

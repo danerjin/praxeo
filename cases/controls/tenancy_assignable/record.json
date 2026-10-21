@@ -1,0 +1,29 @@
+{
+ "name": "Carrow Rent Cap",
+ "jurisdiction": "fictional",
+ "rule_maker": "city council",
+ "enacted": "2030-01-01",
+ "effective": "2030-07-01",
+ "stated_aim": null,
+ "components": [
+  {
+   "id": "r3",
+   "instrument": "price_ceiling",
+   "good": "rental_housing",
+   "market": "city",
+   "bound_actor": "landlords.controlled",
+   "protected_actor": "tenants.controlled",
+   "excluded_actor": "tenants.prospective",
+   "vacancy_decontrol": false,
+   "source_sentences": [
+    "Yearly rent increases for covered units are capped at 1 percent.",
+    "A sitting tenant may assign or sell the tenancy, at the capped rent, to any person and at any price the parties agree."
+   ]
+  }
+ ],
+ "unclear": [],
+ "context": [
+  "The Rent Board enforces the cap with fines larger than any likely gain.",
+  "Market rents in Carrow rise about 6 percent a year."
+ ]
+}

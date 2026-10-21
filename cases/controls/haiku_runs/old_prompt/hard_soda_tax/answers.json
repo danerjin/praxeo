@@ -1,0 +1,12 @@
+[
+  {
+    "question_id": "h6.quantity_responds",
+    "value": "yes",
+    "probability": 0.92,
+    "rationale": "The tax raises the price of sugar-sweetened drinks, and untaxed substitutes sold in the same shops, made by the same firms, let buyers switch and sellers shift resources, so the quantity traded should fall.",
+    "evidence": [
+      "Shops in Marden sell bottled water, unsweetened tea, juice and diet drinks, none of which is taxed.",
+      "Soft drinks are made by several firms that also make the untaxed drinks."
+    ]
+  }
+]
