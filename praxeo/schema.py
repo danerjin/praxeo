@@ -187,6 +187,13 @@ class Component(BaseModel):
     charge_payer_worker_actor: Optional[str] = Field(default=None, description="Play or pay: the workers of those firms, who do not receive the term")
     charge_capped_actor: Optional[str] = Field(default=None, description="Play or pay with a charge capped per firm: payers above the cap, for whom the charge is a fixed cost (RS-18 0.9)")
     fixed_cost_per_item: bool = Field(default=False, description="Mandates, standards and disclosure: the measure attaches a cost fixed per item, model or version offered (RS-24)")
+    # price_floor (PC-9 to PC-11): bound_actor is the buyers who must pay at least the floor (employers), seller_actor the
+    # sellers it holds up (low-wage workers), excluded_actor the would-be sellers who bear the surplus (job seekers);
+    # contract_kind employment for a wage floor, sale for a good; output_buyer_actor, mobile_buyer_actor,
+    # substitute_seller_actor, asset_owner_actor, definition_line, announcement_window and general_budget apply.
+    lower_tier_seller_actor: Optional[str] = Field(default=None, description="Price floors: sellers under a lower floor (a youth rate) whom buyers can take in place of seller_actor (RS-1)")
+    state_buys_surplus: bool = Field(default=False, description="Price floors: the state buys what the market does not take at the floor (PC-9 Unless, SB-9); outlay_actor holds the stocks")
+    fixed_budget: bool = Field(default=False, description="The enforcing agency's budget is not raised for the measure, so its other work gives way (OC-3, fixed budget)")
     stock_owner_actor: Optional[str] = Field(default=None, description="Product standards with the stock exempt: owners of existing units (EN-14)")
     source_sentences: list[str] = Field(description="Sentences of the policy text this component rests on, quoted exactly")
 

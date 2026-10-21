@@ -635,6 +635,65 @@ def _mandate_specs_core(comp: Component) -> list[tuple[str, str, str, str]]:
     return specs if employment else [q for q in specs if q[0] not in EMPLOYMENT_ONLY]
 
 
+# Price floors (PC-9 to PC-11 as CR-6 with the sides named): floors.lp.
+FLOOR_QUESTIONS = [
+    ("binding", "binding",
+     "Is the floor above the price (or wage) that some of the covered sellers could otherwise command?",
+     "The floor binds for an identifiable group of sellers."),
+    ("enforced", "enforcement",
+     "Will most bound buyers comply with the floor?",
+     "Most bound buyers comply with the floor."),
+    ("cost_not_offset", "substitutability",
+     "Does the floor raise buyers' cost per unit, because they cannot fully offset it by cutting other terms or replacing what they buy at the old cost?",
+     "The floor raises buyers' cost per unit; it is not fully offset."),
+    ("evasion", "enforcement",
+     "Will some trade below the floor go undetected?",
+     "Some trade below the floor goes undetected."),
+    ("can_organize", "other",
+     "Can the bound buyers organize to lobby over the floor at a cost below their stake?",
+     "The bound buyers can organize to lobby."),
+    ("sellers_organize", "other",
+     "Can the sellers the floor raises organize to lobby over it at a cost below their stake?",
+     "The sellers the floor raises can organize to lobby."),
+]
+MARGINS_QUESTION = ("margins", "other",
+                    "Can buyers adjust at least one margin (hiring, hours, schedules, breaks, training or benefits)?",
+                    "Buyers can adjust at least one margin.")
+FL_RIVALS_QUESTION = ("rivals_bound", "other",
+                      "Do most of the bound buyers' rivals in their own output market face the same floor?",
+                      "Most of the bound buyers' rivals face the same floor.")
+FL_CROSS_QUESTION = ("cross_border_feasible", "mobility",
+                     "Can some buyers of the bound buyers' output easily buy it across a boundary where the floor does not apply?",
+                     "Some buyers of the output can easily buy across the boundary.")
+SUBSTITUTE_EXISTS_QUESTION = ("substitute_exists", "alternative_uses",
+                              "Is there a substitute (equipment, another input) for what the floor makes dearer?",
+                              "A substitute exists for what the floor makes dearer.")
+AHEAD_QUESTION = ("expected_ahead", "expectations",
+                  "Did those planning investment expect the floor before it took effect?",
+                  "Investors expected the floor before it took effect.")
+LOWER_TIER_USED_QUESTION = ("lower_tier_used", "other",
+                            "Will a meaningful number of buyers use the lower floor?",
+                            "A meaningful number of buyers use the lower floor.")
+TIERS_SUBSTITUTE_QUESTION = ("tiers_substitute", "substitutability",
+                             "Are the sellers under the lower floor substitutes for those under the higher one?",
+                             "The two groups of sellers are substitutes.")
+BUDGET_FIXED_QUESTION = ("budget_fixed", "revenue_use",
+                         "Is the enforcing agency's staff and budget left as it was, without an increase for this measure?",
+                         "The agency's budget is not increased for the measure.")
+
+
+def _floor_specs(comp: Component) -> list[tuple[str, str, str, str]]:
+    specs = list(FLOOR_QUESTIONS)
+    for cond, q in ((comp.contract_kind == "employment", MARGINS_QUESTION), (comp.output_buyer_actor, FL_RIVALS_QUESTION),
+                    (comp.mobile_buyer_actor, FL_CROSS_QUESTION), (comp.substitute_seller_actor, SUBSTITUTE_EXISTS_QUESTION),
+                    (comp.definition_line, RESHAPING_QUESTION), (comp.announcement_window, AHEAD_QUESTION),
+                    (comp.asset_owner_actor, LASTING_QUESTION), (comp.lower_tier_seller_actor, LOWER_TIER_USED_QUESTION),
+                    (comp.lower_tier_seller_actor, TIERS_SUBSTITUTE_QUESTION), (comp.fixed_budget, BUDGET_FIXED_QUESTION)):
+        if cond:
+            specs.append(q)
+    return specs
+
+
 def _related_specs(comp: Component) -> list[tuple[str, str, str, str]]:
     """One question per premise of each related market (CR-9, SB-3, RS-12), named by the relation's index."""
     out = []
@@ -676,6 +735,8 @@ def _instrument_specs(comp: Component) -> list[tuple[str, str, str, str]]:
         return _en_specs(comp)
     if comp.instrument == "prohibition":
         return _prohibition_specs(comp)
+    if comp.instrument == "price_floor":
+        return _floor_specs(comp)
     if comp.instrument in ("mandated_contract_term", "mandate_with_charge", "term_prohibition", "product_standard", "disclosure_mandate"):
         return _mandate_specs(comp)
     if comp.instrument not in ("per_unit_tax", "tariff"):

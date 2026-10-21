@@ -95,6 +95,12 @@ instrument, even when the text states no aim:
   the good was taxed before; revenue_actor collects it), practice_ban (true if the ban forbids a way of doing a legal
   business, not a good), fees_to_budget (true if fees or fines go to the budget that funds enforcement),
   announcement_window, general_budget.
+- price_floor: bound_actor (buyers who must pay at least the floor: employers), seller_actor (sellers it holds up),
+  excluded_actor (would-be sellers who bear the surplus: job seekers), contract_kind (employment for a wage floor, sale for
+  a good), lower_tier_seller_actor (sellers under a lower floor buyers can take instead: a youth rate), output_buyer_actor,
+  mobile_buyer_actor, substitute_seller_actor (sellers of a substitute such as labour-saving equipment), asset_owner_actor,
+  state_buys_surplus with outlay_actor, definition_line, announcement_window, general_budget, fixed_budget (true if the
+  enforcing agency's budget is not raised).
 - mandated_contract_term: bound_actor (who must provide the term and did not), recipient_actor (who receives it),
   floor_bound_actor (recipients whose wage an existing minimum wage holds), applicant_actor (would-be recipients, where
   the term's cost differs by recipient), already_provider_actor and already_recipient_actor (providers who already offer

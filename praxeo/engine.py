@@ -158,6 +158,26 @@ def _mandate_facts(c: str, comp) -> list[str]:
 MANDATES = ("mandated_contract_term", "mandate_with_charge", "term_prohibition", "product_standard", "disclosure_mandate")
 
 
+def _floor_facts(c: str, comp) -> list[str]:
+    """Facts for floors.lp (PC-9 to PC-11)."""
+    lines = [f"floor({c}).", f'fl_seller({c}, "{comp.seller_actor or "sellers.current"}").', f'enforcer({c}, "{comp.enforcer_actor}").',
+             f'taxpayer({c}, "{comp.taxpayer_actor}").', f'fl_outlay({c}, "{comp.outlay_actor or comp.enforcer_actor}").']
+    payers = [comp.taxpayer_actor, comp.other_spending_actor, comp.future_taxpayer_actor]
+    lines.append(f'fl_payer_group({c}, "{",".join(dict.fromkeys(p for p in payers if p))}").')
+    if comp.contract_kind == "employment":
+        lines.append(f"employment({c}).")
+    for pred, actor in (("fl_excluded", comp.excluded_actor), ("fl_lower_tier", comp.lower_tier_seller_actor),
+                        ("mc_output_buyer", comp.output_buyer_actor), ("mobile_buyer", comp.mobile_buyer_actor),
+                        ("fl_substitute_seller", comp.substitute_seller_actor), ("fl_asset_owner", comp.asset_owner_actor)):
+        if actor:
+            lines.append(f'{pred}({c}, "{actor}").')
+    for pred, flag in (("definition_line", comp.definition_line), ("general_budget", comp.general_budget),
+                       ("tax_named", comp.tax_named), ("fixed_budget", comp.fixed_budget), ("state_buys", comp.state_buys_surplus)):
+        if flag:
+            lines.append(f"{pred}({c}).")
+    return lines
+
+
 def _en_facts(c: str, comp) -> list[str]:
     lines = [f"{'licensing' if comp.instrument == 'licensing_requirement' else 'quota'}({c}).",
              f'en_buyer({c}, "{comp.buyer_actor}").', f'en_holder({c}, "{comp.right_holder_actor or comp.bound_actor}").',
@@ -267,6 +287,8 @@ def facts(record: PolicyRecord, assumptions: dict[str, Assumption]) -> str:
             lines += _prohibition_facts(c, comp)
         if comp.instrument in MANDATES:
             lines += _mandate_facts(c, comp)
+        if comp.instrument == "price_floor":
+            lines += _floor_facts(c, comp)
     for a in assumptions:
         lines.append(f"assumption({a}).")
     return "\n".join(lines) + "\n"
