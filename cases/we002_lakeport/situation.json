@@ -1,0 +1,275 @@
+{
+ "name": "WE-002 Lakeport beverage tax (core-rule pilot)",
+ "exchanges": [
+  {
+   "id": "e_dist",
+   "buyer": "retailers.lakeport",
+   "seller": "distributors.registered",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "full_cost_per_unit"
+  }
+ ],
+ "charges": [
+  {
+   "component": "k1",
+   "exchange": "e_dist",
+   "payer_side": "seller",
+   "receiver": "officials.town",
+   "receipt_variable": "tax_revenue",
+   "projection_variable": "tax_revenue_vs_static_projection"
+  }
+ ],
+ "moves": [
+  {
+   "exchange": "e_dist",
+   "side": "seller",
+   "premises": []
+  }
+ ],
+ "alternatives": [
+  {
+   "component": "k1",
+   "chooser": "distributors.registered",
+   "actor": "distributors.registered",
+   "variables": [
+    "reclassification"
+   ],
+   "premises": [
+    "a4"
+   ]
+  },
+  {
+   "component": "k1",
+   "chooser": "distributors.registered",
+   "actor": "distributors.registered",
+   "variables": [
+    "informal_activity"
+   ],
+   "premises": [
+    "a5"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "component": "k1",
+   "actor": "retailers.lakeport",
+   "premises": [
+    "a12"
+   ]
+  },
+  {
+   "component": "k1",
+   "actor": "distributors.registered",
+   "premises": [
+    "a12"
+   ]
+  },
+  {
+   "component": "k1",
+   "actor": "providers.approved",
+   "premises": [
+    "a12"
+   ]
+  }
+ ],
+ "links": [
+  {
+   "source_actor": "distributors.registered",
+   "source_variable": "full_cost_per_unit",
+   "relation": "output",
+   "actor": "retailers.lakeport",
+   "variable": "price_paid",
+   "premises": [
+    "a1"
+   ]
+  },
+  {
+   "source_actor": "retailers.lakeport",
+   "source_variable": "price_paid",
+   "relation": "output",
+   "actor": "buyers.households",
+   "variable": "price_paid",
+   "premises": [
+    "a1"
+   ]
+  },
+  {
+   "source_actor": "buyers.households",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "buyers.households",
+   "variable": "quantity_demanded",
+   "premises": []
+  },
+  {
+   "source_actor": "buyers.households",
+   "source_variable": "quantity_demanded",
+   "relation": "same_act",
+   "actor": "retailers.lakeport",
+   "variable": "quantity_supplied",
+   "premises": []
+  },
+  {
+   "source_actor": "buyers.households",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "buyers.households",
+   "variable": "quantity_substitute",
+   "premises": [
+    "a2"
+   ]
+  },
+  {
+   "source_actor": "buyers.households",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "sellers.untaxed_drinks",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a2"
+   ]
+  },
+  {
+   "source_actor": "buyers.households",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "sellers.untaxed_drinks",
+   "variable": "net_price_received",
+   "premises": [
+    "a2"
+   ]
+  },
+  {
+   "source_actor": "buyers.households",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "buyers.households",
+   "variable": "cross_border_purchases",
+   "premises": [
+    "a3"
+   ]
+  },
+  {
+   "source_actor": "buyers.households",
+   "source_variable": "cross_border_purchases",
+   "relation": "same_act",
+   "actor": "retailers.neighboring",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a3"
+   ]
+  },
+  {
+   "source_actor": "buyers.households",
+   "source_variable": "cross_border_purchases",
+   "relation": "complement",
+   "actor": "retailers.neighboring",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a7"
+   ]
+  },
+  {
+   "source_actor": "buyers.households",
+   "source_variable": "cross_border_purchases",
+   "relation": "substitute",
+   "actor": "retailers.lakeport",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a7"
+   ]
+  },
+  {
+   "source_actor": "retailers.lakeport",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.retail",
+   "variable": "employment,hours_worked",
+   "premises": [
+    "a9"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "distributors.registered"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k3",
+   "actor": "officials.revenue_dept"
+  }
+ ],
+ "means": [
+  {
+   "component": "k2",
+   "actor": "families.private_preschool",
+   "direction": "in"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Lakeport retailers pass at least part of the tax on in shelf prices.",
+   "class": "other",
+   "p": 0.9
+  },
+  "a2": {
+   "text": "Buyers have untaxed substitutes they consider acceptable (water, diet drinks, juice).",
+   "class": "substitutability",
+   "p": 0.9
+  },
+  "a3": {
+   "text": "Enough Lakeport residents can easily shop in the neighboring towns.",
+   "class": "mobility",
+   "p": 0.8
+  },
+  "a4": {
+   "text": "Reformulation or relabeling to an exempt category is feasible for some products.",
+   "class": "other",
+   "p": 0.7
+  },
+  "a5": {
+   "text": "Distributors evade the tax on a meaningful scale.",
+   "class": "enforcement",
+   "p": 0.3
+  },
+  "a6": {
+   "text": "Free places draw some families who would otherwise have paid for private places.",
+   "class": "substitutability",
+   "p": 0.85
+  },
+  "a7": {
+   "text": "Shoppers bundle drink purchases with other groceries on the same trip.",
+   "class": "other",
+   "p": 0.7
+  },
+  "a8": {
+   "text": "Lakeport would otherwise have funded some pre-school places from general revenue, and the law does not fix that funding level.",
+   "class": "revenue_use",
+   "p": 0.65
+  },
+  "a9": {
+   "text": "Sellers adjust their staffing or hours to their sales.",
+   "class": "alternative_uses",
+   "p": 0.75
+  },
+  "a10": {
+   "text": "Earmarked spending on free places exceeds what the town would otherwise have spent on pre-school places from general revenue.",
+   "class": "revenue_use",
+   "p": 0.7
+  },
+  "a11": {
+   "text": "Some families who would have kept their 3- and 4-year-olds at home or in informal care take a free place.",
+   "class": "substitutability",
+   "p": 0.8
+  },
+  "a12": {
+   "text": "Lakeport retailers, the few registered distributors and approved pre-school providers can organize and spend to change or defend the tax at a cost below their stakes.",
+   "class": "other",
+   "p": 0.75
+  }
+ }
+}
