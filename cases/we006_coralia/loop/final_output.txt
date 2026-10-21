@@ -1,0 +1,49 @@
+DONE in 3 rounds, 16 questions
+R buyers.local price_paid  decrease
+R buyers.local quantity_traded announcement decrease
+R buyers.local resources_available_other_uses  increase
+R buyers.repair_local quantity_traded  decrease
+R buyers.unaffected quantity_traded  increase
+R buyers.unserved allocation_by_non_price_criteria  increase
+R buyers.unserved excess_demand  increase
+R buyers.unserved quantity_substitute  increase
+R buyers.unserved quantity_traded  decrease
+R buyers.unserved search_cost  increase
+R buyers.unserved travel_time  increase
+R buyers.unserved wait_time  increase
+R buyers.unserved ['wait_time', 'search_cost', 'allocation_by_non_price_criteria']  at_least_one_increase
+R guests.local price_paid  decrease
+R guests.local quality_per_unit  decrease
+R guests.local resources_available_other_uses  increase
+R guests.local turnover  decrease
+R guests.unserved excess_demand  increase
+R guests.unserved quantity_traded  decrease
+R guests.unserved ['wait_time', 'search_cost', 'allocation_by_non_price_criteria']  at_least_one_increase
+R officials.enforcement enforcement_cost  increase
+R officials.enforcement enforcement_cost  decrease
+R sellers.inland quantity_traded  increase
+R sellers.local compliance_cost  increase
+R sellers.local informal_activity  increase
+R sellers.local inventory_held  increase
+R sellers.local inventory_held announcement decrease
+R sellers.local lobbying_effort  increase
+R sellers.local net_price_received  decrease
+R sellers.local quantity_supplied  decrease
+R sellers.local quantity_traded  decrease
+R sellers.local reclassification  increase
+R sellers.local resources_available_other_uses  decrease
+R sellers.lodging compliance_cost  increase
+R sellers.lodging informal_activity  increase
+R sellers.lodging lobbying_effort  increase
+R sellers.lodging net_price_received  decrease
+R sellers.lodging quantity_traded  decrease
+R sellers.lodging reclassification  increase
+R sellers.lodging resources_available_other_uses  decrease
+R sellers.outside compliance_cost  increase
+R sellers.outside informal_activity  increase
+R sellers.outside net_price_received  decrease
+R sellers.outside quantity_supplied  decrease
+R sellers.outside quantity_traded  decrease
+R sellers.outside reclassification  increase
+R sellers.outside resources_available_other_uses  decrease
+R sellers.repair_outside quantity_supplied  decrease

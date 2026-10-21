@@ -1,0 +1,517 @@
+{
+ "name": "WE-006 anti-price-gouging law (expand-loop blind run)",
+ "exchanges": [
+  {
+   "id": "e_local",
+   "buyer": "buyers.local",
+   "seller": "sellers.local",
+   "unsatisfied_buyer": "buyers.unserved",
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": "buyers.unserved",
+   "criteria": [
+    "wait_time",
+    "search_cost",
+    "allocation_by_non_price_criteria"
+   ]
+  },
+  {
+   "id": "e_outside",
+   "buyer": "buyers.local",
+   "seller": "sellers.outside",
+   "unsatisfied_buyer": "buyers.unserved",
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": "buyers.unserved",
+   "criteria": [
+    "wait_time",
+    "search_cost",
+    "allocation_by_non_price_criteria"
+   ]
+  },
+  {
+   "id": "e_rooms",
+   "buyer": "guests.local",
+   "seller": "sellers.lodging",
+   "unsatisfied_buyer": "guests.unserved",
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": "guests.unserved",
+   "criteria": [
+    "wait_time",
+    "search_cost",
+    "allocation_by_non_price_criteria"
+   ]
+  }
+ ],
+ "held": [
+  {
+   "premises": [
+    "a1",
+    "a3"
+   ],
+   "component": "k1",
+   "exchange": "e_local",
+   "direction": "below"
+  },
+  {
+   "premises": [
+    "a1",
+    "a3"
+   ],
+   "component": "k1",
+   "exchange": "e_outside",
+   "direction": "below"
+  },
+  {
+   "premises": [
+    "a1",
+    "a3"
+   ],
+   "component": "k1",
+   "exchange": "e_rooms",
+   "direction": "below"
+  }
+ ],
+ "margins": [
+  {
+   "premises": [
+    "q6_stores_in_the_declared_counties_ration_s"
+   ],
+   "exchange": "e_local",
+   "kind": "criterion",
+   "side": null,
+   "actor": "buyers.unserved",
+   "variables": [
+    "allocation_by_non_price_criteria"
+   ]
+  },
+  {
+   "premises": [
+    "q6_stores_in_the_declared_counties_ration_s"
+   ],
+   "exchange": "e_local",
+   "kind": "criterion",
+   "side": null,
+   "actor": "buyers.unserved",
+   "variables": [
+    "wait_time"
+   ]
+  },
+  {
+   "premises": [
+    "q7_when_local_stores_sell_out_some_resident"
+   ],
+   "exchange": "e_local",
+   "kind": "criterion",
+   "side": null,
+   "actor": "buyers.unserved",
+   "variables": [
+    "search_cost"
+   ]
+  },
+  {
+   "premises": [
+    "q13_local_sellers_expect_the_emergency_to_en"
+   ],
+   "exchange": "e_local",
+   "kind": "adjust",
+   "side": "seller",
+   "actor": "sellers.local",
+   "variables": [
+    "quantity_supplied"
+   ]
+  },
+  {
+   "premises": [
+    "q14_some_informal_sales_above_the_cap_go_und"
+   ],
+   "exchange": "e_local",
+   "kind": "outside",
+   "side": null,
+   "actor": "sellers.local",
+   "variables": [
+    "informal_activity"
+   ]
+  },
+  {
+   "premises": [
+    "q18_hotels_may_change_services_and_stay_cond"
+   ],
+   "exchange": "e_rooms",
+   "kind": "adjust",
+   "side": "seller",
+   "actor": "guests.local",
+   "variables": [
+    "quality_per_unit"
+   ]
+  },
+  {
+   "premises": [
+    "q14_some_informal_sales_above_the_cap_go_und"
+   ],
+   "exchange": "e_rooms",
+   "kind": "outside",
+   "side": null,
+   "actor": "sellers.lodging",
+   "variables": [
+    "informal_activity"
+   ]
+  },
+  {
+   "premises": [
+    "q19_goods_that_could_be_brought_in_can_be_so"
+   ],
+   "exchange": "e_outside",
+   "kind": "adjust",
+   "side": "seller",
+   "actor": "sellers.outside",
+   "variables": [
+    "quantity_supplied"
+   ]
+  },
+  {
+   "premises": [
+    "q14_some_informal_sales_above_the_cap_go_und"
+   ],
+   "exchange": "e_outside",
+   "kind": "outside",
+   "side": null,
+   "actor": "sellers.outside",
+   "variables": [
+    "informal_activity"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q8_some_unserved_buyers_have_substitutes_ic"
+   ],
+   "component": "k1",
+   "chooser": "buyers.unserved",
+   "actor": "buyers.unserved",
+   "variables": [
+    "quantity_substitute"
+   ]
+  },
+  {
+   "premises": [
+    "q9_inland_stores_can_be_reached_within_days"
+   ],
+   "component": "k1",
+   "chooser": "buyers.unserved",
+   "actor": "buyers.unserved",
+   "variables": [
+    "travel_time"
+   ]
+  },
+  {
+   "premises": [
+    "q10_a_guest_who_checks_out_loses_the_capped_"
+   ],
+   "component": "k1",
+   "chooser": "guests.local",
+   "actor": "guests.local",
+   "variables": [
+    "turnover"
+   ]
+  },
+  {
+   "premises": [
+    "q13_local_sellers_expect_the_emergency_to_en"
+   ],
+   "component": "k1",
+   "chooser": "sellers.local",
+   "actor": "sellers.local",
+   "variables": [
+    "inventory_held"
+   ]
+  },
+  {
+   "premises": [
+    "q15_bundling_new_models_and_relabeled_fees_a"
+   ],
+   "component": "k1",
+   "chooser": "sellers.local",
+   "actor": "sellers.local",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q15_bundling_new_models_and_relabeled_fees_a"
+   ],
+   "component": "k1",
+   "chooser": "sellers.lodging",
+   "actor": "sellers.lodging",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q19_goods_that_could_be_brought_in_can_be_so",
+    "q20_as_the_attorney_general_applies_k2_the_e"
+   ],
+   "component": "k1",
+   "chooser": "sellers.outside",
+   "actor": "buyers.unaffected",
+   "variables": [
+    "quantity_traded"
+   ]
+  },
+  {
+   "premises": [
+    "q15_bundling_new_models_and_relabeled_fees_a"
+   ],
+   "component": "k1",
+   "chooser": "sellers.outside",
+   "actor": "sellers.outside",
+   "variables": [
+    "reclassification"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q17_bound_sellers_can_organize_to_lobby_at_a"
+   ],
+   "component": "k1",
+   "actor": "sellers.local"
+  },
+  {
+   "premises": [
+    "q17_bound_sellers_can_organize_to_lobby_at_a"
+   ],
+   "component": "k1",
+   "actor": "sellers.lodging"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q9_inland_stores_can_be_reached_within_days"
+   ],
+   "source_actor": "buyers.unserved",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "sellers.inland",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q11_some_outside_repair_contractors_rely_on_",
+    "q12_outside_repair_crews_have_other_work_the"
+   ],
+   "source_actor": "guests.unserved",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "sellers.repair_outside",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [],
+   "source_actor": "sellers.repair_outside",
+   "source_variable": "quantity_supplied",
+   "relation": "same_act",
+   "actor": "buyers.repair_local",
+   "variable": "quantity_traded"
+  }
+ ],
+ "assets": [],
+ "yields": [],
+ "transfers": [
+  {
+   "exchange": "e_local",
+   "premises": [
+    "a1"
+   ]
+  },
+  {
+   "exchange": "e_outside",
+   "premises": [
+    "a1"
+   ]
+  },
+  {
+   "exchange": "e_rooms",
+   "premises": [
+    "a1"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "sellers.local"
+  },
+  {
+   "component": "k1",
+   "actor": "sellers.outside"
+  },
+  {
+   "component": "k1",
+   "actor": "sellers.lodging"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [],
+ "fixed_budget": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement",
+   "premises": [
+    "a21"
+   ]
+  }
+ ],
+ "charges": [],
+ "moves": [],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a14"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q5_households_know_the_act_and_expect_it_to"
+   ],
+   "component": "k1",
+   "actor": "buyers.local",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q16_holding_extra_stock_before_the_season_is"
+   ],
+   "component": "k1",
+   "actor": "sellers.local",
+   "variable": "inventory_held",
+   "mode": "carry_over"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "parts": [],
+ "dominance": [],
+ "assumptions": {
+  "a1": {
+   "text": "Without the Act, prices of covered goods and rooms would rise more than 10% above the base plus documented cost increases, for independent sellers, outside sellers and hotels, in the first weeks.",
+   "class": "binding",
+   "p": 0.85
+  },
+  "a3": {
+   "text": "The Attorney General enforces actively in the declared area, including against outside sellers.",
+   "class": "enforcement",
+   "p": 0.75
+  },
+  "a14": {
+   "text": "Sellers expect the cap to bind in future storms.",
+   "class": "expectations",
+   "p": 0.75
+  },
+  "a21": {
+   "text": "Enforcement during a declaration is paid from the Attorney General's existing budget, which is fixed within the year; there is no supplementary appropriation.",
+   "class": "revenue_use",
+   "p": 0.6
+  },
+  "q5_households_know_the_act_and_expect_it_to": {
+   "text": "Households know the Act and expect it to apply in future storms.",
+   "p": 0.55,
+   "class": "expectations"
+  },
+  "q6_stores_in_the_declared_counties_ration_s": {
+   "text": "Stores in the declared counties ration scarce goods by per-customer limits and by serving regular or early customers.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q7_when_local_stores_sell_out_some_resident": {
+   "text": "When local stores sell out, some residents drive between stores and look for informal sellers.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q8_some_unserved_buyers_have_substitutes_ic": {
+   "text": "Some unserved buyers have substitutes (ice, relatives' homes).",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q9_inland_stores_can_be_reached_within_days": {
+   "text": "Inland stores can be reached within days of landfall.",
+   "p": 0.7,
+   "class": "mobility"
+  },
+  "q10_a_guest_who_checks_out_loses_the_capped_": {
+   "text": "A guest who checks out loses the capped room and cannot pass it on.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q11_some_outside_repair_contractors_rely_on_": {
+   "text": "Some outside repair contractors rely on local rooms, and their other lodging is far away.",
+   "p": 0.6,
+   "class": "alternative_uses"
+  },
+  "q12_outside_repair_crews_have_other_work_the": {
+   "text": "Outside repair crews have other work they can do (other storm areas, normal jobs elsewhere), so some are at the margin of coming.",
+   "p": 0.75,
+   "class": "alternative_uses"
+  },
+  "q13_local_sellers_expect_the_emergency_to_en": {
+   "text": "Local sellers expect the emergency to end within weeks, can store durable goods, and are not required to sell.",
+   "p": 0.55,
+   "class": "expectations"
+  },
+  "q14_some_informal_sales_above_the_cap_go_und": {
+   "text": "Some informal sales above the cap go undetected.",
+   "p": 0.6,
+   "class": "enforcement"
+  },
+  "q15_bundling_new_models_and_relabeled_fees_a": {
+   "text": "Bundling, new models and relabeled fees are open to some sellers.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q16_holding_extra_stock_before_the_season_is": {
+   "text": "Holding extra stock before the season is costly to sellers (floor and warehouse space, money tied up, stock left unsold or marked down if no storm comes).",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q17_bound_sellers_can_organize_to_lobby_at_a": {
+   "text": "Bound sellers can organize to lobby at a cost lower than their stake: hotel and retail associations already exist in the state, and the Act applies in every declared emergency.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q18_hotels_may_change_services_and_stay_cond": {
+   "text": "Hotels may change services and stay conditions (the Act caps the charge only).",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q19_goods_that_could_be_brought_in_can_be_so": {
+   "text": "Goods that could be brought in can be sold elsewhere at normal prices.",
+   "p": 0.9,
+   "class": "alternative_uses"
+  },
+  "q20_as_the_attorney_general_applies_k2_the_e": {
+   "text": "As the Attorney General applies K2, the extra costs of an emergency trip (own time, risk, unsold stock, value elsewhere) are mostly not accepted as documented costs.",
+   "p": 0.75,
+   "class": "alternative_uses"
+  }
+ }
+}
