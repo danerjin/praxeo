@@ -1,0 +1,330 @@
+{
+ "applicants.permit": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k3",
+    "chooser": "applicants.permit",
+    "actor": "architects",
+    "variables": [
+     "commercial_interior_work"
+    ]
+   },
+   "premises": [
+    "Architects take on more commercial interior work."
+   ],
+   "premise_class": "substitutability",
+   "source": "Plans must be stamped by a licensed interior designer or an architect."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k3",
+    "actor": "applicants.permit",
+    "variable": "permit_applications",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Commercial clients can bring projects forward into the ten-month window."
+   ],
+   "premise_class": "expectations",
+   "source": "The Act was passed ten months before it took effect."
+  }
+ ],
+ "architects": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "architects",
+    "source_variable": "commercial_interior_work",
+    "relation": "supply_price",
+    "actor": "architects",
+    "variable": "net_price_received"
+   },
+   "premises": [
+    "Architects' capacity for interior work cannot expand at unchanged fees in the medium run (they are licensed, and their own training pipeline is long)."
+   ],
+   "premise_class": "other",
+   "source": "Plans must be stamped by a licensed interior designer or an architect."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "architects"
+   },
+   "premises": [
+    "License holders, schools, retailers and architects can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "K1 exempts architects; K3 lets them stamp plans."
+  }
+ ],
+ "clients.design": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "clients.design",
+    "actor": "retailers.furnishings",
+    "variables": [
+     "design_help_provided"
+    ]
+   },
+   "premises": [
+    "Residential clients have close exempt or unlicensed substitutes: store design help, online services, doing it themselves.",
+    "The retail exemption can be used for full-room design given with furniture sales."
+   ],
+   "premise_class": "substitutability",
+   "source": "Exemptions: retail employees advising on goods sold by their employer; work on one's own home; unpaid work."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "clients.design",
+    "actor": "clients.design",
+    "variables": [
+     "own_design_work",
+     "online_service_use"
+    ]
+   },
+   "premises": [
+    "Residential clients have close exempt or unlicensed substitutes: store design help, online services, doing it themselves."
+   ],
+   "premise_class": "substitutability",
+   "source": "Exemptions: ... work on one's own home; unpaid work."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "clients.design",
+    "actor": "architects",
+    "variables": [
+     "commercial_interior_work"
+    ]
+   },
+   "premises": [
+    "Architects take on more commercial interior work."
+   ],
+   "premise_class": "substitutability",
+   "source": "Exemptions: architects."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "clients.design",
+    "actor": "designers.velmark",
+    "variables": [
+     "arvane_clients_served"
+    ]
+   },
+   "premises": [
+    "Velmark-based designers serve Arvane homes without an Arvane license on a meaningful scale."
+   ],
+   "premise_class": "mobility",
+   "source": "Corvan is 20 km from the border with Velmark, which does not license interior designers."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "clients.design",
+    "variable": "commercial_projects_started",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Commercial clients can bring projects forward into the ten-month window."
+   ],
+   "premise_class": "expectations",
+   "source": "The Act was passed ten months before it took effect."
+  }
+ ],
+ "designers.grandfathered": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "designers.grandfathered",
+    "actor": "designers.grandfathered",
+    "variables": [
+     "temporary_exits_from_trade"
+    ]
+   },
+   "premises": [
+    "Some grandfathered designers would otherwise leave the trade for a time and return."
+   ],
+   "premise_class": "other",
+   "source": "The license lapses if not renewed, and cannot then be regained without meeting K1."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "designers.grandfathered"
+   },
+   "premises": [
+    "License holders, schools, retailers and architects can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "K2 gives a license without the degree, hours or exam."
+  }
+ ],
+ "designers.licensed": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "designers.licensed"
+   },
+   "premises": [
+    "License holders, schools, retailers and architects can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "A four-year accredited degree ...; 3,500 hours of work supervised ...; a state exam; license fee $250 a year."
+  }
+ ],
+ "designers.unlicensed": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "designers.unlicensed",
+    "actor": "retailers.furnishings",
+    "variables": [
+     "design_help_provided"
+    ]
+   },
+   "premises": [
+    "The retail exemption can be used for full-room design given with furniture sales."
+   ],
+   "premise_class": "other",
+   "source": "Exemptions: retail employees advising on goods sold by their employer."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "designers.unlicensed",
+    "actor": "designers.velmark",
+    "variables": [
+     "arvane_clients_served"
+    ]
+   },
+   "premises": [
+    "Velmark-based designers serve Arvane homes without an Arvane license on a meaningful scale."
+   ],
+   "premise_class": "mobility",
+   "source": "Corvan is 20 km from the border with Velmark, which does not license interior designers."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "designers.unlicensed",
+    "actor": "designers.unlicensed",
+    "variables": [
+     "exits_from_trade"
+    ]
+   },
+   "premises": [
+    "The next-best work of recent designers who leave (store design jobs, other occupations) pays less in money than their design practice."
+   ],
+   "premise_class": "other",
+   "source": "About 6,000 people do [offer interior design]; roughly 40% of whom hold a degree."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "designers.unlicensed",
+    "actor": "students.interior_design",
+    "variables": [
+     "degree_program_enrolment"
+    ]
+   },
+   "premises": [
+    "Some practitioners and would-be entrants without the degree earn it to gain a license."
+   ],
+   "premise_class": "other",
+   "source": "Two accredited degree programs in Arvane graduate about 300 students a year."
+  }
+ ],
+ "officials.board": [],
+ "taxpayers": [],
+ "retailers.furnishings": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.furnishings",
+    "source_variable": "design_help_provided",
+    "relation": "complement",
+    "actor": "retailers.furnishings",
+    "variable": "furnishings_sales"
+   },
+   "premises": [
+    "Households that use a store's design help buy most furnishings from that store."
+   ],
+   "premise_class": "other",
+   "source": "Exemptions: retail employees advising on goods sold by their employer."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "retailers.furnishings"
+   },
+   "premises": [
+    "License holders, schools, retailers and architects can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Exemptions: retail employees advising on goods sold by their employer."
+  }
+ ],
+ "students.interior_design": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "students.interior_design",
+    "source_variable": "degree_program_enrolment",
+    "relation": "same_act",
+    "actor": "schools.design_programs",
+    "variable": "enrolment"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Two accredited degree programs in Arvane graduate about 300 students a year."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "students.interior_design",
+    "source_variable": "degree_program_enrolment",
+    "relation": "supply_price",
+    "actor": "students.interior_design",
+    "variable": "wait_for_supervised_position"
+   },
+   "premises": [
+    "Supervision is costly or limited per supervisor, so supervised positions are scarce relative to graduates in the medium run (the assumption of EN-9)."
+   ],
+   "premise_class": "other",
+   "source": "3,500 hours of work supervised by a licensed designer or architect."
+  }
+ ],
+ "schools.design_programs": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "schools.design_programs"
+   },
+   "premises": [
+    "License holders, schools, retailers and architects can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "A four-year accredited degree in interior design; two accredited degree programs graduate about 300 students a year."
+  }
+ ]
+}
