@@ -399,7 +399,10 @@ timing_concl(p_after(C, A, V)) :- timing(C, A, V, _, _, _, _), expires(C, _, _, 
 p_threshold(C, A, V) :- threshold(C, A, V, P1, P2, P3), ok(P1), ok(P2), ok(P3).
 fired(cr_4, p_threshold(C, A, V), P) :- p_threshold(C, A, V), threshold(C, A, V, P1, P2, P3), P = (P1; P2; P3), P != none.
 effect(p_threshold(C, A, V), A, V, decrease, medium, invisible, "B") :- p_threshold(C, A, V).
-chooser(C, A, worse) :- p_threshold(C, A, _).
+has_threshold_chooser(C, A) :- threshold_chooser(C, A, _).
+chooser(C, A, worse) :- p_threshold(C, A, _), not has_threshold_chooser(C, A).
+% Where another actor chooses (employers set the hours that hold workers' weeks below a line), it is the one made worse.
+chooser(C, Ch, worse) :- p_threshold(C, A, _), threshold_chooser(C, A, Ch).
 c_acts(C) :- p_threshold(C, _, _).
 
 % ---------------------------------------------------------------- CR-7c: a claim before its creation

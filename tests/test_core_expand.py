@@ -36,9 +36,9 @@ def test_a_file_driven_run_lists_what_it_needs(tmp_path):
     assert all(n.depth == 1 for n in prop.missing)   # nothing deeper is reached without their facts
 
 
-def _loop_score(case, example, short, windows=None):
+def _loop_score(case, example, short, windows=None, loop="loop"):
     from test_out_of_sample import _rows
-    cons = S.run(S.load(ROOT / "cases" / case / "loop" / "situation.json"))
+    cons = S.run(S.load(ROOT / "cases" / case / loop / "situation.json"))
     keys = {(a, v, c.sign, c.window) for c in cons if c.reported for a in (c.actor_group or [c.actor_class]) for v in (c.group or [c.variable])}
     rows = _rows(example, short, windows or {}, {})
     return {r for r, ks in rows.items() if ks & keys}, len(rows)
@@ -100,4 +100,34 @@ def test_blind_loop_runs_on_the_remaining_families():
     ]
     for case, example, short, windows, k, n in cases:
         produced, total = _loop_score(case, example, short, windows)
+        assert (case, len(produced), total) == (case, k, n)
+
+
+def test_blind_loop_runs_after_the_family_forms():
+    """Second blind runs (loop_r2, written without sight of the first) after per-seller charges, charge branches, capped
+    payers, thresholds, races to qualify and the deadline window; WE-055 is a first run. The WE-028 r2 and WE-055 writers
+    each saw part of the example beyond what was allowed (row starts; the closing check paragraph) and say so in notes.md."""
+    cases = [
+        ("we016_arvane", "loop_r2", "WE-016_interior_designer_license.md",
+         {"designers.recent": "designers.unlicensed", "designers": ["designers.arvane", "designers.grandfathered", "designers.unlicensed"],
+          "retailers.furniture": "retailers.furnishings", "officials.enforcement": "board.interior_design", "architects": "architects.arvane"},
+         {"announcement window": "announcement", "first months": "first_months"}, 14, 36),       # r1 8; pattern engine 16
+        ("we036_quenby", "loop_r2", "WE-036_employer_health_cover_mandate.md",
+         {"insurers": "insurers.health", "workers.uncovered": "workers.full_time", "employers.near_50": "employers.near_threshold",
+          "workers.near_30": "workers.near_hours_line", "insurers.group": "insurers.health", "employers.small": "employers.unbound",
+          "providers.medical": "providers.health", "employers.tradable": "producers.tradable", "general_fund": "officials.enforcement"},
+         {}, 18, 60),                                                                              # r1 13; pattern engine 29
+        ("we028_kallmark", "loop_r2", "WE-028_fishing_quota_shares.md",
+         {"vessel_owners.history": "vessel_owners", "all vessels fishing ridge cod": "vessel_owners", "share_buyers.later": "share_buyers",
+          "entrants.prospective": "vessel_owners.prospective_entrants", "recipients of other public spending": "recipients.other_spending"},
+         {"2026–2027": "announcement"}, 19, 54),                                                   # r1 18; pattern engine 16
+        ("we055_aldenmoor", "loop", "WE-055_home_inspector_licensing.md",
+         {"inspectors": ["inspectors.licensed", "inspectors.unlicensed", "inspectors.entrant"], "buyers.current": "buyers.homebuyers",
+          "inspectors.prospective": "inspectors.entrant", "inspectors.near_line": "inspectors.nearline", "training_schools": "schools.training",
+          "agents": "agents.realestate", "insurers": "insurers.liability", "officials.enforcement": "officials.board",
+          "unlicensed inspectors": "inspectors.unlicensed"},
+         {}, 11, 37),                                                                              # pattern engine 8
+    ]
+    for case, loop, example, short, windows, k, n in cases:
+        produced, total = _loop_score(case, example, short, windows, loop)
         assert (case, len(produced), total) == (case, k, n)

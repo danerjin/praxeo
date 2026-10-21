@@ -104,6 +104,7 @@ class Threshold(Premised):
     component: str
     actor: str = Field(description="Those near the line, below it")
     variable: str = Field(description="The measure of size the line is drawn in (employment, quantity_supplied)")
+    chooser: Optional[str] = Field(default=None, description="Who decides on crossing, where not the actor itself (employers setting workers' hours)")
 
 
 class Qualifies(Premised):
@@ -282,6 +283,8 @@ def facts(s: Situation) -> str:
         out.append(f"banned({b.component}, {b.exchange}, {_p(b.premises)}).")
     for t in s.thresholds:
         out.append(f"threshold({t.component}, {_q(t.actor)}, {_q(t.variable)}, {_p(t.premises)}).")
+        if t.chooser:
+            out.append(f"threshold_chooser({t.component}, {_q(t.actor)}, {_q(t.chooser)}).")
     for t in s.qualifies:
         out.append(f"qualifies({t.component}, {_q(t.actor)}, {_q(t.variable)}, {_p(t.premises)}).")
     for e in s.expires:

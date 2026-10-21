@@ -221,3 +221,38 @@ Writing them found one gap: an actor burdened only through a price had no timing
   - Exempt subclasses of an exchange.
 
 On the pattern side these come from family rules (`rules/mandates.lp`, `rules/licensing.lp`). The core path needs a general form for each: a threshold on the payer's size, alternative charges, and a holding limit. That is the next step before these families can leave the pattern engine.
+
+## Step 7: general forms for the family gaps
+
+**New forms.** Pattern checks have been added for each; 39 patterns and forms are now checked.
+- **A charge branch** (`branch_premises`, for play or pay). Each branch of a choice the policy gives the payer holds only with its own premise that some payers take it.
+- **Capped payers** (`capped_payers`). Payers whose total is capped pay a fixed sum. It takes from their means but bears on no margin.
+- **A threshold** (`thresholds`, CR-4 at a line). Those near a size line hold the size measure below it. Crossing is an option made worse, so alternatives to growing come in. An optional `chooser` covers the case where another actor decides, such as employers setting hours.
+- **A race to qualify** (`qualifies`, CR-7c with CR-8c). A right the policy creates is allocated by history in a period after it is expected. The history variable rises in that period, and what is spent qualifying is used up.
+- **A deadline window** (CR-10a). Actions timed into a grant's period are rushed in before it ends (`deadline`), as well as missing afterwards.
+- **The receiver of a payment in kind** is a chooser made better.
+
+**Blind runs.** These are second runs, written without sight of the first, plus a first run on WE-055.
+
+| Case | Family | Step 6 | Step 7 | Pattern engine | Contradicts the table |
+|---|---|---|---|---|---|
+| WE-016 | licensing | 8/36 | 14/36 | 16 | 0 |
+| WE-036 | mandate | 13/60 | 18/60 | 29 | 1 (cover signed for all full-time workers, not only at firms that offer it) |
+| WE-028 | quota shares | 18/54 | 19/54 | 16 | 0 |
+| WE-055 | licensing (new case) | – | 11/37 | 8 | 1 (school enrolment: no chain from the fall in entrants) |
+
+Two caveats on blindness:
+- The WE-028 second-run writer printed the start of every table row while looking for section breaks, which showed some class names.
+- The WE-055 writer saw the closing check paragraph.
+- Both say so in `notes.md`.
+
+**Still open,** from the writers' notes:
+- Mandates: the core path now has thresholds and branches but is still at 18 against the pattern engine's 29. What remains:
+  - The pay branch replacing the offer branch: the two branches' effects add.
+  - A held price already in force (the minimum wage under a mandate) cannot be proposed in the loop.
+  - `moves` has no horizon, so short-run stickiness and medium-run adjustment collide.
+- Two or more readings of an unclear provision (U1) have no place in the situation record.
+- Quality and information under licensing (CR-11c) are not handled.
+- Holders who also sell under a cap are not distinguished.
+- Consolidation of rights into larger hands is not handled.
+- A race conclusion does not propagate, because it is a timing conclusion.

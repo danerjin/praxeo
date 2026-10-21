@@ -266,3 +266,10 @@ def test_rs_8_the_rush_before_a_grant_ends():
     t = [{"component": "k", "actor": "producers", "variable": "investment", "mode": "bring_forward", "premises": ["a4"]}]
     got = _run(**GRANT, timing=t, expires=[{"component": "k", "premises": ["a5"]}])
     assert ("producers", "investment", "increase", "deadline") in got and ("producers", "investment", "decrease", "after_expiry") in got
+
+
+def test_a_line_another_actor_chooses_on():
+    alt = [{"component": "k", "chooser": "employers", "actor": "employers", "variables": ["reclassification"], "premises": ["a3"]}]
+    got = _run(exchanges=JOBS, alternatives=alt, thresholds=[{"component": "k", "actor": "workers.near_line", "variable": "hours_worked",
+                                                            "chooser": "employers", "premises": ["a2"]}])
+    assert ("workers.near_line", "hours_worked", "decrease", None) in got and ("employers", "reclassification", "increase", None) in got
