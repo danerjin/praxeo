@@ -133,7 +133,14 @@
  "officials.enforcement": [],
  "buyers.unaffected": [],
  "buyers.repair_local": [],
- "sellers.inland": [],
+ "sellers.inland": [
+  {"part": "links",
+   "fact": {"source_actor": "sellers.inland", "source_variable": "quantity_traded", "relation": "supply_price", "actor": "buyers.inland", "variable": "price_paid"},
+   "premises": ["Supply of covered goods in the inland counties is slow to respond in the first weeks."],
+   "premise_class": "other",
+   "source": "The inland counties of Coralia, 60 to 150 miles from the coast, are not declared."}
+ ],
+ "buyers.inland": [],
  "sellers.repair_outside": [
   {"part": "links",
    "fact": {"source_actor": "sellers.repair_outside", "source_variable": "quantity_supplied", "relation": "same_act", "actor": "buyers.repair_local", "variable": "quantity_traded"},
