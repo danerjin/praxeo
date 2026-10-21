@@ -6,6 +6,7 @@ An AI-assisted system for analyzing the consequences of a policy using Misesian 
 |---|---|
 | `Praxeology_AI_Project_Plan_v3.md` (.docx, .pdf) | Current project plan. Version 2 is kept alongside for reference. |
 | `handbook/` | Phase 1: the Method Handbook, which covers how to analyze a policy praxeologically. It has the foundations, vocabulary, workflow, rule catalog, worked examples and open questions. Start at `handbook/README.md`. |
+| `PILOT_CORE_RULES.md` | The core-rule pilot: the engine reasoning from CR-4 to CR-9 directly (`praxeo/core/`) over a situation record in CR-1's terms, compared with the pattern engine in sample and on two blind records. |
 | `PHASE2_REPORT.md` (`Phase2_Progress_Report.pdf`) | Phase 2 progress report: what the analyser does, coverage of the worked examples, LLM-stage and control results, limits, and what needs people. |
 | `praxeo/` | Phase 2 thin slice: parser, decider, clingo engine, explainer and scoring, run end to end on one case. Start at `praxeo/README.md`. |
 | `cases/` | Cases for the pipeline: `sf_1994` (historical, with an outcome card) and `we001_riverton` (the handbook's WE-001, as a consistency check). |

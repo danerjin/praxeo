@@ -62,3 +62,21 @@ def test_the_core_rules_name_no_instrument():
     code = "\n".join(l.split("%")[0] for l in text.splitlines())
     for word in ("ceiling", "floor", "tax", "tariff", "subsidy", "license", "quota", "mandate", "rent", "wage"):
         assert word not in code, word
+
+
+# Blind runs: situation records written by a subagent from section 1 of the example and the assumption statements only,
+# without the analysis or the consequence list. Actor names are mapped to the table's names only where they denote the
+# same class (no class is merged into another).
+WE005_BLIND_SHORT = {"drivers.served": "drivers.current", "stations": "stations.retail",
+                     "drivers": ["drivers.current", "drivers.unserved"], "suppliers": "refiners.corvane"}
+WE008_BLIND_SHORT = {"farmers.prospective": "farmers.entrants", "farmers.neighbors": "farmers.neighboring",
+                     "Dairy Board": "officials.enforcement"}
+
+
+def test_blind_situation_records():
+    rows = _rows("WE-005_gasoline_price_cap.md", WE005_BLIND_SHORT, {}, {})
+    produced, _ = _score(rows, _keys("we005_corvane"))
+    assert produced == {"C-1", "C-2", "C-4", "C-5", "C-6", "C-9", "C-15", "C-16", "C-18", "C-20", "C-21", "C-26"}
+    rows = _rows("WE-008_milk_price_floor.md", WE008_BLIND_SHORT, {}, {})
+    produced, _ = _score(rows, _keys("we008_velmora"))
+    assert produced == {"C-1", "C-6", "C-9", "C-10", "C-12", "C-13", "C-18", "C-22", "C-23"}
