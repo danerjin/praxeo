@@ -1,0 +1,38 @@
+{
+ "name": "WE-006 anti-price-gouging law (expand-loop blind run)",
+ "exchanges": [
+  {"id": "e_local", "buyer": "buyers.local", "seller": "sellers.local", "unsatisfied_buyer": "buyers.unserved",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received", "criteria_for": "buyers.unserved",
+   "criteria": ["wait_time", "search_cost", "allocation_by_non_price_criteria"]},
+  {"id": "e_outside", "buyer": "buyers.local", "seller": "sellers.outside", "unsatisfied_buyer": "buyers.unserved",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received", "criteria_for": "buyers.unserved",
+   "criteria": ["wait_time", "search_cost", "allocation_by_non_price_criteria"]},
+  {"id": "e_rooms", "buyer": "guests.local", "seller": "sellers.lodging", "unsatisfied_buyer": "guests.unserved",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received", "criteria_for": "guests.unserved",
+   "criteria": ["wait_time", "search_cost", "allocation_by_non_price_criteria"]}
+ ],
+ "held": [
+  {"component": "k1", "exchange": "e_local", "direction": "below", "premises": ["a1", "a3"]},
+  {"component": "k1", "exchange": "e_outside", "direction": "below", "premises": ["a1", "a3"]},
+  {"component": "k1", "exchange": "e_rooms", "direction": "below", "premises": ["a1", "a3"]}
+ ],
+ "transfers": [
+  {"exchange": "e_local", "premises": ["a1"]},
+  {"exchange": "e_outside", "premises": ["a1"]},
+  {"exchange": "e_rooms", "premises": ["a1"]}
+ ],
+ "compliance": [
+  {"component": "k1", "actor": "sellers.local"},
+  {"component": "k1", "actor": "sellers.outside"},
+  {"component": "k1", "actor": "sellers.lodging"}
+ ],
+ "enforcers": [{"component": "k1", "actor": "officials.enforcement"}],
+ "fixed_budget": [{"component": "k1", "actor": "officials.enforcement", "premises": ["a21"]}],
+ "announced": [{"component": "k1", "premises": ["a14"]}],
+ "assumptions": {
+  "a1": {"text": "Without the Act, prices of covered goods and rooms would rise more than 10% above the base plus documented cost increases, for independent sellers, outside sellers and hotels, in the first weeks.", "class": "binding", "p": 0.85},
+  "a3": {"text": "The Attorney General enforces actively in the declared area, including against outside sellers.", "class": "enforcement", "p": 0.75},
+  "a14": {"text": "Sellers expect the cap to bind in future storms.", "class": "expectations", "p": 0.75},
+  "a21": {"text": "Enforcement during a declaration is paid from the Attorney General's existing budget, which is fixed within the year; there is no supplementary appropriation.", "class": "revenue_use", "p": 0.6}
+ }
+}
