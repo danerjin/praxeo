@@ -82,5 +82,61 @@
   "probability": 0.2,
   "rationale": "No matching assumption in WE-018; judged from the text: shoppers near the edge already shop across the line, so buying bags there takes no extra trip.",
   "evidence": []
+ },
+ {
+  "question_id": "k2.binding",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "No row with a probability in WE-018; judged from the text. Section 2 classifies K2 as binding: without the minimum charge, stores would give paper bags away free to compete, as they gave thin bags (about 2 cents each) away before.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.enforced",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-1: most retailers comply, chains in particular. C-2 and C-6 rest on this assumption alone.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.cost_not_offset",
+  "value": "yes",
+  "probability": 0.85,
+  "rationale": "No separate row in WE-018; judged from the text. Shoppers who take a paper bag pay at least 10 cents where they paid nothing, and no other term can offset it (C-2 and C-6 both rest on A-1 alone). The reusable-bag route is a substitute (A-2), not an offset of the price of the paper bag. Same figure as A-1, on which C-2 depends.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.evasion",
+  "value": "yes",
+  "probability": 0.6,
+  "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-5: some small stores keep handing out thin bags, or waive the fee, without being caught. The fee waiver is trade below the floor.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.can_organize",
+  "value": "no",
+  "probability": 0.1,
+  "rationale": "No matching assumption in WE-018; judged from the text. The bound buyers of the paper bag are shoppers, each paying a few cents a trip; A-8 names bag makers and retailers as the groups that can organize, not shoppers (same reading as k1.buyers_organize).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.sellers_organize",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-8: bag makers and retailers can organize at a cost below their stake. Section 5 (C-11) names retailers lobbying over the fee.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.cross_border_feasible",
+  "value": "yes",
+  "probability": 0.55,
+  "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-6: some shoppers near Route 9 are close to indifferent between stores on either side of the line. Section 5 (C-9) explains the crossing by the fee.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.substitute_exists",
+  "value": "yes",
+  "probability": 0.95,
+  "rationale": "Probability taken from the assumption table of handbook WE-018 (illustrative figures), A-2: shoppers accept reusable and paper bags as substitutes. Reusable bags may be sold at any price, so they are the substitute for the paper bag at the floor.",
+  "evidence": []
  }
 ]

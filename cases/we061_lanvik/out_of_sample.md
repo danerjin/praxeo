@@ -100,3 +100,50 @@ General fixes from the out-of-sample runs on WE-031, WE-034, WE-036, WE-059 and 
 ## After the second round of rule changes
 
 Second round of general fixes (`rules/mandates.lp`): play or pay (PC-17 0.9: firms that pay the charge face TX-2 on their labour, the state receives the charge, payers above a cap per firm bear a fixed cost, and the term itself and lock-in go to the recipients at firms that provide it, `player_recipient_actor`); inputs a standard or mandate requires (`related` kind `required`: more demand, and with slow supply a higher price for them and their other users); EN-15 for `disclosure_mandate` (compliance cost; buyers' choices on two premises, ignorance and direction; voluntary disclosure by exempt sellers); RS-24 (`fixed_cost_per_item`). K5 (`mandate_with_charge`, a premium paid to the worker, not a charge to the state) names no recipient or payer, so only OC-2, OC-3 and RS-7 apply; its three answers come from A-2 and A-16 or the text. Rows produced: 13 of 43 (unchanged). WRONG: 0.
+
+
+## Out-of-sample run of the floor rules
+
+Rules as at commit 5944604 (`praxeo/rules/floors.lp`, PC-9 to PC-11 as CR-6, developed on WE-009). Nothing under `praxeo/` was changed. K2 (the minimum wage on engaged time, a `price_floor`) was recorded for the mandate run and no rule read it; the floor rules now read it, and the fixture had no answers for the new k2 questions. No other component was changed.
+
+**What was recorded.** K2 had `bound_actor` `platforms` (the employers, who are the floor's buyers: unchanged) and `protected_actor` `drivers.employee`. Added: `seller_actor` = `drivers.employee` (the workers the floor holds up; C-1); `contract_kind` = `employment` (the default, written explicitly; the wage chains apply); `excluded_actor` = `drivers.employee` (the example's surplus is of employee hours, "more workers seeking employee hours than the company wants at the floor", C-9, A-31; no separate class of job seekers is named, `drivers.prospective` are would-be contractors); `output_buyer_actor` = `riders` (C-6, RS-14; K1 has the same role); `asset_owner_actor` = `owners.platforms` (C-27, A-11). Not set: `mobile_buyer_actor` (C-23 moves workers' hours, not buyers), `substitute_seller_actor` (the substitutes in the example, taxis and in-house couriers, replace the rides and deliveries, not the engaged time the floor makes dearer), `lower_tier_seller_actor`, `state_buys_surplus`, `fixed_budget` (A-26 says the money is new), `definition_line` and `announcement_window` (they belong to K1's reading).
+
+**What was answered (9 new answers, `k2.*`).** From the assumption table: `binding` A-3 (0.9), `enforced` A-1 (0.8), `evasion` A-19 (0.65), `can_organize` and `sellers_organize` A-16 (0.9 each), `rivals_bound` A-4 loosely (0.8, as for `k1.rivals_bound`), `expected_to_last` A-11 (0.7). Judged from the text, and said so in each rationale: `cost_not_offset` (0.8; an employee's pay per engaged hour cannot fall below 16, C-1, C-11; the figure follows A-1) and `margins` (0.9; the company may schedule and direct employees, C-8, A-6, A-18). Run: `python3 -m praxeo cases/we061_lanvik --out cases/we061_lanvik/sample_run` (verifier and citation problems empty).
+
+**Numbers.**
+
+| | Before (K2 unread) | After |
+|---|---|---|
+| Table rows produced | 13 of 43 | 15 of 43 (adds C-1, C-27) |
+| Engine consequences reported (derived) | 21 (21) | 26 (26) |
+| Engine keys (actor, variable, sign, window) | 25 | 32 |
+| Engine rows WRONG | 0 | 0 |
+
+### New engine rows
+
+| Engine row | Class | Why |
+|---|---|---|
+| drivers.employee wage_rate increase | in table | C-1 (PC-9/PC-10: the pay of those who keep their jobs rises to the floor) |
+| owners.platforms asset_value decrease | in table | C-27; derived by SB-4 from the floor with `expected_to_last` (A-11), where the table cites CR-7c and CR-10c |
+| drivers.employee excess_supply increase | defensible | PC-9; the example speaks of the floor's surplus of employee hours (A-31, C-9) but has no row for it |
+| drivers.employee allocation_by_non_price_criteria, search_cost, wait_time at_least_one_increase | defensible | PC-11's group form on the workers who wait for hours. C-9 gives the allocation member alone, as a plain increase, on A-31, so the group is implied; search_cost and wait_time are not named in the example |
+| platforms informal_activity increase | defensible | RS-3 for pay below the floor going undetected (A-19). The example records the same event as `legal_breach` by the platforms (C-17: engaged time left unpaid) |
+| platforms return_on_capital decrease | defensible | already an exception; the floor now derives it too (CR-7b, `fl_returns`) |
+| riders price_paid increase | in table | C-6, already produced by K1; the floor (RS-14, `rivals_bound`) derives it as well |
+
+### Table rows newly produced
+
+| Row | Produced? | Reason |
+|---|---|---|
+| C-1 drivers.employee wage_rate increase | yes (was: missing rule, the engine signed it the other way) | PC-9 on the sellers held up by K2 |
+| C-27 owners.platforms asset_value decrease | yes (was: role, no owner role for bound providers) | `asset_owner_actor` on the floor, SB-4 |
+
+Rows that K2 touches and the floor rules still miss: C-33 (earnings ambiguous: no floor rule gives an `earnings` chain to oppose the mandate's), C-17 (the floor's evasion is `informal_activity`, not `legal_breach`), C-40 (paid waiting time outside shifts: U1 changes no field), C-24 (riders' wait_time, a response argument).
+
+### Patterns for the rule writer
+
+1. **The wage-floor rows now work, and the mandate rules' WRONG rows stay gone.** K2 raises the pay of those below it (C-1) and the mandate rules' wage-down chain is already silent for floor-held recipients, so the two instruments no longer contradict each other. What is missing is the floor's opposing chain in `earnings` (C-33): hours cut (PC-10) against the wage raised, which the example combines as ambiguous. The floor rules sign the wage and the margins separately but name no `earnings` variable or comparison. Rows: C-33.
+2. **A group conclusion and a plain member row for the same variable.** PC-11 is written as a group (`at_least_one_increase` over allocation, search and waiting) because the handbook says the buyer chooses by some criterion. When the example has a premise for one member (A-31: shifts and acceptance thresholds), it signs that member plainly and omits the others. The engine then reports the group, with two members the example never names. The combiner should let the plain member replace the group, or the group should ask which criterion. Rows: C-9 and the three defensible group rows.
+3. **RS-3 on a floor: `informal_activity` against `legal_breach`.** The handbook uses `legal_breach` when a regulated party open to audit pays below the rule (C-17 here) and `informal_activity` for trade that moves out of sight. The floor rule has only the second. The same event under two names makes the row unproduced. Rows: C-17, and the defensible `informal_activity` row (also WE-018 C-8).
+4. **Owners of the bound actor, by the floor's own role.** `asset_owner_actor` gives C-27 (shareholders), which the mandate, tax and ceiling rules cannot give because they put the fall on the bound or rival actor itself (pattern 5 of the first run). The role field exists in only the floor and tariff families; a general `owner_actor` for the bound side would let CR-7c and SB-4 reach owners in the mandate rules too (and the medallion owners, C-26, would need the same for rivals). Rows: C-26, and the defensible `asset_value` rows on `platforms`.
+5. **The floor's `excluded_actor` when the sellers are also the ones waiting.** In a wage floor the would-be sellers are separate job seekers; here the same class (employee drivers) holds the hours and wants more of them, so the record names it twice (`seller_actor` and `excluded_actor`) and the surplus lands on the class that also gets C-1. The rule is consistent, but the example's two sub-groups (kept at the floor, rationed out) are not separate classes, so `excess_supply` and the PC-11 group sit on the same class as `wage_rate` increase. Rows: the four defensible rows above.

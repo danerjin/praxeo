@@ -124,5 +124,68 @@
   "probability": 0.9,
   "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-16: companies, drivers' groups and unions can organize at a cost below their stakes.",
   "evidence": []
+ },
+ {
+  "question_id": "k2.binding",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-3: some hours on a trip pay below 16 per hour on a trip (about a fifth); under U1-b about 75% of logged-in hours do. The floor is K2, the Act's own minimum wage on engaged time.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.enforced",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-1: the Act is enforced: audits and private suits with double damages make treating workers as contractors without a valid agreement costly.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.cost_not_offset",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "No row about the floor alone in WE-061; judged from the text. For an employee the pay per engaged hour cannot fall below 16 (C-1), so the company's cost of an hour of that work rises (C-11); the margins it can cut (hours, flexibility, pay above the floor, C-8) shift the cost but do not undo it for the hours kept. Figure follows A-1, on which C-1 and C-11 rest.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.evasion",
+  "value": "yes",
+  "probability": 0.65,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-19: enforcement is imperfect: some misclassification and some pressure to sign occur. Section 5 (C-17) includes engaged time left unpaid, which is pay below the floor going undetected.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.can_organize",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-16: companies, drivers' groups and unions can organize at a cost below their stakes. The bound buyers here are the platforms.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.sellers_organize",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-16: companies, drivers' groups and unions can organize at a cost below their stakes. The sellers the floor raises are the employee drivers.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.margins",
+  "value": "yes",
+  "probability": 0.9,
+  "rationale": "No matching row in WE-061; judged from the text. As employer the company may schedule and direct employees (the example's actor table), and section 5 has it cut employee hours or jobs, set shifts and acceptance rules and pay less above the floor (C-8, A-6, A-18).",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.rivals_bound",
+  "value": "yes",
+  "probability": 0.8,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-4 (loosely), as for k1.rivals_bound: the four network companies, all with well over 100 workers, face the same floor; taxis and the small cooperatives do not.",
+  "evidence": []
+ },
+ {
+  "question_id": "k2.expected_to_last",
+  "value": "yes",
+  "probability": 0.7,
+  "rationale": "Probability taken from the assumption table of handbook WE-061 (illustrative figures), A-11: buyers of shares and medallions expect the Act to survive the court challenge and repeal campaign. The floor is part of the Act and has no expiry.",
+  "evidence": []
  }
 ]

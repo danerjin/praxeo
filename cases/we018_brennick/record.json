@@ -39,7 +39,7 @@
    "instrument": "price_floor",
    "good": "paper_carryout_bags",
    "market": "brennick",
-   "bound_actor": "retailers.brennick",
+   "bound_actor": "shoppers",
    "buyer_actor": "shoppers",
    "protected_actor": "shoppers.assistance",
    "enforcer_actor": "officials.enforcement",
@@ -48,7 +48,11 @@
     "Recycled-paper carryout bags may be provided only for a charge of at least 10 cents a bag, kept by the retailer and shown on the receipt.",
     "Reusable bags (designed for at least 125 uses; at least 4 mil if plastic) may be sold at any price.",
     "Customers paying with food-assistance benefits receive paper bags free."
-   ]
+   ],
+   "seller_actor": "retailers.brennick",
+   "contract_kind": "sale",
+   "mobile_buyer_actor": "shoppers.edge",
+   "substitute_seller_actor": "sellers.substitutes"
   }
  ],
  "unclear": [

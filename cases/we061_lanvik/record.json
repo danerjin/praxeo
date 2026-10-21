@@ -43,7 +43,12 @@
    "enforcer_actor": "officials.enforcement",
    "source_sentences": [
     "An employee shall be paid at least the state minimum wage for all engaged time."
-   ]
+   ],
+   "seller_actor": "drivers.employee",
+   "excluded_actor": "drivers.employee",
+   "contract_kind": "employment",
+   "output_buyer_actor": "riders",
+   "asset_owner_actor": "owners.platforms"
   },
   {
    "id": "k5",
