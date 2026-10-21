@@ -148,3 +148,27 @@ Both writers then reran (r2), revising only what the new features let them recor
 | WE-062 | 26 of 68 (was 23) | 12 |
 
 On WE-062, the recyclers' supply, investment, price and workers, and the municipalities' collection, now increase as the table signs them. Converters' recycled content now increases (C-4). One conflicting row remains: converters' investment falls, where the table splits it into recycling equipment, which rises, and an ambiguous total.
+
+## Step 5: the core path as the default (`praxeo/core/pipeline.py`)
+
+`python -m praxeo CASE` now runs the core path whenever the case has core inputs (`loop/seed.json`, or a one-shot `situation.json`) or the parser is the LLM. Otherwise it falls back to the pattern engine; `--engine patterns` forces the fallback and `--engine core` forces the core path. The run goes:
+1. seed;
+2. expand loop: a file-driven or LLM proposer, and a file-driven, LLM or human decider;
+3. core rules, with CR-12e applied;
+4. verifier: vocabulary, derivations, estimated premises, the cut-off;
+5. templated explanations, one sentence per core rule used;
+6. frozen, hashed log and report.
+
+**The patterns as checks.** `tests/test_core_derives_patterns.py` gives one small situation per pattern, meeting its If-clause, and asserts that the core rules derive its conclusion. That covers 24 patterns:
+- PC-1 to PC-11;
+- TX-1, TX-2, TX-7, TX-8, TX-9;
+- RS-1, RS-4, RS-5, RS-7, RS-8, RS-14, RS-15;
+- SB-4, SB-9;
+- OC-3, OC-4.
+
+Writing them found one gap: an actor burdened only through a price had no timing response unless it also had an alternative listed.
+
+**Not yet done:**
+- The LLM proposer and seed parser have not run against the API: there is no key in this environment.
+- The pattern files still hold rules for families the core layer has not been checked on: licensing, quotas, prohibitions, mandates, subsidies, private rules. Their cases run on the pattern engine until they have core inputs.
+- The CR-12 combiner's declared comparisons are pattern-side; the core path settles clashes with dominance premises instead.

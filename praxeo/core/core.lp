@@ -115,6 +115,7 @@ price_chooser(A, better) :- moved(A, V, decrease), buy_price(V).
 price_chooser(A, worse)  :- moved(A, V, decrease), sell_price(V).
 price_chooser(A, better) :- moved(A, V, increase), sell_price(V).
 chooser(C, A, W) :- alt(C, A, _, _, _, _, _, _), price_chooser(A, W).
+chooser(C, A, W) :- timing(C, A, _, _, _, _, _), price_chooser(A, W).   % found by the RS-8 derivation check
 alt_dir(worse, increase, at_least_one_increase). alt_dir(better, decrease, at_least_one_decrease).
 p_alt(C, Ch, A, V) :- alt(C, Ch, A, V, _, P1, P2, P3), chooser(C, Ch, _), ok(P1), ok(P2), ok(P3).
 fired(cr_4, p_alt(C, Ch, A, V), P) :- p_alt(C, Ch, A, V), alt(C, Ch, A, V, _, P1, P2, P3), P = (P1; P2; P3), P != none.
