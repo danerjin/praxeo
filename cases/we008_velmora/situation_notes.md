@@ -60,3 +60,15 @@ Still not held:
 - K2 still does not cancel the burden I put on plants.commodity in e1 (price_paid up, quantity cut, out-of-state substitution, quantity_traded down). K2 says those plants break even at $21; the format has no way to net a backstop against the held price on another exchange. The K2 eligibility test also cannot be written.
 - K3 resale above 110% and export: no fact for them. a3 (out-of-state supply and the withdrawn product): the Board's purchase has no link relation to a rise in the market product price.
 - The timing fact is thin: the text gives the dates and a12 gives storability, but nothing says who holds stocks beyond what the engine draws. Specialty plants and farmers got no timing fact; milk is not storable.
+
+## Revision r3 (branch core-pilot-we008-r3, from 73b9bc2)
+
+Added to situation.json:
+- link plants.commodity quantity_supplied (cheese and powder sold to the Board) input plants.commodity quantity_traded (milk bought). Rests on Sec. 1 K2: the product must be made from Velmora milk paid at least the floor. No premise. This carries K2's chain onto the variable the floor's chain (prevented trade on e1) also reaches, in the opposite direction.
+- parts: plants.commodity and plants.specialty are parts of plants.velmora. Rests on Sec. 1 K1 ("any plant located in Velmora that buys it").
+
+Engine result: plants.commodity quantity_traded is now ambiguous (the floor lowers it, the Board route raises it), and so is plants.velmora quantity_traded. The class total plants.velmora also gets the other plant effects (price_paid up, quantity_demanded down, return_on_capital down, and so on), each from its part.
+
+Dominance: none added. No assumption states which chain outweighs the other. The text says K2's prices let a plant paying $21 break even, but that fixes the plants' profit, not the volume of milk bought, and no assumption gives the volumes (a13 says plants expand as supply grows, which supports the K2 chain but does not say it outweighs the floor's). Adding a dominance would be inventing a premise. A note for the format: a13 is close to a response-type dominance for the commodity plants' milk purchases if the analyst reads it that way; I did not.
+
+The other plant effects from e1 (price_paid, quantity_demanded, quantity_substitute) are unchanged and not netted: the format links one variable at a time, and nothing in the text ties the break-even to the price the plants pay.
