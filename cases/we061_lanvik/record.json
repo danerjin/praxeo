@@ -48,7 +48,8 @@
    "excluded_actor": "drivers.employee",
    "contract_kind": "employment",
    "output_buyer_actor": "riders",
-   "asset_owner_actor": "owners.platforms"
+   "asset_owner_actor": "owners.platforms",
+   "open_breach": true
   },
   {
    "id": "k5",

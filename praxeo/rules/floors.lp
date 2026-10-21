@@ -9,6 +9,8 @@
 %   fl_excluded(C, A).             would-be sellers at the floor, who bear the surplus (job seekers)
 %   employment(C).                 the floor is on a wage; otherwise on the price of a good
 %   fl_lower_tier(C, A).           sellers under a lower floor whom buyers can hire in place of fl_seller (a youth rate)
+%   fl_complier(C, A).             who must comply and can evade: the bound buyers unless the record names the sellers
+%   open_breach(C).                evasion is within the legal market (legal_breach), not outside it
 %   mc_output_buyer(C, A). mobile_buyer(C, A). fl_substitute_seller(C, A). fl_asset_owner(C, A).
 %   definition_line(C). announced(C). general_budget(C). tax_named(C). fixed_budget(C). state_buys(C).
 %   enforcer(C, A). fl_payer_group(C, "a,b,c"). fl_outlay(C, A).
@@ -74,17 +76,33 @@ group_effect(fl_tiers(C), Y, "employment,hours_worked,non_wage_compensation", at
 % CR-7b, CR-3a: the buyers' return falls in the short run; TS-2: investment planned for when the floor is expected falls
 % (announced, and expected_ahead); SB-4: the value of assets specific to the use falls where the floor is expected to last
 % (expected_to_last).
+% These are the short side's losses under a wage floor. Under a floor on a good that the state backs by buying the surplus,
+% the long side gains instead (below): found out of sample on WE-008.
 fl_returns(C) :- fl_cost(C), employment(C).
 fired(cr_7, fl_returns(C), fl_cost(C)) :- fl_returns(C).
 effect(fl_returns(C), B, "return_on_capital", decrease, short, invisible, "B") :- fl_returns(C), bound(C, B).
-fl_invest(C) :- fl_cost(C), announced(C), holds(expected_ahead(C)), not exception(ts_2, C).
+fl_invest(C) :- fl_cost(C), employment(C), announced(C), holds(expected_ahead(C)), not exception(ts_2, C).
 fired(ts_2, fl_invest(C), announced(C))      :- fl_invest(C).
 fired(ts_2, fl_invest(C), expected_ahead(C)) :- fl_invest(C).
 effect(fl_invest(C), B, "investment_target", decrease, short, invisible, "B") :- fl_invest(C), bound(C, B).
-fl_capitalized(C) :- fl_cost(C), fl_asset_owner(C, _), holds(expected_to_last(C)), not exception(sb_4, C).
+fl_capitalized(C) :- fl_cost(C), employment(C), fl_asset_owner(C, _), holds(expected_to_last(C)), not exception(sb_4, C).
 fired(sb_4, fl_capitalized(C), fl_cost(C))           :- fl_capitalized(C).
 fired(sb_4, fl_capitalized(C), expected_to_last(C))  :- fl_capitalized(C).
 effect(fl_capitalized(C), O, "asset_value", decrease, short, invisible, "B") :- fl_capitalized(C), fl_asset_owner(C, O).
+
+% SB-2, SB-4 on the long side: where the state buys what the market does not take, the sellers are paid the floor for all
+% they offer, so they supply more; where the floor is expected to last (expected_to_last), they invest, more of them enter,
+% and the value of assets specific to selling rises.
+fl_held(C) :- fl_binds(C), state_buys(C), not exception(sb_2, C).
+fired(sb_2, fl_held(C), fl_binds(C))   :- fl_held(C).
+fired(sb_2, fl_held(C), state_buys(C)) :- fl_held(C).
+effect(fl_held(C), S, "quantity_supplied", increase, short, invisible, "B") :- fl_held(C), fl_seller(C, S).
+fl_held_lasting(C) :- fl_held(C), holds(expected_to_last(C)).
+fired(sb_4, fl_held_lasting(C), fl_held(C))           :- fl_held_lasting(C).
+fired(sb_4, fl_held_lasting(C), expected_to_last(C))  :- fl_held_lasting(C).
+effect(fl_held_lasting(C), S, "investment_target", increase, medium, invisible, "B") :- fl_held_lasting(C), fl_seller(C, S).
+effect(fl_held_lasting(C), S, "number_of_sellers", increase, medium, invisible, "B") :- fl_held_lasting(C), fl_seller(C, S).
+effect(fl_held_lasting(C), O, "asset_value", increase, short, invisible, "B") :- fl_held_lasting(C), fl_asset_owner(C, O).
 
 % RS-14: where the buyers' rivals face the same floor (rivals_bound), their output's price rises; RS-4: buyers of that output
 % who can cross to unbound sellers (cross_border_feasible) do so.
@@ -111,11 +129,14 @@ fired(rs_5, fl_reshaped(C), definition_line(C)) :- fl_reshaped(C).
 fired(rs_5, fl_reshaped(C), reshaping_pays(C))  :- fl_reshaped(C).
 effect(fl_reshaped(C), B, "reclassification", increase, short, invisible, "B") :- fl_reshaped(C), bound(C, B).
 
-% RS-3: where trade below the floor goes undetected (evasion), some of it moves outside the law.
+% RS-3: where trade below the floor goes undetected (evasion), those who must comply evade: outside the law, or within the
+% legal market where the evasion is open (open_breach: pay below the floor on the books, false certification; found out of
+% sample on WE-008 and WE-061).
 fl_evaded(C) :- floor(C), holds(binding(C)), holds(evasion(C)), not exception(rs_3, C).
 fired(rs_3, fl_evaded(C), binding(C)) :- fl_evaded(C).
 fired(rs_3, fl_evaded(C), evasion(C)) :- fl_evaded(C).
-effect(fl_evaded(C), B, "informal_activity", increase, short, invisible, "B") :- fl_evaded(C), bound(C, B).
+effect(fl_evaded(C), B, "informal_activity", increase, short, invisible, "B") :- fl_evaded(C), not open_breach(C), fl_complier(C, B).
+effect(fl_evaded(C), B, "legal_breach", increase, short, invisible, "B")      :- fl_evaded(C), open_breach(C), fl_complier(C, B).
 
 % RS-7: those who bear the floor (can_organize) and those it raises (sellers_organize) lobby over it.
 fl_lobby(C) :- floor(C), holds(binding(C)), holds(can_organize(C)), not exception(rs_7, C).
@@ -132,7 +153,7 @@ lobby_concl(fl_sellers_lobby(C), C) :- fl_sellers_lobby(C).
 % OC-2: complying takes resources (records of hours and pay), Tier A given the floor.
 fl_compliance(C) :- floor(C), not exception(oc_2, C).
 fired(oc_2, fl_compliance(C), floor(C)) :- fl_compliance(C).
-effect(fl_compliance(C), B, "compliance_cost", increase, short, invisible, "A") :- fl_compliance(C), bound(C, B).
+effect(fl_compliance(C), B, "compliance_cost", increase, short, invisible, "A") :- fl_compliance(C), fl_complier(C, B).
 
 % OC-3: enforcing the floor takes the agency's resources (Tier A). With a general budget, OC-1's payers bear it. With a budget
 % that is not raised (fixed_budget, and budget_fixed), the agency's other work falls instead (OC-3 0.9), recorded as the item

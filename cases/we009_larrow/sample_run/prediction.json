@@ -869,14 +869,14 @@
      "binding(k1)",
      "cost_not_offset(k1)",
      "enforced(k1)",
-     "lower_tier_used(k1)",
-     "tiers_substitute(k1)"
+     "margins(k1)"
     ],
     [
      "binding(k1)",
      "cost_not_offset(k1)",
      "enforced(k1)",
-     "margins(k1)"
+     "lower_tier_used(k1)",
+     "tiers_substitute(k1)"
     ]
    ],
    "assumptions": [
@@ -1162,17 +1162,17 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "binding(k2)",
-     "cost_not_offset(k2)",
-     "enforced(k2)",
-     "margins(k2)"
-    ],
-    [
      "binding(k1)",
      "cost_not_offset(k1)",
      "enforced(k1)",
      "lower_tier_used(k1)",
      "tiers_substitute(k1)"
+    ],
+    [
+     "binding(k2)",
+     "cost_not_offset(k2)",
+     "enforced(k2)",
+     "margins(k2)"
     ]
    ],
    "assumptions": [
@@ -1337,7 +1337,7 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"employers.low_wage\").\nexcluded(k1, \"workers.prospective\").\nannounced(k1).\nfloor(k1).\nfl_seller(k1, \"workers.adult_low_wage\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nfl_outlay(k1, \"officials.enforcement\").\nfl_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nemployment(k1).\nfl_excluded(k1, \"workers.prospective\").\nfl_lower_tier(k1, \"workers.youth\").\nmc_output_buyer(k1, \"consumers\").\nmobile_buyer(k1, \"consumers.border\").\nfl_substitute_seller(k1, \"input_suppliers\").\nfl_asset_owner(k1, \"factor_owners.specific\").\ndefinition_line(k1).\ngeneral_budget(k1).\nfixed_budget(k1).\nbound(k2, \"employers.low_wage\").\nexcluded(k2, \"buyers.prospective\").\nfloor(k2).\nfl_seller(k2, \"workers.youth\").\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nfl_outlay(k2, \"officials.enforcement\").\nfl_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nemployment(k2).\ngeneral_budget(k2).\nfixed_budget(k2).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(cost_not_offset(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(sellers_organize(k1)).\nassumption(margins(k1)).\nassumption(rivals_bound(k1)).\nassumption(cross_border_feasible(k1)).\nassumption(substitute_exists(k1)).\nassumption(reshaping_pays(k1)).\nassumption(expected_ahead(k1)).\nassumption(expected_to_last(k1)).\nassumption(lower_tier_used(k1)).\nassumption(tiers_substitute(k1)).\nassumption(budget_fixed(k1)).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(cost_not_offset(k2)).\nassumption(evasion(k2)).\nassumption(can_organize(k2)).\nassumption(sellers_organize(k2)).\nassumption(margins(k2)).\nassumption(budget_fixed(k2)).\n",
+ "engine_facts": "bound(k1, \"employers.low_wage\").\nexcluded(k1, \"workers.prospective\").\nannounced(k1).\nfloor(k1).\nfl_seller(k1, \"workers.adult_low_wage\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nfl_outlay(k1, \"officials.enforcement\").\nfl_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nemployment(k1).\nfl_complier(k1, \"employers.low_wage\").\nfl_excluded(k1, \"workers.prospective\").\nfl_lower_tier(k1, \"workers.youth\").\nmc_output_buyer(k1, \"consumers\").\nmobile_buyer(k1, \"consumers.border\").\nfl_substitute_seller(k1, \"input_suppliers\").\nfl_asset_owner(k1, \"factor_owners.specific\").\ndefinition_line(k1).\ngeneral_budget(k1).\nfixed_budget(k1).\nbound(k2, \"employers.low_wage\").\nexcluded(k2, \"buyers.prospective\").\nfloor(k2).\nfl_seller(k2, \"workers.youth\").\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nfl_outlay(k2, \"officials.enforcement\").\nfl_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nemployment(k2).\nfl_complier(k2, \"employers.low_wage\").\ngeneral_budget(k2).\nfixed_budget(k2).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(cost_not_offset(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(sellers_organize(k1)).\nassumption(margins(k1)).\nassumption(rivals_bound(k1)).\nassumption(cross_border_feasible(k1)).\nassumption(substitute_exists(k1)).\nassumption(reshaping_pays(k1)).\nassumption(expected_ahead(k1)).\nassumption(expected_to_last(k1)).\nassumption(lower_tier_used(k1)).\nassumption(tiers_substitute(k1)).\nassumption(budget_fixed(k1)).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(cost_not_offset(k2)).\nassumption(evasion(k2)).\nassumption(can_organize(k2)).\nassumption(sellers_organize(k2)).\nassumption(margins(k2)).\nassumption(budget_fixed(k2)).\n",
  "explanations": [
   "C-1. Compared with no Larrow Fair Wage Act, price paid for consumers rises from the short run onward (tier B, invisible). Why: PC-9: PC-9; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.75); Most of the bound buyers' rivals face the same floor (p = 0.80). Reported.",
   "C-2. Compared with no Larrow Fair Wage Act, cross border purchases for consumers.border rises from the short run onward (tier B, invisible). Why: PC-9: PC-9; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-4: shut-out buyers turn to uncovered units, which are close substitutes. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Some buyers of the output can easily buy across the boundary (p = 0.70); Most bound buyers comply with the floor (p = 0.75). Reported.",
@@ -1820,6 +1820,7 @@
     "claim_penalties": false,
     "complainant_actor": null,
     "complaint_only": false,
+    "complier_actor": null,
     "contract_kind": "employment",
     "convicted_actor": null,
     "cover_seller_actor": null,
@@ -1862,6 +1863,7 @@
     "near_threshold_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
+    "open_breach": false,
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
@@ -1946,6 +1948,7 @@
     "claim_penalties": false,
     "complainant_actor": null,
     "complaint_only": false,
+    "complier_actor": null,
     "contract_kind": "employment",
     "convicted_actor": null,
     "cover_seller_actor": null,
@@ -1988,6 +1991,7 @@
     "near_threshold_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
+    "open_breach": false,
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
@@ -2061,7 +2065,7 @@
   "unclear": []
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-21T16:59:18+00:00",
+ "run_at": "2026-10-21T17:26:53+00:00",
  "sources_held_back": [],
  "unclear": [],
  "verifier_problems": []

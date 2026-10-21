@@ -687,7 +687,7 @@ def _floor_specs(comp: Component) -> list[tuple[str, str, str, str]]:
     for cond, q in ((comp.contract_kind == "employment", MARGINS_QUESTION), (comp.output_buyer_actor, FL_RIVALS_QUESTION),
                     (comp.mobile_buyer_actor, FL_CROSS_QUESTION), (comp.substitute_seller_actor, SUBSTITUTE_EXISTS_QUESTION),
                     (comp.definition_line, RESHAPING_QUESTION), (comp.announcement_window, AHEAD_QUESTION),
-                    (comp.asset_owner_actor, LASTING_QUESTION), (comp.lower_tier_seller_actor, LOWER_TIER_USED_QUESTION),
+                    (comp.asset_owner_actor or comp.state_buys_surplus, LASTING_QUESTION), (comp.lower_tier_seller_actor, LOWER_TIER_USED_QUESTION),
                     (comp.lower_tier_seller_actor, TIERS_SUBSTITUTE_QUESTION), (comp.fixed_budget, BUDGET_FIXED_QUESTION)):
         if cond:
             specs.append(q)

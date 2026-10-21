@@ -166,13 +166,15 @@ def _floor_facts(c: str, comp) -> list[str]:
     lines.append(f'fl_payer_group({c}, "{",".join(dict.fromkeys(p for p in payers if p))}").')
     if comp.contract_kind == "employment":
         lines.append(f"employment({c}).")
+    lines.append(f'fl_complier({c}, "{comp.complier_actor or comp.bound_actor}").')
     for pred, actor in (("fl_excluded", comp.excluded_actor), ("fl_lower_tier", comp.lower_tier_seller_actor),
                         ("mc_output_buyer", comp.output_buyer_actor), ("mobile_buyer", comp.mobile_buyer_actor),
                         ("fl_substitute_seller", comp.substitute_seller_actor), ("fl_asset_owner", comp.asset_owner_actor)):
         if actor:
             lines.append(f'{pred}({c}, "{actor}").')
     for pred, flag in (("definition_line", comp.definition_line), ("general_budget", comp.general_budget),
-                       ("tax_named", comp.tax_named), ("fixed_budget", comp.fixed_budget), ("state_buys", comp.state_buys_surplus)):
+                       ("tax_named", comp.tax_named), ("fixed_budget", comp.fixed_budget), ("state_buys", comp.state_buys_surplus),
+                       ("open_breach", comp.open_breach)):
         if flag:
             lines.append(f"{pred}({c}).")
     return lines

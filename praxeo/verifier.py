@@ -23,7 +23,7 @@ RECORD_PREDICATES = ("ceiling(", "decontrol(", "bound(", "protected(", "excluded
                      "exporter(", "seller(", "renewable(", "definition_line(", "relief_applicant(",
                      "mandate(", "employment(", "term_ban(", "standard(", "per_head_cap(", "paid_absence(", "forfeit_on_leaving(", "complaint_only(",
                      "size_threshold(", "threshold_staff_split(", "threshold_partial_count(", "margin_covered(", "restrains_mobility(",
-                     "voids_existing(", "stock_exempt(", "disclosure(", "fixed_cost_per_item(", "floor(", "fixed_budget(", "state_buys(")
+                     "voids_existing(", "stock_exempt(", "disclosure(", "fixed_cost_per_item(", "floor(", "fixed_budget(", "state_buys(", "open_breach(")
 
 
 def record_roles(record: PolicyRecord) -> set[str]:
@@ -46,7 +46,7 @@ def record_roles(record: PolicyRecord) -> set[str]:
                   comp.already_recipient_actor, comp.below_cap_actor, comp.above_cap_actor, comp.cover_seller_actor,
                   comp.output_buyer_actor, comp.tradable_actor, comp.outside_actor, comp.complainant_actor, comp.violator_actor,
                   comp.near_threshold_actor, comp.below_threshold_actor, comp.margin_recipient_actor, comp.stock_owner_actor,
-                  comp.charge_payer_actor, comp.charge_payer_worker_actor, comp.player_recipient_actor, comp.lower_tier_seller_actor, comp.charge_capped_actor,
+                  comp.charge_payer_actor, comp.charge_payer_worker_actor, comp.player_recipient_actor, comp.lower_tier_seller_actor, comp.complier_actor, comp.charge_capped_actor,
                   *comp.rival_actors]
         names += [n for rel in comp.related for n in (rel.seller_actor, rel.other_user_actor)]
         for d in comp.downstream:

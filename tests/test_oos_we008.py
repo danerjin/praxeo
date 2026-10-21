@@ -16,6 +16,8 @@ WE8 = ROOT / "cases" / "we008_velmora"
 # the table's "Dairy Board" is the record's enforcer and outlay actor
 SHORT = {"Dairy Board": "officials.enforcement"}
 EXCEPTIONS = {
+    ("plants.commodity", "legal_breach", "increase", None):
+        "defensible: RS-3 with open_breach: false certification of origin is a breach within the legal market; the table records the same act as reclassification (C-11); after the rule changes",
     ("plants.commodity", "price_paid", "increase", None):
         "defensible: the floor raises the price every Velmora plant pays; the table gives it to the specialty plants (C-6), and section 5 says the commodity plants also pay $21 and recover it from the Board",
     ("officials.enforcement", "subsidy_outlay", "increase", None):
@@ -24,18 +26,9 @@ EXCEPTIONS = {
         "defensible: OC-1 as a group (SB-9 outlay and OC-3 funding); the table gives taxpayers a plain decrease (C-22)",
     ("recipients.other_spending", "resources_available_other_uses", "at_least_one_decrease", None):
         "defensible: member of the OC-1 group; the table names taxpayers alone as payers (C-22)",
-    ("plants.commodity", "informal_activity", "increase", None):
-        "KNOWN WRONG: RS-3 from the evasion premise (A-6); section 6 says RS-10 applies only to the false-origin trade, which takes place inside legal plants, and that no informal market for milk is expected. The table records the same evasion as reclassification (C-11)",
-    ("plants.commodity", "investment_target", "decrease", None):
-        "KNOWN WRONG: TS-2 signs the bound buyers' investment down when the floor is expected; here the Board buys their product at prices that cover the floor, and C-9 signs commodity plants' investment up (SB-2, CR-9)",
-    ("factor_owners.specific", "asset_value", "decrease", None):
-        "KNOWN WRONG: SB-4 as floors.lp writes it signs the value of the buyers' specific assets down; the asset owners here are the sellers' (dairy land and barns), whose value rises (C-18)",
 }
 NOT_PRODUCED = {
     "C-2": "missing rule: the state's purchase (SB-2 for the Board's quantity_demanded) is not signed by the state_buys branch, which gives stocks and outlay only",
-    "C-3": "missing rule: the sellers' supply response (SB-2, LW-4) to the higher price; floors.lp signs only their price",
-    "C-4": "missing rule: the sellers' investment (SB-2, LW-4, TS-1) when the floor is expected to last; TS-2 is written for the buyers",
-    "C-5": "missing rule: number_of_sellers (farms that would have closed stay open); no floor rule signs it",
     "C-6": "role: a floor has one bound_actor; the record names commodity plants (C-10, C-13), so the specialty plants have no role",
     "C-7": "role and missing rule: no specialty-plant role; RS-14 for a floor is written for rivals who face the same floor (price rise), not for exempt rivals (quantity effect)",
     "C-8": "role: plants.market, who switch to out-of-state milk, are bound buyers too, but a floor has one bound_actor; substitute_seller_actor and mobile_buyer_actor name sellers and buyers of the output, not another bound class",
@@ -45,7 +38,6 @@ NOT_PRODUCED = {
     "C-15": "missing rule and role: PC-8 for a floor (plants switch to neighbors' milk); no neighbor-seller role for a floor",
     "C-16": "missing rule and role: PC-8 and LW-4 for the neighbors' supply",
     "C-17": "missing rule: SB-3 for the input suppliers; input_supplier_actor is not a floor role",
-    "C-18": "missing rule: SB-4 for the sellers' fixed assets; the engine's row says the opposite (see EXCEPTIONS)",
     "C-19": "missing rule: SB-3 for land and labour kept in dairy (substitute uses)",
     "C-21": "missing rule: SB-9's disposal by donation displaces suppliers' sales",
     "C-22": "sign form: the engine signs OC-1 as a group (at_least_one_decrease over taxpayers and other spending), the table a plain decrease",

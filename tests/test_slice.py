@@ -143,7 +143,7 @@ def test_context_grounding_holds_back_later_sources():
 
 def test_no_ceiling_no_consequences():
     rec = _record()
-    rec.components[0].instrument = "price_floor"  # no rule file covers it (a per_unit_tax now has rules in taxes.lp)
+    rec.components[0].instrument = "export_subsidy"  # no rule file covers it (price floors now have floors.lp)
     assert engine.run(rec, _assumptions())[0] == []
 
 

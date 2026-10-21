@@ -331,12 +331,6 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "binding(k2)",
-     "cost_not_offset(k2)",
-     "enforced(k2)",
-     "margins(k2)"
-    ],
-    [
      "binding(k1)",
      "enforced(k1)",
      "floor_binds(k1)"
@@ -350,6 +344,12 @@
      "binding(k1)",
      "enforced(k1)",
      "worth_less(k1)"
+    ],
+    [
+     "binding(k2)",
+     "cost_not_offset(k2)",
+     "enforced(k2)",
+     "margins(k2)"
     ]
    ],
    "assumptions": [
@@ -903,7 +903,7 @@
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
-   "variable": "informal_activity",
+   "variable": "legal_breach",
    "visibility": "invisible",
    "window": null
   },
@@ -912,12 +912,12 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "binding(k5)",
-     "can_organize(k5)"
-    ],
-    [
      "binding(k1)",
      "can_organize(k1)"
+    ],
+    [
+     "binding(k5)",
+     "can_organize(k5)"
     ],
     [
      "binding(k2)",
@@ -1225,12 +1225,6 @@
    "actor_group": [],
    "assumption_sets": [
     [
-     "binding(k2)",
-     "cost_not_offset(k2)",
-     "enforced(k2)",
-     "rivals_bound(k2)"
-    ],
-    [
      "binding(k1)",
      "enforced(k1)",
      "rivals_bound(k1)",
@@ -1241,6 +1235,12 @@
      "enforced(k1)",
      "rivals_bound(k1)",
      "worth_less(k1)"
+    ],
+    [
+     "binding(k2)",
+     "cost_not_offset(k2)",
+     "enforced(k2)",
+     "rivals_bound(k2)"
     ]
    ],
    "assumptions": [
@@ -1760,7 +1760,7 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"platforms\").\nexcluded(k1, \"buyers.prospective\").\nmandate(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nemployment(k1).\nmc_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nmc_recipient(k1, \"drivers.employee\").\nmc_floor_recipient(k1, \"drivers.employee\").\nmc_applicant(k1, \"drivers.employee\").\nmc_output_buyer(k1, \"riders\").\nmc_outside(k1, \"drivers.contractor\").\nmc_below_threshold(k1, \"sellers.small_platform\").\nmc_rival(k1, \"sellers.small_platform\").\nmc_rival(k1, \"sellers.substitutes\").\nsize_threshold(k1).\ndefinition_line(k1).\ngeneral_budget(k1).\nbound(k2, \"platforms\").\nprotected(k2, \"drivers.employee\").\nexcluded(k2, \"drivers.employee\").\nfloor(k2).\nfl_seller(k2, \"drivers.employee\").\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nfl_outlay(k2, \"officials.enforcement\").\nfl_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nemployment(k2).\nfl_excluded(k2, \"drivers.employee\").\nmc_output_buyer(k2, \"riders\").\nfl_asset_owner(k2, \"owners.platforms\").\nbound(k5, \"platforms\").\nprotected(k5, \"drivers.contractor\").\nexcluded(k5, \"buyers.prospective\").\nmandate(k5).\nenforcer(k5, \"officials.enforcement\").\ntaxpayer(k5, \"taxpayers\").\nemployment(k5).\nmc_payer_group(k5, \"taxpayers,recipients.other_spending,taxpayers.future\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(wages_sticky(k1)).\nassumption(wages_adjust(k1)).\nassumption(worth_less(k1)).\nassumption(alternatives_worse(k1)).\nassumption(valued_on_earnings(k1)).\nassumption(can_organize(k1)).\nassumption(recipients_organize(k1)).\nassumption(floor_binds(k1)).\nassumption(can_screen(k1)).\nassumption(rivals_bound(k1)).\nassumption(compete_with_bound(k1)).\nassumption(reshaping_pays(k1)).\nassumption(staying_small_pays(k1)).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(cost_not_offset(k2)).\nassumption(evasion(k2)).\nassumption(can_organize(k2)).\nassumption(sellers_organize(k2)).\nassumption(margins(k2)).\nassumption(rivals_bound(k2)).\nassumption(expected_to_last(k2)).\nassumption(binding(k5)).\nassumption(enforced(k5)).\nassumption(can_organize(k5)).\n",
+ "engine_facts": "bound(k1, \"platforms\").\nexcluded(k1, \"buyers.prospective\").\nmandate(k1).\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nemployment(k1).\nmc_payer_group(k1, \"taxpayers,recipients.other_spending,taxpayers.future\").\nmc_recipient(k1, \"drivers.employee\").\nmc_floor_recipient(k1, \"drivers.employee\").\nmc_applicant(k1, \"drivers.employee\").\nmc_output_buyer(k1, \"riders\").\nmc_outside(k1, \"drivers.contractor\").\nmc_below_threshold(k1, \"sellers.small_platform\").\nmc_rival(k1, \"sellers.small_platform\").\nmc_rival(k1, \"sellers.substitutes\").\nsize_threshold(k1).\ndefinition_line(k1).\ngeneral_budget(k1).\nbound(k2, \"platforms\").\nprotected(k2, \"drivers.employee\").\nexcluded(k2, \"drivers.employee\").\nfloor(k2).\nfl_seller(k2, \"drivers.employee\").\nenforcer(k2, \"officials.enforcement\").\ntaxpayer(k2, \"taxpayers\").\nfl_outlay(k2, \"officials.enforcement\").\nfl_payer_group(k2, \"taxpayers,recipients.other_spending,taxpayers.future\").\nemployment(k2).\nfl_complier(k2, \"platforms\").\nfl_excluded(k2, \"drivers.employee\").\nmc_output_buyer(k2, \"riders\").\nfl_asset_owner(k2, \"owners.platforms\").\nopen_breach(k2).\nbound(k5, \"platforms\").\nprotected(k5, \"drivers.contractor\").\nexcluded(k5, \"buyers.prospective\").\nmandate(k5).\nenforcer(k5, \"officials.enforcement\").\ntaxpayer(k5, \"taxpayers\").\nemployment(k5).\nmc_payer_group(k5, \"taxpayers,recipients.other_spending,taxpayers.future\").\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(wages_sticky(k1)).\nassumption(wages_adjust(k1)).\nassumption(worth_less(k1)).\nassumption(alternatives_worse(k1)).\nassumption(valued_on_earnings(k1)).\nassumption(can_organize(k1)).\nassumption(recipients_organize(k1)).\nassumption(floor_binds(k1)).\nassumption(can_screen(k1)).\nassumption(rivals_bound(k1)).\nassumption(compete_with_bound(k1)).\nassumption(reshaping_pays(k1)).\nassumption(staying_small_pays(k1)).\nassumption(binding(k2)).\nassumption(enforced(k2)).\nassumption(cost_not_offset(k2)).\nassumption(evasion(k2)).\nassumption(can_organize(k2)).\nassumption(sellers_organize(k2)).\nassumption(margins(k2)).\nassumption(rivals_bound(k2)).\nassumption(expected_to_last(k2)).\nassumption(binding(k5)).\nassumption(enforced(k5)).\nassumption(can_organize(k5)).\n",
  "explanations": [
   "C-1. Compared with no Lanvik App-Based Work Act 2027, reclassification for drivers.contractor rises from the medium run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.50). Reported.",
   "C-2. Compared with no Lanvik App-Based Work Act 2027, allocation by non price criteria for drivers.employee rises from the medium run onward (tier B, invisible). Why: PC-17: PC-17; RS-23: RS-23. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Providers can tell which applicants will cost more under the term (p = 0.70); Most bound providers comply (p = 0.80). Reported.",
@@ -1774,7 +1774,7 @@
   "C-10. Compared with no Lanvik App-Based Work Act 2027, asset value for owners.platforms falls from the short run onward (tier B, invisible). Why: PC-9: PC-9; CR-6: sellers facing fewer buyers than they planned for cut their price; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.80); Investors expect the measure to stay in force for at least its stated term (p = 0.70). Reported.",
   "C-11. Compared with no Lanvik App-Based Work Act 2027, asset value for platforms falls from the short run onward (tier B, invisible). Why: PC-17: PC-17; CR-7: CR-7. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80); The providers' businesses are valued on expected earnings (p = 0.70); The other money terms are fixed in the short run (p = 0.60). Reported.",
   "C-12. Compared with no Lanvik App-Based Work Act 2027, compliance cost for platforms rises from the short run onward (tier A, invisible). Why: OC-2: OC-2. This holds if: no assumption. Reported.",
-  "C-13. Compared with no Lanvik App-Based Work Act 2027, informal activity for platforms rises from the short run onward (tier B, invisible). Why: RS-3: RS-3. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); Some trade below the floor goes undetected (p = 0.65). Reported.",
+  "C-13. Compared with no Lanvik App-Based Work Act 2027, legal breach for platforms rises from the short run onward (tier B, invisible). Why: RS-3: RS-3. This holds if: The floor binds for an identifiable group of sellers (p = 0.90); Some trade below the floor goes undetected (p = 0.65). Reported.",
   "C-14. Compared with no Lanvik App-Based Work Act 2027, lobbying effort for platforms rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); The bound providers can organize to lobby (p = 0.90). It also follows under 2 other minimal assumption set(s). Reported.",
   "C-15. Compared with no Lanvik App-Based Work Act 2027, price paid for platforms rises from the short run onward (tier B, visible). Why: PC-17: PC-17; CR-12: CR-12; CR-6: sellers facing fewer buyers than they planned for cut their price. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80); The other money terms are fixed in the short run (p = 0.60). It also follows under 1 other minimal assumption set(s). Reported.",
   "C-16. Compared with no Lanvik App-Based Work Act 2027, reclassification for platforms rises from the medium run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: The term was absent from some contracts, so the mandate binds for them (p = 0.95); Most bound providers comply (p = 0.80); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.50). Reported.",
@@ -2302,6 +2302,7 @@
     "claim_penalties": false,
     "complainant_actor": null,
     "complaint_only": false,
+    "complier_actor": null,
     "contract_kind": "employment",
     "convicted_actor": null,
     "cover_seller_actor": null,
@@ -2344,6 +2345,7 @@
     "near_threshold_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
+    "open_breach": false,
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
@@ -2432,6 +2434,7 @@
     "claim_penalties": false,
     "complainant_actor": null,
     "complaint_only": false,
+    "complier_actor": null,
     "contract_kind": "employment",
     "convicted_actor": null,
     "cover_seller_actor": null,
@@ -2474,6 +2477,7 @@
     "near_threshold_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
+    "open_breach": true,
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
@@ -2556,6 +2560,7 @@
     "claim_penalties": false,
     "complainant_actor": null,
     "complaint_only": false,
+    "complier_actor": null,
     "contract_kind": "employment",
     "convicted_actor": null,
     "cover_seller_actor": null,
@@ -2598,6 +2603,7 @@
     "near_threshold_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
+    "open_breach": false,
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": null,
@@ -2686,7 +2692,7 @@
   ]
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-21T17:02:57+00:00",
+ "run_at": "2026-10-21T17:26:52+00:00",
  "sources_held_back": [],
  "unclear": [
   {

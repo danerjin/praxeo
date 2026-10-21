@@ -1,7 +1,7 @@
 # Thin-slice run: Larrow Fair Wage Act
 
-Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-21T16:59:18+00:00
-Prediction log sha256 (frozen before the outcome card was opened): `1a89363fecc9e8d1…`
+Rule base: rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)  |  Decider: fixture:answers.json  |  Run: 2026-10-21T17:26:53+00:00
+Prediction log sha256 (frozen before the outcome card was opened): `0dba2bd63a6148d9…`
 
 ## Policy record
 
@@ -58,12 +58,12 @@ Prediction log sha256 (frozen before the outcome card was opened): `1a89363fecc9
 | C-11 | input_suppliers | quantity_traded | increase | medium+ | B | PC-9, CR-6, RS-1 | {binding(k1), cost_not_offset(k1), enforced(k1), substitute_exists(k1)} | yes |
 | C-12 | officials.enforcement | enforcement_cost | increase | short+ | A | OC-3 | {} | yes |
 | C-13 | officials.enforcement | enforcement_cost (other_work) | decrease | short+ | B | OC-3 | {budget_fixed(k1)} or {budget_fixed(k2)} | yes |
-| C-14 | workers.adult_low_wage | employment or hours_worked or non_wage_compensation | at_least_one_decrease | short+ | B | PC-9, CR-6, RS-1, PC-10 | {binding(k1), cost_not_offset(k1), enforced(k1), lower_tier_used(k1), tiers_substitute(k1)} or {binding(k1), cost_not_offset(k1), enforced(k1), margins(k1)} | yes |
+| C-14 | workers.adult_low_wage | employment or hours_worked or non_wage_compensation | at_least_one_decrease | short+ | B | PC-9, CR-6, RS-1, PC-10 | {binding(k1), cost_not_offset(k1), enforced(k1), margins(k1)} or {binding(k1), cost_not_offset(k1), enforced(k1), lower_tier_used(k1), tiers_substitute(k1)} | yes |
 | C-15 | workers.adult_low_wage | lobbying_effort | increase | medium+ | B | RS-7 | {binding(k1), sellers_organize(k1)} | yes |
 | C-16 | workers.adult_low_wage | wage_rate | increase | short+ | B | PC-9 | {binding(k1), enforced(k1)} | yes |
 | C-17 | workers.prospective | allocation_by_non_price_criteria or search_cost or wait_time | at_least_one_increase | short+ | B | PC-9, CR-6, PC-11 | {binding(k1), cost_not_offset(k1), enforced(k1)} | yes |
 | C-18 | workers.prospective | excess_supply | increase | short+ | B | PC-9, CR-6, PC-11 | {binding(k1), cost_not_offset(k1), enforced(k1)} | yes |
-| C-19 | workers.youth | employment or hours_worked or non_wage_compensation | ambiguous | short+ | B | PC-9, CR-6, RS-1, PC-10 | {binding(k2), cost_not_offset(k2), enforced(k2), margins(k2)} or {binding(k1), cost_not_offset(k1), enforced(k1), lower_tier_used(k1), tiers_substitute(k1)} | yes |
+| C-19 | workers.youth | employment or hours_worked or non_wage_compensation | ambiguous | short+ | B | PC-9, CR-6, RS-1, PC-10 | {binding(k1), cost_not_offset(k1), enforced(k1), lower_tier_used(k1), tiers_substitute(k1)} or {binding(k2), cost_not_offset(k2), enforced(k2), margins(k2)} | yes |
 | C-20 | workers.youth | lobbying_effort | increase | medium+ | B | RS-7 | {binding(k2), sellers_organize(k2)} | yes |
 | C-21 | workers.youth | wage_rate | increase | short+ | B | PC-9 | {binding(k2), enforced(k2)} | yes |
 

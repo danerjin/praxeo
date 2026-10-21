@@ -193,6 +193,8 @@ class Component(BaseModel):
     # substitute_seller_actor, asset_owner_actor, definition_line, announcement_window and general_budget apply.
     lower_tier_seller_actor: Optional[str] = Field(default=None, description="Price floors: sellers under a lower floor (a youth rate) whom buyers can take in place of seller_actor (RS-1)")
     state_buys_surplus: bool = Field(default=False, description="Price floors: the state buys what the market does not take at the floor (PC-9 Unless, SB-9); outlay_actor holds the stocks")
+    complier_actor: Optional[str] = Field(default=None, description="Price floors: who must comply and can evade, when not the bound buyers: the sellers who must charge at least the floor (a minimum bag charge); OC-2 and RS-3 fall on them")
+    open_breach: bool = Field(default=False, description="Price floors: evasion happens within the legal market (pay below the floor on the books, false certification), so it is legal_breach, not informal_activity (RS-3)")
     fixed_budget: bool = Field(default=False, description="The enforcing agency's budget is not raised for the measure, so its other work gives way (OC-3, fixed budget)")
     stock_owner_actor: Optional[str] = Field(default=None, description="Product standards with the stock exempt: owners of existing units (EN-14)")
     source_sentences: list[str] = Field(description="Sentences of the policy text this component rests on, quoted exactly")

@@ -130,14 +130,12 @@
    "assumption_sets": [
     [
      "binding(k1)",
-     "cost_not_offset(k1)",
      "enforced(k1)",
      "expected_to_last(k1)"
     ]
    ],
    "assumptions": [
     "binding(k1)",
-    "cost_not_offset(k1)",
     "enforced(k1)",
     "expected_to_last(k1)"
    ],
@@ -153,18 +151,18 @@
      "rule": "PC-9"
     },
     {
-     "conclusion": "fl_cost(k1)",
+     "conclusion": "fl_held(k1)",
      "premises": [
-      "cost_not_offset(k1)",
-      "fl_binds(k1)"
+      "fl_binds(k1)",
+      "state_buys(k1)"
      ],
-     "rule": "CR-6"
+     "rule": "SB-2"
     },
     {
-     "conclusion": "fl_capitalized(k1)",
+     "conclusion": "fl_held_lasting(k1)",
      "premises": [
       "expected_to_last(k1)",
-      "fl_cost(k1)"
+      "fl_held(k1)"
      ],
      "rule": "SB-4"
     }
@@ -178,10 +176,68 @@
    "id": "C-2",
    "item": null,
    "reported": true,
-   "sign": "decrease",
+   "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
    "variable": "asset_value",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "farmers.velmora",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "expected_to_last(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "expected_to_last(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-9"
+    },
+    {
+     "conclusion": "fl_held(k1)",
+     "premises": [
+      "fl_binds(k1)",
+      "state_buys(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "fl_held_lasting(k1)",
+     "premises": [
+      "expected_to_last(k1)",
+      "fl_held(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-3",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "investment_target",
    "visibility": "invisible",
    "window": null
   },
@@ -215,7 +271,7 @@
     "medium",
     "long"
    ],
-   "id": "C-3",
+   "id": "C-4",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -256,7 +312,7 @@
     "medium",
     "long"
    ],
-   "id": "C-4",
+   "id": "C-5",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -264,6 +320,113 @@
    "tier": "B",
    "variable": "net_price_received",
    "visibility": "visible",
+   "window": null
+  },
+  {
+   "actor_class": "farmers.velmora",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)",
+     "expected_to_last(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)",
+    "expected_to_last(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-9"
+    },
+    {
+     "conclusion": "fl_held(k1)",
+     "premises": [
+      "fl_binds(k1)",
+      "state_buys(k1)"
+     ],
+     "rule": "SB-2"
+    },
+    {
+     "conclusion": "fl_held_lasting(k1)",
+     "premises": [
+      "expected_to_last(k1)",
+      "fl_held(k1)"
+     ],
+     "rule": "SB-4"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "medium",
+    "long"
+   ],
+   "id": "C-6",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "number_of_sellers",
+   "visibility": "invisible",
+   "window": null
+  },
+  {
+   "actor_class": "farmers.velmora",
+   "actor_group": [],
+   "assumption_sets": [
+    [
+     "binding(k1)",
+     "enforced(k1)"
+    ]
+   ],
+   "assumptions": [
+    "binding(k1)",
+    "enforced(k1)"
+   ],
+   "combines": [],
+   "comparison": null,
+   "derivation": [
+    {
+     "conclusion": "fl_binds(k1)",
+     "premises": [
+      "binding(k1)",
+      "enforced(k1)"
+     ],
+     "rule": "PC-9"
+    },
+    {
+     "conclusion": "fl_held(k1)",
+     "premises": [
+      "fl_binds(k1)",
+      "state_buys(k1)"
+     ],
+     "rule": "SB-2"
+    }
+   ],
+   "group": [],
+   "horizon": [
+    "short",
+    "medium",
+    "long"
+   ],
+   "id": "C-7",
+   "item": null,
+   "reported": true,
+   "sign": "increase",
+   "sign_by_reading": {},
+   "tier": "B",
+   "variable": "quantity_supplied",
+   "visibility": "invisible",
    "window": null
   },
   {
@@ -290,7 +453,7 @@
     "medium",
     "long"
    ],
-   "id": "C-5",
+   "id": "C-8",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -341,7 +504,7 @@
     "medium",
     "long"
    ],
-   "id": "C-6",
+   "id": "C-9",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -392,7 +555,7 @@
     "medium",
     "long"
    ],
-   "id": "C-7",
+   "id": "C-10",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -426,7 +589,7 @@
     "medium",
     "long"
    ],
-   "id": "C-8",
+   "id": "C-11",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -467,58 +630,13 @@
     "medium",
     "long"
    ],
-   "id": "C-9",
+   "id": "C-12",
    "item": null,
    "reported": true,
    "sign": "increase",
    "sign_by_reading": {},
    "tier": "B",
-   "variable": "informal_activity",
-   "visibility": "invisible",
-   "window": null
-  },
-  {
-   "actor_class": "plants.commodity",
-   "actor_group": [],
-   "assumption_sets": [
-    [
-     "binding(k1)",
-     "cost_not_offset(k1)",
-     "enforced(k1)",
-     "expected_ahead(k1)"
-    ]
-   ],
-   "assumptions": [
-    "binding(k1)",
-    "cost_not_offset(k1)",
-    "enforced(k1)",
-    "expected_ahead(k1)"
-   ],
-   "combines": [],
-   "comparison": null,
-   "derivation": [
-    {
-     "conclusion": "fl_invest(k1)",
-     "premises": [
-      "announced(k1)",
-      "expected_ahead(k1)"
-     ],
-     "rule": "TS-2"
-    }
-   ],
-   "group": [],
-   "horizon": [
-    "short",
-    "medium",
-    "long"
-   ],
-   "id": "C-10",
-   "item": null,
-   "reported": true,
-   "sign": "decrease",
-   "sign_by_reading": {},
-   "tier": "B",
-   "variable": "investment_target",
+   "variable": "legal_breach",
    "visibility": "invisible",
    "window": null
   },
@@ -552,7 +670,7 @@
     "medium",
     "long"
    ],
-   "id": "C-11",
+   "id": "C-13",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -593,7 +711,7 @@
     "medium",
     "long"
    ],
-   "id": "C-12",
+   "id": "C-14",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -636,7 +754,7 @@
     "medium",
     "long"
    ],
-   "id": "C-13",
+   "id": "C-15",
    "item": null,
    "reported": true,
    "sign": "increase",
@@ -689,7 +807,7 @@
     "medium",
     "long"
    ],
-   "id": "C-14",
+   "id": "C-16",
    "item": null,
    "reported": true,
    "sign": "at_least_one_decrease",
@@ -701,22 +819,24 @@
   }
  ],
  "decider": "fixture:answers.json",
- "engine_facts": "bound(k1, \"plants.commodity\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nfloor(k1).\nfl_seller(k1, \"farmers.velmora\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nfl_outlay(k1, \"officials.enforcement\").\nfl_payer_group(k1, \"taxpayers,recipients.other_spending\").\nmc_output_buyer(k1, \"consumers\").\nfl_asset_owner(k1, \"factor_owners.specific\").\ndefinition_line(k1).\ngeneral_budget(k1).\nstate_buys(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(cost_not_offset(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(sellers_organize(k1)).\nassumption(rivals_bound(k1)).\nassumption(reshaping_pays(k1)).\nassumption(expected_ahead(k1)).\nassumption(expected_to_last(k1)).\n",
+ "engine_facts": "bound(k1, \"plants.commodity\").\nexcluded(k1, \"buyers.prospective\").\nannounced(k1).\nfloor(k1).\nfl_seller(k1, \"farmers.velmora\").\nenforcer(k1, \"officials.enforcement\").\ntaxpayer(k1, \"taxpayers\").\nfl_outlay(k1, \"officials.enforcement\").\nfl_payer_group(k1, \"taxpayers,recipients.other_spending\").\nfl_complier(k1, \"plants.commodity\").\nmc_output_buyer(k1, \"consumers\").\nfl_asset_owner(k1, \"factor_owners.specific\").\ndefinition_line(k1).\ngeneral_budget(k1).\nstate_buys(k1).\nopen_breach(k1).\nassumption(binding(k1)).\nassumption(enforced(k1)).\nassumption(cost_not_offset(k1)).\nassumption(evasion(k1)).\nassumption(can_organize(k1)).\nassumption(sellers_organize(k1)).\nassumption(rivals_bound(k1)).\nassumption(reshaping_pays(k1)).\nassumption(expected_ahead(k1)).\nassumption(expected_to_last(k1)).\n",
  "explanations": [
   "C-1. Compared with no Velmora Dairy Stabilization Act, price paid for consumers rises from the short run onward (tier B, invisible). Why: PC-9: PC-9; CR-6: sellers facing fewer buyers than they planned for cut their price; RS-14: a dearer input is passed down to the output: its price rises where competitors face the same cost, and its sellers sell less where competitors are exempt. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.85); Most of the bound buyers' rivals face the same floor (p = 0.15). Not reported: an assumption is below the 0.5 cut-off.",
-  "C-2. Compared with no Velmora Dairy Stabilization Act, asset value for factor_owners.specific falls from the short run onward (tier B, invisible). Why: PC-9: PC-9; CR-6: sellers facing fewer buyers than they planned for cut their price; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.85); Investors expect the measure to stay in force for at least its stated term (p = 0.65). Reported.",
-  "C-3. Compared with no Velmora Dairy Stabilization Act, lobbying effort for farmers.velmora rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); The sellers the floor raises can organize to lobby (p = 0.70). Reported.",
-  "C-4. Compared with no Velmora Dairy Stabilization Act, net price received for farmers.velmora rises from the short run onward (tier B, visible). Why: PC-9: PC-9. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); Most bound buyers comply with the floor (p = 0.85). Reported.",
-  "C-5. Compared with no Velmora Dairy Stabilization Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
-  "C-6. Compared with no Velmora Dairy Stabilization Act, inventory held for officials.enforcement rises from the short run onward (tier B, invisible). Why: PC-9: PC-9; SB-9: SB-9. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.85). Reported.",
-  "C-7. Compared with no Velmora Dairy Stabilization Act, subsidy outlay for officials.enforcement rises from the short run onward (tier B, invisible). Why: PC-9: PC-9; SB-9: SB-9. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.85). Reported.",
-  "C-8. Compared with no Velmora Dairy Stabilization Act, compliance cost for plants.commodity rises from the short run onward (tier A, invisible). Why: OC-2: OC-2. This holds if: no assumption. Reported.",
-  "C-9. Compared with no Velmora Dairy Stabilization Act, informal activity for plants.commodity rises from the short run onward (tier B, invisible). Why: RS-3: RS-3. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); Some trade below the floor goes undetected (p = 0.55). Reported.",
-  "C-10. Compared with no Velmora Dairy Stabilization Act, investment target for plants.commodity falls from the short run onward (tier B, invisible). Why: TS-2: TS-2. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.85); Investors expected the floor before it took effect (p = 0.80). Reported.",
-  "C-11. Compared with no Velmora Dairy Stabilization Act, lobbying effort for plants.commodity rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); The bound buyers can organize to lobby (p = 0.70). Reported.",
-  "C-12. Compared with no Velmora Dairy Stabilization Act, price paid for plants.commodity rises from the short run onward (tier B, visible). Why: PC-9: PC-9. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); Most bound buyers comply with the floor (p = 0.85). Reported.",
-  "C-13. Compared with no Velmora Dairy Stabilization Act, reclassification for plants.commodity rises from the short run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); Most bound buyers comply with the floor (p = 0.85); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.55). Reported.",
-  "C-14. Compared with no Velmora Dairy Stabilization Act, resources available other uses for taxpayers or recipients.other_spending falls for at least one of them from the short run onward (tier B, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought; PC-9: PC-9; SB-9: SB-9. This holds if: no assumption. Reported."
+  "C-2. Compared with no Velmora Dairy Stabilization Act, asset value for factor_owners.specific rises from the short run onward (tier B, invisible). Why: PC-9: PC-9; SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); Most bound buyers comply with the floor (p = 0.85); Investors expect the measure to stay in force for at least its stated term (p = 0.65). Reported.",
+  "C-3. Compared with no Velmora Dairy Stabilization Act, investment target for farmers.velmora rises from the medium run onward (tier B, invisible). Why: PC-9: PC-9; SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); Most bound buyers comply with the floor (p = 0.85); Investors expect the measure to stay in force for at least its stated term (p = 0.65). Reported.",
+  "C-4. Compared with no Velmora Dairy Stabilization Act, lobbying effort for farmers.velmora rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); The sellers the floor raises can organize to lobby (p = 0.70). Reported.",
+  "C-5. Compared with no Velmora Dairy Stabilization Act, net price received for farmers.velmora rises from the short run onward (tier B, visible). Why: PC-9: PC-9. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); Most bound buyers comply with the floor (p = 0.85). Reported.",
+  "C-6. Compared with no Velmora Dairy Stabilization Act, number of sellers for farmers.velmora rises from the medium run onward (tier B, invisible). Why: PC-9: PC-9; SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded; SB-4: a lasting change in the return on an asset in slow supply is capitalized in its value. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); Most bound buyers comply with the floor (p = 0.85); Investors expect the measure to stay in force for at least its stated term (p = 0.65). Reported.",
+  "C-7. Compared with no Velmora Dairy Stabilization Act, quantity supplied for farmers.velmora rises from the short run onward (tier B, invisible). Why: PC-9: PC-9; SB-2: a payment per unit is a wedge in the other direction: buyers pay less net of it, sellers may receive more, and more is traded. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); Most bound buyers comply with the floor (p = 0.85). Reported.",
+  "C-8. Compared with no Velmora Dairy Stabilization Act, enforcement cost for officials.enforcement rises from the short run onward (tier A, invisible). Why: OC-3: the measure must be administered, and a raised budget is paid for by taxpayers. This holds if: no assumption. Reported.",
+  "C-9. Compared with no Velmora Dairy Stabilization Act, inventory held for officials.enforcement rises from the short run onward (tier B, invisible). Why: PC-9: PC-9; SB-9: SB-9. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.85). Reported.",
+  "C-10. Compared with no Velmora Dairy Stabilization Act, subsidy outlay for officials.enforcement rises from the short run onward (tier B, invisible). Why: PC-9: PC-9; SB-9: SB-9. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); The floor raises buyers' cost per unit; it is not fully offset (p = 0.80); Most bound buyers comply with the floor (p = 0.85). Reported.",
+  "C-11. Compared with no Velmora Dairy Stabilization Act, compliance cost for plants.commodity rises from the short run onward (tier A, invisible). Why: OC-2: OC-2. This holds if: no assumption. Reported.",
+  "C-12. Compared with no Velmora Dairy Stabilization Act, legal breach for plants.commodity rises from the short run onward (tier B, invisible). Why: RS-3: RS-3. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); Some trade below the floor goes undetected (p = 0.55). Reported.",
+  "C-13. Compared with no Velmora Dairy Stabilization Act, lobbying effort for plants.commodity rises from the medium run onward (tier B, invisible). Why: RS-7: a gain concentrated on an identifiable group draws its lobbying to keep or extend it. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); The bound buyers can organize to lobby (p = 0.70). Reported.",
+  "C-14. Compared with no Velmora Dairy Stabilization Act, price paid for plants.commodity rises from the short run onward (tier B, visible). Why: PC-9: PC-9. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); Most bound buyers comply with the floor (p = 0.85). Reported.",
+  "C-15. Compared with no Velmora Dairy Stabilization Act, reclassification for plants.commodity rises from the short run onward (tier B, invisible). Why: RS-5: owners move units out of the rule's reach. This holds if: The floor binds for an identifiable group of sellers (p = 0.80); Most bound buyers comply with the floor (p = 0.85); Reshaping goods to fall outside the definitions costs some actors less than the burden (p = 0.55). Reported.",
+  "C-16. Compared with no Velmora Dairy Stabilization Act, resources available other uses for taxpayers or recipients.other_spending falls for at least one of them from the short run onward (tier B, invisible). Why: OC-1: what the payers give up is what they would otherwise have bought; PC-9: PC-9; SB-9: SB-9. This holds if: no assumption. Reported."
  ],
  "questions": [
   {
@@ -925,6 +1045,7 @@
     "claim_penalties": false,
     "complainant_actor": null,
     "complaint_only": false,
+    "complier_actor": null,
     "contract_kind": "sale",
     "convicted_actor": null,
     "cover_seller_actor": null,
@@ -967,6 +1088,7 @@
     "near_threshold_actor": null,
     "neighbor_actor": null,
     "neighbor_seller_actor": null,
+    "open_breach": true,
     "other_buyer_actor": null,
     "other_spending_actor": "recipients.other_spending",
     "outlay_actor": "officials.enforcement",
@@ -1045,7 +1167,7 @@
   "unclear": []
  },
  "rulebase_version": "rb-thin-0.7 (handbook catalog 1.4: price ceilings PC-1..PC-7, PC-16, PC-21, RS-2..RS-11, SB-4, OC-2..OC-4; taxes and tariffs TX-1, TX-2, TX-4, TX-7..TX-9, RS-1, RS-5..RS-8, RS-14, RS-15, TS-2, SB-4, OC-2..OC-4; CR-12 totals and the declared comparisons; group signs; announcement windows)",
- "run_at": "2026-10-21T17:02:22+00:00",
+ "run_at": "2026-10-21T17:26:49+00:00",
  "sources_held_back": [],
  "unclear": [],
  "verifier_problems": []
