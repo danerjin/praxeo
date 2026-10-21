@@ -133,3 +133,18 @@ Blind scores after step 3: WE-005 13 of 26, WE-008 11 of 28, WE-002 9 of 26, WE-
 4. **Exemptions and lines as CR-1 facts.** RS-5 and RS-17 need them: the 30% line, the 10 t notch.
 5. **Supply response.** No relation takes a change in demand to a price through the response of supply (CR-6 0.9).
 6. **Premises with no fact to rest on.** There is no premise-only fact, and no time-trend fact.
+
+**After the loop fixes.** Four changes were made to the core layer:
+- revisits;
+- CR-4 for anyone whose price moved;
+- CR-7 on charged exchanges;
+- the `supply_price` relation.
+
+Both writers then reran (r2), revising only what the new features let them record. A fifth change, the CR-12e response argument, came next. A step that runs around a loop of links and parts is reported for the class it reaches, but it does not feed back to reverse its cause. The loop is read from the facts, and the cause is the step out of a variable an actor's alternative drives.
+
+| Case | Core loop | Pattern engine |
+|---|---|---|
+| WE-006 | 17 of 26 (unchanged; one new defensible row, inland buyers' price) | 15 |
+| WE-062 | 26 of 68 (was 23) | 12 |
+
+On WE-062, the recyclers' supply, investment, price and workers, and the municipalities' collection, now increase as the table signs them. Converters' recycled content now increases (C-4). One conflicting row remains: converters' investment falls, where the table splits it into recycling equipment, which rises, and an ambiguous total.

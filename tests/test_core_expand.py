@@ -62,4 +62,4 @@ def test_blind_loop_runs():
                                "sellers.substitutes": "sellers.substitute_packaging", "converters.owners": "owners.converters",
                                "importers.packaged_goods": "importers.goods",
                                "small_importers": ["importers.small_goods", "importers.small_packaging"], "taxpayers.other": "taxpayers"})
-    assert (len(produced), n) == (23, 68)          # pattern engine: 12 after its fixes
+    assert (len(produced), n) == (26, 68)          # pattern engine: 12 after its fixes; 23 before r2 and the response argument

@@ -192,7 +192,7 @@ rel_dir(currency,   quantity, D, D) :- opp(D, _).
 rel_dir(supply_price, quantity, D, D) :- opp(D, _).
 % Only changes outside a timing window propagate (an order brought forward is not a lasting change in trade). Timing
 % conclusions are named from facts alone, so the negation stays on facts.
-moved(A, V, D) :- effect(X, A, V, D, _, _, _), opp(D, _), not timing_concl(X).
+moved(A, V, D) :- effect(X, A, V, D, _, _, _), opp(D, _), not timing_concl(X), not response_concl(X).
 timing_concl(p_timing(C, A, V)) :- timing(C, A, V, _, _, _, _).
 timing_concl(p_early_price(C, E)) :- early_price(E, _, _, _), held(C, E, _, _, _, _).
 p_link(A0, V0, R, A, V) :- link(A0, V0, R, A, V, P1, P2, P3), moved(A0, V0, _), ok(P1), ok(P2), ok(P3).
@@ -273,7 +273,7 @@ window(p_early_price(C, E), announcement) :- p_early_price(C, E).
 % A class's total takes every chain that reaches its parts (a). Opposite directions make it ambiguous (b) unless a dominance
 % premise settles it (e, applied in situation.py). Groups are not chains (1.1), and changes inside a timing window are kept to
 % their window.
-p_total(P, V, X) :- part_of(A, P), effect(X, A, V, D, _, _, _), opp(D, _), not timing_concl(X).
+p_total(P, V, X) :- part_of(A, P), effect(X, A, V, D, _, _, _), opp(D, _), not timing_concl(X), not response_concl(X).
 fired(cr_12, p_total(P, V, X), X) :- p_total(P, V, X).
 effect(p_total(P, V, X), P, V, D, H, Vis, T) :- p_total(P, V, X), part_of(A, P), effect(X, A, V, D, H, Vis, T).
 
@@ -289,6 +289,21 @@ effect(p_first_line(C, E), A, V, D1, short, visible, "B") :- p_first_line(C, E),
 window(p_first_line(C, E), first_months) :- p_first_line(C, E).
 timing_concl(p_first_carry(C, E)) :- early_price(E, _, _, _), held(C, E, _, _, _, _).
 timing_concl(p_first_line(C, E)) :- early_price(E, _, _, _), held(C, E, _, _, _, _).
+
+% CR-12e, the response argument: a response cannot reverse the change that causes it. Where the links and parts of the record
+% close a loop (more use of recycled resin raises its price, which lowers recycled content for a part of the same class),
+% the step that runs around the loop is a response: it is reported for the class it reaches, but it does not propagate
+% further or feed the class total back onto its own cause (found on the blind WE-062 loop). Loops are read from the link and
+% part facts alone, so the negation stays on facts.
+edge(A0, V0, A, V) :- link(A0, V0, _, A, V, _, _, _).
+node_key(A, V) :- edge(A, V, _, _).
+node_key(A, V) :- edge(_, _, A, V).
+edge(A, V, P, V) :- part_of(A, P), node_key(A, V).
+reach(A0, V0, A, V) :- edge(A0, V0, A, V).
+reach(A0, V0, A2, V2) :- reach(A0, V0, A, V), edge(A, V, A2, V2).
+% The cause is the step out of a variable the policy drives directly (an actor's alternative); the steps after it are responses.
+driven(A, V) :- alt(_, _, A, V, plain, _, _, _).
+response_concl(p_link(A0, V0, R, A, V)) :- link(A0, V0, R, A, V, _, _, _), reach(A, V, A0, V0), not driven(A0, V0).
 
 #show holds/1.
 #show fired/3.
