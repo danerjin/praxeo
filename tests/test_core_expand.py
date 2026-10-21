@@ -36,11 +36,11 @@ def test_a_file_driven_run_lists_what_it_needs(tmp_path):
     assert all(n.depth == 1 for n in prop.missing)   # nothing deeper is reached without their facts
 
 
-def _loop_score(case, example, short):
+def _loop_score(case, example, short, windows=None):
     from test_out_of_sample import _rows
     cons = S.run(S.load(ROOT / "cases" / case / "loop" / "situation.json"))
     keys = {(a, v, c.sign, c.window) for c in cons if c.reported for a in (c.actor_group or [c.actor_class]) for v in (c.group or [c.variable])}
-    rows = _rows(example, short, {}, {})
+    rows = _rows(example, short, windows or {}, {})
     return {r for r, ks in rows.items() if ks & keys}, len(rows)
 
 
@@ -63,3 +63,41 @@ def test_blind_loop_runs():
                                "importers.packaged_goods": "importers.goods",
                                "small_importers": ["importers.small_goods", "importers.small_packaging"], "taxpayers.other": "taxpayers"})
     assert (len(produced), n) == (26, 68)          # pattern engine: 12 after its fixes; 23 before r2 and the response argument
+
+
+def test_blind_loop_runs_on_the_remaining_families():
+    """Blind runs after the grant, expiry, cap, ban and in-kind-charge operations (one per family). Counts are of table rows
+    produced by key; names mapped only where the class is the same (cases/<case>/loop/notes.md has the records' choices)."""
+    cases = [
+        ("we020_tamberlay", "WE-020_first_time_buyer_grant.md",
+         {"owners.entry_level": ["owners.entry_level_homes", "sellers.entry_level_homes"],
+          "owners": ["owners.entry_level_homes", "sellers.entry_level_homes"], "buyers.other": "buyers.ineligible",
+          "builders": "developers", "intermediaries": "agents.real_estate", "construction_labor": "workers.construction"},
+         {"March to June": "announcement", "before end of Year 4": "deadline"}, 13, 33),     # pattern engine 15
+        ("we016_arvane", "WE-016_interior_designer_license.md",
+         {"clients.residential": "clients.design", "clients.commercial": ["clients.design", "applicants.permit"],
+          "clients": "clients.design", "designers.recent": "designers.unlicensed", "designers.prospective": "students.interior_design",
+          "designers": ["designers.licensed", "designers.grandfathered", "designers.unlicensed"],
+          "schools.design": "schools.design_programs", "retailers.furniture": "retailers.furnishings",
+          "officials.enforcement": "officials.board"},
+         {"announcement window": "announcement", "first months": "first_months"}, 8, 36),      # pattern engine 16
+        ("we028_kallmark", "WE-028_fishing_quota_shares.md",
+         {"vessel_owners.history": "vessel_owners", "share_recipients": "vessel_owners", "all vessels fishing ridge cod": "vessel_owners",
+          "crew": "crew.ridge_cod", "processors": "processors.ridge_cod", "buyers.fresh_domestic": "buyers.fresh_fish",
+          "buyers.regional": "buyers.north_basin", "share_buyers.later": "vessel_owners.acquiring",
+          "recipients of other public spending": "recipients.other_spending"},
+         {"2026–2027": "announcement"}, 18, 54),     # pattern engine 16 (8 out of sample)
+        ("we018_brennick", "WE-018_plastic_bag_ban.md", {"retailers": "retailers.brennick", "shoppers": "shoppers.brennick"},
+         {"announcement window": "announcement"}, 10, 22),     # pattern engine 11; 9 before CR-8c on compliers
+        ("we036_quenby", "WE-036_employer_health_cover_mandate.md",
+         {"insurers": "insurers.health", "unions": "workers.full_time_bound", "workers.uncovered": "workers.full_time_bound",
+          "workers.min_wage": "workers.minimum_wage_bound", "workers.full_time": "workers.full_time_bound",
+          "general_fund": ["officials.enforcement", "officials.indigent_care"], "insurers.group": "insurers.health",
+          "insurers.individual": "insurers.individual_market", "employers.small": "employers.unbound",
+          "sellers.contract_services": "employers.staffing", "neighboring_jurisdictions": "sellers.foreign",
+          "providers.medical": "hospitals.providers", "recipients of other general-fund spending": "recipients.other_spending"},
+         {}, 13, 60),     # pattern engine 29
+    ]
+    for case, example, short, windows, k, n in cases:
+        produced, total = _loop_score(case, example, short, windows)
+        assert (case, len(produced), total) == (case, k, n)

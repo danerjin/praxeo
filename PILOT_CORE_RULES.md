@@ -170,5 +170,54 @@ Writing them found one gap: an actor burdened only through a price had no timing
 
 **Not yet done:**
 - The LLM proposer and seed parser have not run against the API: there is no key in this environment.
-- The pattern files still hold rules for families the core layer has not been checked on: licensing, quotas, prohibitions, mandates, subsidies, private rules. Their cases run on the pattern engine until they have core inputs.
+- The pattern files still hold rules for families the core layer has not been checked on: private rules and disclosure. Licensing, quotas, prohibitions, mandates and subsidies were checked in step 6.
 - The CR-12 combiner's declared comparisons are pattern-side; the core path settles clashes with dominance premises instead.
+
+## Step 6: the remaining families on the core path
+
+**New operations.** No instrument names appear in the rules, and the new-operation pattern checks pass.
+- A grant (`grants`) is CR-1 op 3 reversed:
+  - the wedge runs the other way;
+  - more trades take place;
+  - the recipient's means rise;
+  - the payer's outlay rises.
+- Expiry (`expires`) is CR-10a at the end. Actions brought forward into the measure's period fall in an `after_expiry` window.
+- A fixed quantity (`capped`) follows CR-6's fixed-quantity clause:
+  - the price rations the cap;
+  - fewer trades take place;
+  - holders of the permission gain its value (CR-7c), or its lease price where the good is priced in a wider market (`wider_price`);
+  - shut-out sellers trade less.
+- A ban (`banned`) stops the legal trade for both sides.
+- A charge can carry quantity premises (`quantity_premises`). This lets a mandated term be a charge paid in kind to the counterparty, as PC-17 needs.
+- New pattern checks: SB-1, SB-2, SB-6, EN-1, EN-2, EN-6, EN-7 and PC-17. That makes 32 patterns re-derived in all.
+
+**Blind loop runs, one per family.** These are sonnet stand-ins for the proposer and decider, and they read section 1 and the assumption statements only.
+
+| Case | Family | Core loop | Pattern engine | Contradicts the table |
+|---|---|---|---|---|
+| WE-020 | subsidy (grant, expiry) | 13/33 | 15 | 1 (landlords' `quantity_supplied`: the record means homes put up for sale, the table rental units) |
+| WE-016 | licensing | 8/36 | 16 | 0 |
+| WE-028 | quota shares | 18/54 | 16 (8 out of sample) | 1 (crew lay pay linked to price only, not catch) |
+| WE-018 | ban | 10/22 | 11 | 0 (1 before the CR-8c fix) |
+| WE-036 | mandate (play or pay) | 13/60 | 29 | 1 (the in-kind cover signed for every bound worker, not only those at firms that offer it) |
+
+**General fixes from these runs:**
+- **CR-8c.** Compliers' other uses fall. On WE-018, the retailers' resources become ambiguous, as in the table.
+- **CR-4 0.8.** A charge fixed per seller (`basis: "operating"`, such as a licence fee) bears on the number of sellers, not on each trade. The WE-016 writer named this gap, but the run was not redone because a merge into its worktree was denied.
+- **A `supply` link.** More offered lowers the price (CR-6). The WE-020 writer had no way to set the supply response against the grant's price rise.
+
+**What the format still cannot hold,** from the writers' notes:
+- **Mandates.** This is the weakest family on the core path (13 against 29).
+  - A firm-size threshold, and the restraint on growth below it.
+  - A cap on a charge.
+  - Play-or-pay, a choice between two charges where each branch needs a premise.
+  - A per-holder limit on a quota.
+- **Other gaps:**
+  - The race to qualify for an allocation by history (CR-7c, claims before creation).
+  - A market the policy creates, where share trades rise against no shares.
+  - Quality and information under licensing (CR-11c).
+  - Decay of a grandfathered stock.
+  - A deadline window before expiry (the table's "before end of Year 4").
+  - Exempt subclasses of an exchange.
+
+On the pattern side these come from family rules (`rules/mandates.lp`, `rules/licensing.lp`). The core path needs a general form for each: a threshold on the payer's size, alternative charges, and a holding limit. That is the next step before these families can leave the pattern engine.
