@@ -4,7 +4,8 @@ deemed employees with a per-trip buy-out.
 Same shape as test_oos_we018.py. The rules were not changed for this example: every engine consequence is a row of the
 example's consequence list or sits in EXCEPTIONS with its reason (each classified "defensible" or "KNOWN WRONG"), and every
 table row the engine does not produce sits in NOT_PRODUCED with its reason. The run is described in
-cases/we061_lanvik/out_of_sample.md.
+cases/we061_lanvik/out_of_sample.md. K2, the minimum wage on engaged time, is also read by the price-floor rules
+(floors.lp, commit 5944604; the K2 role fields are in record.json); the section of the report on the floor rules describes that run.
 """
 from pathlib import Path
 
@@ -22,7 +23,17 @@ EXCEPTIONS = {
     ("platforms", "asset_value", "decrease", None):
         "defensible: CR-7c on the bound actor; the table puts the fall on the platforms' shareholders, owners.platforms (C-27)",
     ("platforms", "return_on_capital", "decrease", None):
-        "defensible: CR-7b, the cost stays with the platforms while fare shares hold (A-29); C-27 rests on the same fall in expected yield",
+        "defensible: CR-7b, the cost stays with the platforms while fare shares hold (A-29), and from K2 the floor's cost per engaged hour (cost_not_offset); C-27 rests on the same fall in expected yield",
+    ("drivers.employee", "excess_supply", "increase", None):
+        "defensible: PC-9 on the sellers the floor holds (K2); A-31 and C-9 speak of the floor's surplus of employee hours, which this variable names",
+    ("drivers.employee", "allocation_by_non_price_criteria", "at_least_one_increase", None):
+        "defensible: PC-11's group form for K2 (selection, search or waiting, at least one); C-9 gives the allocation member alone, as a plain increase, on A-31, so the group is implied by C-9",
+    ("drivers.employee", "search_cost", "at_least_one_increase", None):
+        "defensible: member of the PC-11 group (see above); the example names no search cost",
+    ("drivers.employee", "wait_time", "at_least_one_increase", None):
+        "defensible: member of the PC-11 group (see above); the example names no waiting for shifts",
+    ("platforms", "informal_activity", "increase", None):
+        "defensible: RS-3 for K2 (pay below the floor goes undetected, A-19); the example records the same event as legal_breach by the platforms (C-17, engaged time left unpaid)",
     ("platforms", "resources_available_other_uses", "decrease", None):
         "defensible: CR-8b, the platforms' means fall with the cost they bear. The final check (item 4) signs this variable only for "
         "riders whose trips do not fall (C-38); it does not say the platforms' means do not fall",
@@ -36,7 +47,6 @@ EXCEPTIONS = {
         "defensible: CR-7c for the unbound rivals; the table puts the gain on the medallion owners (C-26)",
 }
 NOT_PRODUCED = {
-    "C-1": "missing rule: the floor's direct effect on the pay per hour of workers below it (PC-10); K2 is a price_floor, which has no rules, and the engine signs wage_rate the other way",
     "C-2": "unsupported form: K5 is a mandate_with_charge, which has no rules",
     "C-4": "missing record fact: K4 (contributions, a per_unit_tax on wages with a notch) is not recorded; the tax family is not the mandate rules",
     "C-10": "missing rule: RS-23's selection of low-fare workers into employee status (term_prevalence); the rule signs only the providers' choice among applicants",
@@ -51,7 +61,6 @@ NOT_PRODUCED = {
     "C-24": "combiner and missing rule: riders' wait_time, CR-12e's response argument, no rule",
     "C-25": "missing rule: RS-1 (riders leaving the apps take taxi trips, quantity_substitute); the engine's CR-9 rival gain is quantity_supplied",
     "C-26": "role: CR-7c on the rivals signs their own asset_value; the medallion owners have no role field",
-    "C-27": "role: CR-7c puts the fall on the bound actor (platforms), the table on owners.platforms; no owner role for bound providers",
     "C-28": "missing rule: RS-12 (delivery as a complement to restaurant meals)",
     "C-29": "missing rule: RS-1 with CR-6 labor demand (in-house couriers) for a restaurant substitute",
     "C-30": "missing record fact: the insurance fund and its benefits (K4's receipts); CR-8b",
@@ -67,7 +76,7 @@ NOT_PRODUCED = {
     "C-44": "missing rule: RS-1, home production as a substitute for delivery",
     "C-45": "missing rule: CR-6 for the price of a legal right (a taxi medallion's lease price)",
 }
-PRODUCED = {"C-3", "C-5", "C-6", "C-7", "C-8", "C-9", "C-11", "C-15", "C-16", "C-21", "C-22", "C-36", "C-37"}
+PRODUCED = {"C-1", "C-3", "C-5", "C-6", "C-7", "C-8", "C-9", "C-11", "C-15", "C-16", "C-21", "C-22", "C-27", "C-36", "C-37"}
 
 
 def test_consistent_with_worked_example_we061():
