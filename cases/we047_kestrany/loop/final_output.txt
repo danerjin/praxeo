@@ -1,0 +1,55 @@
+DONE in 3 rounds, 20 questions
+R buyers.foreign quantity_traded  increase
+R export_industries.other quantity_traded  decrease
+R general_fund fund_balance  decrease
+R general_fund tax_revenue  decrease
+R general_fund tax_revenue_vs_static_projection  decrease
+R growers lobbying_effort  increase
+R growers quantity_supplied  increase
+R households price_paid  increase
+R households quantity_demanded  decrease
+R importers compliance_cost  increase
+R importers lobbying_effort  increase
+R importers number_of_sellers  decrease
+R importers price_paid  increase
+R importers quantity_traded  ambiguous
+R importers quantity_traded announcement increase
+R importers reclassification  increase
+R importers resources_available_other_uses  decrease
+R importers tax_share_borne  increase
+R importers.applicants allocation_by_non_price_criteria  ambiguous
+R importers.applicants compliance_cost  ambiguous
+R importers.applicants lobbying_effort  ambiguous
+R importers.licence_holders asset_value  increase
+R importers.licence_holders inventory_held announcement increase
+R importers.licence_holders lobbying_effort  increase
+R importers.licence_holders quantity_traded  ambiguous
+R importers.licence_holders resources_available_other_uses  ambiguous
+R importers.licence_holders return_on_capital  increase
+R importers.licence_holders right_lease_price  increase
+R importers.refiners quantity_traded  ambiguous
+R importers.trading_houses quantity_traded  decrease
+R importers.white_sugar quantity_traded  increase
+R input_suppliers quantity_demanded  increase
+R manufacturers.exporting quantity_supplied  decrease
+R manufacturers.food lobbying_effort  increase
+R manufacturers.food price_paid  increase
+R manufacturers.food quantity_demanded  decrease
+R manufacturers.food quantity_supplied  decrease
+R manufacturers.importing quantity_traded  increase
+R officials.enforcement enforcement_cost  increase
+R officials.licensing enforcement_cost  increase
+R officials.licensing non_tax_receipts  increase
+R owners.manufacturers asset_value  decrease
+R producers.glucose net_price_received  increase
+R producers.glucose quantity_supplied  increase
+R producers.sugar investment_target  increase
+R producers.sugar net_price_received  increase
+R producers.sugar quantity_supplied  increase
+R sellers.foreign net_price_received  decrease
+R sellers.foreign quantity_traded  decrease
+R sellers.substitutes quantity_supplied  increase
+R taxpayers resources_available_other_uses  decrease
+R workers.beet_farming ['employment', 'hours_worked']  at_least_one_increase
+R workers.food_manufacturing ['employment', 'hours_worked']  at_least_one_decrease
+R workers.mills ['employment', 'hours_worked']  at_least_one_increase

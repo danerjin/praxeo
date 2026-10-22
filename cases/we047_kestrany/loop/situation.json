@@ -1,0 +1,913 @@
+{
+ "name": "WE-047 Kestrany Sugar Import Regime Act (loop)",
+ "exchanges": [
+  {
+   "id": "e_imp",
+   "buyer": "importers",
+   "seller": "sellers.foreign",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": "sellers.foreign",
+   "buyer_price_var": null,
+   "seller_price_var": null,
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_oq",
+   "buyer": "importers",
+   "seller": "sellers.foreign",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_lic",
+   "buyer": "importers",
+   "seller": "importers.licence_holders",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "right_lease_price",
+   "seller_price_var": "right_lease_price",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [],
+ "alternatives": [
+  {
+   "premises": [
+    "q16_licences_and_shares_trade_and_lease_at_l"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "importers",
+   "actor": "importers.licence_holders",
+   "variables": [
+    "right_lease_price"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q17_some_sugar_can_be_imported_as_mixtures_c"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "importers",
+   "actor": "importers",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "j_inc"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "sellers.foreign",
+   "actor": "buyers.foreign",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q24_the_quota_rent_per_tonne_is_larger_for_w"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "importers",
+   "actor": "importers.white_sugar",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q18_licence_holders_growers_manufacturers_an"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "importers"
+  },
+  {
+   "premises": [
+    "q18_licence_holders_growers_manufacturers_an"
+   ],
+   "reading": null,
+   "component": "k4a",
+   "actor": "importers.applicants"
+  },
+  {
+   "premises": [
+    "q18_licence_holders_growers_manufacturers_an"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "importers.licence_holders"
+  },
+  {
+   "premises": [
+    "q18_licence_holders_growers_manufacturers_an"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "manufacturers.food"
+  },
+  {
+   "premises": [
+    "q18_licence_holders_growers_manufacturers_an"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "growers"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q12_out_of_quota_imports_stay_below_200_000_"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "quantity_traded",
+   "relation": "same_act",
+   "actor": "general_fund",
+   "variable": "tax_revenue",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q13_domestic_supply_cannot_expand_at_the_old"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "manufacturers.food",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q13_domestic_supply_cannot_expand_at_the_old"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "households",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q13_domestic_supply_cannot_expand_at_the_old"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "producers.sugar",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q14_the_cost_of_the_marginal_domestic_tonne_"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "producers.sugar",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_the_change_in_imports_is_not_offset_by_c"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "quantity_traded",
+   "relation": "currency",
+   "actor": "export_industries.other",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q21_the_highest_value_users_of_licences_are_"
+   ],
+   "reading": null,
+   "source_actor": "importers.licence_holders",
+   "source_variable": "right_lease_price",
+   "relation": "cost",
+   "actor": "importers.trading_houses",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a27",
+    "a32"
+   ],
+   "reading": null,
+   "source_actor": "officials.licensing",
+   "source_variable": "enforcement_cost",
+   "relation": "paid_from",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q23_kestrany_s_import_cut_lowers_world_deman"
+   ],
+   "reading": null,
+   "source_actor": "sellers.foreign",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "sellers.foreign",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "general_fund",
+   "source_variable": "tax_revenue",
+   "relation": "paid_into",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "households",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "households",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q17_some_sugar_can_be_imported_as_mixtures_c"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "reclassification",
+   "relation": "substitute",
+   "actor": "general_fund",
+   "variable": "tax_revenue",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q21_the_highest_value_users_of_licences_are_"
+   ],
+   "reading": null,
+   "source_actor": "importers.trading_houses",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "importers.refiners",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q21_the_highest_value_users_of_licences_are_"
+   ],
+   "reading": null,
+   "source_actor": "importers.trading_houses",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "manufacturers.importing",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q25_domestic_food_manufacturers_compete_at_h"
+   ],
+   "reading": null,
+   "source_actor": "manufacturers.food",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "manufacturers.food",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q26_food_exporters_sell_at_prices_set_in_wor"
+   ],
+   "reading": null,
+   "source_actor": "manufacturers.food",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "manufacturers.exporting",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q25_domestic_food_manufacturers_compete_at_h",
+    "q20_investors_expect_the_act_to_last_at_leas"
+   ],
+   "reading": null,
+   "source_actor": "manufacturers.food",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "owners.manufacturers",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q27_glucose_syrup_and_other_sweeteners_subst"
+   ],
+   "reading": null,
+   "source_actor": "manufacturers.food",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "producers.glucose",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q27_glucose_syrup_and_other_sweeteners_subst",
+    "q28_glucose_syrup_supply_cannot_expand_at_on"
+   ],
+   "reading": null,
+   "source_actor": "manufacturers.food",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "producers.glucose",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q29_employment_and_hours_in_food_manufacturi"
+   ],
+   "reading": null,
+   "source_actor": "manufacturers.food",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.food_manufacturing",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q30_growers_can_move_land_to_beet_within_the"
+   ],
+   "reading": null,
+   "source_actor": "producers.sugar",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "growers",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q29_employment_and_hours_in_food_manufacturi"
+   ],
+   "reading": null,
+   "source_actor": "producers.sugar",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.mills",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q31_at_the_higher_expected_price_some_expans"
+   ],
+   "reading": null,
+   "source_actor": "producers.sugar",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "producers.sugar",
+   "variable": "investment_target",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q29_employment_and_hours_in_food_manufacturi"
+   ],
+   "reading": null,
+   "source_actor": "growers",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.beet_farming",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q24_the_quota_rent_per_tonne_is_larger_for_w"
+   ],
+   "reading": null,
+   "source_actor": "importers.white_sugar",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "importers.refiners",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q29_employment_and_hours_in_food_manufacturi"
+   ],
+   "reading": null,
+   "source_actor": "manufacturers.exporting",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.food_manufacturing",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q25_domestic_food_manufacturers_compete_at_h"
+   ],
+   "reading": null,
+   "source_actor": "manufacturers.food",
+   "source_variable": "quantity_supplied",
+   "relation": "substitute",
+   "actor": "sellers.substitutes",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "manufacturers.food",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "manufacturers.food",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "producers.glucose",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "q20_investors_expect_the_act_to_last_at_leas"
+   ],
+   "reading": null,
+   "exchange": "e_imp",
+   "side": "seller",
+   "actor": "importers.licence_holders"
+  }
+ ],
+ "yields": [
+  {
+   "premises": [
+    "q19_for_the_importing_firms_the_quota_rent_f"
+   ],
+   "reading": null,
+   "exchange": "e_imp",
+   "side": "seller",
+   "actor": "importers.licence_holders"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "importers"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement"
+  },
+  {
+   "component": "k2",
+   "actor": "officials.licensing"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k2",
+   "actor": "taxpayers",
+   "premises": [
+    "a27",
+    "a32"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "k1",
+   "premises": [
+    "a2"
+   ],
+   "exchange": "e_oq",
+   "payer_side": "buyer",
+   "receiver": "general_fund",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k3_reg",
+   "premises": [
+    "j_reg"
+   ],
+   "exchange": "e_oq",
+   "payer_side": "buyer",
+   "receiver": "officials.licensing",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "operating"
+  },
+  {
+   "component": "k3_fee",
+   "premises": [
+    "j_fee"
+   ],
+   "exchange": "e_lic",
+   "payer_side": "seller",
+   "receiver": "officials.licensing",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a4"
+   ],
+   "reading": null,
+   "exchange": "e_oq",
+   "side": "buyer",
+   "horizon": null
+  }
+ ],
+ "discretion": [
+  {
+   "premises": [
+    "a20"
+   ],
+   "reading": null,
+   "component": "k4a",
+   "actor": "importers.applicants"
+  }
+ ],
+ "means": [
+  {
+   "component": "k2",
+   "actor": "importers.licence_holders",
+   "direction": "in"
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a10"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "a10"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "importers",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q22_holders_of_the_stocks_imported_in_2026_s"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "importers.licence_holders",
+   "variable": "inventory_held",
+   "mode": "carry_over"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_imp",
+   "holders": [
+    "importers.licence_holders"
+   ],
+   "wider_price": true
+  }
+ ],
+ "terms": [
+  {
+   "premises": [
+    "a19"
+   ],
+   "reading": null,
+   "component": "k4",
+   "exchange": "e_lic",
+   "side": "buyer",
+   "direction": "worse"
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "component": "k4a",
+   "exchange": "e_lic",
+   "side": "buyer",
+   "direction": "better"
+  }
+ ],
+ "banned": [],
+ "incidence": [
+  {
+   "premises": [
+    "j_inc"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_oq",
+   "side": "buyer"
+  }
+ ],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Surrendered licences (section 9 with sections 4(2) and 12)",
+   "readings": [
+    "U1-a: surrendered quantities return to the quota and are allocated again in the same year to registered importers on application",
+    "U1-b: surrender cancels the licence and the surrendered quantity lapses for that year"
+   ],
+   "components": {
+    "U1-a": [
+     "k4a"
+    ],
+    "U1-b": []
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "actor": "importers",
+   "variable": "price_paid",
+   "window": null,
+   "direction": "increase",
+   "kind": "arithmetic"
+  },
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "actor": "importers",
+   "variable": "quantity_traded",
+   "window": null,
+   "direction": "decrease",
+   "kind": "arithmetic"
+  },
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "actor": "sellers.foreign",
+   "variable": "quantity_traded",
+   "window": null,
+   "direction": "decrease",
+   "kind": "arithmetic"
+  },
+  {
+   "premises": [
+    "q12_out_of_quota_imports_stay_below_200_000_"
+   ],
+   "reading": null,
+   "actor": "general_fund",
+   "variable": "tax_revenue",
+   "window": null,
+   "direction": "decrease",
+   "kind": "arithmetic"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "At the old landed price (about $550 a tonne, white), demand for imports would exceed 400,000 t.",
+   "class": "binding",
+   "p": 0.9
+  },
+  "a2": {
+   "text": "Customs enforce the out-of-quota rate and licence limits.",
+   "class": "enforcement",
+   "p": 0.85
+  },
+  "a4": {
+   "text": "Foreign supply comes from many competing exporters, and no exporting country administers a share of the quota.",
+   "class": "other",
+   "p": 0.85
+  },
+  "a10": {
+   "text": "Sugar can be imported ahead in 2026 at 25% and stored into 2027, and is expected to sell higher after January.",
+   "class": "expectations",
+   "p": 0.85
+  },
+  "a19": {
+   "text": "Some licence volume is left unused and unsold on 30 September each year.",
+   "class": "other",
+   "p": 0.6
+  },
+  "a20": {
+   "text": "Under U1-a, applications for surrendered quantities exceed them, and the Minister's rules allocate them otherwise than by price.",
+   "class": "other",
+   "p": 0.65
+  },
+  "a27": {
+   "text": "The licence office's budget is raised with its task.",
+   "class": "revenue_use",
+   "p": 0.6
+  },
+  "a32": {
+   "text": "The licence office's running cost exceeds the registration and transfer fees it receives.",
+   "class": "other",
+   "p": 0.85
+  },
+  "j_reg": {
+   "text": "Every firm that imports sugar must register as an importer for $500.",
+   "class": "enforcement",
+   "p": 0.9
+  },
+  "j_fee": {
+   "text": "Transfers of shares and licences must be registered with the licence office for a $200 fee.",
+   "class": "enforcement",
+   "p": 0.9
+  },
+  "j_inc": {
+   "text": "Exporters can sell the sugar that Kestrany does not buy to other buyers in the world market.",
+   "class": "substitutability",
+   "p": 0.9
+  },
+  "q12_out_of_quota_imports_stay_below_200_000_": {
+   "text": "Out-of-quota imports stay below 200,000 t a year.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q13_domestic_supply_cannot_expand_at_the_old": {
+   "text": "Domestic supply cannot expand at the old cost enough to replace the cut imports within five years (the response is partial).",
+   "p": 0.8,
+   "class": "durability"
+  },
+  "q14_the_cost_of_the_marginal_domestic_tonne_": {
+   "text": "The cost of the marginal domestic tonne does not fall as domestic output expands (constant or rising cost).",
+   "p": 0.85,
+   "class": "durability"
+  },
+  "q15_the_change_in_imports_is_not_offset_by_c": {
+   "text": "The change in imports is not offset by capital flows within the medium term.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q16_licences_and_shares_trade_and_lease_at_l": {
+   "text": "Licences and shares trade and lease at low cost.",
+   "p": 0.8,
+   "class": "mobility"
+  },
+  "q17_some_sugar_can_be_imported_as_mixtures_c": {
+   "text": "Some sugar can be imported as mixtures classified outside the sugar heading at a lower duty.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q18_licence_holders_growers_manufacturers_an": {
+   "text": "Licence holders, growers, manufacturers and would-be importers can organize at a cost below their stakes.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q19_for_the_importing_firms_the_quota_rent_f": {
+   "text": "For the importing firms, the quota rent far exceeds the trading margin on the volume they lose.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q20_investors_expect_the_act_to_last_at_leas": {
+   "text": "Investors expect the act to last at least until the 2031 review.",
+   "p": 0.75,
+   "class": "expectations"
+  },
+  "q21_the_highest_value_users_of_licences_are_": {
+   "text": "The highest-value users of licences are among the nine holders (the refiners through their refining margin, the three manufacturers), and trading houses that lease out their licences import less or stop.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q22_holders_of_the_stocks_imported_in_2026_s": {
+   "text": "Holders of the stocks imported in 2026 sell them over the months in which they fetch most, at a price above what they paid plus carrying costs, and the stocks, limited by port storage, run out within 2027.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "q23_kestrany_s_import_cut_lowers_world_deman": {
+   "text": "Kestrany's import cut lowers world demand for sugar on net.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q24_the_quota_rent_per_tonne_is_larger_for_w": {
+   "text": "The quota rent per tonne is larger for white sugar than for raw.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q25_domestic_food_manufacturers_compete_at_h": {
+   "text": "Domestic food manufacturers compete at home with imported sugar-containing goods not covered by the act.",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q26_food_exporters_sell_at_prices_set_in_wor": {
+   "text": "Food exporters sell at prices set in world markets.",
+   "p": 0.75,
+   "class": "substitutability"
+  },
+  "q27_glucose_syrup_and_other_sweeteners_subst": {
+   "text": "Glucose syrup and other sweeteners substitute for sugar in some industrial uses.",
+   "p": 0.65,
+   "class": "substitutability"
+  },
+  "q28_glucose_syrup_supply_cannot_expand_at_on": {
+   "text": "Glucose syrup supply cannot expand at once.",
+   "p": 0.6,
+   "class": "substitutability"
+  },
+  "q29_employment_and_hours_in_food_manufacturi": {
+   "text": "Employment and hours in food manufacturing, mills and beet farming adjust with output.",
+   "p": 0.75,
+   "class": "alternative_uses"
+  },
+  "q30_growers_can_move_land_to_beet_within_the": {
+   "text": "Growers can move land to beet within the mills' haul radius, and the mills have about 10% spare capacity.",
+   "p": 0.75,
+   "class": "alternative_uses"
+  },
+  "q31_at_the_higher_expected_price_some_expans": {
+   "text": "At the higher expected price, some expansion or debottlenecking of mill capacity becomes worthwhile for the processors before 2031.",
+   "p": 0.6,
+   "class": "alternative_uses"
+  }
+ }
+}
