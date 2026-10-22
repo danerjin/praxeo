@@ -1,0 +1,797 @@
+{
+ "name": "WE-034 non-compete ban (expand loop)",
+ "exchanges": [
+  {
+   "id": "e_train",
+   "buyer": "employers.trainers",
+   "seller": "workers.trainees",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": null,
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_hire",
+   "buyer": "employers.hiring",
+   "seller": "workers.bound",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": null,
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q23_employers_keep_writing_void_clauses_and_"
+   ],
+   "reading": null,
+   "exchange": "e_train",
+   "kind": "outside",
+   "side": null,
+   "actor": "employers.trainers",
+   "variables": [
+    "legal_breach"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q10_some_firms_hire_more_trained_staff_than_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.hiring",
+   "actor": "employers.hiring",
+   "variables": [
+    "enrollment"
+   ]
+  },
+  {
+   "premises": [
+    "q11_firms_that_rely_on_hiring_experienced_st"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.hiring",
+   "actor": "employers.hiring",
+   "variables": [
+    "relocation_out_of_area"
+   ]
+  },
+  {
+   "premises": [
+    "q15_for_many_employers_reshaping_restraints_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.trainers",
+   "actor": "employers.trainers",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q16_employers_turn_to_trade_secret_and_non_s"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.trainers",
+   "actor": "employers.trainers",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q17_courts_accept_bona_fide_partnership_buy_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.trainers",
+   "actor": "employers.trainers.practices",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q18_token_equity_grants_made_only_to_bring_a"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.trainers",
+   "actor": "employers.trainers",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q19_some_employers_locate_new_training_inten"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.trainers",
+   "actor": "employers.trainers",
+   "variables": [
+    "relocation_out_of_area"
+   ]
+  },
+  {
+   "premises": [
+    "q20_employers_expand_unvested_deferred_pay_a"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.trainers",
+   "actor": "workers.bound",
+   "variables": [
+    "earnings"
+   ]
+  },
+  {
+   "premises": [
+    "a26"
+   ],
+   "reading": "U1-a",
+   "component": "k1",
+   "chooser": "employers.trainers",
+   "actor": "employers.trainers",
+   "variables": [
+    "term_prevalence"
+   ]
+  },
+  {
+   "premises": [
+    "a26"
+   ],
+   "reading": "U2-b",
+   "component": "k1",
+   "chooser": "employers.trainers",
+   "actor": "employers.trainers",
+   "variables": [
+    "term_prevalence"
+   ]
+  },
+  {
+   "premises": [
+    "q24_in_the_counterfactual_some_bound_workers"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "workers.bound",
+   "actor": "workers.bound.out_of_field",
+   "variables": [
+    "job_changes"
+   ]
+  },
+  {
+   "premises": [
+    "a5"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "workers.trainees",
+   "actor": "workers.trainees",
+   "variables": [
+    "enrollment"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q14_employers_associations_worker_groups_and"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "employers.hiring"
+  },
+  {
+   "premises": [
+    "q14_employers_associations_worker_groups_and"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "employers.trainers"
+  },
+  {
+   "premises": [
+    "q14_employers_associations_worker_groups_and"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "workers.bound"
+  },
+  {
+   "premises": [
+    "q14_employers_associations_worker_groups_and"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "entrants"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q12_recruiters_handle_a_material_share_of_ex"
+   ],
+   "reading": null,
+   "source_actor": "employers.hiring",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "intermediaries",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q13_mossgrave_bound_workers_escape_their_res"
+   ],
+   "reading": null,
+   "source_actor": "employers.hiring",
+   "source_variable": "quantity_traded",
+   "relation": "same_act",
+   "actor": "workers.mossgrave",
+   "variable": "job_changes",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q22_net_trainers_cut_employer_funded_trainin"
+   ],
+   "reading": null,
+   "source_actor": "employers.trainers",
+   "source_variable": "return_on_capital",
+   "relation": "yield",
+   "actor": "employers.trainers",
+   "variable": "investment_target",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q27_some_bound_workers_have_plans_to_start_a"
+   ],
+   "reading": null,
+   "source_actor": "workers.bound",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "entrants",
+   "variable": "entry_rate",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q28_employer_funded_training_or_trainee_hiri"
+   ],
+   "reading": null,
+   "source_actor": "workers.trainees",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "entrants",
+   "variable": "entry_rate",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q10_some_firms_hire_more_trained_staff_than_"
+   ],
+   "reading": null,
+   "source_actor": "employers.hiring",
+   "source_variable": "enrollment",
+   "relation": "input",
+   "actor": "workers.trainees",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q11_firms_that_rely_on_hiring_experienced_st"
+   ],
+   "reading": null,
+   "source_actor": "employers.hiring",
+   "source_variable": "relocation_out_of_area",
+   "relation": "same_act",
+   "actor": "neighboring_jurisdictions",
+   "variable": "employment",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q19_some_employers_locate_new_training_inten"
+   ],
+   "reading": null,
+   "source_actor": "employers.trainers",
+   "source_variable": "relocation_out_of_area",
+   "relation": "same_act",
+   "actor": "neighboring_jurisdictions",
+   "variable": "employment",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q29_substitute_restraints_such_as_non_solici"
+   ],
+   "reading": null,
+   "source_actor": "employers.trainers",
+   "source_variable": "reclassification",
+   "relation": "substitute",
+   "actor": "workers.bound",
+   "variable": "job_changes",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_for_many_employers_reshaping_restraints_"
+   ],
+   "reading": null,
+   "source_actor": "employers.trainers",
+   "source_variable": "reclassification",
+   "relation": "yield",
+   "actor": "employers.trainers",
+   "variable": "return_on_capital",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q31_a_paid_notice_period_of_six_to_twelve_mo"
+   ],
+   "reading": "U1-a",
+   "source_actor": "employers.trainers",
+   "source_variable": "term_prevalence",
+   "relation": "substitute",
+   "actor": "workers.bound",
+   "variable": "job_changes",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q29_substitute_restraints_such_as_non_solici"
+   ],
+   "reading": null,
+   "source_actor": "employers.trainers.practices",
+   "source_variable": "reclassification",
+   "relation": "substitute",
+   "actor": "workers.bound",
+   "variable": "job_changes",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q32_spin_off_entry_adds_supply_that_is_not_o"
+   ],
+   "reading": null,
+   "source_actor": "entrants",
+   "source_variable": "entry_rate",
+   "relation": "supply",
+   "actor": "customers",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "workers.bound",
+   "source_variable": "quantity_traded",
+   "relation": "same_act",
+   "actor": "workers.bound",
+   "variable": "job_changes",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q32_spin_off_entry_adds_supply_that_is_not_o"
+   ],
+   "reading": null,
+   "source_actor": "workers.bound",
+   "source_variable": "wage_rate",
+   "relation": "output",
+   "actor": "customers",
+   "variable": "price_paid",
+   "horizon": null
+  }
+ ],
+ "assets": [],
+ "yields": [
+  {
+   "premises": [
+    "q21_non_competes_protected_a_material_part_o"
+   ],
+   "reading": null,
+   "exchange": "e_train",
+   "side": "buyer",
+   "actor": "employers.trainers"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k4",
+   "actor": "employers.trainers"
+  },
+  {
+   "component": "k4",
+   "actor": "employers.hiring"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k5",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [],
+ "fixed_budget": [
+  {
+   "component": "k5",
+   "actor": "officials.enforcement",
+   "premises": [
+    "a18"
+   ]
+  }
+ ],
+ "charges": [],
+ "moves": [
+  {
+   "premises": [
+    "a7"
+   ],
+   "reading": null,
+   "exchange": "e_hire",
+   "side": "seller",
+   "horizon": null
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "n1"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q25_some_bound_workers_would_have_moved_to_r"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "workers.bound",
+   "variable": "job_changes",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q26_some_bound_workers_who_would_not_have_mo"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "workers.bound",
+   "variable": "job_changes",
+   "mode": "carry_over"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "terms": [
+  {
+   "premises": [
+    "a2",
+    "a5"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_train",
+   "side": "buyer",
+   "direction": "worse"
+  },
+  {
+   "premises": [
+    "a2",
+    "a28"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_hire",
+   "side": "buyer",
+   "direction": "better"
+  },
+  {
+   "premises": [
+    "a2",
+    "a1"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_hire",
+   "side": "seller",
+   "direction": "better"
+  },
+  {
+   "premises": [
+    "a2",
+    "a26"
+   ],
+   "reading": null,
+   "component": "k1b",
+   "exchange": "e_hire",
+   "side": "seller",
+   "direction": "better"
+  },
+  {
+   "premises": [
+    "a2",
+    "a29"
+   ],
+   "reading": null,
+   "component": "k1d",
+   "exchange": "e_hire",
+   "side": "seller",
+   "direction": "better"
+  },
+  {
+   "premises": [
+    "a2",
+    "a26"
+   ],
+   "reading": null,
+   "component": "k1c",
+   "exchange": "e_train",
+   "side": "buyer",
+   "direction": "worse"
+  }
+ ],
+ "banned": [],
+ "incidence": [],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Does K3(c) cover a paid notice period of six to twelve months in which the worker may not work for anyone else?",
+   "readings": [
+    "U1-a: yes, any paid notice period in which the worker remains employed is preserved",
+    "U1-b: no, a notice period long enough to keep the worker out of the field is a restraint in effect and void under K1"
+   ],
+   "components": {
+    "U1-a": [],
+    "U1-b": [
+     "k1b"
+    ]
+   }
+  },
+  {
+   "id": "U2",
+   "text": "Is a term requiring a worker who leaves within 24 months to repay employer-paid training a penalty under K1?",
+   "readings": [
+    "U2-a: yes, it penalizes leaving, and leaving is how one comes to work for another",
+    "U2-b: no, it applies to every departure and only recovers a cost"
+   ],
+   "components": {
+    "U2-a": [
+     "k1c"
+    ],
+    "U2-b": []
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [
+  {
+   "premises": [
+    "q30_substitute_restraints_non_solicitation_u"
+   ],
+   "reading": null,
+   "actor": "employers.trainers",
+   "variable": "return_on_capital",
+   "window": null,
+   "direction": "decrease",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q30_substitute_restraints_non_solicitation_u"
+   ],
+   "reading": null,
+   "actor": "employers.trainers",
+   "variable": "investment_target",
+   "window": null,
+   "direction": "decrease",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q33_substitute_retention_devices_deter_fewer"
+   ],
+   "reading": null,
+   "actor": "workers.bound",
+   "variable": "job_changes",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Non-competes deter some bound workers from moves to rivals or start-ups they would otherwise make.",
+   "p": 0.8,
+   "class": "binding"
+  },
+  "a2": {
+   "text": "Employers stop enforcing, and workers learn that the clause is void (K4 notices, damages and fee-shifting).",
+   "p": 0.8,
+   "class": "enforcement"
+  },
+  "a5": {
+   "text": "In a material share of trainee jobs, the non-compete protected the employer's recovery of the cost of general training.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "a7": {
+   "text": "Some bound workers are paid less than a rival would pay them.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "a18": {
+   "text": "The Labor Bureau's budget is not raised for the new task.",
+   "p": 0.7,
+   "class": "revenue_use"
+  },
+  "a26": {
+   "text": "In the counterfactual, some Teravel employment contracts contain paid notice periods of six months or more, and some contain training repayment agreements.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "a28": {
+   "text": "In the counterfactual, firms that hire a bound worker from a rival bear litigation risk, demand letters or buy-out payments.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "a29": {
+   "text": "Some existing contracts contain forfeiture-for-competition clauses (deferred pay lost only on joining a competitor).",
+   "p": 0.75,
+   "class": "other"
+  },
+  "n1": {
+   "text": "Employers and workers expect the Act to take effect on 1 January 2026 once it has passed.",
+   "p": 0.9,
+   "class": "expectations"
+  },
+  "q10_some_firms_hire_more_trained_staff_than_": {
+   "text": "Some firms hire more trained staff than they train.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q11_firms_that_rely_on_hiring_experienced_st": {
+   "text": "Firms that rely on hiring experienced staff, and founders, prefer to locate where staff are mobile.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q12_recruiters_handle_a_material_share_of_ex": {
+   "text": "Recruiters handle a material share of experienced hires in these fields.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q13_mossgrave_bound_workers_escape_their_res": {
+   "text": "Mossgrave-bound workers escape their restraints by taking Teravel jobs.",
+   "p": 0.4,
+   "class": "other"
+  },
+  "q14_employers_associations_worker_groups_and": {
+   "text": "Employers' associations, worker groups and start-up associations can organize at a cost below their stake.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q15_for_many_employers_reshaping_restraints_": {
+   "text": "For many employers, reshaping restraints into the preserved forms costs less than the protection it restores.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q16_employers_turn_to_trade_secret_and_non_s": {
+   "text": "Employers turn to trade-secret and non-solicitation claims against departing staff.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q17_courts_accept_bona_fide_partnership_buy_": {
+   "text": "Courts accept bona fide partnership buy-ins as within K2, and practices use them.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q18_token_equity_grants_made_only_to_bring_a": {
+   "text": "Token equity grants, made only to bring a restraint within K2, qualify.",
+   "p": 0.3,
+   "class": "other"
+  },
+  "q19_some_employers_locate_new_training_inten": {
+   "text": "Some employers locate new training-intensive work in Mossgrave because restraints are enforceable there.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q20_employers_expand_unvested_deferred_pay_a": {
+   "text": "Employers expand unvested deferred pay and retention bonuses.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q21_non_competes_protected_a_material_part_o": {
+   "text": "Non-competes protected a material part of net trainers' expected yield.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q22_net_trainers_cut_employer_funded_trainin": {
+   "text": "Net trainers cut employer-funded training when its expected yield falls.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q23_employers_keep_writing_void_clauses_and_": {
+   "text": "Employers keep writing void clauses and rely on workers not knowing.",
+   "p": 0.35,
+   "class": "other"
+  },
+  "q24_in_the_counterfactual_some_bound_workers": {
+   "text": "In the counterfactual, some bound workers change employer by leaving their field.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q25_some_bound_workers_would_have_moved_to_r": {
+   "text": "Some bound workers would have moved to rivals in 2025, by buy-out or litigation, and can wait.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q26_some_bound_workers_who_would_not_have_mo": {
+   "text": "Some bound workers who would not have moved in 2025 in the counterfactual move late in 2025, because a suit against them would be pending on 1 January 2026 and decided under the Act.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q27_some_bound_workers_have_plans_to_start_a": {
+   "text": "Some bound workers have plans to start a firm in their field that the non-compete blocks.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q28_employer_funded_training_or_trainee_hiri": {
+   "text": "Employer-funded training or trainee hiring (not only trainee pay) falls enough to thin the pool of would-be founders in the bound fields within the horizon of C-3.",
+   "p": 0.4,
+   "class": "other"
+  },
+  "q29_substitute_restraints_such_as_non_solici": {
+   "text": "Substitute restraints such as non-solicitation, unvested pay and retention bonuses deter some moves to rivals.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q30_substitute_restraints_non_solicitation_u": {
+   "text": "Substitute restraints (non-solicitation, unvested pay, and under U2-b repayment agreements) do not fully restore that protection.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q31_a_paid_notice_period_of_six_to_twelve_mo": {
+   "text": "A paid notice period of six to twelve months keeps the worker out of the field.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q32_spin_off_entry_adds_supply_that_is_not_o": {
+   "text": "Spin-off entry adds supply that is not offset elsewhere (RS-13), and experienced staff pay is a material part of these services' costs (RS-14).",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q33_substitute_retention_devices_deter_fewer": {
+   "text": "Substitute retention devices deter fewer moves to rivals than non-competes did (dominance premise, CR-12e).",
+   "p": 0.65,
+   "class": "other"
+  }
+ }
+}
