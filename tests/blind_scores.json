@@ -488,5 +488,107 @@
   "produced": 32,
   "total": 71,
   "pattern_engine": "none"
+ },
+ {
+  "case": "we064_tarnesse",
+  "loop": "loop_r2",
+  "example": "WE-064_spectrum_auction.md",
+  "short": {
+   "fixed_broadband_sellers": "sellers.substitutes",
+   "tower_owners": "input_suppliers.towers",
+   "riggers": "workers.riggers",
+   "equipment_vendors": "sellers.foreign",
+   "other_borrowers": "borrowers.other",
+   "officials.enforcement": "officials.enforcement"
+  },
+  "windows": {},
+  "produced": 12,
+  "total": 44,
+  "pattern_engine": "5"
+ },
+ {
+  "case": "we061_lanvik",
+  "loop": "loop_r2",
+  "example": "WE-061_gig_worker_reclassification.md",
+  "short": {
+   "platforms": "platforms.large",
+   "drivers.employee": "workers.employees",
+   "drivers.contractor": "workers.contractors",
+   "sellers.complements": "retailers.restaurants",
+   "owners.platforms": "owners",
+   "owners.medallions": "owners.medallion",
+   "workers.inhouse_couriers": "workers.couriers",
+   "sellers.small_platform": "platforms.small"
+  },
+  "windows": {},
+  "produced": 9,
+  "total": 43,
+  "pattern_engine": "16"
+ },
+ {
+  "case": "we042_vessland",
+  "loop": "loop_r2",
+  "example": "WE-042_aluminum_tariff_drawback.md",
+  "short": {
+   "smelters": "producers.smelters",
+   "smelters.owners": "owners.smelters",
+   "smelter_workers": "workers.smelters",
+   "users.home": "manufacturers.home_market",
+   "remelters": "producers.remelters",
+   "scrap_sellers": "sellers.scrap",
+   "buyers.aluminum_goods": "consumers",
+   "export_industries.other": "export_industries"
+  },
+  "windows": {},
+  "produced": 12,
+  "total": 57,
+  "pattern_engine": "42"
+ },
+ {
+  "case": "we039_sorrel",
+  "loop": "loop_r2",
+  "example": "WE-039_groundwater_pumping_allocation.md",
+  "short": {
+   "landholders.history": [
+    "licensees.history",
+    "owners.history"
+   ],
+   "landholders.no_history": "owners.no_history",
+   "lottery.winners": "licensees.lottery",
+   "farm_workers": "workers.farm",
+   "neighbors": "households.domestic"
+  },
+  "windows": {},
+  "produced": 12,
+  "total": 60,
+  "pattern_engine": "8"
+ },
+ {
+  "case": "we033_kestland",
+  "loop": "loop_r2",
+  "example": "WE-033_household_cash_rebate.md",
+  "short": {
+   "households.recipients": [
+    "households.deposit",
+    "households.applicants"
+   ],
+   "households.no_account": "households.applicants",
+   "lenders.new": [
+    "buyers.domestic",
+    "buyers.foreign"
+   ],
+   "borrowers.private": [
+    "borrowers.business",
+    "borrowers.households",
+    "homebuyers"
+   ],
+   "taxpayers.later": "taxpayers.future",
+   "public_spending_recipients.later": "recipients.other_spending",
+   "officials.enforcement": "officials.revenue"
+  },
+  "windows": {},
+  "produced": 6,
+  "total": 31,
+  "pattern_engine": "6"
  }
 ]

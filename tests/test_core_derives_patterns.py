@@ -459,8 +459,8 @@ def test_grant_fraud_is_an_outside_margin():
 def test_a_fine_on_breach_is_a_transfer_from_violators():
     got = _run(exchanges=MENU, banned=[{"component": "k", "exchange": "e", "premises": ["a1"]}],
                penalties=[{"component": "k", "actor": "restaurants.violating", "collector": "officials.enforcement", "premises": ["a2"]}])
-    assert ("restaurants.violating", "resources_available_other_uses", "decrease", None) in got
     assert ("officials.enforcement", "non_tax_receipts", "increase", None) in got
+    assert not any(a == "restaurants.violating" for a, *_ in got)   # their net position is not signed by the fine alone
 
 
 def test_a_right_the_policy_creates_and_sells():

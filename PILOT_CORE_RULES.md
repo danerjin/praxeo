@@ -451,3 +451,29 @@ The mappings and counts are in `tests/blind_scores.json`, which a test checks.
 - One recursive grep from the repository root printed a test file name.
 - One writer saw another run's seed in the shared scratchpad.
 - All of these are recorded in the runs' notes.
+
+## Step 14: the loop's last limits, and second runs
+
+**New forms and fixes.** Each has a check.
+- **A node can propose an exchange the seed lacks**, with its response premise (`moves`) and fixed prices. Writers hit this limit most often.
+- **A sign per reading counts a reading only where its chain is reportable.** This is in the merge shared with the pattern engine, and the pattern engine's tests are unchanged. It raised WE-065 from 12 to 13.
+- **A right the policy creates and sells** (`issued`, such as spectrum auctioned or licences sold). The trade in it opens, buyers pay, and the issuer receives the price.
+- **A group** (employment or hours, at least one falls) **is a link source** in its direction.
+- **Fines narrowed to the collector's receipts.** The blind WE-033 run showed that the violators' net position is not signed by the fine alone: the policy may create the gain from breaking it, such as a payment claimed falsely.
+- **The loop's printout shows signs per reading.**
+
+**Second blind runs:**
+
+| Case | Run 1 | Run 2 | Pattern engine |
+|---|---|---|---|
+| WE-039 groundwater allocation | 8/60 | 12/60 | 8 |
+| WE-033 cash rebate | 4/31 | 6/31 | 6 |
+| WE-064 spectrum auction | 12/44 | 12/44 | 5 |
+| WE-042 aluminium drawback | 13/57 | 12/57 | 42 |
+| WE-061 gig reclassification | 15/43 | 9/43 | 16 |
+
+- The second runs were scored with a stricter mapping: the scorer left out several looser joins.
+- The spread between two runs of one case is as large as the effect of the forms. WE-061 falls from 15 to 9, and WE-039 rises from 8 to 12.
+- The tax case WE-042 stays far behind the pattern engine. Its detailed rows (drawback claims by yield table, scrap's two outlets) need facts no writer proposed.
+
+**What remains:** the gap to the pattern engine is now mainly in what the proposer thinks to propose, not in what the rules can derive. The next useful test is the real LLM proposer on these cases, with several runs per case so the spread can be measured. It needs an API key.

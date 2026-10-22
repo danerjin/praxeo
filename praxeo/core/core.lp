@@ -509,13 +509,12 @@ side_dir(E, S2, D) :- c_terms(_, E, _, W), terms_qty(W, D), side(S2).
 
 % ---------------------------------------------------------------- CR-8b: a sum due on breaking the rule
 % A fine (penalty/6: who breaks the rule, who collects, with the premise that some break it and are fined) is a transfer
-% from the violators to the collector: their means fall by it, the collector's receipts rise. It attaches to the option
-% of breaking the rule, so it makes that option worse for the violators (CR-4), not the legal trade.
+% from those fined to the collector, whose receipts rise. For the class that breaks the rule, the fine is set against
+% what breaking it gains them, and against no policy the policy may have created that gain (a payment claimed falsely):
+% their net position is not signed by the fine alone (found on blind WE-033), so only the collector's side is.
 p_penalty(C, A, R) :- penalty(C, A, R, P1, P2, P3), c_acts(C), ok(P1), ok(P2), ok(P3).
 fired(cr_8, p_penalty(C, A, R), P) :- p_penalty(C, A, R), penalty(C, A, R, P1, P2, P3), P = (P1; P2; P3), P != none.
-effect(p_penalty(C, A, R), A, "resources_available_other_uses", decrease, short, invisible, "B") :- p_penalty(C, A, R).
 effect(p_penalty(C, A, R), R, V, increase, short, visible, "B") :- p_penalty(C, A, R), share_var(penalty, V).
-chooser(C, A, worse) :- p_penalty(C, A, _).
 
 % ---------------------------------------------------------------- CR-1: a right the policy creates and sells
 % Where a component creates a right and sells it in E (issued/6, with the premise that it is sold as enacted), the trade in
