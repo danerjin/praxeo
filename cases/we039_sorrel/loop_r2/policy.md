@@ -1,0 +1,25 @@
+## 1. Policy record
+
+**Sorrel Basin Groundwater Allocation Plan.** The Sorrel Basin, in the State of Castellan, is an alluvial aquifer under about 110,000 irrigated acres, divided by the state's hydrologic survey into three sub-basins: North, Central and South. Average pumping in water years 2017 to 2021 was about 300,000 acre-feet (af) a year: North 110,000 (mostly field crops: cotton, alfalfa, grain), Central 70,000 (mixed), South 120,000 (mostly tree nuts). Tree nuts use about 160,000 af on 40,000 acres; field crops about 140,000 af on 70,000 acres. The survey estimates the basin's long-run sustainable yield at about 200,000 af a year. Over 2017 to 2021 the water table fell about 2.5 feet a year on average and about 4 feet a year in South. Pumping lift averages about 300 feet; each foot of lift costs about $0.20 per af in energy. About 2,400 agricultural wells and about 4,000 domestic wells draw on the aquifer; about 60 agricultural wells a year were deepened or replaced (about $80,000 each), and about 150 domestic wells went dry in 2017 to 2021. The county runs an emergency water program for households with dry wells.
+
+Crops are sold in national markets: the basin grows about 5% of the nation's tree nuts and under 1% of each field crop. Irrigated land sells for about $12,000 an acre (nuts) and $6,000 (field crops); dry grazing land for about $1,500. About 6,000 people work on farms in the basin. The Sorrel Irrigation District delivers canal water to about 30,000 acres in North; surface water also trades between districts in the region, at about $250 per af in normal years. To the east, the Lowther Basin has no cap; its plan is due in 2030.
+
+Before March 2022 no allocation method had been proposed in the basin; the state's groundwater act allows allocation by history, by area or by auction. The Sorrel Basin Water Authority (SBWA) published its draft plan, including the 2017 to 2021 base period, on 15 March 2022. After hearings it adopted the plan on 18 November 2026. Shares are issued on 1 July 2027; the cap takes effect with the water year beginning 1 October 2027. No expiry; the cap is reviewed in 2032.
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Cap | `quota` | Groundwater pumped from the basin | Holders of non-domestic wells | 210,000 af a year (70% of the 2017 to 2021 average). | Domestic wells pumping under 2 af a year. |
+| K2 Allocation by history | `rights_allocation` | 90% of the cap (189,000 af) | SBWA | Permanent shares of the annual cap, issued to whoever holds a parcel on 1 July 2027, in proportion to the parcel's average metered or estimated pumping in water years 2017 to 2021. A holder receives about 63% of its history. | — |
+| K3 Reserve for new users | `rights_allocation` (lottery) | 10% of the cap (21,000 af) | SBWA | Permanent shares in blocks of 100 af, drawn by lottery in September 2027. Eligible: each parcel of at least 20 acres in the basin, held on 1 July 2027, with no K2 allocation; one entry per parcel; entry fee $500. | — |
+| K4 Trading | Rule on transfers | K2 and K3 shares and annual allocations | Share holders | Shares may be sold, and a year's allocation leased, separately from land. "Allocations may be transferred between wells in the Basin, subject to the Authority's rules on local impacts." No carry-over between years. | — |
+| K5 Enforcement and funding | Enforcement | K1 to K4 | SBWA | Meters with telemetry on every non-domestic well by 1 October 2027, at the owner's cost (about $3,000 a well); monthly readings; satellite checks of crop water use. Penalty $600 per af pumped over allocation; loss of shares for repeated violation. Funded by an annual fee of $10 per af of shares held (about $2.1 million a year). | — |
+
+Unclear provision:
+- U1, trading across sub-basins. K4 allows transfers "between wells in the Basin, subject to the Authority's rules on local impacts", and the plan's hydrology chapter says impacts are to be "managed by sub-basin". Reading U1-a: a share may be pumped only from a well in the sub-basin where the parcel that earned it lies. Reading U1-b: a share may be pumped anywhere in the basin; the impact rules only set conditions on individual wells (spacing, monitoring).
+
+Readings get no probability; where a sign depends on one, each reading's sign is reported.
+
+**Figures.** Without the cap, pumping would stay near 300,000 af and rise with new plantings (A-1). The cap removes about 90,000 af a year, 30% of base pumping. A history holder keeps 63% of its history; to keep pumping as before it must lease about 37% from others. A share's annual allocation, leased at a price p per af, is worth roughly p divided by the rate at which land is capitalized; at an illustrative $300 per af and 7%, a share for 1 af is worth about $4,300, and the K2 shares together about $800 million. Each foot of water table not lost saves about $0.20 per af on every af pumped from then on.
+
+The counterfactual is the basin without the plan: pumping as landholders choose, the water table falling as it did in 2017 to 2021.
+
