@@ -1,0 +1,976 @@
+{
+ "general_fund": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "general_fund",
+    "source_variable": "subsidy_outlay",
+    "relation": "paid_from",
+    "actor": "general_fund",
+    "variable": "fund_balance"
+   },
+   "premises": [
+    "The credit and the county's administration fee are paid from the City's general fund."
+   ],
+   "source": "The credit: 'from the City's general fund'; 'no tax is named'.",
+   "premise_class": "revenue_use"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "general_fund",
+    "source_variable": "resources_available_other_uses",
+    "relation": "same_act",
+    "actor": "recipients.other_spending",
+    "variable": "resources_available_other_uses"
+   },
+   "premises": [
+    "The credit is paid out of other uses of the general fund, since no tax is named for it."
+   ],
+   "source": "budget office estimates the senior credit ... from a general fund of about $1.1 billion; no tax is named.",
+   "premise_class": "revenue_use"
+  }
+ ],
+ "landlords.controlled": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "landlords.controlled",
+    "actor": "landlords.controlled",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "The withdrawal route is used for a meaningful number of buildings."
+   ],
+   "source": "\u00a79(a): An owner may withdraw all the units in a building from the rental market on 120 days' written notice",
+   "premise_class": "alternative_uses"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "landlords.controlled",
+    "actor": "landlords.controlled",
+    "variables": [
+     "units_held_vacant"
+    ]
+   },
+   "premises": [
+    "In a building an owner plans to withdraw, holding a vacated unit empty pays better than re-letting it, for some owners (core re-run A-N7)."
+   ],
+   "source": "A withdrawn unit may not be offered for rent within five years; owners usually sell withdrawn units",
+   "premise_class": "alternative_uses"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "landlords.controlled",
+    "actor": "tenants.controlled",
+    "variables": [
+     "turnover"
+    ]
+   },
+   "premises": [
+    "Some landlords pay sitting tenants to vacate, and some tenants accept (core re-run A-N2)."
+   ],
+   "source": "\u00a74 eviction only for cause; about 1,100 terminations without cause in 2026",
+   "premise_class": "other"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "landlords.controlled",
+    "actor": "tenants.controlled",
+    "variables": [
+     "side_payments"
+    ]
+   },
+   "premises": [
+    "Some landlords pay sitting tenants to vacate, and some tenants accept (core re-run A-N2)."
+   ],
+   "source": "\u00a74 eviction only for cause",
+   "premise_class": "other"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_cov",
+    "kind": "adjust",
+    "actor": "landlords.controlled",
+    "variables": [
+     "maintenance_spending"
+    ],
+    "side": "seller"
+   },
+   "premises": [
+    "The housing code leaves room to cut maintenance above the legal minimum."
+   ],
+   "source": "\u00a73: rent of a sitting tenant may rise by no more than 60 per cent of the annual change",
+   "premise_class": "other"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_cov",
+    "kind": "adjust",
+    "actor": "landlords.controlled",
+    "variables": [
+     "quantity_supplied"
+    ],
+    "side": "seller"
+   },
+   "premises": [
+    "The withdrawal route is used for a meaningful number of buildings.",
+    "Rental buildings last several decades, so the stock changes slowly."
+   ],
+   "source": "\u00a79: withdrawal route; Rental buildings last several decades",
+   "premise_class": "alternative_uses"
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "landlords.controlled",
+    "variable": "units_held_vacant",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Some landlords end month-to-month tenancies without cause in the window, to re-let at the market before the base date or to hold units empty for withdrawal."
+   ],
+   "source": "State law lets a landlord end a month-to-month tenancy without cause on 60 days' notice; in 2026 there were about 1,100 such terminations",
+   "premise_class": "expectations"
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "landlords.controlled",
+    "variable": "turnover",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Some landlords end month-to-month tenancies without cause in the window, to re-let at the market before the base date or to hold units empty for withdrawal."
+   ],
+   "source": "State law lets a landlord end a month-to-month tenancy without cause on 60 days' notice",
+   "premise_class": "expectations"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "landlords.controlled"
+   },
+   "premises": [
+    "Landlords, tenant unions and senior advocates can organize at a cost below their stakes.",
+    "Rent regulation would have been contested on the counterfactual path."
+   ],
+   "source": "In November 2026 a majority of the newly elected council and the mayor campaigned on rent regulation (a 2022 petition for a ballot measure had failed to qualify).",
+   "premise_class": "other"
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_cov",
+    "side": "seller",
+    "actor": "landlords.controlled"
+   },
+   "premises": [
+    "Buyers of buildings expect the ordinance to last many years."
+   ],
+   "source": "Council review after five years (2032); no expiry.",
+   "premise_class": "expectations"
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_cov",
+    "side": "seller",
+    "actor": "landlords.controlled"
+   },
+   "premises": [],
+   "source": "\u00a73 cap on sitting tenants' rent",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "landlords.controlled",
+    "source_variable": "quantity_supplied",
+    "relation": "supply",
+    "actor": "tenants.prospective",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Because of the policy, free rents in Tessford (exempt units, initial rents of new covered tenancies) rise more than rents elsewhere in Ambry County, for the homes movers choose (core re-run A-N1, widened from seniors to all movers)."
+   ],
+   "source": "On a new tenancy the landlord may set the initial rent.",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "landlords.controlled",
+    "source_variable": "reclassification",
+    "relation": "same_act",
+    "actor": "homebuyers",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Owners sell withdrawn units as condominiums."
+   ],
+   "source": "Owners usually sell withdrawn units as condominiums (state law allows conversion with a subdivision map) or occupy them.",
+   "premise_class": "alternative_uses"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "landlords.controlled",
+    "source_variable": "reclassification",
+    "relation": "same_act",
+    "actor": "tenants.displaced",
+    "variable": "turnover"
+   },
+   "premises": [],
+   "source": "\u00a79(b) paying each household a relocation payment of $8,000",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "landlords.controlled",
+    "source_variable": "reclassification",
+    "relation": "same_act",
+    "actor": "tenants.displaced",
+    "variable": "relocation_out_of_area"
+   },
+   "premises": [
+    "Some displaced households' next-best home is outside Tessford, and some outside Ambry County."
+   ],
+   "source": "Of households displaced by building sales in 2019 to 2024, 42% left Tessford and 17% left Ambry County.",
+   "premise_class": "mobility"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "landlords.controlled",
+    "source_variable": "reclassification",
+    "relation": "same_act",
+    "actor": "tenants.senior_displaced",
+    "variable": "turnover"
+   },
+   "premises": [],
+   "source": "\u00a79(b) $12,000 for a household with a member aged 65 or over",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "landlords.controlled",
+    "source_variable": "reclassification",
+    "relation": "same_act",
+    "actor": "tenants.senior_displaced",
+    "variable": "relocation_out_of_area"
+   },
+   "premises": [
+    "Some displaced households' next-best home is outside Tessford, and some outside Ambry County."
+   ],
+   "source": "Of households displaced by building sales in 2019 to 2024, 42% left Tessford and 17% left Ambry County.",
+   "premise_class": "mobility"
+  }
+ ],
+ "landlords.county": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "landlords.county",
+    "source_variable": "quantity_traded",
+    "relation": "supply_price",
+    "actor": "renters.neighbors",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "More than about 115 households shut out of Tessford settle elsewhere in Ambry County each year, and county rental supply cannot expand at an unchanged cost in the medium horizon."
+   ],
+   "source": "unincorporated areas: about 41,000 rental homes outside Tessford, with a vacancy rate of about 4%",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "landlords.county",
+    "source_variable": "quantity_traded",
+    "relation": "supply_price",
+    "actor": "tenants.senior",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "More than about 115 households shut out of Tessford settle elsewhere in Ambry County each year, and county rental supply cannot expand at an unchanged cost in the medium horizon."
+   ],
+   "source": "unincorporated areas: about 41,000 rental homes outside Tessford, with a vacancy rate of about 4%",
+   "premise_class": "other"
+  }
+ ],
+ "officials.enforcement": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.enforcement",
+    "source_variable": "enforcement_cost",
+    "relation": "paid_from",
+    "actor": "officials.enforcement",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "source": "\u00a711: funded by an annual fee of $90 per covered unit",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.enforcement",
+    "source_variable": "non_tax_receipts",
+    "relation": "paid_into",
+    "actor": "officials.enforcement",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "source": "\u00a711: funded by an annual fee of $90 per covered unit ... fines up to $5,000",
+   "premise_class": "other"
+  }
+ ],
+ "owners.withdrawn": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k3_relet",
+    "chooser": "owners.withdrawn",
+    "actor": "homebuyers",
+    "variables": [
+     "quantity_traded"
+    ]
+   },
+   "premises": [
+    "Owners sell withdrawn units as condominiums."
+   ],
+   "source": "Owners usually sell withdrawn units as condominiums (state law allows conversion with a subdivision map) or occupy them.",
+   "premise_class": "alternative_uses"
+  }
+ ],
+ "tenants.controlled": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "tenants.controlled",
+    "actor": "tenants.controlled",
+    "variables": [
+     "turnover"
+    ]
+   },
+   "premises": [
+    "Without the ordinance, some sitting tenants would have left Tessford (and some seniors Ambry County), priced out or for opportunities elsewhere."
+   ],
+   "source": "About 18% of covered households move out each year (about 9,400).",
+   "premise_class": "mobility"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "tenants.controlled",
+    "actor": "tenants.controlled",
+    "variables": [
+     "relocation_out_of_area"
+    ]
+   },
+   "premises": [
+    "Without the ordinance, some sitting tenants would have left Tessford (and some seniors Ambry County), priced out or for opportunities elsewhere."
+   ],
+   "source": "About 38% leave Tessford (about 3,550 a year).",
+   "premise_class": "mobility"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "tenants.controlled",
+    "actor": "tenants.controlled",
+    "variables": [
+     "job_changes"
+    ]
+   },
+   "premises": [
+    "Some job opportunities for sitting tenants would require leaving the unit."
+   ],
+   "source": "31% of those who left Tessford gave a rent increase as the main reason.",
+   "premise_class": "mobility"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_cov",
+    "kind": "adjust",
+    "actor": "tenants.controlled",
+    "variables": [
+     "quality_per_unit"
+    ],
+    "side": "seller"
+   },
+   "premises": [
+    "The housing code leaves room to cut maintenance above the legal minimum."
+   ],
+   "source": "\u00a73 cap on rent of a sitting tenant",
+   "premise_class": "other"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "tenants.controlled"
+   },
+   "premises": [
+    "Landlords, tenant unions and senior advocates can organize at a cost below their stakes.",
+    "Rent regulation would have been contested on the counterfactual path."
+   ],
+   "source": "In November 2026 a majority of the newly elected council and the mayor campaigned on rent regulation",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.controlled",
+    "source_variable": "turnover",
+    "relation": "same_act",
+    "actor": "landlords.controlled",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Each covered unit a sitting tenant does not leave is one fewer vacancy offered to new tenants."
+   ],
+   "source": "About 18% of covered households move out each year (about 9,400).",
+   "premise_class": "other"
+  }
+ ],
+ "tenants.displaced": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.displaced",
+    "source_variable": "side_payments",
+    "relation": "same_act",
+    "actor": "tenants.displaced",
+    "variable": "resources_available_other_uses"
+   },
+   "premises": [],
+   "source": "\u00a79(b) paying each household a relocation payment of $8,000",
+   "premise_class": "other"
+  }
+ ],
+ "tenants.prospective": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.prospective",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "renters.neighbors",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Some seekers shut out of Tessford settle elsewhere in the county and in Durnside and commute.",
+    "More than about 115 households shut out of Tessford settle elsewhere in Ambry County each year, and county rental supply cannot expand at an unchanged cost in the medium horizon."
+   ],
+   "source": "Corvell (92,000 people, 12 km away, about 14,000 rental homes), Wick Hollow, unincorporated areas",
+   "premise_class": "mobility"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.prospective",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "renters.durnside",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Some seekers shut out of Tessford settle elsewhere in the county and in Durnside and commute.",
+    "More than about 35 households shut out of Tessford settle in Durnside each year, and Durnside's supply cannot expand at once."
+   ],
+   "source": "Durnside ... 22 minutes from central Tessford by rail",
+   "premise_class": "mobility"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.prospective",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "tenants.prospective",
+    "variable": "price_substitute"
+   },
+   "premises": [
+    "Covered and exempt Tessford units are close substitutes."
+   ],
+   "source": "Exempt rental homes: about 17,000 flats in buildings first occupied in or after 1990, and about 12,000 rented houses and condominiums.",
+   "premise_class": "substitutability"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.prospective",
+    "source_variable": "price_substitute",
+    "relation": "yield",
+    "actor": "developers",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Owners and developers expect the exemption of post-1989 buildings to last."
+   ],
+   "source": "buildings first occupied on or after that date are exempt",
+   "premise_class": "expectations"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.prospective",
+    "source_variable": "price_paid",
+    "relation": "substitute",
+    "actor": "tenants.controlled",
+    "variable": "relocation_out_of_area"
+   },
+   "premises": [
+    "Because of the policy, free rents in Tessford (exempt units, initial rents of new covered tenancies) rise more than rents elsewhere in Ambry County, for the homes movers choose (core re-run A-N1, widened from seniors to all movers)."
+   ],
+   "source": "On a new tenancy the landlord may set the initial rent.",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.prospective",
+    "source_variable": "price_paid",
+    "relation": "yield",
+    "actor": "landlords.controlled",
+    "variable": "return_on_capital"
+   },
+   "premises": [
+    "Because of the policy, free rents in Tessford (exempt units, initial rents of new covered tenancies) rise more than rents elsewhere in Ambry County, for the homes movers choose (core re-run A-N1, widened from seniors to all movers)."
+   ],
+   "source": "On a new tenancy the landlord may set the initial rent.",
+   "premise_class": "other"
+  }
+ ],
+ "tenants.senior": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k4",
+    "chooser": "tenants.senior",
+    "actor": "tenants.senior",
+    "variables": [
+     "turnover"
+    ],
+    "inverse": true
+   },
+   "premises": [
+    "Some qualifying seniors leave covered units for rentals in Ambry County and claim the credit."
+   ],
+   "source": "\u00a77(a): A tenant aged 65 or over who vacates a covered unit after at least three years' continuous tenancy ... may apply for a Portable Senior Credit",
+   "premise_class": "other"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k4",
+    "chooser": "tenants.senior",
+    "actor": "homebuyers",
+    "variables": [
+     "quantity_traded"
+    ]
+   },
+   "premises": [
+    "Some qualifying seniors who would have moved in with family or bought a home in the county rent instead, to keep the credit (core re-run A-N6)."
+   ],
+   "source": "\u00a77(c): The City pays the credit monthly to the landlord of any rental dwelling in Ambry County in which the tenant resides",
+   "premise_class": "substitutability"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k4",
+    "actor": "tenants.senior"
+   },
+   "premises": [
+    "Landlords, tenant unions and senior advocates can organize at a cost below their stakes."
+   ],
+   "source": "\u00a77 Portable Senior Credit; senior advocates",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.senior",
+    "source_variable": "turnover",
+    "relation": "same_act",
+    "actor": "landlords.controlled",
+    "variable": "quantity_supplied"
+   },
+   "premises": [],
+   "source": "They move out at about 6% a year (about 470)",
+   "premise_class": "other"
+  }
+ ],
+ "tenants.senior_displaced": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.senior_displaced",
+    "source_variable": "side_payments",
+    "relation": "same_act",
+    "actor": "tenants.senior_displaced",
+    "variable": "resources_available_other_uses"
+   },
+   "premises": [],
+   "source": "\u00a79(b) $12,000 for a household with a member aged 65 or over",
+   "premise_class": "other"
+  }
+ ],
+ "tenants.senior_near": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.senior_near",
+    "source_variable": "turnover",
+    "relation": "same_act",
+    "actor": "landlords.controlled",
+    "variable": "quantity_supplied"
+   },
+   "premises": [],
+   "source": "6,400 of them with at least three years in their present home",
+   "premise_class": "other"
+  }
+ ],
+ "tenants.subtenants": [],
+ "tenants.sublessors": [
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_sublet",
+    "kind": "outside",
+    "actor": "tenants.sublessors",
+    "variables": [
+     "informal_activity"
+    ]
+   },
+   "premises": [
+    "Some sublets above the controlled rent go undetected."
+   ],
+   "source": "a sublet needs the landlord's consent and may not be at more than the tenant's rent",
+   "premise_class": "enforcement"
+  }
+ ],
+ "developers": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "developers",
+    "source_variable": "investment_target",
+    "relation": "supply",
+    "actor": "tenants.prospective",
+    "variable": "price_substitute",
+    "horizon": "long"
+   },
+   "premises": [
+    "Owners and developers expect the exemption of post-1989 buildings to last."
+   ],
+   "source": "buildings first occupied on or after that date are exempt",
+   "premise_class": "expectations"
+  }
+ ],
+ "homebuyers": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "homebuyers",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "tenants.prospective",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Fewer than about 58% of buyers of withdrawn units vacate a Tessford rental to buy, so each withdrawal adds to excess demand for Tessford rentals (core re-run A-N8)."
+   ],
+   "source": "Owners usually sell withdrawn units as condominiums",
+   "premise_class": "other"
+  }
+ ],
+ "landlords.controlled#2": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "landlords.controlled",
+    "variable": "quantity_supplied",
+    "direction": "decrease",
+    "kind": "empirical"
+   },
+   "premises": [
+    "Any rise in covered vacancies from qualifying seniors' turnover is smaller than the fall in vacancies from keepers and withdrawals (core re-run A-N9)."
+   ],
+   "source": "About 15% of households in withdrawn buildings would be seniors, as in the stock; 150 to 400 units a year will be withdrawn under \u00a79",
+   "premise_class": "other"
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "landlords.controlled",
+    "variable": "return_on_capital",
+    "direction": "decrease",
+    "kind": "empirical"
+   },
+   "premises": [
+    "In the medium horizon, what covered landlords gain from higher initial rents on new tenancies is smaller than what they lose on tenancies in place, in fees, relocation payments and buyouts (new)."
+   ],
+   "source": "fee ... $90 per covered unit; relocation payment of $8,000, or $12,000; On a new tenancy the landlord may set the initial rent.",
+   "premise_class": "other"
+  }
+ ],
+ "renters.neighbors": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "renters.neighbors",
+    "source_variable": "price_paid",
+    "relation": "yield",
+    "actor": "landlords.county",
+    "variable": "return_on_capital"
+   },
+   "premises": [],
+   "source": "unincorporated areas: about 41,000 rental homes outside Tessford",
+   "premise_class": "other"
+  }
+ ],
+ "renters.durnside": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "renters.durnside",
+    "source_variable": "price_paid",
+    "relation": "yield",
+    "actor": "landlords.durnside",
+    "variable": "return_on_capital"
+   },
+   "premises": [],
+   "source": "Durnside (Selcombe County; 60,000 people, about 11,000 rental homes, no rent regulation)",
+   "premise_class": "other"
+  }
+ ],
+ "tenants.controlled#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.controlled",
+    "source_variable": "resources_available_other_uses",
+    "relation": "input",
+    "actor": "tenants.controlled",
+    "variable": "turnover"
+   },
+   "premises": [
+    "Savings built from the capped rent can pay for a move that the cap itself makes less attractive."
+   ],
+   "source": "\u00a73 cap: the gap between the capped and the market rent stays with the sitting tenant",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.controlled",
+    "source_variable": "resources_available_other_uses",
+    "relation": "input",
+    "actor": "tenants.controlled",
+    "variable": "relocation_out_of_area"
+   },
+   "premises": [
+    "Savings built from the capped rent can pay for a move that the cap itself makes less attractive."
+   ],
+   "source": "\u00a73 cap: the gap between the capped and the market rent stays with the sitting tenant",
+   "premise_class": "other"
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "tenants.controlled",
+    "variable": "turnover",
+    "direction": "decrease",
+    "kind": "empirical"
+   },
+   "premises": [
+    "For insiders who keep their units, the forfeit of the future gap outweighs any move that savings built from the gap make affordable (CR-4 exception).",
+    "Buyouts move fewer keepers out of their units than the cap and the for-cause rule hold in place (core re-run A-N3; PC-7 1.4 and PC-21 1.4, Assumes)."
+   ],
+   "source": "\u00a73 cap and \u00a74 for-cause rule hold sitting tenants in place; buyouts",
+   "premise_class": "other"
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "tenants.controlled",
+    "variable": "relocation_out_of_area",
+    "direction": "decrease",
+    "kind": "empirical"
+   },
+   "premises": [
+    "For insiders who keep their units, the forfeit of the future gap outweighs any move that savings built from the gap make affordable (CR-4 exception).",
+    "For non-qualifying keepers, the lock-in from forfeiting the gap outweighs any diversion of their remaining moves out of Tessford, or out of Ambry County, by the policy's rise in Tessford's free rents relative to destinations (new; the dominance premise PC-21 1.4 asks for)."
+   ],
+   "source": "About 38% leave Tessford (about 3,550 a year).",
+   "premise_class": "other"
+  },
+  {
+   "part": "parts",
+   "fact": {
+    "part": "tenants.controlled",
+    "whole": "tenants.nonsenior"
+   },
+   "premises": [],
+   "source": "Non-senior households leave Tessford at about 3,340 a year.",
+   "premise_class": "other"
+  }
+ ],
+ "tenants.displaced#2": [
+  {
+   "part": "parts",
+   "fact": {
+    "part": "tenants.displaced",
+    "whole": "tenants.nonsenior"
+   },
+   "premises": [],
+   "source": "Of households displaced by building sales in 2019 to 2024, 42% left Tessford and 17% left Ambry County.",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.displaced",
+    "source_variable": "relocation_out_of_area",
+    "relation": "supply_price",
+    "actor": "renters.neighbors",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "More than about 115 households shut out of Tessford settle elsewhere in Ambry County each year, and county rental supply cannot expand at an unchanged cost in the medium horizon."
+   ],
+   "source": "60% of them to elsewhere in Ambry County, 40% beyond it",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.displaced",
+    "source_variable": "relocation_out_of_area",
+    "relation": "supply_price",
+    "actor": "renters.durnside",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "More than about 35 households shut out of Tessford settle in Durnside each year, and Durnside's supply cannot expand at once."
+   ],
+   "source": "about 35 go to Durnside",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.displaced",
+    "source_variable": "turnover",
+    "relation": "same_act",
+    "actor": "tenants.prospective",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Some displaced households rent another home in Tessford."
+   ],
+   "source": "Of households displaced by building sales in 2019 to 2024, 42% left Tessford",
+   "premise_class": "mobility"
+  }
+ ],
+ "tenants.prospective#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "tenants.prospective",
+    "source_variable": "quantity_demanded",
+    "relation": "supply_price",
+    "actor": "tenants.prospective",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Rental buildings last several decades, so the stock changes slowly."
+   ],
+   "source": "Covered buildings hold 52,000 rental homes, almost all occupied (vacancy 3%)",
+   "premise_class": "durability"
+  }
+ ],
+ "tenants.senior#2": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "tenants.senior",
+    "variable": "price_paid",
+    "direction": "decrease",
+    "kind": "empirical"
+   },
+   "premises": [
+    "The rise in county rents caused by the policy is far smaller than the credit for those who hold it."
+   ],
+   "source": "\u00a77(b) The credit is the amount by which the registered market rent of the vacated unit exceeds the rent the tenant would have paid",
+   "premise_class": "other"
+  }
+ ],
+ "tenants.senior_displaced#2": [],
+ "tenants.sublessors#2": [],
+ "general_fund#2": [],
+ "officials.enforcement#2": [],
+ "recipients.other_spending": [],
+ "tenants.nonsenior": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "tenants.nonsenior",
+    "variable": "relocation_out_of_area",
+    "direction": "decrease",
+    "kind": "empirical"
+   },
+   "premises": [
+    "By the third year, the cap cuts non-qualifying keepers' moves out of Tessford by more than 5% of the counterfactual (about 170 a year), more than the displaced non-senior households who leave the city (at most about 145 a year)."
+   ],
+   "source": "Non-senior households leave Tessford at about 3,340 a year; by the third year the cap cuts keepers' moves",
+   "premise_class": "other"
+  }
+ ],
+ "tenants.prospective#3": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "tenants.prospective",
+    "variable": "quantity_demanded",
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "Fewer than about 58% of buyers of withdrawn units vacate a Tessford rental to buy, so each withdrawal adds to excess demand for Tessford rentals (core re-run A-N8)."
+   ],
+   "source": "Of households displaced by building sales in 2019 to 2024, 42% left Tessford; buyers of withdrawn units",
+   "premise_class": "other"
+  }
+ ],
+ "landlords.controlled#3": [],
+ "landlords.county#2": [],
+ "landlords.durnside": [],
+ "tenants.controlled#3": [],
+ "tenants.senior#3": []
+}
