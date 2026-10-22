@@ -1,0 +1,79 @@
+DONE in 3 rounds, 21 questions
+- consumers price_paid  increase
+R contractors quantity_traded  increase
+R employers.capped compliance_cost  increase
+R employers.capped lobbying_effort  increase
+R employers.capped quantity_supplied  increase
+R employers.capped resources_available_other_uses  decrease
+R employers.near_threshold employment  decrease
+R employers.near_threshold employment announcement decrease
+R employers.near_threshold lobbying_effort  increase
+R employers.near_threshold reclassification  increase
+R employers.offering compliance_cost  increase
+R employers.offering investment_target  decrease
+R employers.offering lobbying_effort  increase
+R employers.offering quantity_supplied  decrease
+R employers.offering quantity_traded  decrease
+R employers.offering resources_available_other_uses  decrease
+R employers.offering return_on_capital  decrease
+R employers.paying compliance_cost  increase
+R employers.paying investment_target  decrease
+R employers.paying legal_breach  increase
+R employers.paying lobbying_effort  increase
+R employers.paying quantity_substitute  increase
+R employers.paying quantity_supplied  decrease
+R employers.paying quantity_traded  decrease
+R employers.paying resources_available_other_uses  decrease
+R employers.paying return_on_capital  decrease
+R employers.seasonal employment  ambiguous
+R employers.seasonal quantity_traded  ambiguous
+R employers.seasonal reclassification  ambiguous
+R employers.seasonal resources_available_other_uses  ambiguous
+R employers.small quantity_supplied  increase
+R input_suppliers quantity_traded  decrease
+R insurers compliance_cost  increase
+R insurers lobbying_effort  increase
+R insurers quantity_traded  increase
+R insurers resources_available_other_uses  decrease
+R insurers.individual_market quantity_traded  decrease
+R officials.enforcement enforcement_cost  increase
+R officials.revenue enforcement_cost  increase
+R officials.revenue non_tax_receipts  increase
+R officials.revenue tax_revenue_vs_static_projection  decrease
+R owners.near_threshold asset_value  decrease
+R owners.offering asset_value  decrease
+R owners.paying asset_value  decrease
+R producers.tarnley quantity_supplied  increase
+R sellers.hospital_care quantity_traded  increase
+R taxpayers resources_available_other_uses  increase
+R treasury fund_balance  increase
+R treasury subsidy_outlay  decrease
+R unions lobbying_effort  increase
+R workers.at_capped_firms ['employment', 'hours_worked']  at_least_one_increase
+R workers.at_near_threshold_firms employment  decrease
+R workers.at_offering_firms earnings  decrease
+R workers.at_offering_firms ['employment', 'hours_worked', 'non_wage_compensation']  at_least_one_decrease
+R workers.at_offering_firms hours_worked  increase
+R workers.at_offering_firms non_wage_compensation  increase
+R workers.at_offering_firms quantity_substitute  decrease
+R workers.at_offering_firms quantity_traded  decrease
+R workers.at_offering_firms tax_share_borne  increase
+R workers.at_offering_firms wage_rate  decrease
+R workers.at_paying_firms earnings  decrease
+R workers.at_paying_firms ['employment', 'hours_worked', 'non_wage_compensation']  at_least_one_decrease
+R workers.at_paying_firms hours_worked  increase
+R workers.at_paying_firms quantity_traded  decrease
+R workers.at_paying_firms tax_share_borne  increase
+R workers.at_paying_firms wage_rate  decrease
+- workers.at_seasonal_firms hours_worked  ambiguous
+R workers.at_seasonal_firms quantity_traded  ambiguous
+R workers.at_unbound_firms employment  ambiguous
+R workers.at_unbound_firms ['employment', 'hours_worked']  at_least_one_increase
+R workers.cross_border employment  ambiguous
+R workers.cross_border ['employment', 'hours_worked']  at_least_one_increase
+R workers.min_wage earnings  decrease
+R workers.min_wage ['employment', 'hours_worked', 'non_wage_compensation']  at_least_one_decrease
+R workers.min_wage quantity_traded  decrease
+R workers.near_30_hours earnings  decrease
+R workers.near_30_hours hours_worked  decrease
+R workers.part_time employment  ambiguous
