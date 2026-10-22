@@ -1,0 +1,133 @@
+{
+ "customers": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "customers",
+    "actor": "households",
+    "variables": [
+     "home_production"
+    ],
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Home braiding by family or friends is a feasible substitute for some customers."
+   ],
+   "premise_class": "substitutability",
+   "source": "Unclear provisions: whether unpaid braiding for family and friends is covered. Assumed not covered (only braiding for pay is)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "customers",
+    "actor": "customers",
+    "variables": [
+     "quality_per_unit"
+    ],
+    "inverse": true
+   },
+   "premises": [
+    "What customers move to (home braiding by family and friends, unlicensed braiders) is of lower quality than the paid braiding it replaces."
+   ],
+   "premise_class": "other",
+   "source": "The curriculum covers cutting, coloring and chemical treatments; braiding is a small part or absent."
+  }
+ ],
+ "officials.enforcement": [],
+ "schools": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "schools"
+   },
+   "premises": [
+    "Schools, licensed cosmetologists and braiders can organize and spend to change or defend the requirement at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "1,500 hours at a licensed cosmetology school (typical tuition $12,000 to $18,000)"
+  }
+ ],
+ "sellers.current": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "sellers.current",
+    "actor": "schools",
+    "variables": [
+     "enrollment"
+    ]
+   },
+   "premises": [
+    "Some current braiders or new entrants choose to obtain the full license."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "A full cosmetology license: 1,500 hours at a licensed cosmetology school ... and a state exam. Existing braiders have 12 months to comply."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "sellers.current",
+    "actor": "sellers.current",
+    "variables": [
+     "relocation_out_of_area"
+    ]
+   },
+   "premises": [
+    "Braiders relocate to neighboring states on a meaningful scale."
+   ],
+   "premise_class": "mobility",
+   "source": "Two neighboring states do not license braiding; their borders are a long drive from the main cities."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.current",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "licensees",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Licensed cosmetologists take some of the customers who leave unlicensed braiders."
+   ],
+   "premise_class": "substitutability",
+   "source": "Bound: Anyone who braids for pay, and any business that employs them (licensed cosmetologists are the only legal braiders)."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "sellers.current"
+   },
+   "premises": [
+    "Schools, licensed cosmetologists and braiders can organize and spend to change or defend the requirement at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "About 2,000 people braid for pay, mostly self-employed, many working from home or in small shops."
+  }
+ ],
+ "taxpayers": [],
+ "households": [],
+ "licensees": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "licensees"
+   },
+   "premises": [
+    "Schools, licensed cosmetologists and braiders can organize and spend to change or defend the requirement at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "A full cosmetology license: 1,500 hours at a licensed cosmetology school (typical tuition $12,000 to $18,000) and a state exam."
+  }
+ ],
+ "schools#2": [],
+ "sellers.current#2": [],
+ "licensees#2": []
+}

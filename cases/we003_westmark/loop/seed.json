@@ -1,0 +1,39 @@
+{
+ "name": "WE-003 hair braiding licence (loop)",
+ "exchanges": [
+  {"id": "e1", "buyer": "customers", "seller": "sellers.current",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "banned": [
+  {"component": "k1", "exchange": "e1", "premises": ["a1", "a2"]}
+ ],
+ "charges": [
+  {"component": "k1", "exchange": "e1", "payer_side": "seller", "receiver": "schools",
+   "receipt_variable": "non_tax_receipts", "basis": "operating",
+   "premises": ["a1", "a2"], "branch_premises": ["a10"]}
+ ],
+ "margins": [
+  {"exchange": "e1", "kind": "outside", "actor": "sellers.current", "variables": ["informal_activity"], "premises": ["a3"]}
+ ],
+ "moves": [
+  {"exchange": "e1", "side": "buyer", "horizon": "medium", "premises": ["a11"]}
+ ],
+ "compliance": [{"component": "k1", "actor": "sellers.current"}],
+ "enforcers": [{"component": "k2", "actor": "officials.enforcement"}],
+ "funded": [{"component": "k2", "actor": "taxpayers", "premises": ["a8"]}],
+ "fixed_budget": [{"component": "k2", "actor": "officials.enforcement", "premises": ["a12"]}],
+ "unclear": [
+  {"id": "U1", "text": "Whether unpaid braiding for family and friends is covered.",
+   "readings": ["U1-a: only braiding for pay is covered (assumed)", "U1-b: unpaid braiding for family and friends is covered too"],
+   "components": {"U1-a": [], "U1-b": []}}
+ ],
+ "assumptions": {
+  "a1": {"text": "Few current braiders already hold a cosmetology license, so the requirement binds.", "p": 0.95, "class": "binding"},
+  "a2": {"text": "The board enforces the requirement often enough that many braiders comply or stop.", "p": 0.7, "class": "enforcement"},
+  "a3": {"text": "Some braiders keep working without a license and are not caught.", "p": 0.8, "class": "enforcement"},
+  "a8": {"text": "The board's budget is raised for the new enforcement task (appropriation and fees), rather than the task being absorbed within a fixed budget.", "p": 0.6, "class": "revenue_use"},
+  "a10": {"text": "Some current braiders or new entrants choose to obtain the full license.", "p": 0.8, "class": "alternative_uses"},
+  "a11": {"text": "With fewer braiders offering legal braiding, customers pay a higher price for it.", "p": 0.7, "class": "other"},
+  "a12": {"text": "The board absorbs the new enforcement task within a fixed budget, so its other work gives way.", "p": 0.4, "class": "revenue_use"}
+ }
+}

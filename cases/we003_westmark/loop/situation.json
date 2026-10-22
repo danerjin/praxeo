@@ -1,0 +1,294 @@
+{
+ "name": "WE-003 hair braiding licence (loop)",
+ "exchanges": [
+  {
+   "id": "e1",
+   "buyer": "customers",
+   "seller": "sellers.current",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "a3"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "kind": "outside",
+   "side": null,
+   "actor": "sellers.current",
+   "variables": [
+    "informal_activity"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q8_home_braiding_by_family_or_friends_is_a_"
+   ],
+   "reading": "U1-a",
+   "component": "k1",
+   "chooser": "customers",
+   "actor": "households",
+   "variables": [
+    "home_production"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q9_what_customers_move_to_home_braiding_by_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "customers",
+   "actor": "customers",
+   "variables": [
+    "quality_per_unit"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "a10"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "sellers.current",
+   "actor": "schools",
+   "variables": [
+    "enrollment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q11_braiders_relocate_to_neighboring_states_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "sellers.current",
+   "actor": "sellers.current",
+   "variables": [
+    "relocation_out_of_area"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q10_schools_licensed_cosmetologists_and_brai"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "schools"
+  },
+  {
+   "premises": [
+    "q10_schools_licensed_cosmetologists_and_brai"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.current"
+  },
+  {
+   "premises": [
+    "q10_schools_licensed_cosmetologists_and_brai"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "licensees"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q12_licensed_cosmetologists_take_some_of_the"
+   ],
+   "reading": null,
+   "source_actor": "sellers.current",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "licensees",
+   "variable": "quantity_supplied",
+   "horizon": null
+  }
+ ],
+ "assets": [],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "sellers.current"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k2",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k2",
+   "actor": "taxpayers",
+   "premises": [
+    "a8"
+   ]
+  }
+ ],
+ "fixed_budget": [
+  {
+   "component": "k2",
+   "actor": "officials.enforcement",
+   "premises": [
+    "a12"
+   ]
+  }
+ ],
+ "charges": [
+  {
+   "component": "k1",
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "exchange": "e1",
+   "payer_side": "seller",
+   "receiver": "schools",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [
+    "a10"
+   ],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "operating"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a11"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "buyer",
+   "horizon": "medium"
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [],
+ "timing": [],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "terms": [],
+ "banned": [
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e1"
+  }
+ ],
+ "incidence": [],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether unpaid braiding for family and friends is covered.",
+   "readings": [
+    "U1-a: only braiding for pay is covered (assumed)",
+    "U1-b: unpaid braiding for family and friends is covered too"
+   ],
+   "components": {
+    "U1-a": [],
+    "U1-b": []
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [],
+ "assumptions": {
+  "a1": {
+   "text": "Few current braiders already hold a cosmetology license, so the requirement binds.",
+   "p": 0.95,
+   "class": "binding"
+  },
+  "a2": {
+   "text": "The board enforces the requirement often enough that many braiders comply or stop.",
+   "p": 0.7,
+   "class": "enforcement"
+  },
+  "a3": {
+   "text": "Some braiders keep working without a license and are not caught.",
+   "p": 0.8,
+   "class": "enforcement"
+  },
+  "a8": {
+   "text": "The board's budget is raised for the new enforcement task (appropriation and fees), rather than the task being absorbed within a fixed budget.",
+   "p": 0.6,
+   "class": "revenue_use"
+  },
+  "a10": {
+   "text": "Some current braiders or new entrants choose to obtain the full license.",
+   "p": 0.8,
+   "class": "alternative_uses"
+  },
+  "a11": {
+   "text": "With fewer braiders offering legal braiding, customers pay a higher price for it.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "a12": {
+   "text": "The board absorbs the new enforcement task within a fixed budget, so its other work gives way.",
+   "p": 0.4,
+   "class": "revenue_use"
+  },
+  "q8_home_braiding_by_family_or_friends_is_a_": {
+   "text": "Home braiding by family or friends is a feasible substitute for some customers.",
+   "p": 0.75,
+   "class": "substitutability"
+  },
+  "q9_what_customers_move_to_home_braiding_by_": {
+   "text": "What customers move to (home braiding by family and friends, unlicensed braiders) is of lower quality than the paid braiding it replaces.",
+   "p": 0.45,
+   "class": "other"
+  },
+  "q10_schools_licensed_cosmetologists_and_brai": {
+   "text": "Schools, licensed cosmetologists and braiders can organize and spend to change or defend the requirement at a cost below their stakes.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q11_braiders_relocate_to_neighboring_states_": {
+   "text": "Braiders relocate to neighboring states on a meaningful scale.",
+   "p": 0.3,
+   "class": "mobility"
+  },
+  "q12_licensed_cosmetologists_take_some_of_the": {
+   "text": "Licensed cosmetologists take some of the customers who leave unlicensed braiders.",
+   "p": 0.6,
+   "class": "substitutability"
+  }
+ }
+}
