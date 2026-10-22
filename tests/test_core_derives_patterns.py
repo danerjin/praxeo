@@ -9,7 +9,7 @@ P = {"text": "premise", "p": 0.9}
 def _run(**parts):
     sit = {"name": "check", "exchanges": [], **parts}
     used = {p for v in parts.values() if isinstance(v, list) for x in v if isinstance(x, dict)
-            for p in (x.get("premises") or []) + x.get("quantity_premises", []) + x.get("branch_premises", [])}
+            for p in (x.get("premises") or []) + x.get("quantity_premises", []) + x.get("branch_premises", []) + x.get("budget_premises", [])}
     sit["assumptions"] = {k: P for k in used | {"a1"}}
     return {(c.actor_class, c.variable if not c.group else ",".join(c.group), c.sign, c.window)
             for c in S.run(S.Situation(**sit)) if c.reported}
@@ -423,3 +423,9 @@ def test_a_charge_rests_on_its_own_binding_premise_and_a_road_carries_crowding()
     sit["assumptions"]["a5"]["p"] = 0.9
     got = {(c.actor_class, c.variable, c.sign) for c in S.run(S.Situation(**sit)) if c.reported}
     assert ("drivers.through", "travel_time", "decrease") in got
+
+
+def test_sb_a_grant_with_a_fixed_budget_is_rationed():
+    g = [{**GRANT["grants"][0], "budget_premises": ["a4"]}]
+    got = _run(exchanges=GRANT["exchanges"], grants=g)
+    assert ("producers", "wait_time,allocation_by_non_price_criteria", "at_least_one_increase", None) in got

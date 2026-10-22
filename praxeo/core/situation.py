@@ -104,9 +104,12 @@ class Grant(BaseModel):
     recipient_side: Side
     payer: str = Field(description="Who pays it out (an agency or fund)")
     outlay_variable: Optional[str] = Field(default="subsidy_outlay")
+    budget_premises: list[str] = Field(default=[], max_length=3, description="The grant's total is fixed and more would claim it than it covers: it is rationed by waiting or other criteria")
 
 
 class Threshold(Premised):
+    """A line in a measure of size past which the component binds, or past which a grant is lost: crossing it is an option
+    made worse for those near it."""
     component: str
     actor: str = Field(description="Those near the line, below it")
     variable: str = Field(description="The measure of size the line is drawn in (employment, quantity_supplied)")
@@ -334,6 +337,8 @@ def facts(s: Situation) -> str:
             out.append(f"outlay_var({b.component}, {_q(b.outlay_variable)}).")
     for g in s.grants:
         out.append(f"grant({g.component}, {g.exchange}, {g.recipient_side}, {_q(g.payer)}).")
+        if g.budget_premises:
+            out.append(f"budget({g.component}, {g.exchange}, {_p(g.budget_premises)}).")
         if g.outlay_variable:
             out.append(f"outlay_var({g.component}, {_q(g.outlay_variable)}).")
     for c in s.capped:

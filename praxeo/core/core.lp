@@ -431,6 +431,14 @@ fired(cr_5, p_gmoves(C, E, S), c_granted(C, E)) :- p_gmoves(C, E, S).
 g_wedge(buyer, decrease). g_wedge(seller, increase).
 effect(p_gmoves(C, E, S), A, V, D, H, invisible, "B") :- p_gmoves(C, E, S), price_var(E, S, V), party(E, S, A), g_wedge(S, D), moves_h(E, S, H).
 g_paid(C, E) :- c_granted(C, E).
+% A grant with a fixed total (budget/5, with the premise that more would claim it than it covers) is a good supplied at a
+% set price below what clears: it is rationed by other criteria (CR-6, public supply at a set price), at least one of
+% waiting and selection by non-price criteria rising for those who claim it.
+p_budget(C, E) :- c_granted(C, E), budget(C, E, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+fired(cr_6, p_budget(C, E), P) :- p_budget(C, E), budget(C, E, P1, P2, P3), P = (P1; P2; P3), P != none.
+fired(cr_6, p_budget(C, E), c_granted(C, E)) :- p_budget(C, E).
+group_effect(p_budget(C, E), A, "wait_time,allocation_by_non_price_criteria", at_least_one_increase, short, invisible, "B") :-
+    p_budget(C, E), grant(C, E, S, _), party(E, S, A).
 fired(cr_8, g_paid(C, E), c_granted(C, E)) :- g_paid(C, E).
 effect(g_paid(C, E), A, "resources_available_other_uses", increase, short, invisible, "A") :- g_paid(C, E), grant(C, E, S, _), party(E, S, A).
 effect(g_paid(C, E), P, V, increase, short, visible, "A") :- g_paid(C, E), grant(C, E, _, P), outlay_var(C, V).
