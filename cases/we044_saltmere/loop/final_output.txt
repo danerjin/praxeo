@@ -1,0 +1,68 @@
+DONE in 3 rounds, 32 questions
+R buyers.mid_term quantity_demanded  increase
+R buyers.short_stay informal_activity  increase
+R buyers.short_stay price_paid  increase
+R buyers.short_stay quantity_demanded announcement increase
+R buyers.short_stay quantity_traded  decrease
+R buyers.short_stay quantity_traded announcement increase
+R buyers.short_stay trips  decrease
+R general_fund fund_balance  ambiguous
+R general_fund non_tax_receipts  ambiguous
+R general_fund resources_available_other_uses  decrease
+R general_fund tax_revenue  ambiguous
+R homebuyers price_paid  decrease
+R homeowners asset_value  ambiguous
+R input_suppliers.cleaning ['employment', 'hours_worked']  at_least_one_decrease
+R landlords.elsdon quantity_supplied  decrease
+R landlords.long_term quantity_supplied  increase
+R officials.enforcement enforcement_cost  ambiguous
+R officials.enforcement enforcement_cost  decrease
+R officials.registry enforcement_cost  increase
+R owners.elsdon asset_value  increase
+R owners.elsdon quantity_traded  increase
+R owners.mid_term quantity_supplied  increase
+R owners.non_primary allocation_by_non_price_criteria  increase
+R owners.non_primary asset_value  decrease
+R owners.non_primary informal_activity  increase
+R owners.non_primary lobbying_effort  increase
+R owners.non_primary quantity_supplied announcement decrease
+R owners.non_primary quantity_traded  decrease
+R owners.non_primary reclassification  increase
+R owners.non_primary return_on_capital  decrease
+R owners.non_primary turnover  increase
+R owners.non_primary units_held_vacant  increase
+R owners.occupant net_price_received  increase
+R owners.occupant quantity_supplied  increase
+R owners.occupant quantity_traded  increase
+R owners.over_90_nights informal_activity  increase
+R owners.over_90_nights legal_breach  increase
+R owners.over_90_nights quantity_traded  decrease
+R owners.primary_residence compliance_cost  increase
+R owners.primary_residence informal_activity  increase
+R owners.primary_residence net_price_received  increase
+R owners.primary_residence number_of_sellers  ambiguous
+R owners.primary_residence quantity_supplied  increase
+R owners.primary_residence quantity_traded  increase
+R owners.primary_residence resources_available_other_uses  decrease
+R owners.two_unit informal_activity  increase
+R owners.two_unit number_of_sellers  ambiguous
+R owners.two_unit quantity_traded  ambiguous
+R owners.two_unit resources_available_other_uses  ambiguous
+R owners.two_unit_over_90 informal_activity  increase
+R owners.two_unit_over_90 legal_breach  ambiguous
+R owners.two_unit_over_90 quantity_traded  ambiguous
+R platforms compliance_cost  increase
+R platforms lobbying_effort  increase
+R platforms resources_available_other_uses  decrease
+R renters price_paid  decrease
+R renters.elsdon price_paid  increase
+R retailers.elsdon quantity_traded  increase
+R retailers.neighbors quantity_traded  ambiguous
+R sellers.hotels asset_value  increase
+R sellers.hotels capital_stock_target  increase
+R sellers.hotels lobbying_effort  increase
+R sellers.hotels net_price_received  increase
+R sellers.hotels quantity_traded  increase
+R sellers.hotels return_on_capital  increase
+R workers.hotels ['employment', 'hours_worked']  at_least_one_increase
+R workers.retail ['employment', 'hours_worked']  ambiguous

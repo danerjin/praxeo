@@ -1,0 +1,1108 @@
+{
+ "name": "WE-044 Saltmere short-term rental ordinance (loop)",
+ "exchanges": [
+  {
+   "id": "e1",
+   "buyer": "buyers.short_stay",
+   "seller": "owners.non_primary",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e2",
+   "buyer": "buyers.short_stay",
+   "seller": "owners.primary_residence",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": "owners.over_90_nights",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e3",
+   "buyer": "buyers.short_stay",
+   "seller": "owners.two_unit",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": "owners.two_unit_over_90",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q14_some_guests_keep_wanting_whole_units_in_"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "kind": "outside",
+   "side": null,
+   "actor": "buyers.short_stay",
+   "variables": [
+    "informal_activity"
+   ]
+  },
+  {
+   "premises": [
+    "q23_for_some_units_complaints_are_unlikely_d"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "kind": "outside",
+   "side": null,
+   "actor": "owners.non_primary",
+   "variables": [
+    "informal_activity"
+   ]
+  },
+  {
+   "premises": [
+    "q24_hosts_in_breach_can_screen_guests_on_tra",
+    "q23_for_some_units_complaints_are_unlikely_d"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "kind": "outside",
+   "side": null,
+   "actor": "owners.non_primary",
+   "variables": [
+    "allocation_by_non_price_criteria"
+   ]
+  },
+  {
+   "premises": [
+    "q23_for_some_units_complaints_are_unlikely_d"
+   ],
+   "reading": null,
+   "exchange": "e2",
+   "kind": "outside",
+   "side": null,
+   "actor": "owners.over_90_nights",
+   "variables": [
+    "informal_activity"
+   ]
+  },
+  {
+   "premises": [
+    "q23_for_some_units_complaints_are_unlikely_d",
+    "q14_some_guests_keep_wanting_whole_units_in_"
+   ],
+   "reading": null,
+   "exchange": "e2",
+   "kind": "outside",
+   "side": null,
+   "actor": "owners.primary_residence",
+   "variables": [
+    "informal_activity"
+   ]
+  },
+  {
+   "premises": [
+    "q23_for_some_units_complaints_are_unlikely_d"
+   ],
+   "reading": null,
+   "exchange": "e3",
+   "kind": "outside",
+   "side": null,
+   "actor": "owners.two_unit",
+   "variables": [
+    "informal_activity"
+   ]
+  },
+  {
+   "premises": [
+    "q23_for_some_units_complaints_are_unlikely_d"
+   ],
+   "reading": null,
+   "exchange": "e3",
+   "kind": "outside",
+   "side": null,
+   "actor": "owners.two_unit_over_90",
+   "variables": [
+    "informal_activity"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q8_hotels_are_a_substitute_for_whole_units_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.short_stay",
+   "actor": "sellers.hotels",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q9_elsdon_is_near_enough_for_some_guests_12",
+    "q10_elsdon_str_supply_can_expand_at_close_to"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.short_stay",
+   "actor": "owners.elsdon",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q11_some_guests_on_stays_of_two_to_four_week"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.short_stay",
+   "actor": "buyers.mid_term",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q12_rooms_in_occupied_homes_and_primary_resi"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.short_stay",
+   "actor": "owners.occupant",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q12_rooms_in_occupied_homes_and_primary_resi"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.short_stay",
+   "actor": "owners.primary_residence",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q13_some_visitors_large_groups_families_have"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.short_stay",
+   "actor": "buyers.short_stay",
+   "variables": [
+    "trips"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q18_most_non_primary_units_can_be_let_on_12_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "owners.non_primary",
+   "actor": "landlords.long_term",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q19_some_owners_can_let_for_30_nights_or_mor"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "owners.non_primary",
+   "actor": "owners.mid_term",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q20_some_second_home_owners_value_their_own_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "owners.non_primary",
+   "actor": "owners.non_primary",
+   "variables": [
+    "units_held_vacant"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q21_some_owners_of_non_primary_units_sell_ra"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "owners.non_primary",
+   "actor": "owners.non_primary",
+   "variables": [
+    "turnover"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q22_some_owners_reshape_short_stays_into_nom"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "owners.non_primary",
+   "actor": "owners.non_primary",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q22_some_owners_reshape_short_stays_into_nom"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "owners.non_primary",
+   "actor": "owners.primary_residence",
+   "variables": [
+    "number_of_sellers"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q32_hosts_listing_on_more_than_one_platform_"
+   ],
+   "reading": null,
+   "component": "k1_cap",
+   "chooser": "owners.over_90_nights",
+   "actor": "owners.over_90_nights",
+   "variables": [
+    "legal_breach"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q18_most_non_primary_units_can_be_let_on_12_"
+   ],
+   "reading": null,
+   "component": "k1_ban_u1b",
+   "chooser": "owners.two_unit",
+   "actor": "landlords.long_term",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q19_some_owners_can_let_for_30_nights_or_mor"
+   ],
+   "reading": null,
+   "component": "k1_ban_u1b",
+   "chooser": "owners.two_unit",
+   "actor": "owners.mid_term",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q32_hosts_listing_on_more_than_one_platform_"
+   ],
+   "reading": null,
+   "component": "k1_cap_u1a",
+   "chooser": "owners.two_unit_over_90",
+   "actor": "owners.two_unit_over_90",
+   "variables": [
+    "legal_breach"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q25_hosts_platforms_hotels_and_neighborhood_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "owners.non_primary"
+  },
+  {
+   "premises": [
+    "q25_hosts_platforms_hotels_and_neighborhood_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "platforms"
+  },
+  {
+   "premises": [
+    "q25_hosts_platforms_hotels_and_neighborhood_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.hotels"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q17_visitors_buy_meals_and_goods_near_their_"
+   ],
+   "reading": null,
+   "source_actor": "buyers.short_stay",
+   "source_variable": "trips",
+   "relation": "complement",
+   "actor": "retailers.neighbors",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a20"
+   ],
+   "reading": null,
+   "source_actor": "general_fund",
+   "source_variable": "non_tax_receipts",
+   "relation": "paid_into",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a20"
+   ],
+   "reading": null,
+   "source_actor": "officials.registry",
+   "source_variable": "enforcement_cost",
+   "relation": "paid_from",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q27_cleaning_and_management_firms_adjust_the"
+   ],
+   "reading": null,
+   "source_actor": "owners.non_primary",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "input_suppliers.cleaning",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q28_nuisance_complaints_per_operating_str_un"
+   ],
+   "reading": null,
+   "source_actor": "owners.non_primary",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "officials.enforcement",
+   "variable": "enforcement_cost",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "owners.non_primary",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "general_fund",
+   "variable": "tax_revenue",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q29_more_than_about_49_of_whole_unit_hosts_w"
+   ],
+   "reading": null,
+   "source_actor": "owners.non_primary",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "general_fund",
+   "variable": "non_tax_receipts",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q30_some_buyers_value_fewer_transient_neighb"
+   ],
+   "reading": null,
+   "source_actor": "owners.non_primary",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "homeowners",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q31_investors_are_a_material_part_of_demand_"
+   ],
+   "reading": null,
+   "source_actor": "owners.non_primary",
+   "source_variable": "asset_value",
+   "relation": "yield",
+   "actor": "homeowners",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q21_some_owners_of_non_primary_units_sell_ra"
+   ],
+   "reading": null,
+   "source_actor": "owners.non_primary",
+   "source_variable": "turnover",
+   "relation": "supply",
+   "actor": "homebuyers",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "general_fund",
+   "source_variable": "tax_revenue",
+   "relation": "paid_into",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q33_units_added_to_the_long_term_market_are_"
+   ],
+   "reading": null,
+   "source_actor": "landlords.long_term",
+   "source_variable": "quantity_supplied",
+   "relation": "supply",
+   "actor": "renters",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q34_residents_of_units_moved_to_12_month_lea"
+   ],
+   "reading": null,
+   "source_actor": "landlords.long_term",
+   "source_variable": "quantity_supplied",
+   "relation": "complement",
+   "actor": "retailers.neighbors",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q35_some_elsdon_owners_move_units_from_long_"
+   ],
+   "reading": null,
+   "source_actor": "owners.elsdon",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "landlords.elsdon",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a30"
+   ],
+   "reading": null,
+   "source_actor": "owners.elsdon",
+   "source_variable": "quantity_traded",
+   "relation": "yield",
+   "actor": "owners.elsdon",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q17_visitors_buy_meals_and_goods_near_their_"
+   ],
+   "reading": null,
+   "source_actor": "owners.elsdon",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "retailers.elsdon",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q36_the_supply_of_rooms_in_occupied_homes_an"
+   ],
+   "reading": null,
+   "source_actor": "owners.occupant",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "owners.occupant",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q37_some_owner_occupiers_have_rooms_or_night"
+   ],
+   "reading": null,
+   "source_actor": "owners.occupant",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "owners.occupant",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q36_the_supply_of_rooms_in_occupied_homes_an"
+   ],
+   "reading": null,
+   "source_actor": "owners.primary_residence",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "owners.primary_residence",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q37_some_owner_occupiers_have_rooms_or_night"
+   ],
+   "reading": null,
+   "source_actor": "owners.primary_residence",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "owners.primary_residence",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "retailers.neighbors",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.retail",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q38_hotel_rooms_cannot_be_added_in_the_short"
+   ],
+   "reading": null,
+   "source_actor": "sellers.hotels",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "sellers.hotels",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "sellers.hotels",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "general_fund",
+   "variable": "tax_revenue",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "sellers.hotels",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.hotels",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "landlords.elsdon",
+   "source_variable": "quantity_supplied",
+   "relation": "supply",
+   "actor": "renters.elsdon",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "sellers.hotels",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "sellers.hotels",
+   "variable": "return_on_capital",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a30"
+   ],
+   "reading": null,
+   "source_actor": "sellers.hotels",
+   "source_variable": "return_on_capital",
+   "relation": "yield",
+   "actor": "sellers.hotels",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q39_hotels_can_obtain_sites_and_permits_to_a"
+   ],
+   "reading": null,
+   "source_actor": "sellers.hotels",
+   "source_variable": "return_on_capital",
+   "relation": "yield",
+   "actor": "sellers.hotels",
+   "variable": "capital_stock_target",
+   "horizon": "long"
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "a30"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "seller",
+   "actor": "owners.non_primary"
+  }
+ ],
+ "yields": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "seller",
+   "actor": "owners.non_primary"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k2",
+   "actor": "platforms"
+  },
+  {
+   "component": "k3",
+   "actor": "owners.primary_residence"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k2",
+   "actor": "officials.registry"
+  },
+  {
+   "component": "k3",
+   "actor": "officials.registry"
+  },
+  {
+   "component": "k4",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k3",
+   "actor": "general_fund",
+   "premises": [
+    "a20"
+   ]
+  }
+ ],
+ "fixed_budget": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement",
+   "premises": [
+    "j3"
+   ]
+  }
+ ],
+ "charges": [
+  {
+   "component": "k3",
+   "premises": [
+    "a2"
+   ],
+   "exchange": "e2",
+   "payer_side": "seller",
+   "receiver": "general_fund",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "operating"
+  },
+  {
+   "component": "k3_u1a",
+   "premises": [
+    "a2"
+   ],
+   "exchange": "e3",
+   "payer_side": "seller",
+   "receiver": "general_fund",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "operating"
+  }
+ ],
+ "moves": [],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a30"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q15_some_guests_who_prefer_whole_units_move_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "buyers.short_stay",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q16_guests_can_book_summer_stays_earlier_tha"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "buyers.short_stay",
+   "variable": "quantity_demanded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q26_some_owners_planning_to_convert_or_sell_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "owners.non_primary",
+   "variable": "quantity_supplied",
+   "mode": "carry_over"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [
+  {
+   "premises": [
+    "j1",
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1_cap",
+   "exchange": "e2",
+   "holders": [],
+   "wider_price": false
+  },
+  {
+   "premises": [
+    "j2",
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1_cap_u1a",
+   "exchange": "e3",
+   "holders": [],
+   "wider_price": false
+  }
+ ],
+ "terms": [],
+ "banned": [
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e1"
+  },
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1_ban_u1b",
+   "exchange": "e3"
+  }
+ ],
+ "incidence": [],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether K1's exception for the dwelling in which the owner resides covers the second unit of a two-unit building whose owner lives in the other unit.",
+   "readings": [
+    "U1-a: the dwelling is the building, so the second unit is part of the primary residence and may be let up to 90 nights a year, with registration",
+    "U1-b: the dwelling is the unit, so the second unit is not the owner's primary residence and may not be let for under 30 nights"
+   ],
+   "components": {
+    "U1-a": [
+     "k1_cap_u1a",
+     "k3_u1a"
+    ],
+    "U1-b": [
+     "k1_ban_u1b"
+    ]
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [],
+ "assumptions": {
+  "a1": {
+   "text": "For most non-primary units, short lets yield more than any lawful alternative (about $30,000 net against about $20,000).",
+   "class": "binding",
+   "p": 0.9
+  },
+  "a2": {
+   "text": "Platforms comply with K2: they display numbers, remove listings on notice and report nights.",
+   "class": "enforcement",
+   "p": 0.85
+  },
+  "a20": {
+   "text": "The $520,000 is new general-fund money.",
+   "class": "revenue_use",
+   "p": 0.9
+  },
+  "a30": {
+   "text": "Values of STR units, hotels and Elsdon homes rest on expected yields, and passage was likely from the introduction (six of nine sponsors).",
+   "class": "expectations",
+   "p": 0.8
+  },
+  "j1": {
+   "text": "Some primary-residence hosts would let more than 90 nights a year, so the 90-night cap binds on them.",
+   "class": "binding",
+   "p": 0.95
+  },
+  "j2": {
+   "text": "Some hosts in two-unit buildings would let more than 90 nights a year, so the 90-night cap binds on them.",
+   "class": "binding",
+   "p": 0.95
+  },
+  "j3": {
+   "text": "Code Enforcement takes K1 complaints within its existing fixed budget, with no new appropriation.",
+   "class": "revenue_use",
+   "p": 0.9
+  },
+  "q8_hotels_are_a_substitute_for_whole_units_": {
+   "text": "Hotels are a substitute for whole units for some guests.",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q9_elsdon_is_near_enough_for_some_guests_12": {
+   "text": "Elsdon is near enough for some guests (12 km from Harbor).",
+   "p": 0.7,
+   "class": "mobility"
+  },
+  "q10_elsdon_str_supply_can_expand_at_close_to": {
+   "text": "Elsdon STR supply can expand at close to the old price for part of the year (spare occupancy outside the peak).",
+   "p": 0.7,
+   "class": "mobility"
+  },
+  "q11_some_guests_on_stays_of_two_to_four_week": {
+   "text": "Some guests on stays of two to four weeks can extend to 30 nights.",
+   "p": 0.6,
+   "class": "substitutability"
+  },
+  "q12_rooms_in_occupied_homes_and_primary_resi": {
+   "text": "Rooms in occupied homes and primary-residence lets are a substitute for whole units for some guests.",
+   "p": 0.75,
+   "class": "substitutability"
+  },
+  "q13_some_visitors_large_groups_families_have": {
+   "text": "Some visitors (large groups, families) have no close substitute at the old price and shorten or skip trips.",
+   "p": 0.65,
+   "class": "substitutability"
+  },
+  "q14_some_guests_keep_wanting_whole_units_in_": {
+   "text": "Some guests keep wanting whole units in Saltmere enough to book them directly.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q15_some_guests_who_prefer_whole_units_move_": {
+   "text": "Some guests who prefer whole units move a later trip to before 1 July 2027.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q16_guests_can_book_summer_stays_earlier_tha": {
+   "text": "Guests can book summer stays earlier than they otherwise would.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "q17_visitors_buy_meals_and_goods_near_their_": {
+   "text": "Visitors buy meals and goods near their lodging.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q18_most_non_primary_units_can_be_let_on_12_": {
+   "text": "Most non-primary units can be let on 12-month leases, and some owners choose that over sale, vacancy or mid-term lets.",
+   "p": 0.85,
+   "class": "alternative_uses"
+  },
+  "q19_some_owners_can_let_for_30_nights_or_mor": {
+   "text": "Some owners can let for 30 nights or more (traveling nurses, university visitors, relocations).",
+   "p": 0.75,
+   "class": "substitutability"
+  },
+  "q20_some_second_home_owners_value_their_own_": {
+   "text": "Some second-home owners value their own weeks enough to keep the home and leave it empty the rest of the year.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q21_some_owners_of_non_primary_units_sell_ra": {
+   "text": "Some owners of non-primary units sell rather than lease, let mid-term or hold.",
+   "p": 0.7,
+   "class": "alternative_uses"
+  },
+  "q22_some_owners_reshape_short_stays_into_nom": {
+   "text": "Some owners reshape short stays into nominal 30-night contracts, or claim primary residence on documents they can change at low cost.",
+   "p": 0.6,
+   "class": "substitutability"
+  },
+  "q23_for_some_units_complaints_are_unlikely_d": {
+   "text": "For some units, complaints are unlikely (detached homes, neighbors who are absent or also let), so the expected fine is below the gain from breach.",
+   "p": 0.75,
+   "class": "enforcement"
+  },
+  "q24_hosts_in_breach_can_screen_guests_on_tra": {
+   "text": "Hosts in breach can screen guests on traits that predict complaints, and do not set prices to cover the risk guest by guest.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q25_hosts_platforms_hotels_and_neighborhood_": {
+   "text": "Hosts, platforms, hotels and neighborhood associations can organize at a cost below their stake.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q26_some_owners_planning_to_convert_or_sell_": {
+   "text": "Some owners planning to convert or sell end or refuse summer lets to have the unit free for the August–September leasing season or a sale.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q27_cleaning_and_management_firms_adjust_the": {
+   "text": "Cleaning and management firms adjust their labor to the nights they service.",
+   "p": 0.8,
+   "class": "alternative_uses"
+  },
+  "q28_nuisance_complaints_per_operating_str_un": {
+   "text": "Nuisance complaints per operating STR unit stay near the 2025 rate.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q29_more_than_about_49_of_whole_unit_hosts_w": {
+   "text": "More than about 49% of whole-unit hosts were registered under R1 (the rate for all hosts is about 65%), so R1's fees from whole units exceed the most K3 can raise.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q30_some_buyers_value_fewer_transient_neighb": {
+   "text": "Some buyers value fewer transient neighbors (the `proximity` chain).",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q31_investors_are_a_material_part_of_demand_": {
+   "text": "Investors are a material part of demand for homes in the beach districts.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q32_hosts_listing_on_more_than_one_platform_": {
+   "text": "Hosts listing on more than one platform can exceed 90 nights without the per-platform reports revealing it.",
+   "p": 0.6,
+   "class": "enforcement"
+  },
+  "q33_units_added_to_the_long_term_market_are_": {
+   "text": "Units added to the long-term market are not offset by withdrawals elsewhere.",
+   "p": 0.75,
+   "class": "substitutability"
+  },
+  "q34_residents_of_units_moved_to_12_month_lea": {
+   "text": "Residents of units moved to 12-month leases buy some meals and goods near home.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q35_some_elsdon_owners_move_units_from_long_": {
+   "text": "Some Elsdon owners move units from long-term leases into STR.",
+   "p": 0.6,
+   "class": "alternative_uses"
+  },
+  "q36_the_supply_of_rooms_in_occupied_homes_an": {
+   "text": "The supply of rooms in occupied homes and of primary-residence lets cannot expand at the old nightly price in the period (owners must be present; the 90-night cap).",
+   "p": 0.7,
+   "class": "durability"
+  },
+  "q37_some_owner_occupiers_have_rooms_or_night": {
+   "text": "Some owner-occupiers have rooms or nights they would let at a higher nightly price.",
+   "p": 0.7,
+   "class": "alternative_uses"
+  },
+  "q38_hotel_rooms_cannot_be_added_in_the_short": {
+   "text": "Hotel rooms cannot be added in the short to medium run, and peak-season occupancy is near capacity (94%).",
+   "p": 0.85,
+   "class": "durability"
+  },
+  "q39_hotels_can_obtain_sites_and_permits_to_a": {
+   "text": "Hotels can obtain sites and permits to add rooms in the long run.",
+   "p": 0.55,
+   "class": "alternative_uses"
+  }
+ }
+}

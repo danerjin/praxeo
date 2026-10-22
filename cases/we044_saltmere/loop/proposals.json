@@ -1,0 +1,943 @@
+{
+ "buyers.short_stay": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.short_stay",
+    "actor": "sellers.hotels",
+    "variables": [
+     "quantity_traded"
+    ]
+   },
+   "premises": [
+    "Hotels are a substitute for whole units for some guests."
+   ],
+   "premise_class": "substitutability",
+   "source": "Hotels: about 7,400 rooms ... average daily rate $180"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.short_stay",
+    "actor": "owners.elsdon",
+    "variables": [
+     "quantity_traded"
+    ]
+   },
+   "premises": [
+    "Elsdon is near enough for some guests (12 km from Harbor).",
+    "Elsdon STR supply can expand at close to the old price for part of the year (spare occupancy outside the peak)."
+   ],
+   "premise_class": "mobility",
+   "source": "the town of Elsdon, 12 km from the Harbor district, has about 420 STR listings and no rules beyond county registration"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.short_stay",
+    "actor": "buyers.mid_term",
+    "variables": [
+     "quantity_demanded"
+    ]
+   },
+   "premises": [
+    "Some guests on stays of two to four weeks can extend to 30 nights."
+   ],
+   "premise_class": "substitutability",
+   "source": "Furnished lets of 30 nights or more ... are a small segment of about 900 units"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.short_stay",
+    "actor": "owners.occupant",
+    "variables": [
+     "quantity_traded"
+    ]
+   },
+   "premises": [
+    "Rooms in occupied homes and primary-residence lets are a substitute for whole units for some guests."
+   ],
+   "premise_class": "substitutability",
+   "source": "Rooms in a home where the owner lives and is present ... Not covered by K1"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.short_stay",
+    "actor": "owners.primary_residence",
+    "variables": [
+     "quantity_traded"
+    ]
+   },
+   "premises": [
+    "Rooms in occupied homes and primary-residence lets are a substitute for whole units for some guests."
+   ],
+   "premise_class": "substitutability",
+   "source": "Whole units, the owner's primary residence, let while the owner is away"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.short_stay",
+    "actor": "buyers.short_stay",
+    "variables": [
+     "trips"
+    ],
+    "inverse": true
+   },
+   "premises": [
+    "Some visitors (large groups, families) have no close substitute at the old price and shorten or skip trips."
+   ],
+   "premise_class": "substitutability",
+   "source": "the old price"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e1",
+    "kind": "outside",
+    "actor": "buyers.short_stay",
+    "variables": [
+     "informal_activity"
+    ]
+   },
+   "premises": [
+    "Some guests keep wanting whole units in Saltmere enough to book them directly."
+   ],
+   "premise_class": "substitutability",
+   "source": "Some guests keep wanting whole units in Saltmere enough to book them directly"
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "buyers.short_stay",
+    "variable": "quantity_traded",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Some guests who prefer whole units move a later trip to before 1 July 2027."
+   ],
+   "premise_class": "other",
+   "source": "Introduced 3 November 2026 by six of nine council members (announced). Enacted 8 December 2026. Effective 1 July 2027"
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "buyers.short_stay",
+    "variable": "quantity_demanded",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Guests can book summer stays earlier than they otherwise would."
+   ],
+   "premise_class": "expectations",
+   "source": "Stays booked and confirmed before 1 July 2027 may be completed if they end by 30 September 2027"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.short_stay",
+    "source_variable": "trips",
+    "relation": "complement",
+    "actor": "retailers.neighbors",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Visitors buy meals and goods near their lodging."
+   ],
+   "premise_class": "other",
+   "source": "Visitors buy meals and goods near their lodging"
+  }
+ ],
+ "owners.non_primary": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "owners.non_primary",
+    "actor": "landlords.long_term",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Most non-primary units can be let on 12-month leases, and some owners choose that over sale, vacancy or mid-term lets."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "The same unit let on a 12-month lease earns about $24,000 gross, about $20,000 net"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "owners.non_primary",
+    "actor": "owners.mid_term",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Some owners can let for 30 nights or more (traveling nurses, university visitors, relocations)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Furnished lets of 30 nights or more (traveling nurses, university visitors, relocations)"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "owners.non_primary",
+    "actor": "owners.non_primary",
+    "variables": [
+     "units_held_vacant"
+    ]
+   },
+   "premises": [
+    "Some second-home owners value their own weeks enough to keep the home and leave it empty the rest of the year."
+   ],
+   "premise_class": "other",
+   "source": "about 450 second homes the owner uses some weeks a year"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "owners.non_primary",
+    "actor": "owners.non_primary",
+    "variables": [
+     "turnover"
+    ]
+   },
+   "premises": [
+    "Some owners of non-primary units sell rather than lease, let mid-term or hold."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "Whole units, not the owner's primary residence"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "owners.non_primary",
+    "actor": "owners.non_primary",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Some owners reshape short stays into nominal 30-night contracts, or claim primary residence on documents they can change at low cost."
+   ],
+   "premise_class": "substitutability",
+   "source": "Primary residence: the dwelling in which the owner resides at least 270 days a year"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "owners.non_primary",
+    "actor": "owners.primary_residence",
+    "variables": [
+     "number_of_sellers"
+    ]
+   },
+   "premises": [
+    "Some owners reshape short stays into nominal 30-night contracts, or claim primary residence on documents they can change at low cost."
+   ],
+   "premise_class": "substitutability",
+   "source": "registered under K3 ... with proof of residence (driver's license, voter registration, homestead tax exemption)"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e1",
+    "kind": "outside",
+    "actor": "owners.non_primary",
+    "variables": [
+     "informal_activity"
+    ]
+   },
+   "premises": [
+    "For some units, complaints are unlikely (detached homes, neighbors who are absent or also let), so the expected fine is below the gain from breach."
+   ],
+   "premise_class": "enforcement",
+   "source": "K4: on complaint only; no proactive inspection"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e1",
+    "kind": "outside",
+    "actor": "owners.non_primary",
+    "variables": [
+     "allocation_by_non_price_criteria"
+    ]
+   },
+   "premises": [
+    "Hosts in breach can screen guests on traits that predict complaints, and do not set prices to cover the risk guest by guest.",
+    "For some units, complaints are unlikely (detached homes, neighbors who are absent or also let), so the expected fine is below the gain from breach."
+   ],
+   "premise_class": "other",
+   "source": "K4: on complaint only; no proactive inspection"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "owners.non_primary"
+   },
+   "premises": [
+    "Hosts, platforms, hotels and neighborhood associations can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "neighborhood associations, hosts, platforms, hotels"
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "owners.non_primary",
+    "variable": "quantity_supplied",
+    "mode": "carry_over"
+   },
+   "premises": [
+    "Some owners planning to convert or sell end or refuse summer lets to have the unit free for the August\u2013September leasing season or a sale."
+   ],
+   "premise_class": "other",
+   "source": "the August-September leasing season"
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e1",
+    "side": "seller",
+    "actor": "owners.non_primary"
+   },
+   "premises": [
+    "Values of STR units, hotels and Elsdon homes rest on expected yields, and passage was likely from the introduction (six of nine sponsors)."
+   ],
+   "premise_class": "expectations",
+   "source": "In 2023 to 2025, about 30% of home purchases in the beach districts were by buyers who did not occupy the home"
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e1",
+    "side": "seller",
+    "actor": "owners.non_primary"
+   },
+   "premises": [
+    "For most non-primary units, short lets yield more than any lawful alternative (about $30,000 net against about $20,000)."
+   ],
+   "premise_class": "binding",
+   "source": "A whole-unit STR earns on average $235 a night at 60% occupancy, about $51,000 a year gross"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.non_primary",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "input_suppliers.cleaning",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Cleaning and management firms adjust their labor to the nights they service."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "after cleaning, platform fees, furnishing and management (about 40% of gross)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.non_primary",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "officials.enforcement",
+    "variable": "enforcement_cost"
+   },
+   "premises": [
+    "Nuisance complaints per operating STR unit stay near the 2025 rate."
+   ],
+   "premise_class": "other",
+   "source": "about 1,500 of them about STR units (about one a year for every two whole-unit listings), at about 2.5 staff hours each"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.non_primary",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "general_fund",
+    "variable": "tax_revenue"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "R2 Transient occupancy tax (TOT) of 12% on stays under 30 nights ... about $18.7 million a year from whole-unit STRs"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.non_primary",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "general_fund",
+    "variable": "non_tax_receipts"
+   },
+   "premises": [
+    "More than about 49% of whole-unit hosts were registered under R1 (the rate for all hosts is about 65%), so R1's fees from whole units exceed the most K3 can raise."
+   ],
+   "premise_class": "other",
+   "source": "R1 STR registration ($150 a year; about 65% of hosts registered) ... Replaces R1 for whole units"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.non_primary",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "homeowners",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Some buyers value fewer transient neighbors (the `proximity` chain)."
+   ],
+   "premise_class": "other",
+   "source": "about 30% of home purchases in the beach districts were by buyers who did not occupy the home"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.non_primary",
+    "source_variable": "asset_value",
+    "relation": "yield",
+    "actor": "homeowners",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Investors are a material part of demand for homes in the beach districts."
+   ],
+   "premise_class": "other",
+   "source": "about 30% of home purchases in the beach districts were by buyers who did not occupy the home"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.non_primary",
+    "source_variable": "turnover",
+    "relation": "supply",
+    "actor": "homebuyers",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Some owners of non-primary units sell rather than lease, let mid-term or hold."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "Whole units, not the owner's primary residence"
+  }
+ ],
+ "owners.primary_residence": [
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e2",
+    "kind": "outside",
+    "actor": "owners.primary_residence",
+    "variables": [
+     "informal_activity"
+    ]
+   },
+   "premises": [
+    "For some units, complaints are unlikely (detached homes, neighbors who are absent or also let), so the expected fine is below the gain from breach.",
+    "Some guests keep wanting whole units in Saltmere enough to book them directly."
+   ],
+   "premise_class": "enforcement",
+   "source": "Registration $250 a year, with proof of residence"
+  }
+ ],
+ "owners.over_90_nights": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_cap",
+    "chooser": "owners.over_90_nights",
+    "actor": "owners.over_90_nights",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Hosts listing on more than one platform can exceed 90 nights without the per-platform reports revealing it."
+   ],
+   "premise_class": "enforcement",
+   "source": "report nights booked per registration number each quarter"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e2",
+    "kind": "outside",
+    "actor": "owners.over_90_nights",
+    "variables": [
+     "informal_activity"
+    ]
+   },
+   "premises": [
+    "For some units, complaints are unlikely (detached homes, neighbors who are absent or also let), so the expected fine is below the gain from breach."
+   ],
+   "premise_class": "enforcement",
+   "source": "K4: on complaint only; no proactive inspection"
+  }
+ ],
+ "owners.two_unit_over_90": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_cap_u1a",
+    "chooser": "owners.two_unit_over_90",
+    "actor": "owners.two_unit_over_90",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Hosts listing on more than one platform can exceed 90 nights without the per-platform reports revealing it."
+   ],
+   "premise_class": "enforcement",
+   "source": "report nights booked per registration number each quarter"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e3",
+    "kind": "outside",
+    "actor": "owners.two_unit_over_90",
+    "variables": [
+     "informal_activity"
+    ]
+   },
+   "premises": [
+    "For some units, complaints are unlikely (detached homes, neighbors who are absent or also let), so the expected fine is below the gain from breach."
+   ],
+   "premise_class": "enforcement",
+   "source": "K4: on complaint only; no proactive inspection"
+  }
+ ],
+ "owners.two_unit": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_ban_u1b",
+    "chooser": "owners.two_unit",
+    "actor": "landlords.long_term",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Most non-primary units can be let on 12-month leases, and some owners choose that over sale, vacancy or mid-term lets."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "U1-b: the dwelling is the unit ... may not be let for under 30 nights at all"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_ban_u1b",
+    "chooser": "owners.two_unit",
+    "actor": "owners.mid_term",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Some owners can let for 30 nights or more (traveling nurses, university visitors, relocations)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Lets of 30 nights or more"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e3",
+    "kind": "outside",
+    "actor": "owners.two_unit",
+    "variables": [
+     "informal_activity"
+    ]
+   },
+   "premises": [
+    "For some units, complaints are unlikely (detached homes, neighbors who are absent or also let), so the expected fine is below the gain from breach."
+   ],
+   "premise_class": "enforcement",
+   "source": "K4: on complaint only; no proactive inspection"
+  }
+ ],
+ "platforms": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "platforms"
+   },
+   "premises": [
+    "Hosts, platforms, hotels and neighborhood associations can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Hosts, platforms, hotels and neighborhood associations can organize at a cost below their stake"
+  }
+ ],
+ "general_fund": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "general_fund",
+    "source_variable": "non_tax_receipts",
+    "relation": "paid_into",
+    "actor": "general_fund",
+    "variable": "fund_balance"
+   },
+   "premises": [
+    "The $520,000 is new general-fund money."
+   ],
+   "premise_class": "revenue_use",
+   "source": "fines go to the general fund"
+  }
+ ],
+ "officials.registry": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.registry",
+    "source_variable": "enforcement_cost",
+    "relation": "paid_from",
+    "actor": "general_fund",
+    "variable": "fund_balance"
+   },
+   "premises": [
+    "The $520,000 is new general-fund money."
+   ],
+   "premise_class": "revenue_use",
+   "source": "K3: a new Registry Unit of five staff, $520,000 a year, new appropriation from the general fund"
+  }
+ ],
+ "officials.enforcement": [],
+ "buyers.mid_term": [],
+ "buyers.short_stay#2": [],
+ "homebuyers": [],
+ "homeowners": [],
+ "input_suppliers.cleaning": [],
+ "owners.mid_term": [],
+ "owners.non_primary#2": [],
+ "owners.over_90_nights#2": [],
+ "owners.primary_residence#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.primary_residence",
+    "source_variable": "quantity_traded",
+    "relation": "supply_price",
+    "actor": "owners.primary_residence",
+    "variable": "net_price_received"
+   },
+   "premises": [
+    "The supply of rooms in occupied homes and of primary-residence lets cannot expand at the old nightly price in the period (owners must be present; the 90-night cap)."
+   ],
+   "premise_class": "durability",
+   "source": "owners must be present; the 90-night cap"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.primary_residence",
+    "source_variable": "net_price_received",
+    "relation": "yield",
+    "actor": "owners.primary_residence",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Some owner-occupiers have rooms or nights they would let at a higher nightly price."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "Some owner-occupiers have rooms or nights they would let at a higher nightly price"
+  }
+ ],
+ "owners.two_unit#2": [],
+ "owners.two_unit_over_90#2": [],
+ "platforms#2": [],
+ "general_fund#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "general_fund",
+    "source_variable": "tax_revenue",
+    "relation": "paid_into",
+    "actor": "general_fund",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "fines go to the general fund"
+  }
+ ],
+ "landlords.long_term": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "landlords.long_term",
+    "source_variable": "quantity_supplied",
+    "relation": "supply",
+    "actor": "renters",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Units added to the long-term market are not offset by withdrawals elsewhere."
+   ],
+   "premise_class": "substitutability",
+   "source": "about 60,000 are rented long-term (median rent $1,850 a month, vacancy about 3%)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "landlords.long_term",
+    "source_variable": "quantity_supplied",
+    "relation": "complement",
+    "actor": "retailers.neighbors",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Residents of units moved to 12-month leases buy some meals and goods near home."
+   ],
+   "premise_class": "other",
+   "source": "Residents of units moved to 12-month leases buy some meals and goods near home"
+  }
+ ],
+ "owners.elsdon": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.elsdon",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "landlords.elsdon",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Some Elsdon owners move units from long-term leases into STR."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "the town of Elsdon ... has about 420 STR listings and no rules beyond county registration"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.elsdon",
+    "source_variable": "quantity_traded",
+    "relation": "yield",
+    "actor": "owners.elsdon",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Values of STR units, hotels and Elsdon homes rest on expected yields, and passage was likely from the introduction (six of nine sponsors)."
+   ],
+   "premise_class": "expectations",
+   "source": "Values of STR units, hotels and Elsdon homes rest on expected yields"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.elsdon",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "retailers.elsdon",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Visitors buy meals and goods near their lodging."
+   ],
+   "premise_class": "other",
+   "source": "Visitors buy meals and goods near their lodging"
+  }
+ ],
+ "owners.occupant": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.occupant",
+    "source_variable": "quantity_traded",
+    "relation": "supply_price",
+    "actor": "owners.occupant",
+    "variable": "net_price_received"
+   },
+   "premises": [
+    "The supply of rooms in occupied homes and of primary-residence lets cannot expand at the old nightly price in the period (owners must be present; the 90-night cap)."
+   ],
+   "premise_class": "durability",
+   "source": "owners must be present; the 90-night cap"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.occupant",
+    "source_variable": "net_price_received",
+    "relation": "yield",
+    "actor": "owners.occupant",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Some owner-occupiers have rooms or nights they would let at a higher nightly price."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "Some owner-occupiers have rooms or nights they would let at a higher nightly price"
+  }
+ ],
+ "retailers.neighbors": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.neighbors",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "workers.retail",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Visitors buy meals and goods near their lodging"
+  }
+ ],
+ "sellers.hotels": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.hotels",
+    "source_variable": "quantity_traded",
+    "relation": "supply_price",
+    "actor": "sellers.hotels",
+    "variable": "net_price_received"
+   },
+   "premises": [
+    "Hotel rooms cannot be added in the short to medium run, and peak-season occupancy is near capacity (94%)."
+   ],
+   "premise_class": "durability",
+   "source": "Hotels: about 7,400 rooms, average occupancy 79% (94% in July and August); construction takes three to five years"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.hotels",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "general_fund",
+    "variable": "tax_revenue"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "R2 Transient occupancy tax (TOT) of 12% on stays under 30 nights, hotels and STRs alike ... about $46 million from hotels"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.hotels",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "workers.hotels",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Hotels: about 7,400 rooms"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "sellers.hotels"
+   },
+   "premises": [
+    "Hosts, platforms, hotels and neighborhood associations can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Hosts, platforms, hotels and neighborhood associations can organize at a cost below their stake"
+  }
+ ],
+ "officials.enforcement#2": [],
+ "general_fund#3": [],
+ "owners.elsdon#2": [],
+ "owners.occupant#2": [],
+ "owners.primary_residence#3": [],
+ "renters": [],
+ "retailers.elsdon": [],
+ "retailers.neighbors#2": [],
+ "workers.hotels": [],
+ "workers.retail": [],
+ "landlords.elsdon": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "landlords.elsdon",
+    "source_variable": "quantity_supplied",
+    "relation": "supply",
+    "actor": "renters.elsdon",
+    "variable": "price_paid"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Some Elsdon owners move units from long-term leases into STR"
+  }
+ ],
+ "sellers.hotels#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.hotels",
+    "source_variable": "net_price_received",
+    "relation": "yield",
+    "actor": "sellers.hotels",
+    "variable": "return_on_capital"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "average daily rate $180"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.hotels",
+    "source_variable": "return_on_capital",
+    "relation": "yield",
+    "actor": "sellers.hotels",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Values of STR units, hotels and Elsdon homes rest on expected yields, and passage was likely from the introduction (six of nine sponsors)."
+   ],
+   "premise_class": "expectations",
+   "source": "Values of STR units, hotels and Elsdon homes rest on expected yields"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.hotels",
+    "source_variable": "return_on_capital",
+    "relation": "yield",
+    "actor": "sellers.hotels",
+    "variable": "capital_stock_target",
+    "horizon": "long"
+   },
+   "premises": [
+    "Hotels can obtain sites and permits to add rooms in the long run."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "Hotel construction takes three to five years from site to opening"
+  }
+ ]
+}
