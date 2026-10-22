@@ -1,0 +1,38 @@
+## 1. Policy record
+
+**Corvany Personal Data Residency Act.** Corvany is a country of 22 million people with its own currency, the crown, and a floating exchange rate. Its largest trading partner is Esterland, 300 km away, where the three large cloud providers that serve Corvany run their nearest data center regions. Corvany's main exports are machinery, timber and tourism.
+
+The Data Protection Office's register (2026) counts firms by the number of Corvany residents whose personal data each data controller holds:
+
+| Residents' records held | Controllers |
+|---|---|
+| 20,000 to 40,000 | 1,900 |
+| 40,000 to 50,000 | 650 |
+| 50,001 to 60,000 | 380 |
+| 60,001 to 100,000 | 720 |
+| Over 100,000 | 2,000 |
+
+So about 3,100 controllers are above the threshold. About 2,150 of them (70%) store and process this data mainly abroad, almost all in the three providers' Esterland regions. About 950 already host it in Corvany, in their own data centers or with local colocation firms; about 600 of these keep backup copies abroad. About 400 of the 3,100 are foreign online services with no establishment in Corvany (shops, apps, games).
+
+| Item | Figure |
+|---|---|
+| Corvany firms' spending on cloud services | about 1.1 billion crowns a year, nearly all bought from the Esterland regions |
+| Local colocation | four firms, nine facilities, 60 MW, 85% occupied; facility revenue 30 to 120 million crowns a year |
+| Cost of local hosting per unit of computing | estimated 25% to 40% above the Esterland regions (smaller scale, dearer electricity) |
+| A provider's local region (two separate sites) | about 400 million crowns, 18 to 30 months to build. Providers N and S announced regions in August 2027; provider T has not decided; dozens of smaller foreign providers have none. |
+| Grid connections | below 10 MW about 12 months; above 10 MW three to four years. Sites with grid capacity and fiber are in two industrial zones. |
+| Hosting as a share of costs | 1% to 3% for banks and retailers; 10% to 20% for online services |
+| Migration of a firm's systems | 150,000 to 2 million crowns per firm, by consultants (about 40 firms in Corvany) |
+
+The bill was introduced on 14 October 2026 and enacted on 1 July 2027. The requirement applies from 1 January 2029, 18 months after enactment. It has no expiry.
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Residency | `prohibition` of storing or processing covered data outside Corvany | Personal data of Corvany residents | Each data controller that held such data on more than 50,000 residents on any day of the preceding calendar year | From 1 January 2029, the data "shall be stored and processed only on servers located in Corvany". A foreign provider may comply by operating servers in Corvany. The count is per controller; a group's companies count separately. | Controllers at or below 50,000 |
+| K2 Officer and statement | Compliance requirement | Covered controllers | Covered controllers | Appoint a data residency officer; file an annual residency statement. | — |
+| K3 Facility certificate | `licensing_requirement` for facilities | Data centers in Corvany that host covered data | Facility operators | Annual audit of physical security and access logs; fee 40,000 crowns per facility a year. | — |
+| K4 Enforcement | — | — | Data Protection Office | Fines up to 4% of turnover. For a foreign controller with no establishment in Corvany, the Office may order internet providers to block its service, after a hearing; it has never issued a blocking order under the existing privacy law. The Office receives a supplementary appropriation of 6 million crowns a year from the general budget. Fees go to the general budget. | — |
+
+Unclear provisions:
+- **U1, encrypted backups abroad.** Section 4(2): "A copy made solely for security may be kept outside Corvany where the Office so allows by regulation." The Office has issued no regulation and has said nothing about whether it will. Reading U1-a: encrypted backup copies may be kept abroad (the provision is read as permitting security copies, with the regulation setting only conditions). Reading U1-b: until the Office allows it by regulation, every copy, including backups, must be in Corvany. Readings get no probability; where a sign depends on one, each reading's sign is reported.
+
