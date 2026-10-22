@@ -231,6 +231,10 @@ rel_dir(currency,   quantity, D, D) :- opp(D, _).
 rel_dir(supply_price, quantity, D, D) :- opp(D, _).
 % Supply (CR-6): more of a good offered, at given demand, lowers the price that clears it; less raises it.
 rel_dir(supply, quantity, D, E) :- opp(D, E).
+% A fund (CR-8b): spending paid from it lowers its balance, receipts paid into it raise it. A source variable of either
+% kind may be a price or a quantity.
+rel_dir(paid_from, K, D, E) :- opp(D, E), K = (price; quantity).
+rel_dir(paid_into, K, D, D) :- opp(D, _), K = (price; quantity).
 % Only changes outside a timing window propagate (an order brought forward is not a lasting change in trade). Timing
 % conclusions are named from facts alone, so the negation stays on facts.
 moved(A, V, D) :- effect(X, A, V, D, _, _, _), opp(D, _), not timing_concl(X), not response_concl(X).
@@ -239,9 +243,12 @@ timing_concl(p_early_price(C, E)) :- early_price(E, _, _, _), held(C, E, _, _, _
 p_link(A0, V0, R, A, V) :- link(A0, V0, R, A, V, P1, P2, P3), moved(A0, V0, _), ok(P1), ok(P2), ok(P3).
 fired(cr_9, p_link(A0, V0, R, A, V), X) :- p_link(A0, V0, R, A, V), effect(X, A0, V0, D, _, _, _), opp(D, _).
 fired(cr_9, p_link(A0, V0, R, A, V), P) :- p_link(A0, V0, R, A, V), link(A0, V0, R, A, V, P1, P2, P3), P = (P1; P2; P3), P != none.
-effect(p_link(A0, V0, R, A, V), A, V, D2, medium, invisible, "B") :- p_link(A0, V0, R, A, V), not link_group(V), moved(A0, V0, D), kind(V0, K), rel_dir(R, K, D, D2).
+% The horizon over which the link acts (link_horizon/6; medium by default).
+link_h(A0, V0, R, A, V, H) :- link_horizon(A0, V0, R, A, V, H).
+link_h(A0, V0, R, A, V, medium) :- link(A0, V0, R, A, V, _, _, _), not link_horizon(A0, V0, R, A, V, _).
+effect(p_link(A0, V0, R, A, V), A, V, D2, H, invisible, "B") :- p_link(A0, V0, R, A, V), not link_group(V), moved(A0, V0, D), kind(V0, K), rel_dir(R, K, D, D2), link_h(A0, V0, R, A, V, H).
 group_sign(increase, at_least_one_increase). group_sign(decrease, at_least_one_decrease).
-group_effect(p_link(A0, V0, R, A, V), A, V, G, medium, invisible, "B") :- p_link(A0, V0, R, A, V), link_group(V), moved(A0, V0, D), kind(V0, K), rel_dir(R, K, D, D2), group_sign(D2, G).
+group_effect(p_link(A0, V0, R, A, V), A, V, G, H, invisible, "B") :- p_link(A0, V0, R, A, V), link_group(V), moved(A0, V0, D), kind(V0, K), rel_dir(R, K, D, D2), group_sign(D2, G), link_h(A0, V0, R, A, V, H).
 
 % ---------------------------------------------------------------- CR-1 op 3: a payment attached to trading
 % The payment is a wedge: the range both sides accept moves (CR-5c). Fewer trades take place (CR-4: the option is worse for
@@ -255,7 +262,8 @@ has_branch(C) :- branch(C, _, _, _).
 c_charged(C, E) :- charge(C, E, _, _), not has_branch(C).
 c_charged(C, E) :- charge(C, E, _, _), branch(C, P1, P2, P3), ok(P1), ok(P2), ok(P3).
 fired(cr_1, c_charged(C, E), charge(C, E, S, R)) :- c_charged(C, E), charge(C, E, S, R).
-fired(cr_4, c_charged(C, E), P) :- c_charged(C, E), branch(C, P1, P2, P3), P = (P1; P2; P3), P != none.
+% Several branch/4 facts for one charge are alternative premise sets: any one that holds opens the branch.
+fired(cr_4, c_charged(C, E), P) :- c_charged(C, E), branch(C, P1, P2, P3), ok(P1), ok(P2), ok(P3), P = (P1; P2; P3), P != none.
 % Payers whose total is capped pay a fixed sum at the margin (charge_capped/2): it takes from their means (CR-8b) and
 % bears on none of their choices at the margin (CR-4 0.8).
 effect(c_paid(C, E), A, "resources_available_other_uses", decrease, short, invisible, "A") :- c_paid(C, E), charge_capped(C, A).

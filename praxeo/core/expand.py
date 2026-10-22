@@ -173,7 +173,7 @@ engine has already derived for it. Propose only what this node needs for the rea
 - alternatives (CR-4): what this actor can do instead of an option the policy makes worse or better; `fact`: {component,
   chooser: this actor, actor: whose variable measures the alternative's use, variables: [one, or several for a group]}.
 - links (CR-9): markets reached through this actor's changed variables; `fact`: {source_actor: this actor, source_variable,
-  relation: complement | input | substitute | output | yield | same_act | cost | own_price | currency | supply_price (more demand raises the price where supply is slow) | supply (more offered lowers the price), actor, variable}.
+  relation: complement | input | substitute | output | yield | same_act | cost | own_price | currency | supply_price (more demand raises the price where supply is slow) | supply (more offered lowers the price) | paid_from (spending from a fund lowers its balance) | paid_into (receipts raise it), actor, and optionally horizon, variable}.
 - margins (CR-6): terms or quantities this actor controls under a held or fixed price, criteria it is chosen by, trade outside the rule.
 - incidence (CR-7b): on an exchange a charge or grant acts on, the side whose alternatives are clearly worse than the
   other side's (it bears more of the charge, or keeps more of the grant); `fact`: {component, exchange, side}. Only with a
@@ -189,7 +189,8 @@ Names: every variable comes from the controlled list below, chosen by its meanin
 offer, not what owners put up for sale in another market); use actor classes from the list where one fits, as role.qualifier.
 Where the policy or the reasoning treats parts of a class differently (those who take one branch of a choice and those who
 take the other; those near a line and those past it; those already in the trade and those who would enter), name each
-part as its own subclass rather than the whole class."""
+part as its own subclass rather than the whole class. Where a reading of an unclear provision exempts some actors or
+acts, the exempt form is an alternative open only under that reading: give the fact `reading` with that label."""
 
 
 def vocabulary_text(exclude: tuple[str, ...] = ()) -> str:

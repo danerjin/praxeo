@@ -339,3 +339,27 @@ def test_signs_name_only_the_readings_they_depend_on():
            "assumptions": {"a2": P}}
     got = [c for c in S.run(S.Situation(**sit)) if c.actor_class == "employers.seasonal" and c.variable == "employment"]
     assert got[0].sign_by_reading == {"U1-a": "decrease", "U1-b": "none"}
+
+
+def test_a_branch_any_of_several_premise_sets_opens():
+    ch = [{"component": "k_offer", "exchange": "e", "payer_side": "buyer", "receiver": "workers.at_offering_firms",
+           "receipt_variable": "non_wage_compensation", "branch_premises": ["a2"], "branch_premise_sets": [["a3"]]}]
+    sit = {"name": "check", "exchanges": JOBS, "charges": ch,
+           "assumptions": {"a2": {"text": "new offerers", "p": 0.3}, "a3": {"text": "upgraders", "p": 0.8}}}
+    got = {(c.actor_class, c.variable, c.sign) for c in S.run(S.Situation(**sit)) if c.reported}
+    assert ("workers.at_offering_firms", "non_wage_compensation", "increase") in got
+
+
+def test_a_link_acts_at_its_horizon_and_funds_net_their_flows():
+    link = [{"source_actor": "officials.revenue", "source_variable": "tax_revenue", "relation": "paid_into", "actor": "treasury",
+             "variable": "fund_balance", "premises": ["a4"]},
+            {"source_actor": "buyers", "source_variable": "price_paid", "relation": "output", "actor": "buyers.downstream",
+             "variable": "price_paid", "horizon": "long", "premises": ["a4"]}]
+    sit = {"name": "check", **TAX, "links": link, "assumptions": {k: P for k in ("a2", "a3", "a4")}}
+    cons = {(c.actor_class, c.variable): c for c in S.run(S.Situation(**sit)) if c.reported}
+    assert cons[("treasury", "fund_balance")].sign == "increase"
+    assert cons[("buyers.downstream", "price_paid")].horizon == ["long"]
+    spend = link[:1] + [{"source_actor": "officials.enforcement", "source_variable": "enforcement_cost", "relation": "paid_from",
+                         "actor": "treasury", "variable": "fund_balance", "premises": ["a4"]}]
+    got = _run(**TAX, links=spend, enforcers=[{"component": "k", "actor": "officials.enforcement"}])
+    assert ("treasury", "fund_balance", "ambiguous", None) in got        # receipts against spending: CR-12 without dominance

@@ -69,9 +69,11 @@ class Stake(Premised):
 class Link(Premised):
     source_actor: str
     source_variable: str
-    relation: Literal["complement", "input", "substitute", "output", "yield", "same_act", "cost", "own_price", "currency", "supply_price", "supply"]
+    relation: Literal["complement", "input", "substitute", "output", "yield", "same_act", "cost", "own_price", "currency", "supply_price", "supply",
+                      "paid_from", "paid_into"]
     actor: str
     variable: str = Field(description="One variable, or several comma-separated for a group (labour as employment,hours_worked)")
+    horizon: Optional[Literal["short", "medium", "long"]] = Field(default=None, description="When the link acts; medium if not given")
 
 
 class Tied(Premised):
@@ -89,6 +91,7 @@ class Charge(BaseModel):
     quantity_premises: list[str] = Field(default=[], max_length=3, description="Premises the fall in trades rests on, where the payment is worth something to its receiver (a mandated term)")
     projection_variable: Optional[str] = Field(default=None, description="tax_revenue_vs_static_projection for a tax")
     branch_premises: list[str] = Field(default=[], max_length=3, description="Where the charge is one branch of a choice the policy gives the payer (pay, or provide in kind): the premise that some payers take it")
+    branch_premise_sets: list[list[str]] = Field(default=[], description="Further premise sets, any one of which also opens the branch (new offerers, or upgraders)")
     capped_payers: list[str] = Field(default=[], description="Payers whose total under the charge is capped: they pay a fixed sum at the margin")
     basis: Literal["unit", "operating"] = Field(default="unit", description="operating: a sum fixed per seller (a licence fee), not per unit sold (CR-4 0.8)")
 
@@ -268,6 +271,8 @@ def facts(s: Situation) -> str:
         out.append(f"stake({st.component}, {_q(st.actor)}, {_p(st.premises)}).")
     for l in s.links:
         out.append(f"link({_q(l.source_actor)}, {_q(l.source_variable)}, {l.relation}, {_q(l.actor)}, {_q(l.variable)}, {_p(l.premises)}).")
+        if l.horizon:
+            out.append(f"link_horizon({_q(l.source_actor)}, {_q(l.source_variable)}, {l.relation}, {_q(l.actor)}, {_q(l.variable)}, {l.horizon}).")
     for l in s.links:
         if "," in l.variable:
             out.append(f"link_group({_q(l.variable)}).")
@@ -280,6 +285,7 @@ def facts(s: Situation) -> str:
             out.append(f"projection_var({ch.component}, {_q(ch.projection_variable)}).")
         if ch.branch_premises:
             out.append(f"branch({ch.component}, {_p(ch.branch_premises)}).")
+        out += [f"branch({ch.component}, {_p(ps)})." for ps in ch.branch_premise_sets]
         out += [f"charge_capped({ch.component}, {_q(a)})." for a in ch.capped_payers]
         if ch.basis == "operating":
             out.append(f"operating({ch.component}).")
