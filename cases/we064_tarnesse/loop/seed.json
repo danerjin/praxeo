@@ -1,0 +1,62 @@
+{
+ "name": "WE-064 Tarnesse 2.9 GHz Award Regulations (loop)",
+ "exchanges": [
+  {"id": "e_lic", "buyer": "licensees", "seller": "treasury", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_cap", "buyer": "licensees.large", "seller": "treasury.over_cap", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_resale", "buyer": "licensees.prospective", "seller": "licensees.current", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "charges": [
+  {"component": "k1", "exchange": "e_lic", "payer_side": "buyer", "receiver": "treasury", "receipt_variable": "non_tax_receipts", "basis": "operating", "premises": ["a1"]},
+  {"component": "k2", "exchange": "e_lic", "payer_side": "buyer", "receiver": "customers.outside_cities", "receipt_variable": "quality_per_unit", "basis": "operating", "premises": ["a8", "a3"], "quantity_premises": ["j1"]}
+ ],
+ "terms": [
+  {"component": "k1_right", "exchange": "e_lic", "side": "buyer", "direction": "better", "premises": []}
+ ],
+ "banned": [
+  {"component": "k3", "exchange": "e_cap", "premises": ["j2"]},
+  {"component": "k14_u1b", "exchange": "e_resale", "premises": ["j3"]}
+ ],
+ "discretion": [
+  {"component": "k14_u1a", "actor": "licensees.current", "premises": []}
+ ],
+ "margins": [
+  {"exchange": "e_lic", "kind": "outside", "actor": "licensees", "variables": ["legal_breach"], "premises": ["a9"]},
+  {"exchange": "e_cap", "kind": "outside", "actor": "licensees.large", "variables": ["reclassification"], "premises": ["a5"]},
+  {"exchange": "e_resale", "kind": "outside", "actor": "licensees.current", "variables": ["reclassification"], "premises": ["a11"], "reading": "U1-b"}
+ ],
+ "unclear": [
+  {"id": "U1", "text": "Resale before the coverage deadline (reg. 14 with reg. 9(3)).",
+   "readings": ["U1-a: transfers are allowed at any time with the Authority's consent (reg. 14); reg. 9(3) only states the purpose of the obligation",
+                "U1-b: reg. 9(3) bars any transfer until the obligation is met or the deadline passes"],
+   "components": {"U1-a": ["k14_u1a"], "U1-b": ["k14_u1b"]}}
+ ],
+ "announced": [
+  {"component": "k1_right", "premises": ["a28"]},
+  {"component": "k1", "premises": ["a28"]},
+  {"component": "k2", "premises": ["a28"]},
+  {"component": "k3", "premises": ["a28"]}
+ ],
+ "expires": [
+  {"component": "k1", "premises": ["j4"]}
+ ],
+ "compliance": [{"component": "k2", "actor": "licensees"}],
+ "enforcers": [
+  {"component": "k1", "actor": "officials.enforcement"},
+  {"component": "k2", "actor": "officials.enforcement"},
+  {"component": "k3", "actor": "officials.enforcement"}
+ ],
+ "funded": [{"component": "k5", "actor": "taxpayers", "premises": []}],
+ "assumptions": {
+  "a1": {"text": "Some blocks are bid at or above the reserve: bidders expect a license to be worth more than M40 million after the build-out cost.", "class": "binding", "p": 0.95},
+  "a3": {"text": "The obligation is enforced: revocation is credible, so licensees build to 90% by the end of 2032.", "class": "enforcement", "p": 0.75},
+  "a5": {"text": "Some bidders or holders use stakes or joint ventures below the affiliate line.", "class": "other", "p": 0.55},
+  "a8": {"text": "Licensees would not, on their own, cover 90% of the population with the band by 2032 (about 65% commercially).", "class": "binding", "p": 0.8},
+  "a9": {"text": "Some licensees overstate coverage, meet it by minimal sites, or miss the deadline.", "class": "enforcement", "p": 0.55},
+  "a11": {"text": "Under U1-b, sales of licensee companies or long capacity leases are not treated as transfers.", "class": "enforcement", "p": 0.55},
+  "a28": {"text": "Investors expected the award partly from the March 2026 consultation and fully from 1 March 2027.", "class": "expectations", "p": 0.8},
+  "j1": {"text": "Households and businesses outside the cities and large towns value mobile coverage in the band.", "class": "other", "p": 0.8},
+  "j2": {"text": "Some bidders would take more than two blocks if the cap allowed it.", "class": "binding", "p": 0.9},
+  "j3": {"text": "Under U1-b, the Authority enforces the bar on transfers before the coverage deadline.", "class": "enforcement", "p": 0.8},
+  "j4": {"text": "Licensees expect each license to end on 31 December 2042 unless the Authority renews or re-auctions it.", "class": "expectations", "p": 0.85}
+ }
+}
