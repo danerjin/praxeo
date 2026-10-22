@@ -13,6 +13,9 @@ core rule CR-1 (what it does to actors' options), as a Situation record. Fill on
   side's price takes it, with the premise on the other side's response; a charge paid in kind to the counterparty (a
   mandated term) with its quantity premises; a sum fixed per seller (basis "operating"); a charge that is one branch of a
   choice the policy gives the payer (branch premises); payers whose total is capped;
+- terms: trading in an exchange made worse or better for one side with no payment (a private rule-maker changing the
+  bundle it sells its members; a disclosure showing a good worse or better than believed, with the premise that beliefs
+  change); a charge fixed per item offered has basis "item";
 - grants (a payment to one side of an exchange), capped (a rule fixing the quantity traded, with the holders of the
   permission), banned (a rule stopping the legal trade), expires (the measure ends and is expected to);
 - incidence: where the text or context makes one side's alternatives clearly worse than the other's, that side, with the

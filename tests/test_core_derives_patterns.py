@@ -371,3 +371,28 @@ def test_the_subclass_receiving_a_term_in_kind_holds_on_to_it():
     alt = [{"component": "k", "chooser": "workers.at_offering_firms", "actor": "workers.at_offering_firms",
             "variables": ["job_changes"], "premises": ["a3"]}]
     assert ("workers.at_offering_firms", "job_changes", "decrease", None) in _run(exchanges=JOBS, charges=ch, alternatives=alt)
+
+
+MENU = [{"id": "e", "buyer": "diners", "seller": "restaurants", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}]
+
+
+def test_cr_11_a_disclosure_that_shows_a_good_worse_than_believed():
+    got = _run(exchanges=MENU, terms=[{"component": "k", "exchange": "e", "side": "buyer", "direction": "worse", "premises": ["a1"]}],
+               moves=[{"exchange": "e", "side": "seller", "premises": ["a2"]}],
+               alternatives=[{"component": "k", "chooser": "diners", "actor": "diners", "variables": ["quantity_substitute"], "premises": ["a3"]}])
+    assert {("diners", "quantity_traded", "decrease", None), ("restaurants", "net_price_received", "decrease", None),
+            ("diners", "quantity_substitute", "increase", None)} <= got
+
+
+def test_cr_5_a_private_rule_that_worsens_the_members_bundle():
+    x = [{"id": "e", "buyer": "members.current", "seller": "rule_maker.private", "buyer_price_var": "price_paid",
+          "seller_price_var": "net_price_received"}]
+    alt = [{"component": "k", "chooser": "members.current", "actor": "rival_providers", "variables": ["quantity_traded"], "premises": ["a3"]}]
+    got = _run(exchanges=x, alternatives=alt, terms=[{"component": "k", "exchange": "e", "side": "buyer", "direction": "worse", "premises": ["a1"]}])
+    assert ("members.current", "quantity_traded", "decrease", None) in got and ("rival_providers", "quantity_traded", "increase", None) in got
+
+
+def test_cr_4_a_cost_per_item_offered_narrows_the_range():
+    ch = [{"component": "k", "exchange": "e", "payer_side": "seller", "receiver": "testers", "receipt_variable": "non_tax_receipts", "basis": "item"}]
+    got = _run(exchanges=MENU, charges=ch)
+    assert ("restaurants", "variety", "decrease", None) in got and ("diners", "quantity_traded", "decrease", None) not in got

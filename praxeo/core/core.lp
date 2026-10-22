@@ -26,6 +26,7 @@
 %   fixed(E, S, P1, P2, P3): S's price in E cannot move in the period (a rule in force, a term already set).
 %   incidence(C, E, S, P1, P2, P3): S's alternatives in E are clearly worse than the other side's (CR-7b).
 %   moves_horizon(E, S, H), fixed_horizon(E, S, H): the horizon a response premise or a fixed price is about.
+%   terms(C, E, S, W, P1, P2, P3): C makes trading in E worse or better (W) for side S, with no payment (CR-1, CR-5 1.2, CR-11).
 %   operating(C): a charge fixed per seller, not per unit (CR-4 0.8).
 %   compliance(C, A). enforcer(C, A). funded(C, A, P1, P2, P3). fixed_budget(C, A, P1, P2, P3).   CR-8c
 %   charge(C, E, Side, Receiver).           CR-1 op 3: C attaches a payment to trading in E, paid by Side, to Receiver
@@ -281,13 +282,18 @@ c_qty(C, E) :- c_moved_trade(C, E), qty_premise(C, E, P1, P2, P3), ok(P1), ok(P2
 fired(cr_4, c_qty(C, E), c_charged(C, E)) :- c_qty(C, E), c_charged(C, E).
 fired(cr_4, c_qty(C, E), c_granted(C, E)) :- c_qty(C, E), c_granted(C, E).
 fired(cr_4, c_qty(C, E), P) :- c_qty(C, E), qty_premise(C, E, P1, P2, P3), P = (P1; P2; P3), P != none.
-c_moved_trade(C, E) :- c_charged(C, E), not operating(C).
+c_moved_trade(C, E) :- c_charged(C, E), not operating(C), not per_item(C).
 % A payment fixed per seller (a licence fee, a registration) rather than per unit bears on whether the seller operates, not
 % on each trade (CR-4 0.8): those whose ranking of operating over leaving it reverses leave, so the number of payers falls;
 % the unit price moves only with the premise on the other side's response (moves/5).
 c_operating(C, E) :- c_charged(C, E), operating(C).
 fired(cr_4, c_operating(C, E), c_charged(C, E)) :- c_operating(C, E).
 effect(c_operating(C, E), A, "number_of_sellers", decrease, medium, invisible, "B") :- c_operating(C, E), charge(C, E, S, _), party(E, S, A).
+% A cost fixed per item offered (testing or labelling each item: per_item/1) bears on which items are offered (CR-4 0.8):
+% items whose sales no longer cover it are dropped, so the range offered narrows.
+c_per_item(C, E) :- c_charged(C, E), per_item(C).
+fired(cr_4, c_per_item(C, E), c_charged(C, E)) :- c_per_item(C, E).
+effect(c_per_item(C, E), A, "variety", decrease, medium, invisible, "B") :- c_per_item(C, E), party(E, _, A).
 c_moved_trade(C, E) :- c_granted(C, E).
 p_moves(C, E, S) :- c_charged(C, E), moves(E, S, P1, P2, P3), ok(P1), ok(P2), ok(P3).
 fired(cr_6, p_moves(C, E, S), P) :- p_moves(C, E, S), moves(E, S, P1, P2, P3), P = (P1; P2; P3), P != none.
@@ -435,6 +441,30 @@ fired(cr_7, p_incidence(C, E, S), c_granted(C, E)) :- p_incidence(C, E, S), c_gr
 fired(cr_7, p_incidence(C, E, S), P) :- p_incidence(C, E, S), incidence(C, E, S, P1, P2, P3), P = (P1; P2; P3), P != none.
 effect(p_incidence(C, E, S), A, V, increase, medium, invisible, "B") :- p_incidence(C, E, S), c_charged(C, E), party(E, S, A), share_var(charge, V).
 effect(p_incidence(C, E, S), A, V, increase, medium, invisible, "B") :- p_incidence(C, E, S), c_granted(C, E), party(E, S, A), share_var(grant, V).
+
+% ---------------------------------------------------------------- CR-1 op 3 without a payment: terms made worse or better
+% A component that makes the option of trading in E worse (or better) for side S without any payment changing hands
+% (terms/7): a private rule-maker changing the bundle it sells its members (CR-5 1.2), a disclosure that shows a good to be
+% worse or better than buyers believed (CR-11, with the premise that beliefs change), a non-price term the rule imposes.
+% S's party is a chooser made worse (better); fewer (more) trades take place (CR-4, CR-5a); with the premise on a side's
+% response (moves/5), the money price moves to the level that clears: less wanted by buyers, both prices fall; dearer to
+% sellers, both rise.
+c_terms(C, E, S, W) :- terms(C, E, S, W, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+fired(cr_1, c_terms(C, E, S, W), P) :- c_terms(C, E, S, W), terms(C, E, S, W, P1, P2, P3), P = (P1; P2; P3), P != none.
+fired(cr_1, c_terms(C, E, S, W), terms(C, E, S, W)) :- c_terms(C, E, S, W).
+c_acts(C) :- c_terms(C, _, _, _).
+c_on(E) :- c_terms(_, E, _, worse).
+chooser(C, A, W) :- c_terms(C, E, S, W), party(E, S, A).
+terms_qty(worse, decrease). terms_qty(better, increase).
+effect(c_terms(C, E, S, W), A, "quantity_traded", D, short, invisible, "B") :- c_terms(C, E, S, W), party(E, _, A), terms_qty(W, D).
+terms_price(buyer, worse, decrease). terms_price(buyer, better, increase).
+terms_price(seller, worse, increase). terms_price(seller, better, decrease).
+p_tmoves(C, E, S2) :- c_terms(C, E, _, _), moves(E, S2, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+fired(cr_6, p_tmoves(C, E, S2), P) :- p_tmoves(C, E, S2), moves(E, S2, P1, P2, P3), P = (P1; P2; P3), P != none.
+fired(cr_5, p_tmoves(C, E, S2), c_terms(C, E, S, W)) :- p_tmoves(C, E, S2), c_terms(C, E, S, W).
+effect(p_tmoves(C, E, S2), A, V, D, H, invisible, "B") :- p_tmoves(C, E, S2), c_terms(C, E, S, W), terms_price(S, W, D),
+                                                         price_var(E, S2, V), party(E, S2, A), moves_h(E, S2, H).
+side_dir(E, S2, D) :- c_terms(_, E, _, W), terms_qty(W, D), side(S2).
 
 % ---------------------------------------------------------------- CR-4 at a line: a measure that binds above a size
 % Where a component binds only on actors whose V exceeds a line (threshold/6: those near it, the measure V of size), crossing

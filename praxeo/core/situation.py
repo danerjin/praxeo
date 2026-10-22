@@ -93,7 +93,7 @@ class Charge(BaseModel):
     branch_premises: list[str] = Field(default=[], max_length=3, description="Where the charge is one branch of a choice the policy gives the payer (pay, or provide in kind): the premise that some payers take it")
     branch_premise_sets: list[list[str]] = Field(default=[], description="Further premise sets, any one of which also opens the branch (new offerers, or upgraders)")
     capped_payers: list[str] = Field(default=[], description="Payers whose total under the charge is capped: they pay a fixed sum at the margin")
-    basis: Literal["unit", "operating"] = Field(default="unit", description="operating: a sum fixed per seller (a licence fee), not per unit sold (CR-4 0.8)")
+    basis: Literal["unit", "operating", "item"] = Field(default="unit", description="operating: a sum fixed per seller (a licence fee); item: a sum fixed per item offered (testing or labelling each item); both not per unit sold (CR-4 0.8)")
 
 
 class Grant(BaseModel):
@@ -122,6 +122,16 @@ class Capped(Premised):
     exchange: str
     holders: list[str] = Field(default=[], description="Those who hold the permission to sell (licences, quota rights)")
     wider_price: bool = Field(default=False, description="The good's price is set in a wider market (CR-6 0.7)")
+
+
+class Terms(Premised):
+    """CR-1 without a payment: the option of trading in an exchange made worse or better for one side (a private rule
+    changing the bundle a rule-maker sells its members; a disclosure showing a good worse or better than believed, with
+    the premise that beliefs change; a non-price term imposed by rule)."""
+    component: str
+    exchange: str
+    side: Side
+    direction: Literal["worse", "better"]
 
 
 class Banned(Premised):
@@ -218,6 +228,7 @@ class Situation(BaseModel):
     backstops: list[Backstop] = []
     grants: list[Grant] = []
     capped: list[Capped] = []
+    terms: list[Terms] = Field(default=[], description="CR-1 without a payment: trading in an exchange made worse or better for one side")
     banned: list[Banned] = []
     incidence: list[Incidence] = Field(default=[], description="CR-7b: which side's alternatives are clearly worse, for a charge or grant on an exchange")
     fixed: list[Fixed] = Field(default=[], description="A price that cannot move in the period; a charge's payer then adjusts the terms it controls (margins of kind adjust)")
@@ -289,6 +300,8 @@ def facts(s: Situation) -> str:
         out += [f"charge_capped({ch.component}, {_q(a)})." for a in ch.capped_payers]
         if ch.basis == "operating":
             out.append(f"operating({ch.component}).")
+        if ch.basis == "item":
+            out.append(f"per_item({ch.component}).")
     for f in s.fixed:
         out.append(f"fixed({f.exchange}, {f.side}, {_p(f.premises)}).")
         if f.horizon:
@@ -322,6 +335,8 @@ def facts(s: Situation) -> str:
         out += [f"holder({c.component}, {c.exchange}, {_q(h)})." for h in c.holders]
         if c.wider_price:
             out.append(f"wider_price({c.exchange}).")
+    for t in s.terms:
+        out.append(f"terms({t.component}, {t.exchange}, {t.side}, {t.direction}, {_p(t.premises)}).")
     for b in s.banned:
         out.append(f"banned({b.component}, {b.exchange}, {_p(b.premises)}).")
     for t in s.thresholds:
@@ -357,7 +372,7 @@ def assumptions(s: Situation) -> dict[str, Assumption]:
 
 # The parts that are a component's own operation (CR-1): under an unclear provision they apply only under the readings
 # that list their component.
-OPERATIONS = ["held", "charges", "grants", "capped", "banned", "thresholds", "qualifies", "backstops", "discretion", "means",
+OPERATIONS = ["held", "charges", "terms", "grants", "capped", "banned", "thresholds", "qualifies", "backstops", "discretion", "means",
               "compliance", "enforcers", "funded", "fixed_budget", "announced", "expires"]
 
 
