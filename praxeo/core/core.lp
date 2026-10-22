@@ -28,6 +28,7 @@
 %   moves_horizon(E, S, H), fixed_horizon(E, S, H): the horizon a response premise or a fixed price is about.
 %   terms(C, E, S, W, P1, P2, P3): C makes trading in E worse or better (W) for side S, with no payment (CR-1, CR-5 1.2, CR-11).
 %   charge_premise(C, P1, P2, P3): the charge's own binding and enforcement premises.
+%   dom(A, V, D, P1, P2, P3): CR-12e, the direction D of (A, V) dominates (unwindowed), so only it propagates.
 %   operating(C): a charge fixed per seller, not per unit (CR-4 0.8).
 %   compliance(C, A). enforcer(C, A). funded(C, A, P1, P2, P3). fixed_budget(C, A, P1, P2, P3).   CR-8c
 %   charge(C, E, Side, Receiver).           CR-1 op 3: C attaches a payment to trading in E, paid by Side, to Receiver
@@ -248,7 +249,13 @@ rel_dir(paid_from, K, D, E) :- opp(D, E), K = (price; quantity).
 rel_dir(paid_into, K, D, D) :- opp(D, _), K = (price; quantity).
 % Only changes outside a timing window propagate (an order brought forward is not a lasting change in trade). Timing
 % conclusions are named from facts alone, so the negation stays on facts.
-moved(A, V, D) :- effect(X, A, V, D, _, _, _), opp(D, _), not timing_concl(X), not response_concl(X).
+raw_moved(A, V, D) :- effect(X, A, V, D, _, _, _), opp(D, _), not timing_concl(X), not response_concl(X).
+% CR-12e before propagation: where a dominance premise settles which of two opposed chains on (A, V) wins (dom/6), only
+% the winning direction propagates, and only while that premise holds; without one, both directions propagate (and meet
+% downstream as an ambiguity). The dominance fact is a fact, so the negation stays on facts.
+dom_fact(A, V) :- dom(A, V, _, _, _, _).
+moved(A, V, D) :- raw_moved(A, V, D), not dom_fact(A, V).
+moved(A, V, D) :- raw_moved(A, V, D), dom(A, V, D, P1, P2, P3), ok(P1), ok(P2), ok(P3).
 timing_concl(p_timing(C, A, V)) :- timing(C, A, V, _, _, _, _).
 timing_concl(p_early_price(C, E)) :- early_price(E, _, _, _), held(C, E, _, _, _, _).
 p_link(A0, V0, R, A, V) :- link(A0, V0, R, A, V, P1, P2, P3), moved(A0, V0, _), ok(P1), ok(P2), ok(P3).
@@ -422,7 +429,10 @@ response_concl(p_link(A0, V0, R, A, V)) :- link(A0, V0, R, A, V, _, _, _), reach
 % A payment made to one side for each trade (a subsidy per unit) is a wedge the other way (CR-5c): buyers pay less and
 % sellers receive more, with the same premise on which side's price takes it (moves/5); more trades take place (CR-4);
 % the recipients' means rise by what they receive, and the payer's outlay rises (CR-8b; who funds it: funded/5).
-c_granted(C, E) :- grant(C, E, _, _).
+grant_ok(C) :- grant(C, _, _, _), not grant_premise(C, _, _, _).
+grant_ok(C) :- grant_premise(C, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+c_granted(C, E) :- grant(C, E, _, _), grant_ok(C).
+fired(cr_1, c_granted(C, E), P) :- c_granted(C, E), grant_premise(C, P1, P2, P3), P = (P1; P2; P3), P != none.
 fired(cr_1, c_granted(C, E), grant(C, E, S, P)) :- c_granted(C, E), grant(C, E, S, P).
 effect(c_qty(C, E), A, "quantity_traded", increase, short, invisible, "B") :- c_qty(C, E), c_granted(C, E), party(E, _, A).
 p_gmoves(C, E, S) :- c_granted(C, E), moves(E, S, P1, P2, P3), ok(P1), ok(P2), ok(P3).

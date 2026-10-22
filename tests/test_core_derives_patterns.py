@@ -429,3 +429,14 @@ def test_sb_a_grant_with_a_fixed_budget_is_rationed():
     g = [{**GRANT["grants"][0], "budget_premises": ["a4"]}]
     got = _run(exchanges=GRANT["exchanges"], grants=g)
     assert ("producers", "wait_time,allocation_by_non_price_criteria", "at_least_one_increase", None) in got
+
+
+def test_cr_12e_a_settled_sign_propagates_alone():
+    link = [{"source_actor": "producers", "source_variable": "quantity_traded", "relation": "supply", "actor": "producers",
+             "variable": "net_price_received", "premises": ["a4"]},
+            {"source_actor": "producers", "source_variable": "net_price_received", "relation": "yield", "actor": "owners",
+             "variable": "asset_value", "premises": ["a4"]}]
+    dom = [{"actor": "producers", "variable": "net_price_received", "direction": "increase", "kind": "empirical", "premises": ["a5"]}]
+    got = _run(**GRANT, links=link, dominance=dom)
+    assert ("producers", "net_price_received", "increase", None) in got and ("owners", "asset_value", "increase", None) in got
+    assert ("owners", "asset_value", "ambiguous", None) in _run(**GRANT, links=link)

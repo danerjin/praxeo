@@ -100,6 +100,7 @@ class Charge(BaseModel):
 
 class Grant(BaseModel):
     component: str
+    premises: list[str] = Field(default=[], max_length=3, description="That the grant is paid as enacted (funded, claimed)")
     exchange: str
     recipient_side: Side
     payer: str = Field(description="Who pays it out (an agency or fund)")
@@ -337,6 +338,8 @@ def facts(s: Situation) -> str:
             out.append(f"outlay_var({b.component}, {_q(b.outlay_variable)}).")
     for g in s.grants:
         out.append(f"grant({g.component}, {g.exchange}, {g.recipient_side}, {_q(g.payer)}).")
+        if g.premises:
+            out.append(f"grant_premise({g.component}, {_p(g.premises)}).")
         if g.budget_premises:
             out.append(f"budget({g.component}, {g.exchange}, {_p(g.budget_premises)}).")
         if g.outlay_variable:
@@ -358,6 +361,9 @@ def facts(s: Situation) -> str:
         out.append(f"qualifies({t.component}, {_q(t.actor)}, {_q(t.variable)}, {_p(t.premises)}).")
     for e in s.expires:
         out.append(f"expires({e['component']}, {_p(e.get('premises', []))}).")
+    for d in s.dominance:
+        if d.window is None:
+            out.append(f"dom({_q(d.actor)}, {_q(d.variable)}, {d.direction}, {_p(d.premises)}).")
     for pt in s.parts:
         out.append(f"part_of({_q(pt['part'])}, {_q(pt['whole'])}).")
     for t in s.assets:
@@ -450,7 +456,8 @@ def dominate(cons, s: Situation, a: dict[str, Assumption]):
     out = []
     for c in cons:
         d = next((d for d in s.dominance if (d.actor, d.variable, d.window) == (c.actor_class, c.variable, c.window)), None)
-        if d and c.sign == "ambiguous" and not c.sign_by_reading and not c.group:
+        # a dominance premise below the cut-off settles nothing: the consequence stays ambiguous, and reported as such
+        if d and c.sign == "ambiguous" and not c.sign_by_reading and not c.group and all(a[x].p >= engine.CUTOFF for x in d.premises):
             used = sorted(set(c.assumptions) | set(d.premises))
             c = c.model_copy(update=dict(sign=d.direction, assumptions=used, assumption_sets=[used],
                                          reported=all(a[x].p >= engine.CUTOFF for x in used)))
