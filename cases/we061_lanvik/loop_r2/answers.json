@@ -1,0 +1,16 @@
+{
+ "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes).": 0.8,
+ "Companies can steer requests between employees and contractors through dispatch.": 0.6,
+ "Under U1-b, companies schedule employees' logged-in time to cut paid waiting.": 0.85,
+ "Some services can be reshaped to meet the three conditions at a cost below the Act's burden.": 0.5,
+ "Companies, drivers' groups and unions can organize at a cost below their stakes.": 0.9,
+ "Workers paid below 16 per hour on a trip mostly choose employee status (the top-up exceeds the premium and the flexibility they give up).": 0.65,
+ "Under U1-b, workers who wait much of their logged-in time choose employee status.": 0.7,
+ "Some workers can work through one-person companies, which §3 does not cover.": 0.55,
+ "Some workers can move hours between trips starting in Selvane and in Lanvik.": 0.65,
+ "Some employees whose hours are cut qualify for and claim benefits.": 0.6,
+ "Taxis are a substitute for some app rides, at fares fixed by the city, with the medallion cap binding; taxis have idle capacity at the fixed fare, so more riders mean more trips per medallion.": 0.75,
+ "Restaurants' delivery orders fall as delivery fees rise.": 0.8,
+ "Some restaurants hire their own couriers rather than pay the higher fees.": 0.55,
+ "The premium dominates the effects of entry and fewer trips on contractors' hourly earnings.": 0.35
+}

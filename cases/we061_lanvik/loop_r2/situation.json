@@ -1,0 +1,1083 @@
+{
+ "name": "WE-061 Lanvik App-Based Work Act 2027 (loop_r2 seed)",
+ "exchanges": [
+  {
+   "id": "e_emp",
+   "buyer": "platforms.large",
+   "seller": "workers.employees",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": "workers.prospective",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate",
+   "criteria_for": "workers.prospective",
+   "criteria": [
+    "allocation_by_non_price_criteria",
+    "wait_time"
+   ]
+  },
+  {
+   "id": "e_con",
+   "buyer": "platforms.large",
+   "seller": "workers.contractors",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_taxi",
+   "buyer": "consumers.riders",
+   "seller": "drivers.taxi",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [
+  {
+   "premises": [
+    "a3",
+    "a1"
+   ],
+   "reading": null,
+   "component": "k2_a",
+   "exchange": "e_emp",
+   "direction": "above"
+  },
+  {
+   "premises": [
+    "j1",
+    "a1"
+   ],
+   "reading": null,
+   "component": "k2_b",
+   "exchange": "e_emp",
+   "direction": "above"
+  }
+ ],
+ "margins": [
+  {
+   "premises": [
+    "a31"
+   ],
+   "reading": null,
+   "exchange": "e_emp",
+   "kind": "criterion",
+   "side": null,
+   "actor": "workers.prospective",
+   "variables": [
+    "allocation_by_non_price_criteria"
+   ]
+  },
+  {
+   "premises": [
+    "a18"
+   ],
+   "reading": null,
+   "exchange": "e_emp",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.employees",
+   "variables": [
+    "employment",
+    "hours_worked"
+   ]
+  },
+  {
+   "premises": [
+    "q16_companies_can_steer_requests_between_emp"
+   ],
+   "reading": null,
+   "exchange": "e_con",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.contractors",
+   "variables": [
+    "hours_worked"
+   ]
+  },
+  {
+   "premises": [
+    "q17_under_u1_b_companies_schedule_employees_"
+   ],
+   "reading": "U1-b",
+   "exchange": "e_emp",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.employees",
+   "variables": [
+    "hours_worked"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "a2",
+    "q16_companies_can_steer_requests_between_emp"
+   ],
+   "reading": null,
+   "component": "k2_a",
+   "chooser": "platforms.large",
+   "actor": "workers.contractors",
+   "variables": [
+    "employment",
+    "hours_worked"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "a2",
+    "q16_companies_can_steer_requests_between_emp"
+   ],
+   "reading": null,
+   "component": "k2_b",
+   "chooser": "platforms.large",
+   "actor": "workers.contractors",
+   "variables": [
+    "employment",
+    "hours_worked"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q18_some_services_can_be_reshaped_to_meet_th"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "platforms.large",
+   "actor": "platforms.large",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "a15"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "platforms.near_threshold",
+   "actor": "platforms.small",
+   "variables": [
+    "quantity_substitute"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q20_workers_paid_below_16_per_hour_on_a_trip"
+   ],
+   "reading": null,
+   "component": "k5",
+   "chooser": "workers.contractors",
+   "actor": "workers.employees",
+   "variables": [
+    "employment",
+    "hours_worked"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q21_under_u1_b_workers_who_wait_much_of_thei"
+   ],
+   "reading": "U1-b",
+   "component": "k5",
+   "chooser": "workers.contractors",
+   "actor": "workers.employees",
+   "variables": [
+    "employment",
+    "hours_worked"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "j2"
+   ],
+   "reading": null,
+   "component": "k4",
+   "chooser": "workers.employees",
+   "actor": "workers.contractors",
+   "variables": [
+    "employment",
+    "hours_worked"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q22_some_workers_can_work_through_one_person"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "workers.employees",
+   "actor": "workers.employees",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q23_some_workers_can_move_hours_between_trip"
+   ],
+   "reading": null,
+   "component": "k4",
+   "chooser": "workers.employees",
+   "actor": "neighboring_jurisdictions",
+   "variables": [
+    "employment",
+    "hours_worked"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "j2"
+   ],
+   "reading": null,
+   "component": "k3",
+   "chooser": "workers.full_time",
+   "actor": "workers.contractors",
+   "variables": [
+    "hours_worked"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "j2"
+   ],
+   "reading": null,
+   "component": "k4",
+   "chooser": "workers.near_threshold",
+   "actor": "workers.contractors",
+   "variables": [
+    "employment",
+    "hours_worked"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "a2",
+    "j2"
+   ],
+   "reading": null,
+   "component": "k2_a",
+   "chooser": "workers.prospective",
+   "actor": "workers.contractors",
+   "variables": [
+    "employment",
+    "hours_worked"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "a2",
+    "j2"
+   ],
+   "reading": null,
+   "component": "k2_b",
+   "chooser": "workers.prospective",
+   "actor": "workers.contractors",
+   "variables": [
+    "employment",
+    "hours_worked"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q23_some_workers_can_move_hours_between_trip"
+   ],
+   "reading": null,
+   "component": "k2_a",
+   "chooser": "workers.prospective",
+   "actor": "neighboring_jurisdictions",
+   "variables": [
+    "employment",
+    "hours_worked"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q23_some_workers_can_move_hours_between_trip"
+   ],
+   "reading": null,
+   "component": "k2_b",
+   "chooser": "workers.prospective",
+   "actor": "neighboring_jurisdictions",
+   "variables": [
+    "employment",
+    "hours_worked"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q19_companies_drivers_groups_and_unions_can_"
+   ],
+   "reading": null,
+   "component": "k2_a",
+   "actor": "platforms.large"
+  },
+  {
+   "premises": [
+    "q19_companies_drivers_groups_and_unions_can_"
+   ],
+   "reading": null,
+   "component": "k2_b",
+   "actor": "platforms.large"
+  },
+  {
+   "premises": [
+    "q19_companies_drivers_groups_and_unions_can_"
+   ],
+   "reading": null,
+   "component": "k5",
+   "actor": "platforms.large"
+  },
+  {
+   "premises": [
+    "q19_companies_drivers_groups_and_unions_can_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "platforms.near_threshold"
+  },
+  {
+   "premises": [
+    "q19_companies_drivers_groups_and_unions_can_"
+   ],
+   "reading": null,
+   "component": "k5",
+   "actor": "workers.contractors"
+  },
+  {
+   "premises": [
+    "q19_companies_drivers_groups_and_unions_can_"
+   ],
+   "reading": null,
+   "component": "k2_a",
+   "actor": "workers.employees"
+  },
+  {
+   "premises": [
+    "q19_companies_drivers_groups_and_unions_can_"
+   ],
+   "reading": null,
+   "component": "k2_b",
+   "actor": "workers.employees"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q15_platforms_pass_part_of_their_added_cost_"
+   ],
+   "reading": null,
+   "source_actor": "platforms.large",
+   "source_variable": "price_paid",
+   "relation": "output",
+   "actor": "consumers.riders",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_platforms_pass_part_of_their_added_cost_"
+   ],
+   "reading": null,
+   "source_actor": "platforms.large",
+   "source_variable": "price_paid",
+   "relation": "output",
+   "actor": "retailers.restaurants",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q24_some_employees_whose_hours_are_cut_quali"
+   ],
+   "reading": null,
+   "source_actor": "workers.employees",
+   "source_variable": "employment",
+   "relation": "substitute",
+   "actor": "claimants",
+   "variable": "applications",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_platforms_pass_part_of_their_added_cost_"
+   ],
+   "reading": null,
+   "source_actor": "consumers.riders",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "consumers.riders",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q25_taxis_are_a_substitute_for_some_app_ride"
+   ],
+   "reading": null,
+   "source_actor": "consumers.riders",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "drivers.taxi",
+   "variable": "quantity_substitute",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_platforms_pass_part_of_their_added_cost_"
+   ],
+   "reading": null,
+   "source_actor": "consumers.riders",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "sellers.substitutes",
+   "variable": "quantity_substitute",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_platforms_pass_part_of_their_added_cost_"
+   ],
+   "reading": null,
+   "source_actor": "consumers.riders",
+   "source_variable": "quantity_demanded",
+   "relation": "input",
+   "actor": "workers.employees",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_platforms_pass_part_of_their_added_cost_"
+   ],
+   "reading": null,
+   "source_actor": "consumers.riders",
+   "source_variable": "quantity_demanded",
+   "relation": "input",
+   "actor": "workers.contractors",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a11"
+   ],
+   "reading": null,
+   "source_actor": "owners",
+   "source_variable": "return_on_capital",
+   "relation": "yield",
+   "actor": "owners",
+   "variable": "investment_target",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_platforms_pass_part_of_their_added_cost_"
+   ],
+   "reading": null,
+   "source_actor": "platforms.large",
+   "source_variable": "price_paid",
+   "relation": "output",
+   "actor": "consumers.diners",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a15"
+   ],
+   "reading": null,
+   "source_actor": "platforms.small",
+   "source_variable": "quantity_substitute",
+   "relation": "input",
+   "actor": "workers.uncovered",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q26_restaurants_delivery_orders_fall_as_deli"
+   ],
+   "reading": null,
+   "source_actor": "retailers.restaurants",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "retailers.restaurants",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q27_some_restaurants_hire_their_own_couriers"
+   ],
+   "reading": null,
+   "source_actor": "retailers.restaurants",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "workers.couriers",
+   "variable": "quantity_substitute",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q26_restaurants_delivery_orders_fall_as_deli"
+   ],
+   "reading": null,
+   "source_actor": "retailers.restaurants",
+   "source_variable": "quantity_demanded",
+   "relation": "input",
+   "actor": "workers.employees",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q26_restaurants_delivery_orders_fall_as_deli"
+   ],
+   "reading": null,
+   "source_actor": "retailers.restaurants",
+   "source_variable": "quantity_demanded",
+   "relation": "input",
+   "actor": "workers.contractors",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "workers.contractors",
+   "source_variable": "net_price_received",
+   "relation": "same_act",
+   "actor": "workers.contractors",
+   "variable": "earnings",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "workers.contractors",
+   "source_variable": "non_wage_compensation",
+   "relation": "same_act",
+   "actor": "workers.contractors",
+   "variable": "earnings",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_platforms_pass_part_of_their_added_cost_"
+   ],
+   "reading": null,
+   "source_actor": "consumers.diners",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "consumers.diners",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_platforms_pass_part_of_their_added_cost_"
+   ],
+   "reading": null,
+   "source_actor": "consumers.diners",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "households",
+   "variable": "home_production",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_platforms_pass_part_of_their_added_cost_"
+   ],
+   "reading": null,
+   "source_actor": "consumers.diners",
+   "source_variable": "quantity_demanded",
+   "relation": "input",
+   "actor": "workers.employees",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_platforms_pass_part_of_their_added_cost_"
+   ],
+   "reading": null,
+   "source_actor": "consumers.diners",
+   "source_variable": "quantity_demanded",
+   "relation": "input",
+   "actor": "workers.contractors",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q25_taxis_are_a_substitute_for_some_app_ride"
+   ],
+   "reading": null,
+   "source_actor": "drivers.taxi",
+   "source_variable": "quantity_substitute",
+   "relation": "same_act",
+   "actor": "drivers.taxi",
+   "variable": "quantity_traded",
+   "horizon": null
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "a11"
+   ],
+   "reading": null,
+   "exchange": "e_emp",
+   "side": "buyer",
+   "actor": "owners"
+  },
+  {
+   "premises": [
+    "a11",
+    "q25_taxis_are_a_substitute_for_some_app_ride"
+   ],
+   "reading": null,
+   "exchange": "e_taxi",
+   "side": "seller",
+   "actor": "owners.medallion"
+  }
+ ],
+ "yields": [
+  {
+   "premises": [
+    "a11"
+   ],
+   "reading": null,
+   "exchange": "e_emp",
+   "side": "buyer",
+   "actor": "owners"
+  },
+  {
+   "premises": [
+    "a11",
+    "q25_taxis_are_a_substitute_for_some_app_ride"
+   ],
+   "reading": null,
+   "exchange": "e_taxi",
+   "side": "seller",
+   "actor": "owners.medallion"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k6",
+   "actor": "platforms.large"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k6",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k6",
+   "actor": "taxpayers",
+   "premises": [
+    "a26"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "k4",
+   "premises": [
+    "a1"
+   ],
+   "exchange": "e_emp",
+   "payer_side": "buyer",
+   "receiver": "officials.revenue",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k5",
+   "premises": [
+    "a1"
+   ],
+   "exchange": "e_con",
+   "payer_side": "buyer",
+   "receiver": "workers.contractors",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "a29"
+   ],
+   "projection_variable": null,
+   "branch_premises": [
+    "a2",
+    "j2"
+   ],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a28"
+   ],
+   "reading": null,
+   "exchange": "e_emp",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "a28"
+   ],
+   "reading": null,
+   "exchange": "e_con",
+   "side": "seller",
+   "horizon": "medium"
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k2_a",
+   "premises": [
+    "a11"
+   ]
+  },
+  {
+   "component": "k2_b",
+   "premises": [
+    "a11"
+   ]
+  },
+  {
+   "component": "k3",
+   "premises": [
+    "a11"
+   ]
+  },
+  {
+   "component": "k4",
+   "premises": [
+    "a11"
+   ]
+  },
+  {
+   "component": "k5",
+   "premises": [
+    "a11"
+   ]
+  }
+ ],
+ "timing": [],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "issued": [],
+ "penalties": [
+  {
+   "premises": [
+    "a19"
+   ],
+   "reading": null,
+   "component": "k6",
+   "actor": "platforms.large",
+   "collector": "officials.enforcement"
+  },
+  {
+   "premises": [
+    "a19"
+   ],
+   "reading": null,
+   "component": "k6_suit",
+   "actor": "platforms.large",
+   "collector": "workers.employees"
+  }
+ ],
+ "terms": [],
+ "banned": [],
+ "incidence": [],
+ "fixed": [
+  {
+   "premises": [
+    "a29"
+   ],
+   "reading": null,
+   "exchange": "e_emp",
+   "side": "seller",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "a29"
+   ],
+   "reading": null,
+   "exchange": "e_con",
+   "side": "seller",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q25_taxis_are_a_substitute_for_some_app_ride"
+   ],
+   "reading": null,
+   "exchange": "e_taxi",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q25_taxis_are_a_substitute_for_some_app_ride"
+   ],
+   "reading": null,
+   "exchange": "e_taxi",
+   "side": "buyer",
+   "horizon": "medium"
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Waiting time: is time logged in and waiting for a request time during which the worker is required by the network company to remain available (section 5(2))?",
+   "readings": [
+    "U1-a: no; a worker may log off at will, so only time on a trip, and any shift a company schedules, is engaged time",
+    "U1-b: yes; the apps reduce the priority of workers who decline requests, so all logged-in time is engaged time"
+   ],
+   "components": {
+    "U1-a": [
+     "k2_a"
+    ],
+    "U1-b": [
+     "k2_b"
+    ]
+   }
+  }
+ ],
+ "thresholds": [
+  {
+   "premises": [
+    "a15"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "platforms.near_threshold",
+   "variable": "employment",
+   "chooser": null
+  },
+  {
+   "premises": [
+    "a17"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "workers.full_time",
+   "variable": "hours_worked",
+   "chooser": "platforms.large"
+  },
+  {
+   "premises": [
+    "a18"
+   ],
+   "reading": null,
+   "component": "k4",
+   "actor": "workers.near_threshold",
+   "variable": "earnings",
+   "chooser": "platforms.large"
+  }
+ ],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [
+  {
+   "premises": [
+    "q28_the_premium_dominates_the_effects_of_ent"
+   ],
+   "reading": null,
+   "actor": "workers.contractors",
+   "variable": "earnings",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "The Act is enforced: audits and private suits with double damages make treating workers as contractors without a valid agreement costly.",
+   "class": "enforcement",
+   "p": 0.8
+  },
+  "a2": {
+   "text": "Each company elects to offer contractor agreements.",
+   "class": "other",
+   "p": 0.75
+  },
+  "a3": {
+   "text": "Some hours on a trip pay below 16 per hour on a trip (about a fifth).",
+   "class": "binding",
+   "p": 0.9
+  },
+  "a11": {
+   "text": "Buyers of shares and medallions expect the Act to survive the court challenge and repeal campaign.",
+   "class": "expectations",
+   "p": 0.7
+  },
+  "a15": {
+   "text": "Some delivery services can operate with fewer than 100 Lanvik workers.",
+   "class": "other",
+   "p": 0.5
+  },
+  "a17": {
+   "text": "Some workers exceed 40 hours a week with one company (about 600 on trips; about 5,000 logged in), and companies can cap them.",
+   "class": "other",
+   "p": 0.85
+  },
+  "a18": {
+   "text": "Companies control dispatch enough to keep part-time employees' weekly wages at or under 150.",
+   "class": "other",
+   "p": 0.7
+  },
+  "a19": {
+   "text": "Enforcement is imperfect: some misclassification and some pressure to sign occur.",
+   "class": "enforcement",
+   "p": 0.65
+  },
+  "a26": {
+   "text": "The Department's 4 million is new money from the general fund.",
+   "class": "revenue_use",
+   "p": 0.9
+  },
+  "a28": {
+   "text": "§9 does not fix the fare share, and companies can cut fare shares and bonuses after launch.",
+   "class": "other",
+   "p": 0.75
+  },
+  "a29": {
+   "text": "Fare shares are not cut in the first months (30 days' notice; scrutiny at launch).",
+   "class": "other",
+   "p": 0.6
+  },
+  "a31": {
+   "text": "The floor's surplus of employee hours is rationed by stricter criteria than the counterfactual's dispatch ranking (shift allocation, acceptance thresholds).",
+   "class": "other",
+   "p": 0.7
+  },
+  "j1": {
+   "text": "Many logged-in hours pay below 16 per logged-in hour (about three quarters).",
+   "class": "binding",
+   "p": 0.95
+  },
+  "j2": {
+   "text": "Some workers sign a contractor agreement.",
+   "class": "other",
+   "p": 0.85
+  },
+  "q15_platforms_pass_part_of_their_added_cost_": {
+   "text": "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes).",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q16_companies_can_steer_requests_between_emp": {
+   "text": "Companies can steer requests between employees and contractors through dispatch.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q17_under_u1_b_companies_schedule_employees_": {
+   "text": "Under U1-b, companies schedule employees' logged-in time to cut paid waiting.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q18_some_services_can_be_reshaped_to_meet_th": {
+   "text": "Some services can be reshaped to meet the three conditions at a cost below the Act's burden.",
+   "p": 0.5,
+   "class": "other"
+  },
+  "q19_companies_drivers_groups_and_unions_can_": {
+   "text": "Companies, drivers' groups and unions can organize at a cost below their stakes.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q20_workers_paid_below_16_per_hour_on_a_trip": {
+   "text": "Workers paid below 16 per hour on a trip mostly choose employee status (the top-up exceeds the premium and the flexibility they give up).",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q21_under_u1_b_workers_who_wait_much_of_thei": {
+   "text": "Under U1-b, workers who wait much of their logged-in time choose employee status.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q22_some_workers_can_work_through_one_person": {
+   "text": "Some workers can work through one-person companies, which §3 does not cover.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q23_some_workers_can_move_hours_between_trip": {
+   "text": "Some workers can move hours between trips starting in Selvane and in Lanvik.",
+   "p": 0.65,
+   "class": "mobility"
+  },
+  "q24_some_employees_whose_hours_are_cut_quali": {
+   "text": "Some employees whose hours are cut qualify for and claim benefits.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q25_taxis_are_a_substitute_for_some_app_ride": {
+   "text": "Taxis are a substitute for some app rides, at fares fixed by the city, with the medallion cap binding; taxis have idle capacity at the fixed fare, so more riders mean more trips per medallion.",
+   "p": 0.75,
+   "class": "substitutability"
+  },
+  "q26_restaurants_delivery_orders_fall_as_deli": {
+   "text": "Restaurants' delivery orders fall as delivery fees rise.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q27_some_restaurants_hire_their_own_couriers": {
+   "text": "Some restaurants hire their own couriers rather than pay the higher fees.",
+   "p": 0.55,
+   "class": "substitutability"
+  },
+  "q28_the_premium_dominates_the_effects_of_ent": {
+   "text": "The premium dominates the effects of entry and fewer trips on contractors' hourly earnings.",
+   "p": 0.35,
+   "class": "other"
+  }
+ }
+}

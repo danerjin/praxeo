@@ -1,0 +1,49 @@
+DONE in 3 rounds, 14 questions
+R consumers.diners price_paid  increase
+R consumers.diners quantity_demanded  decrease
+R consumers.riders price_paid  increase
+R consumers.riders quantity_demanded  decrease
+R drivers.taxi quantity_substitute  increase
+R drivers.taxi quantity_traded  increase
+R households home_production  increase
+R neighboring_jurisdictions ['employment', 'hours_worked']  ambiguous
+R officials.enforcement enforcement_cost  increase
+R officials.revenue tax_revenue  increase
+R officials.revenue tax_revenue_vs_static_projection  decrease
+R owners asset_value  decrease
+R owners investment_target  decrease
+R owners return_on_capital  decrease
+R platforms.large compliance_cost  increase
+R platforms.large lobbying_effort  increase
+R platforms.large price_paid  increase
+R platforms.large quantity_traded  decrease
+R platforms.large reclassification  increase
+R platforms.large resources_available_other_uses  decrease
+R platforms.near_threshold employment  decrease
+R platforms.near_threshold lobbying_effort  increase
+R platforms.small quantity_substitute  increase
+R retailers.restaurants price_paid  increase
+R retailers.restaurants quantity_demanded  decrease
+R sellers.substitutes quantity_substitute  increase
+R taxpayers resources_available_other_uses  decrease
+R workers.contractors earnings  ambiguous
+R workers.contractors ['employment', 'hours_worked']  ambiguous
+R workers.contractors hours_worked  decrease
+R workers.contractors lobbying_effort  increase
+R workers.contractors net_price_received  decrease
+R workers.contractors non_wage_compensation  increase
+R workers.contractors quantity_traded  decrease
+R workers.couriers quantity_substitute  increase
+R workers.employees ['employment', 'hours_worked']  ambiguous
+R workers.employees hours_worked  ambiguous
+R workers.employees lobbying_effort  increase
+R workers.employees quantity_traded  decrease
+R workers.employees reclassification  ambiguous
+R workers.employees wage_rate  ambiguous
+R workers.full_time hours_worked  decrease
+R workers.near_threshold earnings  decrease
+R workers.prospective allocation_by_non_price_criteria  increase
+R workers.prospective ['allocation_by_non_price_criteria', 'wait_time']  at_least_one_increase
+R workers.prospective excess_supply  increase
+R workers.prospective quantity_traded  decrease
+R workers.uncovered ['employment', 'hours_worked']  at_least_one_increase

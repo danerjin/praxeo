@@ -1,0 +1,66 @@
+{
+ "name": "WE-061 Lanvik App-Based Work Act 2027 (loop_r2 seed)",
+ "exchanges": [
+  {"id": "e_emp", "buyer": "platforms.large", "seller": "workers.employees", "unsatisfied_seller": "workers.prospective", "buyer_price_var": "price_paid", "seller_price_var": "wage_rate", "criteria_for": "workers.prospective", "criteria": ["allocation_by_non_price_criteria", "wait_time"]},
+  {"id": "e_con", "buyer": "platforms.large", "seller": "workers.contractors", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "held": [
+  {"component": "k2_a", "exchange": "e_emp", "direction": "above", "premises": ["a3", "a1"]},
+  {"component": "k2_b", "exchange": "e_emp", "direction": "above", "premises": ["j1", "a1"]}
+ ],
+ "margins": [
+  {"exchange": "e_emp", "kind": "criterion", "actor": "workers.prospective", "variables": ["allocation_by_non_price_criteria"], "premises": ["a31"]}
+ ],
+ "charges": [
+  {"component": "k4", "premises": ["a1"], "exchange": "e_emp", "payer_side": "buyer", "receiver": "officials.revenue", "receipt_variable": "tax_revenue", "projection_variable": "tax_revenue_vs_static_projection"},
+  {"component": "k5", "premises": ["a1"], "exchange": "e_con", "payer_side": "buyer", "receiver": "workers.contractors", "receipt_variable": "non_wage_compensation", "quantity_premises": ["a29"], "branch_premises": ["a2", "j2"]}
+ ],
+ "fixed": [
+  {"exchange": "e_emp", "side": "seller", "horizon": "short", "premises": ["a29"]},
+  {"exchange": "e_con", "side": "seller", "horizon": "short", "premises": ["a29"]}
+ ],
+ "moves": [
+  {"exchange": "e_emp", "side": "seller", "horizon": "medium", "premises": ["a28"]},
+  {"exchange": "e_con", "side": "seller", "horizon": "medium", "premises": ["a28"]}
+ ],
+ "thresholds": [
+  {"component": "k1", "actor": "platforms.near_threshold", "variable": "employment", "premises": ["a15"]},
+  {"component": "k3", "actor": "workers.full_time", "variable": "hours_worked", "chooser": "platforms.large", "premises": ["a17"]},
+  {"component": "k4", "actor": "workers.near_threshold", "variable": "earnings", "chooser": "platforms.large", "premises": ["a18"]}
+ ],
+ "penalties": [
+  {"component": "k6", "actor": "platforms.large", "collector": "officials.enforcement", "premises": ["a19"]},
+  {"component": "k6_suit", "actor": "platforms.large", "collector": "workers.employees", "premises": ["a19"]}
+ ],
+ "unclear": [
+  {"id": "U1", "text": "Waiting time: is time logged in and waiting for a request time during which the worker is required by the network company to remain available (section 5(2))?",
+   "readings": ["U1-a: no; a worker may log off at will, so only time on a trip, and any shift a company schedules, is engaged time", "U1-b: yes; the apps reduce the priority of workers who decline requests, so all logged-in time is engaged time"],
+   "components": {"U1-a": ["k2_a"], "U1-b": ["k2_b"]}}
+ ],
+ "announced": [
+  {"component": "k2_a", "premises": ["a11"]},
+  {"component": "k2_b", "premises": ["a11"]},
+  {"component": "k3", "premises": ["a11"]},
+  {"component": "k4", "premises": ["a11"]},
+  {"component": "k5", "premises": ["a11"]}
+ ],
+ "compliance": [{"component": "k6", "actor": "platforms.large"}],
+ "enforcers": [{"component": "k6", "actor": "officials.enforcement"}],
+ "funded": [{"component": "k6", "actor": "taxpayers", "premises": ["a26"]}],
+ "assumptions": {
+  "a1": {"text": "The Act is enforced: audits and private suits with double damages make treating workers as contractors without a valid agreement costly.", "class": "enforcement", "p": 0.8},
+  "a2": {"text": "Each company elects to offer contractor agreements.", "class": "other", "p": 0.75},
+  "a3": {"text": "Some hours on a trip pay below 16 per hour on a trip (about a fifth).", "class": "binding", "p": 0.9},
+  "a11": {"text": "Buyers of shares and medallions expect the Act to survive the court challenge and repeal campaign.", "class": "expectations", "p": 0.7},
+  "a15": {"text": "Some delivery services can operate with fewer than 100 Lanvik workers.", "class": "other", "p": 0.5},
+  "a17": {"text": "Some workers exceed 40 hours a week with one company (about 600 on trips; about 5,000 logged in), and companies can cap them.", "class": "other", "p": 0.85},
+  "a18": {"text": "Companies control dispatch enough to keep part-time employees' weekly wages at or under 150.", "class": "other", "p": 0.7},
+  "a19": {"text": "Enforcement is imperfect: some misclassification and some pressure to sign occur.", "class": "enforcement", "p": 0.65},
+  "a26": {"text": "The Department's 4 million is new money from the general fund.", "class": "revenue_use", "p": 0.9},
+  "a28": {"text": "§9 does not fix the fare share, and companies can cut fare shares and bonuses after launch.", "class": "other", "p": 0.75},
+  "a29": {"text": "Fare shares are not cut in the first months (30 days' notice; scrutiny at launch).", "class": "other", "p": 0.6},
+  "a31": {"text": "The floor's surplus of employee hours is rationed by stricter criteria than the counterfactual's dispatch ranking (shift allocation, acceptance thresholds).", "class": "other", "p": 0.7},
+  "j1": {"text": "Many logged-in hours pay below 16 per logged-in hour (about three quarters).", "class": "binding", "p": 0.95},
+  "j2": {"text": "Some workers sign a contractor agreement.", "class": "other", "p": 0.85}
+ }
+}

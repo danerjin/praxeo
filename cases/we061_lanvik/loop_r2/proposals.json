@@ -1,0 +1,871 @@
+{
+ "platforms.large": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "platforms.large",
+    "source_variable": "price_paid",
+    "relation": "output",
+    "actor": "consumers.riders",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Platforms pass part of their added cost per trip into fares (A-4); riders pay on average about 16.00 a trip; the platforms keep the difference."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "platforms.large",
+    "source_variable": "price_paid",
+    "relation": "output",
+    "actor": "retailers.restaurants",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Platforms pass part of their added cost per trip into fares and fees (A-4)."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_emp",
+    "kind": "adjust",
+    "side": "buyer",
+    "actor": "workers.employees",
+    "variables": [
+     "employment",
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Companies control dispatch enough to keep part-time employees' weekly wages at or under 150."
+   ],
+   "premise_class": "other",
+   "source": "Companies control dispatch enough to keep part-time employees' weekly wages at or under 150."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_con",
+    "kind": "adjust",
+    "side": "buyer",
+    "actor": "workers.contractors",
+    "variables": [
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Companies can steer requests between employees and contractors through dispatch."
+   ],
+   "premise_class": "other",
+   "source": "Companies can steer requests between employees and contractors through dispatch."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_emp",
+    "kind": "adjust",
+    "side": "buyer",
+    "actor": "workers.employees",
+    "variables": [
+     "hours_worked"
+    ],
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Under U1-b, companies schedule employees' logged-in time to cut paid waiting."
+   ],
+   "premise_class": "other",
+   "source": "U1-b: all logged-in time is engaged time; companies schedule employees' logged-in time to cut paid waiting."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2_a",
+    "chooser": "platforms.large",
+    "actor": "workers.contractors",
+    "variables": [
+     "employment",
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Each company elects to offer contractor agreements.",
+    "Companies can steer requests between employees and contractors through dispatch."
+   ],
+   "premise_class": "other",
+   "source": "\u00a79: A network company may elect to offer its app-based workers in Lanvik a contractor agreement; companies can steer requests between employees and contractors through dispatch."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2_b",
+    "chooser": "platforms.large",
+    "actor": "workers.contractors",
+    "variables": [
+     "employment",
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Each company elects to offer contractor agreements.",
+    "Companies can steer requests between employees and contractors through dispatch."
+   ],
+   "premise_class": "other",
+   "source": "\u00a79: A network company may elect to offer its app-based workers in Lanvik a contractor agreement; companies can steer requests between employees and contractors through dispatch."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "platforms.large",
+    "actor": "platforms.large",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Some services can be reshaped to meet the three conditions at a cost below the Act's burden."
+   ],
+   "premise_class": "other",
+   "source": "\u00a73: employee unless the company proves (a) free from control, (b) outside the usual course of business, (c) an independently established trade."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k2_a",
+    "actor": "platforms.large"
+   },
+   "premises": [
+    "Companies, drivers' groups and unions can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Companies, drivers' groups and unions can organize at a cost below their stakes."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k2_b",
+    "actor": "platforms.large"
+   },
+   "premises": [
+    "Companies, drivers' groups and unions can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Companies, drivers' groups and unions can organize at a cost below their stakes."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k5",
+    "actor": "platforms.large"
+   },
+   "premises": [
+    "Companies, drivers' groups and unions can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Companies, drivers' groups and unions can organize at a cost below their stakes."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_emp",
+    "side": "buyer",
+    "actor": "owners"
+   },
+   "premises": [
+    "Buyers of shares and medallions expect the Act to survive the court challenge and repeal campaign."
+   ],
+   "premise_class": "expectations",
+   "source": "Buyers of shares and medallions expect the Act to survive the court challenge and repeal campaign."
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_emp",
+    "side": "buyer",
+    "actor": "owners"
+   },
+   "premises": [
+    "Buyers of shares and medallions expect the Act to survive the court challenge and repeal campaign."
+   ],
+   "premise_class": "expectations",
+   "source": "Buyers of shares and medallions expect the Act to survive the court challenge and repeal campaign."
+  }
+ ],
+ "officials.enforcement": [],
+ "officials.revenue": [],
+ "taxpayers": [],
+ "platforms.near_threshold": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "platforms.near_threshold",
+    "actor": "platforms.small",
+    "variables": [
+     "quantity_substitute"
+    ]
+   },
+   "premises": [
+    "Some delivery services can operate with fewer than 100 Lanvik workers."
+   ],
+   "premise_class": "other",
+   "source": "\u00a73 applies to natural persons who perform rides or deliveries through a network company with 100 or more app-based workers in Lanvik."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "platforms.near_threshold"
+   },
+   "premises": [
+    "Companies, drivers' groups and unions can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Companies can organize at a cost below their stakes."
+  }
+ ],
+ "workers.employees": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k4",
+    "chooser": "workers.employees",
+    "actor": "workers.contractors",
+    "variables": [
+     "employment",
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Some workers sign a contractor agreement."
+   ],
+   "premise_class": "other",
+   "source": "\u00a79: A worker who signs [a contractor agreement] is not an employee for the purposes of \u00a75 to \u00a77 for the following twelve months."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "workers.employees",
+    "actor": "workers.employees",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Some workers can work through one-person companies, which \u00a73 does not cover."
+   ],
+   "premise_class": "other",
+   "source": "\u00a73 applies to natural persons."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k4",
+    "chooser": "workers.employees",
+    "actor": "neighboring_jurisdictions",
+    "variables": [
+     "employment",
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Some workers can move hours between trips starting in Selvane and in Lanvik."
+   ],
+   "premise_class": "mobility",
+   "source": "Selvane, which has no such law; about 8% of the metro area's app trips start in Selvane."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.employees",
+    "source_variable": "employment",
+    "relation": "substitute",
+    "actor": "claimants",
+    "variable": "applications"
+   },
+   "premises": [
+    "Some employees whose hours are cut qualify for and claim benefits."
+   ],
+   "premise_class": "other",
+   "source": "Insured wages count toward unemployment benefit eligibility (2,600 in a base year)."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k2_a",
+    "actor": "workers.employees"
+   },
+   "premises": [
+    "Companies, drivers' groups and unions can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Drivers' groups and unions can organize at a cost below their stakes."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k2_b",
+    "actor": "workers.employees"
+   },
+   "premises": [
+    "Companies, drivers' groups and unions can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Drivers' groups and unions can organize at a cost below their stakes."
+  }
+ ],
+ "workers.contractors": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k5",
+    "chooser": "workers.contractors",
+    "actor": "workers.employees",
+    "variables": [
+     "employment",
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Workers paid below 16 per hour on a trip mostly choose employee status (the top-up exceeds the premium and the flexibility they give up)."
+   ],
+   "premise_class": "other",
+   "source": "\u00a79: may revoke at each anniversary; employee status must be offered as the default."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k5",
+    "chooser": "workers.contractors",
+    "actor": "workers.employees",
+    "variables": [
+     "employment",
+     "hours_worked"
+    ],
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Under U1-b, workers who wait much of their logged-in time choose employee status."
+   ],
+   "premise_class": "other",
+   "source": "U1-b: all logged-in time is engaged time."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k5",
+    "actor": "workers.contractors"
+   },
+   "premises": [
+    "Companies, drivers' groups and unions can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Drivers' groups and unions can organize at a cost below their stakes."
+  }
+ ],
+ "workers.full_time": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k3",
+    "chooser": "workers.full_time",
+    "actor": "workers.contractors",
+    "variables": [
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Some workers sign a contractor agreement."
+   ],
+   "premise_class": "other",
+   "source": "\u00a76: engaged time over 40 hours in a workweek with one network company is paid at 1.5 times the regular rate; \u00a79 contractors are not employees for \u00a75 to \u00a77."
+  }
+ ],
+ "workers.near_threshold": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k4",
+    "chooser": "workers.near_threshold",
+    "actor": "workers.contractors",
+    "variables": [
+     "employment",
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Some workers sign a contractor agreement."
+   ],
+   "premise_class": "other",
+   "source": "\u00a77: contributions on all wages in any week in which the employee's wages from that company exceed 150; \u00a79 contractors are outside \u00a75 to \u00a77."
+  }
+ ],
+ "workers.prospective": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2_a",
+    "chooser": "workers.prospective",
+    "actor": "workers.contractors",
+    "variables": [
+     "employment",
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Each company elects to offer contractor agreements.",
+    "Some workers sign a contractor agreement."
+   ],
+   "premise_class": "other",
+   "source": "\u00a79: a company may offer a contractor agreement; a worker who signs is not an employee for \u00a75 to \u00a77."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2_b",
+    "chooser": "workers.prospective",
+    "actor": "workers.contractors",
+    "variables": [
+     "employment",
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Each company elects to offer contractor agreements.",
+    "Some workers sign a contractor agreement."
+   ],
+   "premise_class": "other",
+   "source": "\u00a79: a company may offer a contractor agreement; a worker who signs is not an employee for \u00a75 to \u00a77."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2_a",
+    "chooser": "workers.prospective",
+    "actor": "neighboring_jurisdictions",
+    "variables": [
+     "employment",
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Some workers can move hours between trips starting in Selvane and in Lanvik."
+   ],
+   "premise_class": "mobility",
+   "source": "Selvane has no such law; about 8% of the metro area's app trips start in Selvane."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2_b",
+    "chooser": "workers.prospective",
+    "actor": "neighboring_jurisdictions",
+    "variables": [
+     "employment",
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Some workers can move hours between trips starting in Selvane and in Lanvik."
+   ],
+   "premise_class": "mobility",
+   "source": "Selvane has no such law; about 8% of the metro area's app trips start in Selvane."
+  }
+ ],
+ "consumers.riders": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "consumers.riders",
+    "source_variable": "price_paid",
+    "relation": "own_price",
+    "actor": "consumers.riders",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "some riders and diners take fewer trips at the higher price"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "consumers.riders",
+    "source_variable": "price_paid",
+    "relation": "substitute",
+    "actor": "drivers.taxi",
+    "variable": "quantity_substitute"
+   },
+   "premises": [
+    "Taxis are a substitute for some app rides, at fares fixed by the city, with the medallion cap binding; taxis have idle capacity at the fixed fare, so more riders mean more trips per medallion."
+   ],
+   "premise_class": "substitutability",
+   "source": "Taxis in Lanvik City are licensed separately: the city caps medallions at 1,800 and sets metered fares."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "consumers.riders",
+    "source_variable": "price_paid",
+    "relation": "substitute",
+    "actor": "sellers.substitutes",
+    "variable": "quantity_substitute"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "taxis, transit and home cooking are partial substitutes"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "consumers.riders",
+    "source_variable": "quantity_demanded",
+    "relation": "input",
+    "actor": "workers.employees",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "They log about 1.3 million hours a week, of which about 58% is time on a trip."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "consumers.riders",
+    "source_variable": "quantity_demanded",
+    "relation": "input",
+    "actor": "workers.contractors",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Riders pay on average about 16.00 a trip; fewer trips mean less work per logged-in hour."
+  }
+ ],
+ "retailers.restaurants": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.restaurants",
+    "source_variable": "price_paid",
+    "relation": "own_price",
+    "actor": "retailers.restaurants",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Restaurants' delivery orders fall as delivery fees rise."
+   ],
+   "premise_class": "other",
+   "source": "Restaurants' delivery orders fall as delivery fees rise."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.restaurants",
+    "source_variable": "price_paid",
+    "relation": "substitute",
+    "actor": "workers.couriers",
+    "variable": "quantity_substitute"
+   },
+   "premises": [
+    "Some restaurants hire their own couriers rather than pay the higher fees."
+   ],
+   "premise_class": "substitutability",
+   "source": "Some restaurants hire their own couriers rather than pay the higher fees."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.restaurants",
+    "source_variable": "quantity_demanded",
+    "relation": "input",
+    "actor": "workers.employees",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Restaurants' delivery orders fall as delivery fees rise."
+   ],
+   "premise_class": "other",
+   "source": "two delivery platforms; deliveries are about 2.4 trips per hour on a trip"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.restaurants",
+    "source_variable": "quantity_demanded",
+    "relation": "input",
+    "actor": "workers.contractors",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Restaurants' delivery orders fall as delivery fees rise."
+   ],
+   "premise_class": "other",
+   "source": "two delivery platforms; deliveries are about 2.4 trips per hour on a trip"
+  }
+ ],
+ "neighboring_jurisdictions": [],
+ "owners": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners",
+    "source_variable": "return_on_capital",
+    "relation": "yield",
+    "actor": "owners",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Buyers of shares and medallions expect the Act to survive the court challenge and repeal campaign."
+   ],
+   "premise_class": "expectations",
+   "source": "Buyers of shares and medallions expect the Act to survive the court challenge and repeal campaign."
+  }
+ ],
+ "platforms.large#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "platforms.large",
+    "source_variable": "price_paid",
+    "relation": "output",
+    "actor": "consumers.diners",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Platforms pass part of their added cost per trip into fares and fees; some riders and diners take fewer trips at the higher price."
+  }
+ ],
+ "platforms.near_threshold#2": [],
+ "platforms.small": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "platforms.small",
+    "source_variable": "quantity_substitute",
+    "relation": "input",
+    "actor": "workers.uncovered",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Some delivery services can operate with fewer than 100 Lanvik workers."
+   ],
+   "premise_class": "other",
+   "source": "A few local courier cooperatives have fewer than 100 workers; \u00a73 covers companies with 100 or more app-based workers."
+  }
+ ],
+ "workers.contractors#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.contractors",
+    "source_variable": "net_price_received",
+    "relation": "same_act",
+    "actor": "workers.contractors",
+    "variable": "earnings"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Platforms set and change workers' fare shares and bonuses unilaterally."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.contractors",
+    "source_variable": "non_wage_compensation",
+    "relation": "same_act",
+    "actor": "workers.contractors",
+    "variable": "earnings"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "\u00a79: the company shall pay the worker, in addition to the agreed fare share, a premium of 1.50."
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "workers.contractors",
+    "variable": "earnings",
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "The premium dominates the effects of entry and fewer trips on contractors' hourly earnings."
+   ],
+   "premise_class": "other",
+   "source": "The premium is about 3.00 per hour on a trip, about 1.74 per hour logged in, and about 9% of the average rider fare."
+  }
+ ],
+ "workers.employees#2": [],
+ "consumers.diners": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "consumers.diners",
+    "source_variable": "price_paid",
+    "relation": "own_price",
+    "actor": "consumers.diners",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "some riders and diners take fewer trips at the higher price"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "consumers.diners",
+    "source_variable": "price_paid",
+    "relation": "substitute",
+    "actor": "households",
+    "variable": "home_production"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "taxis, transit and home cooking are partial substitutes"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "consumers.diners",
+    "source_variable": "quantity_demanded",
+    "relation": "input",
+    "actor": "workers.employees",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "two delivery platforms; deliveries are about 2.4 trips per hour on a trip"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "consumers.diners",
+    "source_variable": "quantity_demanded",
+    "relation": "input",
+    "actor": "workers.contractors",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "two delivery platforms; deliveries are about 2.4 trips per hour on a trip"
+  }
+ ],
+ "consumers.riders#2": [],
+ "drivers.taxi": [
+  {
+   "part": "exchanges",
+   "fact": {
+    "id": "e_taxi",
+    "buyer": "consumers.riders",
+    "seller": "drivers.taxi",
+    "buyer_price_var": "price_paid",
+    "seller_price_var": "net_price_received"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Taxis in Lanvik City are licensed separately: the city caps medallions at 1,800 and sets metered fares."
+  },
+  {
+   "part": "fixed",
+   "fact": {
+    "exchange": "e_taxi",
+    "side": "seller",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Taxis are a substitute for some app rides, at fares fixed by the city, with the medallion cap binding; taxis have idle capacity at the fixed fare, so more riders mean more trips per medallion."
+   ],
+   "premise_class": "substitutability",
+   "source": "the city caps medallions at 1,800 and sets metered fares."
+  },
+  {
+   "part": "fixed",
+   "fact": {
+    "exchange": "e_taxi",
+    "side": "buyer",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Taxis are a substitute for some app rides, at fares fixed by the city, with the medallion cap binding; taxis have idle capacity at the fixed fare, so more riders mean more trips per medallion."
+   ],
+   "premise_class": "substitutability",
+   "source": "the city ... sets metered fares."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.taxi",
+    "source_variable": "quantity_substitute",
+    "relation": "same_act",
+    "actor": "drivers.taxi",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Taxis are a substitute for some app rides, at fares fixed by the city, with the medallion cap binding; taxis have idle capacity at the fixed fare, so more riders mean more trips per medallion."
+   ],
+   "premise_class": "substitutability",
+   "source": "taxis have idle capacity at the fixed fare, so more riders mean more trips per medallion."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_taxi",
+    "side": "seller",
+    "actor": "owners.medallion"
+   },
+   "premises": [
+    "Buyers of shares and medallions expect the Act to survive the court challenge and repeal campaign.",
+    "Taxis are a substitute for some app rides, at fares fixed by the city, with the medallion cap binding; taxis have idle capacity at the fixed fare, so more riders mean more trips per medallion."
+   ],
+   "premise_class": "expectations",
+   "source": "medallions trade at about 95,000; buyers of shares and medallions expect the Act to survive."
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_taxi",
+    "side": "seller",
+    "actor": "owners.medallion"
+   },
+   "premises": [
+    "Buyers of shares and medallions expect the Act to survive the court challenge and repeal campaign.",
+    "Taxis are a substitute for some app rides, at fares fixed by the city, with the medallion cap binding; taxis have idle capacity at the fixed fare, so more riders mean more trips per medallion."
+   ],
+   "premise_class": "expectations",
+   "source": "medallions trade at about 95,000."
+  }
+ ],
+ "owners#2": [],
+ "retailers.restaurants#2": [],
+ "sellers.substitutes": [],
+ "workers.contractors#3": [],
+ "workers.couriers": [],
+ "workers.uncovered": []
+}
