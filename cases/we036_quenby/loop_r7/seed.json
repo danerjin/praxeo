@@ -1,0 +1,83 @@
+{
+ "name": "WE-036 Quenby Fair Share Health Cover Act (loop_r7)",
+ "exchanges": [
+  {"id": "e1", "buyer": "employers.mid_size", "seller": "workers.uncovered", "seller_price_var": "wage_rate", "buyer_price_var": "price_paid"},
+  {"id": "e2", "buyer": "employers.mid_size", "seller": "workers.min_wage", "seller_price_var": "wage_rate", "buyer_price_var": "price_paid"},
+  {"id": "e3", "buyer": "employers.capped", "seller": "workers.at_capped_firms", "seller_price_var": "wage_rate", "buyer_price_var": "price_paid"},
+  {"id": "e4", "buyer": "employers.seasonal", "seller": "workers.at_seasonal_firms", "seller_price_var": "wage_rate", "buyer_price_var": "price_paid"}
+ ],
+ "charges": [
+  {"component": "k1_offer", "exchange": "e1", "payer_side": "buyer", "receiver": "workers.at_offering_firms", "receipt_variable": "non_wage_compensation",
+   "quantity_premises": ["a7"], "branch_premises": ["a1", "a2"], "branch_premise_sets": [["a1", "a5"]]},
+  {"component": "k1_offer", "exchange": "e2", "payer_side": "buyer", "receiver": "workers.at_offering_firms", "receipt_variable": "non_wage_compensation",
+   "quantity_premises": ["a7"], "branch_premises": ["a1", "a2"], "branch_premise_sets": [["a1", "a5"]]},
+  {"component": "k1_offer", "exchange": "e3", "payer_side": "buyer", "receiver": "workers.at_offering_firms", "receipt_variable": "non_wage_compensation",
+   "quantity_premises": ["a7"], "branch_premises": ["a1", "a2"], "branch_premise_sets": [["a1", "a5"]]},
+  {"component": "k1_pay", "exchange": "e1", "payer_side": "buyer", "receiver": "officials.revenue", "receipt_variable": "non_tax_receipts",
+   "branch_premises": ["a1", "a4"]},
+  {"component": "k1_pay", "exchange": "e2", "payer_side": "buyer", "receiver": "officials.revenue", "receipt_variable": "non_tax_receipts",
+   "branch_premises": ["a1", "a4"]},
+  {"component": "k1_pay", "exchange": "e3", "payer_side": "buyer", "receiver": "officials.revenue", "receipt_variable": "non_tax_receipts",
+   "branch_premises": ["a1", "a4", "a12"], "capped_payers": ["employers.capped"]},
+  {"component": "k1_offer_seasonal", "exchange": "e4", "payer_side": "buyer", "receiver": "workers.at_offering_firms", "receipt_variable": "non_wage_compensation",
+   "quantity_premises": ["a7"], "branch_premises": ["a2"]},
+  {"component": "k1_pay_seasonal", "exchange": "e4", "payer_side": "buyer", "receiver": "officials.revenue", "receipt_variable": "non_tax_receipts",
+   "branch_premises": ["a4", "a33"]}
+ ],
+ "fixed": [
+  {"exchange": "e1", "side": "seller", "horizon": "short", "premises": ["a3"]},
+  {"exchange": "e2", "side": "seller", "horizon": "long", "premises": ["a9"]},
+  {"exchange": "e3", "side": "seller", "horizon": "short", "premises": ["a3"]},
+  {"exchange": "e4", "side": "seller", "horizon": "short", "premises": ["a3"]}
+ ],
+ "moves": [
+  {"exchange": "e1", "side": "buyer", "horizon": "short", "premises": ["a3"]},
+  {"exchange": "e1", "side": "seller", "horizon": "medium", "premises": ["a6"]},
+  {"exchange": "e2", "side": "buyer", "horizon": "long", "premises": ["a9"]},
+  {"exchange": "e3", "side": "buyer", "horizon": "short", "premises": ["a3"]},
+  {"exchange": "e3", "side": "seller", "horizon": "medium", "premises": ["a6"]},
+  {"exchange": "e4", "side": "buyer", "horizon": "short", "premises": ["a3"]},
+  {"exchange": "e4", "side": "seller", "horizon": "medium", "premises": ["a6"]}
+ ],
+ "thresholds": [
+  {"component": "k3", "actor": "employers.near_threshold", "variable": "employment", "premises": ["a14"]},
+  {"component": "k1_hours", "actor": "workers.near_hours_line", "variable": "hours_worked", "chooser": "employers.mid_size", "premises": ["a10"]}
+ ],
+ "unclear": [
+  {"id": "U1", "text": "Seasonal workers in the count: the Act does not say whether seasonal workers count toward the 50.",
+   "readings": ["U1-a: seasonal workers count by their hours, like any other employee, so the seasonal firms reach 50 and are bound",
+                "U1-b: seasonal workers are left out of the count, so the seasonal firms stay below 50 and are not bound"],
+   "components": {"U1-a": ["k1_offer_seasonal", "k1_pay_seasonal", "k5_seasonal"], "U1-b": []}}
+ ],
+ "announced": [
+  {"component": "k1_offer", "premises": []},
+  {"component": "k1_pay", "premises": []},
+  {"component": "k3", "premises": ["a15"]}
+ ],
+ "compliance": [
+  {"component": "k5", "actor": "employers.mid_size"},
+  {"component": "k5", "actor": "employers.capped"},
+  {"component": "k5_seasonal", "actor": "employers.seasonal"}
+ ],
+ "enforcers": [
+  {"component": "k5", "actor": "officials.revenue"},
+  {"component": "k2", "actor": "officials.insurance"}
+ ],
+ "funded": [{"component": "k5", "actor": "taxpayers", "premises": ["a29"]}],
+ "assumptions": {
+  "a1": {"text": "About 135,000 full-timers at firms of 50+ FTE are offered nothing, and about 105,000 are offered less than K1 requires, so K1 binds for them.", "class": "binding", "p": 0.9},
+  "a2": {"text": "Some bound firms that offer nothing now choose to offer (mainly those with higher-paid staff who value cover, given the tax exclusion).", "class": "other", "p": 0.75},
+  "a3": {"text": "Money wages are fixed in the short run by pay scales and yearly raises in at-will employment (CR-6, 0.8: stickiness as a premise).", "class": "other", "p": 0.75},
+  "a4": {"text": "Some bound firms choose to pay the charge for at least some full-timers (all the capped firms, many mid-size low-wage firms).", "class": "other", "p": 0.9},
+  "a5": {"text": "Some firms with plans short of K1 upgrade them rather than pay.", "class": "other", "p": 0.7},
+  "a6": {"text": "Wages above the minimum can adjust over the medium horizon, as raises are set.", "class": "other", "p": 0.8},
+  "a7": {"text": "At players, for the marginal pair, cover at 30% is worth less to the worker than its cost to the employer: they could have agreed on it, with the tax exclusion, and did not.", "class": "other", "p": 0.6},
+  "a9": {"text": "The minimum wage binds for some workers at bound firms.", "class": "binding", "p": 0.85},
+  "a10": {"text": "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost.", "class": "other", "p": 0.75},
+  "a12": {"text": "The 45 capped firms stay above 100 uncovered full-timers.", "class": "other", "p": 0.9},
+  "a14": {"text": "Some firms near 50 FTE value staying below the line more than the extra work.", "class": "other", "p": 0.7},
+  "a15": {"text": "Owners of firms near 50 know from January 2027 that the 2027 average decides 2028 status.", "class": "expectations", "p": 0.75},
+  "a29": {"text": "The $4.1 million is new general-fund money.", "class": "revenue_use", "p": 0.9},
+  "a33": {"text": "Some of the 380 seasonal firms do not offer qualifying cover to their full-timers.", "class": "binding", "p": 0.75}
+ }
+}
