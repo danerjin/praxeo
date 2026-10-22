@@ -1,0 +1,397 @@
+{
+ "name": "WE-059 Kestrava Fair Repair Act (loop_r3, blind)",
+ "exchanges": [
+  {
+   "id": "e1",
+   "buyer": "repair_shops.independent_phone",
+   "seller": "manufacturers.phone",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e2",
+   "buyer": "owners.phones",
+   "seller": "manufacturers.phone",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e3",
+   "buyer": "repair_shops.independent_farm",
+   "seller": "manufacturers.farm",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e4",
+   "buyer": "growers",
+   "seller": "manufacturers.farm",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e5",
+   "buyer": "buyers.new_phones",
+   "seller": "manufacturers.phone",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e7",
+   "buyer": "repair_shops.independent_phone",
+   "seller": "sellers.stolen_parts",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e6",
+   "buyer": "growers.new_buyers",
+   "seller": "manufacturers.farm",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  }
+ ],
+ "duties": [
+  {
+   "component": "k1",
+   "exchange": "e1",
+   "premises": [
+    "a2",
+    "a1"
+   ]
+  },
+  {
+   "component": "k1",
+   "exchange": "e2",
+   "premises": [
+    "a2",
+    "a1"
+   ]
+  },
+  {
+   "component": "k1",
+   "exchange": "e3",
+   "premises": [
+    "a2",
+    "a1"
+   ]
+  },
+  {
+   "component": "k1",
+   "exchange": "e4",
+   "premises": [
+    "a2",
+    "a1"
+   ]
+  }
+ ],
+ "charges": [
+  {
+   "component": "k1_term",
+   "exchange": "e5",
+   "payer_side": "seller",
+   "receiver": "buyers.new_phones",
+   "receipt_variable": "quality_per_unit",
+   "other_receivers": [
+    {
+     "receiver": "repair_shops.independent_phone",
+     "receipt_variable": "quality_per_unit"
+    }
+   ],
+   "premises": [
+    "a2",
+    "a1"
+   ],
+   "quantity_premises": [
+    "a25"
+   ]
+  },
+  {
+   "component": "k1_term",
+   "exchange": "e6",
+   "payer_side": "seller",
+   "receiver": "growers.new_buyers",
+   "receipt_variable": "quality_per_unit",
+   "other_receivers": [
+    {
+     "receiver": "repair_shops.independent_farm",
+     "receipt_variable": "quality_per_unit"
+    }
+   ],
+   "premises": [
+    "a2",
+    "a1"
+   ],
+   "quantity_premises": [
+    "a25"
+   ]
+  },
+  {
+   "component": "k1_item",
+   "exchange": "e6",
+   "payer_side": "seller",
+   "receiver": "growers.new_buyers",
+   "receipt_variable": "quality_per_unit",
+   "other_receivers": [
+    {
+     "receiver": "repair_shops.independent_farm",
+     "receipt_variable": "quality_per_unit"
+    }
+   ],
+   "premises": [
+    "a1"
+   ],
+   "basis": "item",
+   "branch_premises": [
+    "a11"
+   ]
+  }
+ ],
+ "terms": [
+  {
+   "component": "k2",
+   "exchange": "e5",
+   "side": "buyer",
+   "direction": "better",
+   "premises": [
+    "a2",
+    "a22"
+   ]
+  },
+  {
+   "component": "k2",
+   "exchange": "e5",
+   "side": "seller",
+   "direction": "worse",
+   "premises": [
+    "a2",
+    "a6"
+   ]
+  },
+  {
+   "component": "k2",
+   "exchange": "e6",
+   "side": "buyer",
+   "direction": "better",
+   "premises": [
+    "a2",
+    "a22"
+   ]
+  },
+  {
+   "component": "k2",
+   "exchange": "e6",
+   "side": "seller",
+   "direction": "worse",
+   "premises": [
+    "a2",
+    "a6"
+   ]
+  },
+  {
+   "component": "k3",
+   "exchange": "e5",
+   "side": "buyer",
+   "direction": "better",
+   "premises": [
+    "s1",
+    "a22"
+   ]
+  },
+  {
+   "component": "k3",
+   "exchange": "e7",
+   "side": "seller",
+   "direction": "better",
+   "premises": [
+    "s1",
+    "a17"
+   ]
+  },
+  {
+   "component": "k3",
+   "exchange": "e7",
+   "side": "buyer",
+   "direction": "better",
+   "premises": [
+    "s1"
+   ]
+  }
+ ],
+ "moves": [
+  {
+   "exchange": "e6",
+   "side": "buyer",
+   "premises": [
+    "a18"
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Parts pairing: whether the software lock that s5(c) forbids includes pairing that needs the maker's authorization.",
+   "readings": [
+    "U1-a: pairing that needs the maker's authorization is itself the lock s5(c) forbids; any part installed, genuine, salvaged or non-genuine, must work fully without contacting the maker, and makers must remove pairing from covered devices and leave it out of new ones",
+    "U1-b: s3(a)(iv) presupposes that pairing continues; a lock is lawful if the owner (or a repairer acting for the owner) can pair a genuine part using a tool the maker supplies on fair and reasonable terms; makers may refuse to pair parts reported stolen and need not pair non-genuine parts"
+   ],
+   "components": {
+    "U1-a": [
+     "k3"
+    ],
+    "U1-b": []
+   }
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a20"
+   ]
+  },
+  {
+   "component": "k1_term",
+   "premises": [
+    "a20"
+   ]
+  },
+  {
+   "component": "k2",
+   "premises": [
+    "a20"
+   ]
+  },
+  {
+   "component": "k3",
+   "premises": [
+    "a20"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "manufacturers.phone"
+  },
+  {
+   "component": "k1",
+   "actor": "manufacturers.farm"
+  },
+  {
+   "component": "k2",
+   "actor": "manufacturers.phone"
+  },
+  {
+   "component": "k2",
+   "actor": "manufacturers.farm"
+  },
+  {
+   "component": "k3",
+   "actor": "manufacturers.phone"
+  },
+  {
+   "component": "k3",
+   "actor": "manufacturers.farm"
+  },
+  {
+   "component": "k2",
+   "actor": "distributors.farm_equipment"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "fixed_budget": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement",
+   "premises": [
+    "s2"
+   ]
+  }
+ ],
+ "penalties": [
+  {
+   "component": "k1",
+   "actor": "manufacturers.phone",
+   "collector": "treasury",
+   "premises": [
+    "a10"
+   ]
+  },
+  {
+   "component": "k1",
+   "actor": "manufacturers.farm",
+   "collector": "treasury",
+   "premises": [
+    "a10"
+   ]
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Most makers comply with K1 in most cases.",
+   "class": "enforcement",
+   "p": 0.7
+  },
+  "a2": {
+   "text": "Before the Act, makers did not offer independents and owners genuine parts, tools and software on the terms they gave authorized repairers (except one phone maker's national program, which matches on price and meets U1-b), and anti-repair terms were in use.",
+   "class": "binding",
+   "p": 0.9
+  },
+  "a6": {
+   "text": "Makers bear costs from K1 and K2 (margin on repair inputs, supply and support) and seek to recover them through other terms of sale.",
+   "class": "other",
+   "p": 0.85
+  },
+  "a10": {
+   "text": "The Attorney General acts only on complaint, and some makers' offers fall short.",
+   "class": "enforcement",
+   "p": 0.7
+  },
+  "a11": {
+   "text": "For some specialty farm models with fewer than 20 sales a year in Kestrava, the cost of supplying documentation, tools and software for the model there exceeds the margin on those sales.",
+   "class": "other",
+   "p": 0.5
+  },
+  "a18": {
+   "text": "Farm equipment makers raise list prices in Kestrava relative to Darnholt.",
+   "class": "other",
+   "p": 0.55
+  },
+  "a20": {
+   "text": "Makers, dealers and investors expect the Act to stay in force.",
+   "class": "expectations",
+   "p": 0.8
+  },
+  "a22": {
+   "text": "Buyers of new covered equipment value access to repair inputs.",
+   "class": "other",
+   "p": 0.7
+  },
+  "a17": {
+   "text": "Pairing and activation locks now keep most parts of reported stolen phones from working in other devices; under U1-a they would work.",
+   "class": "other",
+   "p": 0.65
+  },
+  "a25": {
+   "text": "For each maker, the lost margin on repair inputs, the voided terms and the costs of compliance outweigh any gain from every rival being bound at once and from buyers' higher valuation of covered units.",
+   "class": "other",
+   "p": 0.7
+  },
+  "s1": {
+   "text": "Most makers comply with K3 in most cases.",
+   "class": "enforcement",
+   "p": 0.7
+  },
+  "s2": {
+   "text": "The Consumer Protection Division's budget is unchanged, so its other complaint work gives way to enforcing the Act.",
+   "class": "other",
+   "p": 0.85
+  }
+ }
+}

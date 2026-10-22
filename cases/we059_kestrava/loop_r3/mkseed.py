@@ -1,0 +1,62 @@
+import json
+A = {
+ "a1": ("Most makers comply with K1 in most cases.", "enforcement", 0.7),
+ "a2": ("Before the Act, makers did not offer independents and owners genuine parts, tools and software on the terms they gave authorized repairers (except one phone maker's national program, which matches on price and meets U1-b), and anti-repair terms were in use.", "binding", 0.9),
+ "a6": ("Makers bear costs from K1 and K2 (margin on repair inputs, supply and support) and seek to recover them through other terms of sale.", "other", 0.85),
+ "a10": ("The Attorney General acts only on complaint, and some makers' offers fall short.", "enforcement", 0.7),
+ "a11": ("For some specialty farm models with fewer than 20 sales a year in Kestrava, the cost of supplying documentation, tools and software for the model there exceeds the margin on those sales.", "other", 0.5),
+ "a18": ("Farm equipment makers raise list prices in Kestrava relative to Darnholt.", "other", 0.55),
+ "a20": ("Makers, dealers and investors expect the Act to stay in force.", "expectations", 0.8),
+ "a22": ("Buyers of new covered equipment value access to repair inputs.", "other", 0.7),
+ "a25": ("For each maker, the lost margin on repair inputs, the voided terms and the costs of compliance outweigh any gain from every rival being bound at once and from buyers' higher valuation of covered units.", "other", 0.7),
+ "a17": ("Pairing and activation locks now keep most parts of reported stolen phones from working in other devices; under U1-a they would work.", "other", 0.65),
+ "s1": ("Most makers comply with K3 in most cases.", "enforcement", 0.7),
+ "s2": ("The Consumer Protection Division's budget is unchanged, so its other complaint work gives way to enforcing the Act.", "other", 0.85),
+}
+used = ["a1", "a2", "a6", "a10", "a11", "a18", "a20", "a22", "a17", "a25", "s1", "s2"]
+EX = [
+ ("e1", "repair_shops.independent_phone", "manufacturers.phone"),
+ ("e2", "owners.phones", "manufacturers.phone"),
+ ("e3", "repair_shops.independent_farm", "manufacturers.farm"),
+ ("e4", "growers", "manufacturers.farm"),
+ ("e5", "buyers.new_phones", "manufacturers.phone"),
+ ("e7", "repair_shops.independent_phone", "sellers.stolen_parts"),
+ ("e6", "growers.new_buyers", "manufacturers.farm"),
+]
+seed = {
+ "name": "WE-059 Kestrava Fair Repair Act (loop_r3, blind)",
+ "exchanges": [{"id": i, "buyer": b, "seller": s, "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"} for i, b, s in EX],
+ "duties": [{"component": "k1", "exchange": e, "premises": ["a2", "a1"]} for e in ("e1", "e2", "e3", "e4")],
+ "charges": [
+  {"component": "k1_term", "exchange": "e5", "payer_side": "seller", "receiver": "buyers.new_phones", "receipt_variable": "quality_per_unit",
+   "other_receivers": [{"receiver": "repair_shops.independent_phone", "receipt_variable": "quality_per_unit"}],
+   "premises": ["a2", "a1"], "quantity_premises": ["a25"]},
+  {"component": "k1_term", "exchange": "e6", "payer_side": "seller", "receiver": "growers.new_buyers", "receipt_variable": "quality_per_unit",
+   "other_receivers": [{"receiver": "repair_shops.independent_farm", "receipt_variable": "quality_per_unit"}],
+   "premises": ["a2", "a1"], "quantity_premises": ["a25"]},
+  {"component": "k1_item", "exchange": "e6", "payer_side": "seller", "receiver": "growers.new_buyers", "receipt_variable": "quality_per_unit",
+   "other_receivers": [{"receiver": "repair_shops.independent_farm", "receipt_variable": "quality_per_unit"}],
+   "premises": ["a1"], "basis": "item", "branch_premises": ["a11"]},
+ ],
+ "terms": [
+  {"component": "k2", "exchange": "e5", "side": "buyer", "direction": "better", "premises": ["a2", "a22"]},
+  {"component": "k2", "exchange": "e5", "side": "seller", "direction": "worse", "premises": ["a2", "a6"]},
+  {"component": "k2", "exchange": "e6", "side": "buyer", "direction": "better", "premises": ["a2", "a22"]},
+  {"component": "k2", "exchange": "e6", "side": "seller", "direction": "worse", "premises": ["a2", "a6"]},
+  {"component": "k3", "exchange": "e5", "side": "buyer", "direction": "better", "premises": ["s1", "a22"]},
+  {"component": "k3", "exchange": "e7", "side": "seller", "direction": "better", "premises": ["s1", "a17"]},
+  {"component": "k3", "exchange": "e7", "side": "buyer", "direction": "better", "premises": ["s1"]},
+ ],
+ "moves": [{"exchange": "e6", "side": "buyer", "premises": ["a18"]}],
+ "unclear": [{"id": "U1", "text": "Parts pairing: whether the software lock that s5(c) forbids includes pairing that needs the maker's authorization.",
+   "readings": ["U1-a: pairing that needs the maker's authorization is itself the lock s5(c) forbids; any part installed, genuine, salvaged or non-genuine, must work fully without contacting the maker, and makers must remove pairing from covered devices and leave it out of new ones",
+                "U1-b: s3(a)(iv) presupposes that pairing continues; a lock is lawful if the owner (or a repairer acting for the owner) can pair a genuine part using a tool the maker supplies on fair and reasonable terms; makers may refuse to pair parts reported stolen and need not pair non-genuine parts"],
+   "components": {"U1-a": ["k3"], "U1-b": []}}],
+ "announced": [{"component": c, "premises": ["a20"]} for c in ("k1", "k1_term", "k2", "k3")],
+ "compliance": [{"component": c, "actor": a} for c in ("k1", "k2", "k3") for a in ("manufacturers.phone", "manufacturers.farm")] + [{"component": "k2", "actor": "distributors.farm_equipment"}],
+ "enforcers": [{"component": "k4", "actor": "officials.enforcement"}],
+ "fixed_budget": [{"component": "k4", "actor": "officials.enforcement", "premises": ["s2"]}],
+ "penalties": [{"component": "k1", "actor": a, "collector": "treasury", "premises": ["a10"]} for a in ("manufacturers.phone", "manufacturers.farm")],
+ "assumptions": {k: {"text": A[k][0], "class": A[k][1], "p": A[k][2]} for k in used},
+}
+json.dump(seed, open("cases/we059_kestrava/loop_r3/seed.json", "w"), indent=1)
