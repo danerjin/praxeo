@@ -1,0 +1,385 @@
+{
+ "builders.homes": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "builders.homes",
+    "actor": "builders.homes",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "The renovation exemption can be used for projects that would otherwise be rebuilds or large additions."
+   ],
+   "premise_class": "other",
+   "source": "Renovations and alterations of existing homes. Additions that enlarge a home's conditioned floor area by 50% or less."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "builders.homes",
+    "actor": "builders.across_state_line",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Builders and buyers in the Halden metro area can move new building across the state line."
+   ],
+   "premise_class": "mobility",
+   "source": "The Halden metropolitan area ... straddles the state line with the neighboring state of Brennick, which has no comparable code."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "builders.homes",
+    "actor": "builders.four_story",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Builders move small apartment projects to four stories to fall under the commercial code."
+   ],
+   "premise_class": "other",
+   "source": "Buildings of four or more stories (covered by the commercial code, unchanged)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "builders.homes",
+    "actor": "sellers.other_construction",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Buyers have substitutes for new site-built homes in the state (existing homes, manufactured homes, homes across the state line), and builders can move some capital and labor to other work."
+   ],
+   "premise_class": "substitutability",
+   "source": "new homes whose DEI exceeds a maximum may not be built"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "builders.homes",
+    "actor": "builders.homes",
+    "variables": [
+     "unit_size"
+    ]
+   },
+   "premises": [
+    "Under a per-square-foot index, a larger home meets a given maximum at lower cost per square foot, because loads that do not grow with floor area (water heating, appliances) are spread over more of it."
+   ],
+   "premise_class": "other",
+   "source": "the modeled annual site energy of a home per square foot of conditioned floor area"
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "builders.homes",
+    "variable": "applications",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Builders can file complete applications ahead of each step and start within 12 months."
+   ],
+   "premise_class": "expectations",
+   "source": "A home must meet the standard in force on the date a complete permit application is filed. A permit lapses if construction has not begun within 12 months."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_newhomes",
+    "kind": "outside",
+    "actor": "builders.homes",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Lenient or false ratings occur on a meaningful scale, given that builders hire raters and 2% are audited."
+   ],
+   "premise_class": "enforcement",
+   "source": "Raters ... are hired and paid by builders. The Energy Office audits 2% of certificates."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "builders.homes"
+   },
+   "premises": [
+    "Builders' associations can organize to lobby at a cost below their stake (RS-7's premise)."
+   ],
+   "premise_class": "other",
+   "source": "Builders and owners who apply for a building permit"
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_newhomes",
+    "side": "seller",
+    "actor": "landowners.buildable_lots"
+   },
+   "premises": [
+    "Buildable lots have few uses other than new homes (zoning, services).",
+    "Buyers of homes and land expect the schedule to be carried out, not paused."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "The maximum falls by 4% of the Year 1 value each year ... it then stays fixed until the legislature acts."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "builders.homes",
+    "source_variable": "compliance_cost",
+    "relation": "input",
+    "actor": "makers.efficiency_products",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Spending on efficiency products per new home rises proportionally more than the number of new homes falls."
+   ],
+   "premise_class": "other",
+   "source": "heat pumps ... efficiency products ... a requirement that barely binds when it starts and binds more each year"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "builders.homes",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "workers.construction",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "About 40,000 new homes are permitted each year"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "builders.homes",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "input_suppliers",
+    "variable": "quantity_demanded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "About 40,000 new homes are permitted each year"
+  }
+ ],
+ "buyers.new_homes": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.new_homes",
+    "actor": "owners.existing_homes",
+    "variables": [
+     "quantity_substitute"
+    ]
+   },
+   "premises": [
+    "Buyers have substitutes for new site-built homes in the state (existing homes, manufactured homes, homes across the state line), and builders can move some capital and labor to other work."
+   ],
+   "premise_class": "substitutability",
+   "source": "About 2.4 million homes."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.new_homes",
+    "actor": "sellers.manufactured_homes",
+    "variables": [
+     "quantity_substitute"
+    ]
+   },
+   "premises": [
+    "Manufactured homes are a usable substitute for some new-home buyers."
+   ],
+   "premise_class": "substitutability",
+   "source": "Manufactured homes built to the national manufactured-housing standard are sold throughout the state."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.new_homes",
+    "actor": "buyers.new_homes",
+    "variables": [
+     "cross_border_purchases"
+    ]
+   },
+   "premises": [
+    "Builders and buyers in the Halden metro area can move new building across the state line."
+   ],
+   "premise_class": "mobility",
+   "source": "The Halden metropolitan area ... straddles the state line with the neighboring state of Brennick, which has no comparable code."
+  }
+ ],
+ "buyers.large_homes": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_u1b",
+    "chooser": "buyers.large_homes",
+    "actor": "owners.existing_homes",
+    "variables": [
+     "quantity_substitute"
+    ]
+   },
+   "premises": [
+    "Buyers have substitutes for new site-built homes in the state (existing homes, manufactured homes, homes across the state line), and builders can move some capital and labor to other work."
+   ],
+   "premise_class": "substitutability",
+   "source": "for homes above 2,500 square feet, the maximum applies to the home's total modeled energy as if it were 2,500 square feet"
+  }
+ ],
+ "officials.building_departments": [],
+ "officials.energy_office": [],
+ "taxpayers": [],
+ "raters": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "raters",
+    "source_variable": "non_tax_receipts",
+    "relation": "yield",
+    "actor": "raters.prospective",
+    "variable": "entry_rate"
+   },
+   "premises": [
+    "Rater certification is open, and some people in related trades take it up."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "Raters are certified by the Energy Office (a course and exam, about six months)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "raters",
+    "source_variable": "non_tax_receipts",
+    "relation": "supply_price",
+    "actor": "raters",
+    "variable": "net_price_received"
+   },
+   "premises": [
+    "Rater capacity cannot grow much within the first two years (six-month certification; about 70 active raters for new homes)."
+   ],
+   "premise_class": "other",
+   "source": "About 140 certified raters work in the state; about 70 of them rate new homes, a capacity of about 35,000 homes a year at current staffing."
+  }
+ ],
+ "builders.across_state_line": [],
+ "input_suppliers": [],
+ "landowners.buildable_lots": [],
+ "makers.efficiency_products": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "makers.efficiency_products",
+    "source_variable": "quantity_demanded",
+    "relation": "yield",
+    "actor": "makers.efficiency_products",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "The plant and skills of efficiency-product makers serving new homes are partly specific, so a higher expected yield is not fully competed away by new capacity at once."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "the utilities' rebate program paid for homes that beat its baseline; heat pumps became cheaper"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "makers.efficiency_products"
+   },
+   "premises": [
+    "Makers and installers of efficiency products can organize to lobby."
+   ],
+   "premise_class": "other",
+   "source": "The median DEI of new homes has fallen by about 1.5% a year ... as heat pumps became cheaper"
+  }
+ ],
+ "owners.existing_homes": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.existing_homes",
+    "source_variable": "quantity_substitute",
+    "relation": "yield",
+    "actor": "owners.existing_homes",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "The stock of existing homes cannot expand in the period, so more demand for existing homes raises their prices and value."
+   ],
+   "premise_class": "durability",
+   "source": "About 2.4 million homes."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.existing_homes",
+    "source_variable": "quantity_substitute",
+    "relation": "supply_price",
+    "actor": "buyers.existing_homes",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "The stock of existing homes cannot expand in the period, so more demand for existing homes raises their prices and value."
+   ],
+   "premise_class": "durability",
+   "source": "About 2.4 million homes."
+  }
+ ],
+ "raters.prospective": [],
+ "sellers.manufactured_homes": [],
+ "sellers.other_construction": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.other_construction",
+    "source_variable": "quantity_supplied",
+    "relation": "supply",
+    "actor": "buyers.other_construction",
+    "variable": "price_paid"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Renovations and alterations of existing homes are exempt"
+  }
+ ],
+ "workers.construction": [],
+ "buyers.existing_homes": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.existing_homes",
+    "actor": "sellers.manufactured_homes",
+    "variables": [
+     "quantity_substitute"
+    ]
+   },
+   "premises": [
+    "Manufactured homes are a usable substitute for some new-home buyers."
+   ],
+   "premise_class": "substitutability",
+   "source": "Manufactured homes built to the national manufactured-housing standard are sold throughout the state."
+  }
+ ],
+ "buyers.other_construction": []
+}

@@ -1,0 +1,33 @@
+DONE in 3 rounds, 15 questions
+R builders.across_state_line quantity_supplied  increase
+- builders.four_story quantity_supplied  increase
+R builders.homes applications announcement increase
+R builders.homes compliance_cost  increase
+R builders.homes legal_breach  increase
+R builders.homes lobbying_effort  increase
+R builders.homes quantity_traded  decrease
+R builders.homes reclassification  increase
+R builders.homes resources_available_other_uses  decrease
+R builders.homes unit_size  increase
+R buyers.existing_homes price_paid  increase
+R buyers.large_homes quantity_traded  ambiguous
+R buyers.new_homes cross_border_purchases  increase
+R buyers.new_homes quantity_traded  decrease
+R buyers.other_construction price_paid  decrease
+R input_suppliers quantity_demanded  decrease
+R landowners.buildable_lots asset_value  decrease
+R makers.efficiency_products asset_value  increase
+R makers.efficiency_products lobbying_effort  increase
+R makers.efficiency_products quantity_demanded  increase
+R officials.building_departments enforcement_cost  increase
+R officials.building_departments enforcement_cost  decrease
+R officials.energy_office enforcement_cost  increase
+R owners.existing_homes asset_value  increase
+R owners.existing_homes quantity_substitute  increase
+R raters net_price_received  increase
+R raters non_tax_receipts  increase
+R raters.prospective entry_rate  increase
+R sellers.manufactured_homes quantity_substitute  increase
+R sellers.other_construction quantity_supplied  increase
+R taxpayers resources_available_other_uses  decrease
+R workers.construction ['employment', 'hours_worked']  at_least_one_decrease

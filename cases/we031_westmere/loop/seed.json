@@ -1,0 +1,41 @@
+{
+ "name": "WE-031 building energy code (expand-loop blind run)",
+ "exchanges": [
+  {"id": "e_newhomes", "buyer": "buyers.new_homes", "seller": "builders.homes",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_large_homes", "buyer": "buyers.large_homes", "seller": "builders.homes",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "banned": [
+  {"component": "k1", "exchange": "e_newhomes", "premises": ["a1", "a2"]},
+  {"component": "k1_u1b", "exchange": "e_large_homes", "premises": ["a1", "a2", "a28"]}
+ ],
+ "charges": [
+  {"component": "k3", "exchange": "e_newhomes", "payer_side": "seller", "receiver": "raters",
+   "receipt_variable": "non_tax_receipts"}
+ ],
+ "announced": [{"component": "k1", "premises": ["a20"]}],
+ "compliance": [
+  {"component": "k1", "actor": "builders.homes"},
+  {"component": "k3", "actor": "builders.homes"}
+ ],
+ "enforcers": [
+  {"component": "k3", "actor": "officials.building_departments"},
+  {"component": "k3", "actor": "officials.energy_office"}
+ ],
+ "fixed_budget": [{"component": "k3", "actor": "officials.building_departments", "premises": ["a10"]}],
+ "funded": [{"component": "k3", "actor": "taxpayers", "premises": ["a25"]}],
+ "unclear": [
+  {"id": "U1", "text": "The size adjustment: the Act requires the Energy Office to adjust the index for dwelling size, no rule has been made.",
+   "readings": ["U1-a: no adjustment beyond the per-square-foot measure", "U1-b: for homes above 2,500 square feet the maximum applies to the home's total modeled energy as if it were 2,500 square feet"],
+   "components": {"U1-a": [], "U1-b": ["k1_u1b"]}}
+ ],
+ "assumptions": {
+  "a1": {"text": "The schedule outpaces the counterfactual improvement, so that from about Year 4 a material share of the homes that would have been built would not meet the standard.", "class": "binding", "p": 0.8},
+  "a2": {"text": "Building departments do not issue permits without a DEI report, nor certificates of occupancy without a rater's certificate.", "class": "enforcement", "p": 0.9},
+  "a10": {"text": "Building departments' review staff is fixed in the short run, because fees are fixed by ordinance and are not raised within two years.", "class": "revenue_use", "p": 0.6},
+  "a20": {"text": "Buyers of homes and land expect the schedule to be carried out, not paused.", "class": "expectations", "p": 0.7},
+  "a25": {"text": "The Energy Office's audit unit is funded by a new general-fund appropriation, as K3 says, not by cuts elsewhere.", "class": "revenue_use", "p": 0.6},
+  "a28": {"text": "Under a per-square-foot index, a larger home meets a given maximum at lower cost per square foot, because loads that do not grow with floor area (water heating, appliances) are spread over more of it.", "class": "other", "p": 0.65}
+ }
+}

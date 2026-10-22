@@ -1,0 +1,495 @@
+{
+ "name": "WE-031 building energy code (expand-loop blind run)",
+ "exchanges": [
+  {
+   "id": "e_newhomes",
+   "buyer": "buyers.new_homes",
+   "seller": "builders.homes",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_large_homes",
+   "buyer": "buyers.large_homes",
+   "seller": "builders.homes",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q12_lenient_or_false_ratings_occur_on_a_mean"
+   ],
+   "exchange": "e_newhomes",
+   "kind": "outside",
+   "side": null,
+   "actor": "builders.homes",
+   "variables": [
+    "legal_breach"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q7_the_renovation_exemption_can_be_used_for"
+   ],
+   "component": "k1",
+   "chooser": "builders.homes",
+   "actor": "builders.homes",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q8_builders_and_buyers_in_the_halden_metro_"
+   ],
+   "component": "k1",
+   "chooser": "builders.homes",
+   "actor": "builders.across_state_line",
+   "variables": [
+    "quantity_supplied"
+   ]
+  },
+  {
+   "premises": [
+    "q9_builders_move_small_apartment_projects_t"
+   ],
+   "component": "k1",
+   "chooser": "builders.homes",
+   "actor": "builders.four_story",
+   "variables": [
+    "quantity_supplied"
+   ]
+  },
+  {
+   "premises": [
+    "q10_buyers_have_substitutes_for_new_site_bui"
+   ],
+   "component": "k1",
+   "chooser": "builders.homes",
+   "actor": "sellers.other_construction",
+   "variables": [
+    "quantity_supplied"
+   ]
+  },
+  {
+   "premises": [
+    "a28"
+   ],
+   "component": "k1",
+   "chooser": "builders.homes",
+   "actor": "builders.homes",
+   "variables": [
+    "unit_size"
+   ]
+  },
+  {
+   "premises": [
+    "q10_buyers_have_substitutes_for_new_site_bui"
+   ],
+   "component": "k1_u1b",
+   "chooser": "buyers.large_homes",
+   "actor": "owners.existing_homes",
+   "variables": [
+    "quantity_substitute"
+   ]
+  },
+  {
+   "premises": [
+    "q10_buyers_have_substitutes_for_new_site_bui"
+   ],
+   "component": "k1",
+   "chooser": "buyers.new_homes",
+   "actor": "owners.existing_homes",
+   "variables": [
+    "quantity_substitute"
+   ]
+  },
+  {
+   "premises": [
+    "q16_manufactured_homes_are_a_usable_substitu"
+   ],
+   "component": "k1",
+   "chooser": "buyers.new_homes",
+   "actor": "sellers.manufactured_homes",
+   "variables": [
+    "quantity_substitute"
+   ]
+  },
+  {
+   "premises": [
+    "q8_builders_and_buyers_in_the_halden_metro_"
+   ],
+   "component": "k1",
+   "chooser": "buyers.new_homes",
+   "actor": "buyers.new_homes",
+   "variables": [
+    "cross_border_purchases"
+   ]
+  },
+  {
+   "premises": [
+    "q16_manufactured_homes_are_a_usable_substitu"
+   ],
+   "component": "k1",
+   "chooser": "buyers.existing_homes",
+   "actor": "sellers.manufactured_homes",
+   "variables": [
+    "quantity_substitute"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q13_builders_associations_can_organize_to_lo"
+   ],
+   "component": "k1",
+   "actor": "builders.homes"
+  },
+  {
+   "premises": [
+    "q20_makers_and_installers_of_efficiency_prod"
+   ],
+   "component": "k1",
+   "actor": "makers.efficiency_products"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q15_spending_on_efficiency_products_per_new_"
+   ],
+   "source_actor": "builders.homes",
+   "source_variable": "compliance_cost",
+   "relation": "input",
+   "actor": "makers.efficiency_products",
+   "variable": "quantity_demanded"
+  },
+  {
+   "premises": [],
+   "source_actor": "builders.homes",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.construction",
+   "variable": "employment,hours_worked"
+  },
+  {
+   "premises": [],
+   "source_actor": "builders.homes",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_demanded"
+  },
+  {
+   "premises": [
+    "q17_rater_certification_is_open_and_some_peo"
+   ],
+   "source_actor": "raters",
+   "source_variable": "non_tax_receipts",
+   "relation": "yield",
+   "actor": "raters.prospective",
+   "variable": "entry_rate"
+  },
+  {
+   "premises": [
+    "q18_rater_capacity_cannot_grow_much_within_t"
+   ],
+   "source_actor": "raters",
+   "source_variable": "non_tax_receipts",
+   "relation": "supply_price",
+   "actor": "raters",
+   "variable": "net_price_received"
+  },
+  {
+   "premises": [
+    "q19_the_plant_and_skills_of_efficiency_produ"
+   ],
+   "source_actor": "makers.efficiency_products",
+   "source_variable": "quantity_demanded",
+   "relation": "yield",
+   "actor": "makers.efficiency_products",
+   "variable": "asset_value"
+  },
+  {
+   "premises": [
+    "q21_the_stock_of_existing_homes_cannot_expan"
+   ],
+   "source_actor": "owners.existing_homes",
+   "source_variable": "quantity_substitute",
+   "relation": "yield",
+   "actor": "owners.existing_homes",
+   "variable": "asset_value"
+  },
+  {
+   "premises": [
+    "q21_the_stock_of_existing_homes_cannot_expan"
+   ],
+   "source_actor": "owners.existing_homes",
+   "source_variable": "quantity_substitute",
+   "relation": "supply_price",
+   "actor": "buyers.existing_homes",
+   "variable": "price_paid"
+  },
+  {
+   "premises": [],
+   "source_actor": "sellers.other_construction",
+   "source_variable": "quantity_supplied",
+   "relation": "supply",
+   "actor": "buyers.other_construction",
+   "variable": "price_paid"
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "q14_buildable_lots_have_few_uses_other_than_",
+    "a20"
+   ],
+   "exchange": "e_newhomes",
+   "side": "seller",
+   "actor": "landowners.buildable_lots"
+  }
+ ],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "builders.homes"
+  },
+  {
+   "component": "k3",
+   "actor": "builders.homes"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k3",
+   "actor": "officials.building_departments"
+  },
+  {
+   "component": "k3",
+   "actor": "officials.energy_office"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k3",
+   "actor": "taxpayers",
+   "premises": [
+    "a25"
+   ]
+  }
+ ],
+ "fixed_budget": [
+  {
+   "component": "k3",
+   "actor": "officials.building_departments",
+   "premises": [
+    "a10"
+   ]
+  }
+ ],
+ "charges": [
+  {
+   "component": "k3",
+   "exchange": "e_newhomes",
+   "payer_side": "seller",
+   "receiver": "raters",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "capped_payers": [],
+   "basis": "unit"
+  }
+ ],
+ "moves": [],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a20"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q11_builders_can_file_complete_applications_"
+   ],
+   "component": "k1",
+   "actor": "builders.homes",
+   "variable": "applications",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "banned": [
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "component": "k1",
+   "exchange": "e_newhomes"
+  },
+  {
+   "premises": [
+    "a1",
+    "a2",
+    "a28"
+   ],
+   "component": "k1_u1b",
+   "exchange": "e_large_homes"
+  }
+ ],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "The size adjustment: the Act requires the Energy Office to adjust the index for dwelling size, no rule has been made.",
+   "readings": [
+    "U1-a: no adjustment beyond the per-square-foot measure",
+    "U1-b: for homes above 2,500 square feet the maximum applies to the home's total modeled energy as if it were 2,500 square feet"
+   ],
+   "components": {
+    "U1-a": [],
+    "U1-b": [
+     "k1_u1b"
+    ]
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [],
+ "assumptions": {
+  "a1": {
+   "text": "The schedule outpaces the counterfactual improvement, so that from about Year 4 a material share of the homes that would have been built would not meet the standard.",
+   "class": "binding",
+   "p": 0.8
+  },
+  "a2": {
+   "text": "Building departments do not issue permits without a DEI report, nor certificates of occupancy without a rater's certificate.",
+   "class": "enforcement",
+   "p": 0.9
+  },
+  "a10": {
+   "text": "Building departments' review staff is fixed in the short run, because fees are fixed by ordinance and are not raised within two years.",
+   "class": "revenue_use",
+   "p": 0.6
+  },
+  "a20": {
+   "text": "Buyers of homes and land expect the schedule to be carried out, not paused.",
+   "class": "expectations",
+   "p": 0.7
+  },
+  "a25": {
+   "text": "The Energy Office's audit unit is funded by a new general-fund appropriation, as K3 says, not by cuts elsewhere.",
+   "class": "revenue_use",
+   "p": 0.6
+  },
+  "a28": {
+   "text": "Under a per-square-foot index, a larger home meets a given maximum at lower cost per square foot, because loads that do not grow with floor area (water heating, appliances) are spread over more of it.",
+   "class": "other",
+   "p": 0.65
+  },
+  "q7_the_renovation_exemption_can_be_used_for": {
+   "text": "The renovation exemption can be used for projects that would otherwise be rebuilds or large additions.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q8_builders_and_buyers_in_the_halden_metro_": {
+   "text": "Builders and buyers in the Halden metro area can move new building across the state line.",
+   "p": 0.6,
+   "class": "mobility"
+  },
+  "q9_builders_move_small_apartment_projects_t": {
+   "text": "Builders move small apartment projects to four stories to fall under the commercial code.",
+   "p": 0.35,
+   "class": "other"
+  },
+  "q10_buyers_have_substitutes_for_new_site_bui": {
+   "text": "Buyers have substitutes for new site-built homes in the state (existing homes, manufactured homes, homes across the state line), and builders can move some capital and labor to other work.",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q11_builders_can_file_complete_applications_": {
+   "text": "Builders can file complete applications ahead of each step and start within 12 months.",
+   "p": 0.85,
+   "class": "expectations"
+  },
+  "q12_lenient_or_false_ratings_occur_on_a_mean": {
+   "text": "Lenient or false ratings occur on a meaningful scale, given that builders hire raters and 2% are audited.",
+   "p": 0.55,
+   "class": "enforcement"
+  },
+  "q13_builders_associations_can_organize_to_lo": {
+   "text": "Builders' associations can organize to lobby at a cost below their stake (RS-7's premise).",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q14_buildable_lots_have_few_uses_other_than_": {
+   "text": "Buildable lots have few uses other than new homes (zoning, services).",
+   "p": 0.75,
+   "class": "alternative_uses"
+  },
+  "q15_spending_on_efficiency_products_per_new_": {
+   "text": "Spending on efficiency products per new home rises proportionally more than the number of new homes falls.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q16_manufactured_homes_are_a_usable_substitu": {
+   "text": "Manufactured homes are a usable substitute for some new-home buyers.",
+   "p": 0.6,
+   "class": "substitutability"
+  },
+  "q17_rater_certification_is_open_and_some_peo": {
+   "text": "Rater certification is open, and some people in related trades take it up.",
+   "p": 0.8,
+   "class": "alternative_uses"
+  },
+  "q18_rater_capacity_cannot_grow_much_within_t": {
+   "text": "Rater capacity cannot grow much within the first two years (six-month certification; about 70 active raters for new homes).",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q19_the_plant_and_skills_of_efficiency_produ": {
+   "text": "The plant and skills of efficiency-product makers serving new homes are partly specific, so a higher expected yield is not fully competed away by new capacity at once.",
+   "p": 0.7,
+   "class": "alternative_uses"
+  },
+  "q20_makers_and_installers_of_efficiency_prod": {
+   "text": "Makers and installers of efficiency products can organize to lobby.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q21_the_stock_of_existing_homes_cannot_expan": {
+   "text": "The stock of existing homes cannot expand in the period, so more demand for existing homes raises their prices and value.",
+   "p": 0.9,
+   "class": "durability"
+  }
+ }
+}
