@@ -1,0 +1,70 @@
+{
+ "borrowers.other#2": [],
+ "consumers#2": [],
+ "input_suppliers.towers#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "input_suppliers.towers",
+    "source_variable": "quantity_demanded",
+    "relation": "input",
+    "actor": "workers.riggers",
+    "variable": "employment"
+   },
+   "premises": [],
+   "source": "About 1,400 certified tower riggers do about 3,000 site installations a year ... 4,000 to 5,000 a year, beside the existing 3,000."
+  }
+ ],
+ "licensees#3": [],
+ "licensees.reselling#3": [],
+ "municipalities": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k2",
+    "actor": "municipalities"
+   },
+   "premises": [
+    "Licensees, entrants and town councils can organize to lobby at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "new towers need municipal permits that take 4 to 9 months; about 2,000 new towers are projected."
+  }
+ ],
+ "sellers.foreign": [],
+ "sellers.substitutes": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.substitutes",
+    "source_variable": "quantity_traded",
+    "relation": "yield",
+    "actor": "sellers.substitutes",
+    "variable": "return_on_capital"
+   },
+   "premises": [
+    "Pellow's copper network cannot be withdrawn or its costs cut at once."
+   ],
+   "premise_class": "durability",
+   "source": "Pellow Networks' copper (DSL) lines serve about 1.6 million households, including about 700,000 outside fibre and cable areas."
+  }
+ ],
+ "workers.riggers": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.riggers",
+    "source_variable": "employment",
+    "relation": "supply",
+    "actor": "workers.riggers",
+    "variable": "wage_rate",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Some new riggers are trained or move from other work in the medium run."
+   ],
+   "premise_class": "mobility",
+   "source": "About 1,400 certified tower riggers do about 3,000 site installations a year."
+  }
+ ]
+}

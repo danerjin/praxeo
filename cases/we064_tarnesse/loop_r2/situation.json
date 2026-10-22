@@ -1,0 +1,737 @@
+{
+ "name": "WE-064 Tarnesse 2.9 GHz award (loop_r2 seed)",
+ "exchanges": [
+  {
+   "id": "e_lic",
+   "buyer": "licensees",
+   "seller": "treasury",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": "treasury",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_resale",
+   "buyer": "licensees.prospective",
+   "seller": "licensees.reselling",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [
+  {
+   "premises": [
+    "j1"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_lic",
+   "direction": "above"
+  }
+ ],
+ "margins": [],
+ "alternatives": [
+  {
+   "premises": [
+    "q9_some_licensees_overstate_coverage_meet_i"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "licensees",
+   "actor": "licensees",
+   "variables": [
+    "legal_breach"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q10_without_the_band_operators_would_densify"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "licensees",
+   "actor": "licensees",
+   "variables": [
+    "investment_target"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q15_some_bidders_or_holders_use_stakes_or_jo"
+   ],
+   "reading": null,
+   "component": "k3",
+   "chooser": "licensees.near_threshold",
+   "actor": "licensees.near_threshold",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q16_some_licensees_pool_blocks_by_network_sh"
+   ],
+   "reading": null,
+   "component": "k3",
+   "chooser": "licensees.near_threshold",
+   "actor": "licensees.near_threshold",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q19_under_u1_b_sales_of_licensee_companies_o"
+   ],
+   "reading": "U1-b",
+   "component": "u1_bar",
+   "chooser": "licensees.reselling",
+   "actor": "licensees.reselling",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q11_licensees_entrants_and_town_councils_can"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "licensees"
+  },
+  {
+   "premises": [
+    "q11_licensees_entrants_and_town_councils_can"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "licensees.near_threshold"
+  },
+  {
+   "premises": [
+    "q11_licensees_entrants_and_town_councils_can"
+   ],
+   "reading": null,
+   "component": "u1_bar",
+   "actor": "licensees.reselling"
+  },
+  {
+   "premises": [
+    "q11_licensees_entrants_and_town_councils_can"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "municipalities"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q12_the_band_is_used_to_add_capacity_where_b"
+   ],
+   "reading": null,
+   "source_actor": "licensees",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "licensees",
+   "variable": "capital_stock_target",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q13_licensees_compete_on_price_no_network_le"
+   ],
+   "reading": null,
+   "source_actor": "licensees",
+   "source_variable": "capital_stock_target",
+   "relation": "supply",
+   "actor": "consumers",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "licensees",
+   "source_variable": "compliance_cost",
+   "relation": "input",
+   "actor": "input_suppliers.towers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "licensees",
+   "source_variable": "investment_target",
+   "relation": "input",
+   "actor": "input_suppliers.towers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q14_licensees_borrow_part_of_what_they_pay_a"
+   ],
+   "reading": null,
+   "source_actor": "licensees",
+   "source_variable": "resources_available_other_uses",
+   "relation": "supply",
+   "actor": "borrowers.other",
+   "variable": "interest_rate",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a17"
+   ],
+   "reading": null,
+   "source_actor": "licensees.near_threshold",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "licensees",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a17"
+   ],
+   "reading": null,
+   "source_actor": "licensees.near_threshold",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "treasury",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q17_at_least_one_of_linmark_and_ombra_wins_b"
+   ],
+   "reading": null,
+   "source_actor": "licensees.near_threshold",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "licensees.entrants",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q18_some_investors_without_networks_bid_only"
+   ],
+   "reading": null,
+   "source_actor": "licensees.prospective",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "licensees.investors",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q21_the_treasury_borrows_less_than_it_would_"
+   ],
+   "reading": null,
+   "source_actor": "treasury",
+   "source_variable": "non_tax_receipts",
+   "relation": "paid_into",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "consumers",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "consumers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q21_the_treasury_borrows_less_than_it_would_"
+   ],
+   "reading": null,
+   "source_actor": "general_fund",
+   "source_variable": "fund_balance",
+   "relation": "supply",
+   "actor": "borrowers.other",
+   "variable": "interest_rate",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q22_sites_cannot_be_added_at_an_unchanged_co"
+   ],
+   "reading": null,
+   "source_actor": "input_suppliers.towers",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "input_suppliers.towers",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "input_suppliers.towers",
+   "source_variable": "quantity_demanded",
+   "relation": "input",
+   "actor": "workers.riggers",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q23_riggers_cannot_be_added_at_once_certific"
+   ],
+   "reading": null,
+   "source_actor": "input_suppliers.towers",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "workers.riggers",
+   "variable": "wage_rate",
+   "horizon": "short"
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "input_suppliers.towers",
+   "source_variable": "quantity_demanded",
+   "relation": "input",
+   "actor": "sellers.foreign",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q24_equipment_vendors_supply_cannot_expand_a"
+   ],
+   "reading": null,
+   "source_actor": "input_suppliers.towers",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "sellers.foreign",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "input_suppliers.towers",
+   "source_variable": "quantity_demanded",
+   "relation": "input",
+   "actor": "municipalities",
+   "variable": "applications",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q26_fixed_wireless_in_the_band_substitutes_f"
+   ],
+   "reading": null,
+   "source_actor": "licensees.entrants",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "sellers.substitutes",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q27_the_six_blocks_are_all_that_is_offered_w"
+   ],
+   "reading": null,
+   "source_actor": "licensees.investors",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "licensees",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "input_suppliers.towers",
+   "source_variable": "quantity_demanded",
+   "relation": "input",
+   "actor": "workers.riggers",
+   "variable": "employment",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q28_pellow_s_copper_network_cannot_be_withdr"
+   ],
+   "reading": null,
+   "source_actor": "sellers.substitutes",
+   "source_variable": "quantity_traded",
+   "relation": "yield",
+   "actor": "sellers.substitutes",
+   "variable": "return_on_capital",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q29_some_new_riggers_are_trained_or_move_fro"
+   ],
+   "reading": null,
+   "source_actor": "workers.riggers",
+   "source_variable": "employment",
+   "relation": "supply",
+   "actor": "workers.riggers",
+   "variable": "wage_rate",
+   "horizon": "medium"
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "q20_after_the_auction_some_licensees_value_t"
+   ],
+   "reading": null,
+   "exchange": "e_resale",
+   "side": "seller",
+   "actor": "licensees.reselling"
+  }
+ ],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k2",
+   "actor": "licensees"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k5",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k5",
+   "actor": "general_fund",
+   "premises": []
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "k2",
+   "premises": [
+    "a8",
+    "a3"
+   ],
+   "exchange": "e_lic",
+   "payer_side": "buyer",
+   "receiver": "customers.uncovered",
+   "receipt_variable": "quality_per_unit",
+   "quantity_premises": [
+    "j2"
+   ],
+   "projection_variable": null,
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "operating"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "exchange": "e_lic",
+   "side": "seller",
+   "horizon": null
+  }
+ ],
+ "discretion": [
+  {
+   "premises": [],
+   "reading": null,
+   "component": "u1_consent",
+   "actor": "licensees"
+  }
+ ],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a28"
+   ]
+  },
+  {
+   "component": "k2",
+   "premises": [
+    "a28"
+   ]
+  },
+  {
+   "component": "k3",
+   "premises": [
+    "a28"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q10_without_the_band_operators_would_densify"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "licensees",
+   "variable": "investment_target",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "issued": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_lic"
+  }
+ ],
+ "penalties": [
+  {
+   "premises": [
+    "a30"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "licensees.noncompliant",
+   "collector": "treasury"
+  }
+ ],
+ "terms": [],
+ "banned": [
+  {
+   "premises": [],
+   "reading": null,
+   "component": "u1_bar",
+   "exchange": "e_resale"
+  }
+ ],
+ "incidence": [],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Resale before the coverage deadline (reg. 14 against reg. 9(3))",
+   "readings": [
+    "U1-a: transfers are allowed at any time with consent (reg. 14); reg. 9(3) only states the purpose of the obligation",
+    "U1-b: reg. 9(3) bars any transfer until the obligation is met or the deadline passes"
+   ],
+   "components": {
+    "U1-a": [],
+    "U1-b": [
+     "u1_bar"
+    ]
+   }
+  }
+ ],
+ "thresholds": [
+  {
+   "premises": [
+    "a17"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "licensees.near_threshold",
+   "variable": "quantity_traded",
+   "chooser": null
+  }
+ ],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [
+  {
+   "premises": [
+    "q25_the_site_capacity_taken_by_the_band_buil"
+   ],
+   "reading": null,
+   "actor": "input_suppliers.towers",
+   "variable": "quantity_demanded",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Some blocks are bid at or above the reserve: bidders expect a license to be worth more than M40 million after the build-out cost.",
+   "p": 0.95,
+   "class": "binding"
+  },
+  "a3": {
+   "text": "The obligation is enforced: revocation is credible, so licensees build to 90% by the end of 2032.",
+   "p": 0.75,
+   "class": "enforcement"
+  },
+  "a8": {
+   "text": "Licensees would not, on their own, cover 90% of the population with the band by 2032 (about 65% commercially).",
+   "p": 0.8,
+   "class": "binding"
+  },
+  "a17": {
+   "text": "Some operators win blocks at prices below their own value for them (the cap holds the clearing price at the third-highest bidder's value).",
+   "p": 0.6,
+   "class": "other"
+  },
+  "a28": {
+   "text": "Investors expected the award partly from the March 2026 consultation and fully from 1 March 2027.",
+   "p": 0.8,
+   "class": "expectations"
+  },
+  "a30": {
+   "text": "A license is revoked and the band re-auctioned.",
+   "p": 0.3,
+   "class": "other"
+  },
+  "j1": {
+   "text": "The reserve price of M40 million a block binds: some blocks would sell for less without it.",
+   "p": 0.15,
+   "class": "binding"
+  },
+  "j2": {
+   "text": "Households outside the cities and large towns value mobile coverage from the band.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q9_some_licensees_overstate_coverage_meet_i": {
+   "text": "Some licensees overstate coverage, meet it by minimal sites, or miss the deadline.",
+   "p": 0.55,
+   "class": "enforcement"
+  },
+  "q10_without_the_band_operators_would_densify": {
+   "text": "Without the band, operators would densify sites in the existing bands; with it, they densify less.",
+   "p": 0.75,
+   "class": "substitutability"
+  },
+  "q11_licensees_entrants_and_town_councils_can": {
+   "text": "Licensees, entrants and town councils can organize to lobby at a cost below their stakes.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q12_the_band_is_used_to_add_capacity_where_b": {
+   "text": "The band is used to add capacity where busy-hour demand presses on existing capacity.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q13_licensees_compete_on_price_no_network_le": {
+   "text": "Licensees compete on price; no network leaves the market because of the award in the medium run.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q14_licensees_borrow_part_of_what_they_pay_a": {
+   "text": "Licensees borrow part of what they pay and build in Tarnesse's loan market.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q15_some_bidders_or_holders_use_stakes_or_jo": {
+   "text": "Some bidders or holders use stakes or joint ventures below the affiliate line.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q16_some_licensees_pool_blocks_by_network_sh": {
+   "text": "Some licensees pool blocks by network-sharing agreements.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q17_at_least_one_of_linmark_and_ombra_wins_b": {
+   "text": "At least one of Linmark and Ombra wins blocks and builds a network.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q18_some_investors_without_networks_bid_only": {
+   "text": "Some investors without networks bid only if they can resell before the deadline.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q19_under_u1_b_sales_of_licensee_companies_o": {
+   "text": "Under U1-b, sales of licensee companies or long capacity leases are not treated as transfers.",
+   "p": 0.55,
+   "class": "enforcement"
+  },
+  "q20_after_the_auction_some_licensees_value_t": {
+   "text": "After the auction, some licensees value their licenses less than others would (an entrant cannot finance the build-out, or values change).",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q21_the_treasury_borrows_less_than_it_would_": {
+   "text": "The Treasury borrows less than it would have, by part of the receipts.",
+   "p": 0.6,
+   "class": "revenue_use"
+  },
+  "q22_sites_cannot_be_added_at_an_unchanged_co": {
+   "text": "Sites cannot be added at an unchanged cost per site in the period, and cost per site does not fall as building expands (permits 4 to 9 months; riggers scarce).",
+   "p": 0.8,
+   "class": "durability"
+  },
+  "q23_riggers_cannot_be_added_at_once_certific": {
+   "text": "Riggers cannot be added at once (certification takes 6 to 12 months).",
+   "p": 0.75,
+   "class": "durability"
+  },
+  "q24_equipment_vendors_supply_cannot_expand_a": {
+   "text": "Equipment vendors' supply cannot expand at an unchanged cost in the period.",
+   "p": 0.6,
+   "class": "durability"
+  },
+  "q25_the_site_capacity_taken_by_the_band_buil": {
+   "text": "The site capacity taken by the band build-out (co-location on existing sites in the cities, about 2,000 new towers and their tenancies outside them) exceeds the site capacity that the densification not done would have taken.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q26_fixed_wireless_in_the_band_substitutes_f": {
+   "text": "Fixed wireless in the band substitutes for DSL for some households outside fibre areas.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q27_the_six_blocks_are_all_that_is_offered_w": {
+   "text": "The six blocks are all that is offered, whatever the price.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "q28_pellow_s_copper_network_cannot_be_withdr": {
+   "text": "Pellow's copper network cannot be withdrawn or its costs cut at once.",
+   "p": 0.8,
+   "class": "durability"
+  },
+  "q29_some_new_riggers_are_trained_or_move_fro": {
+   "text": "Some new riggers are trained or move from other work in the medium run.",
+   "p": 0.8,
+   "class": "mobility"
+  }
+ }
+}

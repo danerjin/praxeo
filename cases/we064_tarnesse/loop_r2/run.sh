@@ -1,0 +1,1 @@
+python -m praxeo.core.expand cases/we064_tarnesse/loop_r2/seed.json cases/we064_tarnesse/loop_r2/proposals.json cases/we064_tarnesse/loop_r2/answers.json --policy cases/we064_tarnesse/loop_r2/policy.txt "$@"
