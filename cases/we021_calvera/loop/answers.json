@@ -1,0 +1,17 @@
+{
+ "Certification is easy enough that new installers enter.": 0.8,
+ "Fraudulent claims are made on a meaningful scale.": 0.2,
+ "Entrants make investments specific to solar installation that lose value when the program ends.": 0.7,
+ "In the first year, installers have clearly fewer alternatives than households: their capacity is fixed by the number of licensed electricians (A-4), while households can wait or keep buying grid power.": 0.65,
+ "Installers, suppliers and large users can organize to lobby at a cost below their stake.": 0.85,
+ "The part of the subsidy that installers keep exceeds what certification costs them.": 0.8,
+ "Some households at the margin install because of the subsidy.": 0.9,
+ "Adopters buy less grid power after installing.": 0.95,
+ "Oversizing toward the 10 kW limit is feasible and pays under net metering.": 0.65,
+ "Some adopters would have installed later without the subsidy.": 0.8,
+ "Installer capacity is limited near step-downs, so backlogs form.": 0.75,
+ "Rooftop output is large enough to lower midday wholesale prices (it is not offset by withdrawal of other supply), and the reduction reaches retail rates.": 0.55,
+ "Electricians and roofers are scarce and fully used elsewhere.": 0.8,
+ "Calvera's purchases are large enough to raise world panel prices.": 0.05,
+ "The Commission recovers fixed grid costs mainly per kWh, those costs do not fall with sales, and net metering credits exports at the full retail rate.": 0.8
+}

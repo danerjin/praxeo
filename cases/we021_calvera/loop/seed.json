@@ -1,0 +1,32 @@
+{
+ "name": "WE-021 Calvera Rooftop Solar Incentive (loop seed)",
+ "exchanges": [
+  {"id": "e_install", "buyer": "homeowners", "seller": "contractors.certified",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_elec", "buyer": "customers", "seller": "producers.utilities",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "charges": [
+  {"component": "k2", "exchange": "e_elec", "payer_side": "buyer", "receiver": "treasury.solar_fund",
+   "receipt_variable": "tax_revenue", "projection_variable": "tax_revenue_vs_static_projection"}
+ ],
+ "grants": [
+  {"component": "k1", "exchange": "e_install", "recipient_side": "seller", "payer": "treasury.solar_fund", "outlay_variable": "subsidy_outlay"}
+ ],
+ "moves": [
+  {"exchange": "e_install", "side": "buyer", "premises": ["a1"]},
+  {"exchange": "e_install", "side": "seller", "premises": ["a4"]},
+  {"exchange": "e_elec", "side": "buyer", "premises": ["a3"]}
+ ],
+ "expires": [{"component": "k1", "premises": []}],
+ "announced": [{"component": "k1", "premises": ["a8"]}],
+ "compliance": [{"component": "k3", "actor": "contractors.certified"}, {"component": "k2", "actor": "producers.utilities"}],
+ "enforcers": [{"component": "k4", "actor": "officials.enforcement"}],
+ "funded": [{"component": "k1", "actor": "customers", "premises": []}, {"component": "k4", "actor": "customers", "premises": []}],
+ "assumptions": {
+  "a1": {"text": "Installers do not capture the whole subsidy.", "class": "other", "p": 0.85},
+  "a3": {"text": "The surcharge is passed through to customers in full, and their demand changes little.", "class": "other", "p": 0.95},
+  "a4": {"text": "Installation labor cannot grow much within the first year.", "class": "other", "p": 0.7},
+  "a8": {"text": "Households knew of the subsidy from September and could wait.", "class": "expectations", "p": 0.8}
+ }
+}

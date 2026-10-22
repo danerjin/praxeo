@@ -1,0 +1,570 @@
+{
+ "name": "WE-021 Calvera Rooftop Solar Incentive (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_install",
+   "buyer": "homeowners",
+   "seller": "contractors.certified",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_elec",
+   "buyer": "customers",
+   "seller": "producers.utilities",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [],
+ "alternatives": [
+  {
+   "premises": [
+    "q11_some_households_at_the_margin_install_be",
+    "q12_adopters_buy_less_grid_power_after_insta"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "homeowners",
+   "actor": "producers.utilities",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q13_oversizing_toward_the_10_kw_limit_is_fea"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "homeowners",
+   "actor": "homeowners",
+   "variables": [
+    "unit_size"
+   ],
+   "inverse": true
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q9_installers_suppliers_and_large_users_can"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "contractors.certified"
+  },
+  {
+   "premises": [
+    "q9_installers_suppliers_and_large_users_can"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "customers"
+  },
+  {
+   "premises": [
+    "q9_installers_suppliers_and_large_users_can"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "input_suppliers"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q5_certification_is_easy_enough_that_new_in"
+   ],
+   "reading": null,
+   "source_actor": "contractors.certified",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "entrants",
+   "variable": "entry_rate",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "contractors.certified",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.electricians",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "contractors.certified",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.electricians",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "contractors.certified",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q6_fraudulent_claims_are_made_on_a_meaningf"
+   ],
+   "reading": null,
+   "source_actor": "contractors.certified",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "contractors.certified",
+   "variable": "legal_breach",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_installer_capacity_is_limited_near_step_"
+   ],
+   "reading": null,
+   "source_actor": "homeowners",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "homeowners",
+   "variable": "wait_time",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q16_rooftop_output_is_large_enough_to_lower_"
+   ],
+   "reading": null,
+   "source_actor": "homeowners",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "customers",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "officials.enforcement",
+   "source_variable": "enforcement_cost",
+   "relation": "paid_from",
+   "actor": "treasury.solar_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q17_the_commission_recovers_fixed_grid_costs"
+   ],
+   "reading": null,
+   "source_actor": "producers.utilities",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "customers",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "treasury.solar_fund",
+   "source_variable": "subsidy_outlay",
+   "relation": "paid_from",
+   "actor": "treasury.solar_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "treasury.solar_fund",
+   "source_variable": "tax_revenue",
+   "relation": "paid_into",
+   "actor": "treasury.solar_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "contractors.certified",
+   "source_variable": "number_of_sellers",
+   "relation": "supply",
+   "actor": "contractors.certified",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "entrants",
+   "source_variable": "entry_rate",
+   "relation": "same_act",
+   "actor": "contractors.certified",
+   "variable": "number_of_sellers",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "entrants",
+   "source_variable": "entry_rate",
+   "relation": "input",
+   "actor": "workers.electricians",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "homeowners",
+   "source_variable": "unit_size",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "homeowners",
+   "source_variable": "unit_size",
+   "relation": "same_act",
+   "actor": "treasury.solar_fund",
+   "variable": "subsidy_outlay",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q19_calvera_s_purchases_are_large_enough_to_"
+   ],
+   "reading": null,
+   "source_actor": "input_suppliers",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "input_suppliers",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q18_electricians_and_roofers_are_scarce_and_",
+    "a4"
+   ],
+   "reading": null,
+   "source_actor": "workers.electricians",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "workers.electricians",
+   "variable": "wage_rate",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q18_electricians_and_roofers_are_scarce_and_"
+   ],
+   "reading": null,
+   "source_actor": "workers.electricians",
+   "source_variable": "wage_rate",
+   "relation": "cost",
+   "actor": "contractors.other_trades",
+   "variable": "quantity_supplied",
+   "horizon": null
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "q7_entrants_make_investments_specific_to_so"
+   ],
+   "reading": null,
+   "exchange": "e_install",
+   "side": "seller",
+   "actor": "entrants"
+  }
+ ],
+ "yields": [
+  {
+   "premises": [
+    "a4"
+   ],
+   "reading": null,
+   "exchange": "e_install",
+   "side": "seller",
+   "actor": "contractors.certified"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k3",
+   "actor": "contractors.certified"
+  },
+  {
+   "component": "k2",
+   "actor": "producers.utilities"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k1",
+   "actor": "customers",
+   "premises": []
+  },
+  {
+   "component": "k4",
+   "actor": "customers",
+   "premises": []
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "k2",
+   "premises": [],
+   "exchange": "e_elec",
+   "payer_side": "buyer",
+   "receiver": "treasury.solar_fund",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "exchange": "e_install",
+   "side": "buyer",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a4"
+   ],
+   "reading": null,
+   "exchange": "e_install",
+   "side": "seller",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a3"
+   ],
+   "reading": null,
+   "exchange": "e_elec",
+   "side": "buyer",
+   "horizon": null
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a8"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q14_some_adopters_would_have_installed_later"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "homeowners",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [
+  {
+   "component": "k1",
+   "exchange": "e_install",
+   "recipient_side": "seller",
+   "payer": "treasury.solar_fund",
+   "outlay_variable": "subsidy_outlay"
+  }
+ ],
+ "capped": [],
+ "terms": [],
+ "banned": [],
+ "incidence": [
+  {
+   "premises": [
+    "q8_in_the_first_year_installers_have_clearl"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_install",
+   "side": "seller"
+  }
+ ],
+ "fixed": [],
+ "unclear": [],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [
+  {
+   "component": "k1",
+   "premises": []
+  }
+ ],
+ "parts": [],
+ "dominance": [
+  {
+   "premises": [
+    "q10_the_part_of_the_subsidy_that_installers_"
+   ],
+   "reading": null,
+   "actor": "contractors.certified",
+   "variable": "resources_available_other_uses",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "a4",
+    "q18_electricians_and_roofers_are_scarce_and_"
+   ],
+   "reading": null,
+   "actor": "contractors.certified",
+   "variable": "net_price_received",
+   "window": null,
+   "direction": "increase",
+   "kind": "response"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Installers do not capture the whole subsidy.",
+   "class": "other",
+   "p": 0.85
+  },
+  "a3": {
+   "text": "The surcharge is passed through to customers in full, and their demand changes little.",
+   "class": "other",
+   "p": 0.95
+  },
+  "a4": {
+   "text": "Installation labor cannot grow much within the first year.",
+   "class": "other",
+   "p": 0.7
+  },
+  "a8": {
+   "text": "Households knew of the subsidy from September and could wait.",
+   "class": "expectations",
+   "p": 0.8
+  },
+  "q5_certification_is_easy_enough_that_new_in": {
+   "text": "Certification is easy enough that new installers enter.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q6_fraudulent_claims_are_made_on_a_meaningf": {
+   "text": "Fraudulent claims are made on a meaningful scale.",
+   "p": 0.2,
+   "class": "enforcement"
+  },
+  "q7_entrants_make_investments_specific_to_so": {
+   "text": "Entrants make investments specific to solar installation that lose value when the program ends.",
+   "p": 0.7,
+   "class": "durability"
+  },
+  "q8_in_the_first_year_installers_have_clearl": {
+   "text": "In the first year, installers have clearly fewer alternatives than households: their capacity is fixed by the number of licensed electricians (A-4), while households can wait or keep buying grid power.",
+   "p": 0.65,
+   "class": "substitutability"
+  },
+  "q9_installers_suppliers_and_large_users_can": {
+   "text": "Installers, suppliers and large users can organize to lobby at a cost below their stake.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q10_the_part_of_the_subsidy_that_installers_": {
+   "text": "The part of the subsidy that installers keep exceeds what certification costs them.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q11_some_households_at_the_margin_install_be": {
+   "text": "Some households at the margin install because of the subsidy.",
+   "p": 0.9,
+   "class": "substitutability"
+  },
+  "q12_adopters_buy_less_grid_power_after_insta": {
+   "text": "Adopters buy less grid power after installing.",
+   "p": 0.95,
+   "class": "substitutability"
+  },
+  "q13_oversizing_toward_the_10_kw_limit_is_fea": {
+   "text": "Oversizing toward the 10 kW limit is feasible and pays under net metering.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q14_some_adopters_would_have_installed_later": {
+   "text": "Some adopters would have installed later without the subsidy.",
+   "p": 0.8,
+   "class": "expectations"
+  },
+  "q15_installer_capacity_is_limited_near_step_": {
+   "text": "Installer capacity is limited near step-downs, so backlogs form.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q16_rooftop_output_is_large_enough_to_lower_": {
+   "text": "Rooftop output is large enough to lower midday wholesale prices (it is not offset by withdrawal of other supply), and the reduction reaches retail rates.",
+   "p": 0.55,
+   "class": "substitutability"
+  },
+  "q17_the_commission_recovers_fixed_grid_costs": {
+   "text": "The Commission recovers fixed grid costs mainly per kWh, those costs do not fall with sales, and net metering credits exports at the full retail rate.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q18_electricians_and_roofers_are_scarce_and_": {
+   "text": "Electricians and roofers are scarce and fully used elsewhere.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q19_calvera_s_purchases_are_large_enough_to_": {
+   "text": "Calvera's purchases are large enough to raise world panel prices.",
+   "p": 0.05,
+   "class": "other"
+  }
+ }
+}
