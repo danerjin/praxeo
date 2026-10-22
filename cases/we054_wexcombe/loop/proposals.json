@@ -1,0 +1,961 @@
+{
+ "customers.passengers": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "customers.passengers",
+    "actor": "customers.passengers",
+    "variables": [
+     "cross_border_purchases"
+    ]
+   },
+   "premises": [
+    "Some travelers find Pellham a substitute."
+   ],
+   "premise_class": "other",
+   "source": "Pellham Regional Airport, 70 km away by motorway (about 55 minutes), is run by a separate authority, has no curfew, and uses about 45% of its runway capacity."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.passengers",
+    "source_variable": "cross_border_purchases",
+    "relation": "complement",
+    "actor": "sellers.airlines_pellham",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Flights at Pellham can be added in the period considered (its supply of flights is not fixed)."
+   ],
+   "premise_class": "other",
+   "source": "Pellham Regional Airport, 70 km away by motorway (about 55 minutes), is run by a separate authority, has no curfew, and uses about 45% of its runway capacity."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.passengers",
+    "source_variable": "cross_border_purchases",
+    "relation": "supply_price",
+    "actor": "customers.passengers_pellham",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Airlines cannot add flights at Pellham at unchanged cost, so Pellham fares rise."
+   ],
+   "premise_class": "other",
+   "source": "A-19: Airlines cannot add flights at Pellham at unchanged cost, so Pellham fares rise."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.passengers",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "sellers.concessions",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Concession sales follow passenger numbers."
+   ],
+   "premise_class": "other",
+   "source": "A-21: Concession sales follow passenger numbers."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.passengers",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "workers.airport",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Employment and hours at WXI follow movements and the night sort."
+   ],
+   "premise_class": "other",
+   "source": "WXI employs about 11,000 people on site, including about 900 (mostly part-time night shifts) in the integrator's sort"
+  }
+ ],
+ "customers.passengers_night": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "customers.passengers_night",
+    "actor": "customers.passengers_night",
+    "variables": [
+     "cross_border_purchases"
+    ]
+   },
+   "premises": [
+    "Some travelers find Pellham a substitute."
+   ],
+   "premise_class": "other",
+   "source": "Pellham Regional Airport, 70 km away by motorway (about 55 minutes), is run by a separate authority, has no curfew, and uses about 45% of its runway capacity."
+  }
+ ],
+ "customers.passengers_late": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_late",
+    "chooser": "customers.passengers_late",
+    "actor": "customers.passengers_late",
+    "variables": [
+     "cross_border_purchases"
+    ],
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Some travelers find Pellham a substitute."
+   ],
+   "premise_class": "other",
+   "source": "U1-b: ... a late flight diverts (in practice to Pellham) or is cancelled."
+  }
+ ],
+ "customers.shippers": [],
+ "buyers.airlines": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.airlines",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "sellers.airlines_shoulder",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Some night operators buy or lease daytime slots and fly in the shoulder hours."
+   ],
+   "premise_class": "other",
+   "source": "A-7: Some night operators buy or lease daytime slots and fly in the shoulder hours."
+  }
+ ],
+ "sellers.slot_holders": [],
+ "sellers.airlines": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.airlines",
+    "source_variable": "asset_value",
+    "relation": "same_act",
+    "actor": "sellers.slot_holders",
+    "variable": "right_lease_price"
+   },
+   "premises": [
+    "A slot market forms: slots are sold, leased and retimed at low transaction cost."
+   ],
+   "premise_class": "other",
+   "source": "K4: Slots may be sold or leased, and retimed to another daytime hour where the hourly limit leaves room."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.airlines",
+    "source_variable": "asset_value",
+    "relation": "same_act",
+    "actor": "buyers.airlines",
+    "variable": "right_lease_price"
+   },
+   "premises": [
+    "A slot market forms: slots are sold, leased and retimed at low transaction cost."
+   ],
+   "premise_class": "other",
+   "source": "K4: Slots may be sold or leased"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.airlines",
+    "source_variable": "net_price_received",
+    "relation": "yield",
+    "actor": "sellers.airlines",
+    "variable": "unit_size"
+   },
+   "premises": [
+    "Airlines can move to larger aircraft on some WXI routes within the medium horizon."
+   ],
+   "premise_class": "other",
+   "source": "Aircraft average about 150 seats; airlines can move to larger aircraft only as fleets turn over (two to four years), and three of WXI's gates take wide-bodied aircraft."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.airlines",
+    "source_variable": "unit_size",
+    "relation": "supply",
+    "actor": "customers.passengers",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Airlines can move to larger aircraft on some WXI routes within the medium horizon."
+   ],
+   "premise_class": "other",
+   "source": "Aircraft average about 150 seats; airlines can move to larger aircraft only as fleets turn over"
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_day",
+    "side": "seller",
+    "actor": "sellers.airlines"
+   },
+   "premises": [
+    "Holders expect slots to last past the 2032 review without reallocation."
+   ],
+   "premise_class": "other",
+   "source": "A-3: Holders expect slots to last past the 2032 review without reallocation."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k2",
+    "actor": "sellers.airlines"
+   },
+   "premises": [
+    "Night operators, slot holders, would-be entrants and residents' associations can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "No expiry; the WAA will review the cap in 2032."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k3",
+    "actor": "sellers.airlines"
+   },
+   "premises": [
+    "Night operators, slot holders, would-be entrants and residents' associations can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "K3: Issued free to airlines in proportion to the daytime movements each operated"
+  }
+ ],
+ "sellers.prospective": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "sellers.prospective",
+    "actor": "sellers.airlines_pellham",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Flights at Pellham can be added in the period considered (its supply of flights is not fixed)."
+   ],
+   "premise_class": "other",
+   "source": "Pellham Regional Airport, 70 km away by motorway (about 55 minutes), is run by a separate authority, has no curfew, and uses about 45% of its runway capacity."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "sellers.prospective",
+    "actor": "buyers.airlines",
+    "variables": [
+     "quantity_traded"
+    ]
+   },
+   "premises": [
+    "A slot market forms: slots are sold, leased and retimed at low transaction cost."
+   ],
+   "premise_class": "other",
+   "source": "K4: Slots may be sold or leased"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k5",
+    "actor": "sellers.prospective"
+   },
+   "premises": [
+    "Night operators, slot holders, would-be entrants and residents' associations can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "K5: reissued free, first to night operators ..., then to new entrants."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.prospective",
+    "source_variable": "quantity_traded",
+    "relation": "supply",
+    "actor": "sellers.airlines",
+    "variable": "full_cost_per_unit"
+   },
+   "premises": [
+    "The WAA sets charges to recover costs that are largely fixed."
+   ],
+   "premise_class": "other",
+   "source": "The WAA's charges (about $2,000 per movement on average, about $13 per seat) are set each year to recover its costs, which are mostly fixed."
+  }
+ ],
+ "sellers.integrator": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "sellers.integrator",
+    "actor": "sellers.airlines_shoulder",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Some night operators buy or lease daytime slots and fly in the shoulder hours."
+   ],
+   "premise_class": "other",
+   "source": "A-7: Some night operators buy or lease daytime slots and fly in the shoulder hours."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "sellers.integrator"
+   },
+   "premises": [
+    "Night operators, slot holders, would-be entrants and residents' associations can organize at a cost below their stake.",
+    "Without the order, night operators would have opposed the residents' campaign for a curfew."
+   ],
+   "premise_class": "other",
+   "source": "A-32: Without the order, night operators would have opposed the residents' campaign for a curfew."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.integrator",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "homeowners.contour_wxi",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Buyers of homes in a night-noise contour value quieter nights, so night movements are capitalized in home prices."
+   ],
+   "premise_class": "other",
+   "source": "About 9,000 homes lie inside the WAA's night-noise contour"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.integrator",
+    "source_variable": "quantity_traded",
+    "relation": "supply",
+    "actor": "sellers.airlines",
+    "variable": "full_cost_per_unit"
+   },
+   "premises": [
+    "The WAA sets charges to recover costs that are largely fixed."
+   ],
+   "premise_class": "other",
+   "source": "The WAA's charges (about $2,000 per movement on average, about $13 per seat) are set each year to recover its costs, which are mostly fixed."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "sellers.integrator",
+    "actor": "sellers.integrator_pellham",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "The integrator moves most of its night sort to Pellham, and other night cargo follows."
+   ],
+   "premise_class": "other",
+   "source": "A-6: The integrator moves most of its night sort to Pellham, and other night cargo follows."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_nint",
+    "side": "seller",
+    "actor": "sellers.integrator"
+   },
+   "premises": [
+    "The integrator's WXI sort facility has no equally valuable other use."
+   ],
+   "premise_class": "other",
+   "source": "A-16: The integrator's WXI sort facility has no equally valuable other use."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.integrator",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "workers.night_sort",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Employment and hours at WXI follow movements and the night sort."
+   ],
+   "premise_class": "other",
+   "source": "WXI employs about 11,000 people on site, including about 900 (mostly part-time night shifts) in the integrator's sort"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.integrator",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "customers.shippers",
+    "variable": "quality_per_unit"
+   },
+   "premises": [
+    "With the sort 70 km away, collection cut-offs in Wexcombe move earlier."
+   ],
+   "premise_class": "other",
+   "source": "A-17: With the sort 70 km away, collection cut-offs in Wexcombe move earlier."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.integrator",
+    "source_variable": "quantity_traded",
+    "relation": "supply",
+    "actor": "customers.shippers",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Restated in 1.0. Serving Wexcombe's region from Pellham costs the integrator more per parcel than its WXI night sort did, net of the WXI charges and hall costs it no longer pays, so the supply of overnight delivery at the old national price is lower."
+   ],
+   "premise_class": "other",
+   "source": "Overnight parcel delivery is sold in a national market; Wexcombe's region is about 4% of it."
+  }
+ ],
+ "sellers.cargo_other": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "sellers.cargo_other",
+    "actor": "sellers.airlines_shoulder",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Some night operators buy or lease daytime slots and fly in the shoulder hours."
+   ],
+   "premise_class": "other",
+   "source": "A-7: Some night operators buy or lease daytime slots and fly in the shoulder hours."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "sellers.cargo_other"
+   },
+   "premises": [
+    "Night operators, slot holders, would-be entrants and residents' associations can organize at a cost below their stake.",
+    "Without the order, night operators would have opposed the residents' campaign for a curfew."
+   ],
+   "premise_class": "other",
+   "source": "A-32: Without the order, night operators would have opposed the residents' campaign for a curfew."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.cargo_other",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "homeowners.contour_wxi",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Buyers of homes in a night-noise contour value quieter nights, so night movements are capitalized in home prices."
+   ],
+   "premise_class": "other",
+   "source": "About 9,000 homes lie inside the WAA's night-noise contour"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.cargo_other",
+    "source_variable": "quantity_traded",
+    "relation": "supply",
+    "actor": "sellers.airlines",
+    "variable": "full_cost_per_unit"
+   },
+   "premises": [
+    "The WAA sets charges to recover costs that are largely fixed."
+   ],
+   "premise_class": "other",
+   "source": "The WAA's charges (about $2,000 per movement on average, about $13 per seat) are set each year to recover its costs, which are mostly fixed."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "sellers.cargo_other",
+    "actor": "sellers.cargo_pellham",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "The integrator moves most of its night sort to Pellham, and other night cargo follows."
+   ],
+   "premise_class": "other",
+   "source": "A-6: ... and other night cargo follows."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.cargo_other",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "workers.airport",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Employment and hours at WXI follow movements and the night sort."
+   ],
+   "premise_class": "other",
+   "source": "WXI employs about 11,000 people on site, including about 900 (mostly part-time night shifts) in the integrator's sort"
+  }
+ ],
+ "sellers.airlines_night": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "sellers.airlines_night",
+    "actor": "sellers.airlines_shoulder",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Some night operators buy or lease daytime slots and fly in the shoulder hours."
+   ],
+   "premise_class": "other",
+   "source": "A-7: Some night operators buy or lease daytime slots and fly in the shoulder hours."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "sellers.airlines_night"
+   },
+   "premises": [
+    "Night operators, slot holders, would-be entrants and residents' associations can organize at a cost below their stake.",
+    "Without the order, night operators would have opposed the residents' campaign for a curfew."
+   ],
+   "premise_class": "other",
+   "source": "A-32: Without the order, night operators would have opposed the residents' campaign for a curfew."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.airlines_night",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "homeowners.contour_wxi",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Buyers of homes in a night-noise contour value quieter nights, so night movements are capitalized in home prices."
+   ],
+   "premise_class": "other",
+   "source": "About 9,000 homes lie inside the WAA's night-noise contour"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.airlines_night",
+    "source_variable": "quantity_traded",
+    "relation": "supply",
+    "actor": "sellers.airlines",
+    "variable": "full_cost_per_unit"
+   },
+   "premises": [
+    "The WAA sets charges to recover costs that are largely fixed."
+   ],
+   "premise_class": "other",
+   "source": "The WAA's charges (about $2,000 per movement on average, about $13 per seat) are set each year to recover its costs, which are mostly fixed."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "sellers.airlines_night",
+    "actor": "sellers.airlines_pellham",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Flights at Pellham can be added in the period considered (its supply of flights is not fixed)."
+   ],
+   "premise_class": "other",
+   "source": "Pellham Regional Airport, 70 km away by motorway (about 55 minutes), is run by a separate authority, has no curfew, and uses about 45% of its runway capacity."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "sellers.airlines_night",
+    "actor": "sellers.airlines_late",
+    "variables": [
+     "quantity_supplied"
+    ],
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Under U1-a, airlines schedule some flights just before 23:00 knowing they will often operate after it."
+   ],
+   "premise_class": "other",
+   "source": "A-24: Under U1-a, airlines schedule some flights just before 23:00 knowing they will often operate after it."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.airlines_night",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "workers.airport",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Employment and hours at WXI follow movements and the night sort."
+   ],
+   "premise_class": "other",
+   "source": "WXI employs about 11,000 people on site, including about 900 (mostly part-time night shifts) in the integrator's sort"
+  }
+ ],
+ "sellers.airlines_late": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_late",
+    "chooser": "sellers.airlines_late",
+    "actor": "sellers.airlines_pellham",
+    "variables": [
+     "quantity_supplied"
+    ],
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Flights at Pellham can be added in the period considered (its supply of flights is not fixed)."
+   ],
+   "premise_class": "other",
+   "source": "U1-b: ... a late flight diverts (in practice to Pellham) or is cancelled."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_late",
+    "chooser": "sellers.airlines_late",
+    "actor": "sellers.airlines_early",
+    "variables": [
+     "quantity_supplied"
+    ],
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Under U1-b, airlines move some flights scheduled 22:00 to 23:00 earlier to keep a buffer against delays."
+   ],
+   "premise_class": "other",
+   "source": "A-23: Under U1-b, airlines move some flights scheduled 22:00 to 23:00 earlier to keep a buffer against delays."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.airlines_late",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "homeowners.contour_wxi",
+    "variable": "asset_value",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Buyers of homes in a night-noise contour value quieter nights, so night movements are capitalized in home prices."
+   ],
+   "premise_class": "other",
+   "source": "About 9,000 homes lie inside the WAA's night-noise contour"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.airlines_late",
+    "source_variable": "quantity_traded",
+    "relation": "supply",
+    "actor": "sellers.airlines",
+    "variable": "full_cost_per_unit",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "The WAA sets charges to recover costs that are largely fixed."
+   ],
+   "premise_class": "other",
+   "source": "The WAA's charges (about $2,000 per movement on average, about $13 per seat) are set each year to recover its costs, which are mostly fixed."
+  }
+ ],
+ "officials.enforcement": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.enforcement",
+    "source_variable": "enforcement_cost",
+    "relation": "input",
+    "actor": "sellers.airlines",
+    "variable": "full_cost_per_unit"
+   },
+   "premises": [
+    "The WAA sets charges to recover costs that are largely fixed.",
+    "Penalty receipts are far smaller than the WAA's added costs: the K6 costs ($2.8 million a year) and the shortfall in charge revenue from fewer movements (about $300 more per movement by 2030 on about 140,000 movements a year)."
+   ],
+   "premise_class": "other",
+   "source": "K6: costs recovered through the annual charges."
+  }
+ ],
+ "customers.passengers#2": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "customers.passengers",
+    "variable": "price_paid",
+    "direction": "increase",
+    "kind": "response"
+   },
+   "premises": [
+    "Larger aircraft and Pellham together cannot carry all of the counterfactual growth at the old cost (the responses are partial).",
+    "Airlines' cost per seat at WXI does not fall below its counterfactual level as movements are held below their path (constant or rising cost)."
+   ],
+   "premise_class": "other",
+   "source": "A-9: Larger aircraft and Pellham together cannot carry all of the counterfactual growth at the old cost (the responses are partial). A-35: cost per seat does not fall below its counterfactual level."
+  }
+ ],
+ "customers.passengers_night#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.passengers_night",
+    "source_variable": "cross_border_purchases",
+    "relation": "complement",
+    "actor": "sellers.airlines_pellham",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Flights at Pellham can be added in the period considered (its supply of flights is not fixed)."
+   ],
+   "premise_class": "other",
+   "source": "Pellham Regional Airport, 70 km away by motorway (about 55 minutes), is run by a separate authority, has no curfew, and uses about 45% of its runway capacity."
+  }
+ ],
+ "customers.passengers_late#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.passengers_late",
+    "source_variable": "cross_border_purchases",
+    "relation": "complement",
+    "actor": "sellers.airlines_pellham",
+    "variable": "quantity_supplied",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Flights at Pellham can be added in the period considered (its supply of flights is not fixed)."
+   ],
+   "premise_class": "other",
+   "source": "Pellham Regional Airport, 70 km away by motorway (about 55 minutes), is run by a separate authority, has no curfew, and uses about 45% of its runway capacity."
+  }
+ ],
+ "homeowners.contour_wxi": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "homeowners.contour_wxi"
+   },
+   "premises": [
+    "Night operators, slot holders, would-be entrants and residents' associations can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "after a residents' campaign for a curfew that had run since 2023"
+  }
+ ],
+ "sellers.integrator#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.integrator",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "homeowners.contour_wxi",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Employment and hours at WXI follow movements and the night sort.",
+    "Airport workers' housing demand is a material part of demand for homes near each airport, including the contours."
+   ],
+   "premise_class": "other",
+   "source": "A-12: Airport workers' housing demand is a material part of demand for homes near each airport, including the contours. WXI employs about 11,000 people on site, including about 900 (mostly part-time night shifts) in the integrator's sort; about 30% of airport workers live within 8 km."
+  }
+ ],
+ "sellers.cargo_other#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.cargo_other",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "homeowners.contour_wxi",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Employment and hours at WXI follow movements and the night sort.",
+    "Airport workers' housing demand is a material part of demand for homes near each airport, including the contours."
+   ],
+   "premise_class": "other",
+   "source": "A-12: Airport workers' housing demand is a material part of demand for homes near each airport, including the contours. WXI employs about 11,000 people on site, including about 900 (mostly part-time night shifts) in the integrator's sort; about 30% of airport workers live within 8 km."
+  }
+ ],
+ "sellers.airlines_night#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.airlines_night",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "homeowners.contour_wxi",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Employment and hours at WXI follow movements and the night sort.",
+    "Airport workers' housing demand is a material part of demand for homes near each airport, including the contours."
+   ],
+   "premise_class": "other",
+   "source": "A-12: Airport workers' housing demand is a material part of demand for homes near each airport, including the contours. WXI employs about 11,000 people on site, including about 900 (mostly part-time night shifts) in the integrator's sort; about 30% of airport workers live within 8 km."
+  }
+ ],
+ "sellers.integrator_pellham": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.integrator_pellham",
+    "source_variable": "quantity_supplied",
+    "relation": "substitute",
+    "actor": "homeowners.contour_pellham",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Buyers of homes in a night-noise contour value quieter nights, so night movements are capitalized in home prices."
+   ],
+   "premise_class": "other",
+   "source": "About 1,200 homes lie in the area that would be inside a night-noise contour at Pellham if night cargo moved there; Pellham's commuting area holds about 40,000 homes."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.integrator_pellham",
+    "source_variable": "quantity_supplied",
+    "relation": "complement",
+    "actor": "homeowners.contour_pellham",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Employment and hours at Pellham follow the movements and the night sort that move there.",
+    "Airport workers' housing demand is a material part of demand for homes near each airport, including the contours."
+   ],
+   "premise_class": "other",
+   "source": "A-12: Airport workers' housing demand is a material part of demand for homes near each airport, including the contours."
+  }
+ ],
+ "sellers.cargo_pellham": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.cargo_pellham",
+    "source_variable": "quantity_supplied",
+    "relation": "substitute",
+    "actor": "homeowners.contour_pellham",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Buyers of homes in a night-noise contour value quieter nights, so night movements are capitalized in home prices."
+   ],
+   "premise_class": "other",
+   "source": "About 1,200 homes lie in the area that would be inside a night-noise contour at Pellham if night cargo moved there; Pellham's commuting area holds about 40,000 homes."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.cargo_pellham",
+    "source_variable": "quantity_supplied",
+    "relation": "complement",
+    "actor": "homeowners.contour_pellham",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Employment and hours at Pellham follow the movements and the night sort that move there.",
+    "Airport workers' housing demand is a material part of demand for homes near each airport, including the contours."
+   ],
+   "premise_class": "other",
+   "source": "A-12: Airport workers' housing demand is a material part of demand for homes near each airport, including the contours."
+  }
+ ],
+ "workers.night_sort": [
+  {
+   "part": "parts",
+   "fact": {
+    "part": "workers.night_sort",
+    "whole": "workers.airport"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "WXI employs about 11,000 people on site, including about 900 (mostly part-time night shifts) in the integrator's sort"
+  }
+ ],
+ "buyers.airlines#2": [],
+ "customers.shippers#2": [],
+ "sellers.airlines#2": [],
+ "sellers.airlines_early": [],
+ "sellers.airlines_late#2": [],
+ "sellers.airlines_pellham": [],
+ "sellers.airlines_shoulder": [],
+ "sellers.concessions": [],
+ "sellers.prospective#2": [],
+ "sellers.slot_holders#2": [],
+ "workers.airport": [],
+ "customers.passengers#3": [],
+ "homeowners.contour_pellham": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "homeowners.contour_pellham",
+    "variable": "asset_value",
+    "direction": "decrease",
+    "kind": "empirical"
+   },
+   "premises": [
+    "In Pellham's prospective night contour, the discount buyers place on night noise exceeds the added demand from hub workers."
+   ],
+   "premise_class": "other",
+   "source": "A-20: In Pellham's prospective night contour, the discount buyers place on night noise exceeds the added demand from hub workers."
+  }
+ ],
+ "homeowners.contour_wxi#2": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "homeowners.contour_wxi",
+    "variable": "asset_value",
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "In the WXI night-noise contour, the discount buyers place on night noise that is removed exceeds the lost demand from fewer airport workers."
+   ],
+   "premise_class": "other",
+   "source": "About 9,000 homes lie inside the WAA's night-noise contour (the area where night noise exceeds the WAA's threshold), with a median value of about $310,000."
+  }
+ ],
+ "sellers.airlines_pellham#2": []
+}

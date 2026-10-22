@@ -1,0 +1,288 @@
+{
+ "name": "WE-054 Wexcombe night curfew and slot order (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_day",
+   "buyer": "customers.passengers",
+   "seller": "sellers.airlines",
+   "unsatisfied_seller": "sellers.prospective",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_slot",
+   "buyer": "buyers.airlines",
+   "seller": "sellers.slot_holders",
+   "buyer_price_var": "right_lease_price",
+   "seller_price_var": "right_lease_price"
+  },
+  {
+   "id": "e_nint",
+   "buyer": "customers.shippers",
+   "seller": "sellers.integrator",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_ncargo",
+   "buyer": "customers.shippers",
+   "seller": "sellers.cargo_other",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_npax",
+   "buyer": "customers.passengers_night",
+   "seller": "sellers.airlines_night",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_late",
+   "buyer": "customers.passengers_late",
+   "seller": "sellers.airlines_late",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  }
+ ],
+ "banned": [
+  {
+   "component": "k1",
+   "exchange": "e_nint",
+   "premises": [
+    "a2"
+   ]
+  },
+  {
+   "component": "k1",
+   "exchange": "e_ncargo",
+   "premises": [
+    "a2"
+   ]
+  },
+  {
+   "component": "k1",
+   "exchange": "e_npax",
+   "premises": [
+    "a2"
+   ]
+  },
+  {
+   "component": "k1_late",
+   "exchange": "e_late",
+   "premises": [
+    "a2"
+   ]
+  }
+ ],
+ "capped": [
+  {
+   "component": "k2",
+   "exchange": "e_day",
+   "holders": [
+    "sellers.airlines"
+   ],
+   "premises": [
+    "a1",
+    "a2"
+   ]
+  }
+ ],
+ "terms": [
+  {
+   "component": "k4",
+   "exchange": "e_slot",
+   "side": "buyer",
+   "direction": "better",
+   "premises": [
+    "a4"
+   ]
+  },
+  {
+   "component": "k4",
+   "exchange": "e_slot",
+   "side": "seller",
+   "direction": "better",
+   "premises": [
+    "a4"
+   ]
+  }
+ ],
+ "qualifies": [
+  {
+   "component": "k3",
+   "actor": "sellers.airlines",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a5"
+   ]
+  },
+  {
+   "component": "k3",
+   "actor": "sellers.prospective",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a29"
+   ]
+  },
+  {
+   "component": "k3",
+   "actor": "sellers.integrator",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a28"
+   ]
+  },
+  {
+   "component": "k3",
+   "actor": "sellers.cargo_other",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a28"
+   ]
+  },
+  {
+   "component": "k3",
+   "actor": "sellers.airlines_night",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a28"
+   ]
+  },
+  {
+   "component": "k5",
+   "actor": "sellers.integrator",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a31"
+   ]
+  },
+  {
+   "component": "k5",
+   "actor": "sellers.cargo_other",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a31"
+   ]
+  },
+  {
+   "component": "k5",
+   "actor": "sellers.airlines_night",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a31"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "sellers.integrator"
+  },
+  {
+   "component": "k1",
+   "actor": "sellers.cargo_other"
+  },
+  {
+   "component": "k1",
+   "actor": "sellers.airlines_night"
+  },
+  {
+   "component": "k1_late",
+   "actor": "sellers.airlines_late"
+  },
+  {
+   "component": "k2",
+   "actor": "sellers.airlines"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k6",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k6",
+   "actor": "sellers.airlines",
+   "premises": [
+    "a13",
+    "a33"
+   ]
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": []
+  },
+  {
+   "component": "k2",
+   "premises": []
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Late-running flights: K1 lets the duty manager permit a flight scheduled before 23:00 and delayed to operate; the order names no time and no criteria.",
+   "readings": [
+    "U1-a: a flight scheduled before 23:00 and delayed may land or take off until 00:00, as of right",
+    "U1-b: no dispensation for ordinary delays; after 23:00 only emergencies operate, and a late flight diverts (to Pellham) or is cancelled"
+   ],
+   "components": {
+    "U1-a": [],
+    "U1-b": [
+     "k1_late"
+    ]
+   }
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Without the order, daytime movements would grow above 380 a day (about 3% a year), and off-peak runway capacity allows it.",
+   "class": "counterfactual_trend",
+   "p": 0.85
+  },
+  "a2": {
+   "text": "The WAA detects every movement from air traffic control's log and imposes penalties.",
+   "class": "enforcement",
+   "p": 0.9
+  },
+  "a4": {
+   "text": "A slot market forms: slots are sold, leased and retimed at low transaction cost.",
+   "class": "other",
+   "p": 0.75
+  },
+  "a5": {
+   "text": "Airlines expected base-season history to set their share, and some could add off-peak daytime movements at a cost below the expected value of the extra slots.",
+   "class": "expectations",
+   "p": 0.8
+  },
+  "a13": {
+   "text": "The WAA sets charges to recover costs that are largely fixed.",
+   "class": "other",
+   "p": 0.75
+  },
+  "a28": {
+   "text": "Night operators moved night flights into the daytime during the base seasons to earn daytime history.",
+   "class": "expectations",
+   "p": 0.35
+  },
+  "a29": {
+   "text": "Some airlines not operating at WXI started there in the base seasons, at a loss on the flights below the expected value of the slots earned.",
+   "class": "expectations",
+   "p": 0.55
+  },
+  "a31": {
+   "text": "Some slots will be freed under K5 (a holder ceases to operate at WXI or under-uses), so night operators' priority claim has a value.",
+   "class": "other",
+   "p": 0.75
+  },
+  "a33": {
+   "text": "Penalty receipts are far smaller than the WAA's added costs: the K6 costs ($2.8 million a year) and the shortfall in charge revenue from fewer movements (about $300 more per movement by 2030 on about 140,000 movements a year).",
+   "class": "other",
+   "p": 0.8
+  }
+ }
+}

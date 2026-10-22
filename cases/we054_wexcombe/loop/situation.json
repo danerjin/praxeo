@@ -1,0 +1,1171 @@
+{
+ "name": "WE-054 Wexcombe night curfew and slot order (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_day",
+   "buyer": "customers.passengers",
+   "seller": "sellers.airlines",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": "sellers.prospective",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_slot",
+   "buyer": "buyers.airlines",
+   "seller": "sellers.slot_holders",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "right_lease_price",
+   "seller_price_var": "right_lease_price",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_nint",
+   "buyer": "customers.shippers",
+   "seller": "sellers.integrator",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_ncargo",
+   "buyer": "customers.shippers",
+   "seller": "sellers.cargo_other",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_npax",
+   "buyer": "customers.passengers_night",
+   "seller": "sellers.airlines_night",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_late",
+   "buyer": "customers.passengers_late",
+   "seller": "sellers.airlines_late",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [],
+ "alternatives": [
+  {
+   "premises": [
+    "q11_some_travelers_find_pellham_a_substitute"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "customers.passengers",
+   "actor": "customers.passengers",
+   "variables": [
+    "cross_border_purchases"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q11_some_travelers_find_pellham_a_substitute"
+   ],
+   "reading": "U1-b",
+   "component": "k1_late",
+   "chooser": "customers.passengers_late",
+   "actor": "customers.passengers_late",
+   "variables": [
+    "cross_border_purchases"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q11_some_travelers_find_pellham_a_substitute"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "customers.passengers_night",
+   "actor": "customers.passengers_night",
+   "variables": [
+    "cross_border_purchases"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q12_flights_at_pellham_can_be_added_in_the_p"
+   ],
+   "reading": "U1-b",
+   "component": "k1_late",
+   "chooser": "sellers.airlines_late",
+   "actor": "sellers.airlines_pellham",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q19_under_u1_b_airlines_move_some_flights_sc"
+   ],
+   "reading": "U1-b",
+   "component": "k1_late",
+   "chooser": "sellers.airlines_late",
+   "actor": "sellers.airlines_early",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q10_some_night_operators_buy_or_lease_daytim"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "sellers.airlines_night",
+   "actor": "sellers.airlines_shoulder",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q12_flights_at_pellham_can_be_added_in_the_p"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "sellers.airlines_night",
+   "actor": "sellers.airlines_pellham",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q22_under_u1_a_airlines_schedule_some_flight"
+   ],
+   "reading": "U1-a",
+   "component": "k1",
+   "chooser": "sellers.airlines_night",
+   "actor": "sellers.airlines_late",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q10_some_night_operators_buy_or_lease_daytim"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "sellers.cargo_other",
+   "actor": "sellers.airlines_shoulder",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q23_the_integrator_moves_most_of_its_night_s"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "sellers.cargo_other",
+   "actor": "sellers.cargo_pellham",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q10_some_night_operators_buy_or_lease_daytim"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "sellers.integrator",
+   "actor": "sellers.airlines_shoulder",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q23_the_integrator_moves_most_of_its_night_s"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "sellers.integrator",
+   "actor": "sellers.integrator_pellham",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q12_flights_at_pellham_can_be_added_in_the_p"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "sellers.prospective",
+   "actor": "sellers.airlines_pellham",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "a4"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "sellers.prospective",
+   "actor": "buyers.airlines",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q18_night_operators_slot_holders_would_be_en"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "sellers.airlines"
+  },
+  {
+   "premises": [
+    "q18_night_operators_slot_holders_would_be_en"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "sellers.airlines"
+  },
+  {
+   "premises": [
+    "q18_night_operators_slot_holders_would_be_en",
+    "q21_without_the_order_night_operators_would_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.airlines_night"
+  },
+  {
+   "premises": [
+    "q18_night_operators_slot_holders_would_be_en",
+    "q21_without_the_order_night_operators_would_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.cargo_other"
+  },
+  {
+   "premises": [
+    "q18_night_operators_slot_holders_would_be_en",
+    "q21_without_the_order_night_operators_would_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.integrator"
+  },
+  {
+   "premises": [
+    "q18_night_operators_slot_holders_would_be_en"
+   ],
+   "reading": null,
+   "component": "k5",
+   "actor": "sellers.prospective"
+  },
+  {
+   "premises": [
+    "q18_night_operators_slot_holders_would_be_en"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "homeowners.contour_wxi"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q10_some_night_operators_buy_or_lease_daytim"
+   ],
+   "reading": null,
+   "source_actor": "buyers.airlines",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "sellers.airlines_shoulder",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q12_flights_at_pellham_can_be_added_in_the_p"
+   ],
+   "reading": null,
+   "source_actor": "customers.passengers",
+   "source_variable": "cross_border_purchases",
+   "relation": "complement",
+   "actor": "sellers.airlines_pellham",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q13_airlines_cannot_add_flights_at_pellham_a"
+   ],
+   "reading": null,
+   "source_actor": "customers.passengers",
+   "source_variable": "cross_border_purchases",
+   "relation": "supply_price",
+   "actor": "customers.passengers_pellham",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q14_concession_sales_follow_passenger_number"
+   ],
+   "reading": null,
+   "source_actor": "customers.passengers",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "sellers.concessions",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_employment_and_hours_at_wxi_follow_movem"
+   ],
+   "reading": null,
+   "source_actor": "customers.passengers",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.airport",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a13",
+    "a33"
+   ],
+   "reading": null,
+   "source_actor": "officials.enforcement",
+   "source_variable": "enforcement_cost",
+   "relation": "input",
+   "actor": "sellers.airlines",
+   "variable": "full_cost_per_unit",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a4"
+   ],
+   "reading": null,
+   "source_actor": "sellers.airlines",
+   "source_variable": "asset_value",
+   "relation": "same_act",
+   "actor": "sellers.slot_holders",
+   "variable": "right_lease_price",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a4"
+   ],
+   "reading": null,
+   "source_actor": "sellers.airlines",
+   "source_variable": "asset_value",
+   "relation": "same_act",
+   "actor": "buyers.airlines",
+   "variable": "right_lease_price",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q16_airlines_can_move_to_larger_aircraft_on_"
+   ],
+   "reading": null,
+   "source_actor": "sellers.airlines",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "sellers.airlines",
+   "variable": "unit_size",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q16_airlines_can_move_to_larger_aircraft_on_"
+   ],
+   "reading": null,
+   "source_actor": "sellers.airlines",
+   "source_variable": "unit_size",
+   "relation": "supply",
+   "actor": "customers.passengers",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q20_buyers_of_homes_in_a_night_noise_contour"
+   ],
+   "reading": "U1-b",
+   "source_actor": "sellers.airlines_late",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "homeowners.contour_wxi",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a13"
+   ],
+   "reading": "U1-b",
+   "source_actor": "sellers.airlines_late",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "sellers.airlines",
+   "variable": "full_cost_per_unit",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q20_buyers_of_homes_in_a_night_noise_contour"
+   ],
+   "reading": null,
+   "source_actor": "sellers.airlines_night",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "homeowners.contour_wxi",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a13"
+   ],
+   "reading": null,
+   "source_actor": "sellers.airlines_night",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "sellers.airlines",
+   "variable": "full_cost_per_unit",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_employment_and_hours_at_wxi_follow_movem"
+   ],
+   "reading": null,
+   "source_actor": "sellers.airlines_night",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.airport",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q20_buyers_of_homes_in_a_night_noise_contour"
+   ],
+   "reading": null,
+   "source_actor": "sellers.cargo_other",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "homeowners.contour_wxi",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a13"
+   ],
+   "reading": null,
+   "source_actor": "sellers.cargo_other",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "sellers.airlines",
+   "variable": "full_cost_per_unit",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_employment_and_hours_at_wxi_follow_movem"
+   ],
+   "reading": null,
+   "source_actor": "sellers.cargo_other",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.airport",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q20_buyers_of_homes_in_a_night_noise_contour"
+   ],
+   "reading": null,
+   "source_actor": "sellers.integrator",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "homeowners.contour_wxi",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a13"
+   ],
+   "reading": null,
+   "source_actor": "sellers.integrator",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "sellers.airlines",
+   "variable": "full_cost_per_unit",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_employment_and_hours_at_wxi_follow_movem"
+   ],
+   "reading": null,
+   "source_actor": "sellers.integrator",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.night_sort",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q25_with_the_sort_70_km_away_collection_cut_"
+   ],
+   "reading": null,
+   "source_actor": "sellers.integrator",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "customers.shippers",
+   "variable": "quality_per_unit",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q26_restated_in_1_0_serving_wexcombe_s_regio"
+   ],
+   "reading": null,
+   "source_actor": "sellers.integrator",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "customers.shippers",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a13"
+   ],
+   "reading": null,
+   "source_actor": "sellers.prospective",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "sellers.airlines",
+   "variable": "full_cost_per_unit",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q12_flights_at_pellham_can_be_added_in_the_p"
+   ],
+   "reading": "U1-b",
+   "source_actor": "customers.passengers_late",
+   "source_variable": "cross_border_purchases",
+   "relation": "complement",
+   "actor": "sellers.airlines_pellham",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q12_flights_at_pellham_can_be_added_in_the_p"
+   ],
+   "reading": null,
+   "source_actor": "customers.passengers_night",
+   "source_variable": "cross_border_purchases",
+   "relation": "complement",
+   "actor": "sellers.airlines_pellham",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_employment_and_hours_at_wxi_follow_movem",
+    "q29_airport_workers_housing_demand_is_a_mate"
+   ],
+   "reading": null,
+   "source_actor": "sellers.airlines_night",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "homeowners.contour_wxi",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_employment_and_hours_at_wxi_follow_movem",
+    "q29_airport_workers_housing_demand_is_a_mate"
+   ],
+   "reading": null,
+   "source_actor": "sellers.cargo_other",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "homeowners.contour_wxi",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q20_buyers_of_homes_in_a_night_noise_contour"
+   ],
+   "reading": null,
+   "source_actor": "sellers.cargo_pellham",
+   "source_variable": "quantity_supplied",
+   "relation": "substitute",
+   "actor": "homeowners.contour_pellham",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q30_employment_and_hours_at_pellham_follow_t",
+    "q29_airport_workers_housing_demand_is_a_mate"
+   ],
+   "reading": null,
+   "source_actor": "sellers.cargo_pellham",
+   "source_variable": "quantity_supplied",
+   "relation": "complement",
+   "actor": "homeowners.contour_pellham",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_employment_and_hours_at_wxi_follow_movem",
+    "q29_airport_workers_housing_demand_is_a_mate"
+   ],
+   "reading": null,
+   "source_actor": "sellers.integrator",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "homeowners.contour_wxi",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q20_buyers_of_homes_in_a_night_noise_contour"
+   ],
+   "reading": null,
+   "source_actor": "sellers.integrator_pellham",
+   "source_variable": "quantity_supplied",
+   "relation": "substitute",
+   "actor": "homeowners.contour_pellham",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q30_employment_and_hours_at_pellham_follow_t",
+    "q29_airport_workers_housing_demand_is_a_mate"
+   ],
+   "reading": null,
+   "source_actor": "sellers.integrator_pellham",
+   "source_variable": "quantity_supplied",
+   "relation": "complement",
+   "actor": "homeowners.contour_pellham",
+   "variable": "asset_value",
+   "horizon": null
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "q17_holders_expect_slots_to_last_past_the_20"
+   ],
+   "reading": null,
+   "exchange": "e_day",
+   "side": "seller",
+   "actor": "sellers.airlines"
+  },
+  {
+   "premises": [
+    "q24_the_integrator_s_wxi_sort_facility_has_n"
+   ],
+   "reading": null,
+   "exchange": "e_nint",
+   "side": "seller",
+   "actor": "sellers.integrator"
+  }
+ ],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "sellers.integrator"
+  },
+  {
+   "component": "k1",
+   "actor": "sellers.cargo_other"
+  },
+  {
+   "component": "k1",
+   "actor": "sellers.airlines_night"
+  },
+  {
+   "component": "k1_late",
+   "actor": "sellers.airlines_late"
+  },
+  {
+   "component": "k2",
+   "actor": "sellers.airlines"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k6",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k6",
+   "actor": "sellers.airlines",
+   "premises": [
+    "a13",
+    "a33"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [],
+ "moves": [],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": []
+  },
+  {
+   "component": "k2",
+   "premises": []
+  }
+ ],
+ "timing": [],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "reading": null,
+   "component": "k2",
+   "exchange": "e_day",
+   "holders": [
+    "sellers.airlines"
+   ],
+   "wider_price": false
+  }
+ ],
+ "terms": [
+  {
+   "premises": [
+    "a4"
+   ],
+   "reading": null,
+   "component": "k4",
+   "exchange": "e_slot",
+   "side": "buyer",
+   "direction": "better"
+  },
+  {
+   "premises": [
+    "a4"
+   ],
+   "reading": null,
+   "component": "k4",
+   "exchange": "e_slot",
+   "side": "seller",
+   "direction": "better"
+  }
+ ],
+ "banned": [
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_nint"
+  },
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_ncargo"
+  },
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_npax"
+  },
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1_late",
+   "exchange": "e_late"
+  }
+ ],
+ "incidence": [],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Late-running flights: K1 lets the duty manager permit a flight scheduled before 23:00 and delayed to operate; the order names no time and no criteria.",
+   "readings": [
+    "U1-a: a flight scheduled before 23:00 and delayed may land or take off until 00:00, as of right",
+    "U1-b: no dispensation for ordinary delays; after 23:00 only emergencies operate, and a late flight diverts (to Pellham) or is cancelled"
+   ],
+   "components": {
+    "U1-a": [],
+    "U1-b": [
+     "k1_late"
+    ]
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [
+  {
+   "premises": [
+    "a5"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "sellers.airlines",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "a29"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "sellers.prospective",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "a28"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "sellers.integrator",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "a28"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "sellers.cargo_other",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "a28"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "sellers.airlines_night",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "a31"
+   ],
+   "reading": null,
+   "component": "k5",
+   "actor": "sellers.integrator",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "a31"
+   ],
+   "reading": null,
+   "component": "k5",
+   "actor": "sellers.cargo_other",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "a31"
+   ],
+   "reading": null,
+   "component": "k5",
+   "actor": "sellers.airlines_night",
+   "variable": "quantity_supplied"
+  }
+ ],
+ "expires": [],
+ "parts": [
+  {
+   "part": "workers.night_sort",
+   "whole": "workers.airport",
+   "premises": []
+  }
+ ],
+ "dominance": [
+  {
+   "premises": [
+    "q27_larger_aircraft_and_pellham_together_can",
+    "q28_airlines_cost_per_seat_at_wxi_does_not_f"
+   ],
+   "reading": null,
+   "actor": "customers.passengers",
+   "variable": "price_paid",
+   "window": null,
+   "direction": "increase",
+   "kind": "response"
+  },
+  {
+   "premises": [
+    "q31_in_pellham_s_prospective_night_contour_t"
+   ],
+   "reading": null,
+   "actor": "homeowners.contour_pellham",
+   "variable": "asset_value",
+   "window": null,
+   "direction": "decrease",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q32_in_the_wxi_night_noise_contour_the_disco"
+   ],
+   "reading": null,
+   "actor": "homeowners.contour_wxi",
+   "variable": "asset_value",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Without the order, daytime movements would grow above 380 a day (about 3% a year), and off-peak runway capacity allows it.",
+   "class": "counterfactual_trend",
+   "p": 0.85
+  },
+  "a2": {
+   "text": "The WAA detects every movement from air traffic control's log and imposes penalties.",
+   "class": "enforcement",
+   "p": 0.9
+  },
+  "a4": {
+   "text": "A slot market forms: slots are sold, leased and retimed at low transaction cost.",
+   "class": "other",
+   "p": 0.75
+  },
+  "a5": {
+   "text": "Airlines expected base-season history to set their share, and some could add off-peak daytime movements at a cost below the expected value of the extra slots.",
+   "class": "expectations",
+   "p": 0.8
+  },
+  "a13": {
+   "text": "The WAA sets charges to recover costs that are largely fixed.",
+   "class": "other",
+   "p": 0.75
+  },
+  "a28": {
+   "text": "Night operators moved night flights into the daytime during the base seasons to earn daytime history.",
+   "class": "expectations",
+   "p": 0.35
+  },
+  "a29": {
+   "text": "Some airlines not operating at WXI started there in the base seasons, at a loss on the flights below the expected value of the slots earned.",
+   "class": "expectations",
+   "p": 0.55
+  },
+  "a31": {
+   "text": "Some slots will be freed under K5 (a holder ceases to operate at WXI or under-uses), so night operators' priority claim has a value.",
+   "class": "other",
+   "p": 0.75
+  },
+  "a33": {
+   "text": "Penalty receipts are far smaller than the WAA's added costs: the K6 costs ($2.8 million a year) and the shortfall in charge revenue from fewer movements (about $300 more per movement by 2030 on about 140,000 movements a year).",
+   "class": "other",
+   "p": 0.8
+  },
+  "q10_some_night_operators_buy_or_lease_daytim": {
+   "text": "Some night operators buy or lease daytime slots and fly in the shoulder hours.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q11_some_travelers_find_pellham_a_substitute": {
+   "text": "Some travelers find Pellham a substitute.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q12_flights_at_pellham_can_be_added_in_the_p": {
+   "text": "Flights at Pellham can be added in the period considered (its supply of flights is not fixed).",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q13_airlines_cannot_add_flights_at_pellham_a": {
+   "text": "Airlines cannot add flights at Pellham at unchanged cost, so Pellham fares rise.",
+   "p": 0.35,
+   "class": "other"
+  },
+  "q14_concession_sales_follow_passenger_number": {
+   "text": "Concession sales follow passenger numbers.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q15_employment_and_hours_at_wxi_follow_movem": {
+   "text": "Employment and hours at WXI follow movements and the night sort.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q16_airlines_can_move_to_larger_aircraft_on_": {
+   "text": "Airlines can move to larger aircraft on some WXI routes within the medium horizon.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q17_holders_expect_slots_to_last_past_the_20": {
+   "text": "Holders expect slots to last past the 2032 review without reallocation.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q18_night_operators_slot_holders_would_be_en": {
+   "text": "Night operators, slot holders, would-be entrants and residents' associations can organize at a cost below their stake.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q19_under_u1_b_airlines_move_some_flights_sc": {
+   "text": "Under U1-b, airlines move some flights scheduled 22:00 to 23:00 earlier to keep a buffer against delays.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q20_buyers_of_homes_in_a_night_noise_contour": {
+   "text": "Buyers of homes in a night-noise contour value quieter nights, so night movements are capitalized in home prices.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q21_without_the_order_night_operators_would_": {
+   "text": "Without the order, night operators would have opposed the residents' campaign for a curfew.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q22_under_u1_a_airlines_schedule_some_flight": {
+   "text": "Under U1-a, airlines schedule some flights just before 23:00 knowing they will often operate after it.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q23_the_integrator_moves_most_of_its_night_s": {
+   "text": "The integrator moves most of its night sort to Pellham, and other night cargo follows.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q24_the_integrator_s_wxi_sort_facility_has_n": {
+   "text": "The integrator's WXI sort facility has no equally valuable other use.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q25_with_the_sort_70_km_away_collection_cut_": {
+   "text": "With the sort 70 km away, collection cut-offs in Wexcombe move earlier.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q26_restated_in_1_0_serving_wexcombe_s_regio": {
+   "text": "Restated in 1.0. Serving Wexcombe's region from Pellham costs the integrator more per parcel than its WXI night sort did, net of the WXI charges and hall costs it no longer pays, so the supply of overnight delivery at the old national price is lower.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q27_larger_aircraft_and_pellham_together_can": {
+   "text": "Larger aircraft and Pellham together cannot carry all of the counterfactual growth at the old cost (the responses are partial).",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q28_airlines_cost_per_seat_at_wxi_does_not_f": {
+   "text": "Airlines' cost per seat at WXI does not fall below its counterfactual level as movements are held below their path (constant or rising cost).",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q29_airport_workers_housing_demand_is_a_mate": {
+   "text": "Airport workers' housing demand is a material part of demand for homes near each airport, including the contours.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q30_employment_and_hours_at_pellham_follow_t": {
+   "text": "Employment and hours at Pellham follow the movements and the night sort that move there.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q31_in_pellham_s_prospective_night_contour_t": {
+   "text": "In Pellham's prospective night contour, the discount buyers place on night noise exceeds the added demand from hub workers.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q32_in_the_wxi_night_noise_contour_the_disco": {
+   "text": "In the WXI night-noise contour, the discount buyers place on night noise that is removed exceeds the lost demand from fewer airport workers.",
+   "p": 0.7,
+   "class": "other"
+  }
+ }
+}
