@@ -1,0 +1,34 @@
+## 1. Policy record
+
+**Saltmere Housing Preservation Ordinance (Ordinance 2026-31).** Saltmere is a coastal city of about 310,000 people with about 128,000 dwellings, of which about 60,000 are rented long-term (median rent $1,850 a month, vacancy about 3%). Tourism is concentrated in three districts near the beach (Harbor, Dunes and Old Town). The city's 2026 platform report counts about 4,300 active short-term rental (STR) listings:
+
+| Listing type | Listings | Notes |
+|---|---|---|
+| Rooms in a home where the owner lives and is present | 1,250 | Not covered by K1. |
+| Whole units, not the owner's primary residence | 2,150 | About 1,700 never used by the owner (investor units); about 450 second homes the owner uses some weeks a year. About 70% are in the three beach districts. |
+| Whole units, the owner's primary residence, let while the owner is away | 550 | About 140 let more than 90 nights a year. |
+| Whole units in two-unit buildings whose owner lives in the other unit | 350 | About 120 let more than 90 nights a year. Subject to U1. |
+
+A whole-unit STR earns on average $235 a night at 60% occupancy, about $51,000 a year gross; after cleaning, platform fees, furnishing and management (about 40% of gross), about $30,000 net. The same unit let on a 12-month lease earns about $24,000 gross, about $20,000 net. Hotels: about 7,400 rooms, average occupancy 79% (94% in July and August), average daily rate $180; about 2.1 million room-nights a year, against about 0.67 million whole-unit STR nights. Hotel construction takes three to five years from site to opening. Furnished lets of 30 nights or more (traveling nurses, university visitors, relocations) are a small segment of about 900 units, rented at about $3,200 a month. About 6% of a year's whole-unit STR nights are booked more than nine months ahead. In 2023 to 2025, about 30% of home purchases in the beach districts were by buyers who did not occupy the home.
+
+Outside the city: the town of Elsdon, 12 km from the Harbor district, has about 420 STR listings and no rules beyond county registration.
+
+| Field | Value | Source sentence |
+|---|---|---|
+| Jurisdiction (and what lies just outside) | City of Saltmere, all zones. Elsdon (no STR restriction) 12 km away. | §1: "This ordinance applies to every dwelling unit within the City." |
+| Announced / enacted / effective / expires | Introduced 3 November 2026 by six of nine council members (announced). Enacted 8 December 2026. Effective 1 July 2027 (eight months after introduction); transition for booked stays to 30 September 2027. No expiry. | §9 |
+| Enforcement (who, penalties, resources) | K2 against platforms: Registry Unit notices, fine per listing per day. K4 against hosts: Code Enforcement, on complaint only, fine $2,500 for a first violation and $5,000 for each later one, "within existing appropriations"; fines go to the general fund. K3: a new Registry Unit of five staff, $520,000 a year, new appropriation from the general fund. | §6, §7, §8 |
+| Existing rules | R1 STR registration ($150 a year; about 65% of hosts registered; platforms not obliged to check). R2 Transient occupancy tax (TOT) of 12% on stays under 30 nights, hotels and STRs alike; platforms collect it for STRs (about $18.7 million a year from whole-unit STRs; about $46 million from hotels). R3 Noise and nuisance ordinance, enforced by Code Enforcement on complaint: in 2025, about 9,600 noise complaints, about 1,500 of them about STR units (about one a year for every two whole-unit listings), at about 2.5 staff hours each. Code Enforcement has a fixed budget of $6.1 million (48 staff). | Municipal Code §5.12, §3.30, §8.04 |
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Ban | `prohibition` (letting a whole dwelling unit for stays under 30 consecutive nights) | Whole-unit STR | Owners and anyone letting a unit | From 1 July 2027, no whole unit may be let for under 30 nights unless it is the owner's primary residence, registered under K3, and then for no more than 90 nights in a calendar year (45 nights for July to December 2027). "Primary residence": "the dwelling in which the owner resides at least 270 days a year". Stays booked and confirmed before 1 July 2027 may be completed if they end by 30 September 2027; all other bookings for later dates must be cancelled and refunded in full. | Rooms in a home that is the owner's primary residence, while the owner is present. Lets of 30 nights or more. |
+| K2 Platform duty | Rule on intermediaries | Listings | Booking platforms | From 1 July 2027: display a valid K3 registration number on every whole-unit listing; remove a listing within 10 days of a city notice that it is non-compliant; report nights booked per registration number each quarter. Fine $1,000 per listing per day after the 10 days. | — |
+| K3 Registry | Licensing of the exempt use | Primary-residence lets | Owners who let their primary residence | Registration $250 a year, with proof of residence (driver's license, voter registration, homestead tax exemption). Registry Unit, $520,000 a year. Replaces R1 for whole units. | — |
+| K4 Host enforcement | Enforcement | K1 | Code Enforcement | On complaint only; no proactive inspection; fines above. No new appropriation. | — |
+
+Unclear provisions:
+- **U1, two-unit buildings.** K1's exception covers "the dwelling in which the owner resides". Reading U1-a: the dwelling is the building (one structure on one parcel), so the second unit of a two-unit building whose owner lives in the other unit is part of the primary residence and may be let up to 90 nights a year. Reading U1-b: the dwelling is the unit, so the second unit is not the owner's primary residence and may not be let for under 30 nights at all. About 350 listings are affected; about 120 of them let more than 90 nights a year. The Registry Unit will decide which reading it applies when it issues (or refuses) registration numbers, and K2 makes platforms follow the registry. Readings get no probability; where a sign depends on U1, one sign per reading is given.
+
+The counterfactual is Saltmere without the ordinance: R1 to R3 stay in force, whole units may be let for any number of nights, and nuisance complaints are handled under R3.
+
