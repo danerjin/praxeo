@@ -1,0 +1,66 @@
+{
+ "name": "WE-042 aluminum tariff with drawback (loop_r2)",
+ "exchanges": [
+  {"id": "e_imp", "buyer": "importers", "seller": "sellers.foreign", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_exp_i", "buyer": "buyers.foreign", "seller": "exporters.imported_metal", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_exp_d", "buyer": "buyers.foreign", "seller": "exporters.domestic_metal", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_reimp", "buyer": "importers.reimporters", "seller": "sellers.foreign", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "charges": [
+  {"component": "k1", "exchange": "e_imp", "payer_side": "buyer", "receiver": "general_fund", "receipt_variable": "tax_revenue",
+   "projection_variable": "tax_revenue_vs_static_projection", "premises": ["a1", "a2"]},
+  {"component": "k3", "exchange": "e_reimp", "payer_side": "buyer", "receiver": "general_fund", "receipt_variable": "tax_revenue",
+   "premises": ["w1"]}
+ ],
+ "grants": [
+  {"component": "k2", "exchange": "e_exp_i", "recipient_side": "seller", "payer": "general_fund", "outlay_variable": "subsidy_outlay", "premises": ["a26"]},
+  {"component": "k2_sub", "exchange": "e_exp_d", "recipient_side": "seller", "payer": "general_fund", "outlay_variable": "subsidy_outlay", "premises": ["a26"]}
+ ],
+ "moves": [
+  {"exchange": "e_imp", "side": "buyer", "premises": ["a1"]},
+  {"exchange": "e_imp", "side": "seller", "premises": ["a18"]},
+  {"exchange": "e_exp_i", "side": "seller", "premises": ["w3"]},
+  {"exchange": "e_exp_d", "side": "seller", "premises": ["w3"]}
+ ],
+ "incidence": [
+  {"component": "k1", "exchange": "e_imp", "side": "buyer", "premises": ["a14"]}
+ ],
+ "penalties": [
+  {"component": "k3", "actor": "importers.reimporters", "collector": "general_fund", "premises": ["w2"]}
+ ],
+ "announced": [{"component": "k1", "premises": []}],
+ "compliance": [
+  {"component": "k1", "actor": "importers"},
+  {"component": "k2", "actor": "exporters.imported_metal"},
+  {"component": "k2_sub", "actor": "exporters.domestic_metal"},
+  {"component": "k3", "actor": "importers.reimporters"}
+ ],
+ "enforcers": [
+  {"component": "k1", "actor": "officials.enforcement"},
+  {"component": "k2", "actor": "officials.enforcement"},
+  {"component": "k2_sub", "actor": "officials.enforcement"},
+  {"component": "k3", "actor": "officials.enforcement"}
+ ],
+ "fixed_budget": [
+  {"component": "k2", "actor": "officials.enforcement", "premises": ["a17"]},
+  {"component": "k2_sub", "actor": "officials.enforcement", "premises": ["a17"]},
+  {"component": "k3", "actor": "officials.enforcement", "premises": ["a17"]}
+ ],
+ "unclear": [
+  {"id": "U1", "text": "K2 pays on goods made 'using imported aluminum on which the tariff was paid'",
+   "readings": ["U1-a: direct identification: the claimant must show the tariff-paid metal, or metal traced to it by lot, went into the exported goods",
+                "U1-b: substitution: same-grade aluminum used in the exported goods within three years of an import qualifies against that entry, whatever its origin, so domestic metal can stand in for imported metal"],
+   "components": {"U1-a": [], "U1-b": ["k2_sub"]}}
+ ],
+ "assumptions": {
+  "a1": {"text": "Imports remain a material share of supply, so the domestic price is set at import parity.", "p": 0.9, "class": "binding"},
+  "a2": {"text": "Most covered imports pay the tariff; misdeclaration is limited.", "p": 0.85, "class": "enforcement"},
+  "a14": {"text": "Foreign smelters have far better alternatives than Vessland's users.", "p": 0.9, "class": "substitutability"},
+  "a17": {"text": "Customs' appropriation does not rise with the new work.", "p": 0.8, "class": "revenue_use"},
+  "a18": {"text": "Vessland's purchases are large enough to lower the world price.", "p": 0.15, "class": "other"},
+  "a26": {"text": "Exporters with qualifying content file claims; for most, the paperwork costs less than the refund.", "p": 0.9, "class": "other"},
+  "w1": {"text": "Importers declare re-imports of goods that received drawback and repay it.", "p": 0.8, "class": "enforcement"},
+  "w2": {"text": "Some importers fail to declare re-imports of goods that received drawback and are found on audit.", "p": 0.65, "class": "enforcement"},
+  "w3": {"text": "Exporters sell at prices set in world markets.", "p": 0.85, "class": "substitutability"}
+ }
+}

@@ -1,0 +1,1050 @@
+{
+ "name": "WE-042 aluminum tariff with drawback (loop_r2)",
+ "exchanges": [
+  {
+   "id": "e_imp",
+   "buyer": "importers",
+   "seller": "sellers.foreign",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_exp_i",
+   "buyer": "buyers.foreign",
+   "seller": "exporters.imported_metal",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_exp_d",
+   "buyer": "buyers.foreign",
+   "seller": "exporters.domestic_metal",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_reimp",
+   "buyer": "importers.reimporters",
+   "seller": "sellers.foreign",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q12_claimants_overstate_content_beyond_the_y"
+   ],
+   "reading": null,
+   "exchange": "e_exp_d",
+   "kind": "outside",
+   "side": null,
+   "actor": "exporters.domestic_metal",
+   "variables": [
+    "legal_breach"
+   ]
+  },
+  {
+   "premises": [
+    "q12_claimants_overstate_content_beyond_the_y"
+   ],
+   "reading": null,
+   "exchange": "e_exp_i",
+   "kind": "outside",
+   "side": null,
+   "actor": "exporters.imported_metal",
+   "variables": [
+    "legal_breach"
+   ]
+  },
+  {
+   "premises": [
+    "q21_for_some_bulky_low_value_goods_made_near",
+    "q22_k3_audits_detect_few_undeclared_re_impor"
+   ],
+   "reading": null,
+   "exchange": "e_reimp",
+   "kind": "outside",
+   "side": null,
+   "actor": "importers.reimporters",
+   "variables": [
+    "legal_breach"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q10_under_u1_a_most_exporters_using_domestic"
+   ],
+   "reading": "U1-a",
+   "component": "k1",
+   "chooser": "exporters.domestic_metal",
+   "actor": "exporters.domestic_metal",
+   "variables": [
+    "quantity_substitute"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q16_some_imports_can_be_reshaped_into_uncove"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "importers",
+   "actor": "importers",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q26_mixed_fabricators_and_makers_of_parts_ca"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "manufacturers.home_market",
+   "actor": "exporters.imported_metal",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q26_mixed_fabricators_and_makers_of_parts_ca"
+   ],
+   "reading": "U1-b",
+   "component": "k1",
+   "chooser": "manufacturers.home_market",
+   "actor": "exporters.domestic_metal",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q27_some_fabrication_for_the_vessland_market"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "manufacturers.home_market",
+   "actor": "manufacturers.home_market",
+   "variables": [
+    "relocation_out_of_area"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q11_smelters_users_and_exporters_can_organiz"
+   ],
+   "reading": null,
+   "component": "k2_sub",
+   "actor": "exporters.domestic_metal"
+  },
+  {
+   "premises": [
+    "q11_smelters_users_and_exporters_can_organiz"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "exporters.imported_metal"
+  },
+  {
+   "premises": [
+    "q11_smelters_users_and_exporters_can_organiz"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "importers"
+  },
+  {
+   "premises": [
+    "q11_smelters_users_and_exporters_can_organiz"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "manufacturers.home_market"
+  },
+  {
+   "premises": [
+    "q11_smelters_users_and_exporters_can_organiz"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "producers.remelters"
+  },
+  {
+   "premises": [
+    "q11_smelters_users_and_exporters_can_organiz"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "producers.smelters"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "w3"
+   ],
+   "reading": null,
+   "source_actor": "exporters.domestic_metal",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "exporters.domestic_metal",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "exporters.domestic_metal",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.export_industries",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "w3"
+   ],
+   "reading": null,
+   "source_actor": "exporters.imported_metal",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "exporters.imported_metal",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "exporters.imported_metal",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.export_industries",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "general_fund",
+   "source_variable": "tax_revenue",
+   "relation": "paid_into",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "general_fund",
+   "source_variable": "non_tax_receipts",
+   "relation": "paid_into",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "general_fund",
+   "source_variable": "subsidy_outlay",
+   "relation": "paid_from",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q14_the_fund_s_net_receipts_are_used_for_low"
+   ],
+   "reading": null,
+   "source_actor": "general_fund",
+   "source_variable": "fund_balance",
+   "relation": "same_act",
+   "actor": "taxpayers",
+   "variable": "resources_available_other_uses",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "producers.smelters",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q17_the_smelters_can_bring_their_idle_70_000"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "producers.smelters",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "price_paid",
+   "relation": "output",
+   "actor": "manufacturers.home_market",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "price_paid",
+   "relation": "output",
+   "actor": "exporters.domestic_metal",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "price_paid",
+   "relation": "output",
+   "actor": "exporters.imported_metal",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q18_secondary_aluminum_substitutes_for_prima"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "producers.remelters",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q18_secondary_aluminum_substitutes_for_prima"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "producers.remelters",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q19_trade_flows_are_not_offset_by_capital_fl"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "quantity_traded",
+   "relation": "currency",
+   "actor": "export_industries",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "export_industries",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.export_industries",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q10_under_u1_a_most_exporters_using_domestic"
+   ],
+   "reading": "U1-a",
+   "source_actor": "exporters.domestic_metal",
+   "source_variable": "quantity_substitute",
+   "relation": "same_act",
+   "actor": "importers",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q19_trade_flows_are_not_offset_by_capital_fl"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "quantity_traded",
+   "relation": "currency",
+   "actor": "exporters.imported_metal",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q19_trade_flows_are_not_offset_by_capital_fl"
+   ],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "quantity_traded",
+   "relation": "currency",
+   "actor": "exporters.domestic_metal",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "importers.reimporters",
+   "source_variable": "legal_breach",
+   "relation": "paid_from",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q23_buyers_of_uncovered_finished_goods_can_b"
+   ],
+   "reading": null,
+   "source_actor": "manufacturers.home_market",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "manufacturers.home_market",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q24_some_aluminum_goods_have_no_close_import"
+   ],
+   "reading": null,
+   "source_actor": "manufacturers.home_market",
+   "source_variable": "price_paid",
+   "relation": "output",
+   "actor": "consumers",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q23_buyers_of_uncovered_finished_goods_can_b"
+   ],
+   "reading": null,
+   "source_actor": "manufacturers.home_market",
+   "source_variable": "quantity_supplied",
+   "relation": "substitute",
+   "actor": "consumers",
+   "variable": "quantity_substitute",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "manufacturers.home_market",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.manufacturers",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q25_vessland_s_makers_of_machined_and_stampe"
+   ],
+   "reading": null,
+   "source_actor": "manufacturers.home_market",
+   "source_variable": "price_paid",
+   "relation": "output",
+   "actor": "buyers.border",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "producers.remelters",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "producers.remelters",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q28_home_demand_for_scrap_rises_by_more_than"
+   ],
+   "reading": null,
+   "source_actor": "producers.remelters",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "sellers.scrap",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "producers.smelters",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.smelters",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "producers.smelters",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q29_smelters_build_or_restart_capacity_beyon"
+   ],
+   "reading": null,
+   "source_actor": "producers.smelters",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "producers.smelters",
+   "variable": "investment_target",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q13_firms_are_valued_on_expected_earnings_an"
+   ],
+   "reading": null,
+   "source_actor": "producers.smelters",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "owners.smelters",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q27_some_fabrication_for_the_vessland_market"
+   ],
+   "reading": null,
+   "source_actor": "buyers.border",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "buyers.border",
+   "variable": "cross_border_purchases",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "consumers",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "consumers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "q13_firms_are_valued_on_expected_earnings_an"
+   ],
+   "reading": null,
+   "exchange": "e_exp_d",
+   "side": "seller",
+   "actor": "owners.exporters"
+  },
+  {
+   "premises": [
+    "q13_firms_are_valued_on_expected_earnings_an"
+   ],
+   "reading": null,
+   "exchange": "e_exp_i",
+   "side": "seller",
+   "actor": "owners.exporters"
+  },
+  {
+   "premises": [
+    "q13_firms_are_valued_on_expected_earnings_an",
+    "q23_buyers_of_uncovered_finished_goods_can_b"
+   ],
+   "reading": null,
+   "exchange": "e_imp",
+   "side": "buyer",
+   "actor": "owners.manufacturers"
+  }
+ ],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "importers"
+  },
+  {
+   "component": "k2",
+   "actor": "exporters.imported_metal"
+  },
+  {
+   "component": "k2_sub",
+   "actor": "exporters.domestic_metal"
+  },
+  {
+   "component": "k3",
+   "actor": "importers.reimporters"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement"
+  },
+  {
+   "component": "k2",
+   "actor": "officials.enforcement"
+  },
+  {
+   "component": "k2_sub",
+   "actor": "officials.enforcement"
+  },
+  {
+   "component": "k3",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [],
+ "fixed_budget": [
+  {
+   "component": "k2",
+   "actor": "officials.enforcement",
+   "premises": [
+    "a17"
+   ]
+  },
+  {
+   "component": "k2_sub",
+   "actor": "officials.enforcement",
+   "premises": [
+    "a17"
+   ]
+  },
+  {
+   "component": "k3",
+   "actor": "officials.enforcement",
+   "premises": [
+    "a17"
+   ]
+  }
+ ],
+ "charges": [
+  {
+   "component": "k1",
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "exchange": "e_imp",
+   "payer_side": "buyer",
+   "receiver": "general_fund",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k3",
+   "premises": [
+    "w1"
+   ],
+   "exchange": "e_reimp",
+   "payer_side": "buyer",
+   "receiver": "general_fund",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "exchange": "e_imp",
+   "side": "buyer",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a18"
+   ],
+   "reading": null,
+   "exchange": "e_imp",
+   "side": "seller",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "w3"
+   ],
+   "reading": null,
+   "exchange": "e_exp_i",
+   "side": "seller",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "w3"
+   ],
+   "reading": null,
+   "exchange": "e_exp_d",
+   "side": "seller",
+   "horizon": null
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": []
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q20_users_expect_the_tariff_and_can_import_a"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "importers",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q20_users_expect_the_tariff_and_can_import_a"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "importers",
+   "variable": "inventory_held",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [
+  {
+   "component": "k2",
+   "premises": [
+    "a26"
+   ],
+   "exchange": "e_exp_i",
+   "recipient_side": "seller",
+   "payer": "general_fund",
+   "outlay_variable": "subsidy_outlay",
+   "budget_premises": []
+  },
+  {
+   "component": "k2_sub",
+   "premises": [
+    "a26"
+   ],
+   "exchange": "e_exp_d",
+   "recipient_side": "seller",
+   "payer": "general_fund",
+   "outlay_variable": "subsidy_outlay",
+   "budget_premises": []
+  }
+ ],
+ "capped": [],
+ "issued": [],
+ "penalties": [
+  {
+   "premises": [
+    "w2"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "importers.reimporters",
+   "collector": "general_fund"
+  }
+ ],
+ "terms": [],
+ "banned": [],
+ "incidence": [
+  {
+   "premises": [
+    "a14"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_imp",
+   "side": "buyer"
+  }
+ ],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "K2 pays on goods made 'using imported aluminum on which the tariff was paid'",
+   "readings": [
+    "U1-a: direct identification: the claimant must show the tariff-paid metal, or metal traced to it by lot, went into the exported goods",
+    "U1-b: substitution: same-grade aluminum used in the exported goods within three years of an import qualifies against that entry, whatever its origin, so domestic metal can stand in for imported metal"
+   ],
+   "components": {
+    "U1-a": [],
+    "U1-b": [
+     "k2_sub"
+    ]
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [
+  {
+   "premises": [
+    "q15_covered_imports_exceed_the_aluminum_cont"
+   ],
+   "reading": null,
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "window": null,
+   "direction": "increase",
+   "kind": "arithmetic"
+  },
+  {
+   "premises": [
+    "q30_for_fabricators_the_change_in_the_relati"
+   ],
+   "reading": null,
+   "actor": "exporters.domestic_metal",
+   "variable": "quantity_supplied",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q30_for_fabricators_the_change_in_the_relati"
+   ],
+   "reading": null,
+   "actor": "exporters.imported_metal",
+   "variable": "quantity_supplied",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Imports remain a material share of supply, so the domestic price is set at import parity.",
+   "p": 0.9,
+   "class": "binding"
+  },
+  "a2": {
+   "text": "Most covered imports pay the tariff; misdeclaration is limited.",
+   "p": 0.85,
+   "class": "enforcement"
+  },
+  "a14": {
+   "text": "Foreign smelters have far better alternatives than Vessland's users.",
+   "p": 0.9,
+   "class": "substitutability"
+  },
+  "a17": {
+   "text": "Customs' appropriation does not rise with the new work.",
+   "p": 0.8,
+   "class": "revenue_use"
+  },
+  "a18": {
+   "text": "Vessland's purchases are large enough to lower the world price.",
+   "p": 0.15,
+   "class": "other"
+  },
+  "a26": {
+   "text": "Exporters with qualifying content file claims; for most, the paperwork costs less than the refund.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "w1": {
+   "text": "Importers declare re-imports of goods that received drawback and repay it.",
+   "p": 0.8,
+   "class": "enforcement"
+  },
+  "w2": {
+   "text": "Some importers fail to declare re-imports of goods that received drawback and are found on audit.",
+   "p": 0.65,
+   "class": "enforcement"
+  },
+  "w3": {
+   "text": "Exporters sell at prices set in world markets.",
+   "p": 0.85,
+   "class": "substitutability"
+  },
+  "q10_under_u1_a_most_exporters_using_domestic": {
+   "text": "Under U1-a, most exporters using domestic metal can switch to traced imported metal of the same grade within a year.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q11_smelters_users_and_exporters_can_organiz": {
+   "text": "Smelters, users and exporters can organize at a cost below their stake.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q12_claimants_overstate_content_beyond_the_y": {
+   "text": "Claimants overstate content beyond the yield tables.",
+   "p": 0.4,
+   "class": "enforcement"
+  },
+  "q13_firms_are_valued_on_expected_earnings_an": {
+   "text": "Firms are valued on expected earnings, and buyers expect the tariff to last at least its four years.",
+   "p": 0.75,
+   "class": "expectations"
+  },
+  "q14_the_fund_s_net_receipts_are_used_for_low": {
+   "text": "The fund's net receipts are used for lower taxes, less borrowing or other spending, not held idle.",
+   "p": 0.85,
+   "class": "revenue_use"
+  },
+  "q15_covered_imports_exceed_the_aluminum_cont": {
+   "text": "Covered imports exceed the aluminum content of exports under either reading, so the fund keeps net receipts.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "q16_some_imports_can_be_reshaped_into_uncove": {
+   "text": "Some imports can be reshaped into uncovered fabricated forms for less than $500 a tonne.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q17_the_smelters_can_bring_their_idle_70_000": {
+   "text": "The smelters can bring their idle 70,000 t into use within months.",
+   "p": 0.75,
+   "class": "durability"
+  },
+  "q18_secondary_aluminum_substitutes_for_prima": {
+   "text": "Secondary aluminum substitutes for primary metal in some uses.",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q19_trade_flows_are_not_offset_by_capital_fl": {
+   "text": "Trade flows are not offset by capital flows in the period considered.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q20_users_expect_the_tariff_and_can_import_a": {
+   "text": "Users expect the tariff and can import and store metal ahead of 1 September at a cost below $500 a tonne.",
+   "p": 0.8,
+   "class": "expectations"
+  },
+  "q21_for_some_bulky_low_value_goods_made_near": {
+   "text": "For some bulky, low-value goods made near the Ostrel border, a round trip costs less than the refund.",
+   "p": 0.6,
+   "class": "enforcement"
+  },
+  "q22_k3_audits_detect_few_undeclared_re_impor": {
+   "text": "K3 audits detect few undeclared re-imports of goods without serial identity.",
+   "p": 0.65,
+   "class": "enforcement"
+  },
+  "q23_buyers_of_uncovered_finished_goods_can_b": {
+   "text": "Buyers of uncovered finished goods can buy tariff-free imports, and home fabricators' capital is specific.",
+   "p": 0.75,
+   "class": "substitutability"
+  },
+  "q24_some_aluminum_goods_have_no_close_import": {
+   "text": "Some aluminum goods have no close imported substitute.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q25_vessland_s_makers_of_machined_and_stampe": {
+   "text": "Vessland's makers of machined and stamped parts are a material share of supply to some regional buyers.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q26_mixed_fabricators_and_makers_of_parts_ca": {
+   "text": "Mixed fabricators and makers of parts can sell more abroad at world prices.",
+   "p": 0.6,
+   "class": "alternative_uses"
+  },
+  "q27_some_fabrication_for_the_vessland_market": {
+   "text": "Some fabrication for the Vessland market can move to plants in Ostrel within the tariff's term.",
+   "p": 0.55,
+   "class": "mobility"
+  },
+  "q28_home_demand_for_scrap_rises_by_more_than": {
+   "text": "Home demand for scrap rises by more than the 60,000 t a year now exported, so the domestic scrap price rises above its old level (by up to about $80 a tonne, the gap to the import price of scrap). Restated under 0.9: it no longer carries a $19 threshold, which ignored the holding cost.",
+   "p": 0.65,
+   "class": "substitutability"
+  },
+  "q29_smelters_build_or_restart_capacity_beyon": {
+   "text": "Smelters build or restart capacity beyond 470,000 t within the tariff's term, expecting renewal.",
+   "p": 0.35,
+   "class": "expectations"
+  },
+  "q30_for_fabricators_the_change_in_the_relati": {
+   "text": "For fabricators, the change in the relative yield of home and export sales (about $500 a tonne of metal on home sales, at most the unrefunded 1% and the holding cost on exports) outweighs any movement of the exchange rate from the change in the form of imports.",
+   "p": 0.6,
+   "class": "other"
+  }
+ }
+}

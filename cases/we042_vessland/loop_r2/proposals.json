@@ -1,0 +1,854 @@
+{
+ "importers": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "importers",
+    "actor": "importers",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Some imports can be reshaped into uncovered fabricated forms for less than $500 a tonne."
+   ],
+   "premise_class": "other",
+   "source": "Exemptions: 'Finished goods and parts containing aluminum (vehicles and their parts, appliances, windows and doors, fabricated structures, cable assemblies, cans and containers).'"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "importers",
+    "source_variable": "price_paid",
+    "relation": "substitute",
+    "actor": "producers.smelters",
+    "variable": "net_price_received"
+   },
+   "premises": [
+    "Imports remain a material share of supply, so the domestic price is set at import parity."
+   ],
+   "premise_class": "binding",
+   "source": "Two domestic smelters ... produce about 400,000 t (85% of capacity); the other 600,000 t is imported."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "importers",
+    "source_variable": "price_paid",
+    "relation": "substitute",
+    "actor": "producers.smelters",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "The smelters can bring their idle 70,000 t into use within months."
+   ],
+   "premise_class": "durability",
+   "source": "Two domestic smelters, with a combined capacity of 470,000 t ... produce about 400,000 t (85% of capacity)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "importers",
+    "source_variable": "price_paid",
+    "relation": "output",
+    "actor": "manufacturers.home_market",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Imports remain a material share of supply, so the domestic price is set at import parity."
+   ],
+   "premise_class": "binding",
+   "source": "About 1,200 firms use aluminum ... The remaining 750,000 t is used in goods sold in Vessland"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "importers",
+    "source_variable": "price_paid",
+    "relation": "output",
+    "actor": "exporters.domestic_metal",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Imports remain a material share of supply, so the domestic price is set at import parity."
+   ],
+   "premise_class": "binding",
+   "source": "U1-b: ... domestic metal can stand in for imported metal; the domestic price sits at import parity"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "importers",
+    "source_variable": "price_paid",
+    "relation": "output",
+    "actor": "exporters.imported_metal",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Imports remain a material share of supply, so the domestic price is set at import parity."
+   ],
+   "premise_class": "binding",
+   "source": "K1: 20% of customs value: about $500 a tonne at $2,500; K2 refunds 99% of it on exported goods"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "importers",
+    "source_variable": "price_paid",
+    "relation": "substitute",
+    "actor": "producers.remelters",
+    "variable": "net_price_received"
+   },
+   "premises": [
+    "Secondary aluminum substitutes for primary metal in some uses."
+   ],
+   "premise_class": "substitutability",
+   "source": "Secondary producers (remelters) make about 120,000 t a year from scrap"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "importers",
+    "source_variable": "price_paid",
+    "relation": "substitute",
+    "actor": "producers.remelters",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Secondary aluminum substitutes for primary metal in some uses."
+   ],
+   "premise_class": "substitutability",
+   "source": "Secondary producers (remelters) make about 120,000 t a year from scrap"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "importers",
+    "source_variable": "quantity_traded",
+    "relation": "currency",
+    "actor": "export_industries",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Trade flows are not offset by capital flows in the period considered."
+   ],
+   "premise_class": "other",
+   "source": "Vessland is a trading country ... with its own currency, the crown, and a floating exchange rate."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "importers",
+    "variable": "quantity_traded",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Users expect the tariff and can import and store metal ahead of 1 September at a cost below $500 a tonne."
+   ],
+   "premise_class": "expectations",
+   "source": "The trade minister announced the measure on 3 February 2027 ... it applies to aluminum entered on or after 1 September 2027."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "importers",
+    "variable": "inventory_held",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Users expect the tariff and can import and store metal ahead of 1 September at a cost below $500 a tonne."
+   ],
+   "premise_class": "expectations",
+   "source": "it applies to aluminum entered on or after 1 September 2027."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "importers"
+   },
+   "premises": [
+    "Smelters, users and exporters can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "The tariff expires on 31 August 2031 unless Parliament extends it after a review in 2030."
+  }
+ ],
+ "exporters.imported_metal": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k2",
+    "actor": "exporters.imported_metal"
+   },
+   "premises": [
+    "Smelters, users and exporters can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "The tariff expires on 31 August 2031 unless Parliament extends it after a review in 2030."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_exp_i",
+    "kind": "outside",
+    "actor": "exporters.imported_metal",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Claimants overstate content beyond the yield tables."
+   ],
+   "premise_class": "enforcement",
+   "source": "'Aluminum used' may be shown from the claimant's production records or, at its option, from Customs' standard yield tables"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "exporters.imported_metal",
+    "source_variable": "price_paid",
+    "relation": "cost",
+    "actor": "exporters.imported_metal",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Exporters sell at prices set in world markets."
+   ],
+   "premise_class": "substitutability",
+   "source": "99% of the tariff paid on the aluminum used in manufacturing the exported goods ... paid within 120 days of an accepted claim"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "exporters.imported_metal",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.export_industries",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "About 1,200 firms use aluminum ..., employing about 60,000 people."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_exp_i",
+    "side": "seller",
+    "actor": "owners.exporters"
+   },
+   "premises": [
+    "Firms are valued on expected earnings, and buyers expect the tariff to last at least its four years."
+   ],
+   "premise_class": "expectations",
+   "source": "The tariff expires on 31 August 2031 unless Parliament extends it after a review in 2030."
+  }
+ ],
+ "exporters.domestic_metal": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "exporters.domestic_metal",
+    "actor": "exporters.domestic_metal",
+    "variables": [
+     "quantity_substitute"
+    ],
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Under U1-a, most exporters using domestic metal can switch to traced imported metal of the same grade within a year."
+   ],
+   "premise_class": "substitutability",
+   "source": "Reading U1-a (direct identification): the claimant must show that the metal on which the tariff was paid, or metal traced to it by lot, went into the exported goods."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k2_sub",
+    "actor": "exporters.domestic_metal"
+   },
+   "premises": [
+    "Smelters, users and exporters can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Reading U1-b (substitution): aluminum of the same grade ... qualifies against that import's entry, whatever the metal's origin"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_exp_d",
+    "kind": "outside",
+    "actor": "exporters.domestic_metal",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Claimants overstate content beyond the yield tables."
+   ],
+   "premise_class": "enforcement",
+   "source": "'Aluminum used' may be shown from the claimant's production records or, at its option, from Customs' standard yield tables"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "exporters.domestic_metal",
+    "source_variable": "price_paid",
+    "relation": "cost",
+    "actor": "exporters.domestic_metal",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Exporters sell at prices set in world markets."
+   ],
+   "premise_class": "substitutability",
+   "source": "The aluminum content of their exports is about 250,000 t a year: ... 150,000 t domestic metal."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "exporters.domestic_metal",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.export_industries",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "About 1,200 firms use aluminum ..., employing about 60,000 people."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_exp_d",
+    "side": "seller",
+    "actor": "owners.exporters"
+   },
+   "premises": [
+    "Firms are valued on expected earnings, and buyers expect the tariff to last at least its four years."
+   ],
+   "premise_class": "expectations",
+   "source": "The tariff expires on 31 August 2031 unless Parliament extends it after a review in 2030."
+  }
+ ],
+ "importers.reimporters": [
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_reimp",
+    "kind": "outside",
+    "actor": "importers.reimporters",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "For some bulky, low-value goods made near the Ostrel border, a round trip costs less than the refund.",
+    "K3 audits detect few undeclared re-imports of goods without serial identity."
+   ],
+   "premise_class": "enforcement",
+   "source": "K3: If the goods, or goods made from them, are re-imported within three years, the importer must declare it and repay the drawback; undeclared re-imports found on audit repay it plus 20%."
+  }
+ ],
+ "general_fund": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "general_fund",
+    "source_variable": "tax_revenue",
+    "relation": "paid_into",
+    "actor": "general_fund",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Tariff receipts go to the general fund"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "general_fund",
+    "source_variable": "non_tax_receipts",
+    "relation": "paid_into",
+    "actor": "general_fund",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "undeclared re-imports found on audit repay it plus 20%"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "general_fund",
+    "source_variable": "subsidy_outlay",
+    "relation": "paid_from",
+    "actor": "general_fund",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "drawback is paid out of them"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "general_fund",
+    "source_variable": "fund_balance",
+    "relation": "same_act",
+    "actor": "taxpayers",
+    "variable": "resources_available_other_uses"
+   },
+   "premises": [
+    "The fund's net receipts are used for lower taxes, less borrowing or other spending, not held idle."
+   ],
+   "premise_class": "revenue_use",
+   "source": "Tariff receipts go to the general fund; drawback is paid out of them."
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "general_fund",
+    "variable": "fund_balance",
+    "direction": "increase",
+    "kind": "arithmetic"
+   },
+   "premises": [
+    "Covered imports exceed the aluminum content of exports under either reading, so the fund keeps net receipts."
+   ],
+   "premise_class": "other",
+   "source": "Customs' static projection of revenue: 600,000 t x $500 = $300 million a year, less drawback of at most about 250,000 t x $495 = $124 million."
+  }
+ ],
+ "officials.enforcement": [],
+ "sellers.foreign": [],
+ "buyers.foreign": [],
+ "export_industries": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "export_industries",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.export_industries",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "About 1,200 firms use aluminum ..., employing about 60,000 people."
+  }
+ ],
+ "exporters.domestic_metal#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "exporters.domestic_metal",
+    "source_variable": "quantity_substitute",
+    "relation": "same_act",
+    "actor": "importers",
+    "variable": "quantity_traded",
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Under U1-a, most exporters using domestic metal can switch to traced imported metal of the same grade within a year."
+   ],
+   "premise_class": "substitutability",
+   "source": "Reading U1-a (direct identification): the claimant must show that the metal on which the tariff was paid, or metal traced to it by lot, went into the exported goods."
+  }
+ ],
+ "exporters.imported_metal#2": [],
+ "general_fund#2": [],
+ "importers#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "importers",
+    "source_variable": "quantity_traded",
+    "relation": "currency",
+    "actor": "exporters.imported_metal",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Trade flows are not offset by capital flows in the period considered."
+   ],
+   "premise_class": "other",
+   "source": "Vessland is a trading country ... with its own currency, the crown, and a floating exchange rate."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "importers",
+    "source_variable": "quantity_traded",
+    "relation": "currency",
+    "actor": "exporters.domestic_metal",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Trade flows are not offset by capital flows in the period considered."
+   ],
+   "premise_class": "other",
+   "source": "Vessland is a trading country ... with its own currency, the crown, and a floating exchange rate."
+  }
+ ],
+ "importers.reimporters#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "importers.reimporters",
+    "source_variable": "legal_breach",
+    "relation": "paid_from",
+    "actor": "general_fund",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "K3: ... undeclared re-imports found on audit repay it plus 20%; the drawback is paid on exported goods"
+  }
+ ],
+ "manufacturers.home_market": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "manufacturers.home_market",
+    "source_variable": "price_paid",
+    "relation": "cost",
+    "actor": "manufacturers.home_market",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Buyers of uncovered finished goods can buy tariff-free imports, and home fabricators' capital is specific."
+   ],
+   "premise_class": "substitutability",
+   "source": "The remaining 750,000 t is used in goods sold in Vessland (500,000 t imported, 250,000 t domestic)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "manufacturers.home_market",
+    "source_variable": "price_paid",
+    "relation": "output",
+    "actor": "consumers",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Some aluminum goods have no close imported substitute."
+   ],
+   "premise_class": "other",
+   "source": "The remaining 750,000 t is used in goods sold in Vessland"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "manufacturers.home_market",
+    "source_variable": "quantity_supplied",
+    "relation": "substitute",
+    "actor": "consumers",
+    "variable": "quantity_substitute"
+   },
+   "premises": [
+    "Buyers of uncovered finished goods can buy tariff-free imports, and home fabricators' capital is specific."
+   ],
+   "premise_class": "substitutability",
+   "source": "Exemptions: Finished goods and parts containing aluminum ... (not covered by K1)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "manufacturers.home_market",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.manufacturers",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "About 1,200 firms use aluminum ..., employing about 60,000 people."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "manufacturers.home_market",
+    "source_variable": "price_paid",
+    "relation": "output",
+    "actor": "buyers.border",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Vessland's makers of machined and stamped parts are a material share of supply to some regional buyers."
+   ],
+   "premise_class": "other",
+   "source": "Vessland's main industrial region lies 30 to 60 km from the border with Ostrel, which has no tariff on aluminum."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "manufacturers.home_market",
+    "actor": "exporters.imported_metal",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Mixed fabricators and makers of parts can sell more abroad at world prices."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "K2: 99% of the tariff paid on the aluminum used in manufacturing the exported goods"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "manufacturers.home_market",
+    "actor": "exporters.domestic_metal",
+    "variables": [
+     "quantity_supplied"
+    ],
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Mixed fabricators and makers of parts can sell more abroad at world prices."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "Reading U1-b (substitution): ... domestic metal can stand in for imported metal."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "manufacturers.home_market",
+    "actor": "manufacturers.home_market",
+    "variables": [
+     "relocation_out_of_area"
+    ]
+   },
+   "premises": [
+    "Some fabrication for the Vessland market can move to plants in Ostrel within the tariff's term."
+   ],
+   "premise_class": "mobility",
+   "source": "Vessland's main industrial region lies 30 to 60 km from the border with Ostrel, which has no tariff on aluminum. Goods cross the border with customs declarations; trucking costs about $30 a tonne each way."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "manufacturers.home_market"
+   },
+   "premises": [
+    "Smelters, users and exporters can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "The tariff expires on 31 August 2031 unless Parliament extends it after a review in 2030."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_imp",
+    "side": "buyer",
+    "actor": "owners.manufacturers"
+   },
+   "premises": [
+    "Firms are valued on expected earnings, and buyers expect the tariff to last at least its four years.",
+    "Buyers of uncovered finished goods can buy tariff-free imports, and home fabricators' capital is specific."
+   ],
+   "premise_class": "expectations",
+   "source": "The tariff expires on 31 August 2031 unless Parliament extends it after a review in 2030."
+  }
+ ],
+ "owners.exporters": [],
+ "producers.remelters": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "producers.remelters",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "producers.remelters",
+    "variable": "quantity_demanded"
+   },
+   "premises": [],
+   "premise_class": "substitutability",
+   "source": "Secondary producers (remelters) make about 120,000 t a year from scrap"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "producers.remelters",
+    "source_variable": "quantity_demanded",
+    "relation": "supply_price",
+    "actor": "sellers.scrap",
+    "variable": "net_price_received"
+   },
+   "premises": [
+    "Home demand for scrap rises by more than the 60,000 t a year now exported, so the domestic scrap price rises above its old level (by up to about $80 a tonne, the gap to the import price of scrap). Restated under 0.9: it no longer carries a $19 threshold, which ignored the holding cost."
+   ],
+   "premise_class": "substitutability",
+   "source": "Vessland exports about 60,000 t of scrap; the domestic scrap price sits near the export price of scrap less about $40 a tonne of freight."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "producers.remelters"
+   },
+   "premises": [
+    "Smelters, users and exporters can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "The tariff expires on 31 August 2031 unless Parliament extends it after a review in 2030."
+  }
+ ],
+ "producers.smelters": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "producers.smelters",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.smelters",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Two domestic smelters, with a combined capacity of 470,000 t and about 3,800 employees"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "producers.smelters",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "input_suppliers",
+    "variable": "quantity_demanded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "electricity is about 35% of their cost and is bought from the state grid"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "producers.smelters",
+    "source_variable": "net_price_received",
+    "relation": "yield",
+    "actor": "producers.smelters",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Smelters build or restart capacity beyond 470,000 t within the tariff's term, expecting renewal."
+   ],
+   "premise_class": "expectations",
+   "source": "The tariff expires on 31 August 2031 unless Parliament extends it after a review in 2030."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "producers.smelters",
+    "source_variable": "net_price_received",
+    "relation": "yield",
+    "actor": "owners.smelters",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Firms are valued on expected earnings, and buyers expect the tariff to last at least its four years."
+   ],
+   "premise_class": "expectations",
+   "source": "The tariff expires on 31 August 2031 unless Parliament extends it after a review in 2030."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "producers.smelters"
+   },
+   "premises": [
+    "Smelters, users and exporters can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "The tariff expires on 31 August 2031 unless Parliament extends it after a review in 2030."
+  }
+ ],
+ "taxpayers": [],
+ "workers.export_industries": [],
+ "buyers.border": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.border",
+    "source_variable": "price_paid",
+    "relation": "substitute",
+    "actor": "buyers.border",
+    "variable": "cross_border_purchases"
+   },
+   "premises": [
+    "Some fabrication for the Vessland market can move to plants in Ostrel within the tariff's term."
+   ],
+   "premise_class": "mobility",
+   "source": "Vessland's main industrial region lies 30 to 60 km from the border with Ostrel, which has no tariff on aluminum. Goods cross the border with customs declarations; trucking costs about $30 a tonne each way."
+  }
+ ],
+ "consumers": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "consumers",
+    "source_variable": "price_paid",
+    "relation": "own_price",
+    "actor": "consumers",
+    "variable": "quantity_demanded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "The remaining 750,000 t is used in goods sold in Vessland"
+  }
+ ],
+ "export_industries#2": [],
+ "exporters.domestic_metal#3": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "exporters.domestic_metal",
+    "variable": "quantity_supplied",
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "For fabricators, the change in the relative yield of home and export sales (about $500 a tonne of metal on home sales, at most the unrefunded 1% and the holding cost on exports) outweighs any movement of the exchange rate from the change in the form of imports."
+   ],
+   "premise_class": "other",
+   "source": "K2: 99% of the tariff paid on the aluminum used in manufacturing the exported goods; the tariff is about $500 a tonne on home sales"
+  }
+ ],
+ "exporters.imported_metal#3": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "exporters.imported_metal",
+    "variable": "quantity_supplied",
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "For fabricators, the change in the relative yield of home and export sales (about $500 a tonne of metal on home sales, at most the unrefunded 1% and the holding cost on exports) outweighs any movement of the exchange rate from the change in the form of imports."
+   ],
+   "premise_class": "other",
+   "source": "K2: 99% of the tariff paid on the aluminum used in manufacturing the exported goods; the tariff is about $500 a tonne on home sales"
+  }
+ ],
+ "importers#3": [],
+ "input_suppliers": [],
+ "manufacturers.home_market#2": [],
+ "owners.manufacturers": [],
+ "owners.smelters": [],
+ "producers.remelters#2": [],
+ "producers.smelters#2": [],
+ "sellers.scrap": [],
+ "workers.export_industries#2": [],
+ "workers.manufacturers": [],
+ "workers.smelters": []
+}
