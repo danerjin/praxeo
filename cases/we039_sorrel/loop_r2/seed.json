@@ -1,0 +1,168 @@
+{
+ "name": "WE-039 Sorrel Basin groundwater allocation (loop_r2 seed)",
+ "exchanges": [
+  {
+   "id": "e_water",
+   "buyer": "growers.lessees",
+   "seller": "licensees.history",
+   "unsatisfied_seller": "owners.no_history",
+   "buyer_price_var": "right_lease_price",
+   "seller_price_var": "right_lease_price"
+  },
+  {
+   "id": "e_xsub",
+   "buyer": "growers.south",
+   "seller": "licensees.north_central",
+   "buyer_price_var": "right_lease_price",
+   "seller_price_var": "right_lease_price"
+  }
+ ],
+ "capped": [
+  {
+   "component": "k1",
+   "exchange": "e_water",
+   "holders": [
+    "licensees.history",
+    "licensees.lottery"
+   ],
+   "wider_price": false,
+   "premises": [
+    "a1",
+    "a2"
+   ]
+  }
+ ],
+ "penalties": [
+  {
+   "component": "k1",
+   "actor": "growers.overpumping",
+   "collector": "officials.enforcement",
+   "premises": [
+    "a10",
+    "a2"
+   ]
+  }
+ ],
+ "charges": [
+  {
+   "component": "k5",
+   "exchange": "e_water",
+   "payer_side": "seller",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "non_tax_receipts",
+   "basis": "operating",
+   "premises": [
+    "a2"
+   ]
+  }
+ ],
+ "means": [
+  {
+   "component": "k2",
+   "actor": "licensees.history",
+   "direction": "in"
+  },
+  {
+   "component": "k3",
+   "actor": "licensees.lottery",
+   "direction": "in"
+  }
+ ],
+ "terms": [
+  {
+   "component": "k4b",
+   "exchange": "e_xsub",
+   "side": "buyer",
+   "direction": "better",
+   "premises": [
+    "a4"
+   ],
+   "reading": null
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k5",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k5",
+   "actor": "licensees.history",
+   "premises": []
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k5",
+   "actor": "growers.lessees"
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a12"
+   ]
+  }
+ ],
+ "qualifies": [
+  {
+   "component": "k2",
+   "actor": "growers.lessees",
+   "variable": "quantity_supplied",
+   "premises": [
+    "a17"
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Trading across sub-basins: K4 allows transfers between wells in the Basin, subject to the Authority's rules on local impacts; the hydrology chapter says impacts are managed by sub-basin.",
+   "readings": [
+    "U1-a: a share may be pumped only from a well in the sub-basin where the parcel that earned it lies",
+    "U1-b: a share may be pumped anywhere in the basin; impact rules only set conditions on individual wells"
+   ],
+   "components": {
+    "U1-a": [],
+    "U1-b": [
+     "k4b"
+    ]
+   }
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Without the cap, pumping would stay near 300,000 af and above 210,000.",
+   "class": "binding",
+   "p": 0.95
+  },
+  "a2": {
+   "text": "The cap is enforced against most pumpers: meters, telemetry and satellite checks detect most over-pumping.",
+   "class": "enforcement",
+   "p": 0.75
+  },
+  "a10": {
+   "text": "Detection is weak for some wells, so some pumpers over-pump.",
+   "class": "enforcement",
+   "p": 0.55
+  },
+  "a12": {
+   "text": "Land buyers priced the expected claim to shares from the publication of the draft plan.",
+   "class": "expectations",
+   "p": 0.75
+  },
+  "a17": {
+   "text": "Some pumpers inflated 2017 to 2021 pumping in anticipation of allocation by history.",
+   "class": "expectations",
+   "p": 0.2
+  },
+  "a4": {
+   "text": "A lease market forms: transaction costs are low enough for holders to lease to others within a season.",
+   "class": "other",
+   "p": 0.8
+  }
+ }
+}

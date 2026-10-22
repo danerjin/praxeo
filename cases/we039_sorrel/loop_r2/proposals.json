@@ -1,0 +1,622 @@
+{
+ "growers.lessees": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "growers.lessees",
+    "actor": "growers.lessees",
+    "variables": [
+     "quantity_substitute"
+    ],
+    "inverse": false
+   },
+   "premises": [
+    "Some basin farms can buy regional surface water, whose supply is fixed by allotments in a given year."
+   ],
+   "premise_class": "other",
+   "source": "surface water also trades between districts in the region, at about $250 per af in normal years"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "growers.lessees",
+    "actor": "growers.lessees",
+    "variables": [
+     "quantity_supplied"
+    ],
+    "inverse": true
+   },
+   "premises": [
+    "Some nut growers, in South and elsewhere, value the last af they would have pumped without the cap below the lease price, so they give it up rather than lease it (the leasing response is partial)."
+   ],
+   "premise_class": "other",
+   "source": "A holder receives about 63% of its history."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "growers.lessees",
+    "actor": "growers.lessees",
+    "variables": [
+     "relocation_out_of_area"
+    ],
+    "inverse": false
+   },
+   "premises": [
+    "Some basin growers can farm in the Lowther Basin, which has no cap until its plan."
+   ],
+   "premise_class": "other",
+   "source": "To the east, the Lowther Basin has no cap; its plan is due in 2030."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "growers.lessees",
+    "actor": "growers.lessees",
+    "variables": [
+     "capital_stock_target"
+    ],
+    "inverse": true
+   },
+   "premises": [
+    "Some non-domestic wells are backups or low-use wells that owners retire rather than meter."
+   ],
+   "premise_class": "other",
+   "source": "Meters with telemetry on every non-domestic well by 1 October 2027, at the owner's cost (about $3,000 a well)"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_water",
+    "kind": "outside",
+    "actor": "growers.overpumping",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Detection is weak for some wells, so some pumpers over-pump."
+   ],
+   "premise_class": "other",
+   "source": "Penalty $600 per af pumped over allocation; loss of shares for repeated violation."
+  },
+  {
+   "part": "parts",
+   "fact": {
+    "part": "growers.overpumping",
+    "whole": "growers.lessees"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Penalty $600 per af pumped over allocation"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers.lessees",
+    "source_variable": "right_lease_price",
+    "relation": "cost",
+    "actor": "growers.lessees",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Basin growers take national crop prices as given."
+   ],
+   "premise_class": "other",
+   "source": "the basin grows about 5% of the nation's tree nuts and under 1% of each field crop."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers.lessees",
+    "source_variable": "right_lease_price",
+    "relation": "same_act",
+    "actor": "growers.lessees",
+    "variable": "full_cost_per_unit"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "A share's annual allocation, leased at a price p per af, is worth roughly p divided by the rate at which land is capitalized"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers.lessees",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "growers.lessees",
+    "variable": "full_cost_per_unit"
+   },
+   "premises": [
+    "Under the cap, the water table falls more slowly than it would have."
+   ],
+   "premise_class": "other",
+   "source": "Each foot of water table not lost saves about $0.20 per af on every af pumped from then on."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers.lessees",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "households.domestic",
+    "variable": "maintenance_spending"
+   },
+   "premises": [
+    "Under the cap, the water table falls more slowly than it would have."
+   ],
+   "premise_class": "other",
+   "source": "about 150 domestic wells went dry in 2017 to 2021"
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "growers.lessees",
+    "variable": "full_cost_per_unit",
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "The lease price of an af far exceeds the energy it saves through a slower-falling table over the medium horizon."
+   ],
+   "premise_class": "other",
+   "source": "at an illustrative $300 per af and 7% ... Each foot of water table not lost saves about $0.20 per af"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers.lessees",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.farm",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Farm employment and hours adjust to acres farmed."
+   ],
+   "premise_class": "other",
+   "source": "About 6,000 people work on farms in the basin."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers.lessees",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "input_suppliers",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Input suppliers sell mainly to basin farms."
+   ],
+   "premise_class": "other",
+   "source": "About 6,000 people work on farms in the basin."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers.lessees",
+    "source_variable": "quantity_supplied",
+    "relation": "supply",
+    "actor": "buyers.tree_nuts",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "The fall in basin tree-nut output moves national tree-nut prices by more than a negligible amount."
+   ],
+   "premise_class": "other",
+   "source": "Crops are sold in national markets: the basin grows about 5% of the nation's tree nuts"
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_water",
+    "side": "buyer",
+    "actor": "owners.no_history"
+   },
+   "premises": [
+    "Land buyers priced the expected claim to shares from the publication of the draft plan."
+   ],
+   "premise_class": "other",
+   "source": "Irrigated land sells for about $12,000 an acre (nuts) and $6,000 (field crops); dry grazing land for about $1,500."
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_water",
+    "side": "buyer",
+    "actor": "growers.lessees"
+   },
+   "premises": [
+    "Basin growers take national crop prices as given."
+   ],
+   "premise_class": "other",
+   "source": "Crops are sold in national markets"
+  }
+ ],
+ "growers.overpumping": [],
+ "growers.south": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "growers.south"
+   },
+   "premises": [
+    "South growers, North communities and landholders without history can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Over 2017 to 2021 the water table fell about 2.5 feet a year on average and about 4 feet a year in South."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers.south",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "growers.south",
+    "variable": "full_cost_per_unit",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Under U1-b, South growers could lease in enough North and Central allocations to approach South's counterfactual pumping."
+   ],
+   "premise_class": "other",
+   "source": "Reading U1-b: a share may be pumped anywhere in the basin"
+  }
+ ],
+ "licensees.history": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "licensees.history",
+    "actor": "licensees.field_crops",
+    "variables": [
+     "quantity_supplied"
+    ],
+    "inverse": false
+   },
+   "premises": [
+    "Some field-crop growers value lease income above farming their allocation."
+   ],
+   "premise_class": "other",
+   "source": "field crops about 140,000 af on 70,000 acres"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "licensees.history",
+    "actor": "licensees.history",
+    "variables": [
+     "units_held_vacant"
+    ],
+    "inverse": true
+   },
+   "premises": [
+    "Some holders lease out or sell their whole allocation and stop irrigating."
+   ],
+   "premise_class": "other",
+   "source": "Shares may be sold, and a year's allocation leased, separately from land."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_water",
+    "side": "seller",
+    "actor": "owners.history"
+   },
+   "premises": [
+    "Land buyers priced the expected claim to shares from the publication of the draft plan."
+   ],
+   "premise_class": "other",
+   "source": "issued to whoever holds a parcel on 1 July 2027"
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "licensees.history",
+    "variable": "resources_available_other_uses",
+    "direction": "increase",
+    "kind": "arithmetic"
+   },
+   "premises": [
+    "The value of the free shares to history holders exceeds the fees they pay on them."
+   ],
+   "premise_class": "other",
+   "source": "the K2 shares together about $800 million ... Funded by an annual fee of $10 per af of shares held (about $2.1 million a year)"
+  }
+ ],
+ "licensees.lottery": [],
+ "licensees.north_central": [
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_xsub",
+    "side": "seller",
+    "actor": "licensees.north_central",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Holders expect shares to last, without early reallocation."
+   ],
+   "premise_class": "other",
+   "source": "Reading U1-b: a share may be pumped anywhere in the basin"
+  }
+ ],
+ "officials.enforcement": [],
+ "owners.no_history": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "owners.no_history",
+    "actor": "owners.no_history",
+    "variables": [
+     "applications"
+    ],
+    "inverse": false
+   },
+   "premises": [
+    "The lottery's expected value per entry exceeds the cost of entering for many eligible parcels."
+   ],
+   "premise_class": "other",
+   "source": "each parcel of at least 20 acres in the basin, held on 1 July 2027, with no K2 allocation; one entry per parcel; entry fee $500"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "owners.no_history",
+    "actor": "owners.no_history",
+    "variables": [
+     "reclassification"
+    ],
+    "inverse": false
+   },
+   "premises": [
+    "Parcels can be split or transferred into separate ownership before 1 July 2027 (lot-line adjustments approved within months).",
+    "The lottery's expected value per entry exceeds the cost of entering for many eligible parcels."
+   ],
+   "premise_class": "other",
+   "source": "one entry per parcel"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k2",
+    "actor": "owners.no_history"
+   },
+   "premises": [
+    "South growers, North communities and landholders without history can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Permanent shares of the annual cap, issued to whoever holds a parcel on 1 July 2027, in proportion to the parcel's average metered or estimated pumping"
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "owners.no_history",
+    "variable": "investment_target",
+    "mode": "carry_over"
+   },
+   "premises": [
+    "Landholders planning new orchards gave weight to the draft plan from 2022."
+   ],
+   "premise_class": "other",
+   "source": "The Sorrel Basin Water Authority (SBWA) published its draft plan, including the 2017 to 2021 base period, on 15 March 2022."
+  }
+ ],
+ "growers.lessees#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers.lessees",
+    "source_variable": "quantity_substitute",
+    "relation": "supply_price",
+    "actor": "buyers.substitutes",
+    "variable": "price_paid",
+    "horizon": "short"
+   },
+   "premises": [
+    "Some basin farms can buy regional surface water, whose supply is fixed by allotments in a given year."
+   ],
+   "premise_class": "other",
+   "source": "surface water also trades between districts in the region, at about $250 per af in normal years"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers.lessees",
+    "source_variable": "quantity_substitute",
+    "relation": "supply_price",
+    "actor": "sellers.substitutes",
+    "variable": "net_price_received",
+    "horizon": "short"
+   },
+   "premises": [
+    "Some basin farms can buy regional surface water, whose supply is fixed by allotments in a given year."
+   ],
+   "premise_class": "other",
+   "source": "surface water also trades between districts in the region, at about $250 per af in normal years"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers.lessees",
+    "source_variable": "relocation_out_of_area",
+    "relation": "same_act",
+    "actor": "growers.lowther",
+    "variable": "entry_rate"
+   },
+   "premises": [
+    "Some basin growers can farm in the Lowther Basin, which has no cap until its plan."
+   ],
+   "premise_class": "other",
+   "source": "To the east, the Lowther Basin has no cap; its plan is due in 2030."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers.lessees",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "growers.lessees",
+    "variable": "maintenance_spending"
+   },
+   "premises": [
+    "Under the cap, the water table falls more slowly than it would have."
+   ],
+   "premise_class": "other",
+   "source": "about 60 agricultural wells a year were deepened or replaced (about $80,000 each)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers.lessees",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "municipalities",
+    "variable": "subsidy_outlay"
+   },
+   "premises": [
+    "Under the cap, the water table falls more slowly than it would have."
+   ],
+   "premise_class": "other",
+   "source": "The county runs an emergency water program for households with dry wells."
+  }
+ ],
+ "growers.overpumping#2": [],
+ "growers.south#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers.south",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "households.south",
+    "variable": "maintenance_spending",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Under U1-b, South growers could lease in enough North and Central allocations to approach South's counterfactual pumping."
+   ],
+   "premise_class": "other",
+   "source": "Over 2017 to 2021 the water table fell about 2.5 feet a year on average and about 4 feet a year in South."
+  }
+ ],
+ "households.domestic": [],
+ "input_suppliers": [],
+ "licensees.field_crops": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "licensees.field_crops",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.farm",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Farm employment and hours adjust to acres farmed."
+   ],
+   "premise_class": "other",
+   "source": "About 6,000 people work on farms in the basin."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "licensees.field_crops",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "input_suppliers",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Input suppliers sell mainly to basin farms."
+   ],
+   "premise_class": "other",
+   "source": "About 6,000 people work on farms in the basin."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "licensees.field_crops",
+    "source_variable": "quantity_supplied",
+    "relation": "supply",
+    "actor": "buyers.field_crops",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "The fall in basin field-crop output moves national field-crop prices by more than a negligible amount."
+   ],
+   "premise_class": "other",
+   "source": "Crops are sold in national markets: ... under 1% of each field crop."
+  }
+ ],
+ "licensees.history#2": [],
+ "licensees.north_central#2": [],
+ "owners.history": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "owners.history",
+    "variable": "asset_value",
+    "direction": "increase",
+    "kind": "arithmetic"
+   },
+   "premises": [
+    "The value of the free shares to history holders exceeds the fees they pay on them."
+   ],
+   "premise_class": "other",
+   "source": "the K2 shares together about $800 million ... Funded by an annual fee of $10 per af of shares held (about $2.1 million a year)"
+  }
+ ],
+ "owners.no_history#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.no_history",
+    "source_variable": "applications",
+    "relation": "same_act",
+    "actor": "officials.enforcement",
+    "variable": "non_tax_receipts"
+   },
+   "premises": [
+    "The lottery's expected value per entry exceeds the cost of entering for many eligible parcels."
+   ],
+   "premise_class": "other",
+   "source": "Eligible: each parcel of at least 20 acres ... one entry per parcel; entry fee $500."
+  }
+ ],
+ "workers.farm": [],
+ "buyers.substitutes": [],
+ "growers.lessees#3": [],
+ "growers.lowther": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers.lowther",
+    "source_variable": "entry_rate",
+    "relation": "crowding",
+    "actor": "growers.lowther",
+    "variable": "full_cost_per_unit"
+   },
+   "premises": [
+    "Some basin growers can farm in the Lowther Basin, which has no cap until its plan."
+   ],
+   "premise_class": "other",
+   "source": "To the east, the Lowther Basin has no cap; its plan is due in 2030."
+  }
+ ],
+ "households.south": [],
+ "municipalities": [],
+ "owners.history#2": [],
+ "sellers.substitutes": []
+}

@@ -1,0 +1,759 @@
+{
+ "name": "WE-039 Sorrel Basin groundwater allocation (loop_r2 seed)",
+ "exchanges": [
+  {
+   "id": "e_water",
+   "buyer": "growers.lessees",
+   "seller": "licensees.history",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": "owners.no_history",
+   "buyer_price_var": "right_lease_price",
+   "seller_price_var": "right_lease_price",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_xsub",
+   "buyer": "growers.south",
+   "seller": "licensees.north_central",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "right_lease_price",
+   "seller_price_var": "right_lease_price",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "a10"
+   ],
+   "reading": null,
+   "exchange": "e_water",
+   "kind": "outside",
+   "side": null,
+   "actor": "growers.overpumping",
+   "variables": [
+    "legal_breach"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q7_some_basin_farms_can_buy_regional_surfac"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "growers.lessees",
+   "actor": "growers.lessees",
+   "variables": [
+    "quantity_substitute"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q8_some_nut_growers_in_south_and_elsewhere_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "growers.lessees",
+   "actor": "growers.lessees",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q9_some_basin_growers_can_farm_in_the_lowth"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "growers.lessees",
+   "actor": "growers.lessees",
+   "variables": [
+    "relocation_out_of_area"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q10_some_non_domestic_wells_are_backups_or_l"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "growers.lessees",
+   "actor": "growers.lessees",
+   "variables": [
+    "capital_stock_target"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q19_some_field_crop_growers_value_lease_inco"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "licensees.history",
+   "actor": "licensees.field_crops",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q20_some_holders_lease_out_or_sell_their_who"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "licensees.history",
+   "actor": "licensees.history",
+   "variables": [
+    "units_held_vacant"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q23_the_lottery_s_expected_value_per_entry_e"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "owners.no_history",
+   "actor": "owners.no_history",
+   "variables": [
+    "applications"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q24_parcels_can_be_split_or_transferred_into",
+    "q23_the_lottery_s_expected_value_per_entry_e"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "owners.no_history",
+   "actor": "owners.no_history",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q17_south_growers_north_communities_and_land"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "growers.south"
+  },
+  {
+   "premises": [
+    "q17_south_growers_north_communities_and_land"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "owners.no_history"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q11_basin_growers_take_national_crop_prices_"
+   ],
+   "reading": null,
+   "source_actor": "growers.lessees",
+   "source_variable": "right_lease_price",
+   "relation": "cost",
+   "actor": "growers.lessees",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "growers.lessees",
+   "source_variable": "right_lease_price",
+   "relation": "same_act",
+   "actor": "growers.lessees",
+   "variable": "full_cost_per_unit",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q12_under_the_cap_the_water_table_falls_more"
+   ],
+   "reading": null,
+   "source_actor": "growers.lessees",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "growers.lessees",
+   "variable": "full_cost_per_unit",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q12_under_the_cap_the_water_table_falls_more"
+   ],
+   "reading": null,
+   "source_actor": "growers.lessees",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "households.domestic",
+   "variable": "maintenance_spending",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q14_farm_employment_and_hours_adjust_to_acre"
+   ],
+   "reading": null,
+   "source_actor": "growers.lessees",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.farm",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_input_suppliers_sell_mainly_to_basin_far"
+   ],
+   "reading": null,
+   "source_actor": "growers.lessees",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q16_the_fall_in_basin_tree_nut_output_moves_"
+   ],
+   "reading": null,
+   "source_actor": "growers.lessees",
+   "source_variable": "quantity_supplied",
+   "relation": "supply",
+   "actor": "buyers.tree_nuts",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q18_under_u1_b_south_growers_could_lease_in_"
+   ],
+   "reading": "U1-b",
+   "source_actor": "growers.south",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "growers.south",
+   "variable": "full_cost_per_unit",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q7_some_basin_farms_can_buy_regional_surfac"
+   ],
+   "reading": null,
+   "source_actor": "growers.lessees",
+   "source_variable": "quantity_substitute",
+   "relation": "supply_price",
+   "actor": "buyers.substitutes",
+   "variable": "price_paid",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q7_some_basin_farms_can_buy_regional_surfac"
+   ],
+   "reading": null,
+   "source_actor": "growers.lessees",
+   "source_variable": "quantity_substitute",
+   "relation": "supply_price",
+   "actor": "sellers.substitutes",
+   "variable": "net_price_received",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q9_some_basin_growers_can_farm_in_the_lowth"
+   ],
+   "reading": null,
+   "source_actor": "growers.lessees",
+   "source_variable": "relocation_out_of_area",
+   "relation": "same_act",
+   "actor": "growers.lowther",
+   "variable": "entry_rate",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q12_under_the_cap_the_water_table_falls_more"
+   ],
+   "reading": null,
+   "source_actor": "growers.lessees",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "growers.lessees",
+   "variable": "maintenance_spending",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q12_under_the_cap_the_water_table_falls_more"
+   ],
+   "reading": null,
+   "source_actor": "growers.lessees",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "municipalities",
+   "variable": "subsidy_outlay",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q18_under_u1_b_south_growers_could_lease_in_"
+   ],
+   "reading": "U1-b",
+   "source_actor": "growers.south",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "households.south",
+   "variable": "maintenance_spending",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q14_farm_employment_and_hours_adjust_to_acre"
+   ],
+   "reading": null,
+   "source_actor": "licensees.field_crops",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.farm",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_input_suppliers_sell_mainly_to_basin_far"
+   ],
+   "reading": null,
+   "source_actor": "licensees.field_crops",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q26_the_fall_in_basin_field_crop_output_move"
+   ],
+   "reading": null,
+   "source_actor": "licensees.field_crops",
+   "source_variable": "quantity_supplied",
+   "relation": "supply",
+   "actor": "buyers.field_crops",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q23_the_lottery_s_expected_value_per_entry_e"
+   ],
+   "reading": null,
+   "source_actor": "owners.no_history",
+   "source_variable": "applications",
+   "relation": "same_act",
+   "actor": "officials.enforcement",
+   "variable": "non_tax_receipts",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q9_some_basin_growers_can_farm_in_the_lowth"
+   ],
+   "reading": null,
+   "source_actor": "growers.lowther",
+   "source_variable": "entry_rate",
+   "relation": "crowding",
+   "actor": "growers.lowther",
+   "variable": "full_cost_per_unit",
+   "horizon": null
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "a12"
+   ],
+   "reading": null,
+   "exchange": "e_water",
+   "side": "buyer",
+   "actor": "owners.no_history"
+  },
+  {
+   "premises": [
+    "a12"
+   ],
+   "reading": null,
+   "exchange": "e_water",
+   "side": "seller",
+   "actor": "owners.history"
+  },
+  {
+   "premises": [
+    "q22_holders_expect_shares_to_last_without_ea"
+   ],
+   "reading": "U1-b",
+   "exchange": "e_xsub",
+   "side": "seller",
+   "actor": "licensees.north_central"
+  }
+ ],
+ "yields": [
+  {
+   "premises": [
+    "q11_basin_growers_take_national_crop_prices_"
+   ],
+   "reading": null,
+   "exchange": "e_water",
+   "side": "buyer",
+   "actor": "growers.lessees"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k5",
+   "actor": "growers.lessees"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k5",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k5",
+   "actor": "licensees.history",
+   "premises": []
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "k5",
+   "premises": [
+    "a2"
+   ],
+   "exchange": "e_water",
+   "payer_side": "seller",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "operating"
+  }
+ ],
+ "moves": [],
+ "discretion": [],
+ "means": [
+  {
+   "component": "k2",
+   "actor": "licensees.history",
+   "direction": "in"
+  },
+  {
+   "component": "k3",
+   "actor": "licensees.lottery",
+   "direction": "in"
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a12"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q25_landholders_planning_new_orchards_gave_w"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "owners.no_history",
+   "variable": "investment_target",
+   "mode": "carry_over"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_water",
+   "holders": [
+    "licensees.history",
+    "licensees.lottery"
+   ],
+   "wider_price": false
+  }
+ ],
+ "issued": [],
+ "penalties": [
+  {
+   "premises": [
+    "a10",
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "growers.overpumping",
+   "collector": "officials.enforcement"
+  }
+ ],
+ "terms": [
+  {
+   "premises": [
+    "a4"
+   ],
+   "reading": null,
+   "component": "k4b",
+   "exchange": "e_xsub",
+   "side": "buyer",
+   "direction": "better"
+  }
+ ],
+ "banned": [],
+ "incidence": [],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Trading across sub-basins: K4 allows transfers between wells in the Basin, subject to the Authority's rules on local impacts; the hydrology chapter says impacts are managed by sub-basin.",
+   "readings": [
+    "U1-a: a share may be pumped only from a well in the sub-basin where the parcel that earned it lies",
+    "U1-b: a share may be pumped anywhere in the basin; impact rules only set conditions on individual wells"
+   ],
+   "components": {
+    "U1-a": [],
+    "U1-b": [
+     "k4b"
+    ]
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [
+  {
+   "premises": [
+    "a17"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "growers.lessees",
+   "variable": "quantity_supplied"
+  }
+ ],
+ "expires": [],
+ "parts": [
+  {
+   "part": "growers.overpumping",
+   "whole": "growers.lessees",
+   "premises": []
+  }
+ ],
+ "dominance": [
+  {
+   "premises": [
+    "q13_the_lease_price_of_an_af_far_exceeds_the"
+   ],
+   "reading": null,
+   "actor": "growers.lessees",
+   "variable": "full_cost_per_unit",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q21_the_value_of_the_free_shares_to_history_"
+   ],
+   "reading": null,
+   "actor": "licensees.history",
+   "variable": "resources_available_other_uses",
+   "window": null,
+   "direction": "increase",
+   "kind": "arithmetic"
+  },
+  {
+   "premises": [
+    "q21_the_value_of_the_free_shares_to_history_"
+   ],
+   "reading": null,
+   "actor": "owners.history",
+   "variable": "asset_value",
+   "window": null,
+   "direction": "increase",
+   "kind": "arithmetic"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Without the cap, pumping would stay near 300,000 af and above 210,000.",
+   "class": "binding",
+   "p": 0.95
+  },
+  "a2": {
+   "text": "The cap is enforced against most pumpers: meters, telemetry and satellite checks detect most over-pumping.",
+   "class": "enforcement",
+   "p": 0.75
+  },
+  "a10": {
+   "text": "Detection is weak for some wells, so some pumpers over-pump.",
+   "class": "enforcement",
+   "p": 0.55
+  },
+  "a12": {
+   "text": "Land buyers priced the expected claim to shares from the publication of the draft plan.",
+   "class": "expectations",
+   "p": 0.75
+  },
+  "a17": {
+   "text": "Some pumpers inflated 2017 to 2021 pumping in anticipation of allocation by history.",
+   "class": "expectations",
+   "p": 0.2
+  },
+  "a4": {
+   "text": "A lease market forms: transaction costs are low enough for holders to lease to others within a season.",
+   "class": "other",
+   "p": 0.8
+  },
+  "q7_some_basin_farms_can_buy_regional_surfac": {
+   "text": "Some basin farms can buy regional surface water, whose supply is fixed by allotments in a given year.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q8_some_nut_growers_in_south_and_elsewhere_": {
+   "text": "Some nut growers, in South and elsewhere, value the last af they would have pumped without the cap below the lease price, so they give it up rather than lease it (the leasing response is partial).",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q9_some_basin_growers_can_farm_in_the_lowth": {
+   "text": "Some basin growers can farm in the Lowther Basin, which has no cap until its plan.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q10_some_non_domestic_wells_are_backups_or_l": {
+   "text": "Some non-domestic wells are backups or low-use wells that owners retire rather than meter.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q11_basin_growers_take_national_crop_prices_": {
+   "text": "Basin growers take national crop prices as given.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q12_under_the_cap_the_water_table_falls_more": {
+   "text": "Under the cap, the water table falls more slowly than it would have.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q13_the_lease_price_of_an_af_far_exceeds_the": {
+   "text": "The lease price of an af far exceeds the energy it saves through a slower-falling table over the medium horizon.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q14_farm_employment_and_hours_adjust_to_acre": {
+   "text": "Farm employment and hours adjust to acres farmed.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q15_input_suppliers_sell_mainly_to_basin_far": {
+   "text": "Input suppliers sell mainly to basin farms.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q16_the_fall_in_basin_tree_nut_output_moves_": {
+   "text": "The fall in basin tree-nut output moves national tree-nut prices by more than a negligible amount.",
+   "p": 0.3,
+   "class": "other"
+  },
+  "q17_south_growers_north_communities_and_land": {
+   "text": "South growers, North communities and landholders without history can organize at a cost below their stake.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q18_under_u1_b_south_growers_could_lease_in_": {
+   "text": "Under U1-b, South growers could lease in enough North and Central allocations to approach South's counterfactual pumping.",
+   "p": 0.5,
+   "class": "other"
+  },
+  "q19_some_field_crop_growers_value_lease_inco": {
+   "text": "Some field-crop growers value lease income above farming their allocation.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q20_some_holders_lease_out_or_sell_their_who": {
+   "text": "Some holders lease out or sell their whole allocation and stop irrigating.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q21_the_value_of_the_free_shares_to_history_": {
+   "text": "The value of the free shares to history holders exceeds the fees they pay on them.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "q22_holders_expect_shares_to_last_without_ea": {
+   "text": "Holders expect shares to last, without early reallocation.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q23_the_lottery_s_expected_value_per_entry_e": {
+   "text": "The lottery's expected value per entry exceeds the cost of entering for many eligible parcels.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q24_parcels_can_be_split_or_transferred_into": {
+   "text": "Parcels can be split or transferred into separate ownership before 1 July 2027 (lot-line adjustments approved within months).",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q25_landholders_planning_new_orchards_gave_w": {
+   "text": "Landholders planning new orchards gave weight to the draft plan from 2022.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q26_the_fall_in_basin_field_crop_output_move": {
+   "text": "The fall in basin field-crop output moves national field-crop prices by more than a negligible amount.",
+   "p": 0.15,
+   "class": "other"
+  }
+ }
+}
