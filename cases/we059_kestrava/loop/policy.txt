@@ -1,0 +1,58 @@
+## 1. Policy record
+
+**Kestrava Fair Repair Act.** Kestrava is a state of about 6.2 million. To its west lies Darnholt, which has no such law; about 3,000 Kestrava farms lie within 30 km of the state line, and six farm equipment dealers operate on the Darnholt side within 30 km of it. Similar bills were introduced in Kestrava in 2023 and 2025 and failed after campaigns on both sides.
+
+**Phones.** About 5.4 million phones are in use in Kestrava and about 1.9 million are sold a year (about 60% online, delivered to Kestrava addresses); three makers sell about 90% of them, at the same prices in every state. About 1.1 million phone repairs are made a year: about 60% by makers' stores and authorized providers (a screen repair with a genuine part costs about $280), about 40% by some 900 independent shops using non-genuine or salvaged parts (about $160). On recent models makers pair screens, batteries and cameras to the device: a replacement part not paired by the maker's server works with warnings (battery health hidden, "unknown part" notices) or with some features disabled (face unlock). One maker already sells genuine parts and rents tools to owners in all states at the prices its authorized providers pay, and pairs the part through its server after the repair. About 40,000 phones are reported stolen in Kestrava each year; activation locks and parts pairing now keep most parts of reported phones from working in other devices.
+
+**Farm equipment.** About 38,000 farms run about 95,000 tractors and 12,000 combines with electronic controls; about 30% of the tractors were sold on or after 1 January 2023. Four makers sell through 140 authorized dealer locations, which are independent businesses under dealer agreements; about 260 independent shops repair farm equipment. Dealers' service revenue is about $520 million a year ($330 million parts, $190 million labor at about $165 an hour; independents charge about $95). Dealers subscribe to each maker's diagnostic software (about $8,000 a year per location) and buy parts at 25% below list. Independents can buy many mechanical parts at list from dealers but cannot buy the software, without which many electronic parts cannot be calibrated or paired. Farm surveys put the average wait for a dealer technician at harvest at 2.5 days. New equipment sales in Kestrava are about $1.1 billion a year; 14 specialty models sell fewer than 20 units a year each in the state.
+
+**Timing.** The bill passed the legislature on 18 February 2027 and was signed on 1 March 2027; it takes effect on 1 September 2028 (18 months). No expiry.
+
+| Field | Value | Source sentence |
+|---|---|---|
+| Jurisdiction (and what lies just outside) | Covered equipment sold or leased to a purchaser in Kestrava. Just outside: Darnholt (no law), with dealers near the line; phones are sold nationally at one price. | §2(b): "'Covered equipment' means a mobile phone, or agricultural equipment designed primarily for agricultural use and containing electronic controls, sold or leased to a purchaser in Kestrava on or after 1 January 2023." |
+| Announced / enacted / effective / expires | Passed 18 February 2027; signed 1 March 2027; effective 1 September 2028; no expiry. | §9. |
+| Enforcement (who, penalties, resources) | Attorney General under the Unfair Trade Practices Act, on complaint; civil penalty up to $10,000 per violation; no private right of action. No new appropriation: the Consumer Protection Division's budget (about $14 million, about 22,000 complaints a year) is unchanged. | §8. |
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Duty to supply | `mandated_contract_term` (a term of every sale of covered equipment, owed to the owner and to any independent repair provider) | Parts, tools, documentation and diagnostic software, including the means to reset, calibrate and pair parts | Makers of covered equipment | "On fair and reasonable terms", defined in §2(d) as "terms, including price, no less favorable than the most favorable terms on which the manufacturer offers the item to an authorized repair provider, net of any discount, rebate or incentive." | Parts no longer made; information not given to authorized providers. |
+| K2 Void terms | `term_prohibition` | Terms in contracts for the sale, lease or license of covered equipment (including software licenses) that prohibit or restrict repair by the owner or a person of the owner's choice, or that void a warranty because of such repair | Makers, dealers, lessors; existing and new contracts, from 1 September 2028 | "Any such term is void." A warranty may still exclude damage caused by the repair itself (§4(b)). | — |
+| K3 Software locks | `product_standard` (a rule on the software of covered equipment) | Software that pairs parts to a device | Makers | §5(c): "A manufacturer shall not use a software lock to prevent the functioning of a part supplied, repaired or replaced in accordance with this Act." | — |
+| K4 Enforcement | Enforcement | K1 to K3 | Attorney General, on complaint, from an unchanged budget | Penalty up to $10,000 per violation. | — |
+
+The counterfactual law, which K1 to K3 change (CR-1, recording): a maker may refuse to sell parts, tools and software to anyone but its authorized repairers; contract and license terms restricting repair are enforceable; parts pairing is lawful.
+
+Unclear provisions:
+- **U1, parts pairing.** §5(c) forbids "a software lock to prevent the functioning of a part supplied, repaired or replaced in accordance with this Act". §2(f): "'Software lock' means any technical measure that restricts the functioning of a part unless the manufacturer authorizes it." §3(a)(iv) lists among what makers must supply "the means to pair a part to the equipment". Reading U1-a: pairing that needs the maker's authorization is itself the lock §5(c) forbids; any part installed, genuine, salvaged or non-genuine, must work fully without contacting the maker, and makers must remove pairing from covered devices and leave it out of new ones. Reading U1-b: §3(a)(iv) presupposes that pairing continues; a lock is lawful if the owner (or a repairer acting for the owner) can pair a genuine part using a tool the maker supplies on fair and reasonable terms. Makers may then refuse to pair parts reported stolen and need not pair non-genuine parts. The Attorney General has issued no guidance.
+
+Readings get no probability; where a sign depends on U1, one sign per reading is given.
+
+**Figures.** If independents' share of phone repairs and their prices stayed as they are, and dealers' farm service revenue fell by a fifth, about $100 million a year of dealer service would move to independents and owners. The maker's existing national phone program already matches K1 on price and meets U1-b's pairing condition. Phones in use are replaced about every three years, so by 2030 nearly all phones in use will be covered; about 70% of tractors in use were sold before 2023 and are not covered, and tractors last 15 to 25 years.
+
+Assumptions (ID | Statement | Type | p):
+ A-1 | Most makers comply with K1 in most cases. | enforcement | 0.7 
+ A-2 | Before the Act, makers did not offer independents and owners genuine parts, tools and software on the terms they gave authorized repairers (except one phone maker's national program, which matches on price and meets U1-b), and anti-repair terms were in use. | binding | 0.9 
+ A-3 | Some owners prefer independent or self repair at the new terms. | substitutability | 0.9 
+ A-4 | Dealers' and authorized providers' repair capacity cannot contract at once. | durability | 0.75 
+ A-5 | Independent shops can open or expand once inputs are available. | mobility | 0.75 
+ A-6 | Makers bear costs from K1 and K2 (margin on repair inputs, supply and support) and seek to recover them through other terms of sale. | other | 0.85 
+ A-7 | Some repairs can be deferred for months. | other | 0.6 
+ A-8 | Phone makers extend their parts and tool programs to owners in all states rather than only Kestrava. | other | 0.6 
+ A-9 | Some compact tractors can be designed and marketed for grounds care at a cost below the burden of coverage. | other | 0.55 
+ A-10 | The Attorney General acts only on complaint, and some makers' offers fall short. | enforcement | 0.7 
+ A-11 | For some specialty farm models with fewer than 20 sales a year in Kestrava, the cost of supplying documentation, tools and software for the model there exceeds the margin on those sales. | other | 0.5 
+ A-12 | Investors value makers' expected repair-input margins in Kestrava. | other | 0.85 
+ A-13 | In the long run independent repair capacity can be added at roughly constant cost. | other | 0.6 
+ A-14 | More repairers and self-repair shorten waits at harvest. | other | 0.75 
+ A-15 | Some buyers of used phones check the part notices and pay less for phones with unpaired parts. | other | 0.6 
+ A-16 | Owners could not read fault codes or documentation before, and some use them to diagnose or to shop for repairs. | other | 0.85 
+ A-17 | Pairing and activation locks now keep most parts of reported stolen phones from working in other devices; under U1-a they would work. | other | 0.65 
+ A-18 | Farm equipment makers raise list prices in Kestrava relative to Darnholt. | other | 0.55 
+ A-19 | Dealers' capital and locations are tied to their territory, while makers sell in many states at national prices. | mobility | 0.75 
+ A-20 | Makers, dealers and investors expect the Act to stay in force. | expectations | 0.8 
+ A-21 | Salvaged and non-genuine parts compete with makers' genuine parts once independents can buy both. | substitutability | 0.6 
+ A-22 | Buyers of new covered equipment value access to repair inputs. | other | 0.7 
+ A-23 | Makers, dealers, farm groups and repair associations can organize at a cost below their stakes. | other | 0.85 
+ A-24 | Some makers respond by integrating components or (under U1-b) by pairing more parts, to keep control of which parts work. | other | 0.55 
+ A-25 | For each maker, the lost margin on repair inputs, the voided terms and the costs of compliance outweigh any gain from every rival being bound at once and from buyers' higher valuation of covered units. | other | 0.7 

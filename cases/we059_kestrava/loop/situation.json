@@ -1,0 +1,912 @@
+{
+ "name": "WE-059 Kestrava Fair Repair Act (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_ag_sale",
+   "buyer": "owners.ag",
+   "seller": "makers.ag",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_phone_sale",
+   "buyer": "owners.phone",
+   "seller": "makers.phone",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_ag_parts",
+   "buyer": "independents.ag",
+   "seller": "makers.ag",
+   "unsatisfied_buyer": "independents.ag",
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_phone_parts",
+   "buyer": "independents.phone",
+   "seller": "makers.phone",
+   "unsatisfied_buyer": "independents.phone",
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_ag_terms",
+   "buyer": "makers.ag",
+   "seller": "owners.ag",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": null,
+   "seller_price_var": null,
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_phone_terms",
+   "buyer": "makers.phone",
+   "seller": "owners.phone",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": null,
+   "seller_price_var": null,
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_phone_pairing",
+   "buyer": "owners.phone",
+   "seller": "makers.phone",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": null,
+   "seller_price_var": null,
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "a6"
+   ],
+   "exchange": "e_ag_sale",
+   "kind": "adjust",
+   "side": "seller",
+   "actor": "owners.ag",
+   "variables": [
+    "quality_per_unit",
+    "variety"
+   ]
+  },
+  {
+   "premises": [
+    "q18_the_attorney_general_acts_only_on_compla"
+   ],
+   "exchange": "e_ag_sale",
+   "kind": "outside",
+   "side": null,
+   "actor": "makers.ag",
+   "variables": [
+    "legal_breach"
+   ]
+  },
+  {
+   "premises": [
+    "a6"
+   ],
+   "exchange": "e_phone_sale",
+   "kind": "adjust",
+   "side": "seller",
+   "actor": "owners.phone",
+   "variables": [
+    "quality_per_unit",
+    "variety"
+   ]
+  },
+  {
+   "premises": [
+    "q18_the_attorney_general_acts_only_on_compla"
+   ],
+   "exchange": "e_phone_sale",
+   "kind": "outside",
+   "side": null,
+   "actor": "makers.phone",
+   "variables": [
+    "legal_breach"
+   ]
+  },
+  {
+   "premises": [
+    "q21_pairing_and_activation_locks_now_keep_mo"
+   ],
+   "exchange": "e_phone_pairing",
+   "kind": "outside",
+   "side": null,
+   "actor": "intermediaries.stolen_parts",
+   "variables": [
+    "informal_activity"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q15_some_compact_tractors_can_be_designed_an"
+   ],
+   "component": "k1",
+   "chooser": "makers.ag",
+   "actor": "makers.ag",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q16_some_makers_respond_by_integrating_compo"
+   ],
+   "component": "k1",
+   "chooser": "makers.ag",
+   "actor": "makers.ag",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q17_for_some_specialty_farm_models_with_fewe"
+   ],
+   "component": "k1",
+   "chooser": "makers.ag",
+   "actor": "owners.ag",
+   "variables": [
+    "cross_border_purchases"
+   ]
+  },
+  {
+   "premises": [
+    "q20_phone_makers_extend_their_parts_and_tool"
+   ],
+   "component": "k1",
+   "chooser": "makers.phone",
+   "actor": "owners.phone.other_states",
+   "variables": [
+    "quality_per_unit"
+   ]
+  },
+  {
+   "premises": [
+    "q16_some_makers_respond_by_integrating_compo"
+   ],
+   "component": "k1",
+   "chooser": "makers.phone",
+   "actor": "makers.phone",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q22_some_farms_within_30_km_of_the_state_lin"
+   ],
+   "component": "k1",
+   "chooser": "owners.ag",
+   "actor": "owners.ag",
+   "variables": [
+    "cross_border_purchases"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q11_makers_dealers_farm_groups_and_repair_as"
+   ],
+   "component": "k1",
+   "actor": "dealers.ag"
+  },
+  {
+   "premises": [
+    "q11_makers_dealers_farm_groups_and_repair_as"
+   ],
+   "component": "k2",
+   "actor": "dealers.ag"
+  },
+  {
+   "premises": [
+    "q11_makers_dealers_farm_groups_and_repair_as"
+   ],
+   "component": "k1",
+   "actor": "makers.ag"
+  },
+  {
+   "premises": [
+    "q11_makers_dealers_farm_groups_and_repair_as"
+   ],
+   "component": "k2",
+   "actor": "makers.ag"
+  },
+  {
+   "premises": [
+    "q11_makers_dealers_farm_groups_and_repair_as"
+   ],
+   "component": "k1",
+   "actor": "makers.phone"
+  },
+  {
+   "premises": [
+    "q11_makers_dealers_farm_groups_and_repair_as"
+   ],
+   "component": "k2",
+   "actor": "makers.phone"
+  },
+  {
+   "premises": [
+    "q11_makers_dealers_farm_groups_and_repair_as"
+   ],
+   "component": "k3_a",
+   "actor": "makers.phone"
+  },
+  {
+   "premises": [
+    "q11_makers_dealers_farm_groups_and_repair_as"
+   ],
+   "component": "k1",
+   "actor": "owners.ag"
+  },
+  {
+   "premises": [
+    "q11_makers_dealers_farm_groups_and_repair_as"
+   ],
+   "component": "k2",
+   "actor": "owners.ag"
+  },
+  {
+   "premises": [
+    "q11_makers_dealers_farm_groups_and_repair_as"
+   ],
+   "component": "k1",
+   "actor": "independents.ag"
+  },
+  {
+   "premises": [
+    "q11_makers_dealers_farm_groups_and_repair_as"
+   ],
+   "component": "k2",
+   "actor": "independents.ag"
+  },
+  {
+   "premises": [
+    "q11_makers_dealers_farm_groups_and_repair_as"
+   ],
+   "component": "k1",
+   "actor": "independents.phone"
+  },
+  {
+   "premises": [
+    "q11_makers_dealers_farm_groups_and_repair_as"
+   ],
+   "component": "k2",
+   "actor": "independents.phone"
+  },
+  {
+   "premises": [
+    "q11_makers_dealers_farm_groups_and_repair_as"
+   ],
+   "component": "k1",
+   "actor": "authorized_providers.phone"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q12_dealers_capital_and_locations_are_tied_t",
+    "q13_makers_dealers_and_investors_expect_the_"
+   ],
+   "source_actor": "dealers.ag",
+   "source_variable": "quantity_traded",
+   "relation": "yield",
+   "actor": "factor_owners.dealers",
+   "variable": "asset_value"
+  },
+  {
+   "premises": [
+    "q14_dealers_and_authorized_providers_repair_"
+   ],
+   "source_actor": "dealers.ag",
+   "source_variable": "quantity_traded",
+   "relation": "yield",
+   "actor": "dealers.ag",
+   "variable": "return_on_capital"
+  },
+  {
+   "premises": [],
+   "source_actor": "dealers.ag",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.dealers",
+   "variable": "employment,hours_worked"
+  },
+  {
+   "premises": [],
+   "source_actor": "makers.ag",
+   "source_variable": "quantity_traded",
+   "relation": "same_act",
+   "actor": "dealers.ag",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "j_bud"
+   ],
+   "source_actor": "officials.enforcement",
+   "source_variable": "enforcement_cost",
+   "relation": "supply",
+   "actor": "buyers.complainants",
+   "variable": "wait_time"
+  },
+  {
+   "premises": [
+    "q23_some_owners_prefer_independent_or_self_r",
+    "q24_independent_shops_can_open_or_expand_onc"
+   ],
+   "source_actor": "owners.ag",
+   "source_variable": "quality_per_unit",
+   "relation": "same_act",
+   "actor": "independents.ag",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q26_owners_could_not_read_fault_codes_or_doc"
+   ],
+   "source_actor": "owners.ag",
+   "source_variable": "quality_per_unit",
+   "relation": "supply",
+   "actor": "owners.ag",
+   "variable": "search_cost"
+  },
+  {
+   "premises": [
+    "q23_some_owners_prefer_independent_or_self_r",
+    "q24_independent_shops_can_open_or_expand_onc"
+   ],
+   "source_actor": "owners.phone",
+   "source_variable": "quality_per_unit",
+   "relation": "same_act",
+   "actor": "independents.phone",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q26_owners_could_not_read_fault_codes_or_doc"
+   ],
+   "source_actor": "owners.phone",
+   "source_variable": "quality_per_unit",
+   "relation": "supply",
+   "actor": "owners.phone",
+   "variable": "search_cost"
+  },
+  {
+   "premises": [
+    "q24_independent_shops_can_open_or_expand_onc"
+   ],
+   "source_actor": "independents.ag",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.independent_shops",
+   "variable": "employment,hours_worked"
+  },
+  {
+   "premises": [
+    "q23_some_owners_prefer_independent_or_self_r"
+   ],
+   "source_actor": "independents.ag",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "dealers.ag",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q24_independent_shops_can_open_or_expand_onc"
+   ],
+   "source_actor": "independents.ag",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "owners.ag",
+   "variable": "full_cost_per_unit"
+  },
+  {
+   "premises": [
+    "q27_more_repairers_and_self_repair_shorten_w"
+   ],
+   "source_actor": "independents.ag",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "owners.ag",
+   "variable": "wait_time"
+  },
+  {
+   "premises": [
+    "q24_independent_shops_can_open_or_expand_onc"
+   ],
+   "source_actor": "independents.phone",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.independent_phone_shops",
+   "variable": "employment,hours_worked"
+  },
+  {
+   "premises": [
+    "q23_some_owners_prefer_independent_or_self_r"
+   ],
+   "source_actor": "independents.phone",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "authorized_providers.phone",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q24_independent_shops_can_open_or_expand_onc"
+   ],
+   "source_actor": "independents.phone",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "owners.phone",
+   "variable": "full_cost_per_unit"
+  },
+  {
+   "premises": [
+    "q28_salvaged_and_non_genuine_parts_compete_w"
+   ],
+   "source_actor": "independents.phone",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "sellers.salvaged_parts",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q29_thieves_steal_more_phones_when_the_parts"
+   ],
+   "source_actor": "intermediaries.stolen_parts",
+   "source_variable": "informal_activity",
+   "relation": "input",
+   "actor": "sellers.stolen_phones",
+   "variable": "informal_activity"
+  },
+  {
+   "premises": [
+    "q14_dealers_and_authorized_providers_repair_"
+   ],
+   "source_actor": "authorized_providers.phone",
+   "source_variable": "quantity_traded",
+   "relation": "yield",
+   "actor": "authorized_providers.phone",
+   "variable": "return_on_capital"
+  },
+  {
+   "premises": [],
+   "source_actor": "authorized_providers.phone",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.authorized_providers",
+   "variable": "employment,hours_worked"
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "q19_investors_value_makers_expected_repair_i",
+    "q13_makers_dealers_and_investors_expect_the_"
+   ],
+   "exchange": "e_ag_sale",
+   "side": "seller",
+   "actor": "investors.makers_ag"
+  },
+  {
+   "premises": [
+    "q19_investors_value_makers_expected_repair_i",
+    "q13_makers_dealers_and_investors_expect_the_"
+   ],
+   "exchange": "e_phone_sale",
+   "side": "seller",
+   "actor": "investors.makers_phone"
+  }
+ ],
+ "yields": [
+  {
+   "premises": [
+    "a25"
+   ],
+   "exchange": "e_ag_sale",
+   "side": "seller",
+   "actor": "makers.ag"
+  },
+  {
+   "premises": [
+    "a25"
+   ],
+   "exchange": "e_phone_sale",
+   "side": "seller",
+   "actor": "makers.phone"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "makers.ag"
+  },
+  {
+   "component": "k1",
+   "actor": "makers.phone"
+  },
+  {
+   "component": "k2",
+   "actor": "makers.ag"
+  },
+  {
+   "component": "k2",
+   "actor": "dealers.ag"
+  },
+  {
+   "component": "k2",
+   "actor": "makers.phone"
+  },
+  {
+   "component": "k3_a",
+   "actor": "makers.phone"
+  },
+  {
+   "component": "k3_b",
+   "actor": "makers.phone"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [],
+ "fixed_budget": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement",
+   "premises": [
+    "j_bud"
+   ]
+  }
+ ],
+ "charges": [
+  {
+   "component": "k1",
+   "exchange": "e_ag_sale",
+   "payer_side": "seller",
+   "receiver": "owners.ag",
+   "receipt_variable": "quality_per_unit",
+   "quantity_premises": [
+    "a1",
+    "a2",
+    "a25"
+   ],
+   "projection_variable": null,
+   "branch_premises": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k1",
+   "exchange": "e_phone_sale",
+   "payer_side": "seller",
+   "receiver": "owners.phone",
+   "receipt_variable": "quality_per_unit",
+   "quantity_premises": [
+    "a1",
+    "a2",
+    "a25"
+   ],
+   "projection_variable": null,
+   "branch_premises": [],
+   "capped_payers": [],
+   "basis": "unit"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a18"
+   ],
+   "exchange": "e_ag_sale",
+   "side": "buyer"
+  },
+  {
+   "premises": [
+    "a6"
+   ],
+   "exchange": "e_ag_sale",
+   "side": "seller"
+  },
+  {
+   "premises": [
+    "a6"
+   ],
+   "exchange": "e_phone_sale",
+   "side": "seller"
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "j_ann"
+   ]
+  },
+  {
+   "component": "k2",
+   "premises": [
+    "j_ann"
+   ]
+  },
+  {
+   "component": "k3_a",
+   "premises": [
+    "j_ann"
+   ]
+  },
+  {
+   "component": "k3_b",
+   "premises": [
+    "j_ann"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q25_some_repairs_can_be_deferred_for_months"
+   ],
+   "component": "k1",
+   "actor": "owners.ag",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q25_some_repairs_can_be_deferred_for_months"
+   ],
+   "component": "k1",
+   "actor": "owners.phone",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "banned": [
+  {
+   "premises": [
+    "a2",
+    "j_k2"
+   ],
+   "component": "k2",
+   "exchange": "e_ag_terms"
+  },
+  {
+   "premises": [
+    "a2",
+    "j_k2"
+   ],
+   "component": "k2",
+   "exchange": "e_phone_terms"
+  },
+  {
+   "premises": [
+    "j_k3"
+   ],
+   "component": "k3_a",
+   "exchange": "e_phone_pairing"
+  }
+ ],
+ "fixed": [
+  {
+   "premises": [
+    "j_nat"
+   ],
+   "exchange": "e_phone_sale",
+   "side": "buyer"
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Parts pairing: does section 5(c) forbid pairing that needs the maker's authorization, or only locks the owner cannot unlock with a tool the maker supplies?",
+   "readings": [
+    "U1-a: pairing that needs the maker's authorization is itself the lock section 5(c) forbids; any part must work fully without contacting the maker, and makers must remove pairing from covered devices",
+    "U1-b: a lock is lawful if the owner or a repairer acting for the owner can pair a genuine part with a tool the maker supplies on fair and reasonable terms; makers may refuse to pair stolen or non-genuine parts"
+   ],
+   "components": {
+    "U1-a": [
+     "k3_a"
+    ],
+    "U1-b": [
+     "k3_b"
+    ]
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [],
+ "assumptions": {
+  "a1": {
+   "text": "Most makers comply with K1 in most cases.",
+   "class": "enforcement",
+   "p": 0.7
+  },
+  "a2": {
+   "text": "Before the Act, makers did not offer independents and owners genuine parts, tools and software on the terms they gave authorized repairers (except one phone maker's national program, which matches on price and meets U1-b), and anti-repair terms were in use.",
+   "class": "binding",
+   "p": 0.9
+  },
+  "a6": {
+   "text": "Makers bear costs from K1 and K2 (margin on repair inputs, supply and support) and seek to recover them through other terms of sale.",
+   "class": "other",
+   "p": 0.85
+  },
+  "a18": {
+   "text": "Farm equipment makers raise list prices in Kestrava relative to Darnholt.",
+   "class": "other",
+   "p": 0.55
+  },
+  "a25": {
+   "text": "For each maker, the lost margin on repair inputs, the voided terms and the costs of compliance outweigh any gain from every rival being bound at once and from buyers' higher valuation of covered units.",
+   "class": "other",
+   "p": 0.7
+  },
+  "j_ann": {
+   "text": "Makers and dealers expected the Act to take effect on 1 September 2028 once it was signed on 1 March 2027.",
+   "class": "expectations",
+   "p": 0.9
+  },
+  "j_nat": {
+   "text": "Phone makers keep their prices the same in every state during the period.",
+   "class": "other",
+   "p": 0.7
+  },
+  "j_k2": {
+   "text": "Makers and dealers stop using terms that restrict repair once such terms are void.",
+   "class": "enforcement",
+   "p": 0.8
+  },
+  "j_k3": {
+   "text": "Where pairing needs the maker's authorization, makers remove that need once pairing is forbidden.",
+   "class": "enforcement",
+   "p": 0.8
+  },
+  "j_bud": {
+   "text": "The Consumer Protection Division handles fewer of its other complaints when repair complaints take its time.",
+   "class": "revenue_use",
+   "p": 0.7
+  },
+  "q11_makers_dealers_farm_groups_and_repair_as": {
+   "text": "Makers, dealers, farm groups and repair associations can organize at a cost below their stakes.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q12_dealers_capital_and_locations_are_tied_t": {
+   "text": "Dealers' capital and locations are tied to their territory, while makers sell in many states at national prices.",
+   "p": 0.75,
+   "class": "mobility"
+  },
+  "q13_makers_dealers_and_investors_expect_the_": {
+   "text": "Makers, dealers and investors expect the Act to stay in force.",
+   "p": 0.8,
+   "class": "mobility"
+  },
+  "q14_dealers_and_authorized_providers_repair_": {
+   "text": "Dealers' and authorized providers' repair capacity cannot contract at once.",
+   "p": 0.75,
+   "class": "durability"
+  },
+  "q15_some_compact_tractors_can_be_designed_an": {
+   "text": "Some compact tractors can be designed and marketed for grounds care at a cost below the burden of coverage.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q16_some_makers_respond_by_integrating_compo": {
+   "text": "Some makers respond by integrating components or (under U1-b) by pairing more parts, to keep control of which parts work.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q17_for_some_specialty_farm_models_with_fewe": {
+   "text": "For some specialty farm models with fewer than 20 sales a year in Kestrava, the cost of supplying documentation, tools and software for the model there exceeds the margin on those sales.",
+   "p": 0.5,
+   "class": "other"
+  },
+  "q18_the_attorney_general_acts_only_on_compla": {
+   "text": "The Attorney General acts only on complaint, and some makers' offers fall short.",
+   "p": 0.7,
+   "class": "enforcement"
+  },
+  "q19_investors_value_makers_expected_repair_i": {
+   "text": "Investors value makers' expected repair-input margins in Kestrava.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q20_phone_makers_extend_their_parts_and_tool": {
+   "text": "Phone makers extend their parts and tool programs to owners in all states rather than only Kestrava.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q21_pairing_and_activation_locks_now_keep_mo": {
+   "text": "Pairing and activation locks now keep most parts of reported stolen phones from working in other devices; under U1-a they would work.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q22_some_farms_within_30_km_of_the_state_lin": {
+   "text": "Some farms within 30 km of the state line buy new equipment from Darnholt dealers when Kestrava prices are higher.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q23_some_owners_prefer_independent_or_self_r": {
+   "text": "Some owners prefer independent or self repair at the new terms.",
+   "p": 0.9,
+   "class": "substitutability"
+  },
+  "q24_independent_shops_can_open_or_expand_onc": {
+   "text": "Independent shops can open or expand once inputs are available.",
+   "p": 0.75,
+   "class": "substitutability"
+  },
+  "q25_some_repairs_can_be_deferred_for_months": {
+   "text": "Some repairs can be deferred for months.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q26_owners_could_not_read_fault_codes_or_doc": {
+   "text": "Owners could not read fault codes or documentation before, and some use them to diagnose or to shop for repairs.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q27_more_repairers_and_self_repair_shorten_w": {
+   "text": "More repairers and self-repair shorten waits at harvest.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q28_salvaged_and_non_genuine_parts_compete_w": {
+   "text": "Salvaged and non-genuine parts compete with makers' genuine parts once independents can buy both.",
+   "p": 0.6,
+   "class": "substitutability"
+  },
+  "q29_thieves_steal_more_phones_when_the_parts": {
+   "text": "Thieves steal more phones when the parts of stolen phones work in other devices.",
+   "p": 0.6,
+   "class": "other"
+  }
+ }
+}
