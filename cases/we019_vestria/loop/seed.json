@@ -1,0 +1,39 @@
+{
+ "name": "WE-019 Vestria fleet renewal rebate (expand loop, blind)",
+ "exchanges": [
+  {"id": "e1", "buyer": "buyers.rebate", "seller": "retailers.dealers", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_used", "buyer": "buyers.used", "seller": "owners.eligible_cars", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_scrap", "buyer": "buyers.dismantlers", "seller": "buyers.rebate", "seller_price_var": "net_price_received"},
+  {"id": "e_parts", "buyer": "buyers.parts", "seller": "sellers.dismantlers", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "grants": [
+  {"component": "k1", "exchange": "e1", "recipient_side": "buyer", "payer": "treasury", "outlay_variable": "subsidy_outlay"},
+  {"component": "k2_fee", "exchange": "e_scrap", "recipient_side": "buyer", "payer": "treasury", "outlay_variable": "subsidy_outlay"}
+ ],
+ "moves": [
+  {"exchange": "e1", "side": "buyer", "premises": ["a1"]},
+  {"exchange": "e1", "side": "seller", "premises": ["a7"]}
+ ],
+ "incidence": [
+  {"component": "k1", "exchange": "e1", "side": "seller", "premises": ["a16"]}
+ ],
+ "banned": [
+  {"component": "k2", "exchange": "e_used", "premises": ["a4", "j3"]},
+  {"component": "k2", "exchange": "e_parts", "premises": ["j3"]}
+ ],
+ "announced": [{"component": "k1", "premises": ["a5"]}],
+ "expires": [{"component": "k1", "premises": ["j2"]}],
+ "funded": [{"component": "k3", "actor": "taxpayers.future", "premises": ["j1"]}],
+ "compliance": [{"component": "k1", "actor": "buyers.rebate"}, {"component": "k2", "actor": "sellers.dismantlers"}],
+ "enforcers": [{"component": "k4", "actor": "officials.enforcement"}],
+ "assumptions": {
+  "a1": {"text": "Sellers do not capture the whole rebate by raising transaction prices, so the net price to rebate buyers falls.", "p": 0.85, "class": "other"},
+  "a4": {"text": "The scrapped cars would otherwise have stayed in use for some years.", "p": 0.85, "class": "durability"},
+  "a5": {"text": "Buyers knew of the scheme from March and could delay purchases.", "p": 0.85, "class": "expectations"},
+  "a7": {"text": "The supply of eligible models cannot grow much within six months.", "p": 0.7, "class": "other"},
+  "a16": {"text": "In the window, sellers of eligible models have clearly fewer alternatives than rebate buyers: their stock is fixed by earlier import orders, while rebate buyers can wait, keep their old car or choose a non-eligible model.", "p": 0.65, "class": "substitutability"},
+  "j1": {"text": "The additional government bonds are serviced and repaid from general revenue.", "p": 0.95, "class": "other"},
+  "j2": {"text": "Buyers expect the rebate to end on 31 December.", "p": 0.9, "class": "expectations"},
+  "j3": {"text": "Dismantlers do not fake scrapping on a meaningful scale.", "p": 0.75, "class": "enforcement"}
+ }
+}
