@@ -16,6 +16,8 @@ core rule CR-1 (what it does to actors' options), as a Situation record. Fill on
 - terms: trading in an exchange made worse or better for one side with no payment (a private rule-maker changing the
   bundle it sells its members; a disclosure showing a good worse or better than believed, with the premise that beliefs
   change); a charge fixed per item offered has basis "item";
+- duties: a duty to supply, where sellers must sell what they would otherwise withhold; a charge owed to more than one
+  receiver lists the others in other_receivers;
 - issued: a right the policy creates and sells in an exchange whose seller is the issuer (an auction of licences);
 - penalties: a fine due on breaking a component's rule (who pays, who collects, the premise that some break it and are fined);
 - grants (a payment to one side of an exchange), capped (a rule fixing the quantity traded, with the holders of the

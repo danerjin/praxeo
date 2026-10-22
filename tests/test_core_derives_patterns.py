@@ -476,3 +476,20 @@ def test_a_group_is_a_link_source():
     link = [{"source_actor": "workers", "source_variable": "employment,hours_worked", "relation": "complement", "actor": "sellers.lunch",
              "variable": "quantity_traded", "premises": ["a3"]}]
     assert ("sellers.lunch", "quantity_traded", "decrease", None) in _run(**FLOOR, margins=m, links=link)
+
+
+def test_a_duty_to_supply_opens_a_withheld_trade():
+    x = [{"id": "e", "buyer": "repairers.independent", "seller": "makers", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}]
+    alt = [{"component": "k", "chooser": "makers", "actor": "makers", "variables": ["reclassification"], "premises": ["a3"]}]
+    got = _run(exchanges=x, duties=[{"component": "k", "exchange": "e", "premises": ["a1"]}], alternatives=alt,
+               assets=[{"exchange": "e", "side": "seller", "actor": "owners.makers", "premises": ["a2"]}])
+    assert {("repairers.independent", "quantity_traded", "increase", None), ("makers", "quantity_traded", "increase", None),
+            ("makers", "reclassification", "increase", None), ("owners.makers", "asset_value", "decrease", None)} <= got
+    assert not any(v in ("price_paid", "net_price_received") for _, v, _, _ in got)
+
+
+def test_a_term_owed_to_two_receivers():
+    ch = [{"component": "k", "exchange": "e", "payer_side": "seller", "receiver": "owners", "receipt_variable": "non_wage_compensation",
+           "other_receivers": [{"receiver": "repairers.independent", "receipt_variable": "quantity_complement"}]}]
+    got = _run(exchanges=MENU, charges=ch)
+    assert ("owners", "non_wage_compensation", "increase", None) in got and ("repairers.independent", "quantity_complement", "increase", None) in got

@@ -31,6 +31,7 @@
 %   dom(A, V, D, P1, P2, P3): CR-12e, the direction D of (A, V) dominates (unwindowed), so only it propagates.
 %   penalty(C, Violator, Collector, P1, P2, P3): a fine due on breaking C (CR-8b).
 %   issued(C, E, P1, P2, P3): C creates a right and sells it in E (seller: the issuer).
+%   duty(C, E, P1, P2, P3): C obliges E's sellers to sell what they withheld. charge_receiver(C, R, V): a further receiver.
 %   operating(C): a charge fixed per seller, not per unit (CR-4 0.8).
 %   compliance(C, A). enforcer(C, A). funded(C, A, P1, P2, P3). fixed_budget(C, A, P1, P2, P3).   CR-8c
 %   charge(C, E, Side, Receiver).           CR-1 op 3: C attaches a payment to trading in E, paid by Side, to Receiver
@@ -334,6 +335,8 @@ c_wedge(buyer, increase). c_wedge(seller, decrease).
 c_paid(C, E) :- c_charged(C, E).
 fired(cr_8, c_paid(C, E), c_charged(C, E)) :- c_paid(C, E).
 effect(c_paid(C, E), R, V, increase, short, visible, "A") :- c_paid(C, E), charge(C, E, _, R), receipt_var(C, V).
+% A payment owed to more than one receiver (charge_receiver/3: each further receiver with its receipt variable).
+effect(c_paid(C, E), R, V, increase, short, visible, "A") :- c_paid(C, E), charge_receiver(C, R, V).
 effect(c_paid(C, E), A, "resources_available_other_uses", decrease, short, invisible, "A") :- c_paid(C, E), charge(C, E, S, _), party(E, S, A).
 effect(c_paid(C, E), R, V, decrease, short, invisible, "B") :- c_paid(C, E), charge(C, E, _, R), projection_var(C, V).
 
@@ -515,6 +518,21 @@ side_dir(E, S2, D) :- c_terms(_, E, _, W), terms_qty(W, D), side(S2).
 p_penalty(C, A, R) :- penalty(C, A, R, P1, P2, P3), c_acts(C), ok(P1), ok(P2), ok(P3).
 fired(cr_8, p_penalty(C, A, R), P) :- p_penalty(C, A, R), penalty(C, A, R, P1, P2, P3), P = (P1; P2; P3), P != none.
 effect(p_penalty(C, A, R), R, V, increase, short, visible, "B") :- p_penalty(C, A, R), share_var(penalty, V).
+
+% ---------------------------------------------------------------- CR-1: a duty to supply
+% Where a component obliges sellers to sell in E what they would otherwise withhold (duty/5, with the premise that they
+% withheld it and the duty is enforced), it adds an option for the buyers and removes one from the sellers: the trade in E
+% opens (CR-1 op 1 for the buyers, op 2 for the sellers), so trades in it rise for both; buyers are choosers made better,
+% the obliged sellers made worse (CR-4). The price is not signed without a premise on a side's response (moves/5): the
+% terms the duty sets ("fair and reasonable") are not a held line.
+c_duty(C, E) :- duty(C, E, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+fired(cr_1, c_duty(C, E), P) :- c_duty(C, E), duty(C, E, P1, P2, P3), P = (P1; P2; P3), P != none.
+c_acts(C) :- c_duty(C, _).
+effect(c_duty(C, E), A, "quantity_traded", increase, short, invisible, "B") :- c_duty(C, E), party(E, _, A).
+chooser(C, A, better) :- c_duty(C, E), party(E, buyer, A).
+chooser(C, A, worse) :- c_duty(C, E), party(E, seller, A).
+side_dir(E, buyer, increase) :- c_duty(_, E).
+side_dir(E, seller, decrease) :- c_duty(_, E).
 
 % ---------------------------------------------------------------- CR-1: a right the policy creates and sells
 % Where a component creates a right and sells it in E (issued/6, with the premise that it is sold as enacted), the trade in

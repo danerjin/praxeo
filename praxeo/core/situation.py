@@ -95,6 +95,7 @@ class Charge(BaseModel):
     branch_premises: list[str] = Field(default=[], max_length=3, description="Where the charge is one branch of a choice the policy gives the payer (pay, or provide in kind): the premise that some payers take it")
     branch_premise_sets: list[list[str]] = Field(default=[], description="Further premise sets, any one of which also opens the branch (new offerers, or upgraders)")
     capped_payers: list[str] = Field(default=[], description="Payers whose total under the charge is capped: they pay a fixed sum at the margin")
+    other_receivers: list[dict] = Field(default=[], description="Further receivers, each {'receiver', 'receipt_variable'} (a term owed to owners and to independent repairers)")
     basis: Literal["unit", "operating", "item"] = Field(default="unit", description="operating: a sum fixed per seller (a licence fee); item: a sum fixed per item offered (testing or labelling each item); both not per unit sold (CR-4 0.8)")
 
 
@@ -128,6 +129,13 @@ class Capped(Premised):
     exchange: str
     holders: list[str] = Field(default=[], description="Those who hold the permission to sell (licences, quota rights)")
     wider_price: bool = Field(default=False, description="The good's price is set in a wider market (CR-6 0.7)")
+
+
+class Duty(Premised):
+    """A duty to supply: E's sellers must sell what they would otherwise withhold (parts and tools to independent repairers);
+    the premises are that they withheld it and the duty is enforced."""
+    component: str
+    exchange: str
 
 
 class Issued(Premised):
@@ -249,6 +257,7 @@ class Situation(BaseModel):
     backstops: list[Backstop] = []
     grants: list[Grant] = []
     capped: list[Capped] = []
+    duties: list[Duty] = Field(default=[], description="A duty to supply: sellers must sell what they withheld")
     issued: list[Issued] = Field(default=[], description="A right the policy creates and sells in an exchange")
     penalties: list[Penalty] = Field(default=[], description="CR-8b: fines due on breaking a component's rule")
     terms: list[Terms] = Field(default=[], description="CR-1 without a payment: trading in an exchange made worse or better for one side")
@@ -325,6 +334,7 @@ def facts(s: Situation) -> str:
             out.append(f"branch({ch.component}, {_p(ch.branch_premises)}).")
         out += [f"branch({ch.component}, {_p(ps)})." for ps in ch.branch_premise_sets]
         out += [f"charge_capped({ch.component}, {_q(a)})." for a in ch.capped_payers]
+        out += [f"charge_receiver({ch.component}, {_q(r['receiver'])}, {_q(r['receipt_variable'])})." for r in ch.other_receivers]
         if ch.basis == "operating":
             out.append(f"operating({ch.component}).")
         if ch.basis == "item":
@@ -366,6 +376,8 @@ def facts(s: Situation) -> str:
         out += [f"holder({c.component}, {c.exchange}, {_q(h)})." for h in c.holders]
         if c.wider_price:
             out.append(f"wider_price({c.exchange}).")
+    for d in s.duties:
+        out.append(f"duty({d.component}, {d.exchange}, {_p(d.premises)}).")
     for i in s.issued:
         out.append(f"issued({i.component}, {i.exchange}, {_p(i.premises)}).")
     for pn in s.penalties:
@@ -410,7 +422,7 @@ def assumptions(s: Situation) -> dict[str, Assumption]:
 
 # The parts that are a component's own operation (CR-1): under an unclear provision they apply only under the readings
 # that list their component.
-OPERATIONS = ["held", "charges", "terms", "penalties", "issued", "grants", "capped", "banned", "thresholds", "qualifies", "backstops", "discretion", "means",
+OPERATIONS = ["held", "charges", "terms", "penalties", "issued", "duties", "grants", "capped", "banned", "thresholds", "qualifies", "backstops", "discretion", "means",
               "compliance", "enforcers", "funded", "fixed_budget", "announced", "expires"]
 
 
