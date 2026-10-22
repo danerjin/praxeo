@@ -1,0 +1,195 @@
+{
+ "name": "WE-066 St Aldric's College e-bike rule (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_bundle_th",
+   "buyer": "members.current.throttle",
+   "seller": "rule_maker.private",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_bundle_pa",
+   "buyer": "members.current.pedal_assist",
+   "seller": "rule_maker.private",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_bundle_oth",
+   "buyer": "members.current.non_riders",
+   "seller": "rule_maker.private",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  }
+ ],
+ "terms": [
+  {
+   "component": "k1_throttle",
+   "exchange": "e_bundle_th",
+   "side": "buyer",
+   "direction": "worse",
+   "premises": [
+    "a1"
+   ]
+  },
+  {
+   "component": "k1_pedal_assist",
+   "exchange": "e_bundle_pa",
+   "side": "buyer",
+   "direction": "worse",
+   "premises": [
+    "a1"
+   ]
+  },
+  {
+   "component": "k1_campus_a",
+   "exchange": "e_bundle_oth",
+   "side": "buyer",
+   "direction": "better",
+   "premises": [
+    "a21",
+    "a1"
+   ]
+  },
+  {
+   "component": "k1_campus_b",
+   "exchange": "e_bundle_oth",
+   "side": "buyer",
+   "direction": "better",
+   "premises": [
+    "a41",
+    "a1"
+   ]
+  }
+ ],
+ "margins": [
+  {
+   "exchange": "e_bundle_th",
+   "kind": "outside",
+   "actor": "members.current.throttle",
+   "variables": [
+    "legal_breach"
+   ],
+   "premises": [
+    "a10"
+   ]
+  },
+  {
+   "exchange": "e_bundle_pa",
+   "kind": "outside",
+   "actor": "members.current.pedal_assist",
+   "variables": [
+    "legal_breach"
+   ],
+   "premises": [
+    "a10"
+   ],
+   "reading": "U1-a"
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1_throttle",
+   "actor": "members.current.throttle"
+  },
+  {
+   "component": "k1_pedal_assist",
+   "actor": "members.current.pedal_assist"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k2",
+   "actor": "workers.school_staff"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k2",
+   "actor": "members.current",
+   "premises": [
+    "a31"
+   ]
+  }
+ ],
+ "fixed_budget": [
+  {
+   "component": "k2",
+   "actor": "workers.school_staff",
+   "premises": [
+    "a20"
+   ]
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1_throttle",
+   "premises": [
+    "a_ann"
+   ]
+  },
+  {
+   "component": "k1_pedal_assist",
+   "premises": [
+    "a_ann"
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Pedal-assist e-bikes: section 2 defines an electric bicycle as a bicycle fitted with a motor capable of propelling it.",
+   "readings": [
+    "U1-a: every bicycle with a motor, including pedal-assist e-bikes (270 riders bound)",
+    "U1-b: only bicycles whose motor can propel them without pedalling, i.e. throttle e-bikes (80 riders bound)"
+   ],
+   "components": {
+    "U1-a": [
+     "k1_pedal_assist",
+     "k1_campus_a"
+    ],
+    "U1-b": [
+     "k1_campus_b"
+    ]
+   }
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "The rule is enforced at the gates: most students who ride or park an e-bike on the grounds are detected within days.",
+   "p": 0.8,
+   "class": "enforcement"
+  },
+  "a10": {
+   "text": "Some students ride or park on the grounds anyway.",
+   "p": 0.65,
+   "class": "enforcement"
+  },
+  "a20": {
+   "text": "The school's staff budget for 2027 is fixed and gate duty is drawn from other duties.",
+   "p": 0.85,
+   "class": "revenue_use"
+  },
+  "a31": {
+   "text": "The school raises its fees for 2027-28 because of the gate duty.",
+   "p": 0.25,
+   "class": "revenue_use"
+  },
+  "a_ann": {
+   "text": "Families expect the rule to take effect on 19 April 2027.",
+   "p": 0.95,
+   "class": "expectations"
+  },
+  "a21": {
+   "text": "Some parents rank a campus without student e-bikes above one with them, enough to change their choice of school or to stay.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "a41": {
+   "text": "Under U1-b, some parents rank a campus without throttle e-bikes above one with them, enough to change their choice of school or to stay.",
+   "p": 0.5,
+   "class": "other"
+  }
+ }
+}

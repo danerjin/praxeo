@@ -1,0 +1,58 @@
+## 1. Policy record
+
+**St Aldric's College Student Travel Rule 2027.** St Aldric's College is a private (independent, fee-paying) secondary school in Wendlemere, a town of about 46,000. It is not part of any public school system; the rule is made by its board of governors and enforced by its own staff. Fees are $18,600 a year, paid by term. The enrollment contract says that "the College may amend its rules from time to time, and parents agree that their child will abide by the rules in force", and that a child may be withdrawn on one full term's written notice (or a term's fees in lieu).
+
+**The school.** 1,240 students aged 11 to 18 and 140 staff, on a 9-hectare campus at the north edge of town. The Main Gate opens on Quarry Lane; the East Gate on Kestle Road. Bike shelters inside the Main Gate hold 420 cycles; about 398 are used on a school day (270 student e-bikes, 110 student pedal bicycles, 18 staff e-bikes): about 95% of capacity.
+
+**How students travel** (the school's travel survey, October 2026):
+
+| Mode | Students | Share |
+|---|---|---|
+| E-bike | 270 (190 pedal-assist, with no throttle; 80 with a throttle that can propel the bike without pedalling) | 22% |
+| Pedal bicycle | 110 | 9% |
+| School coach (contracted) | 370 | 30% |
+| Public bus (route 14) | 125 | 10% |
+| Walking | 150 | 12% |
+| Driven by car | 215 (in about 150 cars) | 17% |
+
+E-bike riders live 3 to 12 km away (median 6 km); about 120 of them live on the Hollin Rise estate, 6 to 8 km north. For a 6 km trip, door to door: e-bike about 16 minutes; pedal bicycle about 24; school coach about 35 (routes 3 and 4 serve Hollin Rise); route 14 about 40, with a 20-minute headway; car about 15 plus the drop-off queue (about 8 minutes at 8:30 now). In a follow-up poll of e-bike riders (February 2027) asking what they would do if all e-bikes were banned, 30% said a pedal bicycle, 25% the school coach, 10% route 14, 20% being driven, 5% walking and 10% an e-scooter or "other".
+
+**Coaches and buses.** Marrick Coaches runs nine school routes under a contract renewed each September: 57 seats a coach, 513 seats, 370 riders (about 72%). Routes 3 and 4 have 114 seats and 106 riders. Passes cost $420 a term, a price fixed in the contract for the school year; when a route is full the school allocates seats by a published priority (distance, then year group) and keeps a waiting list. Wendlemere Buses runs route 14 past the Main Gate at about 60% of peak capacity; a student term pass costs $165, sold at the bus station and at Dunnock News on the Quarry Lane parade (3% commission).
+
+**The gates and the streets.** Cars drop off in a loop inside the Main Gate that holds about 20 cars; between 8:15 and 8:45 about 150 cars use it and the queue backs onto Quarry Lane, which the nine coaches also use to reach the coach bay (arriving 8:20 to 8:40). Between the fence and the Quarry Lane footway is a grass verge (the Verge) owned by the school. Opposite the Main Gate are two residential cul-de-sacs, Linnet Close and Orchard Row (64 homes, about half with a driveway or garage). The Quarry Lane parade, 250 m east, has six shops (Dunnock News, a bakery, a café, a pharmacy, a chip shop and a convenience store) and 24 free council cycle stands, of which about 8 are used in school hours. A council by-law lets the council remove cycles locked to street furniture other than stands, after notice; it is enforced on complaint.
+
+**Bike shops and the used market.** Spokewright Cycles (Mardle Street, 600 m from the Main Gate) sells e-bikes, pedal bicycles and e-scooters and services them; about 30% of its service jobs are students' e-bikes. Corrow Cycle Works is 3 km away in the town centre. Students bought about 60 e-bikes in 2025-26 (35 new, 25 used), about 40 of them from the two shops. New pedal-assist e-bikes cost $1,500 to $2,400, throttle e-bikes $900 to $1,700, pedal bicycles $350 to $700. On many throttle models the throttle unplugs; Spokewright removes one for $40. Wendlemere's online marketplace lists about 25 used e-bikes a month in term time; a two-year-old pedal-assist sells for about $850, a throttle e-bike for about $550. About 40 student e-bikes a year are sold by leavers and upgraders in July to September. On 2 February 2027 Spokewright advertised a secure yard for 40 e-bikes at $4 a week.
+
+**Why the rule.** In 2025-26 there were 7 collisions on campus involving student e-bikes (3 with pedestrians, 2 with cars in the staff car park, 2 between cycles; 5 involved throttle e-bikes); one student went to hospital. In October 2026 a parents' group, Safe Lanes, petitioned the board for a ban (310 signatures); the student council petitioned against (540 signatures). The board minuted in November 2026 that "the e-bike question will be revisited".
+
+**The rule.** Announced by letter to families on 21 January 2027 (the Spring term began on 6 January). Effective on 19 April 2027, the first day of the Summer term (about 12.5 weeks later). The Summer term ends on 16 July; the next school year begins on 6 September 2027. The board will review the rule in June 2028.
+- §1: "From the first day of the Summer term 2027, no student may ride or park an electric bicycle on school grounds."
+- §2: "'Electric bicycle' means a bicycle fitted with a motor capable of propelling it. Ordinary bicycles may continue to use the shelters."
+- §3: "'School grounds' means all land within the College's title, including the verge along Quarry Lane and the coach bay."
+- §4: "This rule does not apply to members of staff."
+- §5 (enforcement): staff on gate duty check arrivals at both gates; first breach, a one-hour after-school detention; second, the e-bike is confiscated and held in the site office until a parent collects it; third, a Saturday detention and a meeting with parents. Parents may appeal to the deputy head.
+
+Existing rules that stay in the counterfactual: the Behaviour Code (e-bikes must be walked from the gate to the shelter and carry a free registration sticker; breach, a detention); Behaviour Code §14, "Scooters, including electric scooters, must be carried folded on school grounds and stored in lockers"; the coach contract and pass price; the council's cycle stands and by-law. Existing supervision: site staff spend about 150 hours a year managing the shelters and stickers and about 110 hours on e-bike incidents and walking-rule detentions (about 260 hours).
+
+**Figures for the arithmetic.** Gate duty: two staff at each gate for 30 minutes in the morning and 20 in the afternoon on 190 days: about 630 staff-hours a year, plus about 120 hours of detentions and confiscations projected for the first year (about 750 hours). The ban makes unnecessary, under U1-a, about 90 of the 150 shelter hours (the shelters would hold about 130 cycles) and about 90 of the 110 incident and walking-rule hours (about 180 hours); under U1-b, less (about 30 and 35 hours), since pedal-assist e-bikes stay. Net: about +570 hours under U1-a and about +685 under U1-b. Car drop-offs: 20% of 270 riders is about 54 students, or about 40 more cars at 8:30 under U1-a (siblings share cars), against about 150 now; under U1-b, about 12 more cars. Coach demand on routes 3 and 4: about 120 riders on Hollin Rise, of whom 25% is about 30, against 8 free seats. Outlays: a coach pass is $1,260 a year and a route 14 pass $495; a car school run of about 12 km a day is about $500 a year in fuel; an e-bike costs about $150 a year to run (charging, tyres, servicing). Parking: about 60 to 80% of the riders who said "pedal bicycle", "coach" or "other" would in fact keep riding an e-bike to a spot outside the grounds (staff estimate); even 50 such bikes exceed the 16 free council stands.
+
+| Field | Value | Source sentence |
+|---|---|---|
+| Jurisdiction (and what lies just outside) | School grounds: all land in the College's title, including the Verge and the coach bay. Just outside: the Quarry Lane footway (council), Linnet Close and Orchard Row, the Quarry Lane parade with 24 council stands, Spokewright's yard 600 m away. | §3. |
+| Announced / enacted / effective / expires | Announced and adopted 21 January 2027; effective 19 April 2027; no expiry; board review June 2028. | Letter of 21 January 2027; §1. |
+| Enforcement (who, penalties, resources) | The school's own staff on gate duty and its site office; detention, confiscation until a parent collects, Saturday detention. Funded from the school's budget for the year (fees already set); no new staff. | §5. |
+| Rule maker (1.2) | `private`: the board of governors of St Aldric's College, over its own land. Bound parties: students, through the enrollment contract signed by their parents. The College may change its rules during the relationship ("may amend its rules from time to time"). Leaving costs a full term's written notice or a term's fees in lieu (about $6,200), plus finding a place at another school (a rival school is 4 km from Hollin Rise). | Enrollment contract; letter of 21 January 2027. |
+| Stated aim (1.2) | Safety on campus: "e-bikes such as those involved in last year's collisions" (the letter), after 7 campus collisions in 2025-26. In scope: **no** (version 1 has no safety variables). | Letter of 21 January 2027; the board's minute. |
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Ban | `private_rule` (02_ontology.md, 2.3, 1.2): a rule set by the owner of the land, binding through a continuing contract | Riding or parking an electric bicycle on school grounds | Students | From 19 April 2027; "electric bicycle" as in §2 (U1). | Staff (§4). Pedal bicycles; e-scooters carried folded (Behaviour Code §14). |
+| K2 Enforcement | Enforcement | K1 | The school's staff | Gate checks, detentions, confiscation (§5). | — |
+
+Unclear provision:
+- **U1, pedal-assist e-bikes.** §2 defines an electric bicycle as "a bicycle fitted with a motor capable of propelling it". Reading U1-a: every bicycle with a motor, including pedal-assist e-bikes, whose motor propels the bike while the rider pedals. Reading U1-b: only bicycles whose motor can propel them without pedalling (throttle e-bikes); pedal-assist e-bikes are "ordinary bicycles", as the national road law classes them (pedal cycles with assistance up to 25 km/h) and as §2's second sentence might suggest. The letter refers to "e-bikes such as those involved in last year's collisions" (five of seven were throttle e-bikes). The school has issued no guidance and has no practice yet. Under U1-a, 270 riders are bound; under U1-b, 80.
+
+The Verge and the coach bay are school land and §3 names them, so parking just outside the gate on school land is covered under both readings; the boundary that matters is the College's title line. Whether an e-bike with its battery removed is still "fitted with a motor capable of propelling it" is a further question the text leaves open; it is noted, not analyzed.
+
+Readings get no probability; where a sign depends on U1, one sign per reading is given.
+
