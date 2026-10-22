@@ -1,0 +1,274 @@
+{
+ "name": "WE-059 Kestrava Fair Repair Act (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_ag_sale",
+   "buyer": "owners.ag",
+   "seller": "makers.ag",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_phone_sale",
+   "buyer": "owners.phone",
+   "seller": "makers.phone",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_ag_parts",
+   "buyer": "independents.ag",
+   "seller": "makers.ag",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "unsatisfied_buyer": "independents.ag"
+  },
+  {
+   "id": "e_phone_parts",
+   "buyer": "independents.phone",
+   "seller": "makers.phone",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "unsatisfied_buyer": "independents.phone"
+  },
+  {
+   "id": "e_ag_terms",
+   "buyer": "makers.ag",
+   "seller": "owners.ag"
+  },
+  {
+   "id": "e_phone_terms",
+   "buyer": "makers.phone",
+   "seller": "owners.phone"
+  },
+  {
+   "id": "e_phone_pairing",
+   "buyer": "owners.phone",
+   "seller": "makers.phone"
+  }
+ ],
+ "charges": [
+  {
+   "component": "k1",
+   "exchange": "e_ag_sale",
+   "payer_side": "seller",
+   "receiver": "owners.ag",
+   "receipt_variable": "quality_per_unit",
+   "quantity_premises": [
+    "a1",
+    "a2",
+    "a25"
+   ]
+  },
+  {
+   "component": "k1",
+   "exchange": "e_phone_sale",
+   "payer_side": "seller",
+   "receiver": "owners.phone",
+   "receipt_variable": "quality_per_unit",
+   "quantity_premises": [
+    "a1",
+    "a2",
+    "a25"
+   ]
+  }
+ ],
+ "moves": [
+  {
+   "exchange": "e_ag_sale",
+   "side": "buyer",
+   "premises": [
+    "a18"
+   ]
+  },
+  {
+   "exchange": "e_ag_sale",
+   "side": "seller",
+   "premises": [
+    "a6"
+   ]
+  },
+  {
+   "exchange": "e_phone_sale",
+   "side": "seller",
+   "premises": [
+    "a6"
+   ]
+  }
+ ],
+ "fixed": [
+  {
+   "exchange": "e_phone_sale",
+   "side": "buyer",
+   "premises": [
+    "j_nat"
+   ]
+  }
+ ],
+ "banned": [
+  {
+   "component": "k2",
+   "exchange": "e_ag_terms",
+   "premises": [
+    "a2",
+    "j_k2"
+   ]
+  },
+  {
+   "component": "k2",
+   "exchange": "e_phone_terms",
+   "premises": [
+    "a2",
+    "j_k2"
+   ]
+  },
+  {
+   "component": "k3_a",
+   "exchange": "e_phone_pairing",
+   "premises": [
+    "j_k3"
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Parts pairing: does section 5(c) forbid pairing that needs the maker's authorization, or only locks the owner cannot unlock with a tool the maker supplies?",
+   "readings": [
+    "U1-a: pairing that needs the maker's authorization is itself the lock section 5(c) forbids; any part must work fully without contacting the maker, and makers must remove pairing from covered devices",
+    "U1-b: a lock is lawful if the owner or a repairer acting for the owner can pair a genuine part with a tool the maker supplies on fair and reasonable terms; makers may refuse to pair stolen or non-genuine parts"
+   ],
+   "components": {
+    "U1-a": [
+     "k3_a"
+    ],
+    "U1-b": [
+     "k3_b"
+    ]
+   }
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "j_ann"
+   ]
+  },
+  {
+   "component": "k2",
+   "premises": [
+    "j_ann"
+   ]
+  },
+  {
+   "component": "k3_a",
+   "premises": [
+    "j_ann"
+   ]
+  },
+  {
+   "component": "k3_b",
+   "premises": [
+    "j_ann"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "makers.ag"
+  },
+  {
+   "component": "k1",
+   "actor": "makers.phone"
+  },
+  {
+   "component": "k2",
+   "actor": "makers.ag"
+  },
+  {
+   "component": "k2",
+   "actor": "dealers.ag"
+  },
+  {
+   "component": "k2",
+   "actor": "makers.phone"
+  },
+  {
+   "component": "k3_a",
+   "actor": "makers.phone"
+  },
+  {
+   "component": "k3_b",
+   "actor": "makers.phone"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "fixed_budget": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement",
+   "premises": [
+    "j_bud"
+   ]
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Most makers comply with K1 in most cases.",
+   "class": "enforcement",
+   "p": 0.7
+  },
+  "a2": {
+   "text": "Before the Act, makers did not offer independents and owners genuine parts, tools and software on the terms they gave authorized repairers (except one phone maker's national program, which matches on price and meets U1-b), and anti-repair terms were in use.",
+   "class": "binding",
+   "p": 0.9
+  },
+  "a6": {
+   "text": "Makers bear costs from K1 and K2 (margin on repair inputs, supply and support) and seek to recover them through other terms of sale.",
+   "class": "other",
+   "p": 0.85
+  },
+  "a18": {
+   "text": "Farm equipment makers raise list prices in Kestrava relative to Darnholt.",
+   "class": "other",
+   "p": 0.55
+  },
+  "a25": {
+   "text": "For each maker, the lost margin on repair inputs, the voided terms and the costs of compliance outweigh any gain from every rival being bound at once and from buyers' higher valuation of covered units.",
+   "class": "other",
+   "p": 0.7
+  },
+  "j_ann": {
+   "text": "Makers and dealers expected the Act to take effect on 1 September 2028 once it was signed on 1 March 2027.",
+   "class": "expectations",
+   "p": 0.9
+  },
+  "j_nat": {
+   "text": "Phone makers keep their prices the same in every state during the period.",
+   "class": "other",
+   "p": 0.7
+  },
+  "j_k2": {
+   "text": "Makers and dealers stop using terms that restrict repair once such terms are void.",
+   "class": "enforcement",
+   "p": 0.8
+  },
+  "j_k3": {
+   "text": "Where pairing needs the maker's authorization, makers remove that need once pairing is forbidden.",
+   "class": "enforcement",
+   "p": 0.8
+  },
+  "j_bud": {
+   "text": "The Consumer Protection Division handles fewer of its other complaints when repair complaints take its time.",
+   "class": "revenue_use",
+   "p": 0.7
+  }
+ }
+}
