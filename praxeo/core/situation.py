@@ -130,6 +130,14 @@ class Capped(Premised):
     wider_price: bool = Field(default=False, description="The good's price is set in a wider market (CR-6 0.7)")
 
 
+class Penalty(Premised):
+    """CR-8b: a fine due on breaking the rule, from those who break it to those who collect it; its premise is that some
+    break the rule and are fined."""
+    component: str
+    actor: str = Field(description="Those who break the rule and pay")
+    collector: str
+
+
 class Terms(Premised):
     """CR-1 without a payment: the option of trading in an exchange made worse or better for one side (a private rule
     changing the bundle a rule-maker sells its members; a disclosure showing a good worse or better than believed, with
@@ -234,6 +242,7 @@ class Situation(BaseModel):
     backstops: list[Backstop] = []
     grants: list[Grant] = []
     capped: list[Capped] = []
+    penalties: list[Penalty] = Field(default=[], description="CR-8b: fines due on breaking a component's rule")
     terms: list[Terms] = Field(default=[], description="CR-1 without a payment: trading in an exchange made worse or better for one side")
     banned: list[Banned] = []
     incidence: list[Incidence] = Field(default=[], description="CR-7b: which side's alternatives are clearly worse, for a charge or grant on an exchange")
@@ -259,7 +268,7 @@ def _p(prem: list[str]) -> str:
 def facts(s: Situation) -> str:
     out = [f"price_kind({_q(v)})." for v in PRICE_VARIABLES]
     out += ['buy_price("price_paid").', 'sell_price("net_price_received").', 'sell_price("wage_rate").']
-    out += ['share_var(charge, "tax_share_borne").', 'share_var(grant, "subsidy_share_received").']
+    out += ['share_var(charge, "tax_share_borne").', 'share_var(grant, "subsidy_share_received").', 'share_var(penalty, "non_tax_receipts").']
     for e in s.exchanges:
         out += [f"party({e.id}, buyer, {_q(e.buyer)}).", f"party({e.id}, seller, {_q(e.seller)})."]
         for side, a in (("buyer", e.unsatisfied_buyer), ("seller", e.unsatisfied_seller)):
@@ -349,6 +358,8 @@ def facts(s: Situation) -> str:
         out += [f"holder({c.component}, {c.exchange}, {_q(h)})." for h in c.holders]
         if c.wider_price:
             out.append(f"wider_price({c.exchange}).")
+    for pn in s.penalties:
+        out.append(f"penalty({pn.component}, {_q(pn.actor)}, {_q(pn.collector)}, {_p(pn.premises)}).")
     for t in s.terms:
         out.append(f"terms({t.component}, {t.exchange}, {t.side}, {t.direction}, {_p(t.premises)}).")
     for b in s.banned:
@@ -389,7 +400,7 @@ def assumptions(s: Situation) -> dict[str, Assumption]:
 
 # The parts that are a component's own operation (CR-1): under an unclear provision they apply only under the readings
 # that list their component.
-OPERATIONS = ["held", "charges", "terms", "grants", "capped", "banned", "thresholds", "qualifies", "backstops", "discretion", "means",
+OPERATIONS = ["held", "charges", "terms", "penalties", "grants", "capped", "banned", "thresholds", "qualifies", "backstops", "discretion", "means",
               "compliance", "enforcers", "funded", "fixed_budget", "announced", "expires"]
 
 

@@ -29,6 +29,7 @@
 %   terms(C, E, S, W, P1, P2, P3): C makes trading in E worse or better (W) for side S, with no payment (CR-1, CR-5 1.2, CR-11).
 %   charge_premise(C, P1, P2, P3): the charge's own binding and enforcement premises.
 %   dom(A, V, D, P1, P2, P3): CR-12e, the direction D of (A, V) dominates (unwindowed), so only it propagates.
+%   penalty(C, Violator, Collector, P1, P2, P3): a fine due on breaking C (CR-8b).
 %   operating(C): a charge fixed per seller, not per unit (CR-4 0.8).
 %   compliance(C, A). enforcer(C, A). funded(C, A, P1, P2, P3). fixed_budget(C, A, P1, P2, P3).   CR-8c
 %   charge(C, E, Side, Receiver).           CR-1 op 3: C attaches a payment to trading in E, paid by Side, to Receiver
@@ -501,6 +502,16 @@ fired(cr_5, p_tmoves(C, E, S2), c_terms(C, E, S, W)) :- p_tmoves(C, E, S2), c_te
 effect(p_tmoves(C, E, S2), A, V, D, H, invisible, "B") :- p_tmoves(C, E, S2), c_terms(C, E, S, W), terms_price(S, W, D),
                                                          price_var(E, S2, V), party(E, S2, A), moves_h(E, S2, H).
 side_dir(E, S2, D) :- c_terms(_, E, _, W), terms_qty(W, D), side(S2).
+
+% ---------------------------------------------------------------- CR-8b: a sum due on breaking the rule
+% A fine (penalty/6: who breaks the rule, who collects, with the premise that some break it and are fined) is a transfer
+% from the violators to the collector: their means fall by it, the collector's receipts rise. It attaches to the option
+% of breaking the rule, so it makes that option worse for the violators (CR-4), not the legal trade.
+p_penalty(C, A, R) :- penalty(C, A, R, P1, P2, P3), c_acts(C), ok(P1), ok(P2), ok(P3).
+fired(cr_8, p_penalty(C, A, R), P) :- p_penalty(C, A, R), penalty(C, A, R, P1, P2, P3), P = (P1; P2; P3), P != none.
+effect(p_penalty(C, A, R), A, "resources_available_other_uses", decrease, short, invisible, "B") :- p_penalty(C, A, R).
+effect(p_penalty(C, A, R), R, V, increase, short, visible, "B") :- p_penalty(C, A, R), share_var(penalty, V).
+chooser(C, A, worse) :- p_penalty(C, A, _).
 
 % ---------------------------------------------------------------- CR-4 at a line: a measure that binds above a size
 % Where a component binds only on actors whose V exceeds a line (threshold/6: those near it, the measure V of size), crossing

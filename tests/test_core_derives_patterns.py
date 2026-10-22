@@ -454,3 +454,10 @@ def test_a_reading_tagged_fact_of_a_component_that_reading_applies():
 def test_grant_fraud_is_an_outside_margin():
     m = [{"exchange": "e", "kind": "outside", "actor": "producers", "variables": ["informal_activity"], "premises": ["a4"]}]
     assert ("producers", "informal_activity", "increase", None) in _run(**GRANT, margins=m)
+
+
+def test_a_fine_on_breach_is_a_transfer_from_violators():
+    got = _run(exchanges=MENU, banned=[{"component": "k", "exchange": "e", "premises": ["a1"]}],
+               penalties=[{"component": "k", "actor": "restaurants.violating", "collector": "officials.enforcement", "premises": ["a2"]}])
+    assert ("restaurants.violating", "resources_available_other_uses", "decrease", None) in got
+    assert ("officials.enforcement", "non_tax_receipts", "increase", None) in got
