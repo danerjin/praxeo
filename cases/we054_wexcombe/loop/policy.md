@@ -1,0 +1,36 @@
+## 1. Policy record
+
+**Wexcombe Airport Night Curfew and Slot Order.** Wexcombe International Airport (WXI) is run by the Wexcombe Airport Authority (WAA), a public authority owned by the City of Wexcombe and two counties, which sets the airport's operating rules and charges. In the summer 2025 season WXI handled about 420 movements (a takeoff or a landing) a day: about 380 between 06:00 and 23:00, and about 40 between 23:00 and 06:00. Of the night movements, about 22 are an express parcel carrier's night sort (the "integrator"), about 6 are two other cargo carriers, and about 12 are passenger flights (8 late arrivals scheduled 23:00 to 00:30 and 4 early departures scheduled 05:15 to 05:55). On top of these, about 6 movements a night are daytime flights scheduled before 23:00 that run late and operate between 23:00 and 00:00; about 1 a night operates after midnight. The runway's declared capacity is 34 movements an hour (an existing rule, set by the WAA from air traffic control's assessment); the peaks 07:00 to 09:00 and 17:00 to 20:00 run at 30 to 34, the hour 06:00 to 07:00 at about 10 and the hour 22:00 to 23:00 at about 12. Daytime movements have grown about 3% a year and night cargo about 5%. Fourteen airlines operate in the daytime; the three largest operate about 60% of daytime movements. Aircraft average about 150 seats; airlines can move to larger aircraft only as fleets turn over (two to four years), and three of WXI's gates take wide-bodied aircraft.
+
+WXI employs about 11,000 people on site, including about 900 (mostly part-time night shifts) in the integrator's sort; about 30% of airport workers live within 8 km. About 9,000 homes lie inside the WAA's night-noise contour (the area where night noise exceeds the WAA's threshold), with a median value of about $310,000. The WAA's charges (about $2,000 per movement on average, about $13 per seat) are set each year to recover its costs, which are mostly fixed. Its noise office, which handles residents' complaints, costs about $0.5 million a year; about 60% of its cases concern night movements. The WAA estimates the slot coordination unit and curfew monitoring at about $2.8 million a year.
+
+Pellham Regional Airport, 70 km away by motorway (about 55 minutes), is run by a separate authority, has no curfew, and uses about 45% of its runway capacity. About 1,200 homes lie in the area that would be inside a night-noise contour at Pellham if night cargo moved there; Pellham's commuting area holds about 40,000 homes. Overnight parcel delivery is sold in a national market; Wexcombe's region is about 4% of it.
+
+The WAA board published the draft order, including the base seasons, on 2 March 2026, after a residents' campaign for a curfew that had run since 2023. It adopted the order on 15 September 2026. Slots are issued on 1 September 2027; the curfew and the cap take effect with the winter season on 31 October 2027. No expiry; the WAA will review the cap in 2032.
+
+| Field | Value | Source sentence |
+|---|---|---|
+| Jurisdiction (and what lies just outside) | WXI only. Pellham Regional (70 km) has no curfew and spare capacity. | "This Order applies to aircraft movements at Wexcombe International Airport." |
+| Announced / enacted / effective / expires | Draft with base seasons 2 March 2026; adopted 15 September 2026; slots issued 1 September 2027; curfew and cap from 31 October 2027; review 2032; no expiry. | Order, art. 1 and 12. |
+| Enforcement (who, penalties, resources) | WAA, from air traffic control's movement log. $50,000 per movement in the curfew without a dispensation; $10,000 per daytime movement without a slot; slots of a holder fined three times in a season may be withdrawn. Funded from airport charges. | Order, art. 9 to 11. |
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Curfew | `prohibition` | Takeoffs and landings 23:00 to 06:00 | All operators at WXI | None permitted, subject to U1. | Emergencies, medical and state flights. |
+| K2 Daytime cap | `quota` | Movements 06:00 to 23:00 | All operators at WXI | 380 a day (the summer 2025 scheduled number); the existing hourly limit of 34 stays. | As K1. |
+| K3 Allocation by history | `rights_allocation` | The 380 daily slots | WAA | Issued free to airlines in proportion to the daytime movements each operated in the summer 2026 and winter 2026/27 seasons, each slot in the hour of the movement that earned it. | — |
+| K4 Trading | Rule on transfers | Slots | Slot holders | Slots may be sold or leased, and retimed to another daytime hour where the hourly limit leaves room. | — |
+| K5 Freed slots | `rights_allocation` | Slots returned to the WAA | WAA | Slots of a holder that ceases to operate at WXI, or that uses a slot on fewer than 80% of a season's days, return to the WAA and are reissued free, first to night operators (those with night movements in winter 2026/27) in proportion to their night movements, then to new entrants. | — |
+| K6 Enforcement and funding | Enforcement | K1 to K5 | WAA | Penalties as above; costs recovered through the annual charges. | — |
+
+Existing rules: the hourly limit of 34 movements; the WAA's cost-recovery charge method. Both stay in the counterfactual.
+
+Unclear provision:
+- U1, late-running flights. K1 says: "No aircraft shall take off or land between 23:00 and 06:00, save that a flight scheduled to operate before 23:00 and delayed by circumstances beyond the operator's control may be permitted to operate by the duty manager." The WAA's explanatory note says late-running flights "may operate until midnight"; the order itself names no time and no criteria. Reading U1-a: a flight scheduled before 23:00 and delayed may land or take off until 00:00, as of right. Reading U1-b: there is no dispensation for ordinary delays; after 23:00 only emergencies operate, and a late flight diverts (in practice to Pellham) or is cancelled.
+
+Readings get no probability; where a sign depends on one, each reading's sign is reported.
+
+**Figures.** Without the order, daytime movements would be about 409 a day by winter 2027/28 and about 440 by 2030 (3% a year; A-1); the cap holds them at 380. The curfew removes about 40 scheduled night movements a night and, under U1-b, about 6 late-running ones as well. At an illustrative price of $2 million for a slot (one daily movement for every day of the year), the 380 slots are worth about $760 million. A charge of $2,000 per movement spread over about 13% fewer movements than the counterfactual by 2030 rises by about $300 per movement, about $2 per seat. The WAA's slot unit and monitoring ($2.8 million a year) are more than five times its whole noise office ($0.5 million).
+
+The counterfactual is WXI without the order: no curfew, no cap, no slots, daytime and night movements growing as before, and the residents' campaign continuing.
+
