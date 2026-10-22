@@ -1,0 +1,677 @@
+{
+ "employers.covered": [
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e1",
+    "kind": "adjust",
+    "side": "buyer",
+    "actor": "workers.uncovered",
+    "variables": [
+     "employment",
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Employers can move hours between part-time and full-time staff."
+   ],
+   "premise_class": "other",
+   "source": "Employers can move hours between part-time and full-time staff; wages are fixed by pay scales, annual raises and agreements."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e2",
+    "kind": "adjust",
+    "side": "buyer",
+    "actor": "workers.min_wage",
+    "variables": [
+     "employment",
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Employers can move hours between part-time and full-time staff."
+   ],
+   "premise_class": "other",
+   "source": "R1: the minimum wage is $13.50 an hour, indexed yearly."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e1",
+    "kind": "outside",
+    "actor": "employers.covered",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Complaints are unlikely for some workers: short tenure, unaware of the law, fearing retaliation, or owed small sums."
+   ],
+   "premise_class": "enforcement",
+   "source": "K6: enforcement on complaint only, no routine audits."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.covered",
+    "actor": "employers.covered",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "The classification test is weakly enforced in some occupations, so contractor arrangements are open to some employers."
+   ],
+   "premise_class": "enforcement",
+   "source": "K1 exempts independent contractors, as defined by the state's existing classification test; R2 is enforced on complaint and in tax audits."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.covered",
+    "actor": "employers.covered",
+    "variables": [
+     "quantity_substitute"
+    ]
+   },
+   "premises": [
+    "Shift-based employers cover absent shifts, partly through agencies and on-call staff."
+   ],
+   "premise_class": "other",
+   "source": "K2: the employer may not require the employee to find a replacement, so absent shifts are covered by the employer."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.covered",
+    "actor": "workers.full_time",
+    "variables": [
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Employers can move hours between part-time and full-time staff."
+   ],
+   "premise_class": "other",
+   "source": "K1: accrual is capped at 40 hours a year, so hours of full-time staff cost no more once the cap is reached."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.covered",
+    "actor": "workers.uncovered",
+    "variables": [
+     "job_changes"
+    ]
+   },
+   "premises": [
+    "Employers end seasonal and temporary engagements before 90 days to avoid use."
+   ],
+   "premise_class": "other",
+   "source": "K2: sick time is usable after 90 days of employment."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.covered",
+    "actor": "workers.uncovered",
+    "variables": [
+     "allocation_by_non_price_criteria"
+    ]
+   },
+   "premises": [
+    "Employers can infer expected use of sick time from what they see of applicants, and cannot set pay worker by worker to match it."
+   ],
+   "premise_class": "other",
+   "source": "K2: employers may not require documentation or count sick time as an absence."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.covered",
+    "source_variable": "quantity_substitute",
+    "relation": "input",
+    "actor": "intermediaries",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Shift-based employers cover absent shifts, partly through agencies and on-call staff."
+   ],
+   "premise_class": "other",
+   "source": "K2: absent shifts are covered through agencies and on-call staff."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.covered",
+    "source_variable": "price_paid",
+    "relation": "output",
+    "actor": "consumers",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Most competitors of local service sellers are bound too (in Varrow, six or more employees)."
+   ],
+   "premise_class": "other",
+   "source": "Local service sellers' competitors are bound too."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.covered",
+    "source_variable": "price_paid",
+    "relation": "cost",
+    "actor": "export_industries",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Varrow's tradable producers compete with Pellam producers, who are not bound."
+   ],
+   "premise_class": "mobility",
+   "source": "Pellam has no paid sick leave law; Fenmouth lies on the river that forms the border."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.covered",
+    "source_variable": "price_paid",
+    "relation": "substitute",
+    "actor": "employers.small",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Compliant and small firms compete in product markets with uncovered firms."
+   ],
+   "premise_class": "substitutability",
+   "source": "K4 and K5 exempt employers with existing PTO and employers with fewer than six employees."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.covered",
+    "source_variable": "legal_breach",
+    "relation": "same_act",
+    "actor": "officials.enforcement",
+    "variable": "non_tax_receipts"
+   },
+   "premises": [
+    "Complaints are filed in meaningful numbers."
+   ],
+   "premise_class": "enforcement",
+   "source": "K6: civil penalty up to $1,000 for retaliation."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.covered",
+    "source_variable": "legal_breach",
+    "relation": "same_act",
+    "actor": "workers.uncovered",
+    "variable": "resources_available_other_uses"
+   },
+   "premises": [
+    "Complaints are filed in meaningful numbers."
+   ],
+   "premise_class": "enforcement",
+   "source": "K6: back pay for sick time denied or unpaid, plus an equal sum as damages to the employee."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "employers.covered"
+   },
+   "premises": [
+    "Small-business and restaurant associations, unions and compliant employers can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Small-business and restaurant associations and compliant employers."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e1",
+    "side": "buyer",
+    "actor": "owners"
+   },
+   "premises": [
+    "Labor-intensive businesses are valued on expected earnings, and buyers expect the short-run cost before wages adjust."
+   ],
+   "premise_class": "expectations",
+   "source": "Labour-intensive businesses are valued on expected earnings."
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e1",
+    "side": "buyer",
+    "actor": "employers.covered"
+   },
+   "premises": [
+    "Money wages are fixed in the short run by pay scales, annual raises and collective agreements.",
+    "For the marginal worker and employer, the term is worth less to the worker than it costs the employer: they could have agreed on it and did not."
+   ],
+   "premise_class": "other",
+   "source": "K1 pays the sick time at the employee's regular hourly rate."
+  }
+ ],
+ "employers.full_time": [],
+ "employers.near_threshold": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k5a",
+    "chooser": "employers.near_threshold",
+    "actor": "employers.near_threshold",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "The classification test is weakly enforced in some occupations, so contractor arrangements are open to some employers."
+   ],
+   "premise_class": "enforcement",
+   "source": "K1 exempts independent contractors; K5 counts employees."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k5b",
+    "chooser": "employers.near_threshold",
+    "actor": "employers.near_threshold",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "The classification test is weakly enforced in some occupations, so contractor arrangements are open to some employers."
+   ],
+   "premise_class": "enforcement",
+   "source": "K1 exempts independent contractors; K5 counts employees."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k5b",
+    "chooser": "employers.near_threshold",
+    "actor": "workers.part_time",
+    "variables": [
+     "employment"
+    ],
+    "reading": "U2-b"
+   },
+   "premises": [
+    "Employers can move hours between part-time and full-time staff."
+   ],
+   "premise_class": "other",
+   "source": "U2-b: only employees who average 20 hours a week or more count."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k5a",
+    "actor": "employers.near_threshold",
+    "variable": "employment",
+    "mode": "carry_over"
+   },
+   "premises": [
+    "Some firms near six employees value staying exempt more than an extra hire."
+   ],
+   "premise_class": "other",
+   "source": "K5: size is the average number of employees during the previous calendar year."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k5b",
+    "actor": "employers.near_threshold",
+    "variable": "employment",
+    "mode": "carry_over"
+   },
+   "premises": [
+    "Some firms near six employees value staying exempt more than an extra hire."
+   ],
+   "premise_class": "other",
+   "source": "K5: size is the average number of employees during the previous calendar year."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.near_threshold",
+    "source_variable": "employment",
+    "relation": "input",
+    "actor": "workers.prospective",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Some firms near six employees value staying exempt more than an extra hire."
+   ],
+   "premise_class": "other",
+   "source": "K5 exempts employers with fewer than six employees."
+  }
+ ],
+ "officials.enforcement": [],
+ "taxpayers": [],
+ "workers.min_wage": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "workers.min_wage",
+    "actor": "workers.min_wage",
+    "variables": [
+     "job_changes"
+    ]
+   },
+   "premises": [
+    "Some job changes are marginal enough that losing a balance and waiting 90 days decides them."
+   ],
+   "premise_class": "mobility",
+   "source": "K2: usable after 90 days of employment; K3: unused hours are not paid out at separation."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "workers.min_wage",
+    "actor": "workers.min_wage",
+    "variables": [
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Some uncovered workers would have worked while ill, or will use paid hours for other ends, and documentation rules make this hard to police."
+   ],
+   "premise_class": "other",
+   "source": "K2: for the employee's own illness, injury or medical care, or a family member's."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.min_wage",
+    "source_variable": "non_wage_compensation",
+    "relation": "same_act",
+    "actor": "workers.min_wage",
+    "variable": "earnings"
+   },
+   "premises": [
+    "Some uncovered workers would have taken unpaid absences for illness without the Act."
+   ],
+   "premise_class": "other",
+   "source": "K1: paid at the employee's regular hourly rate."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "workers.min_wage"
+   },
+   "premises": [
+    "Small-business and restaurant associations, unions and compliant employers can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Unions."
+  }
+ ],
+ "workers.part_time": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.part_time",
+    "source_variable": "hours_worked",
+    "relation": "substitute",
+    "actor": "workers.full_time",
+    "variable": "hours_worked"
+   },
+   "premises": [
+    "Employers can move hours between part-time and full-time staff."
+   ],
+   "premise_class": "other",
+   "source": "U2-b: only employees who average 20 hours a week or more count."
+  }
+ ],
+ "workers.uncovered": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "workers.uncovered",
+    "actor": "workers.uncovered",
+    "variables": [
+     "job_changes"
+    ]
+   },
+   "premises": [
+    "Some job changes are marginal enough that losing a balance and waiting 90 days decides them."
+   ],
+   "premise_class": "mobility",
+   "source": "K2: usable after 90 days of employment; K3: unused hours are not paid out at separation."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "workers.uncovered",
+    "actor": "workers.uncovered",
+    "variables": [
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Some uncovered workers would have worked while ill, or will use paid hours for other ends, and documentation rules make this hard to police."
+   ],
+   "premise_class": "other",
+   "source": "K2: for the employee's own illness, injury or medical care, or a family member's."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.uncovered",
+    "source_variable": "non_wage_compensation",
+    "relation": "same_act",
+    "actor": "workers.uncovered",
+    "variable": "earnings"
+   },
+   "premises": [
+    "Some uncovered workers would have taken unpaid absences for illness without the Act."
+   ],
+   "premise_class": "other",
+   "source": "K1: paid at the employee's regular hourly rate."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.uncovered",
+    "source_variable": "wage_rate",
+    "relation": "same_act",
+    "actor": "workers.uncovered",
+    "variable": "earnings"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Earnings are wage times hours times employment."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "workers.uncovered"
+   },
+   "premises": [
+    "Small-business and restaurant associations, unions and compliant employers can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Unions."
+  }
+ ],
+ "consumers": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "consumers",
+    "source_variable": "price_paid",
+    "relation": "substitute",
+    "actor": "consumers.border",
+    "variable": "cross_border_purchases"
+   },
+   "premises": [
+    "Fenmouth residents can buy goods and services across the river in Pellam."
+   ],
+   "premise_class": "other",
+   "source": "Its largest city, Fenmouth, lies on the river that forms the border with the State of Pellam, which has no paid sick leave law."
+  }
+ ],
+ "employers.covered#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.covered",
+    "source_variable": "return_on_capital",
+    "relation": "yield",
+    "actor": "employers.covered",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Labor-intensive businesses are valued on expected earnings, and buyers expect the short-run cost before wages adjust."
+   ],
+   "premise_class": "expectations",
+   "source": "Labour-intensive businesses are valued on expected earnings."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.covered",
+    "source_variable": "reclassification",
+    "relation": "same_act",
+    "actor": "workers.contractors",
+    "variable": "employment"
+   },
+   "premises": [
+    "The classification test is weakly enforced in some occupations, so contractor arrangements are open to some employers."
+   ],
+   "premise_class": "enforcement",
+   "source": "K1 exempts independent contractors, as defined by the state's existing classification test."
+  }
+ ],
+ "employers.near_threshold#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.near_threshold",
+    "source_variable": "reclassification",
+    "relation": "same_act",
+    "actor": "workers.contractors",
+    "variable": "employment"
+   },
+   "premises": [
+    "The classification test is weakly enforced in some occupations, so contractor arrangements are open to some employers."
+   ],
+   "premise_class": "enforcement",
+   "source": "K1 exempts independent contractors, as defined by the state's existing classification test."
+  }
+ ],
+ "employers.small": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.small",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.small_firms",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Compliant and small firms compete in product markets with uncovered firms."
+   ],
+   "premise_class": "substitutability",
+   "source": "K5 exempts employers with fewer than six employees."
+  }
+ ],
+ "export_industries": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "export_industries",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.export_industries",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Varrow's tradable producers compete with Pellam producers, who are not bound."
+   ],
+   "premise_class": "mobility",
+   "source": "Pellam has no paid sick leave law."
+  }
+ ],
+ "intermediaries": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "intermediaries",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "workers.agency_on_call",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Shift-based employers cover absent shifts, partly through agencies and on-call staff."
+   ],
+   "premise_class": "other",
+   "source": "K2: absent shifts are covered partly through agencies and on-call staff."
+  }
+ ],
+ "officials.enforcement#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.enforcement",
+    "source_variable": "enforcement_cost",
+    "relation": "paid_from",
+    "actor": "general_fund",
+    "variable": "fund_balance"
+   },
+   "premises": [
+    "The $3.4 million is new money from the general fund."
+   ],
+   "premise_class": "revenue_use",
+   "source": "K6: a new appropriation of $3.4 million a year from the general fund pays for 25 investigators."
+  }
+ ],
+ "owners": [],
+ "workers.full_time": [],
+ "workers.min_wage#2": [],
+ "workers.part_time#2": [],
+ "workers.prospective": [],
+ "workers.uncovered#2": [],
+ "consumers.border": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "consumers.border",
+    "source_variable": "cross_border_purchases",
+    "relation": "substitute",
+    "actor": "retailers",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Fenmouth residents can buy goods and services across the river in Pellam."
+   ],
+   "premise_class": "other",
+   "source": "Its largest city, Fenmouth, lies on the river that forms the border with the State of Pellam."
+  }
+ ],
+ "employers.covered#3": [],
+ "general_fund": [],
+ "workers.agency_on_call": [],
+ "workers.contractors": [],
+ "workers.export_industries": [],
+ "workers.small_firms": []
+}

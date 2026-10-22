@@ -1,0 +1,320 @@
+{
+ "name": "WE-029 Varrow Healthy Workplaces Act (loop_r2 seed)",
+ "exchanges": [
+  {
+   "id": "e1",
+   "buyer": "employers.covered",
+   "seller": "workers.uncovered",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate"
+  },
+  {
+   "id": "e2",
+   "buyer": "employers.covered",
+   "seller": "workers.min_wage",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate"
+  }
+ ],
+ "charges": [
+  {
+   "component": "k1",
+   "exchange": "e1",
+   "payer_side": "buyer",
+   "receiver": "workers.uncovered",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "a6"
+   ],
+   "branch_premises": [
+    "a1",
+    "a2"
+   ],
+   "branch_premise_sets": [
+    [
+     "a12",
+     "a2"
+    ]
+   ],
+   "capped_payers": [
+    "employers.full_time"
+   ]
+  },
+  {
+   "component": "k1",
+   "exchange": "e2",
+   "payer_side": "buyer",
+   "receiver": "workers.min_wage",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "a6"
+   ],
+   "branch_premises": [
+    "a1",
+    "a2"
+   ],
+   "branch_premise_sets": [
+    [
+     "a12",
+     "a2"
+    ]
+   ],
+   "capped_payers": [
+    "employers.full_time"
+   ]
+  },
+  {
+   "component": "k3_2027",
+   "exchange": "e1",
+   "payer_side": "buyer",
+   "receiver": "workers.uncovered",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "a6"
+   ],
+   "branch_premises": [
+    "a1",
+    "a2"
+   ],
+   "branch_premise_sets": [
+    [
+     "a12",
+     "a2"
+    ]
+   ],
+   "capped_payers": [
+    "employers.full_time"
+   ]
+  },
+  {
+   "component": "k3_2027",
+   "exchange": "e2",
+   "payer_side": "buyer",
+   "receiver": "workers.min_wage",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "a6"
+   ],
+   "branch_premises": [
+    "a1",
+    "a2"
+   ],
+   "branch_premise_sets": [
+    [
+     "a12",
+     "a2"
+    ]
+   ],
+   "capped_payers": [
+    "employers.full_time"
+   ]
+  }
+ ],
+ "fixed": [
+  {
+   "exchange": "e1",
+   "side": "seller",
+   "horizon": "short",
+   "premises": [
+    "a3"
+   ]
+  },
+  {
+   "exchange": "e2",
+   "side": "seller",
+   "horizon": "long",
+   "premises": [
+    "a7"
+   ]
+  }
+ ],
+ "moves": [
+  {
+   "exchange": "e1",
+   "side": "buyer",
+   "horizon": "short",
+   "premises": [
+    "a3"
+   ]
+  },
+  {
+   "exchange": "e1",
+   "side": "seller",
+   "horizon": "medium",
+   "premises": [
+    "a5"
+   ]
+  },
+  {
+   "exchange": "e2",
+   "side": "buyer",
+   "horizon": "long",
+   "premises": [
+    "a7"
+   ]
+  }
+ ],
+ "incidence": [
+  {
+   "component": "k1",
+   "exchange": "e1",
+   "side": "seller",
+   "premises": [
+    "a22"
+   ]
+  }
+ ],
+ "thresholds": [
+  {
+   "component": "k5a",
+   "actor": "employers.near_threshold",
+   "variable": "employment",
+   "premises": [
+    "a10"
+   ]
+  },
+  {
+   "component": "k5b",
+   "actor": "workers.part_time",
+   "variable": "hours_worked",
+   "chooser": "employers.near_threshold",
+   "premises": [
+    "a10",
+    "a8"
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Carry-over in the first year: K3 is enforced from 1 January 2028.",
+   "readings": [
+    "U1-a: hours accrued in 2027 and unused on 31 December 2027 must carry into 2028; only enforcement waits",
+    "U1-b: K3 applies only to hours accrued from 2028, so an employer may let 2027 hours lapse at the end of the year"
+   ],
+   "components": {
+    "U1-a": [
+     "k3_2027"
+    ],
+    "U1-b": []
+   }
+  },
+  {
+   "id": "U2",
+   "text": "Counting employees for K5.",
+   "readings": [
+    "U2-a: every person on the payroll counts as one",
+    "U2-b: only employees who average 20 hours a week or more count"
+   ],
+   "components": {
+    "U2-a": [
+     "k5a"
+    ],
+    "U2-b": [
+     "k5b"
+    ]
+   }
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": []
+  },
+  {
+   "component": "k5a",
+   "premises": [
+    "a25"
+   ]
+  },
+  {
+   "component": "k5b",
+   "premises": [
+    "a25"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k6",
+   "actor": "employers.covered"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k6",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k6",
+   "actor": "taxpayers",
+   "premises": [
+    "a20"
+   ]
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "About 38% of private employees lack paid leave usable for illness, so the term binds for them.",
+   "class": "binding",
+   "p": 0.9
+  },
+  "a2": {
+   "text": "Most bound employers comply: payroll vendors build in accrual, and some workers complain.",
+   "class": "enforcement",
+   "p": 0.7
+  },
+  "a3": {
+   "text": "Money wages are fixed in the short run by pay scales, annual raises and collective agreements.",
+   "class": "other",
+   "p": 0.8
+  },
+  "a5": {
+   "text": "Wages above the minimum can adjust over the medium horizon, as raises are set.",
+   "class": "other",
+   "p": 0.8
+  },
+  "a6": {
+   "text": "For the marginal worker and employer, the term is worth less to the worker than it costs the employer: they could have agreed on it and did not.",
+   "class": "other",
+   "p": 0.6
+  },
+  "a7": {
+   "text": "The minimum wage binds for some uncovered workers.",
+   "class": "binding",
+   "p": 0.85
+  },
+  "a8": {
+   "text": "Employers can move hours between part-time and full-time staff.",
+   "class": "other",
+   "p": 0.7
+  },
+  "a10": {
+   "text": "Some firms near six employees value staying exempt more than an extra hire.",
+   "class": "other",
+   "p": 0.6
+  },
+  "a12": {
+   "text": "Some existing PTO policies do not meet the K2 conditions (documentation, notice, increments, attendance points).",
+   "class": "other",
+   "p": 0.8
+  },
+  "a20": {
+   "text": "The $3.4 million is new money from the general fund.",
+   "class": "revenue_use",
+   "p": 0.9
+  },
+  "a22": {
+   "text": "Over the medium to long run, workers' alternatives to bound employment (small firms, contracting, Pellam) are clearly worse than employers' alternatives (automation, redeployment, Pellam).",
+   "class": "mobility",
+   "p": 0.6
+  },
+  "a25": {
+   "text": "Owners of firms near six employees know from mid-2026 that the 2026 average decides their 2027 status.",
+   "class": "expectations",
+   "p": 0.7
+  }
+ }
+}

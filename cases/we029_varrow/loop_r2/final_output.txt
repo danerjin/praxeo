@@ -1,0 +1,52 @@
+DONE in 3 rounds, 15 questions
+R consumers price_paid  increase
+R consumers.border cross_border_purchases  increase
+R employers.covered compliance_cost  increase
+R employers.covered investment_target  decrease
+R employers.covered legal_breach  increase
+R employers.covered lobbying_effort  increase
+R employers.covered price_paid  increase
+R employers.covered quantity_substitute  increase
+R employers.covered quantity_traded  decrease
+R employers.covered reclassification  increase
+R employers.covered resources_available_other_uses  decrease
+R employers.covered return_on_capital  decrease
+R employers.full_time resources_available_other_uses  decrease
+R employers.near_threshold employment  ambiguous
+R employers.near_threshold employment announcement decrease
+R employers.near_threshold reclassification  increase
+R employers.small quantity_supplied  increase
+R export_industries quantity_supplied  decrease
+R general_fund fund_balance  decrease
+R intermediaries quantity_traded  increase
+R officials.enforcement enforcement_cost  increase
+R officials.enforcement non_tax_receipts  increase
+R owners asset_value  decrease
+R retailers quantity_traded  decrease
+R taxpayers resources_available_other_uses  decrease
+R workers.agency_on_call ['employment', 'hours_worked']  at_least_one_increase
+R workers.contractors employment  increase
+R workers.export_industries ['employment', 'hours_worked']  at_least_one_decrease
+R workers.full_time hours_worked  increase
+R workers.min_wage earnings  increase
+R workers.min_wage ['employment', 'hours_worked']  at_least_one_decrease
+R workers.min_wage hours_worked  decrease
+R workers.min_wage job_changes  decrease
+R workers.min_wage lobbying_effort  increase
+R workers.min_wage non_wage_compensation  increase
+R workers.min_wage quantity_traded  decrease
+R workers.part_time employment  ambiguous
+R workers.part_time hours_worked  ambiguous
+R workers.prospective ['employment', 'hours_worked']  ambiguous
+R workers.small_firms ['employment', 'hours_worked']  at_least_one_increase
+R workers.uncovered allocation_by_non_price_criteria  increase
+R workers.uncovered earnings  ambiguous
+R workers.uncovered ['employment', 'hours_worked']  at_least_one_decrease
+R workers.uncovered hours_worked  ambiguous
+R workers.uncovered job_changes  ambiguous
+R workers.uncovered lobbying_effort  increase
+R workers.uncovered non_wage_compensation  increase
+R workers.uncovered quantity_traded  decrease
+R workers.uncovered resources_available_other_uses  increase
+R workers.uncovered tax_share_borne  increase
+R workers.uncovered wage_rate  decrease
