@@ -1,0 +1,877 @@
+{
+ "name": "WE-037 Selvar Fair Ticket Act (loop)",
+ "exchanges": [
+  {
+   "id": "e_resale_fans",
+   "buyer": "buyers.current",
+   "seller": "sellers.fans",
+   "unsatisfied_buyer": "buyers.prospective",
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": "buyers.prospective",
+   "criteria": [
+    "search_cost",
+    "wait_time",
+    "side_payments",
+    "allocation_by_non_price_criteria"
+   ]
+  },
+  {
+   "id": "e_resale_brokers",
+   "buyer": "buyers.current",
+   "seller": "intermediaries.brokers",
+   "unsatisfied_buyer": "buyers.prospective",
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": "buyers.prospective",
+   "criteria": [
+    "search_cost",
+    "wait_time",
+    "side_payments",
+    "allocation_by_non_price_criteria"
+   ]
+  },
+  {
+   "id": "e_platform",
+   "buyer": "buyers.current",
+   "seller": "platforms.compliant",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_bots",
+   "buyer": "intermediaries.brokers",
+   "seller": "sellers.software",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_resale_fans",
+   "direction": "below"
+  },
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_resale_brokers",
+   "direction": "below"
+  },
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1_fee",
+   "exchange": "e_platform",
+   "direction": "below"
+  }
+ ],
+ "margins": [
+  {
+   "premises": [
+    "q11_under_the_attorney_general_s_existing_pr"
+   ],
+   "reading": null,
+   "exchange": "e_resale_fans",
+   "kind": "criterion",
+   "side": null,
+   "actor": "buyers.prospective",
+   "variables": [
+    "side_payments"
+   ]
+  },
+  {
+   "premises": [
+    "q12_the_expected_penalty_for_individual_abov"
+   ],
+   "reading": null,
+   "exchange": "e_resale_fans",
+   "kind": "outside",
+   "side": null,
+   "actor": "buyers.prospective",
+   "variables": [
+    "informal_activity"
+   ]
+  },
+  {
+   "premises": [
+    "q13_some_brokers_keep_reselling_selvar_ticke"
+   ],
+   "reading": null,
+   "exchange": "e_resale_brokers",
+   "kind": "outside",
+   "side": null,
+   "actor": "intermediaries.brokers",
+   "variables": [
+    "informal_activity"
+   ]
+  },
+  {
+   "premises": [
+    "q13_some_brokers_keep_reselling_selvar_ticke"
+   ],
+   "reading": null,
+   "exchange": "e_bots",
+   "kind": "outside",
+   "side": null,
+   "actor": "intermediaries.brokers",
+   "variables": [
+    "informal_activity"
+   ]
+  },
+  {
+   "premises": [
+    "q20_platforms_cut_the_services_they_provide_"
+   ],
+   "reading": null,
+   "exchange": "e_platform",
+   "kind": "adjust",
+   "side": "seller",
+   "actor": "platforms.compliant",
+   "variables": [
+    "quality_per_unit"
+   ]
+  },
+  {
+   "premises": [],
+   "reading": "U1-b",
+   "exchange": "e_resale_fans",
+   "kind": "criterion",
+   "side": null,
+   "actor": "buyers.current",
+   "variables": [
+    "side_payments"
+   ]
+  },
+  {
+   "premises": [
+    "q12_the_expected_penalty_for_individual_abov"
+   ],
+   "reading": null,
+   "exchange": "e_resale_fans",
+   "kind": "outside",
+   "side": null,
+   "actor": "sellers.fans",
+   "variables": [
+    "informal_activity"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q9_some_fans_who_would_have_bought_on_resal"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.prospective",
+   "actor": "sellers.fixed_price",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q9_some_fans_who_would_have_bought_on_resal"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.prospective",
+   "actor": "sellers.demand_priced",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q10_some_fans_of_a_touring_act_substitute_th"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.prospective",
+   "actor": "buyers.border",
+   "variables": [
+    "cross_border_purchases"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q11_under_the_attorney_general_s_existing_pr"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "intermediaries.brokers",
+   "actor": "intermediaries.brokers",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q14_brokers_shift_some_of_their_buying_from_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "intermediaries.brokers",
+   "actor": "intermediaries.brokers",
+   "variables": [
+    "cross_border_purchases"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q21_platforms_raise_the_fee_they_charge_to_s"
+   ],
+   "reading": null,
+   "component": "k1_fee",
+   "chooser": "platforms.compliant",
+   "actor": "sellers.fans",
+   "variables": [
+    "net_price_received"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q21_platforms_raise_the_fee_they_charge_to_s"
+   ],
+   "reading": null,
+   "component": "k1_fee",
+   "chooser": "platforms.compliant",
+   "actor": "intermediaries.brokers",
+   "variables": [
+    "net_price_received"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q22_some_holders_of_high_demand_tickets_who_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "sellers.fans",
+   "actor": "sellers.charities",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q23_offshore_platforms_with_no_selvar_presen",
+    "q24_platforms_compete_for_listings_and_for_b"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "sellers.fans",
+   "actor": "platforms.offshore",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q11_under_the_attorney_general_s_existing_pr"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "sellers.fans",
+   "actor": "sellers.fans",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q8_brokers_platforms_fan_groups_and_primary"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "buyers.current"
+  },
+  {
+   "premises": [
+    "q8_brokers_platforms_fan_groups_and_primary"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "intermediaries.brokers"
+  },
+  {
+   "premises": [
+    "q8_brokers_platforms_fan_groups_and_primary"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "platforms.compliant"
+  },
+  {
+   "premises": [
+    "q8_brokers_platforms_fan_groups_and_primary"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.demand_priced"
+  },
+  {
+   "premises": [
+    "q8_brokers_platforms_fan_groups_and_primary"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.fixed_price"
+  }
+ ],
+ "links": [
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "intermediaries.brokers",
+   "source_variable": "cross_border_purchases",
+   "relation": "same_act",
+   "actor": "sellers.brackmere",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_brokers_purchases_in_primary_sales_are_m",
+    "q16_brokers_bought_a_material_share_of_deman"
+   ],
+   "reading": null,
+   "source_actor": "intermediaries.brokers",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "sellers.demand_priced",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q17_brokers_hold_about_15_of_season_tickets_",
+    "q18_the_season_seats_released_by_brokers_abo"
+   ],
+   "reading": null,
+   "source_actor": "intermediaries.brokers",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "buyers.waitlist",
+   "variable": "wait_time",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "buyers.border",
+   "source_variable": "cross_border_purchases",
+   "relation": "same_act",
+   "actor": "sellers.brackmere",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q11_under_the_attorney_general_s_existing_pr"
+   ],
+   "reading": null,
+   "source_actor": "intermediaries.brokers",
+   "source_variable": "reclassification",
+   "relation": "complement",
+   "actor": "sellers.complements",
+   "variable": "quantity_complement",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q18_the_season_seats_released_by_brokers_abo"
+   ],
+   "reading": null,
+   "source_actor": "owners.season_ticket",
+   "source_variable": "asset_value",
+   "relation": "yield",
+   "actor": "buyers.waitlist",
+   "variable": "wait_time",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "platforms.offshore",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "platforms.compliant",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q26_demand_based_prices_respond_to_demand_wi"
+   ],
+   "reading": null,
+   "source_actor": "sellers.demand_priced",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "buyers.primary",
+   "variable": "price_paid",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q27_primary_sellers_who_already_price_some_s"
+   ],
+   "reading": null,
+   "source_actor": "sellers.demand_priced",
+   "source_variable": "quantity_demanded",
+   "relation": "yield",
+   "actor": "sellers.demand_priced",
+   "variable": "term_prevalence",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q11_under_the_attorney_general_s_existing_pr"
+   ],
+   "reading": null,
+   "source_actor": "sellers.fans",
+   "source_variable": "reclassification",
+   "relation": "complement",
+   "actor": "sellers.complements",
+   "variable": "quantity_complement",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q28_seats_sold_at_fixed_face_values_do_not_r"
+   ],
+   "reading": null,
+   "source_actor": "sellers.fixed_price",
+   "source_variable": "quantity_demanded",
+   "relation": "same_act",
+   "actor": "buyers.primary",
+   "variable": "excess_demand",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q28_seats_sold_at_fixed_face_values_do_not_r"
+   ],
+   "reading": null,
+   "source_actor": "sellers.fixed_price",
+   "source_variable": "quantity_demanded",
+   "relation": "crowding",
+   "actor": "buyers.primary",
+   "variable": "wait_time",
+   "horizon": null
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "q19_broker_businesses_are_valued_on_expected"
+   ],
+   "reading": null,
+   "exchange": "e_resale_brokers",
+   "side": "seller",
+   "actor": "intermediaries.brokers"
+  },
+  {
+   "premises": [
+    "q25_season_seat_rights_trade_at_a_price_that"
+   ],
+   "reading": null,
+   "exchange": "e_resale_fans",
+   "side": "seller",
+   "actor": "owners.season_ticket"
+  }
+ ],
+ "yields": [],
+ "transfers": [
+  {
+   "exchange": "e_resale_fans",
+   "premises": [
+    "a2"
+   ]
+  },
+  {
+   "exchange": "e_resale_brokers",
+   "premises": [
+    "a2"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "platforms.compliant"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [],
+ "fixed_budget": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement",
+   "premises": [
+    "a21"
+   ]
+  }
+ ],
+ "charges": [
+  {
+   "component": "k4_penalty",
+   "premises": [
+    "j1"
+   ],
+   "exchange": "e_resale_fans",
+   "payer_side": "seller",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k4_penalty",
+   "premises": [
+    "j1"
+   ],
+   "exchange": "e_resale_brokers",
+   "payer_side": "seller",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k4_damages",
+   "premises": [
+    "a11"
+   ],
+   "exchange": "e_resale_fans",
+   "payer_side": "seller",
+   "receiver": "buyers.current",
+   "receipt_variable": "resources_available_other_uses",
+   "quantity_premises": [
+    "a11"
+   ],
+   "projection_variable": null,
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k4_damages",
+   "premises": [
+    "a11"
+   ],
+   "exchange": "e_resale_brokers",
+   "payer_side": "seller",
+   "receiver": "buyers.current",
+   "receipt_variable": "resources_available_other_uses",
+   "quantity_premises": [
+    "a11"
+   ],
+   "projection_variable": null,
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  }
+ ],
+ "moves": [],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a8"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "a8"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "buyers.current",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "a8"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "intermediaries.brokers",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "a8"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.fans",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "terms": [],
+ "banned": [
+  {
+   "premises": [
+    "a13"
+   ],
+   "reading": null,
+   "component": "k2",
+   "exchange": "e_bots"
+  }
+ ],
+ "incidence": [],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Section 3 caps the price of a resale at face value plus 10%; section 5 says nothing prevents a platform from charging a reasonable fee for its services.",
+   "readings": [
+    "U1-a: platform fees charged to the buyer are part of the price, so the buyer pays at most face value plus 10% in total",
+    "U1-b: platform fees are charged on top of the capped price, and reasonable is not defined"
+   ],
+   "components": {
+    "U1-a": [
+     "k1_fee"
+    ],
+    "U1-b": []
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [
+  {
+   "premises": [
+    "q29_the_demand_added_in_primary_sales_by_fan"
+   ],
+   "reading": null,
+   "actor": "buyers.primary",
+   "variable": "price_paid",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q29_the_demand_added_in_primary_sales_by_fan"
+   ],
+   "reading": null,
+   "actor": "sellers.demand_priced",
+   "variable": "term_prevalence",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "For high-demand events, the market resale price is above face value plus 10%, so K1 binds.",
+   "p": 0.95,
+   "class": "binding"
+  },
+  "a2": {
+   "text": "Compliant platforms, which carry 77% of resale by value, enforce the cap on their listings.",
+   "p": 0.85,
+   "class": "enforcement"
+  },
+  "a8": {
+   "text": "Holders and buyers know from February 2027 that resales from 1 September will be capped, and can time their sales and purchases.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "a11": {
+   "text": "Buyers sue in meaningful numbers to recover three times the excess.",
+   "p": 0.45,
+   "class": "enforcement"
+  },
+  "a13": {
+   "text": "K2 is enforced enough to cut bot purchases beyond what R1 already did.",
+   "p": 0.45,
+   "class": "enforcement"
+  },
+  "a21": {
+   "text": "The division's budget does not rise with the new work.",
+   "p": 0.8,
+   "class": "revenue_use"
+  },
+  "j1": {
+   "text": "The Attorney General's division brings penalty actions against some above-cap resales.",
+   "p": 0.75,
+   "class": "enforcement"
+  },
+  "q8_brokers_platforms_fan_groups_and_primary": {
+   "text": "Brokers, platforms, fan groups and primary sellers can organize at a cost below their stakes.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q9_some_fans_who_would_have_bought_on_resal": {
+   "text": "Some fans who would have bought on resale at the market price now try to buy in the primary sale, including demand-priced seats.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q10_some_fans_of_a_touring_act_substitute_th": {
+   "text": "Some fans of a touring act substitute the Brackmere City stop for Dunholt.",
+   "p": 0.55,
+   "class": "substitutability"
+  },
+  "q11_under_the_attorney_general_s_existing_pr": {
+   "text": "Under the Attorney General's existing practice, packages whose other items carry most of the price are not treated as tickets, so some sellers use them, and add-ons sold with tickets get past platforms' screening.",
+   "p": 0.6,
+   "class": "enforcement"
+  },
+  "q12_the_expected_penalty_for_individual_abov": {
+   "text": "The expected penalty for individual above-cap resales outside compliant platforms is small enough that some take place.",
+   "p": 0.8,
+   "class": "enforcement"
+  },
+  "q13_some_brokers_keep_reselling_selvar_ticke": {
+   "text": "Some brokers keep reselling Selvar tickets outside the cap and keep using bots for it.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q14_brokers_shift_some_of_their_buying_from_": {
+   "text": "Brokers shift some of their buying from Selvar to Brackmere City events.",
+   "p": 0.6,
+   "class": "mobility"
+  },
+  "q15_brokers_purchases_in_primary_sales_are_m": {
+   "text": "Brokers' purchases in primary sales are made mainly to resell above face value, so the cap removes most of their gain on Selvar high-demand events.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q16_brokers_bought_a_material_share_of_deman": {
+   "text": "Brokers bought a material share of demand-priced seats, so their withdrawal lowers demand for them.",
+   "p": 0.4,
+   "class": "other"
+  },
+  "q17_brokers_hold_about_15_of_season_tickets_": {
+   "text": "Brokers hold about 15% of season tickets mainly to resell single games, and renew fewer once resale is capped.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q18_the_season_seats_released_by_brokers_abo": {
+   "text": "The season seats released (by brokers, about 5,700 at most, and by other holders who renew less now that resale is capped) are fewer than the waiting-list members who still buy at the club's price.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q19_broker_businesses_are_valued_on_expected": {
+   "text": "Broker businesses are valued on expected earnings, and buyers of them expected the cap from introduction.",
+   "p": 0.6,
+   "class": "expectations"
+  },
+  "q20_platforms_cut_the_services_they_provide_": {
+   "text": "Platforms cut the services they provide to buyers when the fee they may charge is capped.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q21_platforms_raise_the_fee_they_charge_to_s": {
+   "text": "Platforms raise the fee they charge to sellers when the fee they may charge to buyers is capped.",
+   "p": 0.6,
+   "class": "substitutability"
+  },
+  "q22_some_holders_of_high_demand_tickets_who_": {
+   "text": "Some holders of high-demand tickets who cannot attend give them to exempt charity auctions rather than resell at the cap.",
+   "p": 0.5,
+   "class": "substitutability"
+  },
+  "q23_offshore_platforms_with_no_selvar_presen": {
+   "text": "Offshore platforms with no Selvar presence are hard for the Attorney General to reach.",
+   "p": 0.65,
+   "class": "mobility"
+  },
+  "q24_platforms_compete_for_listings_and_for_b": {
+   "text": "Platforms compete for listings and for buyers.",
+   "p": 0.7,
+   "class": "mobility"
+  },
+  "q25_season_seat_rights_trade_at_a_price_that": {
+   "text": "Season seat rights trade at a price that reflects expected resale of games.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "q26_demand_based_prices_respond_to_demand_wi": {
+   "text": "Demand-based prices respond to demand within the sale period.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q27_primary_sellers_who_already_price_some_s": {
+   "text": "Primary sellers who already price some seats by demand find it worth doing for more seats once resale is capped.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q28_seats_sold_at_fixed_face_values_do_not_r": {
+   "text": "Seats sold at fixed face values do not rise in price when more buyers try to buy them.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q29_the_demand_added_in_primary_sales_by_fan": {
+   "text": "The demand added in primary sales by fans priced out of resale is larger than the demand lost when brokers withdraw.",
+   "p": 0.7,
+   "class": "other"
+  }
+ }
+}
