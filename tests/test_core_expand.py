@@ -295,7 +295,7 @@ def test_blind_loop_runs_on_the_families_left_on_the_pattern_engine():
           "owners.parking.edge": "owners.garages_ringside", "transit_workers": "workers.transit", "transit_operator": "sellers.transit",
           "ring_road_users": "drivers.through", "owners.zone_commercial": "owners.property_zone",
           "owners.zone_residential": "owners.property_zone", "officials.enforcement": ["officials.enforcement", "officials.revenue"],
-          "businesses.edge": "retailers.neighbors"}, {}, 18),                               # of 71; pattern engine 53
+          "businesses.edge": "retailers.neighbors"}, {}, 19),                               # of 71 (18 before a dominance premise below the cut-off left the clash reported); pattern engine 53
     ]
     for case, example, short, windows, k in cases:
         produced, _ = _loop_score(case, example, short, windows)

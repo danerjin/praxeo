@@ -20,4 +20,4 @@ def test_core_path_end_to_end(tmp_path):
 
 
 def test_fallback_to_patterns_without_core_inputs():
-    assert CP.inputs(ROOT / "cases" / "we017_corrin") is None
+    assert CP.inputs(ROOT / "cases" / "controls" / "ceiling_clear_yes") is None

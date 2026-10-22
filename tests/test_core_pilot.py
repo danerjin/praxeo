@@ -122,4 +122,5 @@ def test_cr12_parts_and_dominance():
     dom = [{"actor": "buyers.border", "variable": "cross_border_purchases", "direction": "increase", "kind": "empirical", "premises": ["a3"]}]
     assert by({**base, "dominance": dom})[("buyers.border", "cross_border_purchases")] == "increase"
     base["assumptions"]["a3"]["p"] = 0.3
-    assert ("buyers.border", "cross_border_purchases") not in by({**base, "dominance": dom})   # the settled sign rests on a3
+    # a dominance premise below the cut-off settles nothing: the clash stays, reported as ambiguous
+    assert by({**base, "dominance": dom})[("buyers.border", "cross_border_purchases")] == "ambiguous"
