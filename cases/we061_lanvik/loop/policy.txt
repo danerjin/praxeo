@@ -1,0 +1,40 @@
+## 1. Policy record
+
+**Lanvik App-Based Work Act 2027.** Lanvik is a state of about 9 million people. Most app-based work is in the Lanvik City metro area, whose eastern suburbs lie across the Tolvar River in the state of Selvane; about 8% of the metro area's app trips start in Selvane, which has no such law. Four network companies operate in Lanvik: two ride-hail platforms and two delivery platforms, each with well over 100 workers. A few local courier cooperatives have fewer than 100.
+
+**Figures (last 12 months, before the Act).** About 140,000 people did at least one ride or delivery; in a typical week about 62,000 are active, about 45% of them on more than one platform. They log about 1.3 million hours a week, of which about 58% (about 754,000 hours) is time on a trip, from accepting a request to completing it. The platforms pay workers an average of 22.40 per hour on a trip (about 11.20 per trip, at about 2.0 trips per hour on a trip: 1.6 for rides, 2.4 for deliveries), or about 13.00 per hour logged in. Workers bear their own vehicle costs (about 4 per hour logged in). About 20% of hours on a trip pay less than 16 per hour on a trip (bicycle couriers on short orders, long low-fare rides). About 75% of hours logged in pay less than 16 per hour logged in. In a typical week about 600 workers spend more than 40 hours on trips for one platform, and about 5,000 are logged in to one platform for more than 40 hours. About 24,000 of those active in a week earn less than 150 from a given platform that week. Riders pay on average about 16.00 a trip; the platforms keep the difference. Platforms set and change workers' fare shares and bonuses unilaterally, usually several times a year, with 30 days' notice.
+
+The state minimum wage is 16 an hour (indexed). Taxis in Lanvik City are licensed separately: the city caps medallions at 1,800 and sets metered fares; medallions trade at about 95,000.
+
+**Statute.**
+- §3. An app-based worker is an employee of the network company unless the company proves that (a) the worker is free from its control and direction in performing the work, (b) the work is outside the usual course of its business, and (c) the worker is customarily engaged in an independently established trade. §3 applies to natural persons who perform rides or deliveries through a network company with 100 or more app-based workers in Lanvik.
+- §5. An employee shall be paid at least the state minimum wage for all engaged time. §5(2): "'Engaged time' means the time from when a worker accepts a request for a ride or delivery until the worker completes it, and any other time during which the worker is required by the network company to remain available to perform work."
+- §6. Engaged time over 40 hours in a workweek with one network company is paid at 1.5 times the regular rate.
+- §7. The network company pays unemployment insurance (2.7%) and state social insurance (8.3%) contributions, 11% in all, on all wages paid to an employee in any week in which the employee's wages from that company exceed 150. Insured wages count toward unemployment benefit eligibility (2,600 in a base year).
+- §9. A network company may elect to offer its app-based workers in Lanvik a contractor agreement; an election applies to all its Lanvik workers. A worker who signs one is not an employee for the purposes of §5 to §7 for the following twelve months, and may revoke it at each anniversary. For every ride or delivery completed under a contractor agreement, the company shall pay the worker, "in addition to the agreed fare share", a premium of 1.50. Employee status must be offered as the default, on a separate screen, and the choice must be freely made.
+- §11. The Department of Labor enforces the Act by audit; workers have a private right of action for double damages; the penalty for misclassification is 5,000 per worker. The Department's budget is raised by 4 million a year from the general fund.
+
+**Arithmetic.** The premium is about 3.00 per hour on a trip (1.50 × 2.0 trips), about 1.74 per hour logged in, and about 9% of the average rider fare. Contributions on an employee paid the average fare share cost about 2.46 per hour on a trip (11% × 22.40). The §7 threshold is a notch: crossing 150 in a week adds about 16.50 of contributions on the first 150. Under U1-a, a worker on a trip at the average rate already earns more than 16 an hour on the trip; the minimum binds on about a fifth of trip hours. Under U1-b, the minimum applies to all logged-in time, and binds on about three quarters of logged-in hours.
+
+The bill was introduced on 10 January 2027 and enacted on 15 March 2027; it takes effect on 1 October 2027, and contractor agreements may be offered from 1 September 2027. No expiry.
+
+| Field | Value | Source sentence |
+|---|---|---|
+| Jurisdiction (and what lies just outside) | Lanvik. Just outside: Selvane (eastern suburbs of the metro area, about 8% of trips); companies with fewer than 100 workers in Lanvik. | §3. |
+| Announced / enacted / effective / expires | Introduced 10 January 2027; enacted 15 March 2027; effective 1 October 2027; no expiry. | §1, §14. |
+| Enforcement (who, penalties, resources) | Department of Labor audits; private suits for double damages; 5,000 per misclassified worker; +4 million a year from the general fund. | §11. |
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Employee presumption | `mandated_contract_term` | The status of app-based workers | Network companies with 100 or more Lanvik workers | Employee unless the three conditions are proved. | Non-natural persons; companies under 100 workers. |
+| K2 Minimum wage on engaged time | `price_floor` | Engaged time of employees | Network companies | 16 an hour of engaged time (U1). | Contractors under K5. |
+| K3 Overtime | `mandated_contract_term` | Engaged time over 40 hours a week with one company | Network companies | 1.5 times the regular rate. | Contractors under K5. |
+| K4 Contributions | `per_unit_tax` (on wages, with a notch) | Employees' wages | Network companies | 11% of all wages in any week in which wages from the company exceed 150. | Weeks at or under 150; contractors under K5. |
+| K5 Buy-out | `mandate_with_charge` | Status | The company elects; each worker chooses | Premium of 1.50 per completed trip, paid to the worker, "in addition to the agreed fare share"; twelve months, revocable at the anniversary. | — |
+| K6 Enforcement | Enforcement | K1 to K5 | Department of Labor | +4 million a year, general fund. | — |
+
+Unclear provision:
+- **U1, waiting time.** Is time logged in and waiting for a request "time during which the worker is required by the network company to remain available"? Reading U1-a: no. A worker may log off at will, so only time on a trip, and any shift a company schedules, is engaged time. Reading U1-b: yes. The apps reduce the priority of workers who decline requests, so a logged-in worker is required to remain available; all logged-in time is engaged time. The Department's draft guidance quotes §5(2) without applying it, and the legislative record is silent.
+
+Readings get no probability; where a sign depends on U1, one sign per reading is given.
+
