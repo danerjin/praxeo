@@ -1,0 +1,815 @@
+{
+ "buyers.state_plan": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "buyers.state_plan",
+    "actor": "buyers.state_plan",
+    "variables": [
+     "quantity_demanded"
+    ],
+    "inverse": true
+   },
+   "premises": [
+    "Some covered residents used less insulin than prescribed at the old price."
+   ],
+   "source": "about 40% of the last group and 15% of high-deductible members said they had used less insulin than prescribed because of cost",
+   "premise_class": "other"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "buyers.state_plan",
+    "actor": "buyers.state_plan",
+    "variables": [
+     "product_attribute"
+    ],
+    "inverse": true
+   },
+   "premises": [
+    "When the patient's payment is the same for every product, some patients and prescribers choose pens or newer analogs over vials and older products."
+   ],
+   "source": "the pharmacy bills the balance to the plan (the patient's payment is $35 for every product)",
+   "premise_class": "substitutability"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "buyers.state_plan",
+    "actor": "buyers.border",
+    "variables": [
+     "cross_border_purchases"
+    ]
+   },
+   "premises": [
+    "Some residents near the Lisvane line filled insulin at Lisvane retail pharmacies before the Act."
+   ],
+   "source": "Lisvane (the two large mail-order pharmacies; border towns 20 minutes away)",
+   "premise_class": "mobility"
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k2",
+    "actor": "buyers.state_plan",
+    "variable": "quantity_traded",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Some covered residents can defer storable insulin purchases from late 2027 to January 2028."
+   ],
+   "source": "The Act was signed on 12 April 2027 and takes effect on 1 January 2028",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.state_plan",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "buyers.state_plan_mail",
+    "variable": "quantity_traded",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Under U1-b, most state-plan members using out-of-state mail order can switch to an in-state pharmacy."
+   ],
+   "source": "Reading U1-b: out-of-state pharmacies collect the plan's ordinary cost sharing",
+   "premise_class": "mobility"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.state_plan",
+    "source_variable": "price_paid",
+    "relation": "own_price",
+    "actor": "buyers.state_plan",
+    "variable": "membership"
+   },
+   "premises": [
+    "Some insulin users move into Tarrenmoor for the cap."
+   ],
+   "source": "the cap lowers average out-of-pocket cost from about $88 to about $34 per fill",
+   "premise_class": "mobility"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.state_plan",
+    "source_variable": "price_paid",
+    "relation": "own_price",
+    "actor": "buyers.high_deductible",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "In high-deductible plans only the member's own payment counts toward the deductible, so a $35 fill counts $35, not the plan's balance."
+   ],
+   "source": "Members of high-deductible plans (about 40%) pay the plan's contracted price ... until the deductible is met",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.state_plan",
+    "source_variable": "product_attribute",
+    "relation": "input",
+    "actor": "insurers",
+    "variable": "subsidy_outlay"
+   },
+   "premises": [
+    "When the patient's payment is the same for every product, some patients and prescribers choose pens or newer analogs over vials and older products."
+   ],
+   "source": "so plans pay about $54 more per fill",
+   "premise_class": "substitutability"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.state_plan",
+    "source_variable": "quantity_demanded",
+    "relation": "input",
+    "actor": "insurers",
+    "variable": "subsidy_outlay"
+   },
+   "premises": [
+    "Some covered residents used less insulin than prescribed at the old price."
+   ],
+   "source": "plus the extra fills of members who rationed, about $34 million in all",
+   "premise_class": "other"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k2",
+    "actor": "buyers.state_plan"
+   },
+   "premises": [
+    "Pharmacies, PBMs, insurers and patient groups can organize at a cost below their stakes."
+   ],
+   "source": "Pharmacies, PBMs, insurers and patient groups can organize",
+   "premise_class": "other"
+  }
+ ],
+ "buyers.state_plan_mail": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.state_plan_mail",
+    "source_variable": "quantity_traded",
+    "relation": "same_act",
+    "actor": "retailers.mail_order",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "source": "about 20% of insulin fills for state-plan members are by mail"
+  }
+ ],
+ "buyers.uninsured": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k3",
+    "chooser": "buyers.uninsured",
+    "actor": "buyers.uninsured",
+    "variables": [
+     "quantity_demanded"
+    ],
+    "inverse": true
+   },
+   "premises": [
+    "Some covered residents used less insulin than prescribed at the old price."
+   ],
+   "source": "about 40% of the last group and 15% of high-deductible members said they had used less insulin than prescribed because of cost",
+   "premise_class": "other"
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k3",
+    "actor": "buyers.uninsured",
+    "variable": "quantity_traded",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Some covered residents can defer storable insulin purchases from late 2027 to January 2028."
+   ],
+   "source": "The Act was signed on 12 April 2027 and takes effect on 1 January 2028",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.uninsured",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "buyers.otc",
+    "variable": "quantity_substitute"
+   },
+   "premises": [
+    "Some over-the-counter human insulin buyers obtain a prescription to buy an analog at $35."
+   ],
+   "source": "3,000 buy human insulin without a prescription at about $25 a vial",
+   "premise_class": "substitutability"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.uninsured",
+    "source_variable": "price_paid",
+    "relation": "substitute",
+    "actor": "buyers.individual_market",
+    "variable": "membership"
+   },
+   "premises": [
+    "Some individual-market insulin users drop coverage because insulin now costs $35 without it."
+   ],
+   "source": "A covered resident is a resident who is uninsured or enrolled in a plan regulated under the insurance code",
+   "premise_class": "substitutability"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_unins",
+    "kind": "outside",
+    "actor": "buyers.ineligible",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Some members of self-funded plans, or residents of Lisvane, attest falsely, and pharmacies cannot easily check."
+   ],
+   "source": "The uninsured resident attests at the pharmacy to having no coverage (section 5)",
+   "premise_class": "enforcement"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k3",
+    "actor": "buyers.uninsured"
+   },
+   "premises": [
+    "Pharmacies, PBMs, insurers and patient groups can organize at a cost below their stakes."
+   ],
+   "source": "Pharmacies, PBMs, insurers and patient groups can organize",
+   "premise_class": "other"
+  }
+ ],
+ "insurers": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "insurers",
+    "actor": "insurers",
+    "variables": [
+     "term_prevalence"
+    ]
+   },
+   "premises": [
+    "Plans may and some do add prior authorization or step therapy for costlier insulin products."
+   ],
+   "source": "which shall pay it on the terms of its pharmacy contract",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "insurers",
+    "source_variable": "subsidy_outlay",
+    "relation": "input",
+    "actor": "employers.insured_group",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Insurers include the added outlay in 2028 premiums, and the insurance commissioner approves it."
+   ],
+   "source": "about 0.36% of state-regulated premiums",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "insurers",
+    "source_variable": "subsidy_outlay",
+    "relation": "input",
+    "actor": "buyers.individual_market",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Insurers include the added outlay in 2028 premiums, and the insurance commissioner approves it."
+   ],
+   "source": "Many individual-market buyers receive national premium credits ... about a third do not",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "insurers",
+    "source_variable": "subsidy_outlay",
+    "relation": "yield",
+    "actor": "treasury",
+    "variable": "tax_revenue"
+   },
+   "premises": [
+    "Insurers include the added outlay in 2028 premiums, and the insurance commissioner approves it."
+   ],
+   "source": "The state levies a 2% premium tax on them, paid into the general fund",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "insurers",
+    "source_variable": "subsidy_outlay",
+    "relation": "supply",
+    "actor": "retailers.in_state",
+    "variable": "net_price_received",
+    "horizon": "long"
+   },
+   "premises": [
+    "Some PBMs press insulin reimbursement rates down at the 2029 renewals because plans now bear what high-deductible members paid.",
+    "2028 PBM contracts with pharmacies are not reopened during the year."
+   ],
+   "source": "Contracts between pharmacy benefit managers and pharmacies run by calendar year",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "insurers",
+    "source_variable": "term_prevalence",
+    "relation": "substitute",
+    "actor": "insurers",
+    "variable": "subsidy_outlay"
+   },
+   "premises": [
+    "Plans may and some do add prior authorization or step therapy for costlier insulin products."
+   ],
+   "source": "plans pay about $54 more per fill",
+   "premise_class": "other"
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "insurers",
+    "variable": "subsidy_outlay",
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "The contracted rates of the insulin products a plan can steer between differ by much less than the $54 a fill the cap shifts to plans."
+   ],
+   "source": "so plans pay about $54 more per fill",
+   "premise_class": "other"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k2",
+    "actor": "insurers"
+   },
+   "premises": [
+    "Pharmacies, PBMs, insurers and patient groups can organize at a cost below their stakes."
+   ],
+   "source": "Pharmacies, PBMs, insurers and patient groups can organize",
+   "premise_class": "other"
+  }
+ ],
+ "officials.enforcement": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.enforcement",
+    "source_variable": "non_tax_receipts",
+    "relation": "paid_into",
+    "actor": "treasury.insulin_fund",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "source": "$1,000 fine for each overcharge, paid into the Fund"
+  }
+ ],
+ "retailers.in_state": [
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_ins",
+    "kind": "outside",
+    "actor": "retailers.in_state",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Some pharmacies collect more than $35, and some are fined."
+   ],
+   "source": "Board of Pharmacy: $1,000 fine for each overcharge",
+   "premise_class": "enforcement"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.in_state",
+    "source_variable": "legal_breach",
+    "relation": "same_act",
+    "actor": "officials.enforcement",
+    "variable": "non_tax_receipts"
+   },
+   "premises": [
+    "Some pharmacies collect more than $35, and some are fined."
+   ],
+   "source": "$1,000 fine for each overcharge, paid into the Fund",
+   "premise_class": "enforcement"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.in_state",
+    "source_variable": "net_price_received",
+    "relation": "output",
+    "actor": "buyers.cash_uncovered",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Most pharmacies have few cash insulin customers outside the Act, so they set their usual price at or near the Fund's limit."
+   ],
+   "source": "The usual and customary price is the price the pharmacy charges a cash-paying customer who is not a covered resident",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.in_state",
+    "source_variable": "quantity_traded",
+    "relation": "supply_price",
+    "actor": "producers.manufacturers",
+    "variable": "net_price_received"
+   },
+   "premises": [
+    "Manufacturers' list prices respond at the margin to how many sales a higher list price loses, so a smaller loss in Tarrenmoor moves them, by a small amount."
+   ],
+   "source": "List prices are set nationally by three manufacturers; the 58,000 users the Act reaches are about 0.7% of the national total",
+   "premise_class": "other"
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_unins",
+    "side": "seller",
+    "actor": "retailers.in_state"
+   },
+   "premises": [
+    "Most pharmacies have few cash insulin customers outside the Act, so they set their usual price at or near the Fund's limit."
+   ],
+   "source": "the Fund pays the pharmacy's usual and customary price, less $35",
+   "premise_class": "other"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k3",
+    "actor": "retailers.in_state"
+   },
+   "premises": [
+    "Pharmacies, PBMs, insurers and patient groups can organize at a cost below their stakes."
+   ],
+   "source": "Pharmacies, PBMs, insurers and patient groups can organize",
+   "premise_class": "other"
+  }
+ ],
+ "retailers.mail_order": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2_mail",
+    "chooser": "retailers.mail_order",
+    "actor": "retailers.mail_order",
+    "variables": [
+     "quantity_supplied"
+    ],
+    "inverse": true,
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Under U1-a, some nonresident permit holders with few Tarrenmoor insulin patients stop shipping insulin there rather than comply with the billing and usual-price rules."
+   ],
+   "source": "Reading U1-a: out-of-state mail-order pharmacies shipping to residents are bound by section 3",
+   "premise_class": "other"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "retailers.mail_order",
+    "actor": "retailers.in_state",
+    "variables": [
+     "entry_rate"
+    ],
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Under U1-b, a PBM opens an in-state licensed mail-order pharmacy to keep its Tarrenmoor insulin fills."
+   ],
+   "source": "Reading U1-b: only 18-4 licensees are bound",
+   "premise_class": "other"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k2",
+    "actor": "retailers.mail_order"
+   },
+   "premises": [
+    "Pharmacies, PBMs, insurers and patient groups can organize at a cost below their stakes."
+   ],
+   "source": "Pharmacies, PBMs, insurers and patient groups can organize",
+   "premise_class": "other"
+  }
+ ],
+ "taxpayers": [],
+ "treasury.insulin_fund": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "treasury.insulin_fund",
+    "source_variable": "subsidy_outlay",
+    "relation": "paid_from",
+    "actor": "treasury",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "source": "such sums as are necessary, from general revenue"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "treasury.insulin_fund",
+    "source_variable": "subsidy_outlay",
+    "relation": "substitute",
+    "actor": "producers.assistance",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Manufacturers apply their payer-of-last-resort clause to the Fund and drop or restrict program enrollment for Tarrenmoor residents."
+   ],
+   "source": "The manufacturers' assistance programs exclude people whose insulin is paid for by any public program or fund",
+   "premise_class": "other"
+  }
+ ],
+ "buyers.border": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.border",
+    "source_variable": "cross_border_purchases",
+    "relation": "same_act",
+    "actor": "retailers.neighbors",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Some residents near the Lisvane line filled insulin at Lisvane retail pharmacies before the Act."
+   ],
+   "source": "Just outside: Lisvane (the two large mail-order pharmacies; border towns 20 minutes away) and Ardmere",
+   "premise_class": "mobility"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.border",
+    "source_variable": "cross_border_purchases",
+    "relation": "substitute",
+    "actor": "retailers.in_state",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Some residents near the Lisvane line filled insulin at Lisvane retail pharmacies before the Act."
+   ],
+   "source": "Tarrenmoor has about 1,050 pharmacies licensed under chapter 18, section 18-4 (pharmacies located in the state)",
+   "premise_class": "mobility"
+  }
+ ],
+ "buyers.cash_uncovered": [],
+ "buyers.high_deductible": [],
+ "buyers.individual_market": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "buyers.individual_market",
+    "actor": "buyers.individual_market",
+    "variables": [
+     "membership"
+    ],
+    "inverse": true
+   },
+   "premises": [
+    "Some individual-market buyers without premium credits are at the margin of buying coverage at a slightly higher premium."
+   ],
+   "source": "Many individual-market buyers receive national premium credits that cap their net premium as a share of income; about a third do not",
+   "premise_class": "substitutability"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.individual_market",
+    "source_variable": "membership",
+    "relation": "same_act",
+    "actor": "insurers",
+    "variable": "membership"
+   },
+   "premises": [],
+   "source": "individual-market plans, 9,000"
+  }
+ ],
+ "buyers.ineligible": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.ineligible",
+    "source_variable": "legal_breach",
+    "relation": "input",
+    "actor": "treasury.insulin_fund",
+    "variable": "subsidy_outlay"
+   },
+   "premises": [
+    "Some members of self-funded plans, or residents of Lisvane, attest falsely, and pharmacies cannot easily check."
+   ],
+   "source": "The uninsured resident attests at the pharmacy to having no coverage (section 5)",
+   "premise_class": "enforcement"
+  }
+ ],
+ "buyers.otc": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.otc",
+    "source_variable": "quantity_substitute",
+    "relation": "same_act",
+    "actor": "retailers.chains",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "source": "Private-label human insulin is sold by national pharmacy chains at one national price",
+   "premise_class": "other"
+  }
+ ],
+ "buyers.state_plan#2": [],
+ "buyers.uninsured#2": [],
+ "employers.insured_group": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "employers.insured_group",
+    "actor": "employers.insured_group",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Some employers near the line between insured and self-funded plans convert."
+   ],
+   "source": "Members of self-funded employer plans, governed by the national Employee Benefit Plans Act, which overrides state insurance law",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.insured_group",
+    "source_variable": "reclassification",
+    "relation": "substitute",
+    "actor": "insurers",
+    "variable": "membership"
+   },
+   "premises": [
+    "Some employers near the line between insured and self-funded plans convert."
+   ],
+   "source": "fully insured group plans, 39,000",
+   "premise_class": "other"
+  }
+ ],
+ "insurers#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "insurers",
+    "source_variable": "term_prevalence",
+    "relation": "substitute",
+    "actor": "buyers.state_plan",
+    "variable": "product_attribute"
+   },
+   "premises": [
+    "Plans may and some do add prior authorization or step therapy for costlier insulin products."
+   ],
+   "source": "Plans may require mail order for maintenance drugs only if members may opt out",
+   "premise_class": "other"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "insurers",
+    "source_variable": "membership",
+    "relation": "yield",
+    "actor": "treasury",
+    "variable": "tax_revenue"
+   },
+   "premises": [],
+   "source": "The state levies a 2% premium tax on them, paid into the general fund",
+   "premise_class": "other"
+  }
+ ],
+ "officials.enforcement#2": [],
+ "producers.assistance": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "producers.assistance",
+    "source_variable": "quantity_supplied",
+    "relation": "substitute",
+    "actor": "buyers.uninsured",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Manufacturers apply their payer-of-last-resort clause to the Fund and drop or restrict program enrollment for Tarrenmoor residents."
+   ],
+   "source": "2,500 receive analog insulin free through manufacturers' patient-assistance programs",
+   "premise_class": "other"
+  }
+ ],
+ "producers.manufacturers": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "producers.manufacturers",
+    "source_variable": "net_price_received",
+    "relation": "input",
+    "actor": "treasury.insulin_fund",
+    "variable": "subsidy_outlay"
+   },
+   "premises": [],
+   "source": "not more than the wholesale acquisition cost plus 20 percent, less $35"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "producers.manufacturers",
+    "source_variable": "net_price_received",
+    "relation": "output",
+    "actor": "buyers.national",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Manufacturers' list prices respond at the margin to how many sales a higher list price loses, so a smaller loss in Tarrenmoor moves them, by a small amount."
+   ],
+   "source": "about 8 million people in the country use insulin",
+   "premise_class": "other"
+  }
+ ],
+ "retailers.in_state#2": [],
+ "retailers.mail_order#2": [],
+ "treasury": [],
+ "treasury.insulin_fund#2": [],
+ "buyers.national": [],
+ "buyers.state_plan#3": [],
+ "employers.insured_group#2": [],
+ "retailers.chains": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.chains",
+    "source_variable": "quantity_traded",
+    "relation": "supply",
+    "actor": "producers.human_insulin",
+    "variable": "full_cost_per_unit",
+    "horizon": "long"
+   },
+   "premises": [
+    "Private-label human insulin cannot be cut back at once: chains buy it under contracted volumes.",
+    "Human insulin is made in a few plants with large fixed costs, so cost per vial rises as output contracts."
+   ],
+   "source": "Private-label human insulin is sold by national pharmacy chains at one national price",
+   "premise_class": "durability"
+  }
+ ],
+ "retailers.neighbors": [],
+ "treasury#2": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "treasury",
+    "variable": "tax_revenue",
+    "direction": "increase",
+    "kind": "arithmetic"
+   },
+   "premises": [
+    "Premium tax lost to employers who convert and members who drop coverage is smaller than the premium tax raised by the added premiums."
+   ],
+   "source": "The state levies a 2% premium tax on them; plans pay about 0.36% of state-regulated premiums more",
+   "premise_class": "other"
+  }
+ ]
+}
