@@ -1,0 +1,13 @@
+{
+ "Employers can adjust hiring and hours at the margin.": 0.85,
+ "Some work can be reshaped as self-employed contracts without much risk of reclassification by the Inspectorate.": 0.7,
+ "Labor-saving equipment and outsourcing are available for some tasks.": 0.75,
+ "Some employers and workers can move part of pay into meal vouchers (up to 150 crowns a month) or employer-paid health insurance premiums at little loss in value to the worker.": 0.7,
+ "Employers move whole operations abroad within five years.": 0.35,
+ "Enforcement against undeclared work is weak enough that some firms expand it, and penalties for it are enforced at least sometimes.": 0.7,
+ "Employer associations and unions organize.": 0.8,
+ "Labor-intensive service firms face competitors with the same cost increase, so they can raise prices.": 0.75,
+ "Labor-intensive service firms cannot replace labor at its old cost within the short to medium run; labor is a material part of their costs.": 0.85,
+ "Employers can move bonus payments into June.": 0.7,
+ "The general-budget transfer to the pension fund is cut by part of the new revenue.": 0.75
+}

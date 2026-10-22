@@ -1,0 +1,45 @@
+{
+ "name": "WE-012 Norvania employer social contribution increase (loop seed)",
+ "exchanges": [
+  {"id": "e_cov", "buyer": "employers.covered", "seller": "workers.covered",
+   "buyer_price_var": "price_paid", "seller_price_var": "wage_rate"},
+  {"id": "e_mw", "buyer": "employers.low_wage", "seller": "workers.min_wage",
+   "buyer_price_var": "price_paid", "seller_price_var": "wage_rate"}
+ ],
+ "charges": [
+  {"component": "k1", "exchange": "e_cov", "payer_side": "buyer", "receiver": "officials.revenue",
+   "receipt_variable": "tax_revenue", "projection_variable": "tax_revenue_vs_static_projection",
+   "capped_payers": ["employers.high_wage"]},
+  {"component": "k1", "exchange": "e_mw", "payer_side": "buyer", "receiver": "officials.revenue",
+   "receipt_variable": "tax_revenue", "projection_variable": "tax_revenue_vs_static_projection"}
+ ],
+ "fixed": [
+  {"exchange": "e_cov", "side": "seller", "horizon": "short", "premises": ["a1"]},
+  {"exchange": "e_mw", "side": "seller", "horizon": "long", "premises": ["a9"]}
+ ],
+ "moves": [
+  {"exchange": "e_cov", "side": "buyer", "horizon": "short", "premises": ["a1"]},
+  {"exchange": "e_cov", "side": "seller", "horizon": "medium", "premises": ["a8", "a12"]},
+  {"exchange": "e_mw", "side": "buyer", "horizon": "long", "premises": ["a9"]}
+ ],
+ "incidence": [
+  {"component": "k1", "exchange": "e_cov", "side": "seller", "premises": ["a8"]}
+ ],
+ "unclear": [
+  {"id": "U1", "text": "Whether the Labor Inspectorate's budget rises.",
+   "readings": ["U1-a: the Inspectorate's budget rises to meet the added enforcement",
+                "U1-b: the Inspectorate's budget does not rise (assumed)"],
+   "components": {"U1-a": ["k2_funded"], "U1-b": ["k2_flat"]}}
+ ],
+ "announced": [{"component": "k1", "premises": []}],
+ "compliance": [{"component": "k2", "actor": "employers.covered"}, {"component": "k2", "actor": "employers.low_wage"}],
+ "enforcers": [{"component": "k2", "actor": "officials.enforcement"}],
+ "funded": [{"component": "k2_funded", "actor": "taxpayers", "premises": []}],
+ "fixed_budget": [{"component": "k2_flat", "actor": "officials.enforcement", "premises": []}],
+ "assumptions": {
+  "a1": {"text": "Money wages are fixed for most workers for the first year (agreements, custom, reluctance to cut).", "class": "other", "p": 0.85},
+  "a8": {"text": "Over the long run, employers have better alternatives to hiring formal labor than most workers have to formal employment.", "class": "mobility", "p": 0.75},
+  "a9": {"text": "The minimum wage plus contribution exceeds what employers will pay for some workers' labor.", "class": "binding", "p": 0.75},
+  "a12": {"text": "Workers do not value the contribution as payment for a benefit.", "class": "other", "p": 0.9}
+ }
+}

@@ -1,0 +1,562 @@
+{
+ "name": "WE-012 Norvania employer social contribution increase (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_cov",
+   "buyer": "employers.covered",
+   "seller": "workers.covered",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_mw",
+   "buyer": "employers.low_wage",
+   "seller": "workers.min_wage",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q5_employers_can_adjust_hiring_and_hours_at"
+   ],
+   "reading": null,
+   "exchange": "e_cov",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.covered",
+   "variables": [
+    "employment",
+    "hours_worked"
+   ]
+  },
+  {
+   "premises": [
+    "q10_enforcement_against_undeclared_work_is_w"
+   ],
+   "reading": null,
+   "exchange": "e_cov",
+   "kind": "outside",
+   "side": null,
+   "actor": "employers.covered",
+   "variables": [
+    "informal_activity"
+   ]
+  },
+  {
+   "premises": [
+    "q5_employers_can_adjust_hiring_and_hours_at"
+   ],
+   "reading": null,
+   "exchange": "e_mw",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.min_wage",
+   "variables": [
+    "employment",
+    "hours_worked"
+   ]
+  },
+  {
+   "premises": [
+    "q10_enforcement_against_undeclared_work_is_w"
+   ],
+   "reading": null,
+   "exchange": "e_mw",
+   "kind": "outside",
+   "side": null,
+   "actor": "employers.low_wage",
+   "variables": [
+    "informal_activity"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q6_some_work_can_be_reshaped_as_self_employ"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.covered",
+   "actor": "employers.covered",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q7_labor_saving_equipment_and_outsourcing_a"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.covered",
+   "actor": "employers.covered",
+   "variables": [
+    "quantity_substitute"
+   ]
+  },
+  {
+   "premises": [
+    "q8_some_employers_and_workers_can_move_part"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.covered",
+   "actor": "workers.covered",
+   "variables": [
+    "non_wage_compensation"
+   ]
+  },
+  {
+   "premises": [
+    "q9_employers_move_whole_operations_abroad_w"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.covered",
+   "actor": "employers.covered",
+   "variables": [
+    "relocation_out_of_area"
+   ]
+  },
+  {
+   "premises": [
+    "q6_some_work_can_be_reshaped_as_self_employ"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.low_wage",
+   "actor": "employers.low_wage",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q7_labor_saving_equipment_and_outsourcing_a"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.low_wage",
+   "actor": "employers.low_wage",
+   "variables": [
+    "quantity_substitute"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q11_employer_associations_and_unions_organiz"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "employers.covered"
+  },
+  {
+   "premises": [
+    "q11_employer_associations_and_unions_organiz"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "employers.low_wage"
+  },
+  {
+   "premises": [
+    "q11_employer_associations_and_unions_organiz"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "workers.covered"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q10_enforcement_against_undeclared_work_is_w"
+   ],
+   "reading": null,
+   "source_actor": "employers.covered",
+   "source_variable": "informal_activity",
+   "relation": "same_act",
+   "actor": "workers.informal",
+   "variable": "employment"
+  },
+  {
+   "premises": [
+    "q6_some_work_can_be_reshaped_as_self_employ"
+   ],
+   "reading": null,
+   "source_actor": "employers.covered",
+   "source_variable": "reclassification",
+   "relation": "same_act",
+   "actor": "workers.self_employed",
+   "variable": "employment"
+  },
+  {
+   "premises": [
+    "q6_some_work_can_be_reshaped_as_self_employ"
+   ],
+   "reading": null,
+   "source_actor": "employers.covered",
+   "source_variable": "reclassification",
+   "relation": "substitute",
+   "actor": "officials.revenue",
+   "variable": "tax_revenue_vs_static_projection"
+  },
+  {
+   "premises": [
+    "q10_enforcement_against_undeclared_work_is_w"
+   ],
+   "reading": null,
+   "source_actor": "employers.covered",
+   "source_variable": "informal_activity",
+   "relation": "substitute",
+   "actor": "officials.revenue",
+   "variable": "tax_revenue_vs_static_projection"
+  },
+  {
+   "premises": [
+    "q10_enforcement_against_undeclared_work_is_w"
+   ],
+   "reading": null,
+   "source_actor": "employers.covered",
+   "source_variable": "informal_activity",
+   "relation": "same_act",
+   "actor": "officials.enforcement",
+   "variable": "non_tax_receipts"
+  },
+  {
+   "premises": [
+    "q7_labor_saving_equipment_and_outsourcing_a"
+   ],
+   "reading": null,
+   "source_actor": "employers.covered",
+   "source_variable": "quantity_substitute",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q12_labor_intensive_service_firms_face_compe",
+    "q13_labor_intensive_service_firms_cannot_rep"
+   ],
+   "reading": null,
+   "source_actor": "employers.low_wage",
+   "source_variable": "price_paid",
+   "relation": "output",
+   "actor": "consumers",
+   "variable": "price_paid"
+  },
+  {
+   "premises": [
+    "q10_enforcement_against_undeclared_work_is_w"
+   ],
+   "reading": null,
+   "source_actor": "employers.low_wage",
+   "source_variable": "informal_activity",
+   "relation": "same_act",
+   "actor": "workers.informal",
+   "variable": "employment"
+  },
+  {
+   "premises": [
+    "q6_some_work_can_be_reshaped_as_self_employ"
+   ],
+   "reading": null,
+   "source_actor": "employers.low_wage",
+   "source_variable": "reclassification",
+   "relation": "same_act",
+   "actor": "workers.self_employed",
+   "variable": "employment"
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "officials.revenue",
+   "source_variable": "tax_revenue",
+   "relation": "same_act",
+   "actor": "officials.pension",
+   "variable": "fund_balance"
+  },
+  {
+   "premises": [
+    "q15_the_general_budget_transfer_to_the_pensi"
+   ],
+   "reading": null,
+   "source_actor": "officials.pension",
+   "source_variable": "fund_balance",
+   "relation": "same_act",
+   "actor": "general_fund",
+   "variable": "fund_balance"
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "general_fund",
+   "source_variable": "fund_balance",
+   "relation": "same_act",
+   "actor": "taxpayers",
+   "variable": "resources_available_other_uses"
+  }
+ ],
+ "assets": [],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k2",
+   "actor": "employers.covered"
+  },
+  {
+   "component": "k2",
+   "actor": "employers.low_wage"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k2",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k2_funded",
+   "actor": "taxpayers",
+   "premises": []
+  }
+ ],
+ "fixed_budget": [
+  {
+   "component": "k2_flat",
+   "actor": "officials.enforcement",
+   "premises": []
+  }
+ ],
+ "charges": [
+  {
+   "component": "k1",
+   "exchange": "e_cov",
+   "payer_side": "buyer",
+   "receiver": "officials.revenue",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [],
+   "capped_payers": [
+    "employers.high_wage"
+   ],
+   "basis": "unit"
+  },
+  {
+   "component": "k1",
+   "exchange": "e_mw",
+   "payer_side": "buyer",
+   "receiver": "officials.revenue",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [],
+   "capped_payers": [],
+   "basis": "unit"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "exchange": "e_cov",
+   "side": "buyer",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "a8",
+    "a12"
+   ],
+   "reading": null,
+   "exchange": "e_cov",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "a9"
+   ],
+   "reading": null,
+   "exchange": "e_mw",
+   "side": "buyer",
+   "horizon": "long"
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": []
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q14_employers_can_move_bonus_payments_into_j"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "workers.covered",
+   "variable": "earnings",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "banned": [],
+ "incidence": [
+  {
+   "premises": [
+    "a8"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_cov",
+   "side": "seller"
+  }
+ ],
+ "fixed": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "exchange": "e_cov",
+   "side": "seller",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "a9"
+   ],
+   "reading": null,
+   "exchange": "e_mw",
+   "side": "seller",
+   "horizon": "long"
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether the Labor Inspectorate's budget rises.",
+   "readings": [
+    "U1-a: the Inspectorate's budget rises to meet the added enforcement",
+    "U1-b: the Inspectorate's budget does not rise (assumed)"
+   ],
+   "components": {
+    "U1-a": [
+     "k2_funded"
+    ],
+    "U1-b": [
+     "k2_flat"
+    ]
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [],
+ "assumptions": {
+  "a1": {
+   "text": "Money wages are fixed for most workers for the first year (agreements, custom, reluctance to cut).",
+   "class": "other",
+   "p": 0.85
+  },
+  "a8": {
+   "text": "Over the long run, employers have better alternatives to hiring formal labor than most workers have to formal employment.",
+   "class": "mobility",
+   "p": 0.75
+  },
+  "a9": {
+   "text": "The minimum wage plus contribution exceeds what employers will pay for some workers' labor.",
+   "class": "binding",
+   "p": 0.75
+  },
+  "a12": {
+   "text": "Workers do not value the contribution as payment for a benefit.",
+   "class": "other",
+   "p": 0.9
+  },
+  "q5_employers_can_adjust_hiring_and_hours_at": {
+   "text": "Employers can adjust hiring and hours at the margin.",
+   "p": 0.85,
+   "class": "alternative_uses"
+  },
+  "q6_some_work_can_be_reshaped_as_self_employ": {
+   "text": "Some work can be reshaped as self-employed contracts without much risk of reclassification by the Inspectorate.",
+   "p": 0.7,
+   "class": "enforcement"
+  },
+  "q7_labor_saving_equipment_and_outsourcing_a": {
+   "text": "Labor-saving equipment and outsourcing are available for some tasks.",
+   "p": 0.75,
+   "class": "substitutability"
+  },
+  "q8_some_employers_and_workers_can_move_part": {
+   "text": "Some employers and workers can move part of pay into meal vouchers (up to 150 crowns a month) or employer-paid health insurance premiums at little loss in value to the worker.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q9_employers_move_whole_operations_abroad_w": {
+   "text": "Employers move whole operations abroad within five years.",
+   "p": 0.35,
+   "class": "mobility"
+  },
+  "q10_enforcement_against_undeclared_work_is_w": {
+   "text": "Enforcement against undeclared work is weak enough that some firms expand it, and penalties for it are enforced at least sometimes.",
+   "p": 0.7,
+   "class": "enforcement"
+  },
+  "q11_employer_associations_and_unions_organiz": {
+   "text": "Employer associations and unions organize.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q12_labor_intensive_service_firms_face_compe": {
+   "text": "Labor-intensive service firms face competitors with the same cost increase, so they can raise prices.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q13_labor_intensive_service_firms_cannot_rep": {
+   "text": "Labor-intensive service firms cannot replace labor at its old cost within the short to medium run; labor is a material part of their costs.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q14_employers_can_move_bonus_payments_into_j": {
+   "text": "Employers can move bonus payments into June.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q15_the_general_budget_transfer_to_the_pensi": {
+   "text": "The general-budget transfer to the pension fund is cut by part of the new revenue.",
+   "p": 0.75,
+   "class": "revenue_use"
+  }
+ }
+}

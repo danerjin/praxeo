@@ -1,0 +1,13 @@
+## 1. Policy record
+
+**Norvania Social Contribution Amendment.** Norvania is a country of about 10 million people. Employers pay a social contribution on each employee's gross wage, up to a ceiling of 6,000 crowns a month; wages above the ceiling bear no contribution. Self-employed people pay a separate contribution of 8% of declared income. A national minimum wage of 1,500 crowns a month applies; about 8% of employees earn at or near it. Collective agreements cover about 40% of employees and fix money wages for one or two years at a time. About 15% of employment is informal (undeclared). Pension benefits are set by a formula based on years worked and past wages, not on the contribution rate. The government announced the increase in the budget on 10 January; it applies to wages paid from 1 July.
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Rate increase | `ad_valorem_tax` on labor (a percentage of the wage) | Gross wages paid to employees, up to the ceiling | Employers | Employer contribution rises from 10% to 14% of the gross wage, up to 6,000 crowns a month per employee. The ceiling is unchanged and not indexed. | Wages above the ceiling. Self-employed income (stays at 8%, paid by the self-employed person). Non-wage benefits: meal vouchers up to 150 crowns a month and employer-paid health insurance premiums. |
+| K2 Enforcement | Enforcement | K1, and the line between employees and contractors | Tax Agency and Labor Inspectorate | Monthly payroll returns; audits; complaint-driven and random inspections for undeclared work and false self-employment; fines. | None |
+
+Revenue use: the contribution is paid into the State Pension Fund. The fund has run a deficit covered by an annual transfer from the general budget; the amendment says that transfer "will be reviewed". Pension benefits do not change. Workers therefore receive nothing in exchange for the higher contribution, which matters for incidence (section 7).
+
+Unclear provisions: whether the Labor Inspectorate's budget rises. Assumed not.
+

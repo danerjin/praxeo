@@ -1,0 +1,40 @@
+DONE in 3 rounds, 11 questions
+R consumers price_paid  increase
+R employers.covered compliance_cost  increase
+R employers.covered informal_activity  increase
+R employers.covered lobbying_effort  increase
+R employers.covered price_paid  increase
+R employers.covered quantity_substitute  increase
+R employers.covered quantity_traded  decrease
+R employers.covered reclassification  increase
+- employers.covered relocation_out_of_area  increase
+R employers.covered resources_available_other_uses  decrease
+R employers.high_wage resources_available_other_uses  decrease
+R employers.low_wage compliance_cost  increase
+R employers.low_wage informal_activity  increase
+R employers.low_wage lobbying_effort  increase
+R employers.low_wage price_paid  increase
+R employers.low_wage quantity_substitute  increase
+R employers.low_wage quantity_traded  decrease
+R employers.low_wage reclassification  increase
+R employers.low_wage resources_available_other_uses  decrease
+R general_fund fund_balance  increase
+R input_suppliers quantity_traded  increase
+R officials.enforcement enforcement_cost  increase
+R officials.enforcement enforcement_cost  ambiguous
+R officials.enforcement non_tax_receipts  increase
+R officials.pension fund_balance  increase
+R officials.revenue tax_revenue  increase
+R officials.revenue tax_revenue_vs_static_projection  decrease
+R taxpayers resources_available_other_uses  ambiguous
+R workers.covered earnings announcement increase
+R workers.covered ['employment', 'hours_worked']  at_least_one_decrease
+R workers.covered lobbying_effort  increase
+R workers.covered non_wage_compensation  increase
+R workers.covered quantity_traded  decrease
+R workers.covered tax_share_borne  increase
+R workers.covered wage_rate  decrease
+R workers.informal employment  increase
+R workers.min_wage ['employment', 'hours_worked']  at_least_one_decrease
+R workers.min_wage quantity_traded  decrease
+R workers.self_employed employment  increase
