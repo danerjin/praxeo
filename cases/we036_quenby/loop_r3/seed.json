@@ -1,0 +1,60 @@
+{
+ "name": "WE-036 Quenby employer health cover mandate, play or pay (expand-loop blind run, loop_r3)",
+ "exchanges": [
+  {"id": "e_work", "buyer": "employers.bound", "seller": "workers.at_bound_firms", "seller_price_var": "wage_rate"}
+ ],
+ "fixed": [
+  {"exchange": "e_work", "side": "seller", "premises": ["a9"]},
+  {"exchange": "e_work", "side": "seller", "premises": ["a3"]}
+ ],
+ "moves": [
+  {"exchange": "e_work", "side": "seller", "premises": ["a6", "a37"]}
+ ],
+ "charges": [
+  {"component": "k1_play", "exchange": "e_work", "payer_side": "buyer", "receiver": "workers.at_offering_firms",
+   "receipt_variable": "non_wage_compensation", "quantity_premises": ["a7"], "branch_premises": ["a2"]},
+  {"component": "k1_pay", "exchange": "e_work", "payer_side": "buyer", "receiver": "officials.revenue",
+   "receipt_variable": "non_tax_receipts", "branch_premises": ["a4"], "capped_payers": ["employers.capped"]}
+ ],
+ "thresholds": [
+  {"component": "k3", "actor": "employers.near_line", "variable": "employment", "premises": ["a14"]},
+  {"component": "k1_hours", "actor": "workers.near_30_hours", "variable": "hours_worked", "chooser": "employers.bound", "premises": ["a10"]},
+  {"component": "k3_seasonal", "actor": "employers.seasonal", "variable": "employment", "premises": ["a33", "a14"]}
+ ],
+ "unclear": [
+  {"id": "U1", "text": "Whether seasonal workers count toward the 50 FTE line of K3.",
+   "readings": ["U1-a: seasonal workers count by their hours, like any other employee",
+                "U1-b: seasonal workers are left out of the count"],
+   "components": {"U1-a": ["k3_seasonal"], "U1-b": []}}
+ ],
+ "announced": [
+  {"component": "k3", "premises": ["a15"]},
+  {"component": "k1_play", "premises": ["a21"]},
+  {"component": "k1_pay", "premises": ["a21"]}
+ ],
+ "compliance": [
+  {"component": "k5", "actor": "employers.bound"}
+ ],
+ "enforcers": [
+  {"component": "k5", "actor": "officials.revenue"},
+  {"component": "k2", "actor": "officials.insurance"}
+ ],
+ "funded": [
+  {"component": "k5", "actor": "taxpayers", "premises": ["a29"]}
+ ],
+ "assumptions": {
+  "a2": {"text": "Some bound firms that offer nothing now choose to offer (mainly those with higher-paid staff who value cover, given the tax exclusion).", "class": "other", "p": 0.75},
+  "a3": {"text": "Money wages are fixed in the short run by pay scales and yearly raises in at-will employment (CR-6, 0.8: stickiness as a premise).", "class": "other", "p": 0.75},
+  "a4": {"text": "Some bound firms choose to pay the charge for at least some full-timers (all the capped firms, many mid-size low-wage firms).", "class": "other", "p": 0.9},
+  "a6": {"text": "Wages above the minimum can adjust over the medium horizon, as raises are set.", "class": "other", "p": 0.8},
+  "a7": {"text": "At players, for the marginal pair, cover at 30% is worth less to the worker than its cost to the employer: they could have agreed on it, with the tax exclusion, and did not.", "class": "other", "p": 0.6},
+  "a9": {"text": "The minimum wage binds for some workers at bound firms.", "class": "binding", "p": 0.85},
+  "a10": {"text": "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost.", "class": "other", "p": 0.75},
+  "a14": {"text": "Some firms near 50 FTE value staying below the line more than the extra work.", "class": "other", "p": 0.7},
+  "a15": {"text": "Owners of firms near 50 know from January 2027 that the 2027 average decides 2028 status.", "class": "expectations", "p": 0.75},
+  "a21": {"text": "Business values reflect expected earnings, and buyers expected the Act from its introduction.", "class": "expectations", "p": 0.7},
+  "a29": {"text": "The $4.1 million is new general-fund money.", "class": "revenue_use", "p": 0.9},
+  "a33": {"text": "Some of the 380 seasonal firms do not offer qualifying cover to their full-timers.", "class": "binding", "p": 0.75},
+  "a37": {"text": "Workers at bound firms cannot all move to unbound work at the old wage in the medium run (the response is partial).", "class": "mobility", "p": 0.9}
+ }
+}
