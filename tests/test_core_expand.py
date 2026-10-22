@@ -131,3 +131,27 @@ def test_blind_loop_runs_after_the_family_forms():
     for case, loop, example, short, windows, k, n in cases:
         produced, total = _loop_score(case, example, short, windows, loop)
         assert (case, len(produced), total) == (case, k, n)
+
+
+def test_blind_loop_runs_on_mandates_after_fixed_prices_and_readings():
+    """Blind mandate runs after fixed prices, unclear provisions and capped payers (a522291): a third WE-036 run and first runs
+    on WE-031 and WE-059. All three writers report reading slips beyond section 1 (section headings, the closing check
+    paragraph; on WE-059 the start of sections 2 and 3), recorded in their notes.md."""
+    cases = [
+        ("we036_quenby", "loop_r3", "WE-036_employer_health_cover_mandate.md",
+         {"insurers": "insurers.health", "workers.uncovered": "workers.at_bound_firms", "workers.at_players": "workers.at_offering_firms",
+          "workers.min_wage": "workers.at_bound_firms", "employers.near_50": "employers.near_line", "workers.near_30": "workers.near_30_hours",
+          "insurers.group": "insurers.health", "employers.small": "employers.unbound", "sellers.contract_services": "employers.staffing",
+          "general_fund": "officials.revenue"},
+         {}, 16, 60),                                                                              # r2 18; pattern engine 29
+        ("we031_westmere", "loop", "WE-031_building_energy_code.md",
+         {"builders": "builders.homes", "officials.enforcement": "officials.building_departments",
+          "owners.buildable_lots": "landowners.buildable_lots", "input_suppliers.efficiency": "makers.efficiency_products",
+          "workers.residential_construction": "workers.construction", "taxpayers.current": "taxpayers"},
+         {"announcement window": "announcement"}, 12, 47),                                         # pattern engine 9
+        ("we059_kestrava", "loop", "WE-059_right_to_repair.md",
+         {"lobbying groups": ["makers.ag", "makers.phone", "dealers.ag", "owners.ag"]}, {}, 9, 47),  # pattern engine 9
+    ]
+    for case, loop, example, short, windows, k, n in cases:
+        produced, total = _loop_score(case, example, short, windows, loop)
+        assert (case, len(produced), total) == (case, k, n)

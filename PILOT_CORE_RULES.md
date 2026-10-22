@@ -256,3 +256,28 @@ Two caveats on blindness:
 - Holders who also sell under a cap are not distinguished.
 - Consolidation of rights into larger hands is not handled.
 - A race conclusion does not propagate, because it is a timing conclusion.
+
+## Step 8: closing the mandate gap
+
+**New forms.** Each has a pattern check.
+- **A fixed price** (`fixed`). A price that cannot move in the period, such as a minimum wage in force or a wage already set, leaves a charge's payer to adjust the terms it controls (CR-6 with CR-1 op 3). That is the group fall in hours, hiring and other benefits under a mandate.
+- **Unclear provisions** (`unclear`). Each reading lists the components it applies, and any fact can be tied to one reading (`reading: "U1-b"`, for example the exempt alternative only that reading opens). The core run goes once per reading and gives a sign per reading where they differ, using the pattern engine's merge.
+- **Revisits in the loop.** A node reached again by new effects can take its own proposals (`actor#2`). Before this, a file-driven run replayed the first list.
+- **Naming.** A branch paid in kind names the subclass that receives it.
+
+**Blind runs on mandates:**
+
+| Case | Core path | Pattern engine | Contradicts the table |
+|---|---|---|---|
+| WE-036, third run | 16/60 (18 in the second, 13 in the first) | 29 | 1: seasonal hiring under the exempting reading, which the reading-tied facts added after the run now let a record state |
+| WE-031 (building code, new case) | 12/47 | 9 | 1: construction work, where the run had no chain for more work per home |
+| WE-059 (right to repair, new case) | 9/47 | 9 | 3: makers' sales and owners' price, signed through a forced quantity premise where the table leaves them ambiguous |
+
+All three writers report reading slips beyond section 1, recorded in their notes:
+- The headings and closing check paragraph that follow the assumption table.
+- On WE-059, the start of sections 2 and 3.
+
+**Where mandates stand:**
+- On the two new mandate cases the core path matches or beats the pattern engine (12 against 9, 9 against 9).
+- On WE-036 it is still well short (16 to 18 against 29). Its table is long, and most of the missing rows are subclass splits (players against payers, near-50 against capped firms) and variables the writers name differently.
+- The variation between runs (13, 18, 16) is now as large as the effect of the forms. Further gains on WE-036 depend more on the proposer than on the rules.

@@ -25,6 +25,7 @@ Side = Literal["buyer", "seller"]
 
 class Premised(BaseModel):
     premises: list[str] = Field(default=[], max_length=3, description="Assumption ids the fact rests on")
+    reading: Optional[str] = Field(default=None, description="A reading label (U1-b): the fact holds only under that reading of an unclear provision")
 
 
 class Exchange(BaseModel):
@@ -341,17 +342,30 @@ def _comp(x) -> Optional[str]:
     return x.get("component") if isinstance(x, dict) else getattr(x, "component", None)
 
 
-def _only(s: Situation, keep) -> Situation:
-    """The situation with each operation part limited to the components `keep` accepts."""
-    return s.model_copy(update={p: [x for x in getattr(s, p) if keep(_comp(x))] for p in OPERATIONS})
+def _reading(x) -> Optional[str]:
+    return x.get("reading") if isinstance(x, dict) else getattr(x, "reading", None)
+
+
+def _only(s: Situation, keep, label: Optional[str] = None) -> Situation:
+    """The situation with each operation part limited to the components `keep` accepts, and every part to the facts that
+    hold under the reading `label` (None: the facts tied to no reading)."""
+    upd = {p: [x for x in getattr(s, p) if keep(_comp(x))] for p in OPERATIONS}
+    for p, f in Situation.model_fields.items():
+        items = upd.get(p, getattr(s, p))
+        if isinstance(items, list):
+            upd[p] = [x for x in items if _reading(x) == label]
+    return s.model_copy(update=upd)
 
 
 def run(s: Situation):
     """The consequences the core rules alone derive from the situation, with CR-12e applied; once per reading of an unclear
     provision, merged with a sign per reading where they differ (engine.run)."""
     conditional = {c for u in s.unclear for cs in u.components.values() for c in cs}
+    labels = lambda u: [r.split(":", 1)[0].strip() for r in u.readings]
+    # under a reading: the components it applies, and the facts tied to it (an alternative only that reading opens)
     unclear = [Unclear(id=u.id, text=u.text, readings=u.readings,
-                       reading_facts={lab: facts(_only(s, lambda c, cs=set(cs): c in cs)) for lab, cs in u.components.items()})
+                       reading_facts={lab: facts(_only(s, lambda c, cs=set(u.components.get(lab, [])): c in cs))
+                                      + facts(_only(s, lambda c: c not in conditional, lab)) for lab in labels(u)})
                for u in s.unclear]
     empty = PolicyRecord(name=s.name, jurisdiction="-", rule_maker="-", enacted="-", effective="-", components=[], unclear=unclear)
     a = assumptions(s)

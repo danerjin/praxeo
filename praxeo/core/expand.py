@@ -40,6 +40,7 @@ class Proposal(BaseModel):
 class Node(BaseModel):
     actor: str
     depth: int
+    visit: int = Field(default=1, description="1 on the first visit; a revisit (new effects reached the actor) counts up")
     effects: list[tuple[str, str, Optional[str]]] = Field(description="(variable, sign, window) of the reported effects on it")
 
 
@@ -57,7 +58,8 @@ class FixtureProposer:
         self.by_actor = {a: [Proposal(**p) for p in ps] for a, ps in json.loads(path.read_text()).items()}
 
     def propose(self, node: Node, situation: S.Situation, policy: str) -> list[Proposal]:
-        return list(self.by_actor.get(node.actor, []))
+        # a revisit k also gets what was written for it under "actor#k" (proposals made once the new effects were seen)
+        return [p for k in range(1, node.visit + 1) for p in self.by_actor.get(_key(node.actor, k), [])]
 
 
 class TextDecider:
@@ -69,6 +71,10 @@ class TextDecider:
     def answer(self, question: Question, record: PolicyRecord) -> Answer:
         p = self.table[question.text]
         return Answer(question_id=question.id, value="yes" if p >= 0.5 else "no", probability=p, rationale="from table", decider=self.name)
+
+
+def _key(actor: str, visit: int) -> str:
+    return actor if visit == 1 else f"{actor}#{visit}"
 
 
 def _slug(text: str) -> str:
@@ -88,6 +94,7 @@ def expand(seed: S.Situation, proposer: Proposer, decider, policy: str = "", max
     record = record or PolicyRecord(name=seed.name, jurisdiction="-", rule_maker="-", enacted="-", effective="-", components=[])
     by_text = {v["text"]: k for k, v in sit.assumptions.items()}
     seen: dict[str, set] = {}        # actor -> the effects it was last proposed for (a node is revisited when new ones reach it)
+    visits: dict[str, int] = {}
     added: set[str] = set()          # facts already in the situation, so a revisit does not add them twice
     run = Run(situation=sit)
     for depth in range(1, max_depth + 1):
@@ -102,7 +109,8 @@ def expand(seed: S.Situation, proposer: Proposer, decider, policy: str = "", max
         run.rounds = depth
         for actor in frontier:
             seen[actor] = set(reached[actor])
-            node = Node(actor=actor, depth=depth, effects=sorted(reached[actor], key=str))
+            visits[actor] = visits.get(actor, 0) + 1
+            node = Node(actor=actor, depth=depth, visit=visits[actor], effects=sorted(reached[actor], key=str))
             for prop in proposer.propose(node, sit, policy):
                 atoms = []
                 for text in prop.premises:
@@ -219,10 +227,9 @@ class FileProposer(FixtureProposer):
         self.missing: list[Node] = []
 
     def propose(self, node: Node, situation: S.Situation, policy: str) -> list[Proposal]:
-        if node.actor not in self.by_actor:
+        if _key(node.actor, node.visit) not in self.by_actor:
             self.missing.append(node)
-            return []
-        return list(self.by_actor[node.actor])
+        return super().propose(node, situation, policy)
 
 
 class FileDecider(TextDecider):
@@ -258,7 +265,7 @@ def main() -> None:
     if prop.missing or dec.missing:
         print("PENDING")
         for n in prop.missing:
-            print(f"node {n.actor} (depth {n.depth}): " + "; ".join(f"{v} {s}" + (f" [{w}]" if w else "") for v, s, w in n.effects))
+            print(f"node {_key(n.actor, n.visit)} (depth {n.depth}" + (", revisit: new effects reached it" if n.visit > 1 else "") + "): " + "; ".join(f"{v} {s}" + (f" [{w}]" if w else "") for v, s, w in n.effects))
         for q in dict.fromkeys(dec.missing):
             print(f"question: {q}")
         return

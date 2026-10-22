@@ -293,3 +293,15 @@ def test_an_unclear_provision_gives_a_sign_per_reading():
            "assumptions": {"a2": P}}
     got = [c for c in S.run(S.Situation(**sit)) if c.actor_class == "employers.seasonal" and c.variable == "employment"]
     assert got and got[0].sign_by_reading == {"U1-a": "decrease", "U1-b": "none"}
+
+
+def test_an_alternative_only_one_reading_opens():
+    sit = {"name": "check", "exchanges": JOBS,
+           "thresholds": [{"component": "k", "actor": "employers.near_line", "variable": "employment", "premises": ["a2"]}],
+           "alternatives": [{"component": "k", "chooser": "employers.near_line", "actor": "employers.near_line",
+                             "variables": ["seasonal_engagements"], "premises": ["a2"], "reading": "U1-b"}],
+           "unclear": [{"id": "U1", "text": "whether seasonal staff count", "readings": ["U1-a: they count", "U1-b: they do not"],
+                        "components": {}}],
+           "assumptions": {"a2": P}}
+    got = [c for c in S.run(S.Situation(**sit)) if c.variable == "seasonal_engagements"]
+    assert got and got[0].sign_by_reading == {"U1-a": "none", "U1-b": "increase"}
