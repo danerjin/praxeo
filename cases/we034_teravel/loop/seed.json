@@ -1,0 +1,198 @@
+{
+ "name": "WE-034 non-compete ban (expand loop)",
+ "exchanges": [
+  {
+   "id": "e_train",
+   "buyer": "employers.trainers",
+   "seller": "workers.trainees",
+   "seller_price_var": "wage_rate"
+  },
+  {
+   "id": "e_hire",
+   "buyer": "employers.hiring",
+   "seller": "workers.bound",
+   "seller_price_var": "wage_rate"
+  }
+ ],
+ "terms": [
+  {
+   "component": "k1",
+   "exchange": "e_train",
+   "side": "buyer",
+   "direction": "worse",
+   "premises": [
+    "a2",
+    "a5"
+   ]
+  },
+  {
+   "component": "k1",
+   "exchange": "e_hire",
+   "side": "buyer",
+   "direction": "better",
+   "premises": [
+    "a2",
+    "a28"
+   ]
+  },
+  {
+   "component": "k1",
+   "exchange": "e_hire",
+   "side": "seller",
+   "direction": "better",
+   "premises": [
+    "a2",
+    "a1"
+   ]
+  },
+  {
+   "component": "k1b",
+   "exchange": "e_hire",
+   "side": "seller",
+   "direction": "better",
+   "premises": [
+    "a2",
+    "a26"
+   ]
+  },
+  {
+   "component": "k1d",
+   "exchange": "e_hire",
+   "side": "seller",
+   "direction": "better",
+   "premises": [
+    "a2",
+    "a29"
+   ]
+  },
+  {
+   "component": "k1c",
+   "exchange": "e_train",
+   "side": "buyer",
+   "direction": "worse",
+   "premises": [
+    "a2",
+    "a26"
+   ]
+  }
+ ],
+ "moves": [
+  {
+   "exchange": "e_hire",
+   "side": "seller",
+   "premises": [
+    "a7"
+   ]
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "n1"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k4",
+   "actor": "employers.trainers"
+  },
+  {
+   "component": "k4",
+   "actor": "employers.hiring"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k5",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "fixed_budget": [
+  {
+   "component": "k5",
+   "actor": "officials.enforcement",
+   "premises": [
+    "a18"
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Does K3(c) cover a paid notice period of six to twelve months in which the worker may not work for anyone else?",
+   "readings": [
+    "U1-a: yes, any paid notice period in which the worker remains employed is preserved",
+    "U1-b: no, a notice period long enough to keep the worker out of the field is a restraint in effect and void under K1"
+   ],
+   "components": {
+    "U1-a": [],
+    "U1-b": [
+     "k1b"
+    ]
+   }
+  },
+  {
+   "id": "U2",
+   "text": "Is a term requiring a worker who leaves within 24 months to repay employer-paid training a penalty under K1?",
+   "readings": [
+    "U2-a: yes, it penalizes leaving, and leaving is how one comes to work for another",
+    "U2-b: no, it applies to every departure and only recovers a cost"
+   ],
+   "components": {
+    "U2-a": [
+     "k1c"
+    ],
+    "U2-b": []
+   }
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Non-competes deter some bound workers from moves to rivals or start-ups they would otherwise make.",
+   "p": 0.8,
+   "class": "binding"
+  },
+  "a2": {
+   "text": "Employers stop enforcing, and workers learn that the clause is void (K4 notices, damages and fee-shifting).",
+   "p": 0.8,
+   "class": "enforcement"
+  },
+  "a5": {
+   "text": "In a material share of trainee jobs, the non-compete protected the employer's recovery of the cost of general training.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "a7": {
+   "text": "Some bound workers are paid less than a rival would pay them.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "a18": {
+   "text": "The Labor Bureau's budget is not raised for the new task.",
+   "p": 0.7,
+   "class": "revenue_use"
+  },
+  "a26": {
+   "text": "In the counterfactual, some Teravel employment contracts contain paid notice periods of six months or more, and some contain training repayment agreements.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "a28": {
+   "text": "In the counterfactual, firms that hire a bound worker from a rival bear litigation risk, demand letters or buy-out payments.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "a29": {
+   "text": "Some existing contracts contain forfeiture-for-competition clauses (deferred pay lost only on joining a competitor).",
+   "p": 0.75,
+   "class": "other"
+  },
+  "n1": {
+   "text": "Employers and workers expect the Act to take effect on 1 January 2026 once it has passed.",
+   "p": 0.9,
+   "class": "expectations"
+  }
+ }
+}

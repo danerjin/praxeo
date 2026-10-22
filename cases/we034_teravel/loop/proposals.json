@@ -1,0 +1,555 @@
+{
+ "employers.hiring": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.hiring",
+    "actor": "employers.hiring",
+    "variables": [
+     "enrollment"
+    ]
+   },
+   "premises": [
+    "Some firms hire more trained staff than they train."
+   ],
+   "source": "Some firms hire more trained staff than they train (A-16)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.hiring",
+    "actor": "employers.hiring",
+    "variables": [
+     "relocation_out_of_area"
+    ]
+   },
+   "premises": [
+    "Firms that rely on hiring experienced staff, and founders, prefer to locate where staff are mobile."
+   ],
+   "source": "Firms that rely on hiring experienced staff, and founders, prefer to locate where staff are mobile (A-24)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.hiring",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "intermediaries",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Recruiters handle a material share of experienced hires in these fields."
+   ],
+   "source": "Recruiters handle a material share of experienced hires (A-21)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.hiring",
+    "source_variable": "quantity_traded",
+    "relation": "same_act",
+    "actor": "workers.mossgrave",
+    "variable": "job_changes"
+   },
+   "premises": [
+    "Mossgrave-bound workers escape their restraints by taking Teravel jobs."
+   ],
+   "source": "K1 applies to employers of workers who primarily work in Teravel, whatever law the contract chooses; about 60,000 people commute across the river each way (A-25)."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "employers.hiring"
+   },
+   "premises": [
+    "Employers' associations, worker groups and start-up associations can organize at a cost below their stake."
+   ],
+   "source": "Start-up associations can organize at a cost below their stake (A-13)."
+  }
+ ],
+ "employers.trainers": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.trainers",
+    "actor": "employers.trainers",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "For many employers, reshaping restraints into the preserved forms costs less than the protection it restores."
+   ],
+   "source": "K3 preserves non-disclosure, 12-month non-solicitation, notice periods and plan forfeiture; reshaping restraints costs less than the protection it restores (A-4)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.trainers",
+    "actor": "employers.trainers",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Employers turn to trade-secret and non-solicitation claims against departing staff."
+   ],
+   "source": "The Trade Secrets Act is unchanged; employers turn to trade-secret and non-solicitation claims (A-19)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.trainers",
+    "actor": "employers.trainers.practices",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Courts accept bona fide partnership buy-ins as within K2, and practices use them."
+   ],
+   "source": "K2 exempts restraints given by a person who sells an ownership interest in a business (A-11)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.trainers",
+    "actor": "employers.trainers",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Token equity grants, made only to bring a restraint within K2, qualify."
+   ],
+   "source": "K2 states no minimum share (A-12)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.trainers",
+    "actor": "employers.trainers",
+    "variables": [
+     "relocation_out_of_area"
+    ]
+   },
+   "premises": [
+    "Some employers locate new training-intensive work in Mossgrave because restraints are enforceable there."
+   ],
+   "source": "Mossgrave enforces non-competes (A-22)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.trainers",
+    "actor": "workers.bound",
+    "variables": [
+     "earnings"
+    ]
+   },
+   "premises": [
+    "Employers expand unvested deferred pay and retention bonuses."
+   ],
+   "source": "K3(d) preserves forfeiture of unvested pay under a plan that applies to every departure (A-10)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.trainers",
+    "actor": "employers.trainers",
+    "variables": [
+     "term_prevalence"
+    ],
+    "reading": "U1-a"
+   },
+   "premises": [
+    "In the counterfactual, some Teravel employment contracts contain paid notice periods of six months or more, and some contain training repayment agreements."
+   ],
+   "source": "U1-a: any paid notice period in which the worker remains employed is preserved."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.trainers",
+    "actor": "employers.trainers",
+    "variables": [
+     "term_prevalence"
+    ],
+    "reading": "U2-b"
+   },
+   "premises": [
+    "In the counterfactual, some Teravel employment contracts contain paid notice periods of six months or more, and some contain training repayment agreements."
+   ],
+   "source": "U2-b: a repayment term applies to every departure and only recovers a cost."
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_train",
+    "side": "buyer",
+    "actor": "employers.trainers"
+   },
+   "premises": [
+    "Non-competes protected a material part of net trainers' expected yield."
+   ],
+   "source": "Non-competes protected a material part of net trainers' expected yield (A-15)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.trainers",
+    "source_variable": "return_on_capital",
+    "relation": "yield",
+    "actor": "employers.trainers",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Net trainers cut employer-funded training when its expected yield falls."
+   ],
+   "source": "Employer-funded training is an investment of net trainers (A-5, A-15)."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_train",
+    "kind": "outside",
+    "actor": "employers.trainers",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Employers keep writing void clauses and rely on workers not knowing."
+   ],
+   "source": "K1 makes such terms void; K5 lets workers sue employers that put one in a contract (A-20)."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "employers.trainers"
+   },
+   "premises": [
+    "Employers' associations, worker groups and start-up associations can organize at a cost below their stake."
+   ],
+   "source": "Employers' associations can organize at a cost below their stake (A-13)."
+  }
+ ],
+ "workers.bound": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "workers.bound",
+    "actor": "workers.bound.out_of_field",
+    "variables": [
+     "job_changes"
+    ]
+   },
+   "premises": [
+    "In the counterfactual, some bound workers change employer by leaving their field."
+   ],
+   "source": "In the counterfactual some bound workers change employer by leaving their field (A-8)."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "workers.bound",
+    "variable": "job_changes",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Some bound workers would have moved to rivals in 2025, by buy-out or litigation, and can wait."
+   ],
+   "source": "Passed 12 June 2025, effective 1 January 2026; some bound workers would have moved in 2025 and can wait (A-14)."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "workers.bound",
+    "variable": "job_changes",
+    "mode": "carry_over"
+   },
+   "premises": [
+    "Some bound workers who would not have moved in 2025 in the counterfactual move late in 2025, because a suit against them would be pending on 1 January 2026 and decided under the Act."
+   ],
+   "source": "K1 applies to pending cases, which are decided under the Act (A-27)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.bound",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "entrants",
+    "variable": "entry_rate"
+   },
+   "premises": [
+    "Some bound workers have plans to start a firm in their field that the non-compete blocks."
+   ],
+   "source": "Some bound workers have plans to start a firm that the non-compete blocks (A-3)."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "workers.bound"
+   },
+   "premises": [
+    "Employers' associations, worker groups and start-up associations can organize at a cost below their stake."
+   ],
+   "source": "Worker groups can organize at a cost below their stake (A-13)."
+  }
+ ],
+ "workers.trainees": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "workers.trainees",
+    "actor": "workers.trainees",
+    "variables": [
+     "enrollment"
+    ]
+   },
+   "premises": [
+    "In a material share of trainee jobs, the non-compete protected the employer's recovery of the cost of general training."
+   ],
+   "source": "In a material share of trainee jobs the non-compete protected recovery of the cost of general training (A-5)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.trainees",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "entrants",
+    "variable": "entry_rate",
+    "horizon": "long"
+   },
+   "premises": [
+    "Employer-funded training or trainee hiring (not only trainee pay) falls enough to thin the pool of would-be founders in the bound fields within the horizon of C-3."
+   ],
+   "source": "Employer-funded training or trainee hiring falls enough to thin the pool of would-be founders (A-30)."
+  }
+ ],
+ "employers.hiring#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.hiring",
+    "source_variable": "enrollment",
+    "relation": "input",
+    "actor": "workers.trainees",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Some firms hire more trained staff than they train."
+   ],
+   "source": "Some firms hire more trained staff than they train (A-16)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.hiring",
+    "source_variable": "relocation_out_of_area",
+    "relation": "same_act",
+    "actor": "neighboring_jurisdictions",
+    "variable": "employment"
+   },
+   "premises": [
+    "Firms that rely on hiring experienced staff, and founders, prefer to locate where staff are mobile."
+   ],
+   "source": "Teravel's largest city lies on a river whose far bank is in Mossgrave, which enforces non-competes (A-24)."
+  }
+ ],
+ "employers.trainers#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.trainers",
+    "source_variable": "relocation_out_of_area",
+    "relation": "same_act",
+    "actor": "neighboring_jurisdictions",
+    "variable": "employment"
+   },
+   "premises": [
+    "Some employers locate new training-intensive work in Mossgrave because restraints are enforceable there."
+   ],
+   "source": "Mossgrave enforces non-competes (A-22)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.trainers",
+    "source_variable": "reclassification",
+    "relation": "substitute",
+    "actor": "workers.bound",
+    "variable": "job_changes"
+   },
+   "premises": [
+    "Substitute restraints such as non-solicitation, unvested pay and retention bonuses deter some moves to rivals."
+   ],
+   "source": "K3 preserves non-solicitation for up to 12 months and forfeiture of unvested pay (A-6, A-9)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.trainers",
+    "source_variable": "reclassification",
+    "relation": "yield",
+    "actor": "employers.trainers",
+    "variable": "return_on_capital"
+   },
+   "premises": [
+    "For many employers, reshaping restraints into the preserved forms costs less than the protection it restores."
+   ],
+   "source": "Reshaping restraints into the preserved forms restores part of the protection (A-4)."
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "employers.trainers",
+    "variable": "return_on_capital",
+    "direction": "decrease",
+    "kind": "empirical"
+   },
+   "premises": [
+    "Substitute restraints (non-solicitation, unvested pay, and under U2-b repayment agreements) do not fully restore that protection."
+   ],
+   "source": "Substitute restraints do not fully restore that protection (A-6)."
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "employers.trainers",
+    "variable": "investment_target",
+    "direction": "decrease",
+    "kind": "empirical"
+   },
+   "premises": [
+    "Substitute restraints (non-solicitation, unvested pay, and under U2-b repayment agreements) do not fully restore that protection."
+   ],
+   "source": "Substitute restraints do not fully restore that protection (A-6)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.trainers",
+    "source_variable": "term_prevalence",
+    "relation": "substitute",
+    "actor": "workers.bound",
+    "variable": "job_changes",
+    "reading": "U1-a"
+   },
+   "premises": [
+    "A paid notice period of six to twelve months keeps the worker out of the field."
+   ],
+   "source": "U1-a: a paid notice period in which the worker remains employed is preserved."
+  }
+ ],
+ "employers.trainers.practices": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.trainers.practices",
+    "source_variable": "reclassification",
+    "relation": "substitute",
+    "actor": "workers.bound",
+    "variable": "job_changes"
+   },
+   "premises": [
+    "Substitute restraints such as non-solicitation, unvested pay and retention bonuses deter some moves to rivals."
+   ],
+   "source": "K2 exempts restraints given by a person who sells an ownership interest."
+  }
+ ],
+ "customers": [],
+ "entrants#2": [],
+ "neighboring_jurisdictions": [],
+ "workers.bound#3": [],
+ "entrants": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "entrants",
+    "source_variable": "entry_rate",
+    "relation": "supply",
+    "actor": "customers",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Spin-off entry adds supply that is not offset elsewhere (RS-13), and experienced staff pay is a material part of these services' costs (RS-14)."
+   ],
+   "source": "Spin-off entry adds supply that is not offset elsewhere (A-23)."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "entrants"
+   },
+   "premises": [
+    "Employers' associations, worker groups and start-up associations can organize at a cost below their stake."
+   ],
+   "source": "Start-up associations can organize at a cost below their stake (A-13)."
+  }
+ ],
+ "intermediaries": [],
+ "workers.bound#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.bound",
+    "source_variable": "quantity_traded",
+    "relation": "same_act",
+    "actor": "workers.bound",
+    "variable": "job_changes"
+   },
+   "premises": [],
+   "source": "A move to a rival is a new contract struck in the exchange."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.bound",
+    "source_variable": "wage_rate",
+    "relation": "output",
+    "actor": "customers",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Spin-off entry adds supply that is not offset elsewhere (RS-13), and experienced staff pay is a material part of these services' costs (RS-14)."
+   ],
+   "source": "Experienced staff pay is a material part of these services' costs (A-23)."
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "workers.bound",
+    "variable": "job_changes",
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "Substitute retention devices deter fewer moves to rivals than non-competes did (dominance premise, CR-12e)."
+   ],
+   "source": "Substitute retention devices deter fewer moves to rivals than non-competes did (A-9)."
+  }
+ ],
+ "workers.bound.out_of_field": [],
+ "officials.enforcement": []
+}
