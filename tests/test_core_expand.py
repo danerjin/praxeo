@@ -200,3 +200,31 @@ def test_blind_loop_runs_with_the_controlled_names():
     for case, loop, short, windows, k in cases:
         produced, _ = _loop_score(case, examples[case], short, windows, loop)
         assert (case, loop, len(produced)) == (case, loop, k)
+
+
+def test_blind_loop_runs_with_incidence_and_horizons():
+    """Runs after incidence (CR-7b) and horizons on moves and fixed (86c9546), from extracted files only. WE-012 and WE-029
+    were used to write the pattern rules (taxes, mandates), so the pattern engine's counts there are in sample."""
+    cases = [
+        ("we036_quenby", "loop_r6", "WE-036_employer_health_cover_mandate.md",
+         {"workers.uncovered": ["workers.at_paying_firms", "workers.at_offering_firms"], "workers.at_players": "workers.at_offering_firms",
+          "employers.players": "employers.offering", "employers.payers_midsize": "employers.paying",
+          "employers.near_50": "employers.near_threshold", "workers.capped_firms": "workers.at_capped_firms",
+          "workers.near_30": "workers.near_30_hours", "general_fund": ["treasury", "officials.revenue"],
+          "sellers.contract_services": "contractors", "insurers.group": "insurers", "insurers.individual": "insurers.individual_market",
+          "neighboring_jurisdictions": "producers.tarnley", "providers.medical": "sellers.hospital_care"},
+         {}, 24),     # runs 1 to 5: 13, 18, 16, 19, 21; pattern engine 29 (of 60)
+        ("we012_payroll", "loop", "WE-012_employer_payroll_tax.md",
+         {"employers.formal": "employers.covered", "workers.formal": "workers.covered", "workers.below_ceiling": "workers.covered",
+          "officials.enforcement": ["officials.enforcement", "officials.revenue"], "buyers.labor_intensive": "consumers",
+          "government.general_budget": "general_fund"},
+         {"announcement window": "announcement"}, 18),                                  # of 33
+        ("we029_varrow", "loop", "WE-029_paid_sick_leave_mandate.md",
+         {"employers.uncovered": "employers.covered", "associations": "employers.covered", "unions": "workers.uncovered",
+          "neighboring_jurisdictions": "sellers.foreign", "employers.tradable": "producers.tradable",
+          "buyers.local_services": "consumers"},
+         {}, 18),                                                                       # of 42; pattern engine 40, in sample
+    ]
+    for case, loop, example, short, windows, k in cases:
+        produced, _ = _loop_score(case, example, short, windows, loop)
+        assert (case, loop, len(produced)) == (case, loop, k)

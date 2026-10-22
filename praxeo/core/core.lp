@@ -259,7 +259,8 @@ fired(cr_4, c_charged(C, E), P) :- c_charged(C, E), branch(C, P1, P2, P3), P = (
 % Payers whose total is capped pay a fixed sum at the margin (charge_capped/2): it takes from their means (CR-8b) and
 % bears on none of their choices at the margin (CR-4 0.8).
 effect(c_paid(C, E), A, "resources_available_other_uses", decrease, short, invisible, "A") :- c_paid(C, E), charge_capped(C, A).
-effect(c_qty(C, E), A, "quantity_traded", decrease, short, invisible, "B") :- c_qty(C, E), c_charged(C, E), party(E, _, A).
+% A payer whose total is capped pays nothing more at the margin, so its trades are not the ones that fall (CR-4 0.8).
+effect(c_qty(C, E), A, "quantity_traded", decrease, short, invisible, "B") :- c_qty(C, E), c_charged(C, E), party(E, _, A), not charge_capped(C, A).
 % The fall (or rise) in trades rests on a premise where the record gives one: a payment that is worth something to the side
 % that receives it in kind (a mandated term) can be recovered through the other terms (CR-7, gross and net), so its effect
 % on the quantity is not a priori.

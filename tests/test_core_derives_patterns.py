@@ -246,6 +246,9 @@ def test_a_capped_charge_takes_means_but_bears_on_no_margin():
     ch = [{"component": "k", "exchange": "e", "payer_side": "buyer", "receiver": "officials.revenue",
            "receipt_variable": "non_tax_receipts", "capped_payers": ["employers.capped"]}]
     assert ("employers.capped", "resources_available_other_uses", "decrease", None) in _run(exchanges=JOBS, charges=ch)
+    x = [{"id": "e", "buyer": "employers.capped", "seller": "workers", "buyer_price_var": "labor_cost", "seller_price_var": "wage_rate"}]
+    got = _run(exchanges=x, charges=[{**ch[0], "capped_payers": ["employers.capped"]}])
+    assert ("employers.capped", "quantity_traded", "decrease", None) not in got
 
 
 def test_a_line_drawn_in_size_holds_those_near_it_below_it():
@@ -326,3 +329,13 @@ def test_a_sticky_price_takes_the_wedge_later_and_the_other_terms_first():
     assert cons[("workers", "wage_rate")].sign == "decrease" and cons[("workers", "wage_rate")].horizon[0] == "medium"
     grp = cons[("workers", "employment,hours_worked,non_wage_compensation")]
     assert grp.sign == "at_least_one_decrease" and grp.horizon[0] == "short"
+
+
+def test_signs_name_only_the_readings_they_depend_on():
+    sit = {"name": "check", "exchanges": JOBS,
+           "thresholds": [{"component": "k_seasonal", "actor": "employers.seasonal", "variable": "employment", "premises": ["a2"]}],
+           "unclear": [{"id": "U1", "text": "x", "readings": ["U1-a: x", "U1-b: y"], "components": {"U1-a": ["k_seasonal"], "U1-b": []}},
+                       {"id": "U2", "text": "z", "readings": ["U2-a: z", "U2-b: w"], "components": {"U2-a": [], "U2-b": []}}],
+           "assumptions": {"a2": P}}
+    got = [c for c in S.run(S.Situation(**sit)) if c.actor_class == "employers.seasonal" and c.variable == "employment"]
+    assert got[0].sign_by_reading == {"U1-a": "decrease", "U1-b": "none"}

@@ -388,7 +388,28 @@ def run(s: Situation):
     a = assumptions(s)
     with engine.rule_set(CORE_RULES):
         cons = engine.run(empty, a, extra=facts(_only(s, lambda c: c not in conditional)))[0]
-    return dominate(cons, s, a)
+    return dominate([_collapse(c) for c in cons], s, a)
+
+
+def _collapse(c):
+    """Signs per combination of readings ("U1-a; U2-b") keep only the provisions the sign depends on: a provision whose
+    readings give the same sign whatever the others' readings is dropped from the labels (and a sign no provision changes
+    is the one sign)."""
+    if not c.sign_by_reading:
+        return c
+    combos = {tuple(x.strip() for x in k.split(";")): v for k, v in c.sign_by_reading.items()}
+    n = len(next(iter(combos)))
+    keep = []
+    for i in range(n):
+        rest = {}
+        for k, v in combos.items():
+            rest.setdefault(k[:i] + k[i + 1:], set()).add(v)
+        if any(len(vs) > 1 for vs in rest.values()):
+            keep.append(i)
+    if not keep:
+        return c.model_copy(update={"sign": next(iter(combos.values())), "sign_by_reading": {}})
+    reduced = {"; ".join(k[i] for i in keep): v for k, v in combos.items()}
+    return c.model_copy(update={"sign_by_reading": reduced})
 
 
 def dominate(cons, s: Situation, a: dict[str, Assumption]):

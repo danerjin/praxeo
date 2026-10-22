@@ -309,3 +309,25 @@ From this step on, writers read only extracted files (section 1, and the assumpt
 - The exempt alternative under reading U1-b can be stated (`reading: "U1-b"`), but neither writer stated it.
 - A-23's incidence claim (`tax_share_borne`) has no rule.
 - Wage stickiness and adjustment still share a window, because `fixed` and `moves` carry no horizon.
+
+## Step 10: incidence and horizons
+
+**New forms:**
+- **Incidence** (`incidence`, CR-7b and DM-1). Where a premise makes one side's alternatives clearly worse than the other's, that side bears more of a charge (`tax_share_borne`) or keeps more of a grant (`subsidy_share_received`). This ranks the shares only, and it can be proposed at a node.
+- **Horizons on `moves` and `fixed`.** A sticky wage takes the wedge in the medium run, while the terms the payer controls take it first (short run).
+- **Capped payers** no longer show a fall in trades: nothing more is paid at the margin.
+- **Signs per reading** name only the provisions the sign depends on (`U2-a: decrease; U2-b: no_change`, not every combination with U1).
+
+**Blind runs** (writers read only the extracted files):
+
+| Case | Core path | Pattern engine | Notes |
+|---|---|---|---|
+| WE-036, run 6 | 24/60 (runs 1 to 5: 13, 18, 16, 19, 21) | 29 | the incidence row (C-30) is produced; the one recurring contradiction is seasonal hiring under the exempting reading |
+| WE-012, payroll tax | 18/33 | in sample | both incidence rows (C-13, C-14) produced |
+| WE-029, sick-leave mandate | 18/42 | 40, in sample | pattern rules were written from it |
+
+The three writers flagged the same gap: capped payers were signed as trading less. That gap is fixed above. Still open, from their notes:
+- A branch that more than one premise can open (`branch_premises` is a conjunction).
+- Links carry no horizon.
+- A delayed, not lost, response has no later window.
+- No relation turns an appropriation or enforcement cost into a fall in a fund's balance.
