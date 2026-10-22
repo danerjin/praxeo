@@ -1,0 +1,50 @@
+{
+ "name": "WE-046 Calderford central zone charge (loop seed)",
+ "exchanges": [
+  {"id": "e_shop", "buyer": "customers.drivers", "seller": "retailers.zone", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_res", "buyer": "drivers.resident", "seller": "retailers.zone", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_commute", "buyer": "employers.zone", "seller": "workers.car_commuters", "seller_price_var": "wage_rate"},
+  {"id": "e_delivery", "buyer": "retailers.zone", "seller": "distributors.longer_visits", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_short", "buyer": "retailers.zone", "seller": "distributors.short_visits", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_ride", "buyer": "customers.ride_hail", "seller": "drivers.taxi", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_bus", "buyer": "riders", "seller": "sellers.transit", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "charges": [
+  {"component": "k1", "exchange": "e_shop", "payer_side": "buyer", "receiver": "officials.revenue", "receipt_variable": "tax_revenue", "projection_variable": "tax_revenue_vs_static_projection"},
+  {"component": "k2", "exchange": "e_res", "payer_side": "buyer", "receiver": "officials.revenue", "receipt_variable": "tax_revenue", "projection_variable": "tax_revenue_vs_static_projection"},
+  {"component": "k1", "exchange": "e_commute", "payer_side": "seller", "receiver": "officials.revenue", "receipt_variable": "tax_revenue", "projection_variable": "tax_revenue_vs_static_projection"},
+  {"component": "k1", "exchange": "e_delivery", "payer_side": "seller", "receiver": "officials.revenue", "receipt_variable": "tax_revenue", "projection_variable": "tax_revenue_vs_static_projection"},
+  {"component": "k1_short", "exchange": "e_short", "payer_side": "seller", "receiver": "officials.revenue", "receipt_variable": "tax_revenue", "projection_variable": "tax_revenue_vs_static_projection"},
+  {"component": "k1", "exchange": "e_ride", "payer_side": "seller", "receiver": "officials.revenue", "receipt_variable": "tax_revenue", "projection_variable": "tax_revenue_vs_static_projection"}
+ ],
+ "moves": [
+  {"exchange": "e_shop", "side": "buyer", "premises": ["a1", "a2"]},
+  {"exchange": "e_commute", "side": "seller", "premises": ["a19"]},
+  {"exchange": "e_delivery", "side": "buyer", "premises": ["a14"]},
+  {"exchange": "e_short", "side": "buyer", "premises": ["a14"]},
+  {"exchange": "e_ride", "side": "buyer", "premises": []}
+ ],
+ "grants": [
+  {"component": "k3", "exchange": "e_bus", "recipient_side": "seller", "payer": "officials.revenue"}
+ ],
+ "announced": [{"component": "k1", "premises": []}],
+ "enforcers": [
+  {"component": "k1", "actor": "officials.enforcement"},
+  {"component": "k2", "actor": "officials.enforcement"},
+  {"component": "k1", "actor": "officials.adjudication"}
+ ],
+ "fixed_budget": [{"component": "k1", "actor": "officials.adjudication", "premises": ["a24"]}],
+ "unclear": [
+  {"id": "U1", "text": "Short delivery visits: whether a goods vehicle that enters and leaves the zone within thirty minutes in the course of a delivery pays the daily charge.",
+   "readings": ["U1-a: a short visit is recorded and pays the daily charge like any other day in the zone",
+                "U1-b: a short visit is not a chargeable day; such vans pay nothing"],
+   "components": {"U1-a": ["k1_short"], "U1-b": []}}
+ ],
+ "assumptions": {
+  "a1": {"text": "Some drivers who now enter the zone on weekdays value the day there by less than $15 more than its other costs, at today's speeds (the charge binds, and the response is partial).", "class": "binding", "p": 0.95},
+  "a2": {"text": "The charge is enforced: cameras read most plates and penalties are collected.", "class": "enforcement", "p": 0.85},
+  "a14": {"text": "Carriers have better alternatives (customers elsewhere) than zone businesses have (premises elsewhere).", "class": "substitutability", "p": 0.65},
+  "a19": {"text": "Some zone workers commute by car and cannot switch cheaply, and zone employers compete with employers elsewhere for them.", "class": "other", "p": 0.55},
+  "a24": {"text": "The PAO's budget is not raised for the new appeals, and its net caseload rises (about 9,000 new appeals against about 2,800 fewer).", "class": "revenue_use", "p": 0.8}
+ }
+}
