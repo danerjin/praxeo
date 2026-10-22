@@ -1,0 +1,855 @@
+{
+ "platforms.covered": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "platforms.covered",
+    "actor": "platforms.covered",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Some services can be reshaped to meet the three conditions at a cost below the Act's burden."
+   ],
+   "premise_class": "other",
+   "source": "An app-based worker is an employee of the network company unless the company proves that (a) the worker is free from its control and direction in performing the work, (b) the work is outside the usual course of its business, and (c) the worker is customarily engaged in an independently established trade."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k4",
+    "chooser": "platforms.covered",
+    "actor": "contractors.agreement",
+    "variables": [
+     "employment",
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Companies can steer requests between employees and contractors through dispatch."
+   ],
+   "premise_class": "other",
+   "source": "A network company may elect to offer its app-based workers in Lanvik a contractor agreement; an election applies to all its Lanvik workers. (Employees carry the contributions of §7 and the overtime of §6; contractors carry the premium of §9.)"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2_b",
+    "chooser": "platforms.covered",
+    "actor": "workers.min_wage",
+    "variables": [
+     "hours_worked"
+    ],
+    "reading": "U1-b",
+    "inverse": true
+   },
+   "premises": [
+    "Under U1-b, companies schedule employees' logged-in time to cut paid waiting."
+   ],
+   "premise_class": "other",
+   "source": "Under U1-b, the minimum applies to all logged-in time; \"any other time during which the worker is required by the network company to remain available to perform work.\""
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_off",
+    "kind": "outside",
+    "actor": "platforms.covered",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Enforcement is imperfect: some misclassification and some pressure to sign occur."
+   ],
+   "premise_class": "enforcement",
+   "source": "The Department of Labor enforces the Act by audit; ... the penalty for misclassification is 5,000 per worker."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "platforms.covered",
+    "source_variable": "price_paid",
+    "relation": "output",
+    "actor": "customers",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Riders pay on average about 16.00 a trip; the platforms keep the difference."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "platforms.covered",
+    "source_variable": "price_paid",
+    "relation": "output",
+    "actor": "retailers.restaurants",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Four network companies operate in Lanvik: two ride-hail platforms and two delivery platforms."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "platforms.covered",
+    "source_variable": "legal_breach",
+    "relation": "same_act",
+    "actor": "officials.enforcement",
+    "variable": "non_tax_receipts"
+   },
+   "premises": [
+    "Enforcement is imperfect: some misclassification and some pressure to sign occur.",
+    "The Act is enforced: audits and private suits with double damages make treating workers as contractors without a valid agreement costly."
+   ],
+   "premise_class": "enforcement",
+   "source": "the penalty for misclassification is 5,000 per worker."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "platforms.covered"
+   },
+   "premises": [
+    "Companies, drivers' groups and unions can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "The bill was introduced on 10 January 2027 and enacted on 15 March 2027; it takes effect on 1 October 2027."
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_emp",
+    "side": "buyer",
+    "actor": "platforms.covered"
+   },
+   "premises": [
+    "Platforms do not recover all of their added cost through fares and fare shares."
+   ],
+   "premise_class": "other",
+   "source": "Platforms set and change workers' fare shares and bonuses unilaterally ... Riders pay on average about 16.00 a trip; the platforms keep the difference."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_emp",
+    "side": "buyer",
+    "actor": "owners.shares"
+   },
+   "premises": [
+    "Buyers of shares and medallions expect the Act to survive the court challenge and repeal campaign."
+   ],
+   "premise_class": "expectations",
+   "source": "bill introduced on 10 January 2027 and enacted on 15 March 2027; it takes effect on 1 October 2027."
+  }
+ ],
+ "contractors.agreement": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k5",
+    "chooser": "contractors.agreement",
+    "actor": "workers.employees",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Some workers prefer the contractor agreement with the premium to employee status."
+   ],
+   "premise_class": "other",
+   "source": "A network company may elect to offer its app-based workers in Lanvik a contractor agreement; ... For every ride or delivery completed under a contractor agreement, the company shall pay the worker, \"in addition to the agreed fare share\", a premium of 1.50."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_con",
+    "kind": "adjust",
+    "actor": "contractors.agreement",
+    "variables": [
+     "employment",
+     "hours_worked",
+     "non_wage_compensation"
+    ],
+    "side": "buyer"
+   },
+   "premises": [
+    "Platforms control how many hours of work each worker gets through dispatch."
+   ],
+   "premise_class": "other",
+   "source": "Employee status must be offered as the default ... Platforms set and change workers' fare shares and bonuses unilaterally."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "contractors.agreement",
+    "source_variable": "wage_rate",
+    "relation": "same_act",
+    "actor": "contractors.agreement",
+    "variable": "earnings"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "The premium is about 3.00 per hour on a trip (1.50 × 2.0 trips); the platforms pay workers an average of 22.40 per hour on a trip. (Earnings are wage times hours times employment: an identity, no premise.)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "contractors.agreement",
+    "source_variable": "non_wage_compensation",
+    "relation": "same_act",
+    "actor": "contractors.agreement",
+    "variable": "earnings"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "The premium is about 3.00 per hour on a trip (1.50 × 2.0 trips); the platforms pay workers an average of 22.40 per hour on a trip. (Earnings are wage times hours times employment: an identity, no premise.)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "contractors.agreement",
+    "source_variable": "quantity_traded",
+    "relation": "same_act",
+    "actor": "contractors.agreement",
+    "variable": "earnings"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "The premium is about 3.00 per hour on a trip (1.50 × 2.0 trips); the platforms pay workers an average of 22.40 per hour on a trip. (Earnings are wage times hours times employment: an identity, no premise.)"
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "contractors.agreement",
+    "variable": "earnings",
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "The premium dominates the effects of entry and fewer trips on contractors' hourly earnings."
+   ],
+   "premise_class": "other",
+   "source": "a premium of 1.50 ... about 3.00 per hour on a trip (1.50 × 2.0 trips)."
+  }
+ ],
+ "contractors.no_agreement": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "contractors.no_agreement",
+    "actor": "contractors.agreement",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Each company elects to offer contractor agreements."
+   ],
+   "premise_class": "other",
+   "source": "A network company may elect to offer its app-based workers in Lanvik a contractor agreement; ... For every ride or delivery completed under a contractor agreement, the company shall pay the worker, \"in addition to the agreed fare share\", a premium of 1.50."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "contractors.no_agreement",
+    "actor": "workers.employees",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Workers paid below 16 per hour on a trip mostly choose employee status (the top-up exceeds the premium and the flexibility they give up)."
+   ],
+   "premise_class": "other",
+   "source": "An app-based worker is an employee of the network company unless the company proves that (a) the worker is free from its control and direction in performing the work, (b) the work is outside the usual course of its business, and (c) the worker is customarily engaged in an independently established trade."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "contractors.no_agreement",
+    "actor": "contractors.no_agreement",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Some workers can work through one-person companies, which §3 does not cover."
+   ],
+   "premise_class": "other",
+   "source": "§3 applies to natural persons who perform rides or deliveries through a network company with 100 or more app-based workers in Lanvik."
+  }
+ ],
+ "officials.enforcement": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.enforcement",
+    "source_variable": "enforcement_cost",
+    "relation": "paid_from",
+    "actor": "general_fund",
+    "variable": "fund_balance"
+   },
+   "premises": [
+    "The Department's 4 million is new money from the general fund."
+   ],
+   "premise_class": "revenue_use",
+   "source": "The Department's budget is raised by 4 million a year from the general fund."
+  }
+ ],
+ "officials.revenue": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.revenue",
+    "source_variable": "tax_revenue",
+    "relation": "paid_into",
+    "actor": "treasury",
+    "variable": "fund_balance"
+   },
+   "premises": [
+    "The contributions are paid into the unemployment and social insurance funds."
+   ],
+   "premise_class": "revenue_use",
+   "source": "The network company pays unemployment insurance (2.7%) and state social insurance (8.3%) contributions, 11% in all, on all wages paid to an employee in any week in which the employee's wages from that company exceed 150."
+  }
+ ],
+ "platforms.near_threshold": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "platforms.near_threshold",
+    "actor": "platforms.near_threshold",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Some delivery services can operate with fewer than 100 Lanvik workers."
+   ],
+   "premise_class": "other",
+   "source": "§3 applies to natural persons who perform rides or deliveries through a network company with 100 or more app-based workers in Lanvik. A few local courier cooperatives have fewer than 100."
+  }
+ ],
+ "taxpayers": [],
+ "workers.employees": [
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_emp",
+    "kind": "adjust",
+    "actor": "workers.employees",
+    "variables": [
+     "employment",
+     "hours_worked",
+     "non_wage_compensation"
+    ],
+    "side": "buyer"
+   },
+   "premises": [
+    "Platforms control how many hours of work each worker gets through dispatch."
+   ],
+   "premise_class": "other",
+   "source": "Platforms set and change workers' fare shares and bonuses unilaterally, usually several times a year, with 30 days' notice."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k4",
+    "chooser": "workers.employees",
+    "actor": "workers.uncovered",
+    "variables": [
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Some workers can move hours between trips starting in Selvane and in Lanvik."
+   ],
+   "premise_class": "mobility",
+   "source": "about 8% of the metro area's app trips start in Selvane, which has no such law."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k4",
+    "chooser": "workers.employees",
+    "actor": "treasury",
+    "variables": [
+     "fund_balance"
+    ],
+    "inverse": true
+   },
+   "premises": [
+    "Some employees whose hours are cut qualify for and claim benefits."
+   ],
+   "premise_class": "other",
+   "source": "Insured wages count toward unemployment benefit eligibility (2,600 in a base year)."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "workers.employees"
+   },
+   "premises": [
+    "Companies, drivers' groups and unions can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "The bill was introduced on 10 January 2027 and enacted on 15 March 2027; it takes effect on 1 October 2027."
+  }
+ ],
+ "workers.full_time": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.full_time",
+    "source_variable": "hours_worked",
+    "relation": "substitute",
+    "actor": "workers.employees",
+    "variable": "hours_worked"
+   },
+   "premises": [
+    "Workers whose hours with one company are capped take the hours from another company."
+   ],
+   "premise_class": "other",
+   "source": "Engaged time over 40 hours in a workweek with one network company is paid at 1.5 times the regular rate."
+  }
+ ],
+ "workers.min_wage": [
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_min",
+    "kind": "adjust",
+    "actor": "workers.min_wage",
+    "variables": [
+     "employment",
+     "hours_worked",
+     "non_wage_compensation"
+    ],
+    "side": "buyer"
+   },
+   "premises": [
+    "Platforms control how many hours of work each worker gets through dispatch."
+   ],
+   "premise_class": "other",
+   "source": "An employee shall be paid at least the state minimum wage for all engaged time."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2_a",
+    "chooser": "workers.min_wage",
+    "actor": "contractors.agreement",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Workers paid below 16 per hour on a trip mostly choose employee status (the top-up exceeds the premium and the flexibility they give up)."
+   ],
+   "premise_class": "other",
+   "source": "A network company may elect to offer its app-based workers in Lanvik a contractor agreement; ... For every ride or delivery completed under a contractor agreement, the company shall pay the worker, \"in addition to the agreed fare share\", a premium of 1.50."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2_b",
+    "chooser": "workers.min_wage",
+    "actor": "contractors.agreement",
+    "variables": [
+     "employment"
+    ],
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Workers paid below 16 per hour on a trip mostly choose employee status (the top-up exceeds the premium and the flexibility they give up)."
+   ],
+   "premise_class": "other",
+   "source": "A network company may elect to offer its app-based workers in Lanvik a contractor agreement; ... For every ride or delivery completed under a contractor agreement, the company shall pay the worker, \"in addition to the agreed fare share\", a premium of 1.50."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2_b",
+    "chooser": "workers.min_wage",
+    "actor": "contractors.agreement",
+    "variables": [
+     "employment"
+    ],
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Under U1-b, workers who wait much of their logged-in time choose employee status."
+   ],
+   "premise_class": "other",
+   "source": "Under U1-b, the minimum applies to all logged-in time, and binds on about three quarters of logged-in hours."
+  }
+ ],
+ "workers.part_time": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.part_time",
+    "source_variable": "earnings",
+    "relation": "substitute",
+    "actor": "workers.employees",
+    "variable": "earnings"
+   },
+   "premises": [
+    "Workers split their hours among companies to keep weekly wages from each company at or under 150."
+   ],
+   "premise_class": "other",
+   "source": "About 24,000 of those active in a week earn less than 150 from a given platform that week.; in a typical week about 62,000 are active, about 45% of them on more than one platform."
+  }
+ ],
+ "workers.prospective": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2_a",
+    "chooser": "workers.prospective",
+    "actor": "contractors.agreement",
+    "variables": [
+     "entry_rate"
+    ]
+   },
+   "premises": [
+    "Onboarding of new contractors takes four to six weeks, so entry is partial in the first months."
+   ],
+   "premise_class": "durability",
+   "source": "A network company may elect to offer its app-based workers in Lanvik a contractor agreement; ... For every ride or delivery completed under a contractor agreement, the company shall pay the worker, \"in addition to the agreed fare share\", a premium of 1.50."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2_b",
+    "chooser": "workers.prospective",
+    "actor": "contractors.agreement",
+    "variables": [
+     "entry_rate"
+    ]
+   },
+   "premises": [
+    "Onboarding of new contractors takes four to six weeks, so entry is partial in the first months."
+   ],
+   "premise_class": "durability",
+   "source": "A network company may elect to offer its app-based workers in Lanvik a contractor agreement; ... For every ride or delivery completed under a contractor agreement, the company shall pay the worker, \"in addition to the agreed fare share\", a premium of 1.50."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2_a",
+    "chooser": "workers.prospective",
+    "actor": "workers.uncovered",
+    "variables": [
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Some workers can move hours between trips starting in Selvane and in Lanvik."
+   ],
+   "premise_class": "mobility",
+   "source": "about 8% of the metro area's app trips start in Selvane, which has no such law."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2_b",
+    "chooser": "workers.prospective",
+    "actor": "workers.uncovered",
+    "variables": [
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Some workers can move hours between trips starting in Selvane and in Lanvik."
+   ],
+   "premise_class": "mobility",
+   "source": "about 8% of the metro area's app trips start in Selvane, which has no such law."
+  }
+ ],
+ "customers": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers",
+    "source_variable": "price_paid",
+    "relation": "own_price",
+    "actor": "customers",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Riders pay on average about 16.00 a trip; the platforms keep the difference."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers",
+    "source_variable": "quantity_demanded",
+    "relation": "same_act",
+    "actor": "platforms.covered",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Riders pay on average about 16.00 a trip; the platforms keep the difference."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k4",
+    "chooser": "customers",
+    "actor": "drivers.taxi",
+    "variables": [
+     "quantity_traded"
+    ]
+   },
+   "premises": [
+    "Taxis are a substitute for some app rides, at fares fixed by the city, with the medallion cap binding; taxis have idle capacity at the fixed fare, so more riders mean more trips per medallion."
+   ],
+   "premise_class": "substitutability",
+   "source": "Taxis in Lanvik City are licensed separately: the city caps medallions at 1,800 and sets metered fares; medallions trade at about 95,000."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k4",
+    "chooser": "customers",
+    "actor": "customers",
+    "variables": [
+     "home_production"
+    ]
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Riders pay on average about 16.00 a trip; the platforms keep the difference."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k4",
+    "chooser": "customers",
+    "actor": "platforms.near_threshold",
+    "variables": [
+     "quantity_traded"
+    ]
+   },
+   "premises": [
+    "Some delivery services can operate with fewer than 100 Lanvik workers."
+   ],
+   "premise_class": "other",
+   "source": "A few local courier cooperatives have fewer than 100."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers",
+    "source_variable": "price_paid",
+    "relation": "same_act",
+    "actor": "customers.no_substitute",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Some riders do not cut their trips at the higher fares (airport, late-night and mobility-limited riders with no close substitute)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Riders pay on average about 16.00 a trip; the platforms keep the difference."
+  }
+ ],
+ "retailers.restaurants": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.restaurants",
+    "source_variable": "price_paid",
+    "relation": "own_price",
+    "actor": "retailers.restaurants",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Restaurants' delivery orders fall as delivery fees rise."
+   ],
+   "premise_class": "other",
+   "source": "two delivery platforms"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k4",
+    "chooser": "retailers.restaurants",
+    "actor": "workers.uncovered",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Some restaurants hire their own couriers rather than pay the higher fees."
+   ],
+   "premise_class": "substitutability",
+   "source": "Four network companies operate in Lanvik: two ride-hail platforms and two delivery platforms."
+  }
+ ],
+ "general_fund": [],
+ "owners.shares": [],
+ "treasury": [],
+ "officials.enforcement#2": [],
+ "platforms.near_threshold#2": [],
+ "contractors.no_agreement#2": [],
+ "contractors.agreement#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "contractors.agreement",
+    "source_variable": "entry_rate",
+    "relation": "same_act",
+    "actor": "contractors.agreement",
+    "variable": "employment"
+   },
+   "premises": [
+    "Onboarding of new contractors takes four to six weeks, so entry is partial in the first months."
+   ],
+   "premise_class": "durability",
+   "source": "Onboarding of new contractors takes four to six weeks, so entry is partial in the first months."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "contractors.agreement",
+    "source_variable": "entry_rate",
+    "relation": "supply",
+    "actor": "contractors.agreement",
+    "variable": "earnings"
+   },
+   "premises": [
+    "New contractors share the same requests with the contractors already signed."
+   ],
+   "premise_class": "other",
+   "source": "For every ride or delivery completed under a contractor agreement, the company shall pay the worker ... a premium of 1.50."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k5",
+    "actor": "contractors.agreement"
+   },
+   "premises": [
+    "Companies, drivers' groups and unions can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Companies, drivers' groups and unions can organize at a cost below their stakes."
+  }
+ ],
+ "platforms.covered#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "platforms.covered",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "contractors.agreement",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Riders pay on average about 16.00 a trip; the platforms keep the difference."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "platforms.covered",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "workers.employees",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Riders pay on average about 16.00 a trip; the platforms keep the difference."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "platforms.covered",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "workers.min_wage",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Platforms pass part of their added cost per trip into fares and fees, and some riders and diners take fewer trips at the higher price (taxis, transit and home cooking are partial substitutes)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Riders pay on average about 16.00 a trip; the platforms keep the difference."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "platforms.covered",
+    "source_variable": "return_on_capital",
+    "relation": "yield",
+    "actor": "platforms.covered",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Buyers of shares and medallions expect the Act to survive the court challenge and repeal campaign."
+   ],
+   "premise_class": "expectations",
+   "source": "bill introduced on 10 January 2027 and enacted on 15 March 2027; it takes effect on 1 October 2027."
+  }
+ ],
+ "workers.employees#2": [],
+ "workers.min_wage#2": [],
+ "workers.uncovered": [],
+ "drivers.taxi": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.taxi",
+    "source_variable": "quantity_traded",
+    "relation": "yield",
+    "actor": "owners.medallions",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Taxis are a substitute for some app rides, at fares fixed by the city, with the medallion cap binding; taxis have idle capacity at the fixed fare, so more riders mean more trips per medallion.",
+    "Buyers of shares and medallions expect the Act to survive the court challenge and repeal campaign."
+   ],
+   "premise_class": "expectations",
+   "source": "Taxis in Lanvik City are licensed separately: the city caps medallions at 1,800 and sets metered fares; medallions trade at about 95,000."
+  }
+ ],
+ "contractors.agreement#3": [],
+ "customers#2": [],
+ "customers.no_substitute": [],
+ "platforms.covered#3": [],
+ "platforms.near_threshold#3": [],
+ "retailers.restaurants#2": [],
+ "workers.employees#3": [],
+ "workers.min_wage#3": [],
+ "workers.uncovered#2": []
+}
