@@ -1,0 +1,788 @@
+{
+ "growers": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "growers",
+    "actor": "retailers.dealers",
+    "variables": [
+     "quantity_traded"
+    ]
+   },
+   "premises": [
+    "Some owners prefer independent or self repair at the new terms."
+   ],
+   "premise_class": "substitutability",
+   "source": "Dealers' service revenue is about $520 million a year ($330 million parts, $190 million labor at about $165 an hour; independents charge about $95). K1: \"a term of every sale of covered equipment, owed to the owner and to any independent repair provider\""
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "growers",
+    "variable": "quantity_demanded",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Some repairs can be deferred for months."
+   ],
+   "premise_class": "other",
+   "source": "The bill passed the legislature on 18 February 2027 and was signed on 1 March 2027; it takes effect on 1 September 2028 (18 months)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers",
+    "source_variable": "non_wage_compensation",
+    "relation": "complement",
+    "actor": "growers",
+    "variable": "home_production"
+   },
+   "premises": [
+    "Some owners prefer independent or self repair at the new terms."
+   ],
+   "premise_class": "substitutability",
+   "source": "K1: \"a term of every sale of covered equipment, owed to the owner and to any independent repair provider\""
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers",
+    "source_variable": "non_wage_compensation",
+    "relation": "substitute",
+    "actor": "growers",
+    "variable": "search_cost"
+   },
+   "premises": [
+    "Owners could not read fault codes or documentation before, and some use them to diagnose or to shop for repairs."
+   ],
+   "premise_class": "other",
+   "source": "Parts, tools, documentation and diagnostic software, including the means to reset, calibrate and pair parts."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "growers",
+    "variable": "stock_age"
+   },
+   "premises": [
+    "Growers can keep uncovered tractors in service longer in place of buying covered ones."
+   ],
+   "premise_class": "substitutability",
+   "source": "About 70% of tractors in use were sold before 2023 and are not covered, and tractors last 15 to 25 years."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "growers"
+   },
+   "premises": [
+    "Makers, dealers, farm groups and repair associations can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Similar bills were introduced in Kestrava in 2023 and 2025 and failed after campaigns on both sides."
+  }
+ ],
+ "manufacturers.farm": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "manufacturers.farm",
+    "actor": "manufacturers.farm",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Some compact tractors can be designed and marketed for grounds care at a cost below the burden of coverage."
+   ],
+   "premise_class": "other",
+   "source": "\u00a72(b): \"'Covered equipment' means a mobile phone, or agricultural equipment designed primarily for agricultural use and containing electronic controls, sold or leased to a purchaser in Kestrava on or after 1 January 2023.\""
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "manufacturers.farm",
+    "actor": "manufacturers.farm",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "The Attorney General acts only on complaint, and some makers' offers fall short."
+   ],
+   "premise_class": "enforcement",
+   "source": "Attorney General under the Unfair Trade Practices Act, on complaint; civil penalty up to $10,000 per violation; no private right of action."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "manufacturers.farm",
+    "actor": "growers",
+    "variables": [
+     "cross_border_purchases"
+    ]
+   },
+   "premises": [
+    "For some specialty farm models with fewer than 20 sales a year in Kestrava, the cost of supplying documentation, tools and software for the model there exceeds the margin on those sales."
+   ],
+   "premise_class": "other",
+   "source": "New equipment sales in Kestrava are about $1.1 billion a year; 14 specialty models sell fewer than 20 units a year each in the state."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "manufacturers.farm",
+    "actor": "manufacturers.farm",
+    "variables": [
+     "product_attribute"
+    ]
+   },
+   "premises": [
+    "Some makers respond by integrating components or (under U1-b) by pairing more parts, to keep control of which parts work."
+   ],
+   "premise_class": "other",
+   "source": "Independents ... cannot buy the software, without which many electronic parts cannot be calibrated or paired."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "manufacturers.farm"
+   },
+   "premises": [
+    "Makers, dealers, farm groups and repair associations can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Similar bills were introduced in Kestrava in 2023 and 2025 and failed after campaigns on both sides."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_farm_sale",
+    "side": "seller",
+    "actor": "owners.makers_farm"
+   },
+   "premises": [
+    "Investors value makers' expected repair-input margins in Kestrava."
+   ],
+   "premise_class": "expectations",
+   "source": "Dealers subscribe to each maker's diagnostic software (about $8,000 a year per location) and buy parts at 25% below list."
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_farm_sale",
+    "side": "seller",
+    "actor": "manufacturers.farm"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Independents can buy many mechanical parts at list from dealers but cannot buy the software."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "manufacturers.farm",
+    "source_variable": "quantity_traded",
+    "relation": "same_act",
+    "actor": "retailers.dealers",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Four makers sell through 140 authorized dealer locations, which are independent businesses under dealer agreements."
+  }
+ ],
+ "manufacturers.phone_other": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "manufacturers.phone_other",
+    "actor": "manufacturers.phone_other",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "The Attorney General acts only on complaint, and some makers' offers fall short."
+   ],
+   "premise_class": "enforcement",
+   "source": "Attorney General under the Unfair Trade Practices Act, on complaint; civil penalty up to $10,000 per violation; no private right of action."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "manufacturers.phone_other",
+    "actor": "manufacturers.phone_other",
+    "variables": [
+     "product_attribute"
+    ]
+   },
+   "premises": [
+    "Some makers respond by integrating components or (under U1-b) by pairing more parts, to keep control of which parts work."
+   ],
+   "premise_class": "other",
+   "source": "On recent models makers pair screens, batteries and cameras to the device."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "manufacturers.phone_other",
+    "actor": "manufacturers.phone_other",
+    "variables": [
+     "product_attribute"
+    ],
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Some makers respond by integrating components or (under U1-b) by pairing more parts, to keep control of which parts work."
+   ],
+   "premise_class": "other",
+   "source": "Reading U1-b: makers may then refuse to pair parts reported stolen and need not pair non-genuine parts."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "manufacturers.phone_other",
+    "actor": "owners.other_states",
+    "variables": [
+     "non_wage_compensation"
+    ]
+   },
+   "premises": [
+    "Phone makers extend their parts and tool programs to owners in all states rather than only Kestrava."
+   ],
+   "premise_class": "other",
+   "source": "One maker already sells genuine parts and rents tools to owners in all states at the prices its authorized providers pay."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "manufacturers.phone_other"
+   },
+   "premises": [
+    "Makers, dealers, farm groups and repair associations can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Similar bills were introduced in Kestrava in 2023 and 2025 and failed after campaigns on both sides."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_phone_sale",
+    "side": "seller",
+    "actor": "owners.makers_phone"
+   },
+   "premises": [
+    "Investors value makers' expected repair-input margins in Kestrava."
+   ],
+   "premise_class": "expectations",
+   "source": "three makers sell about 90% of them, at the same prices in every state"
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_phone_sale",
+    "side": "seller",
+    "actor": "manufacturers.phone_other"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "About 60% by makers' stores and authorized providers (a screen repair with a genuine part costs about $280)."
+  },
+  {
+   "part": "parts",
+   "fact": {
+    "part": "manufacturers.phone_other",
+    "whole": "manufacturers.phone"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "One maker already sells genuine parts and rents tools to owners in all states at the prices its authorized providers pay."
+  }
+ ],
+ "manufacturers.phone": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k2",
+    "actor": "manufacturers.phone"
+   },
+   "premises": [
+    "Makers, dealers, farm groups and repair associations can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Similar bills were introduced in Kestrava in 2023 and 2025 and failed after campaigns on both sides."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "manufacturers.phone",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "sellers.stolen_parts",
+    "variable": "informal_activity",
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Pairing and activation locks now keep most parts of reported stolen phones from working in other devices; under U1-a they would work."
+   ],
+   "premise_class": "other",
+   "source": "About 40,000 phones are reported stolen in Kestrava each year; activation locks and parts pairing now keep most parts of reported phones from working in other devices."
+  }
+ ],
+ "owners.phone": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "owners.phone",
+    "actor": "repair_shops.authorized_phone",
+    "variables": [
+     "quantity_traded"
+    ]
+   },
+   "premises": [
+    "Some owners prefer independent or self repair at the new terms."
+   ],
+   "premise_class": "substitutability",
+   "source": "About 60% by makers' stores and authorized providers (a screen repair with a genuine part costs about $280), about 40% by some 900 independent shops using non-genuine or salvaged parts (about $160)."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "owners.phone",
+    "variable": "quantity_demanded",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Some repairs can be deferred for months."
+   ],
+   "premise_class": "other",
+   "source": "The bill passed the legislature on 18 February 2027 and was signed on 1 March 2027; it takes effect on 1 September 2028 (18 months)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.phone",
+    "source_variable": "non_wage_compensation",
+    "relation": "complement",
+    "actor": "owners.phone",
+    "variable": "home_production"
+   },
+   "premises": [
+    "Some owners prefer independent or self repair at the new terms."
+   ],
+   "premise_class": "substitutability",
+   "source": "K1: \"a term of every sale of covered equipment, owed to the owner and to any independent repair provider\""
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.phone",
+    "source_variable": "non_wage_compensation",
+    "relation": "substitute",
+    "actor": "owners.phone",
+    "variable": "search_cost"
+   },
+   "premises": [
+    "Owners could not read fault codes or documentation before, and some use them to diagnose or to shop for repairs."
+   ],
+   "premise_class": "other",
+   "source": "Parts, tools, documentation and diagnostic software, including the means to reset, calibrate and pair parts."
+  }
+ ],
+ "officials.enforcement": [],
+ "retailers.dealers": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "retailers.dealers"
+   },
+   "premises": [
+    "Makers, dealers, farm groups and repair associations can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Dealers' service revenue is about $520 million a year ($330 million parts, $190 million labor at about $165 an hour; independents charge about $95)."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k2",
+    "actor": "retailers.dealers"
+   },
+   "premises": [
+    "Makers, dealers, farm groups and repair associations can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "K2 binds \"Makers, dealers, lessors; existing and new contracts, from 1 September 2028\"."
+  }
+ ],
+ "growers#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers",
+    "source_variable": "non_wage_compensation",
+    "relation": "complement",
+    "actor": "repair_shops.independent_farm",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Some owners prefer independent or self repair at the new terms."
+   ],
+   "premise_class": "substitutability",
+   "source": "K1: \"a term of every sale of covered equipment, owed to the owner and to any independent repair provider\"; independents charge about $95 an hour against the dealers' $165."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers",
+    "source_variable": "home_production",
+    "relation": "substitute",
+    "actor": "growers",
+    "variable": "wait_time"
+   },
+   "premises": [
+    "More repairers and self-repair shorten waits at harvest."
+   ],
+   "premise_class": "other",
+   "source": "Farm surveys put the average wait for a dealer technician at harvest at 2.5 days."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers",
+    "source_variable": "cross_border_purchases",
+    "relation": "same_act",
+    "actor": "retailers.neighbors",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "about 3,000 Kestrava farms lie within 30 km of the state line, and six farm equipment dealers operate on the Darnholt side within 30 km of it."
+  }
+ ],
+ "manufacturers.farm#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "manufacturers.farm",
+    "source_variable": "return_on_capital",
+    "relation": "yield",
+    "actor": "manufacturers.farm",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Makers, dealers and investors expect the Act to stay in force."
+   ],
+   "premise_class": "expectations",
+   "source": "No expiry."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "manufacturers.farm",
+    "source_variable": "product_attribute",
+    "relation": "substitute",
+    "actor": "repair_shops.independent_farm",
+    "variable": "quantity_traded",
+    "horizon": "long"
+   },
+   "premises": [
+    "Some makers respond by integrating components or (under U1-b) by pairing more parts, to keep control of which parts work."
+   ],
+   "premise_class": "other",
+   "source": "Independents ... cannot buy the software, without which many electronic parts cannot be calibrated or paired."
+  }
+ ],
+ "manufacturers.phone_other#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "manufacturers.phone_other",
+    "source_variable": "return_on_capital",
+    "relation": "yield",
+    "actor": "manufacturers.phone_other",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Makers, dealers and investors expect the Act to stay in force."
+   ],
+   "premise_class": "expectations",
+   "source": "No expiry."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "manufacturers.phone_other",
+    "source_variable": "product_attribute",
+    "relation": "substitute",
+    "actor": "repair_shops.independent_phone",
+    "variable": "quantity_traded",
+    "horizon": "long"
+   },
+   "premises": [
+    "Some makers respond by integrating components or (under U1-b) by pairing more parts, to keep control of which parts work."
+   ],
+   "premise_class": "other",
+   "source": "On recent models makers pair screens, batteries and cameras to the device: a replacement part not paired by the maker's server works with warnings ... or with some features disabled."
+  }
+ ],
+ "manufacturers.phone#2": [],
+ "retailers.dealers#2": [],
+ "owners.makers_farm": [],
+ "owners.makers_phone": [],
+ "owners.other_states": [],
+ "owners.phone#2": [],
+ "sellers.stolen_parts": [],
+ "repair_shops.authorized_phone": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "repair_shops.authorized_phone",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "repair_shops.independent_phone",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Some owners prefer independent or self repair at the new terms."
+   ],
+   "premise_class": "substitutability",
+   "source": "about 60% by makers' stores and authorized providers (a screen repair with a genuine part costs about $280), about 40% by some 900 independent shops using non-genuine or salvaged parts (about $160)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "repair_shops.authorized_phone",
+    "source_variable": "quantity_traded",
+    "relation": "supply_price",
+    "actor": "repair_shops.authorized_phone",
+    "variable": "net_price_received"
+   },
+   "premises": [
+    "Dealers' and authorized providers' repair capacity cannot contract at once."
+   ],
+   "premise_class": "durability",
+   "source": "Dealers' and authorized providers' repair capacity cannot contract at once (A-4)."
+  }
+ ],
+ "growers#3": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "retailers.dealers",
+    "variable": "quantity_traded",
+    "direction": "decrease",
+    "kind": "empirical"
+   },
+   "premises": [
+    "Owners' shift to independent and self repair outweighs the extra repair of older equipment kept in service."
+   ],
+   "premise_class": "other",
+   "source": "Dealers' service revenue ... labor at about $165 an hour; independents charge about $95. (proposed here, where the growers' two opposite choices arise)"
+  }
+ ],
+ "manufacturers.farm#3": [],
+ "manufacturers.phone#3": [],
+ "manufacturers.phone_other#3": [],
+ "repair_shops.authorized_phone#2": [],
+ "repair_shops.independent_farm": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "growers",
+    "source_variable": "non_wage_compensation",
+    "relation": "complement",
+    "actor": "repair_shops.independent_farm",
+    "variable": "entry_rate"
+   },
+   "premises": [
+    "Independent shops can open or expand once inputs are available."
+   ],
+   "premise_class": "mobility",
+   "source": "Independents can buy many mechanical parts at list from dealers but cannot buy the software, without which many electronic parts cannot be calibrated or paired."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "repair_shops.independent_farm",
+    "source_variable": "entry_rate",
+    "relation": "complement",
+    "actor": "repair_shops.independent_farm",
+    "variable": "quantity_supplied",
+    "horizon": "long"
+   },
+   "premises": [
+    "In the long run independent repair capacity can be added at roughly constant cost."
+   ],
+   "premise_class": "other",
+   "source": "about 260 independent shops repair farm equipment."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "repair_shops.independent_farm",
+    "source_variable": "quantity_supplied",
+    "relation": "supply",
+    "actor": "growers",
+    "variable": "wait_time"
+   },
+   "premises": [
+    "More repairers and self-repair shorten waits at harvest."
+   ],
+   "premise_class": "other",
+   "source": "Farm surveys put the average wait for a dealer technician at harvest at 2.5 days."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "repair_shops.independent_farm",
+    "source_variable": "quantity_supplied",
+    "relation": "supply",
+    "actor": "retailers.dealers",
+    "variable": "net_price_received"
+   },
+   "premises": [
+    "Dealers' and authorized providers' repair capacity cannot contract at once."
+   ],
+   "premise_class": "durability",
+   "source": "Dealers' service revenue is about $520 million a year ($330 million parts, $190 million labor at about $165 an hour; independents charge about $95)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.dealers",
+    "source_variable": "net_price_received",
+    "relation": "yield",
+    "actor": "owners.dealers",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Dealers' capital and locations are tied to their territory, while makers sell in many states at national prices."
+   ],
+   "premise_class": "mobility",
+   "source": "Dealers ... are independent businesses under dealer agreements: 140 authorized dealer locations."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "repair_shops.independent_farm"
+   },
+   "premises": [
+    "Makers, dealers, farm groups and repair associations can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Similar bills were introduced in Kestrava in 2023 and 2025 and failed after campaigns on both sides."
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "repair_shops.independent_farm",
+    "variable": "quantity_traded",
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "Independents' gain from access to parts, tools and software outweighs the loss from makers integrating components."
+   ],
+   "premise_class": "other",
+   "source": "Independents charge about $95 against the dealers' $165; many electronic parts cannot be calibrated or paired without the software."
+  }
+ ],
+ "repair_shops.independent_phone": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.phone",
+    "source_variable": "non_wage_compensation",
+    "relation": "complement",
+    "actor": "repair_shops.independent_phone",
+    "variable": "entry_rate"
+   },
+   "premises": [
+    "Independent shops can open or expand once inputs are available."
+   ],
+   "premise_class": "mobility",
+   "source": "about 40% by some 900 independent shops using non-genuine or salvaged parts (about $160)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "repair_shops.independent_phone",
+    "source_variable": "entry_rate",
+    "relation": "complement",
+    "actor": "repair_shops.independent_phone",
+    "variable": "quantity_supplied",
+    "horizon": "long"
+   },
+   "premises": [
+    "In the long run independent repair capacity can be added at roughly constant cost."
+   ],
+   "premise_class": "other",
+   "source": "some 900 independent shops"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "repair_shops.independent_phone",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "owners.phone",
+    "variable": "asset_value",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Some buyers of used phones check the part notices and pay less for phones with unpaired parts."
+   ],
+   "premise_class": "other",
+   "source": "a replacement part not paired by the maker's server works with warnings (battery health hidden, \"unknown part\" notices)"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "repair_shops.independent_phone"
+   },
+   "premises": [
+    "Makers, dealers, farm groups and repair associations can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Similar bills were introduced in Kestrava in 2023 and 2025 and failed after campaigns on both sides."
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "repair_shops.independent_phone",
+    "variable": "quantity_traded",
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "Independents' gain from access to parts, tools and software outweighs the loss from makers integrating components."
+   ],
+   "premise_class": "other",
+   "source": "about 60% by makers' stores and authorized providers (about $280) ... about 40% by some 900 independent shops (about $160)"
+  }
+ ],
+ "retailers.neighbors": []
+}
