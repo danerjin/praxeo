@@ -590,5 +590,33 @@
   "produced": 6,
   "total": 31,
   "pattern_engine": "6"
+ },
+ {
+  "case": "we059_kestrava",
+  "loop": "loop_r3",
+  "example": "WE-059_right_to_repair.md",
+  "short": {
+   "owners.ag": "growers",
+   "owners.phone": "owners.phones",
+   "makers.ag": "manufacturers.farm",
+   "makers.phone": "manufacturers.phone",
+   "dealers.ag": "distributors.farm_equipment",
+   "independents": [
+    "repair_shops.independent_farm",
+    "repair_shops.independent_phone"
+   ],
+   "authorized_providers.phone": "repair_shops.authorized_phone",
+   "lobbying groups": [
+    "manufacturers.farm",
+    "manufacturers.phone",
+    "distributors.farm_equipment",
+    "growers"
+   ],
+   "buyers of stolen parts": "sellers.stolen_parts"
+  },
+  "windows": {},
+  "produced": 15,
+  "total": 47,
+  "pattern_engine": "9"
  }
 ]

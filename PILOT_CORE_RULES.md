@@ -477,3 +477,17 @@ The mappings and counts are in `tests/blind_scores.json`, which a test checks.
 - The tax case WE-042 stays far behind the pattern engine. Its detailed rows (drawback claims by yield table, scrap's two outlets) need facts no writer proposed.
 
 **What remains:** the gap to the pattern engine is now mainly in what the proposer thinks to propose, not in what the rules can derive. The next useful test is the real LLM proposer on these cases, with several runs per case so the spread can be measured. It needs an API key.
+
+## Step 15: a duty to supply, and a charge owed to two receivers
+
+The blind WE-059 writers named both of these gaps (step 11). Each new form has a check.
+- **A duty to supply** (`duties`): sellers must sell what they would otherwise withhold, such as parts and tools to independent repairers.
+  - It opens the trade, so trades rise for both sides.
+  - Buyers are choosers made better, and the obliged sellers are made worse.
+  - The price is not signed without a response premise. The duty's "fair and reasonable" terms are not a held line.
+- **A charge owed to more than one receiver** (`other_receivers`): each further receiver has its own receipt variable.
+
+**Third blind run on WE-059 (right to repair):** 15 of 47 rows, against 9 and 11 in the first two runs and 9 for the pattern engine.
+- Makers' sales now come out ambiguous, as the table has them (C-30). That is the duty's added sales set against the cost of the term.
+- Two rows are signed where the table leaves them ambiguous: makers' product attributes, by the writer's choice of alternative.
+- What the writer could not hold: `quantity_traded` merges an actor's exchanges, so makers' parts sales (up) and equipment sales (down) are one variable.
