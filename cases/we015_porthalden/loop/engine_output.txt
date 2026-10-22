@@ -1,0 +1,36 @@
+DONE in 3 rounds, 14 questions
+R customers.booked price_paid  decrease
+R customers.booked quantity_demanded  increase
+R customers.taxi allocation_by_non_price_criteria  increase
+R customers.taxi excess_demand  increase
+R customers.taxi quality_per_unit  decrease
+R customers.taxi quantity_substitute  increase
+R customers.taxi quantity_traded  decrease
+R customers.taxi side_payments  increase
+R customers.taxi wait_time  increase
+R customers.taxi ['wait_time', 'side_payments', 'allocation_by_non_price_criteria']  at_least_one_increase
+R drivers.licensed net_price_received  decrease
+R drivers.licensed quantity_traded  decrease
+R drivers.private_hire entry_rate  increase
+R drivers.private_hire informal_activity  increase
+R drivers.private_hire number_of_sellers  decrease
+R drivers.private_hire quantity_supplied  ambiguous
+R drivers.private_hire quantity_traded  increase
+R drivers.private_hire reclassification  increase
+R drivers.private_hire resources_available_other_uses  decrease
+R drivers.prospective applications announcement increase
+R drivers.prospective earnings  decrease
+R drivers.prospective informal_activity  increase
+R drivers.prospective quantity_traded  decrease
+R drivers.prospective resources_available_other_uses  decrease
+R licensees asset_value  increase
+R licensees lobbying_effort  increase
+R licensees quantity_traded  decrease
+R licensees resources_available_other_uses  increase
+R licensees right_lease_price  increase
+R licensees.bought_near_peak asset_value  decrease
+R officials.enforcement enforcement_cost  increase
+- officials.enforcement enforcement_cost  decrease
+R officials.enforcement fund_balance  ambiguous
+R officials.enforcement non_tax_receipts  increase
+R taxpayers resources_available_other_uses  decrease
