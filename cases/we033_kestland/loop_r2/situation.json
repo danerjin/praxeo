@@ -1,0 +1,816 @@
+{
+ "name": "WE-033 Kestland Household Support Payment (loop_r2)",
+ "exchanges": [
+  {
+   "id": "e_bonds_dom",
+   "buyer": "buyers.domestic",
+   "seller": "treasury",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": null,
+   "seller_price_var": null,
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_bonds_for",
+   "buyer": "buyers.foreign",
+   "seller": "treasury",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": null,
+   "seller_price_var": null,
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [],
+ "alternatives": [
+  {
+   "premises": [
+    "q6_banks_and_pension_funds_that_buy_support"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "buyers.domestic",
+   "actor": "buyers.domestic",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q7_some_payments_are_diverted_by_identity_f",
+    "a18"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "claimants.false",
+   "actor": "claimants.false",
+   "variables": [
+    "legal_breach"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q10_some_recipients_would_have_borrowed_in_j"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "households.applicants",
+   "actor": "borrowers.households",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q10_some_recipients_would_have_borrowed_in_j"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "households.deposit",
+   "actor": "borrowers.households",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q15_for_some_households_forming_a_separate_q"
+   ],
+   "reading": "U1-b",
+   "component": "k1b",
+   "chooser": "households.separate_filers",
+   "actor": "households.separate_filers",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": true
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q27_retailers_can_organize_to_press_for_a_re"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "retailers"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q8_some_recipient_households_spend_part_of_"
+   ],
+   "reading": null,
+   "source_actor": "households.applicants",
+   "source_variable": "resources_available_other_uses",
+   "relation": "input",
+   "actor": "households.applicants",
+   "variable": "consumption",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q9_some_recipient_households_save_part_of_t"
+   ],
+   "reading": null,
+   "source_actor": "households.applicants",
+   "source_variable": "resources_available_other_uses",
+   "relation": "input",
+   "actor": "households.applicants",
+   "variable": "saving",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q8_some_recipient_households_spend_part_of_"
+   ],
+   "reading": null,
+   "source_actor": "households.deposit",
+   "source_variable": "resources_available_other_uses",
+   "relation": "input",
+   "actor": "households.deposit",
+   "variable": "consumption",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q9_some_recipient_households_save_part_of_t"
+   ],
+   "reading": null,
+   "source_actor": "households.deposit",
+   "source_variable": "resources_available_other_uses",
+   "relation": "input",
+   "actor": "households.deposit",
+   "variable": "saving",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q8_some_recipient_households_spend_part_of_"
+   ],
+   "reading": "U1-b",
+   "source_actor": "households.separate_filers",
+   "source_variable": "resources_available_other_uses",
+   "relation": "input",
+   "actor": "households.separate_filers",
+   "variable": "consumption",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q9_some_recipient_households_save_part_of_t"
+   ],
+   "reading": "U1-b",
+   "source_actor": "households.separate_filers",
+   "source_variable": "resources_available_other_uses",
+   "relation": "input",
+   "actor": "households.separate_filers",
+   "variable": "saving",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q16_many_households_expect_to_bear_part_of_t"
+   ],
+   "reading": null,
+   "source_actor": "taxpayers.future",
+   "source_variable": "resources_available_other_uses",
+   "relation": "substitute",
+   "actor": "households.deposit",
+   "variable": "saving",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q16_many_households_expect_to_bear_part_of_t"
+   ],
+   "reading": null,
+   "source_actor": "taxpayers.future",
+   "source_variable": "resources_available_other_uses",
+   "relation": "input",
+   "actor": "households.deposit",
+   "variable": "consumption",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q16_many_households_expect_to_bear_part_of_t"
+   ],
+   "reading": null,
+   "source_actor": "taxpayers.future",
+   "source_variable": "resources_available_other_uses",
+   "relation": "substitute",
+   "actor": "households.applicants",
+   "variable": "saving",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q16_many_households_expect_to_bear_part_of_t"
+   ],
+   "reading": null,
+   "source_actor": "taxpayers.future",
+   "source_variable": "resources_available_other_uses",
+   "relation": "input",
+   "actor": "households.applicants",
+   "variable": "consumption",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q16_many_households_expect_to_bear_part_of_t"
+   ],
+   "reading": "U1-b",
+   "source_actor": "taxpayers.future",
+   "source_variable": "resources_available_other_uses",
+   "relation": "substitute",
+   "actor": "households.separate_filers",
+   "variable": "saving",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q16_many_households_expect_to_bear_part_of_t"
+   ],
+   "reading": "U1-b",
+   "source_actor": "taxpayers.future",
+   "source_variable": "resources_available_other_uses",
+   "relation": "input",
+   "actor": "households.separate_filers",
+   "variable": "consumption",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q17_the_supply_of_loans_to_kestland_is_not_p",
+    "q18_rates_on_household_deposits_and_on_card_"
+   ],
+   "reading": null,
+   "source_actor": "treasury",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "borrowers.business",
+   "variable": "interest_rate",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q17_the_supply_of_loans_to_kestland_is_not_p",
+    "q18_rates_on_household_deposits_and_on_card_"
+   ],
+   "reading": null,
+   "source_actor": "treasury",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "homebuyers",
+   "variable": "interest_rate",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q19_most_private_borrowing_at_the_margin_fin"
+   ],
+   "reading": null,
+   "source_actor": "borrowers.business",
+   "source_variable": "interest_rate",
+   "relation": "cost",
+   "actor": "borrowers.business",
+   "variable": "investment_target",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q20_investment_crowded_out_in_2027_and_2028_"
+   ],
+   "reading": null,
+   "source_actor": "borrowers.business",
+   "source_variable": "investment_target",
+   "relation": "yield",
+   "actor": "borrowers.business",
+   "variable": "capital_stock_economy",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q19_most_private_borrowing_at_the_margin_fin"
+   ],
+   "reading": null,
+   "source_actor": "homebuyers",
+   "source_variable": "interest_rate",
+   "relation": "own_price",
+   "actor": "homebuyers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q22_the_supply_of_homes_is_slow_to_respond_i"
+   ],
+   "reading": null,
+   "source_actor": "homebuyers",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "owners.homes",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q23_some_of_what_recipients_spend_on_present"
+   ],
+   "reading": null,
+   "source_actor": "households.applicants",
+   "source_variable": "consumption",
+   "relation": "same_act",
+   "actor": "retailers",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q24_money_that_recipients_save_or_use_to_rep"
+   ],
+   "reading": null,
+   "source_actor": "households.applicants",
+   "source_variable": "saving",
+   "relation": "supply",
+   "actor": "borrowers.business",
+   "variable": "interest_rate",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q24_money_that_recipients_save_or_use_to_rep"
+   ],
+   "reading": null,
+   "source_actor": "households.applicants",
+   "source_variable": "saving",
+   "relation": "supply",
+   "actor": "homebuyers",
+   "variable": "interest_rate",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q25_recipients_spend_enough_of_the_payment_o"
+   ],
+   "reading": null,
+   "source_actor": "households.applicants",
+   "source_variable": "consumption",
+   "relation": "same_act",
+   "actor": "homebuyers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q23_some_of_what_recipients_spend_on_present"
+   ],
+   "reading": null,
+   "source_actor": "households.deposit",
+   "source_variable": "consumption",
+   "relation": "same_act",
+   "actor": "retailers",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q24_money_that_recipients_save_or_use_to_rep"
+   ],
+   "reading": null,
+   "source_actor": "households.deposit",
+   "source_variable": "saving",
+   "relation": "supply",
+   "actor": "borrowers.business",
+   "variable": "interest_rate",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q24_money_that_recipients_save_or_use_to_rep"
+   ],
+   "reading": null,
+   "source_actor": "households.deposit",
+   "source_variable": "saving",
+   "relation": "supply",
+   "actor": "homebuyers",
+   "variable": "interest_rate",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q25_recipients_spend_enough_of_the_payment_o"
+   ],
+   "reading": null,
+   "source_actor": "households.deposit",
+   "source_variable": "consumption",
+   "relation": "same_act",
+   "actor": "homebuyers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q23_some_of_what_recipients_spend_on_present"
+   ],
+   "reading": "U1-b",
+   "source_actor": "households.separate_filers",
+   "source_variable": "consumption",
+   "relation": "same_act",
+   "actor": "retailers",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q24_money_that_recipients_save_or_use_to_rep"
+   ],
+   "reading": "U1-b",
+   "source_actor": "households.separate_filers",
+   "source_variable": "saving",
+   "relation": "supply",
+   "actor": "borrowers.business",
+   "variable": "interest_rate",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q24_money_that_recipients_save_or_use_to_rep"
+   ],
+   "reading": "U1-b",
+   "source_actor": "households.separate_filers",
+   "source_variable": "saving",
+   "relation": "supply",
+   "actor": "homebuyers",
+   "variable": "interest_rate",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q25_recipients_spend_enough_of_the_payment_o"
+   ],
+   "reading": "U1-b",
+   "source_actor": "households.separate_filers",
+   "source_variable": "consumption",
+   "relation": "same_act",
+   "actor": "homebuyers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q26_sellers_adjust_staff_or_hours_to_sales_w"
+   ],
+   "reading": null,
+   "source_actor": "retailers",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.retailers",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  }
+ ],
+ "assets": [],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "households.applicants"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k4",
+   "actor": "officials.revenue"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k4",
+   "actor": "taxpayers.future",
+   "premises": [
+    "a11"
+   ]
+  },
+  {
+   "component": "k3",
+   "actor": "taxpayers.future",
+   "premises": [
+    "a11",
+    "a4"
+   ]
+  },
+  {
+   "component": "k3",
+   "actor": "recipients.other_spending",
+   "premises": [
+    "a11",
+    "a_cut"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [],
+ "moves": [],
+ "discretion": [],
+ "means": [
+  {
+   "component": "k1",
+   "actor": "households.deposit",
+   "direction": "in"
+  },
+  {
+   "component": "k1",
+   "actor": "households.applicants",
+   "direction": "in"
+  },
+  {
+   "component": "k1b",
+   "actor": "households.separate_filers",
+   "direction": "in"
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": []
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q11_some_applicants_file_in_the_last_weeks_b"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "households.applicants",
+   "variable": "applications",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q13_many_households_expect_a_further_payment"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "households.deposit",
+   "variable": "consumption",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q14_some_households_borrow_against_the_expec"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "households.deposit",
+   "variable": "consumption",
+   "mode": "carry_over"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "issued": [
+  {
+   "premises": [
+    "a_sold"
+   ],
+   "reading": null,
+   "component": "k2",
+   "exchange": "e_bonds_dom"
+  },
+  {
+   "premises": [
+    "a_sold"
+   ],
+   "reading": null,
+   "component": "k2",
+   "exchange": "e_bonds_for"
+  }
+ ],
+ "penalties": [
+  {
+   "premises": [
+    "a18"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "claimants.false",
+   "collector": "officials.revenue"
+  }
+ ],
+ "terms": [],
+ "banned": [],
+ "incidence": [],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "What a household is: persons living together at one address and sharing living expenses (the Tax Agency's first guidance pays by tax-filing unit)",
+   "readings": [
+    "U1-a: one payment per registered address",
+    "U1-b: one payment per tax-filing unit, so an address with an adult child or lodger who files separately receives two"
+   ],
+   "components": {
+    "U1-a": [],
+    "U1-b": [
+     "k1b"
+    ]
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [
+  {
+   "component": "k1",
+   "premises": []
+  }
+ ],
+ "parts": [],
+ "dominance": [
+  {
+   "premises": [
+    "q12_the_cost_of_applying_with_a_form_and_ide"
+   ],
+   "reading": null,
+   "actor": "households.applicants",
+   "variable": "resources_available_other_uses",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q21_the_money_that_recipients_save_or_use_to"
+   ],
+   "reading": null,
+   "actor": "borrowers.business",
+   "variable": "interest_rate",
+   "window": null,
+   "direction": "increase",
+   "kind": "arithmetic"
+  },
+  {
+   "premises": [
+    "q21_the_money_that_recipients_save_or_use_to"
+   ],
+   "reading": null,
+   "actor": "homebuyers",
+   "variable": "interest_rate",
+   "window": null,
+   "direction": "increase",
+   "kind": "arithmetic"
+  }
+ ],
+ "assumptions": {
+  "a_sold": {
+   "text": "The Support Bonds are sold at auction as enacted.",
+   "p": 0.9,
+   "class": "enforcement"
+  },
+  "a18": {
+   "text": "The Tax Agency detects some false or duplicate claims and recovers repayments and fines.",
+   "p": 0.75,
+   "class": "enforcement"
+  },
+  "a11": {
+   "text": "The bonds are repaid on the ten-year schedule rather than rolled over.",
+   "p": 0.6,
+   "class": "expectations"
+  },
+  "a4": {
+   "text": "The installments are funded mainly by higher taxes rather than lower spending.",
+   "p": 0.45,
+   "class": "revenue_use"
+  },
+  "a_cut": {
+   "text": "Some of the installments are funded by lower spending.",
+   "p": 0.8,
+   "class": "revenue_use"
+  },
+  "q6_banks_and_pension_funds_that_buy_support": {
+   "text": "Banks and pension funds that buy Support Bonds would otherwise have lent the funds to private borrowers.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q7_some_payments_are_diverted_by_identity_f": {
+   "text": "Some payments are diverted by identity fraud, or made twice.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q8_some_recipient_households_spend_part_of_": {
+   "text": "Some recipient households spend part of the payment on present goods and services within six months, rather than saving it all or repaying debt.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q9_some_recipient_households_save_part_of_t": {
+   "text": "Some recipient households save part of the payment or use it to repay debt.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q10_some_recipients_would_have_borrowed_in_j": {
+   "text": "Some recipients would have borrowed in July to December 2027 for purchases they now pay with the payment.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q11_some_applicants_file_in_the_last_weeks_b": {
+   "text": "Some applicants file in the last weeks before the 31 December 2027 deadline.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q12_the_cost_of_applying_with_a_form_and_ide": {
+   "text": "The cost of applying with a form and identity documents is far smaller than the 1,000 crowns paid.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q13_many_households_expect_a_further_payment": {
+   "text": "Many households expect a further payment and delay purchases to wait for it.",
+   "p": 0.25,
+   "class": "other"
+  },
+  "q14_some_households_borrow_against_the_expec": {
+   "text": "Some households borrow against the expected payment before it arrives.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q15_for_some_households_forming_a_separate_q": {
+   "text": "For some households, forming a separate qualifying household costs less than a second payment.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q16_many_households_expect_to_bear_part_of_t": {
+   "text": "Many households expect to bear part of the later installments.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q17_the_supply_of_loans_to_kestland_is_not_p": {
+   "text": "The supply of loans to Kestland is not perfectly elastic in 2027 and 2028: foreign lenders do not supply all the extra funds at the going rate.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q18_rates_on_household_deposits_and_on_card_": {
+   "text": "Rates on household deposits and on card and payday credit move little in 2027 in response to the auctions; the higher rate falls mainly on business and mortgage borrowers.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q19_most_private_borrowing_at_the_margin_fin": {
+   "text": "Most private borrowing at the margin finances business investment and home purchases.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q20_investment_crowded_out_in_2027_and_2028_": {
+   "text": "Investment crowded out in 2027 and 2028 is not fully made up in later years.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q21_the_money_that_recipients_save_or_use_to": {
+   "text": "The money that recipients save or use to repay debt is less than the sum the Treasury borrows.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q22_the_supply_of_homes_is_slow_to_respond_i": {
+   "text": "The supply of homes is slow to respond in 2027 and 2028.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q23_some_of_what_recipients_spend_on_present": {
+   "text": "Some of what recipients spend on present goods buys goods that would not have been bought without the payment, rather than goods that would have been bought on credit anyway (A-6).",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q24_money_that_recipients_save_or_use_to_rep": {
+   "text": "Money that recipients save or use to repay debt returns to lenders and is lent on.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q25_recipients_spend_enough_of_the_payment_o": {
+   "text": "Recipients spend enough of the payment on housing (a deposit toward a purchase, a higher rent) to raise home values.",
+   "p": 0.3,
+   "class": "other"
+  },
+  "q26_sellers_adjust_staff_or_hours_to_sales_w": {
+   "text": "Sellers adjust staff or hours to sales within months.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q27_retailers_can_organize_to_press_for_a_re": {
+   "text": "Retailers can organize to press for a repeat payment, and expect a chance of success.",
+   "p": 0.45,
+   "class": "other"
+  }
+ }
+}

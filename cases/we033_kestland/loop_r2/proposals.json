@@ -1,0 +1,648 @@
+{
+ "households.deposit": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.deposit",
+    "source_variable": "resources_available_other_uses",
+    "relation": "input",
+    "actor": "households.deposit",
+    "variable": "consumption"
+   },
+   "premises": [
+    "Some recipient households spend part of the payment on present goods and services within six months, rather than saving it all or repaying debt."
+   ],
+   "source": "1,000 crowns per household, once, tax-free"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.deposit",
+    "source_variable": "resources_available_other_uses",
+    "relation": "input",
+    "actor": "households.deposit",
+    "variable": "saving"
+   },
+   "premises": [
+    "Some recipient households save part of the payment or use it to repay debt."
+   ],
+   "source": "30% of households planned to save most of the payment, 40% to pay bills or debts"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "households.deposit",
+    "actor": "borrowers.households",
+    "variables": [
+     "quantity_demanded"
+    ]
+   },
+   "premises": [
+    "Some recipients would have borrowed in July to December 2027 for purchases they now pay with the payment."
+   ],
+   "source": "About 35% of households report less than one month's income in liquid savings."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "households.deposit",
+    "variable": "consumption",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Many households expect a further payment and delay purchases to wait for it."
+   ],
+   "source": "The Finance Minister announced the payment in the budget speech on 4 March 2027."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "households.deposit",
+    "variable": "consumption",
+    "mode": "carry_over"
+   },
+   "premises": [
+    "Some households borrow against the expected payment before it arrives."
+   ],
+   "source": "Paid by direct deposit from 1 July 2027; Parliament enacted it on 29 April 2027."
+  }
+ ],
+ "households.applicants": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.applicants",
+    "source_variable": "resources_available_other_uses",
+    "relation": "input",
+    "actor": "households.applicants",
+    "variable": "consumption"
+   },
+   "premises": [
+    "Some recipient households spend part of the payment on present goods and services within six months, rather than saving it all or repaying debt."
+   ],
+   "source": "1,000 crowns per household, once, tax-free"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.applicants",
+    "source_variable": "resources_available_other_uses",
+    "relation": "input",
+    "actor": "households.applicants",
+    "variable": "saving"
+   },
+   "premises": [
+    "Some recipient households save part of the payment or use it to repay debt."
+   ],
+   "source": "30% of households planned to save most of the payment, 40% to pay bills or debts"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "households.applicants",
+    "actor": "borrowers.households",
+    "variables": [
+     "quantity_demanded"
+    ]
+   },
+   "premises": [
+    "Some recipients would have borrowed in July to December 2027 for purchases they now pay with the payment."
+   ],
+   "source": "About 35% of households report less than one month's income in liquid savings."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "households.applicants",
+    "variable": "applications",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Some applicants file in the last weeks before the 31 December 2027 deadline."
+   ],
+   "source": "Others apply by form, with identity documents, by 31 December 2027, and are paid within eight weeks."
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "households.applicants",
+    "variable": "resources_available_other_uses",
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "The cost of applying with a form and identity documents is far smaller than the 1,000 crowns paid."
+   ],
+   "source": "Others apply by form, with identity documents, by 31 December 2027"
+  }
+ ],
+ "households.separate_filers": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.separate_filers",
+    "source_variable": "resources_available_other_uses",
+    "relation": "input",
+    "actor": "households.separate_filers",
+    "variable": "consumption",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Some recipient households spend part of the payment on present goods and services within six months, rather than saving it all or repaying debt."
+   ],
+   "source": "Reading U1-b: one payment per tax-filing unit, so an address with an adult child or a lodger who files separately receives two."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.separate_filers",
+    "source_variable": "resources_available_other_uses",
+    "relation": "input",
+    "actor": "households.separate_filers",
+    "variable": "saving",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Some recipient households save part of the payment or use it to repay debt."
+   ],
+   "source": "Reading U1-b: one payment per tax-filing unit, so an address with an adult child or a lodger who files separately receives two."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1b",
+    "chooser": "households.separate_filers",
+    "actor": "households.separate_filers",
+    "variables": [
+     "reclassification"
+    ],
+    "inverse": true,
+    "reading": "U1-b"
+   },
+   "premises": [
+    "For some households, forming a separate qualifying household costs less than a second payment."
+   ],
+   "source": "Reading U1-b: an address with an adult child or a lodger who files separately receives two."
+  }
+ ],
+ "claimants.false": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "claimants.false",
+    "actor": "claimants.false",
+    "variables": [
+     "legal_breach"
+    ],
+    "inverse": true
+   },
+   "premises": [
+    "Some payments are diverted by identity fraud, or made twice.",
+    "The Tax Agency detects some false or duplicate claims and recovers repayments and fines."
+   ],
+   "source": "False claims must be repaid, with a fine of 2,000 crowns, and may be prosecuted as fraud. Bank details on file can be changed online with a password."
+  }
+ ],
+ "buyers.domestic": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "buyers.domestic",
+    "actor": "buyers.domestic",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Banks and pension funds that buy Support Bonds would otherwise have lent the funds to private borrowers."
+   ],
+   "source": "Sold at auction from May to August 2027 to banks, pension funds, other private buyers and foreign buyers."
+  }
+ ],
+ "buyers.foreign": [],
+ "treasury": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "treasury",
+    "source_variable": "quantity_traded",
+    "relation": "supply_price",
+    "actor": "borrowers.business",
+    "variable": "interest_rate"
+   },
+   "premises": [
+    "The supply of loans to Kestland is not perfectly elastic in 2027 and 2028: foreign lenders do not supply all the extra funds at the going rate.",
+    "Rates on household deposits and on card and payday credit move little in 2027 in response to the auctions; the higher rate falls mainly on business and mortgage borrowers."
+   ],
+   "source": "The government sells about 35 billion crowns of bonds in a typical year; about 30% of its bonds are held abroad. Up to 4.1 billion crowns, sold at auction."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "treasury",
+    "source_variable": "quantity_traded",
+    "relation": "supply_price",
+    "actor": "homebuyers",
+    "variable": "interest_rate"
+   },
+   "premises": [
+    "The supply of loans to Kestland is not perfectly elastic in 2027 and 2028: foreign lenders do not supply all the extra funds at the going rate.",
+    "Rates on household deposits and on card and payday credit move little in 2027 in response to the auctions; the higher rate falls mainly on business and mortgage borrowers."
+   ],
+   "source": "Up to 4.1 billion crowns, sold at auction from May to August 2027."
+  }
+ ],
+ "officials.revenue": [],
+ "recipients.other_spending": [],
+ "taxpayers.future": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "taxpayers.future",
+    "source_variable": "resources_available_other_uses",
+    "relation": "substitute",
+    "actor": "households.deposit",
+    "variable": "saving"
+   },
+   "premises": [
+    "Many households expect to bear part of the later installments."
+   ],
+   "source": "Repaid from general revenue in ten equal annual installments from 2028."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "taxpayers.future",
+    "source_variable": "resources_available_other_uses",
+    "relation": "input",
+    "actor": "households.deposit",
+    "variable": "consumption"
+   },
+   "premises": [
+    "Many households expect to bear part of the later installments."
+   ],
+   "source": "Repaid from general revenue in ten equal annual installments from 2028."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "taxpayers.future",
+    "source_variable": "resources_available_other_uses",
+    "relation": "substitute",
+    "actor": "households.applicants",
+    "variable": "saving"
+   },
+   "premises": [
+    "Many households expect to bear part of the later installments."
+   ],
+   "source": "Repaid from general revenue in ten equal annual installments from 2028."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "taxpayers.future",
+    "source_variable": "resources_available_other_uses",
+    "relation": "input",
+    "actor": "households.applicants",
+    "variable": "consumption"
+   },
+   "premises": [
+    "Many households expect to bear part of the later installments."
+   ],
+   "source": "Repaid from general revenue in ten equal annual installments from 2028."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "taxpayers.future",
+    "source_variable": "resources_available_other_uses",
+    "relation": "substitute",
+    "actor": "households.separate_filers",
+    "variable": "saving",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Many households expect to bear part of the later installments."
+   ],
+   "source": "Repaid from general revenue in ten equal annual installments from 2028."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "taxpayers.future",
+    "source_variable": "resources_available_other_uses",
+    "relation": "input",
+    "actor": "households.separate_filers",
+    "variable": "consumption",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Many households expect to bear part of the later installments."
+   ],
+   "source": "Repaid from general revenue in ten equal annual installments from 2028."
+  }
+ ],
+ "borrowers.business": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "borrowers.business",
+    "source_variable": "interest_rate",
+    "relation": "cost",
+    "actor": "borrowers.business",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Most private borrowing at the margin finances business investment and home purchases."
+   ],
+   "source": "the higher rate falls mainly on business and mortgage borrowers"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "borrowers.business",
+    "source_variable": "investment_target",
+    "relation": "yield",
+    "actor": "borrowers.business",
+    "variable": "capital_stock_economy",
+    "horizon": "long"
+   },
+   "premises": [
+    "Investment crowded out in 2027 and 2028 is not fully made up in later years."
+   ],
+   "source": "Support Bonds sold at auction May to August 2027; repaid from 2028"
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "borrowers.business",
+    "variable": "interest_rate",
+    "direction": "increase",
+    "kind": "arithmetic"
+   },
+   "premises": [
+    "The money that recipients save or use to repay debt is less than the sum the Treasury borrows."
+   ],
+   "source": "Up to 4.1 billion crowns; 1,000 crowns per household"
+  }
+ ],
+ "homebuyers": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "homebuyers",
+    "source_variable": "interest_rate",
+    "relation": "own_price",
+    "actor": "homebuyers",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Most private borrowing at the margin finances business investment and home purchases."
+   ],
+   "source": "the higher rate falls mainly on business and mortgage borrowers"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "homebuyers",
+    "source_variable": "quantity_demanded",
+    "relation": "supply_price",
+    "actor": "owners.homes",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "The supply of homes is slow to respond in 2027 and 2028."
+   ],
+   "source": "Support Bonds sold at auction May to August 2027"
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "homebuyers",
+    "variable": "interest_rate",
+    "direction": "increase",
+    "kind": "arithmetic"
+   },
+   "premises": [
+    "The money that recipients save or use to repay debt is less than the sum the Treasury borrows."
+   ],
+   "source": "Up to 4.1 billion crowns; 1,000 crowns per household"
+  }
+ ],
+ "borrowers.households": [],
+ "buyers.domestic#2": [],
+ "claimants.false#2": [],
+ "households.deposit#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.deposit",
+    "source_variable": "consumption",
+    "relation": "same_act",
+    "actor": "retailers",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Some of what recipients spend on present goods buys goods that would not have been bought without the payment, rather than goods that would have been bought on credit anyway (A-6)."
+   ],
+   "source": "1,000 crowns per household, once, tax-free"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.deposit",
+    "source_variable": "saving",
+    "relation": "supply",
+    "actor": "borrowers.business",
+    "variable": "interest_rate"
+   },
+   "premises": [
+    "Money that recipients save or use to repay debt returns to lenders and is lent on."
+   ],
+   "source": "1,000 crowns per household, once, tax-free"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.deposit",
+    "source_variable": "saving",
+    "relation": "supply",
+    "actor": "homebuyers",
+    "variable": "interest_rate"
+   },
+   "premises": [
+    "Money that recipients save or use to repay debt returns to lenders and is lent on."
+   ],
+   "source": "1,000 crowns per household, once, tax-free"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.deposit",
+    "source_variable": "consumption",
+    "relation": "same_act",
+    "actor": "homebuyers",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Recipients spend enough of the payment on housing (a deposit toward a purchase, a higher rent) to raise home values."
+   ],
+   "source": "1,000 crowns per household, once, tax-free"
+  }
+ ],
+ "households.applicants#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.applicants",
+    "source_variable": "consumption",
+    "relation": "same_act",
+    "actor": "retailers",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Some of what recipients spend on present goods buys goods that would not have been bought without the payment, rather than goods that would have been bought on credit anyway (A-6)."
+   ],
+   "source": "1,000 crowns per household, once, tax-free"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.applicants",
+    "source_variable": "saving",
+    "relation": "supply",
+    "actor": "borrowers.business",
+    "variable": "interest_rate"
+   },
+   "premises": [
+    "Money that recipients save or use to repay debt returns to lenders and is lent on."
+   ],
+   "source": "1,000 crowns per household, once, tax-free"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.applicants",
+    "source_variable": "saving",
+    "relation": "supply",
+    "actor": "homebuyers",
+    "variable": "interest_rate"
+   },
+   "premises": [
+    "Money that recipients save or use to repay debt returns to lenders and is lent on."
+   ],
+   "source": "1,000 crowns per household, once, tax-free"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.applicants",
+    "source_variable": "consumption",
+    "relation": "same_act",
+    "actor": "homebuyers",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Recipients spend enough of the payment on housing (a deposit toward a purchase, a higher rent) to raise home values."
+   ],
+   "source": "1,000 crowns per household, once, tax-free"
+  }
+ ],
+ "households.separate_filers#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.separate_filers",
+    "source_variable": "consumption",
+    "relation": "same_act",
+    "actor": "retailers",
+    "variable": "quantity_traded",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Some of what recipients spend on present goods buys goods that would not have been bought without the payment, rather than goods that would have been bought on credit anyway (A-6)."
+   ],
+   "source": "Reading U1-b: one payment per tax-filing unit, so an address with an adult child or a lodger who files separately receives two."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.separate_filers",
+    "source_variable": "saving",
+    "relation": "supply",
+    "actor": "borrowers.business",
+    "variable": "interest_rate",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Money that recipients save or use to repay debt returns to lenders and is lent on."
+   ],
+   "source": "Reading U1-b: one payment per tax-filing unit, so an address with an adult child or a lodger who files separately receives two."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.separate_filers",
+    "source_variable": "saving",
+    "relation": "supply",
+    "actor": "homebuyers",
+    "variable": "interest_rate",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Money that recipients save or use to repay debt returns to lenders and is lent on."
+   ],
+   "source": "Reading U1-b: one payment per tax-filing unit, so an address with an adult child or a lodger who files separately receives two."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "households.separate_filers",
+    "source_variable": "consumption",
+    "relation": "same_act",
+    "actor": "homebuyers",
+    "variable": "quantity_demanded",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Recipients spend enough of the payment on housing (a deposit toward a purchase, a higher rent) to raise home values."
+   ],
+   "source": "Reading U1-b: one payment per tax-filing unit, so an address with an adult child or a lodger who files separately receives two."
+  }
+ ],
+ "borrowers.business#2": [],
+ "retailers": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "workers.retailers",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Sellers adjust staff or hours to sales within months."
+   ],
+   "source": "A 2014 energy rebate of 300 crowns per household was followed by higher card spending in the following two months."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "retailers"
+   },
+   "premises": [
+    "Retailers can organize to press for a repeat payment, and expect a chance of success."
+   ],
+   "source": "A 2014 energy rebate of 300 crowns per household was followed by higher card spending in the following two months."
+  }
+ ]
+}

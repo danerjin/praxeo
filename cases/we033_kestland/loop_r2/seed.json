@@ -1,0 +1,38 @@
+{
+ "name": "WE-033 Kestland Household Support Payment (loop_r2)",
+ "exchanges": [
+  {"id": "e_bonds_dom", "buyer": "buyers.domestic", "seller": "treasury"},
+  {"id": "e_bonds_for", "buyer": "buyers.foreign", "seller": "treasury"}
+ ],
+ "issued": [
+  {"component": "k2", "exchange": "e_bonds_dom", "premises": ["a_sold"]},
+  {"component": "k2", "exchange": "e_bonds_for", "premises": ["a_sold"]}
+ ],
+ "means": [
+  {"component": "k1", "actor": "households.deposit", "direction": "in"},
+  {"component": "k1", "actor": "households.applicants", "direction": "in"},
+  {"component": "k1b", "actor": "households.separate_filers", "direction": "in"}
+ ],
+ "compliance": [{"component": "k1", "actor": "households.applicants"}],
+ "penalties": [{"component": "k1", "actor": "claimants.false", "collector": "officials.revenue", "premises": ["a18"]}],
+ "enforcers": [{"component": "k4", "actor": "officials.revenue"}],
+ "funded": [
+  {"component": "k4", "actor": "taxpayers.future", "premises": ["a11"]},
+  {"component": "k3", "actor": "taxpayers.future", "premises": ["a11", "a4"]},
+  {"component": "k3", "actor": "recipients.other_spending", "premises": ["a11", "a_cut"]}
+ ],
+ "announced": [{"component": "k1", "premises": []}],
+ "expires": [{"component": "k1", "premises": []}],
+ "unclear": [
+  {"id": "U1", "text": "What a household is: persons living together at one address and sharing living expenses (the Tax Agency's first guidance pays by tax-filing unit)",
+   "readings": ["U1-a: one payment per registered address", "U1-b: one payment per tax-filing unit, so an address with an adult child or lodger who files separately receives two"],
+   "components": {"U1-a": [], "U1-b": ["k1b"]}}
+ ],
+ "assumptions": {
+  "a_sold": {"text": "The Support Bonds are sold at auction as enacted.", "p": 0.9, "class": "enforcement"},
+  "a18": {"text": "The Tax Agency detects some false or duplicate claims and recovers repayments and fines.", "p": 0.75, "class": "enforcement"},
+  "a11": {"text": "The bonds are repaid on the ten-year schedule rather than rolled over.", "p": 0.6, "class": "expectations"},
+  "a4": {"text": "The installments are funded mainly by higher taxes rather than lower spending.", "p": 0.45, "class": "revenue_use"},
+  "a_cut": {"text": "Some of the installments are funded by lower spending.", "p": 0.8, "class": "revenue_use"}
+ }
+}
