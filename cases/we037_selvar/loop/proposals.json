@@ -1,0 +1,163 @@
+{
+ "sellers.fans": [
+  {"part": "margins", "fact": {"exchange": "e_resale_fans", "kind": "outside", "actor": "sellers.fans", "variables": ["informal_activity"]},
+   "premises": ["The expected penalty for individual above-cap resales outside compliant platforms is small enough that some take place."], "premise_class": "enforcement",
+   "source": "Civil penalty up to $500 per ticket resold above the cap; about 12% of resale by value goes through social media and in person."},
+  {"part": "alternatives", "fact": {"component": "k1", "chooser": "sellers.fans", "actor": "sellers.charities", "variables": ["quantity_supplied"]},
+   "premises": ["Some holders of high-demand tickets who cannot attend give them to exempt charity auctions rather than resell at the cap."], "premise_class": "substitutability",
+   "source": "Exemptions: Resale by registered charities at auction."},
+  {"part": "alternatives", "fact": {"component": "k1", "chooser": "sellers.fans", "actor": "platforms.offshore", "variables": ["quantity_traded"]},
+   "premises": ["Offshore platforms with no Selvar presence are hard for the Attorney General to reach.", "Platforms compete for listings and for buyers."], "premise_class": "mobility",
+   "source": "11% of resales by value go through platforms based abroad with no presence in Selvar."},
+  {"part": "alternatives", "fact": {"component": "k1", "chooser": "sellers.fans", "actor": "sellers.fans", "variables": ["reclassification"]},
+   "premises": ["Under the Attorney General's existing practice, packages whose other items carry most of the price are not treated as tickets, so some sellers use them, and add-ons sold with tickets get past platforms' screening."], "premise_class": "enforcement",
+   "source": "A ticket sold with parking, food or a lounge pass: the guidance treats a package as a ticket where the ticket is its main item."},
+  {"part": "timing", "fact": {"component": "k1", "actor": "sellers.fans", "variable": "quantity_traded", "mode": "bring_forward"},
+   "premises": ["Holders and buyers know from February 2027 that resales from 1 September will be capped, and can time their sales and purchases."], "premise_class": "expectations",
+   "source": "Signed on 12 May 2027, applies to resales made on or after 1 September 2027; resale contracts made before 1 September 2027 are exempt."},
+  {"part": "assets", "fact": {"exchange": "e_resale_fans", "side": "seller", "actor": "owners.season_ticket"},
+   "premises": ["Season seat rights trade at a price that reflects expected resale of games."], "premise_class": "expectations",
+   "source": "Season ticket holders may transfer their seat rights through the club for a fee, and those rights trade at a price."}
+ ],
+ "intermediaries.brokers": [
+  {"part": "margins", "fact": {"exchange": "e_resale_brokers", "kind": "outside", "actor": "intermediaries.brokers", "variables": ["informal_activity"]},
+   "premises": ["Some brokers keep reselling Selvar tickets outside the cap and keep using bots for it."], "premise_class": "other",
+   "source": "About 60% of resale listings come from professional brokers (about 600, 40 based in Selvar)."},
+  {"part": "margins", "fact": {"exchange": "e_bots", "kind": "outside", "actor": "intermediaries.brokers", "variables": ["informal_activity"]},
+   "premises": ["Some brokers keep reselling Selvar tickets outside the cap and keep using bots for it."], "premise_class": "other",
+   "source": "K2 bans software that evades a primary seller's purchase limits."},
+  {"part": "alternatives", "fact": {"component": "k1", "chooser": "intermediaries.brokers", "actor": "intermediaries.brokers", "variables": ["reclassification"]},
+   "premises": ["Under the Attorney General's existing practice, packages whose other items carry most of the price are not treated as tickets, so some sellers use them, and add-ons sold with tickets get past platforms' screening."], "premise_class": "enforcement",
+   "source": "A ticket sold with parking, food or a lounge pass: the guidance treats a package as a ticket where the ticket is its main item."},
+  {"part": "alternatives", "fact": {"component": "k1", "chooser": "intermediaries.brokers", "actor": "intermediaries.brokers", "variables": ["cross_border_purchases"]},
+   "premises": ["Brokers shift some of their buying from Selvar to Brackmere City events."], "premise_class": "mobility",
+   "source": "Brackmere has a 14,000-seat arena and no resale law; about 40% of the arena tours that play Dunholt also play Brackmere City."},
+  {"part": "links", "fact": {"source_actor": "intermediaries.brokers", "source_variable": "cross_border_purchases", "relation": "same_act", "actor": "sellers.brackmere", "variable": "quantity_traded"},
+   "premises": [], "premise_class": "other",
+   "source": "The State of Brackmere, whose capital Brackmere City is 55 minutes from Dunholt, has a 14,000-seat arena and no resale law."},
+  {"part": "links", "fact": {"source_actor": "intermediaries.brokers", "source_variable": "quantity_traded", "relation": "input", "actor": "sellers.demand_priced", "variable": "quantity_demanded"},
+   "premises": ["Brokers' purchases in primary sales are made mainly to resell above face value, so the cap removes most of their gain on Selvar high-demand events.", "Brokers bought a material share of demand-priced seats, so their withdrawal lowers demand for them."], "premise_class": "other",
+   "source": "A national promoter uses demand-based pricing on about 10% of seats at high-demand events."},
+  {"part": "links", "fact": {"source_actor": "intermediaries.brokers", "source_variable": "quantity_traded", "relation": "crowding", "actor": "buyers.waitlist", "variable": "wait_time"},
+   "premises": ["Brokers hold about 15% of season tickets mainly to resell single games, and renew fewer once resale is capped.", "The season seats released (by brokers, about 5,700 at most, and by other holders who renew less now that resale is capped) are fewer than the waiting-list members who still buy at the club's price."], "premise_class": "other",
+   "source": "The football club sells 38,000 season tickets, with a waiting list of about 9,000; brokers hold about 15% of season tickets."},
+  {"part": "stakes", "fact": {"component": "k1", "actor": "intermediaries.brokers"},
+   "premises": ["Brokers, platforms, fan groups and primary sellers can organize at a cost below their stakes."], "premise_class": "other",
+   "source": "About 600 professional brokers account for about 60% of resale listings."},
+  {"part": "assets", "fact": {"exchange": "e_resale_brokers", "side": "seller", "actor": "intermediaries.brokers"},
+   "premises": ["Broker businesses are valued on expected earnings, and buyers of them expected the cap from introduction."], "premise_class": "expectations",
+   "source": "The bill was introduced on 3 February 2027, signed on 12 May 2027."},
+  {"part": "timing", "fact": {"component": "k1", "actor": "intermediaries.brokers", "variable": "quantity_traded", "mode": "bring_forward"},
+   "premises": ["Holders and buyers know from February 2027 that resales from 1 September will be capped, and can time their sales and purchases."], "premise_class": "expectations",
+   "source": "Applies to resales made on or after 1 September 2027; resale contracts made before 1 September 2027 are exempt."}
+ ],
+ "buyers.prospective": [
+  {"part": "alternatives", "fact": {"component": "k1", "chooser": "buyers.prospective", "actor": "sellers.fixed_price", "variables": ["quantity_demanded"]},
+   "premises": ["Some fans who would have bought on resale at the market price now try to buy in the primary sale, including demand-priced seats."], "premise_class": "substitutability",
+   "source": "Many artists and the theaters use fixed face values only; the national promoter uses demand-based pricing on about 10% of seats."},
+  {"part": "alternatives", "fact": {"component": "k1", "chooser": "buyers.prospective", "actor": "sellers.demand_priced", "variables": ["quantity_demanded"]},
+   "premises": ["Some fans who would have bought on resale at the market price now try to buy in the primary sale, including demand-priced seats."], "premise_class": "substitutability",
+   "source": "A national promoter that runs about 60% of arena concerts uses demand-based pricing on about 10% of seats at high-demand events."},
+  {"part": "alternatives", "fact": {"component": "k1", "chooser": "buyers.prospective", "actor": "buyers.border", "variables": ["cross_border_purchases"]},
+   "premises": ["Some fans of a touring act substitute the Brackmere City stop for Dunholt."], "premise_class": "substitutability",
+   "source": "About 40% of the arena tours that play Dunholt also play Brackmere City, 55 minutes away, which has no resale law."},
+  {"part": "margins", "fact": {"exchange": "e_resale_fans", "kind": "criterion", "actor": "buyers.prospective", "variables": ["side_payments"]},
+   "premises": ["Under the Attorney General's existing practice, packages whose other items carry most of the price are not treated as tickets, so some sellers use them, and add-ons sold with tickets get past platforms' screening."], "premise_class": "enforcement",
+   "source": "A ticket sold with parking, food or a lounge pass is a hospitality package."},
+  {"part": "margins", "fact": {"exchange": "e_resale_fans", "kind": "outside", "actor": "buyers.prospective", "variables": ["informal_activity"]},
+   "premises": ["The expected penalty for individual above-cap resales outside compliant platforms is small enough that some take place."], "premise_class": "enforcement",
+   "source": "12% of resale by value goes through social media and in person."}
+ ],
+ "buyers.current": [
+  {"part": "timing", "fact": {"component": "k1", "actor": "buyers.current", "variable": "quantity_traded", "mode": "bring_forward"},
+   "premises": ["Holders and buyers know from February 2027 that resales from 1 September will be capped, and can time their sales and purchases."], "premise_class": "expectations",
+   "source": "Applies to resales made on or after 1 September 2027."},
+  {"part": "stakes", "fact": {"component": "k1", "actor": "buyers.current"},
+   "premises": ["Brokers, platforms, fan groups and primary sellers can organize at a cost below their stakes."], "premise_class": "other",
+   "source": "The cap lowers what resale buyers pay."}
+ ],
+ "platforms.compliant": [
+  {"part": "stakes", "fact": {"component": "k1", "actor": "platforms.compliant"},
+   "premises": ["Brokers, platforms, fan groups and primary sellers can organize at a cost below their stakes."], "premise_class": "other",
+   "source": "Two national platforms with offices and staff in Selvar carry 68% of resales by value; typical fees are 18% to the buyer and 10% to the seller."},
+  {"part": "margins", "fact": {"exchange": "e_platform", "kind": "adjust", "side": "seller", "actor": "platforms.compliant", "variables": ["quality_per_unit"]},
+   "premises": ["Platforms cut the services they provide to buyers when the fee they may charge is capped."], "premise_class": "other",
+   "source": "U1-a: platform fees charged to the buyer are part of the price, so the buyer pays at most face value plus 10% in total."},
+  {"part": "alternatives", "fact": {"component": "k1_fee", "chooser": "platforms.compliant", "actor": "sellers.fans", "variables": ["net_price_received"], "inverse": true},
+   "premises": ["Platforms raise the fee they charge to sellers when the fee they may charge to buyers is capped."], "premise_class": "substitutability",
+   "source": "Typical platform fees are 18% of the resale price charged to the buyer and 10% to the seller."},
+  {"part": "alternatives", "fact": {"component": "k1_fee", "chooser": "platforms.compliant", "actor": "intermediaries.brokers", "variables": ["net_price_received"], "inverse": true},
+   "premises": ["Platforms raise the fee they charge to sellers when the fee they may charge to buyers is capped."], "premise_class": "substitutability",
+   "source": "Typical platform fees are 18% of the resale price charged to the buyer and 10% to the seller."},
+  {"part": "margins", "fact": {"exchange": "e_resale_fans", "kind": "criterion", "actor": "buyers.current", "variables": ["side_payments"], "reading": "U1-b"},
+   "premises": [], "premise_class": "other",
+   "source": "U1-b: platform fees are charged on top of the capped price, and reasonable is not defined."}
+ ],
+ "officials.enforcement": [],
+ "buyers.border": [
+  {"part": "links", "fact": {"source_actor": "buyers.border", "source_variable": "cross_border_purchases", "relation": "same_act", "actor": "sellers.brackmere", "variable": "quantity_traded"},
+   "premises": [], "premise_class": "other",
+   "source": "Brackmere City, 55 minutes from Dunholt, has a 14,000-seat arena and no resale law."}
+ ],
+ "buyers.current#2": [],
+ "buyers.prospective#2": [],
+ "buyers.waitlist": [],
+ "intermediaries.brokers#2": [
+  {"part": "links", "fact": {"source_actor": "intermediaries.brokers", "source_variable": "reclassification", "relation": "complement", "actor": "sellers.complements", "variable": "quantity_complement"},
+   "premises": ["Under the Attorney General's existing practice, packages whose other items carry most of the price are not treated as tickets, so some sellers use them, and add-ons sold with tickets get past platforms' screening."], "premise_class": "enforcement",
+   "source": "A ticket sold with parking, food or a lounge pass."}
+ ],
+ "owners.season_ticket": [
+  {"part": "links", "fact": {"source_actor": "owners.season_ticket", "source_variable": "asset_value", "relation": "yield", "actor": "buyers.waitlist", "variable": "wait_time"},
+   "premises": ["The season seats released (by brokers, about 5,700 at most, and by other holders who renew less now that resale is capped) are fewer than the waiting-list members who still buy at the club's price."], "premise_class": "other",
+   "source": "The football club sells 38,000 season tickets, with a waiting list of about 9,000."}
+ ],
+ "platforms.compliant#2": [],
+ "platforms.offshore": [
+  {"part": "links", "fact": {"source_actor": "platforms.offshore", "source_variable": "quantity_traded", "relation": "substitute", "actor": "platforms.compliant", "variable": "quantity_traded"},
+   "premises": [], "premise_class": "other",
+   "source": "By value, 68% of Selvar resales go through two national platforms with offices and staff in Selvar, 11% through platforms based abroad with no presence in Selvar."}
+ ],
+ "sellers.brackmere": [],
+ "sellers.charities": [],
+ "sellers.demand_priced": [
+  {"part": "links", "fact": {"source_actor": "sellers.demand_priced", "source_variable": "quantity_demanded", "relation": "supply_price", "actor": "buyers.primary", "variable": "price_paid", "horizon": "short"},
+   "premises": ["Demand-based prices respond to demand within the sale period."], "premise_class": "other",
+   "source": "A national promoter uses demand-based pricing on about 10% of seats at high-demand events."},
+  {"part": "links", "fact": {"source_actor": "sellers.demand_priced", "source_variable": "quantity_demanded", "relation": "yield", "actor": "sellers.demand_priced", "variable": "term_prevalence"},
+   "premises": ["Primary sellers who already price some seats by demand find it worth doing for more seats once resale is capped."], "premise_class": "other",
+   "source": "Demand-based pricing on about 10% of seats at high-demand events and fixed face values on the rest."},
+  {"part": "stakes", "fact": {"component": "k1", "actor": "sellers.demand_priced"},
+   "premises": ["Brokers, platforms, fan groups and primary sellers can organize at a cost below their stakes."], "premise_class": "other",
+   "source": "K3: Nothing in this Act limits the price at which a primary seller or venue may sell a ticket."}
+ ],
+ "sellers.fans#2": [
+  {"part": "links", "fact": {"source_actor": "sellers.fans", "source_variable": "reclassification", "relation": "complement", "actor": "sellers.complements", "variable": "quantity_complement"},
+   "premises": ["Under the Attorney General's existing practice, packages whose other items carry most of the price are not treated as tickets, so some sellers use them, and add-ons sold with tickets get past platforms' screening."], "premise_class": "enforcement",
+   "source": "A ticket sold with parking, food or a lounge pass."}
+ ],
+ "buyers.primary": [
+  {"part": "dominance", "fact": {"actor": "buyers.primary", "variable": "price_paid", "direction": "increase", "kind": "empirical"},
+   "premises": ["The demand added in primary sales by fans priced out of resale is larger than the demand lost when brokers withdraw."], "premise_class": "other",
+   "source": "About 60% of arena concerts are run by the promoter, which prices only about 10% of seats by demand; brokers hold part of those seats."}
+ ],
+ "platforms.compliant#3": [],
+ "sellers.complements": [],
+ "sellers.demand_priced#2": [
+  {"part": "dominance", "fact": {"actor": "sellers.demand_priced", "variable": "term_prevalence", "direction": "increase", "kind": "empirical"},
+   "premises": ["The demand added in primary sales by fans priced out of resale is larger than the demand lost when brokers withdraw."], "premise_class": "other",
+   "source": "Demand-based pricing on about 10% of seats at high-demand events and fixed face values on the rest."}
+ ],
+ "sellers.fixed_price#2": [],
+ "sellers.fixed_price": [
+  {"part": "links", "fact": {"source_actor": "sellers.fixed_price", "source_variable": "quantity_demanded", "relation": "same_act", "actor": "buyers.primary", "variable": "excess_demand"},
+   "premises": ["Seats sold at fixed face values do not rise in price when more buyers try to buy them."], "premise_class": "other",
+   "source": "Many artists and the theaters use fixed face values only."},
+  {"part": "links", "fact": {"source_actor": "sellers.fixed_price", "source_variable": "quantity_demanded", "relation": "crowding", "actor": "buyers.primary", "variable": "wait_time"},
+   "premises": ["Seats sold at fixed face values do not rise in price when more buyers try to buy them."], "premise_class": "other",
+   "source": "Many artists and the theaters use fixed face values only."},
+  {"part": "stakes", "fact": {"component": "k1", "actor": "sellers.fixed_price"},
+   "premises": ["Brokers, platforms, fan groups and primary sellers can organize at a cost below their stakes."], "premise_class": "other",
+   "source": "K3: Nothing in this Act limits the price at which a primary seller or venue may sell a ticket."}
+ ]
+}
