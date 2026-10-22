@@ -1,0 +1,721 @@
+{
+ "name": "WE-014 Calvar Sugar Market Act (loop)",
+ "exchanges": [
+  {
+   "id": "e_sugar",
+   "buyer": "buyers",
+   "seller": "importers.quota_holders",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": "sellers.foreign",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "a12"
+   ],
+   "reading": null,
+   "exchange": "e_sugar",
+   "kind": "outside",
+   "side": null,
+   "actor": "importers.without_rights",
+   "variables": [
+    "informal_activity"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q7_corn_syrup_and_other_sweeteners_are_acce"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers",
+   "actor": "buyers",
+   "variables": [
+    "quantity_substitute"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q8_enough_varnholt_residents_shop_in_ostria"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers",
+   "actor": "buyers.border",
+   "variables": [
+    "cross_border_purchases"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "a8"
+   ],
+   "reading": "U1-a",
+   "component": "k1",
+   "chooser": "importers.near_threshold",
+   "actor": "importers.near_threshold",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "a8",
+    "q20_when_sugar_is_counted_against_dry_weight"
+   ],
+   "reading": "U1-b",
+   "component": "k1",
+   "chooser": "importers.near_threshold",
+   "actor": "importers.near_threshold",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q14_growers_quota_holders_and_manufacturers_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "buyers"
+  },
+  {
+   "premises": [
+    "q14_growers_quota_holders_and_manufacturers_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "importers.quota_holders"
+  },
+  {
+   "premises": [
+    "q14_growers_quota_holders_and_manufacturers_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "importers.near_threshold"
+  },
+  {
+   "premises": [
+    "q14_growers_quota_holders_and_manufacturers_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "producers.beet_factories"
+  },
+  {
+   "premises": [
+    "q14_growers_quota_holders_and_manufacturers_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "producers.sweetened_goods"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q9_domestic_beet_sugar_and_refined_imported"
+   ],
+   "reading": null,
+   "source_actor": "buyers",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "producers.beet_factories",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q9_domestic_beet_sugar_and_refined_imported",
+    "q10_land_and_labor_can_move_from_other_field"
+   ],
+   "reading": null,
+   "source_actor": "buyers",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "producers.beet_factories",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q7_corn_syrup_and_other_sweeteners_are_acce",
+    "q11_corn_syrup_output_cannot_expand_at_once_"
+   ],
+   "reading": null,
+   "source_actor": "buyers",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "sellers.substitutes",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q12_makers_of_locally_made_sweetened_goods_c"
+   ],
+   "reading": null,
+   "source_actor": "buyers",
+   "source_variable": "price_paid",
+   "relation": "output",
+   "actor": "consumers",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q12_makers_of_locally_made_sweetened_goods_c"
+   ],
+   "reading": null,
+   "source_actor": "buyers",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "producers.sweetened_goods",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q13_buyers_demand_for_sugar_and_sweeteners_t"
+   ],
+   "reading": null,
+   "source_actor": "buyers",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "buyers",
+   "variable": "resources_available_other_uses",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "buyers",
+   "source_variable": "quantity_traded",
+   "relation": "same_act",
+   "actor": "importers.quota_holders",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a8"
+   ],
+   "reading": null,
+   "source_actor": "importers.near_threshold",
+   "source_variable": "reclassification",
+   "relation": "substitute",
+   "actor": "buyers",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q17_lower_imports_are_not_offset_by_capital_"
+   ],
+   "reading": null,
+   "source_actor": "sellers.foreign",
+   "source_variable": "quantity_traded",
+   "relation": "currency",
+   "actor": "export_industries",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q19_varnholt_shoppers_buy_other_groceries_on"
+   ],
+   "reading": null,
+   "source_actor": "buyers.border",
+   "source_variable": "cross_border_purchases",
+   "relation": "complement",
+   "actor": "buyers.border",
+   "variable": "quantity_complement",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q19_varnholt_shoppers_buy_other_groceries_on"
+   ],
+   "reading": null,
+   "source_actor": "buyers.border",
+   "source_variable": "quantity_complement",
+   "relation": "substitute",
+   "actor": "retailers.border",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "consumers",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "consumers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "export_industries",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.export_industries",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q21_the_port_refineries_cannot_replace_impor"
+   ],
+   "reading": null,
+   "source_actor": "importers.quota_holders",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "importers.refineries",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "producers.beet_factories",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "input_suppliers.beet_growers",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "producers.beet_factories",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.beet_factories",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_holders_growers_and_landowners_expect_th"
+   ],
+   "reading": null,
+   "source_actor": "producers.beet_factories",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "owners.beet_land",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_holders_growers_and_landowners_expect_th"
+   ],
+   "reading": null,
+   "source_actor": "producers.beet_factories",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "producers.beet_factories",
+   "variable": "investment_target",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q23_imported_confectionery_biscuits_and_soft"
+   ],
+   "reading": null,
+   "source_actor": "producers.sweetened_goods",
+   "source_variable": "quantity_supplied",
+   "relation": "substitute",
+   "actor": "sellers.imported_goods",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q24_food_plants_last_15_to_25_years_so_reloc"
+   ],
+   "reading": null,
+   "source_actor": "producers.sweetened_goods",
+   "source_variable": "quantity_supplied",
+   "relation": "yield",
+   "actor": "producers.sweetened_goods",
+   "variable": "capital_stock_target",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q24_food_plants_last_15_to_25_years_so_reloc"
+   ],
+   "reading": null,
+   "source_actor": "producers.sweetened_goods",
+   "source_variable": "quantity_supplied",
+   "relation": "yield",
+   "actor": "owners.sweetened_goods",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "producers.sweetened_goods",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.sweetened_goods",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q11_corn_syrup_output_cannot_expand_at_once_"
+   ],
+   "reading": null,
+   "source_actor": "sellers.substitutes",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "sellers.substitutes",
+   "variable": "investment_target",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "importers.refineries",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.refineries",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q10_land_and_labor_can_move_from_other_field"
+   ],
+   "reading": null,
+   "source_actor": "input_suppliers.beet_growers",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "producers.other_crops",
+   "variable": "quantity_supplied",
+   "horizon": null
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "q15_holders_growers_and_landowners_expect_th",
+    "q16_calvar_s_sugar_imports_come_from_many_co"
+   ],
+   "reading": null,
+   "exchange": "e_sugar",
+   "side": "seller",
+   "actor": "importers.quota_holders"
+  },
+  {
+   "premises": [
+    "q25_the_port_refineries_imported_their_raw_c",
+    "q15_holders_growers_and_landowners_expect_th"
+   ],
+   "reading": null,
+   "exchange": "e_sugar",
+   "side": "seller",
+   "actor": "importers.refineries"
+  }
+ ],
+ "yields": [
+  {
+   "premises": [
+    "q16_calvar_s_sugar_imports_come_from_many_co"
+   ],
+   "reading": null,
+   "exchange": "e_sugar",
+   "side": "seller",
+   "actor": "importers.quota_holders"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k3",
+   "actor": "importers.quota_holders"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k3",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k3",
+   "actor": "taxpayers",
+   "premises": [
+    "a22"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [],
+ "moves": [],
+ "discretion": [],
+ "means": [
+  {
+   "component": "k2",
+   "actor": "importers.quota_holders",
+   "direction": "in"
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": []
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "a6"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "importers.quota_holders",
+   "variable": "inventory_held",
+   "mode": "carry_over"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_sugar",
+   "holders": [
+    "importers.quota_holders"
+   ],
+   "wider_price": false
+  }
+ ],
+ "terms": [],
+ "banned": [],
+ "incidence": [],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether the 65% threshold counts sugar against dry weight or total weight (assumed total weight, the reading more favorable to importers of syrups and blends).",
+   "readings": [
+    "U1-a: the threshold counts sugar against total weight (assumed)",
+    "U1-b: the threshold counts sugar against dry weight"
+   ],
+   "components": {
+    "U1-a": [],
+    "U1-b": []
+   }
+  }
+ ],
+ "thresholds": [
+  {
+   "premises": [
+    "a8"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "importers.near_threshold",
+   "variable": "product_attribute",
+   "chooser": null
+  }
+ ],
+ "qualifies": [
+  {
+   "premises": [
+    "a6"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "importers.quota_holders",
+   "variable": "quantity_traded"
+  }
+ ],
+ "expires": [],
+ "parts": [
+  {
+   "part": "importers.refineries",
+   "whole": "importers.quota_holders",
+   "premises": []
+  }
+ ],
+ "dominance": [
+  {
+   "premises": [
+    "q18_blends_and_syrups_at_or_below_the_65_lin"
+   ],
+   "reading": null,
+   "actor": "buyers",
+   "variable": "price_paid",
+   "window": null,
+   "direction": "increase",
+   "kind": "response"
+  },
+  {
+   "premises": [
+    "q22_the_value_of_the_free_quota_shares_to_th"
+   ],
+   "reading": null,
+   "actor": "importers.quota_holders",
+   "variable": "resources_available_other_uses",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Without the quota, Calvar would keep importing well over 350,000 tonnes a year, so the quota binds from the first year, and more tightly as demand grows.",
+   "p": 0.95,
+   "class": "binding"
+  },
+  "a2": {
+   "text": "Customs enforces the quota at the ports.",
+   "p": 0.85,
+   "class": "enforcement"
+  },
+  "a6": {
+   "text": "Importers know the allocation formula during the window and can finance and store extra imports.",
+   "p": 0.8,
+   "class": "expectations"
+  },
+  "a8": {
+   "text": "Importing blends and syrups with 65% sugar or less is technically and commercially workable for some users.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "a12": {
+   "text": "Bulk sugar is smuggled on a meaningful scale.",
+   "p": 0.3,
+   "class": "enforcement"
+  },
+  "a22": {
+   "text": "The customs budget is raised to cover inspection of bulk shipments and the register of quota rights.",
+   "p": 0.7,
+   "class": "revenue_use"
+  },
+  "q7_corn_syrup_and_other_sweeteners_are_acce": {
+   "text": "Corn syrup and other sweeteners are acceptable substitutes for sugar in some uses, above all soft drinks.",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q8_enough_varnholt_residents_shop_in_ostria": {
+   "text": "Enough Varnholt residents shop in Ostria within the personal allowance.",
+   "p": 0.7,
+   "class": "mobility"
+  },
+  "q9_domestic_beet_sugar_and_refined_imported": {
+   "text": "Domestic beet sugar and refined imported sugar are close substitutes for buyers.",
+   "p": 0.9,
+   "class": "substitutability"
+  },
+  "q10_land_and_labor_can_move_from_other_field": {
+   "text": "Land and labor can move from other field crops into beet within one or two seasons, and the beet factories have some spare capacity.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q11_corn_syrup_output_cannot_expand_at_once_": {
+   "text": "Corn syrup output cannot expand at once because the mills are near capacity.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q12_makers_of_locally_made_sweetened_goods_c": {
+   "text": "Makers of locally made sweetened goods compete mainly with each other, all face the dearer sugar, and cannot fully switch to other sweeteners.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q13_buyers_demand_for_sugar_and_sweeteners_t": {
+   "text": "Buyers' demand for sugar and sweeteners taken together is inelastic enough that their total spending on them rises.",
+   "p": 0.75,
+   "class": "substitutability"
+  },
+  "q14_growers_quota_holders_and_manufacturers_": {
+   "text": "Growers, quota holders and manufacturers can organize at a cost below their stake.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q15_holders_growers_and_landowners_expect_th": {
+   "text": "Holders, growers and landowners expect the quota to survive the five-year review.",
+   "p": 0.65,
+   "class": "expectations"
+  },
+  "q16_calvar_s_sugar_imports_come_from_many_co": {
+   "text": "Calvar's sugar imports come from many competing foreign sellers, and no exporting country administers a share of the quota (the assumption of DM-4).",
+   "p": 0.8,
+   "class": "expectations"
+  },
+  "q17_lower_imports_are_not_offset_by_capital_": {
+   "text": "Lower imports are not offset by capital flows or other adjustments within the medium horizon (the assumption of TX-8).",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q18_blends_and_syrups_at_or_below_the_65_lin": {
+   "text": "Blends and syrups at or below the 65% line can serve only some users, so imports in that form cannot replace all the sugar the quota keeps out.",
+   "p": 0.85,
+   "class": "substitutability"
+  },
+  "q19_varnholt_shoppers_buy_other_groceries_on": {
+   "text": "Varnholt shoppers buy other groceries on the same trips as sugar.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q20_when_sugar_is_counted_against_dry_weight": {
+   "text": "When sugar is counted against dry weight, a narrower range of blends and syrups still falls at or below the 65% line.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q21_the_port_refineries_cannot_replace_impor": {
+   "text": "The port refineries cannot replace imported raw cane with domestic beet.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q22_the_value_of_the_free_quota_shares_to_th": {
+   "text": "The value of the free quota shares to their holders far exceeds their cost of compliance.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q23_imported_confectionery_biscuits_and_soft": {
+   "text": "Imported confectionery, biscuits and soft drinks are close substitutes for Calvarian ones and enter freely.",
+   "p": 0.75,
+   "class": "substitutability"
+  },
+  "q24_food_plants_last_15_to_25_years_so_reloc": {
+   "text": "Food plants last 15 to 25 years, so relocation happens mainly through new investment.",
+   "p": 0.9,
+   "class": "durability"
+  },
+  "q25_the_port_refineries_imported_their_raw_c": {
+   "text": "The port refineries imported their raw cane as importers of record in the base period, and so receive large quota shares.",
+   "p": 0.8,
+   "class": "other"
+  }
+ }
+}
