@@ -1,0 +1,989 @@
+{
+ "name": "WE-056 Tarrenmoor Insulin Affordability Act (loop)",
+ "exchanges": [
+  {
+   "id": "e_ins",
+   "buyer": "buyers.state_plan",
+   "seller": "retailers.in_state",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_mail",
+   "buyer": "buyers.state_plan_mail",
+   "seller": "retailers.mail_order",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_unins",
+   "buyer": "buyers.uninsured",
+   "seller": "retailers.in_state",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q16_some_members_of_self_funded_plans_or_res"
+   ],
+   "reading": null,
+   "exchange": "e_unins",
+   "kind": "outside",
+   "side": null,
+   "actor": "buyers.ineligible",
+   "variables": [
+    "legal_breach"
+   ]
+  },
+  {
+   "premises": [
+    "q21_some_pharmacies_collect_more_than_35_and"
+   ],
+   "reading": null,
+   "exchange": "e_ins",
+   "kind": "outside",
+   "side": null,
+   "actor": "retailers.in_state",
+   "variables": [
+    "legal_breach"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q6_some_covered_residents_used_less_insulin"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "buyers.state_plan",
+   "actor": "buyers.state_plan",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q7_when_the_patient_s_payment_is_the_same_f"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "buyers.state_plan",
+   "actor": "buyers.state_plan",
+   "variables": [
+    "product_attribute"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q8_some_residents_near_the_lisvane_line_fil"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "buyers.state_plan",
+   "actor": "buyers.border",
+   "variables": [
+    "cross_border_purchases"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q6_some_covered_residents_used_less_insulin"
+   ],
+   "reading": null,
+   "component": "k3",
+   "chooser": "buyers.uninsured",
+   "actor": "buyers.uninsured",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q17_plans_may_and_some_do_add_prior_authoriz"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "insurers",
+   "actor": "insurers",
+   "variables": [
+    "term_prevalence"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q23_under_u1_a_some_nonresident_permit_holde"
+   ],
+   "reading": "U1-a",
+   "component": "k2_mail",
+   "chooser": "retailers.mail_order",
+   "actor": "retailers.mail_order",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q24_under_u1_b_a_pbm_opens_an_in_state_licen"
+   ],
+   "reading": "U1-b",
+   "component": "k2",
+   "chooser": "retailers.mail_order",
+   "actor": "retailers.in_state",
+   "variables": [
+    "entry_rate"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q26_some_individual_market_buyers_without_pr"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "buyers.individual_market",
+   "actor": "buyers.individual_market",
+   "variables": [
+    "membership"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q27_some_employers_near_the_line_between_ins"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "employers.insured_group",
+   "actor": "employers.insured_group",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q13_pharmacies_pbms_insurers_and_patient_gro"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "buyers.state_plan"
+  },
+  {
+   "premises": [
+    "q13_pharmacies_pbms_insurers_and_patient_gro"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "buyers.uninsured"
+  },
+  {
+   "premises": [
+    "q13_pharmacies_pbms_insurers_and_patient_gro"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "insurers"
+  },
+  {
+   "premises": [
+    "q13_pharmacies_pbms_insurers_and_patient_gro"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "retailers.in_state"
+  },
+  {
+   "premises": [
+    "q13_pharmacies_pbms_insurers_and_patient_gro"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "retailers.mail_order"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q10_under_u1_b_most_state_plan_members_using"
+   ],
+   "reading": "U1-b",
+   "source_actor": "buyers.state_plan",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "buyers.state_plan_mail",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q11_some_insulin_users_move_into_tarrenmoor_"
+   ],
+   "reading": null,
+   "source_actor": "buyers.state_plan",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "buyers.state_plan",
+   "variable": "membership",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q12_in_high_deductible_plans_only_the_member"
+   ],
+   "reading": null,
+   "source_actor": "buyers.state_plan",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "buyers.high_deductible",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q7_when_the_patient_s_payment_is_the_same_f"
+   ],
+   "reading": null,
+   "source_actor": "buyers.state_plan",
+   "source_variable": "product_attribute",
+   "relation": "input",
+   "actor": "insurers",
+   "variable": "subsidy_outlay",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q6_some_covered_residents_used_less_insulin"
+   ],
+   "reading": null,
+   "source_actor": "buyers.state_plan",
+   "source_variable": "quantity_demanded",
+   "relation": "input",
+   "actor": "insurers",
+   "variable": "subsidy_outlay",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "buyers.state_plan_mail",
+   "source_variable": "quantity_traded",
+   "relation": "same_act",
+   "actor": "retailers.mail_order",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q14_some_over_the_counter_human_insulin_buye"
+   ],
+   "reading": null,
+   "source_actor": "buyers.uninsured",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "buyers.otc",
+   "variable": "quantity_substitute",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_some_individual_market_insulin_users_dro"
+   ],
+   "reading": null,
+   "source_actor": "buyers.uninsured",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "buyers.individual_market",
+   "variable": "membership",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q18_insurers_include_the_added_outlay_in_202"
+   ],
+   "reading": null,
+   "source_actor": "insurers",
+   "source_variable": "subsidy_outlay",
+   "relation": "input",
+   "actor": "employers.insured_group",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q18_insurers_include_the_added_outlay_in_202"
+   ],
+   "reading": null,
+   "source_actor": "insurers",
+   "source_variable": "subsidy_outlay",
+   "relation": "input",
+   "actor": "buyers.individual_market",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q18_insurers_include_the_added_outlay_in_202"
+   ],
+   "reading": null,
+   "source_actor": "insurers",
+   "source_variable": "subsidy_outlay",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q19_some_pbms_press_insulin_reimbursement_ra",
+    "a2"
+   ],
+   "reading": null,
+   "source_actor": "insurers",
+   "source_variable": "subsidy_outlay",
+   "relation": "supply",
+   "actor": "retailers.in_state",
+   "variable": "net_price_received",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q17_plans_may_and_some_do_add_prior_authoriz"
+   ],
+   "reading": null,
+   "source_actor": "insurers",
+   "source_variable": "term_prevalence",
+   "relation": "substitute",
+   "actor": "insurers",
+   "variable": "subsidy_outlay",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "officials.enforcement",
+   "source_variable": "non_tax_receipts",
+   "relation": "paid_into",
+   "actor": "treasury.insulin_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q21_some_pharmacies_collect_more_than_35_and"
+   ],
+   "reading": null,
+   "source_actor": "retailers.in_state",
+   "source_variable": "legal_breach",
+   "relation": "same_act",
+   "actor": "officials.enforcement",
+   "variable": "non_tax_receipts",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a4"
+   ],
+   "reading": null,
+   "source_actor": "retailers.in_state",
+   "source_variable": "net_price_received",
+   "relation": "output",
+   "actor": "buyers.cash_uncovered",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q22_manufacturers_list_prices_respond_at_the"
+   ],
+   "reading": null,
+   "source_actor": "retailers.in_state",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "producers.manufacturers",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "treasury.insulin_fund",
+   "source_variable": "subsidy_outlay",
+   "relation": "paid_from",
+   "actor": "treasury",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q25_manufacturers_apply_their_payer_of_last_"
+   ],
+   "reading": null,
+   "source_actor": "treasury.insulin_fund",
+   "source_variable": "subsidy_outlay",
+   "relation": "substitute",
+   "actor": "producers.assistance",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q8_some_residents_near_the_lisvane_line_fil"
+   ],
+   "reading": null,
+   "source_actor": "buyers.border",
+   "source_variable": "cross_border_purchases",
+   "relation": "same_act",
+   "actor": "retailers.neighbors",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q8_some_residents_near_the_lisvane_line_fil"
+   ],
+   "reading": null,
+   "source_actor": "buyers.border",
+   "source_variable": "cross_border_purchases",
+   "relation": "substitute",
+   "actor": "retailers.in_state",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "buyers.individual_market",
+   "source_variable": "membership",
+   "relation": "same_act",
+   "actor": "insurers",
+   "variable": "membership",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q16_some_members_of_self_funded_plans_or_res"
+   ],
+   "reading": null,
+   "source_actor": "buyers.ineligible",
+   "source_variable": "legal_breach",
+   "relation": "input",
+   "actor": "treasury.insulin_fund",
+   "variable": "subsidy_outlay",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "buyers.otc",
+   "source_variable": "quantity_substitute",
+   "relation": "same_act",
+   "actor": "retailers.chains",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q27_some_employers_near_the_line_between_ins"
+   ],
+   "reading": null,
+   "source_actor": "employers.insured_group",
+   "source_variable": "reclassification",
+   "relation": "substitute",
+   "actor": "insurers",
+   "variable": "membership",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q17_plans_may_and_some_do_add_prior_authoriz"
+   ],
+   "reading": null,
+   "source_actor": "insurers",
+   "source_variable": "term_prevalence",
+   "relation": "substitute",
+   "actor": "buyers.state_plan",
+   "variable": "product_attribute",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "insurers",
+   "source_variable": "membership",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q25_manufacturers_apply_their_payer_of_last_"
+   ],
+   "reading": null,
+   "source_actor": "producers.assistance",
+   "source_variable": "quantity_supplied",
+   "relation": "substitute",
+   "actor": "buyers.uninsured",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "producers.manufacturers",
+   "source_variable": "net_price_received",
+   "relation": "input",
+   "actor": "treasury.insulin_fund",
+   "variable": "subsidy_outlay",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q22_manufacturers_list_prices_respond_at_the"
+   ],
+   "reading": null,
+   "source_actor": "producers.manufacturers",
+   "source_variable": "net_price_received",
+   "relation": "output",
+   "actor": "buyers.national",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q28_private_label_human_insulin_cannot_be_cu",
+    "q29_human_insulin_is_made_in_a_few_plants_wi"
+   ],
+   "reading": null,
+   "source_actor": "retailers.chains",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "producers.human_insulin",
+   "variable": "full_cost_per_unit",
+   "horizon": "long"
+  }
+ ],
+ "assets": [],
+ "yields": [
+  {
+   "premises": [
+    "a4"
+   ],
+   "reading": null,
+   "exchange": "e_unins",
+   "side": "seller",
+   "actor": "retailers.in_state"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "retailers.in_state"
+  },
+  {
+   "component": "k1_mail",
+   "actor": "retailers.mail_order"
+  },
+  {
+   "component": "k3",
+   "actor": "retailers.in_state"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement"
+  },
+  {
+   "component": "k1_mail",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k3",
+   "actor": "taxpayers",
+   "premises": []
+  }
+ ],
+ "fixed_budget": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement",
+   "premises": [
+    "a5"
+   ]
+  }
+ ],
+ "charges": [],
+ "moves": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "exchange": "e_ins",
+   "side": "buyer",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "exchange": "e_mail",
+   "side": "buyer",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "exchange": "e_unins",
+   "side": "buyer",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a4"
+   ],
+   "reading": null,
+   "exchange": "e_unins",
+   "side": "seller",
+   "horizon": null
+  }
+ ],
+ "discretion": [],
+ "means": [
+  {
+   "component": "k2",
+   "actor": "insurers",
+   "direction": "out"
+  },
+  {
+   "component": "k2_mail",
+   "actor": "insurers",
+   "direction": "out"
+  }
+ ],
+ "announced": [
+  {
+   "component": "k2",
+   "premises": [
+    "a23"
+   ]
+  },
+  {
+   "component": "k3",
+   "premises": [
+    "a23"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q9_some_covered_residents_can_defer_storabl"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "buyers.state_plan",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q9_some_covered_residents_can_defer_storabl"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "buyers.uninsured",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [
+  {
+   "component": "k2",
+   "premises": [
+    "a1"
+   ],
+   "exchange": "e_ins",
+   "recipient_side": "buyer",
+   "payer": "insurers",
+   "outlay_variable": "subsidy_outlay",
+   "budget_premises": []
+  },
+  {
+   "component": "k2_mail",
+   "premises": [
+    "a1"
+   ],
+   "exchange": "e_mail",
+   "recipient_side": "buyer",
+   "payer": "insurers",
+   "outlay_variable": "subsidy_outlay",
+   "budget_premises": []
+  },
+  {
+   "component": "k3",
+   "premises": [
+    "a1"
+   ],
+   "exchange": "e_unins",
+   "recipient_side": "buyer",
+   "payer": "treasury.insulin_fund",
+   "outlay_variable": "subsidy_outlay",
+   "budget_premises": []
+  }
+ ],
+ "capped": [],
+ "terms": [],
+ "banned": [],
+ "incidence": [],
+ "fixed": [
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "exchange": "e_ins",
+   "side": "seller",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "exchange": "e_mail",
+   "side": "seller",
+   "horizon": "short"
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Do the cap and the billing rules bind nonresident permit holders (out-of-state mail-order pharmacies)?",
+   "readings": [
+    "U1-a: a nonresident permit holder is a pharmacy licensed under chapter 18; out-of-state mail-order pharmacies are bound by the cap and may bill the plan for the balance",
+    "U1-b: only in-state licensees are bound; out-of-state pharmacies collect the plan's ordinary cost sharing and cannot bill"
+   ],
+   "components": {
+    "U1-a": [
+     "k2_mail",
+     "k1_mail"
+    ],
+    "U1-b": []
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [
+  {
+   "premises": [
+    "q20_the_contracted_rates_of_the_insulin_prod"
+   ],
+   "reading": null,
+   "actor": "insurers",
+   "variable": "subsidy_outlay",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q30_premium_tax_lost_to_employers_who_conver"
+   ],
+   "reading": null,
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "window": null,
+   "direction": "increase",
+   "kind": "arithmetic"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Bound pharmacies comply with the $35 cap for most fills, and the payments they receive (contract rate, or the Fund's payment) exceed their acquisition cost, so they keep dispensing.",
+   "p": 0.9,
+   "class": "enforcement"
+  },
+  "a2": {
+   "text": "2028 PBM contracts with pharmacies are not reopened during the year.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "a4": {
+   "text": "Most pharmacies have few cash insulin customers outside the Act, so they set their usual price at or near the Fund's limit.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "a5": {
+   "text": "The Board of Pharmacy does some enforcement work under the Act (complaints, audits of balance billing) from its existing fee-funded budget, which the Act does not raise.",
+   "p": 0.8,
+   "class": "revenue_use"
+  },
+  "a23": {
+   "text": "The Act was not expected before its introduction in January 2027.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "q6_some_covered_residents_used_less_insulin": {
+   "text": "Some covered residents used less insulin than prescribed at the old price.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q7_when_the_patient_s_payment_is_the_same_f": {
+   "text": "When the patient's payment is the same for every product, some patients and prescribers choose pens or newer analogs over vials and older products.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q8_some_residents_near_the_lisvane_line_fil": {
+   "text": "Some residents near the Lisvane line filled insulin at Lisvane retail pharmacies before the Act.",
+   "p": 0.6,
+   "class": "mobility"
+  },
+  "q9_some_covered_residents_can_defer_storabl": {
+   "text": "Some covered residents can defer storable insulin purchases from late 2027 to January 2028.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q10_under_u1_b_most_state_plan_members_using": {
+   "text": "Under U1-b, most state-plan members using out-of-state mail order can switch to an in-state pharmacy.",
+   "p": 0.85,
+   "class": "mobility"
+  },
+  "q11_some_insulin_users_move_into_tarrenmoor_": {
+   "text": "Some insulin users move into Tarrenmoor for the cap.",
+   "p": 0.2,
+   "class": "mobility"
+  },
+  "q12_in_high_deductible_plans_only_the_member": {
+   "text": "In high-deductible plans only the member's own payment counts toward the deductible, so a $35 fill counts $35, not the plan's balance.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q13_pharmacies_pbms_insurers_and_patient_gro": {
+   "text": "Pharmacies, PBMs, insurers and patient groups can organize at a cost below their stakes.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q14_some_over_the_counter_human_insulin_buye": {
+   "text": "Some over-the-counter human insulin buyers obtain a prescription to buy an analog at $35.",
+   "p": 0.75,
+   "class": "substitutability"
+  },
+  "q15_some_individual_market_insulin_users_dro": {
+   "text": "Some individual-market insulin users drop coverage because insulin now costs $35 without it.",
+   "p": 0.4,
+   "class": "substitutability"
+  },
+  "q16_some_members_of_self_funded_plans_or_res": {
+   "text": "Some members of self-funded plans, or residents of Lisvane, attest falsely, and pharmacies cannot easily check.",
+   "p": 0.6,
+   "class": "enforcement"
+  },
+  "q17_plans_may_and_some_do_add_prior_authoriz": {
+   "text": "Plans may and some do add prior authorization or step therapy for costlier insulin products.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q18_insurers_include_the_added_outlay_in_202": {
+   "text": "Insurers include the added outlay in 2028 premiums, and the insurance commissioner approves it.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q19_some_pbms_press_insulin_reimbursement_ra": {
+   "text": "Some PBMs press insulin reimbursement rates down at the 2029 renewals because plans now bear what high-deductible members paid.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q20_the_contracted_rates_of_the_insulin_prod": {
+   "text": "The contracted rates of the insulin products a plan can steer between differ by much less than the $54 a fill the cap shifts to plans.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q21_some_pharmacies_collect_more_than_35_and": {
+   "text": "Some pharmacies collect more than $35, and some are fined.",
+   "p": 0.6,
+   "class": "enforcement"
+  },
+  "q22_manufacturers_list_prices_respond_at_the": {
+   "text": "Manufacturers' list prices respond at the margin to how many sales a higher list price loses, so a smaller loss in Tarrenmoor moves them, by a small amount.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q23_under_u1_a_some_nonresident_permit_holde": {
+   "text": "Under U1-a, some nonresident permit holders with few Tarrenmoor insulin patients stop shipping insulin there rather than comply with the billing and usual-price rules.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q24_under_u1_b_a_pbm_opens_an_in_state_licen": {
+   "text": "Under U1-b, a PBM opens an in-state licensed mail-order pharmacy to keep its Tarrenmoor insulin fills.",
+   "p": 0.35,
+   "class": "other"
+  },
+  "q25_manufacturers_apply_their_payer_of_last_": {
+   "text": "Manufacturers apply their payer-of-last-resort clause to the Fund and drop or restrict program enrollment for Tarrenmoor residents.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q26_some_individual_market_buyers_without_pr": {
+   "text": "Some individual-market buyers without premium credits are at the margin of buying coverage at a slightly higher premium.",
+   "p": 0.55,
+   "class": "substitutability"
+  },
+  "q27_some_employers_near_the_line_between_ins": {
+   "text": "Some employers near the line between insured and self-funded plans convert.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q28_private_label_human_insulin_cannot_be_cu": {
+   "text": "Private-label human insulin cannot be cut back at once: chains buy it under contracted volumes.",
+   "p": 0.6,
+   "class": "durability"
+  },
+  "q29_human_insulin_is_made_in_a_few_plants_wi": {
+   "text": "Human insulin is made in a few plants with large fixed costs, so cost per vial rises as output contracts.",
+   "p": 0.6,
+   "class": "durability"
+  },
+  "q30_premium_tax_lost_to_employers_who_conver": {
+   "text": "Premium tax lost to employers who convert and members who drop coverage is smaller than the premium tax raised by the added premiums.",
+   "p": 0.8,
+   "class": "other"
+  }
+ }
+}

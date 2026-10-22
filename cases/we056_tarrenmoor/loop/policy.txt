@@ -1,0 +1,37 @@
+## 1. Policy record
+
+**Tarrenmoor Insulin Affordability Act.** Tarrenmoor is a state of about 4.3 million people. About 120,000 residents use insulin. By source of coverage:
+
+| Group | Insulin users | What they pay now for a 30-day supply |
+|---|---|---|
+| Members of plans regulated by the state insurance code (fully insured group plans, 39,000; individual-market plans, 9,000) | 48,000 | Average $88. Members of high-deductible plans (about 40%) pay the plan's contracted price, about $290 for an analog insulin, until the deductible is met; others pay copays of $25 to $75 or coinsurance. About 70% pay more than $35 in a typical month. |
+| Members of self-funded employer plans, governed by the national Employee Benefit Plans Act, which overrides state insurance law | 30,000 | Plan terms; not reachable by the state. |
+| National old-age and low-income programs | 32,000 | Already $35 or less under national rules. |
+| Uninsured | 10,000 | 2,500 receive analog insulin free through manufacturers' patient-assistance programs (income test, yearly re-application, shipped by the program's pharmacy); 3,000 buy human insulin without a prescription at about $25 a vial (about $50 a month); 4,500 buy analog insulin on prescription at pharmacy cash prices, about $320 (wholesale acquisition cost about $295 plus a markup of about $25). In a 2026 state survey, about 40% of the last group and 15% of high-deductible members said they had used less insulin than prescribed because of cost. |
+
+List prices (wholesale acquisition costs) are set nationally by three manufacturers; about 8 million people in the country use insulin, so the 58,000 users the Act reaches are about 0.7% of the national total. Private-label human insulin is sold by national pharmacy chains at one national price. The manufacturers' assistance programs exclude people whose insulin is paid for by "any public program or fund" (their standard payer-of-last-resort clause), but apply it to state funds only at their discretion.
+
+Tarrenmoor has about 1,050 pharmacies licensed under chapter 18, §18-4 of the pharmacy law (pharmacies located in the state). Under §18-9 the Board of Pharmacy issues about 140 "nonresident pharmacy permits" to pharmacies outside the state that ship prescriptions to residents; §18-9(3) says "a holder of a nonresident permit is subject to the provisions of this chapter governing dispensing". About 20% of insulin fills for state-plan members are by mail, three quarters of them from two mail-order pharmacies owned by pharmacy benefit managers in Lisvane, the neighboring state. Plans may require mail order for maintenance drugs only if members may opt out to a retail pharmacy. Contracts between pharmacy benefit managers (PBMs) and pharmacies run by calendar year and were signed for 2028 in the autumn of 2027.
+
+Premiums of state-regulated plans total about $9.4 billion a year for about 1.4 million members. The state levies a 2% premium tax on them, paid into the general fund. Prescription drugs are exempt from sales tax. Many individual-market buyers receive national premium credits that cap their net premium as a share of income; about a third do not.
+
+The Act was signed on 12 April 2027 and takes effect on 1 January 2028. No expiry.
+
+| Field | Value | Source sentence |
+|---|---|---|
+| Jurisdiction (and what lies just outside) | Tarrenmoor. Just outside: Lisvane (the two large mail-order pharmacies; border towns 20 minutes away) and Ardmere. | §1. |
+| Announced / enacted / effective / expires | Bill introduced 15 January 2027; signed 12 April 2027; effective 1 January 2028; no expiry. | §9. |
+| Enforcement (who, penalties, resources) | Board of Pharmacy: $1,000 fine for each overcharge, paid into the Fund; repeated violation may lead to suspension of a license or permit. The Board is funded by license and permit fees; the Act gives it no new money. The Department of Health runs the Fund through a claims contract (about $3 million a year, paid from the Fund). False attestation is an offence. | §5, §7. |
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Counter cap | Cap on the buyer's payment (no ontology type; see section 2) | Insulin dispensed on prescription | Every "pharmacy licensed by the Board of Pharmacy under chapter 18" (U1) | §3: "A pharmacy shall not collect from a covered resident more than $35 for each 30-day supply of insulin." A covered resident is a resident who is uninsured or enrolled in a plan regulated under the insurance code. | Members of self-funded plans and of national programs; non-residents; insulin sold without a prescription. |
+| K2 Plans pay the balance | Mandated payment | Insulin fills of state-plan members | State-regulated plans | §4(a): the pharmacy bills the balance to the plan, "which shall pay it on the terms of its pharmacy contract". | — |
+| K3 Insulin Access Fund | `purchase_rebate` paid to the pharmacy | Insulin fills of uninsured residents | Fund (Department of Health) | §4(b): the Fund pays "the pharmacy's usual and customary price, less $35, but not more than the wholesale acquisition cost plus 20 percent, less $35". The usual and customary price is "the price the pharmacy charges a cash-paying customer who is not a covered resident". The uninsured resident attests at the pharmacy to having no coverage (§5). | — |
+| K4 Funding | Appropriation | K3 | General fund | §6: "such sums as are necessary", from general revenue; fines under §7 are paid into the Fund. The fiscal note projects $19 million a year. | — |
+
+Unclear provision:
+- **U1, mail-order pharmacies outside the state.** §3 binds "a pharmacy licensed by the Board of Pharmacy under chapter 18". Chapter 18 "licenses" in-state pharmacies under §18-4 and issues "permits" to nonresident pharmacies under §18-9, while §18-9(3) subjects permit holders to the chapter's dispensing provisions. Reading U1-a: a nonresident permit holder is a pharmacy licensed under chapter 18; out-of-state mail-order pharmacies shipping to residents are bound by §3 and may bill the plan or the Fund for the balance. Reading U1-b: only §18-4 licensees are bound; out-of-state pharmacies collect the plan's ordinary cost sharing (or their cash price from the uninsured) and cannot bill the Fund. The Board has issued no guidance. Readings get no probability; where a sign depends on U1, one sign per reading is given.
+
+**Figures.** State-plan members: the cap lowers average out-of-pocket cost from about $88 to about $34 per fill, so plans pay about $54 more per fill: about 48,000 × 12 × $54 ≈ $31 million a year, plus the extra fills of members who rationed, about $34 million in all, or about 0.36% of state-regulated premiums. Premium tax on that: about $0.7 million. Uninsured: if pharmacies set the usual and customary price at the Fund's limit (about $354 on a $295 acquisition cost), each fill costs the Fund about $319. The 4,500 current cash buyers cost about $17 million, or about $19 million with the end of rationing; 2,000 over-the-counter buyers who obtain a prescription would add about $8 million, and the 2,500 program enrollees about $10 million if the manufacturers drop them; claims administration adds $3 million: about $39 million against the fiscal note's $19 million (4,500 buyers at the current $320 price less $35, plus administration). Fines: at most a few hundred thousand dollars a year.
+

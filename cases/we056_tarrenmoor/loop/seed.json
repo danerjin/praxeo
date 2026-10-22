@@ -1,0 +1,216 @@
+{
+ "name": "WE-056 Tarrenmoor Insulin Affordability Act (loop)",
+ "exchanges": [
+  {
+   "id": "e_ins",
+   "buyer": "buyers.state_plan",
+   "seller": "retailers.in_state",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_mail",
+   "buyer": "buyers.state_plan_mail",
+   "seller": "retailers.mail_order",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_unins",
+   "buyer": "buyers.uninsured",
+   "seller": "retailers.in_state",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  }
+ ],
+ "grants": [
+  {
+   "component": "k2",
+   "premises": [
+    "a1"
+   ],
+   "exchange": "e_ins",
+   "recipient_side": "buyer",
+   "payer": "insurers",
+   "outlay_variable": "subsidy_outlay"
+  },
+  {
+   "component": "k2_mail",
+   "premises": [
+    "a1"
+   ],
+   "exchange": "e_mail",
+   "recipient_side": "buyer",
+   "payer": "insurers",
+   "outlay_variable": "subsidy_outlay"
+  },
+  {
+   "component": "k3",
+   "premises": [
+    "a1"
+   ],
+   "exchange": "e_unins",
+   "recipient_side": "buyer",
+   "payer": "treasury.insulin_fund",
+   "outlay_variable": "subsidy_outlay"
+  }
+ ],
+ "moves": [
+  {
+   "exchange": "e_ins",
+   "side": "buyer",
+   "premises": [
+    "a1"
+   ]
+  },
+  {
+   "exchange": "e_mail",
+   "side": "buyer",
+   "premises": [
+    "a1"
+   ]
+  },
+  {
+   "exchange": "e_unins",
+   "side": "buyer",
+   "premises": [
+    "a1"
+   ]
+  },
+  {
+   "exchange": "e_unins",
+   "side": "seller",
+   "premises": [
+    "a4"
+   ]
+  }
+ ],
+ "fixed": [
+  {
+   "exchange": "e_ins",
+   "side": "seller",
+   "premises": [
+    "a2"
+   ],
+   "horizon": "short"
+  },
+  {
+   "exchange": "e_mail",
+   "side": "seller",
+   "premises": [
+    "a2"
+   ],
+   "horizon": "short"
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Do the cap and the billing rules bind nonresident permit holders (out-of-state mail-order pharmacies)?",
+   "readings": [
+    "U1-a: a nonresident permit holder is a pharmacy licensed under chapter 18; out-of-state mail-order pharmacies are bound by the cap and may bill the plan for the balance",
+    "U1-b: only in-state licensees are bound; out-of-state pharmacies collect the plan's ordinary cost sharing and cannot bill"
+   ],
+   "components": {
+    "U1-a": [
+     "k2_mail",
+     "k1_mail"
+    ],
+    "U1-b": []
+   }
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "retailers.in_state"
+  },
+  {
+   "component": "k1_mail",
+   "actor": "retailers.mail_order"
+  },
+  {
+   "component": "k3",
+   "actor": "retailers.in_state"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement"
+  },
+  {
+   "component": "k1_mail",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "fixed_budget": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement",
+   "premises": [
+    "a5"
+   ]
+  }
+ ],
+ "funded": [
+  {
+   "component": "k3",
+   "actor": "taxpayers",
+   "premises": []
+  }
+ ],
+ "announced": [
+  {
+   "component": "k2",
+   "premises": [
+    "a23"
+   ]
+  },
+  {
+   "component": "k3",
+   "premises": [
+    "a23"
+   ]
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Bound pharmacies comply with the $35 cap for most fills, and the payments they receive (contract rate, or the Fund's payment) exceed their acquisition cost, so they keep dispensing.",
+   "p": 0.9,
+   "class": "enforcement"
+  },
+  "a2": {
+   "text": "2028 PBM contracts with pharmacies are not reopened during the year.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "a4": {
+   "text": "Most pharmacies have few cash insulin customers outside the Act, so they set their usual price at or near the Fund's limit.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "a5": {
+   "text": "The Board of Pharmacy does some enforcement work under the Act (complaints, audits of balance billing) from its existing fee-funded budget, which the Act does not raise.",
+   "p": 0.8,
+   "class": "revenue_use"
+  },
+  "a23": {
+   "text": "The Act was not expected before its introduction in January 2027.",
+   "p": 0.7,
+   "class": "expectations"
+  }
+ },
+ "means": [
+  {
+   "component": "k2",
+   "actor": "insurers",
+   "direction": "out"
+  },
+  {
+   "component": "k2_mail",
+   "actor": "insurers",
+   "direction": "out"
+  }
+ ]
+}
