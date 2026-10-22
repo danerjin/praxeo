@@ -1,0 +1,1035 @@
+{
+ "drivers.nonresident": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1c",
+    "chooser": "drivers.nonresident",
+    "actor": "riders",
+    "variables": [
+     "quantity_traded"
+    ]
+   },
+   "premises": [
+    "Some drivers switch to bus, tram or Ringside parking."
+   ],
+   "premise_class": "substitutability",
+   "source": "Calderford Transit runs about 850 buses and two tram lines"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1c",
+    "chooser": "drivers.nonresident",
+    "actor": "sellers.ringside_parking",
+    "variables": [
+     "quantity_demanded"
+    ]
+   },
+   "premises": [
+    "Some drivers switch to bus, tram or Ringside parking."
+   ],
+   "premise_class": "substitutability",
+   "source": "the three Ringside garages have about 7,500 spaces at $9 a day and about 88% occupancy (about 900 spare)"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1c",
+    "chooser": "drivers.nonresident",
+    "actor": "drivers.switchers",
+    "variables": [
+     "travel_time"
+    ]
+   },
+   "premises": [
+    "Some drivers switch to bus, tram or Ringside parking.",
+    "For most who switch, the trip by bus or by Ringside parking and walking takes longer than by car.",
+    "The gap in door-to-door time between car and bus far exceeds what faster roads save the bus (15 minutes against a few)."
+   ],
+   "premise_class": "substitutability",
+   "source": "the same commute by bus takes about 15 minutes longer door to door"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1c",
+    "chooser": "drivers.nonresident",
+    "actor": "retailers.ringside",
+    "variables": [
+     "quantity_demanded"
+    ]
+   },
+   "premises": [
+    "Some shoppers who drove into the zone buy instead in Ringside or Merrowdale, where they can park."
+   ],
+   "premise_class": "other",
+   "source": "Just outside the Inner Ring lies Ringside, a band of about 1,100 shops and offices with three large parking garages"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1c",
+    "chooser": "drivers.nonresident",
+    "actor": "drivers.nonresident",
+    "variables": [
+     "cross_border_purchases"
+    ]
+   },
+   "premises": [
+    "Some shoppers who drove into the zone buy instead in Ringside or Merrowdale, where they can park."
+   ],
+   "premise_class": "other",
+   "source": "the suburban town of Merrowdale with a regional shopping centre"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1c",
+    "chooser": "drivers.nonresident",
+    "actor": "drivers.offpeak",
+    "variables": [
+     "trips"
+    ]
+   },
+   "premises": [
+    "Some weekday trips can move to before 7:00, after 19:00 or to weekends."
+   ],
+   "premise_class": "other",
+   "source": "about 118,000 vehicles are driven or parked in the zone between 7:00 and 19:00"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1c",
+    "chooser": "drivers.nonresident",
+    "actor": "drivers.ring_road",
+    "variables": [
+     "trips"
+    ]
+   },
+   "premises": [
+    "Some through traffic diverts to the Inner Ring Road."
+   ],
+   "premise_class": "mobility",
+   "source": "Through traffic can go round the zone on the Inner Ring Road, which is itself busy at peak."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1c",
+    "chooser": "drivers.nonresident",
+    "actor": "drivers.ring_road",
+    "variables": [
+     "travel_time"
+    ]
+   },
+   "premises": [
+    "Some through traffic diverts to the Inner Ring Road.",
+    "For most diverted through trips, going round on the Inner Ring Road takes longer than crossing the zone did."
+   ],
+   "premise_class": "mobility",
+   "source": "Through traffic can go round the zone on the Inner Ring Road, which is itself busy at peak."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1c",
+    "chooser": "drivers.nonresident",
+    "actor": "drivers.taxi",
+    "variables": [
+     "quantity_demanded"
+    ]
+   },
+   "premises": [
+    "Some drivers switch to ride-hail or taxis."
+   ],
+   "premise_class": "substitutability",
+   "source": "about 4,000 taxis and ride-hail cars"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1c",
+    "chooser": "drivers.nonresident",
+    "actor": "homebuyers",
+    "variables": [
+     "quantity_demanded"
+    ]
+   },
+   "premises": [
+    "Some people who work in the zone and drive would move into it to pay $1.50 rather than $15."
+   ],
+   "premise_class": "mobility",
+   "source": "Residents' discount: Registered keepers whose registered address is in the zone: 90% discount: $1.50 a day."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1c",
+    "chooser": "drivers.nonresident",
+    "actor": "drivers.nonresident",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Some non-residents can register a vehicle to a zone address without detection."
+   ],
+   "premise_class": "enforcement",
+   "source": "Residence is taken from the vehicle register, which keepers update by declaration."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_car",
+    "kind": "outside",
+    "actor": "drivers.nonresident",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Some drivers evade (foreign, cloned or obscured plates)."
+   ],
+   "premise_class": "enforcement",
+   "source": "cameras reading number plates at all 74 entry points and at 40 points inside the zone"
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1c",
+    "actor": "drivers.nonresident",
+    "variable": "reclassification",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Some non-residents can register a vehicle to a zone address without detection."
+   ],
+   "premise_class": "enforcement",
+   "source": "The ordinance was adopted and published on 4 January 2027; charging starts on 1 November 2027 (ten months later)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.nonresident",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "drivers.nonresident",
+    "variable": "travel_time",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Fewer vehicles in the zone raise speeds for those that remain."
+   ],
+   "premise_class": "other",
+   "source": "the average speed would rise to about 15 km/h"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.nonresident",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "drivers.resident",
+    "variable": "travel_time",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Fewer vehicles in the zone raise speeds for those that remain."
+   ],
+   "premise_class": "other",
+   "source": "the average speed would rise to about 15 km/h"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.nonresident",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "drivers.taxi",
+    "variable": "travel_time",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Fewer vehicles in the zone raise speeds for those that remain."
+   ],
+   "premise_class": "other",
+   "source": "the average speed would rise to about 15 km/h"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.nonresident",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "distributors.long_visit",
+    "variable": "travel_time",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Fewer vehicles in the zone raise speeds for those that remain."
+   ],
+   "premise_class": "other",
+   "source": "For a multi-drop van covering about 40 km in the zone, the same speed change saves about 40 minutes a day."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.nonresident",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "distributors.short_visit",
+    "variable": "travel_time",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Fewer vehicles in the zone raise speeds for those that remain."
+   ],
+   "premise_class": "other",
+   "source": "the same speed change saves about 40 minutes a day"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.nonresident",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "riders",
+    "variable": "travel_time",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Fewer vehicles in the zone raise speeds for those that remain."
+   ],
+   "premise_class": "other",
+   "source": "the average speed would rise to about 15 km/h"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.nonresident",
+    "source_variable": "price_paid",
+    "relation": "same_act",
+    "actor": "drivers.nonresident",
+    "variable": "full_cost_per_unit"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "$15 per vehicle per day"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.nonresident",
+    "source_variable": "travel_time",
+    "relation": "input",
+    "actor": "drivers.nonresident",
+    "variable": "full_cost_per_unit"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "the time saved by faster roads is about 4 minutes each way inside the zone, about 8 minutes a day"
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "drivers.nonresident",
+    "variable": "full_cost_per_unit",
+    "window": null,
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "For most car trips into the zone, the time saved by faster roads is worth much less than $15."
+   ],
+   "premise_class": "other",
+   "source": "For a typical car commuter, the charge is $15 a day and the time saved by faster roads is about 4 minutes each way"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.nonresident",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "retailers.zone",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Some shoppers who drove into the zone buy instead in Ringside or Merrowdale, where they can park."
+   ],
+   "premise_class": "other",
+   "source": "about 4,200 shops, caf\u00e9s and restaurants"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.nonresident",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "sellers.zone_parking",
+    "variable": "quantity_demanded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "There are about 31,000 off-street parking spaces in the zone, at an average of $21 a day and about 90% weekday occupancy"
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_car",
+    "side": "buyer",
+    "actor": "owners.zone_garages"
+   },
+   "premises": [
+    "Zone garages cannot be converted to other uses within a year.",
+    "Buyers of property expect the charge to last."
+   ],
+   "premise_class": "durability",
+   "source": "There are about 31,000 off-street parking spaces in the zone"
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_car",
+    "side": "buyer",
+    "actor": "sellers.zone_parking"
+   },
+   "premises": [
+    "Zone garages cannot be converted to other uses within a year."
+   ],
+   "premise_class": "durability",
+   "source": "There are about 31,000 off-street parking spaces in the zone, at an average of $21 a day"
+  },
+  {
+   "part": "parts",
+   "fact": {
+    "part": "drivers.nonresident",
+    "whole": "drivers"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "92,000 cars (about 9,500 of them residents')"
+  }
+ ],
+ "drivers.resident": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "drivers.resident",
+    "actor": "drivers.resident",
+    "variables": [
+     "relocation_out_of_area"
+    ]
+   },
+   "premises": [
+    "Some zone residents value keeping a car at a zone address by less than $1.50 a weekday more than their next-best (giving it up, keeping it outside the zone, moving out).",
+    "Some residents who drive in the zone would have moved out of it within a few years."
+   ],
+   "premise_class": "substitutability",
+   "source": "Registered keepers whose registered address is in the zone: 90% discount: $1.50 a day."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "drivers.resident",
+    "actor": "riders",
+    "variables": [
+     "quantity_traded"
+    ]
+   },
+   "premises": [
+    "Some zone residents value keeping a car at a zone address by less than $1.50 a weekday more than their next-best (giving it up, keeping it outside the zone, moving out).",
+    "Some drivers switch to bus, tram or Ringside parking."
+   ],
+   "premise_class": "substitutability",
+   "source": "about 58,000 residents, 14,500 cars registered to zone addresses"
+  },
+  {
+   "part": "parts",
+   "fact": {
+    "part": "drivers.resident",
+    "whole": "drivers"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "92,000 cars (about 9,500 of them residents')"
+  }
+ ],
+ "drivers.taxi": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.taxi",
+    "source_variable": "quantity_demanded",
+    "relation": "supply_price",
+    "actor": "drivers.nonresident",
+    "variable": "price_substitute",
+    "horizon": "short"
+   },
+   "premises": [
+    "Ride-hail supply into the zone at peak cannot expand at an unchanged cost at once."
+   ],
+   "premise_class": "durability",
+   "source": "Ride-hail fares are set by the platforms; there is no fare regulation."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.taxi",
+    "source_variable": "quantity_demanded",
+    "relation": "input",
+    "actor": "drivers.taxi",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "about 4,000 taxis and ride-hail cars"
+  },
+  {
+   "part": "parts",
+   "fact": {
+    "part": "drivers.taxi",
+    "whole": "drivers"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "4,000 taxis and ride-hail cars"
+  }
+ ],
+ "drivers": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "drivers",
+    "variable": "quantity_traded",
+    "window": null,
+    "direction": "decrease",
+    "kind": "empirical"
+   },
+   "premises": [
+    "Each ride-hail car-day added carries the trips of more than one former private car-day, so switching to ride-hail lowers the total of vehicle-days."
+   ],
+   "premise_class": "other",
+   "source": "about 118,000 vehicles are driven or parked in the zone between 7:00 and 19:00"
+  }
+ ],
+ "distributors.long_visit": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1g",
+    "chooser": "distributors.long_visit",
+    "actor": "distributors.long_visit",
+    "variables": [
+     "transaction_size"
+    ]
+   },
+   "premises": [
+    "Some carriers can consolidate zone deliveries into fewer van-days (more drops per charged day)."
+   ],
+   "premise_class": "other",
+   "source": "One charge covers any number of entries that day."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1g",
+    "chooser": "distributors.long_visit",
+    "actor": "distributors.short_visit",
+    "variables": [
+     "quantity_traded"
+    ],
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Under U1-b some rounds can be reshaped into visits under 30 minutes."
+   ],
+   "premise_class": "other",
+   "source": "A goods vehicle which enters and leaves the zone within thirty minutes in the course of a delivery shall be recorded as a short visit."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1g",
+    "actor": "distributors.long_visit"
+   },
+   "premises": [
+    "Zone retailers, delivery firms, Ringside residents and the transit union can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "19,000 goods vehicles"
+  },
+  {
+   "part": "incidence",
+   "fact": {
+    "component": "k1g",
+    "exchange": "e_goods",
+    "side": "buyer"
+   },
+   "premises": [
+    "Carriers have better alternatives (customers elsewhere) than zone businesses have (premises elsewhere)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Carriers have better alternatives (customers elsewhere) than zone businesses have (premises elsewhere)."
+  }
+ ],
+ "distributors.short_visit": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1s",
+    "chooser": "distributors.short_visit",
+    "actor": "distributors.short_visit",
+    "variables": [
+     "transaction_size"
+    ]
+   },
+   "premises": [
+    "Some carriers can consolidate zone deliveries into fewer van-days (more drops per charged day)."
+   ],
+   "premise_class": "other",
+   "source": "One charge covers any number of entries that day."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1s",
+    "actor": "distributors.short_visit"
+   },
+   "premises": [
+    "Zone retailers, delivery firms, Ringside residents and the transit union can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "about 7,000 of which make a single visit lasting under 30 minutes"
+  },
+  {
+   "part": "incidence",
+   "fact": {
+    "component": "k1s",
+    "exchange": "e_short",
+    "side": "buyer"
+   },
+   "premises": [
+    "Carriers have better alternatives (customers elsewhere) than zone businesses have (premises elsewhere)."
+   ],
+   "premise_class": "substitutability",
+   "source": "Carriers have better alternatives (customers elsewhere) than zone businesses have (premises elsewhere)."
+  }
+ ],
+ "municipalities": [],
+ "officials.adjudication": [],
+ "officials.enforcement": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.enforcement",
+    "source_variable": "subsidy_outlay",
+    "relation": "substitute",
+    "actor": "general_fund",
+    "variable": "subsidy_outlay"
+   },
+   "premises": [
+    "The council reduces general-fund support for buses below what it would otherwise have been (no maintenance-of-effort clause)."
+   ],
+   "premise_class": "revenue_use",
+   "source": "No clause on the level of general-fund support for buses."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.enforcement",
+    "source_variable": "tax_revenue",
+    "relation": "paid_into",
+    "actor": "officials.enforcement",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "The net revenue of the charge, after the costs of the City Charging Office, shall be applied to bus services."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.enforcement",
+    "source_variable": "enforcement_cost",
+    "relation": "paid_from",
+    "actor": "officials.enforcement",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "CCO, funded from gross revenue (K3: \"after the costs of the City Charging Office\")"
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "officials.enforcement",
+    "variable": "fund_balance",
+    "window": null,
+    "direction": "increase",
+    "kind": "arithmetic"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Net of the CCO's $45 million, about $230 million to $260 million a year is earmarked for buses"
+  }
+ ],
+ "retailers.zone": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.zone",
+    "source_variable": "price_paid",
+    "relation": "cost",
+    "actor": "retailers.zone",
+    "variable": "quantity_supplied"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Zone retailers"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "retailers.zone",
+    "source_variable": "quantity_traded",
+    "relation": "yield",
+    "actor": "owners.zone_premises",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Buyers of property expect the charge to last."
+   ],
+   "premise_class": "expectations",
+   "source": "about 4,200 shops, caf\u00e9s and restaurants"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1c",
+    "actor": "retailers.zone"
+   },
+   "premises": [
+    "Zone retailers, delivery firms, Ringside residents and the transit union can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "about 4,200 shops, caf\u00e9s and restaurants"
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "retailers.zone",
+    "variable": "quantity_traded",
+    "window": null,
+    "direction": "decrease",
+    "kind": "empirical"
+   },
+   "premises": [
+    "The loss of car shoppers dominates the gain from new visitors in zone sales."
+   ],
+   "premise_class": "other",
+   "source": "More frequent buses bring to zone shops some visitors who would not otherwise have come"
+  }
+ ],
+ "riders": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "riders",
+    "variable": "wait_time",
+    "horizon": "short"
+   },
+   "premises": [
+    "Calderford Transit cannot add buses for at least a year (14 to 18 months to order)."
+   ],
+   "premise_class": "durability",
+   "source": "peak load on routes into the zone is about 85% of capacity, and new buses take 14 to 18 months from order to service"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders",
+    "source_variable": "quantity_traded",
+    "relation": "same_act",
+    "actor": "sellers.transit",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "fare revenue of about $180 million a year"
+  }
+ ],
+ "sellers.transit": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.transit",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "retailers.zone",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "More frequent buses bring to zone shops some visitors who would not otherwise have come."
+   ],
+   "premise_class": "other",
+   "source": "bus services"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.transit",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "drivers.nonresident",
+    "variable": "travel_time",
+    "horizon": "long"
+   },
+   "premises": [
+    "At a given number of vehicles in the zone, travel time is the same with and without the charge: the roads, signals and parking are unchanged, and the extra buses from the earmark add to congestion rather than relieve it."
+   ],
+   "premise_class": "other",
+   "source": "the extra buses from the earmark add to congestion rather than relieve it"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.transit",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "drivers.resident",
+    "variable": "travel_time",
+    "horizon": "long"
+   },
+   "premises": [
+    "At a given number of vehicles in the zone, travel time is the same with and without the charge: the roads, signals and parking are unchanged, and the extra buses from the earmark add to congestion rather than relieve it."
+   ],
+   "premise_class": "other",
+   "source": "the extra buses from the earmark add to congestion rather than relieve it"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.transit",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "drivers.taxi",
+    "variable": "travel_time",
+    "horizon": "long"
+   },
+   "premises": [
+    "At a given number of vehicles in the zone, travel time is the same with and without the charge: the roads, signals and parking are unchanged, and the extra buses from the earmark add to congestion rather than relieve it."
+   ],
+   "premise_class": "other",
+   "source": "the extra buses from the earmark add to congestion rather than relieve it"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.transit",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "distributors.long_visit",
+    "variable": "travel_time",
+    "horizon": "long"
+   },
+   "premises": [
+    "At a given number of vehicles in the zone, travel time is the same with and without the charge: the roads, signals and parking are unchanged, and the extra buses from the earmark add to congestion rather than relieve it."
+   ],
+   "premise_class": "other",
+   "source": "the extra buses from the earmark add to congestion rather than relieve it"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.transit",
+    "source_variable": "quantity_traded",
+    "relation": "crowding",
+    "actor": "riders",
+    "variable": "travel_time",
+    "horizon": "long"
+   },
+   "premises": [
+    "At a given number of vehicles in the zone, travel time is the same with and without the charge: the roads, signals and parking are unchanged, and the extra buses from the earmark add to congestion rather than relieve it."
+   ],
+   "premise_class": "other",
+   "source": "the extra buses from the earmark add to congestion rather than relieve it"
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "sellers.transit",
+    "variable": "quantity_traded",
+    "window": null,
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "General-fund support for buses is cut by less than the earmark, so bus service rises."
+   ],
+   "premise_class": "revenue_use",
+   "source": "Net of the CCO's $45 million, about $230 million to $260 million a year is earmarked for buses, against $140 million of general-fund support now."
+  }
+ ],
+ "drivers.nonresident#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.nonresident",
+    "source_variable": "price_paid",
+    "relation": "output",
+    "actor": "workers.commuting",
+    "variable": "wage_rate"
+   },
+   "premises": [
+    "Some zone workers commute by car and cannot switch cheaply, and zone employers compete with employers elsewhere for them."
+   ],
+   "premise_class": "other",
+   "source": "Of commuters to zone jobs, about 62% come by bus or tram, 22% by car and 16% on foot or by bicycle."
+  }
+ ],
+ "general_fund": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "general_fund",
+    "source_variable": "subsidy_outlay",
+    "relation": "input",
+    "actor": "sellers.transit",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Calderford Transit's fares and its general-fund support (set each year in the city budget)"
+  }
+ ],
+ "homebuyers": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "homebuyers",
+    "source_variable": "quantity_demanded",
+    "relation": "supply_price",
+    "actor": "homebuyers",
+    "variable": "price_paid",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Housing in the zone cannot be expanded within a few years."
+   ],
+   "premise_class": "other",
+   "source": "about 58,000 residents, 14,500 cars registered to zone addresses"
+  }
+ ],
+ "sellers.ringside_parking": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.ringside_parking",
+    "source_variable": "quantity_demanded",
+    "relation": "supply_price",
+    "actor": "sellers.ringside_parking",
+    "variable": "net_price_received",
+    "horizon": "short"
+   },
+   "premises": [
+    "Ringside's garages, about 88% full, cannot add spaces within a year."
+   ],
+   "premise_class": "durability",
+   "source": "the three Ringside garages have about 7,500 spaces at $9 a day and about 88% occupancy (about 900 spare)"
+  }
+ ],
+ "sellers.zone_parking": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.zone_parking",
+    "source_variable": "quantity_demanded",
+    "relation": "supply_price",
+    "actor": "sellers.zone_parking",
+    "variable": "net_price_received",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Zone garages cannot be converted to other uses within a year."
+   ],
+   "premise_class": "durability",
+   "source": "There are about 31,000 off-street parking spaces in the zone, at an average of $21 a day and about 90% weekday occupancy"
+  }
+ ],
+ "distributors.long_visit#2": [],
+ "distributors.short_visit#2": [],
+ "drivers.offpeak": [],
+ "drivers.resident#2": [],
+ "drivers.ring_road": [],
+ "drivers.switchers": [],
+ "drivers.taxi#2": [],
+ "officials.enforcement#2": [],
+ "owners.zone_garages": [],
+ "owners.zone_premises": [],
+ "retailers.ringside": [],
+ "retailers.zone#2": [],
+ "riders#2": [],
+ "drivers#2": [],
+ "homebuyers#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "homebuyers",
+    "source_variable": "price_paid",
+    "relation": "yield",
+    "actor": "homeowners.zone",
+    "variable": "asset_value",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Buyers of property expect the charge to last."
+   ],
+   "premise_class": "expectations",
+   "source": "Buyers of property expect the charge to last"
+  }
+ ],
+ "sellers.ringside_parking#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.ringside_parking",
+    "source_variable": "net_price_received",
+    "relation": "yield",
+    "actor": "owners.ringside_garages",
+    "variable": "asset_value",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Buyers of property expect the charge to last."
+   ],
+   "premise_class": "expectations",
+   "source": "the three Ringside garages have about 7,500 spaces at $9 a day"
+  }
+ ],
+ "sellers.zone_parking#2": [],
+ "workers.commuting": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.commuting",
+    "source_variable": "wage_rate",
+    "relation": "cost",
+    "actor": "employers.zone",
+    "variable": "quantity_supplied",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Some zone workers commute by car and cannot switch cheaply, and zone employers compete with employers elsewhere for them."
+   ],
+   "premise_class": "other",
+   "source": "260,000 jobs"
+  }
+ ]
+}

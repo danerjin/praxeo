@@ -1,0 +1,1271 @@
+{
+ "name": "WE-046 Calderford central zone charge (loop_r2, blind)",
+ "exchanges": [
+  {
+   "id": "e_car",
+   "buyer": "drivers.nonresident",
+   "seller": "municipalities",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": null,
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_res",
+   "buyer": "drivers.resident",
+   "seller": "municipalities",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": null,
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_taxi",
+   "buyer": "drivers.taxi",
+   "seller": "municipalities",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": null,
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_goods",
+   "buyer": "retailers.zone",
+   "seller": "distributors.long_visit",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_short",
+   "buyer": "retailers.zone",
+   "seller": "distributors.short_visit",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_bus",
+   "buyer": "riders",
+   "seller": "sellers.transit",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q21_some_drivers_evade_foreign_cloned_or_obs"
+   ],
+   "reading": null,
+   "exchange": "e_car",
+   "kind": "outside",
+   "side": null,
+   "actor": "drivers.nonresident",
+   "variables": [
+    "legal_breach"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q8_some_carriers_can_consolidate_zone_deliv"
+   ],
+   "reading": null,
+   "component": "k1g",
+   "chooser": "distributors.long_visit",
+   "actor": "distributors.long_visit",
+   "variables": [
+    "transaction_size"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q9_under_u1_b_some_rounds_can_be_reshaped_i"
+   ],
+   "reading": "U1-b",
+   "component": "k1g",
+   "chooser": "distributors.long_visit",
+   "actor": "distributors.short_visit",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q8_some_carriers_can_consolidate_zone_deliv"
+   ],
+   "reading": null,
+   "component": "k1s",
+   "chooser": "distributors.short_visit",
+   "actor": "distributors.short_visit",
+   "variables": [
+    "transaction_size"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q11_some_drivers_switch_to_bus_tram_or_rings"
+   ],
+   "reading": null,
+   "component": "k1c",
+   "chooser": "drivers.nonresident",
+   "actor": "riders",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q11_some_drivers_switch_to_bus_tram_or_rings"
+   ],
+   "reading": null,
+   "component": "k1c",
+   "chooser": "drivers.nonresident",
+   "actor": "sellers.ringside_parking",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q11_some_drivers_switch_to_bus_tram_or_rings",
+    "q12_for_most_who_switch_the_trip_by_bus_or_b",
+    "q13_the_gap_in_door_to_door_time_between_car"
+   ],
+   "reading": null,
+   "component": "k1c",
+   "chooser": "drivers.nonresident",
+   "actor": "drivers.switchers",
+   "variables": [
+    "travel_time"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q14_some_shoppers_who_drove_into_the_zone_bu"
+   ],
+   "reading": null,
+   "component": "k1c",
+   "chooser": "drivers.nonresident",
+   "actor": "retailers.ringside",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q14_some_shoppers_who_drove_into_the_zone_bu"
+   ],
+   "reading": null,
+   "component": "k1c",
+   "chooser": "drivers.nonresident",
+   "actor": "drivers.nonresident",
+   "variables": [
+    "cross_border_purchases"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q15_some_weekday_trips_can_move_to_before_7_"
+   ],
+   "reading": null,
+   "component": "k1c",
+   "chooser": "drivers.nonresident",
+   "actor": "drivers.offpeak",
+   "variables": [
+    "trips"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q16_some_through_traffic_diverts_to_the_inne"
+   ],
+   "reading": null,
+   "component": "k1c",
+   "chooser": "drivers.nonresident",
+   "actor": "drivers.ring_road",
+   "variables": [
+    "trips"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q16_some_through_traffic_diverts_to_the_inne",
+    "q17_for_most_diverted_through_trips_going_ro"
+   ],
+   "reading": null,
+   "component": "k1c",
+   "chooser": "drivers.nonresident",
+   "actor": "drivers.ring_road",
+   "variables": [
+    "travel_time"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q18_some_drivers_switch_to_ride_hail_or_taxi"
+   ],
+   "reading": null,
+   "component": "k1c",
+   "chooser": "drivers.nonresident",
+   "actor": "drivers.taxi",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q19_some_people_who_work_in_the_zone_and_dri"
+   ],
+   "reading": null,
+   "component": "k1c",
+   "chooser": "drivers.nonresident",
+   "actor": "homebuyers",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q20_some_non_residents_can_register_a_vehicl"
+   ],
+   "reading": null,
+   "component": "k1c",
+   "chooser": "drivers.nonresident",
+   "actor": "drivers.nonresident",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "a33",
+    "q26_some_residents_who_drive_in_the_zone_wou"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "drivers.resident",
+   "actor": "drivers.resident",
+   "variables": [
+    "relocation_out_of_area"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "a33",
+    "q11_some_drivers_switch_to_bus_tram_or_rings"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "drivers.resident",
+   "actor": "riders",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q10_zone_retailers_delivery_firms_ringside_r"
+   ],
+   "reading": null,
+   "component": "k1g",
+   "actor": "distributors.long_visit"
+  },
+  {
+   "premises": [
+    "q10_zone_retailers_delivery_firms_ringside_r"
+   ],
+   "reading": null,
+   "component": "k1s",
+   "actor": "distributors.short_visit"
+  },
+  {
+   "premises": [
+    "q10_zone_retailers_delivery_firms_ringside_r"
+   ],
+   "reading": null,
+   "component": "k1c",
+   "actor": "retailers.zone"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q22_fewer_vehicles_in_the_zone_raise_speeds_"
+   ],
+   "reading": null,
+   "source_actor": "drivers.nonresident",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "drivers.nonresident",
+   "variable": "travel_time",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q22_fewer_vehicles_in_the_zone_raise_speeds_"
+   ],
+   "reading": null,
+   "source_actor": "drivers.nonresident",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "drivers.resident",
+   "variable": "travel_time",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q22_fewer_vehicles_in_the_zone_raise_speeds_"
+   ],
+   "reading": null,
+   "source_actor": "drivers.nonresident",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "drivers.taxi",
+   "variable": "travel_time",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q22_fewer_vehicles_in_the_zone_raise_speeds_"
+   ],
+   "reading": null,
+   "source_actor": "drivers.nonresident",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "distributors.long_visit",
+   "variable": "travel_time",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q22_fewer_vehicles_in_the_zone_raise_speeds_"
+   ],
+   "reading": null,
+   "source_actor": "drivers.nonresident",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "distributors.short_visit",
+   "variable": "travel_time",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q22_fewer_vehicles_in_the_zone_raise_speeds_"
+   ],
+   "reading": null,
+   "source_actor": "drivers.nonresident",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "riders",
+   "variable": "travel_time",
+   "horizon": "medium"
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "drivers.nonresident",
+   "source_variable": "price_paid",
+   "relation": "same_act",
+   "actor": "drivers.nonresident",
+   "variable": "full_cost_per_unit",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "drivers.nonresident",
+   "source_variable": "travel_time",
+   "relation": "input",
+   "actor": "drivers.nonresident",
+   "variable": "full_cost_per_unit",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q14_some_shoppers_who_drove_into_the_zone_bu"
+   ],
+   "reading": null,
+   "source_actor": "drivers.nonresident",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "retailers.zone",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "drivers.nonresident",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "sellers.zone_parking",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q27_ride_hail_supply_into_the_zone_at_peak_c"
+   ],
+   "reading": null,
+   "source_actor": "drivers.taxi",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "drivers.nonresident",
+   "variable": "price_substitute",
+   "horizon": "short"
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "drivers.taxi",
+   "source_variable": "quantity_demanded",
+   "relation": "input",
+   "actor": "drivers.taxi",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q28_the_council_reduces_general_fund_support"
+   ],
+   "reading": null,
+   "source_actor": "officials.enforcement",
+   "source_variable": "subsidy_outlay",
+   "relation": "substitute",
+   "actor": "general_fund",
+   "variable": "subsidy_outlay",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "officials.enforcement",
+   "source_variable": "tax_revenue",
+   "relation": "paid_into",
+   "actor": "officials.enforcement",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "officials.enforcement",
+   "source_variable": "enforcement_cost",
+   "relation": "paid_from",
+   "actor": "officials.enforcement",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "retailers.zone",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "retailers.zone",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q25_buyers_of_property_expect_the_charge_to_"
+   ],
+   "reading": null,
+   "source_actor": "retailers.zone",
+   "source_variable": "quantity_traded",
+   "relation": "yield",
+   "actor": "owners.zone_premises",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q30_calderford_transit_cannot_add_buses_for_"
+   ],
+   "reading": null,
+   "source_actor": "riders",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "riders",
+   "variable": "wait_time",
+   "horizon": "short"
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "riders",
+   "source_variable": "quantity_traded",
+   "relation": "same_act",
+   "actor": "sellers.transit",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q31_more_frequent_buses_bring_to_zone_shops_"
+   ],
+   "reading": null,
+   "source_actor": "sellers.transit",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "retailers.zone",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q32_at_a_given_number_of_vehicles_in_the_zon"
+   ],
+   "reading": null,
+   "source_actor": "sellers.transit",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "drivers.nonresident",
+   "variable": "travel_time",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q32_at_a_given_number_of_vehicles_in_the_zon"
+   ],
+   "reading": null,
+   "source_actor": "sellers.transit",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "drivers.resident",
+   "variable": "travel_time",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q32_at_a_given_number_of_vehicles_in_the_zon"
+   ],
+   "reading": null,
+   "source_actor": "sellers.transit",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "drivers.taxi",
+   "variable": "travel_time",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q32_at_a_given_number_of_vehicles_in_the_zon"
+   ],
+   "reading": null,
+   "source_actor": "sellers.transit",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "distributors.long_visit",
+   "variable": "travel_time",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q32_at_a_given_number_of_vehicles_in_the_zon"
+   ],
+   "reading": null,
+   "source_actor": "sellers.transit",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "riders",
+   "variable": "travel_time",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q35_some_zone_workers_commute_by_car_and_can"
+   ],
+   "reading": null,
+   "source_actor": "drivers.nonresident",
+   "source_variable": "price_paid",
+   "relation": "output",
+   "actor": "workers.commuting",
+   "variable": "wage_rate",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "general_fund",
+   "source_variable": "subsidy_outlay",
+   "relation": "input",
+   "actor": "sellers.transit",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q36_housing_in_the_zone_cannot_be_expanded_w"
+   ],
+   "reading": null,
+   "source_actor": "homebuyers",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "homebuyers",
+   "variable": "price_paid",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q37_ringside_s_garages_about_88_full_cannot_"
+   ],
+   "reading": null,
+   "source_actor": "sellers.ringside_parking",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "sellers.ringside_parking",
+   "variable": "net_price_received",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q24_zone_garages_cannot_be_converted_to_othe"
+   ],
+   "reading": null,
+   "source_actor": "sellers.zone_parking",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "sellers.zone_parking",
+   "variable": "net_price_received",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q25_buyers_of_property_expect_the_charge_to_"
+   ],
+   "reading": null,
+   "source_actor": "homebuyers",
+   "source_variable": "price_paid",
+   "relation": "yield",
+   "actor": "homeowners.zone",
+   "variable": "asset_value",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q25_buyers_of_property_expect_the_charge_to_"
+   ],
+   "reading": null,
+   "source_actor": "sellers.ringside_parking",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "owners.ringside_garages",
+   "variable": "asset_value",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q35_some_zone_workers_commute_by_car_and_can"
+   ],
+   "reading": null,
+   "source_actor": "workers.commuting",
+   "source_variable": "wage_rate",
+   "relation": "cost",
+   "actor": "employers.zone",
+   "variable": "quantity_supplied",
+   "horizon": "medium"
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "q24_zone_garages_cannot_be_converted_to_othe",
+    "q25_buyers_of_property_expect_the_charge_to_"
+   ],
+   "reading": null,
+   "exchange": "e_car",
+   "side": "buyer",
+   "actor": "owners.zone_garages"
+  }
+ ],
+ "yields": [
+  {
+   "premises": [
+    "q24_zone_garages_cannot_be_converted_to_othe"
+   ],
+   "reading": null,
+   "exchange": "e_car",
+   "side": "buyer",
+   "actor": "sellers.zone_parking"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1c",
+   "actor": "drivers.nonresident"
+  },
+  {
+   "component": "k2",
+   "actor": "drivers.resident"
+  },
+  {
+   "component": "k1t",
+   "actor": "drivers.taxi"
+  },
+  {
+   "component": "k1g",
+   "actor": "distributors.long_visit"
+  },
+  {
+   "component": "k1s",
+   "actor": "distributors.short_visit"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k1c",
+   "actor": "officials.enforcement"
+  },
+  {
+   "component": "k2",
+   "actor": "officials.enforcement"
+  },
+  {
+   "component": "k1t",
+   "actor": "officials.enforcement"
+  },
+  {
+   "component": "k1g",
+   "actor": "officials.enforcement"
+  },
+  {
+   "component": "k1s",
+   "actor": "officials.enforcement"
+  },
+  {
+   "component": "k1c",
+   "actor": "officials.adjudication"
+  }
+ ],
+ "funded": [],
+ "fixed_budget": [
+  {
+   "component": "k1c",
+   "actor": "officials.adjudication",
+   "premises": [
+    "a24"
+   ]
+  }
+ ],
+ "charges": [
+  {
+   "component": "k1c",
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "exchange": "e_car",
+   "payer_side": "buyer",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k2",
+   "premises": [
+    "a33",
+    "a2"
+   ],
+   "exchange": "e_res",
+   "payer_side": "buyer",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k1t",
+   "premises": [
+    "a2"
+   ],
+   "exchange": "e_taxi",
+   "payer_side": "buyer",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k1g",
+   "premises": [
+    "a12",
+    "a2"
+   ],
+   "exchange": "e_goods",
+   "payer_side": "seller",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k1s",
+   "premises": [
+    "a2"
+   ],
+   "exchange": "e_short",
+   "payer_side": "seller",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "exchange": "e_car",
+   "side": "buyer",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a33"
+   ],
+   "reading": null,
+   "exchange": "e_res",
+   "side": "buyer",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "exchange": "e_taxi",
+   "side": "buyer",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a14"
+   ],
+   "reading": null,
+   "exchange": "e_goods",
+   "side": "buyer",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a14"
+   ],
+   "reading": null,
+   "exchange": "e_short",
+   "side": "buyer",
+   "horizon": null
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1c",
+   "premises": [
+    "a36"
+   ]
+  },
+  {
+   "component": "k2",
+   "premises": [
+    "a36"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q20_some_non_residents_can_register_a_vehicl"
+   ],
+   "reading": null,
+   "component": "k1c",
+   "actor": "drivers.nonresident",
+   "variable": "reclassification",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [
+  {
+   "component": "k3",
+   "exchange": "e_bus",
+   "recipient_side": "seller",
+   "payer": "officials.enforcement",
+   "outlay_variable": "subsidy_outlay"
+  }
+ ],
+ "capped": [],
+ "terms": [],
+ "banned": [],
+ "incidence": [
+  {
+   "premises": [
+    "a14"
+   ],
+   "reading": null,
+   "component": "k1g",
+   "exchange": "e_goods",
+   "side": "buyer"
+  },
+  {
+   "premises": [
+    "a14"
+   ],
+   "reading": null,
+   "component": "k1s",
+   "exchange": "e_short",
+   "side": "buyer"
+  }
+ ],
+ "fixed": [
+  {
+   "premises": [],
+   "reading": null,
+   "exchange": "e_bus",
+   "side": "buyer",
+   "horizon": "short"
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Short delivery visits: whether a goods vehicle that enters and leaves the zone within thirty minutes in the course of a delivery pays the daily charge.",
+   "readings": [
+    "U1-a: a short visit is recorded and pays the daily charge like any other day in the zone",
+    "U1-b: a short visit is not a chargeable day; such vans pay nothing"
+   ],
+   "components": {
+    "U1-a": [
+     "k1s"
+    ],
+    "U1-b": []
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [],
+ "parts": [
+  {
+   "part": "drivers.nonresident",
+   "whole": "drivers",
+   "premises": []
+  },
+  {
+   "part": "drivers.resident",
+   "whole": "drivers",
+   "premises": []
+  },
+  {
+   "part": "drivers.taxi",
+   "whole": "drivers",
+   "premises": []
+  }
+ ],
+ "dominance": [
+  {
+   "premises": [
+    "q23_for_most_car_trips_into_the_zone_the_tim"
+   ],
+   "reading": null,
+   "actor": "drivers.nonresident",
+   "variable": "full_cost_per_unit",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "actor": "officials.enforcement",
+   "variable": "fund_balance",
+   "window": null,
+   "direction": "increase",
+   "kind": "arithmetic"
+  },
+  {
+   "premises": [
+    "q29_the_loss_of_car_shoppers_dominates_the_g"
+   ],
+   "reading": null,
+   "actor": "retailers.zone",
+   "variable": "quantity_traded",
+   "window": null,
+   "direction": "decrease",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q33_general_fund_support_for_buses_is_cut_by"
+   ],
+   "reading": null,
+   "actor": "sellers.transit",
+   "variable": "quantity_traded",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q34_each_ride_hail_car_day_added_carries_the"
+   ],
+   "reading": null,
+   "actor": "drivers",
+   "variable": "quantity_traded",
+   "window": null,
+   "direction": "decrease",
+   "kind": "empirical"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Some drivers who now enter the zone on weekdays value the day there by less than $15 more than its other costs, at today's speeds (the charge binds, and the response is partial).",
+   "class": "binding",
+   "p": 0.95
+  },
+  "a2": {
+   "text": "The charge is enforced: cameras read most plates and penalties are collected.",
+   "class": "enforcement",
+   "p": 0.85
+  },
+  "a12": {
+   "text": "Some deliveries cannot be completed within 30 minutes (installations, large drops, multi-drop rounds).",
+   "class": "other",
+   "p": 0.85
+  },
+  "a14": {
+   "text": "Carriers have better alternatives (customers elsewhere) than zone businesses have (premises elsewhere).",
+   "class": "substitutability",
+   "p": 0.65
+  },
+  "a24": {
+   "text": "The PAO's budget is not raised for the new appeals, and its net caseload rises (about 9,000 new appeals against about 2,800 fewer).",
+   "class": "revenue_use",
+   "p": 0.8
+  },
+  "a33": {
+   "text": "Some zone residents value keeping a car at a zone address by less than $1.50 a weekday more than their next-best (giving it up, keeping it outside the zone, moving out).",
+   "class": "substitutability",
+   "p": 0.6
+  },
+  "a36": {
+   "text": "Drivers, carriers and residents expect the charge to start on 1 November 2027 as enacted.",
+   "class": "expectations",
+   "p": 0.9
+  },
+  "q8_some_carriers_can_consolidate_zone_deliv": {
+   "text": "Some carriers can consolidate zone deliveries into fewer van-days (more drops per charged day).",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q9_under_u1_b_some_rounds_can_be_reshaped_i": {
+   "text": "Under U1-b some rounds can be reshaped into visits under 30 minutes.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q10_zone_retailers_delivery_firms_ringside_r": {
+   "text": "Zone retailers, delivery firms, Ringside residents and the transit union can organize at a cost below their stakes.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q11_some_drivers_switch_to_bus_tram_or_rings": {
+   "text": "Some drivers switch to bus, tram or Ringside parking.",
+   "p": 0.9,
+   "class": "substitutability"
+  },
+  "q12_for_most_who_switch_the_trip_by_bus_or_b": {
+   "text": "For most who switch, the trip by bus or by Ringside parking and walking takes longer than by car.",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q13_the_gap_in_door_to_door_time_between_car": {
+   "text": "The gap in door-to-door time between car and bus far exceeds what faster roads save the bus (15 minutes against a few).",
+   "p": 0.75,
+   "class": "substitutability"
+  },
+  "q14_some_shoppers_who_drove_into_the_zone_bu": {
+   "text": "Some shoppers who drove into the zone buy instead in Ringside or Merrowdale, where they can park.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q15_some_weekday_trips_can_move_to_before_7_": {
+   "text": "Some weekday trips can move to before 7:00, after 19:00 or to weekends.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q16_some_through_traffic_diverts_to_the_inne": {
+   "text": "Some through traffic diverts to the Inner Ring Road.",
+   "p": 0.85,
+   "class": "mobility"
+  },
+  "q17_for_most_diverted_through_trips_going_ro": {
+   "text": "For most diverted through trips, going round on the Inner Ring Road takes longer than crossing the zone did.",
+   "p": 0.75,
+   "class": "mobility"
+  },
+  "q18_some_drivers_switch_to_ride_hail_or_taxi": {
+   "text": "Some drivers switch to ride-hail or taxis.",
+   "p": 0.6,
+   "class": "substitutability"
+  },
+  "q19_some_people_who_work_in_the_zone_and_dri": {
+   "text": "Some people who work in the zone and drive would move into it to pay $1.50 rather than $15.",
+   "p": 0.55,
+   "class": "mobility"
+  },
+  "q20_some_non_residents_can_register_a_vehicl": {
+   "text": "Some non-residents can register a vehicle to a zone address without detection.",
+   "p": 0.6,
+   "class": "enforcement"
+  },
+  "q21_some_drivers_evade_foreign_cloned_or_obs": {
+   "text": "Some drivers evade (foreign, cloned or obscured plates).",
+   "p": 0.6,
+   "class": "enforcement"
+  },
+  "q22_fewer_vehicles_in_the_zone_raise_speeds_": {
+   "text": "Fewer vehicles in the zone raise speeds for those that remain.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q23_for_most_car_trips_into_the_zone_the_tim": {
+   "text": "For most car trips into the zone, the time saved by faster roads is worth much less than $15.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q24_zone_garages_cannot_be_converted_to_othe": {
+   "text": "Zone garages cannot be converted to other uses within a year.",
+   "p": 0.8,
+   "class": "durability"
+  },
+  "q25_buyers_of_property_expect_the_charge_to_": {
+   "text": "Buyers of property expect the charge to last.",
+   "p": 0.75,
+   "class": "durability"
+  },
+  "q26_some_residents_who_drive_in_the_zone_wou": {
+   "text": "Some residents who drive in the zone would have moved out of it within a few years.",
+   "p": 0.6,
+   "class": "substitutability"
+  },
+  "q27_ride_hail_supply_into_the_zone_at_peak_c": {
+   "text": "Ride-hail supply into the zone at peak cannot expand at an unchanged cost at once.",
+   "p": 0.6,
+   "class": "durability"
+  },
+  "q28_the_council_reduces_general_fund_support": {
+   "text": "The council reduces general-fund support for buses below what it would otherwise have been (no maintenance-of-effort clause).",
+   "p": 0.7,
+   "class": "revenue_use"
+  },
+  "q29_the_loss_of_car_shoppers_dominates_the_g": {
+   "text": "The loss of car shoppers dominates the gain from new visitors in zone sales.",
+   "p": 0.4,
+   "class": "other"
+  },
+  "q30_calderford_transit_cannot_add_buses_for_": {
+   "text": "Calderford Transit cannot add buses for at least a year (14 to 18 months to order).",
+   "p": 0.8,
+   "class": "durability"
+  },
+  "q31_more_frequent_buses_bring_to_zone_shops_": {
+   "text": "More frequent buses bring to zone shops some visitors who would not otherwise have come.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q32_at_a_given_number_of_vehicles_in_the_zon": {
+   "text": "At a given number of vehicles in the zone, travel time is the same with and without the charge: the roads, signals and parking are unchanged, and the extra buses from the earmark add to congestion rather than relieve it.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q33_general_fund_support_for_buses_is_cut_by": {
+   "text": "General-fund support for buses is cut by less than the earmark, so bus service rises.",
+   "p": 0.7,
+   "class": "revenue_use"
+  },
+  "q34_each_ride_hail_car_day_added_carries_the": {
+   "text": "Each ride-hail car-day added carries the trips of more than one former private car-day, so switching to ride-hail lowers the total of vehicle-days.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q35_some_zone_workers_commute_by_car_and_can": {
+   "text": "Some zone workers commute by car and cannot switch cheaply, and zone employers compete with employers elsewhere for them.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q36_housing_in_the_zone_cannot_be_expanded_w": {
+   "text": "Housing in the zone cannot be expanded within a few years.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q37_ringside_s_garages_about_88_full_cannot_": {
+   "text": "Ringside's garages, about 88% full, cannot add spaces within a year.",
+   "p": 0.75,
+   "class": "durability"
+  }
+ }
+}
