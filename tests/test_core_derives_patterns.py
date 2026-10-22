@@ -469,3 +469,10 @@ def test_a_right_the_policy_creates_and_sells():
                assets=[{"exchange": "e", "side": "buyer", "actor": "owners.licensees", "premises": ["a2"]}])
     assert {("licensees", "quantity_traded", "increase", None), ("treasury", "non_tax_receipts", "increase", None),
             ("licensees", "resources_available_other_uses", "decrease", None)} <= got
+
+
+def test_a_group_is_a_link_source():
+    m = [{"exchange": "e", "kind": "adjust", "side": "buyer", "actor": "workers", "variables": ["employment", "hours_worked"], "premises": ["a2"]}]
+    link = [{"source_actor": "workers", "source_variable": "employment,hours_worked", "relation": "complement", "actor": "sellers.lunch",
+             "variable": "quantity_traded", "premises": ["a3"]}]
+    assert ("sellers.lunch", "quantity_traded", "decrease", None) in _run(**FLOOR, margins=m, links=link)

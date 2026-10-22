@@ -258,6 +258,9 @@ raw_moved(A, V, D) :- effect(X, A, V, D, _, _, _), opp(D, _), not timing_concl(X
 % the winning direction propagates, and only while that premise holds; without one, both directions propagate (and meet
 % downstream as an ambiguity). The dominance fact is a fact, so the negation stays on facts.
 dom_fact(A, V) :- dom(A, V, _, _, _, _).
+% A group (employment or hours, at least one falls) measures one thing in several variables; it is a source in its
+% direction, named by the group (the comma-joined variables), as a quantity.
+raw_moved(A, V, D) :- group_effect(X, A, V, G, _, _, _), group_sign(D, G), not timing_concl(X), not response_concl(X).
 moved(A, V, D) :- raw_moved(A, V, D), not dom_fact(A, V).
 moved(A, V, D) :- raw_moved(A, V, D), dom(A, V, D, P1, P2, P3), ok(P1), ok(P2), ok(P3).
 timing_concl(p_timing(C, A, V)) :- timing(C, A, V, _, _, _, _).
