@@ -396,3 +396,10 @@ def test_cr_4_a_cost_per_item_offered_narrows_the_range():
     ch = [{"component": "k", "exchange": "e", "payer_side": "seller", "receiver": "testers", "receipt_variable": "non_tax_receipts", "basis": "item"}]
     got = _run(exchanges=MENU, charges=ch)
     assert ("restaurants", "variety", "decrease", None) in got and ("diners", "quantity_traded", "decrease", None) not in got
+
+
+def test_an_alternative_measured_inversely():
+    alt = [{"component": "k", "chooser": "restaurants", "actor": "restaurants", "variables": ["product_attribute"], "inverse": True, "premises": ["a3"]}]
+    got = _run(exchanges=MENU, alternatives=alt,
+               charges=[{"component": "k", "exchange": "e", "payer_side": "seller", "receiver": "testers", "receipt_variable": "non_tax_receipts", "basis": "item"}])
+    assert ("restaurants", "product_attribute", "decrease", None) in got

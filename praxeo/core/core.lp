@@ -155,7 +155,10 @@ fired(cr_4, p_alt(C, Ch, A, V), P) :- p_alt(C, Ch, A, V), alt(C, Ch, A, V, _, P1
 fired(cr_4, p_alt(C, Ch, A, V), h(C, E, D)) :- p_alt(C, Ch, A, V), h(C, E, D).
 fired(cr_4, p_alt(C, Ch, A, V), c_charged(C, E)) :- p_alt(C, Ch, A, V), c_charged(C, E).
 fired(cr_4, p_alt(C, Ch, A, V), X) :- p_alt(C, Ch, A, V), price_chooser(Ch, _), effect(X, Ch, V2, _, _, _, _), side_price(V2), not timing_concl(X).
-effect(p_alt(C, Ch, A, V), A, V, Dir, medium, invisible, "B")       :- p_alt(C, Ch, A, V), alt(C, Ch, A, V, plain, _, _, _), chooser(C, Ch, W), alt_dir(W, Dir, _).
+% A variable that measures the alternative inversely (alt_inverse/4: reformulating to fewer calories is measured by the
+% calorie count) moves against the alternative's use.
+effect(p_alt(C, Ch, A, V), A, V, Dir, medium, invisible, "B")       :- p_alt(C, Ch, A, V), alt(C, Ch, A, V, plain, _, _, _), chooser(C, Ch, W), alt_dir(W, Dir, _), not alt_inverse(C, Ch, A, V).
+effect(p_alt(C, Ch, A, V), A, V, Dir2, medium, invisible, "B")      :- p_alt(C, Ch, A, V), alt(C, Ch, A, V, plain, _, _, _), chooser(C, Ch, W), alt_dir(W, Dir, _), alt_inverse(C, Ch, A, V), opp(Dir, Dir2).
 group_effect(p_alt(C, Ch, A, V), A, V, G, medium, invisible, "B")   :- p_alt(C, Ch, A, V), alt(C, Ch, A, V, group, _, _, _), chooser(C, Ch, W), alt_dir(W, _, G).
 
 % Accept against lobby: whoever has a stake in the component's outcome lobbies over it.

@@ -59,6 +59,7 @@ class Alt(Premised):
     chooser: str
     actor: str
     variables: list[str]
+    inverse: bool = Field(default=False, description="The variable falls as the alternative is used more (reformulating to fewer calories, measured by the calorie count)")
 
 
 class Stake(Premised):
@@ -278,6 +279,8 @@ def facts(s: Situation) -> str:
     for a in s.alternatives:
         kind = "group" if len(a.variables) > 1 else "plain"
         out.append(f"alt({a.component}, {_q(a.chooser)}, {_q(a.actor)}, {_q(','.join(a.variables))}, {kind}, {_p(a.premises)}).")
+        if a.inverse and kind == "plain":
+            out.append(f"alt_inverse({a.component}, {_q(a.chooser)}, {_q(a.actor)}, {_q(a.variables[0])}).")
     for st in s.stakes:
         out.append(f"stake({st.component}, {_q(st.actor)}, {_p(st.premises)}).")
     for l in s.links:

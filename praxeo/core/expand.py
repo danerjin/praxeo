@@ -171,7 +171,8 @@ PROPOSER_SYSTEM = """You propose facts for a praxeological analysis that a rule 
 from. You are given the policy text, the situation as recorded so far, and one node: an actor class and the effects the
 engine has already derived for it. Propose only what this node needs for the reasoning to go on, as facts of these kinds:
 - alternatives (CR-4): what this actor can do instead of an option the policy makes worse or better; `fact`: {component,
-  chooser: this actor, actor: whose variable measures the alternative's use, variables: [one, or several for a group]}.
+  chooser: this actor, actor: whose variable measures the alternative's use, variables: [one, or several for a group],
+  inverse: true where the variable falls as the alternative is used more (reformulating, measured by calories)}.
 - links (CR-9): markets reached through this actor's changed variables; `fact`: {source_actor: this actor, source_variable,
   relation: complement | input | substitute | output | yield | same_act | cost | own_price | currency | supply_price (more demand raises the price where supply is slow) | supply (more offered lowers the price) | paid_from (spending from a fund lowers its balance) | paid_into (receipts raise it), actor, and optionally horizon, variable}.
 - margins (CR-6): terms or quantities this actor controls under a held or fixed price, criteria it is chosen by, trade outside the rule.
