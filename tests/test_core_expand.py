@@ -300,3 +300,12 @@ def test_blind_loop_runs_on_the_families_left_on_the_pattern_engine():
     for case, example, short, windows, k in cases:
         produced, _ = _loop_score(case, example, short, windows)
         assert (case, len(produced)) == (case, k)
+
+
+def test_blind_loop_runs_on_the_remaining_cases():
+    """The first core runs on the cases left on the pattern engine (and a second WE-046 run with `crowding`), scored with a
+    same-class name mapping written by a separate, non-blind scorer and audited (tests/blind_scores.json, with the pattern
+    engine's count where an out-of-sample run exists; "in sample" where the pattern rules were written from the case)."""
+    for r in json.loads((ROOT / "tests" / "blind_scores.json").read_text()):
+        produced, total = _loop_score(r["case"], r["example"], r["short"], r["windows"], r["loop"])
+        assert (r["case"], len(produced), total) == (r["case"], r["produced"], r["total"])

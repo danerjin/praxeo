@@ -1,0 +1,154 @@
+[
+ {
+  "case": "we046_calderford",
+  "loop": "loop_r2",
+  "example": "WE-046_congestion_charge.md",
+  "short": {
+   "residents.zone": "drivers.resident",
+   "goods_vehicle_operators": [
+    "distributors.long_visit",
+    "distributors.short_visit"
+   ],
+   "businesses.zone": "retailers.zone",
+   "businesses.edge": "retailers.ringside",
+   "bus_riders": "riders",
+   "owners.parking.zone": "owners.zone_garages",
+   "owners.parking.edge": "owners.ringside_garages",
+   "transit_operator": "sellers.transit",
+   "employers.zone": "employers.zone",
+   "workers.zone": "workers.commuting",
+   "ring_road_users": "drivers.ring_road",
+   "drivers.switch": "drivers.switchers",
+   "drivers.retime": "drivers.offpeak",
+   "buyers.prospective": "homebuyers"
+  },
+  "windows": {},
+  "produced": 24,
+  "total": 71,
+  "pattern_engine": "53"
+ },
+ {
+  "case": "we003_westmark",
+  "loop": "loop",
+  "example": "WE-003_braiding_license.md",
+  "short": {
+   "braiders": "sellers.current",
+   "braiders.current": "sellers.current",
+   "customers.braiding": "customers",
+   "schools.cosmetology": "schools"
+  },
+  "windows": {},
+  "produced": 8,
+  "total": 18,
+  "pattern_engine": "in sample"
+ },
+ {
+  "case": "we014_calvar",
+  "loop": "loop",
+  "example": "WE-014_sugar_import_quota.md",
+  "short": {
+   "growers.beet": "input_suppliers.beet_growers",
+   "landowners.beet": "owners.beet_land",
+   "quota_holders": "importers.quota_holders",
+   "refiners.port": "importers.refineries",
+   "buyers.sugar": "buyers",
+   "households": "consumers",
+   "households.varnholt": "buyers.border",
+   "retailers.varnholt": "retailers.border",
+   "sweetener_makers": "sellers.substitutes",
+   "exporters.foreign": "sellers.foreign",
+   "exporters.calvar": "export_industries"
+  },
+  "windows": {
+   "announcement window": "announcement"
+  },
+  "produced": 17,
+  "total": 34,
+  "pattern_engine": "11"
+ },
+ {
+  "case": "we017_corrin",
+  "loop": "loop",
+  "example": "WE-017_substance_ban.md",
+  "short": {
+   "users.current": "buyers.current",
+   "shops.lirva": "sellers.current",
+   "sellers.informal": "sellers.prospective",
+   "users.mobile": "buyers.border"
+  },
+  "windows": {
+   "announcement window": "announcement"
+  },
+  "produced": 10,
+  "total": 30,
+  "pattern_engine": "in sample"
+ },
+ {
+  "case": "we019_vestria",
+  "loop": "loop",
+  "example": "WE-019_car_scrappage_subsidy.md",
+  "short": {
+   "buyers.new_cars.scrapping": "buyers.rebate",
+   "sellers.new_cars": [
+    "importers",
+    "retailers.dealers"
+   ],
+   "buyers.used_cars": "buyers.used",
+   "repair_shops": "sellers.repairs",
+   "dismantlers": [
+    "buyers.dismantlers",
+    "sellers.dismantlers"
+   ]
+  },
+  "windows": {
+   "after the window": "after_expiry",
+   "March to June": "announcement"
+  },
+  "produced": 11,
+  "total": 26,
+  "pattern_engine": "in sample"
+ },
+ {
+  "case": "we021_calvera",
+  "loop": "loop",
+  "example": "WE-021_solar_panel_subsidy.md",
+  "short": {
+   "buyers.adopters": "homeowners",
+   "installers": [
+    "contractors.certified",
+    "entrants"
+   ],
+   "panel_suppliers": "input_suppliers",
+   "customers.electricity": "customers",
+   "utilities": "producers.utilities",
+   "electricians": "workers.electricians"
+  },
+  "windows": {
+   "after program ends": "after_expiry"
+  },
+  "produced": 16,
+  "total": 33,
+  "pattern_engine": "19"
+ },
+ {
+  "case": "we037_selvar",
+  "loop": "loop",
+  "example": "WE-037_ticket_resale_cap.md",
+  "short": {
+   "buyers.insiders": "buyers.current",
+   "buyers.outsiders": "buyers.prospective",
+   "resellers.brokers": "intermediaries.brokers",
+   "resellers.fans": "sellers.fans",
+   "primary_sellers.dynamic": "sellers.demand_priced",
+   "primary_sellers.fixed": "sellers.fixed_price",
+   "season_holders": "owners.season_ticket",
+   "season_waitlist": "buyers.waitlist",
+   "charities": "sellers.charities",
+   "bot_vendors": "sellers.software"
+  },
+  "windows": {},
+  "produced": 16,
+  "total": 47,
+  "pattern_engine": "12"
+ }
+]
