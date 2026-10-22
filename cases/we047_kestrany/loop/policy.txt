@@ -1,0 +1,28 @@
+## 1. Policy record
+
+**Kestrany Sugar Import Regime Act.** Kestrany consumes about 1,750,000 tonnes (t) of sugar a year, about 60% by food and drink manufacturers and 40% by households. Domestic beet sugar supplies about 1,100,000 t, from about 4,000 growers on about 120,000 ha and two processors (Ardmouth Sugar and the Pellmont Beet Co-operative) with six mills running at about 90% of capacity. Imports averaged about 650,000 t a year in 2023 to 2025: about 450,000 t of raw cane sugar refined at two port refineries in Vellport, and about 200,000 t of white sugar. Kestrany takes about 1.2% of world sugar trade, bought from many exporters. World prices (illustrative): raw $360 a tonne, white $440. Under the existing flat 25% ad valorem tariff, white sugar lands at about $550 a tonne, which sets the domestic white price; tariff revenue is about $62.5 million a year. Nine firms imported in 2023 to 2025: the two Vellport refiners (66% of imports), four trading houses (25%), and three manufacturers that import directly (a soft-drink bottler and two confectioners, 9%). Kestrany's food manufacturers export about a fifth of their output, and imported confectionery, biscuits and soft-drink concentrates (not covered by the sugar tariff) hold about a quarter of the home market. Two wet mills make glucose syrup from domestic maize. Kestrany's main exports are timber, machinery and tourism.
+
+The bill, including the base period, was published on 2 March 2026, passed on 10 June 2026, and takes effect for the quota year beginning 1 January 2027 (ten months after it was proposed). No expiry; the quota volume is reviewed in 2031.
+
+| Field | Value | Source sentence |
+|---|---|---|
+| Jurisdiction (and what lies just outside) | Kestrany's customs territory. Outside: the world sugar market, and foreign makers of sugar-containing goods, which the act does not cover. | §2. |
+| Announced / enacted / effective / expires | Proposed with the base period 2 March 2026; enacted 10 June 2026; effective 1 January 2027; review of volume 2031. | §1, §15. |
+| Enforcement (who, penalties, resources) | Customs applies the rates; the Ministry of Trade's licence office keeps the register of quota shares and licences. Imports above a firm's licence pay the out-of-quota rate; misdeclaration is penalized as under existing customs law. The licence office's funding is not stated. | §10, §11. |
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Two-rate tariff (replaces the flat 25%) | `tariff` | Imports of raw and white sugar | Importers of record | 2% ad valorem on imports covered by a licence, up to 400,000 t a year in total; 60% ad valorem on all other sugar imports. A licence covers raw or white sugar tonne for tonne. | Sugar-containing goods are not covered (as now). |
+| K2 Allocation by history | `rights_allocation` | Permanent quota shares, and each year's licences | The licence office | Each firm that imported sugar in 2023 to 2025 receives a permanent share of the 400,000 t equal to its share of total imports in those years. Each December, licences for the next year are issued to share holders pro rata. | — |
+| K3 Trading | Rule on transfers | Shares and licences | Holders | Shares and licences may be sold or leased to any registered importer; transfers are registered with the licence office for a $200 fee. Registration as an importer is open to any firm for $500. | — |
+| K4 Surrender | Rule on the use of licences | Licences | Holders | §9: "A licence not used by 30 September of the quota year is surrendered." | — |
+
+Existing rules that stay in the counterfactual: the flat 25% tariff on raw and white sugar; customs classification of sugar mixtures; the general budget, which receives the tariff.
+
+Unclear provision:
+- **U1, surrendered licences.** §9 surrenders licences not used by 30 September. §4(2): "The tariff quota shall be allocated in full in each quota year." §12: "The Minister may make rules for the allocation of quantities among registered importers on application." Reading U1-a: surrendered quantities return to the quota and must be allocated again in the same year (§4(2)), to registered importers on application under §12. Reading U1-b: surrender cancels the licence; §4(2) refers to the December issue, and the surrendered quantity lapses for that year. The ministry has not said which it will apply.
+
+Readings get no probability; where a sign depends on U1, one sign per reading is given.
+
+**Figures.** At the old landed price ($550 a tonne, white), Kestrany imports about 650,000 t, 250,000 t more than the quota. So with the quota in place the domestic white price must rise above $550: either to the point where import demand falls to 400,000 t, or, if it still exceeds 400,000 t there, to the out-of-quota landed price of about $704 (440 × 1.60), with out-of-quota imports at the margin. In-quota white sugar lands at about $449 (440 × 1.02). The gap per tonne between the domestic price and the in-quota landed cost (the quota rent) is therefore more than $100 and at most about $255 for white sugar; at an illustrative domestic price of $650 it is about $200, about $80 million a year on 400,000 t, and capitalized at 8% a share of the whole quota would be worth about $1 billion. Tariff revenue: in-quota about $3.2 million a year; out-of-quota about $264 a tonne of white sugar. If out-of-quota imports stay below 200,000 t (A-25), total revenue is below about $56 million, against $62.5 million now. Importers' trading margin is about $15 a tonne. Without the act, imports would continue at about 650,000 t, spread evenly through the year (about 160,000 t a quarter).
+

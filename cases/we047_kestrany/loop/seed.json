@@ -1,0 +1,69 @@
+{
+ "name": "WE-047 Kestrany Sugar Import Regime Act (loop)",
+ "exchanges": [
+  {"id": "e_imp", "buyer": "importers", "seller": "sellers.foreign", "unsatisfied_seller": "sellers.foreign"},
+  {"id": "e_oq", "buyer": "importers", "seller": "sellers.foreign",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_lic", "buyer": "importers", "seller": "importers.licence_holders",
+   "buyer_price_var": "right_lease_price", "seller_price_var": "right_lease_price"}
+ ],
+ "charges": [
+  {"component": "k1", "premises": ["a2"], "exchange": "e_oq", "payer_side": "buyer", "receiver": "general_fund",
+   "receipt_variable": "tax_revenue", "projection_variable": "tax_revenue_vs_static_projection"},
+  {"component": "k3_reg", "premises": ["j_reg"], "exchange": "e_oq", "payer_side": "buyer", "receiver": "officials.licensing",
+   "receipt_variable": "non_tax_receipts", "basis": "operating"},
+  {"component": "k3_fee", "premises": ["j_fee"], "exchange": "e_lic", "payer_side": "seller", "receiver": "officials.licensing",
+   "receipt_variable": "non_tax_receipts"}
+ ],
+ "capped": [
+  {"component": "k1", "exchange": "e_imp", "holders": ["importers.licence_holders"], "wider_price": true, "premises": ["a1", "a2"]}
+ ],
+ "moves": [
+  {"exchange": "e_oq", "side": "buyer", "premises": ["a4"]}
+ ],
+ "incidence": [
+  {"component": "k1", "exchange": "e_oq", "side": "buyer", "premises": ["j_inc"]}
+ ],
+ "terms": [
+  {"component": "k4", "exchange": "e_lic", "side": "buyer", "direction": "worse", "premises": ["a19"]},
+  {"component": "k4a", "exchange": "e_lic", "side": "buyer", "direction": "better", "premises": []}
+ ],
+ "discretion": [
+  {"component": "k4a", "actor": "importers.applicants", "premises": ["a20"]}
+ ],
+ "means": [
+  {"component": "k2", "actor": "importers.licence_holders", "direction": "in"}
+ ],
+ "announced": [
+  {"component": "k1", "premises": ["a10"]}
+ ],
+ "compliance": [
+  {"component": "k1", "actor": "importers"}
+ ],
+ "enforcers": [
+  {"component": "k1", "actor": "officials.enforcement"},
+  {"component": "k2", "actor": "officials.licensing"}
+ ],
+ "funded": [
+  {"component": "k2", "actor": "taxpayers", "premises": ["a27", "a32"]}
+ ],
+ "unclear": [
+  {"id": "U1", "text": "Surrendered licences (section 9 with sections 4(2) and 12)",
+   "readings": ["U1-a: surrendered quantities return to the quota and are allocated again in the same year to registered importers on application",
+                "U1-b: surrender cancels the licence and the surrendered quantity lapses for that year"],
+   "components": {"U1-a": ["k4a"], "U1-b": []}}
+ ],
+ "assumptions": {
+  "a1": {"text": "At the old landed price (about $550 a tonne, white), demand for imports would exceed 400,000 t.", "class": "binding", "p": 0.9},
+  "a2": {"text": "Customs enforce the out-of-quota rate and licence limits.", "class": "enforcement", "p": 0.85},
+  "a4": {"text": "Foreign supply comes from many competing exporters, and no exporting country administers a share of the quota.", "class": "other", "p": 0.85},
+  "a10": {"text": "Sugar can be imported ahead in 2026 at 25% and stored into 2027, and is expected to sell higher after January.", "class": "expectations", "p": 0.85},
+  "a19": {"text": "Some licence volume is left unused and unsold on 30 September each year.", "class": "other", "p": 0.6},
+  "a20": {"text": "Under U1-a, applications for surrendered quantities exceed them, and the Minister's rules allocate them otherwise than by price.", "class": "other", "p": 0.65},
+  "a27": {"text": "The licence office's budget is raised with its task.", "class": "revenue_use", "p": 0.6},
+  "a32": {"text": "The licence office's running cost exceeds the registration and transfer fees it receives.", "class": "other", "p": 0.85},
+  "j_reg": {"text": "Every firm that imports sugar must register as an importer for $500.", "class": "enforcement", "p": 0.9},
+  "j_fee": {"text": "Transfers of shares and licences must be registered with the licence office for a $200 fee.", "class": "enforcement", "p": 0.9},
+  "j_inc": {"text": "Exporters can sell the sugar that Kestrany does not buy to other buyers in the world market.", "class": "substitutability", "p": 0.9}
+ }
+}
