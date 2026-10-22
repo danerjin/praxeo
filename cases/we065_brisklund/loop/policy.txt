@@ -1,0 +1,27 @@
+## 1. Policy record
+
+**Brisklund Wheat Price Assurance Act.** Brisklund is a country of about 9 million people with its own currency, the thaler (Th). About 18,000 farms grow wheat on about 570,000 hectares; at about 7.0 tonnes a hectare they produce about 4.0 million tonnes a year. About 2.5 million tonnes are used at home (1.4 by millers, 1.1 as animal feed) and about 1.5 million tonnes are exported. World wheat production is about 800 million tonnes and world trade about 200 million; Brisklund's exports are under 1% of world trade. The farm-gate price follows the export price less freight. Over the past ten marketing years the national average farm-gate price ranged from Th 175 to Th 285 a tonne, averaged about Th 232, and was below Th 220 in four of the ten years, by about Th 20 on average in those years. Milling varieties fetch about Th 18 a tonne more than feed varieties and yield about 0.6 tonnes a hectare less. Barley (about 1.2 million tonnes, part exported) competes with wheat for land and with feed wheat in animal feed. About 40% of wheat land is rented, on leases of three to five years; wheat land sells for about Th 12,000 a hectare and rents for about Th 300 a hectare a year. The Farm Register, kept by the Ministry of Agriculture, records for each registered farm its annual harvest declarations and, since 2026, its "established production": the average of its wheat output in the crop years 2022 to 2026, entered for a crop-insurance scheme that has since ended. Registration requires that agricultural activity is carried out on the farm. About 3.8 million tonnes of established production are recorded in all.
+
+The bill was introduced with the government's majority on 10 February 2027 and enacted on 30 June 2027. It covers the crop years 2028 to 2032 (the harvests of those years; winter wheat for 2028 is sown in autumn 2027). Parliament must review the target price before 2032.
+
+**Figures.** Payment rate = Th 220 less the national average farm-gate price for the marketing year, when that price is below Th 220; otherwise zero. On the past ten years' prices, the expected payment is about Th 7 to Th 8 a tonne a year, and in a year at Th 180 the payment is Th 40 a tonne: about Th 160 million on 4.0 million tonnes (U1-a) or Th 152 million on 3.8 million tonnes of established production (U1-b), against a general budget of about Th 40 billion. Futures for the 2028 harvest trade at about Th 228. The Ministry's payments office costs about Th 4 million a year. A grower switching a hectare from a milling to a feed variety gains about 0.6 tonnes and loses Th 18 a tonne on 6.6 tonnes: at a payment of Th 8 a tonne the switch gains about Th 5 a hectare more than without the payment; at Th 40, about Th 24.
+
+| Field | Value | Source sentence |
+|---|---|---|
+| Jurisdiction (and what lies just outside) | Brisklund. Neighbors grow wheat without such payments; grain crosses the borders by rail and road. | §1. |
+| Announced / enacted / effective / expires | Announced 10 February 2027 (bill introduced with a majority); enacted 30 June 2027; crop years 2028 to 2032; review before 2032. | §1, §12. |
+| Enforcement (who, penalties, resources) | Ministry of Agriculture payments office: claims on the Farm Register; harvest declarations checked by sampling (about 3% of farms a year); false declarations: repayment and a fine of up to twice the payment. | §8 to §10. |
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Deficiency payment | `per_unit_subsidy` (contingent) under U1-a; `lump_sum_subsidy` (contingent) under U1-b | Wheat | Paid to the holder (the person registered as farming the land) of each registered farm | Rate: Th 220 less the national average farm-gate price for the marketing year, if positive. Paid in December after the marketing year. | — |
+| K2 Funding | `revenue_use` (outlay) | K1 | The general budget | "Such sums as are needed for payments under this Act shall be paid out of the Consolidated Fund." | — |
+| K3 Administration | Enforcement | K1 | Ministry payments office, from its general appropriation | About Th 4 million a year. | — |
+
+Existing rules that stay in the counterfactual: the Farm Register and its registration rule; no tariff or quota on wheat; leases freely negotiated.
+
+Unclear provision:
+- **U1, actual output or a historical base.** §4(1): "A deficiency payment is payable to the holder of each registered farm on the farm's wheat production for the crop year." §2: "'Wheat production', in relation to a farm, means the production of wheat recorded for the farm in the Farm Register." The Register records both annual harvest declarations and established production (the 2022 to 2026 average). Reading U1-a: the payment is on the harvest declared for the crop year (actual output). Reading U1-b: it is on the farm's established production, "for the crop year" fixing only the year whose price sets the rate. The Ministry has issued no guidance.
+
+Readings get no probability; where a sign depends on U1, one sign per reading is given.
+

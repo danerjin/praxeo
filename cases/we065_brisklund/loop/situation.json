@@ -1,0 +1,626 @@
+{
+ "name": "WE-065 Brisklund wheat deficiency payment (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_wheat",
+   "buyer": "buyers",
+   "seller": "growers",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q11_declarations_are_checked_only_by_samplin"
+   ],
+   "reading": "U1-a",
+   "exchange": "e_wheat",
+   "kind": "outside",
+   "side": null,
+   "actor": "growers",
+   "variables": [
+    "legal_breach"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q7_land_can_be_moved_between_wheat_and_othe"
+   ],
+   "reading": null,
+   "component": "k1a",
+   "chooser": "growers",
+   "actor": "growers.barley",
+   "variables": [
+    "quantity_substitute"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q8_some_pasture_or_other_land_can_be_conver"
+   ],
+   "reading": null,
+   "component": "k1a",
+   "chooser": "growers",
+   "actor": "owners.pasture",
+   "variables": [
+    "quantity_substitute"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q9_some_growers_who_now_buy_put_options_or_"
+   ],
+   "reading": null,
+   "component": "k1a",
+   "chooser": "growers",
+   "actor": "intermediaries",
+   "variables": [
+    "quantity_substitute"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q10_some_growers_switch_to_high_yield_feed_v"
+   ],
+   "reading": "U1-a",
+   "component": "k1a",
+   "chooser": "growers",
+   "actor": "growers",
+   "variables": [
+    "quality_per_unit"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q19_under_u1_b_some_land_that_would_have_lef"
+   ],
+   "reading": "U1-b",
+   "component": "k1b",
+   "chooser": "growers.established",
+   "actor": "growers",
+   "variables": [
+    "number_of_sellers"
+   ],
+   "inverse": true
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q6_farm_unions_millers_and_holders_of_estab"
+   ],
+   "reading": null,
+   "component": "k1a",
+   "actor": "buyers.millers"
+  },
+  {
+   "premises": [
+    "q6_farm_unions_millers_and_holders_of_estab"
+   ],
+   "reading": null,
+   "component": "k1a",
+   "actor": "unions"
+  },
+  {
+   "premises": [
+    "q6_farm_unions_millers_and_holders_of_estab"
+   ],
+   "reading": null,
+   "component": "k1b",
+   "actor": "unions"
+  },
+  {
+   "premises": [
+    "q6_farm_unions_millers_and_holders_of_estab"
+   ],
+   "reading": null,
+   "component": "k1b",
+   "actor": "growers.established"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "a10"
+   ],
+   "reading": null,
+   "source_actor": "buyers",
+   "source_variable": "quantity_traded",
+   "relation": "same_act",
+   "actor": "exporters",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "general_fund",
+   "source_variable": "subsidy_outlay",
+   "relation": "paid_from",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q12_the_payments_office_s_sampling_finds_som"
+   ],
+   "reading": "U1-a",
+   "source_actor": "growers",
+   "source_variable": "legal_breach",
+   "relation": "same_act",
+   "actor": "officials.enforcement",
+   "variable": "non_tax_receipts",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q13_some_growers_at_the_margin_sow_more_whea"
+   ],
+   "reading": null,
+   "source_actor": "growers",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "growers",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q14_land_has_fewer_alternatives_than_tenants"
+   ],
+   "reading": null,
+   "source_actor": "growers",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "landlords",
+   "variable": "net_price_received",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q15_most_leases_come_up_for_renewal_within_t"
+   ],
+   "reading": null,
+   "source_actor": "landlords",
+   "source_variable": "net_price_received",
+   "relation": "same_act",
+   "actor": "tenants",
+   "variable": "price_paid",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q16_wheat_land_with_history_is_in_fixed_supp"
+   ],
+   "reading": null,
+   "source_actor": "landlords",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "owners.farmland",
+   "variable": "asset_value",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q17_lenders_lower_rates_to_wheat_growers_who"
+   ],
+   "reading": null,
+   "source_actor": "growers",
+   "source_variable": "net_price_received",
+   "relation": "cost",
+   "actor": "borrowers.growers",
+   "variable": "interest_rate",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q19_under_u1_b_some_land_that_would_have_lef"
+   ],
+   "reading": "U1-b",
+   "source_actor": "growers",
+   "source_variable": "number_of_sellers",
+   "relation": "input",
+   "actor": "growers",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a11",
+    "q20_the_payment_on_established_production_go"
+   ],
+   "reading": "U1-b",
+   "source_actor": "growers.established",
+   "source_variable": "resources_available_other_uses",
+   "relation": "yield",
+   "actor": "owners.farmland",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "exporters",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "buyers.foreign",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "exporters",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "sellers.foreign",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q21_the_rise_in_wheat_exports_is_not_offset_"
+   ],
+   "reading": null,
+   "source_actor": "exporters",
+   "source_variable": "quantity_traded",
+   "relation": "currency",
+   "actor": "importers",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [],
+   "reading": "U1-a",
+   "source_actor": "growers",
+   "source_variable": "quality_per_unit",
+   "relation": "supply",
+   "actor": "buyers.millers",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "growers.barley",
+   "source_variable": "quantity_substitute",
+   "relation": "supply",
+   "actor": "buyers.substitutes",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "officials.enforcement",
+   "source_variable": "non_tax_receipts",
+   "relation": "paid_into",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q23_feed_buyers_substitute_between_feed_whea"
+   ],
+   "reading": null,
+   "source_actor": "buyers.substitutes",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "buyers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q24_foreign_growers_cost_per_tonne_does_not_"
+   ],
+   "reading": null,
+   "source_actor": "sellers.foreign",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "sellers.foreign",
+   "variable": "quantity_supplied",
+   "horizon": "medium"
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "a11"
+   ],
+   "reading": null,
+   "exchange": "e_wheat",
+   "side": "seller",
+   "actor": "owners.farmland"
+  }
+ ],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k3",
+   "actor": "growers"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k3",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k2",
+   "actor": "taxpayers",
+   "premises": [
+    "a1"
+   ]
+  },
+  {
+   "component": "k3",
+   "actor": "taxpayers",
+   "premises": [
+    "a1"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [],
+ "moves": [
+  {
+   "premises": [
+    "a10",
+    "a18"
+   ],
+   "reading": null,
+   "exchange": "e_wheat",
+   "side": "seller",
+   "horizon": null
+  }
+ ],
+ "discretion": [],
+ "means": [
+  {
+   "component": "k1b",
+   "actor": "growers.established",
+   "direction": "in"
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1a",
+   "premises": [
+    "a11"
+   ]
+  },
+  {
+   "component": "k1b",
+   "premises": [
+    "a11"
+   ]
+  }
+ ],
+ "timing": [],
+ "early_price": [],
+ "backstops": [],
+ "grants": [
+  {
+   "component": "k1a",
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "exchange": "e_wheat",
+   "recipient_side": "seller",
+   "payer": "general_fund",
+   "outlay_variable": "subsidy_outlay",
+   "budget_premises": []
+  }
+ ],
+ "capped": [],
+ "terms": [],
+ "banned": [],
+ "incidence": [],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Actual output or a historical base: payable to the holder of each registered farm on the farm's wheat production for the crop year; wheat production is what the Farm Register records for the farm (annual harvest declarations and established production).",
+   "readings": [
+    "U1-a: the payment is on the harvest declared for the crop year (actual output)",
+    "U1-b: the payment is on the farm's established production (2022 to 2026 average); the crop year fixes only the year whose price sets the rate"
+   ],
+   "components": {
+    "U1-a": [
+     "k1a"
+    ],
+    "U1-b": [
+     "k1b"
+    ]
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [
+  {
+   "component": "k1a",
+   "premises": [
+    "a11"
+   ]
+  },
+  {
+   "component": "k1b",
+   "premises": [
+    "a11"
+   ]
+  }
+ ],
+ "parts": [
+  {
+   "part": "growers.established",
+   "whole": "growers",
+   "premises": []
+  }
+ ],
+ "dominance": [
+  {
+   "premises": [
+    "q18_the_cost_to_growers_of_making_claims_and"
+   ],
+   "reading": null,
+   "actor": "growers",
+   "variable": "resources_available_other_uses",
+   "window": null,
+   "direction": "increase",
+   "kind": "arithmetic"
+  },
+  {
+   "premises": [
+    "q22_the_repayments_and_fines_collected_are_f"
+   ],
+   "reading": null,
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "window": null,
+   "direction": "decrease",
+   "kind": "arithmetic"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "The Act is in force for 2028 to 2032 and payments are made as it provides.",
+   "p": 0.9,
+   "class": "enforcement"
+  },
+  "a2": {
+   "text": "The national average price falls below Th 220 in at least one of the five crop years.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "a10": {
+   "text": "The domestic farm-gate price follows export parity in every year (Brisklund exports in every year).",
+   "p": 0.9,
+   "class": "other"
+  },
+  "a11": {
+   "text": "Land buyers expected the Act from February 2027 and expect it to run its term, with some chance of renewal.",
+   "p": 0.8,
+   "class": "expectations"
+  },
+  "a18": {
+   "text": "The effect of Brisklund's added output on the world price is far smaller than the expected payment per tonne.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q6_farm_unions_millers_and_holders_of_estab": {
+   "text": "Farm unions, millers and holders of established production can organize at a cost below their stakes.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q7_land_can_be_moved_between_wheat_and_othe": {
+   "text": "Land can be moved between wheat and other crops from year to year.",
+   "p": 0.9,
+   "class": "alternative_uses"
+  },
+  "q8_some_pasture_or_other_land_can_be_conver": {
+   "text": "Some pasture or other land can be converted to wheat.",
+   "p": 0.7,
+   "class": "alternative_uses"
+  },
+  "q9_some_growers_who_now_buy_put_options_or_": {
+   "text": "Some growers who now buy put options or forward sales for price cover buy less.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q10_some_growers_switch_to_high_yield_feed_v": {
+   "text": "Some growers switch to high-yield feed varieties when every tonne is paid alike.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q11_declarations_are_checked_only_by_samplin": {
+   "text": "Declarations are checked only by sampling, so some growers overstate or declare bought grain as their own.",
+   "p": 0.55,
+   "class": "enforcement"
+  },
+  "q12_the_payments_office_s_sampling_finds_som": {
+   "text": "The payments office's sampling finds some false declarations, and repayments and fines are collected.",
+   "p": 0.7,
+   "class": "enforcement"
+  },
+  "q13_some_growers_at_the_margin_sow_more_whea": {
+   "text": "Some growers at the margin sow more wheat, or grow it more intensively, when the expected price including the payment rises.",
+   "p": 0.85,
+   "class": "substitutability"
+  },
+  "q14_land_has_fewer_alternatives_than_tenants": {
+   "text": "Land has fewer alternatives than tenants' labor and machinery, and leases are let competitively.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q15_most_leases_come_up_for_renewal_within_t": {
+   "text": "Most leases come up for renewal within the five-year term.",
+   "p": 0.85,
+   "class": "durability"
+  },
+  "q16_wheat_land_with_history_is_in_fixed_supp": {
+   "text": "Wheat land with history is in fixed supply in the short run, and converting other land to wheat does not get cheaper per hectare as more is converted.",
+   "p": 0.8,
+   "class": "durability"
+  },
+  "q17_lenders_lower_rates_to_wheat_growers_who": {
+   "text": "Lenders lower rates to wheat growers whose income in low-price years is now higher.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q18_the_cost_to_growers_of_making_claims_and": {
+   "text": "The cost to growers of making claims and declarations is far smaller than the payments they receive.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q19_under_u1_b_some_land_that_would_have_lef": {
+   "text": "Under U1-b, some land that would have left farming is kept registered, and some of it grows wheat.",
+   "p": 0.35,
+   "class": "other"
+  },
+  "q20_the_payment_on_established_production_go": {
+   "text": "The payment on established production goes to the holder registered as farming the land, so the claim passes with the farm.",
+   "p": 0.8,
+   "class": "expectations"
+  },
+  "q21_the_rise_in_wheat_exports_is_not_offset_": {
+   "text": "The rise in wheat exports is not offset by capital flows in the medium run.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q22_the_repayments_and_fines_collected_are_f": {
+   "text": "The repayments and fines collected are far smaller than the payments made.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q23_feed_buyers_substitute_between_feed_whea": {
+   "text": "Feed buyers substitute between feed wheat and feed barley of a given quality.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q24_foreign_growers_cost_per_tonne_does_not_": {
+   "text": "Foreign growers' cost per tonne does not rise as their output contracts (the land given up is the least productive; costs are not mainly fixed per farm), and they cannot contract at once.",
+   "p": 0.85,
+   "class": "other"
+  }
+ }
+}

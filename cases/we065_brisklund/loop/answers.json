@@ -1,0 +1,21 @@
+{
+ "Farm unions, millers and holders of established production can organize at a cost below their stakes.": 0.9,
+ "Land can be moved between wheat and other crops from year to year.": 0.9,
+ "Some pasture or other land can be converted to wheat.": 0.7,
+ "Some growers who now buy put options or forward sales for price cover buy less.": 0.7,
+ "Some growers switch to high-yield feed varieties when every tonne is paid alike.": 0.6,
+ "Declarations are checked only by sampling, so some growers overstate or declare bought grain as their own.": 0.55,
+ "The payments office's sampling finds some false declarations, and repayments and fines are collected.": 0.7,
+ "Some growers at the margin sow more wheat, or grow it more intensively, when the expected price including the payment rises.": 0.85,
+ "Land has fewer alternatives than tenants' labor and machinery, and leases are let competitively.": 0.7,
+ "Most leases come up for renewal within the five-year term.": 0.85,
+ "Wheat land with history is in fixed supply in the short run, and converting other land to wheat does not get cheaper per hectare as more is converted.": 0.8,
+ "Lenders lower rates to wheat growers whose income in low-price years is now higher.": 0.6,
+ "The cost to growers of making claims and declarations is far smaller than the payments they receive.": 0.9,
+ "Under U1-b, some land that would have left farming is kept registered, and some of it grows wheat.": 0.35,
+ "The payment on established production goes to the holder registered as farming the land, so the claim passes with the farm.": 0.8,
+ "The rise in wheat exports is not offset by capital flows in the medium run.": 0.55,
+ "The repayments and fines collected are far smaller than the payments made.": 0.9,
+ "Foreign growers' cost per tonne does not rise as their output contracts (the land given up is the least productive; costs are not mainly fixed per farm), and they cannot contract at once.": 0.85,
+ "Feed buyers substitute between feed wheat and feed barley of a given quality.": 0.7
+}
