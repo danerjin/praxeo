@@ -1,0 +1,53 @@
+{
+ "borrowers.other": [],
+ "consumers": [
+  {"part": "links", "fact": {"source_actor": "consumers", "source_variable": "price_paid", "relation": "own_price", "actor": "consumers", "variable": "quantity_demanded"},
+   "premises": [], "source": "Mobile data traffic grows about 30% a year; no regulation of mobile or broadband prices"}
+ ],
+ "general_fund#2": [
+  {"part": "links", "fact": {"source_actor": "general_fund", "source_variable": "fund_balance", "relation": "supply", "actor": "borrowers.other", "variable": "interest_rate"},
+   "premises": ["The Treasury borrows less than it would have, by part of the receipts."], "premise_class": "revenue_use",
+   "source": "projected receipts are M600 million to M1.2 billion, against a general budget of about M58 billion a year and annual borrowing of about M2 billion"}
+ ],
+ "input_suppliers.towers": [
+  {"part": "links", "fact": {"source_actor": "input_suppliers.towers", "source_variable": "quantity_demanded", "relation": "supply_price", "actor": "input_suppliers.towers", "variable": "net_price_received"},
+   "premises": ["Sites cannot be added at an unchanged cost per site in the period, and cost per site does not fall as building expands (permits 4 to 9 months; riggers scarce)."], "premise_class": "durability",
+   "source": "new towers need municipal permits that take 4 to 9 months"},
+  {"part": "links", "fact": {"source_actor": "input_suppliers.towers", "source_variable": "quantity_demanded", "relation": "input", "actor": "workers.riggers", "variable": "employment,hours_worked"},
+   "premises": [], "source": "About 1,400 certified tower riggers do about 3,000 site installations a year ... 4,000 to 5,000 a year, beside the existing 3,000."},
+  {"part": "links", "fact": {"source_actor": "input_suppliers.towers", "source_variable": "quantity_demanded", "relation": "supply_price", "actor": "workers.riggers", "variable": "wage_rate"},
+   "premises": ["Riggers cannot be added at once (certification takes 6 to 12 months)."], "premise_class": "durability",
+   "source": "About 1,400 certified tower riggers do about 3,000 site installations a year."},
+  {"part": "links", "fact": {"source_actor": "input_suppliers.towers", "source_variable": "quantity_demanded", "relation": "input", "actor": "sellers.foreign", "variable": "quantity_traded"},
+   "premises": [], "source": "All radio equipment is imported; Tarnesse buys about 0.4% of the world's mobile radio equipment."},
+  {"part": "links", "fact": {"source_actor": "input_suppliers.towers", "source_variable": "quantity_demanded", "relation": "supply_price", "actor": "sellers.foreign", "variable": "net_price_received"},
+   "premises": ["Equipment vendors' supply cannot expand at an unchanged cost in the period."], "premise_class": "durability",
+   "source": "All radio equipment is imported; Tarnesse buys about 0.4% of the world's mobile radio equipment."},
+  {"part": "links", "fact": {"source_actor": "input_suppliers.towers", "source_variable": "quantity_demanded", "relation": "input", "actor": "municipalities", "variable": "applications"},
+   "premises": [], "source": "new towers need municipal permits that take 4 to 9 months."},
+  {"part": "dominance", "fact": {"actor": "input_suppliers.towers", "variable": "quantity_demanded", "direction": "increase", "kind": "empirical"},
+   "premises": ["The site capacity taken by the band build-out (co-location on existing sites in the cities, about 2,000 new towers and their tenancies outside them) exceeds the site capacity that the densification not done would have taken."], "premise_class": "other",
+   "source": "Three to four networks building to 6,500 sites each is 20,000 to 26,000 installations in five years ... About 2,000 new towers are projected."}
+ ],
+ "licensees#2": [
+  {"part": "timing", "fact": {"component": "k1", "actor": "licensees", "variable": "investment_target", "mode": "bring_forward"},
+   "premises": ["Without the band, operators would densify sites in the existing bands; with it, they densify less."], "premise_class": "substitutability",
+   "source": "the Award Regulations were made on 1 March 2027 ... licenses run from 1 January 2028"}
+ ],
+ "licensees.entrants": [
+  {"part": "links", "fact": {"source_actor": "licensees.entrants", "source_variable": "quantity_traded", "relation": "substitute", "actor": "sellers.substitutes", "variable": "quantity_traded"},
+   "premises": ["Fixed wireless in the band substitutes for DSL for some households outside fibre areas."], "premise_class": "substitutability",
+   "source": "Linmark Fibre (which plans fixed wireless access outside its fibre footprint); Pellow Networks' copper (DSL) lines serve about 1.6 million households, including about 700,000 outside fibre and cable areas."}
+ ],
+ "licensees.investors": [
+  {"part": "links", "fact": {"source_actor": "licensees.investors", "source_variable": "quantity_demanded", "relation": "supply_price", "actor": "licensees", "variable": "price_paid"},
+   "premises": ["The six blocks are all that is offered, whatever the price."], "premise_class": "other",
+   "source": "Six blocks of 20 MHz at a reserve price of M40 million each"}
+ ],
+ "licensees.near_threshold#2": [],
+ "licensees.reselling#2": [
+  {"part": "stakes", "fact": {"component": "u1_bar", "actor": "licensees.reselling"},
+   "premises": ["Licensees, entrants and town councils can organize to lobby at a cost below their stakes."], "premise_class": "other",
+   "source": "Reg. 9(3): \"Until the coverage obligation is met, the licence is held by the licensee for the purpose of meeting it.\""}
+ ]
+}

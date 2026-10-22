@@ -1,0 +1,196 @@
+{
+ "name": "WE-064 Tarnesse 2.9 GHz award (loop_r2 seed)",
+ "exchanges": [
+  {
+   "id": "e_lic",
+   "buyer": "licensees",
+   "seller": "treasury",
+   "unsatisfied_seller": "treasury",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_resale",
+   "buyer": "licensees.prospective",
+   "seller": "licensees.reselling",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  }
+ ],
+ "issued": [
+  {
+   "component": "k1",
+   "exchange": "e_lic",
+   "premises": [
+    "a1"
+   ]
+  }
+ ],
+ "held": [
+  {
+   "component": "k1",
+   "exchange": "e_lic",
+   "direction": "above",
+   "premises": [
+    "j1"
+   ]
+  }
+ ],
+ "charges": [
+  {
+   "component": "k2",
+   "exchange": "e_lic",
+   "payer_side": "buyer",
+   "receiver": "customers.uncovered",
+   "receipt_variable": "quality_per_unit",
+   "basis": "operating",
+   "premises": [
+    "a8",
+    "a3"
+   ],
+   "quantity_premises": [
+    "j2"
+   ]
+  }
+ ],
+ "moves": [
+  {
+   "exchange": "e_lic",
+   "side": "seller",
+   "premises": [
+    "a1"
+   ]
+  }
+ ],
+ "thresholds": [
+  {
+   "component": "k3",
+   "actor": "licensees.near_threshold",
+   "variable": "quantity_traded",
+   "premises": [
+    "a17"
+   ]
+  }
+ ],
+ "penalties": [
+  {
+   "component": "k2",
+   "actor": "licensees.noncompliant",
+   "collector": "treasury",
+   "premises": [
+    "a30"
+   ]
+  }
+ ],
+ "banned": [
+  {
+   "component": "u1_bar",
+   "exchange": "e_resale",
+   "premises": []
+  }
+ ],
+ "discretion": [
+  {
+   "component": "u1_consent",
+   "actor": "licensees",
+   "premises": []
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a28"
+   ]
+  },
+  {
+   "component": "k2",
+   "premises": [
+    "a28"
+   ]
+  },
+  {
+   "component": "k3",
+   "premises": [
+    "a28"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k2",
+   "actor": "licensees"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k5",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k5",
+   "actor": "general_fund",
+   "premises": []
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Resale before the coverage deadline (reg. 14 against reg. 9(3))",
+   "readings": [
+    "U1-a: transfers are allowed at any time with consent (reg. 14); reg. 9(3) only states the purpose of the obligation",
+    "U1-b: reg. 9(3) bars any transfer until the obligation is met or the deadline passes"
+   ],
+   "components": {
+    "U1-a": [],
+    "U1-b": [
+     "u1_bar"
+    ]
+   }
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Some blocks are bid at or above the reserve: bidders expect a license to be worth more than M40 million after the build-out cost.",
+   "p": 0.95,
+   "class": "binding"
+  },
+  "a3": {
+   "text": "The obligation is enforced: revocation is credible, so licensees build to 90% by the end of 2032.",
+   "p": 0.75,
+   "class": "enforcement"
+  },
+  "a8": {
+   "text": "Licensees would not, on their own, cover 90% of the population with the band by 2032 (about 65% commercially).",
+   "p": 0.8,
+   "class": "binding"
+  },
+  "a17": {
+   "text": "Some operators win blocks at prices below their own value for them (the cap holds the clearing price at the third-highest bidder's value).",
+   "p": 0.6,
+   "class": "other"
+  },
+  "a28": {
+   "text": "Investors expected the award partly from the March 2026 consultation and fully from 1 March 2027.",
+   "p": 0.8,
+   "class": "expectations"
+  },
+  "a30": {
+   "text": "A license is revoked and the band re-auctioned.",
+   "p": 0.3,
+   "class": "other"
+  },
+  "j1": {
+   "text": "The reserve price of M40 million a block binds: some blocks would sell for less without it.",
+   "p": 0.15,
+   "class": "binding"
+  },
+  "j2": {
+   "text": "Households outside the cities and large towns value mobile coverage from the band.",
+   "p": 0.7,
+   "class": "other"
+  }
+ }
+}
