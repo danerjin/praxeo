@@ -172,3 +172,31 @@ def test_off_list_names_are_flagged():
                               "actor": "zzz.unknown", "variable": "homes_listed"}])
     msgs = X.off_list(sit)
     assert any("homes_listed" in m for m in msgs) and any("zzz" in m for m in msgs)
+
+
+def test_blind_loop_runs_with_the_controlled_names():
+    """Runs whose proposer was given the controlled names and the subclass guidance (10e031e), reading only extracted files
+    (section 1 and the four allowed assumption columns), so without the reading slips of earlier runs."""
+    cases = [
+        ("we036_quenby", "loop_r4",
+         {"workers.uncovered": ["workers.at_paying_firms", "workers.at_offering_firms"], "workers.at_players": "workers.at_offering_firms",
+          "employers.players": "employers.offering", "employers.payers_midsize": "employers.paying",
+          "employers.near_50": "employers.near_threshold", "workers.capped_firms": "workers.at_capped_firms",
+          "general_fund": ["treasury", "officials.revenue"], "sellers.contract_services": "contractors", "insurers.group": "insurers"},
+         {}, 19),
+        ("we036_quenby", "loop_r5",
+         {"workers.uncovered": "workers.fulltime_bound", "workers.at_players": "workers.at_offering_firms",
+          "employers.near_50": "employers.near_threshold", "workers.near_30": "workers.near_hours_line",
+          "workers.full_time": "workers.fulltime_bound", "insurers.group": "insurers", "general_fund": ["treasury", "officials.revenue"],
+          "providers.medical": "sellers.health_care", "sellers.contract_services": "contractors"},
+         {}, 21),     # runs 1 to 3 without the names: 13, 18, 16; pattern engine 29 (of 60)
+        ("we020_tamberlay", "loop_r2",
+         {"buyers.first_time": "homebuyers.first_time", "owners.entry_level": ["owners.under_cap", "sellers.entry_level"],
+          "owners": ["owners.under_cap", "sellers.entry_level"], "buyers.other": "homebuyers.repeat",
+          "construction_labor": "construction_workers", "taxpayers": "taxpayers.current"},
+         {"March to June": "announcement", "before end of Year 4": "deadline"}, 16),   # r1 13; pattern engine 15 (of 33)
+    ]
+    examples = {"we036_quenby": "WE-036_employer_health_cover_mandate.md", "we020_tamberlay": "WE-020_first_time_buyer_grant.md"}
+    for case, loop, short, windows, k in cases:
+        produced, _ = _loop_score(case, examples[case], short, windows, loop)
+        assert (case, loop, len(produced)) == (case, loop, k)

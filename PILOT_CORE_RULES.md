@@ -281,3 +281,31 @@ All three writers report reading slips beyond section 1, recorded in their notes
 - On the two new mandate cases the core path matches or beats the pattern engine (12 against 9, 9 against 9).
 - On WE-036 it is still well short (16 to 18 against 29). Its table is long, and most of the missing rows are subclass splits (players against payers, near-50 against capped firms) and variables the writers name differently.
 - The variation between runs (13, 18, 16) is now as large as the effect of the forms. Further gains on WE-036 depend more on the proposer than on the rules.
+
+## Step 9: the proposer is given the controlled names
+
+**What the proposer now gets** (`praxeo/core/expand.py`):
+- The controlled variables with their meanings (02_ontology.md 2.4).
+- The controlled actor classes (2.2, plus names shared by at least two worked examples). A blind run on an example excludes that example from the count.
+- An instruction to split a class the policy treats differently into subclasses. Examples: firms that offer cover against firms that pay; those near a line against those past it.
+- `python -m praxeo.core.expand --vocab --exclude WE-NNN` prints the lists for a stand-in writer.
+- Every run flags names outside the lists (`off-list:`).
+
+From this step on, writers read only extracted files (section 1, and the assumption table's ID, Statement, Type and p). This ends the reading slips of steps 7 and 8.
+
+**Blind runs:**
+
+| Case | Without the names | With the names | Pattern engine | Contradicts the table |
+|---|---|---|---|---|
+| WE-036 | 13, 18, 16 (runs 1 to 3) | 19, 21 (runs 4 and 5) | 29 of 60 | 1 in each run: seasonal hiring under the exempting reading |
+| WE-020 | 13 | 16 | 15 of 33 | 0 (the landlord row is now right) |
+
+**What changed:**
+- **The subclasses the table uses now appear:** workers at firms that offer cover, firms near the line, workers near the hours line, the minimum-wage workers.
+- **Rows that were wrong now match.** The landlords' rental supply on WE-020 matches, because the variables are now chosen by their meaning.
+- **Exact class names still differ from the tables.** Without the class mapping, WE-020 matches only 4 rows (`homebuyers.first_time` against the table's `buyers.first_time`). The gain is in the classes the writers draw, not in their exact names. The mapping (same class only) remains part of scoring.
+
+**What remains on WE-036:**
+- The exempt alternative under reading U1-b can be stated (`reading: "U1-b"`), but neither writer stated it.
+- A-23's incidence claim (`tax_share_borne`) has no rule.
+- Wage stickiness and adjustment still share a window, because `fixed` and `moves` carry no horizon.
