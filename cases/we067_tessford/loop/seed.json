@@ -1,0 +1,360 @@
+{
+ "name": "WE-067 Tessford Tenant Stability Ordinance (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_cov",
+   "buyer": "tenants.controlled",
+   "seller": "landlords.controlled",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_sublet",
+   "buyer": "tenants.subtenants",
+   "seller": "tenants.sublessors",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_relet",
+   "buyer": "tenants.prospective",
+   "seller": "owners.withdrawn",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_cred",
+   "buyer": "tenants.senior",
+   "seller": "landlords.county",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_cred_w",
+   "buyer": "tenants.senior_displaced",
+   "seller": "landlords.county",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  }
+ ],
+ "held": [
+  {
+   "component": "k1",
+   "exchange": "e_cov",
+   "direction": "below",
+   "premises": [
+    "a1",
+    "a2"
+   ]
+  },
+  {
+   "component": "k2_sublet",
+   "exchange": "e_sublet",
+   "direction": "below",
+   "premises": [
+    "a3"
+   ]
+  }
+ ],
+ "terms": [
+  {
+   "component": "k2_evict",
+   "exchange": "e_cov",
+   "side": "seller",
+   "direction": "worse",
+   "premises": [
+    "j2"
+   ]
+  },
+  {
+   "component": "k2_assign",
+   "exchange": "e_cov",
+   "side": "buyer",
+   "direction": "worse",
+   "premises": [
+    "a3"
+   ]
+  }
+ ],
+ "banned": [
+  {
+   "component": "k3_relet",
+   "exchange": "e_relet",
+   "premises": [
+    "j1"
+   ]
+  }
+ ],
+ "charges": [
+  {
+   "component": "k3",
+   "exchange": "e_cov",
+   "payer_side": "seller",
+   "receiver": "tenants.displaced",
+   "receipt_variable": "side_payments",
+   "branch_premises": [
+    "a12"
+   ]
+  },
+  {
+   "component": "k3",
+   "exchange": "e_cov",
+   "payer_side": "seller",
+   "receiver": "tenants.senior_displaced",
+   "receipt_variable": "side_payments",
+   "branch_premises": [
+    "a12"
+   ]
+  },
+  {
+   "component": "k5",
+   "exchange": "e_cov",
+   "payer_side": "seller",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "non_tax_receipts",
+   "basis": "operating",
+   "premises": [
+    "a2"
+   ]
+  }
+ ],
+ "grants": [
+  {
+   "component": "k4",
+   "exchange": "e_cred",
+   "recipient_side": "seller",
+   "payer": "general_fund",
+   "premises": [
+    "a16"
+   ]
+  },
+  {
+   "component": "k4w",
+   "exchange": "e_cred_w",
+   "recipient_side": "seller",
+   "payer": "general_fund",
+   "premises": [
+    "a16"
+   ]
+  }
+ ],
+ "moves": [
+  {
+   "exchange": "e_cred",
+   "side": "seller",
+   "horizon": "long",
+   "premises": [
+    "a36"
+   ]
+  },
+  {
+   "exchange": "e_cred",
+   "side": "buyer",
+   "premises": [
+    "a17"
+   ]
+  },
+  {
+   "exchange": "e_cred_w",
+   "side": "seller",
+   "horizon": "long",
+   "premises": [
+    "a36"
+   ]
+  },
+  {
+   "exchange": "e_cred_w",
+   "side": "buyer",
+   "premises": [
+    "a17"
+   ]
+  }
+ ],
+ "incidence": [
+  {
+   "component": "k4",
+   "exchange": "e_cred",
+   "side": "buyer",
+   "premises": [
+    "a17"
+   ]
+  },
+  {
+   "component": "k4w",
+   "exchange": "e_cred_w",
+   "side": "buyer",
+   "premises": [
+    "a17"
+   ]
+  }
+ ],
+ "thresholds": [
+  {
+   "component": "k4_county",
+   "actor": "tenants.senior",
+   "variable": "relocation_out_of_area",
+   "premises": [
+    "a7"
+   ]
+  },
+  {
+   "component": "k4_tenure",
+   "actor": "tenants.senior_near",
+   "variable": "turnover",
+   "premises": [
+    "a9"
+   ]
+  },
+  {
+   "component": "k4w_county",
+   "actor": "tenants.senior_displaced",
+   "variable": "relocation_out_of_area",
+   "premises": [
+    "a7"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "exchange": "e_cov",
+   "premises": [
+    "a5"
+   ]
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": []
+  }
+ ],
+ "early_price": [
+  {
+   "exchange": "e_cov",
+   "premises": [
+    "a4"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "landlords.controlled"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement"
+  },
+  {
+   "component": "k6",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k4",
+   "actor": "general_fund",
+   "premises": [
+    "j3"
+   ]
+  },
+  {
+   "component": "k6",
+   "actor": "general_fund",
+   "premises": [
+    "j3"
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Displaced seniors and the credit: whether a senior who leaves on a withdrawal notice also receives the Portable Senior Credit.",
+   "readings": [
+    "U1-a: a senior who leaves on a withdrawal notice vacates the unit, and the credit (a City payment, not a claim against the owner) is paid as well as the $12,000",
+    "U1-b: section 9(c) settles all claims under the Ordinance, section 7 included; displaced seniors receive the $12,000 only"
+   ],
+   "components": {
+    "U1-a": [
+     "k4w",
+     "k4w_county"
+    ],
+    "U1-b": []
+   }
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Market rents keep rising faster than 1.8% a year, so the cap binds within the first year and the gap grows.",
+   "class": "binding",
+   "p": 0.9
+  },
+  "a2": {
+   "text": "The board enforces the cap against most landlords.",
+   "class": "enforcement",
+   "p": 0.8
+  },
+  "a3": {
+   "text": "Covered tenancies cannot be assigned or sold, and sublets are limited to the tenant's rent.",
+   "class": "other",
+   "p": 0.9
+  },
+  "a4": {
+   "text": "Enough leases renew in the window, and landlords raise rents at renewal to lift the base.",
+   "class": "expectations",
+   "p": 0.75
+  },
+  "a5": {
+   "text": "Without the ordinance, sitting tenants' rents would follow the market within one or two lease cycles, so the counterfactual passes any pre-emptive raise within the medium horizon.",
+   "class": "other",
+   "p": 0.7
+  },
+  "a7": {
+   "text": "For some qualifying seniors who would have left Ambry County, the credit is worth more than what they would have gained by leaving, so they choose a county option instead.",
+   "class": "mobility",
+   "p": 0.7
+  },
+  "a9": {
+   "text": "Some qualifying and near-qualifying seniors know the credit's conditions and delay moves to meet them.",
+   "class": "expectations",
+   "p": 0.6
+  },
+  "a12": {
+   "text": "The withdrawal route is used for a meaningful number of buildings.",
+   "class": "alternative_uses",
+   "p": 0.75
+  },
+  "a16": {
+   "text": "Some qualifying seniors leave covered units for rentals in Ambry County and claim the credit.",
+   "class": "other",
+   "p": 0.9
+  },
+  "a17": {
+   "text": "The rise in county rents caused by the policy is far smaller than the credit for those who hold it.",
+   "class": "other",
+   "p": 0.9
+  },
+  "a36": {
+   "text": "By the long horizon some credit holders' credit is at or above the rent of the home they rent (core re-run A-N5).",
+   "class": "other",
+   "p": 0.55
+  },
+  "j1": {
+   "text": "The rent board enforces the five-year bar on re-letting withdrawn units.",
+   "class": "enforcement",
+   "p": 0.8
+  },
+  "j2": {
+   "text": "The county court enforces the for-cause rule against landlords.",
+   "class": "enforcement",
+   "p": 0.85
+  },
+  "j3": {
+   "text": "The credit and the county's administration fee are paid from the City's general fund.",
+   "class": "revenue_use",
+   "p": 0.95
+  }
+ }
+}

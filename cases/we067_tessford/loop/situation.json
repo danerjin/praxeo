@@ -1,0 +1,1313 @@
+{
+ "name": "WE-067 Tessford Tenant Stability Ordinance (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_cov",
+   "buyer": "tenants.controlled",
+   "seller": "landlords.controlled",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_sublet",
+   "buyer": "tenants.subtenants",
+   "seller": "tenants.sublessors",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_relet",
+   "buyer": "tenants.prospective",
+   "seller": "owners.withdrawn",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_cred",
+   "buyer": "tenants.senior",
+   "seller": "landlords.county",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_cred_w",
+   "buyer": "tenants.senior_displaced",
+   "seller": "landlords.county",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_cov",
+   "direction": "below"
+  },
+  {
+   "premises": [
+    "a3"
+   ],
+   "reading": null,
+   "component": "k2_sublet",
+   "exchange": "e_sublet",
+   "direction": "below"
+  }
+ ],
+ "margins": [
+  {
+   "premises": [
+    "q18_the_housing_code_leaves_room_to_cut_main"
+   ],
+   "reading": null,
+   "exchange": "e_cov",
+   "kind": "adjust",
+   "side": "seller",
+   "actor": "landlords.controlled",
+   "variables": [
+    "maintenance_spending"
+   ]
+  },
+  {
+   "premises": [
+    "a12",
+    "q19_rental_buildings_last_several_decades_so"
+   ],
+   "reading": null,
+   "exchange": "e_cov",
+   "kind": "adjust",
+   "side": "seller",
+   "actor": "landlords.controlled",
+   "variables": [
+    "quantity_supplied"
+   ]
+  },
+  {
+   "premises": [
+    "q18_the_housing_code_leaves_room_to_cut_main"
+   ],
+   "reading": null,
+   "exchange": "e_cov",
+   "kind": "adjust",
+   "side": "seller",
+   "actor": "tenants.controlled",
+   "variables": [
+    "quality_per_unit"
+   ]
+  },
+  {
+   "premises": [
+    "q36_some_sublets_above_the_controlled_rent_g"
+   ],
+   "reading": null,
+   "exchange": "e_sublet",
+   "kind": "outside",
+   "side": null,
+   "actor": "tenants.sublessors",
+   "variables": [
+    "informal_activity"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "a12"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "landlords.controlled",
+   "actor": "landlords.controlled",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q16_in_a_building_an_owner_plans_to_withdraw"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "landlords.controlled",
+   "actor": "landlords.controlled",
+   "variables": [
+    "units_held_vacant"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q17_some_landlords_pay_sitting_tenants_to_va"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "landlords.controlled",
+   "actor": "tenants.controlled",
+   "variables": [
+    "turnover"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q17_some_landlords_pay_sitting_tenants_to_va"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "landlords.controlled",
+   "actor": "tenants.controlled",
+   "variables": [
+    "side_payments"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q25_owners_sell_withdrawn_units_as_condomini"
+   ],
+   "reading": null,
+   "component": "k3_relet",
+   "chooser": "owners.withdrawn",
+   "actor": "homebuyers",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q28_without_the_ordinance_some_sitting_tenan"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "tenants.controlled",
+   "actor": "tenants.controlled",
+   "variables": [
+    "turnover"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q28_without_the_ordinance_some_sitting_tenan"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "tenants.controlled",
+   "actor": "tenants.controlled",
+   "variables": [
+    "relocation_out_of_area"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q29_some_job_opportunities_for_sitting_tenan"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "tenants.controlled",
+   "actor": "tenants.controlled",
+   "variables": [
+    "job_changes"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "a16"
+   ],
+   "reading": null,
+   "component": "k4",
+   "chooser": "tenants.senior",
+   "actor": "tenants.senior",
+   "variables": [
+    "turnover"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q35_some_qualifying_seniors_who_would_have_m"
+   ],
+   "reading": null,
+   "component": "k4",
+   "chooser": "tenants.senior",
+   "actor": "homebuyers",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q21_landlords_tenant_unions_and_senior_advoc",
+    "q22_rent_regulation_would_have_been_conteste"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "landlords.controlled"
+  },
+  {
+   "premises": [
+    "q21_landlords_tenant_unions_and_senior_advoc",
+    "q22_rent_regulation_would_have_been_conteste"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "tenants.controlled"
+  },
+  {
+   "premises": [
+    "q21_landlords_tenant_unions_and_senior_advoc"
+   ],
+   "reading": null,
+   "component": "k4",
+   "actor": "tenants.senior"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "j3"
+   ],
+   "reading": null,
+   "source_actor": "general_fund",
+   "source_variable": "subsidy_outlay",
+   "relation": "paid_from",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_the_credit_is_paid_out_of_other_uses_of_"
+   ],
+   "reading": null,
+   "source_actor": "general_fund",
+   "source_variable": "resources_available_other_uses",
+   "relation": "same_act",
+   "actor": "recipients.other_spending",
+   "variable": "resources_available_other_uses",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q24_because_of_the_policy_free_rents_in_tess"
+   ],
+   "reading": null,
+   "source_actor": "landlords.controlled",
+   "source_variable": "quantity_supplied",
+   "relation": "supply",
+   "actor": "tenants.prospective",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q25_owners_sell_withdrawn_units_as_condomini"
+   ],
+   "reading": null,
+   "source_actor": "landlords.controlled",
+   "source_variable": "reclassification",
+   "relation": "same_act",
+   "actor": "homebuyers",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "landlords.controlled",
+   "source_variable": "reclassification",
+   "relation": "same_act",
+   "actor": "tenants.displaced",
+   "variable": "turnover",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q26_some_displaced_households_next_best_home"
+   ],
+   "reading": null,
+   "source_actor": "landlords.controlled",
+   "source_variable": "reclassification",
+   "relation": "same_act",
+   "actor": "tenants.displaced",
+   "variable": "relocation_out_of_area",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "landlords.controlled",
+   "source_variable": "reclassification",
+   "relation": "same_act",
+   "actor": "tenants.senior_displaced",
+   "variable": "turnover",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q26_some_displaced_households_next_best_home"
+   ],
+   "reading": null,
+   "source_actor": "landlords.controlled",
+   "source_variable": "reclassification",
+   "relation": "same_act",
+   "actor": "tenants.senior_displaced",
+   "variable": "relocation_out_of_area",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q27_more_than_about_115_households_shut_out_"
+   ],
+   "reading": null,
+   "source_actor": "landlords.county",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "renters.neighbors",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q27_more_than_about_115_households_shut_out_"
+   ],
+   "reading": null,
+   "source_actor": "landlords.county",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "tenants.senior",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "officials.enforcement",
+   "source_variable": "enforcement_cost",
+   "relation": "paid_from",
+   "actor": "officials.enforcement",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "officials.enforcement",
+   "source_variable": "non_tax_receipts",
+   "relation": "paid_into",
+   "actor": "officials.enforcement",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q30_each_covered_unit_a_sitting_tenant_does_"
+   ],
+   "reading": null,
+   "source_actor": "tenants.controlled",
+   "source_variable": "turnover",
+   "relation": "same_act",
+   "actor": "landlords.controlled",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "tenants.displaced",
+   "source_variable": "side_payments",
+   "relation": "same_act",
+   "actor": "tenants.displaced",
+   "variable": "resources_available_other_uses",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q31_some_seekers_shut_out_of_tessford_settle",
+    "q27_more_than_about_115_households_shut_out_"
+   ],
+   "reading": null,
+   "source_actor": "tenants.prospective",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "renters.neighbors",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q31_some_seekers_shut_out_of_tessford_settle",
+    "q32_more_than_about_35_households_shut_out_o"
+   ],
+   "reading": null,
+   "source_actor": "tenants.prospective",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "renters.durnside",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q33_covered_and_exempt_tessford_units_are_cl"
+   ],
+   "reading": null,
+   "source_actor": "tenants.prospective",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "tenants.prospective",
+   "variable": "price_substitute",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q34_owners_and_developers_expect_the_exempti"
+   ],
+   "reading": null,
+   "source_actor": "tenants.prospective",
+   "source_variable": "price_substitute",
+   "relation": "yield",
+   "actor": "developers",
+   "variable": "investment_target",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q24_because_of_the_policy_free_rents_in_tess"
+   ],
+   "reading": null,
+   "source_actor": "tenants.prospective",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "tenants.controlled",
+   "variable": "relocation_out_of_area",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q24_because_of_the_policy_free_rents_in_tess"
+   ],
+   "reading": null,
+   "source_actor": "tenants.prospective",
+   "source_variable": "price_paid",
+   "relation": "yield",
+   "actor": "landlords.controlled",
+   "variable": "return_on_capital",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "tenants.senior",
+   "source_variable": "turnover",
+   "relation": "same_act",
+   "actor": "landlords.controlled",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "tenants.senior_displaced",
+   "source_variable": "side_payments",
+   "relation": "same_act",
+   "actor": "tenants.senior_displaced",
+   "variable": "resources_available_other_uses",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "tenants.senior_near",
+   "source_variable": "turnover",
+   "relation": "same_act",
+   "actor": "landlords.controlled",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q34_owners_and_developers_expect_the_exempti"
+   ],
+   "reading": null,
+   "source_actor": "developers",
+   "source_variable": "investment_target",
+   "relation": "supply",
+   "actor": "tenants.prospective",
+   "variable": "price_substitute",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q37_fewer_than_about_58_of_buyers_of_withdra"
+   ],
+   "reading": null,
+   "source_actor": "homebuyers",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "tenants.prospective",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "renters.durnside",
+   "source_variable": "price_paid",
+   "relation": "yield",
+   "actor": "landlords.durnside",
+   "variable": "return_on_capital",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "renters.neighbors",
+   "source_variable": "price_paid",
+   "relation": "yield",
+   "actor": "landlords.county",
+   "variable": "return_on_capital",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q40_savings_built_from_the_capped_rent_can_p"
+   ],
+   "reading": null,
+   "source_actor": "tenants.controlled",
+   "source_variable": "resources_available_other_uses",
+   "relation": "input",
+   "actor": "tenants.controlled",
+   "variable": "turnover",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q40_savings_built_from_the_capped_rent_can_p"
+   ],
+   "reading": null,
+   "source_actor": "tenants.controlled",
+   "source_variable": "resources_available_other_uses",
+   "relation": "input",
+   "actor": "tenants.controlled",
+   "variable": "relocation_out_of_area",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q27_more_than_about_115_households_shut_out_"
+   ],
+   "reading": null,
+   "source_actor": "tenants.displaced",
+   "source_variable": "relocation_out_of_area",
+   "relation": "supply_price",
+   "actor": "renters.neighbors",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q32_more_than_about_35_households_shut_out_o"
+   ],
+   "reading": null,
+   "source_actor": "tenants.displaced",
+   "source_variable": "relocation_out_of_area",
+   "relation": "supply_price",
+   "actor": "renters.durnside",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q44_some_displaced_households_rent_another_h"
+   ],
+   "reading": null,
+   "source_actor": "tenants.displaced",
+   "source_variable": "turnover",
+   "relation": "same_act",
+   "actor": "tenants.prospective",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q19_rental_buildings_last_several_decades_so"
+   ],
+   "reading": null,
+   "source_actor": "tenants.prospective",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "tenants.prospective",
+   "variable": "price_paid",
+   "horizon": null
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "q23_buyers_of_buildings_expect_the_ordinance"
+   ],
+   "reading": null,
+   "exchange": "e_cov",
+   "side": "seller",
+   "actor": "landlords.controlled"
+  }
+ ],
+ "yields": [
+  {
+   "premises": [],
+   "reading": null,
+   "exchange": "e_cov",
+   "side": "seller",
+   "actor": "landlords.controlled"
+  }
+ ],
+ "transfers": [
+  {
+   "exchange": "e_cov",
+   "premises": [
+    "a5"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "landlords.controlled"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement"
+  },
+  {
+   "component": "k6",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k4",
+   "actor": "general_fund",
+   "premises": [
+    "j3"
+   ]
+  },
+  {
+   "component": "k6",
+   "actor": "general_fund",
+   "premises": [
+    "j3"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "k3",
+   "premises": [],
+   "exchange": "e_cov",
+   "payer_side": "seller",
+   "receiver": "tenants.displaced",
+   "receipt_variable": "side_payments",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [
+    "a12"
+   ],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k3",
+   "premises": [],
+   "exchange": "e_cov",
+   "payer_side": "seller",
+   "receiver": "tenants.senior_displaced",
+   "receipt_variable": "side_payments",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [
+    "a12"
+   ],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k5",
+   "premises": [
+    "a2"
+   ],
+   "exchange": "e_cov",
+   "payer_side": "seller",
+   "receiver": "officials.enforcement",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "operating"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a36"
+   ],
+   "reading": null,
+   "exchange": "e_cred",
+   "side": "seller",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "a17"
+   ],
+   "reading": null,
+   "exchange": "e_cred",
+   "side": "buyer",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a36"
+   ],
+   "reading": null,
+   "exchange": "e_cred_w",
+   "side": "seller",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "a17"
+   ],
+   "reading": null,
+   "exchange": "e_cred_w",
+   "side": "buyer",
+   "horizon": null
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": []
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q20_some_landlords_end_month_to_month_tenanc"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "landlords.controlled",
+   "variable": "units_held_vacant",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q20_some_landlords_end_month_to_month_tenanc"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "landlords.controlled",
+   "variable": "turnover",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [
+  {
+   "exchange": "e_cov",
+   "premises": [
+    "a4"
+   ]
+  }
+ ],
+ "backstops": [],
+ "grants": [
+  {
+   "component": "k4",
+   "premises": [
+    "a16"
+   ],
+   "exchange": "e_cred",
+   "recipient_side": "seller",
+   "payer": "general_fund",
+   "outlay_variable": "subsidy_outlay",
+   "budget_premises": []
+  },
+  {
+   "component": "k4w",
+   "premises": [
+    "a16"
+   ],
+   "exchange": "e_cred_w",
+   "recipient_side": "seller",
+   "payer": "general_fund",
+   "outlay_variable": "subsidy_outlay",
+   "budget_premises": []
+  }
+ ],
+ "capped": [],
+ "terms": [
+  {
+   "premises": [
+    "j2"
+   ],
+   "reading": null,
+   "component": "k2_evict",
+   "exchange": "e_cov",
+   "side": "seller",
+   "direction": "worse"
+  },
+  {
+   "premises": [
+    "a3"
+   ],
+   "reading": null,
+   "component": "k2_assign",
+   "exchange": "e_cov",
+   "side": "buyer",
+   "direction": "worse"
+  }
+ ],
+ "banned": [
+  {
+   "premises": [
+    "j1"
+   ],
+   "reading": null,
+   "component": "k3_relet",
+   "exchange": "e_relet"
+  }
+ ],
+ "incidence": [
+  {
+   "premises": [
+    "a17"
+   ],
+   "reading": null,
+   "component": "k4",
+   "exchange": "e_cred",
+   "side": "buyer"
+  },
+  {
+   "premises": [
+    "a17"
+   ],
+   "reading": null,
+   "component": "k4w",
+   "exchange": "e_cred_w",
+   "side": "buyer"
+  }
+ ],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Displaced seniors and the credit: whether a senior who leaves on a withdrawal notice also receives the Portable Senior Credit.",
+   "readings": [
+    "U1-a: a senior who leaves on a withdrawal notice vacates the unit, and the credit (a City payment, not a claim against the owner) is paid as well as the $12,000",
+    "U1-b: section 9(c) settles all claims under the Ordinance, section 7 included; displaced seniors receive the $12,000 only"
+   ],
+   "components": {
+    "U1-a": [
+     "k4w",
+     "k4w_county"
+    ],
+    "U1-b": []
+   }
+  }
+ ],
+ "thresholds": [
+  {
+   "premises": [
+    "a7"
+   ],
+   "reading": null,
+   "component": "k4_county",
+   "actor": "tenants.senior",
+   "variable": "relocation_out_of_area",
+   "chooser": null
+  },
+  {
+   "premises": [
+    "a9"
+   ],
+   "reading": null,
+   "component": "k4_tenure",
+   "actor": "tenants.senior_near",
+   "variable": "turnover",
+   "chooser": null
+  },
+  {
+   "premises": [
+    "a7"
+   ],
+   "reading": null,
+   "component": "k4w_county",
+   "actor": "tenants.senior_displaced",
+   "variable": "relocation_out_of_area",
+   "chooser": null
+  }
+ ],
+ "qualifies": [],
+ "expires": [],
+ "parts": [
+  {
+   "part": "tenants.controlled",
+   "whole": "tenants.nonsenior",
+   "premises": []
+  },
+  {
+   "part": "tenants.displaced",
+   "whole": "tenants.nonsenior",
+   "premises": []
+  }
+ ],
+ "dominance": [
+  {
+   "premises": [
+    "q38_any_rise_in_covered_vacancies_from_quali"
+   ],
+   "reading": null,
+   "actor": "landlords.controlled",
+   "variable": "quantity_supplied",
+   "window": null,
+   "direction": "decrease",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q39_in_the_medium_horizon_what_covered_landl"
+   ],
+   "reading": null,
+   "actor": "landlords.controlled",
+   "variable": "return_on_capital",
+   "window": null,
+   "direction": "decrease",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q41_for_insiders_who_keep_their_units_the_fo",
+    "q42_buyouts_move_fewer_keepers_out_of_their_"
+   ],
+   "reading": null,
+   "actor": "tenants.controlled",
+   "variable": "turnover",
+   "window": null,
+   "direction": "decrease",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q41_for_insiders_who_keep_their_units_the_fo",
+    "q43_for_non_qualifying_keepers_the_lock_in_f"
+   ],
+   "reading": null,
+   "actor": "tenants.controlled",
+   "variable": "relocation_out_of_area",
+   "window": null,
+   "direction": "decrease",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "a17"
+   ],
+   "reading": null,
+   "actor": "tenants.senior",
+   "variable": "price_paid",
+   "window": null,
+   "direction": "decrease",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q45_by_the_third_year_the_cap_cuts_non_quali"
+   ],
+   "reading": null,
+   "actor": "tenants.nonsenior",
+   "variable": "relocation_out_of_area",
+   "window": null,
+   "direction": "decrease",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q37_fewer_than_about_58_of_buyers_of_withdra"
+   ],
+   "reading": null,
+   "actor": "tenants.prospective",
+   "variable": "quantity_demanded",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Market rents keep rising faster than 1.8% a year, so the cap binds within the first year and the gap grows.",
+   "class": "binding",
+   "p": 0.9
+  },
+  "a2": {
+   "text": "The board enforces the cap against most landlords.",
+   "class": "enforcement",
+   "p": 0.8
+  },
+  "a3": {
+   "text": "Covered tenancies cannot be assigned or sold, and sublets are limited to the tenant's rent.",
+   "class": "other",
+   "p": 0.9
+  },
+  "a4": {
+   "text": "Enough leases renew in the window, and landlords raise rents at renewal to lift the base.",
+   "class": "expectations",
+   "p": 0.75
+  },
+  "a5": {
+   "text": "Without the ordinance, sitting tenants' rents would follow the market within one or two lease cycles, so the counterfactual passes any pre-emptive raise within the medium horizon.",
+   "class": "other",
+   "p": 0.7
+  },
+  "a7": {
+   "text": "For some qualifying seniors who would have left Ambry County, the credit is worth more than what they would have gained by leaving, so they choose a county option instead.",
+   "class": "mobility",
+   "p": 0.7
+  },
+  "a9": {
+   "text": "Some qualifying and near-qualifying seniors know the credit's conditions and delay moves to meet them.",
+   "class": "expectations",
+   "p": 0.6
+  },
+  "a12": {
+   "text": "The withdrawal route is used for a meaningful number of buildings.",
+   "class": "alternative_uses",
+   "p": 0.75
+  },
+  "a16": {
+   "text": "Some qualifying seniors leave covered units for rentals in Ambry County and claim the credit.",
+   "class": "other",
+   "p": 0.9
+  },
+  "a17": {
+   "text": "The rise in county rents caused by the policy is far smaller than the credit for those who hold it.",
+   "class": "other",
+   "p": 0.9
+  },
+  "a36": {
+   "text": "By the long horizon some credit holders' credit is at or above the rent of the home they rent (core re-run A-N5).",
+   "class": "other",
+   "p": 0.55
+  },
+  "j1": {
+   "text": "The rent board enforces the five-year bar on re-letting withdrawn units.",
+   "class": "enforcement",
+   "p": 0.8
+  },
+  "j2": {
+   "text": "The county court enforces the for-cause rule against landlords.",
+   "class": "enforcement",
+   "p": 0.85
+  },
+  "j3": {
+   "text": "The credit and the county's administration fee are paid from the City's general fund.",
+   "class": "revenue_use",
+   "p": 0.95
+  },
+  "q15_the_credit_is_paid_out_of_other_uses_of_": {
+   "text": "The credit is paid out of other uses of the general fund, since no tax is named for it.",
+   "p": 0.65,
+   "class": "revenue_use"
+  },
+  "q16_in_a_building_an_owner_plans_to_withdraw": {
+   "text": "In a building an owner plans to withdraw, holding a vacated unit empty pays better than re-letting it, for some owners (core re-run A-N7).",
+   "p": 0.6,
+   "class": "alternative_uses"
+  },
+  "q17_some_landlords_pay_sitting_tenants_to_va": {
+   "text": "Some landlords pay sitting tenants to vacate, and some tenants accept (core re-run A-N2).",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q18_the_housing_code_leaves_room_to_cut_main": {
+   "text": "The housing code leaves room to cut maintenance above the legal minimum.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q19_rental_buildings_last_several_decades_so": {
+   "text": "Rental buildings last several decades, so the stock changes slowly.",
+   "p": 0.95,
+   "class": "alternative_uses"
+  },
+  "q20_some_landlords_end_month_to_month_tenanc": {
+   "text": "Some landlords end month-to-month tenancies without cause in the window, to re-let at the market before the base date or to hold units empty for withdrawal.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "q21_landlords_tenant_unions_and_senior_advoc": {
+   "text": "Landlords, tenant unions and senior advocates can organize at a cost below their stakes.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q22_rent_regulation_would_have_been_conteste": {
+   "text": "Rent regulation would have been contested on the counterfactual path.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q23_buyers_of_buildings_expect_the_ordinance": {
+   "text": "Buyers of buildings expect the ordinance to last many years.",
+   "p": 0.75,
+   "class": "expectations"
+  },
+  "q24_because_of_the_policy_free_rents_in_tess": {
+   "text": "Because of the policy, free rents in Tessford (exempt units, initial rents of new covered tenancies) rise more than rents elsewhere in Ambry County, for the homes movers choose (core re-run A-N1, widened from seniors to all movers).",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q25_owners_sell_withdrawn_units_as_condomini": {
+   "text": "Owners sell withdrawn units as condominiums.",
+   "p": 0.85,
+   "class": "alternative_uses"
+  },
+  "q26_some_displaced_households_next_best_home": {
+   "text": "Some displaced households' next-best home is outside Tessford, and some outside Ambry County.",
+   "p": 0.85,
+   "class": "mobility"
+  },
+  "q27_more_than_about_115_households_shut_out_": {
+   "text": "More than about 115 households shut out of Tessford settle elsewhere in Ambry County each year, and county rental supply cannot expand at an unchanged cost in the medium horizon.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q28_without_the_ordinance_some_sitting_tenan": {
+   "text": "Without the ordinance, some sitting tenants would have left Tessford (and some seniors Ambry County), priced out or for opportunities elsewhere.",
+   "p": 0.95,
+   "class": "mobility"
+  },
+  "q29_some_job_opportunities_for_sitting_tenan": {
+   "text": "Some job opportunities for sitting tenants would require leaving the unit.",
+   "p": 0.75,
+   "class": "mobility"
+  },
+  "q30_each_covered_unit_a_sitting_tenant_does_": {
+   "text": "Each covered unit a sitting tenant does not leave is one fewer vacancy offered to new tenants.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "q31_some_seekers_shut_out_of_tessford_settle": {
+   "text": "Some seekers shut out of Tessford settle elsewhere in the county and in Durnside and commute.",
+   "p": 0.8,
+   "class": "mobility"
+  },
+  "q32_more_than_about_35_households_shut_out_o": {
+   "text": "More than about 35 households shut out of Tessford settle in Durnside each year, and Durnside's supply cannot expand at once.",
+   "p": 0.7,
+   "class": "mobility"
+  },
+  "q33_covered_and_exempt_tessford_units_are_cl": {
+   "text": "Covered and exempt Tessford units are close substitutes.",
+   "p": 0.85,
+   "class": "substitutability"
+  },
+  "q34_owners_and_developers_expect_the_exempti": {
+   "text": "Owners and developers expect the exemption of post-1989 buildings to last.",
+   "p": 0.6,
+   "class": "expectations"
+  },
+  "q35_some_qualifying_seniors_who_would_have_m": {
+   "text": "Some qualifying seniors who would have moved in with family or bought a home in the county rent instead, to keep the credit (core re-run A-N6).",
+   "p": 0.55,
+   "class": "substitutability"
+  },
+  "q36_some_sublets_above_the_controlled_rent_g": {
+   "text": "Some sublets above the controlled rent go undetected.",
+   "p": 0.75,
+   "class": "enforcement"
+  },
+  "q37_fewer_than_about_58_of_buyers_of_withdra": {
+   "text": "Fewer than about 58% of buyers of withdrawn units vacate a Tessford rental to buy, so each withdrawal adds to excess demand for Tessford rentals (core re-run A-N8).",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q38_any_rise_in_covered_vacancies_from_quali": {
+   "text": "Any rise in covered vacancies from qualifying seniors' turnover is smaller than the fall in vacancies from keepers and withdrawals (core re-run A-N9).",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q39_in_the_medium_horizon_what_covered_landl": {
+   "text": "In the medium horizon, what covered landlords gain from higher initial rents on new tenancies is smaller than what they lose on tenancies in place, in fees, relocation payments and buyouts (new).",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q40_savings_built_from_the_capped_rent_can_p": {
+   "text": "Savings built from the capped rent can pay for a move that the cap itself makes less attractive.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q41_for_insiders_who_keep_their_units_the_fo": {
+   "text": "For insiders who keep their units, the forfeit of the future gap outweighs any move that savings built from the gap make affordable (CR-4 exception).",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q42_buyouts_move_fewer_keepers_out_of_their_": {
+   "text": "Buyouts move fewer keepers out of their units than the cap and the for-cause rule hold in place (core re-run A-N3; PC-7 1.4 and PC-21 1.4, Assumes).",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q43_for_non_qualifying_keepers_the_lock_in_f": {
+   "text": "For non-qualifying keepers, the lock-in from forfeiting the gap outweighs any diversion of their remaining moves out of Tessford, or out of Ambry County, by the policy's rise in Tessford's free rents relative to destinations (new; the dominance premise PC-21 1.4 asks for).",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q44_some_displaced_households_rent_another_h": {
+   "text": "Some displaced households rent another home in Tessford.",
+   "p": 0.9,
+   "class": "mobility"
+  },
+  "q45_by_the_third_year_the_cap_cuts_non_quali": {
+   "text": "By the third year, the cap cuts non-qualifying keepers' moves out of Tessford by more than 5% of the counterfactual (about 170 a year), more than the displaced non-senior households who leave the city (at most about 145 a year).",
+   "p": 0.7,
+   "class": "other"
+  }
+ }
+}
