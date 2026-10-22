@@ -24,6 +24,8 @@
 %   threshold(C, A, V, P1, P2, P3): C binds above a line in V; A are those near it. qualifies(C, A, V, P1, P2, P3): a right
 %   C creates is allocated by A's V in a period after it is expected.
 %   fixed(E, S, P1, P2, P3): S's price in E cannot move in the period (a rule in force, a term already set).
+%   incidence(C, E, S, P1, P2, P3): S's alternatives in E are clearly worse than the other side's (CR-7b).
+%   moves_horizon(E, S, H), fixed_horizon(E, S, H): the horizon a response premise or a fixed price is about.
 %   operating(C): a charge fixed per seller, not per unit (CR-4 0.8).
 %   compliance(C, A). enforcer(C, A). funded(C, A, P1, P2, P3). fixed_budget(C, A, P1, P2, P3).   CR-8c
 %   charge(C, E, Side, Receiver).           CR-1 op 3: C attaches a payment to trading in E, paid by Side, to Receiver
@@ -89,8 +91,13 @@ p_adjust(E, S, A) :- burdened(E, S), adjust(E, S, A, G, P1, P2, P3), ok(P1), ok(
 % leaves the payer of a charge on the exchange unable to pass it on through that price: the pressure goes to the terms the
 % payer controls (CR-6 with CR-1 op 3), as under a held line.
 pressed(E, S) :- c_charged(C, E), charge(C, E, S, _), fixed(E, T, P1, P2, P3), side(T), T != S, ok(P1), ok(P2), ok(P3).
-p_adjust(E, S, A) :- pressed(E, S), adjust(E, S, A, G, P1, P2, P3), ok(P1), ok(P2), ok(P3).
-fired(cr_6, p_adjust(E, S, A), P) :- p_adjust(E, S, A), pressed(E, S), fixed(E, _, P1, P2, P3), P = (P1; P2; P3), P != none.
+% The response is signed at the horizon over which the price stays fixed (fixed_horizon/3; short by default).
+p_press(E, S, A) :- pressed(E, S), adjust(E, S, A, G, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+fired(cr_6, p_press(E, S, A), P) :- p_press(E, S, A), pressed(E, S), fixed(E, _, P1, P2, P3), P = (P1; P2; P3), P != none.
+fired(cr_6, p_press(E, S, A), P) :- p_press(E, S, A), adjust(E, S, A, _, P1, P2, P3), P = (P1; P2; P3), P != none.
+fixed_h(E, H) :- fixed_horizon(E, _, H).
+fixed_h(E, short) :- fixed(E, _, _, _, _), not fixed_horizon(E, _, _).
+group_effect(p_press(E, S, A), A, G, at_least_one_decrease, H, invisible, "B") :- p_press(E, S, A), adjust(E, S, A, G, _, _, _), fixed_h(E, H).
 fired(cr_6, p_adjust(E, S, A), P) :- p_adjust(E, S, A), adjust(E, S, A, _, P1, P2, P3), P = (P1; P2; P3), P != none.
 group_effect(p_adjust(E, S, A), A, G, at_least_one_decrease, short, invisible, "B") :- p_adjust(E, S, A), adjust(E, S, A, G, _, _, _).
 p_adjust_one(E, S, A, V) :- burdened(E, S), adjust_one(E, S, A, V, P1, P2, P3), ok(P1), ok(P2), ok(P3).
@@ -275,7 +282,11 @@ fired(cr_6, p_moves(C, E, S), P) :- p_moves(C, E, S), moves(E, S, P1, P2, P3), P
 fired(cr_5, p_moves(C, E, S), c_charged(C, E)) :- p_moves(C, E, S).
 % The wedge raises what buyers pay and lowers what sellers keep, whichever side the payment is levied on (CR-5c; found on
 % the blind WE-002 record, a payment levied on sellers).
-effect(p_moves(C, E, S), A, V, D, short, invisible, "B") :- p_moves(C, E, S), price_var(E, S, V), party(E, S, A), c_wedge(S, D).
+% The price takes the wedge over the horizon the response premise is about (moves_horizon/3; short by default): sticky
+% prices take it later, while the fixed price's other terms take it first.
+moves_h(E, S, H) :- moves_horizon(E, S, H).
+moves_h(E, S, short) :- moves(E, S, _, _, _), not moves_horizon(E, S, _).
+effect(p_moves(C, E, S), A, V, D, H, invisible, "B") :- p_moves(C, E, S), price_var(E, S, V), party(E, S, A), c_wedge(S, D), moves_h(E, S, H).
 c_wedge(buyer, increase). c_wedge(seller, decrease).
 c_paid(C, E) :- c_charged(C, E).
 fired(cr_8, c_paid(C, E), c_charged(C, E)) :- c_paid(C, E).
@@ -384,7 +395,7 @@ p_gmoves(C, E, S) :- c_granted(C, E), moves(E, S, P1, P2, P3), ok(P1), ok(P2), o
 fired(cr_6, p_gmoves(C, E, S), P) :- p_gmoves(C, E, S), moves(E, S, P1, P2, P3), P = (P1; P2; P3), P != none.
 fired(cr_5, p_gmoves(C, E, S), c_granted(C, E)) :- p_gmoves(C, E, S).
 g_wedge(buyer, decrease). g_wedge(seller, increase).
-effect(p_gmoves(C, E, S), A, V, D, short, invisible, "B") :- p_gmoves(C, E, S), price_var(E, S, V), party(E, S, A), g_wedge(S, D).
+effect(p_gmoves(C, E, S), A, V, D, H, invisible, "B") :- p_gmoves(C, E, S), price_var(E, S, V), party(E, S, A), g_wedge(S, D), moves_h(E, S, H).
 g_paid(C, E) :- c_granted(C, E).
 fired(cr_8, g_paid(C, E), c_granted(C, E)) :- g_paid(C, E).
 effect(g_paid(C, E), A, "resources_available_other_uses", increase, short, invisible, "A") :- g_paid(C, E), grant(C, E, S, _), party(E, S, A).
@@ -399,6 +410,19 @@ fired(cr_10, p_after(C, A, V), P) :- p_after(C, A, V), timing(C, A, V, _, P1, P2
 effect(p_after(C, A, V), A, V, decrease, short, invisible, "B") :- p_after(C, A, V).
 window(p_after(C, A, V), after_expiry) :- p_after(C, A, V).
 timing_concl(p_after(C, A, V)) :- timing(C, A, V, _, _, _, _), expires(C, _, _, _).
+
+% ---------------------------------------------------------------- CR-7b: who bears a charge, who keeps a grant
+% Where one side's alternatives are clearly worse than the other side's (incidence/6, with the premise comparing them),
+% that side bears more of a charge, or receives more of a grant, than the other side (DM-1). This ranks the shares only.
+% share_var/2: the variables that measure each share (vocabulary facts written by situation.py).
+c_wedged(C, E) :- c_charged(C, E).
+c_wedged(C, E) :- c_granted(C, E).
+p_incidence(C, E, S) :- c_wedged(C, E), incidence(C, E, S, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+fired(cr_7, p_incidence(C, E, S), c_charged(C, E)) :- p_incidence(C, E, S), c_charged(C, E).
+fired(cr_7, p_incidence(C, E, S), c_granted(C, E)) :- p_incidence(C, E, S), c_granted(C, E).
+fired(cr_7, p_incidence(C, E, S), P) :- p_incidence(C, E, S), incidence(C, E, S, P1, P2, P3), P = (P1; P2; P3), P != none.
+effect(p_incidence(C, E, S), A, V, increase, medium, invisible, "B") :- p_incidence(C, E, S), c_charged(C, E), party(E, S, A), share_var(charge, V).
+effect(p_incidence(C, E, S), A, V, increase, medium, invisible, "B") :- p_incidence(C, E, S), c_granted(C, E), party(E, S, A), share_var(grant, V).
 
 % ---------------------------------------------------------------- CR-4 at a line: a measure that binds above a size
 % Where a component binds only on actors whose V exceeds a line (threshold/6: those near it, the measure V of size), crossing

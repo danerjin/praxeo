@@ -30,7 +30,7 @@ MAX_DEPTH = 3
 
 class Proposal(BaseModel):
     """One fact a node needs, with the questions its premises ask (one concept each, answered yes or no)."""
-    part: Literal["alternatives", "links", "margins", "stakes", "assets", "yields", "timing", "parts", "dominance"]
+    part: Literal["alternatives", "links", "margins", "stakes", "assets", "yields", "timing", "parts", "dominance", "incidence"]
     fact: dict = Field(description="The fields of that situation part, without `premises`")
     premises: list[str] = Field(default=[], max_length=3, description="Each premise as a statement whose truth is asked")
     premise_class: str = "other"
@@ -175,6 +175,9 @@ engine has already derived for it. Propose only what this node needs for the rea
 - links (CR-9): markets reached through this actor's changed variables; `fact`: {source_actor: this actor, source_variable,
   relation: complement | input | substitute | output | yield | same_act | cost | own_price | currency | supply_price (more demand raises the price where supply is slow) | supply (more offered lowers the price), actor, variable}.
 - margins (CR-6): terms or quantities this actor controls under a held or fixed price, criteria it is chosen by, trade outside the rule.
+- incidence (CR-7b): on an exchange a charge or grant acts on, the side whose alternatives are clearly worse than the
+  other side's (it bears more of the charge, or keeps more of the grant); `fact`: {component, exchange, side}. Only with a
+  premise comparing the two sides' alternatives.
 - stakes (lobbying), assets and yields tied to an exchange side, timing (bring_forward or carry_over), parts (a class total),
   dominance (only where a premise states that one direction outweighs another).
 Never state a sign: the engine derives every sign. Name actor classes as role.qualifier from the controlled list where one

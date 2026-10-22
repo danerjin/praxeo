@@ -15,6 +15,8 @@ core rule CR-1 (what it does to actors' options), as a Situation record. Fill on
   choice the policy gives the payer (branch premises); payers whose total is capped;
 - grants (a payment to one side of an exchange), capped (a rule fixing the quantity traded, with the holders of the
   permission), banned (a rule stopping the legal trade), expires (the measure ends and is expected to);
+- incidence: where the text or context makes one side's alternatives clearly worse than the other's, that side, with the
+  premise comparing them; moves and fixed may carry a horizon (wages sticky in the short run, adjusting in the medium);
 - fixed: a price on one side of an exchange that cannot move in the period, by a rule already in force (a minimum wage)
   or a term already set, with its premise; for a branch paid in kind, name as receiver the subclass that receives it;
 - thresholds (the measure binds only above a size: those near the line, the measure of size), qualifies (a right the policy

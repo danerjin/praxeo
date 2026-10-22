@@ -129,6 +129,7 @@ class Banned(Premised):
 class Fixed(Premised):
     exchange: str
     side: Side = Field(description="The side whose price cannot move in the period: by a rule already in force (a minimum wage) or a term already set")
+    horizon: Optional[Literal["short", "medium", "long"]] = Field(default=None, description="How long it stays fixed (a term set for the year: short); short if not given")
 
 
 class Reading(BaseModel):
@@ -144,6 +145,14 @@ class Reading(BaseModel):
 class Moves(Premised):
     exchange: str
     side: Side
+    horizon: Optional[Literal["short", "medium", "long"]] = Field(default=None, description="When the price takes the change (sticky prices: medium); short if not given")
+
+
+class Incidence(Premised):
+    """CR-7b, DM-1: the side whose alternatives are clearly worse bears more of a charge (receives more of a grant)."""
+    component: str
+    exchange: str
+    side: Side = Field(description="The side whose alternatives are clearly worse")
 
 
 class Discretion(Premised):
@@ -207,6 +216,7 @@ class Situation(BaseModel):
     grants: list[Grant] = []
     capped: list[Capped] = []
     banned: list[Banned] = []
+    incidence: list[Incidence] = Field(default=[], description="CR-7b: which side's alternatives are clearly worse, for a charge or grant on an exchange")
     fixed: list[Fixed] = Field(default=[], description="A price that cannot move in the period; a charge's payer then adjusts the terms it controls (margins of kind adjust)")
     unclear: list[Reading] = Field(default=[], description="Provisions with more than one reading, and the components each reading applies")
     thresholds: list[Threshold] = Field(default=[], description="CR-4 at a line: the component binds only above a size")
@@ -229,6 +239,7 @@ def _p(prem: list[str]) -> str:
 def facts(s: Situation) -> str:
     out = [f"price_kind({_q(v)})." for v in PRICE_VARIABLES]
     out += ['buy_price("price_paid").', 'sell_price("net_price_received").', 'sell_price("wage_rate").']
+    out += ['share_var(charge, "tax_share_borne").', 'share_var(grant, "subsidy_share_received").']
     for e in s.exchanges:
         out += [f"party({e.id}, buyer, {_q(e.buyer)}).", f"party({e.id}, seller, {_q(e.seller)})."]
         for side, a in (("buyer", e.unsatisfied_buyer), ("seller", e.unsatisfied_seller)):
@@ -274,8 +285,14 @@ def facts(s: Situation) -> str:
             out.append(f"operating({ch.component}).")
     for f in s.fixed:
         out.append(f"fixed({f.exchange}, {f.side}, {_p(f.premises)}).")
+        if f.horizon:
+            out.append(f"fixed_horizon({f.exchange}, {f.side}, {f.horizon}).")
     for m in s.moves:
         out.append(f"moves({m.exchange}, {m.side}, {_p(m.premises)}).")
+        if m.horizon:
+            out.append(f"moves_horizon({m.exchange}, {m.side}, {m.horizon}).")
+    for i in s.incidence:
+        out.append(f"incidence({i.component}, {i.exchange}, {i.side}, {_p(i.premises)}).")
     for d in s.discretion:
         out.append(f"discretion({d.component}, {_q(d.actor)}, {_p(d.premises)}).")
     for m in s.means:

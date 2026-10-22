@@ -305,3 +305,24 @@ def test_an_alternative_only_one_reading_opens():
            "assumptions": {"a2": P}}
     got = [c for c in S.run(S.Situation(**sit)) if c.variable == "seasonal_engagements"]
     assert got and got[0].sign_by_reading == {"U1-a": "none", "U1-b": "increase"}
+
+
+def test_dm_1_incidence_follows_the_alternatives():
+    got = _run(**TAX, incidence=[{"component": "k", "exchange": "e", "side": "buyer", "premises": ["a4"]}])
+    assert ("buyers", "tax_share_borne", "increase", None) in got and ("sellers", "tax_share_borne", "increase", None) not in got
+    got = _run(**GRANT, incidence=[{"component": "k", "exchange": "e", "side": "seller", "premises": ["a4"]}])
+    assert ("producers", "subsidy_share_received", "increase", None) in got
+
+
+def test_a_sticky_price_takes_the_wedge_later_and_the_other_terms_first():
+    ch = [{"component": "k", "exchange": "e", "payer_side": "buyer", "receiver": "officials.revenue", "receipt_variable": "non_tax_receipts"}]
+    m = [{"exchange": "e", "kind": "adjust", "side": "buyer", "actor": "workers",
+          "variables": ["employment", "hours_worked", "non_wage_compensation"], "premises": ["a3"]}]
+    sit = {"name": "check", "exchanges": JOBS, "charges": ch, "margins": m,
+           "fixed": [{"exchange": "e", "side": "seller", "horizon": "short", "premises": ["a2"]}],
+           "moves": [{"exchange": "e", "side": "seller", "horizon": "medium", "premises": ["a4"]}],
+           "assumptions": {k: P for k in ("a2", "a3", "a4")}}
+    cons = {(c.actor_class, ",".join(c.group) or c.variable): c for c in S.run(S.Situation(**sit)) if c.reported}
+    assert cons[("workers", "wage_rate")].sign == "decrease" and cons[("workers", "wage_rate")].horizon[0] == "medium"
+    grp = cons[("workers", "employment,hours_worked,non_wage_compensation")]
+    assert grp.sign == "at_least_one_decrease" and grp.horizon[0] == "short"
