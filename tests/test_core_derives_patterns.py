@@ -440,3 +440,17 @@ def test_cr_12e_a_settled_sign_propagates_alone():
     got = _run(**GRANT, links=link, dominance=dom)
     assert ("producers", "net_price_received", "increase", None) in got and ("owners", "asset_value", "increase", None) in got
     assert ("owners", "asset_value", "ambiguous", None) in _run(**GRANT, links=link)
+
+
+def test_a_reading_tagged_fact_of_a_component_that_reading_applies():
+    sit = {"name": "check", "exchanges": MENU,
+           "banned": [{"component": "k_b", "exchange": "e", "premises": ["a1"], "reading": "U1-b"}],
+           "unclear": [{"id": "U1", "text": "x", "readings": ["U1-a: x", "U1-b: y"], "components": {"U1-a": [], "U1-b": ["k_b"]}}],
+           "assumptions": {"a1": P}}
+    got = [c for c in S.run(S.Situation(**sit)) if c.actor_class == "diners" and c.variable == "quantity_traded"]
+    assert got and got[0].sign_by_reading == {"U1-a": "none", "U1-b": "decrease"}
+
+
+def test_grant_fraud_is_an_outside_margin():
+    m = [{"exchange": "e", "kind": "outside", "actor": "producers", "variables": ["informal_activity"], "premises": ["a4"]}]
+    assert ("producers", "informal_activity", "increase", None) in _run(**GRANT, margins=m)

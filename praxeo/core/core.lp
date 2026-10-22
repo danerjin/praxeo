@@ -114,6 +114,8 @@ c_on(E) :- h(_, E, _).
 c_on(E) :- c_capped(_, E).
 c_on(E) :- c_banned(_, E).
 c_on(E) :- c_charged(_, E).
+% A grant can be claimed outside its terms (overstated or false claims): its outside margins are open too.
+c_on(E) :- c_granted(_, E).
 fired(cr_4, p_outside(E, A, V), P) :- p_outside(E, A, V), outside(E, A, V, P1, P2, P3), P = (P1; P2; P3), P != none.
 effect(p_outside(E, A, V), A, V, increase, short, invisible, "B") :- p_outside(E, A, V).
 

@@ -401,14 +401,14 @@ def _reading(x) -> Optional[str]:
     return x.get("reading") if isinstance(x, dict) else getattr(x, "reading", None)
 
 
-def _only(s: Situation, keep, label: Optional[str] = None) -> Situation:
-    """The situation with each operation part limited to the components `keep` accepts, and every part to the facts that
-    hold under the reading `label` (None: the facts tied to no reading)."""
+def _only(s: Situation, keep, labels=(None,)) -> Situation:
+    """The situation with each operation part limited to the components `keep` accepts, and every part to the facts tied
+    to one of `labels` (None: the facts tied to no reading)."""
     upd = {p: [x for x in getattr(s, p) if keep(_comp(x))] for p in OPERATIONS}
     for p, f in Situation.model_fields.items():
         items = upd.get(p, getattr(s, p))
         if isinstance(items, list):
-            upd[p] = [x for x in items if _reading(x) == label]
+            upd[p] = [x for x in items if _reading(x) in labels]
     return s.model_copy(update=upd)
 
 
@@ -419,8 +419,8 @@ def run(s: Situation):
     labels = lambda u: [r.split(":", 1)[0].strip() for r in u.readings]
     # under a reading: the components it applies, and the facts tied to it (an alternative only that reading opens)
     unclear = [Unclear(id=u.id, text=u.text, readings=u.readings,
-                       reading_facts={lab: facts(_only(s, lambda c, cs=set(u.components.get(lab, [])): c in cs))
-                                      + facts(_only(s, lambda c: c not in conditional, lab)) for lab in labels(u)})
+                       reading_facts={lab: facts(_only(s, lambda c, cs=set(u.components.get(lab, [])): c in cs, (None, lab)))
+                                      + facts(_only(s, lambda c: c not in conditional, (lab,))) for lab in labels(u)})
                for u in s.unclear]
     empty = PolicyRecord(name=s.name, jurisdiction="-", rule_maker="-", enacted="-", effective="-", components=[], unclear=unclear)
     a = assumptions(s)
@@ -461,6 +461,14 @@ def dominate(cons, s: Situation, a: dict[str, Assumption]):
             used = sorted(set(c.assumptions) | set(d.premises))
             c = c.model_copy(update=dict(sign=d.direction, assumptions=used, assumption_sets=[used],
                                          reported=all(a[x].p >= engine.CUTOFF for x in used)))
+        elif d and c.sign_by_reading and "ambiguous" in c.sign_by_reading.values() and not c.group \
+                and all(a[x].p >= engine.CUTOFF for x in d.premises):
+            # per reading: the dominance premise settles the readings under which the chains clash
+            by = {k: (d.direction if v == "ambiguous" else v) for k, v in c.sign_by_reading.items()}
+            uniform = len(set(by.values())) == 1
+            used = sorted(set(c.assumptions) | set(d.premises))
+            c = c.model_copy(update=dict(sign_by_reading={} if uniform else by, sign=next(iter(by.values())) if uniform else "ambiguous",
+                                         assumptions=used, assumption_sets=[used], reported=all(a[x].p >= engine.CUTOFF for x in used)))
         out.append(c)
     return out
 
