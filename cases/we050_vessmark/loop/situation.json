@@ -1,0 +1,1079 @@
+{
+ "name": "WE-050 Vessmark Clean Cars Act (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_comb",
+   "buyer": "buyers.combustion",
+   "seller": "retailers.dealers",
+   "unsatisfied_buyer": "buyers.combustion",
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_comb_w",
+   "buyer": "retailers.dealers",
+   "seller": "importers.combustion",
+   "unsatisfied_buyer": "retailers.dealers",
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_phev",
+   "buyer": "buyers.phev",
+   "seller": "importers.phev",
+   "unsatisfied_buyer": "buyers.phev",
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_bev",
+   "buyer": "buyers.bev",
+   "seller": "importers.bev",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_used_imp",
+   "buyer": "buyers.used",
+   "seller": "sellers.foreign",
+   "unsatisfied_buyer": "buyers.used",
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q16_residents_evade_the_ban_by_keeping_combu"
+   ],
+   "reading": null,
+   "exchange": "e_comb",
+   "kind": "outside",
+   "side": null,
+   "actor": "buyers.combustion",
+   "variables": [
+    "cross_border_purchases"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q5_some_would_be_buyers_of_new_bevs_buy_a_p"
+   ],
+   "reading": null,
+   "component": "k5",
+   "chooser": "buyers.bev",
+   "actor": "buyers.phev",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q9_some_would_be_buyers_of_new_combustion_c",
+    "q10_some_owners_keep_combustion_cars_longer_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.combustion",
+   "actor": "owners.combustion",
+   "variables": [
+    "maintenance_spending"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q9_some_would_be_buyers_of_new_combustion_c",
+    "q10_some_owners_keep_combustion_cars_longer_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.combustion",
+   "actor": "owners.combustion",
+   "variables": [
+    "stock_age"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q9_some_would_be_buyers_of_new_combustion_c"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.combustion",
+   "actor": "buyers.used",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q11_some_would_be_buyers_of_combustion_cars_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.combustion",
+   "actor": "buyers.phev",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q12_some_would_be_buyers_of_new_combustion_c"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.combustion",
+   "actor": "buyers.bev",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q13_some_displaced_buyers_of_new_combustion_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.combustion",
+   "actor": "buyers.used_bev",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q14_under_u1_b_some_would_be_buyers_of_new_c"
+   ],
+   "reading": "U1-b",
+   "component": "k1",
+   "chooser": "buyers.combustion",
+   "actor": "sellers.foreign",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q22_some_would_be_buyers_of_new_phevs_buy_a_"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "buyers.phev",
+   "actor": "buyers.bev",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q23_some_would_be_buyers_of_new_phevs_buy_a_"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "buyers.phev",
+   "actor": "buyers.used",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q27_under_u1_a_some_of_the_buyers_who_would_"
+   ],
+   "reading": "U1-a",
+   "component": "k1_used",
+   "chooser": "buyers.used",
+   "actor": "buyers.used",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q28_under_u1_a_some_of_the_buyers_who_would_"
+   ],
+   "reading": "U1-a",
+   "component": "k1_used",
+   "chooser": "buyers.used",
+   "actor": "buyers.bev",
+   "variables": [
+    "quantity_traded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q29_importers_stop_offering_some_combustion_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "importers.combustion",
+   "actor": "importers.combustion",
+   "variables": [
+    "variety"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q30_under_u1_b_registering_a_new_combustion_"
+   ],
+   "reading": "U1-b",
+   "component": "k1",
+   "chooser": "importers.combustion",
+   "actor": "importers.combustion",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "a5"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "importers.combustion",
+   "actor": "importers.bev",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "a5"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "importers.phev",
+   "actor": "importers.bev",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q20_dealers_fuel_retailers_and_motoring_club",
+    "q21_without_the_act_no_end_of_sale_date_woul"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "drivers.clubs"
+  },
+  {
+   "premises": [
+    "q20_dealers_fuel_retailers_and_motoring_club",
+    "q21_without_the_act_no_end_of_sale_date_woul"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "importers.bev"
+  },
+  {
+   "premises": [
+    "q20_dealers_fuel_retailers_and_motoring_club",
+    "q21_without_the_act_no_end_of_sale_date_woul"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "retailers.dealers"
+  },
+  {
+   "premises": [
+    "q20_dealers_fuel_retailers_and_motoring_club",
+    "q21_without_the_act_no_end_of_sale_date_woul"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "retailers.fuel"
+  },
+  {
+   "premises": [
+    "q20_dealers_fuel_retailers_and_motoring_club",
+    "q21_without_the_act_no_end_of_sale_date_woul"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.charging"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q7_public_charging_sales_rise_with_the_bev_"
+   ],
+   "reading": null,
+   "source_actor": "buyers.bev",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "sellers.charging",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q8_in_2035_bev_supply_to_vessmark_cannot_ex"
+   ],
+   "reading": null,
+   "source_actor": "buyers.bev",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "buyers.bev",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "buyers.bev",
+   "source_variable": "quantity_traded",
+   "relation": "same_act",
+   "actor": "importers.bev",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q17_vehicle_km_in_combustion_cars_fall_with_"
+   ],
+   "reading": null,
+   "source_actor": "buyers.combustion",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "retailers.fuel",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q18_owners_expect_further_restrictions_on_us"
+   ],
+   "reading": null,
+   "source_actor": "buyers.combustion",
+   "source_variable": "quantity_traded",
+   "relation": "yield",
+   "actor": "owners.combustion",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q19_after_about_2040_as_the_combustion_fleet"
+   ],
+   "reading": null,
+   "source_actor": "buyers.combustion",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "sellers.repair",
+   "variable": "quantity_demanded",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q25_import_inspection_capacity_is_not_expand"
+   ],
+   "reading": null,
+   "source_actor": "buyers.used",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "buyers.used",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q26_used_imports_from_drevland_are_at_import"
+   ],
+   "reading": "U1-b",
+   "source_actor": "buyers.used",
+   "source_variable": "price_paid",
+   "relation": "yield",
+   "actor": "sellers.foreign",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "buyers.used",
+   "source_variable": "price_paid",
+   "relation": "same_act",
+   "actor": "owners.combustion",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "buyers.used",
+   "source_variable": "price_paid",
+   "relation": "yield",
+   "actor": "owners.combustion",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q26_used_imports_from_drevland_are_at_import"
+   ],
+   "reading": null,
+   "source_actor": "sellers.foreign",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "buyers.used",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q32_the_cost_per_used_car_imported_from_drev"
+   ],
+   "reading": "U1-b",
+   "source_actor": "sellers.foreign",
+   "source_variable": "quantity_supplied",
+   "relation": "supply",
+   "actor": "buyers.used",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q29_importers_stop_offering_some_combustion_"
+   ],
+   "reading": null,
+   "source_actor": "importers.combustion",
+   "source_variable": "variety",
+   "relation": "complement",
+   "actor": "buyers.combustion",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q30_under_u1_b_registering_a_new_combustion_"
+   ],
+   "reading": "U1-b",
+   "source_actor": "importers.combustion",
+   "source_variable": "reclassification",
+   "relation": "supply",
+   "actor": "buyers.used",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q33_in_2035_to_2040_the_old_cars_kept_in_use"
+   ],
+   "reading": null,
+   "source_actor": "owners.combustion",
+   "source_variable": "stock_age",
+   "relation": "complement",
+   "actor": "owners.combustion",
+   "variable": "maintenance_spending",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q34_after_2040_the_combustion_fleet_stays_ol"
+   ],
+   "reading": null,
+   "source_actor": "owners.combustion",
+   "source_variable": "stock_age",
+   "relation": "input",
+   "actor": "owners.combustion",
+   "variable": "maintenance_spending",
+   "horizon": "long"
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "owners.combustion",
+   "source_variable": "maintenance_spending",
+   "relation": "complement",
+   "actor": "sellers.repair",
+   "variable": "quantity_demanded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "owners.combustion",
+   "source_variable": "maintenance_spending",
+   "relation": "input",
+   "actor": "sellers.repair",
+   "variable": "quantity_demanded",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q35_fuel_stations_costs_are_largely_fixed_pe"
+   ],
+   "reading": null,
+   "source_actor": "retailers.fuel",
+   "source_variable": "quantity_traded",
+   "relation": "yield",
+   "actor": "retailers.fuel",
+   "variable": "number_of_sellers",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q36_fuel_retailers_adjust_staff_or_hours_to_"
+   ],
+   "reading": null,
+   "source_actor": "retailers.fuel",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.fuel",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q37_fuel_excise_revenue_follows_the_quantity"
+   ],
+   "reading": null,
+   "source_actor": "retailers.fuel",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "general_fund",
+   "variable": "tax_revenue",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q19_after_about_2040_as_the_combustion_fleet"
+   ],
+   "reading": null,
+   "source_actor": "retailers.fuel",
+   "source_variable": "number_of_sellers",
+   "relation": "complement",
+   "actor": "owners.combustion",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q19_after_about_2040_as_the_combustion_fleet"
+   ],
+   "reading": null,
+   "source_actor": "retailers.fuel",
+   "source_variable": "number_of_sellers",
+   "relation": "complement",
+   "actor": "buyers.used",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "sellers.repair",
+   "source_variable": "quantity_demanded",
+   "relation": "input",
+   "actor": "workers.repair",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q19_after_about_2040_as_the_combustion_fleet"
+   ],
+   "reading": null,
+   "source_actor": "sellers.repair",
+   "source_variable": "quantity_demanded",
+   "relation": "yield",
+   "actor": "sellers.repair",
+   "variable": "number_of_sellers",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q19_after_about_2040_as_the_combustion_fleet"
+   ],
+   "reading": null,
+   "source_actor": "sellers.repair",
+   "source_variable": "number_of_sellers",
+   "relation": "complement",
+   "actor": "owners.combustion",
+   "variable": "asset_value",
+   "horizon": null
+  }
+ ],
+ "assets": [],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "importers.combustion"
+  },
+  {
+   "component": "k1",
+   "actor": "retailers.dealers"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement"
+  },
+  {
+   "component": "k2",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [],
+ "fixed_budget": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement",
+   "premises": [
+    "a28"
+   ]
+  },
+  {
+   "component": "k2",
+   "actor": "officials.enforcement",
+   "premises": [
+    "a28"
+   ]
+  }
+ ],
+ "charges": [
+  {
+   "component": "k5",
+   "premises": [
+    "a2"
+   ],
+   "exchange": "e_bev",
+   "payer_side": "buyer",
+   "receiver": "general_fund",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a5"
+   ],
+   "reading": null,
+   "exchange": "e_bev",
+   "side": "buyer",
+   "horizon": null
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a3"
+   ]
+  },
+  {
+   "component": "k2",
+   "premises": [
+    "a3"
+   ]
+  },
+  {
+   "component": "k5",
+   "premises": []
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q15_buyers_know_the_date_and_some_can_bring_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "buyers.combustion",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q24_buyers_know_the_2038_date_and_some_can_b"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "buyers.phev",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q31_dealers_pre_register_unsold_combustion_s"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "retailers.dealers",
+   "variable": "inventory_held",
+   "mode": "carry_over"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "terms": [],
+ "banned": [
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_comb"
+  },
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_comb_w"
+  },
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "component": "k2",
+   "exchange": "e_phev"
+  },
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1_used",
+   "exchange": "e_used_imp"
+  }
+ ],
+ "incidence": [
+  {
+   "premises": [
+    "a5"
+   ],
+   "reading": null,
+   "component": "k5",
+   "exchange": "e_bev",
+   "side": "buyer"
+  }
+ ],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "\"not previously been registered\" (s. 2): registered where is not said.",
+   "readings": [
+    "U1-a: previously registered in Vessmark; a used combustion car first registered in Vessmark after 2035 is new, so imported used combustion cars can no longer be registered",
+    "U1-b: previously registered anywhere; a used or new combustion car registered in Drevland first can still be imported and registered after 2035"
+   ],
+   "components": {
+    "U1-a": [
+     "k1_used"
+    ],
+    "U1-b": []
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [
+  {
+   "premises": [
+    "q6_the_ban_chain_on_new_bev_registrations_d"
+   ],
+   "reading": null,
+   "actor": "buyers.bev",
+   "variable": "quantity_traded",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q6_the_ban_chain_on_new_bev_registrations_d"
+   ],
+   "reading": null,
+   "actor": "importers.bev",
+   "variable": "quantity_traded",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q25_import_inspection_capacity_is_not_expand",
+    "q32_the_cost_per_used_car_imported_from_drev"
+   ],
+   "reading": null,
+   "actor": "buyers.used",
+   "variable": "price_paid",
+   "window": null,
+   "direction": "increase",
+   "kind": "response"
+  },
+  {
+   "premises": [
+    "q38_for_cars_in_the_fleet_at_enactment_and_f"
+   ],
+   "reading": null,
+   "actor": "buyers.used",
+   "variable": "price_paid",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q38_for_cars_in_the_fleet_at_enactment_and_f"
+   ],
+   "reading": null,
+   "actor": "owners.combustion",
+   "variable": "asset_value",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  }
+ ],
+ "assumptions": {
+  "a2": {
+   "text": "The Registry refuses first registration of new combustion cars and collects the road charge with renewals.",
+   "p": 0.95,
+   "class": "enforcement"
+  },
+  "a3": {
+   "text": "The 2035 and 2038 dates are not postponed at the 2031 review.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "a5": {
+   "text": "World supply of BEVs to Vessmark expands at about unchanged cost within the planning period.",
+   "p": 0.8,
+   "class": "alternative_uses"
+  },
+  "a28": {
+   "text": "The Registry's budget does not rise with the new checks.",
+   "p": 0.8,
+   "class": "revenue_use"
+  },
+  "q5_some_would_be_buyers_of_new_bevs_buy_a_p": {
+   "text": "Some would-be buyers of new BEVs buy a PHEV, which pays no road charge.",
+   "p": 0.65,
+   "class": "substitutability"
+  },
+  "q6_the_ban_chain_on_new_bev_registrations_d": {
+   "text": "The ban chain on new BEV registrations dominates the road-charge chain.",
+   "p": 0.85,
+   "class": "substitutability"
+  },
+  "q7_public_charging_sales_rise_with_the_bev_": {
+   "text": "Public charging sales rise with the BEV fleet.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q8_in_2035_bev_supply_to_vessmark_cannot_ex": {
+   "text": "In 2035, BEV supply to Vessmark cannot expand at once (allocations fixed).",
+   "p": 0.3,
+   "class": "other"
+  },
+  "q9_some_would_be_buyers_of_new_combustion_c": {
+   "text": "Some would-be buyers of new combustion cars rank a used car or keeping their present car above a new BEV or PHEV.",
+   "p": 0.85,
+   "class": "substitutability"
+  },
+  "q10_some_owners_keep_combustion_cars_longer_": {
+   "text": "Some owners keep combustion cars longer, repairing them, because the car is now worth more than the repair.",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q11_some_would_be_buyers_of_combustion_cars_": {
+   "text": "Some would-be buyers of combustion cars buy PHEVs in 2035 to 2037.",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q12_some_would_be_buyers_of_new_combustion_c": {
+   "text": "Some would-be buyers of new combustion cars buy a new BEV.",
+   "p": 0.9,
+   "class": "substitutability"
+  },
+  "q13_some_displaced_buyers_of_new_combustion_": {
+   "text": "Some displaced buyers of new combustion cars buy used BEVs.",
+   "p": 0.6,
+   "class": "substitutability"
+  },
+  "q14_under_u1_b_some_would_be_buyers_of_new_c": {
+   "text": "Under U1-b, some would-be buyers of new combustion cars buy an imported used or nearly-new combustion car.",
+   "p": 0.85,
+   "class": "substitutability"
+  },
+  "q15_buyers_know_the_date_and_some_can_bring_": {
+   "text": "Buyers know the date, and some can bring the purchase of a new combustion car forward into 2033 to 2034.",
+   "p": 0.85,
+   "class": "expectations"
+  },
+  "q16_residents_evade_the_ban_by_keeping_combu": {
+   "text": "Residents evade the ban by keeping combustion cars registered in Drevland.",
+   "p": 0.3,
+   "class": "enforcement"
+  },
+  "q17_vehicle_km_in_combustion_cars_fall_with_": {
+   "text": "Vehicle-km in combustion cars fall with the combustion fleet; older cars' higher fuel use per km does not offset it.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q18_owners_expect_further_restrictions_on_us": {
+   "text": "Owners expect further restrictions on using combustion cars within their cars' lives.",
+   "p": 0.3,
+   "class": "expectations"
+  },
+  "q19_after_about_2040_as_the_combustion_fleet": {
+   "text": "After about 2040, as the combustion fleet falls well below its counterfactual size, stations close and combustion repair becomes scarcer, lowering a combustion car's value in use.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q20_dealers_fuel_retailers_and_motoring_club": {
+   "text": "Dealers, fuel retailers and motoring clubs, and BEV importers and charging firms, can each organize at a cost below their stake in the review.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q21_without_the_act_no_end_of_sale_date_woul": {
+   "text": "Without the Act, no end-of-sale date would have been on the agenda in 2026 to 2031, so neither side would have lobbied on one.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q22_some_would_be_buyers_of_new_phevs_buy_a_": {
+   "text": "Some would-be buyers of new PHEVs buy a new BEV.",
+   "p": 0.9,
+   "class": "substitutability"
+  },
+  "q23_some_would_be_buyers_of_new_phevs_buy_a_": {
+   "text": "Some would-be buyers of new PHEVs buy a used car or keep their present car.",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q24_buyers_know_the_2038_date_and_some_can_b": {
+   "text": "Buyers know the 2038 date, and some can bring the purchase of a new PHEV forward into 2036 to 2037.",
+   "p": 0.8,
+   "class": "expectations"
+  },
+  "q25_import_inspection_capacity_is_not_expand": {
+   "text": "Import inspection capacity is not expanded by 2040 enough for imports to close the gap between Vessmark's and Drevland's used combustion prices.",
+   "p": 0.6,
+   "class": "mobility"
+  },
+  "q26_used_imports_from_drevland_are_at_import": {
+   "text": "Used imports from Drevland are at import parity, and rise when Vessmark's used price rises.",
+   "p": 0.75,
+   "class": "mobility"
+  },
+  "q27_under_u1_a_some_of_the_buyers_who_would_": {
+   "text": "Under U1-a, some of the buyers who would have bought an imported used combustion car buy a domestic used car.",
+   "p": 0.85,
+   "class": "substitutability"
+  },
+  "q28_under_u1_a_some_of_the_buyers_who_would_": {
+   "text": "Under U1-a, some of the buyers who would have bought an imported used combustion car (about 25,000 a year) buy a new car instead.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q29_importers_stop_offering_some_combustion_": {
+   "text": "Importers stop offering some combustion models in Vessmark from 2031 rather than certify or market them for a short window, and some buyers of those models buy something other than a new combustion car.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q30_under_u1_b_registering_a_new_combustion_": {
+   "text": "Under U1-b, registering a new combustion car briefly in Drevland and importing it costs less than the premium it earns in Vessmark for some importers.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q31_dealers_pre_register_unsold_combustion_s": {
+   "text": "Dealers pre-register unsold combustion stock before 1 January 2035.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q32_the_cost_per_used_car_imported_from_drev": {
+   "text": "The cost per used car imported from Drevland (transport, inspection, registration) does not fall as imports rise.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q33_in_2035_to_2040_the_old_cars_kept_in_use": {
+   "text": "In 2035 to 2040, the old cars kept in use need more repair a year than the new combustion cars missing from the fleet would have.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q34_after_2040_the_combustion_fleet_stays_ol": {
+   "text": "After 2040 the combustion fleet stays older than on the counterfactual path, and the older cars need more repair a year per car than the younger counterfactual fleet.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q35_fuel_stations_costs_are_largely_fixed_pe": {
+   "text": "Fuel stations' costs are largely fixed per outlet, and their sites have other uses.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q36_fuel_retailers_adjust_staff_or_hours_to_": {
+   "text": "Fuel retailers adjust staff or hours to volume.",
+   "p": 0.7,
+   "class": "alternative_uses"
+  },
+  "q37_fuel_excise_revenue_follows_the_quantity": {
+   "text": "Fuel excise revenue follows the quantity of fuel sold.",
+   "p": 0.98,
+   "class": "revenue_use"
+  },
+  "q38_for_cars_in_the_fleet_at_enactment_and_f": {
+   "text": "For cars in the fleet at enactment, and for used prices in 2035 to 2040, the scarcity chain dominates the thinning chain.",
+   "p": 0.7,
+   "class": "other"
+  }
+ }
+}

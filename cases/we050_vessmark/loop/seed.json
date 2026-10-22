@@ -1,0 +1,188 @@
+{
+ "name": "WE-050 Vessmark Clean Cars Act (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_comb",
+   "buyer": "buyers.combustion",
+   "seller": "retailers.dealers",
+   "unsatisfied_buyer": "buyers.combustion",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_comb_w",
+   "buyer": "retailers.dealers",
+   "seller": "importers.combustion",
+   "unsatisfied_buyer": "retailers.dealers",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_phev",
+   "buyer": "buyers.phev",
+   "seller": "importers.phev",
+   "unsatisfied_buyer": "buyers.phev",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_bev",
+   "buyer": "buyers.bev",
+   "seller": "importers.bev",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_used_imp",
+   "buyer": "buyers.used",
+   "seller": "sellers.foreign",
+   "unsatisfied_buyer": "buyers.used",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  }
+ ],
+ "banned": [
+  {
+   "component": "k1",
+   "exchange": "e_comb",
+   "premises": [
+    "a2"
+   ]
+  },
+  {
+   "component": "k1",
+   "exchange": "e_comb_w",
+   "premises": [
+    "a2"
+   ]
+  },
+  {
+   "component": "k2",
+   "exchange": "e_phev",
+   "premises": [
+    "a2"
+   ]
+  },
+  {
+   "component": "k1_used",
+   "exchange": "e_used_imp",
+   "premises": [
+    "a2"
+   ]
+  }
+ ],
+ "charges": [
+  {
+   "component": "k5",
+   "exchange": "e_bev",
+   "payer_side": "buyer",
+   "receiver": "general_fund",
+   "receipt_variable": "tax_revenue",
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "premises": [
+    "a2"
+   ]
+  }
+ ],
+ "moves": [
+  {
+   "exchange": "e_bev",
+   "side": "buyer",
+   "premises": [
+    "a5"
+   ]
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a3"
+   ]
+  },
+  {
+   "component": "k2",
+   "premises": [
+    "a3"
+   ]
+  },
+  {
+   "component": "k5",
+   "premises": []
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement"
+  },
+  {
+   "component": "k2",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "fixed_budget": [
+  {
+   "component": "k1",
+   "actor": "officials.enforcement",
+   "premises": [
+    "a28"
+   ]
+  },
+  {
+   "component": "k2",
+   "actor": "officials.enforcement",
+   "premises": [
+    "a28"
+   ]
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "importers.combustion"
+  },
+  {
+   "component": "k1",
+   "actor": "retailers.dealers"
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "\"not previously been registered\" (s. 2): registered where is not said.",
+   "readings": [
+    "U1-a: previously registered in Vessmark; a used combustion car first registered in Vessmark after 2035 is new, so imported used combustion cars can no longer be registered",
+    "U1-b: previously registered anywhere; a used or new combustion car registered in Drevland first can still be imported and registered after 2035"
+   ],
+   "components": {
+    "U1-a": [
+     "k1_used"
+    ],
+    "U1-b": []
+   }
+  }
+ ],
+ "assumptions": {
+  "a2": {
+   "text": "The Registry refuses first registration of new combustion cars and collects the road charge with renewals.",
+   "p": 0.95,
+   "class": "enforcement"
+  },
+  "a3": {
+   "text": "The 2035 and 2038 dates are not postponed at the 2031 review.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "a5": {
+   "text": "World supply of BEVs to Vessmark expands at about unchanged cost within the planning period.",
+   "p": 0.8,
+   "class": "alternative_uses"
+  },
+  "a28": {
+   "text": "The Registry's budget does not rise with the new checks.",
+   "p": 0.8,
+   "class": "revenue_use"
+  }
+ }
+}
