@@ -1,0 +1,19 @@
+{
+ "Employers can adjust at least one of hiring, hours, schedules, breaks, training or benefits.": 0.9,
+ "Complaints are unlikely for some workers: short tenure, unaware of the law, fearing retaliation, or owed small sums.": 0.8,
+ "The classification test is weakly enforced in some occupations, so contractor arrangements are open to some employers.": 0.55,
+ "Shift-based employers cover absent shifts, partly through agencies and on-call staff.": 0.65,
+ "Employers end seasonal and temporary engagements before 90 days to avoid use.": 0.4,
+ "Small-business and restaurant associations, unions and compliant employers can organize at a cost below their stake.": 0.85,
+ "Most competitors of local service sellers are bound too (in Varrow, six or more employees).": 0.7,
+ "Varrow's tradable producers compete with Pellam producers, who are not bound.": 0.65,
+ "Labor-intensive businesses are valued on expected earnings, and buyers expect the short-run cost before wages adjust.": 0.7,
+ "Some job changes are marginal enough that losing a balance and waiting 90 days decides them.": 0.55,
+ "Some uncovered workers would have worked while ill, or will use paid hours for other ends, and documentation rules make this hard to police.": 0.9,
+ "Some uncovered workers can take jobs at firms with fewer than six employees.": 0.8,
+ "Some uncovered workers can take jobs in Pellam across the river.": 0.7,
+ "Residents of Fenmouth and other border towns can easily buy goods and services in Pellam.": 0.6,
+ "Compliant and small firms compete in product markets with uncovered firms.": 0.6,
+ "Employers can infer expected use of sick time from what they see of applicants, and cannot set pay worker by worker to match it.": 0.55,
+ "Over the medium to long run, workers' alternatives to bound employment (small firms, contracting, Pellam) are clearly worse than employers' alternatives (automation, redeployment, Pellam).": 0.6
+}
