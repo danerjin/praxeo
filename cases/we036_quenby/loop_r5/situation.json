@@ -1,0 +1,959 @@
+{
+ "name": "WE-036 Quenby play-or-pay health cover (loop_r5 seed)",
+ "exchanges": [
+  {
+   "id": "e1",
+   "buyer": "employers.bound",
+   "seller": "workers.fulltime_bound",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": null,
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e2",
+   "buyer": "employers.bound",
+   "seller": "workers.min_wage",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": null,
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e3",
+   "buyer": "employers.seasonal",
+   "seller": "workers.at_seasonal_firms",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": null,
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q15_employers_control_the_headcount_and_the_"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.fulltime_bound",
+   "variables": [
+    "employment",
+    "non_wage_compensation"
+   ]
+  },
+  {
+   "premises": [
+    "q15_employers_control_the_headcount_and_the_"
+   ],
+   "reading": null,
+   "exchange": "e2",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.min_wage",
+   "variables": [
+    "employment",
+    "non_wage_compensation"
+   ]
+  },
+  {
+   "premises": [
+    "q16_revenue_cannot_cheaply_verify_reported_o"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "kind": "outside",
+   "side": null,
+   "actor": "employers.bound",
+   "variables": [
+    "legal_breach"
+   ]
+  },
+  {
+   "premises": [
+    "q15_employers_control_the_headcount_and_the_"
+   ],
+   "reading": null,
+   "exchange": "e3",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.at_seasonal_firms",
+   "variables": [
+    "employment",
+    "non_wage_compensation"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "a10"
+   ],
+   "reading": null,
+   "component": "k1_pay",
+   "chooser": "employers.bound",
+   "actor": "workers.part_time",
+   "variables": [
+    "employment"
+   ]
+  },
+  {
+   "premises": [
+    "q17_some_mid_size_payers_can_obtain_agency_w"
+   ],
+   "reading": null,
+   "component": "k1_pay",
+   "chooser": "employers.bound",
+   "actor": "workers.agency",
+   "variables": [
+    "employment"
+   ]
+  },
+  {
+   "premises": [
+    "q18_some_firms_with_plans_short_of_k1_upgrad"
+   ],
+   "reading": null,
+   "component": "k1_pay",
+   "chooser": "employers.bound",
+   "actor": "insurers",
+   "variables": [
+    "quantity_traded"
+   ]
+  },
+  {
+   "premises": [
+    "q19_employers_shorten_seasonal_and_temporary"
+   ],
+   "reading": null,
+   "component": "k1_pay",
+   "chooser": "employers.bound",
+   "actor": "workers.seasonal",
+   "variables": [
+    "turnover"
+   ]
+  },
+  {
+   "premises": [
+    "q25_contracting_out_and_franchising_are_open"
+   ],
+   "reading": null,
+   "component": "k3",
+   "chooser": "employers.near_threshold",
+   "actor": "contractors",
+   "variables": [
+    "quantity_traded"
+   ]
+  },
+  {
+   "premises": [
+    "q25_contracting_out_and_franchising_are_open"
+   ],
+   "reading": null,
+   "component": "k3_seasonal",
+   "chooser": "employers.seasonal",
+   "actor": "contractors",
+   "variables": [
+    "quantity_traded"
+   ]
+  },
+  {
+   "premises": [
+    "a14"
+   ],
+   "reading": null,
+   "component": "k3_seasonal",
+   "chooser": "employers.seasonal",
+   "actor": "workers.seasonal",
+   "variables": [
+    "hours_worked"
+   ]
+  },
+  {
+   "premises": [
+    "q33_workers_at_payers_have_some_alternative_"
+   ],
+   "reading": null,
+   "component": "k1_pay_seasonal",
+   "chooser": "workers.at_seasonal_firms",
+   "actor": "employers.small",
+   "variables": [
+    "employment"
+   ]
+  },
+  {
+   "premises": [
+    "q33_workers_at_payers_have_some_alternative_"
+   ],
+   "reading": null,
+   "component": "k1_pay",
+   "chooser": "workers.fulltime_bound",
+   "actor": "employers.small",
+   "variables": [
+    "employment"
+   ]
+  },
+  {
+   "premises": [
+    "q33_workers_at_payers_have_some_alternative_"
+   ],
+   "reading": null,
+   "component": "k1_pay",
+   "chooser": "workers.fulltime_bound",
+   "actor": "workers.part_time",
+   "variables": [
+    "employment"
+   ]
+  },
+  {
+   "premises": [
+    "q33_workers_at_payers_have_some_alternative_"
+   ],
+   "reading": null,
+   "component": "k1_pay",
+   "chooser": "workers.fulltime_bound",
+   "actor": "neighboring_jurisdictions",
+   "variables": [
+    "employment"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q20_insurers_unions_employer_associations_an"
+   ],
+   "reading": null,
+   "component": "k1_pay",
+   "actor": "employers.bound"
+  },
+  {
+   "premises": [
+    "q20_insurers_unions_employer_associations_an"
+   ],
+   "reading": null,
+   "component": "k1_pay",
+   "actor": "employers.capped"
+  },
+  {
+   "premises": [
+    "q20_insurers_unions_employer_associations_an"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "employers.near_threshold"
+  },
+  {
+   "premises": [
+    "q20_insurers_unions_employer_associations_an"
+   ],
+   "reading": null,
+   "component": "k3_seasonal",
+   "actor": "employers.seasonal"
+  },
+  {
+   "premises": [
+    "q20_insurers_unions_employer_associations_an"
+   ],
+   "reading": null,
+   "component": "k1_offer",
+   "actor": "insurers"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q22_the_output_of_bound_firms_moves_with_the"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "employers.bound",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q23_firms_not_bound_small_compliant_capped_c"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "quantity_supplied",
+   "relation": "substitute",
+   "actor": "employers.small",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [
+    "q24_quenby_s_tradable_producers_compete_with"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "quantity_supplied",
+   "relation": "substitute",
+   "actor": "neighboring_jurisdictions",
+   "variable": "quantity_supplied"
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "employers.near_threshold",
+   "source_variable": "employment",
+   "relation": "same_act",
+   "actor": "workers.prospective",
+   "variable": "employment"
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "officials.revenue",
+   "source_variable": "non_tax_receipts",
+   "relation": "same_act",
+   "actor": "treasury",
+   "variable": "fund_balance"
+  },
+  {
+   "premises": [
+    "q28_newly_covered_workers_use_more_care_bill"
+   ],
+   "reading": null,
+   "source_actor": "workers.at_offering_firms",
+   "source_variable": "non_wage_compensation",
+   "relation": "complement",
+   "actor": "sellers.health_care",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q29_some_newly_covered_workers_or_their_care",
+    "q30_the_icp_pays_per_claim_so_fewer_claims_f"
+   ],
+   "reading": null,
+   "source_actor": "workers.at_offering_firms",
+   "source_variable": "non_wage_compensation",
+   "relation": "substitute",
+   "actor": "officials.indigent_care",
+   "variable": "subsidy_outlay"
+  },
+  {
+   "premises": [
+    "q31_some_workers_newly_offered_employer_cove"
+   ],
+   "reading": null,
+   "source_actor": "workers.at_offering_firms",
+   "source_variable": "non_wage_compensation",
+   "relation": "substitute",
+   "actor": "insurers.individual",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q32_employer_contributions_to_health_premium",
+    "a6"
+   ],
+   "reading": null,
+   "source_actor": "workers.at_offering_firms",
+   "source_variable": "non_wage_compensation",
+   "relation": "substitute",
+   "actor": "treasury",
+   "variable": "tax_revenue"
+  },
+  {
+   "premises": [
+    "q34_between_30_and_40_hours_extra_hours_from"
+   ],
+   "reading": null,
+   "source_actor": "workers.fulltime_bound",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "workers.fulltime_bound",
+   "variable": "hours_worked"
+  },
+  {
+   "premises": [
+    "a3"
+   ],
+   "reading": null,
+   "source_actor": "workers.near_hours_line",
+   "source_variable": "hours_worked",
+   "relation": "same_act",
+   "actor": "workers.near_hours_line",
+   "variable": "earnings"
+  },
+  {
+   "premises": [
+    "q16_revenue_cannot_cheaply_verify_reported_o"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "legal_breach",
+   "relation": "substitute",
+   "actor": "officials.revenue",
+   "variable": "non_tax_receipts"
+  },
+  {
+   "premises": [
+    "a37"
+   ],
+   "reading": null,
+   "source_actor": "employers.small",
+   "source_variable": "employment",
+   "relation": "supply",
+   "actor": "workers.at_small_firms",
+   "variable": "wage_rate"
+  },
+  {
+   "premises": [
+    "q35_the_indigent_care_program_is_paid_from_t"
+   ],
+   "reading": null,
+   "source_actor": "officials.indigent_care",
+   "source_variable": "subsidy_outlay",
+   "relation": "substitute",
+   "actor": "treasury",
+   "variable": "fund_balance"
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "treasury",
+   "source_variable": "tax_revenue",
+   "relation": "same_act",
+   "actor": "treasury",
+   "variable": "fund_balance"
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "workers.agency",
+   "source_variable": "employment",
+   "relation": "same_act",
+   "actor": "employers.capped",
+   "variable": "quantity_traded"
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "a21"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "buyer",
+   "actor": "owners.bound"
+  },
+  {
+   "premises": [
+    "q27_values_of_firms_near_50_reflect_their_ex"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "buyer",
+   "actor": "owners.near_threshold"
+  }
+ ],
+ "yields": [
+  {
+   "premises": [
+    "q21_bound_firms_cannot_pass_the_whole_charge"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "buyer",
+   "actor": "employers.bound"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k5",
+   "actor": "employers.bound"
+  },
+  {
+   "component": "k5_seasonal",
+   "actor": "employers.seasonal"
+  },
+  {
+   "component": "k2",
+   "actor": "insurers"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k5",
+   "actor": "officials.revenue"
+  },
+  {
+   "component": "k2",
+   "actor": "officials.insurance"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k5",
+   "actor": "taxpayers",
+   "premises": [
+    "a29"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "k1_offer",
+   "exchange": "e1",
+   "payer_side": "buyer",
+   "receiver": "workers.at_offering_firms",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "a7"
+   ],
+   "projection_variable": null,
+   "branch_premises": [
+    "a1",
+    "a2"
+   ],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k1_pay",
+   "exchange": "e1",
+   "payer_side": "buyer",
+   "receiver": "officials.revenue",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [
+    "a1",
+    "a4"
+   ],
+   "capped_payers": [
+    "employers.capped"
+   ],
+   "basis": "unit"
+  },
+  {
+   "component": "k1_offer",
+   "exchange": "e2",
+   "payer_side": "buyer",
+   "receiver": "workers.at_offering_firms",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "a7"
+   ],
+   "projection_variable": null,
+   "branch_premises": [
+    "a1",
+    "a2"
+   ],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k1_pay",
+   "exchange": "e2",
+   "payer_side": "buyer",
+   "receiver": "officials.revenue",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [
+    "a1",
+    "a4"
+   ],
+   "capped_payers": [
+    "employers.capped"
+   ],
+   "basis": "unit"
+  },
+  {
+   "component": "k1_offer_seasonal",
+   "exchange": "e3",
+   "payer_side": "buyer",
+   "receiver": "workers.at_offering_firms",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "a7"
+   ],
+   "projection_variable": null,
+   "branch_premises": [
+    "a1",
+    "a2"
+   ],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k1_pay_seasonal",
+   "exchange": "e3",
+   "payer_side": "buyer",
+   "receiver": "officials.revenue",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [
+    "a33",
+    "a4"
+   ],
+   "capped_payers": [
+    "employers.capped"
+   ],
+   "basis": "unit"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a6",
+    "a37"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "seller"
+  },
+  {
+   "premises": [
+    "a6",
+    "a37"
+   ],
+   "reading": null,
+   "exchange": "e3",
+   "side": "seller"
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k3",
+   "premises": [
+    "a15"
+   ]
+  },
+  {
+   "component": "k1_offer",
+   "premises": [
+    "a21"
+   ]
+  },
+  {
+   "component": "k1_pay",
+   "premises": [
+    "a21"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q26_some_firms_that_would_have_passed_50_in_"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "employers.near_threshold",
+   "variable": "employment",
+   "mode": "carry_over"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "banned": [],
+ "fixed": [
+  {
+   "premises": [
+    "a3"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "seller"
+  },
+  {
+   "premises": [
+    "a9"
+   ],
+   "reading": null,
+   "exchange": "e2",
+   "side": "seller"
+  },
+  {
+   "premises": [
+    "a3"
+   ],
+   "reading": null,
+   "exchange": "e3",
+   "side": "seller"
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Seasonal workers in the count toward the 50 FTE line.",
+   "readings": [
+    "U1-a: seasonal workers count by their hours, like any other employee",
+    "U1-b: seasonal workers are left out of the count"
+   ],
+   "components": {
+    "U1-a": [
+     "k1_offer_seasonal",
+     "k1_pay_seasonal",
+     "k3_seasonal",
+     "k5_seasonal"
+    ],
+    "U1-b": []
+   }
+  }
+ ],
+ "thresholds": [
+  {
+   "premises": [
+    "a14"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "employers.near_threshold",
+   "variable": "employment",
+   "chooser": null
+  },
+  {
+   "premises": [
+    "a14"
+   ],
+   "reading": null,
+   "component": "k3_seasonal",
+   "actor": "employers.seasonal",
+   "variable": "employment",
+   "chooser": null
+  },
+  {
+   "premises": [
+    "a10"
+   ],
+   "reading": null,
+   "component": "k1_hours",
+   "actor": "workers.near_hours_line",
+   "variable": "hours_worked",
+   "chooser": "employers.bound"
+  }
+ ],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [
+  {
+   "premises": [
+    "q36_charges_collected_in_2028_are_not_cut_by"
+   ],
+   "reading": null,
+   "actor": "officials.revenue",
+   "variable": "non_tax_receipts",
+   "window": null,
+   "direction": "increase",
+   "kind": "response"
+  },
+  {
+   "premises": [
+    "q36_charges_collected_in_2028_are_not_cut_by"
+   ],
+   "reading": null,
+   "actor": "treasury",
+   "variable": "fund_balance",
+   "window": null,
+   "direction": "increase",
+   "kind": "arithmetic"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "About 135,000 full-timers at firms of 50+ FTE are offered nothing, and about 105,000 are offered less than K1 requires, so K1 binds for them.",
+   "p": 0.9,
+   "class": "binding"
+  },
+  "a2": {
+   "text": "Some bound firms that offer nothing now choose to offer (mainly those with higher-paid staff who value cover, given the tax exclusion).",
+   "p": 0.75,
+   "class": "other"
+  },
+  "a3": {
+   "text": "Money wages are fixed in the short run by pay scales and yearly raises in at-will employment (CR-6, 0.8: stickiness as a premise).",
+   "p": 0.75,
+   "class": "other"
+  },
+  "a4": {
+   "text": "Some bound firms choose to pay the charge for at least some full-timers (all the capped firms, many mid-size low-wage firms).",
+   "p": 0.9,
+   "class": "other"
+  },
+  "a6": {
+   "text": "Wages above the minimum can adjust over the medium horizon, as raises are set.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "a7": {
+   "text": "At players, for the marginal pair, cover at 30% is worth less to the worker than its cost to the employer: they could have agreed on it, with the tax exclusion, and did not.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "a9": {
+   "text": "The minimum wage binds for some workers at bound firms.",
+   "p": 0.85,
+   "class": "binding"
+  },
+  "a10": {
+   "text": "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "a14": {
+   "text": "Some firms near 50 FTE value staying below the line more than the extra work.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "a15": {
+   "text": "Owners of firms near 50 know from January 2027 that the 2027 average decides 2028 status.",
+   "p": 0.75,
+   "class": "expectations"
+  },
+  "a21": {
+   "text": "Business values reflect expected earnings, and buyers expected the Act from its introduction.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "a29": {
+   "text": "The $4.1 million is new general-fund money.",
+   "p": 0.9,
+   "class": "revenue_use"
+  },
+  "a37": {
+   "text": "Workers at bound firms cannot all move to unbound work at the old wage in the medium run (the response is partial).",
+   "p": 0.9,
+   "class": "mobility"
+  },
+  "a33": {
+   "text": "Some of the 380 seasonal firms do not offer qualifying cover to their full-timers.",
+   "p": 0.75,
+   "class": "binding"
+  },
+  "q15_employers_control_the_headcount_and_the_": {
+   "text": "Employers control the headcount and the non-wage terms of their full-timers.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q16_revenue_cannot_cheaply_verify_reported_o": {
+   "text": "Revenue cannot cheaply verify reported offers, and some firms report offers not made.",
+   "p": 0.55,
+   "class": "enforcement"
+  },
+  "q17_some_mid_size_payers_can_obtain_agency_w": {
+   "text": "Some mid-size payers can obtain agency workers from capped staffing firms at a markup below the $3,000 charge.",
+   "p": 0.55,
+   "class": "substitutability"
+  },
+  "q18_some_firms_with_plans_short_of_k1_upgrad": {
+   "text": "Some firms with plans short of K1 upgrade them rather than pay.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q19_employers_shorten_seasonal_and_temporary": {
+   "text": "Employers shorten seasonal and temporary engagements below 60 days so that no offer is owed.",
+   "p": 0.4,
+   "class": "other"
+  },
+  "q20_insurers_unions_employer_associations_an": {
+   "text": "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q21_bound_firms_cannot_pass_the_whole_charge": {
+   "text": "Bound firms cannot pass the whole charge on to their customers.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q22_the_output_of_bound_firms_moves_with_the": {
+   "text": "The output of bound firms moves with the labour they hire.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q23_firms_not_bound_small_compliant_capped_c": {
+   "text": "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets.",
+   "p": 0.65,
+   "class": "substitutability"
+  },
+  "q24_quenby_s_tradable_producers_compete_with": {
+   "text": "Quenby's tradable producers compete with Tarnley producers.",
+   "p": 0.65,
+   "class": "mobility"
+  },
+  "q25_contracting_out_and_franchising_are_open": {
+   "text": "Contracting out and franchising are open to some firms near 50 at a cost below the term or the charge (splitting by ownership is closed by the common-control rule).",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q26_some_firms_that_would_have_passed_50_in_": {
+   "text": "Some firms that would have passed 50 in 2027 still pass it later, so part of the growth held back is delayed rather than lost.",
+   "p": 0.6,
+   "class": "expectations"
+  },
+  "q27_values_of_firms_near_50_reflect_their_ex": {
+   "text": "Values of firms near 50 reflect their expected growth.",
+   "p": 0.6,
+   "class": "expectations"
+  },
+  "q28_newly_covered_workers_use_more_care_bill": {
+   "text": "Newly covered workers use more care billed to insurers than they used without cover.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q29_some_newly_covered_workers_or_their_care": {
+   "text": "Some newly covered workers or their care were paid for by the ICP.",
+   "p": 0.7,
+   "class": "revenue_use"
+  },
+  "q30_the_icp_pays_per_claim_so_fewer_claims_f": {
+   "text": "The ICP pays per claim, so fewer claims for newly covered workers lower its outlay rather than raising the payment per remaining claim.",
+   "p": 0.6,
+   "class": "revenue_use"
+  },
+  "q31_some_workers_newly_offered_employer_cove": {
+   "text": "Some workers newly offered employer cover held individual plans.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q32_employer_contributions_to_health_premium": {
+   "text": "Employer contributions to health premiums are excluded from taxable income, while wages are taxed.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "q33_workers_at_payers_have_some_alternative_": {
+   "text": "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley), so the wage does not fall by the whole charge.",
+   "p": 0.85,
+   "class": "mobility"
+  },
+  "q34_between_30_and_40_hours_extra_hours_from": {
+   "text": "Between 30 and 40 hours, extra hours from existing full-timers substitute for extra full-time heads.",
+   "p": 0.65,
+   "class": "substitutability"
+  },
+  "q35_the_indigent_care_program_is_paid_from_t": {
+   "text": "The Indigent Care Program is paid from the general fund.",
+   "p": 0.95,
+   "class": "revenue_use"
+  },
+  "q36_charges_collected_in_2028_are_not_cut_by": {
+   "text": "Charges collected in 2028 are not cut by misreporting below $13.5 million less the short-run income tax lost, and that tax lost is smaller than the $9.4 million by which the capped firms' charges exceed the appropriation.",
+   "p": 0.75,
+   "class": "enforcement"
+  }
+ }
+}
