@@ -327,7 +327,8 @@ def main() -> None:
         return
     print(f"DONE in {run.rounds} rounds, {sum(1 for e in run.log if 'question' in e)} questions")
     for c in S.run(run.situation):
-        print(("R " if c.reported else "- ") + f"{c.actor_group or c.actor_class} {c.group or c.variable} {c.window or ''} {c.sign}")
+        sign = "; ".join(f"{k}: {v}" for k, v in c.sign_by_reading.items()) if c.sign_by_reading else c.sign
+        print(("R " if c.reported else "- ") + f"{c.actor_group or c.actor_class} {c.group or c.variable} {c.window or ''} {sign}")
     if a.out:
         a.out.write_text(run.situation.model_dump_json(indent=1))
 
