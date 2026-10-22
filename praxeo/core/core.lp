@@ -30,6 +30,7 @@
 %   charge_premise(C, P1, P2, P3): the charge's own binding and enforcement premises.
 %   dom(A, V, D, P1, P2, P3): CR-12e, the direction D of (A, V) dominates (unwindowed), so only it propagates.
 %   penalty(C, Violator, Collector, P1, P2, P3): a fine due on breaking C (CR-8b).
+%   issued(C, E, P1, P2, P3): C creates a right and sells it in E (seller: the issuer).
 %   operating(C): a charge fixed per seller, not per unit (CR-4 0.8).
 %   compliance(C, A). enforcer(C, A). funded(C, A, P1, P2, P3). fixed_budget(C, A, P1, P2, P3).   CR-8c
 %   charge(C, E, Side, Receiver).           CR-1 op 3: C attaches a payment to trading in E, paid by Side, to Receiver
@@ -512,6 +513,18 @@ fired(cr_8, p_penalty(C, A, R), P) :- p_penalty(C, A, R), penalty(C, A, R, P1, P
 effect(p_penalty(C, A, R), A, "resources_available_other_uses", decrease, short, invisible, "B") :- p_penalty(C, A, R).
 effect(p_penalty(C, A, R), R, V, increase, short, visible, "B") :- p_penalty(C, A, R), share_var(penalty, V).
 chooser(C, A, worse) :- p_penalty(C, A, _).
+
+% ---------------------------------------------------------------- CR-1: a right the policy creates and sells
+% Where a component creates a right and sells it in E (issued/6, with the premise that it is sold as enacted), the trade in
+% it opens: its buyers acquire it and pay for it (CR-8b), the issuer receives the price; against no award, trades in E rise.
+% Its value to the buyers is the asset's (CR-7c) and is captured at the sale only for the surplus above the price paid.
+c_issued(C, E) :- issued(C, E, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+fired(cr_1, c_issued(C, E), P) :- c_issued(C, E), issued(C, E, P1, P2, P3), P = (P1; P2; P3), P != none.
+c_acts(C) :- c_issued(C, _).
+effect(c_issued(C, E), A, "quantity_traded", increase, short, visible, "B") :- c_issued(C, E), party(E, _, A).
+effect(c_issued(C, E), A, "resources_available_other_uses", decrease, short, invisible, "A") :- c_issued(C, E), party(E, buyer, A).
+effect(c_issued(C, E), A, V, increase, short, visible, "A") :- c_issued(C, E), party(E, seller, A), share_var(penalty, V).
+chooser(C, A, better) :- c_issued(C, E), party(E, buyer, A).
 
 % ---------------------------------------------------------------- CR-4 at a line: a measure that binds above a size
 % Where a component binds only on actors whose V exceeds a line (threshold/6: those near it, the measure V of size), crossing

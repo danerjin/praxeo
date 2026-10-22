@@ -30,7 +30,8 @@ MAX_DEPTH = 3
 
 class Proposal(BaseModel):
     """One fact a node needs, with the questions its premises ask (one concept each, answered yes or no)."""
-    part: Literal["alternatives", "links", "margins", "stakes", "assets", "yields", "timing", "parts", "dominance", "incidence"]
+    part: Literal["alternatives", "links", "margins", "stakes", "assets", "yields", "timing", "parts", "dominance", "incidence",
+                  "exchanges", "moves", "fixed"]
     fact: dict = Field(description="The fields of that situation part, without `premises`")
     premises: list[str] = Field(default=[], max_length=3, description="Each premise as a statement whose truth is asked")
     premise_class: str = "other"
@@ -176,6 +177,9 @@ engine has already derived for it. Propose only what this node needs for the rea
 - links (CR-9): markets reached through this actor's changed variables; `fact`: {source_actor: this actor, source_variable,
   relation: complement | input | substitute | output | yield | same_act | cost | own_price | currency | supply_price (more demand raises the price where supply is slow) | supply (more offered lowers the price) | paid_from (spending from a fund lowers its balance) | paid_into (receipts raise it) | crowding (users of a shared facility, a road or a queue: fewer users, less delay), actor, and optionally horizon, variable}.
 - margins (CR-6): terms or quantities this actor controls under a held or fixed price, criteria it is chosen by, trade outside the rule.
+- exchanges: a market this actor trades in that the effects reach and the seed does not hold (who buys, who sells, the
+  price variables, the unsatisfied side); then moves (whose price takes a change in it, with the premise on the other side's
+  response) and fixed (a price there that cannot move in the period) for it. An exchange takes no premises.
 - incidence (CR-7b): on an exchange a charge or grant acts on, the side whose alternatives are clearly worse than the
   other side's (it bears more of the charge, or keeps more of the grant); `fact`: {component, exchange, side}. Only with a
   premise comparing the two sides' alternatives.

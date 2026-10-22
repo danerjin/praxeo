@@ -461,3 +461,11 @@ def test_a_fine_on_breach_is_a_transfer_from_violators():
                penalties=[{"component": "k", "actor": "restaurants.violating", "collector": "officials.enforcement", "premises": ["a2"]}])
     assert ("restaurants.violating", "resources_available_other_uses", "decrease", None) in got
     assert ("officials.enforcement", "non_tax_receipts", "increase", None) in got
+
+
+def test_a_right_the_policy_creates_and_sells():
+    x = [{"id": "e", "buyer": "licensees", "seller": "treasury", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}]
+    got = _run(exchanges=x, issued=[{"component": "k", "exchange": "e", "premises": ["a1"]}],
+               assets=[{"exchange": "e", "side": "buyer", "actor": "owners.licensees", "premises": ["a2"]}])
+    assert {("licensees", "quantity_traded", "increase", None), ("treasury", "non_tax_receipts", "increase", None),
+            ("licensees", "resources_available_other_uses", "decrease", None)} <= got

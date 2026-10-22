@@ -434,6 +434,12 @@ def run(record: PolicyRecord, assumptions: dict[str, Assumption], extra: str = "
         for label, r in runs:
             hits = [d for (a, v, w, i, _s), d in r.items() if (a, v, w, i) == (actor, variable, window, item)]
             per[label] = hits[0] if len(hits) == 1 else None if not hits else _resolve(hits, assumptions)
+        # a reading's sign counts only where it rests on a reportable chain (some minimal set at or above the cut-off);
+        # where no reading has one, the consequence is kept as derived and goes unreported
+        reportable = {lab: (d if d and any(all(assumptions[a].p >= CUTOFF for a in st) for st in d["sets"]) else None)
+                      for lab, d in per.items()}
+        if any(reportable.values()) and len(per) > 1:
+            per = reportable
         derived = [d for d in per.values() if d]
         first = derived[0]
         signs = {lab: (d["sign"] if d else "none") for lab, d in per.items()}

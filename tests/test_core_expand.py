@@ -309,3 +309,19 @@ def test_blind_loop_runs_on_the_remaining_cases():
     for r in json.loads((ROOT / "tests" / "blind_scores.json").read_text()):
         produced, total = _loop_score(r["case"], r["example"], r["short"], r["windows"], r["loop"])
         assert (r["case"], len(produced), total) == (r["case"], r["produced"], r["total"])
+
+
+def test_a_node_can_propose_an_exchange_and_its_response(tmp_path):
+    seed = S.Situation(name="t", assumptions={"a1": {"text": "binds", "p": 0.9}},
+                       exchanges=[{"id": "e", "buyer": "buyers", "seller": "sellers", "buyer_price_var": "price_paid",
+                                   "seller_price_var": "net_price_received"}],
+                       banned=[{"component": "k", "exchange": "e", "premises": ["a1"]}])
+    props = {"buyers": [{"part": "exchanges", "fact": {"id": "e2", "buyer": "buyers", "seller": "sellers.substitute",
+                                                       "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}},
+                        {"part": "links", "fact": {"source_actor": "buyers", "source_variable": "quantity_traded",
+                                                   "relation": "substitute", "actor": "sellers.substitute", "variable": "quantity_traded"},
+                         "premises": ["Buyers can switch to the substitute."]}]}
+    (tmp_path / "p.json").write_text(json.dumps(props))
+    run = X.expand(seed, X.FixtureProposer(tmp_path / "p.json"), X.TextDecider({"Buyers can switch to the substitute.": 0.8}))
+    assert any(e.id == "e2" for e in run.situation.exchanges)
+    assert ("sellers.substitute", "quantity_traded", "increase", None, ()) in _key(S.run(run.situation))
