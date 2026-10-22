@@ -1,0 +1,910 @@
+{
+ "employers.paying": [
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_pay",
+    "kind": "adjust",
+    "side": "buyer",
+    "actor": "workers.at_paying_firms",
+    "variables": [
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost."
+   ],
+   "premise_class": "other",
+   "source": "Employees averaging under 30 hours."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_pay",
+    "kind": "adjust",
+    "side": "buyer",
+    "actor": "workers.at_paying_firms",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Between 30 and 40 hours, extra hours from existing full-timers substitute for extra full-time heads."
+   ],
+   "premise_class": "substitutability",
+   "source": "Between 30 and 40 hours, extra hours from existing full-timers substitute for extra full-time heads."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_pay",
+    "kind": "outside",
+    "actor": "employers.paying",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Revenue cannot cheaply verify reported offers, and some firms report offers not made."
+   ],
+   "premise_class": "enforcement",
+   "source": "Employers report each employee's offer status on quarterly withholding returns; the charge is assessed with them. Misreporting: twice the unpaid charge."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pay",
+    "chooser": "employers.paying",
+    "actor": "employers.paying",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost."
+   ],
+   "premise_class": "other",
+   "source": "Employees averaging under 30 hours."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pay",
+    "chooser": "employers.paying",
+    "actor": "employers.paying",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Employers shorten seasonal and temporary engagements below 60 days so that no offer is owed."
+   ],
+   "premise_class": "other",
+   "source": "Either offer each such employee, from the first of the month after 60 days of employment"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pay",
+    "chooser": "employers.paying",
+    "actor": "employers.capped",
+    "variables": [
+     "quantity_substitute"
+    ]
+   },
+   "premises": [
+    "Some mid-size payers can obtain agency workers from capped staffing firms at a markup below the $3,000 charge."
+   ],
+   "premise_class": "substitutability",
+   "source": "Agency workers count for the agency."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_pay",
+    "actor": "employers.paying"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_pay",
+    "side": "buyer",
+    "actor": "owners.paying"
+   },
+   "premises": [
+    "Business values reflect expected earnings, and buyers expected the Act from its introduction."
+   ],
+   "premise_class": "expectations",
+   "source": "Business values reflect expected earnings, and buyers expected the Act from its introduction."
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_pay",
+    "side": "buyer",
+    "actor": "employers.paying"
+   },
+   "premises": [
+    "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets."
+   ],
+   "premise_class": "substitutability",
+   "source": "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.paying",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "employers.paying",
+    "variable": "quantity_supplied"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Health cover for each employee averaging 30 or more hours a week (the full-timers are labour used in the firm's output)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.paying",
+    "source_variable": "quantity_supplied",
+    "relation": "substitute",
+    "actor": "employers.small",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets."
+   ],
+   "premise_class": "substitutability",
+   "source": "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.paying",
+    "source_variable": "quantity_supplied",
+    "relation": "supply",
+    "actor": "customers",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Most competitors of mid-size bound firms in local services are bound at a material per-head cost."
+   ],
+   "premise_class": "other",
+   "source": "Most competitors of mid-size bound firms in local services are bound at a material per-head cost."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.paying",
+    "source_variable": "quantity_supplied",
+    "relation": "substitute",
+    "actor": "sellers.foreign",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Quenby's tradable producers compete with Tarnley producers."
+   ],
+   "premise_class": "mobility",
+   "source": "Quenby's tradable producers compete with Tarnley producers."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.paying",
+    "source_variable": "legal_breach",
+    "relation": "substitute",
+    "actor": "officials.revenue",
+    "variable": "non_tax_receipts"
+   },
+   "premises": [
+    "Revenue cannot cheaply verify reported offers, and some firms report offers not made."
+   ],
+   "premise_class": "enforcement",
+   "source": "Revenue cannot cheaply verify reported offers, and some firms report offers not made."
+  }
+ ],
+ "employers.offering": [
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_off",
+    "kind": "adjust",
+    "side": "buyer",
+    "actor": "workers.at_offering_firms",
+    "variables": [
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost."
+   ],
+   "premise_class": "other",
+   "source": "Employees averaging under 30 hours."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_off",
+    "kind": "adjust",
+    "side": "buyer",
+    "actor": "workers.at_offering_firms",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Between 30 and 40 hours, extra hours from existing full-timers substitute for extra full-time heads."
+   ],
+   "premise_class": "substitutability",
+   "source": "Between 30 and 40 hours, extra hours from existing full-timers substitute for extra full-time heads."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_offer_new",
+    "chooser": "employers.offering",
+    "actor": "employers.offering",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost."
+   ],
+   "premise_class": "other",
+   "source": "Employees averaging under 30 hours."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_offer_upgrade",
+    "chooser": "employers.offering",
+    "actor": "employers.offering",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost."
+   ],
+   "premise_class": "other",
+   "source": "Employees averaging under 30 hours."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_offer_new",
+    "actor": "employers.offering"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_off",
+    "side": "buyer",
+    "actor": "owners.offering"
+   },
+   "premises": [
+    "Business values reflect expected earnings, and buyers expected the Act from its introduction."
+   ],
+   "premise_class": "expectations",
+   "source": "Business values reflect expected earnings, and buyers expected the Act from its introduction."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.offering",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "employers.offering",
+    "variable": "quantity_supplied"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "a plan meeting K2 with an employer contribution of at least 70% of the employee-only premium (labour used in the firm's output)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.offering",
+    "source_variable": "quantity_supplied",
+    "relation": "substitute",
+    "actor": "employers.small",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets."
+   ],
+   "premise_class": "substitutability",
+   "source": "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets."
+  }
+ ],
+ "employers.capped": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_pay",
+    "actor": "employers.capped"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+  }
+ ],
+ "employers.near_threshold": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k3",
+    "chooser": "employers.near_threshold",
+    "actor": "employers.near_threshold",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Contracting out and franchising are open to some firms near 50 at a cost below the term or the charge (splitting by ownership is closed by the common-control rule)."
+   ],
+   "premise_class": "other",
+   "source": "Exemption below 50 FTE; Firms under common control are counted together."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k3",
+    "actor": "employers.near_threshold",
+    "variable": "employment",
+    "mode": "carry_over"
+   },
+   "premises": [
+    "Some firms that would have passed 50 in 2027 still pass it later, so part of the growth held back is delayed rather than lost."
+   ],
+   "premise_class": "other",
+   "source": "Status for 2028 is decided by the firm's average FTE over 2027."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.near_threshold",
+    "source_variable": "employment",
+    "relation": "yield",
+    "actor": "owners.near_threshold",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Values of firms near 50 reflect their expected growth."
+   ],
+   "premise_class": "expectations",
+   "source": "Values of firms near 50 reflect their expected growth."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.near_threshold",
+    "source_variable": "employment",
+    "relation": "same_act",
+    "actor": "workers.at_near_threshold_firms",
+    "variable": "employment"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "FTE = monthly average over the previous calendar year of (employees averaging 130 hours a month) plus (all other employees' hours / 130)."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k3",
+    "actor": "employers.near_threshold"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+  }
+ ],
+ "employers.seasonal": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pay_seasonal",
+    "chooser": "employers.seasonal",
+    "actor": "employers.seasonal",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Employers shorten seasonal and temporary engagements below 60 days so that no offer is owed."
+   ],
+   "premise_class": "other",
+   "source": "Under both readings, a seasonal worker who averages 30 or more hours at a bound firm is owed an offer after 60 days"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_seas",
+    "kind": "adjust",
+    "side": "buyer",
+    "actor": "workers.at_seasonal_firms",
+    "variables": [
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost."
+   ],
+   "premise_class": "other",
+   "source": "Employees averaging under 30 hours."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_seas",
+    "kind": "adjust",
+    "side": "buyer",
+    "actor": "workers.at_seasonal_firms",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Between 30 and 40 hours, extra hours from existing full-timers substitute for extra full-time heads."
+   ],
+   "premise_class": "substitutability",
+   "source": "Between 30 and 40 hours, extra hours from existing full-timers substitute for extra full-time heads."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k3_seasonal",
+    "actor": "employers.seasonal"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+  }
+ ],
+ "insurers": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k2",
+    "actor": "insurers"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+  }
+ ],
+ "officials.enforcement": [],
+ "officials.revenue": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.revenue",
+    "source_variable": "non_tax_receipts",
+    "relation": "yield",
+    "actor": "treasury",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Charges are paid into the general fund."
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "officials.revenue",
+    "variable": "non_tax_receipts",
+    "window": null,
+    "direction": "increase",
+    "kind": "arithmetic"
+   },
+   "premises": [
+    "Charges collected in 2028 are not cut by misreporting below $13.5 million less the short-run income tax lost, and that tax lost is smaller than the $9.4 million by which the capped firms' charges exceed the appropriation."
+   ],
+   "premise_class": "other",
+   "source": "Charges collected in 2028 are not cut by misreporting below $13.5 million less the short-run income tax lost, and that tax lost is smaller than the $9.4 million by which the capped firms' charges exceed the appropriation."
+  }
+ ],
+ "taxpayers": [],
+ "workers.at_offering_firms": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_offer_new",
+    "chooser": "workers.at_offering_firms",
+    "actor": "workers.at_offering_firms",
+    "variables": [
+     "job_changes"
+    ]
+   },
+   "premises": [
+    "Some newly covered workers are near the margin between staying and moving to an unbound job."
+   ],
+   "premise_class": "mobility",
+   "source": "An employee who is offered and declines counts as offered."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_offer_upgrade",
+    "chooser": "workers.at_offering_firms",
+    "actor": "workers.at_offering_firms",
+    "variables": [
+     "job_changes"
+    ]
+   },
+   "premises": [
+    "Some newly covered workers are near the margin between staying and moving to an unbound job."
+   ],
+   "premise_class": "mobility",
+   "source": "An employee who is offered and declines counts as offered."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_offer_new",
+    "actor": "unions"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_offering_firms",
+    "source_variable": "non_wage_compensation",
+    "relation": "substitute",
+    "actor": "workers.at_offering_firms",
+    "variable": "quantity_substitute"
+   },
+   "premises": [
+    "Some workers newly offered employer cover held individual plans."
+   ],
+   "premise_class": "other",
+   "source": "Some workers newly offered employer cover held individual plans."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_offering_firms",
+    "source_variable": "non_wage_compensation",
+    "relation": "complement",
+    "actor": "workers.at_offering_firms",
+    "variable": "quantity_complement"
+   },
+   "premises": [
+    "Newly covered workers use more care billed to insurers than they used without cover."
+   ],
+   "premise_class": "other",
+   "source": "Newly covered workers use more care billed to insurers than they used without cover."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_offering_firms",
+    "source_variable": "non_wage_compensation",
+    "relation": "complement",
+    "actor": "insurers",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Hospital, physician, prescription and maternity care, deductible no higher than $2,500; list kept by the Department of Insurance."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_offering_firms",
+    "source_variable": "non_wage_compensation",
+    "relation": "substitute",
+    "actor": "treasury",
+    "variable": "subsidy_outlay"
+   },
+   "premises": [
+    "Some newly covered workers or their care were paid for by the ICP.",
+    "The ICP pays per claim, so fewer claims for newly covered workers lower its outlay rather than raising the payment per remaining claim."
+   ],
+   "premise_class": "other",
+   "source": "R3 Indigent Care Program: public_supply (payment to hospitals); Care for uninsured residents below 200% of the poverty line"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_offering_firms",
+    "source_variable": "non_wage_compensation",
+    "relation": "substitute",
+    "actor": "treasury",
+    "variable": "tax_revenue"
+   },
+   "premises": [
+    "Part of the employer's cost of newly offered cover comes out of taxed pay."
+   ],
+   "premise_class": "other",
+   "source": "R2 Tax exclusion: Excluded from the employee's income for Quenby's 4.5% income tax; wages are taxed."
+  }
+ ],
+ "workers.at_paying_firms": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pay",
+    "chooser": "workers.at_paying_firms",
+    "actor": "workers.at_paying_firms",
+    "variables": [
+     "job_changes"
+    ]
+   },
+   "premises": [
+    "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley), so the wage does not fall by the whole charge."
+   ],
+   "premise_class": "mobility",
+   "source": "Employees averaging under 30 hours. (alternatives to bound full-time work: firms under 50, part-time work, Tarnley)"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_pay",
+    "actor": "unions"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_paying_firms",
+    "source_variable": "job_changes",
+    "relation": "input",
+    "actor": "employers.small",
+    "variable": "employment"
+   },
+   "premises": [
+    "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley), so the wage does not fall by the whole charge."
+   ],
+   "premise_class": "mobility",
+   "source": "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley), so the wage does not fall by the whole charge."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_paying_firms",
+    "source_variable": "job_changes",
+    "relation": "supply",
+    "actor": "workers.at_small_firms",
+    "variable": "wage_rate"
+   },
+   "premises": [
+    "Workers at bound firms cannot all move to unbound work at the old wage in the medium run (the response is partial)."
+   ],
+   "premise_class": "mobility",
+   "source": "Workers at bound firms cannot all move to unbound work at the old wage in the medium run (the response is partial)."
+  }
+ ],
+ "workers.at_seasonal_firms": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pay_seasonal",
+    "chooser": "workers.at_seasonal_firms",
+    "actor": "workers.at_seasonal_firms",
+    "variables": [
+     "job_changes"
+    ]
+   },
+   "premises": [
+    "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley), so the wage does not fall by the whole charge."
+   ],
+   "premise_class": "mobility",
+   "source": "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley), so the wage does not fall by the whole charge."
+  }
+ ],
+ "employers.capped#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.capped",
+    "source_variable": "quantity_substitute",
+    "relation": "input",
+    "actor": "workers.at_capped_firms",
+    "variable": "employment"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Agency workers count for the agency. No firm pays more than $300,000 a year under K1 (reached at 100 uncovered employees)."
+  }
+ ],
+ "employers.near_threshold#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.near_threshold",
+    "source_variable": "reclassification",
+    "relation": "same_act",
+    "actor": "contractors",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Contracting out and franchising are open to some firms near 50 at a cost below the term or the charge (splitting by ownership is closed by the common-control rule)."
+   ],
+   "premise_class": "other",
+   "source": "Contracting out and franchising are open to some firms near 50 (A-17)"
+  }
+ ],
+ "employers.offering#2": [],
+ "employers.paying#2": [],
+ "employers.seasonal#2": [],
+ "employers.small": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.small",
+    "source_variable": "quantity_supplied",
+    "relation": "supply",
+    "actor": "customers",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets."
+   ],
+   "premise_class": "substitutability",
+   "source": "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.small",
+    "source_variable": "employment",
+    "relation": "same_act",
+    "actor": "workers.at_small_firms",
+    "variable": "employment"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Exemption below 50 FTE"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k3",
+    "actor": "employers.small"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+  }
+ ],
+ "insurers#2": [],
+ "owners.near_threshold": [],
+ "owners.offering": [],
+ "owners.paying": [],
+ "sellers.foreign": [],
+ "treasury": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "treasury",
+    "source_variable": "tax_revenue",
+    "relation": "yield",
+    "actor": "treasury",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Charges are paid into the general fund."
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "treasury",
+    "variable": "fund_balance",
+    "window": null,
+    "direction": "increase",
+    "kind": "arithmetic"
+   },
+   "premises": [
+    "Charges collected in 2028 are not cut by misreporting below $13.5 million less the short-run income tax lost, and that tax lost is smaller than the $9.4 million by which the capped firms' charges exceed the appropriation."
+   ],
+   "premise_class": "other",
+   "source": "Charges collected in 2028 are not cut by misreporting below $13.5 million less the short-run income tax lost, and that tax lost is smaller than the $9.4 million by which the capped firms' charges exceed the appropriation."
+  }
+ ],
+ "unions": [],
+ "workers.at_near_threshold_firms": [],
+ "workers.at_offering_firms#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_offering_firms",
+    "source_variable": "quantity_substitute",
+    "relation": "input",
+    "actor": "insurers.individual",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Some workers newly offered employer cover held individual plans (A-20)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_offering_firms",
+    "source_variable": "quantity_complement",
+    "relation": "input",
+    "actor": "sellers.complements",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Hospital, physician, prescription and maternity care (K2); newly covered workers use more care (A-27)"
+  }
+ ],
+ "workers.at_paying_firms#2": [],
+ "workers.at_seasonal_firms#2": [],
+ "workers.at_small_firms": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_small_firms",
+    "source_variable": "wage_rate",
+    "relation": "output",
+    "actor": "customers",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets."
+   ],
+   "premise_class": "substitutability",
+   "source": "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets."
+  }
+ ],
+ "contractors": [],
+ "customers": [],
+ "employers.small#2": [],
+ "sellers.complements": [],
+ "treasury#2": [],
+ "workers.at_capped_firms": [],
+ "workers.at_small_firms#2": [],
+ "insurers.individual": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_offer_new",
+    "actor": "insurers.individual"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+  }
+ ]
+}
