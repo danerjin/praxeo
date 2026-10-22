@@ -1,0 +1,29 @@
+{
+ "name": "WE-020 Tamberlay Home Start Grant (loop_r2 seed)",
+ "exchanges": [
+  {"id": "e_home", "buyer": "homebuyers.first_time", "seller": "sellers.entry_level",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "grants": [
+  {"component": "k1", "exchange": "e_home", "recipient_side": "buyer", "payer": "general_fund", "outlay_variable": "subsidy_outlay"}
+ ],
+ "moves": [
+  {"exchange": "e_home", "side": "buyer", "premises": ["a1"]},
+  {"exchange": "e_home", "side": "seller", "premises": ["a2"]}
+ ],
+ "thresholds": [
+  {"component": "k1", "actor": "homebuyers.near_cap", "variable": "price_paid", "chooser": "sellers.near_cap", "premises": ["a8"]}
+ ],
+ "expires": [{"component": "k1", "premises": ["a16"]}],
+ "announced": [{"component": "k1", "premises": ["a5"]}],
+ "compliance": [{"component": "k1", "actor": "homebuyers.first_time"}],
+ "enforcers": [{"component": "k4", "actor": "officials.revenue"}],
+ "funded": [{"component": "k4", "actor": "taxpayers.current", "premises": []}],
+ "assumptions": {
+  "a1": {"text": "Prices under the cap rise by less than the grant, because many buyers in the segment get no grant and some supply responds.", "p": 0.7, "class": "other"},
+  "a2": {"text": "The supply of homes under the cap responds slowly.", "p": 0.85, "class": "durability"},
+  "a5": {"text": "First-time buyers knew of the grant from March and could delay.", "p": 0.85, "class": "expectations"},
+  "a8": {"text": "Sellers just above the cap can move value outside the contract price.", "p": 0.6, "class": "other"},
+  "a16": {"text": "Renewal is uncertain at the deadline, and some buyers can sign a few months earlier.", "p": 0.7, "class": "expectations"}
+ }
+}

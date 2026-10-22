@@ -1,0 +1,551 @@
+{
+ "general_fund": [],
+ "taxpayers.current": [],
+ "officials.revenue": [],
+ "homebuyers.first_time": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "homebuyers.first_time",
+    "actor": "renters",
+    "variables": [
+     "quantity_demanded"
+    ]
+   },
+   "premises": [
+    "Some renters at the margin buy sooner because of the grant."
+   ],
+   "premise_class": "substitutability",
+   "source": "$15,000, paid at settlement and usable toward the deposit (a first-time buyer who keeps renting is the alternative to buying)"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "homebuyers.first_time",
+    "actor": "buyers.border",
+    "variables": [
+     "cross_border_purchases"
+    ]
+   },
+   "premises": [
+    "Many Kessford-area buyers can choose between Tamberlay and Lowen suburbs."
+   ],
+   "premise_class": "mobility",
+   "source": "Kessford sits on the border with the state of Lowen, whose suburbs are within a 30-minute commute and which has no comparable grant."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "homebuyers.first_time",
+    "actor": "buyers.substitutes",
+    "variables": [
+     "quantity_substitute"
+    ]
+   },
+   "premises": [
+    "Some first-time buyers could buy a home above the cap instead of one under it."
+   ],
+   "premise_class": "substitutability",
+   "source": "Contract price must be $450,000 or less; roughly a third of the 60,000 sales are at or below that price."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "homebuyers.first_time",
+    "actor": "homebuyers.first_time",
+    "variables": [
+     "job_changes"
+    ]
+   },
+   "premises": [
+    "Some recipients receive job offers in the first 24 months that would require moving."
+   ],
+   "premise_class": "mobility",
+   "source": "The home must be the buyer's principal residence for 24 months; otherwise the full grant is repaid."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "homebuyers.first_time",
+    "variable": "quantity_traded",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "First-time buyers knew of the grant from March and could delay.",
+    "Renewal is uncertain at the deadline, and some buyers can sign a few months earlier."
+   ],
+   "premise_class": "expectations",
+   "source": "The governor announced the grant in the budget speech on 10 March of Year 1 ... applies to purchase contracts signed from 1 July of Year 1 to 30 June of Year 4."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "homebuyers.first_time",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "intermediaries",
+    "variable": "earnings"
+   },
+   "premises": [
+    "Real estate agents and conveyancers are paid mainly by commission or by the value of the sale."
+   ],
+   "premise_class": "other",
+   "source": "A-21 (assumption table): agents and conveyancers are paid by commission or by the value of the sale"
+  },
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "homebuyers.first_time",
+    "variable": "resources_available_other_uses",
+    "window": null,
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "The cost of applying for the grant and proving eligibility is far smaller than the grant."
+   ],
+   "premise_class": "other",
+   "source": "$15,000 against an application checked against the land register and by sworn declaration"
+  }
+ ],
+ "homebuyers.near_cap": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "sellers.near_cap",
+    "actor": "sellers.near_cap",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Sellers just above the cap can move value outside the contract price."
+   ],
+   "premise_class": "other",
+   "source": "Contract price must be $450,000 or less (fixed in money terms)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "sellers.near_cap",
+    "actor": "homebuyers.near_cap",
+    "variables": [
+     "side_payments"
+    ]
+   },
+   "premises": [
+    "Sellers just above the cap can move value outside the contract price."
+   ],
+   "premise_class": "other",
+   "source": "Contract price must be $450,000 or less (fixed in money terms)."
+  }
+ ],
+ "sellers.entry_level": [
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_home",
+    "side": "seller",
+    "actor": "owners.under_cap"
+   },
+   "premises": [
+    "Buyers, sellers and builders expect the grant to last at least through Year 4."
+   ],
+   "premise_class": "expectations",
+   "source": "It applies to purchase contracts signed from 1 July of Year 1 to 30 June of Year 4 (homes are durable assets whose price reflects expected yields)."
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_home",
+    "side": "seller",
+    "actor": "builders"
+   },
+   "premises": [
+    "The supply of homes under the cap responds slowly."
+   ],
+   "premise_class": "durability",
+   "source": "Builders complete about 12,000 new homes a year; ... the stock of homes responds slowly to prices."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.entry_level",
+    "source_variable": "net_price_received",
+    "relation": "yield",
+    "actor": "builders",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Builders can obtain approvals for entry-level projects within a few years."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "zoning approval and permits take 12 to 24 months and construction another 9 to 15"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.entry_level",
+    "source_variable": "net_price_received",
+    "relation": "same_act",
+    "actor": "homebuyers.repeat",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Many buyers in the segment get no grant."
+   ],
+   "premise_class": "other",
+   "source": "first-time buyers account for about 18,000 of about 60,000 purchases; the grant goes to first-time buyers who apply"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.entry_level",
+    "source_variable": "net_price_received",
+    "relation": "same_act",
+    "actor": "landlords.entry_level",
+    "variable": "net_price_received"
+   },
+   "premises": [
+    "Some landlords of entry-level homes sell to grant holders."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "A-13 (assumption table): some landlords of entry-level homes sell to grant holders"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.entry_level",
+    "source_variable": "net_price_received",
+    "relation": "yield",
+    "actor": "intermediaries",
+    "variable": "earnings"
+   },
+   "premises": [
+    "Real estate agents and conveyancers are paid mainly by commission or by the value of the sale."
+   ],
+   "premise_class": "other",
+   "source": "A-21 (assumption table): agents and conveyancers are paid by commission or by the value of the sale"
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "sellers.entry_level",
+    "variable": "quantity_supplied",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Some owners delay listing to sell after July."
+   ],
+   "premise_class": "expectations",
+   "source": "The governor announced the grant in the budget speech on 10 March of Year 1 ... from 1 July of Year 1"
+  }
+ ],
+ "builders": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "builders",
+    "source_variable": "investment_target",
+    "relation": "input",
+    "actor": "construction_workers",
+    "variable": "wage_rate"
+   },
+   "premises": [
+    "Construction labor and builders are scarce and fully used elsewhere."
+   ],
+   "premise_class": "other",
+   "source": "construction another 9 to 15 months"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "builders",
+    "source_variable": "investment_target",
+    "relation": "substitute",
+    "actor": "sellers.substitutes",
+    "variable": "quantity_substitute"
+   },
+   "premises": [
+    "Construction labor and builders are scarce and fully used elsewhere."
+   ],
+   "premise_class": "other",
+   "source": "Builders complete about 12,000 new homes a year"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "builders"
+   },
+   "premises": [
+    "Owners, builders and agents can organize to lobby at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Renewal is possible but not promised."
+  }
+ ],
+ "buyers.border": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.border",
+    "source_variable": "cross_border_purchases",
+    "relation": "same_act",
+    "actor": "sellers.foreign",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Many Kessford-area buyers can choose between Tamberlay and Lowen suburbs."
+   ],
+   "premise_class": "mobility",
+   "source": "Kessford sits on the border with the state of Lowen, whose suburbs are within a 30-minute commute"
+  }
+ ],
+ "buyers.substitutes": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.substitutes",
+    "source_variable": "quantity_substitute",
+    "relation": "same_act",
+    "actor": "sellers.substitutes",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Some first-time buyers could buy a home above the cap instead of one under it."
+   ],
+   "premise_class": "substitutability",
+   "source": "Contract price must be $450,000 or less; roughly a third of the 60,000 sales are at or below that price."
+  }
+ ],
+ "homebuyers.first_time#2": [],
+ "homebuyers.near_cap#2": [],
+ "homebuyers.repeat": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "homebuyers.repeat",
+    "actor": "homebuyers.repeat",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Couples can arrange title or partner declarations so that a prior owner's household qualifies."
+   ],
+   "premise_class": "enforcement",
+   "source": "Ownership elsewhere and partner status are by sworn declaration."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "homebuyers.repeat",
+    "actor": "homebuyers.repeat",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Investors use nominee buyers on a meaningful scale."
+   ],
+   "premise_class": "enforcement",
+   "source": "One grant per household; ownership elsewhere is checked only by sworn declaration."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "homebuyers.repeat",
+    "actor": "homebuyers.repeat",
+    "variables": [
+     "cross_border_purchases"
+    ]
+   },
+   "premises": [
+    "Many Kessford-area buyers can choose between Tamberlay and Lowen suburbs."
+   ],
+   "premise_class": "mobility",
+   "source": "Kessford sits on the border with the state of Lowen, whose suburbs are within a 30-minute commute and which has no comparable grant."
+  }
+ ],
+ "intermediaries": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "intermediaries"
+   },
+   "premises": [
+    "Owners, builders and agents can organize to lobby at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Renewal is possible but not promised."
+  }
+ ],
+ "landlords.entry_level": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "landlords.entry_level",
+    "actor": "landlords.entry_level",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Some landlords of entry-level homes sell to grant holders."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "A-13 (assumption table): some landlords of entry-level homes sell to grant holders"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "landlords.entry_level",
+    "source_variable": "quantity_supplied",
+    "relation": "supply",
+    "actor": "renters",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Some landlords of entry-level homes sell to grant holders."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "A-13 (assumption table): some landlords sell to grant holders, leaving fewer homes to rent"
+  }
+ ],
+ "owners.under_cap": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "owners.under_cap",
+    "source_variable": "asset_value",
+    "relation": "yield",
+    "actor": "buyers.substitutes",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Owners whose homes rise in value use part of the gain to bid for larger homes.",
+    "Owners can realize the gain by selling or borrowing against the home, and it is not offset by an equal rise in the price of what they buy next (the grant does not apply above the cap)."
+   ],
+   "premise_class": "other",
+   "source": "the grant does not apply above the cap (Contract price must be $450,000 or less)"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "owners.under_cap"
+   },
+   "premises": [
+    "Owners, builders and agents can organize to lobby at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Renewal is possible but not promised."
+  }
+ ],
+ "renters": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "renters",
+    "source_variable": "quantity_demanded",
+    "relation": "supply_price",
+    "actor": "renters",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "The supply of rental homes responds slowly."
+   ],
+   "premise_class": "durability",
+   "source": "the stock of homes responds slowly to prices"
+  }
+ ],
+ "sellers.entry_level#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.entry_level",
+    "source_variable": "net_price_received",
+    "relation": "same_act",
+    "actor": "owners.under_cap",
+    "variable": "subsidy_share_received"
+   },
+   "premises": [
+    "While supply is slow, owners of homes under the cap have clearly fewer alternatives than first-time buyers, who can keep renting, wait, buy above the cap or buy in Lowen's suburbs."
+   ],
+   "premise_class": "substitutability",
+   "source": "the stock of homes responds slowly to prices; first-time buyers can keep renting, wait, buy above the cap or buy in Lowen"
+  }
+ ],
+ "sellers.near_cap": [],
+ "builders#2": [],
+ "buyers.substitutes#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.substitutes",
+    "source_variable": "quantity_demanded",
+    "relation": "supply_price",
+    "actor": "sellers.substitutes",
+    "variable": "price_substitute"
+   },
+   "premises": [
+    "The supply of homes above the cap also responds slowly."
+   ],
+   "premise_class": "durability",
+   "source": "the stock of homes responds slowly to prices"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.substitutes",
+    "source_variable": "quantity_substitute",
+    "relation": "supply_price",
+    "actor": "sellers.substitutes",
+    "variable": "price_substitute"
+   },
+   "premises": [
+    "The supply of homes above the cap also responds slowly."
+   ],
+   "premise_class": "durability",
+   "source": "the stock of homes responds slowly to prices"
+  }
+ ],
+ "construction_workers": [],
+ "homebuyers.repeat#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "homebuyers.repeat",
+    "source_variable": "cross_border_purchases",
+    "relation": "same_act",
+    "actor": "sellers.foreign",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Many Kessford-area buyers can choose between Tamberlay and Lowen suburbs."
+   ],
+   "premise_class": "mobility",
+   "source": "Kessford sits on the border with the state of Lowen, whose suburbs are within a 30-minute commute and which has no comparable grant."
+  }
+ ],
+ "intermediaries#2": [],
+ "landlords.entry_level#2": [],
+ "owners.under_cap#2": [],
+ "renters#2": [],
+ "sellers.foreign": [],
+ "sellers.substitutes": []
+}

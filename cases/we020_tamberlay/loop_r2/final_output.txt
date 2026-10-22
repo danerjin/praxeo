@@ -1,0 +1,44 @@
+DONE in 3 rounds, 20 questions
+R builders investment_target  increase
+R builders lobbying_effort  increase
+R builders return_on_capital  increase
+R buyers.border cross_border_purchases  decrease
+R buyers.substitutes quantity_demanded  increase
+R buyers.substitutes quantity_substitute  decrease
+R construction_workers wage_rate  increase
+R general_fund subsidy_outlay  increase
+R homebuyers.first_time compliance_cost  increase
+R homebuyers.first_time job_changes  decrease
+R homebuyers.first_time price_paid  decrease
+R homebuyers.first_time quantity_traded  increase
+R homebuyers.first_time quantity_traded after_expiry decrease
+R homebuyers.first_time quantity_traded announcement decrease
+R homebuyers.first_time quantity_traded deadline increase
+R homebuyers.first_time resources_available_other_uses  increase
+R homebuyers.near_cap price_paid  decrease
+R homebuyers.near_cap side_payments  increase
+R homebuyers.repeat cross_border_purchases  increase
+R homebuyers.repeat legal_breach  increase
+R homebuyers.repeat price_paid  increase
+- homebuyers.repeat reclassification  increase
+R intermediaries earnings  increase
+R intermediaries lobbying_effort  increase
+R landlords.entry_level net_price_received  increase
+R landlords.entry_level quantity_supplied  decrease
+R officials.revenue enforcement_cost  increase
+R owners.under_cap asset_value  increase
+R owners.under_cap lobbying_effort  increase
+R owners.under_cap subsidy_share_received  increase
+R renters price_paid  ambiguous
+R renters quantity_demanded  decrease
+R sellers.entry_level net_price_received  increase
+R sellers.entry_level quantity_supplied after_expiry decrease
+R sellers.entry_level quantity_supplied announcement decrease
+R sellers.entry_level quantity_supplied deadline increase
+R sellers.entry_level quantity_traded  increase
+R sellers.foreign quantity_traded  ambiguous
+R sellers.near_cap reclassification  increase
+R sellers.substitutes price_substitute  ambiguous
+R sellers.substitutes quantity_substitute  decrease
+R sellers.substitutes quantity_traded  decrease
+R taxpayers.current resources_available_other_uses  decrease

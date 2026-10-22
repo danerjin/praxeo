@@ -1,0 +1,617 @@
+{
+ "name": "WE-020 Tamberlay Home Start Grant (loop_r2 seed)",
+ "exchanges": [
+  {
+   "id": "e_home",
+   "buyer": "homebuyers.first_time",
+   "seller": "sellers.entry_level",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [],
+ "alternatives": [
+  {
+   "premises": [
+    "q6_some_renters_at_the_margin_buy_sooner_be"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "homebuyers.first_time",
+   "actor": "renters",
+   "variables": [
+    "quantity_demanded"
+   ]
+  },
+  {
+   "premises": [
+    "q7_many_kessford_area_buyers_can_choose_bet"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "homebuyers.first_time",
+   "actor": "buyers.border",
+   "variables": [
+    "cross_border_purchases"
+   ]
+  },
+  {
+   "premises": [
+    "q8_some_first_time_buyers_could_buy_a_home_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "homebuyers.first_time",
+   "actor": "buyers.substitutes",
+   "variables": [
+    "quantity_substitute"
+   ]
+  },
+  {
+   "premises": [
+    "q9_some_recipients_receive_job_offers_in_th"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "homebuyers.first_time",
+   "actor": "homebuyers.first_time",
+   "variables": [
+    "job_changes"
+   ]
+  },
+  {
+   "premises": [
+    "a8"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "sellers.near_cap",
+   "actor": "sellers.near_cap",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "a8"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "sellers.near_cap",
+   "actor": "homebuyers.near_cap",
+   "variables": [
+    "side_payments"
+   ]
+  },
+  {
+   "premises": [
+    "q19_couples_can_arrange_title_or_partner_dec"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "homebuyers.repeat",
+   "actor": "homebuyers.repeat",
+   "variables": [
+    "legal_breach"
+   ]
+  },
+  {
+   "premises": [
+    "q20_investors_use_nominee_buyers_on_a_meanin"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "homebuyers.repeat",
+   "actor": "homebuyers.repeat",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q7_many_kessford_area_buyers_can_choose_bet"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "homebuyers.repeat",
+   "actor": "homebuyers.repeat",
+   "variables": [
+    "cross_border_purchases"
+   ]
+  },
+  {
+   "premises": [
+    "q15_some_landlords_of_entry_level_homes_sell"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "landlords.entry_level",
+   "actor": "landlords.entry_level",
+   "variables": [
+    "quantity_supplied"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q18_owners_builders_and_agents_can_organize_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "builders"
+  },
+  {
+   "premises": [
+    "q18_owners_builders_and_agents_can_organize_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "intermediaries"
+  },
+  {
+   "premises": [
+    "q18_owners_builders_and_agents_can_organize_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "owners.under_cap"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q10_real_estate_agents_and_conveyancers_are_"
+   ],
+   "reading": null,
+   "source_actor": "homebuyers.first_time",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "intermediaries",
+   "variable": "earnings"
+  },
+  {
+   "premises": [
+    "q13_builders_can_obtain_approvals_for_entry_"
+   ],
+   "reading": null,
+   "source_actor": "sellers.entry_level",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "builders",
+   "variable": "investment_target"
+  },
+  {
+   "premises": [
+    "q14_many_buyers_in_the_segment_get_no_grant"
+   ],
+   "reading": null,
+   "source_actor": "sellers.entry_level",
+   "source_variable": "net_price_received",
+   "relation": "same_act",
+   "actor": "homebuyers.repeat",
+   "variable": "price_paid"
+  },
+  {
+   "premises": [
+    "q15_some_landlords_of_entry_level_homes_sell"
+   ],
+   "reading": null,
+   "source_actor": "sellers.entry_level",
+   "source_variable": "net_price_received",
+   "relation": "same_act",
+   "actor": "landlords.entry_level",
+   "variable": "net_price_received"
+  },
+  {
+   "premises": [
+    "q10_real_estate_agents_and_conveyancers_are_"
+   ],
+   "reading": null,
+   "source_actor": "sellers.entry_level",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "intermediaries",
+   "variable": "earnings"
+  },
+  {
+   "premises": [
+    "q17_construction_labor_and_builders_are_scar"
+   ],
+   "reading": null,
+   "source_actor": "builders",
+   "source_variable": "investment_target",
+   "relation": "input",
+   "actor": "construction_workers",
+   "variable": "wage_rate"
+  },
+  {
+   "premises": [
+    "q17_construction_labor_and_builders_are_scar"
+   ],
+   "reading": null,
+   "source_actor": "builders",
+   "source_variable": "investment_target",
+   "relation": "substitute",
+   "actor": "sellers.substitutes",
+   "variable": "quantity_substitute"
+  },
+  {
+   "premises": [
+    "q7_many_kessford_area_buyers_can_choose_bet"
+   ],
+   "reading": null,
+   "source_actor": "buyers.border",
+   "source_variable": "cross_border_purchases",
+   "relation": "same_act",
+   "actor": "sellers.foreign",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q8_some_first_time_buyers_could_buy_a_home_"
+   ],
+   "reading": null,
+   "source_actor": "buyers.substitutes",
+   "source_variable": "quantity_substitute",
+   "relation": "same_act",
+   "actor": "sellers.substitutes",
+   "variable": "quantity_traded"
+  },
+  {
+   "premises": [
+    "q15_some_landlords_of_entry_level_homes_sell"
+   ],
+   "reading": null,
+   "source_actor": "landlords.entry_level",
+   "source_variable": "quantity_supplied",
+   "relation": "supply",
+   "actor": "renters",
+   "variable": "price_paid"
+  },
+  {
+   "premises": [
+    "q21_owners_whose_homes_rise_in_value_use_par",
+    "q22_owners_can_realize_the_gain_by_selling_o"
+   ],
+   "reading": null,
+   "source_actor": "owners.under_cap",
+   "source_variable": "asset_value",
+   "relation": "yield",
+   "actor": "buyers.substitutes",
+   "variable": "quantity_demanded"
+  },
+  {
+   "premises": [
+    "q23_the_supply_of_rental_homes_responds_slow"
+   ],
+   "reading": null,
+   "source_actor": "renters",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "renters",
+   "variable": "price_paid"
+  },
+  {
+   "premises": [
+    "q24_while_supply_is_slow_owners_of_homes_und"
+   ],
+   "reading": null,
+   "source_actor": "sellers.entry_level",
+   "source_variable": "net_price_received",
+   "relation": "same_act",
+   "actor": "owners.under_cap",
+   "variable": "subsidy_share_received"
+  },
+  {
+   "premises": [
+    "q25_the_supply_of_homes_above_the_cap_also_r"
+   ],
+   "reading": null,
+   "source_actor": "buyers.substitutes",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "sellers.substitutes",
+   "variable": "price_substitute"
+  },
+  {
+   "premises": [
+    "q25_the_supply_of_homes_above_the_cap_also_r"
+   ],
+   "reading": null,
+   "source_actor": "buyers.substitutes",
+   "source_variable": "quantity_substitute",
+   "relation": "supply_price",
+   "actor": "sellers.substitutes",
+   "variable": "price_substitute"
+  },
+  {
+   "premises": [
+    "q7_many_kessford_area_buyers_can_choose_bet"
+   ],
+   "reading": null,
+   "source_actor": "homebuyers.repeat",
+   "source_variable": "cross_border_purchases",
+   "relation": "same_act",
+   "actor": "sellers.foreign",
+   "variable": "quantity_traded"
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "q12_buyers_sellers_and_builders_expect_the_g"
+   ],
+   "reading": null,
+   "exchange": "e_home",
+   "side": "seller",
+   "actor": "owners.under_cap"
+  }
+ ],
+ "yields": [
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "exchange": "e_home",
+   "side": "seller",
+   "actor": "builders"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "homebuyers.first_time"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k4",
+   "actor": "officials.revenue"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k4",
+   "actor": "taxpayers.current",
+   "premises": []
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [],
+ "moves": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "exchange": "e_home",
+   "side": "buyer"
+  },
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "exchange": "e_home",
+   "side": "seller"
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a5"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "a5",
+    "a16"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "homebuyers.first_time",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q16_some_owners_delay_listing_to_sell_after_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.entry_level",
+   "variable": "quantity_supplied",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [
+  {
+   "component": "k1",
+   "exchange": "e_home",
+   "recipient_side": "buyer",
+   "payer": "general_fund",
+   "outlay_variable": "subsidy_outlay"
+  }
+ ],
+ "capped": [],
+ "banned": [],
+ "fixed": [],
+ "unclear": [],
+ "thresholds": [
+  {
+   "premises": [
+    "a8"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "homebuyers.near_cap",
+   "variable": "price_paid",
+   "chooser": "sellers.near_cap"
+  }
+ ],
+ "qualifies": [],
+ "expires": [
+  {
+   "component": "k1",
+   "premises": [
+    "a16"
+   ]
+  }
+ ],
+ "parts": [],
+ "dominance": [
+  {
+   "premises": [
+    "q11_the_cost_of_applying_for_the_grant_and_p"
+   ],
+   "reading": null,
+   "actor": "homebuyers.first_time",
+   "variable": "resources_available_other_uses",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Prices under the cap rise by less than the grant, because many buyers in the segment get no grant and some supply responds.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "a2": {
+   "text": "The supply of homes under the cap responds slowly.",
+   "p": 0.85,
+   "class": "durability"
+  },
+  "a5": {
+   "text": "First-time buyers knew of the grant from March and could delay.",
+   "p": 0.85,
+   "class": "expectations"
+  },
+  "a8": {
+   "text": "Sellers just above the cap can move value outside the contract price.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "a16": {
+   "text": "Renewal is uncertain at the deadline, and some buyers can sign a few months earlier.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "q6_some_renters_at_the_margin_buy_sooner_be": {
+   "text": "Some renters at the margin buy sooner because of the grant.",
+   "p": 0.85,
+   "class": "substitutability"
+  },
+  "q7_many_kessford_area_buyers_can_choose_bet": {
+   "text": "Many Kessford-area buyers can choose between Tamberlay and Lowen suburbs.",
+   "p": 0.7,
+   "class": "mobility"
+  },
+  "q8_some_first_time_buyers_could_buy_a_home_": {
+   "text": "Some first-time buyers could buy a home above the cap instead of one under it.",
+   "p": 0.85,
+   "class": "substitutability"
+  },
+  "q9_some_recipients_receive_job_offers_in_th": {
+   "text": "Some recipients receive job offers in the first 24 months that would require moving.",
+   "p": 0.7,
+   "class": "mobility"
+  },
+  "q10_real_estate_agents_and_conveyancers_are_": {
+   "text": "Real estate agents and conveyancers are paid mainly by commission or by the value of the sale.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q11_the_cost_of_applying_for_the_grant_and_p": {
+   "text": "The cost of applying for the grant and proving eligibility is far smaller than the grant.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q12_buyers_sellers_and_builders_expect_the_g": {
+   "text": "Buyers, sellers and builders expect the grant to last at least through Year 4.",
+   "p": 0.75,
+   "class": "expectations"
+  },
+  "q13_builders_can_obtain_approvals_for_entry_": {
+   "text": "Builders can obtain approvals for entry-level projects within a few years.",
+   "p": 0.65,
+   "class": "alternative_uses"
+  },
+  "q14_many_buyers_in_the_segment_get_no_grant": {
+   "text": "Many buyers in the segment get no grant.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q15_some_landlords_of_entry_level_homes_sell": {
+   "text": "Some landlords of entry-level homes sell to grant holders.",
+   "p": 0.7,
+   "class": "alternative_uses"
+  },
+  "q16_some_owners_delay_listing_to_sell_after_": {
+   "text": "Some owners delay listing to sell after July.",
+   "p": 0.55,
+   "class": "expectations"
+  },
+  "q17_construction_labor_and_builders_are_scar": {
+   "text": "Construction labor and builders are scarce and fully used elsewhere.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q18_owners_builders_and_agents_can_organize_": {
+   "text": "Owners, builders and agents can organize to lobby at a cost below their stake.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q19_couples_can_arrange_title_or_partner_dec": {
+   "text": "Couples can arrange title or partner declarations so that a prior owner's household qualifies.",
+   "p": 0.6,
+   "class": "enforcement"
+  },
+  "q20_investors_use_nominee_buyers_on_a_meanin": {
+   "text": "Investors use nominee buyers on a meaningful scale.",
+   "p": 0.3,
+   "class": "enforcement"
+  },
+  "q21_owners_whose_homes_rise_in_value_use_par": {
+   "text": "Owners whose homes rise in value use part of the gain to bid for larger homes.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q22_owners_can_realize_the_gain_by_selling_o": {
+   "text": "Owners can realize the gain by selling or borrowing against the home, and it is not offset by an equal rise in the price of what they buy next (the grant does not apply above the cap).",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q23_the_supply_of_rental_homes_responds_slow": {
+   "text": "The supply of rental homes responds slowly.",
+   "p": 0.8,
+   "class": "durability"
+  },
+  "q24_while_supply_is_slow_owners_of_homes_und": {
+   "text": "While supply is slow, owners of homes under the cap have clearly fewer alternatives than first-time buyers, who can keep renting, wait, buy above the cap or buy in Lowen's suburbs.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q25_the_supply_of_homes_above_the_cap_also_r": {
+   "text": "The supply of homes above the cap also responds slowly.",
+   "p": 0.8,
+   "class": "durability"
+  }
+ }
+}
