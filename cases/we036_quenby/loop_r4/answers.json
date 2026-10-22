@@ -1,0 +1,23 @@
+{
+ "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes.": 0.85,
+ "Contracting out and franchising are open to some firms near 50 at a cost below the term or the charge (splitting by ownership is closed by the common-control rule).": 0.55,
+ "Some firms that would have passed 50 in 2027 still pass it later, so part of the growth held back is delayed rather than lost.": 0.6,
+ "Values of firms near 50 reflect their expected growth.": 0.6,
+ "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost.": 0.75,
+ "Between 30 and 40 hours, extra hours from existing full-timers substitute for extra full-time heads.": 0.65,
+ "Business values reflect expected earnings, and buyers expected the Act from its introduction.": 0.7,
+ "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets.": 0.65,
+ "Revenue cannot cheaply verify reported offers, and some firms report offers not made.": 0.55,
+ "Employers shorten seasonal and temporary engagements below 60 days so that no offer is owed.": 0.4,
+ "Some mid-size payers can obtain agency workers from capped staffing firms at a markup below the $3,000 charge.": 0.55,
+ "Most competitors of mid-size bound firms in local services are bound at a material per-head cost.": 0.4,
+ "Quenby's tradable producers compete with Tarnley producers.": 0.65,
+ "Charges collected in 2028 are not cut by misreporting below $13.5 million less the short-run income tax lost, and that tax lost is smaller than the $9.4 million by which the capped firms' charges exceed the appropriation.": 0.75,
+ "Some newly covered workers are near the margin between staying and moving to an unbound job.": 0.6,
+ "Some workers newly offered employer cover held individual plans.": 0.7,
+ "Newly covered workers use more care billed to insurers than they used without cover.": 0.75,
+ "Some newly covered workers or their care were paid for by the ICP.": 0.7,
+ "The ICP pays per claim, so fewer claims for newly covered workers lower its outlay rather than raising the payment per remaining claim.": 0.6,
+ "Part of the employer's cost of newly offered cover comes out of taxed pay.": 0.8,
+ "Workers at bound firms cannot all move to unbound work at the old wage in the medium run (the response is partial).": 0.9
+}
