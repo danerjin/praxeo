@@ -1,0 +1,32 @@
+## 1. Policy record
+
+**Calderford Central Zone Charging Ordinance.** Calderford is a city of about 900,000. Its central zone, the area inside the Inner Ring Road, covers about 7 km² and has about 58,000 residents, 14,500 cars registered to zone addresses, 260,000 jobs and about 4,200 shops, cafés and restaurants. Just outside the Inner Ring lies Ringside, a band of about 1,100 shops and offices with three large parking garages, five to ten minutes' walk from the zone's edge. Beyond Ringside are the city's outer districts and, beyond the city line, the suburban town of Merrowdale with a regional shopping centre.
+
+On an average weekday, about 118,000 vehicles are driven or parked in the zone between 7:00 and 19:00: about 92,000 cars (about 9,500 of them residents'), 19,000 goods vehicles (about 7,000 of which make a single visit lasting under 30 minutes), 4,000 taxis and ride-hail cars, and 3,000 buses and coaches. Average speed in the zone in charging hours is about 12 km/h. Of commuters to zone jobs, about 62% come by bus or tram, 22% by car and 16% on foot or by bicycle. A typical car commute ends with about 4 km inside the zone (about 20 minutes at 12 km/h); the same commute by bus takes about 15 minutes longer door to door. There are about 31,000 off-street parking spaces in the zone, at an average of $21 a day and about 90% weekday occupancy; the three Ringside garages have about 7,500 spaces at $9 a day and about 88% occupancy (about 900 spare). Calderford Transit runs about 850 buses and two tram lines, with fare revenue of about $180 million a year and general-fund support of about $140 million; peak load on routes into the zone is about 85% of capacity, and new buses take 14 to 18 months from order to service. Through traffic can go round the zone on the Inner Ring Road, which is itself busy at peak. Ride-hail fares are set by the platforms; there is no fare regulation.
+
+The city's model projects that with the charge about 88,000 vehicles a day would be in the zone in charging hours, and the average speed would rise to about 15 km/h (saving about 4 minutes on the typical 4 km of a car commute).
+
+The ordinance was adopted and published on 4 January 2027; charging starts on 1 November 2027 (ten months later). No expiry; the council must review the charge level every three years.
+
+| Field | Value | Source sentence |
+|---|---|---|
+| Jurisdiction (and what lies just outside) | The zone inside the Inner Ring Road. Just outside: Ringside (shops, offices, garages), the Inner Ring Road itself, then the outer districts and Merrowdale. | §2: "The zone is the area bounded by, but not including, the Inner Ring Road." |
+| Announced / enacted / effective / expires | Announced and enacted 4 January 2027; effective 1 November 2027; no expiry. | §1, §14. |
+| Enforcement (who, penalties, resources) | The City Charging Office (CCO): cameras reading number plates at all 74 entry points and at 40 points inside the zone. Unpaid charge: penalty notice of $130 ($65 if paid within 14 days). Appeals against notices go to the existing Parking Adjudication Office (PAO). | §9 to §11. |
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Daily charge | `per_unit_tax` | A vehicle-day in the zone | Registered keeper of each vehicle driven or parked in the zone on a weekday between 7:00 and 19:00 | $15 per vehicle per day, payable by midnight the next day. One charge covers any number of entries that day. | Scheduled buses; emergency vehicles. |
+| K2 Residents' discount | `per_unit_tax` (reduced rate) | Same | Registered keepers whose registered address is in the zone | 90% discount: $1.50 a day. Residence is taken from the vehicle register, which keepers update by declaration. | — |
+| K3 Earmark | `revenue_use` | Net revenue of K1 and K2 | The city | "The net revenue of the charge, after the costs of the City Charging Office, shall be applied to bus services." No clause on the level of general-fund support for buses. | — |
+| K4 Enforcement and administration | Enforcement | K1, K2 | CCO, funded from gross revenue (K3: "after the costs of the City Charging Office"); PAO, whose budget the ordinance does not change | About $45 million a year to run; about $70 million to set up, advanced from city reserves and repaid from the first year's revenue. | — |
+
+Existing rules that stay in the counterfactual: Calderford Transit's fares and its general-fund support (set each year in the city budget); on-street parking rules and their enforcement in the zone (about $11 million a year); the PAO, which hears about 44,000 parking appeals a year, about 14,000 of them on zone tickets.
+
+Unclear provision:
+- **U1, short delivery visits.** §3(1): "The charge is payable for each day on which a vehicle is driven or parked in the zone during charging hours." §7: "A goods vehicle which enters and leaves the zone within thirty minutes in the course of a delivery shall be recorded as a short visit." The schedule of charges sets a single daily rate and nowhere refers to short visits. Reading U1-a: a short visit is recorded (the CCO's freight statistics) and pays the daily charge like any other day in the zone. Reading U1-b: a short visit is not a chargeable day; such vans pay nothing. The CCO has issued no guidance.
+
+Readings get no probability; where a sign depends on U1, one sign per reading is given.
+
+**Figures.** Static revenue (118,000 vehicles, 252 charging days): about $410 million from non-residents and $3.6 million from residents. Projected revenue (88,000 vehicles, of which about 8,000 residents'): about $303 million, less about $26 million under U1-b if the 7,000 short delivery visits do not pay. Net of the CCO's $45 million, about $230 million to $260 million a year is earmarked for buses, against $140 million of general-fund support now. For a typical car commuter, the charge is $15 a day and the time saved by faster roads is about 4 minutes each way inside the zone, about 8 minutes a day. For a multi-drop van covering about 40 km in the zone, the same speed change saves about 40 minutes a day. The PAO's workload: about 180,000 penalty notices a year are projected, about 5% appealed (about 9,000 appeals); fewer cars in the zone are projected to cut zone parking tickets by about a fifth (about 2,800 fewer appeals): a net rise of about 6,200 appeals a year, about 14%, with the same budget.
+
