@@ -1,0 +1,64 @@
+{
+ "name": "WE-059 Kestrava Fair Repair Act (expand-loop blind run, loop_r2)",
+ "exchanges": [
+  {"id": "e_farm_sale", "buyer": "growers", "seller": "manufacturers.farm", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_phone_sale", "buyer": "owners.phone", "seller": "manufacturers.phone_other", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_farm_terms", "buyer": "growers", "seller": "manufacturers.farm", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_phone_terms", "buyer": "owners.phone", "seller": "manufacturers.phone", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_farm_lock", "buyer": "growers", "seller": "manufacturers.farm", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_phone_lock", "buyer": "owners.phone", "seller": "manufacturers.phone", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "charges": [
+  {"component": "k1", "exchange": "e_farm_sale", "payer_side": "seller", "receiver": "growers",
+   "receipt_variable": "non_wage_compensation", "quantity_premises": ["a25"], "branch_premises": ["a2", "a1"]},
+  {"component": "k1", "exchange": "e_phone_sale", "payer_side": "seller", "receiver": "owners.phone",
+   "receipt_variable": "non_wage_compensation", "quantity_premises": ["a25"], "branch_premises": ["a2", "a1"]}
+ ],
+ "moves": [
+  {"exchange": "e_farm_sale", "side": "buyer", "premises": ["a6", "a18"]}
+ ],
+ "banned": [
+  {"component": "k2", "exchange": "e_farm_terms", "premises": ["a2", "j1"]},
+  {"component": "k2", "exchange": "e_phone_terms", "premises": ["a2", "j1"]},
+  {"component": "k3", "exchange": "e_farm_lock", "premises": ["j3"]},
+  {"component": "k3", "exchange": "e_phone_lock", "premises": ["j2"]}
+ ],
+ "unclear": [
+  {"id": "U1", "text": "Parts pairing: whether a software lock that needs the maker's authorization is itself the lock section 5(c) forbids, or is lawful if the owner or a repairer can pair a genuine part with a tool the maker supplies on fair and reasonable terms.",
+   "readings": ["U1-a: pairing that needs the maker's authorization is itself the forbidden lock; any part, genuine, salvaged or non-genuine, must work fully without contacting the maker, and makers must remove pairing from covered devices and leave it out of new ones",
+                "U1-b: pairing continues; a lock is lawful if the owner or a repairer acting for the owner can pair a genuine part with a tool the maker supplies on fair and reasonable terms; makers may refuse to pair parts reported stolen and need not pair non-genuine parts"],
+   "components": {"U1-a": ["k3"], "U1-b": []}}
+ ],
+ "announced": [
+  {"component": "k1", "premises": ["a20"]},
+  {"component": "k2", "premises": ["a20"]},
+  {"component": "k3", "premises": ["a20"]}
+ ],
+ "compliance": [
+  {"component": "k1", "actor": "manufacturers.farm"},
+  {"component": "k1", "actor": "manufacturers.phone_other"},
+  {"component": "k2", "actor": "manufacturers.farm"},
+  {"component": "k2", "actor": "manufacturers.phone"},
+  {"component": "k2", "actor": "retailers.dealers"},
+  {"component": "k3", "actor": "manufacturers.farm"},
+  {"component": "k3", "actor": "manufacturers.phone"}
+ ],
+ "enforcers": [
+  {"component": "k4", "actor": "officials.enforcement"}
+ ],
+ "fixed_budget": [
+  {"component": "k4", "actor": "officials.enforcement", "premises": ["j4"]}
+ ],
+ "assumptions": {
+  "a1": {"text": "Most makers comply with K1 in most cases.", "p": 0.7, "class": "enforcement"},
+  "a2": {"text": "Before the Act, makers did not offer independents and owners genuine parts, tools and software on the terms they gave authorized repairers (except one phone maker's national program, which matches on price and meets U1-b), and anti-repair terms were in use.", "p": 0.9, "class": "binding"},
+  "a6": {"text": "Makers bear costs from K1 and K2 (margin on repair inputs, supply and support) and seek to recover them through other terms of sale.", "p": 0.85, "class": "other"},
+  "a18": {"text": "Farm equipment makers raise list prices in Kestrava relative to Darnholt.", "p": 0.55, "class": "other"},
+  "a20": {"text": "Makers, dealers and investors expect the Act to stay in force.", "p": 0.8, "class": "expectations"},
+  "a25": {"text": "For each maker, the lost margin on repair inputs, the voided terms and the costs of compliance outweigh any gain from every rival being bound at once and from buyers' higher valuation of covered units.", "p": 0.7, "class": "other"},
+  "j1": {"text": "A void term cannot be enforced against an owner who repairs elsewhere.", "p": 0.9, "class": "enforcement"},
+  "j2": {"text": "Makers of recent phone models pair screens, batteries and cameras to the device through the maker's server.", "p": 0.95, "class": "binding"},
+  "j3": {"text": "Many electronic parts of farm equipment cannot be calibrated or paired without the maker's diagnostic software.", "p": 0.95, "class": "binding"},
+  "j4": {"text": "The Consumer Protection Division's budget is unchanged by the Act.", "p": 0.95, "class": "revenue_use"}
+ }
+}
