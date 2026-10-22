@@ -1,0 +1,632 @@
+{
+ "name": "WE-017 Corrin lirva prohibition (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_legal",
+   "buyer": "buyers.current",
+   "seller": "sellers.current",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_informal",
+   "buyer": "buyers.current",
+   "seller": "sellers.prospective",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_related",
+   "buyer": "buyers.current",
+   "seller": "sellers.substitutes",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [],
+ "alternatives": [
+  {
+   "premises": [
+    "a6"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "buyers.border",
+   "actor": "buyers.border",
+   "variables": [
+    "trips"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "a1",
+    "q8_enforcement_is_imperfect_many_informal_s"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.current",
+   "actor": "buyers.current",
+   "variables": [
+    "informal_activity"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "a6"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.current",
+   "actor": "buyers.border",
+   "variables": [
+    "cross_border_purchases"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q9_legal_substitutes_are_acceptable_to_some"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.current",
+   "actor": "buyers.current",
+   "variables": [
+    "quantity_substitute"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "a9",
+    "q10_extract_can_be_made_with_simple_equipmen"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.current",
+   "actor": "buyers.current",
+   "variables": [
+    "share_concentrated_forms"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q10_extract_can_be_made_with_simple_equipmen"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.current",
+   "actor": "buyers.current",
+   "variables": [
+    "home_production"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q13_related_plants_and_blends_outside_the_de"
+   ],
+   "reading": "U1-a",
+   "component": "k1",
+   "chooser": "sellers.current",
+   "actor": "sellers.current",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "a9",
+    "q10_extract_can_be_made_with_simple_equipmen"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "sellers.prospective",
+   "actor": "sellers.prospective",
+   "variables": [
+    "share_concentrated_forms"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q13_related_plants_and_blends_outside_the_de"
+   ],
+   "reading": "U1-a",
+   "component": "k2",
+   "chooser": "sellers.prospective",
+   "actor": "sellers.prospective",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q12_users_and_former_shop_owners_can_organiz"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "buyers.current"
+  },
+  {
+   "premises": [
+    "q12_users_and_former_shop_owners_can_organiz"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.current"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "a6"
+   ],
+   "reading": null,
+   "source_actor": "buyers.border",
+   "source_variable": "trips",
+   "relation": "same_act",
+   "actor": "buyers.border",
+   "variable": "travel_time",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a6"
+   ],
+   "reading": null,
+   "source_actor": "buyers.border",
+   "source_variable": "cross_border_purchases",
+   "relation": "same_act",
+   "actor": "sellers.foreign",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q7_users_bundle_other_shopping_with_lirva_t"
+   ],
+   "reading": null,
+   "source_actor": "buyers.border",
+   "source_variable": "cross_border_purchases",
+   "relation": "complement",
+   "actor": "retailers.neighbors",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q7_users_bundle_other_shopping_with_lirva_t"
+   ],
+   "reading": null,
+   "source_actor": "buyers.border",
+   "source_variable": "cross_border_purchases",
+   "relation": "substitute",
+   "actor": "retailers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "source_actor": "buyers.current",
+   "source_variable": "informal_activity",
+   "relation": "same_act",
+   "actor": "sellers.prospective",
+   "variable": "informal_activity",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q9_legal_substitutes_are_acceptable_to_some"
+   ],
+   "reading": null,
+   "source_actor": "buyers.current",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "sellers.substitutes",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q11_convictions_are_recorded_and_employers_c"
+   ],
+   "reading": null,
+   "source_actor": "buyers.current",
+   "source_variable": "informal_activity",
+   "relation": "substitute",
+   "actor": "buyers.current",
+   "variable": "employment",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "officials.enforcement",
+   "source_variable": "enforcement_cost",
+   "relation": "paid_from",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q14_specialist_shops_cannot_replace_lirva_sa"
+   ],
+   "reading": null,
+   "source_actor": "sellers.current",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.specialist_shops",
+   "variable": "employment,hours_worked",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "sellers.current",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "growers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "sellers.current",
+   "source_variable": "quantity_traded",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q13_related_plants_and_blends_outside_the_de"
+   ],
+   "reading": "U1-a",
+   "source_actor": "sellers.current",
+   "source_variable": "reclassification",
+   "relation": "same_act",
+   "actor": "sellers.substitutes",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_informal_supply_is_organized_by_groups_t"
+   ],
+   "reading": null,
+   "source_actor": "sellers.prospective",
+   "source_variable": "informal_activity",
+   "relation": "same_act",
+   "actor": "sellers.prospective",
+   "variable": "disputes_settled_outside_courts",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q16_some_lirva_spending_moves_to_substitutes"
+   ],
+   "reading": null,
+   "source_actor": "sellers.substitutes",
+   "source_variable": "quantity_demanded",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": null
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "q14_specialist_shops_cannot_replace_lirva_sa"
+   ],
+   "reading": null,
+   "exchange": "e_legal",
+   "side": "seller",
+   "actor": "sellers.current"
+  }
+ ],
+ "yields": [
+  {
+   "premises": [
+    "q14_specialist_shops_cannot_replace_lirva_sa"
+   ],
+   "reading": null,
+   "exchange": "e_legal",
+   "side": "seller",
+   "actor": "sellers.current"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k3",
+   "actor": "sellers.current"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k4",
+   "actor": "taxpayers",
+   "premises": []
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "k2",
+   "premises": [
+    "a4"
+   ],
+   "exchange": "e_informal",
+   "payer_side": "seller",
+   "receiver": "treasury",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k2",
+   "premises": [
+    "a4"
+   ],
+   "exchange": "e_informal",
+   "payer_side": "buyer",
+   "receiver": "treasury",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "unit"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "exchange": "e_informal",
+   "side": "buyer",
+   "horizon": null
+  }
+ ],
+ "discretion": [
+  {
+   "premises": [],
+   "reading": null,
+   "component": "k1",
+   "actor": "licensees.research"
+  }
+ ],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a5"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "a5"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "buyers.current",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.current",
+   "variable": "inventory_held",
+   "mode": "carry_over"
+  },
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.current",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "terms": [],
+ "banned": [
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_legal"
+  },
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": "U1-b",
+   "component": "k1_b",
+   "exchange": "e_related"
+  }
+ ],
+ "incidence": [],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether related plants with similar compounds are covered; the Act names only lirva and lirvine, so they are assumed not covered.",
+   "readings": [
+    "U1-a: related plants and blends are not covered (the Act names only lirva and lirvine)",
+    "U1-b: related plants with similar compounds are covered"
+   ],
+   "components": {
+    "U1-a": [],
+    "U1-b": [
+     "k1_b"
+    ]
+   }
+  }
+ ],
+ "thresholds": [
+  {
+   "premises": [
+    "a9",
+    "a6"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "buyers.border",
+   "variable": "transaction_size",
+   "chooser": null
+  },
+  {
+   "premises": [
+    "a9",
+    "a4"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "sellers.prospective",
+   "variable": "transaction_size",
+   "chooser": null
+  }
+ ],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [],
+ "assumptions": {
+  "a1": {
+   "text": "A meaningful share of regular users keep using lirva after the ban.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "a2": {
+   "text": "Licensed shops comply.",
+   "p": 0.95,
+   "class": "enforcement"
+  },
+  "a4": {
+   "text": "Enforcement is active enough that informal sellers face a real risk.",
+   "p": 0.8,
+   "class": "enforcement"
+  },
+  "a5": {
+   "text": "Users know the date and can store dried leaf for months.",
+   "p": 0.75,
+   "class": "expectations"
+  },
+  "a6": {
+   "text": "Enough users live within reach of Halvet and will carry home amounts under 50 g.",
+   "p": 0.65,
+   "class": "mobility"
+  },
+  "a9": {
+   "text": "Penalties are graded by the total weight of material.",
+   "p": 0.95,
+   "class": "enforcement"
+  },
+  "q7_users_bundle_other_shopping_with_lirva_t": {
+   "text": "Users bundle other shopping with lirva trips to Halvet.",
+   "p": 0.4,
+   "class": "other"
+  },
+  "q8_enforcement_is_imperfect_many_informal_s": {
+   "text": "Enforcement is imperfect: many informal sales go undetected.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q9_legal_substitutes_are_acceptable_to_some": {
+   "text": "Legal substitutes are acceptable to some users.",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q10_extract_can_be_made_with_simple_equipmen": {
+   "text": "Extract can be made with simple equipment.",
+   "p": 0.75,
+   "class": "enforcement"
+  },
+  "q11_convictions_are_recorded_and_employers_c": {
+   "text": "Convictions are recorded and employers check them.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q12_users_and_former_shop_owners_can_organiz": {
+   "text": "Users and former shop owners can organize.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q13_related_plants_and_blends_outside_the_de": {
+   "text": "Related plants and blends outside the definitions can be sold.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q14_specialist_shops_cannot_replace_lirva_sa": {
+   "text": "Specialist shops cannot replace lirva sales with other products for most of their staff.",
+   "p": 0.85,
+   "class": "alternative_uses"
+  },
+  "q15_informal_supply_is_organized_by_groups_t": {
+   "text": "Informal supply is organized by groups that settle disputes by force on a meaningful scale.",
+   "p": 0.3,
+   "class": "other"
+  },
+  "q16_some_lirva_spending_moves_to_substitutes": {
+   "text": "Some lirva spending moves to substitutes that carry an excise on top of the general sales tax, such as alcohol.",
+   "p": 0.6,
+   "class": "substitutability"
+  }
+ }
+}

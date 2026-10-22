@@ -1,0 +1,476 @@
+{
+ "buyers.border": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "buyers.border",
+    "actor": "buyers.border",
+    "variables": [
+     "trips"
+    ]
+   },
+   "premises": [
+    "Enough users live within reach of Halvet and will carry home amounts under 50 g."
+   ],
+   "premise_class": "mobility",
+   "source": "Possession under 50 g: civil fine of $250. 50 g to 1 kg: misdemeanor ... border is 40 to 90 minutes' drive from Corrin's two largest cities"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.border",
+    "source_variable": "trips",
+    "relation": "same_act",
+    "actor": "buyers.border",
+    "variable": "travel_time"
+   },
+   "premises": [
+    "Enough users live within reach of Halvet and will carry home amounts under 50 g."
+   ],
+   "premise_class": "mobility",
+   "source": "border is 40 to 90 minutes' drive from Corrin's two largest cities"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.border",
+    "source_variable": "cross_border_purchases",
+    "relation": "same_act",
+    "actor": "sellers.foreign",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Enough users live within reach of Halvet and will carry home amounts under 50 g."
+   ],
+   "premise_class": "mobility",
+   "source": "The neighboring state of Halvet keeps lirva legal"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.border",
+    "source_variable": "cross_border_purchases",
+    "relation": "complement",
+    "actor": "retailers.neighbors",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Users bundle other shopping with lirva trips to Halvet."
+   ],
+   "premise_class": "other",
+   "source": "The neighboring state of Halvet keeps lirva legal"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.border",
+    "source_variable": "cross_border_purchases",
+    "relation": "substitute",
+    "actor": "retailers",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Users bundle other shopping with lirva trips to Halvet."
+   ],
+   "premise_class": "other",
+   "source": "The neighboring state of Halvet keeps lirva legal"
+  }
+ ],
+ "buyers.current": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.current",
+    "actor": "buyers.current",
+    "variables": [
+     "informal_activity"
+    ]
+   },
+   "premises": [
+    "A meaningful share of regular users keep using lirva after the ban.",
+    "Enforcement is imperfect: many informal sales go undetected."
+   ],
+   "premise_class": "other",
+   "source": "About 180,000 adults use it regularly. ... Everyone"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.current",
+    "actor": "buyers.border",
+    "variables": [
+     "cross_border_purchases"
+    ]
+   },
+   "premises": [
+    "Enough users live within reach of Halvet and will carry home amounts under 50 g."
+   ],
+   "premise_class": "mobility",
+   "source": "The neighboring state of Halvet keeps lirva legal; its border is 40 to 90 minutes' drive from Corrin's two largest cities."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.current",
+    "actor": "buyers.current",
+    "variables": [
+     "quantity_substitute"
+    ]
+   },
+   "premises": [
+    "Legal substitutes are acceptable to some users."
+   ],
+   "premise_class": "substitutability",
+   "source": "Making, selling, possessing for sale, importing and growing lirva ... brewed as tea or chewed for a mild stimulant"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.current",
+    "actor": "buyers.current",
+    "variables": [
+     "share_concentrated_forms"
+    ]
+   },
+   "premises": [
+    "Penalties are graded by the total weight of material.",
+    "Extract can be made with simple equipment."
+   ],
+   "premise_class": "enforcement",
+   "source": "A concentrated extract ... gives the same effect at about 0.25 g; it is about 5% of current sales. Penalties graded by the total weight of material"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.current",
+    "actor": "buyers.current",
+    "variables": [
+     "home_production"
+    ]
+   },
+   "premises": [
+    "Extract can be made with simple equipment."
+   ],
+   "premise_class": "other",
+   "source": "A concentrated extract, made by soaking the leaf in alcohol and drying the result"
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "buyers.current",
+    "variable": "quantity_traded",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Users know the date and can store dried leaf for months."
+   ],
+   "premise_class": "expectations",
+   "source": "The Act was passed six months before it took effect."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.current",
+    "source_variable": "informal_activity",
+    "relation": "same_act",
+    "actor": "sellers.prospective",
+    "variable": "informal_activity"
+   },
+   "premises": [
+    "A meaningful share of regular users keep using lirva after the ban."
+   ],
+   "premise_class": "other",
+   "source": "Making, selling, possessing for sale ... Everyone"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.current",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "sellers.substitutes",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Legal substitutes are acceptable to some users."
+   ],
+   "premise_class": "substitutability",
+   "source": "Legal substitutes (assumption A-7)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.current",
+    "source_variable": "informal_activity",
+    "relation": "substitute",
+    "actor": "buyers.current",
+    "variable": "employment"
+   },
+   "premises": [
+    "Convictions are recorded and employers check them."
+   ],
+   "premise_class": "other",
+   "source": "Possession under 50 g: civil fine of $250. 50 g to 1 kg: misdemeanor, up to 1 year."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "buyers.current"
+   },
+   "premises": [
+    "Users and former shop owners can organize."
+   ],
+   "premise_class": "other",
+   "source": "About 180,000 adults use it regularly."
+  }
+ ],
+ "licensees.research": [],
+ "officials.enforcement": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.enforcement",
+    "source_variable": "enforcement_cost",
+    "relation": "paid_from",
+    "actor": "general_fund",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Added budget for investigators and lab testing, from the general budget."
+  }
+ ],
+ "sellers.current": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "sellers.current",
+    "actor": "sellers.current",
+    "variables": [
+     "reclassification"
+    ],
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Related plants and blends outside the definitions can be sold."
+   ],
+   "premise_class": "other",
+   "source": "The Act names only lirva and lirvine, so they are assumed not covered."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "sellers.current",
+    "variable": "inventory_held",
+    "mode": "carry_over"
+   },
+   "premises": [
+    "Licensed shops comply."
+   ],
+   "premise_class": "enforcement",
+   "source": "Stocks must be destroyed or exported by the effective date."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1",
+    "actor": "sellers.current",
+    "variable": "quantity_traded",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Licensed shops comply."
+   ],
+   "premise_class": "enforcement",
+   "source": "Stocks must be destroyed or exported by the effective date. The Act was passed six months before it took effect."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.current",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "workers.specialist_shops",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "Specialist shops cannot replace lirva sales with other products for most of their staff."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "in about 400 specialist tea shops, in convenience stores and online"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.current",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "growers",
+    "variable": "quantity_demanded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "the dried leaf of the lirva shrub ... sold legally"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.current",
+    "source_variable": "quantity_traded",
+    "relation": "yield",
+    "actor": "treasury",
+    "variable": "tax_revenue"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "has been subject to the general sales tax"
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_legal",
+    "side": "seller",
+    "actor": "sellers.current"
+   },
+   "premises": [
+    "Specialist shops cannot replace lirva sales with other products for most of their staff."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "Stocks must be destroyed or exported by the effective date. No compensation."
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_legal",
+    "side": "seller",
+    "actor": "sellers.current"
+   },
+   "premises": [
+    "Specialist shops cannot replace lirva sales with other products for most of their staff."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "sold legally in about 400 specialist tea shops, in convenience stores and online"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "sellers.current"
+   },
+   "premises": [
+    "Users and former shop owners can organize."
+   ],
+   "premise_class": "other",
+   "source": "Users and former shop owners can organize (A-12)."
+  }
+ ],
+ "sellers.prospective": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "sellers.prospective",
+    "actor": "sellers.prospective",
+    "variables": [
+     "share_concentrated_forms"
+    ]
+   },
+   "premises": [
+    "Penalties are graded by the total weight of material.",
+    "Extract can be made with simple equipment."
+   ],
+   "premise_class": "enforcement",
+   "source": "Graded by the total weight of material, including any carrier or mixture. ... Sale is punished one grade higher than possession of the same weight."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k2",
+    "chooser": "sellers.prospective",
+    "actor": "sellers.prospective",
+    "variables": [
+     "reclassification"
+    ],
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Related plants and blends outside the definitions can be sold."
+   ],
+   "premise_class": "other",
+   "source": "The Act names only lirva and lirvine, so they are assumed not covered."
+  }
+ ],
+ "taxpayers": [],
+ "treasury": [],
+ "buyers.border#2": [],
+ "buyers.current#2": [],
+ "general_fund": [],
+ "growers": [],
+ "sellers.current#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.current",
+    "source_variable": "reclassification",
+    "relation": "same_act",
+    "actor": "sellers.substitutes",
+    "variable": "quantity_traded",
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Related plants and blends outside the definitions can be sold."
+   ],
+   "premise_class": "other",
+   "source": "The Act names only lirva and lirvine, so they are assumed not covered."
+  }
+ ],
+ "sellers.foreign": [],
+ "sellers.prospective#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.prospective",
+    "source_variable": "informal_activity",
+    "relation": "same_act",
+    "actor": "sellers.prospective",
+    "variable": "disputes_settled_outside_courts"
+   },
+   "premises": [
+    "Informal supply is organized by groups that settle disputes by force on a meaningful scale."
+   ],
+   "premise_class": "other",
+   "source": "Making, selling, possessing for sale, importing and growing lirva ... Everyone"
+  }
+ ],
+ "sellers.substitutes": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.substitutes",
+    "source_variable": "quantity_demanded",
+    "relation": "yield",
+    "actor": "treasury",
+    "variable": "tax_revenue"
+   },
+   "premises": [
+    "Some lirva spending moves to substitutes that carry an excise on top of the general sales tax, such as alcohol."
+   ],
+   "premise_class": "substitutability",
+   "source": "has been subject to the general sales tax"
+  }
+ ],
+ "treasury#2": [],
+ "workers.specialist_shops": [],
+ "sellers.substitutes#2": [],
+ "treasury#3": []
+}

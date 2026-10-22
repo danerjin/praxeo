@@ -1,0 +1,176 @@
+{
+ "name": "WE-017 Corrin lirva prohibition (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_legal",
+   "buyer": "buyers.current",
+   "seller": "sellers.current",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_informal",
+   "buyer": "buyers.current",
+   "seller": "sellers.prospective",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  },
+  {
+   "id": "e_related",
+   "buyer": "buyers.current",
+   "seller": "sellers.substitutes",
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received"
+  }
+ ],
+ "banned": [
+  {
+   "component": "k1",
+   "exchange": "e_legal",
+   "premises": [
+    "a2"
+   ]
+  },
+  {
+   "component": "k1_b",
+   "exchange": "e_related",
+   "premises": [
+    "a2"
+   ],
+   "reading": "U1-b"
+  }
+ ],
+ "charges": [
+  {
+   "component": "k2",
+   "premises": [
+    "a4"
+   ],
+   "exchange": "e_informal",
+   "payer_side": "seller",
+   "receiver": "treasury",
+   "receipt_variable": "non_tax_receipts"
+  },
+  {
+   "component": "k2",
+   "premises": [
+    "a4"
+   ],
+   "exchange": "e_informal",
+   "payer_side": "buyer",
+   "receiver": "treasury",
+   "receipt_variable": "non_tax_receipts"
+  }
+ ],
+ "moves": [
+  {
+   "exchange": "e_informal",
+   "side": "buyer",
+   "premises": [
+    "a1"
+   ]
+  }
+ ],
+ "thresholds": [
+  {
+   "component": "k2",
+   "actor": "buyers.border",
+   "variable": "transaction_size",
+   "premises": [
+    "a9",
+    "a6"
+   ]
+  },
+  {
+   "component": "k2",
+   "actor": "sellers.prospective",
+   "variable": "transaction_size",
+   "premises": [
+    "a9",
+    "a4"
+   ]
+  }
+ ],
+ "discretion": [
+  {
+   "component": "k1",
+   "actor": "licensees.research",
+   "premises": []
+  }
+ ],
+ "compliance": [
+  {
+   "component": "k3",
+   "actor": "sellers.current"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k4",
+   "actor": "taxpayers",
+   "premises": []
+  }
+ ],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a5"
+   ]
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether related plants with similar compounds are covered; the Act names only lirva and lirvine, so they are assumed not covered.",
+   "readings": [
+    "U1-a: related plants and blends are not covered (the Act names only lirva and lirvine)",
+    "U1-b: related plants with similar compounds are covered"
+   ],
+   "components": {
+    "U1-a": [],
+    "U1-b": [
+     "k1_b"
+    ]
+   }
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "A meaningful share of regular users keep using lirva after the ban.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "a2": {
+   "text": "Licensed shops comply.",
+   "p": 0.95,
+   "class": "enforcement"
+  },
+  "a4": {
+   "text": "Enforcement is active enough that informal sellers face a real risk.",
+   "p": 0.8,
+   "class": "enforcement"
+  },
+  "a5": {
+   "text": "Users know the date and can store dried leaf for months.",
+   "p": 0.75,
+   "class": "expectations"
+  },
+  "a6": {
+   "text": "Enough users live within reach of Halvet and will carry home amounts under 50 g.",
+   "p": 0.65,
+   "class": "mobility"
+  },
+  "a9": {
+   "text": "Penalties are graded by the total weight of material.",
+   "p": 0.95,
+   "class": "enforcement"
+  }
+ }
+}
