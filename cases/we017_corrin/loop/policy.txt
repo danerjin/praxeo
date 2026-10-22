@@ -1,0 +1,15 @@
+## 1. Policy record
+
+**Corrin Lirva Control Act.** Lirva is the dried leaf of the lirva shrub, brewed as tea or chewed for a mild stimulant and relaxing effect. It has been sold legally in the State of Corrin (about 6 million people) for fifteen years, in about 400 specialist tea shops, in convenience stores and online, and has been subject to the general sales tax. About 180,000 adults use it regularly. A typical dose is about 5 g of leaf. A concentrated extract, made by soaking the leaf in alcohol and drying the result, gives the same effect at about 0.25 g; it is about 5% of current sales. The neighboring state of Halvet keeps lirva legal; its border is 40 to 90 minutes' drive from Corrin's two largest cities. The Act was passed six months before it took effect.
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 Prohibition | `prohibition` | Making, selling, possessing for sale, importing and growing lirva, its active compound lirvine, and any product containing either | Everyone | From the effective date. | Licensed research |
+| K2 Penalties | Part of K1 | Possession and sale | Everyone | Graded by the total weight of material, including any carrier or mixture. Possession under 50 g: civil fine of $250. 50 g to 1 kg: misdemeanor, up to 1 year. Over 1 kg: felony, 2 to 10 years. Sale is punished one grade higher than possession of the same weight. | None |
+| K3 Transition | Part of K1 | Existing stocks | Licensed sellers | Stocks must be destroyed or exported by the effective date. No compensation. | None |
+| K4 Enforcement | Enforcement | K1 to K3 | State police drug unit, local police, state laboratory | Added budget for investigators and lab testing, from the general budget. | None |
+
+Unclear provisions: whether related plants with similar compounds are covered. The Act names only lirva and lirvine, so they are assumed not covered.
+
+Note on K2: 50 g of leaf is about 10 doses; 50 g of extract is about 200. Penalties graded by weight treat the two very differently per dose.
+
