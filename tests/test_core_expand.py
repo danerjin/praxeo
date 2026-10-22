@@ -37,9 +37,9 @@ def test_a_file_driven_run_lists_what_it_needs(tmp_path):
 
 
 def _loop_score(case, example, short, windows=None, loop="loop"):
-    from test_out_of_sample import _rows
+    from test_out_of_sample import _rows, _sign
     cons = S.run(S.load(ROOT / "cases" / case / loop / "situation.json"))
-    keys = {(a, v, c.sign, c.window) for c in cons if c.reported for a in (c.actor_group or [c.actor_class]) for v in (c.group or [c.variable])}
+    keys = {(a, v, _sign(c.model_dump()), c.window) for c in cons if c.reported for a in (c.actor_group or [c.actor_class]) for v in (c.group or [c.variable])}
     rows = _rows(example, short, windows or {}, {})
     return {r for r, ks in rows.items() if ks & keys}, len(rows)
 

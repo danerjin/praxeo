@@ -273,3 +273,23 @@ def test_a_line_another_actor_chooses_on():
     got = _run(exchanges=JOBS, alternatives=alt, thresholds=[{"component": "k", "actor": "workers.near_line", "variable": "hours_worked",
                                                             "chooser": "employers", "premises": ["a2"]}])
     assert ("workers.near_line", "hours_worked", "decrease", None) in got and ("employers", "reclassification", "increase", None) in got
+
+
+def test_pc_17_a_mandated_cost_where_the_wage_cannot_fall_goes_to_hours_and_hiring():
+    ch = [{"component": "k", "exchange": "e", "payer_side": "buyer", "receiver": "officials.revenue", "receipt_variable": "non_tax_receipts"}]
+    m = [{"exchange": "e", "kind": "adjust", "side": "buyer", "actor": "workers.min_wage",
+          "variables": ["employment", "hours_worked", "non_wage_compensation"], "premises": ["a3"]}]
+    got = _run(exchanges=JOBS, charges=ch, margins=m, fixed=[{"exchange": "e", "side": "seller", "premises": ["a2"]}])
+    assert ("workers.min_wage", "employment,hours_worked,non_wage_compensation", "at_least_one_decrease", None) in got
+    assert ("workers.min_wage", "employment,hours_worked,non_wage_compensation", "at_least_one_decrease", None) not in _run(
+        exchanges=JOBS, charges=ch, margins=m)
+
+
+def test_an_unclear_provision_gives_a_sign_per_reading():
+    sit = {"name": "check", "exchanges": JOBS,
+           "thresholds": [{"component": "k_seasonal", "actor": "employers.seasonal", "variable": "employment", "premises": ["a2"]}],
+           "unclear": [{"id": "U1", "text": "whether seasonal staff count", "readings": ["U1-a: they count", "U1-b: they do not"],
+                        "components": {"U1-a": ["k_seasonal"], "U1-b": []}}],
+           "assumptions": {"a2": P}}
+    got = [c for c in S.run(S.Situation(**sit)) if c.actor_class == "employers.seasonal" and c.variable == "employment"]
+    assert got and got[0].sign_by_reading == {"U1-a": "decrease", "U1-b": "none"}

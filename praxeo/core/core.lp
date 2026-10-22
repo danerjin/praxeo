@@ -23,6 +23,7 @@
 %   branch(C, P1, P2, P3): C is one branch of a choice given to the payer. charge_capped(C, A): A's total is capped.
 %   threshold(C, A, V, P1, P2, P3): C binds above a line in V; A are those near it. qualifies(C, A, V, P1, P2, P3): a right
 %   C creates is allocated by A's V in a period after it is expected.
+%   fixed(E, S, P1, P2, P3): S's price in E cannot move in the period (a rule in force, a term already set).
 %   operating(C): a charge fixed per seller, not per unit (CR-4 0.8).
 %   compliance(C, A). enforcer(C, A). funded(C, A, P1, P2, P3). fixed_budget(C, A, P1, P2, P3).   CR-8c
 %   charge(C, E, Side, Receiver).           CR-1 op 3: C attaches a payment to trading in E, paid by Side, to Receiver
@@ -84,9 +85,16 @@ effect(p_criterion(E, A, V), A, V, increase, short, invisible, "B") :- p_criteri
 
 % The burdened side gives less of what the line leaves free: its unregulated terms and the quantity it takes or offers.
 p_adjust(E, S, A) :- burdened(E, S), adjust(E, S, A, G, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+% A price that cannot move in the period (fixed/5: a rule in force, such as a minimum wage, or prices set for a term)
+% leaves the payer of a charge on the exchange unable to pass it on through that price: the pressure goes to the terms the
+% payer controls (CR-6 with CR-1 op 3), as under a held line.
+pressed(E, S) :- c_charged(C, E), charge(C, E, S, _), fixed(E, T, P1, P2, P3), side(T), T != S, ok(P1), ok(P2), ok(P3).
+p_adjust(E, S, A) :- pressed(E, S), adjust(E, S, A, G, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+fired(cr_6, p_adjust(E, S, A), P) :- p_adjust(E, S, A), pressed(E, S), fixed(E, _, P1, P2, P3), P = (P1; P2; P3), P != none.
 fired(cr_6, p_adjust(E, S, A), P) :- p_adjust(E, S, A), adjust(E, S, A, _, P1, P2, P3), P = (P1; P2; P3), P != none.
 group_effect(p_adjust(E, S, A), A, G, at_least_one_decrease, short, invisible, "B") :- p_adjust(E, S, A), adjust(E, S, A, G, _, _, _).
 p_adjust_one(E, S, A, V) :- burdened(E, S), adjust_one(E, S, A, V, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+p_adjust_one(E, S, A, V) :- pressed(E, S), adjust_one(E, S, A, V, P1, P2, P3), ok(P1), ok(P2), ok(P3).
 fired(cr_6, p_adjust_one(E, S, A, V), P) :- p_adjust_one(E, S, A, V), adjust_one(E, S, A, V, P1, P2, P3), P = (P1; P2; P3), P != none.
 effect(p_adjust_one(E, S, A, V), A, V, decrease, short, invisible, "B") :- p_adjust_one(E, S, A, V).
 

@@ -14,7 +14,7 @@ from typing import Literal, Optional
 from pydantic import BaseModel, Field
 
 from .. import engine
-from ..schema import Assumption, PolicyRecord
+from ..schema import Assumption, PolicyRecord, Unclear
 
 CORE_RULES = [Path(__file__).parent / "core.lp"]
 # The vocabulary's price variables (02_ontology.md 2.4): CR-9 needs to know whether a change is in a price or a quantity.
@@ -83,7 +83,7 @@ class Charge(BaseModel):
     component: str
     exchange: str
     payer_side: Side
-    receiver: str
+    receiver: str = Field(description="Who receives it; for a branch paid in kind, the subclass that receives it (workers.at_offering_firms), not the whole side")
     receipt_variable: str = Field(description="tax_revenue for a tax, non_tax_receipts for a fee, non_wage_compensation for a mandated term")
     quantity_premises: list[str] = Field(default=[], max_length=3, description="Premises the fall in trades rests on, where the payment is worth something to its receiver (a mandated term)")
     projection_variable: Optional[str] = Field(default=None, description="tax_revenue_vs_static_projection for a tax")
@@ -123,6 +123,21 @@ class Capped(Premised):
 class Banned(Premised):
     component: str
     exchange: str
+
+
+class Fixed(Premised):
+    exchange: str
+    side: Side = Field(description="The side whose price cannot move in the period: by a rule already in force (a minimum wage) or a term already set")
+
+
+class Reading(BaseModel):
+    """A provision the text leaves unclear (02_ontology.md, per-reading signs): which components apply under each reading.
+    A component no reading lists applies under all of them; the engine runs once per reading and gives a sign per reading
+    where they differ."""
+    id: str
+    text: str
+    readings: list[str] = Field(description='Each "U1-a: what the provision means under it"')
+    components: dict[str, list[str]] = Field(description="Reading label -> the components that apply under it")
 
 
 class Moves(Premised):
@@ -191,6 +206,8 @@ class Situation(BaseModel):
     grants: list[Grant] = []
     capped: list[Capped] = []
     banned: list[Banned] = []
+    fixed: list[Fixed] = Field(default=[], description="A price that cannot move in the period; a charge's payer then adjusts the terms it controls (margins of kind adjust)")
+    unclear: list[Reading] = Field(default=[], description="Provisions with more than one reading, and the components each reading applies")
     thresholds: list[Threshold] = Field(default=[], description="CR-4 at a line: the component binds only above a size")
     qualifies: list[Qualifies] = Field(default=[], description="CR-7c: a right the policy creates is allocated by history in a period after it is expected")
     expires: list[dict] = Field(default=[], description="{'component', 'premises'}: the measure ends and is expected to")
@@ -254,6 +271,8 @@ def facts(s: Situation) -> str:
         out += [f"charge_capped({ch.component}, {_q(a)})." for a in ch.capped_payers]
         if ch.basis == "operating":
             out.append(f"operating({ch.component}).")
+    for f in s.fixed:
+        out.append(f"fixed({f.exchange}, {f.side}, {_p(f.premises)}).")
     for m in s.moves:
         out.append(f"moves({m.exchange}, {m.side}, {_p(m.premises)}).")
     for d in s.discretion:
@@ -312,12 +331,32 @@ def assumptions(s: Situation) -> dict[str, Assumption]:
     return {k: Assumption(id=k, text=v["text"], assumption_class=v.get("class", "other"), p=v["p"]) for k, v in s.assumptions.items()}
 
 
+# The parts that are a component's own operation (CR-1): under an unclear provision they apply only under the readings
+# that list their component.
+OPERATIONS = ["held", "charges", "grants", "capped", "banned", "thresholds", "qualifies", "backstops", "discretion", "means",
+              "compliance", "enforcers", "funded", "fixed_budget", "announced", "expires"]
+
+
+def _comp(x) -> Optional[str]:
+    return x.get("component") if isinstance(x, dict) else getattr(x, "component", None)
+
+
+def _only(s: Situation, keep) -> Situation:
+    """The situation with each operation part limited to the components `keep` accepts."""
+    return s.model_copy(update={p: [x for x in getattr(s, p) if keep(_comp(x))] for p in OPERATIONS})
+
+
 def run(s: Situation):
-    """The consequences the core rules alone derive from the situation, with CR-12e applied."""
-    empty = PolicyRecord(name=s.name, jurisdiction="-", rule_maker="-", enacted="-", effective="-", components=[])
+    """The consequences the core rules alone derive from the situation, with CR-12e applied; once per reading of an unclear
+    provision, merged with a sign per reading where they differ (engine.run)."""
+    conditional = {c for u in s.unclear for cs in u.components.values() for c in cs}
+    unclear = [Unclear(id=u.id, text=u.text, readings=u.readings,
+                       reading_facts={lab: facts(_only(s, lambda c, cs=set(cs): c in cs)) for lab, cs in u.components.items()})
+               for u in s.unclear]
+    empty = PolicyRecord(name=s.name, jurisdiction="-", rule_maker="-", enacted="-", effective="-", components=[], unclear=unclear)
     a = assumptions(s)
     with engine.rule_set(CORE_RULES):
-        cons = engine.run(empty, a, extra=facts(s))[0]
+        cons = engine.run(empty, a, extra=facts(_only(s, lambda c: c not in conditional)))[0]
     return dominate(cons, s, a)
 
 
