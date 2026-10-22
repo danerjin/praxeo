@@ -1,0 +1,40 @@
+{
+ "name": "WE-014 Calvar Sugar Market Act (loop)",
+ "exchanges": [
+  {"id": "e_sugar", "buyer": "buyers", "seller": "importers.quota_holders",
+   "unsatisfied_seller": "sellers.foreign",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "capped": [
+  {"component": "k1", "exchange": "e_sugar", "holders": ["importers.quota_holders"], "wider_price": false, "premises": ["a1", "a2"]}
+ ],
+ "margins": [
+  {"exchange": "e_sugar", "kind": "outside", "actor": "importers.without_rights", "variables": ["informal_activity"], "premises": ["a12"]}
+ ],
+ "thresholds": [
+  {"component": "k1", "actor": "importers.near_threshold", "variable": "product_attribute", "premises": ["a8"]}
+ ],
+ "qualifies": [
+  {"component": "k2", "actor": "importers.quota_holders", "variable": "quantity_traded", "premises": ["a6"]}
+ ],
+ "means": [
+  {"component": "k2", "actor": "importers.quota_holders", "direction": "in"}
+ ],
+ "announced": [{"component": "k1", "premises": []}],
+ "compliance": [{"component": "k3", "actor": "importers.quota_holders"}],
+ "enforcers": [{"component": "k3", "actor": "officials.enforcement"}],
+ "funded": [{"component": "k3", "actor": "taxpayers", "premises": ["a22"]}],
+ "unclear": [
+  {"id": "U1", "text": "Whether the 65% threshold counts sugar against dry weight or total weight (assumed total weight, the reading more favorable to importers of syrups and blends).",
+   "readings": ["U1-a: the threshold counts sugar against total weight (assumed)", "U1-b: the threshold counts sugar against dry weight"],
+   "components": {"U1-a": [], "U1-b": []}}
+ ],
+ "assumptions": {
+  "a1": {"text": "Without the quota, Calvar would keep importing well over 350,000 tonnes a year, so the quota binds from the first year, and more tightly as demand grows.", "p": 0.95, "class": "binding"},
+  "a2": {"text": "Customs enforces the quota at the ports.", "p": 0.85, "class": "enforcement"},
+  "a6": {"text": "Importers know the allocation formula during the window and can finance and store extra imports.", "p": 0.8, "class": "expectations"},
+  "a8": {"text": "Importing blends and syrups with 65% sugar or less is technically and commercially workable for some users.", "p": 0.6, "class": "other"},
+  "a12": {"text": "Bulk sugar is smuggled on a meaningful scale.", "p": 0.3, "class": "enforcement"},
+  "a22": {"text": "The customs budget is raised to cover inspection of bulk shipments and the register of quota rights.", "p": 0.7, "class": "revenue_use"}
+ }
+}

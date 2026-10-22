@@ -1,0 +1,49 @@
+DONE in 3 rounds, 19 questions
+R buyers lobbying_effort  increase
+R buyers price_paid  increase
+R buyers quantity_substitute  ambiguous
+R buyers quantity_traded  decrease
+R buyers resources_available_other_uses  ambiguous
+R buyers.border cross_border_purchases  ambiguous
+R buyers.border quantity_complement  ambiguous
+R consumers price_paid  ambiguous
+R consumers quantity_demanded  ambiguous
+R export_industries quantity_supplied  decrease
+R importers.near_threshold lobbying_effort  increase
+R importers.near_threshold product_attribute  decrease
+R importers.near_threshold reclassification  increase
+R importers.quota_holders asset_value  increase
+R importers.quota_holders compliance_cost  increase
+R importers.quota_holders inventory_held announcement increase
+R importers.quota_holders lobbying_effort  increase
+R importers.quota_holders net_price_received  increase
+R importers.quota_holders quantity_supplied  decrease
+R importers.quota_holders quantity_traded  decrease
+R importers.quota_holders quantity_traded announcement increase
+R importers.quota_holders resources_available_other_uses  increase
+R importers.quota_holders return_on_capital  increase
+R importers.refineries asset_value  increase
+R importers.refineries quantity_supplied  decrease
+- importers.without_rights informal_activity  increase
+R input_suppliers.beet_growers quantity_traded  ambiguous
+R officials.enforcement enforcement_cost  increase
+R owners.beet_land asset_value  ambiguous
+R owners.sweetened_goods asset_value  ambiguous
+R producers.beet_factories investment_target  ambiguous
+R producers.beet_factories lobbying_effort  increase
+R producers.beet_factories net_price_received  ambiguous
+R producers.beet_factories quantity_supplied  ambiguous
+R producers.other_crops quantity_supplied  ambiguous
+R producers.sweetened_goods capital_stock_target  ambiguous
+R producers.sweetened_goods lobbying_effort  increase
+R producers.sweetened_goods quantity_supplied  ambiguous
+R retailers.border quantity_traded  ambiguous
+R sellers.foreign quantity_traded  decrease
+R sellers.imported_goods quantity_traded  ambiguous
+R sellers.substitutes investment_target  ambiguous
+R sellers.substitutes net_price_received  ambiguous
+R taxpayers resources_available_other_uses  decrease
+R workers.beet_factories ['employment', 'hours_worked']  ambiguous
+R workers.export_industries ['employment', 'hours_worked']  at_least_one_decrease
+R workers.refineries ['employment', 'hours_worked']  at_least_one_decrease
+R workers.sweetened_goods ['employment', 'hours_worked']  ambiguous
