@@ -1,0 +1,581 @@
+{
+ "name": "WE-019 Vestria fleet renewal rebate (expand loop, blind)",
+ "exchanges": [
+  {
+   "id": "e1",
+   "buyer": "buyers.rebate",
+   "seller": "retailers.dealers",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_used",
+   "buyer": "buyers.used",
+   "seller": "owners.eligible_cars",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_scrap",
+   "buyer": "buyers.dismantlers",
+   "seller": "buyers.rebate",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": null,
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_parts",
+   "buyer": "buyers.parts",
+   "seller": "sellers.dismantlers",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q20_dismantlers_fake_scrapping_on_a_meaningf"
+   ],
+   "reading": null,
+   "exchange": "e_parts",
+   "kind": "outside",
+   "side": null,
+   "actor": "sellers.dismantlers",
+   "variables": [
+    "informal_activity"
+   ]
+  },
+  {
+   "premises": [
+    "q20_dismantlers_fake_scrapping_on_a_meaningf"
+   ],
+   "reading": null,
+   "exchange": "e_used",
+   "kind": "outside",
+   "side": null,
+   "actor": "sellers.dismantlers",
+   "variables": [
+    "informal_activity"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q10_many_owners_of_eligible_cars_value_the_r"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.rebate",
+   "actor": "buyers.rebate",
+   "variables": [
+    "maintenance_spending"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q17_repairing_an_existing_old_car_is_a_feasi"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "buyers.used",
+   "actor": "buyers.used",
+   "variables": [
+    "maintenance_spending"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q22_importers_can_recertify_model_variants_b"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "sellers.substitutes",
+   "actor": "sellers.substitutes",
+   "variables": [
+    "specification_level"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q19_importers_and_dealers_can_organize_to_lo"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "retailers.dealers"
+  },
+  {
+   "premises": [
+    "q19_importers_and_dealers_can_organize_to_lo"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "importers"
+  },
+  {
+   "premises": [
+    "q19_importers_and_dealers_can_organize_to_lo"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.substitutes"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q9_repairs_parts_and_fuel_are_complements_i"
+   ],
+   "reading": null,
+   "source_actor": "buyers.parts",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "sellers.repairs",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q14_some_rebate_buyers_would_otherwise_have_"
+   ],
+   "reading": null,
+   "source_actor": "buyers.rebate",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "sellers.substitutes",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_the_scrapped_cars_used_materially_more_f"
+   ],
+   "reading": null,
+   "source_actor": "buyers.rebate",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "buyers.rebate",
+   "variable": "quantity_complement",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q9_repairs_parts_and_fuel_are_complements_i"
+   ],
+   "reading": null,
+   "source_actor": "buyers.rebate",
+   "source_variable": "quantity_complement",
+   "relation": "same_act",
+   "actor": "sellers.complements",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q9_repairs_parts_and_fuel_are_complements_i"
+   ],
+   "reading": null,
+   "source_actor": "buyers.rebate",
+   "source_variable": "maintenance_spending",
+   "relation": "yield",
+   "actor": "factor_owners.specific",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q16_some_owners_of_failing_cars_can_get_a_ro"
+   ],
+   "reading": null,
+   "source_actor": "buyers.rebate",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "sellers.repairs",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "buyers.rebate",
+   "source_variable": "maintenance_spending",
+   "relation": "same_act",
+   "actor": "sellers.repairs",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a4"
+   ],
+   "reading": null,
+   "source_actor": "buyers.rebate",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "households",
+   "variable": "stock_age",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q18_used_car_imports_cannot_quickly_replace_"
+   ],
+   "reading": null,
+   "source_actor": "owners.eligible_cars",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "buyers.used",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q18_used_car_imports_cannot_quickly_replace_"
+   ],
+   "reading": null,
+   "source_actor": "buyers.used",
+   "source_variable": "price_paid",
+   "relation": "same_act",
+   "actor": "owners.eligible_cars",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "retailers.dealers",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "importers",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a7"
+   ],
+   "reading": null,
+   "source_actor": "retailers.dealers",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "importers",
+   "variable": "net_price_received",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q21_some_used_car_buyers_can_buy_imported_us"
+   ],
+   "reading": null,
+   "source_actor": "buyers.used",
+   "source_variable": "price_paid",
+   "relation": "substitute",
+   "actor": "sellers.foreign",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "importers",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "sellers.foreign",
+   "variable": "quantity_traded",
+   "horizon": null
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "a7"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "seller",
+   "actor": "retailers.dealers"
+  }
+ ],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "buyers.rebate"
+  },
+  {
+   "component": "k2",
+   "actor": "sellers.dismantlers"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k3",
+   "actor": "taxpayers.future",
+   "premises": [
+    "j1"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [],
+ "moves": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "buyer",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a7"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "seller",
+   "horizon": null
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a5"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q11_many_window_buyers_would_have_bought_a_n",
+    "q12_demand_for_rebates_exceeds_120_000_at_so",
+    "q13_the_dips_consist_only_of_purchases_moved"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "buyers.rebate",
+   "variable": "quantity_traded",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [
+  {
+   "component": "k1",
+   "exchange": "e1",
+   "recipient_side": "buyer",
+   "payer": "treasury",
+   "outlay_variable": "subsidy_outlay"
+  },
+  {
+   "component": "k2_fee",
+   "exchange": "e_scrap",
+   "recipient_side": "buyer",
+   "payer": "treasury",
+   "outlay_variable": "subsidy_outlay"
+  }
+ ],
+ "capped": [],
+ "terms": [],
+ "banned": [
+  {
+   "premises": [
+    "a4",
+    "j3"
+   ],
+   "reading": null,
+   "component": "k2",
+   "exchange": "e_used"
+  },
+  {
+   "premises": [
+    "j3"
+   ],
+   "reading": null,
+   "component": "k2",
+   "exchange": "e_parts"
+  }
+ ],
+ "incidence": [
+  {
+   "premises": [
+    "a16"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e1",
+   "side": "seller"
+  }
+ ],
+ "fixed": [],
+ "unclear": [],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [
+  {
+   "component": "k1",
+   "premises": [
+    "j2"
+   ]
+  }
+ ],
+ "parts": [],
+ "dominance": [
+  {
+   "premises": [
+    "q10_many_owners_of_eligible_cars_value_the_r"
+   ],
+   "reading": null,
+   "actor": "buyers.rebate",
+   "variable": "resources_available_other_uses",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Sellers do not capture the whole rebate by raising transaction prices, so the net price to rebate buyers falls.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "a4": {
+   "text": "The scrapped cars would otherwise have stayed in use for some years.",
+   "p": 0.85,
+   "class": "durability"
+  },
+  "a5": {
+   "text": "Buyers knew of the scheme from March and could delay purchases.",
+   "p": 0.85,
+   "class": "expectations"
+  },
+  "a7": {
+   "text": "The supply of eligible models cannot grow much within six months.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "a16": {
+   "text": "In the window, sellers of eligible models have clearly fewer alternatives than rebate buyers: their stock is fixed by earlier import orders, while rebate buyers can wait, keep their old car or choose a non-eligible model.",
+   "p": 0.65,
+   "class": "substitutability"
+  },
+  "j1": {
+   "text": "The additional government bonds are serviced and repaid from general revenue.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "j2": {
+   "text": "Buyers expect the rebate to end on 31 December.",
+   "p": 0.9,
+   "class": "expectations"
+  },
+  "j3": {
+   "text": "Dismantlers do not fake scrapping on a meaningful scale.",
+   "p": 0.75,
+   "class": "enforcement"
+  },
+  "q9_repairs_parts_and_fuel_are_complements_i": {
+   "text": "Repairs, parts and fuel are complements in use of cars, and repairs and parts for older models have few uses other than in older cars.",
+   "p": 0.85,
+   "class": "substitutability"
+  },
+  "q10_many_owners_of_eligible_cars_value_the_r": {
+   "text": "Many owners of eligible cars value the rebate above their car and the cost of buying sooner.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q11_many_window_buyers_would_have_bought_a_n": {
+   "text": "Many window buyers would have bought a new car within the next few years anyway.",
+   "p": 0.85,
+   "class": "expectations"
+  },
+  "q12_demand_for_rebates_exceeds_120_000_at_so": {
+   "text": "Demand for rebates exceeds 120,000 at some point in the window.",
+   "p": 0.6,
+   "class": "expectations"
+  },
+  "q13_the_dips_consist_only_of_purchases_moved": {
+   "text": "The dips consist only of purchases moved into the window: buyers do not delay later purchases to wait for a repeat scheme (the opposite of A-15).",
+   "p": 0.65,
+   "class": "expectations"
+  },
+  "q14_some_rebate_buyers_would_otherwise_have_": {
+   "text": "Some rebate buyers would otherwise have bought a non-eligible new model.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q15_the_scrapped_cars_used_materially_more_f": {
+   "text": "The scrapped cars used materially more fuel per km than the new cars that replace them.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q16_some_owners_of_failing_cars_can_get_a_ro": {
+   "text": "Some owners of failing cars can get a roadworthiness certificate for less than the rebate is worth to them.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q17_repairing_an_existing_old_car_is_a_feasi": {
+   "text": "Repairing an existing old car is a feasible alternative to replacing it for some used-car buyers.",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q18_used_car_imports_cannot_quickly_replace_": {
+   "text": "Used-car imports cannot quickly replace the scrapped cars.",
+   "p": 0.75,
+   "class": "mobility"
+  },
+  "q19_importers_and_dealers_can_organize_to_lo": {
+   "text": "Importers and dealers can organize to lobby at a cost below their stake.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q20_dismantlers_fake_scrapping_on_a_meaningf": {
+   "text": "Dismantlers fake scrapping on a meaningful scale.",
+   "p": 0.25,
+   "class": "enforcement"
+  },
+  "q21_some_used_car_buyers_can_buy_imported_us": {
+   "text": "Some used-car buyers can buy imported used cars despite the duty and the registration inspection.",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q22_importers_can_recertify_model_variants_b": {
+   "text": "Importers can recertify model variants below 5.0 L/100 km within the window.",
+   "p": 0.3,
+   "class": "other"
+  }
+ }
+}
