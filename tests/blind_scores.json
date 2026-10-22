@@ -348,5 +348,145 @@
   "produced": 11,
   "total": 41,
   "pattern_engine": "7"
+ },
+ {
+  "case": "we054_wexcombe",
+  "loop": "loop",
+  "example": "WE-054_airport_night_curfew.md",
+  "short": {
+   "airlines.history": "sellers.airlines",
+   "operators.night": [
+    "sellers.airlines_night",
+    "sellers.integrator",
+    "sellers.cargo_other"
+   ],
+   "integrator": "sellers.integrator",
+   "travelers.wxi": "customers.passengers",
+   "travelers.night": [
+    "customers.passengers_night",
+    "customers.passengers_late"
+   ],
+   "airlines.prospective": "sellers.prospective",
+   "shippers.wexcombe": "customers.shippers",
+   "neighbors.wxi": "homeowners.contour_wxi",
+   "neighbors.pellham": "homeowners.contour_pellham",
+   "concessions.wxi": "sellers.concessions",
+   "workers.wxi": "workers.airport"
+  },
+  "windows": {},
+  "produced": 18,
+  "total": 52,
+  "pattern_engine": "14"
+ },
+ {
+  "case": "we056_tarrenmoor",
+  "loop": "loop",
+  "example": "WE-056_insulin_price_cap.md",
+  "short": {
+   "covered_residents": [
+    "buyers.state_plan",
+    "buyers.uninsured"
+   ],
+   "covered_residents.uninsured": "buyers.uninsured",
+   "covered_residents.state_plans": "buyers.state_plan",
+   "covered_residents.mail_order_users": "buyers.state_plan_mail",
+   "covered_residents.border": "buyers.border",
+   "covered_residents.hdhp": "buyers.high_deductible",
+   "buyers.otc_human_insulin": "buyers.otc",
+   "pharmacies.in_state": "retailers.in_state",
+   "plans.state_regulated": "insurers",
+   "buyers.plan_premiums": [
+    "employers.insured_group",
+    "buyers.individual_market"
+   ],
+   "employers.fully_insured": "employers.insured_group",
+   "buyers.individual_market": "buyers.individual_market",
+   "buyers.other_states": "buyers.national",
+   "buyers.noncovered_cash": "buyers.cash_uncovered",
+   "manufacturers": "producers.manufacturers",
+   "sellers.substitutes": "retailers.chains",
+   "insulin_fund": "treasury.insulin_fund",
+   "general_fund": "treasury"
+  },
+  "windows": {},
+  "produced": 16,
+  "total": 51,
+  "pattern_engine": "11"
+ },
+ {
+  "case": "we061_lanvik",
+  "loop": "loop",
+  "example": "WE-061_gig_worker_reclassification.md",
+  "short": {
+   "platforms": "platforms.covered",
+   "drivers.employee": [
+    "workers.employees",
+    "workers.min_wage"
+   ],
+   "drivers.contractor": "contractors.agreement",
+   "riders": "customers",
+   "sellers.complements": "retailers.restaurants",
+   "owners.platforms": "owners.shares"
+  },
+  "windows": {},
+  "produced": 15,
+  "total": 43,
+  "pattern_engine": "16"
+ },
+ {
+  "case": "we064_tarnesse",
+  "loop": "loop",
+  "example": "WE-064_spectrum_auction.md",
+  "short": {
+   "entrants": "licensees.entrants",
+   "customers.towns": "customers.outside_cities",
+   "fixed_broadband_sellers": "sellers.dsl",
+   "tower_owners": "input_suppliers.towers",
+   "riggers": "workers.riggers",
+   "other_borrowers": "borrowers.other"
+  },
+  "windows": {},
+  "produced": 12,
+  "total": 44,
+  "pattern_engine": "5"
+ },
+ {
+  "case": "we065_brisklund",
+  "loop": "loop",
+  "example": "WE-065_crop_deficiency_payments.md",
+  "short": {
+   "treasury": "general_fund",
+   "wheat_growers": "growers",
+   "owners.wheat_land": "owners.farmland",
+   "buyers.current": "buyers",
+   "grain_exporters": "exporters"
+  },
+  "windows": {},
+  "produced": 12,
+  "total": 43,
+  "pattern_engine": "13"
+ },
+ {
+  "case": "we067_tessford",
+  "loop": "loop",
+  "example": "WE-067_rent_cap_senior_credit.md",
+  "short": {
+   "sitting tenants": "tenants.controlled",
+   "sitting tenants renewing before 1 October 2027": "tenants.controlled",
+   "tenants.covered.senior": "tenants.senior",
+   "tenants.covered.near_qualifying": "tenants.senior_near",
+   "tenants.displaced.senior": "tenants.senior_displaced",
+   "tenants.displaced.other": "tenants.displaced",
+   "tenants.prospective": "tenants.prospective",
+   "landlords.covered": "landlords.controlled",
+   "City budget": "general_fund"
+  },
+  "windows": {
+   "first months after 1 October 2027": "first_months",
+   "announcement window": "announcement"
+  },
+  "produced": 32,
+  "total": 71,
+  "pattern_engine": "none"
  }
 ]

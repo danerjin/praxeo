@@ -389,3 +389,65 @@ The three writers flagged the same gap: capped payers were signed as trading les
 - **WE-033.** Most rows are signed per reading in the table (U1-b ambiguous), and the run signed them once.
 
 Every family now has a form on the core path. With core inputs for these six cases, 25 cases run on the core path by default (`--engine auto`). The rest run on the pattern engine until they have a seed and a loop.
+
+## Step 13: core runs on the remaining cases
+
+Every worked-example case with a policy now has core inputs: 18 new first runs and a second WE-046 run with `crowding`. The writers read only the extracted files (section 1, and the assumption columns ID, Statement, Type and p).
+
+**Scoring.** A separate, non-blind scorer wrote each case's same-class name mapping. I audited every mapping before recording it and dropped five that joined different classes:
+- beet factories with growers;
+- ride-hail drivers with taxis;
+- prospective growers with growers without history;
+- data-centre workers with prospective workers;
+- equipment vendors with foreign sellers.
+
+The mappings and counts are in `tests/blind_scores.json`, which a test checks.
+
+**Out-of-sample comparisons:**
+
+| Case | Core path | Pattern engine |
+|---|---|---|
+| WE-014 sugar import quota | 17/34 | 11 |
+| WE-037 ticket resale cap | 16/47 | 12 |
+| WE-044 short-term rental ban | 21/64 | 14 |
+| WE-050 combustion car sales ban | 12/47 | 6 |
+| WE-053 data localisation | 11/41 | 7 |
+| WE-054 airport night curfew | 18/52 | 14 |
+| WE-056 insulin price cap | 16/51 | 11 |
+| WE-064 spectrum auction | 12/44 | 5 |
+| WE-039 groundwater allocation | 8/60 | 8 |
+| WE-021 solar panel subsidy | 16/33 | 19 |
+| WE-061 gig worker reclassification | 15/43 | 16 |
+| WE-065 crop deficiency payments | 12/43 | 13 |
+| WE-047 sugar tariff-rate quota | 21/54 | 26 |
+| WE-042 aluminium tariff drawback | 13/57 | 42 |
+| WE-046 congestion charge (run 2; run 1: 19) | 24/71 | 53 |
+
+**What the comparison shows:**
+- The core path beats the pattern engine on 8 of these 15 cases, ties on 1 and falls short on 6. Summed, it produces 232 rows against the pattern engine's 257.
+- The two large shortfalls are tax cases (WE-042 and WE-046). There the pattern engine's tax rules, written from WE-013 and refined on many runs, sign many detailed rows the blind writers did not propose.
+- Without them, the core path leads 195 to 162.
+
+**Cases with no fair comparison:** WE-003 (8/18), WE-017 (10/30) and WE-019 (11/26) were used to write pattern rules. WE-067 (32/71) has no pattern-engine run.
+
+**General fixes from these 19 runs.** Each has a pattern check.
+- **CR-12e acts before propagation.** A settled sign propagates alone, where before everything downstream stayed ambiguous (WE-014, WE-046).
+- **A dominance premise below the cut-off** leaves the clash reported, instead of removing the row.
+- **Dominance settles signs per reading.** Five writers needed this.
+- **A reading-tagged fact of a component that reading applies** is no longer dropped (WE-053).
+- **A grant with a fixed budget is rationed** (WE-019, WE-021).
+- **Grants carry premises and have outside margins** (overstated or false claims).
+- **Fines due on breaking a rule** (CR-8b). This was the form writers most often named missing.
+
+**Still open, from the writers' notes:**
+- Exchanges cannot be proposed in the loop, only seeded.
+- No form for a right the policy creates and sells (the spectrum auction).
+- Dated windows beyond the announcement, first-months, deadline and after-expiry windows.
+- Under one reading, a sign can stand only on a chain below the cut-off. The merge across readings, shared with the pattern engine, does not yet check reporting per reading.
+- Depth 3 leaves some classes unvisited.
+
+**Blindness:**
+- Several writers listed a case folder's file names with `ls`, but none opened them.
+- One recursive grep from the repository root printed a test file name.
+- One writer saw another run's seed in the shared scratchpad.
+- All of these are recorded in the runs' notes.
