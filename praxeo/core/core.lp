@@ -27,6 +27,7 @@
 %   incidence(C, E, S, P1, P2, P3): S's alternatives in E are clearly worse than the other side's (CR-7b).
 %   moves_horizon(E, S, H), fixed_horizon(E, S, H): the horizon a response premise or a fixed price is about.
 %   terms(C, E, S, W, P1, P2, P3): C makes trading in E worse or better (W) for side S, with no payment (CR-1, CR-5 1.2, CR-11).
+%   charge_premise(C, P1, P2, P3): the charge's own binding and enforcement premises.
 %   operating(C): a charge fixed per seller, not per unit (CR-4 0.8).
 %   compliance(C, A). enforcer(C, A). funded(C, A, P1, P2, P3). fixed_budget(C, A, P1, P2, P3).   CR-8c
 %   charge(C, E, Side, Receiver).           CR-1 op 3: C attaches a payment to trading in E, paid by Side, to Receiver
@@ -240,6 +241,9 @@ rel_dir(supply_price, quantity, D, D) :- opp(D, _).
 rel_dir(supply, quantity, D, E) :- opp(D, E).
 % A fund (CR-8b): spending paid from it lowers its balance, receipts paid into it raise it. A source variable of either
 % kind may be a price or a quantity.
+% A shared facility (CR-9, a road, a queue, a counter): fewer users of it, less delay for those who still use it; more,
+% more.
+rel_dir(crowding, quantity, D, D) :- opp(D, _).
 rel_dir(paid_from, K, D, E) :- opp(D, E), K = (price; quantity).
 rel_dir(paid_into, K, D, D) :- opp(D, _), K = (price; quantity).
 % Only changes outside a timing window propagate (an order brought forward is not a lasting change in trade). Timing
@@ -266,8 +270,12 @@ group_effect(p_link(A0, V0, R, A, V), A, V, G, H, invisible, "B") :- p_link(A0, 
 % A charge that is one branch of a choice the policy gives the payer (pay, or provide in kind) holds only with the
 % premise that some payers take that branch (branch/4).
 has_branch(C) :- branch(C, _, _, _).
-c_charged(C, E) :- charge(C, E, _, _), not has_branch(C).
-c_charged(C, E) :- charge(C, E, _, _), branch(C, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+% A charge's own premises (that it binds and is enforced: charge_premise/4) gate it as a held line's do.
+charge_ok(C) :- charge(C, _, _, _), not charge_premise(C, _, _, _).
+charge_ok(C) :- charge_premise(C, P1, P2, P3), ok(P1), ok(P2), ok(P3).
+fired(cr_1, c_charged(C, E), P) :- c_charged(C, E), charge_premise(C, P1, P2, P3), P = (P1; P2; P3), P != none.
+c_charged(C, E) :- charge(C, E, _, _), charge_ok(C), not has_branch(C).
+c_charged(C, E) :- charge(C, E, _, _), charge_ok(C), branch(C, P1, P2, P3), ok(P1), ok(P2), ok(P3).
 fired(cr_1, c_charged(C, E), charge(C, E, S, R)) :- c_charged(C, E), charge(C, E, S, R).
 % Several branch/4 facts for one charge are alternative premise sets: any one that holds opens the branch.
 fired(cr_4, c_charged(C, E), P) :- c_charged(C, E), branch(C, P1, P2, P3), ok(P1), ok(P2), ok(P3), P = (P1; P2; P3), P != none.
@@ -327,6 +335,11 @@ p_means(C, A) :- means(C, A, _).
 fired(cr_8, p_means(C, A), means(C, A, D)) :- p_means(C, A), means(C, A, D).
 means_dir(out, decrease). means_dir(in, increase).
 effect(p_means(C, A), A, "resources_available_other_uses", D, short, invisible, "A") :- p_means(C, A), means(C, A, M), means_dir(M, D).
+% Those whose means it takes are made worse and those it gives to better: no option's relative cost changes, but the
+% timing of acts around it, and lobbying over it, are choices (CR-10, RS-7).
+means_w(out, worse). means_w(in, better).
+chooser(C, A, W) :- means(C, A, M), means_w(M, W).
+c_acts(C) :- means(C, _, _).
 
 % ---------------------------------------------------------------- CR-6: a buyer (or seller) of last resort
 % Where B takes at the line whatever the market leaves (backstop), the long side's surplus does not build up: those on it sell

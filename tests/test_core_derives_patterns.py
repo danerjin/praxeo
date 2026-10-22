@@ -9,7 +9,7 @@ P = {"text": "premise", "p": 0.9}
 def _run(**parts):
     sit = {"name": "check", "exchanges": [], **parts}
     used = {p for v in parts.values() if isinstance(v, list) for x in v if isinstance(x, dict)
-            for p in x.get("premises", []) + x.get("quantity_premises", []) + x.get("branch_premises", [])}
+            for p in (x.get("premises") or []) + x.get("quantity_premises", []) + x.get("branch_premises", [])}
     sit["assumptions"] = {k: P for k in used | {"a1"}}
     return {(c.actor_class, c.variable if not c.group else ",".join(c.group), c.sign, c.window)
             for c in S.run(S.Situation(**sit)) if c.reported}
@@ -403,3 +403,23 @@ def test_an_alternative_measured_inversely():
     got = _run(exchanges=MENU, alternatives=alt,
                charges=[{"component": "k", "exchange": "e", "payer_side": "seller", "receiver": "testers", "receipt_variable": "non_tax_receipts", "basis": "item"}])
     assert ("restaurants", "product_attribute", "decrease", None) in got
+
+
+def test_a_transfer_of_means_allows_timing_and_stakes():
+    t = [{"component": "k", "actor": "households", "variable": "quantity_demanded", "mode": "carry_over", "premises": ["a4"]}]
+    got = _run(exchanges=MENU, means=[{"component": "k", "actor": "households", "direction": "in"}], announced=[{"component": "k", "premises": []}],
+               timing=t, stakes=[{"component": "k", "actor": "households", "premises": ["a4"]}])
+    assert ("households", "quantity_demanded", "increase", "announcement") in got and ("households", "lobbying_effort", "increase", None) in got
+
+
+def test_a_charge_rests_on_its_own_binding_premise_and_a_road_carries_crowding():
+    ch = [{**TAX["charges"][0], "premises": ["a5"]}]
+    link = [{"source_actor": "buyers", "source_variable": "quantity_traded", "relation": "crowding", "actor": "drivers.through",
+             "variable": "travel_time", "premises": ["a4"]}]
+    sit = {"name": "check", "exchanges": TAX["exchanges"], "charges": ch, "moves": TAX["moves"], "links": link,
+           "assumptions": {**{k: P for k in ("a2", "a3", "a4")}, "a5": {"text": "binds", "p": 0.3}}}
+    got = {(c.actor_class, c.variable, c.sign) for c in S.run(S.Situation(**sit)) if c.reported}
+    assert not any(v == "quantity_traded" for _, v, _ in got)
+    sit["assumptions"]["a5"]["p"] = 0.9
+    got = {(c.actor_class, c.variable, c.sign) for c in S.run(S.Situation(**sit)) if c.reported}
+    assert ("drivers.through", "travel_time", "decrease") in got

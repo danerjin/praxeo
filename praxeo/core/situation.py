@@ -71,7 +71,7 @@ class Link(Premised):
     source_actor: str
     source_variable: str
     relation: Literal["complement", "input", "substitute", "output", "yield", "same_act", "cost", "own_price", "currency", "supply_price", "supply",
-                      "paid_from", "paid_into"]
+                      "paid_from", "paid_into", "crowding"]
     actor: str
     variable: str = Field(description="One variable, or several comma-separated for a group (labour as employment,hours_worked)")
     horizon: Optional[Literal["short", "medium", "long"]] = Field(default=None, description="When the link acts; medium if not given")
@@ -85,6 +85,7 @@ class Tied(Premised):
 
 class Charge(BaseModel):
     component: str
+    premises: list[str] = Field(default=[], max_length=3, description="That the charge binds and is enforced")
     exchange: str
     payer_side: Side
     receiver: str = Field(description="Who receives it; for a branch paid in kind, the subclass that receives it (workers.at_offering_firms), not the whole side")
@@ -292,6 +293,8 @@ def facts(s: Situation) -> str:
             out.append(f"link_group({_q(l.variable)}).")
     for ch in s.charges:
         out.append(f"charge({ch.component}, {ch.exchange}, {ch.payer_side}, {_q(ch.receiver)}).")
+        if ch.premises:
+            out.append(f"charge_premise({ch.component}, {_p(ch.premises)}).")
         out.append(f"receipt_var({ch.component}, {_q(ch.receipt_variable)}).")
         if ch.quantity_premises:
             out.append(f"qty_premise({ch.component}, {ch.exchange}, {_p(ch.quantity_premises)}).")

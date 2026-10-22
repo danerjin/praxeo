@@ -256,3 +256,47 @@ def test_blind_loop_runs_after_the_last_mandate_forms():
     for case, loop, example, short, windows, k in cases:
         produced, _ = _loop_score(case, example, short, windows, loop)
         assert (case, loop, len(produced)) == (case, loop, k)
+
+
+def test_blind_loop_runs_on_the_families_left_on_the_pattern_engine():
+    """First core runs on cases that had only pattern-engine inputs, one per family, after the no-payment terms operation
+    and costs per item offered (57f997f): private rules, disclosure, a transfer of means, a licence cap, a ban on a
+    contract term, a congestion charge."""
+    cases = [
+        ("we066_campus", "WE-066_campus_ebike_ban.md",
+         {"students.throttle": "members.current.throttle", "students.pedal_assist": "members.current.pedal_assist",
+          "students.ebike": ["members.current.throttle", "members.current.pedal_assist"], "parents.driving": "drivers.school_run",
+          "students.offsite": "riders.off_site", "coach_riders": "customers.coach", "school_bus_contractor": "contractors.coach",
+          "bike_shops": ["retailers.ebikes", "retailers.pedal_bicycles", "retailers.escooters"],
+          "parking_sellers": ["sellers.driveway_space", "sellers.yard_storage"], "parade_shops": "retailers.neighbors",
+          "dunnock_news": "retailers.news_agent", "public_bus_operator": "sellers.route14",
+          "members.current": ["members.current.throttle", "members.current.pedal_assist", "members.current.non_riders"]},
+         {}, 18),     # of 64; no pattern-engine run
+        ("we035_menu", "WE-035_menu_calorie_labels.md",
+         {"chains.covered": "sellers.covered", "buyers.covered_chains": "buyers", "chains.near_threshold": "firms.near_threshold",
+          "restaurants.exempt": "sellers.exempt"}, {}, 8),                                  # of 26; no pattern-engine run
+        ("we033_kestland", "WE-033_household_cash_rebate.md",
+         {"officials.enforcement": "officials.revenue", "households.recipients": "households",
+          "borrowers.private": ["borrowers.business", "borrowers.mortgage", "borrowers.households"],
+          "households.splittable": "households.separate_filers", "public_spending_recipients.later": "recipients.other_spending"},
+         {}, 4),      # of 31; pattern engine 6
+        ("we015_porthalden", "WE-015_taxi_license_cap.md",
+         {"riders": "customers.taxi", "taxi operators": "licensees", "medallion_owners.initial": "licensees",
+          "medallion_holders": "licensees", "medallion_buyers.later": "licensees.bought_near_peak",
+          "private_hire": "drivers.private_hire", "drivers.unlicensed": "drivers.prospective", "drivers.taxi": "drivers.licensed"},
+         {"announcement window": "announcement"}, 15),                                     # of 34; pattern engine 6
+        ("we034_teravel", "WE-034_noncompete_ban.md",
+         {"employers.net_trainers": "employers.trainers", "employers.rivals": "employers.hiring",
+          "employers.restraining": "employers.trainers", "practices.professional": "employers.trainers.practices"}, {}, 13),  # of 39; pattern 7
+        ("we046_calderford", "WE-046_congestion_charge.md",
+         {"goods_vehicle_operators": ["distributors.longer_visits", "distributors.short_visits"], "drivers.nonresident": "customers.drivers",
+          "residents.zone": "drivers.resident", "businesses.zone": "retailers.zone", "bus_riders": "riders",
+          "ride_hail_drivers": "customers.ride_hail", "owners.parking.zone": "owners.garages_zone",
+          "owners.parking.edge": "owners.garages_ringside", "transit_workers": "workers.transit", "transit_operator": "sellers.transit",
+          "ring_road_users": "drivers.through", "owners.zone_commercial": "owners.property_zone",
+          "owners.zone_residential": "owners.property_zone", "officials.enforcement": ["officials.enforcement", "officials.revenue"],
+          "businesses.edge": "retailers.neighbors"}, {}, 18),                               # of 71; pattern engine 53
+    ]
+    for case, example, short, windows, k in cases:
+        produced, _ = _loop_score(case, example, short, windows)
+        assert (case, len(produced)) == (case, k)

@@ -170,7 +170,7 @@ Writing them found one gap: an actor burdened only through a price had no timing
 
 **Not yet done:**
 - The LLM proposer and seed parser have not run against the API: there is no key in this environment.
-- The pattern files still hold rules for families the core layer has not been checked on: private rules and disclosure. Licensing, quotas, prohibitions, mandates and subsidies were checked in step 6.
+- Every family has a form on the core path (private rules and disclosure from step 12). The pattern files remain as checks and as the fallback for cases without core inputs.
 - The CR-12 combiner's declared comparisons are pattern-side; the core path settles clashes with dominance premises instead.
 
 ## Step 6: the remaining families on the core path
@@ -360,3 +360,32 @@ The three writers flagged the same gap: capped payers were signed as trading les
 - A duty to supply that opens a closed trade, where the format has no operation for it.
 - A charge owed to two receivers.
 - A quantity premise that only ever signs trades down. The record gave the duty such a premise, that its cost outweighs its value to buyers, and so signed makers' sales and owners' prices where the table leaves them ambiguous.
+
+## Step 12: the families left on the pattern engine
+
+**New forms.** Each has a pattern check.
+- **`terms`:** trading in an exchange made worse or better for one side, with no payment (CR-1). This is one operation for:
+  - private rules: a rule-maker changing the bundle it sells its members (CR-5 1.2);
+  - disclosure: a label showing a good worse or better than buyers believed, with the premise that beliefs change (CR-11).
+- **A cost per item offered** (charge `basis: "item"`, CR-4 0.8). It narrows the range offered; it does not raise the unit price.
+- **Inverse alternatives** (`inverse`). Reformulating to fewer calories is signed as a fall in the calorie count.
+- **A transfer of means makes choosers.** Recipients and payers can then time acts around the transfer and lobby over it.
+- **A charge's own premises.** Its binding and enforcement premises gate it, as a held line's do.
+- **A `crowding` link for a shared facility** (a road, a queue): fewer users, less delay.
+
+**Blind runs.** Each is the first core run on a case that had only pattern-engine inputs, and writers read only the extracted files.
+
+| Case | Family | Core path | Pattern engine |
+|---|---|---|---|
+| WE-066 | private rule (campus e-bike ban) | 18/64 | none |
+| WE-035 | disclosure (menu calorie labels) | 8/26 | none |
+| WE-033 | transfer of means (cash rebate) | 4/31 | 6 |
+| WE-015 | licence cap (taxi medallions) | 15/34 | 6 |
+| WE-034 | ban on a contract term (non-competes) | 13/39 | 7 |
+| WE-046 | congestion charge | 18/71 | 53 |
+
+**Where the core path is short:**
+- **WE-046.** Most missing rows are travel times on a shared road (now expressible with `crowding`, added after the run) and per-group splits of drivers.
+- **WE-033.** Most rows are signed per reading in the table (U1-b ambiguous), and the run signed them once.
+
+Every family now has a form on the core path. With core inputs for these six cases, 25 cases run on the core path by default (`--engine auto`). The rest run on the pattern engine until they have a seed and a loop.
