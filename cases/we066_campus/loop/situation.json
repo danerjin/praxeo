@@ -1,0 +1,1259 @@
+{
+ "name": "WE-066 St Aldric's College e-bike rule (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_bundle_th",
+   "buyer": "members.current.throttle",
+   "seller": "rule_maker.private",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_bundle_pa",
+   "buyer": "members.current.pedal_assist",
+   "seller": "rule_maker.private",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_bundle_oth",
+   "buyer": "members.current.non_riders",
+   "seller": "rule_maker.private",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "a10"
+   ],
+   "reading": null,
+   "exchange": "e_bundle_th",
+   "kind": "outside",
+   "side": null,
+   "actor": "members.current.throttle",
+   "variables": [
+    "legal_breach"
+   ]
+  },
+  {
+   "premises": [
+    "a10"
+   ],
+   "reading": "U1-a",
+   "exchange": "e_bundle_pa",
+   "kind": "outside",
+   "side": null,
+   "actor": "members.current.pedal_assist",
+   "variables": [
+    "legal_breach"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q10_some_e_bike_riders_switch_to_a_pedal_bic"
+   ],
+   "reading": "U1-a",
+   "component": "k1_pedal_assist",
+   "chooser": "members.current.pedal_assist",
+   "actor": "riders.pedal_bicycle",
+   "variables": [
+    "trips"
+   ]
+  },
+  {
+   "premises": [
+    "q11_some_e_bike_riders_switch_to_the_school_"
+   ],
+   "reading": "U1-a",
+   "component": "k1_pedal_assist",
+   "chooser": "members.current.pedal_assist",
+   "actor": "customers.coach",
+   "variables": [
+    "quantity_demanded"
+   ]
+  },
+  {
+   "premises": [
+    "q12_some_e_bike_riders_switch_to_route_14"
+   ],
+   "reading": "U1-a",
+   "component": "k1_pedal_assist",
+   "chooser": "members.current.pedal_assist",
+   "actor": "customers.route14",
+   "variables": [
+    "quantity_demanded"
+   ]
+  },
+  {
+   "premises": [
+    "q13_some_families_choose_to_drive_at_today_s"
+   ],
+   "reading": "U1-a",
+   "component": "k1_pedal_assist",
+   "chooser": "members.current.pedal_assist",
+   "actor": "drivers.school_run",
+   "variables": [
+    "trips"
+   ]
+  },
+  {
+   "premises": [
+    "q14_some_e_bike_riders_switch_to_e_scooters_"
+   ],
+   "reading": "U1-a",
+   "component": "k1_pedal_assist",
+   "chooser": "members.current.pedal_assist",
+   "actor": "riders.e_scooter",
+   "variables": [
+    "trips"
+   ]
+  },
+  {
+   "premises": [
+    "q15_some_riders_keep_riding_and_park_off_sch"
+   ],
+   "reading": "U1-a",
+   "component": "k1_pedal_assist",
+   "chooser": "members.current.pedal_assist",
+   "actor": "riders.off_site",
+   "variables": [
+    "trips"
+   ]
+  },
+  {
+   "premises": [
+    "q16_some_e_bike_riders_switch_to_walking"
+   ],
+   "reading": "U1-a",
+   "component": "k1_pedal_assist",
+   "chooser": "members.current.pedal_assist",
+   "actor": "riders.walking",
+   "variables": [
+    "trips"
+   ]
+  },
+  {
+   "premises": [
+    "q17_some_students_sell_their_e_bikes_because"
+   ],
+   "reading": "U1-a",
+   "component": "k1_pedal_assist",
+   "chooser": "members.current.pedal_assist",
+   "actor": "sellers.students",
+   "variables": [
+    "quantity_supplied"
+   ]
+  },
+  {
+   "premises": [
+    "q18_some_families_who_live_far_away_and_reli"
+   ],
+   "reading": "U1-a",
+   "component": "k1_pedal_assist",
+   "chooser": "members.current.pedal_assist",
+   "actor": "rival_providers",
+   "variables": [
+    "membership"
+   ]
+  },
+  {
+   "premises": [
+    "q10_some_e_bike_riders_switch_to_a_pedal_bic"
+   ],
+   "reading": null,
+   "component": "k1_throttle",
+   "chooser": "members.current.throttle",
+   "actor": "riders.pedal_bicycle",
+   "variables": [
+    "trips"
+   ]
+  },
+  {
+   "premises": [
+    "q11_some_e_bike_riders_switch_to_the_school_"
+   ],
+   "reading": null,
+   "component": "k1_throttle",
+   "chooser": "members.current.throttle",
+   "actor": "customers.coach",
+   "variables": [
+    "quantity_demanded"
+   ]
+  },
+  {
+   "premises": [
+    "q12_some_e_bike_riders_switch_to_route_14"
+   ],
+   "reading": null,
+   "component": "k1_throttle",
+   "chooser": "members.current.throttle",
+   "actor": "customers.route14",
+   "variables": [
+    "quantity_demanded"
+   ]
+  },
+  {
+   "premises": [
+    "q13_some_families_choose_to_drive_at_today_s"
+   ],
+   "reading": null,
+   "component": "k1_throttle",
+   "chooser": "members.current.throttle",
+   "actor": "drivers.school_run",
+   "variables": [
+    "trips"
+   ]
+  },
+  {
+   "premises": [
+    "q14_some_e_bike_riders_switch_to_e_scooters_"
+   ],
+   "reading": null,
+   "component": "k1_throttle",
+   "chooser": "members.current.throttle",
+   "actor": "riders.e_scooter",
+   "variables": [
+    "trips"
+   ]
+  },
+  {
+   "premises": [
+    "q15_some_riders_keep_riding_and_park_off_sch"
+   ],
+   "reading": null,
+   "component": "k1_throttle",
+   "chooser": "members.current.throttle",
+   "actor": "riders.off_site",
+   "variables": [
+    "trips"
+   ]
+  },
+  {
+   "premises": [
+    "q16_some_e_bike_riders_switch_to_walking"
+   ],
+   "reading": null,
+   "component": "k1_throttle",
+   "chooser": "members.current.throttle",
+   "actor": "riders.walking",
+   "variables": [
+    "trips"
+   ]
+  },
+  {
+   "premises": [
+    "q17_some_students_sell_their_e_bikes_because"
+   ],
+   "reading": null,
+   "component": "k1_throttle",
+   "chooser": "members.current.throttle",
+   "actor": "sellers.students",
+   "variables": [
+    "quantity_supplied"
+   ]
+  },
+  {
+   "premises": [
+    "q18_some_families_who_live_far_away_and_reli"
+   ],
+   "reading": null,
+   "component": "k1_throttle",
+   "chooser": "members.current.throttle",
+   "actor": "rival_providers",
+   "variables": [
+    "membership"
+   ]
+  },
+  {
+   "premises": [
+    "q21_under_u1_b_some_throttle_riders_remove_t"
+   ],
+   "reading": "U1-b",
+   "component": "k1_throttle",
+   "chooser": "members.current.throttle",
+   "actor": "members.current.throttle",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q47_some_local_buyers_who_would_have_bought_"
+   ],
+   "reading": null,
+   "component": "k1_throttle",
+   "chooser": "buyers.used_ebikes",
+   "actor": "retailers.pedal_bicycles",
+   "variables": [
+    "quantity_traded"
+   ]
+  },
+  {
+   "premises": [
+    "q47_some_local_buyers_who_would_have_bought_"
+   ],
+   "reading": null,
+   "component": "k1_throttle",
+   "chooser": "buyers.used_ebikes",
+   "actor": "retailers.escooters",
+   "variables": [
+    "quantity_traded"
+   ]
+  },
+  {
+   "premises": [
+    "q48_under_u1_b_some_buyers_who_want_a_pedal_"
+   ],
+   "reading": "U1-b",
+   "component": "k1_throttle",
+   "chooser": "buyers.used_ebikes",
+   "actor": "retailers.ebikes",
+   "variables": [
+    "quantity_traded"
+   ]
+  },
+  {
+   "premises": [
+    "q48_under_u1_b_some_buyers_who_want_a_pedal_"
+   ],
+   "reading": "U1-b",
+   "component": "k1_throttle",
+   "chooser": "buyers.used_ebikes",
+   "actor": "repair_shops",
+   "variables": [
+    "quantity_traded"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q8_the_student_council_safe_lanes_and_ride_",
+    "q9_without_the_rule_the_question_of_a_ban_w"
+   ],
+   "reading": "U1-a",
+   "component": "k1_campus_a",
+   "actor": "members.current.non_riders"
+  },
+  {
+   "premises": [
+    "q8_the_student_council_safe_lanes_and_ride_",
+    "q9_without_the_rule_the_question_of_a_ban_w"
+   ],
+   "reading": "U1-b",
+   "component": "k1_campus_b",
+   "actor": "members.current.non_riders"
+  },
+  {
+   "premises": [
+    "q8_the_student_council_safe_lanes_and_ride_",
+    "q9_without_the_rule_the_question_of_a_ban_w"
+   ],
+   "reading": "U1-a",
+   "component": "k1_pedal_assist",
+   "actor": "members.current.pedal_assist"
+  },
+  {
+   "premises": [
+    "q8_the_student_council_safe_lanes_and_ride_",
+    "q9_without_the_rule_the_question_of_a_ban_w"
+   ],
+   "reading": null,
+   "component": "k1_throttle",
+   "actor": "members.current.throttle"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q20_some_students_would_have_bought_an_e_bik"
+   ],
+   "reading": "U1-a",
+   "source_actor": "members.current.pedal_assist",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "buyers.prospective",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q20_some_students_would_have_bought_an_e_bik"
+   ],
+   "reading": null,
+   "source_actor": "members.current.throttle",
+   "source_variable": "quantity_traded",
+   "relation": "complement",
+   "actor": "buyers.prospective",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q22_some_of_the_e_bikes_students_would_have_"
+   ],
+   "reading": null,
+   "source_actor": "buyers.prospective",
+   "source_variable": "quantity_demanded",
+   "relation": "same_act",
+   "actor": "retailers.ebikes",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q23_some_e_bike_riders_who_switch_to_the_sch"
+   ],
+   "reading": null,
+   "source_actor": "customers.coach",
+   "source_variable": "quantity_demanded",
+   "relation": "same_act",
+   "actor": "contractors.coach",
+   "variable": "quantity_traded",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q24_on_routes_3_and_4_applicants_for_seats_a",
+    "q25_marrick_cannot_add_a_coach_on_routes_3_a"
+   ],
+   "reading": null,
+   "source_actor": "customers.coach",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "customers.coach",
+   "variable": "wait_time,allocation_by_non_price_criteria",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q26_marrick_adds_a_coach_on_routes_3_and_4_f"
+   ],
+   "reading": null,
+   "source_actor": "customers.coach",
+   "source_variable": "quantity_demanded",
+   "relation": "input",
+   "actor": "contractors.coach",
+   "variable": "quantity_supplied",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q26_marrick_adds_a_coach_on_routes_3_and_4_f",
+    "q27_the_coach_contractor_s_cost_of_an_added_"
+   ],
+   "reading": null,
+   "source_actor": "customers.coach",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "customers.coach",
+   "variable": "price_paid",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q28_for_families_who_switch_to_a_pass_or_a_c"
+   ],
+   "reading": null,
+   "source_actor": "customers.coach",
+   "source_variable": "quantity_demanded",
+   "relation": "substitute",
+   "actor": "customers.coach",
+   "variable": "resources_available_other_uses",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q29_route_14_has_seats_free_for_the_added_ri"
+   ],
+   "reading": null,
+   "source_actor": "customers.route14",
+   "source_variable": "quantity_demanded",
+   "relation": "same_act",
+   "actor": "sellers.route14",
+   "variable": "quantity_traded",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q30_some_route_14_term_passes_bought_by_swit"
+   ],
+   "reading": null,
+   "source_actor": "customers.route14",
+   "source_variable": "quantity_demanded",
+   "relation": "same_act",
+   "actor": "retailers.news_agent",
+   "variable": "quantity_traded",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q28_for_families_who_switch_to_a_pass_or_a_c"
+   ],
+   "reading": null,
+   "source_actor": "customers.route14",
+   "source_variable": "quantity_demanded",
+   "relation": "substitute",
+   "actor": "customers.route14",
+   "variable": "resources_available_other_uses",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q31_more_cars_at_8_15_to_8_45_lengthen_the_q",
+    "q32_at_a_given_number_of_school_cars_the_que"
+   ],
+   "reading": null,
+   "source_actor": "drivers.school_run",
+   "source_variable": "trips",
+   "relation": "supply_price",
+   "actor": "drivers.school_run",
+   "variable": "wait_time",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q31_more_cars_at_8_15_to_8_45_lengthen_the_q",
+    "q33_the_longer_queue_delays_the_coaches_whic"
+   ],
+   "reading": null,
+   "source_actor": "drivers.school_run",
+   "source_variable": "trips",
+   "relation": "supply_price",
+   "actor": "contractors.coach",
+   "variable": "wait_time",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q28_for_families_who_switch_to_a_pass_or_a_c"
+   ],
+   "reading": null,
+   "source_actor": "drivers.school_run",
+   "source_variable": "trips",
+   "relation": "substitute",
+   "actor": "drivers.school_run",
+   "variable": "resources_available_other_uses",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q21_under_u1_b_some_throttle_riders_remove_t"
+   ],
+   "reading": "U1-b",
+   "source_actor": "members.current.throttle",
+   "source_variable": "reclassification",
+   "relation": "same_act",
+   "actor": "repair_shops",
+   "variable": "quantity_traded",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q34_some_students_e_scooters_are_bought_from"
+   ],
+   "reading": null,
+   "source_actor": "riders.e_scooter",
+   "source_variable": "trips",
+   "relation": "complement",
+   "actor": "retailers.escooters",
+   "variable": "quantity_traded",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q35_the_supply_of_pedal_bicycles_and_e_scoot"
+   ],
+   "reading": null,
+   "source_actor": "riders.e_scooter",
+   "source_variable": "trips",
+   "relation": "supply_price",
+   "actor": "riders.e_scooter",
+   "variable": "price_paid",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q36_off_site_parkers_exceed_the_free_council"
+   ],
+   "reading": null,
+   "source_actor": "riders.off_site",
+   "source_variable": "trips",
+   "relation": "supply_price",
+   "actor": "riders.off_site",
+   "variable": "excess_demand",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q37_some_riders_lock_bikes_to_railings_and_l"
+   ],
+   "reading": null,
+   "source_actor": "riders.off_site",
+   "source_variable": "trips",
+   "relation": "same_act",
+   "actor": "riders.off_site",
+   "variable": "legal_breach",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q38_some_residents_or_shopkeepers_complain_a"
+   ],
+   "reading": null,
+   "source_actor": "riders.off_site",
+   "source_variable": "legal_breach",
+   "relation": "input",
+   "actor": "municipalities",
+   "variable": "enforcement_cost",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q39_some_residents_of_linnet_close_and_orcha"
+   ],
+   "reading": null,
+   "source_actor": "riders.off_site",
+   "source_variable": "trips",
+   "relation": "input",
+   "actor": "sellers.driveway_space",
+   "variable": "quantity_traded",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q40_some_off_site_parkers_rent_a_space_in_sp"
+   ],
+   "reading": null,
+   "source_actor": "riders.off_site",
+   "source_variable": "trips",
+   "relation": "input",
+   "actor": "sellers.yard_storage",
+   "variable": "quantity_traded",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q41_some_students_who_park_at_the_parade_buy"
+   ],
+   "reading": null,
+   "source_actor": "riders.off_site",
+   "source_variable": "trips",
+   "relation": "complement",
+   "actor": "retailers.neighbors",
+   "variable": "quantity_traded",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q42_students_who_park_at_the_parade_buy_brea"
+   ],
+   "reading": null,
+   "source_actor": "riders.off_site",
+   "source_variable": "trips",
+   "relation": "substitute",
+   "actor": "schools.canteen",
+   "variable": "quantity_traded",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q43_bikes_locked_on_the_footways_narrow_them"
+   ],
+   "reading": null,
+   "source_actor": "riders.off_site",
+   "source_variable": "trips",
+   "relation": "supply_price",
+   "actor": "neighbors",
+   "variable": "travel_time",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q44_for_most_riders_who_switch_to_a_coach_ro"
+   ],
+   "reading": null,
+   "source_actor": "riders.off_site",
+   "source_variable": "trips",
+   "relation": "same_act",
+   "actor": "riders.off_site",
+   "variable": "travel_time",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q45_some_students_pedal_bicycles_are_bought_"
+   ],
+   "reading": null,
+   "source_actor": "riders.pedal_bicycle",
+   "source_variable": "trips",
+   "relation": "complement",
+   "actor": "retailers.pedal_bicycles",
+   "variable": "quantity_traded",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q35_the_supply_of_pedal_bicycles_and_e_scoot"
+   ],
+   "reading": null,
+   "source_actor": "riders.pedal_bicycle",
+   "source_variable": "trips",
+   "relation": "supply_price",
+   "actor": "riders.pedal_bicycle",
+   "variable": "price_paid",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q44_for_most_riders_who_switch_to_a_coach_ro"
+   ],
+   "reading": null,
+   "source_actor": "riders.pedal_bicycle",
+   "source_variable": "trips",
+   "relation": "same_act",
+   "actor": "riders.pedal_bicycle",
+   "variable": "travel_time",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q44_for_most_riders_who_switch_to_a_coach_ro"
+   ],
+   "reading": null,
+   "source_actor": "riders.walking",
+   "source_variable": "trips",
+   "relation": "same_act",
+   "actor": "riders.walking",
+   "variable": "travel_time",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q46_most_student_sellers_sell_in_the_local_m"
+   ],
+   "reading": null,
+   "source_actor": "sellers.students",
+   "source_variable": "quantity_supplied",
+   "relation": "supply",
+   "actor": "sellers.students",
+   "variable": "net_price_received",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q46_most_student_sellers_sell_in_the_local_m"
+   ],
+   "reading": null,
+   "source_actor": "sellers.students",
+   "source_variable": "quantity_supplied",
+   "relation": "supply",
+   "actor": "buyers.used_ebikes",
+   "variable": "price_paid",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q49_some_staff_are_at_the_margin_of_buying_a"
+   ],
+   "reading": null,
+   "source_actor": "buyers.used_ebikes",
+   "source_variable": "price_paid",
+   "relation": "own_price",
+   "actor": "riders.staff",
+   "variable": "trips",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q33_the_longer_queue_delays_the_coaches_whic"
+   ],
+   "reading": null,
+   "source_actor": "contractors.coach",
+   "source_variable": "wait_time",
+   "relation": "same_act",
+   "actor": "customers.coach",
+   "variable": "travel_time",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q50_some_staff_who_drive_switch_to_e_bikes_b"
+   ],
+   "reading": null,
+   "source_actor": "drivers.school_run",
+   "source_variable": "trips",
+   "relation": "substitute",
+   "actor": "drivers.staff",
+   "variable": "trips",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q19_holders_of_e_bikes_and_of_rentable_drive"
+   ],
+   "reading": null,
+   "source_actor": "sellers.driveway_space",
+   "source_variable": "quantity_traded",
+   "relation": "yield",
+   "actor": "sellers.driveway_space",
+   "variable": "asset_value",
+   "horizon": "medium"
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "q19_holders_of_e_bikes_and_of_rentable_drive"
+   ],
+   "reading": "U1-a",
+   "exchange": "e_bundle_pa",
+   "side": "buyer",
+   "actor": "members.current.pedal_assist"
+  },
+  {
+   "premises": [
+    "q19_holders_of_e_bikes_and_of_rentable_drive"
+   ],
+   "reading": null,
+   "exchange": "e_bundle_th",
+   "side": "buyer",
+   "actor": "members.current.throttle"
+  }
+ ],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1_throttle",
+   "actor": "members.current.throttle"
+  },
+  {
+   "component": "k1_pedal_assist",
+   "actor": "members.current.pedal_assist"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k2",
+   "actor": "workers.school_staff"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k2",
+   "actor": "members.current",
+   "premises": [
+    "a31"
+   ]
+  }
+ ],
+ "fixed_budget": [
+  {
+   "component": "k2",
+   "actor": "workers.school_staff",
+   "premises": [
+    "a20"
+   ]
+  }
+ ],
+ "charges": [],
+ "moves": [],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1_throttle",
+   "premises": [
+    "a_ann"
+   ]
+  },
+  {
+   "component": "k1_pedal_assist",
+   "premises": [
+    "a_ann"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "q17_some_students_sell_their_e_bikes_because"
+   ],
+   "reading": "U1-a",
+   "component": "k1_pedal_assist",
+   "actor": "members.current.pedal_assist",
+   "variable": "quantity_supplied",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q17_some_students_sell_their_e_bikes_because"
+   ],
+   "reading": null,
+   "component": "k1_throttle",
+   "actor": "members.current.throttle",
+   "variable": "quantity_supplied",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q51_some_leavers_and_upgraders_who_would_hav"
+   ],
+   "reading": null,
+   "component": "k1_throttle",
+   "actor": "sellers.students",
+   "variable": "quantity_supplied",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "terms": [
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "component": "k1_throttle",
+   "exchange": "e_bundle_th",
+   "side": "buyer",
+   "direction": "worse"
+  },
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "component": "k1_pedal_assist",
+   "exchange": "e_bundle_pa",
+   "side": "buyer",
+   "direction": "worse"
+  },
+  {
+   "premises": [
+    "a21",
+    "a1"
+   ],
+   "reading": null,
+   "component": "k1_campus_a",
+   "exchange": "e_bundle_oth",
+   "side": "buyer",
+   "direction": "better"
+  },
+  {
+   "premises": [
+    "a41",
+    "a1"
+   ],
+   "reading": null,
+   "component": "k1_campus_b",
+   "exchange": "e_bundle_oth",
+   "side": "buyer",
+   "direction": "better"
+  }
+ ],
+ "banned": [],
+ "incidence": [],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Pedal-assist e-bikes: section 2 defines an electric bicycle as a bicycle fitted with a motor capable of propelling it.",
+   "readings": [
+    "U1-a: every bicycle with a motor, including pedal-assist e-bikes (270 riders bound)",
+    "U1-b: only bicycles whose motor can propel them without pedalling, i.e. throttle e-bikes (80 riders bound)"
+   ],
+   "components": {
+    "U1-a": [
+     "k1_pedal_assist",
+     "k1_campus_a"
+    ],
+    "U1-b": [
+     "k1_campus_b"
+    ]
+   }
+  }
+ ],
+ "thresholds": [],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [],
+ "assumptions": {
+  "a1": {
+   "text": "The rule is enforced at the gates: most students who ride or park an e-bike on the grounds are detected within days.",
+   "p": 0.8,
+   "class": "enforcement"
+  },
+  "a10": {
+   "text": "Some students ride or park on the grounds anyway.",
+   "p": 0.65,
+   "class": "enforcement"
+  },
+  "a20": {
+   "text": "The school's staff budget for 2027 is fixed and gate duty is drawn from other duties.",
+   "p": 0.85,
+   "class": "revenue_use"
+  },
+  "a31": {
+   "text": "The school raises its fees for 2027-28 because of the gate duty.",
+   "p": 0.25,
+   "class": "revenue_use"
+  },
+  "a_ann": {
+   "text": "Families expect the rule to take effect on 19 April 2027.",
+   "p": 0.95,
+   "class": "expectations"
+  },
+  "a21": {
+   "text": "Some parents rank a campus without student e-bikes above one with them, enough to change their choice of school or to stay.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "a41": {
+   "text": "Under U1-b, some parents rank a campus without throttle e-bikes above one with them, enough to change their choice of school or to stay.",
+   "p": 0.5,
+   "class": "other"
+  },
+  "q8_the_student_council_safe_lanes_and_ride_": {
+   "text": "The student council, Safe Lanes and Ride to School can organize at a cost below their stakes.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q9_without_the_rule_the_question_of_a_ban_w": {
+   "text": "Without the rule, the question of a ban would have stayed contested in 2027-28.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q10_some_e_bike_riders_switch_to_a_pedal_bic": {
+   "text": "Some e-bike riders switch to a pedal bicycle.",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q11_some_e_bike_riders_switch_to_the_school_": {
+   "text": "Some e-bike riders switch to the school coach.",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q12_some_e_bike_riders_switch_to_route_14": {
+   "text": "Some e-bike riders switch to route 14.",
+   "p": 0.6,
+   "class": "substitutability"
+  },
+  "q13_some_families_choose_to_drive_at_today_s": {
+   "text": "Some families choose to drive, at today's queue time (the response is partial).",
+   "p": 0.8,
+   "class": "substitutability"
+  },
+  "q14_some_e_bike_riders_switch_to_e_scooters_": {
+   "text": "Some e-bike riders switch to e-scooters, which section 14 of the Behaviour Code lets them carry in folded.",
+   "p": 0.6,
+   "class": "substitutability"
+  },
+  "q15_some_riders_keep_riding_and_park_off_sch": {
+   "text": "Some riders keep riding and park off school land near the gates.",
+   "p": 0.85,
+   "class": "mobility"
+  },
+  "q16_some_e_bike_riders_switch_to_walking": {
+   "text": "Some e-bike riders switch to walking.",
+   "p": 0.6,
+   "class": "substitutability"
+  },
+  "q17_some_students_sell_their_e_bikes_because": {
+   "text": "Some students sell their e-bikes because the rule removes their main use, some of them before 19 April.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "q18_some_families_who_live_far_away_and_reli": {
+   "text": "Some families who live far away and relied on e-bikes rank the school lower, enough to change their choice.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q19_holders_of_e_bikes_and_of_rentable_drive": {
+   "text": "Holders of e-bikes and of rentable driveways expect the rule to last at least until the June 2028 review.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "q20_some_students_would_have_bought_an_e_bik": {
+   "text": "Some students would have bought an e-bike in the next year.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q21_under_u1_b_some_throttle_riders_remove_t": {
+   "text": "Under U1-b, some throttle riders remove the throttle or swap for a pedal-assist bike at a cost below the rule's burden.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q22_some_of_the_e_bikes_students_would_have_": {
+   "text": "Some of the e-bikes students would have bought are bought from the two local shops.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q23_some_e_bike_riders_who_switch_to_the_sch": {
+   "text": "Some e-bike riders who switch to the school coach find a free seat.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q24_on_routes_3_and_4_applicants_for_seats_a": {
+   "text": "On routes 3 and 4, applicants for seats at the fixed pass price exceed the seats in the Summer term.",
+   "p": 0.6,
+   "class": "binding"
+  },
+  "q25_marrick_cannot_add_a_coach_on_routes_3_a": {
+   "text": "Marrick cannot add a coach on routes 3 and 4 within the Summer term.",
+   "p": 0.7,
+   "class": "binding"
+  },
+  "q26_marrick_adds_a_coach_on_routes_3_and_4_f": {
+   "text": "Marrick adds a coach on routes 3 and 4 from September 2027 at the contract renewal.",
+   "p": 0.6,
+   "class": "alternative_uses"
+  },
+  "q27_the_coach_contractor_s_cost_of_an_added_": {
+   "text": "The coach contractor's cost of an added coach on routes 3 and 4 raises the 2027-28 pass price.",
+   "p": 0.45,
+   "class": "other"
+  },
+  "q28_for_families_who_switch_to_a_pass_or_a_c": {
+   "text": "For families who switch to a pass or a car run, the added outlay exceeds the e-bike running costs they save.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q29_route_14_has_seats_free_for_the_added_ri": {
+   "text": "Route 14 has seats free for the added riders.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q30_some_route_14_term_passes_bought_by_swit": {
+   "text": "Some route 14 term passes bought by switching students are bought at Dunnock News rather than at the bus station.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q31_more_cars_at_8_15_to_8_45_lengthen_the_q": {
+   "text": "More cars at 8:15 to 8:45 lengthen the queue on Quarry Lane, and any diversion of through traffic does not fully offset it.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q32_at_a_given_number_of_school_cars_the_que": {
+   "text": "At a given number of school cars, the queue is no longer than without the rule: the school does not change the loop or drop-off times in the Summer term, and the rule adds no other traffic.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q33_the_longer_queue_delays_the_coaches_whic": {
+   "text": "The longer queue delays the coaches, which use Quarry Lane to reach the coach bay.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q34_some_students_e_scooters_are_bought_from": {
+   "text": "Some students' e-scooters are bought from the two local shops.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q35_the_supply_of_pedal_bicycles_and_e_scoot": {
+   "text": "The supply of pedal bicycles and e-scooters to Wendlemere is not perfectly elastic within the Summer term.",
+   "p": 0.6,
+   "class": "durability"
+  },
+  "q36_off_site_parkers_exceed_the_free_council": {
+   "text": "Off-site parkers exceed the free council stands.",
+   "p": 0.8,
+   "class": "binding"
+  },
+  "q37_some_riders_lock_bikes_to_railings_and_l": {
+   "text": "Some riders lock bikes to railings and lamp posts against the by-law.",
+   "p": 0.7,
+   "class": "enforcement"
+  },
+  "q38_some_residents_or_shopkeepers_complain_a": {
+   "text": "Some residents or shopkeepers complain about bikes locked to street furniture, so that the council acts on the by-law.",
+   "p": 0.55,
+   "class": "enforcement"
+  },
+  "q39_some_residents_of_linnet_close_and_orcha": {
+   "text": "Some residents of Linnet Close and Orchard Row rent driveway or garage space for e-bikes.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q40_some_off_site_parkers_rent_a_space_in_sp": {
+   "text": "Some off-site parkers rent a space in Spokewright's yard.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q41_some_students_who_park_at_the_parade_buy": {
+   "text": "Some students who park at the parade buy there on the same trip.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q42_students_who_park_at_the_parade_buy_brea": {
+   "text": "Students who park at the parade buy breakfast or snacks there instead of at the school canteen.",
+   "p": 0.4,
+   "class": "other"
+  },
+  "q43_bikes_locked_on_the_footways_narrow_them": {
+   "text": "Bikes locked on the footways narrow them for pedestrians.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q44_for_most_riders_who_switch_to_a_coach_ro": {
+   "text": "For most riders who switch to a coach, route 14, a pedal bicycle or walking, or who park outside and walk in, the trip takes longer door to door.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q45_some_students_pedal_bicycles_are_bought_": {
+   "text": "Some students' pedal bicycles are bought from the two local shops.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q46_most_student_sellers_sell_in_the_local_m": {
+   "text": "Most student sellers sell in the local market, and its buyers do not absorb the added listings at an unchanged price.",
+   "p": 0.65,
+   "class": "substitutability"
+  },
+  "q47_some_local_buyers_who_would_have_bought_": {
+   "text": "Some local buyers who would have bought a new pedal bicycle or e-scooter buy a cheaper used e-bike instead.",
+   "p": 0.5,
+   "class": "substitutability"
+  },
+  "q48_under_u1_b_some_buyers_who_want_a_pedal_": {
+   "text": "Under U1-b, some buyers who want a pedal-assist bike buy a used throttle e-bike, made cheaper by students' listings, and remove its throttle.",
+   "p": 0.6,
+   "class": "substitutability"
+  },
+  "q49_some_staff_are_at_the_margin_of_buying_a": {
+   "text": "Some staff are at the margin of buying a used e-bike, so that a lower used price draws one more staff e-bike commute.",
+   "p": 0.35,
+   "class": "other"
+  },
+  "q50_some_staff_who_drive_switch_to_e_bikes_b": {
+   "text": "Some staff who drive switch to e-bikes because the shelters are emptier and the queue is longer.",
+   "p": 0.5,
+   "class": "other"
+  },
+  "q51_some_leavers_and_upgraders_who_would_hav": {
+   "text": "Some leavers and upgraders who would have sold their e-bikes in July to September sell before or during the Summer term instead.",
+   "p": 0.6,
+   "class": "expectations"
+  }
+ }
+}

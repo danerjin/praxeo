@@ -1,0 +1,1143 @@
+{
+ "members.current.throttle": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_throttle",
+    "chooser": "members.current.throttle",
+    "actor": "riders.pedal_bicycle",
+    "variables": [
+     "trips"
+    ]
+   },
+   "premises": [
+    "Some e-bike riders switch to a pedal bicycle."
+   ],
+   "premise_class": "substitutability",
+   "source": "In a follow-up poll of e-bike riders (February 2027) asking what they would do if all e-bikes were banned, 30% said a pedal bicycle, 25% the school coach, 10% route 14, 20% being driven, 5% walking and 10% an e-scooter or \"other\"."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_throttle",
+    "chooser": "members.current.throttle",
+    "actor": "customers.coach",
+    "variables": [
+     "quantity_demanded"
+    ]
+   },
+   "premises": [
+    "Some e-bike riders switch to the school coach."
+   ],
+   "premise_class": "substitutability",
+   "source": "In a follow-up poll of e-bike riders (February 2027) asking what they would do if all e-bikes were banned, 30% said a pedal bicycle, 25% the school coach, 10% route 14, 20% being driven, 5% walking and 10% an e-scooter or \"other\"."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_throttle",
+    "chooser": "members.current.throttle",
+    "actor": "customers.route14",
+    "variables": [
+     "quantity_demanded"
+    ]
+   },
+   "premises": [
+    "Some e-bike riders switch to route 14."
+   ],
+   "premise_class": "substitutability",
+   "source": "In a follow-up poll of e-bike riders (February 2027) asking what they would do if all e-bikes were banned, 30% said a pedal bicycle, 25% the school coach, 10% route 14, 20% being driven, 5% walking and 10% an e-scooter or \"other\"."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_throttle",
+    "chooser": "members.current.throttle",
+    "actor": "drivers.school_run",
+    "variables": [
+     "trips"
+    ]
+   },
+   "premises": [
+    "Some families choose to drive, at today's queue time (the response is partial)."
+   ],
+   "premise_class": "substitutability",
+   "source": "In a follow-up poll of e-bike riders (February 2027) asking what they would do if all e-bikes were banned, 30% said a pedal bicycle, 25% the school coach, 10% route 14, 20% being driven, 5% walking and 10% an e-scooter or \"other\"."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_throttle",
+    "chooser": "members.current.throttle",
+    "actor": "riders.e_scooter",
+    "variables": [
+     "trips"
+    ]
+   },
+   "premises": [
+    "Some e-bike riders switch to e-scooters, which section 14 of the Behaviour Code lets them carry in folded."
+   ],
+   "premise_class": "substitutability",
+   "source": "Behaviour Code section 14: \"Scooters, including electric scooters, must be carried folded on school grounds and stored in lockers\"; In a follow-up poll of e-bike riders (February 2027) asking what they would do if all e-bikes were banned, 30% said a pedal bicycle, 25% the school coach, 10% route 14, 20% being driven, 5% walking and 10% an e-scooter or \"other\"."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_throttle",
+    "chooser": "members.current.throttle",
+    "actor": "riders.off_site",
+    "variables": [
+     "trips"
+    ]
+   },
+   "premises": [
+    "Some riders keep riding and park off school land near the gates."
+   ],
+   "premise_class": "mobility",
+   "source": "\"School grounds\" means all land within the College's title; about 60 to 80% of the riders who said pedal bicycle, coach or other would in fact keep riding an e-bike to a spot outside the grounds (staff estimate)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_throttle",
+    "chooser": "members.current.throttle",
+    "actor": "riders.walking",
+    "variables": [
+     "trips"
+    ]
+   },
+   "premises": [
+    "Some e-bike riders switch to walking."
+   ],
+   "premise_class": "substitutability",
+   "source": "In a follow-up poll of e-bike riders (February 2027) asking what they would do if all e-bikes were banned, 30% said a pedal bicycle, 25% the school coach, 10% route 14, 20% being driven, 5% walking and 10% an e-scooter or \"other\"."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_throttle",
+    "chooser": "members.current.throttle",
+    "actor": "sellers.students",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Some students sell their e-bikes because the rule removes their main use, some of them before 19 April."
+   ],
+   "premise_class": "expectations",
+   "source": "About 40 student e-bikes a year are sold by leavers and upgraders; students bought about 60 e-bikes in 2025-26."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_throttle",
+    "chooser": "members.current.throttle",
+    "actor": "rival_providers",
+    "variables": [
+     "membership"
+    ]
+   },
+   "premises": [
+    "Some families who live far away and relied on e-bikes rank the school lower, enough to change their choice."
+   ],
+   "premise_class": "other",
+   "source": "A child may be withdrawn on one full term's written notice; a rival school is 4 km from Hollin Rise."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_throttle",
+    "actor": "members.current.throttle"
+   },
+   "premises": [
+    "The student council, Safe Lanes and Ride to School can organize at a cost below their stakes.",
+    "Without the rule, the question of a ban would have stayed contested in 2027-28."
+   ],
+   "premise_class": "other",
+   "source": "In October 2026 a parents' group, Safe Lanes, petitioned the board for a ban (310 signatures); the student council petitioned against (540 signatures)."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1_throttle",
+    "actor": "members.current.throttle",
+    "variable": "quantity_supplied",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Some students sell their e-bikes because the rule removes their main use, some of them before 19 April."
+   ],
+   "premise_class": "expectations",
+   "source": "Announced by letter to families on 21 January 2027; effective on 19 April 2027."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_bundle_th",
+    "side": "buyer",
+    "actor": "members.current.throttle"
+   },
+   "premises": [
+    "Holders of e-bikes and of rentable driveways expect the rule to last at least until the June 2028 review."
+   ],
+   "premise_class": "expectations",
+   "source": "The board will review the rule in June 2028."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "members.current.throttle",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "buyers.prospective",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Some students would have bought an e-bike in the next year."
+   ],
+   "premise_class": "other",
+   "source": "Students bought about 60 e-bikes in 2025-26 (35 new, 25 used)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_throttle",
+    "chooser": "members.current.throttle",
+    "actor": "members.current.throttle",
+    "variables": [
+     "reclassification"
+    ],
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Under U1-b, some throttle riders remove the throttle or swap for a pedal-assist bike at a cost below the rule's burden."
+   ],
+   "premise_class": "other",
+   "source": "On many throttle models the throttle unplugs; Spokewright removes one for $40. Reading U1-b: only bicycles whose motor can propel them without pedalling."
+  }
+ ],
+ "members.current.pedal_assist": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pedal_assist",
+    "chooser": "members.current.pedal_assist",
+    "actor": "riders.pedal_bicycle",
+    "variables": [
+     "trips"
+    ],
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Some e-bike riders switch to a pedal bicycle."
+   ],
+   "premise_class": "substitutability",
+   "source": "In a follow-up poll of e-bike riders (February 2027) asking what they would do if all e-bikes were banned, 30% said a pedal bicycle, 25% the school coach, 10% route 14, 20% being driven, 5% walking and 10% an e-scooter or \"other\"."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pedal_assist",
+    "chooser": "members.current.pedal_assist",
+    "actor": "customers.coach",
+    "variables": [
+     "quantity_demanded"
+    ],
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Some e-bike riders switch to the school coach."
+   ],
+   "premise_class": "substitutability",
+   "source": "In a follow-up poll of e-bike riders (February 2027) asking what they would do if all e-bikes were banned, 30% said a pedal bicycle, 25% the school coach, 10% route 14, 20% being driven, 5% walking and 10% an e-scooter or \"other\"."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pedal_assist",
+    "chooser": "members.current.pedal_assist",
+    "actor": "customers.route14",
+    "variables": [
+     "quantity_demanded"
+    ],
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Some e-bike riders switch to route 14."
+   ],
+   "premise_class": "substitutability",
+   "source": "In a follow-up poll of e-bike riders (February 2027) asking what they would do if all e-bikes were banned, 30% said a pedal bicycle, 25% the school coach, 10% route 14, 20% being driven, 5% walking and 10% an e-scooter or \"other\"."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pedal_assist",
+    "chooser": "members.current.pedal_assist",
+    "actor": "drivers.school_run",
+    "variables": [
+     "trips"
+    ],
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Some families choose to drive, at today's queue time (the response is partial)."
+   ],
+   "premise_class": "substitutability",
+   "source": "In a follow-up poll of e-bike riders (February 2027) asking what they would do if all e-bikes were banned, 30% said a pedal bicycle, 25% the school coach, 10% route 14, 20% being driven, 5% walking and 10% an e-scooter or \"other\"."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pedal_assist",
+    "chooser": "members.current.pedal_assist",
+    "actor": "riders.e_scooter",
+    "variables": [
+     "trips"
+    ],
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Some e-bike riders switch to e-scooters, which section 14 of the Behaviour Code lets them carry in folded."
+   ],
+   "premise_class": "substitutability",
+   "source": "Behaviour Code section 14: \"Scooters, including electric scooters, must be carried folded on school grounds and stored in lockers\"; In a follow-up poll of e-bike riders (February 2027) asking what they would do if all e-bikes were banned, 30% said a pedal bicycle, 25% the school coach, 10% route 14, 20% being driven, 5% walking and 10% an e-scooter or \"other\"."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pedal_assist",
+    "chooser": "members.current.pedal_assist",
+    "actor": "riders.off_site",
+    "variables": [
+     "trips"
+    ],
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Some riders keep riding and park off school land near the gates."
+   ],
+   "premise_class": "mobility",
+   "source": "\"School grounds\" means all land within the College's title; about 60 to 80% of the riders who said pedal bicycle, coach or other would in fact keep riding an e-bike to a spot outside the grounds (staff estimate)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pedal_assist",
+    "chooser": "members.current.pedal_assist",
+    "actor": "riders.walking",
+    "variables": [
+     "trips"
+    ],
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Some e-bike riders switch to walking."
+   ],
+   "premise_class": "substitutability",
+   "source": "In a follow-up poll of e-bike riders (February 2027) asking what they would do if all e-bikes were banned, 30% said a pedal bicycle, 25% the school coach, 10% route 14, 20% being driven, 5% walking and 10% an e-scooter or \"other\"."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pedal_assist",
+    "chooser": "members.current.pedal_assist",
+    "actor": "sellers.students",
+    "variables": [
+     "quantity_supplied"
+    ],
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Some students sell their e-bikes because the rule removes their main use, some of them before 19 April."
+   ],
+   "premise_class": "expectations",
+   "source": "About 40 student e-bikes a year are sold by leavers and upgraders; students bought about 60 e-bikes in 2025-26."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pedal_assist",
+    "chooser": "members.current.pedal_assist",
+    "actor": "rival_providers",
+    "variables": [
+     "membership"
+    ],
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Some families who live far away and relied on e-bikes rank the school lower, enough to change their choice."
+   ],
+   "premise_class": "other",
+   "source": "A child may be withdrawn on one full term's written notice; a rival school is 4 km from Hollin Rise."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_pedal_assist",
+    "actor": "members.current.pedal_assist",
+    "reading": "U1-a"
+   },
+   "premises": [
+    "The student council, Safe Lanes and Ride to School can organize at a cost below their stakes.",
+    "Without the rule, the question of a ban would have stayed contested in 2027-28."
+   ],
+   "premise_class": "other",
+   "source": "In October 2026 a parents' group, Safe Lanes, petitioned the board for a ban (310 signatures); the student council petitioned against (540 signatures)."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1_pedal_assist",
+    "actor": "members.current.pedal_assist",
+    "variable": "quantity_supplied",
+    "mode": "bring_forward",
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Some students sell their e-bikes because the rule removes their main use, some of them before 19 April."
+   ],
+   "premise_class": "expectations",
+   "source": "Announced by letter to families on 21 January 2027; effective on 19 April 2027."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_bundle_pa",
+    "side": "buyer",
+    "actor": "members.current.pedal_assist",
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Holders of e-bikes and of rentable driveways expect the rule to last at least until the June 2028 review."
+   ],
+   "premise_class": "expectations",
+   "source": "The board will review the rule in June 2028."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "members.current.pedal_assist",
+    "source_variable": "quantity_traded",
+    "relation": "complement",
+    "actor": "buyers.prospective",
+    "variable": "quantity_demanded",
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Some students would have bought an e-bike in the next year."
+   ],
+   "premise_class": "other",
+   "source": "Students bought about 60 e-bikes in 2025-26 (35 new, 25 used)."
+  }
+ ],
+ "members.current.non_riders": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_campus_a",
+    "actor": "members.current.non_riders",
+    "reading": "U1-a"
+   },
+   "premises": [
+    "The student council, Safe Lanes and Ride to School can organize at a cost below their stakes.",
+    "Without the rule, the question of a ban would have stayed contested in 2027-28."
+   ],
+   "premise_class": "other",
+   "source": "A parents' group, Safe Lanes, petitioned the board for a ban (310 signatures)."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_campus_b",
+    "actor": "members.current.non_riders",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "The student council, Safe Lanes and Ride to School can organize at a cost below their stakes.",
+    "Without the rule, the question of a ban would have stayed contested in 2027-28."
+   ],
+   "premise_class": "other",
+   "source": "A parents' group, Safe Lanes, petitioned the board for a ban (310 signatures)."
+  }
+ ],
+ "rule_maker.private": [],
+ "workers.school_staff": [],
+ "buyers.prospective": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.prospective",
+    "source_variable": "quantity_demanded",
+    "relation": "same_act",
+    "actor": "retailers.ebikes",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Some of the e-bikes students would have bought are bought from the two local shops."
+   ],
+   "premise_class": "other",
+   "source": "Students bought about 60 e-bikes in 2025-26 (35 new, 25 used), about 40 of them from the two shops."
+  }
+ ],
+ "customers.coach": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.coach",
+    "source_variable": "quantity_demanded",
+    "relation": "same_act",
+    "actor": "contractors.coach",
+    "variable": "quantity_traded",
+    "horizon": "short"
+   },
+   "premises": [
+    "Some e-bike riders who switch to the school coach find a free seat."
+   ],
+   "premise_class": "other",
+   "source": "Marrick Coaches runs nine school routes: 57 seats a coach, 513 seats, 370 riders (about 72%)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.coach",
+    "source_variable": "quantity_demanded",
+    "relation": "supply_price",
+    "actor": "customers.coach",
+    "variable": "wait_time,allocation_by_non_price_criteria",
+    "horizon": "short"
+   },
+   "premises": [
+    "On routes 3 and 4, applicants for seats at the fixed pass price exceed the seats in the Summer term.",
+    "Marrick cannot add a coach on routes 3 and 4 within the Summer term."
+   ],
+   "premise_class": "binding",
+   "source": "Passes cost $420 a term, a price fixed in the contract for the school year; when a route is full the school allocates seats by a published priority (distance, then year group) and keeps a waiting list. Routes 3 and 4 have 114 seats and 106 riders; about 30 of the 120 Hollin Rise riders against 8 free seats."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.coach",
+    "source_variable": "quantity_demanded",
+    "relation": "input",
+    "actor": "contractors.coach",
+    "variable": "quantity_supplied",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Marrick adds a coach on routes 3 and 4 from September 2027 at the contract renewal."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "Marrick Coaches runs nine school routes under a contract renewed each September."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.coach",
+    "source_variable": "quantity_demanded",
+    "relation": "supply_price",
+    "actor": "customers.coach",
+    "variable": "price_paid",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Marrick adds a coach on routes 3 and 4 from September 2027 at the contract renewal.",
+    "The coach contractor's cost of an added coach on routes 3 and 4 raises the 2027-28 pass price."
+   ],
+   "premise_class": "other",
+   "source": "Passes cost $420 a term, a price fixed in the contract for the school year (contract renewed each September)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.coach",
+    "source_variable": "quantity_demanded",
+    "relation": "substitute",
+    "actor": "customers.coach",
+    "variable": "resources_available_other_uses",
+    "horizon": "short"
+   },
+   "premises": [
+    "For families who switch to a pass or a car run, the added outlay exceeds the e-bike running costs they save."
+   ],
+   "premise_class": "other",
+   "source": "A coach pass is $1,260 a year; an e-bike costs about $150 a year to run."
+  }
+ ],
+ "customers.route14": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.route14",
+    "source_variable": "quantity_demanded",
+    "relation": "same_act",
+    "actor": "sellers.route14",
+    "variable": "quantity_traded",
+    "horizon": "short"
+   },
+   "premises": [
+    "Route 14 has seats free for the added riders."
+   ],
+   "premise_class": "other",
+   "source": "Wendlemere Buses runs route 14 past the Main Gate at about 60% of peak capacity; a student term pass costs $165."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.route14",
+    "source_variable": "quantity_demanded",
+    "relation": "same_act",
+    "actor": "retailers.news_agent",
+    "variable": "quantity_traded",
+    "horizon": "short"
+   },
+   "premises": [
+    "Some route 14 term passes bought by switching students are bought at Dunnock News rather than at the bus station."
+   ],
+   "premise_class": "other",
+   "source": "A student term pass costs $165, sold at the bus station and at Dunnock News on the Quarry Lane parade (3% commission)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.route14",
+    "source_variable": "quantity_demanded",
+    "relation": "substitute",
+    "actor": "customers.route14",
+    "variable": "resources_available_other_uses",
+    "horizon": "short"
+   },
+   "premises": [
+    "For families who switch to a pass or a car run, the added outlay exceeds the e-bike running costs they save."
+   ],
+   "premise_class": "other",
+   "source": "A route 14 pass is $495 a year; an e-bike costs about $150 a year to run."
+  }
+ ],
+ "drivers.school_run": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.school_run",
+    "source_variable": "trips",
+    "relation": "supply_price",
+    "actor": "drivers.school_run",
+    "variable": "wait_time",
+    "horizon": "short"
+   },
+   "premises": [
+    "More cars at 8:15 to 8:45 lengthen the queue on Quarry Lane, and any diversion of through traffic does not fully offset it.",
+    "At a given number of school cars, the queue is no longer than without the rule: the school does not change the loop or drop-off times in the Summer term, and the rule adds no other traffic."
+   ],
+   "premise_class": "other",
+   "source": "Cars drop off in a loop inside the Main Gate that holds about 20 cars; between 8:15 and 8:45 about 150 cars use it and the queue backs onto Quarry Lane."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.school_run",
+    "source_variable": "trips",
+    "relation": "supply_price",
+    "actor": "contractors.coach",
+    "variable": "wait_time",
+    "horizon": "short"
+   },
+   "premises": [
+    "More cars at 8:15 to 8:45 lengthen the queue on Quarry Lane, and any diversion of through traffic does not fully offset it.",
+    "The longer queue delays the coaches, which use Quarry Lane to reach the coach bay."
+   ],
+   "premise_class": "other",
+   "source": "The queue backs onto Quarry Lane, which the nine coaches also use to reach the coach bay (arriving 8:20 to 8:40)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.school_run",
+    "source_variable": "trips",
+    "relation": "substitute",
+    "actor": "drivers.school_run",
+    "variable": "resources_available_other_uses",
+    "horizon": "short"
+   },
+   "premises": [
+    "For families who switch to a pass or a car run, the added outlay exceeds the e-bike running costs they save."
+   ],
+   "premise_class": "other",
+   "source": "A car school run of about 12 km a day is about $500 a year in fuel; an e-bike costs about $150 a year to run."
+  }
+ ],
+ "members.current.non_riders#2": [],
+ "members.current.pedal_assist#2": [],
+ "members.current.throttle#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "members.current.throttle",
+    "source_variable": "reclassification",
+    "relation": "same_act",
+    "actor": "repair_shops",
+    "variable": "quantity_traded",
+    "horizon": "short",
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Under U1-b, some throttle riders remove the throttle or swap for a pedal-assist bike at a cost below the rule's burden."
+   ],
+   "premise_class": "other",
+   "source": "On many throttle models the throttle unplugs; Spokewright removes one for $40."
+  }
+ ],
+ "riders.e_scooter": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders.e_scooter",
+    "source_variable": "trips",
+    "relation": "complement",
+    "actor": "retailers.escooters",
+    "variable": "quantity_traded",
+    "horizon": "short"
+   },
+   "premises": [
+    "Some students' e-scooters are bought from the two local shops."
+   ],
+   "premise_class": "other",
+   "source": "Spokewright Cycles sells e-bikes, pedal bicycles and e-scooters."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders.e_scooter",
+    "source_variable": "trips",
+    "relation": "supply_price",
+    "actor": "riders.e_scooter",
+    "variable": "price_paid",
+    "horizon": "short"
+   },
+   "premises": [
+    "The supply of pedal bicycles and e-scooters to Wendlemere is not perfectly elastic within the Summer term."
+   ],
+   "premise_class": "durability",
+   "source": "Spokewright Cycles sells e-bikes, pedal bicycles and e-scooters and services them."
+  }
+ ],
+ "riders.pedal_bicycle": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders.pedal_bicycle",
+    "source_variable": "trips",
+    "relation": "complement",
+    "actor": "retailers.pedal_bicycles",
+    "variable": "quantity_traded",
+    "horizon": "short"
+   },
+   "premises": [
+    "Some students' pedal bicycles are bought from the two local shops."
+   ],
+   "premise_class": "other",
+   "source": "New pedal bicycles cost $350 to $700; Spokewright sells pedal bicycles."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders.pedal_bicycle",
+    "source_variable": "trips",
+    "relation": "supply_price",
+    "actor": "riders.pedal_bicycle",
+    "variable": "price_paid",
+    "horizon": "short"
+   },
+   "premises": [
+    "The supply of pedal bicycles and e-scooters to Wendlemere is not perfectly elastic within the Summer term."
+   ],
+   "premise_class": "durability",
+   "source": "Spokewright Cycles sells e-bikes, pedal bicycles and e-scooters."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders.pedal_bicycle",
+    "source_variable": "trips",
+    "relation": "same_act",
+    "actor": "riders.pedal_bicycle",
+    "variable": "travel_time",
+    "horizon": "short"
+   },
+   "premises": [
+    "For most riders who switch to a coach, route 14, a pedal bicycle or walking, or who park outside and walk in, the trip takes longer door to door."
+   ],
+   "premise_class": "other",
+   "source": "For a 6 km trip, door to door: e-bike about 16 minutes; pedal bicycle about 24."
+  }
+ ],
+ "riders.walking": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders.walking",
+    "source_variable": "trips",
+    "relation": "same_act",
+    "actor": "riders.walking",
+    "variable": "travel_time",
+    "horizon": "short"
+   },
+   "premises": [
+    "For most riders who switch to a coach, route 14, a pedal bicycle or walking, or who park outside and walk in, the trip takes longer door to door."
+   ],
+   "premise_class": "other",
+   "source": "For a 6 km trip, door to door: e-bike about 16 minutes."
+  }
+ ],
+ "riders.off_site": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders.off_site",
+    "source_variable": "trips",
+    "relation": "supply_price",
+    "actor": "riders.off_site",
+    "variable": "excess_demand",
+    "horizon": "short"
+   },
+   "premises": [
+    "Off-site parkers exceed the free council stands."
+   ],
+   "premise_class": "binding",
+   "source": "The Quarry Lane parade, 250 m east, has 24 free council cycle stands, of which about 8 are used in school hours; even 50 such bikes exceed the 16 free council stands."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders.off_site",
+    "source_variable": "trips",
+    "relation": "same_act",
+    "actor": "riders.off_site",
+    "variable": "legal_breach",
+    "horizon": "short"
+   },
+   "premises": [
+    "Some riders lock bikes to railings and lamp posts against the by-law."
+   ],
+   "premise_class": "enforcement",
+   "source": "A council by-law lets the council remove cycles locked to street furniture other than stands, after notice; it is enforced on complaint."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders.off_site",
+    "source_variable": "legal_breach",
+    "relation": "input",
+    "actor": "municipalities",
+    "variable": "enforcement_cost",
+    "horizon": "short"
+   },
+   "premises": [
+    "Some residents or shopkeepers complain about bikes locked to street furniture, so that the council acts on the by-law."
+   ],
+   "premise_class": "enforcement",
+   "source": "A council by-law lets the council remove cycles locked to street furniture other than stands, after notice; it is enforced on complaint."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders.off_site",
+    "source_variable": "trips",
+    "relation": "input",
+    "actor": "sellers.driveway_space",
+    "variable": "quantity_traded",
+    "horizon": "short"
+   },
+   "premises": [
+    "Some residents of Linnet Close and Orchard Row rent driveway or garage space for e-bikes."
+   ],
+   "premise_class": "other",
+   "source": "Opposite the Main Gate are two residential cul-de-sacs, Linnet Close and Orchard Row (64 homes, about half with a driveway or garage)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders.off_site",
+    "source_variable": "trips",
+    "relation": "input",
+    "actor": "sellers.yard_storage",
+    "variable": "quantity_traded",
+    "horizon": "short"
+   },
+   "premises": [
+    "Some off-site parkers rent a space in Spokewright's yard."
+   ],
+   "premise_class": "other",
+   "source": "On 2 February 2027 Spokewright advertised a secure yard for 40 e-bikes at $4 a week."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders.off_site",
+    "source_variable": "trips",
+    "relation": "complement",
+    "actor": "retailers.neighbors",
+    "variable": "quantity_traded",
+    "horizon": "short"
+   },
+   "premises": [
+    "Some students who park at the parade buy there on the same trip."
+   ],
+   "premise_class": "other",
+   "source": "The Quarry Lane parade, 250 m east, has six shops (Dunnock News, a bakery, a café, a pharmacy, a chip shop and a convenience store)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders.off_site",
+    "source_variable": "trips",
+    "relation": "substitute",
+    "actor": "schools.canteen",
+    "variable": "quantity_traded",
+    "horizon": "short"
+   },
+   "premises": [
+    "Students who park at the parade buy breakfast or snacks there instead of at the school canteen."
+   ],
+   "premise_class": "other",
+   "source": "The Quarry Lane parade, 250 m east, has six shops (a bakery, a café, a chip shop)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders.off_site",
+    "source_variable": "trips",
+    "relation": "supply_price",
+    "actor": "neighbors",
+    "variable": "travel_time",
+    "horizon": "short"
+   },
+   "premises": [
+    "Bikes locked on the footways narrow them for pedestrians."
+   ],
+   "premise_class": "other",
+   "source": "Between the fence and the Quarry Lane footway is a grass verge; the Quarry Lane footway is the council's."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "riders.off_site",
+    "source_variable": "trips",
+    "relation": "same_act",
+    "actor": "riders.off_site",
+    "variable": "travel_time",
+    "horizon": "short"
+   },
+   "premises": [
+    "For most riders who switch to a coach, route 14, a pedal bicycle or walking, or who park outside and walk in, the trip takes longer door to door."
+   ],
+   "premise_class": "other",
+   "source": "Parking outside the grounds means walking in from a spot outside."
+  }
+ ],
+ "rival_providers": [],
+ "sellers.students": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.students",
+    "source_variable": "quantity_supplied",
+    "relation": "supply",
+    "actor": "sellers.students",
+    "variable": "net_price_received",
+    "horizon": "short"
+   },
+   "premises": [
+    "Most student sellers sell in the local market, and its buyers do not absorb the added listings at an unchanged price."
+   ],
+   "premise_class": "substitutability",
+   "source": "Wendlemere's online marketplace lists about 25 used e-bikes a month in term time; a two-year-old pedal-assist sells for about $850, a throttle e-bike for about $550."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.students",
+    "source_variable": "quantity_supplied",
+    "relation": "supply",
+    "actor": "buyers.used_ebikes",
+    "variable": "price_paid",
+    "horizon": "short"
+   },
+   "premises": [
+    "Most student sellers sell in the local market, and its buyers do not absorb the added listings at an unchanged price."
+   ],
+   "premise_class": "substitutability",
+   "source": "Wendlemere's online marketplace lists about 25 used e-bikes a month in term time."
+  }
+ ],
+ "buyers.used_ebikes": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_throttle",
+    "chooser": "buyers.used_ebikes",
+    "actor": "retailers.pedal_bicycles",
+    "variables": [
+     "quantity_traded"
+    ]
+   },
+   "premises": [
+    "Some local buyers who would have bought a new pedal bicycle or e-scooter buy a cheaper used e-bike instead."
+   ],
+   "premise_class": "substitutability",
+   "source": "New pedal-assist e-bikes cost $1,500 to $2,400, throttle e-bikes $900 to $1,700, pedal bicycles $350 to $700; a two-year-old pedal-assist sells for about $850, a throttle e-bike for about $550."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_throttle",
+    "chooser": "buyers.used_ebikes",
+    "actor": "retailers.escooters",
+    "variables": [
+     "quantity_traded"
+    ]
+   },
+   "premises": [
+    "Some local buyers who would have bought a new pedal bicycle or e-scooter buy a cheaper used e-bike instead."
+   ],
+   "premise_class": "substitutability",
+   "source": "Spokewright Cycles sells e-bikes, pedal bicycles and e-scooters; a throttle e-bike sells used for about $550."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_throttle",
+    "chooser": "buyers.used_ebikes",
+    "actor": "retailers.ebikes",
+    "variables": [
+     "quantity_traded"
+    ],
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Under U1-b, some buyers who want a pedal-assist bike buy a used throttle e-bike, made cheaper by students' listings, and remove its throttle."
+   ],
+   "premise_class": "substitutability",
+   "source": "On many throttle models the throttle unplugs; Spokewright removes one for $40. Reading U1-b: pedal-assist e-bikes stay allowed."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_throttle",
+    "chooser": "buyers.used_ebikes",
+    "actor": "repair_shops",
+    "variables": [
+     "quantity_traded"
+    ],
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Under U1-b, some buyers who want a pedal-assist bike buy a used throttle e-bike, made cheaper by students' listings, and remove its throttle."
+   ],
+   "premise_class": "substitutability",
+   "source": "On many throttle models the throttle unplugs; Spokewright removes one for $40."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.used_ebikes",
+    "source_variable": "price_paid",
+    "relation": "own_price",
+    "actor": "riders.staff",
+    "variable": "trips",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Some staff are at the margin of buying a used e-bike, so that a lower used price draws one more staff e-bike commute."
+   ],
+   "premise_class": "other",
+   "source": "Section 4: this rule does not apply to members of staff; 18 staff e-bikes use the shelters now."
+  }
+ ],
+ "contractors.coach": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "contractors.coach",
+    "source_variable": "wait_time",
+    "relation": "same_act",
+    "actor": "customers.coach",
+    "variable": "travel_time",
+    "horizon": "short"
+   },
+   "premises": [
+    "The longer queue delays the coaches, which use Quarry Lane to reach the coach bay."
+   ],
+   "premise_class": "other",
+   "source": "The queue backs onto Quarry Lane, which the nine coaches also use to reach the coach bay (arriving 8:20 to 8:40)."
+  }
+ ],
+ "customers.coach#2": [],
+ "customers.route14#2": [],
+ "drivers.school_run#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.school_run",
+    "source_variable": "trips",
+    "relation": "substitute",
+    "actor": "drivers.staff",
+    "variable": "trips",
+    "horizon": "short"
+   },
+   "premises": [
+    "Some staff who drive switch to e-bikes because the shelters are emptier and the queue is longer."
+   ],
+   "premise_class": "other",
+   "source": "Section 4: this rule does not apply to members of staff; bike shelters hold 420 cycles and about 398 are used on a school day, of which 18 are staff e-bikes."
+  }
+ ],
+ "municipalities": [],
+ "neighbors": [],
+ "repair_shops": [],
+ "retailers.ebikes": [],
+ "retailers.escooters": [],
+ "retailers.neighbors": [],
+ "retailers.news_agent": [],
+ "retailers.pedal_bicycles": [],
+ "riders.e_scooter#2": [],
+ "riders.off_site#2": [],
+ "riders.pedal_bicycle#2": [],
+ "riders.walking#2": [],
+ "sellers.route14": [],
+ "sellers.yard_storage": [],
+ "sellers.driveway_space": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.driveway_space",
+    "source_variable": "quantity_traded",
+    "relation": "yield",
+    "actor": "sellers.driveway_space",
+    "variable": "asset_value",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Holders of e-bikes and of rentable driveways expect the rule to last at least until the June 2028 review."
+   ],
+   "premise_class": "expectations",
+   "source": "The board will review the rule in June 2028."
+  }
+ ],
+ "sellers.students#2": [
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k1_throttle",
+    "actor": "sellers.students",
+    "variable": "quantity_supplied",
+    "mode": "bring_forward"
+   },
+   "premises": [
+    "Some leavers and upgraders who would have sold their e-bikes in July to September sell before or during the Summer term instead."
+   ],
+   "premise_class": "expectations",
+   "source": "About 40 student e-bikes a year are sold by leavers and upgraders in July to September; the rule is announced on 21 January 2027 and effective on 19 April 2027."
+  }
+ ]
+}
