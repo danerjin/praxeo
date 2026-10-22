@@ -85,7 +85,8 @@ def test_enrichment_from_a_source_reaches_the_engine(tmp_path):
         "quote": "commercial builders compete with solar installers for licensed electricians."}]}]}
     (tmp_path / "enrichment.json").write_text(json.dumps(enrichment))
     out = tmp_path / "run"
-    subprocess.run([sys.executable, "-m", "praxeo", str(case), "--enrichment", str(tmp_path / "enrichment.json"), "--out", str(out)],
+    subprocess.run([sys.executable, "-m", "praxeo", str(case), "--enrichment", str(tmp_path / "enrichment.json"), "--out", str(out),
+                    "--engine", "patterns"],   # enrichment fills the pattern record; WE-021 now also has core inputs
                    check=True, cwd=ROOT, capture_output=True)
     pred = json.loads((out / "prediction.json").read_text())
     assert pred["citation_problems"] == [] and pred["sources_held_back"] == ["s3"]
