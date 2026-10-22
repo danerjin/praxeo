@@ -1,0 +1,13 @@
+{
+ "Some buyers who turn from a heavy item after seeing its count go to another restaurant, including exempt ones, rather than choose another item at the same chain.": 0.6,
+ "Buyers who dislike seeing counts shift to grocery prepared-food counters.": 0.35,
+ "Some buyers value the counts enough to prefer a covered chain over an exempt restaurant.": 0.6,
+ "For some small chains, a second brand costs less than compliance.": 0.55,
+ "Chains near the line can open further outlets in the neighboring state, where the Act does not apply.": 0.55,
+ "Under U1-b, chains can present new items as limited-time offers at low cost.": 0.6,
+ "For some items, a lighter version costs less than the sales it would keep.": 0.6,
+ "Some chains add new lower-calorie items, rather than only reformulating existing ones, to keep buyers who turn from heavier items.": 0.6,
+ "Some covered chains post counts that differ from the actual content by more than the tolerance.": 0.7,
+ "Chains' associations and independent restaurants' associations can organize at a cost below their stake.": 0.75,
+ "Among buyers whose choices change, more move away from higher-calorie items than toward them.": 0.6
+}

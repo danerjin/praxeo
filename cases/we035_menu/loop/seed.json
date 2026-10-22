@@ -1,0 +1,61 @@
+{
+ "name": "WE-035 menu calorie disclosure (loop, blind)",
+ "exchanges": [
+  {"id": "e1", "buyer": "buyers", "seller": "sellers.covered", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e2", "buyer": "buyers", "seller": "sellers.exempt", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e3", "buyer": "buyers.heavier_than_believed", "seller": "sellers.covered", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e4", "buyer": "buyers.lighter_than_believed", "seller": "sellers.covered", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "terms": [
+  {"component": "l1", "exchange": "e3", "side": "buyer", "direction": "worse", "premises": ["a1", "a3"]},
+  {"component": "l1", "exchange": "e4", "side": "buyer", "direction": "better", "premises": ["a1", "a3"]}
+ ],
+ "charges": [
+  {"component": "l2", "exchange": "e1", "payer_side": "seller", "receiver": "input_suppliers.laboratories", "receipt_variable": "earnings",
+   "basis": "item", "branch_premises": ["a13"]},
+  {"component": "l1", "exchange": "e1", "payer_side": "seller", "receiver": "input_suppliers.sign_makers", "receipt_variable": "earnings",
+   "basis": "operating"},
+  {"component": "l1_lt", "exchange": "e1", "payer_side": "seller", "receiver": "input_suppliers.laboratories", "receipt_variable": "earnings",
+   "basis": "item", "branch_premises": ["a13"]},
+  {"component": "l4", "exchange": "e1", "payer_side": "seller", "receiver": "general_fund", "receipt_variable": "non_tax_receipts",
+   "basis": "item", "branch_premises": ["a17"]}
+ ],
+ "moves": [
+  {"exchange": "e1", "side": "buyer", "horizon": "medium", "premises": ["a24"]}
+ ],
+ "thresholds": [
+  {"component": "l1", "actor": "firms.near_threshold", "variable": "number_of_sellers", "premises": ["a9"]}
+ ],
+ "compliance": [
+  {"component": "l1", "actor": "sellers.covered"},
+  {"component": "l2", "actor": "sellers.covered"},
+  {"component": "l1_lt", "actor": "sellers.covered"}
+ ],
+ "enforcers": [
+  {"component": "l4", "actor": "officials.enforcement"}
+ ],
+ "funded": [
+  {"component": "l4", "actor": "taxpayers", "premises": []}
+ ],
+ "fixed_budget": [
+  {"component": "l4", "actor": "officials.enforcement", "premises": ["a15"]}
+ ],
+ "announced": [
+  {"component": "l1", "premises": []}
+ ],
+ "unclear": [
+  {"id": "U1", "text": "items appearing on the menu for a limited time",
+   "readings": ["U1-a: only items offered for two weeks or less are exempt, so seasonal items offered for six to twelve weeks must be analyzed and posted",
+                "U1-b: any item offered for less than 90 days in a year is exempt"],
+   "components": {"U1-a": ["l1_lt"], "U1-b": []}}
+ ],
+ "assumptions": {
+  "a1": {"text": "Most covered chains do not now post counts on boards, and most of their buyers do not look counts up before ordering.", "class": "binding", "p": 0.8},
+  "a3": {"text": "Some buyers' beliefs about calorie content differ from the posted counts.", "class": "other", "p": 0.75},
+  "a9": {"text": "For some near-threshold chains, the compliance cost reverses the ranking of opening a 20th outlet.", "class": "other", "p": 0.65},
+  "a13": {"text": "Many chains buy analysis from outside laboratories or consultants.", "class": "other", "p": 0.8},
+  "a15": {"text": "County inspection budgets are not raised for the new task.", "class": "revenue_use", "p": 0.65},
+  "a17": {"text": "Some inaccurate counts are detected and fined.", "class": "enforcement", "p": 0.55},
+  "a24": {"text": "For some outlets of covered chains near closing, the one-time per-outlet board cost tips the decision to close.", "class": "other", "p": 0.4}
+ }
+}

@@ -1,0 +1,555 @@
+{
+ "name": "WE-035 menu calorie disclosure (loop, blind)",
+ "exchanges": [
+  {
+   "id": "e1",
+   "buyer": "buyers",
+   "seller": "sellers.covered",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e2",
+   "buyer": "buyers",
+   "seller": "sellers.exempt",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e3",
+   "buyer": "buyers.heavier_than_believed",
+   "seller": "sellers.covered",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e4",
+   "buyer": "buyers.lighter_than_believed",
+   "seller": "sellers.covered",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q16_some_covered_chains_post_counts_that_dif"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "kind": "outside",
+   "side": null,
+   "actor": "sellers.covered",
+   "variables": [
+    "legal_breach"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q8_some_buyers_who_turn_from_a_heavy_item_a"
+   ],
+   "reading": null,
+   "component": "l1",
+   "chooser": "buyers.heavier_than_believed",
+   "actor": "sellers.exempt",
+   "variables": [
+    "quantity_traded"
+   ]
+  },
+  {
+   "premises": [
+    "q9_buyers_who_dislike_seeing_counts_shift_t"
+   ],
+   "reading": null,
+   "component": "l1",
+   "chooser": "buyers.heavier_than_believed",
+   "actor": "sellers.substitutes",
+   "variables": [
+    "quantity_traded"
+   ]
+  },
+  {
+   "premises": [
+    "q10_some_buyers_value_the_counts_enough_to_p"
+   ],
+   "reading": null,
+   "component": "l1",
+   "chooser": "buyers.lighter_than_believed",
+   "actor": "sellers.exempt",
+   "variables": [
+    "quantity_traded"
+   ]
+  },
+  {
+   "premises": [
+    "q11_for_some_small_chains_a_second_brand_cos"
+   ],
+   "reading": null,
+   "component": "l1",
+   "chooser": "firms.near_threshold",
+   "actor": "firms.near_threshold",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q12_chains_near_the_line_can_open_further_ou"
+   ],
+   "reading": null,
+   "component": "l1",
+   "chooser": "firms.near_threshold",
+   "actor": "neighboring_jurisdictions",
+   "variables": [
+    "number_of_sellers"
+   ]
+  },
+  {
+   "premises": [
+    "q13_under_u1_b_chains_can_present_new_items_"
+   ],
+   "reading": "U1-b",
+   "component": "l2",
+   "chooser": "sellers.covered",
+   "actor": "sellers.covered",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q14_for_some_items_a_lighter_version_costs_l"
+   ],
+   "reading": null,
+   "component": "l2",
+   "chooser": "sellers.covered",
+   "actor": "sellers.covered",
+   "variables": [
+    "product_attribute"
+   ]
+  },
+  {
+   "premises": [
+    "q15_some_chains_add_new_lower_calorie_items_"
+   ],
+   "reading": null,
+   "component": "l1",
+   "chooser": "sellers.covered",
+   "actor": "sellers.covered",
+   "variables": [
+    "variety"
+   ]
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q17_chains_associations_and_independent_rest"
+   ],
+   "reading": null,
+   "component": "l1",
+   "actor": "sellers.covered"
+  },
+  {
+   "premises": [
+    "q17_chains_associations_and_independent_rest"
+   ],
+   "reading": null,
+   "component": "l1",
+   "actor": "sellers.exempt"
+  }
+ ],
+ "links": [
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "general_fund",
+   "source_variable": "non_tax_receipts",
+   "relation": "paid_into",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q14_for_some_items_a_lighter_version_costs_l"
+   ],
+   "reading": null,
+   "source_actor": "sellers.covered",
+   "source_variable": "product_attribute",
+   "relation": "same_act",
+   "actor": "buyers.heavier_than_believed",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q13_under_u1_b_chains_can_present_new_items_"
+   ],
+   "reading": "U1-b",
+   "source_actor": "sellers.covered",
+   "source_variable": "reclassification",
+   "relation": "same_act",
+   "actor": "sellers.covered",
+   "variable": "variety",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q11_for_some_small_chains_a_second_brand_cos"
+   ],
+   "reading": null,
+   "source_actor": "sellers.exempt",
+   "source_variable": "reclassification",
+   "relation": "same_act",
+   "actor": "sellers.exempt",
+   "variable": "number_of_sellers",
+   "horizon": null
+  }
+ ],
+ "assets": [],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "l1",
+   "actor": "sellers.covered"
+  },
+  {
+   "component": "l2",
+   "actor": "sellers.covered"
+  },
+  {
+   "component": "l1_lt",
+   "actor": "sellers.covered"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "l4",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "l4",
+   "actor": "taxpayers",
+   "premises": []
+  }
+ ],
+ "fixed_budget": [
+  {
+   "component": "l4",
+   "actor": "officials.enforcement",
+   "premises": [
+    "a15"
+   ]
+  }
+ ],
+ "charges": [
+  {
+   "component": "l2",
+   "exchange": "e1",
+   "payer_side": "seller",
+   "receiver": "input_suppliers.laboratories",
+   "receipt_variable": "earnings",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [
+    "a13"
+   ],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "item"
+  },
+  {
+   "component": "l1",
+   "exchange": "e1",
+   "payer_side": "seller",
+   "receiver": "input_suppliers.sign_makers",
+   "receipt_variable": "earnings",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "operating"
+  },
+  {
+   "component": "l1_lt",
+   "exchange": "e1",
+   "payer_side": "seller",
+   "receiver": "input_suppliers.laboratories",
+   "receipt_variable": "earnings",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [
+    "a13"
+   ],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "item"
+  },
+  {
+   "component": "l4",
+   "exchange": "e1",
+   "payer_side": "seller",
+   "receiver": "general_fund",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [
+    "a17"
+   ],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "item"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a24"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "buyer",
+   "horizon": "medium"
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "l1",
+   "premises": []
+  }
+ ],
+ "timing": [],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "terms": [
+  {
+   "premises": [
+    "a1",
+    "a3"
+   ],
+   "reading": null,
+   "component": "l1",
+   "exchange": "e3",
+   "side": "buyer",
+   "direction": "worse"
+  },
+  {
+   "premises": [
+    "a1",
+    "a3"
+   ],
+   "reading": null,
+   "component": "l1",
+   "exchange": "e4",
+   "side": "buyer",
+   "direction": "better"
+  }
+ ],
+ "banned": [],
+ "incidence": [],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "items appearing on the menu for a limited time",
+   "readings": [
+    "U1-a: only items offered for two weeks or less are exempt, so seasonal items offered for six to twelve weeks must be analyzed and posted",
+    "U1-b: any item offered for less than 90 days in a year is exempt"
+   ],
+   "components": {
+    "U1-a": [
+     "l1_lt"
+    ],
+    "U1-b": []
+   }
+  }
+ ],
+ "thresholds": [
+  {
+   "premises": [
+    "a9"
+   ],
+   "reading": null,
+   "component": "l1",
+   "actor": "firms.near_threshold",
+   "variable": "number_of_sellers",
+   "chooser": null
+  }
+ ],
+ "qualifies": [],
+ "expires": [],
+ "parts": [
+  {
+   "part": "buyers.heavier_than_believed",
+   "whole": "buyers",
+   "premises": []
+  },
+  {
+   "part": "buyers.lighter_than_believed",
+   "whole": "buyers",
+   "premises": []
+  },
+  {
+   "part": "firms.near_threshold",
+   "whole": "sellers.exempt",
+   "premises": []
+  }
+ ],
+ "dominance": [
+  {
+   "premises": [
+    "q18_among_buyers_whose_choices_change_more_m",
+    "q8_some_buyers_who_turn_from_a_heavy_item_a"
+   ],
+   "reading": null,
+   "actor": "sellers.covered",
+   "variable": "quantity_traded",
+   "window": null,
+   "direction": "decrease",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q18_among_buyers_whose_choices_change_more_m"
+   ],
+   "reading": null,
+   "actor": "buyers",
+   "variable": "quantity_traded",
+   "window": null,
+   "direction": "decrease",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q18_among_buyers_whose_choices_change_more_m",
+    "q8_some_buyers_who_turn_from_a_heavy_item_a"
+   ],
+   "reading": null,
+   "actor": "sellers.exempt",
+   "variable": "quantity_traded",
+   "window": null,
+   "direction": "increase",
+   "kind": "empirical"
+  }
+ ],
+ "assumptions": {
+  "a1": {
+   "text": "Most covered chains do not now post counts on boards, and most of their buyers do not look counts up before ordering.",
+   "class": "binding",
+   "p": 0.8
+  },
+  "a3": {
+   "text": "Some buyers' beliefs about calorie content differ from the posted counts.",
+   "class": "other",
+   "p": 0.75
+  },
+  "a9": {
+   "text": "For some near-threshold chains, the compliance cost reverses the ranking of opening a 20th outlet.",
+   "class": "other",
+   "p": 0.65
+  },
+  "a13": {
+   "text": "Many chains buy analysis from outside laboratories or consultants.",
+   "class": "other",
+   "p": 0.8
+  },
+  "a15": {
+   "text": "County inspection budgets are not raised for the new task.",
+   "class": "revenue_use",
+   "p": 0.65
+  },
+  "a17": {
+   "text": "Some inaccurate counts are detected and fined.",
+   "class": "enforcement",
+   "p": 0.55
+  },
+  "a24": {
+   "text": "For some outlets of covered chains near closing, the one-time per-outlet board cost tips the decision to close.",
+   "class": "other",
+   "p": 0.4
+  },
+  "q8_some_buyers_who_turn_from_a_heavy_item_a": {
+   "text": "Some buyers who turn from a heavy item after seeing its count go to another restaurant, including exempt ones, rather than choose another item at the same chain.",
+   "p": 0.6,
+   "class": "substitutability"
+  },
+  "q9_buyers_who_dislike_seeing_counts_shift_t": {
+   "text": "Buyers who dislike seeing counts shift to grocery prepared-food counters.",
+   "p": 0.35,
+   "class": "substitutability"
+  },
+  "q10_some_buyers_value_the_counts_enough_to_p": {
+   "text": "Some buyers value the counts enough to prefer a covered chain over an exempt restaurant.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q11_for_some_small_chains_a_second_brand_cos": {
+   "text": "For some small chains, a second brand costs less than compliance.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q12_chains_near_the_line_can_open_further_ou": {
+   "text": "Chains near the line can open further outlets in the neighboring state, where the Act does not apply.",
+   "p": 0.55,
+   "class": "alternative_uses"
+  },
+  "q13_under_u1_b_chains_can_present_new_items_": {
+   "text": "Under U1-b, chains can present new items as limited-time offers at low cost.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q14_for_some_items_a_lighter_version_costs_l": {
+   "text": "For some items, a lighter version costs less than the sales it would keep.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q15_some_chains_add_new_lower_calorie_items_": {
+   "text": "Some chains add new lower-calorie items, rather than only reformulating existing ones, to keep buyers who turn from heavier items.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q16_some_covered_chains_post_counts_that_dif": {
+   "text": "Some covered chains post counts that differ from the actual content by more than the tolerance.",
+   "p": 0.7,
+   "class": "enforcement"
+  },
+  "q17_chains_associations_and_independent_rest": {
+   "text": "Chains' associations and independent restaurants' associations can organize at a cost below their stake.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q18_among_buyers_whose_choices_change_more_m": {
+   "text": "Among buyers whose choices change, more move away from higher-calorie items than toward them.",
+   "p": 0.6,
+   "class": "other"
+  }
+ }
+}
