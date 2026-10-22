@@ -34,6 +34,8 @@ def actor_roles() -> frozenset[str]:
     # roles the worked examples use for housing, labor and public finance
     roles |= {"tenants", "landlords", "renters", "homebuyers", "developers", "workers", "employers",
               "consumers", "producers", "officials", "residents"}
+    # and the roles of the controlled class list (names the worked examples share)
+    roles |= {n.split(".")[0] for n in actor_classes()}
     return frozenset(roles)
 
 
@@ -51,9 +53,22 @@ def check_instrument(name: str) -> str | None:
 
 
 @lru_cache(maxsize=1)
-def actor_classes(min_examples: int = 2) -> tuple[str, ...]:
+def variable_meanings() -> dict[str, str]:
+    """Each controlled variable with its meaning (02_ontology.md 2.4); a row naming two variables gives both the meaning."""
+    text = ONTOLOGY.read_text()
+    section = text[text.index("## 2.4"):text.index("## 2.5")]
+    out = {}
+    for names, meaning in re.findall(r"^\| (`[a-z_]+`(?:, `[a-z_]+`)*) \| (.*?) \|$", section, re.M):
+        for n in re.findall(r"`([a-z_]+)`", names):
+            out[n] = meaning
+    return out
+
+
+@lru_cache(maxsize=8)
+def actor_classes(min_examples: int = 2, exclude: tuple[str, ...] = ()) -> tuple[str, ...]:
     """Controlled list of actor-class names for parsers: the classes in 02_ontology.md 2.2, plus every name
-    used in the consequence lists of at least `min_examples` worked examples (handbook/05_examples)."""
+    used in the consequence lists of at least `min_examples` worked examples (handbook/05_examples). `exclude` drops
+    examples by id prefix ("WE-036") from the count, so a blind run on an example is not shown names only it supports."""
     from collections import Counter
     text = ONTOLOGY.read_text()
     section = text[text.index("## 2.2"):text.index("## 2.3")]
@@ -62,6 +77,8 @@ def actor_classes(min_examples: int = 2) -> tuple[str, ...]:
         names.update(pair)
     counts: Counter = Counter()
     for path in sorted((ONTOLOGY.parent / "05_examples").glob("WE-*.md")):
+        if any(path.name.startswith(x) for x in exclude):
+            continue
         body = path.read_text()
         if "## Consequence list" not in body:
             continue

@@ -155,3 +155,20 @@ def test_blind_loop_runs_on_mandates_after_fixed_prices_and_readings():
     for case, loop, example, short, windows, k, n in cases:
         produced, total = _loop_score(case, example, short, windows, loop)
         assert (case, len(produced), total) == (case, k, n)
+
+
+def test_the_proposer_is_given_the_controlled_names():
+    from praxeo import vocabulary as V
+    text = X.vocabulary_text()
+    assert all(f"- {v}:" in text for v in V.variables()) and "buyers.current" in text
+    assert "controlled list" in X.PROPOSER_SYSTEM and "subclass" in X.PROPOSER_SYSTEM
+    # a blind run on an example is not shown the names only that example's table supports
+    assert set(V.actor_classes(exclude=("WE-036",))) <= set(V.actor_classes())
+
+
+def test_off_list_names_are_flagged():
+    sit = S.Situation(name="t", exchanges=[], assumptions={},
+                      links=[{"source_actor": "buyers.current", "source_variable": "quantity_traded", "relation": "substitute",
+                              "actor": "zzz.unknown", "variable": "homes_listed"}])
+    msgs = X.off_list(sit)
+    assert any("homes_listed" in m for m in msgs) and any("zzz" in m for m in msgs)

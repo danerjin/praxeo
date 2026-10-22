@@ -181,7 +181,45 @@ Never state a sign: the engine derives every sign. Name actor classes as role.qu
 fits. Each fact gets up to three premises, written as statements whose truth will be asked one at a time (one concept each,
 no "and"); reuse the exact wording of a premise already recorded when it is the same premise. Quote in `source` the sentence
 of the policy or context the fact rests on. Propose nothing for an effect that reaches no one else, and nothing you would
-need to invent: an empty list is a valid answer. Use only what was knowable at enactment."""
+need to invent: an empty list is a valid answer. Use only what was knowable at enactment.
+Names: every variable comes from the controlled list below, chosen by its meaning there (quantity_supplied is what sellers
+offer, not what owners put up for sale in another market); use actor classes from the list where one fits, as role.qualifier.
+Where the policy or the reasoning treats parts of a class differently (those who take one branch of a choice and those who
+take the other; those near a line and those past it; those already in the trade and those who would enter), name each
+part as its own subclass rather than the whole class."""
+
+
+def vocabulary_text(exclude: tuple[str, ...] = ()) -> str:
+    """The controlled names the proposer chooses from: variables with their meanings (02_ontology.md 2.4) and actor classes
+    (2.2 plus names used in at least two worked examples, not counting `exclude`)."""
+    from .. import vocabulary as V
+    lines = ["Variables (controlled list):"] + [f"- {n}: {m}" for n, m in sorted(V.variable_meanings().items())]
+    lines += ["", "Actor classes (use one where it fits; otherwise role.qualifier with a listed role):",
+              ", ".join(V.actor_classes(exclude=tuple(exclude)))]
+    return "\n".join(lines)
+
+
+def off_list(sit: S.Situation) -> list[str]:
+    """Names in the situation outside the controlled lists: variables not in 2.4, actor classes whose role is unknown."""
+    from .. import vocabulary as V
+    out = []
+    for part, items in sit.model_dump().items():
+        if not isinstance(items, list):
+            continue
+        for x in items:
+            if not isinstance(x, dict):
+                continue
+            for k in ("variable", "source_variable", "receipt_variable", "projection_variable", "outlay_variable"):
+                for v in (x.get(k) or "").split(","):
+                    if v and (msg := V.check_variable(v)):
+                        out.append(f"{part}: {msg}")
+            for v in x.get("variables") or []:
+                if (msg := V.check_variable(v)):
+                    out.append(f"{part}: {msg}")
+            for k in ("actor", "chooser", "source_actor", "buyer", "seller", "receiver", "payer"):
+                if isinstance(x.get(k), str) and (msg := V.check_actor(x[k])):
+                    out.append(f"{part}: {msg}")
+    return list(dict.fromkeys(out))
 
 
 class Proposals(BaseModel):
@@ -191,16 +229,17 @@ class Proposals(BaseModel):
 class LLMProposer:
     """Claude through the Anthropic SDK, with a structured-output schema (the open-ended part of each node)."""
 
-    def __init__(self, model: str = "claude-opus-5-5", effort: str = "medium"):
+    def __init__(self, model: str = "claude-opus-5-5", effort: str = "medium", exclude: tuple[str, ...] = ()):
         import anthropic
 
         self.client = anthropic.Anthropic()
         self.model, self.effort, self.name = model, effort, f"llm:{model}"
+        self.system = PROPOSER_SYSTEM + "\n\n" + vocabulary_text(exclude)
 
     def propose(self, node: Node, situation: S.Situation, policy: str) -> list[Proposal]:
         prompt = (f"Policy text:\n{policy}\n\nSituation so far:\n{situation.model_dump_json(indent=1)}\n\n"
                   f"Node: {node.model_dump_json()}")
-        resp = self.client.messages.parse(model=self.model, max_tokens=16000, system=PROPOSER_SYSTEM,
+        resp = self.client.messages.parse(model=self.model, max_tokens=16000, system=self.system,
                                           output_config={"effort": self.effort},
                                           messages=[{"role": "user", "content": prompt}], output_format=Proposals)
         if resp.stop_reason == "refusal" or resp.parsed_output is None:
@@ -248,20 +287,28 @@ class FileDecider(TextDecider):
 
 def main() -> None:
     """python -m praxeo.core.expand SEED.json PROPOSALS.json ANSWERS.json [--policy TEXT] [--out SITUATION.json]
+    python -m praxeo.core.expand --vocab [--exclude WE-NNN]
 
     Runs the loop with file-driven proposer and decider. If a node or a question is not yet covered, prints what is needed
     (each node with its derived effects) and stops; fill the files in and run again until it completes."""
     import argparse
 
     ap = argparse.ArgumentParser()
-    ap.add_argument("seed", type=Path)
-    ap.add_argument("proposals", type=Path)
-    ap.add_argument("answers", type=Path)
+    ap.add_argument("seed", type=Path, nargs="?")
+    ap.add_argument("proposals", type=Path, nargs="?")
+    ap.add_argument("answers", type=Path, nargs="?")
+    ap.add_argument("--vocab", action="store_true", help="print the controlled names the proposer chooses from, and stop")
+    ap.add_argument("--exclude", action="append", default=[], help="with --vocab: an example id (WE-036) not to count")
     ap.add_argument("--policy", type=Path)
     ap.add_argument("--out", type=Path)
     a = ap.parse_args()
+    if a.vocab:
+        print(vocabulary_text(tuple(a.exclude)))
+        return
     prop, dec = FileProposer(a.proposals), FileDecider(a.answers)
     run = expand(S.load(a.seed), prop, dec, a.policy.read_text() if a.policy else "")
+    for msg in off_list(run.situation):
+        print(f"off-list: {msg}")
     if prop.missing or dec.missing:
         print("PENDING")
         for n in prop.missing:
