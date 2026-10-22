@@ -1,0 +1,767 @@
+{
+ "name": "WE-053 Corvany personal data residency (loop seed)",
+ "exchanges": [
+  {
+   "id": "e_abroad",
+   "buyer": "buyers.abroad",
+   "seller": "sellers.foreign",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_foreign",
+   "buyer": "buyers.foreign",
+   "seller": "sellers.foreign",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_backup",
+   "buyer": "buyers.backup",
+   "seller": "sellers.foreign",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e_local",
+   "buyer": "buyers.current",
+   "seller": "sellers.current",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q18_enforcement_against_foreign_services_wit"
+   ],
+   "reading": null,
+   "exchange": "e_foreign",
+   "kind": "outside",
+   "side": null,
+   "actor": "buyers.foreign",
+   "variables": [
+    "informal_activity"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q7_some_controllers_above_the_threshold_con"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.abroad",
+   "actor": "sellers.current",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q8_at_least_one_foreign_provider_builds_a_l"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.abroad",
+   "actor": "sellers.prospective",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q9_local_computing_costs_more_per_unit_than",
+    "q7_some_controllers_above_the_threshold_con"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.abroad",
+   "actor": "buyers.abroad",
+   "variables": [
+    "price_paid"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q10_local_hosting_cuts_latency_for_corvany_u"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.abroad",
+   "actor": "buyers.abroad",
+   "variables": [
+    "quality_per_unit"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q11_new_local_regions_launch_with_fewer_serv"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.abroad",
+   "actor": "buyers.abroad",
+   "variables": [
+    "variety"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q12_for_some_controllers_near_50_000_deletin"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.abroad",
+   "actor": "buyers.abroad",
+   "variables": [
+    "membership"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q12_for_some_controllers_near_50_000_deletin",
+    "q13_the_office_does_not_treat_a_group_s_cont"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.abroad",
+   "actor": "buyers.abroad",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q16_some_controllers_that_keep_backups_abroa"
+   ],
+   "reading": "U1-b",
+   "component": "k1_b",
+   "chooser": "buyers.backup",
+   "actor": "sellers.current",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q17_some_foreign_online_services_find_corvan"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.foreign",
+   "actor": "buyers.foreign",
+   "variables": [
+    "membership"
+   ],
+   "inverse": true
+  },
+  {
+   "premises": [
+    "q8_at_least_one_foreign_provider_builds_a_l"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.foreign",
+   "actor": "sellers.prospective",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q12_for_some_controllers_near_50_000_deletin",
+    "q13_the_office_does_not_treat_a_group_s_cont"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.near_threshold",
+   "actor": "buyers.near_threshold",
+   "variables": [
+    "reclassification"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q8_at_least_one_foreign_provider_builds_a_l"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "sellers.foreign",
+   "actor": "sellers.prospective",
+   "variables": [
+    "investment_target"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q25_some_controllers_that_already_host_in_co"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "buyers.current",
+   "actor": "sellers.prospective",
+   "variables": [
+    "quantity_demanded"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q20_local_operators_providers_and_controller"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "buyers.near_threshold"
+  },
+  {
+   "premises": [
+    "q20_local_operators_providers_and_controller"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.current"
+  },
+  {
+   "premises": [
+    "q24_some_providers_that_covered_controllers_",
+    "q20_local_operators_providers_and_controller"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.foreign"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q14_covered_controllers_pay_consultants_to_m"
+   ],
+   "reading": null,
+   "source_actor": "buyers.abroad",
+   "source_variable": "compliance_cost",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q15_hosting_is_a_material_part_of_the_cost_o"
+   ],
+   "reading": null,
+   "source_actor": "buyers.abroad",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "sellers.online",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q19_domestic_services_that_host_locally_are_"
+   ],
+   "reading": null,
+   "source_actor": "buyers.foreign",
+   "source_variable": "membership",
+   "relation": "substitute",
+   "actor": "sellers.substitutes",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "general_fund",
+   "source_variable": "non_tax_receipts",
+   "relation": "paid_into",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a22"
+   ],
+   "reading": null,
+   "source_actor": "officials.enforcement",
+   "source_variable": "enforcement_cost",
+   "relation": "paid_from",
+   "actor": "general_fund",
+   "variable": "fund_balance",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q21_local_colocation_cannot_add_space_beyond"
+   ],
+   "reading": null,
+   "source_actor": "sellers.current",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "sellers.current",
+   "variable": "net_price_received",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q22_local_capacity_can_be_added_at_some_cost"
+   ],
+   "reading": null,
+   "source_actor": "sellers.current",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "sellers.current",
+   "variable": "investment_target",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q22_local_capacity_can_be_added_at_some_cost"
+   ],
+   "reading": null,
+   "source_actor": "sellers.current",
+   "source_variable": "investment_target",
+   "relation": "input",
+   "actor": "sellers.current",
+   "variable": "capital_stock_target",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q22_local_capacity_can_be_added_at_some_cost"
+   ],
+   "reading": null,
+   "source_actor": "sellers.current",
+   "source_variable": "capital_stock_target",
+   "relation": "input",
+   "actor": "sellers.current",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "a18"
+   ],
+   "reading": null,
+   "source_actor": "sellers.current",
+   "source_variable": "number_of_sellers",
+   "relation": "input",
+   "actor": "sellers.current",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q21_local_colocation_cannot_add_space_beyond"
+   ],
+   "reading": null,
+   "source_actor": "sellers.current",
+   "source_variable": "net_price_received",
+   "relation": "yield",
+   "actor": "sellers.current",
+   "variable": "asset_value",
+   "horizon": null
+  },
+  {
+   "premises": [],
+   "reading": null,
+   "source_actor": "sellers.current",
+   "source_variable": "net_price_received",
+   "relation": "same_act",
+   "actor": "buyers.current",
+   "variable": "price_paid",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q23_the_esterland_regions_capacity_is_not_cu"
+   ],
+   "reading": null,
+   "source_actor": "sellers.foreign",
+   "source_variable": "quantity_traded",
+   "relation": "yield",
+   "actor": "sellers.foreign",
+   "variable": "return_on_capital",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q26_covered_controllers_move_other_operation"
+   ],
+   "reading": null,
+   "source_actor": "sellers.current",
+   "source_variable": "quantity_demanded",
+   "relation": "complement",
+   "actor": "workers.prospective",
+   "variable": "employment",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q27_the_providers_investment_is_financed_fro"
+   ],
+   "reading": null,
+   "source_actor": "sellers.prospective",
+   "source_variable": "investment_target",
+   "relation": "input",
+   "actor": "economy",
+   "variable": "capital_stock_economy",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q27_the_providers_investment_is_financed_fro"
+   ],
+   "reading": null,
+   "source_actor": "sellers.prospective",
+   "source_variable": "investment_target",
+   "relation": "complement",
+   "actor": "importers",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q28_large_capacity_cannot_be_added_at_the_ol"
+   ],
+   "reading": null,
+   "source_actor": "sellers.prospective",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "sellers.prospective",
+   "variable": "net_price_received",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q25_some_controllers_that_already_host_in_co"
+   ],
+   "reading": null,
+   "source_actor": "sellers.prospective",
+   "source_variable": "quantity_demanded",
+   "relation": "substitute",
+   "actor": "sellers.current",
+   "variable": "quantity_demanded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q19_domestic_services_that_host_locally_are_"
+   ],
+   "reading": null,
+   "source_actor": "sellers.substitutes",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "sellers.current",
+   "variable": "quantity_demanded",
+   "horizon": null
+  }
+ ],
+ "assets": [],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k2",
+   "actor": "buyers.abroad"
+  },
+  {
+   "component": "k2",
+   "actor": "buyers.foreign"
+  },
+  {
+   "component": "k2",
+   "actor": "buyers.backup"
+  },
+  {
+   "component": "k2",
+   "actor": "buyers.current"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k4",
+   "actor": "officials.enforcement"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k4",
+   "actor": "taxpayers",
+   "premises": [
+    "a22"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "k3",
+   "premises": [
+    "a18"
+   ],
+   "exchange": "e_local",
+   "payer_side": "seller",
+   "receiver": "general_fund",
+   "receipt_variable": "non_tax_receipts",
+   "quantity_premises": [],
+   "projection_variable": null,
+   "branch_premises": [],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "basis": "operating"
+  }
+ ],
+ "moves": [],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a27"
+   ]
+  }
+ ],
+ "timing": [],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "terms": [],
+ "banned": [
+  {
+   "premises": [
+    "a1",
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_abroad"
+  },
+  {
+   "premises": [
+    "a1"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e_foreign"
+  },
+  {
+   "premises": [
+    "a2"
+   ],
+   "reading": null,
+   "component": "k1_b",
+   "exchange": "e_backup"
+  }
+ ],
+ "incidence": [],
+ "fixed": [],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Section 4(2): a copy made solely for security may be kept outside Corvany where the Office so allows by regulation; the Office has issued no regulation.",
+   "readings": [
+    "U1-a: encrypted backup copies may be kept abroad (the regulation sets only conditions)",
+    "U1-b: until the Office allows it by regulation, every copy, including backups, must be in Corvany"
+   ],
+   "components": {
+    "U1-a": [],
+    "U1-b": [
+     "k1_b"
+    ]
+   }
+  }
+ ],
+ "thresholds": [
+  {
+   "premises": [
+    "a10"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "buyers.near_threshold",
+   "variable": "membership",
+   "chooser": null
+  }
+ ],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [],
+ "assumptions": {
+  "a1": {
+   "text": "The requirement binds: many covered controllers would host abroad without it.",
+   "p": 0.95,
+   "class": "binding"
+  },
+  "a2": {
+   "text": "The Office enforces the requirement against controllers with an establishment in Corvany.",
+   "p": 0.85,
+   "class": "enforcement"
+  },
+  "a10": {
+   "text": "The cost of compliance is material against the gain from growing past 50,000.",
+   "p": 0.8,
+   "class": "binding"
+  },
+  "a18": {
+   "text": "For some small facilities, the certificate and audit cost more than the margin on hosting covered data.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "a22": {
+   "text": "The supplementary appropriation is paid from the general budget, with no named tax.",
+   "p": 0.9,
+   "class": "revenue_use"
+  },
+  "a27": {
+   "text": "Actors expect the requirement to apply from 1 January 2029, as enacted.",
+   "p": 0.95,
+   "class": "expectations"
+  },
+  "q7_some_controllers_above_the_threshold_con": {
+   "text": "Some controllers above the threshold continue to pay higher costs rather than drop below it.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q8_at_least_one_foreign_provider_builds_a_l": {
+   "text": "At least one foreign provider builds a local region.",
+   "p": 0.85,
+   "class": "expectations"
+  },
+  "q9_local_computing_costs_more_per_unit_than": {
+   "text": "Local computing costs more per unit than the Esterland regions.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q10_local_hosting_cuts_latency_for_corvany_u": {
+   "text": "Local hosting cuts latency for Corvany users, which some controllers value.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q11_new_local_regions_launch_with_fewer_serv": {
+   "text": "New local regions launch with fewer services than the Esterland regions; colocation offers fewer still.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q12_for_some_controllers_near_50_000_deletin": {
+   "text": "For some controllers near 50,000, deleting inactive records or splitting between controllers costs less than compliance.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q13_the_office_does_not_treat_a_group_s_cont": {
+   "text": "The Office does not treat a group's controllers as one.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q14_covered_controllers_pay_consultants_to_m": {
+   "text": "Covered controllers pay consultants to migrate their systems.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q15_hosting_is_a_material_part_of_the_cost_o": {
+   "text": "Hosting is a material part of the cost of online services.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q16_some_controllers_that_keep_backups_abroa": {
+   "text": "Some controllers that keep backups abroad would store them in Corvany if required.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q17_some_foreign_online_services_find_corvan": {
+   "text": "Some foreign online services find Corvany too small to justify local hosting, and cap sign-ups or withdraw.",
+   "p": 0.7,
+   "class": "alternative_uses"
+  },
+  "q18_enforcement_against_foreign_services_wit": {
+   "text": "Enforcement against foreign services without an establishment is weak.",
+   "p": 0.7,
+   "class": "enforcement"
+  },
+  "q19_domestic_services_that_host_locally_are_": {
+   "text": "Domestic services that host locally are substitutes for some foreign services that withdraw.",
+   "p": 0.7,
+   "class": "substitutability"
+  },
+  "q20_local_operators_providers_and_controller": {
+   "text": "Local operators, providers and controllers near the line can organize at a cost below their stake.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q21_local_colocation_cannot_add_space_beyond": {
+   "text": "Local colocation cannot add space beyond its 15% free capacity within a year.",
+   "p": 0.8,
+   "class": "durability"
+  },
+  "q22_local_capacity_can_be_added_at_some_cost": {
+   "text": "Local capacity can be added at some cost: colocation expansions and connections below 10 MW within about a year.",
+   "p": 0.8,
+   "class": "alternative_uses"
+  },
+  "q23_the_esterland_regions_capacity_is_not_cu": {
+   "text": "The Esterland regions' capacity is not cut as fast as Corvany workloads leave.",
+   "p": 0.7,
+   "class": "durability"
+  },
+  "q24_some_providers_that_covered_controllers_": {
+   "text": "Some providers that covered controllers used do not build in Corvany.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q25_some_controllers_that_already_host_in_co": {
+   "text": "Some controllers that already host in Corvany colocation, covered or not, move to a provider's local region when it opens.",
+   "p": 0.65,
+   "class": "substitutability"
+  },
+  "q26_covered_controllers_move_other_operation": {
+   "text": "Covered controllers move other operations (staff, offices) to Corvany along with their data.",
+   "p": 0.2,
+   "class": "other"
+  },
+  "q27_the_providers_investment_is_financed_fro": {
+   "text": "The providers' investment is financed from abroad, and servers and equipment are imported.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q28_large_capacity_cannot_be_added_at_the_ol": {
+   "text": "Large capacity cannot be added at the old cost within five years, and the cost of adding it does not fall as more is added.",
+   "p": 0.65,
+   "class": "durability"
+  }
+ }
+}

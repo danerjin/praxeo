@@ -1,0 +1,44 @@
+{
+ "name": "WE-053 Corvany personal data residency (loop seed)",
+ "exchanges": [
+  {"id": "e_abroad", "buyer": "buyers.abroad", "seller": "sellers.foreign", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_foreign", "buyer": "buyers.foreign", "seller": "sellers.foreign", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_backup", "buyer": "buyers.backup", "seller": "sellers.foreign", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_local", "buyer": "buyers.current", "seller": "sellers.current", "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "banned": [
+  {"component": "k1", "exchange": "e_abroad", "premises": ["a1", "a2"]},
+  {"component": "k1", "exchange": "e_foreign", "premises": ["a1"]},
+  {"component": "k1_b", "exchange": "e_backup", "premises": ["a2"]}
+ ],
+ "charges": [
+  {"component": "k3", "premises": ["a18"], "exchange": "e_local", "payer_side": "seller", "receiver": "general_fund",
+   "receipt_variable": "non_tax_receipts", "basis": "operating"}
+ ],
+ "thresholds": [
+  {"component": "k1", "actor": "buyers.near_threshold", "variable": "membership", "premises": ["a10"]}
+ ],
+ "compliance": [
+  {"component": "k2", "actor": "buyers.abroad"},
+  {"component": "k2", "actor": "buyers.foreign"},
+  {"component": "k2", "actor": "buyers.backup"},
+  {"component": "k2", "actor": "buyers.current"}
+ ],
+ "enforcers": [{"component": "k4", "actor": "officials.enforcement"}],
+ "funded": [{"component": "k4", "actor": "taxpayers", "premises": ["a22"]}],
+ "announced": [{"component": "k1", "premises": ["a27"]}],
+ "unclear": [
+  {"id": "U1", "text": "Section 4(2): a copy made solely for security may be kept outside Corvany where the Office so allows by regulation; the Office has issued no regulation.",
+   "readings": ["U1-a: encrypted backup copies may be kept abroad (the regulation sets only conditions)",
+                "U1-b: until the Office allows it by regulation, every copy, including backups, must be in Corvany"],
+   "components": {"U1-a": [], "U1-b": ["k1_b"]}}
+ ],
+ "assumptions": {
+  "a1": {"text": "The requirement binds: many covered controllers would host abroad without it.", "p": 0.95, "class": "binding"},
+  "a2": {"text": "The Office enforces the requirement against controllers with an establishment in Corvany.", "p": 0.85, "class": "enforcement"},
+  "a10": {"text": "The cost of compliance is material against the gain from growing past 50,000.", "p": 0.8, "class": "binding"},
+  "a18": {"text": "For some small facilities, the certificate and audit cost more than the margin on hosting covered data.", "p": 0.55, "class": "other"},
+  "a22": {"text": "The supplementary appropriation is paid from the general budget, with no named tax.", "p": 0.9, "class": "revenue_use"},
+  "a27": {"text": "Actors expect the requirement to apply from 1 January 2029, as enacted.", "p": 0.95, "class": "expectations"}
+ }
+}

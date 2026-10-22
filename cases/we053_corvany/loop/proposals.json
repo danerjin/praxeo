@@ -1,0 +1,591 @@
+{
+ "buyers.abroad": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.abroad",
+    "actor": "sellers.current",
+    "variables": [
+     "quantity_demanded"
+    ]
+   },
+   "premises": [
+    "Some controllers above the threshold continue to pay higher costs rather than drop below it."
+   ],
+   "premise_class": "other",
+   "source": "From 1 January 2029, the data \"shall be stored and processed only on servers located in Corvany\". 950 controllers already host in Corvany, in their own data centers or with local colocation firms."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.abroad",
+    "actor": "sellers.prospective",
+    "variables": [
+     "quantity_demanded"
+    ]
+   },
+   "premises": [
+    "At least one foreign provider builds a local region."
+   ],
+   "premise_class": "expectations",
+   "source": "A foreign provider may comply by operating servers in Corvany."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.abroad",
+    "actor": "buyers.abroad",
+    "variables": [
+     "price_paid"
+    ]
+   },
+   "premises": [
+    "Local computing costs more per unit than the Esterland regions.",
+    "Some controllers above the threshold continue to pay higher costs rather than drop below it."
+   ],
+   "premise_class": "other",
+   "source": "Cost of local hosting per unit of computing | estimated 25% to 40% above the Esterland regions"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.abroad",
+    "actor": "buyers.abroad",
+    "variables": [
+     "quality_per_unit"
+    ]
+   },
+   "premises": [
+    "Local hosting cuts latency for Corvany users, which some controllers value."
+   ],
+   "premise_class": "other",
+   "source": "From 1 January 2029, the data \"shall be stored and processed only on servers located in Corvany\"."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.abroad",
+    "actor": "buyers.abroad",
+    "variables": [
+     "variety"
+    ],
+    "inverse": true
+   },
+   "premises": [
+    "New local regions launch with fewer services than the Esterland regions; colocation offers fewer still."
+   ],
+   "premise_class": "other",
+   "source": "A provider's local region (two separate sites) | about 400 million crowns, 18 to 30 months to build"
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.abroad",
+    "actor": "buyers.abroad",
+    "variables": [
+     "membership"
+    ],
+    "inverse": true
+   },
+   "premises": [
+    "For some controllers near 50,000, deleting inactive records or splitting between controllers costs less than compliance."
+   ],
+   "premise_class": "other",
+   "source": "The count is per controller; a group's companies count separately. Controllers at or below 50,000 are exempt."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.abroad",
+    "actor": "buyers.abroad",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "For some controllers near 50,000, deleting inactive records or splitting between controllers costs less than compliance.",
+    "The Office does not treat a group's controllers as one."
+   ],
+   "premise_class": "other",
+   "source": "The count is per controller; a group's companies count separately."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.abroad",
+    "source_variable": "compliance_cost",
+    "relation": "input",
+    "actor": "input_suppliers",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Covered controllers pay consultants to migrate their systems."
+   ],
+   "premise_class": "other",
+   "source": "Migration of a firm's systems | 150,000 to 2 million crowns per firm, by consultants (about 40 firms in Corvany)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.abroad",
+    "source_variable": "price_paid",
+    "relation": "cost",
+    "actor": "sellers.online",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Hosting is a material part of the cost of online services."
+   ],
+   "premise_class": "other",
+   "source": "Hosting as a share of costs | 1% to 3% for banks and retailers; 10% to 20% for online services"
+  }
+ ],
+ "buyers.backup": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_b",
+    "chooser": "buyers.backup",
+    "actor": "sellers.current",
+    "variables": [
+     "quantity_demanded"
+    ],
+    "reading": "U1-b"
+   },
+   "premises": [
+    "Some controllers that keep backups abroad would store them in Corvany if required."
+   ],
+   "premise_class": "other",
+   "source": "U1-b: until the Office allows it by regulation, every copy, including backups, must be in Corvany."
+  }
+ ],
+ "buyers.current": [],
+ "buyers.foreign": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.foreign",
+    "actor": "buyers.foreign",
+    "variables": [
+     "membership"
+    ],
+    "inverse": true
+   },
+   "premises": [
+    "Some foreign online services find Corvany too small to justify local hosting, and cap sign-ups or withdraw."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "About 400 of the 3,100 are foreign online services with no establishment in Corvany (shops, apps, games)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.foreign",
+    "actor": "sellers.prospective",
+    "variables": [
+     "quantity_demanded"
+    ]
+   },
+   "premises": [
+    "At least one foreign provider builds a local region."
+   ],
+   "premise_class": "expectations",
+   "source": "A foreign provider may comply by operating servers in Corvany."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_foreign",
+    "kind": "outside",
+    "actor": "buyers.foreign",
+    "variables": [
+     "informal_activity"
+    ]
+   },
+   "premises": [
+    "Enforcement against foreign services without an establishment is weak."
+   ],
+   "premise_class": "enforcement",
+   "source": "For a foreign controller with no establishment in Corvany, the Office may order internet providers to block its service, after a hearing; it has never issued a blocking order under the existing privacy law."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.foreign",
+    "source_variable": "membership",
+    "relation": "substitute",
+    "actor": "sellers.substitutes",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Domestic services that host locally are substitutes for some foreign services that withdraw."
+   ],
+   "premise_class": "substitutability",
+   "source": "Corvany is a country of 22 million people; foreign online services (shops, apps, games) serve its residents."
+  }
+ ],
+ "buyers.near_threshold": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.near_threshold",
+    "actor": "buyers.near_threshold",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "For some controllers near 50,000, deleting inactive records or splitting between controllers costs less than compliance.",
+    "The Office does not treat a group's controllers as one."
+   ],
+   "premise_class": "other",
+   "source": "The count is per controller; a group's companies count separately."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "buyers.near_threshold"
+   },
+   "premises": [
+    "Local operators, providers and controllers near the line can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Controllers at or below 50,000 are exempt; 650 controllers hold 40,000 to 50,000 residents' records."
+  }
+ ],
+ "general_fund": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "general_fund",
+    "source_variable": "non_tax_receipts",
+    "relation": "paid_into",
+    "actor": "general_fund",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Fees go to the general budget."
+  }
+ ],
+ "officials.enforcement": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.enforcement",
+    "source_variable": "enforcement_cost",
+    "relation": "paid_from",
+    "actor": "general_fund",
+    "variable": "fund_balance"
+   },
+   "premises": [
+    "The supplementary appropriation is paid from the general budget, with no named tax."
+   ],
+   "premise_class": "revenue_use",
+   "source": "The Office receives a supplementary appropriation of 6 million crowns a year from the general budget."
+  }
+ ],
+ "sellers.current": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.current",
+    "source_variable": "quantity_demanded",
+    "relation": "supply_price",
+    "actor": "sellers.current",
+    "variable": "net_price_received",
+    "horizon": "short"
+   },
+   "premises": [
+    "Local colocation cannot add space beyond its 15% free capacity within a year."
+   ],
+   "premise_class": "durability",
+   "source": "Local colocation | four firms, nine facilities, 60 MW, 85% occupied"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.current",
+    "source_variable": "net_price_received",
+    "relation": "yield",
+    "actor": "sellers.current",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Local capacity can be added at some cost: colocation expansions and connections below 10 MW within about a year."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "Grid connections | below 10 MW about 12 months"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.current",
+    "source_variable": "investment_target",
+    "relation": "input",
+    "actor": "sellers.current",
+    "variable": "capital_stock_target"
+   },
+   "premises": [
+    "Local capacity can be added at some cost: colocation expansions and connections below 10 MW within about a year."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "Grid connections | below 10 MW about 12 months"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.current",
+    "source_variable": "capital_stock_target",
+    "relation": "input",
+    "actor": "sellers.current",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Local capacity can be added at some cost: colocation expansions and connections below 10 MW within about a year."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "Grid connections | below 10 MW about 12 months"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.current",
+    "source_variable": "number_of_sellers",
+    "relation": "input",
+    "actor": "sellers.current",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "For some small facilities, the certificate and audit cost more than the margin on hosting covered data."
+   ],
+   "premise_class": "other",
+   "source": "K3 Facility certificate: annual audit of physical security and access logs; fee 40,000 crowns per facility a year."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.current",
+    "source_variable": "net_price_received",
+    "relation": "yield",
+    "actor": "sellers.current",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Local colocation cannot add space beyond its 15% free capacity within a year."
+   ],
+   "premise_class": "durability",
+   "source": "Local colocation | four firms, nine facilities, 60 MW, 85% occupied; facility revenue 30 to 120 million crowns a year"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.current",
+    "source_variable": "net_price_received",
+    "relation": "same_act",
+    "actor": "buyers.current",
+    "variable": "price_paid"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Local colocation | four firms, nine facilities, 60 MW, 85% occupied"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "sellers.current"
+   },
+   "premises": [
+    "Local operators, providers and controllers near the line can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Local colocation | four firms, nine facilities, 60 MW, 85% occupied"
+  }
+ ],
+ "sellers.foreign": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "sellers.foreign",
+    "actor": "sellers.prospective",
+    "variables": [
+     "investment_target"
+    ]
+   },
+   "premises": [
+    "At least one foreign provider builds a local region."
+   ],
+   "premise_class": "expectations",
+   "source": "A provider's local region (two separate sites) | about 400 million crowns, 18 to 30 months to build. Providers N and S announced regions in August 2027."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.foreign",
+    "source_variable": "quantity_traded",
+    "relation": "yield",
+    "actor": "sellers.foreign",
+    "variable": "return_on_capital"
+   },
+   "premises": [
+    "The Esterland regions' capacity is not cut as fast as Corvany workloads leave."
+   ],
+   "premise_class": "durability",
+   "source": "the three large cloud providers that serve Corvany run their nearest data center regions in Esterland"
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "sellers.foreign"
+   },
+   "premises": [
+    "Some providers that covered controllers used do not build in Corvany.",
+    "Local operators, providers and controllers near the line can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "Providers N and S announced regions in August 2027; provider T has not decided; dozens of smaller foreign providers have none."
+  }
+ ],
+ "taxpayers": [],
+ "buyers.abroad#2": [],
+ "buyers.foreign#2": [],
+ "buyers.near_threshold#2": [],
+ "general_fund#2": [],
+ "input_suppliers": [],
+ "sellers.foreign#2": [],
+ "sellers.online": [],
+ "buyers.current#2": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "buyers.current",
+    "actor": "sellers.prospective",
+    "variables": [
+     "quantity_demanded"
+    ]
+   },
+   "premises": [
+    "Some controllers that already host in Corvany colocation, covered or not, move to a provider's local region when it opens."
+   ],
+   "premise_class": "substitutability",
+   "source": "About 950 already host it in Corvany, in their own data centers or with local colocation firms. A provider's local region (two separate sites): about 400 million crowns."
+  }
+ ],
+ "sellers.current#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.current",
+    "source_variable": "quantity_demanded",
+    "relation": "complement",
+    "actor": "workers.prospective",
+    "variable": "employment"
+   },
+   "premises": [
+    "Covered controllers move other operations (staff, offices) to Corvany along with their data."
+   ],
+   "premise_class": "other",
+   "source": "From 1 January 2029, the data \"shall be stored and processed only on servers located in Corvany\"."
+  }
+ ],
+ "sellers.prospective": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.prospective",
+    "source_variable": "investment_target",
+    "relation": "input",
+    "actor": "economy",
+    "variable": "capital_stock_economy"
+   },
+   "premises": [
+    "The providers' investment is financed from abroad, and servers and equipment are imported."
+   ],
+   "premise_class": "other",
+   "source": "A provider's local region (two separate sites) | about 400 million crowns, 18 to 30 months to build."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.prospective",
+    "source_variable": "investment_target",
+    "relation": "complement",
+    "actor": "importers",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "The providers' investment is financed from abroad, and servers and equipment are imported."
+   ],
+   "premise_class": "other",
+   "source": "A provider's local region (two separate sites) | about 400 million crowns, 18 to 30 months to build."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.prospective",
+    "source_variable": "quantity_demanded",
+    "relation": "supply_price",
+    "actor": "sellers.prospective",
+    "variable": "net_price_received",
+    "horizon": "long"
+   },
+   "premises": [
+    "Large capacity cannot be added at the old cost within five years, and the cost of adding it does not fall as more is added."
+   ],
+   "premise_class": "durability",
+   "source": "Grid connections | below 10 MW about 12 months; above 10 MW three to four years."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.prospective",
+    "source_variable": "quantity_demanded",
+    "relation": "substitute",
+    "actor": "sellers.current",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Some controllers that already host in Corvany colocation, covered or not, move to a provider's local region when it opens."
+   ],
+   "premise_class": "substitutability",
+   "source": "About 950 already host it in Corvany, in their own data centers or with local colocation firms."
+  }
+ ],
+ "sellers.substitutes": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.substitutes",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "sellers.current",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Domestic services that host locally are substitutes for some foreign services that withdraw."
+   ],
+   "premise_class": "substitutability",
+   "source": "Domestic services that host locally are substitutes for some foreign services that withdraw (assumption A-20)."
+  }
+ ],
+ "buyers.current#3": [],
+ "economy": [],
+ "importers": [],
+ "sellers.current#3": [],
+ "sellers.prospective#2": []
+}
