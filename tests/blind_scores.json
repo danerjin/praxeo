@@ -150,5 +150,203 @@
   "produced": 16,
   "total": 47,
   "pattern_engine": "12"
+ },
+ {
+  "case": "we039_sorrel",
+  "loop": "loop",
+  "example": "WE-039_groundwater_pumping_allocation.md",
+  "short": {
+   "landholders.history": "landowners.history",
+   "landholders.no_history.eligible": "landowners.eligible",
+   "growers": [
+    "growers.south",
+    "growers.north_central"
+   ],
+   "farm_workers": "workers.farm",
+   "input_suppliers": "input_suppliers",
+   "neighbors": "households.domestic",
+   "officials.county": "municipalities.county",
+   "officials.enforcement": "officials.enforcement",
+   "buyers.crops": [
+    "buyers.tree_nuts",
+    "buyers.field_crops",
+    "buyers"
+   ]
+  },
+  "windows": {},
+  "produced": 8,
+  "total": 60,
+  "pattern_engine": "8"
+ },
+ {
+  "case": "we042_vessland",
+  "loop": "loop",
+  "example": "WE-042_aluminum_tariff_drawback.md",
+  "short": {
+   "smelters": "producers.domestic",
+   "smelters.owners": "owners.smelters",
+   "smelter_workers": "workers.smelters",
+   "users.home": "manufacturers.home",
+   "officials.enforcement": "officials.revenue",
+   "importers": "importers",
+   "exporters.domestic_metal": "exporters.domestic_metal",
+   "sellers.foreign": "sellers.foreign",
+   "buyers.foreign": "buyers.foreign",
+   "input_suppliers": "input_suppliers.electricity",
+   "taxpayers": "taxpayers",
+   "remelters": "producers.secondary",
+   "scrap_sellers": "sellers.scrap",
+   "buyers.aluminum_goods": "buyers"
+  },
+  "windows": {},
+  "produced": 13,
+  "total": 57,
+  "pattern_engine": "42"
+ },
+ {
+  "case": "we044_saltmere",
+  "loop": "loop",
+  "example": "WE-044_short_term_rental_ban.md",
+  "short": {
+   "hosts.non_primary": "owners.non_primary",
+   "guests.whole_unit": "buyers.short_stay",
+   "hosts.duplex": "owners.two_unit",
+   "hosts.primary_over90": "owners.over_90_nights",
+   "hosts.mid_term": "owners.mid_term",
+   "guests.extended": "buyers.mid_term",
+   "hotels": "sellers.hotels",
+   "tenants.prospective": "renters",
+   "landlords.long_term": "landlords.long_term",
+   "buyers.prospective": "homebuyers",
+   "homeowners.str_districts": "homeowners",
+   "sellers.complements": "retailers.neighbors",
+   "neighboring_jurisdictions": [
+    "owners.elsdon",
+    "landlords.elsdon",
+    "renters.elsdon"
+   ],
+   "input_suppliers": "input_suppliers.cleaning",
+   "platforms": "platforms",
+   "officials.enforcement": [
+    "officials.enforcement",
+    "officials.registry"
+   ],
+   "hosts.rooms": "owners.occupant"
+  },
+  "windows": {
+   "stays before 1 July 2027": "announcement"
+  },
+  "produced": 21,
+  "total": 64,
+  "pattern_engine": "14"
+ },
+ {
+  "case": "we047_kestrany",
+  "loop": "loop",
+  "example": "WE-047_sugar_tariff_rate_quota.md",
+  "short": {
+   "importers.history": "importers.licence_holders",
+   "importers": "importers",
+   "applicants": "importers.applicants",
+   "buyers.industrial": "manufacturers.food",
+   "buyers.household": "households",
+   "growers.beet": "growers",
+   "mills.domestic": "producers.sugar",
+   "refiners.port": "importers.refiners",
+   "owners.food_manufacturers": "owners.manufacturers",
+   "workers.food": "workers.food_manufacturing",
+   "workers.mills": [
+    "workers.mills",
+    "workers.beet_farming"
+   ],
+   "sellers.substitutes": [
+    "producers.glucose",
+    "sellers.substitutes"
+   ],
+   "input_suppliers": "input_suppliers",
+   "officials.enforcement": [
+    "officials.enforcement",
+    "officials.licensing"
+   ],
+   "sellers.foreign": "sellers.foreign",
+   "export_industries": "export_industries.other",
+   "food_manufacturers.exporters": "manufacturers.exporting",
+   "taxpayers": "taxpayers"
+  },
+  "windows": {},
+  "produced": 21,
+  "total": 54,
+  "pattern_engine": "26"
+ },
+ {
+  "case": "we050_vessmark",
+  "loop": "loop",
+  "example": "WE-050_combustion_car_sales_ban.md",
+  "short": {
+   "buyers.new_combustion": "buyers.combustion",
+   "buyers.new_phev": "buyers.phev",
+   "buyers.new_bev": "buyers.bev",
+   "buyers.new_cars": [
+    "buyers.combustion",
+    "buyers.phev",
+    "buyers.bev"
+   ],
+   "buyers.used_combustion": "buyers.used",
+   "buyers.used_bev": "buyers.used_bev",
+   "owners.combustion": "owners.combustion",
+   "importers": [
+    "importers.combustion",
+    "importers.phev",
+    "importers.bev"
+   ],
+   "dealers": "retailers.dealers",
+   "sellers.foreign": "sellers.foreign",
+   "sellers.complements": [
+    "retailers.fuel",
+    "sellers.charging"
+   ],
+   "repair_shops": "sellers.repair",
+   "fuel_station_workers": "workers.fuel",
+   "fuel retailers": "retailers.fuel",
+   "charging firms": "sellers.charging",
+   "officials.enforcement": "officials.enforcement"
+  },
+  "windows": {},
+  "produced": 12,
+  "total": 47,
+  "pattern_engine": "6"
+ },
+ {
+  "case": "we053_corvany",
+  "loop": "loop",
+  "example": "WE-053_data_localization.md",
+  "short": {
+   "firms.covered": [
+    "buyers.abroad",
+    "buyers.current",
+    "buyers.foreign",
+    "buyers.backup"
+   ],
+   "firms.covered.abroad": "buyers.abroad",
+   "firms.covered.local": [
+    "buyers.current",
+    "buyers.backup"
+   ],
+   "firms.near_threshold": "buyers.near_threshold",
+   "sellers.foreign": "sellers.foreign",
+   "sellers.foreign.online": "buyers.foreign",
+   "sellers.substitutes": "sellers.current",
+   "sellers.domestic_digital": "sellers.substitutes",
+   "sellers.prospective": "sellers.prospective",
+   "intermediaries": "input_suppliers",
+   "input_suppliers": "__no_record_class__",
+   "state budget": "general_fund",
+   "taxpayers": "taxpayers",
+   "officials.enforcement": "officials.enforcement"
+  },
+  "windows": {},
+  "produced": 11,
+  "total": 41,
+  "pattern_engine": "7"
  }
 ]
