@@ -363,3 +363,11 @@ def test_a_link_acts_at_its_horizon_and_funds_net_their_flows():
                          "actor": "treasury", "variable": "fund_balance", "premises": ["a4"]}]
     got = _run(**TAX, links=spend, enforcers=[{"component": "k", "actor": "officials.enforcement"}])
     assert ("treasury", "fund_balance", "ambiguous", None) in got        # receipts against spending: CR-12 without dominance
+
+
+def test_the_subclass_receiving_a_term_in_kind_holds_on_to_it():
+    ch = [{"component": "k", "exchange": "e", "payer_side": "buyer", "receiver": "workers.at_offering_firms",
+           "receipt_variable": "non_wage_compensation", "quantity_premises": ["a2"]}]
+    alt = [{"component": "k", "chooser": "workers.at_offering_firms", "actor": "workers.at_offering_firms",
+            "variables": ["job_changes"], "premises": ["a3"]}]
+    assert ("workers.at_offering_firms", "job_changes", "decrease", None) in _run(exchanges=JOBS, charges=ch, alternatives=alt)

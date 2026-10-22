@@ -143,7 +143,7 @@ def test_blind_loop_runs_on_mandates_after_fixed_prices_and_readings():
           "workers.min_wage": "workers.at_bound_firms", "employers.near_50": "employers.near_line", "workers.near_30": "workers.near_30_hours",
           "insurers.group": "insurers.health", "employers.small": "employers.unbound", "sellers.contract_services": "employers.staffing",
           "general_fund": "officials.revenue"},
-         {}, 16, 60),                                                                              # r2 18; pattern engine 29
+         {}, 17, 60),                                                                              # 16 before the in-kind receiver was a chooser; r2 18; pattern engine 29
         ("we031_westmere", "loop", "WE-031_building_energy_code.md",
          {"builders": "builders.homes", "officials.enforcement": "officials.building_departments",
           "owners.buildable_lots": "landowners.buildable_lots", "input_suppliers.efficiency": "makers.efficiency_products",
@@ -224,6 +224,34 @@ def test_blind_loop_runs_with_incidence_and_horizons():
           "neighboring_jurisdictions": "sellers.foreign", "employers.tradable": "producers.tradable",
           "buyers.local_services": "consumers"},
          {}, 18),                                                                       # of 42; pattern engine 40, in sample
+    ]
+    for case, loop, example, short, windows, k in cases:
+        produced, _ = _loop_score(case, example, short, windows, loop)
+        assert (case, loop, len(produced)) == (case, loop, k)
+
+
+def test_blind_loop_runs_after_the_last_mandate_forms():
+    """Runs after branch premise sets, link horizons, fund links and reading-tied exempt alternatives (7890e0e)."""
+    cases = [
+        ("we036_quenby", "loop_r7", "WE-036_employer_health_cover_mandate.md",
+         {"workers.at_players": "workers.at_offering_firms", "employers.payers_midsize": "employers.mid_size",
+          "employers.bound": ["employers.mid_size", "employers.capped"], "employers.near_50": "employers.near_threshold",
+          "workers.capped_firms": "workers.at_capped_firms", "workers.near_30": "workers.near_hours_line",
+          "general_fund": ["treasury", "officials.revenue", "officials.icp"],
+          "sellers.contract_services": ["contractors", "intermediaries.staffing"], "insurers.group": "insurers",
+          "employers.tradable": "producers.tradable", "neighboring_jurisdictions": "sellers.foreign", "providers.medical": "sellers.care"},
+         {}, 26),     # runs 1 to 6: 13, 18, 16, 19, 21, 24; pattern engine 29 (of 60)
+        ("we059_kestrava", "loop_r2", "WE-059_right_to_repair.md",
+         {"owners.ag": "growers", "makers.ag": "manufacturers.farm", "makers.phone": ["manufacturers.phone", "manufacturers.phone_other"],
+          "dealers.ag": "retailers.dealers", "independents": ["repair_shops.independent_farm", "repair_shops.independent_phone"],
+          "authorized_providers.phone": "repair_shops.authorized_phone",
+          "lobbying groups": ["manufacturers.farm", "manufacturers.phone", "retailers.dealers", "growers"],
+          "buyers of stolen parts": "sellers.stolen_parts"},
+         {}, 11),     # r1 9; pattern engine 9 (of 47)
+        ("we029_varrow", "loop_r2", "WE-029_paid_sick_leave_mandate.md",
+         {"employers.uncovered": "employers.covered", "associations": "employers.covered", "unions": "workers.uncovered",
+          "neighboring_jurisdictions": "sellers.foreign", "employers.tradable": "producers.tradable", "buyers.local_services": "consumers"},
+         {}, 19),     # r1 18 (of 42); pattern engine 40, in sample
     ]
     for case, loop, example, short, windows, k in cases:
         produced, _ = _loop_score(case, example, short, windows, loop)

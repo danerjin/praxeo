@@ -129,7 +129,10 @@ chooser(C, A, worse)  :- h(C, E, D), long(D, S), unsatisfied(E, S, A).
 chooser(C, A, better) :- h(C, E, _), favored(E, S), party(E, S, A).
 chooser(C, A, worse)  :- c_charged(C, E), charge(C, E, S, _), party(E, S, A).
 chooser(C, A, better) :- c_granted(C, E), grant(C, E, S, _), party(E, S, A).
+% The receiver of a payment in kind is made better, whether it is the whole side or the subclass that receives it (the
+% workers at firms that offer cover): an option it holds is improved (CR-4).
 chooser(C, R, better) :- c_charged(C, E), charge(C, E, _, R), party(E, _, R).
+chooser(C, R, better) :- c_charged(C, E), charge(C, E, S, R), qty_premise(C, E, _, _, _), not party(E, _, R).
 chooser(C, A, worse)  :- c_capped(C, E), party(E, buyer, A).
 chooser(C, A, worse)  :- c_capped(C, E), unsatisfied(E, seller, A).
 chooser(C, A, better) :- c_capped(C, E), holder(C, E, A).

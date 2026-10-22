@@ -331,3 +331,32 @@ The three writers flagged the same gap: capped payers were signed as trading les
 - Links carry no horizon.
 - A delayed, not lost, response has no later window.
 - No relation turns an appropriation or enforcement cost into a fall in a fund's balance.
+
+## Step 11: the remaining mandate gaps
+
+**New forms.** Each has a pattern check.
+- **A branch that any of several premise sets opens** (`branch_premise_sets`). For example, new offerers or upgraders.
+- **A horizon on a link.**
+- **Two fund relations** (CR-8b). `paid_from` means spending from a fund lowers its balance; `paid_into` means receipts raise it. Opposed flows are ambiguous unless a dominance premise settles them.
+- **The subclass that receives a term in kind is a chooser made better**, even where it is not a whole side of the exchange (the workers at firms that offer cover). Their reasons to stay put can now fire. This raised the third WE-036 run from 16 to 17.
+- **Proposer guidance:** the exempt form under a reading is an alternative tied to that reading.
+
+**"Delayed, not lost"** (WE-036 A-31) needs no new window. Holding back before the status year is the timing response in the announcement window. The lasting effect of the line is the threshold rule.
+
+**Blind runs:**
+
+| Case | Core path | Pattern engine |
+|---|---|---|
+| WE-036, run 7 | 26/60, with no real contradiction left; the seasonal row now comes out per reading | 29 |
+| WE-059, run 2 | 11/47 (run 1: 9) | 9 |
+| WE-029, run 2 | 19/42 (run 1: 18) | 40, in sample |
+
+**WE-036 over seven runs:** 13, 18, 16, 19, 21, 24 and 26, against the pattern engine's 29. Most of the gain came after:
+- the controlled names and subclass guidance (step 9);
+- incidence and horizons (step 10);
+- the fixes in this step.
+
+**What the WE-059 writer could not hold:**
+- A duty to supply that opens a closed trade, where the format has no operation for it.
+- A charge owed to two receivers.
+- A quantity premise that only ever signs trades down. The record gave the duty such a premise, that its cost outweighs its value to buyers, and so signed makers' sales and owners' prices where the table leaves them ambiguous.
