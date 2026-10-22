@@ -1,0 +1,984 @@
+{
+ "employers.capped": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_pay",
+    "actor": "employers.capped"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "No firm pays more than $300,000 a year under K1 (reached at 100 uncovered employees)."
+  }
+ ],
+ "employers.near_threshold": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k3",
+    "chooser": "employers.near_threshold",
+    "actor": "employers.near_threshold",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Contracting out and franchising are open to some firms near 50 at a cost below the term or the charge (splitting by ownership is closed by the common-control rule)."
+   ],
+   "premise_class": "other",
+   "source": "Firms under common control are counted together. Agency workers count for the agency."
+  },
+  {
+   "part": "timing",
+   "fact": {
+    "component": "k3",
+    "actor": "employers.near_threshold",
+    "variable": "employment",
+    "mode": "carry_over"
+   },
+   "premises": [
+    "Some firms that would have passed 50 in 2027 still pass it later, so part of the growth held back is delayed rather than lost."
+   ],
+   "premise_class": "other",
+   "source": "Status for 2028 is decided by the firm's average FTE over 2027."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.near_threshold",
+    "source_variable": "employment",
+    "relation": "yield",
+    "actor": "owners.near_threshold",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Values of firms near 50 reflect their expected growth."
+   ],
+   "premise_class": "expectations",
+   "source": "About 1,300 firms have 40 to 49 FTE, and about 1,100 have 50 to 60."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.near_threshold",
+    "source_variable": "employment",
+    "relation": "same_act",
+    "actor": "workers.at_near_threshold_firms",
+    "variable": "employment"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "About 1,300 firms have 40 to 49 FTE, and about 1,100 have 50 to 60."
+  }
+ ],
+ "employers.offering": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_offer",
+    "chooser": "employers.offering",
+    "actor": "workers.at_offering_firms",
+    "variables": [
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Between 30 and 40 hours, extra hours from existing full-timers substitute for extra full-time heads."
+   ],
+   "premise_class": "substitutability",
+   "source": "Health cover for each employee averaging 30 or more hours a week (130 hours in a month)."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_offer",
+    "actor": "employers.offering"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Either offer each such employee ... a plan meeting K2 with an employer contribution of at least 70%."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_off",
+    "side": "buyer",
+    "actor": "owners.offering"
+   },
+   "premises": [
+    "Business values reflect expected earnings, and buyers expected the Act from its introduction."
+   ],
+   "premise_class": "expectations",
+   "source": "The bill was introduced on 9 November 2026 with the governor's support, signed on 4 January 2027, and takes effect on 1 January 2028."
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_off",
+    "side": "buyer",
+    "actor": "employers.offering"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "The average premium for an employee-only plan that meets the standard is $7,400 a year, so a 70% share is $5,180."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.offering",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "employers.offering",
+    "variable": "quantity_supplied"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Firms with 50 or more full-time equivalents (FTE) employ about 1.45 million people."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.offering",
+    "source_variable": "quantity_supplied",
+    "relation": "substitute",
+    "actor": "employers.small",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets."
+   ],
+   "premise_class": "substitutability",
+   "source": "Employers with 50 or more FTE (K3)."
+  }
+ ],
+ "employers.paying": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pay",
+    "chooser": "employers.paying",
+    "actor": "employers.paying",
+    "variables": [
+     "quantity_substitute"
+    ]
+   },
+   "premises": [
+    "Some mid-size payers can obtain agency workers from capped staffing firms at a markup below the $3,000 charge."
+   ],
+   "premise_class": "substitutability",
+   "source": "Agency workers count for the agency."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pay",
+    "chooser": "employers.paying",
+    "actor": "workers.at_paying_firms",
+    "variables": [
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Between 30 and 40 hours, extra hours from existing full-timers substitute for extra full-time heads."
+   ],
+   "premise_class": "substitutability",
+   "source": "R4 Overtime: 1.5 times the regular rate on hours above 40 a week."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pay",
+    "chooser": "employers.paying",
+    "actor": "employers.paying",
+    "variables": [
+     "legal_breach"
+    ]
+   },
+   "premises": [
+    "Revenue cannot cheaply verify reported offers, and some firms report offers not made."
+   ],
+   "premise_class": "enforcement",
+   "source": "Employers report each employee's offer status on quarterly withholding returns; the charge is assessed with them. Misreporting: twice the unpaid charge."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_pay",
+    "actor": "employers.paying"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "about 73,000 at about 2,050 mid-size firms, about 36 per firm on average."
+  },
+  {
+   "part": "assets",
+   "fact": {
+    "exchange": "e_pay",
+    "side": "buyer",
+    "actor": "owners.paying"
+   },
+   "premises": [
+    "Business values reflect expected earnings, and buyers expected the Act from its introduction."
+   ],
+   "premise_class": "expectations",
+   "source": "The bill was introduced on 9 November 2026 with the governor's support, signed on 4 January 2027, and takes effect on 1 January 2028."
+  },
+  {
+   "part": "yields",
+   "fact": {
+    "exchange": "e_pay",
+    "side": "buyer",
+    "actor": "employers.paying"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "pay $250 a month ($3,000 a year) to the Department of Revenue for each such employee not so offered."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.paying",
+    "source_variable": "quantity_traded",
+    "relation": "input",
+    "actor": "employers.paying",
+    "variable": "quantity_supplied"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "about 73,000 at about 2,050 mid-size firms."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.paying",
+    "source_variable": "quantity_supplied",
+    "relation": "substitute",
+    "actor": "employers.small",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets."
+   ],
+   "premise_class": "substitutability",
+   "source": "Employers with 50 or more FTE (K3)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.paying",
+    "source_variable": "quantity_supplied",
+    "relation": "substitute",
+    "actor": "employers.capped",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Firms not bound (small, compliant, capped) compete with mid-size bound firms in local product markets."
+   ],
+   "premise_class": "substitutability",
+   "source": "No firm pays more than $300,000 a year under K1."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.paying",
+    "source_variable": "quantity_supplied",
+    "relation": "supply",
+    "actor": "consumers",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Most competitors of mid-size bound firms in local services are bound at a material per-head cost."
+   ],
+   "premise_class": "other",
+   "source": "about 73,000 at about 2,050 mid-size firms."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.paying",
+    "source_variable": "quantity_substitute",
+    "relation": "same_act",
+    "actor": "employers.capped",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Some mid-size payers can obtain agency workers from capped staffing firms at a markup below the $3,000 charge."
+   ],
+   "premise_class": "substitutability",
+   "source": "45 large firms (national retail and food chains, staffing, security) each with more than 100 such employees."
+  }
+ ],
+ "employers.seasonal": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k3_a",
+    "chooser": "employers.seasonal",
+    "actor": "employers.seasonal",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "Contracting out and franchising are open to some firms near 50 at a cost below the term or the charge (splitting by ownership is closed by the common-control rule)."
+   ],
+   "premise_class": "other",
+   "source": "About 380 firms (farms, food processing, ski and lake resorts, landscaping) have 30 to 49 year-round FTE and would reach 50 if the hours of their seasonal workers counted."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k3_a",
+    "chooser": "employers.seasonal",
+    "actor": "workers.at_seasonal_firms",
+    "variables": [
+     "hours_worked"
+    ]
+   },
+   "premises": [
+    "Employers shorten seasonal and temporary engagements below 60 days so that no offer is owed."
+   ],
+   "premise_class": "other",
+   "source": "Under both readings, a seasonal worker who averages 30 or more hours at a bound firm is owed an offer after 60 days."
+  }
+ ],
+ "insurers": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_offer",
+    "actor": "insurers"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "K2 Benefit standard: product_standard; Insurers and self-insured employers; list kept by the Department of Insurance."
+  }
+ ],
+ "officials.enforcement": [],
+ "officials.revenue": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.revenue",
+    "source_variable": "non_tax_receipts",
+    "relation": "same_act",
+    "actor": "treasury",
+    "variable": "fund_balance"
+   },
+   "premises": [
+    "Charges collected in 2028 are not cut by misreporting below $13.5 million less the short-run income tax lost, and that tax lost is smaller than the $9.4 million by which the capped firms' charges exceed the appropriation."
+   ],
+   "premise_class": "other",
+   "source": "Charges are paid into the general fund. A new appropriation of $4.1 million a year from the general fund pays for 32 staff."
+  }
+ ],
+ "taxpayers": [],
+ "workers.at_offering_firms": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_offer",
+    "chooser": "workers.at_offering_firms",
+    "actor": "workers.at_unbound_firms",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley), so the wage does not fall by the whole charge.",
+    "Some newly covered workers are near the margin between staying and moving to an unbound job."
+   ],
+   "premise_class": "mobility",
+   "source": "Firms with 50 or more FTE ... Employers with 50 or more FTE (K3)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_offer",
+    "chooser": "workers.at_offering_firms",
+    "actor": "workers.part_time",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley), so the wage does not fall by the whole charge."
+   ],
+   "premise_class": "mobility",
+   "source": "Employees averaging under 30 hours are exempt."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_offer",
+    "chooser": "workers.at_offering_firms",
+    "actor": "workers.cross_border",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley), so the wage does not fall by the whole charge."
+   ],
+   "premise_class": "mobility",
+   "source": "Marisport lies on the border with the State of Tarnley, which has no such law; about 35,000 people commute across the border each day."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_off",
+    "kind": "adjust",
+    "side": "buyer",
+    "actor": "workers.at_offering_firms",
+    "variables": [
+     "employment",
+     "hours_worked",
+     "non_wage_compensation"
+    ]
+   },
+   "premises": [
+    "Employers can adjust at least one of hiring, hours, schedules or other benefits for full-timers at bound firms while the wage is fixed."
+   ],
+   "premise_class": "other",
+   "source": "R1 Minimum wage ... $14.00 an hour, indexed yearly; money wages move with pay scales and yearly raises."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_offering_firms",
+    "source_variable": "non_wage_compensation",
+    "relation": "substitute",
+    "actor": "workers.at_offering_firms",
+    "variable": "quantity_substitute"
+   },
+   "premises": [
+    "Some workers newly offered employer cover held individual plans."
+   ],
+   "premise_class": "other",
+   "source": "An employee who is offered and declines counts as offered."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_offering_firms",
+    "source_variable": "non_wage_compensation",
+    "relation": "complement",
+    "actor": "sellers.hospital_care",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Newly covered workers use more care billed to insurers than they used without cover."
+   ],
+   "premise_class": "other",
+   "source": "K2 ... Hospital, physician, prescription and maternity care, deductible no higher than $2,500."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_offering_firms",
+    "source_variable": "non_wage_compensation",
+    "relation": "substitute",
+    "actor": "treasury",
+    "variable": "subsidy_outlay"
+   },
+   "premises": [
+    "Some newly covered workers or their care were paid for by the ICP.",
+    "The ICP pays per claim, so fewer claims for newly covered workers lower its outlay rather than raising the payment per remaining claim."
+   ],
+   "premise_class": "revenue_use",
+   "source": "R3 Indigent Care Program (ICP): public_supply (payment to hospitals) ... About $310 million a year from the general fund."
+  }
+ ],
+ "workers.at_paying_firms": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pay",
+    "chooser": "workers.at_paying_firms",
+    "actor": "workers.at_unbound_firms",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley), so the wage does not fall by the whole charge."
+   ],
+   "premise_class": "mobility",
+   "source": "Employers with 50 or more FTE (K3)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pay",
+    "chooser": "workers.at_paying_firms",
+    "actor": "workers.part_time",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley), so the wage does not fall by the whole charge."
+   ],
+   "premise_class": "mobility",
+   "source": "Employees averaging under 30 hours are exempt."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1_pay",
+    "chooser": "workers.at_paying_firms",
+    "actor": "workers.cross_border",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Workers at payers have some alternative to bound full-time work (firms under 50, part-time work, Tarnley), so the wage does not fall by the whole charge."
+   ],
+   "premise_class": "mobility",
+   "source": "Marisport lies on the border with the State of Tarnley, which has no such law; about 35,000 people commute across the border each day."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_pay",
+    "kind": "adjust",
+    "side": "buyer",
+    "actor": "workers.at_paying_firms",
+    "variables": [
+     "employment",
+     "hours_worked",
+     "non_wage_compensation"
+    ]
+   },
+   "premises": [
+    "Employers can adjust at least one of hiring, hours, schedules or other benefits for full-timers at bound firms while the wage is fixed."
+   ],
+   "premise_class": "other",
+   "source": "or pay $250 a month ($3,000 a year) to the Department of Revenue for each such employee not so offered."
+  },
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1_pay",
+    "actor": "unions"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "about 11% of private employees earn at or near [the minimum wage], mostly in retail, food service, cleaning, security and care."
+  }
+ ],
+ "workers.at_seasonal_firms": [],
+ "workers.min_wage": [
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_mw",
+    "kind": "adjust",
+    "side": "buyer",
+    "actor": "workers.min_wage",
+    "variables": [
+     "employment",
+     "hours_worked",
+     "non_wage_compensation"
+    ]
+   },
+   "premises": [
+    "Employers can adjust at least one of hiring, hours, schedules or other benefits for full-timers at bound firms while the wage is fixed."
+   ],
+   "premise_class": "other",
+   "source": "R1 Minimum wage: price_floor on wages, $14.00 an hour, indexed yearly."
+  }
+ ],
+ "workers.near_30_hours": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.near_30_hours",
+    "source_variable": "hours_worked",
+    "relation": "same_act",
+    "actor": "workers.near_30_hours",
+    "variable": "earnings"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "The penalty of $3,000 a year is $1.44 per hour at 40 hours and $1.92 at 30."
+  }
+ ],
+ "employers.capped#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.capped",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.at_capped_firms",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [
+    "The 45 capped firms stay above 100 uncovered full-timers."
+   ],
+   "premise_class": "other",
+   "source": "No firm pays more than $300,000 a year under K1 (reached at 100 uncovered employees)."
+  }
+ ],
+ "employers.near_threshold#2": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k3",
+    "actor": "employers.near_threshold"
+   },
+   "premises": [
+    "Insurers, unions, employer associations and the large chains can organize at a cost below their stakes."
+   ],
+   "premise_class": "other",
+   "source": "Exemption below 50 FTE: FTE = monthly average over the previous calendar year ..."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.near_threshold",
+    "source_variable": "reclassification",
+    "relation": "same_act",
+    "actor": "contractors",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Firms under common control are counted together. Agency workers count for the agency."
+  }
+ ],
+ "employers.offering#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.offering",
+    "source_variable": "return_on_capital",
+    "relation": "yield",
+    "actor": "employers.offering",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Firms expect the Act to stay in force, as it has no expiry."
+   ],
+   "premise_class": "expectations",
+   "source": "It has no expiry."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.offering",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "input_suppliers",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Firms with 50 or more full-time equivalents (FTE) employ about 1.45 million people."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.offering",
+    "source_variable": "quantity_supplied",
+    "relation": "substitute",
+    "actor": "producers.tarnley",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Quenby's tradable producers compete with Tarnley producers."
+   ],
+   "premise_class": "substitutability",
+   "source": "Its largest city, Marisport, lies on the border with the State of Tarnley, which has no such law."
+  }
+ ],
+ "employers.paying#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.paying",
+    "source_variable": "return_on_capital",
+    "relation": "yield",
+    "actor": "employers.paying",
+    "variable": "investment_target"
+   },
+   "premises": [
+    "Firms expect the Act to stay in force, as it has no expiry."
+   ],
+   "premise_class": "expectations",
+   "source": "It has no expiry."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.paying",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "input_suppliers",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "about 73,000 at about 2,050 mid-size firms."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.paying",
+    "source_variable": "quantity_supplied",
+    "relation": "substitute",
+    "actor": "producers.tarnley",
+    "variable": "quantity_supplied"
+   },
+   "premises": [
+    "Quenby's tradable producers compete with Tarnley producers."
+   ],
+   "premise_class": "substitutability",
+   "source": "Its largest city, Marisport, lies on the border with the State of Tarnley, which has no such law."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.paying",
+    "source_variable": "legal_breach",
+    "relation": "substitute",
+    "actor": "officials.revenue",
+    "variable": "non_tax_receipts"
+   },
+   "premises": [
+    "Revenue cannot cheaply verify reported offers, and some firms report offers not made."
+   ],
+   "premise_class": "enforcement",
+   "source": "Employers report each employee's offer status on quarterly withholding returns; the charge is assessed with them."
+  }
+ ],
+ "employers.seasonal#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.seasonal",
+    "source_variable": "reclassification",
+    "relation": "same_act",
+    "actor": "contractors",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Reading U1-a: they count by their hours, like any other employee."
+  }
+ ],
+ "employers.small": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.small",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.at_unbound_firms",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "About 1,300 firms have 40 to 49 FTE."
+  }
+ ],
+ "insurers#2": [],
+ "owners.near_threshold": [],
+ "owners.offering": [],
+ "owners.paying": [],
+ "sellers.hospital_care": [],
+ "treasury": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "treasury",
+    "source_variable": "subsidy_outlay",
+    "relation": "substitute",
+    "actor": "taxpayers",
+    "variable": "resources_available_other_uses"
+   },
+   "premises": [],
+   "premise_class": "revenue_use",
+   "source": "About $310 million a year from the general fund; about $9 million of that is administration."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "treasury",
+    "source_variable": "fund_balance",
+    "relation": "same_act",
+    "actor": "taxpayers",
+    "variable": "resources_available_other_uses"
+   },
+   "premises": [
+    "Charges collected in 2028 are not cut by misreporting below $13.5 million less the short-run income tax lost, and that tax lost is smaller than the $9.4 million by which the capped firms' charges exceed the appropriation."
+   ],
+   "premise_class": "other",
+   "source": "Charges are paid into the general fund. A new appropriation of $4.1 million a year from the general fund pays for 32 staff."
+  }
+ ],
+ "unions": [],
+ "workers.at_near_threshold_firms": [],
+ "workers.at_offering_firms#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_offering_firms",
+    "source_variable": "non_wage_compensation",
+    "relation": "same_act",
+    "actor": "insurers",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Either offer each such employee ... a plan meeting K2 with an employer contribution of at least 70% of the employee-only premium."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_offering_firms",
+    "source_variable": "quantity_substitute",
+    "relation": "same_act",
+    "actor": "insurers.individual_market",
+    "variable": "quantity_traded"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "An employee who is offered and declines counts as offered."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_offering_firms",
+    "source_variable": "wage_rate",
+    "relation": "yield",
+    "actor": "workers.at_offering_firms",
+    "variable": "earnings"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "Excluded from the employee's income for Quenby's 4.5% income tax; wages are taxed."
+  }
+ ],
+ "workers.at_paying_firms#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_paying_firms",
+    "source_variable": "wage_rate",
+    "relation": "yield",
+    "actor": "workers.at_paying_firms",
+    "variable": "earnings"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "or pay $250 a month ($3,000 a year) to the Department of Revenue for each such employee not so offered."
+  }
+ ],
+ "workers.at_unbound_firms": [],
+ "workers.cross_border": [],
+ "workers.min_wage#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.min_wage",
+    "source_variable": "quantity_traded",
+    "relation": "same_act",
+    "actor": "workers.min_wage",
+    "variable": "earnings"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "about 11% of private employees earn at or near it, mostly in retail, food service, cleaning, security and care."
+  }
+ ],
+ "workers.near_30_hours#2": [],
+ "workers.part_time": [],
+ "contractors": [],
+ "employers.near_threshold#3": [],
+ "employers.offering#3": [],
+ "employers.paying#3": [],
+ "input_suppliers": [],
+ "insurers#3": [],
+ "insurers.individual_market": [],
+ "officials.revenue#2": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "officials.revenue",
+    "variable": "non_tax_receipts",
+    "direction": "increase",
+    "kind": "empirical"
+   },
+   "premises": [
+    "Charges collected in 2028 are not cut by misreporting below $13.5 million less the short-run income tax lost, and that tax lost is smaller than the $9.4 million by which the capped firms' charges exceed the appropriation."
+   ],
+   "premise_class": "other",
+   "source": "Misreporting: twice the unpaid charge. Charges are paid into the general fund."
+  }
+ ],
+ "producers.tarnley": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "producers.tarnley",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.cross_border",
+    "variable": "employment,hours_worked"
+   },
+   "premises": [],
+   "premise_class": "other",
+   "source": "about 35,000 people commute across the border each day."
+  }
+ ],
+ "taxpayers#2": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "taxpayers",
+    "variable": "resources_available_other_uses",
+    "direction": "increase",
+    "kind": "arithmetic"
+   },
+   "premises": [
+    "Charges collected in 2028 are not cut by misreporting below $13.5 million less the short-run income tax lost, and that tax lost is smaller than the $9.4 million by which the capped firms' charges exceed the appropriation."
+   ],
+   "premise_class": "other",
+   "source": "A new appropriation of $4.1 million a year from the general fund pays for 32 staff."
+  }
+ ],
+ "treasury#2": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "treasury",
+    "variable": "fund_balance",
+    "direction": "increase",
+    "kind": "arithmetic"
+   },
+   "premises": [
+    "Charges collected in 2028 are not cut by misreporting below $13.5 million less the short-run income tax lost, and that tax lost is smaller than the $9.4 million by which the capped firms' charges exceed the appropriation."
+   ],
+   "premise_class": "other",
+   "source": "Charges are paid into the general fund. A new appropriation of $4.1 million a year from the general fund pays for 32 staff."
+  }
+ ],
+ "workers.at_capped_firms": [],
+ "workers.at_offering_firms#3": [],
+ "workers.at_paying_firms#3": [],
+ "workers.at_unbound_firms#2": [],
+ "workers.min_wage#3": []
+}

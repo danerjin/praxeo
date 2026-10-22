@@ -1,0 +1,82 @@
+{
+ "name": "WE-036 Quenby Fair Share Health Cover Act (expand-loop blind run, loop_r6)",
+ "exchanges": [
+  {"id": "e_off", "buyer": "employers.offering", "seller": "workers.at_offering_firms", "seller_price_var": "wage_rate"},
+  {"id": "e_pay", "buyer": "employers.paying", "seller": "workers.at_paying_firms", "seller_price_var": "wage_rate"},
+  {"id": "e_mw", "buyer": "employers.paying", "seller": "workers.min_wage", "seller_price_var": "wage_rate"},
+  {"id": "e_cap", "buyer": "employers.capped", "seller": "workers.at_capped_firms", "seller_price_var": "wage_rate"},
+  {"id": "e_seas", "buyer": "employers.seasonal", "seller": "workers.at_seasonal_firms", "seller_price_var": "wage_rate"}
+ ],
+ "charges": [
+  {"component": "k1_offer", "exchange": "e_off", "payer_side": "buyer", "receiver": "workers.at_offering_firms",
+   "receipt_variable": "non_wage_compensation", "quantity_premises": ["a7"], "branch_premises": ["a1", "a2"]},
+  {"component": "k1_pay", "exchange": "e_pay", "payer_side": "buyer", "receiver": "officials.revenue",
+   "receipt_variable": "non_tax_receipts", "projection_variable": "tax_revenue_vs_static_projection", "branch_premises": ["a1", "a4"]},
+  {"component": "k1_pay", "exchange": "e_mw", "payer_side": "buyer", "receiver": "officials.revenue",
+   "receipt_variable": "non_tax_receipts", "projection_variable": "tax_revenue_vs_static_projection", "branch_premises": ["a1", "a4"]},
+  {"component": "k1_seas_a", "exchange": "e_seas", "payer_side": "buyer", "receiver": "officials.revenue",
+   "receipt_variable": "non_tax_receipts", "projection_variable": "tax_revenue_vs_static_projection", "branch_premises": ["a33"]}
+ ],
+ "moves": [
+  {"exchange": "e_off", "side": "seller", "horizon": "medium", "premises": ["a6", "a37"]},
+  {"exchange": "e_pay", "side": "seller", "horizon": "medium", "premises": ["a6", "a37"]}
+ ],
+ "fixed": [
+  {"exchange": "e_off", "side": "seller", "horizon": "short", "premises": ["a3"]},
+  {"exchange": "e_pay", "side": "seller", "horizon": "short", "premises": ["a3"]},
+  {"exchange": "e_mw", "side": "seller", "horizon": "long", "premises": ["a9"]}
+ ],
+ "incidence": [
+  {"component": "k1_offer", "exchange": "e_off", "side": "seller", "premises": ["a23"]},
+  {"component": "k1_pay", "exchange": "e_pay", "side": "seller", "premises": ["a23"]}
+ ],
+ "thresholds": [
+  {"component": "k3", "actor": "employers.near_threshold", "variable": "employment", "premises": ["a14"]},
+  {"component": "k3_a", "actor": "employers.seasonal", "variable": "employment", "premises": ["a33"]},
+  {"component": "k1_pay", "actor": "workers.near_30_hours", "variable": "hours_worked", "chooser": "employers.paying", "premises": ["a10"]},
+  {"component": "k1_offer", "actor": "workers.near_30_hours", "variable": "hours_worked", "chooser": "employers.offering", "premises": ["a10"]}
+ ],
+ "means": [
+  {"component": "k4", "actor": "employers.capped", "direction": "out"}
+ ],
+ "unclear": [
+  {"id": "U1", "text": "Seasonal workers in the count: the Act defines a seasonal worker but does not say whether seasonal workers count toward the 50 FTE.",
+   "readings": ["U1-a: seasonal workers count by their hours, like any other employee", "U1-b: seasonal workers are left out of the count"],
+   "components": {"U1-a": ["k3_a", "k1_seas_a"], "U1-b": []}}
+ ],
+ "announced": [
+  {"component": "k1_offer", "premises": ["a21"]},
+  {"component": "k1_pay", "premises": ["a21"]},
+  {"component": "k3", "premises": ["a15"]}
+ ],
+ "compliance": [
+  {"component": "k1_offer", "actor": "employers.offering"},
+  {"component": "k1_pay", "actor": "employers.paying"},
+  {"component": "k4", "actor": "employers.capped"},
+  {"component": "k2", "actor": "insurers"}
+ ],
+ "enforcers": [
+  {"component": "k5", "actor": "officials.revenue"},
+  {"component": "k5", "actor": "officials.enforcement"}
+ ],
+ "funded": [
+  {"component": "k5", "actor": "taxpayers", "premises": ["a29"]}
+ ],
+ "assumptions": {
+  "a1": {"text": "About 135,000 full-timers at firms of 50+ FTE are offered nothing, and about 105,000 are offered less than K1 requires, so K1 binds for them.", "p": 0.9, "class": "binding"},
+  "a2": {"text": "Some bound firms that offer nothing now choose to offer (mainly those with higher-paid staff who value cover, given the tax exclusion).", "p": 0.75, "class": "other"},
+  "a3": {"text": "Money wages are fixed in the short run by pay scales and yearly raises in at-will employment (CR-6, 0.8: stickiness as a premise).", "p": 0.75, "class": "other"},
+  "a4": {"text": "Some bound firms choose to pay the charge for at least some full-timers (all the capped firms, many mid-size low-wage firms).", "p": 0.9, "class": "other"},
+  "a6": {"text": "Wages above the minimum can adjust over the medium horizon, as raises are set.", "p": 0.8, "class": "other"},
+  "a7": {"text": "At players, for the marginal pair, cover at 30% is worth less to the worker than its cost to the employer: they could have agreed on it, with the tax exclusion, and did not.", "p": 0.6, "class": "other"},
+  "a9": {"text": "The minimum wage binds for some workers at bound firms.", "p": 0.85, "class": "binding"},
+  "a10": {"text": "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost.", "p": 0.75, "class": "other"},
+  "a14": {"text": "Some firms near 50 FTE value staying below the line more than the extra work.", "p": 0.7, "class": "other"},
+  "a15": {"text": "Owners of firms near 50 know from January 2027 that the 2027 average decides 2028 status.", "p": 0.75, "class": "expectations"},
+  "a21": {"text": "Business values reflect expected earnings, and buyers expected the Act from its introduction.", "p": 0.7, "class": "expectations"},
+  "a23": {"text": "Over the medium to long run, workers' alternatives to bound employment are clearly worse than employers' alternatives.", "p": 0.6, "class": "mobility"},
+  "a29": {"text": "The $4.1 million is new general-fund money.", "p": 0.9, "class": "revenue_use"},
+  "a33": {"text": "Some of the 380 seasonal firms do not offer qualifying cover to their full-timers.", "p": 0.75, "class": "binding"},
+  "a37": {"text": "Workers at bound firms cannot all move to unbound work at the old wage in the medium run (the response is partial).", "p": 0.9, "class": "mobility"}
+ }
+}
