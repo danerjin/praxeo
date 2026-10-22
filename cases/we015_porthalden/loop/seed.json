@@ -1,0 +1,49 @@
+{
+ "name": "WE-015 Port Halden taxi license cap (expand-loop blind run)",
+ "exchanges": [
+  {"id": "e_taxi", "buyer": "customers.taxi", "seller": "drivers.licensed",
+   "unsatisfied_buyer": "customers.taxi", "unsatisfied_seller": "drivers.prospective",
+   "buyer_price_var": null, "seller_price_var": null,
+   "criteria_for": "customers.taxi", "criteria": ["wait_time", "side_payments", "allocation_by_non_price_criteria"]},
+  {"id": "e_medallion", "buyer": "drivers.prospective", "seller": "licensees",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_private", "buyer": "customers.booked", "seller": "drivers.private_hire",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"},
+  {"id": "e_app", "buyer": "customers.taxi", "seller": "drivers.private_hire", "unsatisfied_seller": "drivers.private_hire",
+   "buyer_price_var": "price_paid", "seller_price_var": "net_price_received"}
+ ],
+ "held": [
+  {"component": "r1", "exchange": "e_taxi", "direction": "below", "premises": ["a1", "a2"]}
+ ],
+ "capped": [
+  {"component": "k1", "exchange": "e_taxi", "holders": ["licensees"], "wider_price": true, "premises": ["a1", "j1"]},
+  {"component": "k1_b", "exchange": "e_app", "holders": ["licensees"], "wider_price": false, "premises": ["a1", "j1"], "reading": "U1-b"}
+ ],
+ "charges": [
+  {"component": "k1_fee", "exchange": "e_medallion", "payer_side": "buyer", "receiver": "officials.enforcement", "receipt_variable": "non_tax_receipts"},
+  {"component": "k2", "exchange": "e_private", "payer_side": "seller", "receiver": "officials.enforcement", "receipt_variable": "non_tax_receipts", "basis": "operating"},
+  {"component": "k2_a", "exchange": "e_app", "payer_side": "seller", "receiver": "officials.enforcement", "receipt_variable": "non_tax_receipts", "basis": "operating"}
+ ],
+ "qualifies": [
+  {"component": "k1", "actor": "drivers.prospective", "variable": "applications", "premises": ["a4"]}
+ ],
+ "announced": [{"component": "k1", "premises": []}],
+ "means": [{"component": "k1", "actor": "licensees", "direction": "in"}],
+ "enforcers": [{"component": "k3", "actor": "officials.enforcement"}],
+ "funded": [{"component": "k3", "actor": "taxpayers", "premises": ["a16"]}],
+ "fixed_budget": [{"component": "k3", "actor": "officials.enforcement", "premises": ["j2"]}],
+ "unclear": [
+  {"id": "U1",
+   "text": "Whether a booking made through a smartphone app a few minutes before pickup meets the 30-minute rule.",
+   "readings": ["U1-a: app booking counts as pre-booked (K2 applies to it)", "U1-b: app booking does not count as pre-booked (K1 applies to it)"],
+   "components": {"U1-a": ["k2_a"], "U1-b": ["k1_b"]}}
+ ],
+ "assumptions": {
+  "a1": {"text": "Demand keeps growing about 3% a year, so at the meter rate the fixed fleet falls short of demand within about two years, and more so each year.", "p": 0.8, "class": "binding"},
+  "a2": {"text": "Drivers cannot simply charge above the meter on metered trips.", "p": 0.8, "class": "enforcement"},
+  "a4": {"text": "Applicants know the cap will count licenses outstanding on the effective date, and can get a license within five months.", "p": 0.8, "class": "expectations"},
+  "a16": {"text": "The Office's budget rises with the added enforcement work, rather than the 12 inspectors being moved from other duties.", "p": 0.55, "class": "revenue_use"},
+  "j1": {"text": "The cap on licenses is enforced against unlicensed street-hail and rank service.", "p": 0.8, "class": "enforcement"},
+  "j2": {"text": "The 12 inspectors are moved from other duties rather than the Office's budget rising.", "p": 0.45, "class": "revenue_use"}
+ }
+}

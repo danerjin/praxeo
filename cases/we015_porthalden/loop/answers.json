@@ -1,0 +1,16 @@
+{
+ "Transit and private hire are acceptable substitutes for some taxi trips.": 0.8,
+ "Taxi trips are allocated first come at ranks and by hail, so fewer cabs relative to riders shows as longer waits.": 0.9,
+ "Refusals of hails and trips are hard to detect and punish.": 0.75,
+ "Unlicensed service and off-meter deals often go undetected.": 0.75,
+ "Vehicle and service standards leave room above the legal minimum.": 0.8,
+ "The 30-minute booking rule is loosely enforced.": 0.6,
+ "Some would-be taxi drivers shut out by the cap can and do operate as private hire instead.": 0.75,
+ "Would-be taxi drivers' next-best work pays less in money than driving under open entry would have.": 0.6,
+ "Medallion holders can organize at a cost below their stake.": 0.85,
+ "Many licensed cabs are driven by lessees who pay the medallion holder, rather than by the holders themselves.": 0.7,
+ "Medallion holders and buyers expect the cap to last.": 0.75,
+ "Private-hire supply cannot expand within the first months to meet the added bookings.": 0.35,
+ "Disguised street-hail service by private-hire cars relieves only part of the shortage of cabs.": 0.85,
+ "App services take enough trips that medallion prices fall below what buyers near the peak paid.": 0.6
+}

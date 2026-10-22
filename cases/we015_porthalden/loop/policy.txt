@@ -1,0 +1,18 @@
+## 1. Policy record
+
+**Port Halden Taxi Fleet Stabilization Ordinance.** Port Halden is a city of about 900,000 people. Until now, anyone who passed a driver background check and a vehicle inspection could obtain a city taxi license for $400 a year; about 2,400 licenses are in use. Demand for taxi trips has grown about 3% a year with population and tourism. Fares are set by the city council as a meter rate, indexed each year to consumer prices; this rule predates the ordinance and is unchanged by it. The suburbs of Brindlewick and Corvale license their own taxis, which may drop passengers in Port Halden but may not pick up there. The ordinance was introduced by the council five months before it took effect, with passage widely expected.
+
+| Component | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| K1 License cap | `quota` (on the number of licenses, within the existing `licensing_requirement`) | Taxi service: street hails and taxi ranks | Anyone offering taxi service | The number of licenses is fixed at the number outstanding on the effective date. New licenses only by council vote. Licenses become "medallions" that may be sold or leased, with transfers registered and a 2% transfer fee. Driver and vehicle standards unchanged; vehicles must be no more than 8 years old. | K2 |
+| K2 Private-hire exemption | Exemption from K1 | Pre-booked private hire | Private-hire operators | Vehicles that take only bookings made at least 30 minutes ahead, at a fare agreed at booking, may operate with an uncapped private-hire permit ($300 a year). No street hails, no ranks. | — |
+| K3 Enforcement | Enforcement | K1, K2 | Taxi and Limousine Office | 12 inspectors. Fine of $1,000 for unlicensed street-hail or rank service; vehicle impounded on a second offense. Funded from the general budget and license fees. | None |
+
+Existing rules (`existing_rules`; not part of the ordinance, and in force in the counterfactual too):
+
+| Rule | Instrument | Target | Bound | Parameters | Exemptions |
+|---|---|---|---|---|---|
+| R1 Meter rate | `price_ceiling` (and floor) | Taxi fares | Taxi drivers | Council-set rate, indexed each year to consumer prices. Predates the ordinance and is unchanged by it. | None |
+
+Unclear provisions: U1, whether a booking made through a smartphone app a few minutes before pickup meets the 30-minute rule. The rule was written for phone bookings to dispatch offices, and the office has not ruled. Reading U1-a: app booking counts as pre-booked. Reading U1-b: it does not. This matters only in the later stage, where each reading's sign is reported (section 8); readings get no probability.
+

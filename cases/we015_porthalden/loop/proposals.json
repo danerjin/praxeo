@@ -1,0 +1,411 @@
+{
+ "customers.taxi": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "customers.taxi",
+    "actor": "customers.taxi",
+    "variables": [
+     "quantity_substitute"
+    ]
+   },
+   "premises": [
+    "Transit and private hire are acceptable substitutes for some taxi trips."
+   ],
+   "premise_class": "substitutability",
+   "source": "K2 Private-hire exemption ... Pre-booked private hire; the fleet is fixed so riders look to other ways of making the trip."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.taxi",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "customers.booked",
+    "variable": "quantity_demanded"
+   },
+   "premises": [
+    "Transit and private hire are acceptable substitutes for some taxi trips."
+   ],
+   "premise_class": "substitutability",
+   "source": "Vehicles that take only bookings made at least 30 minutes ahead, at a fare agreed at booking, may operate with an uncapped private-hire permit"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_taxi",
+    "kind": "criterion",
+    "actor": "customers.taxi",
+    "variables": [
+     "wait_time"
+    ]
+   },
+   "premises": [
+    "Taxi trips are allocated first come at ranks and by hail, so fewer cabs relative to riders shows as longer waits."
+   ],
+   "premise_class": "other",
+   "source": "Fares are set by the city council as a meter rate ... Fine of $1,000 for unlicensed street-hail or rank service (street hails and taxi ranks)"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_taxi",
+    "kind": "criterion",
+    "actor": "customers.taxi",
+    "variables": [
+     "allocation_by_non_price_criteria"
+    ]
+   },
+   "premises": [
+    "Refusals of hails and trips are hard to detect and punish."
+   ],
+   "premise_class": "enforcement",
+   "source": "Fares are set by the city council as a meter rate, indexed each year to consumer prices; this rule predates the ordinance and is unchanged by it."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_taxi",
+    "kind": "criterion",
+    "actor": "customers.taxi",
+    "variables": [
+     "side_payments"
+    ]
+   },
+   "premises": [
+    "Unlicensed service and off-meter deals often go undetected."
+   ],
+   "premise_class": "enforcement",
+   "source": "R1 Meter rate | price_ceiling (and floor) | Taxi fares | Taxi drivers"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_taxi",
+    "kind": "adjust",
+    "side": "seller",
+    "actor": "customers.taxi",
+    "variables": [
+     "quality_per_unit"
+    ]
+   },
+   "premises": [
+    "Vehicle and service standards leave room above the legal minimum."
+   ],
+   "premise_class": "other",
+   "source": "Driver and vehicle standards unchanged; vehicles must be no more than 8 years old."
+  }
+ ],
+ "drivers.licensed": [],
+ "drivers.private_hire": [
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_private",
+    "kind": "outside",
+    "actor": "drivers.private_hire",
+    "variables": [
+     "informal_activity"
+    ]
+   },
+   "premises": [
+    "Unlicensed service and off-meter deals often go undetected."
+   ],
+   "premise_class": "enforcement",
+   "source": "may operate with an uncapped private-hire permit ($300 a year); Fine of $1,000 for unlicensed street-hail or rank service"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_taxi",
+    "kind": "outside",
+    "actor": "drivers.private_hire",
+    "variables": [
+     "reclassification"
+    ]
+   },
+   "premises": [
+    "The 30-minute booking rule is loosely enforced."
+   ],
+   "premise_class": "enforcement",
+   "source": "Vehicles that take only bookings made at least 30 minutes ahead ... No street hails, no ranks."
+  }
+ ],
+ "drivers.prospective": [
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "drivers.prospective",
+    "actor": "drivers.private_hire",
+    "variables": [
+     "entry_rate"
+    ]
+   },
+   "premises": [
+    "Some would-be taxi drivers shut out by the cap can and do operate as private hire instead."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "K2 Private-hire exemption: ... may operate with an uncapped private-hire permit ($300 a year)."
+  },
+  {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "drivers.prospective",
+    "actor": "drivers.private_hire",
+    "variables": [
+     "quantity_supplied"
+    ],
+    "reading": "U1-a"
+   },
+   "premises": [
+    "Some would-be taxi drivers shut out by the cap can and do operate as private hire instead."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "U1-a: app booking counts as pre-booked (the exempt form is open to app services taking short-notice bookings)"
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_taxi",
+    "kind": "outside",
+    "actor": "drivers.prospective",
+    "variables": [
+     "informal_activity"
+    ]
+   },
+   "premises": [
+    "Unlicensed service and off-meter deals often go undetected."
+   ],
+   "premise_class": "enforcement",
+   "source": "Fine of $1,000 for unlicensed street-hail or rank service; vehicle impounded on a second offense. 12 inspectors."
+  },
+  {
+   "part": "margins",
+   "fact": {
+    "exchange": "e_app",
+    "kind": "outside",
+    "actor": "drivers.prospective",
+    "variables": [
+     "informal_activity"
+    ],
+    "reading": "U1-b"
+   },
+   "premises": [
+    "The 30-minute booking rule is loosely enforced."
+   ],
+   "premise_class": "enforcement",
+   "source": "U1-b: app booking does not count as pre-booked, so short-notice app service is taxi service under K1"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.prospective",
+    "source_variable": "quantity_traded",
+    "relation": "yield",
+    "actor": "drivers.prospective",
+    "variable": "earnings"
+   },
+   "premises": [
+    "Would-be taxi drivers' next-best work pays less in money than driving under open entry would have."
+   ],
+   "premise_class": "other",
+   "source": "Until now, anyone who passed a driver background check and a vehicle inspection could obtain a city taxi license for $400 a year"
+  }
+ ],
+ "licensees": [
+  {
+   "part": "stakes",
+   "fact": {
+    "component": "k1",
+    "actor": "licensees"
+   },
+   "premises": [
+    "Medallion holders can organize at a cost below their stake."
+   ],
+   "premise_class": "other",
+   "source": "New licenses only by council vote. Licenses become \"medallions\" that may be sold or leased"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "licensees",
+    "source_variable": "right_lease_price",
+    "relation": "cost",
+    "actor": "drivers.licensed",
+    "variable": "net_price_received"
+   },
+   "premises": [
+    "Many licensed cabs are driven by lessees who pay the medallion holder, rather than by the holders themselves."
+   ],
+   "premise_class": "other",
+   "source": "Licenses become \"medallions\" that may be sold or leased"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "licensees",
+    "source_variable": "right_lease_price",
+    "relation": "yield",
+    "actor": "licensees",
+    "variable": "asset_value"
+   },
+   "premises": [
+    "Medallion holders and buyers expect the cap to last."
+   ],
+   "premise_class": "expectations",
+   "source": "The number of licenses is fixed at the number outstanding on the effective date. New licenses only by council vote."
+  }
+ ],
+ "officials.enforcement": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.enforcement",
+    "source_variable": "non_tax_receipts",
+    "relation": "paid_into",
+    "actor": "officials.enforcement",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "premise_class": "revenue_use",
+   "source": "Funded from the general budget and license fees."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "officials.enforcement",
+    "source_variable": "enforcement_cost",
+    "relation": "paid_from",
+    "actor": "officials.enforcement",
+    "variable": "fund_balance"
+   },
+   "premises": [],
+   "premise_class": "revenue_use",
+   "source": "12 inspectors. Fine of $1,000 for unlicensed street-hail or rank service ... Funded from the general budget and license fees."
+  }
+ ],
+ "taxpayers": [],
+ "customers.booked": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.booked",
+    "source_variable": "quantity_demanded",
+    "relation": "same_act",
+    "actor": "drivers.private_hire",
+    "variable": "quantity_traded"
+   },
+   "premises": [
+    "Some would-be taxi drivers shut out by the cap can and do operate as private hire instead."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "Vehicles that take only bookings made at least 30 minutes ahead, at a fare agreed at booking, may operate with an uncapped private-hire permit ($300 a year)."
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "customers.booked",
+    "source_variable": "quantity_demanded",
+    "relation": "supply_price",
+    "actor": "customers.booked",
+    "variable": "price_paid",
+    "horizon": "short"
+   },
+   "premises": [
+    "Private-hire supply cannot expand within the first months to meet the added bookings."
+   ],
+   "premise_class": "other",
+   "source": "at a fare agreed at booking (a free price in the private-hire market)"
+  }
+ ],
+ "customers.taxi#2": [
+  {
+   "part": "dominance",
+   "fact": {
+    "actor": "customers.taxi",
+    "variable": "wait_time",
+    "direction": "increase",
+    "kind": "response"
+   },
+   "premises": [
+    "Disguised street-hail service by private-hire cars relieves only part of the shortage of cabs."
+   ],
+   "premise_class": "other",
+   "source": "No street hails, no ranks (private hire cannot legally take street hails, so evasion is partial)"
+  }
+ ],
+ "drivers.licensed#2": [],
+ "drivers.private_hire#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.private_hire",
+    "source_variable": "entry_rate",
+    "relation": "supply",
+    "actor": "customers.booked",
+    "variable": "price_paid"
+   },
+   "premises": [
+    "Some would-be taxi drivers shut out by the cap can and do operate as private hire instead."
+   ],
+   "premise_class": "alternative_uses",
+   "source": "may operate with an uncapped private-hire permit ($300 a year)"
+  },
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.private_hire",
+    "source_variable": "reclassification",
+    "relation": "supply",
+    "actor": "customers.taxi",
+    "variable": "wait_time"
+   },
+   "premises": [
+    "The 30-minute booking rule is loosely enforced."
+   ],
+   "premise_class": "enforcement",
+   "source": "No street hails, no ranks; the 30-minute rule is loosely enforced"
+  }
+ ],
+ "drivers.prospective#2": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.prospective",
+    "source_variable": "informal_activity",
+    "relation": "supply",
+    "actor": "customers.taxi",
+    "variable": "wait_time"
+   },
+   "premises": [
+    "Unlicensed service and off-meter deals often go undetected."
+   ],
+   "premise_class": "enforcement",
+   "source": "Fine of $1,000 for unlicensed street-hail or rank service"
+  }
+ ],
+ "licensees#2": [],
+ "officials.enforcement#2": [],
+ "customers.booked#2": [],
+ "drivers.private_hire#3": [
+  {
+   "part": "links",
+   "fact": {
+    "source_actor": "drivers.private_hire",
+    "source_variable": "quantity_traded",
+    "relation": "substitute",
+    "actor": "licensees.bought_near_peak",
+    "variable": "asset_value",
+    "horizon": "long"
+   },
+   "premises": [
+    "App services take enough trips that medallion prices fall below what buyers near the peak paid."
+   ],
+   "premise_class": "expectations",
+   "source": "Vehicles that take only bookings made at least 30 minutes ahead ... may operate with an uncapped private-hire permit; licenses become medallions that may be sold"
+  }
+ ]
+}
