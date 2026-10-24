@@ -235,25 +235,78 @@ class Proposals(BaseModel):
     proposals: list[Proposal]
 
 
+class ProposalOut(BaseModel):
+    """The structured-output form of a Proposal: structured outputs take closed schemas only, so the fact (whose fields
+    depend on its part) travels as a JSON object in a string and is validated against the part's model here."""
+    part: Literal["alternatives", "links", "margins", "stakes", "assets", "yields", "timing", "parts", "dominance", "incidence",
+                  "exchanges", "moves", "fixed"]
+    fact_json: str = Field(description="The fact's fields as one JSON object, without premises")
+    premises: list[str] = Field(default=[], description="Up to three statements, one concept each")
+    premise_class: str = "other"
+    source: Optional[str] = None
+
+
+class ProposalsOut(BaseModel):
+    proposals: list[ProposalOut]
+
+
+def part_schemas() -> str:
+    """The JSON schema of each proposable part, for the proposer's prompt."""
+    out = []
+    for part in ProposalOut.model_fields["part"].annotation.__args__:
+        inner = S.Situation.model_fields[part].annotation.__args__[0]
+        schema = inner.model_json_schema() if isinstance(inner, type) and issubclass(inner, BaseModel) else {"type": "object"}
+        out.append(f"{part}: {json.dumps(schema)}")
+    return "\n".join(out)
+
+
+def _check(p: ProposalOut) -> tuple[Optional[Proposal], Optional[str]]:
+    try:
+        fact = json.loads(p.fact_json)
+        _coerce(p.part, {**fact, "premises": []})
+        return Proposal(part=p.part, fact=fact, premises=p.premises[:3], premise_class=p.premise_class, source=p.source), None
+    except Exception as e:  # invalid JSON or fields that do not fit the part
+        return None, f"{p.part} {p.fact_json[:200]}: {str(e).splitlines()[0][:200]}"
+
+
 class LLMProposer:
-    """Claude through the Anthropic SDK, with a structured-output schema (the open-ended part of each node)."""
+    """Claude through the Anthropic SDK, with a structured-output schema (the open-ended part of each node). Facts that do
+    not fit their part are sent back once with the errors; any still invalid are dropped and kept in `rejected`."""
 
     def __init__(self, model: str = "claude-opus-5-5", effort: str = "medium", exclude: tuple[str, ...] = ()):
         import anthropic
 
         self.client = anthropic.Anthropic()
         self.model, self.effort, self.name = model, effort, f"llm:{model}"
-        self.system = PROPOSER_SYSTEM + "\n\n" + vocabulary_text(exclude)
+        self.system = (PROPOSER_SYSTEM + "\n\n" + vocabulary_text(exclude)
+                       + "\n\nThe fields of each part, as JSON schemas (give `fact_json` as one JSON object of these fields):\n"
+                       + part_schemas())
+        self.rejected: list[str] = []
+        self.calls = 0
+
+    def _ask(self, messages: list[dict]) -> ProposalsOut:
+        self.calls += 1
+        resp = self.client.messages.parse(model=self.model, max_tokens=16000, system=self.system,
+                                          output_config={"effort": self.effort}, messages=messages, output_format=ProposalsOut)
+        if resp.stop_reason == "refusal" or resp.parsed_output is None:
+            raise RuntimeError(f"proposer gave nothing (stop_reason={resp.stop_reason})")
+        return resp.parsed_output
 
     def propose(self, node: Node, situation: S.Situation, policy: str) -> list[Proposal]:
         prompt = (f"Policy text:\n{policy}\n\nSituation so far:\n{situation.model_dump_json(indent=1)}\n\n"
                   f"Node: {node.model_dump_json()}")
-        resp = self.client.messages.parse(model=self.model, max_tokens=16000, system=self.system,
-                                          output_config={"effort": self.effort},
-                                          messages=[{"role": "user", "content": prompt}], output_format=Proposals)
-        if resp.stop_reason == "refusal" or resp.parsed_output is None:
-            raise RuntimeError(f"proposer gave nothing for {node.actor} (stop_reason={resp.stop_reason})")
-        return resp.parsed_output.proposals
+        messages = [{"role": "user", "content": prompt}]
+        out = self._ask(messages)
+        checked = [_check(p) for p in out.proposals]
+        errors = [e for _, e in checked if e]
+        if errors:
+            messages += [{"role": "assistant", "content": out.model_dump_json()},
+                         {"role": "user", "content": "These facts do not fit their part; give the whole list again with them "
+                                                     "corrected or removed:\n" + "\n".join(errors)}]
+            out = self._ask(messages)
+            checked = [_check(p) for p in out.proposals]
+            self.rejected += [e for _, e in checked if e]
+        return [p for p, _ in checked if p]
 
 
 class Pending(Exception):

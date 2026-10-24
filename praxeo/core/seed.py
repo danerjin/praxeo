@@ -2,6 +2,10 @@
 file). Everything else arrives in the expand loop."""
 from __future__ import annotations
 
+import json
+
+from pydantic import BaseModel, Field, ValidationError
+
 from .situation import Situation
 
 SEED_SYSTEM = """You read a policy text and write the seed of a praxeological analysis: the policy's own facts in the terms of
@@ -36,12 +40,26 @@ empty: they are proposed node by node later. Never state a sign. Name actor clas
 text says or what was knowable at enactment."""
 
 
+class SeedOut(BaseModel):
+    """Structured outputs take closed schemas only, and a Situation has open maps (assumptions), so the seed travels as a
+    JSON object in a string and is validated here."""
+    situation_json: str = Field(description="The seed as one JSON object of the Situation schema given in the instructions")
+
+
 def parse_seed_llm(text: str, model: str = "claude-opus-5-5", effort: str = "medium") -> Situation:
     import anthropic
 
     client = anthropic.Anthropic()
-    resp = client.messages.parse(model=model, max_tokens=16000, system=SEED_SYSTEM, output_config={"effort": effort},
-                                 messages=[{"role": "user", "content": f"Policy text:\n\n{text}"}], output_format=Situation)
-    if resp.stop_reason == "refusal" or resp.parsed_output is None:
-        raise RuntimeError(f"seed parser returned nothing (stop_reason={resp.stop_reason})")
-    return resp.parsed_output
+    system = SEED_SYSTEM + "\n\nThe Situation schema:\n" + json.dumps(Situation.model_json_schema())
+    messages = [{"role": "user", "content": f"Policy text:\n\n{text}"}]
+    for attempt in range(2):
+        resp = client.messages.parse(model=model, max_tokens=32000, system=system, output_config={"effort": effort},
+                                     messages=messages, output_format=SeedOut)
+        if resp.stop_reason == "refusal" or resp.parsed_output is None:
+            raise RuntimeError(f"seed parser returned nothing (stop_reason={resp.stop_reason})")
+        try:
+            return Situation.model_validate_json(resp.parsed_output.situation_json)
+        except ValidationError as e:
+            messages += [{"role": "assistant", "content": resp.parsed_output.model_dump_json()},
+                         {"role": "user", "content": f"The seed does not validate; give it again corrected:\n{e}"}]
+    raise RuntimeError("seed parser output did not validate twice")
