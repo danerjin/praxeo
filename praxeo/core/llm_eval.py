@@ -15,6 +15,7 @@ import json
 import re
 from pathlib import Path
 
+from .. import llm
 from ..schema import PolicyRecord
 from . import expand as X
 
@@ -43,6 +44,7 @@ def run_once(eid: str, case: str, k: int, model: str = "claude-opus-5-5") -> Pat
     from ..decider import LLMDecider
     from .seed import parse_seed_llm
 
+    llm.USAGE.clear()
     section1, table = blind_inputs(eid)
     out = ROOT / "cases" / case / "llm" / f"run_{k}"
     out.mkdir(parents=True, exist_ok=True)
@@ -57,7 +59,8 @@ def run_once(eid: str, case: str, k: int, model: str = "claude-opus-5-5") -> Pat
     (out / "log.json").write_text(json.dumps(run.log, indent=1, default=str))
     (out / "meta.json").write_text(json.dumps({"example": eid, "model": model, "rounds": run.rounds,
                                                "proposer_calls": proposer.calls, "rejected": proposer.rejected,
-                                               "questions": sum(1 for e in run.log if "question" in e)}, indent=1))
+                                               "questions": sum(1 for e in run.log if "question" in e),
+                                               "usage": llm.usage_report(model)}, indent=1))
     return out
 
 

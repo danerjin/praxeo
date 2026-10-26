@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 from typing import Protocol
 
+from . import llm
 from .schema import Answer, PolicyRecord, Question
 
 MODEL = "claude-opus-5-5"
@@ -69,7 +70,9 @@ class LLMDecider:
             + (f"Options: {question.options}\n" if question.options else "")
             + f"Question: {question.text}"
         )
-        resp = self.client.messages.parse(
+        resp = llm.parse(
+            self.client,
+            "decider",
             model=self.model,
             max_tokens=16000,
             system=DECIDER_SYSTEM,

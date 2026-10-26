@@ -20,8 +20,10 @@ Read this first in a new session. The history behind it is in `PILOT_CORE_RULES.
 The API key is read from `ANTHROPIC_API_KEY`. In a new session:
 
 1. Check it is visible: `python -c "import os; print(bool(os.environ.get('ANTHROPIC_API_KEY')))"`.
+   A fresh container also needs the dependencies: `python -m pip install "anthropic>=1,<2" "clingo>=5.6" pydantic pytest`.
 2. Pilot: `python -m praxeo.core.llm_eval WE-036 we036_quenby --runs 1`. It writes `cases/we036_quenby/llm/run_1/` (seed,
-   situation, log, `meta.json` with proposer calls, rejected proposals, questions). The harness is untested against the live
+   situation, log, `meta.json` with proposer calls, rejected proposals, questions, and token use and cost by role from
+   `praxeo/llm.py`). All three roles stream their calls (the SDK refuses the seed's 32000-token call unstreamed). The harness is untested against the live
    API: watch the first `messages.parse` call (structured output with a closed schema; facts travel as JSON strings and are
    validated, `praxeo/core/expand.py` `ProposalOut`, `praxeo/core/seed.py` `SeedOut`).
 3. Score it like the stand-in runs: map class names only where both denote the same class (never across trades, never a

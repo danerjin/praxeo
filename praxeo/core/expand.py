@@ -18,6 +18,7 @@ from typing import Literal, Optional, Protocol
 
 from pydantic import BaseModel, Field
 
+from .. import llm
 from ..schema import Answer, PolicyRecord, Question
 from . import situation as S
 
@@ -286,7 +287,7 @@ class LLMProposer:
 
     def _ask(self, messages: list[dict]) -> ProposalsOut:
         self.calls += 1
-        resp = self.client.messages.parse(model=self.model, max_tokens=16000, system=self.system,
+        resp = llm.parse(self.client, "proposer", model=self.model, max_tokens=16000, system=self.system,
                                           output_config={"effort": self.effort}, messages=messages, output_format=ProposalsOut)
         if resp.stop_reason == "refusal" or resp.parsed_output is None:
             raise RuntimeError(f"proposer gave nothing (stop_reason={resp.stop_reason})")

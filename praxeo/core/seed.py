@@ -6,6 +6,7 @@ import json
 
 from pydantic import BaseModel, Field, ValidationError
 
+from .. import llm
 from .situation import Situation
 
 SEED_SYSTEM = """You read a policy text and write the seed of a praxeological analysis: the policy's own facts in the terms of
@@ -53,7 +54,7 @@ def parse_seed_llm(text: str, model: str = "claude-opus-5-5", effort: str = "med
     system = SEED_SYSTEM + "\n\nThe Situation schema:\n" + json.dumps(Situation.model_json_schema())
     messages = [{"role": "user", "content": f"Policy text:\n\n{text}"}]
     for attempt in range(2):
-        resp = client.messages.parse(model=model, max_tokens=32000, system=system, output_config={"effort": effort},
+        resp = llm.parse(client, "seed", model=model, max_tokens=32000, system=system, output_config={"effort": effort},
                                      messages=messages, output_format=SeedOut)
         if resp.stop_reason == "refusal" or resp.parsed_output is None:
             raise RuntimeError(f"seed parser returned nothing (stop_reason={resp.stop_reason})")
