@@ -275,9 +275,7 @@ class LLMProposer:
     not fit their part are sent back once with the errors; any still invalid are dropped and kept in `rejected`."""
 
     def __init__(self, model: str = "claude-opus-5-5", effort: str = "medium", exclude: tuple[str, ...] = ()):
-        import anthropic
-
-        self.client = anthropic.Anthropic()
+        self.client = llm.client()
         self.model, self.effort, self.name = model, effort, f"llm:{model}"
         self.system = (PROPOSER_SYSTEM + "\n\n" + vocabulary_text(exclude)
                        + "\n\nThe fields of each part, as JSON schemas (give `fact_json` as one JSON object of these fields):\n"

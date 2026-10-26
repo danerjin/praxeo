@@ -17,7 +17,11 @@ Read this first in a new session. The history behind it is in `PILOT_CORE_RULES.
 
 ## Next step: the LLM pilot
 
-The API key is read from `ANTHROPIC_API_KEY`. In a new session:
+The API key is read from `ANTHROPIC_API_KEY`, or, in a cloud session (which withholds that variable), from a network
+secret for `api.anthropic.com` with header `x-api-key`: `praxeo/llm.py` `client()` then sends no key and routes through the
+egress proxy, which adds it. Check either with
+`python -c "from praxeo import llm; print(llm.client().models.retrieve('claude-opus-5-5').id)"` (a 401 means no key reached
+the API). In a new session:
 
 1. Check it is visible: `python -c "import os; print(bool(os.environ.get('ANTHROPIC_API_KEY')))"`.
    A fresh container also needs the dependencies: `python -m pip install "anthropic>=1,<2" "clingo>=5.6" pydantic pytest`.

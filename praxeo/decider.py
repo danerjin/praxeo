@@ -56,9 +56,7 @@ class HumanDecider:
 
 class LLMDecider:
     def __init__(self, model: str = MODEL, effort: str = "medium"):
-        import anthropic
-
-        self.client = anthropic.Anthropic()
+        self.client = llm.client()
         self.model = model
         self.effort = effort
         self.name = f"llm:{model}"

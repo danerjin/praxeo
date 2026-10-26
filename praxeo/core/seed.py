@@ -48,9 +48,7 @@ class SeedOut(BaseModel):
 
 
 def parse_seed_llm(text: str, model: str = "claude-opus-5-5", effort: str = "medium") -> Situation:
-    import anthropic
-
-    client = anthropic.Anthropic()
+    client = llm.client()
     system = SEED_SYSTEM + "\n\nThe Situation schema:\n" + json.dumps(Situation.model_json_schema())
     messages = [{"role": "user", "content": f"Policy text:\n\n{text}"}]
     for attempt in range(2):

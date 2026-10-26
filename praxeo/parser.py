@@ -209,9 +209,9 @@ def enrich_llm(record: PolicyRecord, kept: list[Source], model: str = MODEL, eff
     afterwards by `check_source_quotes` (the pipeline reports every failure)."""
     if not kept:
         return record
-    import anthropic
+    from . import llm
 
-    client = anthropic.Anthropic()
+    client = llm.client()
     sources = "\n\n".join(f"[{s.id}] ({s.citation}, {s.date})\n{s.text}" for s in kept)
     resp = client.messages.parse(
         model=model,
@@ -231,9 +231,9 @@ def parse_fixture(path: Path) -> PolicyRecord:
 
 
 def parse_llm(text: str, model: str = MODEL, effort: str = "medium") -> PolicyRecord:
-    import anthropic
+    from . import llm
 
-    client = anthropic.Anthropic()
+    client = llm.client()
     resp = client.messages.parse(
         model=model,
         max_tokens=16000,

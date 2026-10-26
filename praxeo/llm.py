@@ -2,12 +2,30 @@
 timeout), with the token use of every call summed by role so a run can report its cost."""
 from __future__ import annotations
 
+import os
 from collections import defaultdict
 
 # USD per million tokens, Opus 5.5: input, output, cache write (5 minutes), cache read.
 PRICES = {"claude-opus-5-5": {"input": 4.00, "output": 20.00, "cache_write": 5.00, "cache_read": 0.20}}
 
 USAGE: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
+
+
+def client():
+    """An Anthropic client. With ANTHROPIC_API_KEY set, the SDK's default. Without it (a cloud session, where the key is a
+    network secret the egress proxy adds to requests for api.anthropic.com), the client sends no key and goes through
+    HTTPS_PROXY even though api.anthropic.com is in NO_PROXY, so the proxy can add it."""
+    import anthropic
+
+    proxy = os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy")
+    if os.environ.get("ANTHROPIC_API_KEY") or not proxy:
+        return anthropic.Anthropic()
+    import httpx2
+
+    # A plain httpx2 client: the SDK's DefaultHttpxClient still applies NO_PROXY to an explicit proxy.
+    http = httpx2.Client(proxy=proxy, verify=os.environ.get("SSL_CERT_FILE") or "/root/.ccr/ca-bundle.crt",
+                         timeout=anthropic.DEFAULT_TIMEOUT, limits=anthropic.DEFAULT_CONNECTION_LIMITS, follow_redirects=True)
+    return anthropic.Anthropic(http_client=http, default_headers={"X-Api-Key": anthropic.Omit()})
 
 
 def parse(client, role: str, **kw):
