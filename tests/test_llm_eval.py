@@ -36,3 +36,38 @@ def test_identifiers_a_writer_capitalises_are_made_asp_constants():
     assert dump(S.run(safe)) == dump(S.run(orig))
     assert X.S.safe_ids({"component": "C1", "premises": ["A-2", "q3_x"], "actor": "Workers.Bound"}) == \
         {"component": "c1", "premises": ["a_2", "q3_x"], "actor": "Workers.Bound"}
+    assert X.S.safe_ids({"component": "k1_offer", "branch_premises": ["A-4"], "branch_premise_sets": [["A-5"], ["A-6", "q7_y"]]}) == \
+        {"component": "k1_offer", "branch_premises": ["a_4"], "branch_premise_sets": [["a_5"], ["a_6", "q7_y"]]}
+
+
+def test_no_identifier_in_any_case_reaches_the_program_as_a_variable():
+    """Every case's identifiers, capitalised as a writer might, give a program with no unquoted capital (a variable)."""
+    import re
+    from pathlib import Path
+
+    from praxeo.core import situation as S
+
+    def ids(v, out):
+        if isinstance(v, dict):
+            for k, w in v.items():
+                if k in S.ID_FIELDS and isinstance(w, str):
+                    out.add(w)
+                ids(w, out)
+        elif isinstance(v, list):
+            for w in v:
+                ids(w, out)
+        return out
+
+    root, n = Path(__file__).resolve().parents[1] / "cases", 0
+    for f in sorted(root.glob("*/**/*.json")):
+        try:
+            s = S.Situation.model_validate_json(f.read_text())
+        except Exception:
+            continue
+        n += 1
+        raw = s.model_dump_json()
+        for i in sorted(ids(s.model_dump(), set(s.assumptions)) - {"", "none"}, key=len, reverse=True):
+            raw = raw.replace(f'"{i}"', f'"{i.upper()}-X"')
+        program = re.sub(r'"(?:[^"\\]|\\.)*"', '""', S.facts(S.safe_ids(S.Situation.model_validate_json(raw))))
+        assert not re.findall(r"\b[A-Z]\w*", program), f.name
+    assert n > 100

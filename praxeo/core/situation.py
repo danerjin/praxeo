@@ -294,10 +294,13 @@ def _const(x: str) -> str:
 def safe_ids(x):
     """Identifiers (exchange and component ids, premise atoms, assumption keys) as ASP constants: they are written unquoted,
     and a writer's `E1` or `A-1` would read as a variable. Applies to a Situation or to one fact's dict."""
+    def atoms(w):  # a premise list, or a list of premise sets (branch_premise_sets)
+        return [atoms(a) if isinstance(a, list) else _const(a) for a in w]
+
     def walk(v):
         if isinstance(v, dict):
             return {k: (_const(w) if k in ID_FIELDS and isinstance(w, str)
-                        else [_const(a) for a in w] if k.endswith("premises") and isinstance(w, list)
+                        else atoms(w) if "premise" in k and isinstance(w, list)
                         else walk(w)) for k, w in v.items()}
         return [walk(w) for w in v] if isinstance(v, list) else v
     if isinstance(x, Situation):
