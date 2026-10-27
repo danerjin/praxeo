@@ -3,6 +3,8 @@ timeout), with the token use of every call summed by role so a run can report it
 from __future__ import annotations
 
 import os
+import sys
+import time
 from collections import defaultdict
 
 # USD per million tokens, Opus 5.5: input, output, cache write (5 minutes), cache read.
@@ -28,11 +30,26 @@ def client():
     return anthropic.Anthropic(http_client=http, default_headers={"X-Api-Key": anthropic.Omit()})
 
 
-def parse(client, role: str, **kw):
-    """`messages.parse` as a stream; returns the final ParsedMessage and adds its usage to USAGE[role]."""
-    with client.messages.stream(**kw) as stream:
-        resp = stream.get_final_message()
-    u, tally = resp.usage, USAGE[role]
+def parse(client, role: str, attempts: int = 3, **kw):
+    """`messages.parse` as a stream; returns the final ParsedMessage and adds its usage to USAGE[role]. A stream the
+    connection drops part way is not retried by the SDK, so the whole call is, up to `attempts` times. A dropped call's
+    tokens are billed but not reported, so its count is kept as `dropped`."""
+    import anthropic
+    import httpx2
+
+    tally = USAGE[role]
+    for attempt in range(attempts):
+        try:
+            with client.messages.stream(**kw) as stream:
+                resp = stream.get_final_message()
+            break
+        except (httpx2.TransportError, anthropic.APIConnectionError) as e:
+            tally["dropped"] += 1
+            if attempt == attempts - 1:
+                raise
+            print(f"{role}: connection dropped ({type(e).__name__}); retrying", file=sys.stderr)
+            time.sleep(10 * (attempt + 1))
+    u = resp.usage
     tally["calls"] += 1
     tally["input"] += u.input_tokens
     tally["output"] += u.output_tokens
