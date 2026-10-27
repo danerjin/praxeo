@@ -8,6 +8,7 @@ core rules alone (no pattern file is loaded).
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Literal, Optional
 
@@ -280,6 +281,31 @@ def _q(s: str) -> str:
 def _p(prem: list[str]) -> str:
     ps = list(prem) + ["none"] * (3 - len(prem))
     return ", ".join(ps)
+
+
+ID_FIELDS = ("id", "component", "exchange")
+
+
+def _const(x: str) -> str:
+    """`x` if it is already an ASP constant, else its snake-case form."""
+    return x if re.fullmatch(r"_*[a-z][A-Za-z0-9_']*", x) else engine._atom(x)
+
+
+def safe_ids(x):
+    """Identifiers (exchange and component ids, premise atoms, assumption keys) as ASP constants: they are written unquoted,
+    and a writer's `E1` or `A-1` would read as a variable. Applies to a Situation or to one fact's dict."""
+    def walk(v):
+        if isinstance(v, dict):
+            return {k: (_const(w) if k in ID_FIELDS and isinstance(w, str)
+                        else [_const(a) for a in w] if k.endswith("premises") and isinstance(w, list)
+                        else walk(w)) for k, w in v.items()}
+        return [walk(w) for w in v] if isinstance(v, list) else v
+    if isinstance(x, Situation):
+        d = walk(x.model_dump(exclude={"unclear"}))
+        d["unclear"] = x.unclear
+        d["assumptions"] = {_const(k): v for k, v in x.assumptions.items()}
+        return Situation.model_validate(d)
+    return walk(x)
 
 
 def facts(s: Situation) -> str:

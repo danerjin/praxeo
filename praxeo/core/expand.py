@@ -92,7 +92,7 @@ class Run(BaseModel):
 def expand(seed: S.Situation, proposer: Proposer, decider, policy: str = "", max_depth: int = MAX_DEPTH,
            record: Optional[PolicyRecord] = None) -> Run:
     """Grow the situation from its seed, round by round, until no new actor is reached or `max_depth` rounds are done."""
-    sit = seed.model_copy(deep=True)
+    sit = S.safe_ids(seed)
     record = record or PolicyRecord(name=seed.name, jurisdiction="-", rule_maker="-", enacted="-", effective="-", components=[])
     by_text = {v["text"]: k for k, v in sit.assumptions.items()}
     seen: dict[str, set] = {}        # actor -> the effects it was last proposed for (a node is revisited when new ones reach it)
@@ -125,7 +125,7 @@ def expand(seed: S.Situation, proposer: Proposer, decider, policy: str = "", max
                         run.log.append({"depth": depth, "node": actor, "question": text, "atom": atom,
                                         "p": ans.probability, "rationale": ans.rationale, "decider": getattr(decider, "name", "")})
                     atoms.append(by_text[text])
-                fact = {**prop.fact, "premises": atoms}
+                fact = S.safe_ids({**prop.fact, "premises": atoms})
                 sig = json.dumps([prop.part, fact], sort_keys=True)
                 if sig in added:
                     continue
