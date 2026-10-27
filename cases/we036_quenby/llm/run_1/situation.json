@@ -1,0 +1,889 @@
+{
+ "name": "Quenby Fair Share Health Cover Act",
+ "exchanges": [
+  {
+   "id": "e1",
+   "buyer": "employers.bound",
+   "seller": "workers.full_time_bound",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "labour_cost",
+   "seller_price_var": "wage",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e2",
+   "buyer": "employers.seasonal_30_49",
+   "seller": "workers.full_time_seasonal_firms",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "labour_cost",
+   "seller_price_var": "wage",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [],
+ "alternatives": [
+  {
+   "premises": [
+    "q18_some_bound_employers_can_staff_work_with"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.bound",
+   "actor": "workers.part_time_bound",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q19_some_bound_employers_can_contract_out_cl"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.bound",
+   "actor": "contractors",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q21_some_firms_near_50_fte_can_meet_extra_wo",
+    "q22_hours_above_130_a_month_by_an_employee_a"
+   ],
+   "reading": null,
+   "component": "k3",
+   "chooser": "employers.near_50_fte",
+   "actor": "workers.full_time_near_50_fte",
+   "variables": [
+    "hours_worked"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q23_some_firms_near_50_fte_can_use_agency_wo",
+    "q24_agency_workers_count_toward_the_agency_s"
+   ],
+   "reading": null,
+   "component": "k3",
+   "chooser": "employers.near_50_fte",
+   "actor": "contractors",
+   "variables": [
+    "quantity_supplied"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q25_some_seasonal_firms_can_split_a_season_s",
+    "q26_a_worker_employed_for_60_days_or_less_is"
+   ],
+   "reading": null,
+   "component": "k1s",
+   "chooser": "employers.seasonal_30_49",
+   "actor": "workers.seasonal_short_stint",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q27_some_seasonal_firms_can_staff_seasonal_w"
+   ],
+   "reading": null,
+   "component": "k1s",
+   "chooser": "employers.seasonal_30_49",
+   "actor": "workers.part_time_seasonal_firms",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q34_some_full_timers_at_bound_firms_can_find"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "workers.full_time_bound",
+   "actor": "workers.small_firms",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q35_some_full_timers_at_bound_firms_near_mar"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "workers.full_time_bound",
+   "actor": "workers.cross_border",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q37_some_full_timers_at_seasonal_firms_can_f"
+   ],
+   "reading": null,
+   "component": "k1s",
+   "chooser": "workers.full_time_seasonal_firms",
+   "actor": "workers.small_firms",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q38_some_workers_whose_hours_are_cut_below_3"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "workers.near_30_hours",
+   "actor": "workers.small_firms",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [],
+ "links": [
+  {
+   "premises": [
+    "q20_bound_employers_set_the_prices_of_what_t"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "compliance_cost",
+   "relation": "cost",
+   "actor": "customers",
+   "variable": "price_paid",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q28_ski_and_lake_resorts_set_their_prices_pa"
+   ],
+   "reading": null,
+   "source_actor": "employers.seasonal_30_49",
+   "source_variable": "compliance_cost",
+   "relation": "cost",
+   "actor": "customers.resorts",
+   "variable": "price_paid",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q29_k1_charges_collected_by_the_department_o"
+   ],
+   "reading": null,
+   "source_actor": "government.department_of_revenue",
+   "source_variable": "tax_revenue",
+   "relation": "paid_into",
+   "actor": "government.general_fund",
+   "variable": "fund_balance",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q30_general_fund_money_spent_on_k5_enforceme"
+   ],
+   "reading": null,
+   "source_actor": "government.general_fund",
+   "source_variable": "resources_available_other_uses",
+   "relation": "output",
+   "actor": "recipients.other_spending",
+   "variable": "resources_available_other_uses",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q31_some_full_timers_at_bound_firms_that_now",
+    "q32_care_for_workers_newly_covered_by_an_emp"
+   ],
+   "reading": null,
+   "source_actor": "workers.at_offering_firms",
+   "source_variable": "non_wage_compensation",
+   "relation": "substitute",
+   "actor": "government.indigent_care_program",
+   "variable": "subsidy_outlay",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q33_workers_with_employer_health_cover_use_m"
+   ],
+   "reading": null,
+   "source_actor": "workers.at_offering_firms",
+   "source_variable": "non_wage_compensation",
+   "relation": "complement",
+   "actor": "sellers.medical_care",
+   "variable": "quantity_demanded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q36_quenby_taxes_wages_at_4_5_but_excludes_e"
+   ],
+   "reading": null,
+   "source_actor": "workers.full_time_bound",
+   "source_variable": "wage",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q36_quenby_taxes_wages_at_4_5_but_excludes_e"
+   ],
+   "reading": null,
+   "source_actor": "workers.full_time_seasonal_firms",
+   "source_variable": "wage",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q36_quenby_taxes_wages_at_4_5_but_excludes_e"
+   ],
+   "reading": null,
+   "source_actor": "workers.near_30_hours",
+   "source_variable": "hours_worked",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q39_contractors_meet_extra_contracted_work_b"
+   ],
+   "reading": null,
+   "source_actor": "contractors",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "workers.contractors",
+   "variable": "employment",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q40_money_paid_into_the_general_fund_is_avai"
+   ],
+   "reading": null,
+   "source_actor": "government.general_fund",
+   "source_variable": "fund_balance",
+   "relation": "output",
+   "actor": "recipients.other_spending",
+   "variable": "resources_available_other_uses",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q41_indigent_care_program_payments_to_hospit"
+   ],
+   "reading": null,
+   "source_actor": "government.indigent_care_program",
+   "source_variable": "subsidy_outlay",
+   "relation": "paid_from",
+   "actor": "government.general_fund",
+   "variable": "fund_balance",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q42_the_supply_of_medical_care_in_quenby_can"
+   ],
+   "reading": null,
+   "source_actor": "sellers.medical_care",
+   "source_variable": "quantity_demanded",
+   "relation": "supply_price",
+   "actor": "buyers.medical_care",
+   "variable": "price_paid",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q43_quenby_s_income_tax_receipts_are_paid_in"
+   ],
+   "reading": null,
+   "source_actor": "treasury",
+   "source_variable": "tax_revenue",
+   "relation": "paid_into",
+   "actor": "government.general_fund",
+   "variable": "fund_balance",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q36_quenby_taxes_wages_at_4_5_but_excludes_e"
+   ],
+   "reading": null,
+   "source_actor": "workers.full_time_near_50_fte",
+   "source_variable": "hours_worked",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q36_quenby_taxes_wages_at_4_5_but_excludes_e"
+   ],
+   "reading": null,
+   "source_actor": "workers.part_time_bound",
+   "source_variable": "employment",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q36_quenby_taxes_wages_at_4_5_but_excludes_e"
+   ],
+   "reading": null,
+   "source_actor": "workers.part_time_seasonal_firms",
+   "source_variable": "employment",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q36_quenby_taxes_wages_at_4_5_but_excludes_e"
+   ],
+   "reading": null,
+   "source_actor": "workers.seasonal_short_stint",
+   "source_variable": "employment",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q44_insurers_set_health_premiums_partly_from",
+    "q45_bound_employers_that_offer_cover_pay_a_s"
+   ],
+   "reading": null,
+   "source_actor": "buyers.medical_care",
+   "source_variable": "price_paid",
+   "relation": "cost",
+   "actor": "employers.bound",
+   "variable": "compliance_cost",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q36_quenby_taxes_wages_at_4_5_but_excludes_e"
+   ],
+   "reading": null,
+   "source_actor": "workers.contractors",
+   "source_variable": "employment",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  }
+ ],
+ "assets": [],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "employers.bound"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k5",
+   "actor": "government.department_of_revenue"
+  },
+  {
+   "component": "k5",
+   "actor": "government.department_of_insurance"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k5",
+   "actor": "government.general_fund",
+   "premises": [
+    "a_29"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "k1",
+   "premises": [
+    "a_1"
+   ],
+   "exchange": "e1",
+   "payer_side": "buyer",
+   "receiver": "workers.at_offering_firms",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "a_7"
+   ],
+   "projection_variable": null,
+   "branch_premises": [
+    "a_2"
+   ],
+   "branch_premise_sets": [
+    [
+     "a_5"
+    ]
+   ],
+   "capped_payers": [],
+   "other_receivers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k1",
+   "premises": [
+    "a_1"
+   ],
+   "exchange": "e1",
+   "payer_side": "buyer",
+   "receiver": "government.department_of_revenue",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [
+    "a_4"
+   ],
+   "branch_premise_sets": [],
+   "capped_payers": [
+    "employers.capped"
+   ],
+   "other_receivers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k1s",
+   "premises": [
+    "a_33"
+   ],
+   "exchange": "e2",
+   "payer_side": "buyer",
+   "receiver": "workers.at_offering_firms",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "a_7"
+   ],
+   "projection_variable": null,
+   "branch_premises": [
+    "a_2"
+   ],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "other_receivers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k1s",
+   "premises": [
+    "a_33"
+   ],
+   "exchange": "e2",
+   "payer_side": "buyer",
+   "receiver": "government.department_of_revenue",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [
+    "a_4"
+   ],
+   "branch_premise_sets": [],
+   "capped_payers": [],
+   "other_receivers": [],
+   "basis": "unit"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a_6",
+    "a_8"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "a_6",
+    "a_8"
+   ],
+   "reading": null,
+   "exchange": "e2",
+   "side": "seller",
+   "horizon": "medium"
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a_15",
+    "a_21"
+   ]
+  }
+ ],
+ "timing": [],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "duties": [],
+ "issued": [],
+ "penalties": [
+  {
+   "premises": [
+    "a_18"
+   ],
+   "reading": null,
+   "component": "k5",
+   "actor": "employers.misreporting",
+   "collector": "government.department_of_revenue"
+  }
+ ],
+ "terms": [],
+ "banned": [],
+ "incidence": [
+  {
+   "premises": [
+    "a_23"
+   ],
+   "reading": null,
+   "component": "k1",
+   "exchange": "e1",
+   "side": "seller"
+  }
+ ],
+ "fixed": [
+  {
+   "premises": [
+    "a_3"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "seller",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "a_9"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "seller",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "a_3"
+   ],
+   "reading": null,
+   "exchange": "e2",
+   "side": "seller",
+   "horizon": "short"
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether seasonal workers count toward the 50 FTE threshold",
+   "readings": [
+    "U1-a: seasonal workers count by their hours, so about 380 seasonal firms with 30-49 year-round FTE are bound",
+    "U1-b: seasonal workers are left out of the count, so those firms stay below the line"
+   ],
+   "components": {
+    "U1-a": [
+     "K1s"
+    ],
+    "U1-b": []
+   }
+  }
+ ],
+ "thresholds": [
+  {
+   "premises": [
+    "a_14",
+    "a_15"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "employers.near_50_fte",
+   "variable": "employment",
+   "chooser": null
+  },
+  {
+   "premises": [
+    "a_10"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "workers.near_30_hours",
+   "variable": "hours_worked",
+   "chooser": "employers.bound"
+  }
+ ],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [],
+ "assumptions": {
+  "a_1": {
+   "text": "About 135,000 full-timers at firms of 50+ FTE are offered nothing, and about 105,000 are offered less than K1 requires, so K1 binds for them.",
+   "p": 0.9,
+   "class": "binding"
+  },
+  "a_2": {
+   "text": "Some bound firms that offer nothing now choose to offer.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "a_3": {
+   "text": "Money wages are fixed in the short run by pay scales and yearly raises.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "a_4": {
+   "text": "Some bound firms choose to pay the charge for at least some full-timers.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "a_5": {
+   "text": "Some firms with plans short of K1 upgrade them rather than pay.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "a_6": {
+   "text": "Wages above the minimum can adjust over the medium horizon, as raises are set.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "a_7": {
+   "text": "At players, for the marginal pair, cover at 30% is worth less to the worker than its cost to the employer.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "a_8": {
+   "text": "Workers at payers have some alternative to bound full-time work, so the wage does not fall by the whole charge.",
+   "p": 0.85,
+   "class": "mobility"
+  },
+  "a_9": {
+   "text": "The minimum wage binds for some workers at bound firms.",
+   "p": 0.85,
+   "class": "binding"
+  },
+  "a_10": {
+   "text": "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "a_14": {
+   "text": "Some firms near 50 FTE value staying below the line more than the extra work.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "a_15": {
+   "text": "Owners of firms near 50 know from January 2027 that the 2027 average decides 2028 status.",
+   "p": 0.75,
+   "class": "expectations"
+  },
+  "a_18": {
+   "text": "Revenue cannot cheaply verify reported offers, and some firms report offers not made.",
+   "p": 0.55,
+   "class": "enforcement"
+  },
+  "a_21": {
+   "text": "Business values reflect expected earnings, and buyers expected the Act from its introduction.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "a_23": {
+   "text": "Over the medium to long run, workers' alternatives to bound employment are clearly worse than employers' alternatives.",
+   "p": 0.6,
+   "class": "mobility"
+  },
+  "a_29": {
+   "text": "The $4.1 million is new general-fund money.",
+   "p": 0.9,
+   "class": "revenue_use"
+  },
+  "a_33": {
+   "text": "Some of the 380 seasonal firms do not offer qualifying cover to their full-timers.",
+   "p": 0.75,
+   "class": "binding"
+  },
+  "q18_some_bound_employers_can_staff_work_with": {
+   "text": "Some bound employers can staff work with more employees averaging under 30 hours instead of full-timers.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q19_some_bound_employers_can_contract_out_cl": {
+   "text": "Some bound employers can contract out cleaning, security or food service to firms under 50 FTE.",
+   "p": 0.84,
+   "class": "other"
+  },
+  "q20_bound_employers_set_the_prices_of_what_t": {
+   "text": "Bound employers set the prices of what they sell partly from their labour costs.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q21_some_firms_near_50_fte_can_meet_extra_wo": {
+   "text": "Some firms near 50 FTE can meet extra work with longer hours from existing full-timers.",
+   "p": 0.67,
+   "class": "other"
+  },
+  "q22_hours_above_130_a_month_by_an_employee_a": {
+   "text": "Hours above 130 a month by an employee already counted as one FTE add nothing to the firm's FTE count.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "q23_some_firms_near_50_fte_can_use_agency_wo": {
+   "text": "Some firms near 50 FTE can use agency workers instead of hiring their own employees.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q24_agency_workers_count_toward_the_agency_s": {
+   "text": "Agency workers count toward the agency's FTE rather than the client firm's.",
+   "p": 0.96,
+   "class": "other"
+  },
+  "q25_some_seasonal_firms_can_split_a_season_s": {
+   "text": "Some seasonal firms can split a season's work among more workers each employed for 60 days or less.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q26_a_worker_employed_for_60_days_or_less_is": {
+   "text": "A worker employed for 60 days or less is owed no offer under K1.",
+   "p": 0.93,
+   "class": "other"
+  },
+  "q27_some_seasonal_firms_can_staff_seasonal_w": {
+   "text": "Some seasonal firms can staff seasonal work with more workers averaging under 30 hours instead of full-timers.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q28_ski_and_lake_resorts_set_their_prices_pa": {
+   "text": "Ski and lake resorts set their prices partly from their labour costs.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q29_k1_charges_collected_by_the_department_o": {
+   "text": "K1 charges collected by the Department of Revenue are paid into the general fund.",
+   "p": 0.97,
+   "class": "revenue_use"
+  },
+  "q30_general_fund_money_spent_on_k5_enforceme": {
+   "text": "General-fund money spent on K5 enforcement staff is not available for other state programmes.",
+   "p": 0.88,
+   "class": "revenue_use"
+  },
+  "q31_some_full_timers_at_bound_firms_that_now": {
+   "text": "Some full-timers at bound firms that now offer nothing have incomes below 200% of the poverty line.",
+   "p": 0.93,
+   "class": "revenue_use"
+  },
+  "q32_care_for_workers_newly_covered_by_an_emp": {
+   "text": "Care for workers newly covered by an employer plan would otherwise have been partly paid by the Indigent Care Program.",
+   "p": 0.7,
+   "class": "revenue_use"
+  },
+  "q33_workers_with_employer_health_cover_use_m": {
+   "text": "Workers with employer health cover use more medical care than uninsured workers.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q34_some_full_timers_at_bound_firms_can_find": {
+   "text": "Some full-timers at bound firms can find similar work at firms under 50 FTE.",
+   "p": 0.87,
+   "class": "mobility"
+  },
+  "q35_some_full_timers_at_bound_firms_near_mar": {
+   "text": "Some full-timers at bound firms near Marisport can find similar work across the border in Tarnley.",
+   "p": 0.85,
+   "class": "mobility"
+  },
+  "q36_quenby_taxes_wages_at_4_5_but_excludes_e": {
+   "text": "Quenby taxes wages at 4.5% but excludes employer health contributions from the employee's income.",
+   "p": 0.98,
+   "class": "revenue_use"
+  },
+  "q37_some_full_timers_at_seasonal_firms_can_f": {
+   "text": "Some full-timers at seasonal firms can find similar seasonal work at firms not bound by the Act.",
+   "p": 0.8,
+   "class": "mobility"
+  },
+  "q38_some_workers_whose_hours_are_cut_below_3": {
+   "text": "Some workers whose hours are cut below 30 can make up hours with a second job at another employer.",
+   "p": 0.85,
+   "class": "mobility"
+  },
+  "q39_contractors_meet_extra_contracted_work_b": {
+   "text": "Contractors meet extra contracted work by employing more workers.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q40_money_paid_into_the_general_fund_is_avai": {
+   "text": "Money paid into the general fund is available for other state programmes.",
+   "p": 0.88,
+   "class": "revenue_use"
+  },
+  "q41_indigent_care_program_payments_to_hospit": {
+   "text": "Indigent Care Program payments to hospitals are paid from the general fund.",
+   "p": 0.97,
+   "class": "revenue_use"
+  },
+  "q42_the_supply_of_medical_care_in_quenby_can": {
+   "text": "The supply of medical care in Quenby cannot expand quickly to meet added demand.",
+   "p": 0.62,
+   "class": "other"
+  },
+  "q43_quenby_s_income_tax_receipts_are_paid_in": {
+   "text": "Quenby's income tax receipts are paid into the general fund.",
+   "p": 0.85,
+   "class": "revenue_use"
+  },
+  "q44_insurers_set_health_premiums_partly_from": {
+   "text": "Insurers set health premiums partly from the prices they pay for medical care.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "q45_bound_employers_that_offer_cover_pay_a_s": {
+   "text": "Bound employers that offer cover pay a share of the premium.",
+   "p": 0.97,
+   "class": "other"
+  }
+ }
+}

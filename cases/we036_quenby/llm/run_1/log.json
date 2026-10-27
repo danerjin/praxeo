@@ -1,0 +1,894 @@
+[
+ {
+  "depth": 1,
+  "node": "employers.bound",
+  "question": "Some bound employers can staff work with more employees averaging under 30 hours instead of full-timers.",
+  "atom": "q18_some_bound_employers_can_staff_work_with",
+  "p": 0.8,
+  "rationale": "No assumption row states this exactly. A-10 (0.75) is closest, but it adds a cost condition: rescheduling must cost less than the per-head charge. The question asks only whether some bound employers can substitute part-timers, which is a weaker claim. The record places the uncovered workers mainly in retail, food service, cleaning, security and care. In these sectors shift work is divisible and part-time staffing is common. K1 also exempts employees averaging under 30 hours, which creates a clear incentive to substitute. Since the claim only needs some employers to be able to do this, it is very likely true, though the record has no direct data on how easily hours can be split.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.bound",
+  "proposal": {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.bound",
+    "actor": "workers.part_time_bound",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Some bound employers can staff work with more employees averaging under 30 hours instead of full-timers."
+   ],
+   "premise_class": "other",
+   "source": "Exemptions: Public employers. Employees averaging under 30 hours."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.bound",
+  "question": "Some bound employers can contract out cleaning, security or food service to firms under 50 FTE.",
+  "atom": "q19_some_bound_employers_can_contract_out_cl",
+  "p": 0.84,
+  "rationale": "The question asks whether contracting out is feasible, not whether it costs less than the term or the charge. The record does not say whether independent contractors' staff count toward the client firm. K3 aggregates only firms under common control and assigns agency workers to the agency, so workers employed by an independent cleaning, security or catering contractor would count toward that contractor's FTE, not the client's. If the contractor is under 50 FTE, it is not bound. Small cleaning, security and food-service contractors are common, and these services are routinely outsourced, so it is very likely that some bound employers can do this. A-17 (p 0.55) is narrower: it covers firms near 50 and requires the cost to be below the term or charge, so it is not the same statement. Residual doubt: thin contractor markets, or contractors growing past 50 FTE.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.bound",
+  "proposal": {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "employers.bound",
+    "actor": "contractors",
+    "variables": [
+     "quantity_supplied"
+    ]
+   },
+   "premises": [
+    "Some bound employers can contract out cleaning, security or food service to firms under 50 FTE."
+   ],
+   "premise_class": "other",
+   "source": "about 11% of private employees earn at or near it, mostly in retail, food service, cleaning, security and care."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.bound",
+  "question": "Bound employers set the prices of what they sell partly from their labour costs.",
+  "atom": "q20_bound_employers_set_the_prices_of_what_t",
+  "p": 0.8,
+  "rationale": "The record says nothing directly about how firms price. The assumption table has no row stating this either. A-22 and A-24 bear on it but are not the same statement. The bound firms are mostly retail, food service, security, staffing and care firms. Such firms usually have some local pricing power and set prices with reference to costs, including labour, which is a large share of their costs. Agency workers count for the agency, so staffing firms in particular bill clients on a markup over labour cost; A-34 assumes such a markup. 'Partly' is a weak claim, so it is likely true. Competition from unbound rivals (A-22) limits how far costs can be passed on, but it does not deny that labour costs enter price-setting.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.bound",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.bound",
+    "source_variable": "compliance_cost",
+    "relation": "cost",
+    "actor": "customers",
+    "variable": "price_paid",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Bound employers set the prices of what they sell partly from their labour costs."
+   ],
+   "premise_class": "other",
+   "source": "about 62,000 at 45 large firms (national retail and food chains, staffing, security)"
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.near_50_fte",
+  "question": "Some firms near 50 FTE can meet extra work with longer hours from existing full-timers.",
+  "atom": "q21_some_firms_near_50_fte_can_meet_extra_wo",
+  "p": 0.67,
+  "rationale": "Under K3, anyone averaging 130 or more hours a month counts as one FTE whatever their hours, so longer hours for existing full-timers add no FTE. A firm near 50 can therefore take on extra work without crossing the line, if longer hours can stand in for new heads. That condition is close to A-11 (p 0.65), which is about substitution between 30 and 40 hours in general rather than firms near 50 specifically. The question asks only that 'some' firms can do this, which is a weak claim. Against it, R4 overtime above 40 hours raises the cost, and some work cannot be met by longer hours. On balance I lean yes, at about A-11's level.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.near_50_fte",
+  "question": "Hours above 130 a month by an employee already counted as one FTE add nothing to the firm's FTE count.",
+  "atom": "q22_hours_above_130_a_month_by_an_employee_a",
+  "p": 0.95,
+  "rationale": "K3 counts each employee averaging 130 hours a month as one, and divides by 130 only the hours of all other employees. An employee already counted as a full one adds exactly one FTE, so hours beyond 130 add nothing to the count. The text is clear on this point; the only residual doubt is how 'averaging' is applied month by month.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.near_50_fte",
+  "proposal": {
+   "part": "alternatives",
+   "fact": {
+    "component": "k3",
+    "chooser": "employers.near_50_fte",
+    "actor": "workers.full_time_near_50_fte",
+    "variables": [
+     "hours_worked"
+    ],
+    "inverse": false
+   },
+   "premises": [
+    "Some firms near 50 FTE can meet extra work with longer hours from existing full-timers.",
+    "Hours above 130 a month by an employee already counted as one FTE add nothing to the firm's FTE count."
+   ],
+   "premise_class": "other",
+   "source": "FTE = monthly average over the previous calendar year of (employees averaging 130 hours a month) plus (all other employees' hours \u00f7 130)."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.near_50_fte",
+  "question": "Some firms near 50 FTE can use agency workers instead of hiring their own employees.",
+  "atom": "q23_some_firms_near_50_fte_can_use_agency_wo",
+  "p": 0.8,
+  "rationale": "K3 states that agency workers count toward the agency's headcount, not the client's. A firm near 50 FTE can therefore legally add labour through an agency without raising its own FTE count. The common-control rule closes splitting by ownership but not agency use. Staffing firms already operate in Quenby, including some among the 45 large firms. The question is only whether some firms can do this, with no condition on cost, so it is weaker than A-17 (p 0.55), which adds a cost-below-the-charge condition. A-17 also covers contracting out generally. A-34 (p 0.55) is about payers rather than firms near the threshold. Practical limits remain: agency markups, and some jobs suit agency staffing poorly. Even so, it is very likely that at least some firms near 50 have this option.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.near_50_fte",
+  "question": "Agency workers count toward the agency's FTE rather than the client firm's.",
+  "atom": "q24_agency_workers_count_toward_the_agency_s",
+  "p": 0.96,
+  "rationale": "The record says plainly, in K3, that agency workers count for the agency. The question restates the text, not an assumption row, so it is a reading of the record.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.near_50_fte",
+  "proposal": {
+   "part": "alternatives",
+   "fact": {
+    "component": "k3",
+    "chooser": "employers.near_50_fte",
+    "actor": "contractors",
+    "variables": [
+     "quantity_supplied"
+    ],
+    "inverse": false
+   },
+   "premises": [
+    "Some firms near 50 FTE can use agency workers instead of hiring their own employees.",
+    "Agency workers count toward the agency's FTE rather than the client firm's."
+   ],
+   "premise_class": "other",
+   "source": "Agency workers count for the agency."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.seasonal_30_49",
+  "question": "Some seasonal firms can split a season's work among more workers each employed for 60 days or less.",
+  "atom": "q25_some_seasonal_firms_can_split_a_season_s",
+  "p": 0.7,
+  "rationale": "The question asks whether splitting a season's work among more workers, each employed 60 days or less, is feasible for some seasonal firms. It does not ask whether firms actually do it. A-30, the behavioural claim that employers shorten engagements below 60 days, has p 0.4. Feasibility for some firms is a weaker claim and so more likely than that. The record defines seasonal workers as employed up to 120 days and says an offer is owed only after 60 days. Seasons in farming, food processing, resorts and landscaping often run longer than 60 days, so staggered or relay hiring could keep each worker under the threshold. This is plausible for low-skill, high-turnover jobs such as harvest work or landscaping crews. Costs remain: hiring and training more workers, labour supply in peak season, and skill continuity at resorts. These make it impractical for some firms, but the claim needs only some firms to manage it. The record is otherwise silent on feasibility.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.seasonal_30_49",
+  "question": "A worker employed for 60 days or less is owed no offer under K1.",
+  "atom": "q26_a_worker_employed_for_60_days_or_less_is",
+  "p": 0.93,
+  "rationale": "Under K1, the offer is owed only from the first of the month after 60 days of employment. A worker employed 60 days or less therefore never reaches the date when the offer becomes due, so no offer is owed. The record states this directly, and the U1 note confirms that the 60-day point is when an offer becomes owed. This is a textual reading rather than a behavioural assumption, so A-30 (whether firms actually shorten engagements) does not apply.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.seasonal_30_49",
+  "proposal": {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1s",
+    "chooser": "employers.seasonal_30_49",
+    "actor": "workers.seasonal_short_stint",
+    "variables": [
+     "employment"
+    ],
+    "inverse": false
+   },
+   "premises": [
+    "Some seasonal firms can split a season's work among more workers each employed for 60 days or less.",
+    "A worker employed for 60 days or less is owed no offer under K1."
+   ],
+   "premise_class": "other",
+   "source": "Under both readings, a seasonal worker who averages 30 or more hours at a bound firm is owed an offer after 60 days; that part of the text is clear."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.seasonal_30_49",
+  "question": "Some seasonal firms can staff seasonal work with more workers averaging under 30 hours instead of full-timers.",
+  "atom": "q27_some_seasonal_firms_can_staff_seasonal_w",
+  "p": 0.7,
+  "rationale": "No assumption row matches this exactly. A-10 (p 0.75) says some employers can move 30\u201335 hour jobs to under 30 hours at a cost below the per-head cost. Seasonal work at farms, resorts and landscaping is often peak-load. Staffing it with more part-timers is plausible for some firms, though tight seasonal labor markets and the extra hiring and training of more heads limit this. The question says only \"some\" firms, so this leans yes. Under U1-a, part-timers' hours still count toward the 50, so the switch avoids the offer obligation but not bound status. The question asks about feasibility, not about which status results.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.seasonal_30_49",
+  "proposal": {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1s",
+    "chooser": "employers.seasonal_30_49",
+    "actor": "workers.part_time_seasonal_firms",
+    "variables": [
+     "employment"
+    ],
+    "inverse": false
+   },
+   "premises": [
+    "Some seasonal firms can staff seasonal work with more workers averaging under 30 hours instead of full-timers."
+   ],
+   "premise_class": "other",
+   "source": "Exemptions: Public employers. Employees averaging under 30 hours."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.seasonal_30_49",
+  "question": "Ski and lake resorts set their prices partly from their labour costs.",
+  "atom": "q28_ski_and_lake_resorts_set_their_prices_pa",
+  "p": 0.75,
+  "rationale": "The record is silent on how resorts set prices, and no assumption row matches this question. Resorts are among the roughly 380 seasonal firms whose bound status depends on reading U1. They are service businesses in which labour is a large share of cost. It was generally understood at enactment that prices in such firms reflect costs, including labour, at least in part. Resorts do face competition from Tarnley and other destinations (cf. A-26), which limits pass-through, but the claim says only 'partly', so this is a mild limit. I therefore lean yes.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "employers.seasonal_30_49",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "employers.seasonal_30_49",
+    "source_variable": "compliance_cost",
+    "relation": "cost",
+    "actor": "customers.resorts",
+    "variable": "price_paid",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Ski and lake resorts set their prices partly from their labour costs."
+   ],
+   "premise_class": "other",
+   "source": "About 380 firms (farms, food processing, ski and lake resorts, landscaping) have 30 to 49 year-round FTE and would reach 50 if the hours of their seasonal workers counted."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "government.department_of_revenue",
+  "question": "K1 charges collected by the Department of Revenue are paid into the general fund.",
+  "atom": "q29_k1_charges_collected_by_the_department_o",
+  "p": 0.97,
+  "rationale": "The record says directly that K1 charges are assessed with the quarterly withholding returns and paid into the general fund. No assumption row covers this; it is a plain statement of the text.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "government.department_of_revenue",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "government.department_of_revenue",
+    "source_variable": "tax_revenue",
+    "relation": "paid_into",
+    "actor": "government.general_fund",
+    "variable": "fund_balance",
+    "horizon": "medium"
+   },
+   "premises": [
+    "K1 charges collected by the Department of Revenue are paid into the general fund."
+   ],
+   "premise_class": "revenue_use",
+   "source": "Charges are paid into the general fund."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "government.general_fund",
+  "question": "General-fund money spent on K5 enforcement staff is not available for other state programmes.",
+  "atom": "q30_general_fund_money_spent_on_k5_enforceme",
+  "p": 0.88,
+  "rationale": "K5 funds 32 staff with a new $4.1 million yearly appropriation from the general fund. Money appropriated and spent on those staff cannot also be spent on other programmes, so the opportunity cost holds. The closest assumption row is A-29, that the $4.1 million is new general-fund money (p 0.9). The K1 charges, about $13.5 million or more from capped firms alone, also flow into the general fund, so the Act's net effect on the fund may be positive. That does not change the fact that the $4.1 million spent on enforcement is diverted from other uses. The record is silent on whether the appropriation is offset by cuts elsewhere or kept separate from other programmes.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "government.general_fund",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "government.general_fund",
+    "source_variable": "resources_available_other_uses",
+    "relation": "output",
+    "actor": "recipients.other_spending",
+    "variable": "resources_available_other_uses",
+    "horizon": "medium"
+   },
+   "premises": [
+    "General-fund money spent on K5 enforcement staff is not available for other state programmes."
+   ],
+   "premise_class": "revenue_use",
+   "source": "A new appropriation of $4.1 million a year from the general fund pays for 32 staff."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.at_offering_firms",
+  "question": "Some full-timers at bound firms that now offer nothing have incomes below 200% of the poverty line.",
+  "atom": "q31_some_full_timers_at_bound_firms_that_now",
+  "p": 0.93,
+  "rationale": "No assumption row states this directly; A-28 is related but narrower. The record shows that the 135,000 uncovered full-timers are concentrated in national retail, food, staffing and security chains and in mid-size low-wage firms, where minimum-wage work is common. A full-time minimum-wage worker earns $29,120 a year. This is below 200% of the federal poverty line for a single person, which was roughly $31,000 or more in the mid-2020s, and much further below it for workers with dependents. Workers on 30 to 39 hours a week earn even less. So it is very likely that at least some of these full-timers fall below 200% of the poverty line. The record does not report the income distribution itself.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.at_offering_firms",
+  "question": "Care for workers newly covered by an employer plan would otherwise have been partly paid by the Indigent Care Program.",
+  "atom": "q32_care_for_workers_newly_covered_by_an_emp",
+  "p": 0.7,
+  "rationale": "The question restates assumption A-28, so it takes that row's p of 0.7. The record supports it. The ICP pays hospitals for care of uninsured residents below 200% of the poverty line. Many of the 135,000 workers offered nothing are low-wage (retail, food service, cleaning, security, care), and a full-time minimum-wage income of $29,120 can fall below 200% of poverty, especially with dependants. Some newly covered workers' care would therefore otherwise have been billed to the ICP. Not all of them would qualify, since some were insured individually or earn more, which is why the claim says 'partly' and why the probability stays at 0.7 rather than higher.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.at_offering_firms",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_offering_firms",
+    "source_variable": "non_wage_compensation",
+    "relation": "substitute",
+    "actor": "government.indigent_care_program",
+    "variable": "subsidy_outlay",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Some full-timers at bound firms that now offer nothing have incomes below 200% of the poverty line.",
+    "Care for workers newly covered by an employer plan would otherwise have been partly paid by the Indigent Care Program."
+   ],
+   "premise_class": "revenue_use",
+   "source": "R3 Indigent Care Program (ICP): public_supply (payment to hospitals) for care for uninsured residents below 200% of the poverty line; about $310 million a year from the general fund."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.at_offering_firms",
+  "question": "Workers with employer health cover use more medical care than uninsured workers.",
+  "atom": "q33_workers_with_employer_health_cover_use_m",
+  "p": 0.75,
+  "rationale": "This matches assumption A-27, which says newly covered workers use more care billed to insurers than they used without cover, at p=0.75. The question asks something slightly broader (insured workers vs. uninsured workers in general), but it states essentially the same claim, so I use that row's p. General knowledge available at enactment supports it: insured people use more care than the uninsured (RAND HIE, Oregon experiment). Part of that gap reflects selection rather than cover itself.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.at_offering_firms",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.at_offering_firms",
+    "source_variable": "non_wage_compensation",
+    "relation": "complement",
+    "actor": "sellers.medical_care",
+    "variable": "quantity_demanded",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Workers with employer health cover use more medical care than uninsured workers."
+   ],
+   "premise_class": "other",
+   "source": "K2 Benefit standard: hospital, physician, prescription and maternity care, deductible no higher than $2,500."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.full_time_bound",
+  "question": "Some full-timers at bound firms can find similar work at firms under 50 FTE.",
+  "atom": "q34_some_full_timers_at_bound_firms_can_find",
+  "p": 0.87,
+  "rationale": "The claim is existential and weak. Firms with 50 or more FTE employ about 1.45 million of 2.2 million private employees, so firms under 50 employ roughly 750,000. The low-wage sectors involved (retail, food service, cleaning, security, care) have many small firms, and about 1,300 firms sit at 40\u201349 FTE alone. Some bound full-timers can therefore find similar work at unbound firms. This is close to, but narrower than, A-8 (p 0.85), which lists firms under 50 among workers' alternatives. A-37 limits how many can move (the response is partial), not whether some can.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.full_time_bound",
+  "proposal": {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "workers.full_time_bound",
+    "actor": "workers.small_firms",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Some full-timers at bound firms can find similar work at firms under 50 FTE."
+   ],
+   "premise_class": "mobility",
+   "source": "Firms with 50 or more full-time equivalents (FTE) employ about 1.45 million people"
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.full_time_bound",
+  "question": "Some full-timers at bound firms near Marisport can find similar work across the border in Tarnley.",
+  "atom": "q35_some_full_timers_at_bound_firms_near_mar",
+  "p": 0.85,
+  "rationale": "No assumption row states exactly this. A-8 lists Tarnley among workers' alternatives to bound full-time work at p 0.85, but it is broader than this question. The record shows Marisport, Quenby's largest city, sits on the Tarnley border, with about 35,000 people commuting across it daily. That makes cross-border job search a real option for at least some workers. The claim only needs 'some' full-timers to have similar work available, and many affected jobs (retail, food service, cleaning, security, care) are common local services that also exist in Tarnley. The record is silent on Tarnley's wage levels and licensing rules, so this is not certain, but yes is clearly the more likely answer.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.full_time_bound",
+  "proposal": {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "workers.full_time_bound",
+    "actor": "workers.cross_border",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Some full-timers at bound firms near Marisport can find similar work across the border in Tarnley."
+   ],
+   "premise_class": "mobility",
+   "source": "Its largest city, Marisport, lies on the border with the State of Tarnley, which has no such law; about 35,000 people commute across the border each day."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.full_time_bound",
+  "question": "Quenby taxes wages at 4.5% but excludes employer health contributions from the employee's income.",
+  "atom": "q36_quenby_taxes_wages_at_4_5_but_excludes_e",
+  "p": 0.98,
+  "rationale": "The policy record states this directly as existing rule R2, which applies in the counterfactual as well. No assumption row covers it on its own terms, so the record settles the answer.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.full_time_bound",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.full_time_bound",
+    "source_variable": "wage",
+    "relation": "yield",
+    "actor": "treasury",
+    "variable": "tax_revenue",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Quenby taxes wages at 4.5% but excludes employer health contributions from the employee's income."
+   ],
+   "premise_class": "revenue_use",
+   "source": "Excluded from the employee's income for Quenby's 4.5% income tax; wages are taxed."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.full_time_seasonal_firms",
+  "question": "Some full-timers at seasonal firms can find similar seasonal work at firms not bound by the Act.",
+  "atom": "q37_some_full_timers_at_seasonal_firms_can_f",
+  "p": 0.8,
+  "rationale": "No assumption row states this exactly. The closest is A-8, a general mobility row at 0.85 covering firms under 50, part-time work and Tarnley. Seasonal sectors (farms, food processing, resorts, landscaping) include many small firms. About 1,300 firms have 40 to 49 FTE, and Tarnley, across the border, is unbound. Under reading U1-b, the 380 seasonal firms themselves fall below 50 and are not bound, so similar seasonal work at unbound firms clearly exists. Under U1-a, smaller rivals and Tarnley employers still offer similar work. The claim only needs 'some' workers, so the probability is high. It is slightly below A-8 because seasonal work is location- and season-specific and the record gives no direct figures.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.full_time_seasonal_firms",
+  "proposal": {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1s",
+    "chooser": "workers.full_time_seasonal_firms",
+    "actor": "workers.small_firms",
+    "variables": [
+     "employment"
+    ],
+    "inverse": false
+   },
+   "premises": [
+    "Some full-timers at seasonal firms can find similar seasonal work at firms not bound by the Act."
+   ],
+   "premise_class": "mobility",
+   "source": "About 380 firms (farms, food processing, ski and lake resorts, landscaping) have 30 to 49 year-round FTE and would reach 50 if the hours of their seasonal workers counted."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.full_time_seasonal_firms",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.full_time_seasonal_firms",
+    "source_variable": "wage",
+    "relation": "yield",
+    "actor": "treasury",
+    "variable": "tax_revenue",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Quenby taxes wages at 4.5% but excludes employer health contributions from the employee's income."
+   ],
+   "premise_class": "revenue_use",
+   "source": "Excluded from the employee's income for Quenby's 4.5% income tax; wages are taxed."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.near_30_hours",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.near_30_hours",
+    "source_variable": "hours_worked",
+    "relation": "yield",
+    "actor": "treasury",
+    "variable": "tax_revenue",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Quenby taxes wages at 4.5% but excludes employer health contributions from the employee's income."
+   ],
+   "premise_class": "revenue_use",
+   "source": "Excluded from the employee's income for Quenby's 4.5% income tax; wages are taxed."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.near_30_hours",
+  "question": "Some workers whose hours are cut below 30 can make up hours with a second job at another employer.",
+  "atom": "q38_some_workers_whose_hours_are_cut_below_3",
+  "p": 0.85,
+  "rationale": "No assumption row states this directly, so I judged it from the policy record and general knowledge. The record says workers have alternatives: firms under 50 FTE, part-time work and Tarnley across the border. K1 binds per employer, so a worker cut to 29 hours at one firm can take part-time hours elsewhere without triggering an offer at either firm. Low-wage sectors such as retail, food service and cleaning commonly have workers holding two jobs. The claim only requires 'some' workers, so it is very likely true. Scheduling conflicts limit how many can do this, but they do not make it impossible.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 1,
+  "node": "workers.near_30_hours",
+  "proposal": {
+   "part": "alternatives",
+   "fact": {
+    "component": "k1",
+    "chooser": "workers.near_30_hours",
+    "actor": "workers.small_firms",
+    "variables": [
+     "employment"
+    ]
+   },
+   "premises": [
+    "Some workers whose hours are cut below 30 can make up hours with a second job at another employer."
+   ],
+   "premise_class": "mobility",
+   "source": "Employees averaging under 30 hours."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 2,
+  "node": "contractors",
+  "question": "Contractors meet extra contracted work by employing more workers.",
+  "atom": "q39_contractors_meet_extra_contracted_work_b",
+  "p": 0.7,
+  "rationale": "No assumption row states this directly, so it is judged from the record. A-17 says some firms near 50 can contract out work, for example cleaning, landscaping or security. The contractors that take on that work cannot absorb a whole function with existing staff alone. Overtime above 40 hours costs 1.5 times the regular rate (R4), which limits how far longer hours can stretch. A-11 gives some substitution of extra hours for heads between 30 and 40 hours, but it carries only p=0.65 and covers part of the margin. Contractors may also add part-timers under 30 hours, which still counts as employing more workers. Taken together, contractors mostly meet extra contracted work by adding workers, though partly by lengthening hours.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 2,
+  "node": "contractors",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "contractors",
+    "source_variable": "quantity_supplied",
+    "relation": "input",
+    "actor": "workers.contractors",
+    "variable": "employment",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Contractors meet extra contracted work by employing more workers."
+   ],
+   "premise_class": "other",
+   "source": "Agency workers count for the agency."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 2,
+  "node": "government.general_fund",
+  "question": "Money paid into the general fund is available for other state programmes.",
+  "atom": "q40_money_paid_into_the_general_fund_is_avai",
+  "p": 0.88,
+  "rationale": "The record states that the K1 charges are paid into the general fund and that the enforcement appropriation and the ICP are both drawn from that fund. By ordinary fiscal practice a general fund is unearmarked, so money paid into it can be appropriated to other state programmes. No assumption row states this directly. The record does not say the charges are earmarked, though actual reallocation depends on legislative appropriation.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 2,
+  "node": "government.general_fund",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "government.general_fund",
+    "source_variable": "fund_balance",
+    "relation": "output",
+    "actor": "recipients.other_spending",
+    "variable": "resources_available_other_uses",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Money paid into the general fund is available for other state programmes."
+   ],
+   "premise_class": "revenue_use",
+   "source": "Charges are paid into the general fund."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 2,
+  "node": "government.indigent_care_program",
+  "question": "Indigent Care Program payments to hospitals are paid from the general fund.",
+  "atom": "q41_indigent_care_program_payments_to_hospit",
+  "p": 0.97,
+  "rationale": "The record says directly that the existing Indigent Care Program (R3) pays hospitals about $310 million a year from the general fund, so the answer is yes. No assumption-table row restates this claim, so the answer is judged from the policy record itself.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 2,
+  "node": "government.indigent_care_program",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "government.indigent_care_program",
+    "source_variable": "subsidy_outlay",
+    "relation": "paid_from",
+    "actor": "government.general_fund",
+    "variable": "fund_balance",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Indigent Care Program payments to hospitals are paid from the general fund."
+   ],
+   "premise_class": "revenue_use",
+   "source": "R3 Indigent Care Program (ICP) | `public_supply` (payment to hospitals) | Care for uninsured residents below 200% of the poverty line | Hospitals that claim | About $310 million a year from the general fund"
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 2,
+  "node": "sellers.medical_care",
+  "question": "The supply of medical care in Quenby cannot expand quickly to meet added demand.",
+  "atom": "q42_the_supply_of_medical_care_in_quenby_can",
+  "p": 0.62,
+  "rationale": "No assumption-table row states this, and the record says nothing about medical supply capacity, so the answer rests on what was generally known at enactment. Short-run medical supply is generally inelastic: training physicians and nurses takes years, and licensing and facility approval slow entry. Against that, some slack is plausible. The added demand is small relative to a state of 5.1 million (at most a few hundred thousand newly covered workers, many of them already using care through the ICP). Hospitals and clinics can extend hours, and Tarnley providers near Marisport can absorb some demand. The direction, quick expansion not being feasible, is more likely true than not, so the probability is moderately above 0.5.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 2,
+  "node": "sellers.medical_care",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "sellers.medical_care",
+    "source_variable": "quantity_demanded",
+    "relation": "supply_price",
+    "actor": "buyers.medical_care",
+    "variable": "price_paid",
+    "horizon": "short"
+   },
+   "premises": [
+    "The supply of medical care in Quenby cannot expand quickly to meet added demand."
+   ],
+   "premise_class": "other",
+   "source": "about 12% (135,000) are offered nothing."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 2,
+  "node": "treasury",
+  "question": "Quenby's income tax receipts are paid into the general fund.",
+  "atom": "q43_quenby_s_income_tax_receipts_are_paid_in",
+  "p": 0.85,
+  "rationale": "The record does not say directly where income tax receipts go. It does say that K1 charges are paid into the general fund, and that the ICP and the new appropriation are paid from it. A-36 nets the income tax lost against charges collected and against the appropriation, which treats both as flows of the same fund. In US states, personal income tax is generally the main general-fund revenue, though some states earmark part of it. On that general knowledge, yes is likely but not certain.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 2,
+  "node": "treasury",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "treasury",
+    "source_variable": "tax_revenue",
+    "relation": "paid_into",
+    "actor": "government.general_fund",
+    "variable": "fund_balance",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Quenby's income tax receipts are paid into the general fund."
+   ],
+   "premise_class": "revenue_use",
+   "source": "Excluded from the employee's income for Quenby's 4.5% income tax; wages are taxed."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 2,
+  "node": "workers.full_time_near_50_fte",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.full_time_near_50_fte",
+    "source_variable": "hours_worked",
+    "relation": "yield",
+    "actor": "treasury",
+    "variable": "tax_revenue",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Quenby taxes wages at 4.5% but excludes employer health contributions from the employee's income."
+   ],
+   "premise_class": "revenue_use",
+   "source": "Excluded from the employee's income for Quenby's 4.5% income tax; wages are taxed."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 2,
+  "node": "workers.part_time_bound",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.part_time_bound",
+    "source_variable": "employment",
+    "relation": "yield",
+    "actor": "treasury",
+    "variable": "tax_revenue",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Quenby taxes wages at 4.5% but excludes employer health contributions from the employee's income."
+   ],
+   "premise_class": "revenue_use",
+   "source": "Excluded from the employee's income for Quenby's 4.5% income tax; wages are taxed."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 2,
+  "node": "workers.part_time_seasonal_firms",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.part_time_seasonal_firms",
+    "source_variable": "employment",
+    "relation": "yield",
+    "actor": "treasury",
+    "variable": "tax_revenue",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Quenby taxes wages at 4.5% but excludes employer health contributions from the employee's income."
+   ],
+   "premise_class": "revenue_use",
+   "source": "Excluded from the employee's income for Quenby's 4.5% income tax; wages are taxed."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 2,
+  "node": "workers.seasonal_short_stint",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.seasonal_short_stint",
+    "source_variable": "employment",
+    "relation": "yield",
+    "actor": "treasury",
+    "variable": "tax_revenue",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Quenby taxes wages at 4.5% but excludes employer health contributions from the employee's income."
+   ],
+   "premise_class": "revenue_use",
+   "source": "Excluded from the employee's income for Quenby's 4.5% income tax; wages are taxed."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 3,
+  "node": "buyers.medical_care",
+  "question": "Insurers set health premiums partly from the prices they pay for medical care.",
+  "atom": "q44_insurers_set_health_premiums_partly_from",
+  "p": 0.95,
+  "rationale": "No row in the assumption table states this, and the record does not address how insurers price premiums. On what was generally knowable at enactment, health premiums are set to cover expected claims costs plus loading. Expected claims depend on the prices insurers pay providers for care, so premiums are set partly from those prices.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 3,
+  "node": "buyers.medical_care",
+  "question": "Bound employers that offer cover pay a share of the premium.",
+  "atom": "q45_bound_employers_that_offer_cover_pay_a_s",
+  "p": 0.97,
+  "rationale": "The Act lets a bound employer satisfy K1 by offering a plan that meets the benefit standard. That offer only counts if the employer contributes at least 70% of the employee-only premium. So any bound employer that offers qualifying cover pays a share of the premium by definition. The record itself gives the figure: a 70% share of the average $7,400 premium is $5,180 a year. The question matches the mandate's own text rather than any assumption row, so near-certainty is warranted.",
+  "decider": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 3,
+  "node": "buyers.medical_care",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "buyers.medical_care",
+    "source_variable": "price_paid",
+    "relation": "cost",
+    "actor": "employers.bound",
+    "variable": "compliance_cost",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Insurers set health premiums partly from the prices they pay for medical care.",
+    "Bound employers that offer cover pay a share of the premium."
+   ],
+   "premise_class": "other",
+   "source": "The average premium for an employee-only plan that meets the standard is $7,400 a year, so a 70% share is $5,180."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ },
+ {
+  "depth": 3,
+  "node": "workers.contractors",
+  "proposal": {
+   "part": "links",
+   "fact": {
+    "source_actor": "workers.contractors",
+    "source_variable": "employment",
+    "relation": "yield",
+    "actor": "treasury",
+    "variable": "tax_revenue",
+    "horizon": "medium"
+   },
+   "premises": [
+    "Quenby taxes wages at 4.5% but excludes employer health contributions from the employee's income."
+   ],
+   "premise_class": "revenue_use",
+   "source": "Excluded from the employee's income for Quenby's 4.5% income tax; wages are taxed."
+  },
+  "proposer": "llm:claude-opus-5-5"
+ }
+]
