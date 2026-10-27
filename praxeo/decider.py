@@ -62,12 +62,13 @@ class LLMDecider:
         self.name = f"llm:{model}"
 
     def answer(self, question: Question, record: PolicyRecord) -> Answer:
-        prompt = (
-            f"Policy record:\n{record.model_dump_json(indent=1)}\n\n"
-            f"Question id: {question.id}\nKind: {question.kind}\n"
-            + (f"Options: {question.options}\n" if question.options else "")
-            + f"Question: {question.text}"
-        )
+        # the policy record is the same on every question of a run: cached up to it
+        prompt = [
+            {"type": "text", "text": f"Policy record:\n{record.model_dump_json(indent=1)}", "cache_control": {"type": "ephemeral"}},
+            {"type": "text", "text": f"Question id: {question.id}\nKind: {question.kind}\n"
+                                     + (f"Options: {question.options}\n" if question.options else "")
+                                     + f"Question: {question.text}"},
+        ]
         resp = llm.parse(
             self.client,
             "decider",

@@ -34,6 +34,12 @@ the API). In a new session:
    broader class merging distinct table classes; when unsure, leave it out), then
    `tests/test_core_expand.py::_loop_score(case, example, short, windows, loop)` with `loop="llm/run_1"`. WE-036 stand-in
    runs gave 13 to 26 of 60; the pattern engine 29.
+   Pilot run 1 (`llm/run_1`, proposer at medium effort): 7 of 60 for $3.05 (seed $0.15, proposer $2.08 over 24 calls,
+   decider $0.81 over 28 questions). The proposer proposed only links and alternatives (30 facts), and the seed held 2
+   exchanges against r7's 4, so the engine reported 33 consequences against r7's 63. Since then the proposer prompt
+   describes every part with its fields and a general example and asks for a pass over all of them per node, the
+   proposer runs at high effort (`--proposer-effort`), and the proposer's system prompt and policy text and the
+   decider's record are cached. Next: `llm/run_2` on WE-036 to compare.
 4. Report the token use and cost of the pilot to the user before running the batch: three runs each on WE-036, WE-020,
    WE-046, WE-042, WE-064.
 

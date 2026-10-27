@@ -71,3 +71,16 @@ def test_no_identifier_in_any_case_reaches_the_program_as_a_variable():
         program = re.sub(r'"(?:[^"\\]|\\.)*"', '""', S.facts(S.safe_ids(S.Situation.model_validate_json(raw))))
         assert not re.findall(r"\b[A-Z]\w*", program), f.name
     assert n > 100
+
+
+def test_the_proposer_is_told_every_kind_of_fact_it_may_propose():
+    """The WE-036 pilot proposed only links and alternatives; every part it may propose is described, with its fields."""
+    import re
+
+    parts = X.ProposalOut.model_fields["part"].annotation.__args__
+    for part in parts:
+        assert re.search(rf"\b{part}\b", X.PROPOSER_SYSTEM), part
+    for fields in ("{exchange, kind, side, actor, variables}", "{component, actor}", "{exchange, side, actor",
+                   "{component,\n  actor, variable, mode}", "{part, whole}", "{actor, variable, direction, kind, window}"):
+        assert fields in X.PROPOSER_SYSTEM, fields
+    assert "an empty list is a valid answer" not in X.PROPOSER_SYSTEM

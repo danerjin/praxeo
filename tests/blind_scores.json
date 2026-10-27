@@ -618,5 +618,31 @@
   "produced": 15,
   "total": 47,
   "pattern_engine": "9"
+ },
+ {
+  "case": "we036_quenby",
+  "loop": "llm/run_1",
+  "example": "WE-036_employer_health_cover_mandate.md",
+  "short": {
+   "employers.near_50": "employers.near_50_fte",
+   "employers.seasonal": "employers.seasonal_30_49",
+   "workers.uncovered": "workers.full_time_bound",
+   "workers.at_players": "workers.at_offering_firms",
+   "workers.near_30": "workers.near_30_hours",
+   "sellers.contract_services": "contractors",
+   "providers.medical": "sellers.medical_care",
+   "general_fund": [
+    "government.general_fund",
+    "treasury"
+   ],
+   "officials.enforcement": [
+    "government.department_of_revenue",
+    "government.department_of_insurance"
+   ]
+  },
+  "windows": {},
+  "produced": 7,
+  "total": 60,
+  "pattern_engine": "29"
  }
 ]

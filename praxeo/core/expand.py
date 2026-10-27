@@ -171,26 +171,49 @@ def _in_seed(full: S.Situation, atom: str) -> bool:
 
 PROPOSER_SYSTEM = """You propose facts for a praxeological analysis that a rule engine (the core rules CR-1 to CR-12) will reason
 from. You are given the policy text, the situation as recorded so far, and one node: an actor class and the effects the
-engine has already derived for it. Propose only what this node needs for the reasoning to go on, as facts of these kinds:
+engine has already derived for it. Propose the facts through which the reasoning goes on from this node. Go through every
+kind below for each of the node's effects and ask whether the policy text or its context supports one; a node usually needs
+facts of several kinds, not only alternatives and links. The kinds:
 - alternatives (CR-4): what this actor can do instead of an option the policy makes worse or better; `fact`: {component,
   chooser: this actor, actor: whose variable measures the alternative's use, variables: [one, or several for a group],
   inverse: true where the variable falls as the alternative is used more (reformulating, measured by calories)}.
 - links (CR-9): markets reached through this actor's changed variables; `fact`: {source_actor: this actor, source_variable,
   relation: complement | input | substitute | output | yield | same_act | cost | own_price | currency | supply_price (more demand raises the price where supply is slow) | supply (more offered lowers the price) | paid_from (spending from a fund lowers its balance) | paid_into (receipts raise it) | crowding (users of a shared facility, a road or a queue: fewer users, less delay), actor, and optionally horizon, variable}.
-- margins (CR-6): terms or quantities this actor controls under a held or fixed price, criteria it is chosen by, trade outside the rule.
+- margins (CR-6): where a price is held, or fixed in the period, the parties still trade on other terms, and those terms
+  take the change the price cannot. `fact`: {exchange, kind, side, actor, variables}. kind adjust: the terms or quantities
+  `side` controls that fall on `actor` (sellers held below a resale cap cut service, hours or quality; buyers held above a
+  minimum price ask for more per unit); variables one, or several for a group. kind criterion: a criterion by which the
+  scarce side chooses among those it cannot all serve (a landlord facing many applicants picks by income or references).
+  kind outside: trade outside the rule (sales off the books, through an exempt channel). Every exchange with a held or
+  fixed price, or an unsatisfied side, has margins.
 - exchanges: a market this actor trades in that the effects reach and the seed does not hold (who buys, who sells, the
   price variables, the unsatisfied side); then moves (whose price takes a change in it, with the premise on the other side's
-  response) and fixed (a price there that cannot move in the period) for it. An exchange takes no premises.
+  response) and fixed (a price there that cannot move in the period: a contract wage, a regulated fare) for it. An exchange
+  takes no premises. Where the node's effects reach a market that is not yet an exchange, propose the exchange: the links
+  and margins there need it.
 - incidence (CR-7b): on an exchange a charge or grant acts on, the side whose alternatives are clearly worse than the
   other side's (it bears more of the charge, or keeps more of the grant); `fact`: {component, exchange, side}. Only with a
-  premise comparing the two sides' alternatives.
-- stakes (lobbying), assets and yields tied to an exchange side, timing (bring_forward or carry_over), parts (a class total),
-  dominance (only where a premise states that one direction outweighs another).
+  premise comparing the two sides' alternatives (drinkers of one brand have many substitutes; its maker has few other uses
+  for its plant).
+- stakes (CR-4, accept against lobby): an actor whose position the component changes enough to spend effort keeping or
+  changing it; `fact`: {component, actor}. Those it burdens, those it shelters, and those who sell to either.
+- assets and yields (CR-7c, CR-7b): what is tied to one side of an exchange, so a change in that side's position reaches its
+  owners: assets are things whose value rests on that side's trade (taxi licences, a plant built for the taxed good);
+  yields are returns paid from it (the licence's lease income, the plant's profit). `fact`: {exchange, side, actor: the
+  owner or receiver}.
+- timing: an act the policy's dates make worth moving in time, measured by `variable` on `actor`; `fact`: {component,
+  actor, variable, mode}. bring_forward: done before a measure binds (buying ahead of a tax); carry_over: stock held across
+  the date (goods bought before it, sold after).
+- parts (CR-12): `fact`: {part, whole} where a class the effects reach is the sum of subclasses whose effects differ, so
+  its total combines them (all sellers as the bound and the exempt).
+- dominance (CR-12e): `fact`: {actor, variable, direction, kind, window} where a premise, an accounting identity or the
+  case's figures settle which of two opposite effects on one variable is larger. Only then: otherwise the engine reports
+  the effect as ambiguous, and that is correct.
 Never state a sign: the engine derives every sign. Name actor classes as role.qualifier from the controlled list where one
 fits. Each fact gets up to three premises, written as statements whose truth will be asked one at a time (one concept each,
 no "and"); reuse the exact wording of a premise already recorded when it is the same premise. Quote in `source` the sentence
-of the policy or context the fact rests on. Propose nothing for an effect that reaches no one else, and nothing you would
-need to invent: an empty list is a valid answer. Use only what was knowable at enactment.
+of the policy or context the fact rests on. Do not propose a fact the text and its context give no ground for; an effect
+that reaches no one else needs none. Use only what was knowable at enactment.
 Names: every variable comes from the controlled list below, chosen by its meaning there (quantity_supplied is what sellers
 offer, not what owners put up for sale in another market); use actor classes from the list where one fits, as role.qualifier.
 Where the policy or the reasoning treats parts of a class differently (those who take one branch of a choice and those who
@@ -285,15 +308,17 @@ class LLMProposer:
 
     def _ask(self, messages: list[dict]) -> ProposalsOut:
         self.calls += 1
-        resp = llm.parse(self.client, "proposer", model=self.model, max_tokens=16000, system=self.system,
+        resp = llm.parse(self.client, "proposer", model=self.model, max_tokens=32000, system=self.system,
                                           output_config={"effort": self.effort}, messages=messages, output_format=ProposalsOut)
         if resp.stop_reason == "refusal" or resp.parsed_output is None:
             raise RuntimeError(f"proposer gave nothing (stop_reason={resp.stop_reason})")
         return resp.parsed_output
 
     def propose(self, node: Node, situation: S.Situation, policy: str) -> list[Proposal]:
-        prompt = (f"Policy text:\n{policy}\n\nSituation so far:\n{situation.model_dump_json(indent=1)}\n\n"
-                  f"Node: {node.model_dump_json()}")
+        # the system prompt and the policy text are the same on every call of a run: cached up to the policy block
+        prompt = [{"type": "text", "text": f"Policy text:\n{policy}", "cache_control": {"type": "ephemeral"}},
+                  {"type": "text", "text": f"Situation so far:\n{situation.model_dump_json(indent=1)}\n\n"
+                                           f"Node: {node.model_dump_json()}"}]
         messages = [{"role": "user", "content": prompt}]
         out = self._ask(messages)
         checked = [_check(p) for p in out.proposals]

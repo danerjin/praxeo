@@ -40,7 +40,7 @@ def blind_inputs(eid: str) -> tuple[str, str]:
     return section1, "\n".join(rows)
 
 
-def run_once(eid: str, case: str, k: int, model: str = "claude-opus-5-5") -> Path:
+def run_once(eid: str, case: str, k: int, model: str = "claude-opus-5-5", proposer_effort: str = "high") -> Path:
     from ..decider import LLMDecider
     from .seed import parse_seed_llm
 
@@ -50,14 +50,14 @@ def run_once(eid: str, case: str, k: int, model: str = "claude-opus-5-5") -> Pat
     out.mkdir(parents=True, exist_ok=True)
     seed = parse_seed_llm(section1 + "\n\n" + TABLE_NOTE + "\n" + table, model=model)
     (out / "seed.json").write_text(seed.model_dump_json(indent=1))
-    proposer = X.LLMProposer(model=model, exclude=(eid,))
+    proposer = X.LLMProposer(model=model, effort=proposer_effort, exclude=(eid,))
     decider = LLMDecider(model=model)
     record = PolicyRecord(name=seed.name, jurisdiction="-", rule_maker="-", enacted="-", effective="-", components=[],
                           context=[section1, TABLE_NOTE + "\n" + table])
     run = X.expand(seed, proposer, decider, section1, record=record)
     (out / "situation.json").write_text(run.situation.model_dump_json(indent=1))
     (out / "log.json").write_text(json.dumps(run.log, indent=1, default=str))
-    (out / "meta.json").write_text(json.dumps({"example": eid, "model": model, "rounds": run.rounds,
+    (out / "meta.json").write_text(json.dumps({"example": eid, "model": model, "proposer_effort": proposer_effort, "rounds": run.rounds,
                                                "proposer_calls": proposer.calls, "rejected": proposer.rejected,
                                                "questions": sum(1 for e in run.log if "question" in e),
                                                "usage": llm.usage_report(model)}, indent=1))
@@ -71,9 +71,10 @@ def main() -> None:
     ap.add_argument("--runs", type=int, default=1)
     ap.add_argument("--start", type=int, default=1)
     ap.add_argument("--model", default="claude-opus-5-5")
+    ap.add_argument("--proposer-effort", default="high", choices=["low", "medium", "high", "xhigh", "max"])
     a = ap.parse_args()
     for k in range(a.start, a.start + a.runs):
-        print(run_once(a.example, a.case, k, a.model))
+        print(run_once(a.example, a.case, k, a.model, a.proposer_effort))
 
 
 if __name__ == "__main__":
