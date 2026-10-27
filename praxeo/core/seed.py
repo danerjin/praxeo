@@ -3,6 +3,7 @@ file). Everything else arrives in the expand loop."""
 from __future__ import annotations
 
 import json
+import sys
 
 from pydantic import BaseModel, Field, ValidationError
 
@@ -41,15 +42,25 @@ empty: they are proposed node by node later. Never state a sign. Name actor clas
 text says or what was knowable at enactment."""
 
 
+PRICE_NOTE = """Variables: every variable, the exchanges' price variables included, comes from the controlled list below.
+An exchange's price variables must be prices the engine knows: the buyer's price_paid; the seller's net_price_received, or
+wage_rate where the seller sells labour. Actor classes: use the listed ones where one fits, as role.qualifier."""
+
+
 class SeedOut(BaseModel):
     """Structured outputs take closed schemas only, and a Situation has open maps (assumptions), so the seed travels as a
     JSON object in a string and is validated here."""
     situation_json: str = Field(description="The seed as one JSON object of the Situation schema given in the instructions")
 
 
-def parse_seed_llm(text: str, model: str = "claude-opus-5-5", effort: str = "medium") -> Situation:
+def parse_seed_llm(text: str, model: str = "claude-opus-5-5", effort: str = "medium", exclude: tuple[str, ...] = ()) -> Situation:
+    """The seed from the policy text. A seed that does not validate, or names a variable outside the controlled list, is
+    sent back once with the errors (an invented price variable drops every rule that starts from a price change)."""
+    from .expand import off_list, vocabulary_text
+
     client = llm.client()
-    system = SEED_SYSTEM + "\n\nThe Situation schema:\n" + json.dumps(Situation.model_json_schema())
+    system = (SEED_SYSTEM + "\n\n" + PRICE_NOTE + "\n\n" + vocabulary_text(exclude)
+              + "\n\nThe Situation schema:\n" + json.dumps(Situation.model_json_schema()))
     messages = [{"role": "user", "content": f"Policy text:\n\n{text}"}]
     for attempt in range(2):
         resp = llm.parse(client, "seed", model=model, max_tokens=32000, system=system, output_config={"effort": effort},
@@ -57,8 +68,16 @@ def parse_seed_llm(text: str, model: str = "claude-opus-5-5", effort: str = "med
         if resp.stop_reason == "refusal" or resp.parsed_output is None:
             raise RuntimeError(f"seed parser returned nothing (stop_reason={resp.stop_reason})")
         try:
-            return Situation.model_validate_json(resp.parsed_output.situation_json)
+            sit = Situation.model_validate_json(resp.parsed_output.situation_json)
         except ValidationError as e:
-            messages += [{"role": "assistant", "content": resp.parsed_output.model_dump_json()},
-                         {"role": "user", "content": f"The seed does not validate; give it again corrected:\n{e}"}]
+            problem = f"The seed does not validate; give it again corrected:\n{e}"
+        else:
+            names = off_list(sit, actors=False)
+            if not names or attempt == 1:
+                for msg in names:
+                    print(f"seed: {msg}", file=sys.stderr)
+                return sit
+            problem = "Names outside the controlled list; give the seed again with them replaced:\n" + "\n".join(names)
+        messages += [{"role": "assistant", "content": resp.parsed_output.model_dump_json()},
+                     {"role": "user", "content": problem}]
     raise RuntimeError("seed parser output did not validate twice")

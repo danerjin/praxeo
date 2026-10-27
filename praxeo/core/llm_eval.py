@@ -48,7 +48,7 @@ def run_once(eid: str, case: str, k: int, model: str = "claude-opus-5-5", propos
     section1, table = blind_inputs(eid)
     out = ROOT / "cases" / case / "llm" / f"run_{k}"
     out.mkdir(parents=True, exist_ok=True)
-    seed = parse_seed_llm(section1 + "\n\n" + TABLE_NOTE + "\n" + table, model=model)
+    seed = parse_seed_llm(section1 + "\n\n" + TABLE_NOTE + "\n" + table, model=model, exclude=(eid,))
     (out / "seed.json").write_text(seed.model_dump_json(indent=1))
     proposer = X.LLMProposer(model=model, effort=proposer_effort, exclude=(eid,))
     decider = LLMDecider(model=model)

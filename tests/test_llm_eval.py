@@ -84,3 +84,27 @@ def test_the_proposer_is_told_every_kind_of_fact_it_may_propose():
                    "{component,\n  actor, variable, mode}", "{part, whole}", "{actor, variable, direction, kind, window}"):
         assert fields in X.PROPOSER_SYSTEM, fields
     assert "an empty list is a valid answer" not in X.PROPOSER_SYSTEM
+
+
+def test_a_seed_with_an_invented_price_variable_is_sent_back(monkeypatch):
+    """The WE-036 pilot's seed priced labour in `wage` and `labour_cost`, which the engine does not read as prices."""
+    from types import SimpleNamespace
+
+    from praxeo import llm
+    from praxeo.core import seed as SD
+
+    def seed(buyer, seller):
+        return ('{"name": "t", "assumptions": {}, "exchanges": [{"id": "e1", "buyer": "employers.bound", '
+                f'"seller": "workers.bound", "buyer_price_var": "{buyer}", "seller_price_var": "{seller}"}}]}}')
+    replies = [seed("labour_cost", "wage"), seed("price_paid", "wage_rate")]
+    sent = []
+
+    def fake(client, role, **kw):
+        sent.append(kw)
+        return SimpleNamespace(stop_reason="end_turn", parsed_output=SD.SeedOut(situation_json=replies[len(sent) - 1]))
+    monkeypatch.setattr(llm, "client", lambda: None)
+    monkeypatch.setattr(llm, "parse", fake)
+    sit = SD.parse_seed_llm("policy", exclude=("WE-036",))
+    assert len(sent) == 2 and "Variables (controlled list)" in sent[0]["system"]
+    assert "is not a price variable" in sent[1]["messages"][-1]["content"]
+    assert (sit.exchanges[0].buyer_price_var, sit.exchanges[0].seller_price_var) == ("price_paid", "wage_rate")
