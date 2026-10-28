@@ -644,5 +644,76 @@
   "produced": 7,
   "total": 60,
   "pattern_engine": "29"
+ },
+ {
+  "case": "we036_quenby",
+  "loop": "llm/run_2",
+  "example": "WE-036_employer_health_cover_mandate.md",
+  "short": {
+   "employers.capped": "employers.capped_45",
+   "employers.near_50": "employers.near_50",
+   "employers.seasonal": "employers.seasonal_30_49",
+   "employers.small": "employers.small",
+   "employers.compliant": "employers.offering_already",
+   "workers.uncovered": "workers.full_time_bound",
+   "workers.at_players": "workers.at_offering_firms",
+   "workers.near_30": "workers.30_to_35_hours",
+   "insurers": "insurers",
+   "insurers.group": "insurers",
+   "providers.medical": "sellers.health_care",
+   "taxpayers": "taxpayers.general_fund",
+   "recipients of other general-fund spending": "recipients.other_spending",
+   "officials.enforcement": [
+    "government.department_of_revenue",
+    "government.department_of_insurance"
+   ],
+   "neighboring_jurisdictions": "employers.tarnley",
+   "sellers.contract_services": "intermediaries",
+   "workers.unbound": [
+    "workers.small_firms",
+    "workers.part_time_bound",
+    "workers.tarnley_border"
+   ]
+  },
+  "windows": {},
+  "produced": 11,
+  "total": 60,
+  "pattern_engine": "29"
+ },
+ {
+  "case": "we036_quenby",
+  "loop": "llm/run_3",
+  "example": "WE-036_employer_health_cover_mandate.md",
+  "short": {
+   "employers.capped": "employers.capped",
+   "employers.near_50": "firms.near_threshold",
+   "employers.seasonal": "employers.seasonal",
+   "employers.small": "employers.small",
+   "workers.uncovered": "workers.full_time_bound",
+   "workers.at_players": "workers.at_offering_firms",
+   "insurers": "insurers",
+   "insurers.group": "insurers",
+   "providers.medical": "sellers.complements",
+   "general_fund": "treasury",
+   "taxpayers": "taxpayers",
+   "recipients of other general-fund spending": "recipients.other_spending",
+   "officials.enforcement": "officials.revenue",
+   "neighboring_jurisdictions": [
+    "employers.tarnley",
+    "sellers.foreign"
+   ],
+   "sellers.contract_services": [
+    "intermediaries",
+    "contractors.small"
+   ],
+   "workers.unbound": [
+    "workers.small_firms",
+    "workers.tarnley_jobs"
+   ]
+  },
+  "windows": {},
+  "produced": 13,
+  "total": 60,
+  "pattern_engine": "29"
  }
 ]

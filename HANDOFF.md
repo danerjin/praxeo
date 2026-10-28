@@ -44,7 +44,13 @@ the API). In a new session:
    returns: no stakes, assets or yields; labour as quantity_traded), 5 differ in sign. The seed writer had not been given the
    controlled vocabulary and priced labour in `labour_cost` and `wage`, which the engine does not read as prices; the seed
    now gets the vocabulary, and a seed or proposal naming a variable off the list (or an exchange price that is not a
-   price variable) goes back once with the errors. Next: `llm/run_2` on WE-036 to compare.
+   price variable) goes back once with the errors.
+   Run 2 (new proposer prompt at high effort, seed without the vocabulary): 11 of 60, $11.05. Run 3 (all changes): 13 of
+   60, $9.85 (seed $0.15, proposer $7.14 over 44 calls, decider $2.56 over 208 questions; caching read 1.5M tokens). Both
+   now propose every part (run 3: 20 exchanges, 20 margins, 26 stakes, 9 assets, 12 yields, 111 links). Of run 3's 47
+   misses, 16 are classes never reached (bound employers are still not split into offering and paying), 20 variables not
+   derived, 11 signs that differ, mostly a group claim in the table (at least one of hours, employment, benefits; taxpayers
+   or recipients) where the run gives one sign per variable or class.
 4. Report the token use and cost of the pilot to the user before running the batch: three runs each on WE-036, WE-020,
    WE-046, WE-042, WE-064.
 
