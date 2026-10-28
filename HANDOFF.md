@@ -39,7 +39,12 @@ the API). In a new session:
    exchanges against r7's 4, so the engine reported 33 consequences against r7's 63. Since then the proposer prompt
    describes every part with its fields and a general example and asks for a pass over all of them per node, the
    proposer runs at high effort (`--proposer-effort`), and the proposer's system prompt and policy text and the
-   decider's record are cached. Next: `llm/run_2` on WE-036 to compare.
+   decider's record are cached. Of run 1's 53 missed rows, 25 are classes never reached (offering and paying employers,
+   insurers, taxpayers, recipients of other spending), 23 are classes reached without the variable (lobbying, asset values,
+   returns: no stakes, assets or yields; labour as quantity_traded), 5 differ in sign. The seed writer had not been given the
+   controlled vocabulary and priced labour in `labour_cost` and `wage`, which the engine does not read as prices; the seed
+   now gets the vocabulary, and a seed or proposal naming a variable off the list (or an exchange price that is not a
+   price variable) goes back once with the errors. Next: `llm/run_2` on WE-036 to compare.
 4. Report the token use and cost of the pilot to the user before running the batch: three runs each on WE-036, WE-020,
    WE-046, WE-042, WE-064.
 

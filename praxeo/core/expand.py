@@ -232,26 +232,39 @@ def vocabulary_text(exclude: tuple[str, ...] = ()) -> str:
     return "\n".join(lines)
 
 
-def off_list(sit: S.Situation) -> list[str]:
-    """Names in the situation outside the controlled lists: variables not in 2.4, actor classes whose role is unknown."""
+def off_names(part: str, x: dict) -> tuple[list[str], list[str]]:
+    """One fact's names outside the controlled lists: (variables not in 2.4, or an exchange price variable that is not a
+    price the engine knows; actor classes whose role is unknown). The engine reads a price variable's side and kind from
+    its name, so an invented one (wage for wage_rate) silently drops every rule that starts from a price change."""
     from .. import vocabulary as V
+    variables, actors = [], []
+    for k in ("variable", "source_variable", "receipt_variable", "projection_variable", "outlay_variable"):
+        for v in (x.get(k) or "").split(","):
+            if v and (msg := V.check_variable(v)):
+                variables.append(f"{part}: {msg}")
+    for v in x.get("variables") or []:
+        if (msg := V.check_variable(v)):
+            variables.append(f"{part}: {msg}")
+    for k in ("buyer_price_var", "seller_price_var"):
+        if x.get(k) and x[k] not in S.PRICE_VARIABLES:
+            variables.append(f"{part}: {k} `{x[k]}` is not a price variable; use one of {', '.join(S.PRICE_VARIABLES)} "
+                             "(a buyer's: price_paid; a seller's: net_price_received, or wage_rate for labour)")
+    for k in ("actor", "chooser", "source_actor", "buyer", "seller", "receiver", "payer"):
+        if isinstance(x.get(k), str) and (msg := V.check_actor(x[k])):
+            actors.append(f"{part}: {msg}")
+    return variables, actors
+
+
+def off_list(sit: S.Situation, actors: bool = True) -> list[str]:
+    """Names in the situation outside the controlled lists (off_names over every fact); `actors=False` for variables only."""
     out = []
     for part, items in sit.model_dump().items():
         if not isinstance(items, list):
             continue
         for x in items:
-            if not isinstance(x, dict):
-                continue
-            for k in ("variable", "source_variable", "receipt_variable", "projection_variable", "outlay_variable"):
-                for v in (x.get(k) or "").split(","):
-                    if v and (msg := V.check_variable(v)):
-                        out.append(f"{part}: {msg}")
-            for v in x.get("variables") or []:
-                if (msg := V.check_variable(v)):
-                    out.append(f"{part}: {msg}")
-            for k in ("actor", "chooser", "source_actor", "buyer", "seller", "receiver", "payer"):
-                if isinstance(x.get(k), str) and (msg := V.check_actor(x[k])):
-                    out.append(f"{part}: {msg}")
+            if isinstance(x, dict):
+                v, a = off_names(part, x)
+                out += v + (a if actors else [])
     return list(dict.fromkeys(out))
 
 
@@ -288,6 +301,8 @@ def _check(p: ProposalOut) -> tuple[Optional[Proposal], Optional[str]]:
     try:
         fact = json.loads(p.fact_json)
         _coerce(p.part, {**fact, "premises": []})
+        if bad := off_names(p.part, fact)[0]:
+            raise ValueError("; ".join(bad))
         return Proposal(part=p.part, fact=fact, premises=p.premises[:3], premise_class=p.premise_class, source=p.source), None
     except Exception as e:  # invalid JSON or fields that do not fit the part
         return None, f"{p.part} {p.fact_json[:200]}: {str(e).splitlines()[0][:200]}"
