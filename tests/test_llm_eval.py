@@ -108,3 +108,17 @@ def test_a_seed_with_an_invented_price_variable_is_sent_back(monkeypatch):
     assert len(sent) == 2 and "Variables (controlled list)" in sent[0]["system"]
     assert "is not a price variable" in sent[1]["messages"][-1]["content"]
     assert (sit.exchanges[0].buyer_price_var, sit.exchanges[0].seller_price_var) == ("price_paid", "wage_rate")
+
+
+def test_branches_of_one_choice_on_one_exchange_are_sent_back():
+    """Run 3's seed put pay and provide-in-kind on one exchange, so the payers taking each were one class. Two routes into
+    one branch (a new offer, an upgrade: one receiver) may share an exchange."""
+    from pathlib import Path
+
+    from praxeo.core import seed as SD
+    from praxeo.core import situation as S
+
+    case = Path(__file__).resolve().parents[1] / "cases" / "we036_quenby"
+    assert len(SD.shared_branches(S.load(case / "llm" / "run_3" / "seed.json"))) == 1
+    assert SD.shared_branches(S.load(case / "loop_r4" / "seed.json")) == []
+    assert "never\n  two branches on one exchange" in SD.SEED_SYSTEM

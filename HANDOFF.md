@@ -51,6 +51,10 @@ the API). In a new session:
    misses, 16 are classes never reached (bound employers are still not split into offering and paying), 20 variables not
    derived, 11 signs that differ, mostly a group claim in the table (at least one of hours, employment, benefits; taxpayers
    or recipients) where the run gives one sign per variable or class.
+   The seed now gives each branch of a choice its own exchange and payer subclass (with its counterparties), and a seed
+   with two branches (different receivers) on one exchange goes back once (`seed.py` `shared_branches`). On run 3's seed,
+   split by hand, the engine reports 22 consequences against 17, with effects on offering and paying employers and on the
+   workers at each.
 4. Report the token use and cost of the pilot to the user before running the batch: three runs each on WE-036, WE-020,
    WE-046, WE-042, WE-064.
 
