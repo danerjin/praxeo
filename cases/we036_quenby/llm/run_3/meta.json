@@ -1,0 +1,38 @@
+{
+ "example": "WE-036",
+ "model": "claude-opus-5-5",
+ "proposer_effort": "high",
+ "rounds": 3,
+ "proposer_calls": 44,
+ "rejected": [],
+ "questions": 208,
+ "usage": {
+  "seed": {
+   "calls": 1,
+   "input": 19781,
+   "output": 3676,
+   "cache_write": 0,
+   "cache_read": 0,
+   "usd": 0.1526
+  },
+  "proposer": {
+   "calls": 44,
+   "input": 1204194,
+   "output": 107947,
+   "cache_write": 11928,
+   "cache_read": 512904,
+   "dropped": 6,
+   "usd": 7.1379
+  },
+  "decider": {
+   "calls": 208,
+   "input": 14579,
+   "output": 113810,
+   "cache_write": 4807,
+   "cache_read": 995049,
+   "dropped": 8,
+   "usd": 2.5576
+  },
+  "total_usd": 9.8481
+ }
+}

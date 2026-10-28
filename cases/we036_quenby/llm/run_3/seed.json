@@ -1,0 +1,311 @@
+{
+ "name": "Quenby Fair Share Health Cover Act",
+ "exchanges": [
+  {
+   "id": "E1",
+   "buyer": "employers.bound",
+   "seller": "workers.full_time_bound",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [],
+ "alternatives": [],
+ "stakes": [],
+ "links": [],
+ "assets": [],
+ "yields": [],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "K1",
+   "actor": "employers.bound"
+  },
+  {
+   "component": "K2",
+   "actor": "insurers"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "K5",
+   "actor": "officials.revenue"
+  }
+ ],
+ "funded": [
+  {
+   "component": "K5",
+   "actor": "taxpayers",
+   "premises": [
+    "A-29"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "K1-pay",
+   "premises": [
+    "A-1"
+   ],
+   "exchange": "E1",
+   "payer_side": "buyer",
+   "receiver": "treasury",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [
+    "A-4"
+   ],
+   "branch_premise_sets": [],
+   "capped_payers": [
+    "employers.capped"
+   ],
+   "other_receivers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "K1-play",
+   "premises": [
+    "A-1"
+   ],
+   "exchange": "E1",
+   "payer_side": "buyer",
+   "receiver": "workers.at_offering_firms",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "A-7"
+   ],
+   "projection_variable": null,
+   "branch_premises": [
+    "A-2"
+   ],
+   "branch_premise_sets": [
+    [
+     "A-5"
+    ]
+   ],
+   "capped_payers": [],
+   "other_receivers": [],
+   "basis": "unit"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "A-6",
+    "A-8"
+   ],
+   "reading": null,
+   "exchange": "E1",
+   "side": "seller",
+   "horizon": "medium"
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "K1",
+   "premises": [
+    "A-15",
+    "A-21"
+   ]
+  }
+ ],
+ "timing": [],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "duties": [],
+ "issued": [],
+ "penalties": [
+  {
+   "premises": [
+    "A-18"
+   ],
+   "reading": null,
+   "component": "K5",
+   "actor": "employers.bound",
+   "collector": "treasury"
+  }
+ ],
+ "terms": [],
+ "banned": [],
+ "incidence": [
+  {
+   "premises": [
+    "A-23"
+   ],
+   "reading": null,
+   "component": "K1-pay",
+   "exchange": "E1",
+   "side": "seller"
+  }
+ ],
+ "fixed": [
+  {
+   "premises": [
+    "A-3"
+   ],
+   "reading": null,
+   "exchange": "E1",
+   "side": "seller",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "A-9"
+   ],
+   "reading": null,
+   "exchange": "E1",
+   "side": "seller",
+   "horizon": "long"
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether seasonal workers count toward the 50 FTE threshold",
+   "readings": [
+    "U1-a: seasonal workers count by their hours",
+    "U1-b: seasonal workers are left out of the count"
+   ],
+   "components": {
+    "U1-a": [
+     "K3-seasonal"
+    ],
+    "U1-b": []
+   }
+  }
+ ],
+ "thresholds": [
+  {
+   "premises": [
+    "A-14"
+   ],
+   "reading": null,
+   "component": "K3",
+   "actor": "firms.near_threshold",
+   "variable": "employment",
+   "chooser": null
+  },
+  {
+   "premises": [
+    "A-10"
+   ],
+   "reading": null,
+   "component": "K1-hours",
+   "actor": "workers.full_time_bound",
+   "variable": "hours_worked",
+   "chooser": "employers.bound"
+  },
+  {
+   "premises": [
+    "A-33"
+   ],
+   "reading": "U1-a",
+   "component": "K3-seasonal",
+   "actor": "employers.seasonal",
+   "variable": "employment",
+   "chooser": null
+  }
+ ],
+ "qualifies": [],
+ "expires": [],
+ "parts": [],
+ "dominance": [],
+ "assumptions": {
+  "A-1": {
+   "text": "About 135,000 full-timers at firms of 50+ FTE are offered nothing, and about 105,000 are offered less than K1 requires, so K1 binds for them.",
+   "p": 0.9,
+   "class": "binding"
+  },
+  "A-2": {
+   "text": "Some bound firms that offer nothing now choose to offer.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "A-3": {
+   "text": "Money wages are fixed in the short run by pay scales and yearly raises.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "A-4": {
+   "text": "Some bound firms choose to pay the charge for at least some full-timers.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "A-5": {
+   "text": "Some firms with plans short of K1 upgrade them rather than pay.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "A-6": {
+   "text": "Wages above the minimum can adjust over the medium horizon, as raises are set.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "A-7": {
+   "text": "At players, for the marginal pair, cover at 30% is worth less to the worker than its cost to the employer.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "A-8": {
+   "text": "Workers at payers have some alternative to bound full-time work, so the wage does not fall by the whole charge.",
+   "p": 0.85,
+   "class": "mobility"
+  },
+  "A-9": {
+   "text": "The minimum wage binds for some workers at bound firms.",
+   "p": 0.85,
+   "class": "binding"
+  },
+  "A-10": {
+   "text": "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "A-14": {
+   "text": "Some firms near 50 FTE value staying below the line more than the extra work.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "A-15": {
+   "text": "Owners of firms near 50 know from January 2027 that the 2027 average decides 2028 status.",
+   "p": 0.75,
+   "class": "expectations"
+  },
+  "A-18": {
+   "text": "Revenue cannot cheaply verify reported offers, and some firms report offers not made.",
+   "p": 0.55,
+   "class": "enforcement"
+  },
+  "A-21": {
+   "text": "Business values reflect expected earnings, and buyers expected the Act from its introduction.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "A-23": {
+   "text": "Over the medium to long run, workers' alternatives to bound employment are clearly worse than employers' alternatives.",
+   "p": 0.6,
+   "class": "mobility"
+  },
+  "A-29": {
+   "text": "The $4.1 million is new general-fund money.",
+   "p": 0.9,
+   "class": "revenue_use"
+  },
+  "A-33": {
+   "text": "Some of the 380 seasonal firms do not offer qualifying cover to their full-timers.",
+   "p": 0.75,
+   "class": "binding"
+  }
+ }
+}

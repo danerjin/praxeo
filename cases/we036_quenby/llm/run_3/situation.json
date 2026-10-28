@@ -1,0 +1,4181 @@
+{
+ "name": "Quenby Fair Share Health Cover Act",
+ "exchanges": [
+  {
+   "id": "e1",
+   "buyer": "employers.bound",
+   "seller": "workers.full_time_bound",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e2",
+   "buyer": "customers",
+   "seller": "employers.bound",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e3",
+   "buyer": "employers.bound",
+   "seller": "insurers",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e4",
+   "buyer": "employers.seasonal",
+   "seller": "workers.seasonal",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e5",
+   "buyer": "firms.near_threshold",
+   "seller": "workers.near_threshold_firms",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e6",
+   "buyer": "employers.small",
+   "seller": "workers.small_firms",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e7",
+   "buyer": "customers",
+   "seller": "sellers.substitutes",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e8",
+   "buyer": "customers",
+   "seller": "employers.seasonal",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e9",
+   "buyer": "employers.tarnley",
+   "seller": "workers.tarnley_jobs",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e10",
+   "buyer": "customers",
+   "seller": "firms.near_threshold",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e11",
+   "buyer": "insurers",
+   "seller": "sellers.complements",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e12",
+   "buyer": "intermediaries",
+   "seller": "workers.agency",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e13",
+   "buyer": "contractors.small",
+   "seller": "workers.contractors",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e14",
+   "buyer": "employers.bound",
+   "seller": "contractors.small",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e15",
+   "buyer": "employers.bound",
+   "seller": "contractors.independent",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e16",
+   "buyer": "employers.public",
+   "seller": "workers.public",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e17",
+   "buyer": "customers",
+   "seller": "employers.tarnley",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e18",
+   "buyer": "firms.near_threshold",
+   "seller": "intermediaries",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e19",
+   "buyer": "employers.seasonal",
+   "seller": "intermediaries",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "net_price_received",
+   "criteria_for": null,
+   "criteria": []
+  },
+  {
+   "id": "e20",
+   "buyer": "sellers.complements",
+   "seller": "workers.health",
+   "unsatisfied_buyer": null,
+   "unsatisfied_seller": null,
+   "buyer_price_var": "price_paid",
+   "seller_price_var": "wage_rate",
+   "criteria_for": null,
+   "criteria": []
+  }
+ ],
+ "held": [],
+ "margins": [
+  {
+   "premises": [
+    "q24_bound_employers_can_cut_training_schedul"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.full_time_bound",
+   "variables": [
+    "non_wage_compensation"
+   ]
+  },
+  {
+   "premises": [
+    "q25_where_the_minimum_wage_holds_the_wage_bo",
+    "q26_an_employee_who_is_offered_cover_and_dec"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "kind": "criterion",
+   "side": null,
+   "actor": "workers.prospective",
+   "variables": [
+    "allocation_by_non_price_criteria"
+   ]
+  },
+  {
+   "premises": [
+    "q27_some_bound_employers_can_reclassify_empl"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "kind": "outside",
+   "side": null,
+   "actor": "employers.bound",
+   "variables": [
+    "reclassification"
+   ]
+  },
+  {
+   "premises": [
+    "q42_seasonal_firms_can_keep_seasonal_workers"
+   ],
+   "reading": null,
+   "exchange": "e4",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.seasonal",
+   "variables": [
+    "hours_worked"
+   ]
+  },
+  {
+   "premises": [
+    "q53_insurers_can_narrow_provider_networks_or"
+   ],
+   "reading": null,
+   "exchange": "e3",
+   "kind": "adjust",
+   "side": "seller",
+   "actor": "employers.bound",
+   "variables": [
+    "quality_per_unit"
+   ]
+  },
+  {
+   "premises": [
+    "q82_seasonal_firms_can_cut_non_money_terms_s"
+   ],
+   "reading": null,
+   "exchange": "e4",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.seasonal",
+   "variables": [
+    "non_wage_compensation"
+   ]
+  },
+  {
+   "premises": [
+    "q86_where_the_minimum_wage_holds_the_wage_at",
+    "q67_workers_at_bound_firms_can_move_to_jobs_"
+   ],
+   "reading": null,
+   "exchange": "e6",
+   "kind": "criterion",
+   "side": null,
+   "actor": "workers.small_firms",
+   "variables": [
+    "allocation_by_non_price_criteria"
+   ]
+  },
+  {
+   "premises": [
+    "q87_firms_under_50_fte_can_cut_training_sche"
+   ],
+   "reading": null,
+   "exchange": "e6",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.small_firms",
+   "variables": [
+    "non_wage_compensation"
+   ]
+  },
+  {
+   "premises": [
+    "q97_where_the_minimum_wage_holds_the_wage_at"
+   ],
+   "reading": null,
+   "exchange": "e5",
+   "kind": "criterion",
+   "side": null,
+   "actor": "workers.near_threshold_firms",
+   "variables": [
+    "allocation_by_non_price_criteria"
+   ]
+  },
+  {
+   "premises": [
+    "q98_firms_near_50_fte_can_cut_training_sched"
+   ],
+   "reading": null,
+   "exchange": "e5",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.near_threshold_firms",
+   "variables": [
+    "non_wage_compensation"
+   ]
+  },
+  {
+   "premises": [
+    "q102_insurers_can_stop_offering_group_plans_t"
+   ],
+   "reading": null,
+   "exchange": "e3",
+   "kind": "adjust",
+   "side": "seller",
+   "actor": "employers.bound",
+   "variables": [
+    "variety"
+   ]
+  },
+  {
+   "premises": [
+    "q109_where_the_minimum_wage_holds_the_wage_at"
+   ],
+   "reading": null,
+   "exchange": "e12",
+   "kind": "criterion",
+   "side": null,
+   "actor": "workers.agency",
+   "variables": [
+    "allocation_by_non_price_criteria"
+   ]
+  },
+  {
+   "premises": [
+    "q110_staffing_agencies_can_cut_training_sched"
+   ],
+   "reading": null,
+   "exchange": "e12",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.agency",
+   "variables": [
+    "non_wage_compensation"
+   ]
+  },
+  {
+   "premises": [
+    "q100_insurers_payment_rates_to_hospitals_and_",
+    "q123_where_payment_rates_are_fixed_hospitals_"
+   ],
+   "reading": null,
+   "exchange": "e11",
+   "kind": "adjust",
+   "side": "seller",
+   "actor": "consumers",
+   "variables": [
+    "wait_time",
+    "quality_per_unit"
+   ]
+  },
+  {
+   "premises": [
+    "q143_where_the_minimum_wage_holds_the_wage_at"
+   ],
+   "reading": null,
+   "exchange": "e13",
+   "kind": "criterion",
+   "side": null,
+   "actor": "workers.contractors",
+   "variables": [
+    "allocation_by_non_price_criteria"
+   ]
+  },
+  {
+   "premises": [
+    "q144_small_contractors_can_cut_training_sched"
+   ],
+   "reading": null,
+   "exchange": "e13",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.contractors",
+   "variables": [
+    "non_wage_compensation"
+   ]
+  },
+  {
+   "premises": [
+    "q158_public_sector_wages_are_set_by_pay_scale",
+    "q159_q132_workers_at_bound_firms_can_move_to_"
+   ],
+   "reading": null,
+   "exchange": "e16",
+   "kind": "criterion",
+   "side": null,
+   "actor": "workers.public",
+   "variables": [
+    "allocation_by_non_price_criteria"
+   ]
+  },
+  {
+   "premises": [
+    "q160_public_employers_ration_posts_among_appl"
+   ],
+   "reading": null,
+   "exchange": "e16",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.public",
+   "variables": [
+    "wait_time"
+   ]
+  },
+  {
+   "premises": [
+    "q41_the_minimum_wage_binds_for_many_seasonal",
+    "q161_where_the_minimum_wage_holds_the_wage_at"
+   ],
+   "reading": null,
+   "exchange": "e4",
+   "kind": "criterion",
+   "side": null,
+   "actor": "workers.seasonal",
+   "variables": [
+    "allocation_by_non_price_criteria"
+   ]
+  },
+  {
+   "premises": [
+    "q201_hospitals_short_of_staff_at_fixed_pay_sc"
+   ],
+   "reading": null,
+   "exchange": "e20",
+   "kind": "adjust",
+   "side": "buyer",
+   "actor": "workers.health",
+   "variables": [
+    "non_wage_compensation",
+    "hours_worked"
+   ]
+  }
+ ],
+ "alternatives": [
+  {
+   "premises": [
+    "q18_bound_employers_can_fill_some_full_time_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.bound",
+   "actor": "workers.part_time_bound",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q19_bound_employers_can_contract_out_cleanin"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.bound",
+   "actor": "contractors.small",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q20_some_bound_employers_near_marisport_can_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "employers.bound",
+   "actor": "employers.tarnley",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q36_capped_chains_can_move_outlets_to_franch"
+   ],
+   "reading": null,
+   "component": "k4",
+   "chooser": "employers.capped",
+   "actor": "employers.franchisees",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q37_seasonal_firms_can_hire_their_seasonal_w",
+    "q38_agency_workers_count_toward_the_fte_of_t"
+   ],
+   "reading": "U1-a",
+   "component": "k3_seasonal",
+   "chooser": "employers.seasonal",
+   "actor": "intermediaries",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q45_hours_of_an_employee_averaging_130_or_mo",
+    "q46_firms_near_50_fte_can_lengthen_existing_"
+   ],
+   "reading": null,
+   "component": "k3",
+   "chooser": "firms.near_threshold",
+   "actor": "workers.near_threshold_firms",
+   "variables": [
+    "hours_worked"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q47_firms_near_50_fte_can_take_on_workers_th",
+    "q38_agency_workers_count_toward_the_fte_of_t"
+   ],
+   "reading": null,
+   "component": "k3",
+   "chooser": "firms.near_threshold",
+   "actor": "intermediaries",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q67_workers_at_bound_firms_can_move_to_jobs_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "workers.full_time_bound",
+   "actor": "employers.small",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q68_some_workers_living_near_marisport_can_t"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "workers.full_time_bound",
+   "actor": "employers.tarnley",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q96_firms_near_50_fte_can_contract_out_clean"
+   ],
+   "reading": null,
+   "component": "k3",
+   "chooser": "firms.near_threshold",
+   "actor": "contractors.small",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q117_owners_can_put_new_capital_into_firms_un"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "owners",
+   "actor": "employers.small",
+   "variables": [
+    "investment_target"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q118_owners_can_put_new_capital_into_firms_in"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "owners",
+   "actor": "employers.tarnley",
+   "variables": [
+    "investment_target"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q120_owners_of_insurers_can_put_new_capital_i"
+   ],
+   "reading": null,
+   "component": "k2",
+   "chooser": "owners.insurers",
+   "actor": "insurers.other",
+   "variables": [
+    "investment_target"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q132_workers_at_bound_firms_can_move_to_jobs_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "chooser": "workers.full_time_bound",
+   "actor": "employers.public",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q166_seasonal_firms_can_contract_out_harvest_"
+   ],
+   "reading": "U1-a",
+   "component": "k3_seasonal",
+   "chooser": "employers.seasonal",
+   "actor": "contractors.small",
+   "variables": [
+    "employment"
+   ],
+   "inverse": false
+  },
+  {
+   "premises": [
+    "q167_seasonal_firms_can_replace_some_seasonal"
+   ],
+   "reading": "U1-a",
+   "component": "k3_seasonal",
+   "chooser": "employers.seasonal",
+   "actor": "employers.seasonal",
+   "variables": [
+    "investment_target"
+   ],
+   "inverse": false
+  }
+ ],
+ "stakes": [
+  {
+   "premises": [
+    "q28_the_per_head_cost_of_k1_is_large_relativ"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "employers.bound"
+  },
+  {
+   "premises": [
+    "q23_bound_firms_that_choose_to_offer_buy_qua"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "insurers"
+  },
+  {
+   "premises": [
+    "q29_firms_that_already_offer_qualifying_cove"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "employers.already_offering"
+  },
+  {
+   "premises": [
+    "q33_the_cap_cuts_the_charge_per_uncovered_he"
+   ],
+   "reading": null,
+   "component": "k4",
+   "actor": "employers.capped"
+  },
+  {
+   "premises": [
+    "q34_uncapped_bound_firms_compete_for_workers"
+   ],
+   "reading": null,
+   "component": "k4",
+   "actor": "employers.uncapped"
+  },
+  {
+   "premises": [
+    "q39_whether_seasonal_workers_count_toward_th"
+   ],
+   "reading": "U1-a",
+   "component": "k3_seasonal",
+   "actor": "employers.seasonal"
+  },
+  {
+   "premises": [
+    "q49_crossing_50_fte_would_raise_a_firm_s_lab"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "firms.near_threshold"
+  },
+  {
+   "premises": [
+    "q55_the_benefit_standard_decides_which_of_in"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "insurers"
+  },
+  {
+   "premises": [
+    "q64_a_70_employer_share_of_5_180_is_large_re"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "workers.at_offering_firms"
+  },
+  {
+   "premises": [
+    "q28_the_per_head_cost_of_k1_is_large_relativ"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "workers.full_time_bound"
+  },
+  {
+   "premises": [
+    "q74_firms_under_50_fte_compete_for_customers"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.substitutes"
+  },
+  {
+   "premises": [
+    "q19_bound_employers_can_contract_out_cleanin"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "contractors.small"
+  },
+  {
+   "premises": [
+    "q37_seasonal_firms_can_hire_their_seasonal_w",
+    "q38_agency_workers_count_toward_the_fte_of_t"
+   ],
+   "reading": "U1-a",
+   "component": "k3_seasonal",
+   "actor": "intermediaries"
+  },
+  {
+   "premises": [
+    "q74_firms_under_50_fte_compete_for_customers",
+    "q67_workers_at_bound_firms_can_move_to_jobs_"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "employers.small"
+  },
+  {
+   "premises": [
+    "q105_q61_workers_with_cover_use_more_physicia"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "sellers.complements"
+  },
+  {
+   "premises": [
+    "q47_firms_near_50_fte_can_take_on_workers_th",
+    "q38_agency_workers_count_toward_the_fte_of_t"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "intermediaries"
+  },
+  {
+   "premises": [
+    "q112_some_staffing_agencies_in_quenby_have_50"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "intermediaries"
+  },
+  {
+   "premises": [
+    "q115_owners_of_bound_firms_that_offer_nothing"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "owners"
+  },
+  {
+   "premises": [
+    "q33_the_cap_cuts_the_charge_per_uncovered_he"
+   ],
+   "reading": null,
+   "component": "k4",
+   "actor": "owners"
+  },
+  {
+   "premises": [
+    "q121_q55_the_benefit_standard_decides_which_o",
+    "q104_q54_insurers_profits_are_paid_to_their_o"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "owners.insurers"
+  },
+  {
+   "premises": [
+    "q147_some_small_contractors_that_take_on_cont"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "contractors.small"
+  },
+  {
+   "premises": [
+    "q170_whether_seasonal_workers_count_toward_th"
+   ],
+   "reading": "U1-a",
+   "component": "k3_seasonal",
+   "actor": "workers.seasonal"
+  },
+  {
+   "premises": [
+    "q183_tarnley_firms_near_marisport_compete_for",
+    "q68_some_workers_living_near_marisport_can_t"
+   ],
+   "reading": null,
+   "component": "k1",
+   "actor": "employers.tarnley"
+  },
+  {
+   "premises": [
+    "q190_firms_holding_their_count_below_50_fte_l"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "workers.near_threshold_firms"
+  },
+  {
+   "premises": [
+    "q47_firms_near_50_fte_can_take_on_workers_th",
+    "q111_profits_of_staffing_agencies_are_paid_to"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "owners.intermediaries"
+  },
+  {
+   "premises": [
+    "q47_firms_near_50_fte_can_take_on_workers_th",
+    "q38_agency_workers_count_toward_the_fte_of_t"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "workers.agency"
+  }
+ ],
+ "links": [
+  {
+   "premises": [
+    "q21_bound_retail_and_food_firms_pass_part_of"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "compliance_cost",
+   "relation": "cost",
+   "actor": "customers",
+   "variable": "price_paid",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q23_bound_firms_that_choose_to_offer_buy_qua"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "compliance_cost",
+   "relation": "input",
+   "actor": "insurers",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q35_above_100_uncovered_full_timers_the_capp",
+    "q30_profits_of_bound_firms_are_paid_to_their"
+   ],
+   "reading": null,
+   "source_actor": "employers.capped",
+   "source_variable": "resources_available_other_uses",
+   "relation": "yield",
+   "actor": "owners",
+   "variable": "return_on_capital",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q40_seasonal_firms_hiring_is_measured_by_the"
+   ],
+   "reading": null,
+   "source_actor": "employers.seasonal",
+   "source_variable": "employment",
+   "relation": "same_act",
+   "actor": "workers.seasonal",
+   "variable": "employment",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q43_hiring_by_firms_near_50_fte_is_measured_"
+   ],
+   "reading": null,
+   "source_actor": "firms.near_threshold",
+   "source_variable": "employment",
+   "relation": "same_act",
+   "actor": "workers.near_threshold_firms",
+   "variable": "employment",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q48_firms_near_50_fte_that_hold_staff_below_"
+   ],
+   "reading": null,
+   "source_actor": "firms.near_threshold",
+   "source_variable": "employment",
+   "relation": "input",
+   "actor": "firms.near_threshold",
+   "variable": "quantity_supplied",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q50_insurers_pass_the_cost_of_meeting_and_ce"
+   ],
+   "reading": null,
+   "source_actor": "insurers",
+   "source_variable": "compliance_cost",
+   "relation": "cost",
+   "actor": "employers.bound",
+   "variable": "price_paid",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q54_insurers_profits_are_paid_to_their_owner"
+   ],
+   "reading": null,
+   "source_actor": "insurers",
+   "source_variable": "resources_available_other_uses",
+   "relation": "yield",
+   "actor": "owners.insurers",
+   "variable": "return_on_capital",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q56_the_department_of_revenue_s_cost_of_enfo"
+   ],
+   "reading": null,
+   "source_actor": "officials.revenue",
+   "source_variable": "enforcement_cost",
+   "relation": "paid_from",
+   "actor": "treasury",
+   "variable": "fund_balance",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q57_charges_collected_under_k1_are_paid_into"
+   ],
+   "reading": null,
+   "source_actor": "treasury",
+   "source_variable": "tax_revenue",
+   "relation": "paid_into",
+   "actor": "treasury",
+   "variable": "fund_balance",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q58_many_full_timers_newly_offered_cover_at_",
+    "q59_uninsured_residents_below_200_of_the_pov",
+    "q60_workers_who_take_up_employer_cover_have_"
+   ],
+   "reading": null,
+   "source_actor": "workers.at_offering_firms",
+   "source_variable": "non_wage_compensation",
+   "relation": "substitute",
+   "actor": "treasury",
+   "variable": "subsidy_outlay",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q61_workers_with_cover_use_more_physician_pr"
+   ],
+   "reading": null,
+   "source_actor": "workers.at_offering_firms",
+   "source_variable": "non_wage_compensation",
+   "relation": "complement",
+   "actor": "sellers.complements",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q62_employer_contributions_to_health_premium",
+    "q63_at_offering_firms_part_of_the_cost_of_co"
+   ],
+   "reading": null,
+   "source_actor": "workers.at_offering_firms",
+   "source_variable": "non_wage_compensation",
+   "relation": "substitute",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q67_workers_at_bound_firms_can_move_to_jobs_"
+   ],
+   "reading": null,
+   "source_actor": "workers.full_time_bound",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "workers.small_firms",
+   "variable": "wage_rate",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q70_workers_whose_hours_at_bound_firms_are_c"
+   ],
+   "reading": null,
+   "source_actor": "workers.full_time_bound",
+   "source_variable": "hours_worked",
+   "relation": "substitute",
+   "actor": "employers.small",
+   "variable": "employment",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q71_wages_paid_at_bound_firms_are_taxed_unde"
+   ],
+   "reading": null,
+   "source_actor": "workers.full_time_bound",
+   "source_variable": "wage_rate",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q72_bound_firms_that_use_fewer_full_time_lab"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "employers.bound",
+   "variable": "quantity_supplied",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q30_profits_of_bound_firms_are_paid_to_their"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "resources_available_other_uses",
+   "relation": "yield",
+   "actor": "owners",
+   "variable": "return_on_capital",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q73_customers_of_bound_firms_can_buy_from_fi"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "quantity_traded",
+   "relation": "substitute",
+   "actor": "sellers.substitutes",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q75_workers_reclassified_as_independent_cont"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "reclassification",
+   "relation": "substitute",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q78_seasonal_firms_that_hire_fewer_seasonal_"
+   ],
+   "reading": null,
+   "source_actor": "employers.seasonal",
+   "source_variable": "employment",
+   "relation": "input",
+   "actor": "employers.seasonal",
+   "variable": "quantity_supplied",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q83_hiring_by_firms_under_50_fte_is_measured"
+   ],
+   "reading": null,
+   "source_actor": "employers.small",
+   "source_variable": "employment",
+   "relation": "same_act",
+   "actor": "workers.small_firms",
+   "variable": "employment",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q84_firms_under_50_fte_that_hire_more_worker"
+   ],
+   "reading": null,
+   "source_actor": "employers.small",
+   "source_variable": "employment",
+   "relation": "input",
+   "actor": "employers.small",
+   "variable": "quantity_supplied",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q85_wages_paid_at_firms_under_50_fte_are_tax"
+   ],
+   "reading": null,
+   "source_actor": "employers.small",
+   "source_variable": "employment",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q88_hiring_by_tarnley_employers_is_measured_"
+   ],
+   "reading": null,
+   "source_actor": "employers.tarnley",
+   "source_variable": "employment",
+   "relation": "same_act",
+   "actor": "workers.tarnley_jobs",
+   "variable": "employment",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q89_tarnley_employers_that_hire_more_workers"
+   ],
+   "reading": null,
+   "source_actor": "employers.tarnley",
+   "source_variable": "employment",
+   "relation": "input",
+   "actor": "employers.tarnley",
+   "variable": "quantity_supplied",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q93_customers_of_firms_near_50_fte_can_buy_f"
+   ],
+   "reading": null,
+   "source_actor": "firms.near_threshold",
+   "source_variable": "quantity_supplied",
+   "relation": "substitute",
+   "actor": "sellers.substitutes",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q95_wages_paid_at_firms_near_50_fte_are_taxe"
+   ],
+   "reading": null,
+   "source_actor": "firms.near_threshold",
+   "source_variable": "employment",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q99_insurers_pay_hospitals_physicians_and_ph"
+   ],
+   "reading": null,
+   "source_actor": "insurers",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "sellers.complements",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q106_hiring_by_staffing_agencies_is_measured_"
+   ],
+   "reading": null,
+   "source_actor": "intermediaries",
+   "source_variable": "employment",
+   "relation": "same_act",
+   "actor": "workers.agency",
+   "variable": "employment",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q107_wages_paid_by_staffing_agencies_are_taxe"
+   ],
+   "reading": null,
+   "source_actor": "intermediaries",
+   "source_variable": "employment",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q116_owners_invest_less_new_capital_in_bound_"
+   ],
+   "reading": null,
+   "source_actor": "owners",
+   "source_variable": "return_on_capital",
+   "relation": "input",
+   "actor": "employers.bound",
+   "variable": "investment_target",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q119_owners_of_insurers_put_less_new_capital_"
+   ],
+   "reading": null,
+   "source_actor": "owners.insurers",
+   "source_variable": "return_on_capital",
+   "relation": "input",
+   "actor": "insurers",
+   "variable": "investment_target",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q101_hospital_and_physician_capacity_in_quenb",
+    "q122_patients_of_quenby_hospitals_and_physici"
+   ],
+   "reading": null,
+   "source_actor": "sellers.complements",
+   "source_variable": "quantity_traded",
+   "relation": "crowding",
+   "actor": "consumers",
+   "variable": "wait_time",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q125_hospitals_physicians_and_pharmacies_need"
+   ],
+   "reading": null,
+   "source_actor": "sellers.complements",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.health",
+   "variable": "employment,hours_worked",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q126_indigent_care_program_payments_to_hospit"
+   ],
+   "reading": null,
+   "source_actor": "treasury",
+   "source_variable": "subsidy_outlay",
+   "relation": "paid_from",
+   "actor": "treasury",
+   "variable": "fund_balance",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q127_the_indigent_care_program_pays_hospitals"
+   ],
+   "reading": null,
+   "source_actor": "treasury",
+   "source_variable": "subsidy_outlay",
+   "relation": "input",
+   "actor": "sellers.complements",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q128_quenby_s_general_fund_pays_for_other_sta"
+   ],
+   "reading": null,
+   "source_actor": "treasury",
+   "source_variable": "fund_balance",
+   "relation": "yield",
+   "actor": "recipients.other_spending",
+   "variable": "resources_available_other_uses",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q129_a_change_in_quenby_s_general_fund_balanc"
+   ],
+   "reading": null,
+   "source_actor": "treasury",
+   "source_variable": "fund_balance",
+   "relation": "yield",
+   "actor": "taxpayers.future",
+   "variable": "resources_available_other_uses",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q68_some_workers_living_near_marisport_can_t"
+   ],
+   "reading": null,
+   "source_actor": "workers.full_time_bound",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "workers.tarnley_jobs",
+   "variable": "wage_rate",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q71_wages_paid_at_bound_firms_are_taxed_unde"
+   ],
+   "reading": null,
+   "source_actor": "workers.full_time_bound",
+   "source_variable": "hours_worked",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q130_a_worker_s_money_earnings_are_the_hourly"
+   ],
+   "reading": null,
+   "source_actor": "workers.full_time_bound",
+   "source_variable": "wage_rate",
+   "relation": "yield",
+   "actor": "workers.full_time_bound",
+   "variable": "earnings",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q130_a_worker_s_money_earnings_are_the_hourly"
+   ],
+   "reading": null,
+   "source_actor": "workers.full_time_bound",
+   "source_variable": "hours_worked",
+   "relation": "yield",
+   "actor": "workers.full_time_bound",
+   "variable": "earnings",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q131_full_timers_whose_hours_are_cut_below_30",
+    "q58_many_full_timers_newly_offered_cover_at_",
+    "q59_uninsured_residents_below_200_of_the_pov"
+   ],
+   "reading": null,
+   "source_actor": "workers.full_time_bound",
+   "source_variable": "hours_worked",
+   "relation": "substitute",
+   "actor": "treasury",
+   "variable": "subsidy_outlay",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q130_a_worker_s_money_earnings_are_the_hourly"
+   ],
+   "reading": null,
+   "source_actor": "workers.near_threshold_firms",
+   "source_variable": "hours_worked",
+   "relation": "yield",
+   "actor": "workers.near_threshold_firms",
+   "variable": "earnings",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q95_wages_paid_at_firms_near_50_fte_are_taxe"
+   ],
+   "reading": null,
+   "source_actor": "workers.near_threshold_firms",
+   "source_variable": "hours_worked",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q133_longer_hours_worked_by_existing_staff_at"
+   ],
+   "reading": null,
+   "source_actor": "workers.near_threshold_firms",
+   "source_variable": "hours_worked",
+   "relation": "input",
+   "actor": "firms.near_threshold",
+   "variable": "quantity_supplied",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q130_a_worker_s_money_earnings_are_the_hourly"
+   ],
+   "reading": null,
+   "source_actor": "workers.small_firms",
+   "source_variable": "wage_rate",
+   "relation": "yield",
+   "actor": "workers.small_firms",
+   "variable": "earnings",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q85_wages_paid_at_firms_under_50_fte_are_tax"
+   ],
+   "reading": null,
+   "source_actor": "workers.small_firms",
+   "source_variable": "wage_rate",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q134_firms_under_50_fte_pass_part_of_higher_l"
+   ],
+   "reading": null,
+   "source_actor": "workers.small_firms",
+   "source_variable": "wage_rate",
+   "relation": "cost",
+   "actor": "customers",
+   "variable": "price_paid",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q67_workers_at_bound_firms_can_move_to_jobs_"
+   ],
+   "reading": null,
+   "source_actor": "workers.small_firms",
+   "source_variable": "wage_rate",
+   "relation": "substitute",
+   "actor": "workers.full_time_bound",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q136_patients_place_a_value_on_the_time_they_"
+   ],
+   "reading": null,
+   "source_actor": "consumers",
+   "source_variable": "wait_time",
+   "relation": "cost",
+   "actor": "consumers",
+   "variable": "full_cost_per_unit",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q137_some_quenby_patients_near_marisport_can_"
+   ],
+   "reading": null,
+   "source_actor": "consumers",
+   "source_variable": "wait_time",
+   "relation": "substitute",
+   "actor": "sellers.foreign",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q138_hiring_by_small_contractors_is_measured_"
+   ],
+   "reading": null,
+   "source_actor": "contractors.small",
+   "source_variable": "employment",
+   "relation": "same_act",
+   "actor": "workers.contractors",
+   "variable": "employment",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q139_wages_paid_by_small_contractors_are_taxe"
+   ],
+   "reading": null,
+   "source_actor": "contractors.small",
+   "source_variable": "employment",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q140_small_contractors_that_hire_more_workers"
+   ],
+   "reading": null,
+   "source_actor": "contractors.small",
+   "source_variable": "employment",
+   "relation": "input",
+   "actor": "contractors.small",
+   "variable": "quantity_supplied",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q141_small_contractors_hire_from_the_same_poo"
+   ],
+   "reading": null,
+   "source_actor": "contractors.small",
+   "source_variable": "employment",
+   "relation": "supply_price",
+   "actor": "workers.small_firms",
+   "variable": "wage_rate",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q148_new_investment_in_bound_firms_adds_to_th"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "investment_target",
+   "relation": "input",
+   "actor": "employers.bound",
+   "variable": "capital_stock_target",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q149_new_stores_and_premises_of_bound_chains_"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "investment_target",
+   "relation": "input",
+   "actor": "builders",
+   "variable": "quantity_traded",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q150_bound_retail_and_food_firms_supply_a_lar"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "quantity_supplied",
+   "relation": "supply",
+   "actor": "customers",
+   "variable": "price_paid",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q151_bound_retail_and_food_firms_buy_the_good"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q152_the_department_of_revenue_spends_more_on"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "reclassification",
+   "relation": "cost",
+   "actor": "officials.revenue",
+   "variable": "enforcement_cost",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q153_work_reclassified_by_bound_employers_is_"
+   ],
+   "reading": null,
+   "source_actor": "employers.bound",
+   "source_variable": "reclassification",
+   "relation": "same_act",
+   "actor": "contractors.independent",
+   "variable": "quantity_traded",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q155_hiring_by_public_employers_is_measured_b"
+   ],
+   "reading": null,
+   "source_actor": "employers.public",
+   "source_variable": "employment",
+   "relation": "same_act",
+   "actor": "workers.public",
+   "variable": "employment",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q156_wages_paid_by_public_employers_are_taxed"
+   ],
+   "reading": null,
+   "source_actor": "employers.public",
+   "source_variable": "employment",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q157_wages_of_state_public_employees_are_paid"
+   ],
+   "reading": null,
+   "source_actor": "employers.public",
+   "source_variable": "employment",
+   "relation": "paid_from",
+   "actor": "treasury",
+   "variable": "fund_balance",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q162_wages_paid_by_seasonal_firms_are_taxed_u"
+   ],
+   "reading": null,
+   "source_actor": "employers.seasonal",
+   "source_variable": "employment",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q163_buyers_of_the_produce_and_resort_stays_o"
+   ],
+   "reading": null,
+   "source_actor": "employers.seasonal",
+   "source_variable": "quantity_supplied",
+   "relation": "substitute",
+   "actor": "sellers.foreign",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q164_seasonal_workers_not_hired_by_seasonal_f"
+   ],
+   "reading": null,
+   "source_actor": "employers.seasonal",
+   "source_variable": "employment",
+   "relation": "substitute",
+   "actor": "employers.small",
+   "variable": "employment",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q165_seasonal_firms_buy_seed_feed_fuel_and_su"
+   ],
+   "reading": null,
+   "source_actor": "employers.seasonal",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q171_firms_under_50_fte_supply_part_of_the_go",
+    "q172_q74_firms_under_50_fte_compete_for_custo"
+   ],
+   "reading": null,
+   "source_actor": "employers.small",
+   "source_variable": "quantity_supplied",
+   "relation": "supply",
+   "actor": "customers",
+   "variable": "price_paid",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q173_firms_under_50_fte_buy_goods_and_supplie"
+   ],
+   "reading": null,
+   "source_actor": "employers.small",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q174_firms_under_50_fte_that_hire_more_worker"
+   ],
+   "reading": null,
+   "source_actor": "employers.small",
+   "source_variable": "employment",
+   "relation": "supply_price",
+   "actor": "workers.small_firms",
+   "variable": "wage_rate",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q175_a_group_s_money_earnings_are_the_wage_ti"
+   ],
+   "reading": null,
+   "source_actor": "employers.small",
+   "source_variable": "employment",
+   "relation": "yield",
+   "actor": "workers.small_firms",
+   "variable": "earnings",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q176_many_firms_under_50_fte_offer_their_full",
+    "q177_many_workers_at_firms_under_50_fte_earn_",
+    "q178_q59_uninsured_residents_below_200_of_the"
+   ],
+   "reading": null,
+   "source_actor": "employers.small",
+   "source_variable": "employment",
+   "relation": "complement",
+   "actor": "treasury",
+   "variable": "subsidy_outlay",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q180_tarnley_employers_near_marisport_that_hi"
+   ],
+   "reading": null,
+   "source_actor": "employers.tarnley",
+   "source_variable": "employment",
+   "relation": "supply_price",
+   "actor": "workers.tarnley_jobs",
+   "variable": "wage_rate",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q175_a_group_s_money_earnings_are_the_wage_ti"
+   ],
+   "reading": null,
+   "source_actor": "employers.tarnley",
+   "source_variable": "employment",
+   "relation": "yield",
+   "actor": "workers.tarnley_jobs",
+   "variable": "earnings",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q182_some_quenby_customers_near_marisport_buy"
+   ],
+   "reading": null,
+   "source_actor": "employers.tarnley",
+   "source_variable": "quantity_supplied",
+   "relation": "same_act",
+   "actor": "customers",
+   "variable": "cross_border_purchases",
+   "horizon": null
+  },
+  {
+   "premises": [
+    "q183_tarnley_firms_near_marisport_compete_for"
+   ],
+   "reading": null,
+   "source_actor": "employers.tarnley",
+   "source_variable": "quantity_supplied",
+   "relation": "substitute",
+   "actor": "employers.bound",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q184_tarnley_employers_buy_goods_and_supplies"
+   ],
+   "reading": null,
+   "source_actor": "employers.tarnley",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q186_firms_near_50_fte_buy_goods_and_supplies"
+   ],
+   "reading": null,
+   "source_actor": "firms.near_threshold",
+   "source_variable": "quantity_supplied",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q187_workers_not_hired_by_firms_near_50_fte_t"
+   ],
+   "reading": null,
+   "source_actor": "firms.near_threshold",
+   "source_variable": "employment",
+   "relation": "substitute",
+   "actor": "employers.small",
+   "variable": "employment",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q192_new_investment_by_insurers_adds_to_their"
+   ],
+   "reading": null,
+   "source_actor": "insurers",
+   "source_variable": "investment_target",
+   "relation": "input",
+   "actor": "insurers",
+   "variable": "capital_stock_target",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q194_staffing_agencies_that_hire_more_workers"
+   ],
+   "reading": null,
+   "source_actor": "intermediaries",
+   "source_variable": "employment",
+   "relation": "input",
+   "actor": "intermediaries",
+   "variable": "quantity_supplied",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q195_staffing_agencies_hire_from_the_same_poo"
+   ],
+   "reading": null,
+   "source_actor": "intermediaries",
+   "source_variable": "employment",
+   "relation": "supply_price",
+   "actor": "workers.small_firms",
+   "variable": "wage_rate",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q196_q47_firms_near_50_fte_can_take_on_worker"
+   ],
+   "reading": null,
+   "source_actor": "intermediaries",
+   "source_variable": "employment",
+   "relation": "substitute",
+   "actor": "firms.near_threshold",
+   "variable": "employment",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q199_trained_nursing_and_health_support_staff"
+   ],
+   "reading": null,
+   "source_actor": "sellers.complements",
+   "source_variable": "quantity_traded",
+   "relation": "supply_price",
+   "actor": "workers.health",
+   "variable": "wage_rate",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q202_pharmacies_and_hospitals_buy_drugs_and_m"
+   ],
+   "reading": null,
+   "source_actor": "sellers.complements",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "distributors",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q204_firms_under_50_fte_that_sell_more_need_m"
+   ],
+   "reading": null,
+   "source_actor": "sellers.substitutes",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "workers.small_firms",
+   "variable": "employment,hours_worked",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q173_firms_under_50_fte_buy_goods_and_supplie"
+   ],
+   "reading": null,
+   "source_actor": "sellers.substitutes",
+   "source_variable": "quantity_traded",
+   "relation": "input",
+   "actor": "input_suppliers",
+   "variable": "quantity_traded",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q135_profits_of_firms_under_50_fte_are_paid_t"
+   ],
+   "reading": null,
+   "source_actor": "sellers.substitutes",
+   "source_variable": "quantity_traded",
+   "relation": "yield",
+   "actor": "owners",
+   "variable": "return_on_capital",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q175_a_group_s_money_earnings_are_the_wage_ti"
+   ],
+   "reading": null,
+   "source_actor": "workers.agency",
+   "source_variable": "employment",
+   "relation": "yield",
+   "actor": "workers.agency",
+   "variable": "earnings",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q208_many_workers_placed_by_staffing_agencies",
+    "q209_many_workers_placed_by_staffing_agencies",
+    "q59_uninsured_residents_below_200_of_the_pov"
+   ],
+   "reading": null,
+   "source_actor": "workers.agency",
+   "source_variable": "employment",
+   "relation": "complement",
+   "actor": "treasury",
+   "variable": "subsidy_outlay",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q132_workers_at_bound_firms_can_move_to_jobs_"
+   ],
+   "reading": null,
+   "source_actor": "workers.full_time_bound",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "workers.public",
+   "variable": "wage_rate",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q210_workers_who_lose_full_time_jobs_at_bound"
+   ],
+   "reading": null,
+   "source_actor": "workers.full_time_bound",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "workers.contractors",
+   "variable": "wage_rate",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q211_workers_who_lose_full_time_jobs_at_bound"
+   ],
+   "reading": null,
+   "source_actor": "workers.full_time_bound",
+   "source_variable": "quantity_traded",
+   "relation": "supply",
+   "actor": "workers.agency",
+   "variable": "wage_rate",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q212_some_uncovered_full_timers_at_bound_firm",
+    "q59_uninsured_residents_below_200_of_the_pov"
+   ],
+   "reading": null,
+   "source_actor": "workers.full_time_bound",
+   "source_variable": "earnings",
+   "relation": "substitute",
+   "actor": "treasury",
+   "variable": "subsidy_outlay",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q213_full_timers_at_bound_firms_spend_most_of"
+   ],
+   "reading": null,
+   "source_actor": "workers.full_time_bound",
+   "source_variable": "earnings",
+   "relation": "yield",
+   "actor": "workers.full_time_bound",
+   "variable": "consumption",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q175_a_group_s_money_earnings_are_the_wage_ti"
+   ],
+   "reading": null,
+   "source_actor": "workers.health",
+   "source_variable": "employment",
+   "relation": "yield",
+   "actor": "workers.health",
+   "variable": "earnings",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q130_a_worker_s_money_earnings_are_the_hourly"
+   ],
+   "reading": null,
+   "source_actor": "workers.health",
+   "source_variable": "hours_worked",
+   "relation": "yield",
+   "actor": "workers.health",
+   "variable": "earnings",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q214_wages_paid_to_hospital_nursing_and_suppo"
+   ],
+   "reading": null,
+   "source_actor": "workers.health",
+   "source_variable": "employment",
+   "relation": "yield",
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q215_hospitals_hire_support_staff_such_as_aid"
+   ],
+   "reading": null,
+   "source_actor": "workers.health",
+   "source_variable": "employment",
+   "relation": "supply_price",
+   "actor": "workers.small_firms",
+   "variable": "wage_rate",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q216_workers_at_firms_near_50_fte_spend_most_"
+   ],
+   "reading": null,
+   "source_actor": "workers.near_threshold_firms",
+   "source_variable": "earnings",
+   "relation": "yield",
+   "actor": "workers.near_threshold_firms",
+   "variable": "consumption",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q217_some_uninsured_workers_at_firms_near_50_",
+    "q59_uninsured_residents_below_200_of_the_pov"
+   ],
+   "reading": null,
+   "source_actor": "workers.near_threshold_firms",
+   "source_variable": "earnings",
+   "relation": "substitute",
+   "actor": "treasury",
+   "variable": "subsidy_outlay",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q218_workers_at_firms_near_50_fte_who_work_lo"
+   ],
+   "reading": null,
+   "source_actor": "workers.near_threshold_firms",
+   "source_variable": "hours_worked",
+   "relation": "substitute",
+   "actor": "workers.near_threshold_firms",
+   "variable": "home_production",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q219_workers_given_longer_hours_at_firms_near"
+   ],
+   "reading": null,
+   "source_actor": "workers.near_threshold_firms",
+   "source_variable": "hours_worked",
+   "relation": "substitute",
+   "actor": "employers.small",
+   "variable": "employment",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q222_some_workers_living_near_marisport_choos"
+   ],
+   "reading": null,
+   "source_actor": "workers.small_firms",
+   "source_variable": "wage_rate",
+   "relation": "substitute",
+   "actor": "employers.tarnley",
+   "variable": "employment",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q223_some_people_who_take_added_jobs_at_firms",
+    "q224_workers_who_take_paid_jobs_have_less_tim"
+   ],
+   "reading": null,
+   "source_actor": "workers.small_firms",
+   "source_variable": "employment",
+   "relation": "substitute",
+   "actor": "workers.small_firms",
+   "variable": "home_production",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q130_a_worker_s_money_earnings_are_the_hourly"
+   ],
+   "reading": null,
+   "source_actor": "workers.tarnley_jobs",
+   "source_variable": "wage_rate",
+   "relation": "yield",
+   "actor": "workers.tarnley_jobs",
+   "variable": "earnings",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q225_tarnley_employers_near_marisport_hire_fe"
+   ],
+   "reading": null,
+   "source_actor": "workers.tarnley_jobs",
+   "source_variable": "wage_rate",
+   "relation": "own_price",
+   "actor": "employers.tarnley",
+   "variable": "employment",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q222_some_workers_living_near_marisport_choos"
+   ],
+   "reading": null,
+   "source_actor": "workers.tarnley_jobs",
+   "source_variable": "wage_rate",
+   "relation": "substitute",
+   "actor": "employers.small",
+   "variable": "employment",
+   "horizon": "medium"
+  }
+ ],
+ "assets": [
+  {
+   "premises": [
+    "a_21"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "buyer",
+   "actor": "owners"
+  },
+  {
+   "premises": [
+    "q81_the_value_of_farms_resorts_and_their_lan",
+    "a_21"
+   ],
+   "reading": null,
+   "exchange": "e4",
+   "side": "buyer",
+   "actor": "owners"
+  },
+  {
+   "premises": [
+    "a_21"
+   ],
+   "reading": null,
+   "exchange": "e5",
+   "side": "buyer",
+   "actor": "owners"
+  },
+  {
+   "premises": [
+    "q103_a_21"
+   ],
+   "reading": null,
+   "exchange": "e3",
+   "side": "seller",
+   "actor": "owners.insurers"
+  },
+  {
+   "premises": [
+    "q179_the_value_of_firms_under_50_fte_rests_on",
+    "q103_a_21"
+   ],
+   "reading": null,
+   "exchange": "e6",
+   "side": "buyer",
+   "actor": "owners"
+  },
+  {
+   "premises": [
+    "q185_the_value_of_tarnley_firms_near_marispor",
+    "a_21"
+   ],
+   "reading": null,
+   "exchange": "e9",
+   "side": "buyer",
+   "actor": "owners.tarnley"
+  },
+  {
+   "premises": [
+    "q197_the_value_of_staffing_agencies_rests_on_",
+    "a_21"
+   ],
+   "reading": null,
+   "exchange": "e12",
+   "side": "buyer",
+   "actor": "owners.intermediaries"
+  },
+  {
+   "premises": [
+    "q198_the_value_of_physician_practices_pharmac",
+    "a_21"
+   ],
+   "reading": null,
+   "exchange": "e11",
+   "side": "seller",
+   "actor": "owners.complements"
+  },
+  {
+   "premises": [
+    "q179_the_value_of_firms_under_50_fte_rests_on",
+    "q103_a_21"
+   ],
+   "reading": null,
+   "exchange": "e7",
+   "side": "seller",
+   "actor": "owners"
+  }
+ ],
+ "yields": [
+  {
+   "premises": [
+    "q30_profits_of_bound_firms_are_paid_to_their"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "buyer",
+   "actor": "owners"
+  },
+  {
+   "premises": [
+    "q80_profits_of_seasonal_firms_are_paid_to_th"
+   ],
+   "reading": null,
+   "exchange": "e4",
+   "side": "buyer",
+   "actor": "owners"
+  },
+  {
+   "premises": [
+    "q91_profits_of_tarnley_employers_are_paid_to"
+   ],
+   "reading": null,
+   "exchange": "e9",
+   "side": "buyer",
+   "actor": "owners.tarnley"
+  },
+  {
+   "premises": [
+    "q94_profits_of_firms_near_50_fte_are_paid_to"
+   ],
+   "reading": null,
+   "exchange": "e5",
+   "side": "buyer",
+   "actor": "owners"
+  },
+  {
+   "premises": [
+    "q104_q54_insurers_profits_are_paid_to_their_o"
+   ],
+   "reading": null,
+   "exchange": "e3",
+   "side": "seller",
+   "actor": "owners.insurers"
+  },
+  {
+   "premises": [
+    "q111_profits_of_staffing_agencies_are_paid_to"
+   ],
+   "reading": null,
+   "exchange": "e12",
+   "side": "buyer",
+   "actor": "owners.intermediaries"
+  },
+  {
+   "premises": [
+    "q124_profits_of_physician_practices_pharmacie"
+   ],
+   "reading": null,
+   "exchange": "e11",
+   "side": "seller",
+   "actor": "owners.complements"
+  },
+  {
+   "premises": [
+    "q135_profits_of_firms_under_50_fte_are_paid_t"
+   ],
+   "reading": null,
+   "exchange": "e6",
+   "side": "buyer",
+   "actor": "owners"
+  },
+  {
+   "premises": [
+    "q145_profits_of_small_contractors_are_paid_to"
+   ],
+   "reading": null,
+   "exchange": "e14",
+   "side": "seller",
+   "actor": "owners.contractors"
+  },
+  {
+   "premises": [
+    "q91_profits_of_tarnley_employers_are_paid_to"
+   ],
+   "reading": null,
+   "exchange": "e17",
+   "side": "seller",
+   "actor": "owners.tarnley"
+  },
+  {
+   "premises": [
+    "q111_profits_of_staffing_agencies_are_paid_to"
+   ],
+   "reading": null,
+   "exchange": "e18",
+   "side": "seller",
+   "actor": "owners.intermediaries"
+  },
+  {
+   "premises": [
+    "q135_profits_of_firms_under_50_fte_are_paid_t"
+   ],
+   "reading": null,
+   "exchange": "e7",
+   "side": "seller",
+   "actor": "owners"
+  }
+ ],
+ "transfers": [],
+ "compliance": [
+  {
+   "component": "k1",
+   "actor": "employers.bound"
+  },
+  {
+   "component": "k2",
+   "actor": "insurers"
+  }
+ ],
+ "enforcers": [
+  {
+   "component": "k5",
+   "actor": "officials.revenue"
+  }
+ ],
+ "funded": [
+  {
+   "component": "k5",
+   "actor": "taxpayers",
+   "premises": [
+    "a_29"
+   ]
+  }
+ ],
+ "fixed_budget": [],
+ "charges": [
+  {
+   "component": "k1_pay",
+   "premises": [
+    "a_1"
+   ],
+   "exchange": "e1",
+   "payer_side": "buyer",
+   "receiver": "treasury",
+   "receipt_variable": "tax_revenue",
+   "quantity_premises": [],
+   "projection_variable": "tax_revenue_vs_static_projection",
+   "branch_premises": [
+    "a_4"
+   ],
+   "branch_premise_sets": [],
+   "capped_payers": [
+    "employers.capped"
+   ],
+   "other_receivers": [],
+   "basis": "unit"
+  },
+  {
+   "component": "k1_play",
+   "premises": [
+    "a_1"
+   ],
+   "exchange": "e1",
+   "payer_side": "buyer",
+   "receiver": "workers.at_offering_firms",
+   "receipt_variable": "non_wage_compensation",
+   "quantity_premises": [
+    "a_7"
+   ],
+   "projection_variable": null,
+   "branch_premises": [
+    "a_2"
+   ],
+   "branch_premise_sets": [
+    [
+     "a_5"
+    ]
+   ],
+   "capped_payers": [],
+   "other_receivers": [],
+   "basis": "unit"
+  }
+ ],
+ "moves": [
+  {
+   "premises": [
+    "a_6",
+    "a_8"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q22_many_bound_chains_compete_mainly_with_ot"
+   ],
+   "reading": null,
+   "exchange": "e2",
+   "side": "buyer",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "a_6"
+   ],
+   "reading": null,
+   "exchange": "e5",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q51_several_insurers_compete_for_employer_gr"
+   ],
+   "reading": null,
+   "exchange": "e3",
+   "side": "buyer",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "a_6"
+   ],
+   "reading": null,
+   "exchange": "e6",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q79_quenby_farms_food_processors_and_resorts"
+   ],
+   "reading": null,
+   "exchange": "e8",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q90_wages_at_tarnley_employers_near_marispor"
+   ],
+   "reading": null,
+   "exchange": "e9",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q92_firms_near_50_fte_sell_in_markets_where_"
+   ],
+   "reading": null,
+   "exchange": "e10",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q101_hospital_and_physician_capacity_in_quenb"
+   ],
+   "reading": null,
+   "exchange": "e11",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "a_6"
+   ],
+   "reading": null,
+   "exchange": "e12",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "a_6"
+   ],
+   "reading": null,
+   "exchange": "e13",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q146_contract_prices_for_cleaning_security_an"
+   ],
+   "reading": null,
+   "exchange": "e14",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q154_pay_to_independent_contractors_is_not_he"
+   ],
+   "reading": null,
+   "exchange": "e15",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q181_tarnley_employers_near_marisport_sell_in"
+   ],
+   "reading": null,
+   "exchange": "e17",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q193_staffing_agency_fees_charged_to_client_f"
+   ],
+   "reading": null,
+   "exchange": "e18",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q193_staffing_agency_fees_charged_to_client_f"
+   ],
+   "reading": "U1-a",
+   "exchange": "e19",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q199_trained_nursing_and_health_support_staff"
+   ],
+   "reading": null,
+   "exchange": "e20",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q205_prices_charged_by_firms_under_50_fte_are"
+   ],
+   "reading": null,
+   "exchange": "e7",
+   "side": "seller",
+   "horizon": "medium"
+  }
+ ],
+ "discretion": [],
+ "means": [],
+ "announced": [
+  {
+   "component": "k1",
+   "premises": [
+    "a_15",
+    "a_21"
+   ]
+  }
+ ],
+ "timing": [
+  {
+   "premises": [
+    "a_15"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "firms.near_threshold",
+   "variable": "employment",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q76_owners_of_seasonal_firms_know_from_janua",
+    "q77_seasonal_firms_can_cut_their_2027_season"
+   ],
+   "reading": "U1-a",
+   "component": "k3_seasonal",
+   "actor": "employers.seasonal",
+   "variable": "employment",
+   "mode": "bring_forward"
+  },
+  {
+   "premises": [
+    "q191_insurers_must_have_their_2028_group_plan",
+    "q52_group_premiums_are_set_for_a_plan_year_i"
+   ],
+   "reading": null,
+   "component": "k2",
+   "actor": "insurers",
+   "variable": "compliance_cost",
+   "mode": "bring_forward"
+  }
+ ],
+ "early_price": [],
+ "backstops": [],
+ "grants": [],
+ "capped": [],
+ "duties": [],
+ "issued": [],
+ "penalties": [
+  {
+   "premises": [
+    "a_18"
+   ],
+   "reading": null,
+   "component": "k5",
+   "actor": "employers.bound",
+   "collector": "treasury"
+  }
+ ],
+ "terms": [],
+ "banned": [],
+ "incidence": [
+  {
+   "premises": [
+    "a_23"
+   ],
+   "reading": null,
+   "component": "k1_pay",
+   "exchange": "e1",
+   "side": "seller"
+  }
+ ],
+ "fixed": [
+  {
+   "premises": [
+    "a_3"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "seller",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "a_9"
+   ],
+   "reading": null,
+   "exchange": "e1",
+   "side": "seller",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q41_the_minimum_wage_binds_for_many_seasonal"
+   ],
+   "reading": null,
+   "exchange": "e4",
+   "side": "seller",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q44_the_minimum_wage_binds_for_some_workers_"
+   ],
+   "reading": null,
+   "exchange": "e5",
+   "side": "seller",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q52_group_premiums_are_set_for_a_plan_year_i"
+   ],
+   "reading": null,
+   "exchange": "e3",
+   "side": "buyer",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q69_the_minimum_wage_binds_for_some_workers_"
+   ],
+   "reading": null,
+   "exchange": "e6",
+   "side": "seller",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q100_insurers_payment_rates_to_hospitals_and_"
+   ],
+   "reading": null,
+   "exchange": "e11",
+   "side": "seller",
+   "horizon": "short"
+  },
+  {
+   "premises": [
+    "q108_the_minimum_wage_binds_for_some_workers_"
+   ],
+   "reading": null,
+   "exchange": "e12",
+   "side": "seller",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q142_the_minimum_wage_binds_for_some_workers_"
+   ],
+   "reading": null,
+   "exchange": "e13",
+   "side": "seller",
+   "horizon": "long"
+  },
+  {
+   "premises": [
+    "q158_public_sector_wages_are_set_by_pay_scale"
+   ],
+   "reading": null,
+   "exchange": "e16",
+   "side": "seller",
+   "horizon": "medium"
+  },
+  {
+   "premises": [
+    "q200_pay_for_hospital_nursing_and_support_sta"
+   ],
+   "reading": null,
+   "exchange": "e20",
+   "side": "seller",
+   "horizon": "short"
+  }
+ ],
+ "unclear": [
+  {
+   "id": "U1",
+   "text": "Whether seasonal workers count toward the 50 FTE threshold",
+   "readings": [
+    "U1-a: seasonal workers count by their hours",
+    "U1-b: seasonal workers are left out of the count"
+   ],
+   "components": {
+    "U1-a": [
+     "K3-seasonal"
+    ],
+    "U1-b": []
+   }
+  }
+ ],
+ "thresholds": [
+  {
+   "premises": [
+    "a_14"
+   ],
+   "reading": null,
+   "component": "k3",
+   "actor": "firms.near_threshold",
+   "variable": "employment",
+   "chooser": null
+  },
+  {
+   "premises": [
+    "a_10"
+   ],
+   "reading": null,
+   "component": "k1_hours",
+   "actor": "workers.full_time_bound",
+   "variable": "hours_worked",
+   "chooser": "employers.bound"
+  },
+  {
+   "premises": [
+    "a_33"
+   ],
+   "reading": "U1-a",
+   "component": "k3_seasonal",
+   "actor": "employers.seasonal",
+   "variable": "employment",
+   "chooser": null
+  }
+ ],
+ "qualifies": [],
+ "expires": [],
+ "parts": [
+  {
+   "part": "employers.capped",
+   "whole": "employers.bound",
+   "premises": [
+    "q31_some_bound_firms_have_more_than_100_unco"
+   ]
+  },
+  {
+   "part": "employers.uncapped",
+   "whole": "employers.bound",
+   "premises": [
+    "q32_most_bound_firms_that_offer_nothing_have"
+   ]
+  },
+  {
+   "part": "workers.min_wage",
+   "whole": "workers.full_time_bound",
+   "premises": [
+    "q65_some_full_timers_at_bound_firms_are_paid"
+   ]
+  },
+  {
+   "part": "workers.above_min",
+   "whole": "workers.full_time_bound",
+   "premises": [
+    "q66_some_full_timers_at_bound_firms_are_paid"
+   ]
+  },
+  {
+   "part": "intermediaries.capped",
+   "whole": "intermediaries",
+   "premises": [
+    "q113_some_staffing_agencies_in_quenby_have_mo"
+   ]
+  },
+  {
+   "part": "intermediaries.small",
+   "whole": "intermediaries",
+   "premises": [
+    "q114_some_staffing_agencies_in_quenby_have_fe"
+   ]
+  },
+  {
+   "part": "employers.seasonal_below",
+   "whole": "employers.seasonal",
+   "reading": "U1-a",
+   "premises": [
+    "q168_some_of_the_380_seasonal_firms_keep_thei"
+   ]
+  },
+  {
+   "part": "employers.seasonal_crossing",
+   "whole": "employers.seasonal",
+   "reading": "U1-a",
+   "premises": [
+    "q169_some_of_the_380_seasonal_firms_keep_thei"
+   ]
+  },
+  {
+   "part": "firms.near_threshold_below",
+   "whole": "firms.near_threshold",
+   "premises": [
+    "q188_about_1_300_firms_with_40_to_49_fte_can_"
+   ]
+  },
+  {
+   "part": "firms.near_threshold_above",
+   "whole": "firms.near_threshold",
+   "premises": [
+    "q189_some_of_the_about_1_100_firms_with_50_to"
+   ]
+  },
+  {
+   "part": "workers.small_firms_min",
+   "whole": "workers.small_firms",
+   "premises": [
+    "q220_some_workers_at_firms_under_50_fte_are_p"
+   ]
+  },
+  {
+   "part": "workers.small_firms_above",
+   "whole": "workers.small_firms",
+   "premises": [
+    "q221_some_workers_at_firms_under_50_fte_are_p"
+   ]
+  }
+ ],
+ "dominance": [
+  {
+   "premises": [
+    "q203_care_paid_by_plans_for_newly_covered_wor",
+    "q61_workers_with_cover_use_more_physician_pr"
+   ],
+   "reading": null,
+   "actor": "sellers.complements",
+   "variable": "quantity_traded",
+   "window": "medium",
+   "direction": "increase",
+   "kind": "empirical"
+  },
+  {
+   "premises": [
+    "q206_the_3_000_charge_per_uncovered_full_time",
+    "q207_income_tax_lost_where_employer_cover_or_",
+    "a_4"
+   ],
+   "reading": null,
+   "actor": "treasury",
+   "variable": "tax_revenue",
+   "window": "medium",
+   "direction": "increase",
+   "kind": "arithmetic"
+  }
+ ],
+ "assumptions": {
+  "a_1": {
+   "text": "About 135,000 full-timers at firms of 50+ FTE are offered nothing, and about 105,000 are offered less than K1 requires, so K1 binds for them.",
+   "p": 0.9,
+   "class": "binding"
+  },
+  "a_2": {
+   "text": "Some bound firms that offer nothing now choose to offer.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "a_3": {
+   "text": "Money wages are fixed in the short run by pay scales and yearly raises.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "a_4": {
+   "text": "Some bound firms choose to pay the charge for at least some full-timers.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "a_5": {
+   "text": "Some firms with plans short of K1 upgrade them rather than pay.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "a_6": {
+   "text": "Wages above the minimum can adjust over the medium horizon, as raises are set.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "a_7": {
+   "text": "At players, for the marginal pair, cover at 30% is worth less to the worker than its cost to the employer.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "a_8": {
+   "text": "Workers at payers have some alternative to bound full-time work, so the wage does not fall by the whole charge.",
+   "p": 0.85,
+   "class": "mobility"
+  },
+  "a_9": {
+   "text": "The minimum wage binds for some workers at bound firms.",
+   "p": 0.85,
+   "class": "binding"
+  },
+  "a_10": {
+   "text": "Some employers can reschedule jobs from 30 to 35 hours to under 30 at a cost below the per-head cost.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "a_14": {
+   "text": "Some firms near 50 FTE value staying below the line more than the extra work.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "a_15": {
+   "text": "Owners of firms near 50 know from January 2027 that the 2027 average decides 2028 status.",
+   "p": 0.75,
+   "class": "expectations"
+  },
+  "a_18": {
+   "text": "Revenue cannot cheaply verify reported offers, and some firms report offers not made.",
+   "p": 0.55,
+   "class": "enforcement"
+  },
+  "a_21": {
+   "text": "Business values reflect expected earnings, and buyers expected the Act from its introduction.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "a_23": {
+   "text": "Over the medium to long run, workers' alternatives to bound employment are clearly worse than employers' alternatives.",
+   "p": 0.6,
+   "class": "mobility"
+  },
+  "a_29": {
+   "text": "The $4.1 million is new general-fund money.",
+   "p": 0.9,
+   "class": "revenue_use"
+  },
+  "a_33": {
+   "text": "Some of the 380 seasonal firms do not offer qualifying cover to their full-timers.",
+   "p": 0.75,
+   "class": "binding"
+  },
+  "q18_bound_employers_can_fill_some_full_time_": {
+   "text": "Bound employers can fill some full-time posts with more workers each averaging under 30 hours.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q19_bound_employers_can_contract_out_cleanin": {
+   "text": "Bound employers can contract out cleaning, security or food service to independent firms under 50 FTE.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q20_some_bound_employers_near_marisport_can_": {
+   "text": "Some bound employers near Marisport can move work across the border to Tarnley.",
+   "p": 0.75,
+   "class": "mobility"
+  },
+  "q21_bound_retail_and_food_firms_pass_part_of": {
+   "text": "Bound retail and food firms pass part of higher labour costs into their prices.",
+   "p": 0.58,
+   "class": "other"
+  },
+  "q22_many_bound_chains_compete_mainly_with_ot": {
+   "text": "Many bound chains compete mainly with other bound chains facing the same cost.",
+   "p": 0.38,
+   "class": "other"
+  },
+  "q23_bound_firms_that_choose_to_offer_buy_qua": {
+   "text": "Bound firms that choose to offer buy qualifying group plans from insurers.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q24_bound_employers_can_cut_training_schedul": {
+   "text": "Bound employers can cut training, scheduling flexibility and other non-money terms where wages cannot fall.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q25_where_the_minimum_wage_holds_the_wage_bo": {
+   "text": "Where the minimum wage holds the wage, bound employers face more applicants than full-time posts.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q26_an_employee_who_is_offered_cover_and_dec": {
+   "text": "An employee who is offered cover and declines costs the employer nothing under K1.",
+   "p": 0.86,
+   "class": "other"
+  },
+  "q27_some_bound_employers_can_reclassify_empl": {
+   "text": "Some bound employers can reclassify employees as independent contractors outside K1.",
+   "p": 0.6,
+   "class": "enforcement"
+  },
+  "q28_the_per_head_cost_of_k1_is_large_relativ": {
+   "text": "The per-head cost of K1 is large relative to pay at bound firms that offer nothing.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q29_firms_that_already_offer_qualifying_cove": {
+   "text": "Firms that already offer qualifying cover compete for workers and customers with firms that offer none.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q30_profits_of_bound_firms_are_paid_to_their": {
+   "text": "Profits of bound firms are paid to their owners.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q31_some_bound_firms_have_more_than_100_unco": {
+   "text": "Some bound firms have more than 100 uncovered full-timers.",
+   "p": 0.92,
+   "class": "other"
+  },
+  "q32_most_bound_firms_that_offer_nothing_have": {
+   "text": "Most bound firms that offer nothing have fewer than 100 uncovered full-timers.",
+   "p": 0.93,
+   "class": "other"
+  },
+  "q33_the_cap_cuts_the_charge_per_uncovered_he": {
+   "text": "The cap cuts the charge per uncovered head far below $3,000 for firms with many uncovered full-timers.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "q34_uncapped_bound_firms_compete_for_workers": {
+   "text": "Uncapped bound firms compete for workers and customers with capped chains.",
+   "p": 0.68,
+   "class": "other"
+  },
+  "q35_above_100_uncovered_full_timers_the_capp": {
+   "text": "Above 100 uncovered full-timers the capped charge does not change with hiring or wages.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "q36_capped_chains_can_move_outlets_to_franch": {
+   "text": "Capped chains can move outlets to franchisees not under their common control.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q37_seasonal_firms_can_hire_their_seasonal_w": {
+   "text": "Seasonal firms can hire their seasonal workers through staffing agencies or labour contractors.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q38_agency_workers_count_toward_the_fte_of_t": {
+   "text": "Agency workers count toward the FTE of the agency, not of the firm where they work.",
+   "p": 0.97,
+   "class": "other"
+  },
+  "q39_whether_seasonal_workers_count_toward_th": {
+   "text": "Whether seasonal workers count toward the 50 decides whether about 380 seasonal firms are bound by K1.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q40_seasonal_firms_hiring_is_measured_by_the": {
+   "text": "Seasonal firms' hiring is measured by the seasonal jobs their workers hold.",
+   "p": 0.4,
+   "class": "other"
+  },
+  "q41_the_minimum_wage_binds_for_many_seasonal": {
+   "text": "The minimum wage binds for many seasonal workers in farm, resort and landscaping work.",
+   "p": 0.6,
+   "class": "binding"
+  },
+  "q42_seasonal_firms_can_keep_seasonal_workers": {
+   "text": "Seasonal firms can keep seasonal workers' hours or stints short enough to avoid owing an offer.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q43_hiring_by_firms_near_50_fte_is_measured_": {
+   "text": "Hiring by firms near 50 FTE is measured by the jobs their workers hold.",
+   "p": 0.3,
+   "class": "other"
+  },
+  "q44_the_minimum_wage_binds_for_some_workers_": {
+   "text": "The minimum wage binds for some workers at firms near 50 FTE.",
+   "p": 0.85,
+   "class": "binding"
+  },
+  "q45_hours_of_an_employee_averaging_130_or_mo": {
+   "text": "Hours of an employee averaging 130 or more hours a month add nothing to the firm's FTE count.",
+   "p": 0.82,
+   "class": "other"
+  },
+  "q46_firms_near_50_fte_can_lengthen_existing_": {
+   "text": "Firms near 50 FTE can lengthen existing full-timers' hours, paying overtime, instead of hiring.",
+   "p": 0.72,
+   "class": "other"
+  },
+  "q47_firms_near_50_fte_can_take_on_workers_th": {
+   "text": "Firms near 50 FTE can take on workers through staffing agencies instead of on their own payroll.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q48_firms_near_50_fte_that_hold_staff_below_": {
+   "text": "Firms near 50 FTE that hold staff below the line produce less than they otherwise would.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q49_crossing_50_fte_would_raise_a_firm_s_lab": {
+   "text": "Crossing 50 FTE would raise a firm's labour costs by up to $3,000 per uncovered full-timer.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q50_insurers_pass_the_cost_of_meeting_and_ce": {
+   "text": "Insurers pass the cost of meeting and certifying plans under K2 into the premiums they charge employers.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q51_several_insurers_compete_for_employer_gr": {
+   "text": "Several insurers compete for employer group plans in Quenby, so cost changes reach premiums at renewal.",
+   "p": 0.72,
+   "class": "other"
+  },
+  "q52_group_premiums_are_set_for_a_plan_year_i": {
+   "text": "Group premiums are set for a plan year in advance.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q53_insurers_can_narrow_provider_networks_or": {
+   "text": "Insurers can narrow provider networks or service within the benefit standard.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q54_insurers_profits_are_paid_to_their_owner": {
+   "text": "Insurers' profits are paid to their owners.",
+   "p": 0.82,
+   "class": "other"
+  },
+  "q55_the_benefit_standard_decides_which_of_in": {
+   "text": "The benefit standard decides which of insurers' plans count under K1.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "q56_the_department_of_revenue_s_cost_of_enfo": {
+   "text": "The Department of Revenue's cost of enforcing K1 is paid from a new general-fund appropriation.",
+   "p": 0.9,
+   "class": "revenue_use"
+  },
+  "q57_charges_collected_under_k1_are_paid_into": {
+   "text": "Charges collected under K1 are paid into Quenby's general fund.",
+   "p": 0.97,
+   "class": "revenue_use"
+  },
+  "q58_many_full_timers_newly_offered_cover_at_": {
+   "text": "Many full-timers newly offered cover at bound firms earn below 200% of the poverty line.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q59_uninsured_residents_below_200_of_the_pov": {
+   "text": "Uninsured residents below 200% of the poverty line get hospital care paid by the Indigent Care Program.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "q60_workers_who_take_up_employer_cover_have_": {
+   "text": "Workers who take up employer cover have their hospital care paid by their plan instead of the Indigent Care Program.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q61_workers_with_cover_use_more_physician_pr": {
+   "text": "Workers with cover use more physician, prescription and hospital care than when uninsured.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q62_employer_contributions_to_health_premium": {
+   "text": "Employer contributions to health premiums are excluded from income for Quenby's 4.5% income tax.",
+   "p": 0.97,
+   "class": "revenue_use"
+  },
+  "q63_at_offering_firms_part_of_the_cost_of_co": {
+   "text": "At offering firms part of the cost of cover is paid out of wages that would have been taxed.",
+   "p": 0.7,
+   "class": "revenue_use"
+  },
+  "q64_a_70_employer_share_of_5_180_is_large_re": {
+   "text": "A 70% employer share of $5,180 is large relative to the pay of a full-timer near the minimum wage.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "q65_some_full_timers_at_bound_firms_are_paid": {
+   "text": "Some full-timers at bound firms are paid at or near the minimum wage, so their wage cannot fall.",
+   "p": 0.85,
+   "class": "binding"
+  },
+  "q66_some_full_timers_at_bound_firms_are_paid": {
+   "text": "Some full-timers at bound firms are paid enough above the minimum wage that their wage can fall.",
+   "p": 0.92,
+   "class": "other"
+  },
+  "q67_workers_at_bound_firms_can_move_to_jobs_": {
+   "text": "Workers at bound firms can move to jobs at firms under 50 FTE.",
+   "p": 0.85,
+   "class": "mobility"
+  },
+  "q68_some_workers_living_near_marisport_can_t": {
+   "text": "Some workers living near Marisport can take jobs across the border in Tarnley.",
+   "p": 0.93,
+   "class": "mobility"
+  },
+  "q69_the_minimum_wage_binds_for_some_workers_": {
+   "text": "The minimum wage binds for some workers at firms under 50 FTE.",
+   "p": 0.9,
+   "class": "binding"
+  },
+  "q70_workers_whose_hours_at_bound_firms_are_c": {
+   "text": "Workers whose hours at bound firms are cut below 30 a week take second jobs at other employers.",
+   "p": 0.62,
+   "class": "other"
+  },
+  "q71_wages_paid_at_bound_firms_are_taxed_unde": {
+   "text": "Wages paid at bound firms are taxed under Quenby's 4.5% income tax.",
+   "p": 0.97,
+   "class": "revenue_use"
+  },
+  "q72_bound_firms_that_use_fewer_full_time_lab": {
+   "text": "Bound firms that use fewer full-time labour hours produce less than they otherwise would.",
+   "p": 0.57,
+   "class": "other"
+  },
+  "q73_customers_of_bound_firms_can_buy_from_fi": {
+   "text": "Customers of bound firms can buy from firms under 50 FTE that are not bound.",
+   "p": 0.67,
+   "class": "other"
+  },
+  "q74_firms_under_50_fte_compete_for_customers": {
+   "text": "Firms under 50 FTE compete for customers with bound firms.",
+   "p": 0.72,
+   "class": "other"
+  },
+  "q75_workers_reclassified_as_independent_cont": {
+   "text": "Workers reclassified as independent contractors owe their former employer no K1 charge.",
+   "p": 0.8,
+   "class": "revenue_use"
+  },
+  "q76_owners_of_seasonal_firms_know_from_janua": {
+   "text": "Owners of seasonal firms know from January 2027 that the 2027 average decides 2028 status.",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "q77_seasonal_firms_can_cut_their_2027_season": {
+   "text": "Seasonal firms can cut their 2027 seasonal hiring to keep their 2027 average under 50 FTE.",
+   "p": 0.68,
+   "class": "expectations"
+  },
+  "q78_seasonal_firms_that_hire_fewer_seasonal_": {
+   "text": "Seasonal firms that hire fewer seasonal workers produce less than they otherwise would.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q79_quenby_farms_food_processors_and_resorts": {
+   "text": "Quenby farms, food processors and resorts sell in markets where many sellers outside the state set the price.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q80_profits_of_seasonal_firms_are_paid_to_th": {
+   "text": "Profits of seasonal firms are paid to their owners.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q81_the_value_of_farms_resorts_and_their_lan": {
+   "text": "The value of farms, resorts and their land rests on the expected earnings of the seasonal firms that use them.",
+   "p": 0.77,
+   "class": "expectations"
+  },
+  "q82_seasonal_firms_can_cut_non_money_terms_s": {
+   "text": "Seasonal firms can cut non-money terms such as staff housing, meals or season-end bonuses where wages cannot fall.",
+   "p": 0.72,
+   "class": "other"
+  },
+  "q83_hiring_by_firms_under_50_fte_is_measured": {
+   "text": "Hiring by firms under 50 FTE is measured by the jobs their workers hold.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q84_firms_under_50_fte_that_hire_more_worker": {
+   "text": "Firms under 50 FTE that hire more workers produce more than they otherwise would.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q85_wages_paid_at_firms_under_50_fte_are_tax": {
+   "text": "Wages paid at firms under 50 FTE are taxed under Quenby's 4.5% income tax.",
+   "p": 0.95,
+   "class": "revenue_use"
+  },
+  "q86_where_the_minimum_wage_holds_the_wage_at": {
+   "text": "Where the minimum wage holds the wage at firms under 50 FTE, they face more applicants than posts.",
+   "p": 0.83,
+   "class": "other"
+  },
+  "q87_firms_under_50_fte_can_cut_training_sche": {
+   "text": "Firms under 50 FTE can cut training, scheduling flexibility and other non-money terms where wages cannot fall.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q88_hiring_by_tarnley_employers_is_measured_": {
+   "text": "Hiring by Tarnley employers is measured by the jobs their workers hold.",
+   "p": 0.42,
+   "class": "other"
+  },
+  "q89_tarnley_employers_that_hire_more_workers": {
+   "text": "Tarnley employers that hire more workers produce more than they otherwise would.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q90_wages_at_tarnley_employers_near_marispor": {
+   "text": "Wages at Tarnley employers near Marisport can adjust over the medium horizon, as raises are set.",
+   "p": 0.78,
+   "class": "other"
+  },
+  "q91_profits_of_tarnley_employers_are_paid_to": {
+   "text": "Profits of Tarnley employers are paid to their owners.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q92_firms_near_50_fte_sell_in_markets_where_": {
+   "text": "Firms near 50 FTE sell in markets where many other sellers set the price.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q93_customers_of_firms_near_50_fte_can_buy_f": {
+   "text": "Customers of firms near 50 FTE can buy from other sellers when those firms produce less.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q94_profits_of_firms_near_50_fte_are_paid_to": {
+   "text": "Profits of firms near 50 FTE are paid to their owners.",
+   "p": 0.93,
+   "class": "other"
+  },
+  "q95_wages_paid_at_firms_near_50_fte_are_taxe": {
+   "text": "Wages paid at firms near 50 FTE are taxed under Quenby's 4.5% income tax.",
+   "p": 0.95,
+   "class": "revenue_use"
+  },
+  "q96_firms_near_50_fte_can_contract_out_clean": {
+   "text": "Firms near 50 FTE can contract out cleaning, security or food service to independent firms whose workers do not count toward their FTE.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q97_where_the_minimum_wage_holds_the_wage_at": {
+   "text": "Where the minimum wage holds the wage at firms near 50 FTE, they face more applicants than posts.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q98_firms_near_50_fte_can_cut_training_sched": {
+   "text": "Firms near 50 FTE can cut training, scheduling flexibility and other non-money terms where wages cannot fall.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q99_insurers_pay_hospitals_physicians_and_ph": {
+   "text": "Insurers pay hospitals, physicians and pharmacies for the care their group plans cover.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "q100_insurers_payment_rates_to_hospitals_and_": {
+   "text": "Insurers' payment rates to hospitals and physicians are set by contract for a year or more.",
+   "p": 0.82,
+   "class": "other"
+  },
+  "q101_hospital_and_physician_capacity_in_quenb": {
+   "text": "Hospital and physician capacity in Quenby grows slowly when insured demand rises.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q102_insurers_can_stop_offering_group_plans_t": {
+   "text": "Insurers can stop offering group plans that fall short of the benefit standard.",
+   "p": 0.83,
+   "class": "other"
+  },
+  "q103_a_21": {
+   "text": "a_21",
+   "p": 0.7,
+   "class": "expectations"
+  },
+  "q104_q54_insurers_profits_are_paid_to_their_o": {
+   "text": "q54_insurers_profits_are_paid_to_their_owner",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q105_q61_workers_with_cover_use_more_physicia": {
+   "text": "q61_workers_with_cover_use_more_physician_pr",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q106_hiring_by_staffing_agencies_is_measured_": {
+   "text": "Hiring by staffing agencies is measured by the jobs their workers hold.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q107_wages_paid_by_staffing_agencies_are_taxe": {
+   "text": "Wages paid by staffing agencies are taxed under Quenby's 4.5% income tax.",
+   "p": 0.9,
+   "class": "revenue_use"
+  },
+  "q108_the_minimum_wage_binds_for_some_workers_": {
+   "text": "The minimum wage binds for some workers placed by staffing agencies.",
+   "p": 0.85,
+   "class": "binding"
+  },
+  "q109_where_the_minimum_wage_holds_the_wage_at": {
+   "text": "Where the minimum wage holds the wage at staffing agencies, they face more applicants than posts.",
+   "p": 0.84,
+   "class": "other"
+  },
+  "q110_staffing_agencies_can_cut_training_sched": {
+   "text": "Staffing agencies can cut training, scheduling flexibility and other non-money terms where wages cannot fall.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q111_profits_of_staffing_agencies_are_paid_to": {
+   "text": "Profits of staffing agencies are paid to their owners.",
+   "p": 0.93,
+   "class": "other"
+  },
+  "q112_some_staffing_agencies_in_quenby_have_50": {
+   "text": "Some staffing agencies in Quenby have 50 or more FTE and offer their full-timers no qualifying cover.",
+   "p": 0.88,
+   "class": "binding"
+  },
+  "q113_some_staffing_agencies_in_quenby_have_mo": {
+   "text": "Some staffing agencies in Quenby have more than 100 uncovered full-timers.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q114_some_staffing_agencies_in_quenby_have_fe": {
+   "text": "Some staffing agencies in Quenby have fewer than 50 FTE.",
+   "p": 0.93,
+   "class": "other"
+  },
+  "q115_owners_of_bound_firms_that_offer_nothing": {
+   "text": "Owners of bound firms that offer nothing bear part of K1's cost through lower profits.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q116_owners_invest_less_new_capital_in_bound_": {
+   "text": "Owners invest less new capital in bound firms when the return on it falls.",
+   "p": 0.82,
+   "class": "other"
+  },
+  "q117_owners_can_put_new_capital_into_firms_un": {
+   "text": "Owners can put new capital into firms under 50 FTE that K1 does not bind.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q118_owners_can_put_new_capital_into_firms_in": {
+   "text": "Owners can put new capital into firms in Tarnley, which has no such law.",
+   "p": 0.88,
+   "class": "mobility"
+  },
+  "q119_owners_of_insurers_put_less_new_capital_": {
+   "text": "Owners of insurers put less new capital into Quenby group plans when the return on it falls.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q120_owners_of_insurers_can_put_new_capital_i": {
+   "text": "Owners of insurers can put new capital into insurance lines outside Quenby's group market.",
+   "p": 0.9,
+   "class": "mobility"
+  },
+  "q121_q55_the_benefit_standard_decides_which_o": {
+   "text": "q55_the_benefit_standard_decides_which_of_in",
+   "p": 0.83,
+   "class": "other"
+  },
+  "q122_patients_of_quenby_hospitals_and_physici": {
+   "text": "Patients of Quenby hospitals and physicians share the same limited appointment and bed capacity.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q123_where_payment_rates_are_fixed_hospitals_": {
+   "text": "Where payment rates are fixed, hospitals and physicians can ration added care by longer waits or shorter visits.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q124_profits_of_physician_practices_pharmacie": {
+   "text": "Profits of physician practices, pharmacies and for-profit hospitals are paid to their owners.",
+   "p": 0.93,
+   "class": "other"
+  },
+  "q125_hospitals_physicians_and_pharmacies_need": {
+   "text": "Hospitals, physicians and pharmacies need more nursing and support staff hours to provide more care.",
+   "p": 0.74,
+   "class": "other"
+  },
+  "q126_indigent_care_program_payments_to_hospit": {
+   "text": "Indigent Care Program payments to hospitals are paid from Quenby's general fund.",
+   "p": 0.97,
+   "class": "revenue_use"
+  },
+  "q127_the_indigent_care_program_pays_hospitals": {
+   "text": "The Indigent Care Program pays hospitals for the care they give uninsured low-income residents.",
+   "p": 0.97,
+   "class": "other"
+  },
+  "q128_quenby_s_general_fund_pays_for_other_sta": {
+   "text": "Quenby's general fund pays for other state programs out of the same balance.",
+   "p": 0.93,
+   "class": "revenue_use"
+  },
+  "q129_a_change_in_quenby_s_general_fund_balanc": {
+   "text": "A change in Quenby's general-fund balance is met in later years by a change in the taxes residents pay.",
+   "p": 0.42,
+   "class": "revenue_use"
+  },
+  "q130_a_worker_s_money_earnings_are_the_hourly": {
+   "text": "A worker's money earnings are the hourly wage times the hours worked.",
+   "p": 0.97,
+   "class": "other"
+  },
+  "q131_full_timers_whose_hours_are_cut_below_30": {
+   "text": "Full-timers whose hours are cut below 30 a week are owed no offer under K1.",
+   "p": 0.93,
+   "class": "other"
+  },
+  "q132_workers_at_bound_firms_can_move_to_jobs_": {
+   "text": "Workers at bound firms can move to jobs with public employers, which K1 does not bind.",
+   "p": 0.68,
+   "class": "mobility"
+  },
+  "q133_longer_hours_worked_by_existing_staff_at": {
+   "text": "Longer hours worked by existing staff at firms near 50 FTE let those firms produce more than they otherwise would.",
+   "p": 0.64,
+   "class": "other"
+  },
+  "q134_firms_under_50_fte_pass_part_of_higher_l": {
+   "text": "Firms under 50 FTE pass part of higher labour costs into their prices.",
+   "p": 0.27,
+   "class": "other"
+  },
+  "q135_profits_of_firms_under_50_fte_are_paid_t": {
+   "text": "Profits of firms under 50 FTE are paid to their owners.",
+   "p": 0.93,
+   "class": "other"
+  },
+  "q136_patients_place_a_value_on_the_time_they_": {
+   "text": "Patients place a value on the time they spend waiting for care.",
+   "p": 0.93,
+   "class": "other"
+  },
+  "q137_some_quenby_patients_near_marisport_can_": {
+   "text": "Some Quenby patients near Marisport can get care from hospitals and physicians across the border in Tarnley.",
+   "p": 0.88,
+   "class": "mobility"
+  },
+  "q138_hiring_by_small_contractors_is_measured_": {
+   "text": "Hiring by small contractors is measured by the jobs their workers hold.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q139_wages_paid_by_small_contractors_are_taxe": {
+   "text": "Wages paid by small contractors are taxed under Quenby's 4.5% income tax.",
+   "p": 0.93,
+   "class": "revenue_use"
+  },
+  "q140_small_contractors_that_hire_more_workers": {
+   "text": "Small contractors that hire more workers supply more cleaning, security and food service than they otherwise would.",
+   "p": 0.68,
+   "class": "other"
+  },
+  "q141_small_contractors_hire_from_the_same_poo": {
+   "text": "Small contractors hire from the same pool of low-wage workers as other firms under 50 FTE.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q142_the_minimum_wage_binds_for_some_workers_": {
+   "text": "The minimum wage binds for some workers at small cleaning, security and food-service contractors.",
+   "p": 0.86,
+   "class": "binding"
+  },
+  "q143_where_the_minimum_wage_holds_the_wage_at": {
+   "text": "Where the minimum wage holds the wage at small contractors, they face more applicants than posts.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q144_small_contractors_can_cut_training_sched": {
+   "text": "Small contractors can cut training, scheduling flexibility and other non-money terms where wages cannot fall.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q145_profits_of_small_contractors_are_paid_to": {
+   "text": "Profits of small contractors are paid to their owners.",
+   "p": 0.94,
+   "class": "other"
+  },
+  "q146_contract_prices_for_cleaning_security_an": {
+   "text": "Contract prices for cleaning, security and food service are renegotiated at contract renewal.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q147_some_small_contractors_that_take_on_cont": {
+   "text": "Some small contractors that take on contracted-out work would grow past 50 FTE.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q148_new_investment_in_bound_firms_adds_to_th": {
+   "text": "New investment in bound firms adds to their stores, plant and equipment over time.",
+   "p": 0.88,
+   "class": "other"
+  },
+  "q149_new_stores_and_premises_of_bound_chains_": {
+   "text": "New stores and premises of bound chains are built by builders working in Quenby.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q150_bound_retail_and_food_firms_supply_a_lar": {
+   "text": "Bound retail and food firms supply a large share of the goods their customers buy in Quenby.",
+   "p": 0.57,
+   "class": "other"
+  },
+  "q151_bound_retail_and_food_firms_buy_the_good": {
+   "text": "Bound retail and food firms buy the goods they sell from wholesalers and food suppliers.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "q152_the_department_of_revenue_spends_more_on": {
+   "text": "The Department of Revenue spends more on audits where employers report workers as independent contractors.",
+   "p": 0.42,
+   "class": "enforcement"
+  },
+  "q153_work_reclassified_by_bound_employers_is_": {
+   "text": "Work reclassified by bound employers is bought from the same people as independent contractors.",
+   "p": 0.42,
+   "class": "other"
+  },
+  "q154_pay_to_independent_contractors_is_not_he": {
+   "text": "Pay to independent contractors is not held by the minimum wage.",
+   "p": 0.86,
+   "class": "other"
+  },
+  "q155_hiring_by_public_employers_is_measured_b": {
+   "text": "Hiring by public employers is measured by the jobs their workers hold.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q156_wages_paid_by_public_employers_are_taxed": {
+   "text": "Wages paid by public employers are taxed under Quenby's 4.5% income tax.",
+   "p": 0.88,
+   "class": "revenue_use"
+  },
+  "q157_wages_of_state_public_employees_are_paid": {
+   "text": "Wages of state public employees are paid from Quenby's general fund.",
+   "p": 0.8,
+   "class": "revenue_use"
+  },
+  "q158_public_sector_wages_are_set_by_pay_scale": {
+   "text": "Public-sector wages are set by pay scales and appropriations that do not respond to the number of applicants within a budget period.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q159_q132_workers_at_bound_firms_can_move_to_": {
+   "text": "q132_workers_at_bound_firms_can_move_to_jobs_",
+   "p": 0.2,
+   "class": "other"
+  },
+  "q160_public_employers_ration_posts_among_appl": {
+   "text": "Public employers ration posts among applicants by longer hiring lists and waits.",
+   "p": 0.42,
+   "class": "other"
+  },
+  "q161_where_the_minimum_wage_holds_the_wage_at": {
+   "text": "Where the minimum wage holds the wage at seasonal firms, they face more applicants than seasonal posts.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q162_wages_paid_by_seasonal_firms_are_taxed_u": {
+   "text": "Wages paid by seasonal firms are taxed under Quenby's 4.5% income tax.",
+   "p": 0.95,
+   "class": "revenue_use"
+  },
+  "q163_buyers_of_the_produce_and_resort_stays_o": {
+   "text": "Buyers of the produce and resort stays of Quenby seasonal firms can buy from sellers outside the state when those firms supply less.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q164_seasonal_workers_not_hired_by_seasonal_f": {
+   "text": "Seasonal workers not hired by seasonal firms take jobs at other firms under 50 FTE.",
+   "p": 0.6,
+   "class": "mobility"
+  },
+  "q165_seasonal_firms_buy_seed_feed_fuel_and_su": {
+   "text": "Seasonal firms buy seed, feed, fuel and supplies in proportion to what they produce.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q166_seasonal_firms_can_contract_out_harvest_": {
+   "text": "Seasonal firms can contract out harvest, grounds or cleaning work to independent firms whose workers do not count toward their FTE.",
+   "p": 0.78,
+   "class": "other"
+  },
+  "q167_seasonal_firms_can_replace_some_seasonal": {
+   "text": "Seasonal firms can replace some seasonal labour with machinery.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q168_some_of_the_380_seasonal_firms_keep_thei": {
+   "text": "Some of the 380 seasonal firms keep their 2027 average under 50 FTE by cutting seasonal hours or hiring.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q169_some_of_the_380_seasonal_firms_keep_thei": {
+   "text": "Some of the 380 seasonal firms keep their seasonal hiring and reach 50 FTE, becoming bound by K1.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q170_whether_seasonal_workers_count_toward_th": {
+   "text": "Whether seasonal workers count toward the 50 decides whether seasonal workers at about 380 firms are owed an offer of cover.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q171_firms_under_50_fte_supply_part_of_the_go": {
+   "text": "Firms under 50 FTE supply part of the goods and services their customers buy in Quenby.",
+   "p": 0.95,
+   "class": "other"
+  },
+  "q172_q74_firms_under_50_fte_compete_for_custo": {
+   "text": "q74_firms_under_50_fte_compete_for_customers",
+   "p": 0.66,
+   "class": "other"
+  },
+  "q173_firms_under_50_fte_buy_goods_and_supplie": {
+   "text": "Firms under 50 FTE buy goods and supplies from wholesalers in proportion to what they sell.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q174_firms_under_50_fte_that_hire_more_worker": {
+   "text": "Firms under 50 FTE that hire more workers bid up wages where few more low-wage workers are available in the medium run.",
+   "p": 0.68,
+   "class": "other"
+  },
+  "q175_a_group_s_money_earnings_are_the_wage_ti": {
+   "text": "A group's money earnings are the wage times the hours worked times the number employed.",
+   "p": 0.97,
+   "class": "other"
+  },
+  "q176_many_firms_under_50_fte_offer_their_full": {
+   "text": "Many firms under 50 FTE offer their full-timers no health cover.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q177_many_workers_at_firms_under_50_fte_earn_": {
+   "text": "Many workers at firms under 50 FTE earn below 200% of the poverty line.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q178_q59_uninsured_residents_below_200_of_the": {
+   "text": "q59_uninsured_residents_below_200_of_the_pov",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q179_the_value_of_firms_under_50_fte_rests_on": {
+   "text": "The value of firms under 50 FTE rests on their expected earnings.",
+   "p": 0.75,
+   "class": "expectations"
+  },
+  "q180_tarnley_employers_near_marisport_that_hi": {
+   "text": "Tarnley employers near Marisport that hire more workers bid up wages where few more workers are available in the medium run.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q181_tarnley_employers_near_marisport_sell_in": {
+   "text": "Tarnley employers near Marisport sell in markets where many other sellers set the price.",
+   "p": 0.6,
+   "class": "other"
+  },
+  "q182_some_quenby_customers_near_marisport_buy": {
+   "text": "Some Quenby customers near Marisport buy goods and services from Tarnley firms across the border.",
+   "p": 0.9,
+   "class": "mobility"
+  },
+  "q183_tarnley_firms_near_marisport_compete_for": {
+   "text": "Tarnley firms near Marisport compete for customers with bound Quenby firms.",
+   "p": 0.74,
+   "class": "other"
+  },
+  "q184_tarnley_employers_buy_goods_and_supplies": {
+   "text": "Tarnley employers buy goods and supplies from wholesalers in proportion to what they sell.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q185_the_value_of_tarnley_firms_near_marispor": {
+   "text": "The value of Tarnley firms near Marisport rests on their expected earnings.",
+   "p": 0.8,
+   "class": "expectations"
+  },
+  "q186_firms_near_50_fte_buy_goods_and_supplies": {
+   "text": "Firms near 50 FTE buy goods and supplies from wholesalers in proportion to what they sell.",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q187_workers_not_hired_by_firms_near_50_fte_t": {
+   "text": "Workers not hired by firms near 50 FTE take jobs at other firms under 50 FTE.",
+   "p": 0.62,
+   "class": "mobility"
+  },
+  "q188_about_1_300_firms_with_40_to_49_fte_can_": {
+   "text": "About 1,300 firms with 40 to 49 FTE can stay unbound by not growing past 50 FTE.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q189_some_of_the_about_1_100_firms_with_50_to": {
+   "text": "Some of the about 1,100 firms with 50 to 60 FTE can escape K1 only by cutting their average below 50 FTE.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q190_firms_holding_their_count_below_50_fte_l": {
+   "text": "Firms holding their count below 50 FTE limit hiring and change hours for the workers they employ.",
+   "p": 0.67,
+   "class": "other"
+  },
+  "q191_insurers_must_have_their_2028_group_plan": {
+   "text": "Insurers must have their 2028 group plans certified under K2 before the plan year begins on 1 January 2028.",
+   "p": 0.27,
+   "class": "expectations"
+  },
+  "q192_new_investment_by_insurers_adds_to_their": {
+   "text": "New investment by insurers adds to their capacity to write and service Quenby group plans over time.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q193_staffing_agency_fees_charged_to_client_f": {
+   "text": "Staffing agency fees charged to client firms are renegotiated at contract renewal.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q194_staffing_agencies_that_hire_more_workers": {
+   "text": "Staffing agencies that hire more workers place more workers with client firms.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q195_staffing_agencies_hire_from_the_same_poo": {
+   "text": "Staffing agencies hire from the same pool of low-wage workers as firms under 50 FTE.",
+   "p": 0.78,
+   "class": "other"
+  },
+  "q196_q47_firms_near_50_fte_can_take_on_worker": {
+   "text": "q47_firms_near_50_fte_can_take_on_workers_th",
+   "p": 0.7,
+   "class": "other"
+  },
+  "q197_the_value_of_staffing_agencies_rests_on_": {
+   "text": "The value of staffing agencies rests on their expected earnings.",
+   "p": 0.75,
+   "class": "expectations"
+  },
+  "q198_the_value_of_physician_practices_pharmac": {
+   "text": "The value of physician practices, pharmacies and for-profit hospitals rests on their expected earnings.",
+   "p": 0.85,
+   "class": "expectations"
+  },
+  "q199_trained_nursing_and_health_support_staff": {
+   "text": "Trained nursing and health support staff in Quenby are slow to increase in number.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q200_pay_for_hospital_nursing_and_support_sta": {
+   "text": "Pay for hospital nursing and support staff is set by yearly pay scales or contracts.",
+   "p": 0.82,
+   "class": "other"
+  },
+  "q201_hospitals_short_of_staff_at_fixed_pay_sc": {
+   "text": "Hospitals short of staff at fixed pay scales can offer signing bonuses, overtime or better schedules.",
+   "p": 0.88,
+   "class": "other"
+  },
+  "q202_pharmacies_and_hospitals_buy_drugs_and_m": {
+   "text": "Pharmacies and hospitals buy drugs and medical supplies from distributors in proportion to the care they provide.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q203_care_paid_by_plans_for_newly_covered_wor": {
+   "text": "Care paid by plans for newly covered workers exceeds the hospital care the Indigent Care Program stops paying for them.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q204_firms_under_50_fte_that_sell_more_need_m": {
+   "text": "Firms under 50 FTE that sell more need more labour hours to do so.",
+   "p": 0.88,
+   "class": "other"
+  },
+  "q205_prices_charged_by_firms_under_50_fte_are": {
+   "text": "Prices charged by firms under 50 FTE are revised over the medium horizon as the demand they face changes.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q206_the_3_000_charge_per_uncovered_full_time": {
+   "text": "The $3,000 charge per uncovered full-timer is more than twice the 4.5% income tax on a full-time minimum-wage job ($1,310 a year).",
+   "p": 0.97,
+   "class": "revenue_use"
+  },
+  "q207_income_tax_lost_where_employer_cover_or_": {
+   "text": "Income tax lost where employer cover or the charge replaces taxable wages is at most 4.5% of the amount replaced.",
+   "p": 0.9,
+   "class": "revenue_use"
+  },
+  "q208_many_workers_placed_by_staffing_agencies": {
+   "text": "Many workers placed by staffing agencies are not offered qualifying cover.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q209_many_workers_placed_by_staffing_agencies": {
+   "text": "Many workers placed by staffing agencies earn below 200% of the poverty line.",
+   "p": 0.82,
+   "class": "other"
+  },
+  "q210_workers_who_lose_full_time_jobs_at_bound": {
+   "text": "Workers who lose full-time jobs at bound firms can take jobs at small cleaning, security and food-service contractors.",
+   "p": 0.74,
+   "class": "mobility"
+  },
+  "q211_workers_who_lose_full_time_jobs_at_bound": {
+   "text": "Workers who lose full-time jobs at bound firms can take work placed by staffing agencies.",
+   "p": 0.74,
+   "class": "mobility"
+  },
+  "q212_some_uncovered_full_timers_at_bound_firm": {
+   "text": "Some uncovered full-timers at bound firms whose earnings fall drop below 200% of the poverty line.",
+   "p": 0.78,
+   "class": "other"
+  },
+  "q213_full_timers_at_bound_firms_spend_most_of": {
+   "text": "Full-timers at bound firms spend most of their earnings on present goods.",
+   "p": 0.88,
+   "class": "other"
+  },
+  "q214_wages_paid_to_hospital_nursing_and_suppo": {
+   "text": "Wages paid to hospital nursing and support staff are taxed under Quenby's 4.5% income tax.",
+   "p": 0.93,
+   "class": "revenue_use"
+  },
+  "q215_hospitals_hire_support_staff_such_as_aid": {
+   "text": "Hospitals hire support staff such as aides, cleaners and kitchen workers from the same pool of low-wage workers as firms under 50 FTE.",
+   "p": 0.8,
+   "class": "other"
+  },
+  "q216_workers_at_firms_near_50_fte_spend_most_": {
+   "text": "Workers at firms near 50 FTE spend most of their earnings on present goods.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q217_some_uninsured_workers_at_firms_near_50_": {
+   "text": "Some uninsured workers at firms near 50 FTE whose earnings rise move above 200% of the poverty line.",
+   "p": 0.65,
+   "class": "other"
+  },
+  "q218_workers_at_firms_near_50_fte_who_work_lo": {
+   "text": "Workers at firms near 50 FTE who work longer hours have less time for producing goods and care at home.",
+   "p": 0.85,
+   "class": "other"
+  },
+  "q219_workers_given_longer_hours_at_firms_near": {
+   "text": "Workers given longer hours at firms near 50 FTE give up second jobs at other firms under 50 FTE.",
+   "p": 0.55,
+   "class": "other"
+  },
+  "q220_some_workers_at_firms_under_50_fte_are_p": {
+   "text": "Some workers at firms under 50 FTE are paid at or near the minimum wage, so more demand for them raises hiring before it raises their wage.",
+   "p": 0.8,
+   "class": "binding"
+  },
+  "q221_some_workers_at_firms_under_50_fte_are_p": {
+   "text": "Some workers at firms under 50 FTE are paid enough above the minimum wage that their wage can rise with more demand for them.",
+   "p": 0.9,
+   "class": "other"
+  },
+  "q222_some_workers_living_near_marisport_choos": {
+   "text": "Some workers living near Marisport choose between jobs at Quenby firms under 50 FTE and jobs in Tarnley.",
+   "p": 0.88,
+   "class": "mobility"
+  },
+  "q223_some_people_who_take_added_jobs_at_firms": {
+   "text": "Some people who take added jobs at firms under 50 FTE were not in paid work before.",
+   "p": 0.75,
+   "class": "other"
+  },
+  "q224_workers_who_take_paid_jobs_have_less_tim": {
+   "text": "Workers who take paid jobs have less time for producing goods and care at home.",
+   "p": 0.93,
+   "class": "other"
+  },
+  "q225_tarnley_employers_near_marisport_hire_fe": {
+   "text": "Tarnley employers near Marisport hire fewer workers when the wages they must pay rise.",
+   "p": 0.85,
+   "class": "other"
+  }
+ }
+}
